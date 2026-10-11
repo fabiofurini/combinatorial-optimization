@@ -1,0 +1,1650 @@
+---
+title: "Formulations of the bin packing problem"
+---
+
+# Formulations of the bin packing problem
+
+<div class="info-capitolo" markdown>
+
+**Part 2 · Formulations and their properties · Chapter 9** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf)
+
+</div>
+
+!!! nota "Prerequisites"
+
+    - From the module <em>Linear Programming</em>, Chapter 9 «Duality theory»: the dual of an LP problem, weak and strong duality.
+
+    - From the module <em>Integer linear programming</em>, the chapters «Integer linear programming» and «LP relaxation and dual bounds»: ILP problems, LP relaxations and bounds.
+
+    - From this module, the chapter «Bin packing and cutting stock»: the problem and its assumptions.
+
+!!! chiave "Objectives"
+
+    At the end of this chapter you will be able to:
+
+    - write the ILP model of the Bin Packing Problem and explain the link between the assignment variables and the activation variables;
+
+    - write the two LP relaxations and their duals, and prove that their optimal value is $\sum_{j} w_j / c$;
+
+    - round the LP bound up to obtain a lower bound on the number of bins;
+
+    - prove that the LP bound is at least one half of the optimal value, and that the factor is tight.
+
+## 9.1 The problem in brief
+
+!!! nota "Where we were"
+
+    In the chapter «Bin packing and cutting stock» we met the Bin Packing Problem as a <em>problem</em>: definition, applications and a first bound on the number of bins. Here we look at it as a <em>model</em> and we compute lower bounds on its optimal value. The same problem returns with heuristic algorithms and approximation algorithms for the BPP.
+
+<a id="box-1-def-BPP"></a>
+
+!!! definizione "Definition 9.1: Bin Packing Problem"
+
+    Given:
+
+    1. an infinite number of bins, each with <em>capacity</em> $c \in \Z_{\ge 1}$,
+
+    2. a set $\mathscr{I} = \{1,2,\dots,n\}$ of $n$ items,
+
+    3. for each item $j \in \mathscr{I}$, a <em>weight</em> $w_j \in \Z_{\ge 1}$,
+
+    the <strong>Bin Packing Problem</strong> (BPP) asks to decide in which bin to place each item, so that the total weight of the items in any bin does not exceed the bin capacity, and the total number of bins used is minimized.
+
+- We assume that any BPP instance satisfies the problem assumptions, i.e.,
+
+    $$
+    w_j \le c ~~~~\text{for all}~~~~ j \in \mathscr{I} ~~~~~~~\text{and}~~~~~~~ \sum_{j \in \mathscr{I}} w_j>c
+    $$
+
+    The first assumption guarantees that every item can be packed into a bin, the second one that more than one bin is needed.
+
+## 9.2 An ILP model for the Bin Packing Problem
+
+- Given an upper bound $m \in \Z_{\ge 2}$ on the number of bins used in any optimal BPP solution, we introduce the following $mn$ <strong>binary variables</strong>:
+
+    $$
+    x_{jb} =
+    \begin{cases}
+    1 & \text{if item } j \text{ is packed in bin } b \\
+    0 & \text{otherwise}
+    \end{cases}
+    \qquad \forall j \in \underbrace{\{1,2,\dots,n\}}_{=\mathscr{I}},~~ \forall b \in \underbrace{\{1,2,\dots,m\}}_{=\mathscr{B}},
+    $$
+
+    and the following $m$ <strong>binary variables</strong>:
+
+    $$
+    y_b =
+    \begin{cases}
+    1 & \text{if bin } b \text{ is used} \\
+    0 & \text{otherwise}
+    \end{cases}
+    \qquad \forall b \in \underbrace{\{1,2,\dots,m\}}_{=\mathscr{B}}.
+    $$
+
+    The number $n$ of items is a valid upper bound on the minimum number of bins needed to pack all the items since, in the worst possible case, each item is packed in a different bin. Also the number of bins used in any feasible BPP solution is a valid upper bound.
+
+!!! chiave ""
+
+    Using these variables, an Integer Linear Programming (ILP) model for the Bin Packing Problem (BPP) reads as follows:
+
+    <a id="eq-NAT_BPP"></a>
+
+    \begin{align*}
+    && \min ~~ \sum_{b \in \mathscr{B}} y_b \label{obj_BPP}  \tag{9.1a}\\[2ex]
+    && \text{subject to} \quad \sum_{b \in \mathscr{B}} x_{jb} &= 1, & \forall j \in \mathscr{I}, \label{cons1_BPP}  \tag{9.1b}\\[2ex]
+    && - \sum_{j \in \mathscr{I}}  w_j \; x_{jb} + c \; y_b &\geq 0, & \forall b \in \mathscr{B}, \label{cons2_BPP}  \tag{9.1c}\\[2ex]
+    && x_{jb} &\in \{0,1\}, & \forall j \in \mathscr{I},~ \forall b \in \mathscr{B}, \label{cons4_BPP}  \tag{9.1d}\\[2ex]
+    && y_b &\in \{0,1\}, & \forall b \in \mathscr{B}. \label{cons3_BPP} \tag{9.1e}
+    \end{align*}
+
+    This ILP model is referred to as the $\ILP_{\BPP}$ model.
+
+- Description of the objective function and constraints of the $\ILP_{\BPP}$ model:
+
+    - the linear objective function $\eqref{obj_BPP}$ minimizes the total number of used bins;
+
+    - constraints $\eqref{cons1_BPP}$ ensure that each item is packed in exactly one bin, so that all items are packed ($n$ linear constraints);
+
+    - constraints $\eqref{cons2_BPP}$ link the assignment variables with the activation variables and impose the capacity restrictions: if bin $b$ is used, the weight of its items is at most $c$; if it is not used, it contains no item ($m$ linear constraints);
+
+    - finally, constraints $\eqref{cons4_BPP}$ and $\eqref{cons3_BPP}$ define the variables of the ILP model.
+
+<strong>Explanation of the link between the variables</strong>
+
+- <strong>If at least one item is packed in bin $b$, then the bin is used.</strong> The logical implication is
+
+    $$
+    (x_{1b} {\tt ~OR~} x_{2b} {\tt ~OR~} \dots {\tt ~OR~} x_{nb}) ~~~ \Longrightarrow ~~~ y_b .
+    $$
+
+    Since $w_j>0$, packing an item in bin $b$ gives $\sum_{j \in \mathscr{I}} w_j x_{jb} > 0$, and the constraint $\sum_{j \in \mathscr{I}} w_j x_{jb} \le c\,y_b$ forces $y_b=1$.
+
+- <strong>If bin $b$ is not used, then it is empty.</strong> This is the contrapositive of the previous implication. For $y_b=0$ the constraint reads $\sum_{j \in \mathscr{I}} w_j x_{jb} \le 0$, and since $w_j>0$ we obtain $x_{jb}=0$ for every item $j$.
+
+- <strong>If bin $b$ is used, then it contains at least one item, but only in an optimal solution.</strong> The constraints do not impose it. However, if $x_{jb}=0$ for all $j$ and $y_b=1$, setting $y_b=0$ keeps all the constraints satisfied and decreases the objective value by one. Hence, in every optimal solution, empty bins are not counted as used.
+
+<a id="box-2-texexpbox_ilp_bpp"></a>
+
+!!! esempio "Example 9.1: $\ILP_{\BPP}$ model"
+
+    We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3\}$ of $3$ items ($n=3$), with the following item weights:
+
+    <div class="tabella" markdown="0"><table>
+    <tr>
+    <th></th>
+    <th><span class="arithmatex">\(j=1\)</span></th>
+    <th><span class="arithmatex">\(j=2\)</span></th>
+    <th><span class="arithmatex">\(j=3\)</span></th>
+    </tr>
+    <tr>
+    <td><span class="arithmatex">\(w_j\)</span></td>
+    <td><span class="arithmatex">\(7\)</span></td>
+    <td><span class="arithmatex">\(6\)</span></td>
+    <td><span class="arithmatex">\(3\)</span></td>
+    </tr>
+    </table></div>
+
+    We refer to this BPP instance as <span style="color:#1971c2">Example 1</span>.
+
+    The $\ILP_{\BPP}$ model with $m=3$ for this BPP instance is:
+
+    <div class="tabella" markdown="0"><table>
+    <tr>
+    <td><span class="arithmatex">\(\min\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(y_{1}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(y_{2}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(y_{3}\)</span></td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>subject to</td>
+    <td><span class="arithmatex">\(x_{11}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{12}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{13}\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(=1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(x_{21}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{22}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{23}\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(=1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(x_{31}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{32}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{33}\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(=1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{11}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{21}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{31}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\ge 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{12}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{22}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{32}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_2\)</span></td>
+    <td></td>
+    <td><span class="arithmatex">\(\ge 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{13}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{23}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{33}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_3\)</span></td>
+    <td><span class="arithmatex">\(\ge 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td><span class="arithmatex">\(x_{11}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{12}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{13}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{21}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{22}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{23}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{31}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{32}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{33}\)</span>,</td>
+    <td><span class="arithmatex">\(y_{1}\)</span>,</td>
+    <td><span class="arithmatex">\(y_{2}\)</span>,</td>
+    <td><span class="arithmatex">\(y_{3}\)</span></td>
+    <td><span class="arithmatex">\(\in \{0,1\}\)</span></td>
+    </tr>
+    </table></div>
+
+    An optimal solution ${\tilde{\vet{x}}}(\ILP_{\BPP})$ is:
+
+    $$
+    \tilde{x}_{11} = \tilde{x}_{31} = 1,~~ \tilde{x}_{12} = \tilde{x}_{13} =  \tilde{x}_{21} = 0,~~ \tilde{x}_{22} = 1,~~ \tilde{x}_{23} = \tilde{x}_{32} = \tilde{x}_{33} = 0,~~ \tilde{y}_1 = \tilde{y}_2 = 1,~~ \tilde{y}_3 = 0
+    $$
+
+    Another optimal solution, obtained by permuting the indices of bins $1$ and $2$, is:
+
+    $$
+    \tilde{x}_{12} = \tilde{x}_{32} = 1,~~ \tilde{x}_{11} = \tilde{x}_{13} =  \tilde{x}_{22} = 0,~~ \tilde{x}_{21} = 1,~~ \tilde{x}_{23} = \tilde{x}_{31} = \tilde{x}_{33} = 0,~~ \tilde{y}_1 = \tilde{y}_2 = 1,~~ \tilde{y}_3 = 0.
+    $$
+
+    The optimal value is:
+
+    $$
+    z(\ILP_{\BPP}) = 2
+    $$
+
+    The associated optimal solution of the BPP is given by the packing patterns
+
+    $$
+    \tilde{P}_1 = \{1,3\} \quad \text{and} \quad  \tilde{P}_2 = \{2\}
+    $$
+
+    The optimal solution is not unique: also the packing patterns $\{1\}$ and $\{2,3\}$ use two bins.
+
+## 9.3 A first Linear Programming relaxation
+
+!!! chiave ""
+
+    To obtain a Linear Programming (LP) relaxation of the $\ILP_{\BPP}$ model, we relax constraints $\eqref{cons4_BPP}$ and $\eqref{cons3_BPP}$ with the following ones:
+
+    \begin{align*}
+    && x_{jb} &\ge 0, & \forall j \in \mathscr{I},~ \forall b \in \mathscr{B}, \label{cons4_BPP_LP}  \tag{9.2a}\\[2ex]
+    && y_b &\ge 0, & \forall b \in \mathscr{B}. \label{cons3_BPP_LP} \tag{9.2b}
+    \end{align*}
+
+    The obtained LP model is referred to as the $\LP\text{-}0_{\BPP}$ model.
+
+<a id="box-3-texexpbox_lp0_bpp"></a>
+
+!!! esempio "Example 9.2: $\LP\text{-}0_{\BPP}$ model"
+
+    The $\LP\text{-}0_{\BPP}$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
+
+    <div class="tabella" markdown="0"><table>
+    <tr>
+    <td><span class="arithmatex">\(\min\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(y_{1}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(y_{2}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(y_{3}\)</span></td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>subject to</td>
+    <td><span class="arithmatex">\(x_{11}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{12}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{13}\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(=1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(x_{21}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{22}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{23}\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(=1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(x_{31}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{32}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{33}\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(=1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{11}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{21}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{31}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\ge 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{12}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{22}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{32}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_2\)</span></td>
+    <td></td>
+    <td><span class="arithmatex">\(\ge 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{13}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{23}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{33}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_3\)</span></td>
+    <td><span class="arithmatex">\(\ge 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td><span class="arithmatex">\(x_{11}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{12}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{13}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{21}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{22}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{23}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{31}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{32}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{33}\)</span>,</td>
+    <td><span class="arithmatex">\(y_{1}\)</span>,</td>
+    <td><span class="arithmatex">\(y_{2}\)</span>,</td>
+    <td><span class="arithmatex">\(y_{3}\)</span></td>
+    <td><span class="arithmatex">\(\ge 0\)</span></td>
+    </tr>
+    </table></div>
+
+    An optimal solution ${\tilde{\vet{x}}}(\LP\text{-}0_{\BPP})$ is:
+
+    $$
+    \tilde x_{11}=\tilde x_{12}=\tilde  x_{13}=\tilde  x_{21}=\tilde x_{22}=\tilde  x_{23}= \tilde  x_{31}=\tilde x_{32}=\tilde  x_{33}=\frac{1}{3},
+    \quad
+    \tilde{y}_1 = \tilde{y}_2 = \tilde{y}_3 = \frac{8}{15}
+    $$
+
+    The optimal value $z(\LP\text{-}0_{\BPP})$ is $\frac{8}{5}$.
+
+    Accordingly, we have the lower bound:
+
+    $$
+    \frac{8}{5} \leq z(\ILP_{\BPP})
+    $$
+
+    and, since $z(\ILP_{\BPP})$ is an integer, $z(\ILP_{\BPP}) \ge \lceil \frac{8}{5} \rceil = 2$.
+
+!!! chiave ""
+
+    Using
+
+    - a free dual variable $\mu_j$ for each constraint $\eqref{cons1_BPP}$ ($j \in \mathscr{I}$)
+
+    - a non-negative dual variable $\pi_b$ for each constraint $\eqref{cons2_BPP}$ ($b \in \mathscr{B}$)
+
+    the dual model of the $\LP\text{-}0_{\BPP}$ model reads as follows:
+
+    <a id="eq-DUAL_0"></a>
+
+    \begin{align*}
+    && \max ~~ \sum_{j \in \mathscr{I}}  \mu_j \label{obj_D}  \tag{9.3a}\\[2ex]
+    && \text{subject to} \quad \mu_j - w_j \; \pi_b &\le 0, & \forall j \in \mathscr{I},~\forall b \in \mathscr{B}, \label{cons2_D}  \tag{9.3b}\\[2ex]
+    && c \; \pi_b &\le 1, & \forall b \in \mathscr{B}, \label{cons1_D}  \tag{9.3c}\\[2ex]
+    && \mu_j &\gtreqless 0, & \forall j \in \mathscr{I}, \label{cons3_D}  \tag{9.3d}\\[2ex]
+    && \pi_b &\ge 0, & \forall b \in \mathscr{B}. \label{cons4_D} \tag{9.3e}
+    \end{align*}
+
+    The obtained model is referred to as the dual $D(\LP\text{-}0_{\BPP})$ model.
+
+<a id="box-4-texexpbox_dlp0_bpp"></a>
+
+!!! esempio "Example 9.3: $D(\LP\text{-}0_{\BPP})$ model"
+
+    The  dual $D(\LP\text{-}0_{\BPP})$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
+
+    <div class="tabella" markdown="0"><table>
+    <tr>
+    <td><span class="arithmatex">\(\max\)</span></td>
+    <td><span class="arithmatex">\(\mu_{1}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(\mu_{2}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(\mu_{3}\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>subject to</td>
+    <td><span class="arithmatex">\(\mu_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7\pi_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7\pi_2\)</span></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7\pi_3\)</span></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_2\)</span></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6\pi_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_2\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6\pi_2\)</span></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_2\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6\pi_3\)</span></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_3\)</span></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3\pi_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_3\)</span></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3\pi_2\)</span></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_3\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3\pi_3\)</span></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(10\pi_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(10\pi_2\)</span></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(10\pi_3\)</span></td>
+    <td><span class="arithmatex">\(\le 1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_1\)</span>,</td>
+    <td><span class="arithmatex">\(\mu_2\)</span>,</td>
+    <td><span class="arithmatex">\(\mu_3\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\gtreqless 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\pi_1\)</span>,</td>
+    <td><span class="arithmatex">\(\pi_2\)</span>,</td>
+    <td><span class="arithmatex">\(\pi_3\)</span></td>
+    <td><span class="arithmatex">\(\ge 0\)</span></td>
+    </tr>
+    </table></div>
+
+    An optimal solution $(\tilde{\vet{\mu}},\tilde{\vet{\pi}})$ of $D(\LP\text{-}0_{\BPP})$ is:
+
+    $$
+    \tilde{\mu}_1 = \frac{7}{10}, \quad \tilde{\mu}_2 = \frac{3}{5}, \quad \tilde{\mu}_3 = \frac{3}{10}, \quad \tilde{\pi}_1 = \tilde{\pi}_2 = \tilde{\pi}_3 = \frac{1}{10}
+    $$
+
+    The optimal value $z(D(\LP\text{-}0_{\BPP}))$ is $\frac{8}{5}$.
+
+<a id="box-5-prop_lp0_bpp_opt"></a>
+
+!!! teorema "Proposition 9.2"
+
+    An optimal solution of the primal $\LP\text{-}0_{\BPP}$ model is:
+
+    \begin{equation*}
+    \label{PP}
+    \begin{aligned}
+    \tilde{x}_{jb} &= \frac{1}{m},
+    & \forall j \in \mathscr{I},\; \forall b \in \mathscr{B},\\[2ex]
+    \tilde{y}_b &= \frac{\sum_{j \in \mathscr{I}}  w_j}{m \; c},
+    & \forall b \in \mathscr{B},
+    \end{aligned} \tag{9.4}
+    \end{equation*}
+
+    and an optimal solution of the dual $D(\LP\text{-}0_{\BPP})$ model is:
+
+    \begin{equation*}
+    \label{DD}
+    \begin{aligned}
+    \tilde{\mu}_j &= \frac{w_j}{c},
+    & \forall j \in \mathscr{I},\\[2ex]
+    \tilde{\pi}_b &= \frac{1}{c},
+    & \forall b \in \mathscr{B}.
+    \end{aligned} \tag{9.5}
+    \end{equation*}
+
+<a id="box-6-cor_lp0_bpp_value"></a>
+
+!!! teorema "Corollary 9.3"
+
+    The optimal value of the primal $\LP\text{-}0_{\BPP}$ and dual $D(\LP\text{-}0_{\BPP})$ models is:
+
+    \begin{equation*}
+    \label{VAL_LP0_BPP}
+    z(\LP\text{-}0_{\BPP})
+    =
+    \frac{\sum_{j \in \mathscr{I}} w_j}{c}
+    =
+    z(D(\LP\text{-}0_{\BPP})) \tag{9.6}
+    \end{equation*}
+
+- The proof proceeds in three steps:
+
+    1. We show that $\eqref{PP}$ is a feasible solution for the primal $\LP\text{-}0_{\BPP}$ model;
+
+    2. We show that $\eqref{DD}$ is a feasible solution for the dual $D(\LP\text{-}0_{\BPP})$ model;
+
+    3. We show that both feasible solutions have the same objective function value.
+
+    Therefore, by LP Weak Duality, $\eqref{PP}$ and $\eqref{DD}$ are a pair of optimal primal and dual solutions.
+
+??? dimostrazione "Proof"
+
+    - **1.** For every $j \in \mathscr{I}$, we have:
+
+        $$
+        \sum_{b \in \mathscr{B}} \tilde{x}_{jb} = \sum_{b \in \mathscr{B}} \frac{1}{m} = \frac{m}{m} = 1
+        $$
+
+        thus constraints $\eqref{cons1_BPP}$ are satisfied.
+
+        For every $b \in \mathscr{B}$, we have:
+
+        $$
+        - \sum_{j \in \mathscr{I}}  w_j \; \tilde{x}_{jb} + c \; \tilde{y}_b = - \sum_{j \in \mathscr{I}}  w_j \; \frac{1}{m} + c \; \frac{\sum_{j \in \mathscr{I}}  w_j}{m \; c} = 0
+        $$
+
+        thus constraints $\eqref{cons2_BPP}$ are satisfied.
+
+        We have $\tilde{x}_{jb} \geq 0$ and $\tilde{y}_b \geq 0$, for every $j \in \mathscr{I}$ and every $b \in \mathscr{B}$, thus constraints $\eqref{cons4_BPP_LP}$ and $\eqref{cons3_BPP_LP}$ are satisfied.
+
+        Therefore, $\eqref{PP}$ provides a feasible solution for the primal $\LP\text{-}0_{\BPP}$ model.
+
+    - **2.** For every $b \in \mathscr{B}$ and every $j \in \mathscr{I}$, we have:
+
+        $$
+        \tilde{\mu}_j - w_j \; \tilde{\pi}_b = \frac{w_j}{c} -   \frac{w_j}{c} = 0
+        $$
+
+        thus constraints $\eqref{cons2_D}$ are satisfied.
+
+        For every $b \in \mathscr{B}$, we have:
+
+        $$
+        c \; \tilde{\pi}_b =  \frac{c}{c} = 1
+        $$
+
+        thus constraints $\eqref{cons1_D}$ are satisfied.
+
+        We have $\tilde{\mu}_j \geq 0$ and $\tilde{\pi}_b \geq 0$, for every $b \in \mathscr{B}$ and every $j \in \mathscr{I}$, thus constraints $\eqref{cons3_D}$ and $\eqref{cons4_D}$ are satisfied.
+
+        Therefore, $\eqref{DD}$ provides a feasible solution for the dual $D(\LP\text{-}0_{\BPP})$ model.
+
+    - **3.** For the objective functions, we have:
+
+        $$
+        \sum_{b \in \mathscr{B}} \tilde{y}_b = \sum_{b \in \mathscr{B}} \frac{\sum_{j \in \mathscr{I}}  w_j}{m \; c} = \frac{\sum_{j \in \mathscr{I}}  w_j}{c} = \sum_{j \in \mathscr{I}}  \tilde{\mu}_j
+        $$
+
+        thus the primal and dual objective function values are equal.
+
+    Therefore, by LP Weak Duality, $\eqref{PP}$ and $\eqref{DD}$ are a pair of optimal primal and dual solutions. <span class="qed">□</span>
+
+- This is an alternative proof that does not rely on the dual formulation but instead reasons directly on the minimum objective function value imposed by the constraints.
+
+<a id="box-7-prop_lp0_bpp_alternative"></a>
+
+!!! teorema "Proposition 9.4"
+
+    An optimal solution of the primal $\LP\text{-}0_{\BPP}$ model is:
+
+    \begin{equation*}
+    \label{PP_alternative}
+    \begin{aligned}
+    \tilde{x}_{jb} &= \frac{1}{m},
+    & \forall j \in \mathscr{I},\; \forall b \in \mathscr{B},\\[2ex]
+    \tilde{y}_b &= \frac{\sum_{j \in \mathscr{I}}  w_j}{m \; c},
+    & \forall b \in \mathscr{B},
+    \end{aligned} \tag{9.7}
+    \end{equation*}
+
+    and the optimal value is
+
+    \begin{equation*}
+    \label{VAL_alternative}
+    z(\LP\text{-}0_{\BPP}) = \frac{\sum_{j \in \mathscr{I}} w_j}{c}. \tag{9.8}
+    \end{equation*}
+
+??? dimostrazione "Proof"
+
+    Summing the capacity constraints $\eqref{cons2_BPP}$ over all $b\in\mathscr{B}$ gives
+
+    $$
+    c \sum_{b\in\mathscr{B}} y_b \;\ge\; \sum_{b\in\mathscr{B}} \sum_{j\in\mathscr{I}} w_j x_{jb}
+    = \sum_{j\in\mathscr{I}} w_j \underbrace{\sum_{b\in\mathscr{B}} x_{jb}}_{\text{by }\eqref{cons1_BPP}=1}
+    = \sum_{j\in\mathscr{I}} w_j,
+    $$
+
+    hence
+
+    \begin{equation*}
+    \label{eq:bpp-lb}
+    \sum_{b\in\mathscr{B}} y_b \;\ge\; \frac{1}{c}\sum_{j\in\mathscr{I}} w_j . \tag{9.9}
+    \end{equation*}
+
+    Therefore every feasible solution of $\LP\text{-}0_{\BPP}$ satisfies $\eqref{eq:bpp-lb}$.
+
+    Now consider the point defined in $\eqref{PP_alternative}$. For every $j\in\mathscr{I}$, we have
+
+    $$
+    \sum_{b\in\mathscr{B}} \tilde x_{jb}
+    = m \; \tfrac{1}{m}=1,
+    $$
+
+    so constraints $\eqref{cons1_BPP}$ hold. Moreover, for every $b\in\mathscr{B}$, we have
+
+    $$
+    \sum_{j\in\mathscr{I}} w_j \tilde x_{jb}
+    = \sum_{j\in\mathscr{I}} w_j \; \tfrac{1}{m}
+    = \frac{1}{m} \sum_{j\in\mathscr{I}} w_j
+    = c \; \tilde y_b ,
+    $$
+
+    so constraints $\eqref{cons2_BPP}$ hold with equality. Finally, constraints $\eqref{cons4_BPP_LP}$ and $\eqref{cons3_BPP_LP}$ are satisfied by construction. Hence the point defined in $\eqref{PP_alternative}$ is a feasible solution for $\LP\text{-}0_{\BPP}$.
+
+    The objective value of $\eqref{PP_alternative}$ is
+
+    $$
+    \sum_{b\in\mathscr{B}} \tilde y_b
+    = m \; \frac{\sum_{j\in\mathscr{I}} w_j}{m\,c}
+    = \frac{1}{c} \sum_{j\in\mathscr{I}} w_j ,
+    $$
+
+    which matches the lower bound $\eqref{eq:bpp-lb}$. Therefore the point $\eqref{PP_alternative}$ is an optimal solution with objective value $\eqref{VAL_alternative}$. <span class="qed">□</span>
+
+## 9.4 A second Linear Programming relaxation
+
+!!! chiave ""
+
+    To obtain a Linear Programming (LP) relaxation of the $\ILP_{\BPP}$ model, we relax constraints $\eqref{cons4_BPP}$ and $\eqref{cons3_BPP}$ with the following ones:
+
+    \begin{align*}
+    && x_{jb} &\ge 0, & \forall j \in \mathscr{I},\; \forall b \in \mathscr{B}, \label{cons5_BPP_LP_LL}  \tag{9.10a}\\[2ex]
+    && y_{b} &\le 1, & \forall b \in \mathscr{B}, \label{cons3_BPP_LP_LL}  \tag{9.10b}\\[2ex]
+    && y_{b} &\ge 0, & \forall b \in \mathscr{B}. \label{cons4_BPP_LP_LL} \tag{9.10c}
+    \end{align*}
+
+<a id="box-8-texexpbox_lp_bpp"></a>
+
+!!! esempio "Example 9.4: $\LP_{\BPP}$ model"
+
+    The  $\LP_{\BPP}$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
+
+    <div class="tabella" markdown="0"><table>
+    <tr>
+    <td><span class="arithmatex">\(\min\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(y_{1}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(y_{2}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(y_{3}\)</span></td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>subject to</td>
+    <td><span class="arithmatex">\(x_{11}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{12}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{13}\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(=1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(x_{21}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{22}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{23}\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(=1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(x_{31}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{32}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{33}\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(=1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{11}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{21}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{31}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\ge 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{12}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{22}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{32}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_2\)</span></td>
+    <td></td>
+    <td><span class="arithmatex">\(\ge 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{13}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{23}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{33}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_3\)</span></td>
+    <td><span class="arithmatex">\(\ge 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(y_{1}\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(y_{2}\)</span></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(y_{3}\)</span></td>
+    <td><span class="arithmatex">\(\le 1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td><span class="arithmatex">\(x_{11}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{12}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{13}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{21}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{22}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{23}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{31}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{32}\)</span>,</td>
+    <td><span class="arithmatex">\(x_{33}\)</span>,</td>
+    <td><span class="arithmatex">\(y_{1}\)</span>,</td>
+    <td><span class="arithmatex">\(y_{2}\)</span>,</td>
+    <td><span class="arithmatex">\(y_{3}\)</span></td>
+    <td><span class="arithmatex">\(\ge 0\)</span></td>
+    </tr>
+    </table></div>
+
+    An optimal solution ${\tilde{\vet{x}}}(\LP_{\BPP})$ is:
+
+    $$
+    \tilde x_{11}=\tilde x_{12}=\tilde  x_{13}=\tilde  x_{21}=\tilde x_{22}=\tilde  x_{23}= \tilde  x_{31}=\tilde x_{32}=\tilde  x_{33}=\frac{1}{3},
+    \quad
+    \tilde{y}_1 = \tilde{y}_2 = \tilde{y}_3 = \frac{8}{15}
+    $$
+
+    The optimal value $z(\LP_{\BPP})$ is $\frac{8}{5}$. Accordingly, we have the same lower bound as before.
+
+!!! chiave ""
+
+    Using
+
+    - a free dual variable $\mu_j$ for each constraint $\eqref{cons1_BPP}$ ($j \in \mathscr{I}$)
+
+    - a non-negative dual variable $\pi_b$ for each constraint $\eqref{cons2_BPP}$ ($b \in \mathscr{B}$)
+
+    - a non-positive dual variable $\lambda_b$ for each constraint $\eqref{cons3_BPP_LP_LL}$ ($b \in \mathscr{B}$)
+
+    the dual model of the $\LP_{\BPP}$ model reads as follows:
+
+    <a id="eq-DUAL_2"></a>
+
+    \begin{align*}
+    &&   \max  ~~ \sum_{j \in \mathscr{I}}   \mu_{j} + \sum_{b \in \mathscr{B}}  \lambda_{b} \label{obj_D_2}  \tag{9.11a}\\[2ex]
+    && \text{subject to} \quad \mu_j - w_j \; \pi_{b} &\leq 0, & \forall j \in \mathscr{I},\; \forall b \in \mathscr{B}, \label{cons2_D_2}  \tag{9.11b}\\[2ex]
+    && c \; \pi_{b} + \lambda_b &\leq 1, & \forall b \in \mathscr{B}, \label{cons1_D_2}  \tag{9.11c}\\[2ex]
+    && \mu_{j} &\gtreqless 0, & \forall j \in \mathscr{I}, \label{cons3_D_2}  \tag{9.11d}\\[2ex]
+    && \pi_{b} &\ge 0, & \forall b \in \mathscr{B}, \label{cons4_D_2}  \tag{9.11e}\\[2ex]
+    && \lambda_{b} &\le 0, & \forall b \in \mathscr{B}. \label{cons5_D_2} \tag{9.11f}
+    \end{align*}
+
+<a id="box-9-texexpbox_dlp_bpp"></a>
+
+!!! esempio "Example 9.5: $D(\LP_{\BPP})$ model"
+
+    The  $D(\LP_{\BPP})$ model of <span style="color:#1971c2">Example 1</span> is:
+
+    <div class="tabella" markdown="0"><table>
+    <tr>
+    <td><span class="arithmatex">\(\max\)</span></td>
+    <td><span class="arithmatex">\(\mu_{1}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(\mu_{2}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(\mu_{3}\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\lambda_{1}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(\lambda_{2}\)</span></td>
+    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(\lambda_{3}\)</span></td>
+    <td></td>
+    </tr>
+    <tr>
+    <td>subject to</td>
+    <td><span class="arithmatex">\(\mu_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7\pi_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7\pi_2\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7\pi_3\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_2\)</span></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6\pi_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_2\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6\pi_2\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_2\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6\pi_3\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_3\)</span></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3\pi_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_3\)</span></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3\pi_2\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_3\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3\pi_3\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(10\pi_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(+\lambda_1\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(10\pi_2\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(+\lambda_2\)</span></td>
+    <td></td>
+    <td><span class="arithmatex">\(\le 1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(10\pi_3\)</span></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(+\lambda_3\)</span></td>
+    <td><span class="arithmatex">\(\le 1\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td><span class="arithmatex">\(\mu_1\)</span>,</td>
+    <td><span class="arithmatex">\(\mu_2\)</span>,</td>
+    <td><span class="arithmatex">\(\mu_3\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\gtreqless 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\pi_1\)</span>,</td>
+    <td><span class="arithmatex">\(\pi_2\)</span>,</td>
+    <td><span class="arithmatex">\(\pi_3\)</span></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\ge 0\)</span></td>
+    </tr>
+    <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="arithmatex">\(\lambda_1\)</span>,</td>
+    <td><span class="arithmatex">\(\lambda_2\)</span>,</td>
+    <td><span class="arithmatex">\(\lambda_3\)</span></td>
+    <td><span class="arithmatex">\(\le 0\)</span></td>
+    </tr>
+    </table></div>
+
+    The optimal value $z(D(\LP_{\BPP}))$  is $\frac{8}{5}$.  An optimal solution $(\tilde{\vet{\mu}},\tilde{\vet{\pi}},\tilde{\vet{\lambda}})$ of $D(\LP_{\BPP})$ is:
+
+    $$
+    \tilde \mu_{1}= \frac{7}{10},~~~~\tilde \mu_{2}=\frac{3}{5},~~~~\tilde  \mu_{3}=\frac{3}{10},~~~~\tilde \pi_{1}= \tilde \pi_{2}=\tilde \pi_{3}=\frac{1}{10},~~~~\tilde  \lambda_{1}=\tilde  \lambda_{2}=\tilde \lambda_{3}=0
+    $$
+
+- The constraints:
+
+    $$
+    x_{jb} \le 1, \qquad \forall j \in \mathscr{I},\; \forall b \in \mathscr{B},
+    $$
+
+    are also valid since, for every $j \in \mathscr{I}$ and every $b \in \mathscr{B}$, we have:
+
+    $$
+    x_{jb} \in \{0,1\} ~~~~~\Rightarrow~~~~~ x_{jb} \le 1
+    $$
+
+    but they are implied by constraints $\eqref{cons1_BPP}$.
+
+<a id="box-10-prop_lp_bpp_opt"></a>
+
+!!! teorema "Proposition 9.5"
+
+    An optimal solution of the primal $\LP_{\BPP}$ model is:
+
+    \begin{equation*}
+    \label{PP_bis}
+    \begin{aligned}
+    \tilde{x}_{jb} &= \frac{1}{m},
+    & \forall j \in \mathscr{I},~ \forall b \in \mathscr{B},\\[2ex]
+    \tilde{y}_b &= \frac{\sum_{j \in \mathscr{I}}  w_j}{m \; c},
+    & \forall b \in \mathscr{B},
+    \end{aligned} \tag{9.12}
+    \end{equation*}
+
+    and an optimal solution of the dual $D(\LP_{\BPP})$ model is:
+
+    \begin{equation*}
+    \label{DD_bis}
+    \begin{aligned}
+    \tilde{\mu}_j &= \frac{w_j}{c},
+    & \forall j \in \mathscr{I},\\[2ex]
+    \tilde{\pi}_b &= \frac{1}{c},
+    & \forall b \in \mathscr{B},\\[2ex]
+    \tilde{\lambda}_b &= 0,
+    & \forall b \in \mathscr{B}.
+    \end{aligned} \tag{9.13}
+    \end{equation*}
+
+<a id="box-11-cor_lp_bpp_value"></a>
+
+!!! teorema "Corollary 9.6"
+
+    The optimal value of the primal $\LP_{\BPP}$ and dual $D(\LP_{\BPP})$ models is:
+
+    \begin{equation*}
+    \label{VAL_LP_BPP}
+    z(\LP_{\BPP})
+    =
+    \frac{\sum_{j \in \mathscr{I}} w_j}{c}
+    =
+    z(D(\LP_{\BPP})) \tag{9.14}
+    \end{equation*}
+
+??? dimostrazione "Proof"
+
+    The proof is similar to the previous one. In addition, it is necessary to observe that
+
+    $$
+    \tilde{y}_b = \frac{\sum_{j \in \mathscr{I}}  w_j}{m \; c} \le 1, \quad \forall b \in \mathscr{B},
+    $$
+
+    since $\sum_{j} w_j / c \le z(\ILP_{\BPP}) \le m$, where the last inequality holds because $m$ is an upper bound on the number of bins in any optimal BPP solution. Accordingly, constraints $\eqref{cons3_BPP_LP_LL}$ are also satisfied. <span class="qed">□</span>
+
+### 9.4.1 Some important theoretical properties
+
+- The following two propositions show that the ratio between $z(\LP_{\BPP})$ and $z(\ILP_{\BPP})$ is at least one half for every BPP instance (<strong>by hypothesis</strong>  $z(\ILP_{\BPP}) >1$ since all items do not fit in a single bin). Furthermore, there exist instances for which the value one half can be asymptotically achieved as the capacity $c \to +\infty$.
+
+<a id="box-12-prop_lp_bpp_ratio_half"></a>
+
+!!! teorema "Proposition 9.7"
+
+    For every BPP instance, we have:
+
+    \begin{equation*}
+    \frac{ z(\LP_{\BPP}) }{z(\ILP_{\BPP})} \ge \frac{1}{2} \tag{9.15}
+    \end{equation*}
+
+??? dimostrazione "Proof"
+
+    Consider an optimal solution $\tilde{\vet{x}}(\ILP_{\BPP})$ of value $z=z(\ILP_{\BPP})$ (number of used bins). We can assume, without loss of generality, that bins $1,2,\dots,z$ are the non-empty ones.
+
+    In an optimal solution, no two bins can have total item weight at most $c/2$, since otherwise their contents could be merged into a single bin without exceeding the bin capacity $c$ (contradicting optimality).
+
+    If all non-empty bins have total item weight greater than $c/2$, then
+
+    $$
+    \sum_{j\in\mathscr{I}} w_j
+    =\sum_{b=1}^{z}\sum_{j\in\mathscr{I}} w_j\,\tilde x_{jb}
+    >z \;\frac{c}{2}
+    ~~~ \Longrightarrow ~~~
+    \frac{ \frac{\sum_{j\in\mathscr{I}} w_j}{c} }{z} > \frac{1}{2}
+    ~~~ \Longrightarrow ~~~
+    \frac{ z(\LP_{\BPP}) }{z(\ILP_{\BPP})} \ge \frac{1}{2}.
+    $$
+
+    Otherwise, suppose that there exists a bin with total item weight at most $c/2$. Renumbering bins if necessary, let it be bin $z$, so that
+
+    $$
+    \sum_{j\in\mathscr{I}} w_j\,\tilde x_{jz}\le \frac{c}{2}.
+    $$
+
+    Since $z>1$, there exists another bin say bin 1; by optimality, we must have
+
+    $$
+    \sum_{j\in\mathscr{I}} w_j\,\tilde x_{j1}
+    +
+    \sum_{j\in\mathscr{I}} w_j\,\tilde x_{jz}
+    \;>\; c,
+    $$
+
+    and, by optimality, every bin in $\{2,3,\dots,z-1\}$ has total item weight $>c/2$. Hence,
+
+    $$
+    \begin{aligned}
+    \sum_{j\in\mathscr I} w_j
+    &=\sum_{b=1}^{z}\sum_{j\in\mathscr I} w_j\,\tilde x_{jb}\ =\underbrace{\sum_{b=2}^{z-1}\sum_{j\in\mathscr I} w_j\,\tilde x_{jb}}_{>\frac{c}{2}(z-2)}
+    \;+\; \underbrace{\sum_{j\in\mathscr I} w_j\,\tilde x_{j1}
+    \;+\;\sum_{j\in\mathscr I} w_j\,\tilde x_{jz}}_{>c}\\[1ex]
+    &>\frac{c}{2}(z-2)+c
+    =z\,\frac{c}{2}
+    ~~~ \Longrightarrow ~~~
+    \frac{ \frac{\sum_{j\in\mathscr{I}} w_j}{c} }{z} > \frac{1}{2}
+    ~~~ \Longrightarrow ~~~
+    \frac{ z(\LP_{\BPP}) }{z(\ILP_{\BPP})} \ge \frac{1}{2}.
+    \end{aligned}
+    $$
+
+    <p class="qed-riga"><span class="qed">□</span></p>
+
+<a id="box-13-prop_lp_bpp_ratio_tight"></a>
+
+!!! teorema "Proposition 9.8"
+
+    There are BPP instances such that:
+
+    \begin{equation*}
+    \frac{ z(\LP_{\BPP}) }{z(\ILP_{\BPP})} \to \frac{1}{2} \text{    as    } c \to +\infty \tag{9.16}
+    \end{equation*}
+
+??? dimostrazione "Proof"
+
+    Given $\vartheta \in \Z_{\ge 1}$, consider the BPP instance with bin capacity $c = 2\vartheta$ and $n$ items having the following weights:
+
+    $$
+    w_j = \vartheta+1,~~~ \forall j \in \mathscr{I}.
+    $$
+
+    No bin can contain more than one item, thus each item must be packed alone in its own bin. Therefore, the BPP optimal value is
+
+    $$
+    z(\ILP_{\BPP}) = n.
+    $$
+
+    For the LP relaxation we have:
+
+    $$
+    z(\LP_{\BPP})  =  \frac{n(\vartheta+1)}{2\;\vartheta}.
+    $$
+
+    It follows that:
+
+    \begin{align*}
+    \lim_{\vartheta \to +\infty} \frac{ z(\LP_{\BPP}) }{z(\ILP_{\BPP})}
+    &= \lim_{\vartheta \to +\infty} \frac{ \frac{n(\vartheta+1)}{2\;\vartheta} }{n}
+    =\lim_{\vartheta \to +\infty}  \left( \frac{1}{2} + \underbrace{\frac{1}{2\;\vartheta}}_{\to 0}  \right) = \frac{1}{2}.
+    \end{align*}
+
+    Accordingly,  we conclude that:
+
+    $$
+    \frac{ z(\LP_{\BPP}) }{z(\ILP_{\BPP})} \to \frac{1}{2} \qquad \text{as} \qquad c \to +\infty.
+    $$
+
+    <p class="qed-riga"><span class="qed">□</span></p>
+
+- The following two propositions show that the ratio between $\lceil z(\LP_{\BPP}) \rceil$ and $z(\ILP_{\BPP})$ is at least one half for every BPP instance. Furthermore, there exist instances for which the value one half can be asymptotically achieved as the number of items $n \to +\infty$.
+
+<a id="box-14-prop_ceil_lp_bpp_ratio_half"></a>
+
+!!! teorema "Proposition 9.9"
+
+    For every BPP instance, we have:
+
+    \begin{equation*}
+    \frac{\lceil z(\LP_{\BPP}) \rceil}{z(\ILP_{\BPP})} \ge \frac{1}{2} \tag{9.17}
+    \end{equation*}
+
+??? dimostrazione "Proof"
+
+    Consider an optimal solution $\tilde{\vet{x}}(\ILP_{\BPP})$ of value $z=z(\ILP_{\BPP})$ (number of used bins). We can assume, without loss of generality, that bins $1,2,\dots,z$ are the non-empty ones.
+
+    In an optimal solution, no two bins can have total item weight at most $c/2$, since otherwise their contents could be merged into a single bin without exceeding the bin capacity $c$ (contradicting optimality).
+
+    If all non-empty bins have total item weight greater than $c/2$, then
+
+    $$
+    \begin{aligned}
+    \sum_{j\in\mathscr{I}} w_j
+    &=\sum_{b=1}^{z}\sum_{j\in\mathscr{I}} w_j\,\tilde x_{jb}
+    >\frac{z\,c}{2}
+    ~~~ \Longrightarrow ~~~
+    \frac{\sum_{j\in\mathscr{I}} w_j}{c} > \frac{z}{2}
+    ~~~ \Longrightarrow ~~~
+    \left\lceil \frac{\sum_{j\in\mathscr{I}} w_j}{c} \right\rceil \ge \left\lceil \frac{z}{2} \right\rceil \ge \frac{z}{2} \\[2ex]
+    &\Longrightarrow ~~~
+    \frac{\left\lceil \frac{\sum_{j\in\mathscr{I}} w_j}{c} \right\rceil}{z} \ge \frac{1}{2}
+    ~~~ \Longrightarrow ~~~
+    \frac{\lceil z(\LP_{\BPP})\rceil}{z(\ILP_{\BPP})} \ge \frac{1}{2}.
+    \end{aligned}
+    $$
+
+    Otherwise, suppose that there exists a bin with total item weight at most $c/2$. Renumbering bins if necessary, let it be bin $z$. Then we have:
+
+    $$
+    \sum_{j \in \mathscr{I}}  w_j
+    =\sum_{b=1}^{z} \sum_{j \in \mathscr{I}}  w_j \tilde{x}_{jb}
+    >  \sum_{b=1}^{z-1} \sum_{j \in \mathscr{I}}  w_j \tilde{x}_{jb}
+    >
+    (z-1)\frac{c}{2}
+    ~~~ \Longrightarrow ~~~
+    z < 2 \sum_{j \in \mathscr{I}}  \frac{w_j}{c} + 1.
+    $$
+
+    Since $z$ must be an integer, this implies:
+
+    $$
+    z \le \left\lceil 2 \sum_{j \in \mathscr{I}}  \frac{w_j}{c} \right\rceil
+    \le 2 \left\lceil  \sum_{j \in \mathscr{I}}  \frac{w_j}{c} \right\rceil .
+    $$
+
+    Therefore:
+
+    $$
+    \frac{\left\lceil  \sum_{j \in \mathscr{I}}  \frac{w_j}{c} \right\rceil }{z} \ge \frac{1}{2} ~~~~
+    \Longrightarrow ~~~~
+    \frac{\lceil z(\LP_{\BPP}) \rceil}{z(\ILP_{\BPP})} \ge \frac{1}{2}.
+    $$
+
+    <p class="qed-riga"><span class="qed">□</span></p>
+
+<a id="box-15-prop_ceil_lp_bpp_ratio_tight"></a>
+
+!!! teorema "Proposition 9.10"
+
+    There are BPP instances such that:
+
+    \begin{equation*}
+    \frac{\lceil z(\LP_{\BPP}) \rceil}{z(\ILP_{\BPP})}  \to \frac{1}{2} \text{    as    } n \to +\infty \tag{9.18}
+    \end{equation*}
+
+??? dimostrazione "Proof"
+
+    Given $n \in \Z_{\ge 2}$ (take $n$ even), consider the BPP instance with bin capacity $c=n$ and $n$ items having the following weights:
+
+    $$
+    w_j=\frac{c}{2}+1=\frac{n}{2}+1, \qquad \forall j\in\mathscr I.
+    $$
+
+    No bin can contain more than one item, since $w_j>c/2$ for every $j$. Thus each item must be packed alone in its own bin. Therefore, the BPP optimal value is
+
+    $$
+    z(\ILP_{\BPP})=n.
+    $$
+
+    For the LP relaxation we have:
+
+    $$
+    z(\LP_{\BPP})=\frac{\sum_{j\in\mathscr I} w_j}{c}
+    =\frac{n\left(\frac{n}{2}+1\right)}{n}
+    =\frac{n}{2}+1,
+    $$
+
+    hence $\lceil z(\LP_{\BPP})\rceil=\frac{n}{2}+1$ (since $n$ is even). It follows that:
+
+    $$
+    \lim_{n\to+\infty}\frac{\lceil z(\LP_{\BPP})\rceil}{z(\ILP_{\BPP})}
+    =
+    \lim_{n\to+\infty}\frac{\frac{n}{2}+1}{n}
+    =
+    \lim_{n\to+\infty}\left(\frac{1}{2}+\underbrace{\frac{1}{n}}_{\to 0}\right)
+    =\frac{1}{2}.
+    $$
+
+    Accordingly, we conclude that:
+
+    $$
+    \frac{\lceil z(\LP_{\BPP})\rceil}{z(\ILP_{\BPP})} \to \frac{1}{2}
+    \qquad \text{as} \qquad n \to +\infty.
+    $$
+
+    <p class="qed-riga"><span class="qed">□</span></p>
+
+## 9.5 Typical mistakes
+
+!!! attenzione "Warning"
+
+    - <strong>Choosing $m$ too small.</strong> The number $m$ of bins must be an upper bound on the number of bins of an optimal solution: with $m < z(\ILP_{\BPP})$ the model has no feasible solution. The value $m=n$ is always valid.
+
+    - <strong>Forgetting to round up.</strong> The optimal value of the $\ILP_{\BPP}$ model is an integer, so the lower bound from the relaxations is $\lceil \sum_{j} w_j / c \rceil$; in Example 1 it is $\lceil \tfrac{8}{5} \rceil = 2$, not $\tfrac{8}{5}$.
+
+    - <strong>Believing that the model counts only non-empty bins.</strong> The constraints allow $y_b=1$ for an empty bin: it is the objective function that switches such bins off, in every optimal solution.
+
+    - <strong>Ignoring the symmetry.</strong> Permuting the indices of the bins gives another optimal solution with the same packing: the $\ILP_{\BPP}$ model has many equivalent optimal solutions.
+
+    - <strong>Expecting a better relaxation from $y_b \le 1$.</strong> The second relaxation has the same optimal value as the first one: the upper bounds $y_b \le 1$ do not cut off the optimal solution of the first relaxation.
+
+## 9.6 In summary
+
+!!! chiave "In summary"
+
+    - The $\ILP_{\BPP}$ model has $m \cdot n$ assignment variables $x_{jb}$ and $m$ activation variables $y_b$; the capacity constraints link them.
+
+    - Both LP relaxations have optimal value $z(\LP_{\BPP}) = \sum_{j} w_j / c$, with dual solution $\tilde{\mu}_j = w_j/c$ and $\tilde{\pi}_b = 1/c$.
+
+    - Since the optimal value is an integer, $\lceil z(\LP_{\BPP}) \rceil$ is a lower bound on the number of bins.
+
+    - The ratio between $z(\LP_{\BPP})$ and $z(\ILP_{\BPP})$ is at least $\tfrac{1}{2}$, and the value $\tfrac{1}{2}$ is asymptotically attained; the same holds for $\lceil z(\LP_{\BPP}) \rceil$.
+
+    <strong>Dashboard of Example 1.</strong> Bounds on $z(\ILP_{\BPP})$ computed in this chapter:
+
+    <div class="tabella" markdown="0"><table>
+    <tr>
+    <th>Bound</th>
+    <th>Value</th>
+    <th>From</th>
+    </tr>
+    <tr>
+    <td>First relaxation</td>
+    <td><span class="arithmatex">\(\tfrac{8}{5}\)</span></td>
+    <td><span class="arithmatex">\(z(\LP\text{-}0_{\BPP})\)</span></td>
+    </tr>
+    <tr>
+    <td>Second relaxation</td>
+    <td><span class="arithmatex">\(\tfrac{8}{5}\)</span></td>
+    <td><span class="arithmatex">\(z(\LP_{\BPP})\)</span></td>
+    </tr>
+    <tr>
+    <td>Lower bound</td>
+    <td><span class="arithmatex">\(2\)</span></td>
+    <td><span class="arithmatex">\(\lceil \tfrac{8}{5} \rceil\)</span></td>
+    </tr>
+    <tr>
+    <td>Optimal value</td>
+    <td><span class="arithmatex">\(2\)</span></td>
+    <td>patterns <span class="arithmatex">\(\{1,3\}\)</span> and <span class="arithmatex">\(\{2\}\)</span></td>
+    </tr>
+    </table></div>
+
+    Here the rounded bound is already equal to the optimal value.

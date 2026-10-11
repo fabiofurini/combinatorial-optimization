@@ -211,3 +211,19 @@
 
 /* minipage delle note affiancate */
 .md-typeset .minipage { display: inline-block; vertical-align: top; }
+
+/* ---- box «formula» (rosa: ricorrenze della PD e formule richiamate), modulo Ottimizzazione combinatoria ---- */
+:root { --c-formula: #b0398a; }
+[data-md-color-scheme="slate"] { --c-formula: #e07fc0; }
+.md-typeset .admonition.formula, .md-typeset details.formula { border-color: var(--c-formula); background: color-mix(in srgb, var(--c-formula) 6%, transparent); }
+.md-typeset .formula > .admonition-title, .md-typeset .formula > summary { background: color-mix(in srgb, var(--c-formula) 13%, transparent); }
+.md-typeset .formula > .admonition-title::before, .md-typeset .formula > summary::before { background-color: var(--c-formula); -webkit-mask-image: var(--md-admonition-icon--abstract); mask-image: var(--md-admonition-icon--abstract); }
+.md-typeset .admonition.formula > .admonition-title:empty { display: none; }
+
+/* ---- pseudocodice (algorithm2e): righe numerate e rientri come nel PDF ---- */
+.md-typeset .pseudocodice { margin: .2em 0 .4em; line-height: 1.55; overflow-x: auto; }
+.md-typeset .pseudocodice .pc { position: relative; padding-left: calc(2.4em + var(--liv, 0) * 1.5em); min-height: 1.5em; white-space: nowrap; }
+.md-typeset .pseudocodice .pc-n { position: absolute; left: 0; width: 1.8em; text-align: right; color: var(--md-default-fg-color--light); font-size: .85em; }
+.md-typeset .pseudocodice .pc strong { font-weight: 700; }
+.md-typeset .pseudocodice .pc-com { color: var(--md-default-fg-color--light); font-style: italic; margin-left: .6em; }
+.md-typeset .pseudocodice .pc:target { background: color-mix(in srgb, var(--md-accent-fg-color) 14%, transparent); }
