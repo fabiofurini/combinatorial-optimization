@@ -32,15 +32,7 @@ title: "Approximation algorithms for bin packing"
 
     - read and run the <code>C++</code> implementations of the four algorithms.
 
-## 24.1 Why bin packing algorithms?
-
-- <strong>A challenge.</strong> Pack the items of weights $(6,5,4,7,3)$ into bins of capacity $10$, using as few bins as possible. Can you prove that two bins are not enough?
-
-- The total weight is $25>2\cdot 10$, so at least $\left\lceil\frac{25}{10}\right\rceil=3$ bins are needed, and three bins are enough, for instance $\{6,4\}$, $\{5,3\}$, $\{7\}$.
-
-- With many items we cannot compare with the optimum, and we want simple rules that never use too many bins: the four algorithms of this chapter decide the bin of each item as it arrives, and the chapter proves how far from the optimum they can be, in the worst case.
-
-## 24.2 The problem and the assumptions
+## 24.1 The problem and the assumptions
 
 <a id="box-1-def-BPP"></a>
 
@@ -74,7 +66,7 @@ title: "Approximation algorithms for bin packing"
 
     for every BPP instance $I$.
 
-## 24.3 The Next Fit { #sez-sec-NF }
+## 24.2 The Next Fit { #sez-sec-NF }
 
 !!! chiave ""
 
@@ -183,7 +175,7 @@ title: "Approximation algorithms for bin packing"
 
     - Bin $3$ contains items $4$ and $5$ with total weight $w_4+w_5=7+3=10$.
 
-## 24.4 The Any Fit class { #sez-sec-AF }
+## 24.3 The Any Fit class { #sez-sec-AF }
 
 !!! chiave ""
 
@@ -256,7 +248,7 @@ title: "Approximation algorithms for bin packing"
 
     An Any Fit algorithm, on the contrary, cannot open a third bin for item $3$, because the item fits into bin $1$: it packs item $3$ there and then opens a new bin for item $4$, which fits in neither bin, using $3$ bins instead of $4$. This holds for every algorithm of the class, whatever the selection rule.
 
-### 24.4.1 The First Fit
+### 24.3.1 The First Fit
 
 !!! chiave ""
 
@@ -352,7 +344,7 @@ title: "Approximation algorithms for bin packing"
 
     - Bin $3$ contains item $4$ with weight $w_4=7$.
 
-### 24.4.2 The Best Fit
+### 24.3.2 The Best Fit
 
 !!! chiave ""
 
@@ -451,7 +443,7 @@ title: "Approximation algorithms for bin packing"
 
     - Bin $3$ contains items $4$ and $5$ with total weight $w_4+w_5=7+3=10$.
 
-### 24.4.3 The Worst Fit
+### 24.3.3 The Worst Fit
 
 !!! chiave ""
 
@@ -550,7 +542,7 @@ title: "Approximation algorithms for bin packing"
 
     - Bin $3$ contains item $4$ with weight $w_4=7$.
 
-## 24.5 Half-full property
+## 24.4 Half-full property
 
 - The results of this section do not depend on the rule used to select the bin: they are proved using <em>only</em> the Any Fit condition, and therefore hold for every algorithm of the family, including FF, BF and WF.
 
@@ -653,7 +645,7 @@ title: "Approximation algorithms for bin packing"
     \sum_{i\in P_b} w_i + \sum_{i\in P_{b'}} w_i \le \frac{c}{2} + \frac{c}{2} = c,
     $$
 
-    which contradicts the property of the Any Fit class proved in Section [24.4](#sez-sec-AF), namely that the items of two distinct bins never fit together into a single bin. Therefore there can be at most one bin with total weight at most $\frac{c}{2}$.
+    which contradicts the property of the Any Fit class proved in Section [24.3](#sez-sec-AF), namely that the items of two distinct bins never fit together into a single bin. Therefore there can be at most one bin with total weight at most $\frac{c}{2}$.
 
     Only the Any Fit condition is used, so the statement holds for every algorithm of the class. <span class="qed">□</span>
 
@@ -749,7 +741,7 @@ title: "Approximation algorithms for bin packing"
 
     Since there are <em>two</em> bins (bins $1$ and $3$) with total weight at most $\frac{c}{2}$, the solution does <strong>not</strong> satisfy the half-full property.
 
-## 24.6 Performance guarantees
+## 24.5 Performance guarantees
 
 - We now determine the worst case performance ratio of the four algorithms. Next Fit is not an Any Fit algorithm, so it needs an argument of its own. For the three Any Fit algorithms the bound $\mathscr{A}(I)\le 2\,z(I)$ comes at once from the half-full property, without any assumption on the rule used to select the bin, and the question is how tight that bound is: for WF the factor $2$ cannot be improved, whereas FF and BF obey a strictly better bound.
 
@@ -828,7 +820,7 @@ title: "Approximation algorithms for bin packing"
 
     and therefore FF, BF and WF are $2$-approximation algorithms.
 
-### 24.6.1 The worst case performance ratio of NF
+### 24.5.1 The worst case performance ratio of NF
 
 <a id="box-18-prop-NF2approx"></a>
 
@@ -976,7 +968,7 @@ title: "Approximation algorithms for bin packing"
     r(NF)=2
     $$
 
-### 24.6.2 The worst case performance ratio of WF { #sez-sec-WFratio }
+### 24.5.2 The worst case performance ratio of WF { #sez-sec-WFratio }
 
 <a id="box-20-prop-WFtight"></a>
 
@@ -1055,7 +1047,7 @@ title: "Approximation algorithms for bin packing"
 
     D.S. Johnson, <em>Fast algorithms for bin packing</em>, Journal of Computer and System Sciences, 8(3):272–314, 1974.
 
-### 24.6.3 The worst case performance ratios of FF and BF
+### 24.5.3 The worst case performance ratios of FF and BF
 
 <a id="box-21-propFF"></a>
 
@@ -1116,7 +1108,7 @@ title: "Approximation algorithms for bin packing"
 
     Unlike WF, FF and BF stay strictly below the factor $2$ that the Any Fit condition alone guarantees.
 
-### 24.6.4 What the Any Fit condition does and does not give
+### 24.5.4 What the Any Fit condition does and does not give
 
 - <strong>What the Any Fit condition gives.</strong> The Any Fit condition alone guarantees the half-full property, and therefore the bound
 
@@ -1130,9 +1122,9 @@ title: "Approximation algorithms for bin packing"
 
 - It is known that no algorithm of the class can go below $\frac{17}{10}$, so $\frac{17}{10}$ and $2$ are exactly the best and the worst behaviour that the Any Fit condition allows, and both are attained, the first by FF and BF, the second by WF.
 
-- The Any Fit class and the bounds above are due to the paper of Johnson already cited in Section [24.6.2](#sez-sec-WFratio): in particular, the lower bound $\frac{17}{10}$ for every Any Fit algorithm is due to that paper (D.S. Johnson, 1974).
+- The Any Fit class and the bounds above are due to the paper of Johnson already cited in Section [24.5.2](#sez-sec-WFratio): in particular, the lower bound $\frac{17}{10}$ for every Any Fit algorithm is due to that paper (D.S. Johnson, 1974).
 
-## 24.7 Typical mistakes
+## 24.6 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -1146,7 +1138,7 @@ title: "Approximation algorithms for bin packing"
 
     - <strong>Changing the order of the items.</strong> The four algorithms process the items in the order in which they are given; sorting them first is a different algorithm.
 
-## 24.8 In summary
+## 24.7 In summary
 
 !!! chiave "In summary"
 
@@ -1191,7 +1183,7 @@ title: "Approximation algorithms for bin packing"
     </tr>
     </table></div>
 
-## 24.9 <code>C++</code> implementation
+## 24.8 <code>C++</code> implementation
 
 - In this C++ implementation section we use 0-based indexing (items and bins are numbered starting from 0). The algorithmic logic is unchanged.
 

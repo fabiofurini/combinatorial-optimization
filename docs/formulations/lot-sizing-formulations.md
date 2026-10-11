@@ -6,7 +6,7 @@ title: "Formulations of capacitated lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 13** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf)
+**Part 2 · Formulations and their properties · Chapter 13** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises](../exercises/lot-sizing-formulations.md)
 
 </div>
 
@@ -38,13 +38,25 @@ title: "Formulations of capacitated lot sizing"
 
     In the chapter «Capacitated lot sizing» we met the lot-sizing problem as a <em>problem</em>: plans, setups, counting and a first bound, on a reference instance of five periods. Here we look at it as a <em>model</em>: the natural formulation is weak, and we study how to make it stronger. The case without capacity returns with the DP algorithm of Wagner and Whitin.
 
-- In the <strong>capacitated lot-sizing problem</strong> (CLS) a set $T=\{1,2,\dots,m\}$ of $m$ periods is given. In every period $t \in T$ we know the demand $d_t \in \Z_{\ge 1}$, the capacity $cap_t \in \Z_{\ge 1}$, the setup cost $sc_t$, the variable production cost $vc_t$ per unit and the holding cost $hc_t$ per unit in stock at the end of the period, all in $\Z_{\ge 0}$.
+<a id="box-1-def-CLS"></a>
 
-- We decide the integer quantity $x_t \in \Z_{\ge 0}$ produced in every period $t$, with $x_t \le cap_t$, so that the demands are satisfied, the stock $s_t$ at the end of period $t$ is non-negative, and $s_0=s_m=0$. A <strong>setup</strong> is paid in the periods with $x_t>0$.
+!!! definizione "Definition 13.1: Capacitated lot-sizing problem"
+
+    Given:
+
+    1. a set $T=\{1,2,\dots,m\}$ of $m$ <em>periods</em>,
+
+    2. for each period $t \in T$, a <em>demand</em> $d_t \in \Z_{\ge 1}$ and a <em>capacity</em> $cap_t \in \Z_{\ge 1}$,
+
+    3. for each period $t \in T$, a <em>setup cost</em> $sc_t$, a <em>variable production cost</em> $vc_t$ per unit and a <em>holding cost</em> $hc_t$ per unit in stock at the end of the period, all in $\Z_{\ge 0}$,
+
+    the <strong>capacitated lot-sizing problem</strong> (CLS) asks to decide the integer quantity $x_t \in \Z_{\ge 0}$ produced in every period $t$, with $x_t \le cap_t$, so that the demands are satisfied, the stock $s_t$ at the end of period $t$ is non-negative, $s_0=s_m=0$, and the total cost of setups, production and holding is minimized.
+
+- A <strong>setup</strong> is paid in the periods with $x_t>0$.
 
 - For $j \le t$ we write $D_{j,t}=\sum_{k=j}^{t} d_k$ for the total demand of the periods $j,j+1,\dots,t$.
 
-<a id="box-1-ex-CLS-ref"></a>
+<a id="box-2-ex-CLS-ref"></a>
 
 !!! esempio "Example 13.1: the reference instance"
 
@@ -172,7 +184,7 @@ title: "Formulations of capacitated lot sizing"
 
     <strong>The smaller the big-M value, the stronger the LP relaxation</strong>: the constraint $x_t \le M_t y_t$ cuts off the fractional values of $y_t$ below $x_t/M_t$. A value that is too small, however, cuts off feasible plans.
 
-<a id="box-2-ex-CLS-bigM"></a>
+<a id="box-3-ex-CLS-bigM"></a>
 
 !!! esempio "Example 13.2: big-M values and LP bounds"
 
@@ -265,7 +277,7 @@ title: "Formulations of capacitated lot sizing"
 
 <p class="didascalia">Network of the variables <span class="arithmatex">\(zv_{tk}\)</span> for <span class="arithmatex">\(m=3\)</span>: the variable <span class="arithmatex">\(zv_{tk}\)</span> is the arc from node <span class="arithmatex">\(t-1\)</span> to node <span class="arithmatex">\(k\)</span>.</p>
 
-<a id="box-3-ex-CLS-SP"></a>
+<a id="box-4-ex-CLS-SP"></a>
 
 !!! esempio "Example 13.3: costs and combinations of paths"
 
@@ -373,36 +385,38 @@ title: "Formulations of capacitated lot sizing"
 
 - The formulations have the same optimal value $z(\ILP_{\CLSP})=180$, but their LP relaxations have different optimal values. On the reference instance the lower bounds, computed with the exact simplex algorithm and checked with Gurobi, are the following; the shortest-path formulation, solved with integer quantities, gives again the optimal value $180$.
 
+- The last column is the gap of Chapter «Combinatorial optimization problems» between the bound and the optimal value; it is undefined for the bound $0$.
+
 <div class="tabella" markdown="0"><table>
 <tr>
 <th>Model</th>
 <th>Lower bound</th>
-<th>Gap from <span class="arithmatex">\(180\)</span></th>
+<th>Gap <span class="arithmatex">\(\frac{180-\LB}{\LB}\)</span></th>
 </tr>
 <tr>
 <td>Without setups</td>
 <td><span class="arithmatex">\(0\)</span></td>
-<td><span class="arithmatex">\(100\%\)</span></td>
+<td>undefined</td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{dem}}\)</span> (<span class="arithmatex">\(M_t=D_{t,m}\)</span>)</td>
 <td><span class="arithmatex">\(99.65\)</span></td>
-<td><span class="arithmatex">\(44.6\%\)</span></td>
+<td><span class="arithmatex">\(80.6\%\)</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{cap}}\)</span> (<span class="arithmatex">\(M_t=cap_t\)</span>)</td>
 <td><span class="arithmatex">\(137.50\)</span></td>
-<td><span class="arithmatex">\(23.6\%\)</span></td>
+<td><span class="arithmatex">\(30.9\%\)</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{strong}}\)</span> (<span class="arithmatex">\(M_t=\min\{cap_t,D_{t,m}\}\)</span>)</td>
 <td><span class="arithmatex">\(157.50\)</span></td>
-<td><span class="arithmatex">\(12.5\%\)</span></td>
+<td><span class="arithmatex">\(14.3\%\)</span></td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{SP}}\)</span> (shortest path)</td>
 <td><span class="arithmatex">\(170\)</span></td>
-<td><span class="arithmatex">\(5.6\%\)</span></td>
+<td><span class="arithmatex">\(5.9\%\)</span></td>
 </tr>
 </table></div>
 
@@ -429,7 +443,7 @@ title: "Formulations of capacitated lot sizing"
 
 - In the shortest-path formulation each product has its own network, with an additional arc $w_{pt}$ from node $0$ to node $t$ for the fraction of the initial inventory that covers the demands of the first $t$ periods; its cost is $ci_{pt}=fc_p\,sd_{p1t}+\sum_{s=2}^{t}\sum_{u=1}^{s-1}hc_{pu}\,d_{ps}$. The constraint $\eqref{SP1}$ becomes $\sum_{k}(w_{pk}+zv_{p1k})=1$, the constraint $\eqref{SP2}$ has the arc $w_{p,t-1}$ on the left-hand side, and the capacity constraint is $\sum_{p}st_{pt}\,y_{pt}+\sum_{p}\sum_{k=t}^{m} vt_{pt}\,sd_{ptk}\,zv_{ptk} \le cap_t$.
 
-<a id="box-4-ex-CLSP-inst"></a>
+<a id="box-5-ex-CLSP-inst"></a>
 
 !!! esempio "Example 13.4: two products"
 

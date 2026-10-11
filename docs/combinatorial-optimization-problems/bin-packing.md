@@ -6,7 +6,7 @@ title: "Bin packing and cutting stock"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 3** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf)
+**Part 1 · Combinatorial optimization problems · Chapter 3** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises](../exercises/bin-packing.md)
 
 </div>
 
@@ -30,17 +30,7 @@ title: "Bin packing and cutting stock"
 
     - use the two bounds to certify that a solution is optimal.
 
-## 3.1 Why bin packing problems?
-
-- <strong>A story.</strong> Parcels of different weights must be shipped with identical trucks of capacity $c$. How many trucks are needed, and which parcels travel together? The same problem arises when virtual machines are placed on identical servers.
-
-- <strong>History.</strong> The worst-case behaviour of simple packing rules, such as First Fit, was analysed in the early 1970s by Garey, Graham and Ullman (1972) and by Johnson, Demers, Ullman, Garey and Graham (1974). The latter proved that First Fit uses at most $\tfrac{17}{10}$ of the optimal number of bins, plus $2$ (Chapter «Approximation algorithms for bin packing»).
-
-- The cutting stock problem is the same problem with items that come in several identical copies: the bins are rolls or sheets of material and the items are the pieces to cut.
-
-- <strong>A challenge.</strong> Before reading on, try to answer two questions on <span style="color:#1971c2">[Example 3.1](#box-2-ex-bpp)</span>. How many bins are needed? How can we prove that fewer bins are not enough, without listing all the partitions? Here the second question has a simple answer.
-
-## 3.2 The bin packing problem
+## 3.1 The bin packing problem
 
 <a id="box-1-defBPP"></a>
 
@@ -144,7 +134,7 @@ title: "Bin packing and cutting stock"
 
     We call this BPP instance <span style="color:#1971c2">[Example 3.1](#box-2-ex-bpp)</span>: it is the reference instance of the chapter.
 
-### 3.2.1 Assumptions
+### 3.1.1 Assumptions
 
 - We make the following assumptions:
 
@@ -160,7 +150,7 @@ title: "Bin packing and cutting stock"
         w_j \le c,~~~~ \forall j \in \mathscr{I}
         $$
 
-### 3.2.2 Counting the solutions, a first solution and a simple bound
+### 3.1.2 Counting the solutions, a first solution and a simple bound
 
 - <strong>Candidate solutions.</strong> The candidate solutions are the partitions of $\mathscr{I}$: they are counted by the Bell numbers (Chapter «Combinatorial optimization problems»). For <span style="color:#1971c2">[Example 3.1](#box-2-ex-bpp)</span> we have $B(5) = 52$ partitions.
 
@@ -201,7 +191,7 @@ title: "Bin packing and cutting stock"
     \end{array}
     $$
 
-## 3.3 The cutting stock problem
+## 3.2 The cutting stock problem
 
 <a id="box-4-defCSP"></a>
 
@@ -328,7 +318,7 @@ title: "Bin packing and cutting stock"
     </tr>
     </table></div>
 
-### 3.3.1 Assumptions
+### 3.2.1 Assumptions
 
 - We make the following assumptions:
 
@@ -344,7 +334,7 @@ title: "Bin packing and cutting stock"
         w_j \le c, \qquad \forall\, j\in \mathscr{I}.
         $$
 
-### 3.3.2 Counting the solutions, a first solution and a simple bound
+### 3.2.2 Counting the solutions, a first solution and a simple bound
 
 - <strong>Candidate solutions.</strong> The instance of <span style="color:#1971c2">[Example 3.2](#box-5-ex-csp)</span> has $2+1+3+1 = 7$ copies. The partitions of the extended set of items are counted by $B(7) = 877$, where identical copies are counted as different items; $262$ of them are feasible.
 
@@ -357,6 +347,12 @@ title: "Bin packing and cutting stock"
     uses $3$ bins, of weights $10$, $10$ and $8$, hence $\UB = 3$.
 
 - <strong>The dual bound and the gap.</strong> The weight bound of the bin packing problem holds with the weights of all the copies: $\LB = \lceil \sum_j d_j w_j / c \rceil = \lceil 28/10 \rceil = 3$. The gap is zero, so the solution is optimal and $z(I) = 3$.
+
+## 3.3 Remarks
+
+- The worst-case behaviour of simple packing rules, such as First Fit, was analysed by Garey, Graham and Ullman (1972) and by Johnson, Demers, Ullman, Garey and Graham (1974).
+
+- Johnson et al. (1974) proved that First Fit uses at most $\tfrac{17}{10}$ of the optimal number of bins, plus $2$ (Chapter «Approximation algorithms for bin packing»).
 
 ## 3.4 Typical mistakes
 

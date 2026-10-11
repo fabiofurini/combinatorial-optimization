@@ -34,17 +34,9 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     - explain why the triangle inequality is what makes the TSP approximable.
 
-## 26.1 Why guarantees, and why limits?
+## 26.1 The problems and the assumptions
 
-- <strong>A challenge.</strong> Seven jobs with processing times $(5,5,4,4,3,3,3)$ must be assigned to three machines so as to minimize the makespan. Assigning the jobs one by one to a machine with the smallest load gives different makespans for different orders of the jobs: try the order $7,6,5,4,3,2,1$ and the order $1,2,\dots,7$.
-
-- The first order gives $12$, the second $11$, and the optimal value is $9$. How bad can the first order be on other instances? The positive results of this chapter bound the gap on <em>every</em> instance, for scheduling and for the metric TSP.
-
-- For the general TSP and for the vertex coloring problem we prove the opposite: unless $P=NP$, no polynomial algorithm can have a good guarantee. The negative results tell us when we must give up asking.
-
-## 26.2 The problems and the assumptions
-
-- These notes deal with three problems, all defined in the notes on combinatorial optimization problems, where their reference instances are also given. For two of them, $P\,||\,C_{\max}$ and the metric TSP, we prove that simple algorithms have a constant performance guarantee.
+- The chapter deals with three minimization problems, defined in the chapters on combinatorial optimization problems. For two of them, $P\,||\,C_{\max}$ and the metric TSP, simple algorithms have a constant performance guarantee.
 
 - For the general TSP and for the Vertex Coloring Problem we prove the opposite: unless $P=NP$, no polynomial algorithm can have a (good) constant guarantee.
 
@@ -56,9 +48,15 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     for every instance $I$, and the worst case performance ratio is $r(\mathscr{A})=\sup_I \mathscr{A}(I)/z(I)$.
 
-### 26.2.1 Scheduling on identical parallel machines
+### 26.1.1 Scheduling on identical parallel machines
 
-- An instance of $P\,||\,C_{\max}$ has $m$ identical machines and a set $\mathscr{J}=\{1,2,\dots,n\}$ of jobs with processing times $t_j\in\Z_{\ge 1}$. A solution assigns each job to a machine, $mach_j=h$, the set of jobs of machine $h$ is $J_h$, its load is $L_h=\sum_{j\in J_h}t_j$, and the makespan $C_{\max}=\max_h L_h$ is minimized. We assume $n>m$.
+<a id="box-1-def-pcmax"></a>
+
+!!! definizione "Definition 26.1: Scheduling on identical parallel machines"
+
+    An instance of $P\,||\,C_{\max}$ has $m$ identical machines and a set $\mathscr{J}=\{1,2,\dots,n\}$ of jobs with processing times $t_j\in\Z_{\ge 1}$. A solution assigns each job to a machine, $mach_j=h$, the set of jobs of machine $h$ is $J_h$, its load is $L_h=\sum_{j\in J_h}t_j$, and the makespan $C_{\max}=\max_h L_h$ is minimized.
+
+- We assume $n>m$.
 
 - We use the elementary lower bound of the notes on combinatorial optimization problems:
 
@@ -69,11 +67,13 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 - The reference instance has $m=3$ and $t=(5,5,4,4,3,3,3)$; the bound gives $\max\{5,27/3\}=9$, and $z(I)=9$ with $J_1=\{1,3\}$, $J_2=\{2,4\}$, $J_3=\{5,6,7\}$.
 
-### 26.2.2 The metric Travelling Salesman Problem
+### 26.1.2 The metric Travelling Salesman Problem
 
-- An instance of the TSP has a set $\mathscr{V}=\{1,2,\dots,n\}$ of cities, $n\ge 3$, and symmetric distances $d_{ij}=d_{ji}\in\Z_{\ge 1}$; a tour $\sigma$ is a permutation of $\mathscr{V}$, of length $L(\sigma)=\sum_{k=1}^{n-1} d_{\sigma_k\sigma_{k+1}}+d_{\sigma_n\sigma_1}$.
+<a id="box-2-def-metricTSP"></a>
 
-- The instance is <strong>metric</strong> if the distances satisfy the triangle inequality
+!!! definizione "Definition 26.2: metric TSP"
+
+    An instance of the TSP has a set $\mathscr{V}=\{1,2,\dots,n\}$ of cities, $n\ge 3$, and symmetric distances $d_{ij}=d_{ji}\in\Z_{\ge 1}$; a tour $\sigma$ is a permutation of $\mathscr{V}$, of length $L(\sigma)=\sum_{k=1}^{n-1} d_{\sigma_k\sigma_{k+1}}+d_{\sigma_n\sigma_1}$, and the length is minimized. The instance is <strong>metric</strong> if the distances satisfy the triangle inequality
 
     \begin{equation*}
     \label{eq:triangle}
@@ -133,9 +133,13 @@ title: "P|Cmax, metric TSP and the limits of approximation"
     </tr>
     </table></div>
 
-### 26.2.3 The Vertex Coloring Problem
+### 26.1.3 The Vertex Coloring Problem
 
-- An instance of the VCP is a simple graph $G=(V,E)$ with $n$ vertices; a coloring assigns a color to each vertex so that adjacent vertices get different colors, and the number of colors is minimized. The optimal value is the <strong>chromatic number</strong> $\chi(G)=z(I)$.
+<a id="box-3-def-VCP"></a>
+
+!!! definizione "Definition 26.3: Vertex Coloring Problem"
+
+    An instance of the VCP is a simple graph $G=(V,E)$ with $n$ vertices; a coloring assigns a color to each vertex so that adjacent vertices get different colors, and the number of colors is minimized. The optimal value is the <strong>chromatic number</strong> $\chi(G)=z(I)$.
 
 - $N(v)$ is the set of neighbours of $v$, $\deg(v)=|N(v)|$ its degree, and $\Delta(G)=\max_{v}\deg(v)$ the maximum degree. The size $\omega(G)$ of a maximum clique is a lower bound: $\omega(G)\le\chi(G)$.
 
@@ -148,9 +152,9 @@ title: "P|Cmax, metric TSP and the limits of approximation"
     \end{aligned}
     $$
 
-## 26.3 Scheduling on parallel machines
+## 26.2 Scheduling on parallel machines
 
-### 26.3.1 List scheduling { #sez-sec-LIST }
+### 26.2.1 List scheduling { #sez-sec-LIST }
 
 !!! chiave ""
 
@@ -167,7 +171,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 - Each machine processes its jobs without idle times, so the job $j$ assigned at iteration $k$ <strong>starts</strong> at time $S_j$, equal to the load of its machine just before the assignment, and ends at $S_j+t_j$.
 
-<a id="box-1-ex-list"></a>
+<a id="box-4-ex-list"></a>
 
 !!! esempio "Example 26.1: $LIST$ on the reference instance, shortest jobs first"
 
@@ -230,7 +234,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     The last job, job $1$, starts at $S_1=7$, the smallest load at that moment: all the machines are busy until time $7$ at least. This is the observation on which the guarantee of $LIST$ is built.
 
-### 26.3.2 Longest processing time first { #sez-sec-LPT }
+### 26.2.2 Longest processing time first { #sez-sec-LPT }
 
 !!! chiave ""
 
@@ -242,7 +246,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 - In the proofs it is convenient to renumber the jobs in the order of $\lambda$, so that $t_1\ge t_2\ge\dots\ge t_n$ and $LPT$ assigns the jobs in the order $1,2,\dots,n$.
 
-<a id="box-2-ex-lpt"></a>
+<a id="box-5-ex-lpt"></a>
 
 !!! esempio "Example 26.2: $LPT$ on the reference instance"
 
@@ -252,7 +256,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     With $z(I)=9$, the ratio is $\frac{11}{9}$: sorting improves the makespan from $12$ to $11$, but the last job, short as it is, unbalances three perfectly balanced machines.
 
-## 26.4 The metric TSP
+## 26.3 The metric TSP
 
 - The two algorithms of this section build a tour from a <strong>minimum spanning tree</strong> (MST) of the complete graph on $\mathscr{V}$, with edge weights $d_{ij}$. We compute it with Kruskal's algorithm: the edges are examined by non-decreasing distance (ties by the pair of indices) and an edge is taken if it does not close a cycle with the edges already taken. The weight of a tree $T$ is $d(T)=\sum_{\{i,j\}\in T}d_{ij}$.
 
@@ -260,7 +264,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 - A closed walk that uses every edge of a (multi)graph exactly once is an <strong>Eulerian circuit</strong>. In the examples we build it with <strong>Fleury's rule</strong>: start from city $1$ and, at each step, leave the current city along an unused edge towards the neighbour of smallest index, unless that edge is a <em>bridge</em> of the unused edges (its removal disconnects them) and another edge is available.
 
-### 26.4.1 The double tree algorithm { #sez-sec-DT }
+### 26.3.1 The double tree algorithm { #sez-sec-DT }
 
 !!! chiave ""
 
@@ -274,7 +278,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 - With Kruskal's algorithm and a depth-first visit, $DT$ runs in $O(n^2\log n)$ time.
 
-<a id="box-3-ex-dt"></a>
+<a id="box-6-ex-dt"></a>
 
 !!! esempio "Example 26.3: $DT$ on the TSP reference instance"
 
@@ -296,7 +300,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     The shortcuts replace $3\to1\to4$ ($2+2$) by $3\to4$ ($4$) and $5\to2\to4\to1$ ($4+3+2$) by $5\to1$ ($9$): on this instance both triangle inequalities used hold with equality, and shortcutting saves nothing. Hence $DT(I)=22$ and $\frac{DT(I)}{z(I)}=\frac{22}{18}=\frac{11}{9}$.
 
-### 26.4.2 The Christofides algorithm { #sez-sec-CH }
+### 26.3.2 The Christofides algorithm { #sez-sec-CH }
 
 !!! chiave ""
 
@@ -314,19 +318,19 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 - A minimum weight perfect matching can be computed in polynomial time, $O(n^3)$, with Edmonds' blossom algorithm; in the examples and exercises $|O|\le 4$ and the matchings are enumerated ($|O|=4$ gives $3$ perfect matchings).
 
-<a id="box-4-ex-ch"></a>
+<a id="box-7-ex-ch"></a>
 
 !!! esempio "Example 26.4: $CH$ on the TSP reference instance"
 
-    The MST is the one of [Example 26.3](#box-3-ex-dt), with degrees $\deg(1)=2$, $\deg(2)=2$, $\deg(3)=1$, $\deg(4)=2$, $\deg(5)=1$. Hence $O=\{3,5\}$ and the only perfect matching is $M=\{\{3,5\}\}$, with $d(M)=7$.
+    The MST is the one of [Example 26.3](#box-6-ex-dt), with degrees $\deg(1)=2$, $\deg(2)=2$, $\deg(3)=1$, $\deg(4)=2$, $\deg(5)=1$. Hence $O=\{3,5\}$ and the only perfect matching is $M=\{\{3,5\}\}$, with $d(M)=7$.
 
     ![Figure 4](../img/pcmax-tsp-coloring-approximation/fig04.svg){ .fig loading=lazy  }
 
     $T\cup M$ is a cycle through all the cities. Fleury's rule from city $1$ (neighbours $3$ and $4$) goes to $3$ and gives $W=(1,3,5,2,4,1)$, of length $d(T)+d(M)=11+7=18$, in which no city is repeated: no shortcut is needed and $\sigma=(1,3,5,2,4)$, with $CH(I)=18=z(I)$. On the reference instance $CH$ finds the optimal tour, while $DT$ is $4$ units above it.
 
-## 26.5 Vertex coloring
+## 26.4 Vertex coloring
 
-### 26.5.1 The greedy coloring { #sez-sec-GC }
+### 26.4.1 The greedy coloring { #sez-sec-GC }
 
 !!! chiave ""
 
@@ -341,7 +345,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 - As $LIST$, $GC$ depends on the order of the list, and the order can make a large difference.
 
-<a id="box-5-ex-gc"></a>
+<a id="box-8-ex-gc"></a>
 
 !!! esempio "Example 26.5: $GC$ on the Petersen graph, two orders"
 
@@ -424,7 +428,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     and $GC$ uses $4$ colors: vertex $8$ takes color $2$, which the first order gave to vertex $6$, and vertices $9$ and $10$ then see all three colors among their neighbours.
 
-### 26.5.2 DSATUR { #sez-sec-DSATUR }
+### 26.4.2 DSATUR { #sez-sec-DSATUR }
 
 !!! chiave ""
 
@@ -439,7 +443,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 - $DSATUR$ is $GC$ with a list built on the fly, so every property of $GC$ that holds for every list holds for $DSATUR$ too. A straightforward implementation runs in $O(n^2)$ time.
 
-<a id="box-6-ex-dsatur"></a>
+<a id="box-9-ex-dsatur"></a>
 
 !!! esempio "Example 26.6: $DSATUR$ on the Petersen graph"
 
@@ -515,13 +519,13 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     At step $1$ all the vertices tie and vertex $1$ is chosen. At step $2$ the vertices $2$, $5$, $6$ have saturation degree $1$ and two uncolored neighbours each: the smallest index, $2$, is chosen. At step $7$ vertex $8$ (neighbours $3$ and $6$, colors $1$ and $2$) has saturation degree $2$ and goes before vertex $7$. $DSATUR$ uses $3=\chi(G)$ colors, the same coloring as $GC$ with the list $(1,2,\dots,10)$.
 
-## 26.6 Structural properties
+## 26.5 Structural properties
 
 - The guarantees of the next section compare the value of a heuristic solution with a lower bound on $z(I)$. For $P\,||\,C_{\max}$ the lower bound is $\eqref{eq:pcmaxlb}$; for the metric TSP we need three properties: shortcutting does not increase the length, an MST is shorter than any tour, and so is (twice) a minimum perfect matching of an even set of cities.
 
-<a id="box-7-obs-start"></a>
+<a id="box-10-obs-start"></a>
 
-!!! teorema "Observation 26.1"
+!!! teorema "Observation 26.4"
 
     Let $\ell$ be a job that ends last in a schedule built by $LIST$ (with any list). Then its starting time satisfies
 
@@ -533,9 +537,9 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     When $\ell$ is assigned, $S_\ell$ is the smallest of the $m$ loads, hence it is not larger than their average. The loads at that moment contain only jobs assigned before $\ell$, so their sum is at most $\sum_{j\neq\ell}t_j$, and $S_\ell\le\frac1m\sum_{j\neq\ell}t_j$. <span class="qed">□</span>
 
-<a id="box-8-obs-shortcut"></a>
+<a id="box-11-obs-shortcut"></a>
 
-!!! teorema "Observation 26.2"
+!!! teorema "Observation 26.5"
 
     In a metric TSP instance, let $W$ be a closed walk that visits every city at least once, and let $\sigma$ be the tour obtained from $W$ by shortcutting. Then $L(\sigma)\le$ length of $W$.
 
@@ -549,9 +553,9 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     The stretches are disjoint parts of $W$, so summing over all the edges of $\sigma$ gives $L(\sigma)\le$ length of $W$. <span class="qed">□</span>
 
-<a id="box-9-obs-mst"></a>
+<a id="box-12-obs-mst"></a>
 
-!!! teorema "Observation 26.3"
+!!! teorema "Observation 26.6"
 
     For every TSP instance (metric or not) and every minimum spanning tree $T$,
 
@@ -563,9 +567,9 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     Removing any edge from an optimal tour leaves a path through all the cities, which is a spanning tree. Its weight is $z(I)$ minus the removed distance, at most $z(I)$ since distances are positive, and the MST weighs no more than any spanning tree. <span class="qed">□</span>
 
-<a id="box-10-obs-matching"></a>
+<a id="box-13-obs-matching"></a>
 
-!!! teorema "Observation 26.4"
+!!! teorema "Observation 26.7"
 
     In a metric TSP instance, let $O\subseteq\mathscr{V}$ with $|O|$ even and $|O|\ge 2$, and let $M$ be a minimum weight perfect matching of $O$. Then
 
@@ -575,7 +579,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 ??? dimostrazione "Proof"
 
-    Let $\tilde\sigma$ be an optimal tour and shortcut it to the cities of $O$: we obtain a cycle $o_1,o_2,\dots,o_{|O|},o_1$ through the cities of $O$ which, by [Observation 26.2](#box-8-obs-shortcut), has length at most $z(I)$. Since $|O|$ is even, its edges split into two perfect matchings of $O$, taking alternately one edge each:
+    Let $\tilde\sigma$ be an optimal tour and shortcut it to the cities of $O$: we obtain a cycle $o_1,o_2,\dots,o_{|O|},o_1$ through the cities of $O$ which, by [Observation 26.5](#box-11-obs-shortcut), has length at most $z(I)$. Since $|O|$ is even, its edges split into two perfect matchings of $O$, taking alternately one edge each:
 
     $$
     M_1=\{\{o_1,o_2\},\{o_3,o_4\},\dots\}, \qquad M_2=\{\{o_2,o_3\},\{o_4,o_5\},\dots,\{o_{|O|},o_1\}\}.
@@ -587,13 +591,13 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 - On the reference instance: $d(T)=11\le 18$, and with $O=\{3,5\}$ the optimal tour shortcut to $O$ is $3,5,3$, of length $14\le18$, so $d(M)=7\le 9$.
 
-## 26.7 Performance guarantees
+## 26.6 Performance guarantees
 
-### 26.7.1 The worst case performance ratio of LIST
+### 26.6.1 The worst case performance ratio of LIST
 
-<a id="box-11-prop-LIST"></a>
+<a id="box-14-prop-LIST"></a>
 
-!!! teorema "Proposition 26.5"
+!!! teorema "Proposition 26.8"
 
     For every $P\,||\,C_{\max}$ instance $I$ and every list $\lambda$,
 
@@ -603,7 +607,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 ??? dimostrazione "Proof"
 
-    Let $\ell$ be a job that ends last, so that $LIST(I)=S_\ell+t_\ell$. By [Observation 26.1](#box-7-obs-start),
+    Let $\ell$ be a job that ends last, so that $LIST(I)=S_\ell+t_\ell$. By [Observation 26.4](#box-10-obs-start),
 
     $$
     LIST(I) \;\le\; \frac{1}{m}\sum_{j\neq\ell} t_j + t_\ell
@@ -613,9 +617,9 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     where both bounds come from $\eqref{eq:pcmaxlb}$. Dividing by $z(I)$ gives the claim. <span class="qed">□</span>
 
-<a id="box-12-prop-LISTtight"></a>
+<a id="box-15-prop-LISTtight"></a>
 
-!!! teorema "Proposition 26.6"
+!!! teorema "Proposition 26.9"
 
     For every $m\ge 2$ there is a $P\,||\,C_{\max}$ instance $I_m$ with $m$ machines and a list $\lambda$ such that
 
@@ -643,7 +647,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 !!! chiave ""
 
-    From [Proposition 26.5](#box-11-prop-LIST) and [Proposition 26.6](#box-12-prop-LISTtight) it follows that $LIST$ is a $\left(2-\frac1m\right)$-approximation algorithm, whatever the list, and that the worst case performance ratio of $LIST$ on $m$ machines is
+    From [Proposition 26.8](#box-14-prop-LIST) and [Proposition 26.9](#box-15-prop-LISTtight) it follows that $LIST$ is a $\left(2-\frac1m\right)$-approximation algorithm, whatever the list, and that the worst case performance ratio of $LIST$ on $m$ machines is
 
     $$
     r(LIST)=2-\frac{1}{m}
@@ -651,15 +655,15 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 - For $m=3$ the family has $t=(1,1,1,1,1,1,3)$, $LIST(I_3)=5$ and $z(I_3)=3$. The bad job is the long one, put last: $LPT$ would put it first and find the optimum.
 
-- On [Example 26.1](#box-1-ex-list), $LIST(I)=12\le\frac53\cdot9=15$.
+- On [Example 26.1](#box-4-ex-list), $LIST(I)=12\le\frac53\cdot9=15$.
 
 - The bound and the family are due to Graham (1966).
 
-### 26.7.2 The worst case performance ratio of LPT
+### 26.6.2 The worst case performance ratio of LPT
 
-<a id="box-13-prop-LPT"></a>
+<a id="box-16-prop-LPT"></a>
 
-!!! teorema "Proposition 26.7"
+!!! teorema "Proposition 26.10"
 
     For every $P\,||\,C_{\max}$ instance $I$,
 
@@ -671,7 +675,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     Number the jobs so that $t_1\ge t_2\ge\dots\ge t_n$, the order in which $LPT$ assigns them, and let $\ell$ be a job that ends last, so that $LPT(I)=S_\ell+t_\ell$. The jobs after $\ell$ play no role: let $I'$ be the instance with the jobs $1,\dots,\ell$ only. $LPT$ assigns them on $I'$ exactly as on $I$, so $LPT(I')=LPT(I)$, and $z(I')\le z(I)$ since a schedule of $I$ restricted to the jobs of $I'$ is a schedule of $I'$. It is therefore enough to prove $LPT(I')\le\left(\frac43-\frac1{3m}\right)z(I')$. In $I'$ the job $\ell$ is the shortest one. We distinguish two cases.
 
-    <strong>Case 1: $t_\ell\le\frac{z(I')}{3}$.</strong> As in the proof of [Proposition 26.5](#box-11-prop-LIST), with [Observation 26.1](#box-7-obs-start) applied to $I'$,
+    <strong>Case 1: $t_\ell\le\frac{z(I')}{3}$.</strong> As in the proof of [Proposition 26.8](#box-14-prop-LIST), with [Observation 26.4](#box-10-obs-start) applied to $I'$,
 
     $$
     LPT(I') \;\le\; \frac1m\sum_{j=1}^{\ell} t_j + \Big(1-\frac1m\Big)t_\ell
@@ -687,9 +691,9 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     Therefore $LPT(I')\le z(I')$ in Case 2, which is even better than the claim. <span class="qed">□</span>
 
-<a id="box-14-prop-LPTtight"></a>
+<a id="box-17-prop-LPTtight"></a>
 
-!!! teorema "Proposition 26.8"
+!!! teorema "Proposition 26.11"
 
     For every $m\ge 2$ there is a $P\,||\,C_{\max}$ instance $I_m$ with $m$ machines such that
 
@@ -729,7 +733,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 !!! chiave ""
 
-    From [Proposition 26.7](#box-13-prop-LPT) and [Proposition 26.8](#box-14-prop-LPTtight) it follows that $LPT$ is a $\left(\frac43-\frac1{3m}\right)$-approximation algorithm, and that its worst case performance ratio on $m$ machines is
+    From [Proposition 26.10](#box-16-prop-LPT) and [Proposition 26.11](#box-17-prop-LPTtight) it follows that $LPT$ is a $\left(\frac43-\frac1{3m}\right)$-approximation algorithm, and that its worst case performance ratio on $m$ machines is
 
     $$
     r(LPT)=\frac{4}{3}-\frac{1}{3m}
@@ -737,17 +741,17 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     Sorting the list lowers the guarantee of $LIST$ from $2-\frac1m$ to $\frac43-\frac1{3m}$.
 
-- For $m=3$ the family is $t=(5,5,4,4,3,3,3)$, the reference instance: the loads after six jobs are $(8,8,8)=3m-1$, the seventh job gives $LPT(I)=11=4m-1$, and $z(I)=9=3m$ ([Example 26.2](#box-2-ex-lpt)). The reference instance is a worst case for $LPT$: $\frac{11}{9}=\frac43-\frac19$.
+- For $m=3$ the family is $t=(5,5,4,4,3,3,3)$, the reference instance: the loads after six jobs are $(8,8,8)=3m-1$, the seventh job gives $LPT(I)=11=4m-1$, and $z(I)=9=3m$ ([Example 26.2](#box-5-ex-lpt)). The reference instance is a worst case for $LPT$: $\frac{11}{9}=\frac43-\frac19$.
 
 - On the tight instances the last job has $t_\ell=m=\frac{z(I_m)}{3}$: they lie exactly on the border between the two cases of the proof, and every inequality of Case 1 holds with equality.
 
 - The bound and the family are due to Graham (1969).
 
-### 26.7.3 The worst case performance ratio of DT
+### 26.6.3 The worst case performance ratio of DT
 
-<a id="box-15-prop-DT"></a>
+<a id="box-18-prop-DT"></a>
 
-!!! teorema "Proposition 26.9"
+!!! teorema "Proposition 26.12"
 
     For every metric TSP instance $I$,
 
@@ -757,7 +761,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 ??? dimostrazione "Proof"
 
-    The Eulerian circuit $W$ of the doubled tree uses every edge of $T$ twice, so its length is $2\,d(T)$, and it visits every city because $T$ is spanning. By [Observation 26.2](#box-8-obs-shortcut) and [Observation 26.3](#box-9-obs-mst),
+    The Eulerian circuit $W$ of the doubled tree uses every edge of $T$ twice, so its length is $2\,d(T)$, and it visits every city because $T$ is spanning. By [Observation 26.5](#box-11-obs-shortcut) and [Observation 26.6](#box-12-obs-mst),
 
     $$
     DT(I)=L(\sigma) \;\le\; 2\,d(T) \;\le\; 2\,z(I).
@@ -765,9 +769,9 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     <p class="qed-riga"><span class="qed">□</span></p>
 
-<a id="box-16-prop-DTtight"></a>
+<a id="box-19-prop-DTtight"></a>
 
-!!! teorema "Proposition 26.10"
+!!! teorema "Proposition 26.13"
 
     There are metric TSP instances $I_n$, $n\ge5$ odd, such that
 
@@ -818,7 +822,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 !!! chiave ""
 
-    From [Proposition 26.9](#box-15-prop-DT) and [Proposition 26.10](#box-16-prop-DTtight) it follows that $DT$ is a $2$-approximation algorithm for the metric TSP, and that its worst case performance ratio is
+    From [Proposition 26.12](#box-18-prop-DT) and [Proposition 26.13](#box-19-prop-DTtight) it follows that $DT$ is a $2$-approximation algorithm for the metric TSP, and that its worst case performance ratio is
 
     $$
     r(DT)=2
@@ -830,11 +834,11 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 - The analysis of $DT$ is due to Rosenkrantz, Stearns and Lewis (1977).
 
-### 26.7.4 The worst case performance ratio of CH
+### 26.6.4 The worst case performance ratio of CH
 
-<a id="box-17-prop-CH"></a>
+<a id="box-20-prop-CH"></a>
 
-!!! teorema "Proposition 26.11"
+!!! teorema "Proposition 26.14"
 
     For every metric TSP instance $I$,
 
@@ -844,7 +848,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 ??? dimostrazione "Proof"
 
-    The Eulerian circuit $W$ of $T\cup M$ uses every edge once, so its length is $d(T)+d(M)$, and it visits every city. By [Observation 26.2](#box-8-obs-shortcut), [Observation 26.3](#box-9-obs-mst) and [Observation 26.4](#box-10-obs-matching) (with the set $O$ of odd-degree cities, $|O|\ge2$ because a tree with at least two vertices has at least two leaves),
+    The Eulerian circuit $W$ of $T\cup M$ uses every edge once, so its length is $d(T)+d(M)$, and it visits every city. By [Observation 26.5](#box-11-obs-shortcut), [Observation 26.6](#box-12-obs-mst) and [Observation 26.7](#box-13-obs-matching) (with the set $O$ of odd-degree cities, $|O|\ge2$ because a tree with at least two vertices has at least two leaves),
 
     $$
     CH(I)=L(\sigma) \;\le\; d(T)+d(M) \;\le\; z(I)+\frac{z(I)}{2} \;=\; \frac32\,z(I).
@@ -852,9 +856,9 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     <p class="qed-riga"><span class="qed">□</span></p>
 
-<a id="box-18-prop-CHtight"></a>
+<a id="box-21-prop-CHtight"></a>
 
-!!! teorema "Proposition 26.12"
+!!! teorema "Proposition 26.15"
 
     There are metric TSP instances $I_n$, $n\ge5$ odd, such that
 
@@ -884,7 +888,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
     z(I_n)\le (n-2)b+2a=(n-2)(n+1)+2n=(n+2)(n-1).
     $$
 
-    Together with [Proposition 26.11](#box-17-prop-CH),
+    Together with [Proposition 26.14](#box-20-prop-CH),
 
     $$
     \frac32 \;\ge\; \frac{CH(I_n)}{z(I_n)} \;\ge\; \frac{(n-1)(3n+1)}{2(n+2)(n-1)}=\frac{3n+1}{2n+4}
@@ -895,7 +899,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 !!! chiave ""
 
-    From [Proposition 26.11](#box-17-prop-CH) and [Proposition 26.12](#box-18-prop-CHtight) it follows that $CH$ is a $\frac32$-approximation algorithm for the metric TSP, and that its worst case performance ratio is
+    From [Proposition 26.14](#box-20-prop-CH) and [Proposition 26.15](#box-21-prop-CHtight) it follows that $CH$ is a $\frac32$-approximation algorithm for the metric TSP, and that its worst case performance ratio is
 
     $$
     r(CH)=\frac32
@@ -905,15 +909,15 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 - The algorithm was found independently by Christofides (1976) and Serdyukov (1978). For more than forty years no polynomial algorithm with a better constant was known for the metric TSP; the first improvement, by an extremely small constant, is a randomized algorithm by Karlin, Klein and Oveis Gharan (2021).
 
-## 26.8 The limits of approximation
+## 26.7 The limits of approximation
 
 - The guarantees of the previous section are <em>positive</em> results. For other problems one can prove that no polynomial algorithm has a constant guarantee, or a guarantee below a given constant, unless $P=NP$. The proofs all follow the same scheme: an approximation algorithm with a too good guarantee would decide in polynomial time an NP-complete problem.
 
-### 26.8.1 The general TSP
+### 26.7.1 The general TSP
 
-<a id="box-19-prop-TSPinapx"></a>
+<a id="box-22-prop-TSPinapx"></a>
 
-!!! teorema "Proposition 26.13"
+!!! teorema "Proposition 26.16"
 
     Let $\alpha\ge1$ be a constant. If $P\neq NP$, there is no polynomial algorithm $\mathscr{A}$ for the TSP such that, for every TSP instance $I$,
 
@@ -941,15 +945,15 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     Hence $G$ is Hamiltonian if and only if $\mathscr{A}(I_G)\le\alpha n$. Building $I_G$ and running $\mathscr{A}$ takes polynomial time, so the Hamiltonian cycle problem would be in $P$, and $P=NP$. <span class="qed">□</span>
 
-- The instance $I_G$ is <strong>not metric</strong> as soon as $G$ has a path $i,k,j$ with $\{i,j\}\notin E$: $d_{ij}=\lceil\alpha n\rceil+1>2=d_{ik}+d_{kj}$. This is why [Proposition 26.13](#box-19-prop-TSPinapx) does not contradict the guarantees of $DT$ and $CH$: the triangle inequality is exactly what makes the TSP approximable.
+- The instance $I_G$ is <strong>not metric</strong> as soon as $G$ has a path $i,k,j$ with $\{i,j\}\notin E$: $d_{ij}=\lceil\alpha n\rceil+1>2=d_{ik}+d_{kj}$. This is why [Proposition 26.16](#box-22-prop-TSPinapx) does not contradict the guarantees of $DT$ and $CH$: the triangle inequality is exactly what makes the TSP approximable.
 
 - The result and its proof are due to Sahni and Gonzalez (1976), and the NP-completeness of the Hamiltonian cycle problem to Karp (1972).
 
-### 26.8.2 Vertex coloring: no ratio below four thirds
+### 26.7.2 Vertex coloring: no ratio below four thirds
 
-<a id="box-20-prop-VCP43"></a>
+<a id="box-23-prop-VCP43"></a>
 
-!!! teorema "Proposition 26.14"
+!!! teorema "Proposition 26.17"
 
     If $P\neq NP$, there is no polynomial algorithm $\mathscr{A}$ for the VCP such that, for every VCP instance $I$,
 
@@ -969,7 +973,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     <strong>Much stronger results (cited without proof).</strong>
 
-    - Garey and Johnson (1976) raised the bound of [Proposition 26.14](#box-20-prop-VCP43) to $2$: unless $P=NP$, no polynomial algorithm colors every graph with fewer than $2\chi(G)$ colors.
+    - Garey and Johnson (1976) raised the bound of [Proposition 26.17](#box-23-prop-VCP43) to $2$: unless $P=NP$, no polynomial algorithm colors every graph with fewer than $2\chi(G)$ colors.
 
     - Much more is true: the ratio cannot even be bounded by a small power of $n$. For every $\varepsilon>0$, unless $P=NP$, no polynomial algorithm $\mathscr{A}$ satisfies
 
@@ -979,11 +983,11 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
         for every graph $G$ with $n$ vertices. Since every graph can be colored with $n$ colors, a ratio of $n$ is trivial: the chromatic number is essentially as hard to approximate as possible (Zuckerman, 2007).
 
-### 26.8.3 What the greedy coloring guarantees
+### 26.7.3 What the greedy coloring guarantees
 
-<a id="box-21-prop-GCDelta"></a>
+<a id="box-24-prop-GCDelta"></a>
 
-!!! teorema "Proposition 26.15"
+!!! teorema "Proposition 26.18"
 
     For every graph $G$ and every list $\lambda$,
 
@@ -1001,9 +1005,9 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 - On the other hand, <strong>some</strong> list is always optimal: if $Q_1,\dots,Q_{\chi(G)}$ are the color classes of an optimal coloring, $GC$ with the vertices of $Q_1$ first, then those of $Q_2$, and so on, gives each vertex of $Q_c$ a color at most $c$, so it uses at most $\chi(G)$ colors. The difficulty is entirely in finding the list.
 
-<a id="box-22-prop-crown"></a>
+<a id="box-25-prop-crown"></a>
 
-!!! teorema "Proposition 26.16"
+!!! teorema "Proposition 26.19"
 
     For every $k\ge3$ there is a graph $G_k$ with $n=2k$ vertices, $\chi(G_k)=2$ and $\Delta(G_k)=k-1$, and a list $\lambda$, such that
 
@@ -1021,7 +1025,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 - The crown graphs satisfy the assumptions of the VCP for $k\ge3$: no isolated vertices, and $N(u_i)=\{v_j:j\neq i\}$ is not contained in $N(u_{i'})$ nor in any $N(v_j)\subseteq\{u_1,\dots,u_k\}$.
 
-<a id="box-23-ex-crown"></a>
+<a id="box-26-ex-crown"></a>
 
 !!! esempio "Example 26.7: $GC$ and $DSATUR$ on the crown graph $G_4$"
 
@@ -1033,13 +1037,13 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     $DSATUR$ chooses vertex $1$ ($u_1$, color $1$), then the vertices $4$, $5$, $2$, $3$, $6$, $7$, $8$, with colors $2,1,2,1,2,1,2$: the vertices $u_i$ get color $1$ and the vertices $v_i$ color $2$, and $DSATUR$ uses $2=\chi(G_4)$ colors. After the first step, every vertex adjacent to a colored vertex has saturation degree $1$, and the vertex chosen is always on the side opposite to the last one colored.
 
-### 26.8.4 DSATUR as a heuristic
+### 26.7.4 DSATUR as a heuristic
 
 - On bipartite graphs $DSATUR$ always uses at most $2$ colors, as on the crown graphs; this is proved in the paper that introduced it (Brélaz, 1979).
 
 - On general graphs $DSATUR$ is a polynomial algorithm, so by the results of this section it cannot have a performance guarantee below $\frac43$ (and, by the cited results, not even below $n^{1-\varepsilon}$), unless $P=NP$. It is nevertheless one of the most used constructive heuristics for the VCP, because on most graphs it uses few colors more than $\chi(G)$, often none; it is also the base of exact branch and bound algorithms for the VCP, which branch on the vertex chosen by the $DSATUR$ rule.
 
-## 26.9 Sources
+## 26.8 Sources
 
 - R.L. Graham, Bounds for certain multiprocessing anomalies, <em>Bell System Technical Journal</em> 45(9):1563–1581, 1966.
 
@@ -1063,7 +1067,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 - D. Brélaz, New methods to color the vertices of a graph, <em>Communications of the ACM</em> 22(4):251–256, 1979.
 
-## 26.10 Typical mistakes
+## 26.9 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -1079,7 +1083,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     - <strong>Reading $\frac{4}{3}$ as a guarantee for the VCP.</strong> The result says that no polynomial algorithm has a ratio <em>below</em> $\frac{4}{3}$, unless $P=NP$; it does not give an algorithm with ratio $\frac{4}{3}$.
 
-## 26.11 In summary
+## 26.10 In summary
 
 !!! chiave "In summary"
 

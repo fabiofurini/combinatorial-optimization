@@ -10,9 +10,9 @@
 
     ---
 
-    Why not enumerate all the solutions? · Divide, conquer and combine · Problem properties required by DP algorithms · Steps for designing a DP algorithm · …
+    Divide, conquer and combine · Problem properties required by DP algorithms · Steps for designing a DP algorithm · The DP algorithms of this module · …
 
-    [:octicons-arrow-right-24: Read the chapter](dp-principles.md)
+    [:octicons-arrow-right-24: Read the chapter](dp-principles.md) · [Exercises](../exercises/dp-principles.md)
 
 -   **15. Dynamic programming for knapsack problems**
 

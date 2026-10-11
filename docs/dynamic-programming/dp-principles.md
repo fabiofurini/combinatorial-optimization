@@ -6,7 +6,7 @@ title: "Principles of dynamic programming"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 14** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf)
+**Part 3 · Dynamic programming · Chapter 14** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises](../exercises/dp-principles.md)
 
 </div>
 
@@ -30,91 +30,15 @@ title: "Principles of dynamic programming"
 
     - list the steps of a DP algorithm: recurrence, base cases, lookup table, and reconstruction of an optimal solution.
 
-## 14.1 Why not enumerate all the solutions?
+## 14.1 Divide, conquer and combine
 
-- A brute-force algorithm lists all the feasible solutions of a combinatorial optimization problem; their number grows exponentially (for the KP there are $2^n$ subsets of items). The table shows how the running time of an algorithm with $\mathcal{O}(n)$, $\mathcal{O}(n^2)$ and $\mathcal{O}(2^n)$ steps grows with the size $n$ of the instance, at $1\,\mu$s per step.
+<a id="box-1-def-DP"></a>
 
-<div class="tabella" markdown="0"><table>
-<tr>
-<th></th>
-<th colspan="6">Size <span class="arithmatex">\(n\)</span></th>
-</tr>
-<tr>
-<td>Algorithm</td>
-<td>10</td>
-<td>20</td>
-<td>30</td>
-<td>40</td>
-<td>50</td>
-<td>60</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(\mathcal{O}(n)\)</span></td>
-<td>.00001</td>
-<td>.00002</td>
-<td>.00003</td>
-<td>.00004</td>
-<td>.00005</td>
-<td>.00006</td>
-</tr>
-<tr>
-<td></td>
-<td><span style="color:#1971c2">seconds</span></td>
-<td><span style="color:#1971c2">seconds</span></td>
-<td><span style="color:#1971c2">seconds</span></td>
-<td><span style="color:#1971c2">seconds</span></td>
-<td><span style="color:#1971c2">seconds</span></td>
-<td><span style="color:#1971c2">seconds</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(\mathcal{O}(n^2)\)</span></td>
-<td>.0001</td>
-<td>.0004</td>
-<td>.0009</td>
-<td>.0016</td>
-<td>.0025</td>
-<td>.0036</td>
-</tr>
-<tr>
-<td></td>
-<td><span style="color:#1971c2">seconds</span></td>
-<td><span style="color:#1971c2">seconds</span></td>
-<td><span style="color:#1971c2">seconds</span></td>
-<td><span style="color:#1971c2">seconds</span></td>
-<td><span style="color:#1971c2">seconds</span></td>
-<td><span style="color:#1971c2">seconds</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(\mathcal{O}(2^n)\)</span></td>
-<td>.001</td>
-<td>1.0</td>
-<td>17.9</td>
-<td>12.7</td>
-<td>35.7</td>
-<td>366</td>
-</tr>
-<tr>
-<td></td>
-<td><span style="color:#1971c2">seconds</span></td>
-<td><span style="color:#1971c2">second</span></td>
-<td><span style="color:#e03131">minutes</span></td>
-<td><span style="color:#e03131">days</span></td>
-<td><span style="color:#e03131">years</span></td>
-<td><span style="color:#e03131">centuries</span></td>
-</tr>
-</table></div>
+!!! definizione "Definition 14.1: DP algorithm"
 
-- <span style="color:#e03131">Technology will not help.</span>[^1] With a CPU $1000$ times faster, in one hour an $\mathcal{O}(n)$ algorithm solves an instance $1000$ times larger, while an $\mathcal{O}(2^n)$ algorithm solves an instance only $10$ units larger.
+    A <strong><em>Dynamic Programming (DP) algorithm</em></strong> is an exact algorithm to find an optimal solution of a class of optimization problems with specific properties (Section [14.2](#sez-sec-dp-properties)). It decomposes the original problem into smaller subproblems of the same type, and it reuses the information computed when solving them.
 
-!!! chiave ""
-
-    Brute-force algorithms do not work: a DP algorithm avoids the enumeration by reusing the optimal values of the subproblems.
-
-## 14.2 Divide, conquer and combine
-
-- A <strong><em>Dynamic Programming (DP) algorithm</em></strong> is an exact algorithm to find an optimal solution of a class of optimization problems with specific properties (see the next section).
-
-- It is based on decomposing the original problem into smaller subproblems and reusing the information computed when solving them.
+- A brute-force algorithm lists all the feasible solutions, and their number grows exponentially ($2^n$ subsets of items for the KP). A DP algorithm avoids this enumeration by reusing the optimal values of the subproblems.
 
 - A DP algorithm exploits the <strong><em>divide, conquer, and combine paradigm</em></strong>, whose main principles are:
 
@@ -128,7 +52,7 @@ title: "Principles of dynamic programming"
 
 - In a DP algorithm, the same subproblem may be generated several times during the recursive solution process. In order to avoid redundant computations, the optimal value of each subproblem is stored in a <strong><em>lookup table</em></strong>. Whenever the same subproblem is generated again, its optimal value is retrieved from the lookup table instead of being recomputed.
 
-## 14.3 Problem properties required by DP algorithms
+## 14.2 Problem properties required by DP algorithms { #sez-sec-dp-properties }
 
 - DP algorithms work only for combinatorial optimization problems that allow a recursive decomposition process respecting the following properties:
 
@@ -156,7 +80,7 @@ title: "Principles of dynamic programming"
 
     DP algorithms can be used when a problem has both the <u>Optimal Substructure</u> and <u>Overlapping Subproblems</u>.
 
-## 14.4 Steps for designing a DP algorithm
+## 14.3 Steps for designing a DP algorithm
 
 - Identify the <strong><em>recursive decomposition process</em></strong> that, starting from a given problem, generates its subproblems, which are smaller problems of the same type, and verify the following two properties:
 
@@ -180,7 +104,7 @@ title: "Principles of dynamic programming"
 
         - identify the way to construct an optimal solution from the information stored.
 
-## 14.5 The DP algorithms of this module
+## 14.4 The DP algorithms of this module
 
 - Every DP algorithm of the following chapters follows the two steps above: a recurrence with its base cases gives the optimal value, an additional table gives an optimal solution.
 
@@ -237,7 +161,7 @@ title: "Principles of dynamic programming"
 
 - In all the numerical examples the data are integers: the number of states is finite, and each state is a table cell. The running times $\Theta(nc)$, $\Theta(nc\,b_{\max})$ and $O(mDC)$ contain numbers of the input (a capacity, a bound, a demand), not only its size: they are <strong>pseudo-polynomial</strong>.
 
-## 14.6 Typical mistakes
+## 14.5 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -249,7 +173,7 @@ title: "Principles of dynamic programming"
 
     - <strong>Confusing the optimal value with an optimal solution.</strong> The table of the optimal values does not give the solution: an additional table of the decisions is needed.
 
-## 14.7 In summary
+## 14.6 In summary
 
 !!! chiave "In summary"
 
@@ -260,5 +184,3 @@ title: "Principles of dynamic programming"
     - The design has two steps: the optimal value (recurrence, base cases, bottom-up table) and an optimal solution (decisions stored and read backwards).
 
     - Brute force takes exponential time; DP takes a time that is polynomial in the number of states, and pseudo-polynomial when a number of the input is a table dimension.
-
-[^1]: M. Garey, D. Johnson, <em>Computers and Intractability: A Guide to $NP$-Completeness</em>.

@@ -2203,7 +2203,9 @@ title: "Rod cutting and coin change"
         \end{array} \right. \tag{16.3}
         \end{equation*}
 
-    - The recursive decomposition process of formula $\eqref{eq:ccp}$ generates at most $n$ <strong>independent subproblems</strong>, corresponding to the possible choices of a denomination $j$, with $w_j\le k$, used as one of the coins returning the amount of change $k$. The base case is $v(0)=0$ since no coin is needed to return a null amount of change, and $v(k)=+\infty$ if no denomination is small enough to be used, since in this case the amount of change $k$ cannot be returned at all.
+    - The recursive decomposition process of formula $\eqref{eq:ccp}$ generates at most $n$ <strong>independent subproblems</strong>, corresponding to the possible choices of a denomination $j$, with $w_j\le k$, used as one of the coins returning the amount of change $k$.
+
+    - The base case is $v(0)=0$ since no coin is needed to return a null amount of change, and $v(k)=+\infty$ if no denomination is small enough to be used, since in this case the amount of change $k$ cannot be returned at all.
 
     - The optimal value $v(k)$ is obtained by trying every denomination $j$ with $w_j\le k$ and selecting the one that minimizes the sum $1+v(k-w_j)$ of the single coin of denomination $j$ and the optimal value of the residual subproblem, returning the remaining amount of change $k-w_j$.
 
@@ -2217,7 +2219,7 @@ title: "Rod cutting and coin change"
 
     - A <strong>first method</strong> to compute the optimal value $v(c)$ of the CCP instance is the <strong>top-down approach</strong>. The method starts from the call with $k=c$ and evaluates formula $\eqref{eq:ccp}$ recursively: each call tries every denomination $j$ with $w_j\le k$, until the amount of change is equal to $0$ or no denomination is small enough to be used.
 
-    - The <strong>recursion tree</strong> of the function $g$ has one node for each recursive call, labeled with the function call it represents. The root represents the initial call. The children of a node represent the recursive calls made by that call. The leaf nodes represent the base cases.
+    - The <strong>recursion tree</strong> of the function $v$ has one node for each recursive call, labeled with the function call it represents. The root represents the initial call. The children of a node represent the recursive calls made by that call. The leaf nodes represent the base cases.
 
         <a id="box-39-texccptree"></a>
 
@@ -2227,17 +2229,17 @@ title: "Rod cutting and coin change"
 
             ![Figure 5](../img/dp-rod-cutting-coin-change/fig05.svg){ .fig loading=lazy  }
 
-            The function $g$ is called $42$ times, and the same subproblems are solved multiple times: $v(0)$ is called $14$ times, $v(1)$ is called $8$ times, $v(2)$ is called $6$ times, $v(3)$ is called $5$ times, $v(4)$ is called $2$ times, and $v(5)$ is called $3$ times. All the other calls are made only once.
+            The function $v$ is called $42$ times, and the same subproblems are solved multiple times: $v(0)$ is called $14$ times, $v(1)$ is called $8$ times, $v(2)$ is called $6$ times, $v(3)$ is called $5$ times, $v(4)$ is called $2$ times, and $v(5)$ is called $3$ times. All the other calls are made only once.
 
     - The value $v(k)$ can be computed once the values $v(k')$, for every smaller amount of change $k'<k$, are known. Therefore, all values $v(k)$ can be computed by considering the amount of change $k$ in increasing order.
 
         <a id="box-40-texccpvalues"></a>
 
-        !!! esempio "Example 16.17: Computing the values of the $g$ function"
+        !!! esempio "Example 16.17: Computing the values of the $v$ function"
 
             We consider the CCP instance of <span style="color:#1971c2">Example 1</span>, with amount of change $c=10$ to return and denominations $w=(2,3,5)$.
 
-            The values of the function $g$ are computed as follows:
+            The values of the function $v$ are computed as follows:
 
             - The base case gives $v(0)=0$.
 
@@ -2253,10 +2255,28 @@ title: "Rod cutting and coin change"
                 v(2) = 1+v(0) = 1+0 = 1.
                 $$
 
+            - Once we have computed $v(0)$ and $v(1)$, we can compute $v(3)$:
+
+                $$
+                v(3) = \min\{1+v(1),\,1+v(0)\} = \min\{1+\infty,\,1+0\} = 1.
+                $$
+
             - Once we have computed $v(1)$ and $v(2)$, we can compute $v(4)$, trying every denomination $j$ with $w_j\le 4$:
 
                 $$
                 v(4) = \min\{1+v(2),\,1+v(1)\} = \min\{1+1,\,1+\infty\} = 2.
+                $$
+
+            - Once we have computed $v(0)$, $v(2)$, and $v(3)$, we can compute $v(5)$:
+
+                $$
+                v(5) = \min\{1+v(3),\,1+v(2),\,1+v(0)\} = \min\{1+1,\,1+1,\,1+0\} = 1.
+                $$
+
+            - Once we have computed $v(1)$, $v(3)$, and $v(4)$, we can compute $v(6)$:
+
+                $$
+                v(6) = \min\{1+v(4),\,1+v(3),\,1+v(1)\} = \min\{1+2,\,1+1,\,1+\infty\} = 2.
                 $$
 
             - Once we have computed $v(2)$, $v(4)$, and $v(5)$, we can compute $v(7)$, trying every denomination $j$ with $w_j\le 7$:
@@ -2266,6 +2286,12 @@ title: "Rod cutting and coin change"
                 $$
 
                 Here, the denominations $w_1=2$ and $w_3=5$ are tied: both give value $2$. Since the bottom-up algorithm only updates the optimal value when a strictly smaller value is found, the first denomination achieving the minimum, $w_1=2$, is the one recorded.
+
+            - Once we have computed $v(3)$, $v(5)$, and $v(6)$, we can compute $v(8)$:
+
+                $$
+                v(8) = \min\{1+v(6),\,1+v(5),\,1+v(3)\} = \min\{1+2,\,1+1,\,1+1\} = 2.
+                $$
 
             - Finally, once we have computed $v(5)$, $v(7)$, and $v(8)$, we can compute $v(10)$, trying every denomination $j$ with $w_j\le 10$:
 
@@ -2283,19 +2309,19 @@ title: "Rod cutting and coin change"
 
         !!! algoritmo "Algorithm: CCP\_DP"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A CCP instance given by <span class="arithmatex">\(n\)</span>, the array <span class="arithmatex">\(w[1..n]\)</span> of denominations, and the amount of change <span class="arithmatex">\(c\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> CCP_DP(<span class="arithmatex">\(n,w,c\)</span>)</div><div class="pc" style="--liv:1" id="box-41-ccpbu-a"><span class="pc-n">2</span><span class="arithmatex">\(g := \textnormal{new array}[0..c]\)</span></div><div class="pc" style="--liv:1" id="box-42-ccpbu-b"><span class="pc-n">3</span><span class="arithmatex">\(g[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-43-ccpbu-c"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(k := 1\)</span> <strong>to</strong> <span class="arithmatex">\(c\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-44-ccpbu-d"><span class="pc-n">5</span><span class="arithmatex">\(m := +\infty\)</span></div><div class="pc" style="--liv:2" id="box-45-ccpbu-e"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-46-ccpbu-f"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(w[j]\le k\)</span>  and <span class="arithmatex">\(1+g[k-w[j]] < m\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-47-ccpbu-g"><span class="pc-n">8</span><span class="arithmatex">\(m \leftarrow 1+g[k-w[j]]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:2" id="box-48-ccpbu-h"><span class="pc-n">11</span><span class="arithmatex">\(g[k] \leftarrow m\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-49-ccpbu-i"><span class="pc-n">13</span><strong>return</strong> <span class="arithmatex">\(g[c]\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A CCP instance given by <span class="arithmatex">\(n\)</span>, the array <span class="arithmatex">\(w[1..n]\)</span> of denominations, and the amount of change <span class="arithmatex">\(c\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> CCP_DP(<span class="arithmatex">\(n,w,c\)</span>)</div><div class="pc" style="--liv:1" id="box-41-ccpbu-a"><span class="pc-n">2</span><span class="arithmatex">\(v := \textnormal{new array}[0..c]\)</span></div><div class="pc" style="--liv:1" id="box-42-ccpbu-b"><span class="pc-n">3</span><span class="arithmatex">\(v[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-43-ccpbu-c"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(k := 1\)</span> <strong>to</strong> <span class="arithmatex">\(c\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-44-ccpbu-d"><span class="pc-n">5</span><span class="arithmatex">\(m := +\infty\)</span></div><div class="pc" style="--liv:2" id="box-45-ccpbu-e"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-46-ccpbu-f"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(w[j]\le k\)</span>  and <span class="arithmatex">\(1+v[k-w[j]] < m\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-47-ccpbu-g"><span class="pc-n">8</span><span class="arithmatex">\(m \leftarrow 1+v[k-w[j]]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:2" id="box-48-ccpbu-h"><span class="pc-n">11</span><span class="arithmatex">\(v[k] \leftarrow m\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-49-ccpbu-i"><span class="pc-n">13</span><strong>return</strong> <span class="arithmatex">\(v[c]\)</span></div></div>
 
-        - The array $g[0..c]$ is the <strong>lookup table</strong>: it stores the optimal values of all subproblems.
+        - The array $v[0..c]$ is the <strong>lookup table</strong>: it stores the optimal values of all subproblems.
 
-        - The instruction $g[0] \leftarrow 0$ initializes the base case, corresponding to a null amount of change.
+        - The instruction $v[0] \leftarrow 0$ initializes the base case, corresponding to a null amount of change.
 
         - The outer loop, over $k \in \{1,2,\dots,c\}$, computes the entries of the array in increasing order of amount of change.
 
-        - The inner loop, over $j \in \{1,2,\dots,n\}$, tries every denomination and keeps in $m$ the smallest value found so far; $m$ is initialized to $+\infty$, so that $g[k]$ remains $+\infty$ if no denomination $j$ with $w[j]\le k$ is found.
+        - The inner loop, over $j \in \{1,2,\dots,n\}$, tries every denomination and keeps in $m$ the smallest value found so far; $m$ is initialized to $+\infty$, so that $v[k]$ remains $+\infty$ if no denomination $j$ with $w[j]\le k$ is found.
 
-        - At the end of the inner loop, $g[k] \leftarrow m$ stores the optimal value $g[k]$.
+        - At the end of the inner loop, $v[k] \leftarrow m$ stores the optimal value $v[k]$.
 
-        - Finally, the optimal value of the CCP instance is returned as $g[c]$.
+        - Finally, the optimal value of the CCP instance is returned as $v[c]$.
 
         <a id="box-50-texccpbu"></a>
 
@@ -2303,13 +2329,13 @@ title: "Rod cutting and coin change"
 
             We consider the CCP instance of <span style="color:#1971c2">Example 1</span>, with amount of change $c=10$ to return and denominations $w=(2,3,5)$.
 
-            For each step of the DP algorithm, the table shows the values of $k$ and $j$, the cell $g[k]$, the current value of $m$, and the comparison performed. The cell of $m$ is highlighted in <mark>red</mark> when updated; the cell of $g[k]$ is highlighted in <mark>blue</mark> when assigned.
+            For each step of the DP algorithm, the table shows the values of $k$ and $j$, the cell $v[k]$, the current value of $m$, and the comparison performed. The cell of $m$ is highlighted in <mark>red</mark> when updated; the cell of $v[k]$ is highlighted in <mark>blue</mark> when assigned.
 
             <div class="tabella" markdown="0"><table>
             <tr>
             <th><span class="arithmatex">\(k\)</span></th>
             <th><span class="arithmatex">\(j\)</span></th>
-            <th><span class="arithmatex">\(g[k]\)</span></th>
+            <th><span class="arithmatex">\(v[k]\)</span></th>
             <th><span class="arithmatex">\(m\)</span></th>
             <th>Action</th>
             </tr>
@@ -2318,7 +2344,7 @@ title: "Rod cutting and coin change"
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-blu">0</td>
             <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(g[0]\leftarrow 0\)</span></td>
+            <td><span class="arithmatex">\(v[0]\leftarrow 0\)</span></td>
             </tr>
             <tr>
             <td></td>
@@ -2353,7 +2379,7 @@ title: "Rod cutting and coin change"
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-blu"><span class="arithmatex">\(+\infty\)</span></td>
             <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(g[1]\leftarrow m=+\infty\)</span></td>
+            <td><span class="arithmatex">\(v[1]\leftarrow m=+\infty\)</span></td>
             </tr>
             <tr>
             <td></td>
@@ -2367,7 +2393,7 @@ title: "Rod cutting and coin change"
             <td>1</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-rossa"><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[0]=1<m\)</span>: <span class="arithmatex">\(m\leftarrow 1\)</span></td>
+            <td><span class="arithmatex">\(1{+}v[0]=1<m\)</span>: <span class="arithmatex">\(m\leftarrow 1\)</span></td>
             </tr>
             <tr>
             <td></td>
@@ -2388,7 +2414,7 @@ title: "Rod cutting and coin change"
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-blu"><span class="arithmatex">\(1\)</span></td>
             <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(g[2]\leftarrow m=1\)</span></td>
+            <td><span class="arithmatex">\(v[2]\leftarrow m=1\)</span></td>
             </tr>
             <tr>
             <td></td>
@@ -2402,14 +2428,14 @@ title: "Rod cutting and coin change"
             <td>1</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[1]=+\infty\not<m=+\infty\)</span>: no update</td>
+            <td><span class="arithmatex">\(1{+}v[1]=+\infty\not<m=+\infty\)</span>: no update</td>
             </tr>
             <tr>
             <td></td>
             <td>2</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-rossa"><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[0]=1<m\)</span>: <span class="arithmatex">\(m\leftarrow 1\)</span></td>
+            <td><span class="arithmatex">\(1{+}v[0]=1<m\)</span>: <span class="arithmatex">\(m\leftarrow 1\)</span></td>
             </tr>
             <tr>
             <td></td>
@@ -2423,7 +2449,7 @@ title: "Rod cutting and coin change"
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-blu"><span class="arithmatex">\(1\)</span></td>
             <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(g[3]\leftarrow m=1\)</span></td>
+            <td><span class="arithmatex">\(v[3]\leftarrow m=1\)</span></td>
             </tr>
             <tr>
             <td></td>
@@ -2437,14 +2463,14 @@ title: "Rod cutting and coin change"
             <td>1</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-rossa"><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[2]=2<m\)</span>: <span class="arithmatex">\(m\leftarrow 2\)</span></td>
+            <td><span class="arithmatex">\(1{+}v[2]=2<m\)</span>: <span class="arithmatex">\(m\leftarrow 2\)</span></td>
             </tr>
             <tr>
             <td></td>
             <td>2</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[1]=+\infty\not<m=2\)</span>: no update</td>
+            <td><span class="arithmatex">\(1{+}v[1]=+\infty\not<m=2\)</span>: no update</td>
             </tr>
             <tr>
             <td></td>
@@ -2458,7 +2484,7 @@ title: "Rod cutting and coin change"
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-blu"><span class="arithmatex">\(2\)</span></td>
             <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(g[4]\leftarrow m=2\)</span></td>
+            <td><span class="arithmatex">\(v[4]\leftarrow m=2\)</span></td>
             </tr>
             <tr>
             <td></td>
@@ -2472,28 +2498,28 @@ title: "Rod cutting and coin change"
             <td>1</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-rossa"><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[3]=2<m\)</span>: <span class="arithmatex">\(m\leftarrow 2\)</span></td>
+            <td><span class="arithmatex">\(1{+}v[3]=2<m\)</span>: <span class="arithmatex">\(m\leftarrow 2\)</span></td>
             </tr>
             <tr>
             <td></td>
             <td>2</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[2]=2\not<m=2\)</span>: no update</td>
+            <td><span class="arithmatex">\(1{+}v[2]=2\not<m=2\)</span>: no update</td>
             </tr>
             <tr>
             <td></td>
             <td>3</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-rossa"><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[0]=1<m\)</span>: <span class="arithmatex">\(m\leftarrow 1\)</span></td>
+            <td><span class="arithmatex">\(1{+}v[0]=1<m\)</span>: <span class="arithmatex">\(m\leftarrow 1\)</span></td>
             </tr>
             <tr>
             <td></td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-blu"><span class="arithmatex">\(1\)</span></td>
             <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(g[5]\leftarrow m=1\)</span></td>
+            <td><span class="arithmatex">\(v[5]\leftarrow m=1\)</span></td>
             </tr>
             <tr>
             <td></td>
@@ -2507,28 +2533,28 @@ title: "Rod cutting and coin change"
             <td>1</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-rossa"><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[4]=3<m\)</span>: <span class="arithmatex">\(m\leftarrow 3\)</span></td>
+            <td><span class="arithmatex">\(1{+}v[4]=3<m\)</span>: <span class="arithmatex">\(m\leftarrow 3\)</span></td>
             </tr>
             <tr>
             <td></td>
             <td>2</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-rossa"><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[3]=2<m\)</span>: <span class="arithmatex">\(m\leftarrow 2\)</span></td>
+            <td><span class="arithmatex">\(1{+}v[3]=2<m\)</span>: <span class="arithmatex">\(m\leftarrow 2\)</span></td>
             </tr>
             <tr>
             <td></td>
             <td>3</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[1]=+\infty\not<m=2\)</span>: no update</td>
+            <td><span class="arithmatex">\(1{+}v[1]=+\infty\not<m=2\)</span>: no update</td>
             </tr>
             <tr>
             <td></td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-blu"><span class="arithmatex">\(2\)</span></td>
             <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(g[6]\leftarrow m=2\)</span></td>
+            <td><span class="arithmatex">\(v[6]\leftarrow m=2\)</span></td>
             </tr>
             <tr>
             <td></td>
@@ -2542,28 +2568,28 @@ title: "Rod cutting and coin change"
             <td>1</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-rossa"><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[5]=2<m\)</span>: <span class="arithmatex">\(m\leftarrow 2\)</span></td>
+            <td><span class="arithmatex">\(1{+}v[5]=2<m\)</span>: <span class="arithmatex">\(m\leftarrow 2\)</span></td>
             </tr>
             <tr>
             <td></td>
             <td>2</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[4]=3\not<m=2\)</span>: no update</td>
+            <td><span class="arithmatex">\(1{+}v[4]=3\not<m=2\)</span>: no update</td>
             </tr>
             <tr>
             <td></td>
             <td>3</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[2]=2\not<m=2\)</span>: no update</td>
+            <td><span class="arithmatex">\(1{+}v[2]=2\not<m=2\)</span>: no update</td>
             </tr>
             <tr>
             <td></td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-blu"><span class="arithmatex">\(2\)</span></td>
             <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(g[7]\leftarrow m=2\)</span></td>
+            <td><span class="arithmatex">\(v[7]\leftarrow m=2\)</span></td>
             </tr>
             <tr>
             <td></td>
@@ -2577,28 +2603,28 @@ title: "Rod cutting and coin change"
             <td>1</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-rossa"><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[6]=3<m\)</span>: <span class="arithmatex">\(m\leftarrow 3\)</span></td>
+            <td><span class="arithmatex">\(1{+}v[6]=3<m\)</span>: <span class="arithmatex">\(m\leftarrow 3\)</span></td>
             </tr>
             <tr>
             <td></td>
             <td>2</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-rossa"><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[5]=2<m\)</span>: <span class="arithmatex">\(m\leftarrow 2\)</span></td>
+            <td><span class="arithmatex">\(1{+}v[5]=2<m\)</span>: <span class="arithmatex">\(m\leftarrow 2\)</span></td>
             </tr>
             <tr>
             <td></td>
             <td>3</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[3]=2\not<m=2\)</span>: no update</td>
+            <td><span class="arithmatex">\(1{+}v[3]=2\not<m=2\)</span>: no update</td>
             </tr>
             <tr>
             <td></td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-blu"><span class="arithmatex">\(2\)</span></td>
             <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(g[8]\leftarrow m=2\)</span></td>
+            <td><span class="arithmatex">\(v[8]\leftarrow m=2\)</span></td>
             </tr>
             <tr>
             <td></td>
@@ -2612,28 +2638,28 @@ title: "Rod cutting and coin change"
             <td>1</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-rossa"><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[7]=3<m\)</span>: <span class="arithmatex">\(m\leftarrow 3\)</span></td>
+            <td><span class="arithmatex">\(1{+}v[7]=3<m\)</span>: <span class="arithmatex">\(m\leftarrow 3\)</span></td>
             </tr>
             <tr>
             <td></td>
             <td>2</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[6]=3\not<m=3\)</span>: no update</td>
+            <td><span class="arithmatex">\(1{+}v[6]=3\not<m=3\)</span>: no update</td>
             </tr>
             <tr>
             <td></td>
             <td>3</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[4]=3\not<m=3\)</span>: no update</td>
+            <td><span class="arithmatex">\(1{+}v[4]=3\not<m=3\)</span>: no update</td>
             </tr>
             <tr>
             <td></td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-blu"><span class="arithmatex">\(3\)</span></td>
             <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(g[9]\leftarrow m=3\)</span></td>
+            <td><span class="arithmatex">\(v[9]\leftarrow m=3\)</span></td>
             </tr>
             <tr>
             <td></td>
@@ -2647,32 +2673,32 @@ title: "Rod cutting and coin change"
             <td>1</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-rossa"><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[8]=3<m\)</span>: <span class="arithmatex">\(m\leftarrow 3\)</span></td>
+            <td><span class="arithmatex">\(1{+}v[8]=3<m\)</span>: <span class="arithmatex">\(m\leftarrow 3\)</span></td>
             </tr>
             <tr>
             <td></td>
             <td>2</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[7]=3\not<m=3\)</span>: no update</td>
+            <td><span class="arithmatex">\(1{+}v[7]=3\not<m=3\)</span>: no update</td>
             </tr>
             <tr>
             <td></td>
             <td>3</td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-rossa"><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(1{+}g[5]=2<m\)</span>: <span class="arithmatex">\(m\leftarrow 2\)</span></td>
+            <td><span class="arithmatex">\(1{+}v[5]=2<m\)</span>: <span class="arithmatex">\(m\leftarrow 2\)</span></td>
             </tr>
             <tr>
             <td></td>
             <td><span class="arithmatex">\(-\)</span></td>
             <td class="cella-blu"><span class="arithmatex">\(2\)</span></td>
             <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(g[10]\leftarrow m=2\)</span></td>
+            <td><span class="arithmatex">\(v[10]\leftarrow m=2\)</span></td>
             </tr>
             </table></div>
 
-            This is the array $g$ after the execution of the DP algorithm:
+            This is the array $v$ after the execution of the DP algorithm:
 
             <div class="tabella" markdown="0"><table>
             <tr>
@@ -2690,7 +2716,7 @@ title: "Rod cutting and coin change"
             <th>10</th>
             </tr>
             <tr>
-            <td><span class="arithmatex">\(g[k]\)</span></td>
+            <td><span class="arithmatex">\(v[k]\)</span></td>
             <td>0</td>
             <td><span class="arithmatex">\(+\infty\)</span></td>
             <td>1</td>
@@ -2705,23 +2731,23 @@ title: "Rod cutting and coin change"
             </tr>
             </table></div>
 
-    - After the execution of the DP algorithm, the array $g$ contains the optimal value $g[k]$ for every amount of change $k \in \{0,1,\dots,c\}$, where $g[c]$ is the minimum number of coins needed to return the amount of change $c$.
+    - After the execution of the DP algorithm, the array $v$ contains the optimal value $v[k]$ for every amount of change $k \in \{0,1,\dots,c\}$, where $v[c]$ is the minimum number of coins needed to return the amount of change $c$.
 
 - <u>Step 2</u>: computation of an optimal solution
 
     - To compute an optimal solution, i.e., the integer vector $(x_1,x_2,\dots,x_n)$, it is necessary to store some additional information.
 
-    - For each amount of change $k$, in addition to the optimal value $g[k]$, we store $s[k]$, the index of the denomination of the coin used to obtain the optimal value $g[k]$ in formula $\eqref{eq:ccp}$.
+    - For each amount of change $k$, in addition to the optimal value $v[k]$, we store $s[k]$, the index of the denomination of the coin used to obtain the optimal value $v[k]$ in formula $\eqref{eq:ccp}$.
 
-    - More precisely, $s[k]$ is equal to the index $j$ of the denomination $w_j$ that minimizes the right-hand side of formula $\eqref{eq:ccp}$ when computing $g[k]$.
+    - More precisely, $s[k]$ is equal to the index $j$ of the denomination $w_j$ that minimizes the right-hand side of formula $\eqref{eq:ccp}$ when computing $v[k]$.
 
         This is the pseudo-code of the <strong>DP algorithm using the bottom-up approach</strong> with the storing of the information necessary to construct an optimal solution:
 
         !!! algoritmo "Algorithm: CCP\_DP\_InfoSol"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A CCP instance given by <span class="arithmatex">\(n\)</span>, the array <span class="arithmatex">\(w[1..n]\)</span> of denominations, and the amount of change <span class="arithmatex">\(c\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value and the array <span class="arithmatex">\(s[0..c]\)</span> of the indices of the denominations used</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> CCP_DP_InfoSol(<span class="arithmatex">\(n,w,c\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(g := \textnormal{new array}[0..c]\)</span>; <span class="arithmatex">\(s := \textnormal{new array}[0..c]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><span class="arithmatex">\(g[0] \leftarrow 0\)</span>; <span class="arithmatex">\(s[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(k := 1\)</span> <strong>to</strong> <span class="arithmatex">\(c\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">5</span><span class="arithmatex">\(m := +\infty\)</span>; <span class="arithmatex">\(t := 0\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(w[j]\le k\)</span>  and <span class="arithmatex">\(1+g[k-w[j]] < m\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">8</span><span class="arithmatex">\(m \leftarrow 1+g[k-w[j]]\)</span>; <span class="arithmatex">\(t \leftarrow j\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">11</span><span class="arithmatex">\(g[k] \leftarrow m\)</span>; <span class="arithmatex">\(s[k] \leftarrow t\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">13</span><strong>return</strong> <span class="arithmatex">\(g[c], s\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A CCP instance given by <span class="arithmatex">\(n\)</span>, the array <span class="arithmatex">\(w[1..n]\)</span> of denominations, and the amount of change <span class="arithmatex">\(c\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value and the array <span class="arithmatex">\(s[0..c]\)</span> of the indices of the denominations used</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> CCP_DP_InfoSol(<span class="arithmatex">\(n,w,c\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(v := \textnormal{new array}[0..c]\)</span>; <span class="arithmatex">\(s := \textnormal{new array}[0..c]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><span class="arithmatex">\(v[0] \leftarrow 0\)</span>; <span class="arithmatex">\(s[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(k := 1\)</span> <strong>to</strong> <span class="arithmatex">\(c\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">5</span><span class="arithmatex">\(m := +\infty\)</span>; <span class="arithmatex">\(t := 0\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(w[j]\le k\)</span>  and <span class="arithmatex">\(1+v[k-w[j]] < m\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">8</span><span class="arithmatex">\(m \leftarrow 1+v[k-w[j]]\)</span>; <span class="arithmatex">\(t \leftarrow j\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">11</span><span class="arithmatex">\(v[k] \leftarrow m\)</span>; <span class="arithmatex">\(s[k] \leftarrow t\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">13</span><strong>return</strong> <span class="arithmatex">\(v[c], s\)</span></div></div>
 
-        - The DP algorithm uses the additional temporary variable $t$ to keep track of the decision made when $m$ is updated. If the denomination $w[j]$ is used, $t \leftarrow j$ stores its index. At the end of the inner loop, $s[k]\leftarrow t$ stores the index of the denomination of the coin used, together with the optimal value $g[k]\leftarrow m$.
+        - The DP algorithm uses the additional temporary variable $t$ to keep track of the decision made when $m$ is updated. If the denomination $w[j]$ is used, $t \leftarrow j$ stores its index. At the end of the inner loop, $s[k]\leftarrow t$ stores the index of the denomination of the coin used, together with the optimal value $v[k]\leftarrow m$.
 
         <a id="box-51-texccpinfo"></a>
 
@@ -2762,9 +2788,9 @@ title: "Rod cutting and coin change"
             </tr>
             </table></div>
 
-            For example, $s[5]=3$ since formula $\eqref{eq:ccp}$ selects the denomination $w_3=5$ when computing $g[5]=1$, and $s[10]=3$ since the denomination $w_3=5$ is also selected when computing $g[10]=2$. The entry $s[1]$ is left undefined ($0$, by convention), since $g[1]=+\infty$ is infeasible.
+            For example, $s[5]=3$ since formula $\eqref{eq:ccp}$ selects the denomination $w_3=5$ when computing $v[5]=1$, and $s[10]=3$ since the denomination $w_3=5$ is also selected when computing $v[10]=2$. The entry $s[1]$ is left undefined ($0$, by convention), since $v[1]=+\infty$ is infeasible.
 
-    - Once the array $s$ has been computed, and provided that $g[c]<+\infty$, an optimal solution can be reconstructed by repeatedly using one coin of denomination $s[k]$ and moving to the residual amount of change $k-w_{s[k]}$, starting from $k=c$ and $x_j=0$ for all $j \in \{1,2,\dots,n\}$, until $k=0$:
+    - Once the array $s$ has been computed, and provided that $v[c]<+\infty$, an optimal solution can be reconstructed by repeatedly using one coin of denomination $s[k]$ and moving to the residual amount of change $k-w_{s[k]}$, starting from $k=c$ and $x_j=0$ for all $j \in \{1,2,\dots,n\}$, until $k=0$:
 
         $$
         x_{s[k]} \leftarrow x_{s[k]}+1, \qquad k \leftarrow k - w_{s[k]}.
@@ -2772,11 +2798,11 @@ title: "Rod cutting and coin change"
 
         This yields the vector $(x_1,x_2,\dots,x_n)$, where each entry $x_j$ is the number of coins of denomination $j$ in an optimal solution.
 
-    - The condition $g[c]<+\infty$ is necessary: if $g[c]=+\infty$ the instance is infeasible, $s[c]=0$ and there is no solution to reconstruct. If $g[c]<+\infty$, then $s[k]\ge 1$ for every amount of change $k$ visited by the procedure.
+    - The condition $v[c]<+\infty$ is necessary: if $v[c]=+\infty$ the instance is infeasible, $s[c]=0$ and there is no solution to reconstruct. If $v[c]<+\infty$, then $s[k]\ge 1$ for every amount of change $k$ visited by the procedure.
 
         !!! algoritmo "Algorithm: CCP\_Reconstruct"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> The number <span class="arithmatex">\(n\)</span> of denominations, the array <span class="arithmatex">\(w[1..n]\)</span>, the amount of change <span class="arithmatex">\(c\)</span> with <span class="arithmatex">\(g[c]<+\infty\)</span>, and the array <span class="arithmatex">\(s[0..c]\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> An optimal solution</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> CCP_Reconstruct(<span class="arithmatex">\(n,w,c,s\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(x := \textnormal{new array}[1..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(x[j] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><span class="arithmatex">\(k := c\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><strong>while</strong> <span class="arithmatex">\(k>0\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><span class="arithmatex">\(x[s[k]] \leftarrow x[s[k]]+1\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">9</span><span class="arithmatex">\(k \leftarrow k-w[s[k]]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">11</span><strong>return</strong> <span class="arithmatex">\(x\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> The number <span class="arithmatex">\(n\)</span> of denominations, the array <span class="arithmatex">\(w[1..n]\)</span>, the amount of change <span class="arithmatex">\(c\)</span> with <span class="arithmatex">\(v[c]<+\infty\)</span>, and the array <span class="arithmatex">\(s[0..c]\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> An optimal solution</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> CCP_Reconstruct(<span class="arithmatex">\(n,w,c,s\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(x := \textnormal{new array}[1..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(x[j] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><span class="arithmatex">\(k := c\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><strong>while</strong> <span class="arithmatex">\(k>0\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><span class="arithmatex">\(x[s[k]] \leftarrow x[s[k]]+1\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">9</span><span class="arithmatex">\(k \leftarrow k-w[s[k]]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">11</span><strong>return</strong> <span class="arithmatex">\(x\)</span></div></div>
 
         <a id="box-52-texccpsolvector"></a>
 
@@ -2906,16 +2932,6 @@ title: "Rod cutting and coin change"
     S(n,c)=\Theta(nc).
     $$
 
-    !!! chiave ""
-
-        The DP algorithm executes
-
-        $$
-        S(n,c)=\Theta(nc)
-        $$
-
-        steps in the worst case.
-
     Indeed,
 
     $$
@@ -2928,6 +2944,16 @@ title: "Rod cutting and coin change"
     3\in\mathbb{R}_{>0}.
     $$
 
+    !!! chiave ""
+
+        The DP algorithm executes
+
+        $$
+        S(n,c)=\Theta(nc)
+        $$
+
+        steps in the worst case.
+
 - The version <code>CCP\_DP\_InfoSol</code> stores the additional array $s$ and performs only a constant number of extra operations inside the same loops. Therefore, its number of steps remains $\Theta(nc)$.
 
 ### 16.2.3 Typical mistakes
@@ -2936,7 +2962,7 @@ title: "Rod cutting and coin change"
 
     - <strong>Using $0$ instead of $+\infty$.</strong> An amount that cannot be returned has $v(k)=+\infty$; with the value $0$ the DP algorithm would claim that no coin is needed.
 
-    - <strong>Reconstructing an infeasible instance.</strong> If $g[c]=+\infty$ then $s[c]=0$ and the reconstruction would never stop: the DP algorithm must first check that $g[c]<+\infty$.
+    - <strong>Reconstructing an infeasible instance.</strong> If $v[c]=+\infty$ then $s[c]=0$, and the reconstruction would read $x[0]$ and $w[0]$, outside the arrays: it must first check that $v[c]<+\infty$.
 
     - <strong>Storing the value of the coin instead of its index.</strong> The vector $x$ is indexed by the denominations: $s[k]$ stores the index $j$, and the coin value is $w_{s[k]}$.
 
@@ -2950,7 +2976,7 @@ title: "Rod cutting and coin change"
 
     - The recurrence $v(k)=\min_{j:\,w_j\le k}\{1+v(k-w_j)\}$ is computed bottom-up in $\Theta(nc)$ steps, which is pseudo-polynomial.
 
-    - An optimal solution is read backwards from $s[c]$, the index of the last coin used, and only if $g[c]<+\infty$.
+    - An optimal solution is read backwards from $s[c]$, the index of the denomination of the first coin chosen for the amount $c$, and only if $v[c]<+\infty$.
 
     <strong>Dashboard of the CCP example.</strong> Example 1 ($c=10$, $w=(2,3,5)$):
 

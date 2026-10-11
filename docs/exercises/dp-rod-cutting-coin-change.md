@@ -5348,7 +5348,7 @@ title: "Exercises · Rod cutting and coin change"
 
     **Questions**
 
-    1. Show the execution of the bottom-up DP algorithm by reporting, for each iteration, the values of the array $g$ and the array $s$.
+    1. Show the execution of the bottom-up DP algorithm by reporting, for each iteration, the values of the array $v$ and the array $s$.
 
     2. Using the array $s$, reconstruct an optimal solution in integer notation $(x_1,x_2)$, and report the optimal value.
 
@@ -5356,64 +5356,64 @@ title: "Exercises · Rod cutting and coin change"
 
     1. Step-by-step execution of the bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the value of $j$, the cells $g[j]$ and $s[j]$, and the operation performed.
+        For each step of the DP algorithm, the table shows the amount of change $k$, the cells $v[k]$ and $s[k]$, and the operation performed; $s[k]$ is the index $j$ of the denomination of the coin used. In case of ties the smallest index is kept, because $m$ is updated only when the value is strictly smaller.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
-        <th><span class="arithmatex">\(g[j]\)</span></th>
-        <th><span class="arithmatex">\(s[j]\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
+        <th><span class="arithmatex">\(v[k]\)</span></th>
+        <th><span class="arithmatex">\(s[k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(g[0]\leftarrow 0\)</span>, <span class="arithmatex">\(s[0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(v[0]\leftarrow 0\)</span>, <span class="arithmatex">\(s[0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td>1</td>
         <td>1</td>
         <td>1</td>
-        <td><span class="arithmatex">\(\min\{1+g[0]\}=\min\{1\}=1\)</span></td>
+        <td><span class="arithmatex">\(\min\{1+v[0]\}=\min\{1\}=1\)</span></td>
         </tr>
         <tr>
         <td>2</td>
         <td>2</td>
         <td>1</td>
-        <td><span class="arithmatex">\(\min\{1+g[1]\}=\min\{2\}=2\)</span></td>
+        <td><span class="arithmatex">\(\min\{1+v[1]\}=\min\{2\}=2\)</span></td>
         </tr>
         <tr>
         <td>3</td>
         <td>3</td>
         <td>1</td>
-        <td><span class="arithmatex">\(\min\{1+g[2]\}=\min\{3\}=3\)</span></td>
+        <td><span class="arithmatex">\(\min\{1+v[2]\}=\min\{3\}=3\)</span></td>
         </tr>
         <tr>
         <td>4</td>
         <td>1</td>
-        <td>4</td>
-        <td><span class="arithmatex">\(\min\{1+g[3],\,1+g[0]\}=\min\{4,1\}=1\)</span></td>
+        <td>2</td>
+        <td><span class="arithmatex">\(\min\{1+v[3],\,1+v[0]\}=\min\{4,1\}=1\)</span></td>
         </tr>
         <tr>
         <td>5</td>
         <td>2</td>
         <td>1</td>
-        <td><span class="arithmatex">\(\min\{1+g[4],\,1+g[1]\}=\min\{2,2\}=2\)</span></td>
+        <td><span class="arithmatex">\(\min\{1+v[4],\,1+v[1]\}=\min\{2,2\}=2\)</span></td>
         </tr>
         <tr>
         <td>6</td>
         <td>3</td>
         <td>1</td>
-        <td><span class="arithmatex">\(\min\{1+g[5],\,1+g[2]\}=\min\{3,3\}=3\)</span></td>
+        <td><span class="arithmatex">\(\min\{1+v[5],\,1+v[2]\}=\min\{3,3\}=3\)</span></td>
         </tr>
         </table></div>
 
-        This is the array $g$ after the execution of the DP algorithm:
+        This is the array $v$ after the execution of the DP algorithm:
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
         <th>0</th>
         <th>1</th>
         <th>2</th>
@@ -5423,7 +5423,7 @@ title: "Exercises · Rod cutting and coin change"
         <th>6</th>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(g[j]\)</span></td>
+        <td><span class="arithmatex">\(v[k]\)</span></td>
         <td>0</td>
         <td>1</td>
         <td>2</td>
@@ -5438,7 +5438,7 @@ title: "Exercises · Rod cutting and coin change"
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
         <th>0</th>
         <th>1</th>
         <th>2</th>
@@ -5448,12 +5448,12 @@ title: "Exercises · Rod cutting and coin change"
         <th>6</th>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(s[j]\)</span></td>
+        <td><span class="arithmatex">\(s[k]\)</span></td>
         <td>0</td>
         <td>1</td>
         <td>1</td>
         <td>1</td>
-        <td>4</td>
+        <td>2</td>
         <td>1</td>
         <td>1</td>
         </tr>
@@ -5463,7 +5463,7 @@ title: "Exercises · Rod cutting and coin change"
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
         <th>0</th>
         <th>1</th>
         <th>2</th>
@@ -5473,62 +5473,72 @@ title: "Exercises · Rod cutting and coin change"
         <th>6</th>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(s[j]\)</span></td>
+        <td><span class="arithmatex">\(s[k]\)</span></td>
         <td>0</td>
         <td>1</td>
         <td>1</td>
         <td>1</td>
-        <td>4</td>
+        <td>2</td>
         <td>1</td>
         <td>1</td>
         </tr>
         </table></div>
 
-        We can reconstruct an optimal solution by starting from $j=6$ as follows:
+        We can reconstruct an optimal solution by starting from $k=6$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(j\)</span></th>
-        <th><span class="arithmatex">\(s[j]\)</span></th>
-        <th>Action</th>
+        <th><span class="arithmatex">\(k\)</span></th>
+        <th><span class="arithmatex">\(s[k]\)</span></th>
+        <th><span class="arithmatex">\(x[1]\)</span></th>
+        <th><span class="arithmatex">\(x[2]\)</span></th>
+        <th><span class="arithmatex">\(k \leftarrow k-w_{s[k]}\)</span></th>
         </tr>
         <tr>
         <td><span class="arithmatex">\(-\)</span></td>
-        <td>6</td>
         <td><span class="arithmatex">\(-\)</span></td>
-        <td>coin list <span class="arithmatex">\(=\emptyset\)</span></td>
+        <td><span class="arithmatex">\(-\)</span></td>
+        <td>0</td>
+        <td>0</td>
+        <td><span class="arithmatex">\(k=6\)</span></td>
         </tr>
         <tr>
-        <td>1</td>
-        <td>6</td>
+        <td><span class="arithmatex">\(1\)</span></td>
+        <td><span class="arithmatex">\(6\)</span></td>
+        <td><span class="arithmatex">\(1\)</span></td>
         <td class="cella-blu">1</td>
-        <td>use coin <span class="arithmatex">\(1\)</span>, <span class="arithmatex">\(j\leftarrow 6-1=5\)</span></td>
+        <td>0</td>
+        <td><span class="arithmatex">\(k=6-1=5\)</span></td>
         </tr>
         <tr>
+        <td><span class="arithmatex">\(2\)</span></td>
+        <td><span class="arithmatex">\(5\)</span></td>
+        <td><span class="arithmatex">\(1\)</span></td>
+        <td class="cella-blu">2</td>
+        <td>0</td>
+        <td><span class="arithmatex">\(k=5-1=4\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(3\)</span></td>
+        <td><span class="arithmatex">\(4\)</span></td>
+        <td><span class="arithmatex">\(2\)</span></td>
         <td>2</td>
-        <td>5</td>
         <td class="cella-blu">1</td>
-        <td>use coin <span class="arithmatex">\(1\)</span>, <span class="arithmatex">\(j\leftarrow 5-1=4\)</span></td>
-        </tr>
-        <tr>
-        <td>3</td>
-        <td>4</td>
-        <td class="cella-blu">4</td>
-        <td>use coin <span class="arithmatex">\(4\)</span>, <span class="arithmatex">\(j\leftarrow 4-4=0\)</span></td>
+        <td><span class="arithmatex">\(k=4-4=0\)</span></td>
         </tr>
         </table></div>
 
-        Thus, an optimal solution uses the coins $[1,1,4]$, i.e.,
+        Thus, the vector
 
         $$
         (2,1)
         $$
 
-        The corresponding total value is $2\cdot1+1\cdot4=6=c$. The corresponding optimal value is
+        is an optimal solution: its total value is $2\cdot1+1\cdot4=6=c$. The optimal value is
 
         $$
-        g[6]=3.
+        v[6]=3.
         $$
 
 <a id="esercizio-16-7"></a>
@@ -5543,7 +5553,7 @@ title: "Exercises · Rod cutting and coin change"
 
     **Questions**
 
-    1. Show the execution of the bottom-up DP algorithm by reporting, for each iteration, the values of the array $g$ and the array $s$.
+    1. Show the execution of the bottom-up DP algorithm by reporting, for each iteration, the values of the array $v$ and the array $s$.
 
     2. Using the array $s$, reconstruct an optimal solution in integer notation $(x_1,x_2)$, and report the optimal value.
 
@@ -5551,94 +5561,94 @@ title: "Exercises · Rod cutting and coin change"
 
     1. Step-by-step execution of the bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the value of $j$, the cells $g[j]$ and $s[j]$, and the operation performed. The value $+\infty$ denotes an infeasible amount of change, for which $s[j]$ is left undefined ($0$, by convention).
+        For each step of the DP algorithm, the table shows the amount of change $k$, the cells $v[k]$ and $s[k]$, and the operation performed; $s[k]$ is the index $j$ of the denomination of the coin used. In case of ties the smallest index is kept, because $m$ is updated only when the value is strictly smaller. The value $+\infty$ denotes an amount of change that cannot be returned, for which $s[k]=0$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
-        <th><span class="arithmatex">\(g[j]\)</span></th>
-        <th><span class="arithmatex">\(s[j]\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
+        <th><span class="arithmatex">\(v[k]\)</span></th>
+        <th><span class="arithmatex">\(s[k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(g[0]\leftarrow 0\)</span>, <span class="arithmatex">\(s[0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(v[0]\leftarrow 0\)</span>, <span class="arithmatex">\(s[0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td>1</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td>0</td>
-        <td>no denomination <span class="arithmatex">\(w_i\le 1\)</span>: <span class="arithmatex">\(g[1]\leftarrow +\infty\)</span></td>
+        <td>no denomination <span class="arithmatex">\(w_j\le 1\)</span>: <span class="arithmatex">\(v[1]\leftarrow +\infty\)</span></td>
         </tr>
         <tr>
         <td>2</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td>0</td>
-        <td>no denomination <span class="arithmatex">\(w_i\le 2\)</span>: <span class="arithmatex">\(g[2]\leftarrow +\infty\)</span></td>
+        <td>no denomination <span class="arithmatex">\(w_j\le 2\)</span>: <span class="arithmatex">\(v[2]\leftarrow +\infty\)</span></td>
         </tr>
         <tr>
         <td>3</td>
         <td>1</td>
-        <td>3</td>
-        <td><span class="arithmatex">\(\min\{1+g[0]\}=\min\{1\}=1\)</span></td>
+        <td>1</td>
+        <td><span class="arithmatex">\(\min\{1+v[0]\}=\min\{1\}=1\)</span></td>
         </tr>
         <tr>
         <td>4</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td>0</td>
-        <td><span class="arithmatex">\(\min\{1+g[1]\}=\min\{+\infty\}=+\infty\)</span></td>
+        <td><span class="arithmatex">\(\min\{1+v[1]\}=\min\{+\infty\}=+\infty\)</span></td>
         </tr>
         <tr>
         <td>5</td>
         <td>1</td>
-        <td>5</td>
-        <td><span class="arithmatex">\(\min\{1+g[2],\,1+g[0]\}=\min\{+\infty,1\}=1\)</span></td>
+        <td>2</td>
+        <td><span class="arithmatex">\(\min\{1+v[2],\,1+v[0]\}=\min\{+\infty,1\}=1\)</span></td>
         </tr>
         <tr>
         <td>6</td>
         <td>2</td>
-        <td>3</td>
-        <td><span class="arithmatex">\(\min\{1+g[3],\,1+g[1]\}=\min\{2,+\infty\}=2\)</span></td>
+        <td>1</td>
+        <td><span class="arithmatex">\(\min\{1+v[3],\,1+v[1]\}=\min\{2,+\infty\}=2\)</span></td>
         </tr>
         <tr>
         <td>7</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td>0</td>
-        <td><span class="arithmatex">\(\min\{1+g[4],\,1+g[2]\}=\min\{+\infty,+\infty\}=+\infty\)</span></td>
+        <td><span class="arithmatex">\(\min\{1+v[4],\,1+v[2]\}=\min\{+\infty,+\infty\}=+\infty\)</span></td>
         </tr>
         <tr>
         <td>8</td>
         <td>2</td>
-        <td>3</td>
-        <td><span class="arithmatex">\(\min\{1+g[5],\,1+g[3]\}=\min\{2,2\}=2\)</span></td>
+        <td>1</td>
+        <td><span class="arithmatex">\(\min\{1+v[5],\,1+v[3]\}=\min\{2,2\}=2\)</span></td>
         </tr>
         <tr>
         <td>9</td>
         <td>3</td>
-        <td>3</td>
-        <td><span class="arithmatex">\(\min\{1+g[6],\,1+g[4]\}=\min\{3,+\infty\}=3\)</span></td>
+        <td>1</td>
+        <td><span class="arithmatex">\(\min\{1+v[6],\,1+v[4]\}=\min\{3,+\infty\}=3\)</span></td>
         </tr>
         <tr>
         <td>10</td>
         <td>2</td>
-        <td>5</td>
-        <td><span class="arithmatex">\(\min\{1+g[7],\,1+g[5]\}=\min\{+\infty,2\}=2\)</span></td>
+        <td>2</td>
+        <td><span class="arithmatex">\(\min\{1+v[7],\,1+v[5]\}=\min\{+\infty,2\}=2\)</span></td>
         </tr>
         <tr>
         <td>11</td>
         <td>3</td>
-        <td>3</td>
-        <td><span class="arithmatex">\(\min\{1+g[8],\,1+g[6]\}=\min\{3,3\}=3\)</span></td>
+        <td>1</td>
+        <td><span class="arithmatex">\(\min\{1+v[8],\,1+v[6]\}=\min\{3,3\}=3\)</span></td>
         </tr>
         </table></div>
 
-        This is the array $g$ after the execution of the DP algorithm:
+        This is the array $v$ after the execution of the DP algorithm:
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
         <th>0</th>
         <th>1</th>
         <th>2</th>
@@ -5653,7 +5663,7 @@ title: "Exercises · Rod cutting and coin change"
         <th>11</th>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(g[j]\)</span></td>
+        <td><span class="arithmatex">\(v[k]\)</span></td>
         <td>0</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
@@ -5673,7 +5683,7 @@ title: "Exercises · Rod cutting and coin change"
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
         <th>0</th>
         <th>1</th>
         <th>2</th>
@@ -5688,19 +5698,19 @@ title: "Exercises · Rod cutting and coin change"
         <th>11</th>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(s[j]\)</span></td>
+        <td><span class="arithmatex">\(s[k]\)</span></td>
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td>3</td>
+        <td>1</td>
         <td>0</td>
-        <td>5</td>
-        <td>3</td>
+        <td>2</td>
+        <td>1</td>
         <td>0</td>
-        <td>3</td>
-        <td>3</td>
-        <td>5</td>
-        <td>3</td>
+        <td>1</td>
+        <td>1</td>
+        <td>2</td>
+        <td>1</td>
         </tr>
         </table></div>
 
@@ -5708,7 +5718,7 @@ title: "Exercises · Rod cutting and coin change"
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
         <th>0</th>
         <th>1</th>
         <th>2</th>
@@ -5723,67 +5733,77 @@ title: "Exercises · Rod cutting and coin change"
         <th>11</th>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(s[j]\)</span></td>
+        <td><span class="arithmatex">\(s[k]\)</span></td>
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td>3</td>
+        <td>1</td>
         <td>0</td>
-        <td>5</td>
-        <td>3</td>
+        <td>2</td>
+        <td>1</td>
         <td>0</td>
-        <td>3</td>
-        <td>3</td>
-        <td>5</td>
-        <td>3</td>
+        <td>1</td>
+        <td>1</td>
+        <td>2</td>
+        <td>1</td>
         </tr>
         </table></div>
 
-        We can reconstruct an optimal solution by starting from $j=11$ as follows:
+        We can reconstruct an optimal solution by starting from $k=11$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(j\)</span></th>
-        <th><span class="arithmatex">\(s[j]\)</span></th>
-        <th>Action</th>
+        <th><span class="arithmatex">\(k\)</span></th>
+        <th><span class="arithmatex">\(s[k]\)</span></th>
+        <th><span class="arithmatex">\(x[1]\)</span></th>
+        <th><span class="arithmatex">\(x[2]\)</span></th>
+        <th><span class="arithmatex">\(k \leftarrow k-w_{s[k]}\)</span></th>
         </tr>
         <tr>
         <td><span class="arithmatex">\(-\)</span></td>
-        <td>11</td>
         <td><span class="arithmatex">\(-\)</span></td>
-        <td>coin list <span class="arithmatex">\(=\emptyset\)</span></td>
+        <td><span class="arithmatex">\(-\)</span></td>
+        <td>0</td>
+        <td>0</td>
+        <td><span class="arithmatex">\(k=11\)</span></td>
         </tr>
         <tr>
-        <td>1</td>
-        <td>11</td>
-        <td class="cella-blu">3</td>
-        <td>use coin <span class="arithmatex">\(3\)</span>, <span class="arithmatex">\(j\leftarrow 11-3=8\)</span></td>
+        <td><span class="arithmatex">\(1\)</span></td>
+        <td><span class="arithmatex">\(11\)</span></td>
+        <td><span class="arithmatex">\(1\)</span></td>
+        <td class="cella-blu">1</td>
+        <td>0</td>
+        <td><span class="arithmatex">\(k=11-3=8\)</span></td>
         </tr>
         <tr>
+        <td><span class="arithmatex">\(2\)</span></td>
+        <td><span class="arithmatex">\(8\)</span></td>
+        <td><span class="arithmatex">\(1\)</span></td>
+        <td class="cella-blu">2</td>
+        <td>0</td>
+        <td><span class="arithmatex">\(k=8-3=5\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(3\)</span></td>
+        <td><span class="arithmatex">\(5\)</span></td>
+        <td><span class="arithmatex">\(2\)</span></td>
         <td>2</td>
-        <td>8</td>
-        <td class="cella-blu">3</td>
-        <td>use coin <span class="arithmatex">\(3\)</span>, <span class="arithmatex">\(j\leftarrow 8-3=5\)</span></td>
-        </tr>
-        <tr>
-        <td>3</td>
-        <td>5</td>
-        <td class="cella-blu">5</td>
-        <td>use coin <span class="arithmatex">\(5\)</span>, <span class="arithmatex">\(j\leftarrow 5-5=0\)</span></td>
+        <td class="cella-blu">1</td>
+        <td><span class="arithmatex">\(k=5-5=0\)</span></td>
         </tr>
         </table></div>
 
-        Thus, an optimal solution uses the coins $[3,3,5]$, i.e.,
+        Thus, the vector
 
         $$
         (2,1)
         $$
 
-        The corresponding total value is $2\cdot3+1\cdot5=11=c$. The corresponding optimal value is
+        is an optimal solution: its total value is $2\cdot3+1\cdot5=11=c$. The optimal value is
 
         $$
-        g[11]=3.
+        v[11]=3.
         $$
 
 <a id="esercizio-16-8"></a>
@@ -5798,78 +5818,78 @@ title: "Exercises · Rod cutting and coin change"
 
     **Questions**
 
-    1. Show the execution of the bottom-up DP algorithm by reporting, for each iteration, the values of the array $g$ and the array $s$.
+    1. Show the execution of the bottom-up DP algorithm by reporting, for each iteration, the values of the array $v$ and the array $s$.
 
-    2. Using the array $s$, reconstruct an optimal solution, or explain why the instance is infeasible, and report the optimal value.
+    2. Using the array $s$, reconstruct an optimal solution in integer notation $(x_1,x_2)$, or explain why the instance is infeasible, and report the optimal value.
 
 ??? soluzione "Solution"
 
     1. Step-by-step execution of the bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the value of $j$, the cells $g[j]$ and $s[j]$, and the operation performed. The value $+\infty$ denotes an infeasible amount of change, for which $s[j]$ is left undefined ($0$, by convention).
+        For each step of the DP algorithm, the table shows the amount of change $k$, the cells $v[k]$ and $s[k]$, and the operation performed; $s[k]$ is the index $j$ of the denomination of the coin used. In case of ties the smallest index is kept, because $m$ is updated only when the value is strictly smaller. The value $+\infty$ denotes an amount of change that cannot be returned, for which $s[k]=0$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
-        <th><span class="arithmatex">\(g[j]\)</span></th>
-        <th><span class="arithmatex">\(s[j]\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
+        <th><span class="arithmatex">\(v[k]\)</span></th>
+        <th><span class="arithmatex">\(s[k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(g[0]\leftarrow 0\)</span>, <span class="arithmatex">\(s[0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(v[0]\leftarrow 0\)</span>, <span class="arithmatex">\(s[0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td>1</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td>0</td>
-        <td>no denomination <span class="arithmatex">\(w_i\le 1\)</span>: <span class="arithmatex">\(g[1]\leftarrow +\infty\)</span></td>
+        <td>no denomination <span class="arithmatex">\(w_j\le 1\)</span>: <span class="arithmatex">\(v[1]\leftarrow +\infty\)</span></td>
         </tr>
         <tr>
         <td>2</td>
         <td>1</td>
-        <td>2</td>
-        <td><span class="arithmatex">\(\min\{1+g[0]\}=\min\{1\}=1\)</span></td>
+        <td>1</td>
+        <td><span class="arithmatex">\(\min\{1+v[0]\}=\min\{1\}=1\)</span></td>
         </tr>
         <tr>
         <td>3</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td>0</td>
-        <td><span class="arithmatex">\(\min\{1+g[1]\}=\min\{+\infty\}=+\infty\)</span></td>
+        <td><span class="arithmatex">\(\min\{1+v[1]\}=\min\{+\infty\}=+\infty\)</span></td>
         </tr>
         <tr>
         <td>4</td>
         <td>1</td>
-        <td>4</td>
-        <td><span class="arithmatex">\(\min\{1+g[2],\,1+g[0]\}=\min\{2,1\}=1\)</span></td>
+        <td>2</td>
+        <td><span class="arithmatex">\(\min\{1+v[2],\,1+v[0]\}=\min\{2,1\}=1\)</span></td>
         </tr>
         <tr>
         <td>5</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td>0</td>
-        <td><span class="arithmatex">\(\min\{1+g[3],\,1+g[1]\}=\min\{+\infty,+\infty\}=+\infty\)</span></td>
+        <td><span class="arithmatex">\(\min\{1+v[3],\,1+v[1]\}=\min\{+\infty,+\infty\}=+\infty\)</span></td>
         </tr>
         <tr>
         <td>6</td>
         <td>2</td>
-        <td>2</td>
-        <td><span class="arithmatex">\(\min\{1+g[4],\,1+g[2]\}=\min\{2,2\}=2\)</span></td>
+        <td>1</td>
+        <td><span class="arithmatex">\(\min\{1+v[4],\,1+v[2]\}=\min\{2,2\}=2\)</span></td>
         </tr>
         <tr>
         <td>7</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td>0</td>
-        <td><span class="arithmatex">\(\min\{1+g[5],\,1+g[3]\}=\min\{+\infty,+\infty\}=+\infty\)</span></td>
+        <td><span class="arithmatex">\(\min\{1+v[5],\,1+v[3]\}=\min\{+\infty,+\infty\}=+\infty\)</span></td>
         </tr>
         </table></div>
 
-        This is the array $g$ after the execution of the DP algorithm:
+        This is the array $v$ after the execution of the DP algorithm:
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
         <th>0</th>
         <th>1</th>
         <th>2</th>
@@ -5880,7 +5900,7 @@ title: "Exercises · Rod cutting and coin change"
         <th>7</th>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(g[j]\)</span></td>
+        <td><span class="arithmatex">\(v[k]\)</span></td>
         <td>0</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td>1</td>
@@ -5896,7 +5916,7 @@ title: "Exercises · Rod cutting and coin change"
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
         <th>0</th>
         <th>1</th>
         <th>2</th>
@@ -5907,51 +5927,24 @@ title: "Exercises · Rod cutting and coin change"
         <th>7</th>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(s[j]\)</span></td>
+        <td><span class="arithmatex">\(s[k]\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td>2</td>
-        <td>0</td>
-        <td>4</td>
+        <td>1</td>
         <td>0</td>
         <td>2</td>
+        <td>0</td>
+        <td>1</td>
         <td>0</td>
         </tr>
         </table></div>
 
-    2. We have the following array $g$:
+    2. Since $v[7]=+\infty$, the instance is <strong>infeasible</strong>: no combination of coins of denominations $w=(2,4)$ returns an amount of change exactly equal to $c=7$. Indeed, every denomination is even, so every amount of change that can be returned is even, while $c=7$ is odd.
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
-        <th>0</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        <th>7</th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(g[j]\)</span></td>
-        <td>0</td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td>1</td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td>1</td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td>2</td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        </tr>
-        </table></div>
-
-        Since $g[7]=+\infty$, the instance is <strong>infeasible</strong>: no combination of coins of denominations $w=(2,4)$ returns an amount of change exactly equal to $c=7$. Indeed, every denomination is even, so every feasible amount of change must be even, while $c=7$ is odd. Since $g[7]=+\infty$, no optimal solution can be reconstructed, and the array $s[7]$ is left undefined.
-
-        Thus, the optimal value is
+        Since $s[7]=0$, there is no solution to reconstruct. The optimal value is
 
         $$
-        g[7]=+\infty.
+        v[7]=+\infty.
         $$
 
 <a id="esercizio-16-9"></a>
@@ -5966,7 +5959,7 @@ title: "Exercises · Rod cutting and coin change"
 
     **Questions**
 
-    1. Show the execution of the bottom-up DP algorithm by reporting, for each iteration, the values of the array $g$ and the array $s$.
+    1. Show the execution of the bottom-up DP algorithm by reporting, for each iteration, the values of the array $v$ and the array $s$.
 
     2. Using the array $s$, reconstruct an optimal solution in integer notation $(x_1,x_2)$, and report the optimal value.
 
@@ -5974,100 +5967,100 @@ title: "Exercises · Rod cutting and coin change"
 
     1. Step-by-step execution of the bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the value of $j$, the cells $g[j]$ and $s[j]$, and the operation performed. The value $+\infty$ denotes an infeasible amount of change, for which $s[j]$ is left undefined ($0$, by convention).
+        For each step of the DP algorithm, the table shows the amount of change $k$, the cells $v[k]$ and $s[k]$, and the operation performed; $s[k]$ is the index $j$ of the denomination of the coin used. In case of ties the smallest index is kept, because $m$ is updated only when the value is strictly smaller. The value $+\infty$ denotes an amount of change that cannot be returned, for which $s[k]=0$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
-        <th><span class="arithmatex">\(g[j]\)</span></th>
-        <th><span class="arithmatex">\(s[j]\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
+        <th><span class="arithmatex">\(v[k]\)</span></th>
+        <th><span class="arithmatex">\(s[k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(g[0]\leftarrow 0\)</span>, <span class="arithmatex">\(s[0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(v[0]\leftarrow 0\)</span>, <span class="arithmatex">\(s[0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td>1</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td>0</td>
-        <td>no denomination <span class="arithmatex">\(w_i\le 1\)</span>: <span class="arithmatex">\(g[1]\leftarrow +\infty\)</span></td>
+        <td>no denomination <span class="arithmatex">\(w_j\le 1\)</span>: <span class="arithmatex">\(v[1]\leftarrow +\infty\)</span></td>
         </tr>
         <tr>
         <td>2</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td>0</td>
-        <td>no denomination <span class="arithmatex">\(w_i\le 2\)</span>: <span class="arithmatex">\(g[2]\leftarrow +\infty\)</span></td>
+        <td>no denomination <span class="arithmatex">\(w_j\le 2\)</span>: <span class="arithmatex">\(v[2]\leftarrow +\infty\)</span></td>
         </tr>
         <tr>
         <td>3</td>
         <td>1</td>
-        <td>3</td>
-        <td><span class="arithmatex">\(\min\{1+g[0]\}=\min\{1\}=1\)</span></td>
+        <td>1</td>
+        <td><span class="arithmatex">\(\min\{1+v[0]\}=\min\{1\}=1\)</span></td>
         </tr>
         <tr>
         <td>4</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td>0</td>
-        <td><span class="arithmatex">\(\min\{1+g[1]\}=\min\{+\infty\}=+\infty\)</span></td>
+        <td><span class="arithmatex">\(\min\{1+v[1]\}=\min\{+\infty\}=+\infty\)</span></td>
         </tr>
         <tr>
         <td>5</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td>0</td>
-        <td><span class="arithmatex">\(\min\{1+g[2]\}=\min\{+\infty\}=+\infty\)</span></td>
+        <td><span class="arithmatex">\(\min\{1+v[2]\}=\min\{+\infty\}=+\infty\)</span></td>
         </tr>
         <tr>
         <td>6</td>
         <td>2</td>
-        <td>3</td>
-        <td><span class="arithmatex">\(\min\{1+g[3]\}=\min\{2\}=2\)</span></td>
+        <td>1</td>
+        <td><span class="arithmatex">\(\min\{1+v[3]\}=\min\{2\}=2\)</span></td>
         </tr>
         <tr>
         <td>7</td>
         <td>1</td>
-        <td>7</td>
-        <td><span class="arithmatex">\(\min\{1+g[4],\,1+g[0]\}=\min\{+\infty,1\}=1\)</span></td>
+        <td>2</td>
+        <td><span class="arithmatex">\(\min\{1+v[4],\,1+v[0]\}=\min\{+\infty,1\}=1\)</span></td>
         </tr>
         <tr>
         <td>8</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td>0</td>
-        <td><span class="arithmatex">\(\min\{1+g[5],\,1+g[1]\}=\min\{+\infty,+\infty\}=+\infty\)</span></td>
+        <td><span class="arithmatex">\(\min\{1+v[5],\,1+v[1]\}=\min\{+\infty,+\infty\}=+\infty\)</span></td>
         </tr>
         <tr>
         <td>9</td>
         <td>3</td>
-        <td>3</td>
-        <td><span class="arithmatex">\(\min\{1+g[6],\,1+g[2]\}=\min\{3,+\infty\}=3\)</span></td>
+        <td>1</td>
+        <td><span class="arithmatex">\(\min\{1+v[6],\,1+v[2]\}=\min\{3,+\infty\}=3\)</span></td>
         </tr>
         <tr>
         <td>10</td>
         <td>2</td>
-        <td>3</td>
-        <td><span class="arithmatex">\(\min\{1+g[7],\,1+g[3]\}=\min\{2,2\}=2\)</span></td>
+        <td>1</td>
+        <td><span class="arithmatex">\(\min\{1+v[7],\,1+v[3]\}=\min\{2,2\}=2\)</span></td>
         </tr>
         <tr>
         <td>11</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td>0</td>
-        <td><span class="arithmatex">\(\min\{1+g[8],\,1+g[4]\}=\min\{+\infty,+\infty\}=+\infty\)</span></td>
+        <td><span class="arithmatex">\(\min\{1+v[8],\,1+v[4]\}=\min\{+\infty,+\infty\}=+\infty\)</span></td>
         </tr>
         <tr>
         <td>12</td>
         <td>4</td>
-        <td>3</td>
-        <td><span class="arithmatex">\(\min\{1+g[9],\,1+g[5]\}=\min\{4,+\infty\}=4\)</span></td>
+        <td>1</td>
+        <td><span class="arithmatex">\(\min\{1+v[9],\,1+v[5]\}=\min\{4,+\infty\}=4\)</span></td>
         </tr>
         </table></div>
 
-        This is the array $g$ after the execution of the DP algorithm:
+        This is the array $v$ after the execution of the DP algorithm:
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
         <th>0</th>
         <th>1</th>
         <th>2</th>
@@ -6083,7 +6076,7 @@ title: "Exercises · Rod cutting and coin change"
         <th>12</th>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(g[j]\)</span></td>
+        <td><span class="arithmatex">\(v[k]\)</span></td>
         <td>0</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
@@ -6104,7 +6097,7 @@ title: "Exercises · Rod cutting and coin change"
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
         <th>0</th>
         <th>1</th>
         <th>2</th>
@@ -6120,20 +6113,20 @@ title: "Exercises · Rod cutting and coin change"
         <th>12</th>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(s[j]\)</span></td>
+        <td><span class="arithmatex">\(s[k]\)</span></td>
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td>3</td>
+        <td>1</td>
         <td>0</td>
         <td>0</td>
-        <td>3</td>
-        <td>7</td>
+        <td>1</td>
+        <td>2</td>
         <td>0</td>
-        <td>3</td>
-        <td>3</td>
+        <td>1</td>
+        <td>1</td>
         <td>0</td>
-        <td>3</td>
+        <td>1</td>
         </tr>
         </table></div>
 
@@ -6141,7 +6134,7 @@ title: "Exercises · Rod cutting and coin change"
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
         <th>0</th>
         <th>1</th>
         <th>2</th>
@@ -6157,74 +6150,86 @@ title: "Exercises · Rod cutting and coin change"
         <th>12</th>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(s[j]\)</span></td>
+        <td><span class="arithmatex">\(s[k]\)</span></td>
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td>3</td>
+        <td>1</td>
         <td>0</td>
         <td>0</td>
-        <td>3</td>
-        <td>7</td>
+        <td>1</td>
+        <td>2</td>
         <td>0</td>
-        <td>3</td>
-        <td>3</td>
+        <td>1</td>
+        <td>1</td>
         <td>0</td>
-        <td>3</td>
+        <td>1</td>
         </tr>
         </table></div>
 
-        We can reconstruct an optimal solution by starting from $j=12$ as follows:
+        We can reconstruct an optimal solution by starting from $k=12$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(j\)</span></th>
-        <th><span class="arithmatex">\(s[j]\)</span></th>
-        <th>Action</th>
+        <th><span class="arithmatex">\(k\)</span></th>
+        <th><span class="arithmatex">\(s[k]\)</span></th>
+        <th><span class="arithmatex">\(x[1]\)</span></th>
+        <th><span class="arithmatex">\(x[2]\)</span></th>
+        <th><span class="arithmatex">\(k \leftarrow k-w_{s[k]}\)</span></th>
         </tr>
         <tr>
         <td><span class="arithmatex">\(-\)</span></td>
-        <td>12</td>
         <td><span class="arithmatex">\(-\)</span></td>
-        <td>coin list <span class="arithmatex">\(=\emptyset\)</span></td>
+        <td><span class="arithmatex">\(-\)</span></td>
+        <td>0</td>
+        <td>0</td>
+        <td><span class="arithmatex">\(k=12\)</span></td>
         </tr>
         <tr>
-        <td>1</td>
-        <td>12</td>
-        <td class="cella-blu">3</td>
-        <td>use coin <span class="arithmatex">\(3\)</span>, <span class="arithmatex">\(j\leftarrow 12-3=9\)</span></td>
+        <td><span class="arithmatex">\(1\)</span></td>
+        <td><span class="arithmatex">\(12\)</span></td>
+        <td><span class="arithmatex">\(1\)</span></td>
+        <td class="cella-blu">1</td>
+        <td>0</td>
+        <td><span class="arithmatex">\(k=12-3=9\)</span></td>
         </tr>
         <tr>
-        <td>2</td>
-        <td>9</td>
-        <td class="cella-blu">3</td>
-        <td>use coin <span class="arithmatex">\(3\)</span>, <span class="arithmatex">\(j\leftarrow 9-3=6\)</span></td>
+        <td><span class="arithmatex">\(2\)</span></td>
+        <td><span class="arithmatex">\(9\)</span></td>
+        <td><span class="arithmatex">\(1\)</span></td>
+        <td class="cella-blu">2</td>
+        <td>0</td>
+        <td><span class="arithmatex">\(k=9-3=6\)</span></td>
         </tr>
         <tr>
-        <td>3</td>
-        <td>6</td>
+        <td><span class="arithmatex">\(3\)</span></td>
+        <td><span class="arithmatex">\(6\)</span></td>
+        <td><span class="arithmatex">\(1\)</span></td>
         <td class="cella-blu">3</td>
-        <td>use coin <span class="arithmatex">\(3\)</span>, <span class="arithmatex">\(j\leftarrow 6-3=3\)</span></td>
+        <td>0</td>
+        <td><span class="arithmatex">\(k=6-3=3\)</span></td>
         </tr>
         <tr>
-        <td>4</td>
-        <td>3</td>
-        <td class="cella-blu">3</td>
-        <td>use coin <span class="arithmatex">\(3\)</span>, <span class="arithmatex">\(j\leftarrow 3-3=0\)</span></td>
+        <td><span class="arithmatex">\(4\)</span></td>
+        <td><span class="arithmatex">\(3\)</span></td>
+        <td><span class="arithmatex">\(1\)</span></td>
+        <td class="cella-blu">4</td>
+        <td>0</td>
+        <td><span class="arithmatex">\(k=3-3=0\)</span></td>
         </tr>
         </table></div>
 
-        Thus, an optimal solution uses the coins $[3,3,3,3]$, i.e.,
+        Thus, the vector
 
         $$
         (4,0)
         $$
 
-        The corresponding total value is $4\cdot3=12=c$. The corresponding optimal value is
+        is an optimal solution: its total value is $4\cdot3=12=c$. The optimal value is
 
         $$
-        g[12]=4.
+        v[12]=4.
         $$
 
 <a id="esercizio-16-10"></a>
@@ -6239,7 +6244,7 @@ title: "Exercises · Rod cutting and coin change"
 
     **Questions**
 
-    1. Show the execution of the bottom-up DP algorithm by reporting, for each iteration, the values of the array $g$ and the array $s$.
+    1. Show the execution of the bottom-up DP algorithm by reporting, for each iteration, the values of the array $v$ and the array $s$.
 
     2. Using the array $s$, reconstruct an optimal solution in integer notation $(x_1,x_2,x_3)$, and report the optimal value.
 
@@ -6247,82 +6252,82 @@ title: "Exercises · Rod cutting and coin change"
 
     1. Step-by-step execution of the bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the value of $j$, the cells $g[j]$ and $s[j]$, and the operation performed. The value $+\infty$ denotes an infeasible amount of change, for which $s[j]$ is left undefined ($0$, by convention).
+        For each step of the DP algorithm, the table shows the amount of change $k$, the cells $v[k]$ and $s[k]$, and the operation performed; $s[k]$ is the index $j$ of the denomination of the coin used. In case of ties the smallest index is kept, because $m$ is updated only when the value is strictly smaller. The value $+\infty$ denotes an amount of change that cannot be returned, for which $s[k]=0$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
-        <th><span class="arithmatex">\(g[j]\)</span></th>
-        <th><span class="arithmatex">\(s[j]\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
+        <th><span class="arithmatex">\(v[k]\)</span></th>
+        <th><span class="arithmatex">\(s[k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(g[0]\leftarrow 0\)</span>, <span class="arithmatex">\(s[0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(v[0]\leftarrow 0\)</span>, <span class="arithmatex">\(s[0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td>1</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td>0</td>
-        <td>no denomination <span class="arithmatex">\(w_i\le 1\)</span>: <span class="arithmatex">\(g[1]\leftarrow +\infty\)</span></td>
+        <td>no denomination <span class="arithmatex">\(w_j\le 1\)</span>: <span class="arithmatex">\(v[1]\leftarrow +\infty\)</span></td>
         </tr>
         <tr>
         <td>2</td>
         <td>1</td>
-        <td>2</td>
-        <td><span class="arithmatex">\(\min\{1+g[0]\}=\min\{1\}=1\)</span></td>
+        <td>1</td>
+        <td><span class="arithmatex">\(\min\{1+v[0]\}=\min\{1\}=1\)</span></td>
         </tr>
         <tr>
         <td>3</td>
         <td>1</td>
-        <td>3</td>
-        <td><span class="arithmatex">\(\min\{1+g[1],\,1+g[0]\}=\min\{+\infty,1\}=1\)</span></td>
+        <td>2</td>
+        <td><span class="arithmatex">\(\min\{1+v[1],\,1+v[0]\}=\min\{+\infty,1\}=1\)</span></td>
         </tr>
         <tr>
         <td>4</td>
         <td>2</td>
-        <td>2</td>
-        <td><span class="arithmatex">\(\min\{1+g[2],\,1+g[1]\}=\min\{2,+\infty\}=2\)</span></td>
+        <td>1</td>
+        <td><span class="arithmatex">\(\min\{1+v[2],\,1+v[1]\}=\min\{2,+\infty\}=2\)</span></td>
         </tr>
         <tr>
         <td>5</td>
         <td>2</td>
-        <td>2</td>
-        <td><span class="arithmatex">\(\min\{1+g[3],\,1+g[2]\}=\min\{2,2\}=2\)</span></td>
+        <td>1</td>
+        <td><span class="arithmatex">\(\min\{1+v[3],\,1+v[2]\}=\min\{2,2\}=2\)</span></td>
         </tr>
         <tr>
         <td>6</td>
         <td>2</td>
-        <td>3</td>
-        <td><span class="arithmatex">\(\min\{1+g[4],\,1+g[3]\}=\min\{3,2\}=2\)</span></td>
+        <td>2</td>
+        <td><span class="arithmatex">\(\min\{1+v[4],\,1+v[3]\}=\min\{3,2\}=2\)</span></td>
         </tr>
         <tr>
         <td>7</td>
         <td>1</td>
-        <td>7</td>
-        <td><span class="arithmatex">\(\min\{1+g[5],\,1+g[4],\,1+g[0]\}=\min\{3,3,1\}=1\)</span></td>
+        <td>3</td>
+        <td><span class="arithmatex">\(\min\{1+v[5],\,1+v[4],\,1+v[0]\}=\min\{3,3,1\}=1\)</span></td>
         </tr>
         <tr>
         <td>8</td>
         <td>3</td>
-        <td>2</td>
-        <td><span class="arithmatex">\(\min\{1+g[6],\,1+g[5],\,1+g[1]\}=\min\{3,3,+\infty\}=3\)</span></td>
+        <td>1</td>
+        <td><span class="arithmatex">\(\min\{1+v[6],\,1+v[5],\,1+v[1]\}=\min\{3,3,+\infty\}=3\)</span></td>
         </tr>
         <tr>
         <td>9</td>
         <td>2</td>
-        <td>2</td>
-        <td><span class="arithmatex">\(\min\{1+g[7],\,1+g[6],\,1+g[2]\}=\min\{2,3,2\}=2\)</span></td>
+        <td>1</td>
+        <td><span class="arithmatex">\(\min\{1+v[7],\,1+v[6],\,1+v[2]\}=\min\{2,3,2\}=2\)</span></td>
         </tr>
         </table></div>
 
-        This is the array $g$ after the execution of the DP algorithm:
+        This is the array $v$ after the execution of the DP algorithm:
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
         <th>0</th>
         <th>1</th>
         <th>2</th>
@@ -6335,7 +6340,7 @@ title: "Exercises · Rod cutting and coin change"
         <th>9</th>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(g[j]\)</span></td>
+        <td><span class="arithmatex">\(v[k]\)</span></td>
         <td>0</td>
         <td><span class="arithmatex">\(+\infty\)</span></td>
         <td>1</td>
@@ -6353,7 +6358,7 @@ title: "Exercises · Rod cutting and coin change"
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
         <th>0</th>
         <th>1</th>
         <th>2</th>
@@ -6366,17 +6371,17 @@ title: "Exercises · Rod cutting and coin change"
         <th>9</th>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(s[j]\)</span></td>
+        <td><span class="arithmatex">\(s[k]\)</span></td>
         <td>0</td>
         <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td>1</td>
+        <td>1</td>
         <td>2</td>
         <td>3</td>
-        <td>2</td>
-        <td>2</td>
-        <td>3</td>
-        <td>7</td>
-        <td>2</td>
-        <td>2</td>
+        <td>1</td>
+        <td>1</td>
         </tr>
         </table></div>
 
@@ -6384,7 +6389,7 @@ title: "Exercises · Rod cutting and coin change"
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(k\)</span></th>
         <th>0</th>
         <th>1</th>
         <th>2</th>
@@ -6397,57 +6402,69 @@ title: "Exercises · Rod cutting and coin change"
         <th>9</th>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(s[j]\)</span></td>
+        <td><span class="arithmatex">\(s[k]\)</span></td>
         <td>0</td>
         <td>0</td>
+        <td>1</td>
+        <td>2</td>
+        <td>1</td>
+        <td>1</td>
         <td>2</td>
         <td>3</td>
-        <td>2</td>
-        <td>2</td>
-        <td>3</td>
-        <td>7</td>
-        <td>2</td>
-        <td>2</td>
+        <td>1</td>
+        <td>1</td>
         </tr>
         </table></div>
 
-        We can reconstruct an optimal solution by starting from $j=9$ as follows:
+        We can reconstruct an optimal solution by starting from $k=9$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(j\)</span></th>
-        <th><span class="arithmatex">\(s[j]\)</span></th>
-        <th>Action</th>
+        <th><span class="arithmatex">\(k\)</span></th>
+        <th><span class="arithmatex">\(s[k]\)</span></th>
+        <th><span class="arithmatex">\(x[1]\)</span></th>
+        <th><span class="arithmatex">\(x[2]\)</span></th>
+        <th><span class="arithmatex">\(x[3]\)</span></th>
+        <th><span class="arithmatex">\(k \leftarrow k-w_{s[k]}\)</span></th>
         </tr>
         <tr>
         <td><span class="arithmatex">\(-\)</span></td>
-        <td>9</td>
         <td><span class="arithmatex">\(-\)</span></td>
-        <td>coin list <span class="arithmatex">\(=\emptyset\)</span></td>
+        <td><span class="arithmatex">\(-\)</span></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td><span class="arithmatex">\(k=9\)</span></td>
         </tr>
         <tr>
+        <td><span class="arithmatex">\(1\)</span></td>
+        <td><span class="arithmatex">\(9\)</span></td>
+        <td><span class="arithmatex">\(1\)</span></td>
+        <td class="cella-blu">1</td>
+        <td>0</td>
+        <td>0</td>
+        <td><span class="arithmatex">\(k=9-2=7\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(2\)</span></td>
+        <td><span class="arithmatex">\(7\)</span></td>
+        <td><span class="arithmatex">\(3\)</span></td>
         <td>1</td>
-        <td>9</td>
-        <td class="cella-blu">2</td>
-        <td>use coin <span class="arithmatex">\(2\)</span>, <span class="arithmatex">\(j\leftarrow 9-2=7\)</span></td>
-        </tr>
-        <tr>
-        <td>2</td>
-        <td>7</td>
-        <td class="cella-blu">7</td>
-        <td>use coin <span class="arithmatex">\(7\)</span>, <span class="arithmatex">\(j\leftarrow 7-7=0\)</span></td>
+        <td>0</td>
+        <td class="cella-blu">1</td>
+        <td><span class="arithmatex">\(k=7-7=0\)</span></td>
         </tr>
         </table></div>
 
-        Thus, an optimal solution uses the coins $[2,7]$, i.e.,
+        Thus, the vector
 
         $$
         (1,0,1)
         $$
 
-        The corresponding total value is $1\cdot2+1\cdot7=9=c$. The corresponding optimal value is
+        is an optimal solution: its total value is $1\cdot2+1\cdot7=9=c$. The optimal value is
 
         $$
-        g[9]=2.
+        v[9]=2.
         $$

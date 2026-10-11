@@ -32,15 +32,7 @@ title: "Approximation algorithms for the knapsack problem"
 
     - explain why an absolute performance guarantee for the KP forces an exact algorithm.
 
-## 25.1 Why approximation algorithms for the KP?
-
-- <strong>A challenge.</strong> A knapsack of capacity $10$ and four items with profits $(6,8,19,4)$ and weights $(2,3,9,5)$ ([Example 25.3](#box-5-ex-GR2)). The greedy rule that takes the items by non-increasing efficiency, whenever they fit, collects the profit $18$, while item $3$ alone has profit $19$.
-
-- Can the greedy rule be arbitrarily worse than the optimum? Try to build an instance in which it collects a profit of $2$ and the optimal value is as large as you like.
-
-- The answer is yes, and the cure is cheap: compare with the best single item. This chapter proves the guarantee of this fix, and of three better algorithms, up to a scheme that gets as close to the optimum as we want at a polynomial price.
-
-## 25.2 The problem and the assumptions
+## 25.1 The problem and the assumptions
 
 <a id="box-1-def-KP"></a>
 
@@ -82,7 +74,7 @@ title: "Approximation algorithms for the knapsack problem"
 
     which requires $O(n \log n)$ time, a polynomial function of the number $n$ of items.
 
-## 25.3 Split item and residual capacity
+## 25.2 Split item and residual capacity
 
 - We assume that any KP instance $I$ satisfies the problem assumptions, i.e.,
 
@@ -181,7 +173,7 @@ title: "Approximation algorithms for the knapsack problem"
     \mathit{rc} = c - \sum_{i=1}^{2} w_i = 9 - 2 - 3 = 4
     $$
 
-## 25.4 The greedy algorithm
+## 25.3 The greedy algorithm
 
 - We assume items are sorted in non-increasing order of efficiency
 
@@ -525,7 +517,7 @@ title: "Approximation algorithms for the knapsack problem"
 
     In this instance, the item with maximum profit is item $6$ with $p_6=20$, which appears last in the efficiency-sorted order. The greedy algorithm $GR$ selects all items from $1$ to $5$ (which precede the split item), but does not select item $6$ (the split item itself) because its weight $w_6=21$ exceeds the residual capacity $rc=12$. Item $6$ alone would fit into the knapsack (since $w_6=21 \le c=21$) and would give a profit of $20$, which is better than the greedy solution. The optimal solution is $\tilde{S}=\{6\}$ with value $z(I)=20$.
 
-## 25.5 The Ext-Greedy algorithm
+## 25.4 The Ext-Greedy algorithm
 
 !!! chiave ""
 
@@ -626,7 +618,7 @@ title: "Approximation algorithms for the knapsack problem"
 
     This holds because $GR^e$ returns the better between the greedy solution and the best single-item feasible solution, so it cannot be worse than $GR$, and any feasible solution value is at most the optimal value $z(I)$.
 
-## 25.6 The $H^2$ algorithm { #sez-sec-H2 }
+## 25.5 The $H^2$ algorithm { #sez-sec-H2 }
 
 !!! chiave ""
 
@@ -779,7 +771,7 @@ title: "Approximation algorithms for the knapsack problem"
 
 - With a cleverer  implementation it can be reduced to $O(n^2 )$.
 
-## 25.7 The $H^{\ell}$ algorithm
+## 25.6 The $H^{\ell}$ algorithm
 
 !!! chiave ""
 
@@ -861,7 +853,7 @@ title: "Approximation algorithms for the knapsack problem"
 
     The items are sorted by non-increasing efficiency, since $\frac{2}{1}=2>\frac{3}{3}=1$. The optimal solution packs the four items of weight $3$, with $z(I)=12$.
 
-    <strong>With $\ell=2$</strong>, i.e., the $H^2$ algorithm of Section [25.6](#sez-sec-H2). A pair of two items of profit $3$, for instance $L=\{2,3\}$, leaves residual capacity $6$ and the residual set $\mathscr{I}(L)=\{1,4,5\}$: $GR^e$ packs item $1$ and item $4$, of profit $2+3=5$, so $lb(L)=3+3+5=11$. A pair containing item $1$ leaves an empty residual set, since no other item has profit at most $2$. Hence $H^2(I)=11<12$.
+    <strong>With $\ell=2$</strong>, i.e., the $H^2$ algorithm of Section [25.5](#sez-sec-H2). A pair of two items of profit $3$, for instance $L=\{2,3\}$, leaves residual capacity $6$ and the residual set $\mathscr{I}(L)=\{1,4,5\}$: $GR^e$ packs item $1$ and item $4$, of profit $2+3=5$, so $lb(L)=3+3+5=11$. A pair containing item $1$ leaves an empty residual set, since no other item has profit at most $2$. Hence $H^2(I)=11<12$.
 
     <strong>With $\ell=3$.</strong> A set of three items of profit $3$, for instance $L=\{2,3,4\}$, leaves residual capacity $3$ and the residual set $\mathscr{I}(L)=\{1,5\}$: $GR^e$ returns the best between item $1$ alone (profit $2$, then item $5$ no longer fits) and item $5$ alone (profit $3$), so $lb(L)=9+3=12$. Hence $H^3(I)=12=z(I)$.
 
@@ -877,7 +869,7 @@ title: "Approximation algorithms for the knapsack problem"
 
 - Besides storing the input data, no significant additional memory is used, and the total space requirement is only $O(n)$.
 
-## 25.8 The Basic-FPTAS algorithm
+## 25.7 The Basic-FPTAS algorithm
 
 - The $H^{\ell}$ algorithm enumerates $O(n^{\ell})$ sets of items, a number that grows very quickly with $\ell$. The Basic-FPTAS algorithm follows a completely different route: instead of guessing items, it rounds the profits and solves the rounded instance exactly.
 
@@ -999,11 +991,11 @@ title: "Approximation algorithms for the knapsack problem"
     \frac{z(I)}{FP^{\varepsilon}(I)}=\frac{47}{38}\approx 1.24 .
     $$
 
-## 25.9 Performance guarantees
+## 25.8 Performance guarantees
 
 - We now determine the worst case performance ratio of the algorithms of the previous sections. Recall that, the KP being a maximization problem, the performance ratio of an algorithm $\mathscr{A}$ on an instance $I$ is $z(I)/\mathscr{A}(I)\ge 1$, and that $r(\mathscr{A})$ is its supremum over all the instances.
 
-### 25.9.1 The worst case performance ratio of $GR$
+### 25.8.1 The worst case performance ratio of $GR$
 
 <a id="box-16-prop-GRunbounded"></a>
 
@@ -1071,7 +1063,7 @@ title: "Approximation algorithms for the knapsack problem"
 
 - A key drawback of $GR$ is that it may fail to select the item with maximum profit (even when that single item is optimal). In particular, by prioritizing efficiency $p_i/w_i$, $GR$ can fill the knapsack with high-efficiency items and leave insufficient available capacity to include the maximum-profit item.
 
-### 25.9.2 The worst case performance ratio of $GR^e$
+### 25.8.2 The worst case performance ratio of $GR^e$
 
 <a id="box-17-prop-GRe2approx"></a>
 
@@ -1206,7 +1198,7 @@ title: "Approximation algorithms for the knapsack problem"
 
 - In the previous worst-case example the $GR^e$ made the “mistake” of excluding item $3$ which had a very high profit value.  To avoid such a mistake we need more advanced heuristic algorithms.
 
-### 25.9.3 The worst case performance ratio of $H^2$
+### 25.8.3 The worst case performance ratio of $H^2$
 
 <a id="box-19-prop-G34approx"></a>
 
@@ -1383,7 +1375,7 @@ title: "Approximation algorithms for the knapsack problem"
 
     and $H^2$ is a $\frac{4}{3}$-approximation algorithm. Guessing two items instead of one brings the ratio down from the $2$ of $GR^e$ to $\frac{4}{3}$.
 
-### 25.9.4 The worst case performance ratio of $H^{\ell}$
+### 25.8.4 The worst case performance ratio of $H^{\ell}$
 
 <a id="box-21-prop-Hlapprox"></a>
 
@@ -1484,7 +1476,7 @@ title: "Approximation algorithms for the knapsack problem"
 
     and $H^{\ell}$ is a $\frac{\ell+2}{\ell+1}$-approximation algorithm. For $\ell=2$ we find again $r(H^2)=\frac{4}{3}$, and the ratio tends to $1$ as $\ell$ grows.
 
-### 25.9.5 Approximation schemes
+### 25.8.5 Approximation schemes
 
 - We recall the definitions of the approximation algorithms notes. The <strong>relative error</strong> of an algorithm $\mathscr{A}$ on a KP instance $I$ is $\frac{z(I)-\mathscr{A}(I)}{z(I)}$. An <strong>approximation scheme</strong> is a family of algorithms $\{\mathscr{A}_{\varepsilon}\}_{\varepsilon\in(0,1)}$ such that, for every $\varepsilon$ and every instance $I$, the relative error of $\mathscr{A}_{\varepsilon}$ is at most $\varepsilon$; for a maximization problem this means that $\mathscr{A}_{\varepsilon}$ is a $\frac{1}{1-\varepsilon}$-approximation algorithm. The scheme is a <strong>PTAS</strong> if, for every fixed $\varepsilon$, the running time of $\mathscr{A}_{\varepsilon}$ is polynomial in the size of the instance, and an <strong>FPTAS</strong> if it is polynomial both in the size of the instance and in the accuracy $\frac{1}{\varepsilon}$.
 
@@ -1526,7 +1518,7 @@ title: "Approximation algorithms for the knapsack problem"
 
 - The $H^{\varepsilon}$ algorithm is a straightforward method and quite easy to implement, but its running time explodes as the required accuracy grows. Even for a moderate relative error $\varepsilon=\frac{1}{10}$, i.e., a deviation of $10$ percent from the optimal value, we have $\ell(\varepsilon)=8$ and a running time of $O(n^9)$, or still $O(n^8)$ with the improved implementation.
 
-### 25.9.6 The worst case performance ratio of the Basic-FPTAS
+### 25.8.6 The worst case performance ratio of the Basic-FPTAS
 
 <a id="box-24-prop-fptas"></a>
 
@@ -1597,7 +1589,7 @@ title: "Approximation algorithms for the knapsack problem"
 
 - The guarantee of $GR^e$ is used twice, and in two different roles: $GR^e(I)\le z(I)$ fixes the scaling factor, and $z(I)\le 2\,GR^e(I)$ bounds the size of the dynamic programming table. A better heuristic in place of $GR^e$ would shorten the table, not improve the guarantee.
 
-## 25.10 Absolute performance guarantee
+## 25.9 Absolute performance guarantee
 
 - Unfortunately, there is only a negative result concerning absolute performance guarantees for the knapsack problem.
 
@@ -1673,7 +1665,7 @@ title: "Approximation algorithms for the knapsack problem"
 
 - Hence, also approximation algorithms with fixed absolute performance guarantee are bound to have a pseudo-polynomial running time which is unpleasantly dependent on the magnitude of the input values.
 
-## 25.11 Typical mistakes
+## 25.10 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -1689,7 +1681,7 @@ title: "Approximation algorithms for the knapsack problem"
 
     - <strong>Counting the whole table of the dynamic program.</strong> The bound $O(n^2/\varepsilon)$ holds because the table is truncated at $\lfloor 2n/\varepsilon\rfloor$; the total scaled profit can be as large as $\frac{n^2}{\varepsilon}$.
 
-## 25.12 In summary
+## 25.11 In summary
 
 !!! chiave "In summary"
 
@@ -1740,7 +1732,7 @@ title: "Approximation algorithms for the knapsack problem"
     </tr>
     </table></div>
 
-## 25.13 <code>C++</code> implementation
+## 25.12 <code>C++</code> implementation
 
 - In this section we use 0-based indexing for the items. The algorithmic logic is unchanged.
 

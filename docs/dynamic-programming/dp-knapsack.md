@@ -3938,7 +3938,7 @@ title: "Dynamic programming for knapsack problems"
 
     1. a knapsack of <em>capacity</em> $c \in \Z_{\ge 1}$,
 
-    2. a set $\Ioggetti = \{1,2,\ldots,n\}$ of $n$ item types,
+    2. a set $\Ioggetti = \{1,2,\dots,n\}$ of $n$ item types,
 
     3. for each item type $j \in \Ioggetti$, a <em>profit</em> $p_j \in \Z_{\ge 1}$ and a <em>weight</em> $w_j \in \Z_{\ge 1}$,
 
@@ -4004,7 +4004,7 @@ $$
 
 !!! chiave ""
 
-    The main difference with the $0$–$1$ Knapsack Problem is that the variables are no longer binary. In UKP, each variable $x_j$ can take any nonnegative integer value, provided that the capacity constraint is respected.
+    The main difference with the $0$–$1$ Knapsack Problem is that the variables are no longer binary. In UKP, each variable $x_j$ can take any non-negative integer value, provided that the capacity constraint is respected.
 
 ### 15.2.2 A first DP algorithm
 
@@ -4034,7 +4034,9 @@ $$
         \right. \tag{15.8}
         \end{equation*}
 
-    - The recursive decomposition process of formula $\eqref{eq:ukp1}$ generates at most $n$ <strong>independent subproblems</strong>, each corresponding to a possible choice of an item type $j$, among those with $w_j\le k$, to be inserted as one of the items of the knapsack of capacity $k$. Here, $v(0)=0$ since a knapsack of capacity $0$ cannot contain any item and has profit $0$. Moreover, if $w_j>k$ for every item type $j$, no item fits into the knapsack: the only feasible choice is to insert no item, and therefore $v(k)=0$.
+    - The recursive decomposition process of formula $\eqref{eq:ukp1}$ generates at most $n$ <strong>independent subproblems</strong>, each corresponding to a possible choice of an item type $j$, among those with $w_j\le k$, to be inserted as one of the items of the knapsack of capacity $k$.
+
+    - The base case is $v(0)=0$, since a knapsack of capacity $0$ cannot contain any item and has profit $0$. Moreover, if $w_j>k$ for every item type $j$, no item fits into the knapsack: the only feasible choice is to insert no item, and therefore $v(k)=0$.
 
     - The optimal value $v(k)$ is obtained by trying every item type $j$ with $w_j\le k$ and selecting the one that maximizes the sum $p_j+v(k-w_j)$ of the profit of the chosen item type and the optimal value of the residual subproblem. Since item type $j$ is available in infinitely many copies, it may also be chosen again while solving the residual subproblem of capacity $k-w_j$.
 
@@ -5174,9 +5176,13 @@ $$
         \end{array} \right. \tag{15.9}
         \end{equation*}
 
-    - The recursive decomposition process of formula $\eqref{eq:ukp2}$ generates at most $2$ <strong>independent subproblems</strong>, corresponding to whether or not to insert one copy of item type $j$ into a knapsack of capacity $k$, using only item types $1,2,\dots,j$. If $w_j>k$, item type $j$ cannot be inserted, and therefore the only feasible option is not to use it. Here, $v(0,k)=0$ for every $k$, since with no item type available the only feasible choice is to insert no item, which always has profit $0$.
+    - The recursive decomposition process of formula $\eqref{eq:ukp2}$ generates at most $2$ <strong>independent subproblems</strong>, corresponding to whether or not to insert one copy of item type $j$ into a knapsack of capacity $k$, using only item types $1,2,\dots,j$. If $w_j>k$, item type $j$ cannot be inserted, and therefore the only feasible option is not to use it.
 
-    - If $j\ge 1$ and $k\ge w_j$, the optimal value $v(j,k)$ is obtained by trying the two possible options, not inserting item type $j$ or inserting one further copy of it, and selecting the one that maximizes the profit. The corresponding values are $v(j-1,k)$ and $p_j+v(j,k-w_j)$, respectively; the term $p_j+v(j,k-w_j)$ refers to the same row $j$, because after inserting one copy of item type $j$, additional copies of the same item type are still available. If $j\ge 1$ and $k<w_j$, item type $j$ cannot be used, and therefore $v(j,k)=v(j-1,k)$.
+    - The base case is $v(0,k)=0$ for every $k$, since with no item type available the only feasible choice is to insert no item, which always has profit $0$.
+
+    - If $j\ge 1$ and $k\ge w_j$, the optimal value $v(j,k)$ is obtained by trying the two possible options, not inserting item type $j$ or inserting one further copy of it, and selecting the one that maximizes the profit. The corresponding values are $v(j-1,k)$ and $p_j+v(j,k-w_j)$, respectively. If $j\ge 1$ and $k<w_j$, item type $j$ cannot be used, and therefore $v(j,k)=v(j-1,k)$.
+
+    - The term $p_j+v(j,k-w_j)$ refers to the same row $j$, because after inserting one copy of item type $j$, additional copies of the same item type are still available.
 
     - Hence, an optimal solution for a knapsack of capacity $k$ using only item types $1,2,\dots,j$ is built by combining the chosen decision on item type $j$ with an optimal solution of the corresponding residual subproblem.
 
@@ -5725,7 +5731,7 @@ $$
 
     - For each item type $j$ and each capacity $k$, in addition to the optimal value $v[j][k]$, we store $s[j][k]$, which is equal to $1$ if one copy of item type $j$ is used when computing $v[j][k]$, and to $0$ otherwise.
 
-    - Starting from $j=n$ and $k=c$, if $s[j][k]=0$, then item type $j$ is not used and $j$ is decreased by $1$. If $s[j][k]=1$, then one copy of item type $j$ is used and the residual capacity becomes $k-w_j$. The procedure stops when the residual capacity reaches $0$.
+    - Starting from $j=n$ and $k=c$, if $s[j][k]=0$, then item type $j$ is not used and $j$ is decreased by $1$. If $s[j][k]=1$, then one copy of item type $j$ is used and the residual capacity becomes $k-w_j$. The procedure stops when the residual capacity reaches $0$ or when $j=0$, in which case the residual capacity is left unused.
 
         This is the pseudo-code of the <strong>DP algorithm using the bottom-up approach</strong> with the storing of the information necessary to compute an optimal solution:
 
@@ -6339,7 +6345,7 @@ $$
 
     - <strong>Using row $j-1$ in the second recurrence.</strong> The term $p_j+v(j,k-w_j)$ refers to the same row $j$: this is what allows several copies of item type $j$.
 
-    - <strong>Assuming that the capacity is filled.</strong> When no item type fits, $v(k)$ is not $-\infty$ but the value of a smaller capacity; in Example 1, $v(1)=0$.
+    - <strong>Assuming that the capacity is filled.</strong> Part of the capacity may stay unused: when no item type fits, $v(k)=0$, not $-\infty$; in Example 1, $v(1)=0$.
 
     - <strong>Reconstructing past the end.</strong> The reconstruction stops when the residual capacity is $0$, or when $s[k]=0$ in the first DP algorithm and $j=0$ in the second one; otherwise it reads outside the arrays.
 
@@ -6388,7 +6394,7 @@ $$
 
     At the end of this chapter you will be able to:
 
-    - say how the BKP sits between the KP ($b_j=1$) and the UKP (no bound), and write its recurrence;
+    - say why the KP ($b_j=1$) and the UKP ($b_j\ge\lfloor c/w_j\rfloor$) are special cases of the BKP, and write its recurrence;
 
     - run the DP algorithm by hand, trying every feasible number $d$ of copies of each item type;
 
@@ -6406,7 +6412,7 @@ $$
 
     1. a knapsack of <em>capacity</em> $c \in \Z_{\ge 1}$,
 
-    2. a set $\Ioggetti = \{1,2,\ldots,n\}$ of $n$ item types,
+    2. a set $\Ioggetti = \{1,2,\dots,n\}$ of $n$ item types,
 
     3. for each item type $j \in \Ioggetti$, a <em>profit</em> $p_j \in \Z_{\ge 1}$, a <em>weight</em> $w_j \in \Z_{\ge 1}$, and a <em>bound</em> $b_j \in \Z_{\ge 1}$,
 
@@ -6513,7 +6519,9 @@ $$
         \end{array} \right. \tag{15.10}
         \end{equation*}
 
-    - The recursive decomposition process of formula $\eqref{eq:bkp}$ generates at most $b_j+1$ <strong>independent subproblems</strong>, corresponding to the possible numbers $d \in \{0,1,\dots,\min\{b_j,\lfloor k/w_j\rfloor\}\}$ of copies of item type $j$ inserted into a knapsack of capacity $k$, using only item types $1,2,\dots,j$. The base cases are $v(0,k)=0$ since no item type is available, and $v(j,0)=0$ since no capacity is available.
+    - The recursive decomposition process of formula $\eqref{eq:bkp}$ generates at most $b_j+1$ <strong>independent subproblems</strong>, corresponding to the possible numbers $d \in \{0,1,\dots,\min\{b_j,\lfloor k/w_j\rfloor\}\}$ of copies of item type $j$ inserted into a knapsack of capacity $k$, using only item types $1,2,\dots,j$.
+
+    - The base cases are $v(0,k)=0$ since no item type is available, and $v(j,0)=0$ since no capacity is available.
 
     - The optimal value $v(j,k)$ is obtained by trying every feasible number $d$ of copies of item type $j$ and selecting the one that maximizes the sum $d\,p_j+v(j-1,k-d\,w_j)$ of the profit of the $d$ copies and the optimal value of the residual subproblem, restricted to item types $1,2,\dots,j-1$.
 
@@ -6590,19 +6598,33 @@ $$
                 v(1,10) = \max\{v(0,10),\; p_1+v(0,8),\; 2p_1+v(0,6)\} = \max\{0,\,6,\,12\} = 12
                 $$
 
-            - Once we have computed $v(1,4)$, we can compute $v(2,4)$, trying $d=0,1$ copies of item type $2$ (since $b_2=2$ but $\lfloor 4/3 \rfloor=1$):
+            - In the same way we compute $v(1,7)$, $v(1,5)$ and $v(1,2)$:
 
                 $$
-                v(2,4) = \max\{v(1,4),\; p_2+v(1,1)\} = \max\{12,\,10+0\} = 12
+                v(1,7) = \max\{v(0,7),\; p_1+v(0,5),\; 2p_1+v(0,3)\} = \max\{0,\,6,\,12\} = 12
                 $$
 
-            - Once we have computed $v(1,10)$, we can compute $v(2,10)$, trying $d=0,1,2$ copies of item type $2$:
+                $$
+                v(1,5) = \max\{v(0,5),\; p_1+v(0,3),\; 2p_1+v(0,1)\} = \max\{0,\,6,\,12\} = 12
+                $$
+
+                $$
+                v(1,2) = \max\{v(0,2),\; p_1+v(0,0)\} = \max\{0,\,6\} = 6
+                $$
+
+            - Once we have computed $v(1,5)$ and $v(1,2)$, we can compute $v(2,5)$, trying $d=0,1$ copies of item type $2$ (since $b_2=2$ but $\lfloor 5/3 \rfloor=1$):
+
+                $$
+                v(2,5) = \max\{v(1,5),\; p_2+v(1,2)\} = \max\{12,\,10+6\} = 16
+                $$
+
+            - Once we have computed $v(1,10)$, $v(1,7)$ and $v(1,4)$, we can compute $v(2,10)$, trying $d=0,1,2$ copies of item type $2$:
 
                 \begin{align*}
                 v(2,10) &= \max\{v(1,10),\; p_2+v(1,7),\; 2p_2+v(1,4)\}\\ &= \max\{12,\,10+12,\,20+12\} = 32
                 \end{align*}
 
-            - Finally, once we have computed $v(2,10)$, we can compute $v(3,10)$, trying $d=0,1$ copies of item type $3$ (since $b_3=1$):
+            - Finally, once we have computed $v(2,10)$ and $v(2,5)$, we can compute $v(3,10)$, trying $d=0,1$ copies of item type $3$ (since $b_3=1$):
 
                 $$
                 v(3,10) = \max\{v(2,10),\; p_3+v(2,5)\} = \max\{32,\,12+16\} = 32
@@ -7593,7 +7615,7 @@ $$
 
 - The version <code>BKP\_DP\_InfoSol</code> stores the additional matrix $s$ and performs only a constant number of extra operations inside the same loops. Therefore, its number of steps remains $\Theta(nc\,b_{\max})$.
 
-- Replacing every bound $b_j$ by $\min\{b_j,\lfloor c/w_j\rfloor\}$ does not change the problem, so we can assume $b_{\max}\le c$. Under this assumption the bound $\Theta(nc\,b_{\max})$ is tight: it is attained by the instances in which all the weights are equal to $1$.
+- Replacing every bound $b_j$ by $\min\{b_j,\lfloor c/w_j\rfloor\}$ does not change the problem, so we can assume $b_{\max}\le c$. Under this assumption the bound $\Theta(nc\,b_{\max})$ is tight: it is attained by the instances in which all the weights are equal to $1$ and all the bounds are equal to $b_{\max}$. Indeed, the innermost loop then performs $\sum_{k=0}^{c}(\min\{b_{\max},k\}+1)\ge (c+1)\,b_{\max}/2$ iterations for each item type.
 
 ### 15.3.3 Typical mistakes
 
@@ -7611,7 +7633,7 @@ $$
 
 !!! chiave "In summary"
 
-    - The BKP generalizes the KP ($b_j=1$) and is a restriction of the UKP; the recurrence tries every number $d$ of copies of item type $j$.
+    - The BKP generalizes both the KP ($b_j=1$) and the UKP ($b_j=\lfloor c/w_j\rfloor$); the recurrence tries every number $d$ of copies of item type $j$.
 
     - The matrix $v(j,k)$ is filled in $\Theta(nc\,b_{\max})$ steps, which is pseudo-polynomial.
 

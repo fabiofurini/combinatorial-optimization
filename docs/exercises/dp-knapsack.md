@@ -4394,7 +4394,7 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     3. Step-by-step execution of the second bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed. Notice that all entries in row $i=0$ are initialized to $0$.
+        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed. All entries in row $i=0$ are initialized to $0$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -5739,7 +5739,7 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     3. Step-by-step execution of the second bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed. Notice that all entries in row $i=0$ are initialized to $0$.
+        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed. All entries in row $i=0$ are initialized to $0$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -7296,7 +7296,7 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     3. Step-by-step execution of the second bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed. Notice that all entries in row $i=0$ are initialized to $0$.
+        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed. All entries in row $i=0$ are initialized to $0$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -8065,6 +8065,8 @@ title: "Exercises · Dynamic programming for knapsack problems"
         v[4][10]=22.
         $$
 
+        The optimal solution is not unique: $(0,1,1,0)$, with total weight $4+6=10$ and total profit $10+12=22$, is also optimal. Both DP algorithms find $(2,1,0,0)$, because they update the stored value only when it strictly improves.
+
 <a id="esercizio-15-9"></a>
 
 !!! esercizio "Exercise 15.9: Exercise 4: Unbounded Knapsack Problem"
@@ -8770,7 +8772,7 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     3. Step-by-step execution of the second bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed. Notice that all entries in row $i=0$ are initialized to $0$.
+        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed. All entries in row $i=0$ are initialized to $0$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -10406,7 +10408,7 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     3. Step-by-step execution of the second bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed. Notice that all entries in row $i=0$ are initialized to $0$.
+        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed. All entries in row $i=0$ are initialized to $0$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -11352,6 +11354,8 @@ title: "Exercises · Dynamic programming for knapsack problems"
         $$
         v[5][11]=19.
         $$
+
+        The optimal solution is not unique, and the two DP algorithms find different ones: the first finds $(1,0,0,1,0)$, with total weight $2+9=11$ and total profit $3+16=19$; the second finds $(0,1,1,0,0)$, with total weight $5+6=11$ and total profit $9+10=19$. These are the only two optimal solutions.
 
 ## A DP algorithm for the Bounded Knapsack Problem
 

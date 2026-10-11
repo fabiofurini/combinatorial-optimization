@@ -895,13 +895,13 @@ title: "Exercises · Knapsack: branch-and-bound on the critical item"
             For the $LP^1_\text{KP}$ problem, the split item is $s=3$ and the residual capacity is $\bar c = 4$. An  optimal solution ${ \tilde{ \boldsymbol x}}(\,LP^1_\text{KP}\,)$ is:
 
             $$
-            \tilde{x}_1=1,~~\tilde{x}_2=1,~~\tilde{x}_3=\frac{4}{6},~~\tilde{x}_4=0,~~\tilde{x}_5=0,~~\tilde{x}_6=0
+            \tilde{x}_1=1,~~\tilde{x}_2=1,~~\tilde{x}_3=\frac{2}{3},~~\tilde{x}_4=0,~~\tilde{x}_5=0,~~\tilde{x}_6=0
             $$
 
             the optimal value is:
 
             $$
-            z(~LP^1_\text{KP}~) = 6 \cdot 1 + 5 \cdot 1 +  8 \cdot \frac{4}{6} =\frac{49}{3}
+            z(~LP^1_\text{KP}~) = 6 \cdot 1 + 5 \cdot 1 +  8 \cdot \frac{2}{3} =\frac{49}{3}
             $$
 
             The optimal solution ${ \tilde{ \boldsymbol x}}(\,LP^1_\text{KP}\,)$ is <strong>fractional</strong> and the $LP^1_\text{KP}$ problem is <strong>feasible</strong>, so the $LP^1_\text{KP}$ problem is inserted in the Problem List $L$ and the Lower Bound $LB$ is set to $11$ ($LB(\bar{\boldsymbol x})= 11$).
@@ -929,9 +929,9 @@ title: "Exercises · Knapsack: branch-and-bound on the critical item"
                 The capacity is $c(2)=9$ and the objective-function constant is $p(2)=0$. The split item is $s=4$ and the residual capacity is $\bar c = 4$. An  optimal solution ${ \tilde{ \boldsymbol x}}(\,LP^2_\text{KP}\,)$ is:
 
                 $$
-                \tilde{x}_1=1,~~\tilde{x}_2=1,~~\tilde{x}_4=\frac{4}{7},~~\tilde{x}_5=0,~~\tilde{x}_6=0
-                \qquad \text{and} \qquad
-                z(~LP^2_\text{KP}~) =   6 \cdot 1 + 5 \cdot 1 + 9 \cdot \frac{4}{7} = \frac{113}{7}
+                \begin{gathered}\tilde{x}_1=1,~~\tilde{x}_2=1,~~\tilde{x}_4=\frac{4}{7},~~\tilde{x}_5=0,~~\tilde{x}_6=0
+                \qquad \text{and} \\
+                z(~LP^2_\text{KP}~) =   6 \cdot 1 + 5 \cdot 1 + 9 \cdot \frac{4}{7} = \frac{113}{7}\end{gathered}
                 $$
 
                 The $LP^2_{\text{KP}}$ problem is <strong>feasible</strong> and we have:
@@ -955,7 +955,7 @@ title: "Exercises · Knapsack: branch-and-bound on the critical item"
                 The capacity is $c(3)=3$ and the objective-function constant is $p(3)=8$. The split item is $s=2$ and the residual capacity is $\bar c = 1$. An  optimal solution ${ \tilde{ \boldsymbol x}}(\,LP^3_\text{KP}\,)$ is:
 
                 $$
-                \tilde{x}_1=1,~~\tilde{x}_2=\frac{1}{3},~~\tilde{x}_4=0,~~\tilde{x}_5=0,~~\tilde{x}_6=0 \text{   and   }  z(~LP^3_\text{KP}~) =  8 + 6 \cdot 1 + 5 \cdot \frac{1}{3} = \frac{47}{3}
+                \begin{gathered} \tilde{x}_1=1,~~\tilde{x}_2=\frac{1}{3},~~\tilde{x}_4=0,~~\tilde{x}_5=0,~~\tilde{x}_6=0 \qquad \text{and} \\  z(~LP^3_\text{KP}~) =  8 + 6 \cdot 1 + 5 \cdot \frac{1}{3} = \frac{47}{3}\end{gathered}
                 $$
 
                 The $LP^3_{\text{KP}}$ problem is <strong>feasible</strong> and we have:

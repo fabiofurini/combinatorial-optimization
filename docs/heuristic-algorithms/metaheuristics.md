@@ -30,7 +30,23 @@ title: "Metaheuristics"
 
     - say what metaheuristics do not give: a dual bound.
 
-## 21.1 The problems and the assumptions { #sez-sec-problems }
+## 21.1 Metaheuristics { #sez-sec-metaheuristic }
+
+<a id="box-1-def-metaheuristic"></a>
+
+!!! definizione "Definition 21.1: Metaheuristic"
+
+    A <strong>metaheuristic</strong> is a general strategy that guides a local search beyond the first local optimum, to explore other regions of the set of feasible solutions.
+
+- A metaheuristic is a <em>scheme</em>, not an algorithm: an algorithm is obtained by choosing the representation, the neighbourhoods, the local search and the parameters (Section [21.3](#sez-sec-escape)).
+
+- Every metaheuristic balances <strong>intensification</strong> and <strong>diversification</strong>, defined in the chapter «Heuristic algorithms: definitions».
+
+!!! chiave ""
+
+    A local search stops in the first local optimum; a metaheuristic escapes from it by accepting worse solutions, by jumping to a new starting solution, or by combining several good solutions.
+
+## 21.2 The problems and the assumptions { #sez-sec-problems }
 
 - The metaheuristics of these notes are illustrated on the four combinatorial optimization problems of the notes on heuristic algorithms. Their definitions and assumptions are given in the notes on combinatorial optimization problems; we recall them briefly.
 
@@ -71,7 +87,7 @@ title: "Metaheuristics"
 
 - As in the notes on heuristic algorithms, $\mathscr{A}(I)$ is the value of the solution computed by the algorithm $\mathscr{A}$ on the instance $I$, and $z(I)$ is the optimal value. We write $f(S)$ for the value of a solution $S$, and we describe the algorithms for a <strong>minimization</strong> problem; for the KP, a maximization problem, the inequalities are reversed.
 
-### 21.1.1 The neighbourhoods { #sez-sec-neigh }
+### 21.2.1 The neighbourhoods { #sez-sec-neigh }
 
 - All the metaheuristics of these notes are built on the neighbourhoods of the notes on local search. We recall them by name, with the moves that define them; $n$ is the number of items, cities or jobs.
 
@@ -150,7 +166,7 @@ title: "Metaheuristics"
 
 - The <strong>local searches</strong> used inside the metaheuristics are the descents of the notes on local search: TWOOPTLS (2-opt, best improvement) for the TSP, MOVEDESCENT (move, best improvement, lexicographic comparison) for $P\,||\,C_{\max}$, and KPLOCALSEARCH (feasible flips and swaps, best improvement) for the KP. In every best-improvement descent, ties between equally good moves are broken in favour of the first move found, scanning the indices in increasing order.
 
-### 21.1.2 Random numbers { #sez-sec-random }
+### 21.2.2 Random numbers { #sez-sec-random }
 
 - Most metaheuristics make <strong>random choices</strong>. To make every example and every exercise reproducible, all the random numbers of these notes, and of their <code>C++</code> code, are produced by the <strong>minimal standard generator</strong> of Park and Miller (1988):
 
@@ -172,7 +188,7 @@ title: "Metaheuristics"
 
 - In the worked examples the random numbers are written in the text, rounded to four decimals, so that every step can be checked by hand; the rounding never changes a decision.
 
-### 21.1.3 The instances { #sez-sec-instances }
+### 21.2.3 The instances { #sez-sec-instances }
 
 - The worked examples use the four <strong>reference instances</strong> of the notes on heuristic algorithms, whose optimal values are known:
 
@@ -255,9 +271,9 @@ title: "Metaheuristics"
 </tr>
 </table></div>
 
-- The reference instances are small enough to follow every iteration by hand, but too small to show the behaviour of a metaheuristic over thousands of iterations. For the experiments we use one <strong>medium instance</strong> per problem, generated once with the random number generator of Section [21.1.2](#sez-sec-random) and fixed below. Their optimal values have been computed with an exact algorithm, and are used only to measure the quality of the heuristic solutions.
+- The reference instances are small enough to follow every iteration by hand, but too small to show the behaviour of a metaheuristic over thousands of iterations. For the experiments we use one <strong>medium instance</strong> per problem, generated once with the random number generator of Section [21.2.2](#sez-sec-random) and fixed below. Their optimal values have been computed with an exact algorithm, and are used only to measure the quality of the heuristic solutions.
 
-<a id="box-1-ex-tsp20"></a>
+<a id="box-2-ex-tsp20"></a>
 
 !!! esempio "Example 21.1: The medium TSP instance (TSP20)"
 
@@ -350,7 +366,7 @@ title: "Metaheuristics"
 
     The nearest neighbour tour from city $1$ has length $326$; the 2-opt local search started from it stops at a local optimum of length $319$, after two improving moves. The optimal value is $z(I)=291$: the local optimum is $9.6\%$ above it.
 
-<a id="box-2-ex-medium"></a>
+<a id="box-3-ex-medium"></a>
 
 !!! esempio "Example 21.2: The medium instances of the KP, the BPP and $P\,||\,C_{\max}$"
 
@@ -455,13 +471,13 @@ title: "Metaheuristics"
 
     The total weight is $868$, so at least $\lceil 868/100\rceil=9$ bins are needed, and a packing into $9$ bins exists: $z(I)=9$. FF and FFD both use $10$ bins.
 
-## 21.2 How to escape from a local optimum { #sez-sec-escape }
+## 21.3 How to escape from a local optimum { #sez-sec-escape }
 
 - A local search moves from a solution to a better neighbour, and stops at the first <strong>local optimum</strong>: a solution with no better neighbour. In the landscape of the objective function, it descends to the bottom of the valley where it starts, and stays there. This is pure <strong>intensification</strong>.
 
 - Repeating the local search from many starting solutions (multi-start) explores many valleys, but each start ignores everything learnt before, and good valleys are usually found close to other good valleys.
 
-- A <strong>metaheuristic</strong> is a general strategy that guides a local search beyond the first local optimum, to explore other valleys of the landscape. The table below lists the ways to escape from a local optimum; it is the map of these notes.
+- The table below lists the ways to escape from a local optimum; it is the map of the chapter.
 
 ![Figure 3](../img/metaheuristics/fig03.svg){ .fig loading=lazy  }
 
@@ -474,47 +490,47 @@ title: "Metaheuristics"
 <tr>
 <td>accept worse moves <em>at random</em></td>
 <td>a worse neighbour is accepted with a probability that decreases with the worsening and with time</td>
-<td>simulated annealing (Section [21.3](#sez-sec-sa))</td>
+<td>simulated annealing (Section [21.4](#sez-sec-sa))</td>
 </tr>
 <tr>
 <td>accept worse moves <em>deterministically, with memory</em></td>
 <td>move to the best neighbour even if it is worse, and forbid going back to the solutions just visited</td>
-<td>tabu search (Section [21.4](#sez-sec-ts))</td>
+<td>tabu search (Section [21.5](#sez-sec-ts))</td>
 </tr>
 <tr>
 <td><em>perturb</em> the local optimum and restart</td>
 <td>apply a random modification that the local search cannot undo, and descend again</td>
-<td>iterated local search (Section [21.5](#sez-sec-ils))</td>
+<td>iterated local search (Section [21.6](#sez-sec-ils))</td>
 </tr>
 <tr>
 <td><em>change the neighbourhood</em></td>
 <td>when the search is stuck, use a larger neighbourhood, of which the local optimum is no longer a local optimum</td>
-<td>variable neighbourhood search (Section [21.6](#sez-sec-vns))</td>
+<td>variable neighbourhood search (Section [21.7](#sez-sec-vns))</td>
 </tr>
 <tr>
 <td><em>restart</em> from a randomized construction</td>
 <td>build a different good solution at every restart, and improve it</td>
-<td>GRASP (Section [21.7](#sez-sec-grasp))</td>
+<td>GRASP (Section [21.8](#sez-sec-grasp))</td>
 </tr>
 <tr>
 <td><em>destroy and repair</em></td>
 <td>remove a large part of the solution and rebuild it with a heuristic or an exact algorithm</td>
-<td>large neighbourhood search (Section [21.8](#sez-sec-lns))</td>
+<td>large neighbourhood search (Section [21.9](#sez-sec-lns))</td>
 </tr>
 <tr>
 <td>work with a <em>population</em></td>
 <td>combine the parts of several good solutions into new ones</td>
-<td>genetic and memetic algorithms (Section [21.9](#sez-sec-ga))</td>
+<td>genetic and memetic algorithms (Section [21.10](#sez-sec-ga))</td>
 </tr>
 </table></div>
 
 - The first two ways keep <strong>one current solution</strong> and change the <strong>acceptance rule</strong> of the local search: they walk out of the valley through worse solutions. The next four <strong>jump</strong>: they generate a new starting point, far enough to leave the valley but close enough to keep what is good. The last one keeps <strong>many solutions</strong> at the same time.
 
-- Every metaheuristic must balance <strong>intensification</strong> (descend to the bottom of the current valley) and <strong>diversification</strong> (leave it for another one). For each method we point out which component does what, and Section [21.10](#sez-sec-closing) compares them.
+- Every metaheuristic must balance <strong>intensification</strong> (descend to the bottom of the current valley) and <strong>diversification</strong> (leave it for another one). For each method we point out which component does what, and Section [21.11](#sez-sec-closing) compares them.
 
 - A metaheuristic is a <em>scheme</em>, not an algorithm: to obtain an algorithm one must choose the representation, the neighbourhoods, the local search and the parameters, and these choices matter at least as much as the scheme. We present every metaheuristic on the problems where its idea is most natural, not on all four.
 
-## 21.3 Simulated annealing { #sez-sec-sa }
+## 21.4 Simulated annealing { #sez-sec-sa }
 
 !!! chiave ""
 
@@ -557,7 +573,7 @@ title: "Metaheuristics"
 
 - The figure shows the acceptance probability as a function of the worsening, for four temperatures. At $T=10$ a worsening of $5$ is accepted with probability $e^{-0.5}\approx 0.61$; at $T=1$ with probability $e^{-5}\approx 0.007$. The temperature has the same unit as the objective: $T$ is “large” or “small” only compared with the typical values of $\delta$.
 
-### 21.3.1 The cooling schedule and the parameters { #sez-sec-sa-param }
+### 21.4.1 The cooling schedule and the parameters { #sez-sec-sa-param }
 
 - The <strong>cooling schedule</strong> is the sequence of temperatures. The pseudo-code uses the <strong>geometric</strong> schedule $T\leftarrow\alpha T$, the most common in practice, with $\alpha$ between $0.8$ and $0.99$, and $L$ moves at each temperature. Other schedules are the <em>linear</em> one, $T_k=T_0-k\beta$, and the <em>logarithmic</em> one, $T_k=\frac{\Gamma}{\ln(k+1)}$, which matters in the theory of $SA$ but is far too slow in practice.
 
@@ -569,9 +585,9 @@ title: "Metaheuristics"
 
 - Slow cooling ($\alpha$ close to $1$) gives better solutions but more iterations: the parameters trade quality for time, as every heuristic does.
 
-### 21.3.2 Examples
+### 21.4.2 Examples
 
-<a id="box-3-ex-saTSP"></a>
+<a id="box-4-ex-saTSP"></a>
 
 !!! esempio "Example 21.3: $SA$ with the 2-opt neighbourhood on the TSP reference instance"
 
@@ -581,7 +597,7 @@ title: "Metaheuristics"
     1:(1,3),\quad 2:(1,4),\quad 3:(2,4),\quad 4:(2,5),\quad 5:(3,5),
     $$
 
-    and the random numbers, with $seed=1$, are those of Section [21.1.2](#sez-sec-random): the first number of each iteration ($u$) chooses the move $1+\lfloor 5u\rfloor$, the second ($v$) is used in the acceptance test.
+    and the random numbers, with $seed=1$, are those of Section [21.2.2](#sez-sec-random): the first number of each iteration ($u$) chooses the move $1+\lfloor 5u\rfloor$, the second ($v$) is used in the acceptance test.
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -674,7 +690,7 @@ title: "Metaheuristics"
 
 - On this small instance the optimal tour is the only 2-opt local optimum among the $12$ tours, so a 2-opt local search would reach it as well: the example shows the mechanics of $SA$; its ability to escape from local optima needs instances with bad local optima, as the next ones.
 
-### 21.3.3 Infeasible solutions: simulated annealing with a penalty { #sez-sec-sa-kp }
+### 21.4.3 Infeasible solutions: simulated annealing with a penalty { #sez-sec-sa-kp }
 
 - For the KP, the flip neighbourhood of a solution close to the capacity contains many infeasible solutions. Instead of discarding them, $SA$ can <strong>visit</strong> them, with a penalty on the excess weight that makes them less attractive:
 
@@ -691,7 +707,7 @@ title: "Metaheuristics"
 
 - The <strong>penalty coefficient</strong> $\beta$ is a parameter: if it is too small the search wanders in the infeasible region, where the profit is larger; if it is too large the infeasible solutions are never accepted, and the bridge is closed.
 
-<a id="box-4-ex-saKP"></a>
+<a id="box-5-ex-saKP"></a>
 
 !!! esempio "Example 21.4: $SA$ with a penalty on the KP reference instance"
 
@@ -786,9 +802,9 @@ title: "Metaheuristics"
 
     At iteration $2$ the search moves to the <strong>infeasible</strong> solution $(1,1,1,0)$, of weight $12>9$: its profit is $23$ and its penalized value $23-3\cdot 3=14$, a worsening of $2$ accepted with probability $0.6065$. From there, removing item $3$ gives the feasible solution $(1,1,0,0)$ of profit $17$: the optimum, $SA(I)=17=z(I)$. Iteration $4$ shows that at this temperature even a worsening of $10$ can be accepted, with a small probability; iteration $5$ goes back to the optimum.
 
-### 21.3.4 An experiment on the medium TSP instance { #sez-sec-sa-exp }
+### 21.4.4 An experiment on the medium TSP instance { #sez-sec-sa-exp }
 
-- We run $SA$ with the 2-opt neighbourhood on TSP20 ([Example 21.1](#box-1-ex-tsp20)), from the nearest neighbour tour of length $326$, with $L=100$ and $T_{\min}=0.5$. The figure shows one run, with $T_0=20$, $\alpha=0.95$ and $seed=1$: the length of the current tour (gray) and of the best tour (blue) along the $7200$ iterations, every $10$ iterations. The data are produced by the <code>C++</code> code of these notes (<code>make data</code>).
+- We run $SA$ with the 2-opt neighbourhood on TSP20 ([Example 21.1](#box-2-ex-tsp20)), from the nearest neighbour tour of length $326$, with $L=100$ and $T_{\min}=0.5$. The figure shows one run, with $T_0=20$, $\alpha=0.95$ and $seed=1$: the length of the current tour (gray) and of the best tour (blue) along the $7200$ iterations, every $10$ iterations. The data are produced by the <code>C++</code> code of these notes (<code>make data</code>).
 
 ![Figure 5](../img/metaheuristics/fig05.svg){ .fig loading=lazy  }
 
@@ -918,7 +934,7 @@ title: "Metaheuristics"
 
 - With $T_0=1$ the temperature is too low from the beginning: few worsening moves are accepted, and $SA$ behaves like a randomized local search. Slower cooling ($\alpha=0.99$) spends more iterations at every temperature range and reaches the optimum in almost every run, at the price of many more iterations. A single run says little: the comparison must look at the distribution over several seeds, as recalled in the notes on heuristic algorithms.
 
-### 21.3.5 Properties { #sez-sec-sa-prop }
+### 21.4.5 Properties { #sez-sec-sa-prop }
 
 - At a fixed temperature $T$, the sequence of current solutions of $SA$ is a Markov chain: the next solution depends only on the current one. If the neighbourhood is symmetric ($S'\in N(S)$ if and only if $S\in N(S')$, all neighbourhoods having the same size) and connected (every solution can reach every other one through moves), the chain has a unique stationary distribution, the <strong>Boltzmann distribution</strong>:
 
@@ -932,13 +948,13 @@ title: "Metaheuristics"
 
 - Hajek (1988) proved that with the logarithmic schedule $T_k=\frac{\Gamma}{\ln(k+1)}$, with $\Gamma$ at least the depth of the deepest valley that does not contain an optimal solution, the probability that the current solution is optimal tends to $1$. The result is a guarantee <em>in the limit</em>: the number of iterations needed can be larger than the number of solutions, and in practice the faster geometric schedule is used, without guarantees.
 
-## 21.4 Tabu search { #sez-sec-ts }
+## 21.5 Tabu search { #sez-sec-ts }
 
 !!! chiave ""
 
     <em>Tabu search</em> (denoted by $TS$) explores the neighbourhood of the current solution completely and moves to the <em>best</em> neighbour, even if it is worse than the current solution. To avoid going back to the solutions just visited, it keeps a short-term memory, the <em>tabu list</em>: the moves that would undo the recent moves are forbidden (<em>tabu</em>) for a number of iterations, the <em>tenure</em>, unless they lead to a solution better than the best one found (<em>aspiration criterion</em>).
 
-- The pseudo-code of $TS$ for $P\,||\,C_{\max}$, with the move neighbourhood and the lexicographic comparison of Section [21.1.1](#sez-sec-neigh), reads as follows; the attribute $(j,h)$ forbids moving job $j$ back to machine $h$.
+- The pseudo-code of $TS$ for $P\,||\,C_{\max}$, with the move neighbourhood and the lexicographic comparison of Section [21.2.1](#sez-sec-neigh), reads as follows; the attribute $(j,h)$ forbids moving job $j$ back to machine $h$.
 
 !!! algoritmo "Algorithm: Tabu search for $P\,||\,C_{\max}$"
 
@@ -960,9 +976,9 @@ title: "Metaheuristics"
 
 - <strong>Long-term memory.</strong> Besides the tabu list (short-term memory), $TS$ can record how often each attribute appears in the visited solutions. <em>Diversification</em> penalizes the frequent attributes, to push the search toward unexplored regions; <em>intensification</em> restarts from the best solutions found, and fixes the attributes they share.
 
-### 21.4.1 Example
+### 21.5.1 Example
 
-<a id="box-5-ex-tsPCM"></a>
+<a id="box-6-ex-tsPCM"></a>
 
 !!! esempio "Example 21.5: $TS$ on the $P\,||\,C_{\max}$ reference instance"
 
@@ -1113,9 +1129,9 @@ title: "Metaheuristics"
 
 - With $tenure\le 5$, $TS$ does not reach the optimum on this instance within $50$ iterations: the tabu list is too short to prevent the search from going back to the plateau of makespan $11$.
 
-### 21.4.2 Tabu search for the TSP, and the effect of the tenure { #sez-sec-ts-tsp }
+### 21.5.2 Tabu search for the TSP, and the effect of the tenure { #sez-sec-ts-tsp }
 
-- For the TSP with the 2-opt neighbourhood, the natural attributes are the <strong>edges</strong>: when a move removes the edges $(\sigma_i,\sigma_{i+1})$ and $(\sigma_j,\sigma_{j+1})$, these two edges may not be added back to the tour for $tenure$ iterations, unless the move gives a tour shorter than the best one. Everything else is as in the pseudo-code of Section [21.4](#sez-sec-ts): at every iteration all the $\frac{n(n-3)}{2}$ moves are evaluated in $O(1)$ each, and the best non-tabu one is performed.
+- For the TSP with the 2-opt neighbourhood, the natural attributes are the <strong>edges</strong>: when a move removes the edges $(\sigma_i,\sigma_{i+1})$ and $(\sigma_j,\sigma_{j+1})$, these two edges may not be added back to the tour for $tenure$ iterations, unless the move gives a tour shorter than the best one. Everything else is as in the pseudo-code of Section [21.5](#sez-sec-ts): at every iteration all the $\frac{n(n-3)}{2}$ moves are evaluated in $O(1)$ each, and the best non-tabu one is performed.
 
 - The tables report the result of $TS$ on the medium instances, from the nearest neighbour tour ($326$) for TSP20 with $200$ iterations, and from the LPT solution ($73$) for PCM15 with $300$ iterations, for several values of the tenure; for PCM15 the table also gives the number of iterations performed ($300$ unless the lower bound is reached).
 
@@ -1190,7 +1206,7 @@ title: "Metaheuristics"
 
 - With $tenure=0$ there is no memory, and $TS$ cycles: on TSP20 it never leaves the first 2-opt local optimum. On PCM15 the move neighbourhood has a large plateau, and $TS$ needs a long tabu list to cross it; but a tabu list that is too long forbids too much, and with $tenure\ge 20$ the optimum is lost again. The tenure must be tuned, and its best value depends on the problem and on the instance.
 
-## 21.5 Iterated local search { #sez-sec-ils }
+## 21.6 Iterated local search { #sez-sec-ils }
 
 !!! chiave ""
 
@@ -1219,9 +1235,9 @@ title: "Metaheuristics"
 
 - The <strong>double bridge</strong> cuts the tour into four segments $A$, $B$, $C$, $D$ and reconnects them as $A\,C\,B\,D$: it removes three edges (dashed) and adds three new ones (red), while the edge between the end of $D$ and the beginning of $A$ is kept. No segment is reversed, whereas every 2-opt move reverses a segment: when $B$ and $C$ have at least two cities each, a single 2-opt move cannot undo the kick, and the 2-opt local search, which accepts only improving moves, rarely goes back to the same local optimum. (If $B$ and $C$ are single cities, the kick changes only two edges and is itself a 2-opt move: exercise EX\_IV\_2 uses this case.)
 
-### 21.5.1 Example
+### 21.6.1 Example
 
-<a id="box-6-ex-ilsTSP"></a>
+<a id="box-7-ex-ilsTSP"></a>
 
 !!! esempio "Example 21.6: $ILS$ on the medium TSP instance"
 
@@ -1259,7 +1275,7 @@ title: "Metaheuristics"
 
     for the ten seeds. Each iteration costs one kick and one 2-opt local search, which starts from a solution close to a local optimum and needs few moves.
 
-## 21.6 Variable neighbourhood search { #sez-sec-vns }
+## 21.7 Variable neighbourhood search { #sez-sec-vns }
 
 !!! chiave ""
 
@@ -1280,13 +1296,13 @@ title: "Metaheuristics"
 
 - Here $N_k$ contains the assignments obtained by moving $k$ jobs (or fewer, if the same job is drawn twice). Since a swap of two jobs is the combination of two moves, $N_2$ contains the swap neighbourhood: shaking with $k=2$ can reproduce the swaps that the move neighbourhood cannot see.
 
-### 21.6.1 Example
+### 21.7.1 Example
 
-<a id="box-7-ex-vnsPCM"></a>
+<a id="box-8-ex-vnsPCM"></a>
 
 !!! esempio "Example 21.7: $VNS$ on the $P\,||\,C_{\max}$ reference instance"
 
-    We start from the LPT solution, with loads $(11,8,8)$, and use $k_{\max}=3$ and $seed=1$ (random numbers $0.0000$, $0.1315$, $0.7556$, $0.4587$, $0.5328$, $0.2190$, $0.0470$, $0.6789$). MOVEDESCENT does not change the LPT solution, which is a local optimum for the move neighbourhood ([Example 21.5](#box-5-ex-tsPCM)). Each random move uses two numbers: $j=1+\lfloor 7u\rfloor$ and $g=1+\lfloor 2u\rfloor$.
+    We start from the LPT solution, with loads $(11,8,8)$, and use $k_{\max}=3$ and $seed=1$ (random numbers $0.0000$, $0.1315$, $0.7556$, $0.4587$, $0.5328$, $0.2190$, $0.0470$, $0.6789$). MOVEDESCENT does not change the LPT solution, which is a local optimum for the move neighbourhood ([Example 21.5](#box-6-ex-tsPCM)). Each random move uses two numbers: $j=1+\lfloor 7u\rfloor$ and $g=1+\lfloor 2u\rfloor$.
 
     - <strong>Iteration 1</strong>, $k=1$: job $j=1+\lfloor 7\cdot 0.0000\rfloor=1$ moves from $M_1$ to the first other machine ($g=1+\lfloor 2\cdot 0.1315\rfloor=1$), $M_2$: loads $(6,13,8)$. MOVEDESCENT moves job $6$ from $M_2$ to $M_1$: loads $(9,10,8)$, $C_{\max}=10$, better than $11$. The new solution $J_1=\{5,6,7\}$, $J_2=\{1,2\}$, $J_3=\{3,4\}$ is accepted, and $k=1$.
 
@@ -1396,9 +1412,9 @@ title: "Metaheuristics"
 </tr>
 </table></div>
 
-- With $k_{\max}=3$, $VNS$ reaches the optimum $69$ in $7$ runs out of $10$, usually in a few tens of iterations; the best tabu search of Section [21.4.2](#sez-sec-ts-tsp) needed a carefully tuned tenure. When $VNS$ fails, the search is stuck at $70$: the shaking explores at most three moves away, and the optimum is farther. Larger $k_{\max}$, or restarts, can be added at the price of more iterations.
+- With $k_{\max}=3$, $VNS$ reaches the optimum $69$ in $7$ runs out of $10$, usually in a few tens of iterations; the best tabu search of Section [21.5.2](#sez-sec-ts-tsp) needed a carefully tuned tenure. When $VNS$ fails, the search is stuck at $70$: the shaking explores at most three moves away, and the optimum is farther. Larger $k_{\max}$, or restarts, can be added at the price of more iterations.
 
-## 21.7 GRASP { #sez-sec-grasp }
+## 21.8 GRASP { #sez-sec-grasp }
 
 !!! chiave ""
 
@@ -1433,7 +1449,7 @@ title: "Metaheuristics"
 
 - The iterations of $GRASP$ are <strong>independent</strong>: nothing is learnt from one to the next, and the iterations can be run in parallel. Extensions add memory: <em>reactive</em> GRASP adapts $\alpha$ to the results, and <em>path relinking</em> explores the solutions between two good local optima.
 
-<a id="box-8-ex-graspKP"></a>
+<a id="box-9-ex-graspKP"></a>
 
 !!! esempio "Example 21.8: $GRASP$ on the KP reference instance"
 
@@ -1445,7 +1461,7 @@ title: "Metaheuristics"
 
     $GRASP(I)=17=z(I)$. On this small instance every start leads to the optimum; on larger instances different starts lead to different local optima, as the experiment below shows.
 
-### 21.7.1 GRASP for the TSP, and the effect of $\alpha$ { #sez-sec-grasp-exp }
+### 21.8.1 GRASP for the TSP, and the effect of $\alpha$ { #sez-sec-grasp-exp }
 
 - For the TSP the randomized construction is the nearest neighbour heuristic with an RCL: from the last city $\ell$ of the partial tour, the next city is chosen at random among the unvisited cities whose distance from $\ell$ is at most $d_{\min}+\alpha(d_{\max}-d_{\min})$, and the local search is TWOOPTLS.
 
@@ -1527,7 +1543,7 @@ title: "Metaheuristics"
 
 - With $\alpha=0$ all the iterations are the same: the result is the local optimum reached from the greedy solution ($319$ for TSP20, $514$ for KP20), in every run. A little randomization is enough to reach the optimum in every run on these instances; with $\alpha=1$ the constructions are random, and on KP20 one run misses the optimum.
 
-## 21.8 Large neighbourhood search { #sez-sec-lns }
+## 21.9 Large neighbourhood search { #sez-sec-lns }
 
 !!! chiave ""
 
@@ -1547,7 +1563,7 @@ title: "Metaheuristics"
 
 - The destroy method diversifies (it is usually random, and $q$ controls how far the search goes); the repair method intensifies (it rebuilds the destroyed part in the best way it can). Removing <em>related</em> elements (cities close to each other, items of the same bins) makes the repair more effective than removing unrelated ones, which can only be put back where they were.
 
-<a id="box-9-ex-lnsTSP"></a>
+<a id="box-10-ex-lnsTSP"></a>
 
 !!! esempio "Example 21.9: $LNS$ on the TSP reference instance"
 
@@ -1570,7 +1586,7 @@ title: "Metaheuristics"
 
     so city $2$ goes between $4$ and $5$: $(1,4,2,5,3)$, of length $18$, accepted. It is the optimal tour, traversed in the opposite direction: one destroy-and-repair step has changed four edges of the tour.
 
-### 21.8.1 Large neighbourhood search for the BPP: heuristic and exact repair { #sez-sec-lns-bpp }
+### 21.9.1 Large neighbourhood search for the BPP: heuristic and exact repair { #sez-sec-lns-bpp }
 
 - For the BPP the natural destroy method <strong>empties bins</strong>: the least loaded bin, which is the one we would like to get rid of, and $q-1$ other bins chosen at random. The repair method repacks the removed items into new bins, while the other bins are kept as they are. The new packing is accepted if it uses fewer bins, or the same number of bins and a value of the auxiliary objective $\sum_b(\sum_{i\in P_b}w_i)^2$ not smaller: on the plateaus of the flat objective, the search moves toward fuller bins.
 
@@ -1581,7 +1597,7 @@ title: "Metaheuristics"
     <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> weights <span class="arithmatex">\(w[1..n]\)</span>, capacity <span class="arithmatex">\(c\)</span>, packing <span class="arithmatex">\(bin[1..n]\)</span> with <span class="arithmatex">\(nb\)</span> bins, <span class="arithmatex">\(q\)</span>, <span class="arithmatex">\(exact\)</span>, <span class="arithmatex">\(maxIter\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> a packing <span class="arithmatex">\(bin\)</span> and its number of bins <span class="arithmatex">\(nb\)</span></div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> LNS-BPP(<span class="arithmatex">\(w, c, bin, nb, q, exact, maxIter\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(\LB := \lceil \sum_i w[i]/c\rceil\)</span>;  <span class="arithmatex">\(it := 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>while</strong> <span class="arithmatex">\(it < maxIter\)</span> <strong>and</strong> <span class="arithmatex">\(nb > \LB\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(it := it+1\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">5</span><span class="arithmatex">\(empty :=\)</span> the least loaded bin and <span class="arithmatex">\(q-1\)</span> other bins at random
     <span class="arithmatex">\(items :=\)</span> the items packed in the bins of <span class="arithmatex">\(empty\)</span> <span class="pc-com">▹ destroy</span></div><div class="pc" style="--liv:2"><span class="pc-n">6</span><span class="arithmatex">\(newbin :=\)</span> the other bins, renumbered <span class="arithmatex">\(1,\dots,nb-q\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(exact\)</span> <strong>then</strong> pack <span class="arithmatex">\(items\)</span> optimally in <span class="arithmatex">\(k\)</span> new bins <strong>else</strong> pack <span class="arithmatex">\(items\)</span> by FFD in <span class="arithmatex">\(k\)</span> new bins</div><div class="pc" style="--liv:2"><span class="pc-n">8</span><span class="arithmatex">\(nb' := nb-q+k\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">9</span><strong>if</strong> <span class="arithmatex">\(nb' < nb\)</span> <strong>or</strong> (<span class="arithmatex">\(nb'=nb\)</span> <strong>and</strong> <span class="arithmatex">\(\sum_b (\text{load of } b \text{ in } newbin)^2 \ge \sum_b (\text{load of } b \text{ in } bin)^2\)</span>) <strong>then</strong></div><div class="pc" style="--liv:3"><span class="pc-n">10</span><span class="arithmatex">\(bin := newbin\)</span>;  <span class="arithmatex">\(nb := nb'\)</span> <span class="pc-com">▹ acceptance</span></div><div class="pc" style="--liv:2"><span class="pc-n">11</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">13</span><strong>return</strong> <span class="arithmatex">\(bin\)</span>, <span class="arithmatex">\(nb\)</span></div></div>
 
-<a id="box-10-ex-lnsBPP"></a>
+<a id="box-11-ex-lnsBPP"></a>
 
 !!! esempio "Example 21.10: $LNS$ on the BPP reference instance"
 
@@ -1696,7 +1712,7 @@ title: "Metaheuristics"
 
     A large neighbourhood is explored by solving a <strong>subproblem</strong>: the part of the solution left free by the destroy method is re-optimized, while the rest is fixed. The more powerful the method that solves the subproblem, the more powerful the neighbourhood.
 
-### 21.8.2 Adaptive large neighbourhood search { #sez-sec-alns }
+### 21.9.2 Adaptive large neighbourhood search { #sez-sec-alns }
 
 - Which destroy method works best depends on the instance, and on the phase of the search. <strong>Adaptive</strong> LNS (ALNS), introduced by Ropke and Pisinger (2006), uses several destroy (and repair) methods, chooses one at random at every iteration, and <strong>learns</strong> which ones work, by giving to each method $o$ a weight $w_o$:
 
@@ -1718,7 +1734,7 @@ title: "Metaheuristics"
 
 - On TSP20, from the nearest neighbour tour, with $q=5$, $200$ iterations and $\rho=0.1$, ALNS reaches the optimum in $7$ runs out of $10$ (average $299.4$). At the end the weight of the random removal is between $0.77$ and $0.98$, the weight of the worst removal between $0.03$ and $0.08$: the method has learnt that, from a good tour, removing the worst-placed cities and reinserting them by cheapest insertion almost always rebuilds a tour that is not better, and it has almost stopped using it. In these runs plain $LNS$ with random removal ($q=5$) does slightly better: adaptivity pays off when there are many methods, of unknown quality, and long runs.
 
-## 21.9 Population-based methods: genetic and memetic algorithms { #sez-sec-ga }
+## 21.10 Population-based methods: genetic and memetic algorithms { #sez-sec-ga }
 
 !!! chiave ""
 
@@ -1743,13 +1759,13 @@ title: "Metaheuristics"
 
 - <strong>Mutation.</strong> Each gene is flipped with a small probability $p_m$, typically $\frac1n$: it brings back into the population genes that selection may have lost.
 
-- <strong>Repair.</strong> The child can be infeasible. REPAIRKP removes the selected item of minimum efficiency until the capacity is respected (ties: the item of largest index). Alternatives are penalties, as in Section [21.3.3](#sez-sec-sa-kp), or encodings in which every chromosome is feasible.
+- <strong>Repair.</strong> The child can be infeasible. REPAIRKP removes the selected item of minimum efficiency until the capacity is respected (ties: the item of largest index). Alternatives are penalties, as in Section [21.4.3](#sez-sec-sa-kp), or encodings in which every chromosome is feasible.
 
 - <strong>Replacement.</strong> In the steady-state version of the pseudo-code, the child replaces the worst individual if it is better and not already in the population; duplicates would make the population lose its diversity.
 
 - Selection and replacement <strong>intensify</strong> (the population concentrates on good solutions); crossover and mutation <strong>diversify</strong>. Without local search, a $GA$ is good at finding promising regions but slow at reaching their local optima: the memetic algorithm adds the missing intensification.
 
-<a id="box-11-ex-gaKP"></a>
+<a id="box-12-ex-gaKP"></a>
 
 !!! esempio "Example 21.11: $GA$ on the KP reference instance"
 
@@ -1800,9 +1816,9 @@ title: "Metaheuristics"
 
 - The plain $GA$ reaches the optimum $521$ in $4$ runs out of $10$; the memetic algorithm in every run. The local search makes every individual a local optimum, and the crossover then recombines local optima instead of arbitrary solutions.
 
-## 21.10 Comparison and conclusions { #sez-sec-closing }
+## 21.11 Comparison and conclusions { #sez-sec-closing }
 
-### 21.10.1 The methods on the medium instances
+### 21.11.1 The methods on the medium instances
 
 - The table collects the results of the experiments of the previous sections: for each method, the best value found in $10$ runs ($seed=1,\dots,10$), as minimum, average and maximum, and the number of runs that reach the optimum. Deterministic methods give the same value in every run.
 
@@ -2000,7 +2016,7 @@ title: "Metaheuristics"
 
 - Every metaheuristic improves on the local search it is built on, and with suitable parameters several of them reach the optimum in every run. The table, however, also shows how much the result depends on the parameters (the tenure of $TS$, the strength $q$ of the destruction, the cooling of $SA$) and on the components (the repair of $LNS$, the local search of the memetic algorithm). On four small instances it does not rank the methods: such a ranking needs many instances and equal running times, as discussed in the notes on heuristic algorithms.
 
-### 21.10.2 Intensification and diversification
+### 21.11.2 Intensification and diversification
 
 - Every metaheuristic of these notes combines a component that <strong>intensifies</strong> (searches around the good solutions already found) and a component that <strong>diversifies</strong> (moves the search to unexplored regions), and has parameters that set the balance between the two.
 
@@ -2055,23 +2071,23 @@ title: "Metaheuristics"
 </tr>
 </table></div>
 
-### 21.10.3 Parameters and tuning
+### 21.11.3 Parameters and tuning
 
 - A metaheuristic is an algorithm only after its parameters are fixed, and the experiments of these notes show that the parameters can make the difference between finding the optimum in every run and never finding it. Choosing them is called <strong>tuning</strong>.
 
-- The parameters must be tuned on <strong>training</strong> instances and evaluated on <em>different</em> ones, otherwise the picture is optimistic. Tuning one parameter at a time ignores their interactions (for $SA$, the best $T_0$ depends on $\alpha$); tools such as <code>irace</code> (López-Ibá~nez et al., 2016) tune all of them together. A method that works well for a wide range of parameters is preferable to one that works very well only for a narrow range.
+- The parameters must be tuned on <strong>training</strong> instances and evaluated on <em>different</em> ones, otherwise the picture is optimistic. Tuning one parameter at a time ignores their interactions (for $SA$, the best $T_0$ depends on $\alpha$); tools such as <code>irace</code> (López-Ibáñez et al., 2016) tune all of them together. A method that works well for a wide range of parameters is preferable to one that works very well only for a narrow range.
 
-### 21.10.4 What these methods do not use
+### 21.11.4 What these methods do not use
 
 - None of the metaheuristics of these notes uses a <strong>relaxation</strong> of the problem or a <strong>MIP solver</strong>. They manipulate feasible (or penalized) solutions only, and they produce only <em>primal</em> bounds.
 
-- As a consequence, they cannot tell how good their solutions are. On the medium instances we could measure the quality only because the optimal values had been computed separately, by exact algorithms. The two exceptions confirm the rule: for $P\,||\,C_{\max}$ and the BPP, $TS$, $VNS$ and $LNS$ stopped as soon as they reached a simple lower bound, which is a <em>dual</em> bound that certifies optimality; when the optimum is above the bound, no such certificate exists, and the search goes on until the iteration limit. The exact repair of $LNS$ (Section [21.8.1](#sez-sec-lns-bpp)), finally, showed that re-optimizing a part of the solution exactly, with the rest fixed, gives very powerful neighbourhoods.
+- As a consequence, they cannot tell how good their solutions are. On the medium instances we could measure the quality only because the optimal values had been computed separately, by exact algorithms. The two exceptions confirm the rule: for $P\,||\,C_{\max}$ and the BPP, $TS$, $VNS$ and $LNS$ stopped as soon as they reached a simple lower bound, which is a <em>dual</em> bound that certifies optimality; when the optimum is above the bound, no such certificate exists, and the search goes on until the iteration limit. The exact repair of $LNS$ (Section [21.9.1](#sez-sec-lns-bpp)), finally, showed that re-optimizing a part of the solution exactly, with the rest fixed, gives very powerful neighbourhoods.
 
 !!! chiave ""
 
     Metaheuristics escape from local optima, but they give only one side of the gap. The notes on MIP-based heuristics use the MIP formulation of the problem, its relaxation and a MIP solver, both to guide the search and to obtain the dual bound on the other side.
 
-## 21.11 Typical mistakes
+## 21.12 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -2085,7 +2101,7 @@ title: "Metaheuristics"
 
     - <strong>Miscounting the random numbers.</strong> Every iteration consumes a fixed number of them (ten in the genetic algorithm of the exercises, with $n=5$); a wrong count changes every later step.
 
-## 21.12 In summary
+## 21.13 In summary
 
 !!! chiave "In summary"
 
@@ -2135,13 +2151,13 @@ title: "Metaheuristics"
     </tr>
     </table></div>
 
-## 21.13 <code>C++</code> implementation { #sez-sec-code }
+## 21.14 <code>C++</code> implementation { #sez-sec-code }
 
 - All the functions of this section are in the folder <code>METAHEUR\_CODE/src</code>, one function per file, and are declared in the header <code>Metaheuristics.h</code>. The items, cities and jobs are indexed $0,1,\dots,n-1$, the machines $0,\dots,m-1$ and the bins $0,\dots,nb-1$: the algorithmic logic is the one of the pseudo-codes, with $0$-based indices. Vectors are <code>Vec</code> (<code>vector&lt;int&gt;</code>) and matrices <code>Matrix</code> (<code>vector&lt;Vec&gt;</code>).
 
-- The command <code>make test</code> compiles the code and runs every example of these notes and every instance of the exercises, checking the value found against the expected one; <code>make data</code> writes the data of the figure of Section [21.3.4](#sez-sec-sa-exp).
+- The command <code>make test</code> compiles the code and runs every example of these notes and every instance of the exercises, checking the value found against the expected one; <code>make data</code> writes the data of the figure of Section [21.4.4](#sez-sec-sa-exp).
 
-- The random numbers are produced by <code>Rand</code>, the generator of Section [21.1.2](#sez-sec-random). The structure <code>Random</code> contains the seed and, optionally, a list of given numbers, which are returned instead: the exercises give their random numbers explicitly.
+- The random numbers are produced by <code>Rand</code>, the generator of Section [21.2.2](#sez-sec-random). The structure <code>Random</code> contains the seed and, optionally, a list of given numbers, which are returned instead: the exercises give their random numbers explicitly.
 
 ??? codice "Rand.cpp"
 
@@ -2167,7 +2183,7 @@ title: "Metaheuristics"
     }
     ```
 
-### 21.13.1 Local searches and auxiliary functions
+### 21.14.1 Local searches and auxiliary functions
 
 - The 2-opt local search for the TSP, with the $O(1)$ evaluation of a move:
 
@@ -2425,9 +2441,9 @@ title: "Metaheuristics"
     }
     ```
 
-### 21.13.2 Simulated annealing
+### 21.14.2 Simulated annealing
 
-- Simulated annealing for the TSP (Section [21.3](#sez-sec-sa), with the 2-opt neighbourhood), and for the KP with the penalized objective of Section [21.3.3](#sez-sec-sa-kp):
+- Simulated annealing for the TSP (Section [21.4](#sez-sec-sa), with the 2-opt neighbourhood), and for the KP with the penalized objective of Section [21.4.3](#sez-sec-sa-kp):
 
 ??? codice "SimulatedAnnealingTSP.cpp"
 
@@ -2517,9 +2533,9 @@ title: "Metaheuristics"
     }
     ```
 
-### 21.13.3 Tabu search
+### 21.14.3 Tabu search
 
-- Tabu search for $P\,||\,C_{\max}$ (Section [21.4](#sez-sec-ts)) and for the TSP (Section [21.4.2](#sez-sec-ts-tsp)):
+- Tabu search for $P\,||\,C_{\max}$ (Section [21.5](#sez-sec-ts)) and for the TSP (Section [21.5.2](#sez-sec-ts-tsp)):
 
 ??? codice "TabuSearchPCmax.cpp"
 
@@ -2624,9 +2640,9 @@ title: "Metaheuristics"
     }
     ```
 
-### 21.13.4 Iterated local search and variable neighbourhood search
+### 21.14.4 Iterated local search and variable neighbourhood search
 
-- Iterated local search for the TSP with the double-bridge kick (Section [21.5](#sez-sec-ils)):
+- Iterated local search for the TSP with the double-bridge kick (Section [21.6](#sez-sec-ils)):
 
 ??? codice "DoubleBridge.cpp"
 
@@ -2672,7 +2688,7 @@ title: "Metaheuristics"
     }
     ```
 
-- Variable neighbourhood search for $P\,||\,C_{\max}$ (Section [21.6](#sez-sec-vns)):
+- Variable neighbourhood search for $P\,||\,C_{\max}$ (Section [21.7](#sez-sec-vns)):
 
 ??? codice "Shake.cpp"
 
@@ -2733,9 +2749,9 @@ title: "Metaheuristics"
     }
     ```
 
-### 21.13.5 GRASP
+### 21.14.5 GRASP
 
-- GRASP for the KP (Section [21.7](#sez-sec-grasp)) and for the TSP (Section [21.7.1](#sez-sec-grasp-exp)):
+- GRASP for the KP (Section [21.8](#sez-sec-grasp)) and for the TSP (Section [21.8.1](#sez-sec-grasp-exp)):
 
 ??? codice "RandomizedGreedyKP.cpp"
 
@@ -2860,9 +2876,9 @@ title: "Metaheuristics"
     }
     ```
 
-### 21.13.6 Large neighbourhood search
+### 21.14.6 Large neighbourhood search
 
-- LNS and ALNS for the TSP (Sections [21.8](#sez-sec-lns) and [21.8.2](#sez-sec-alns)):
+- LNS and ALNS for the TSP (Sections [21.9](#sez-sec-lns) and [21.9.2](#sez-sec-alns)):
 
 ??? codice "RandomRemoval.cpp"
 
@@ -2992,7 +3008,7 @@ title: "Metaheuristics"
     }
     ```
 
-- LNS for the BPP (Section [21.8.1](#sez-sec-lns-bpp)), with the First Fit starting packing, the destroy method and the two repair methods:
+- LNS for the BPP (Section [21.9.1](#sez-sec-lns-bpp)), with the First Fit starting packing, the destroy method and the two repair methods:
 
 ??? codice "FirstFit.cpp"
 
@@ -3170,9 +3186,9 @@ title: "Metaheuristics"
     }
     ```
 
-### 21.13.7 Genetic and memetic algorithm
+### 21.14.7 Genetic and memetic algorithm
 
-- The genetic and memetic algorithm for the KP (Section [21.9](#sez-sec-ga)):
+- The genetic and memetic algorithm for the KP (Section [21.10](#sez-sec-ga)):
 
 ??? codice "RepairKP.cpp"
 
@@ -3276,7 +3292,7 @@ title: "Metaheuristics"
 
 - S. Kirkpatrick, C.D. Gelatt, M.P. Vecchi, Optimization by simulated annealing, <em>Science</em> 220 (1983) 671–680.
 
-- M. López-Ibá~nez, J. Dubois-Lacoste, L. Pérez Cáceres, M. Birattari, T. Stützle, The irace package: iterated racing for automatic algorithm configuration, <em>Operations Research Perspectives</em> 3 (2016) 43–58.
+- M. López-Ibáñez, J. Dubois-Lacoste, L. Pérez Cáceres, M. Birattari, T. Stützle, The irace package: iterated racing for automatic algorithm configuration, <em>Operations Research Perspectives</em> 3 (2016) 43–58.
 
 - H.R. Lourenço, O.C. Martin, T. Stützle, Iterated local search, in F. Glover, G.A. Kochenberger (eds.), <em>Handbook of Metaheuristics</em>, Kluwer, 2003, 321–353.
 

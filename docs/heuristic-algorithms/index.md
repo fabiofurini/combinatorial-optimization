@@ -12,13 +12,13 @@
 
     Heuristic algorithms · The problems and the assumptions · Primal and dual bounds · Classification of heuristic algorithms · …
 
-    [:octicons-arrow-right-24: Read the chapter](heuristics.md)
+    [:octicons-arrow-right-24: Read the chapter](heuristics.md) · [Exercises](../exercises/heuristics.md)
 
 -   **19. Constructive heuristics**
 
     ---
 
-    The problems and the assumptions · The greedy paradigm · The knapsack problem: which order? · The bin packing problem: first sort, then pack · …
+    Constructive heuristics · The problems and the assumptions · The greedy paradigm · The knapsack problem: which order? · …
 
     [:octicons-arrow-right-24: Read the chapter](constructive-heuristics.md) · [Exercises](../exercises/constructive-heuristics.md)
 
@@ -26,7 +26,7 @@
 
     ---
 
-    The problems, the assumptions and the starting solutions · Local search: the scheme · Neighbourhoods for the four problems · First improvement and best improvement · …
+    Local search · The problems, the assumptions and the starting solutions · Local search: the scheme · Neighbourhoods for the four problems · …
 
     [:octicons-arrow-right-24: Read the chapter](local-search.md) · [Exercises](../exercises/local-search.md)
 
@@ -34,7 +34,7 @@
 
     ---
 
-    The problems and the assumptions · How to escape from a local optimum · Simulated annealing · Tabu search · …
+    Metaheuristics · The problems and the assumptions · How to escape from a local optimum · Simulated annealing · …
 
     [:octicons-arrow-right-24: Read the chapter](metaheuristics.md) · [Exercises](../exercises/metaheuristics.md)
 
@@ -42,7 +42,7 @@
 
     ---
 
-    From the methods to the classical problems · The problems and their MIP models · Rounding · Diving · …
+    MIP-based heuristics · The problems and their MIP models · Rounding · Diving · …
 
     [:octicons-arrow-right-24: Read the chapter](mip-heuristics-classical.md) · [Exercises](../exercises/mip-heuristics-classical.md)
 

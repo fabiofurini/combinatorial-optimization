@@ -6,7 +6,7 @@ title: "Parallel machine scheduling"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 6** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf)
+**Part 1 · Combinatorial optimization problems · Chapter 6** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises](../exercises/pcmax.md)
 
 </div>
 
@@ -30,29 +30,7 @@ title: "Parallel machine scheduling"
 
     - compute a lower bound on the optimal makespan and use it to prove that a schedule is optimal.
 
-## 6.1 Why parallel machine scheduling?
-
-- Seven print jobs must be sent to three identical printers, and each job runs without interruption on one printer. How should the jobs be distributed, so that all of them are finished as early as possible? The same question arises for tasks on the processors of a computer.
-
-- <strong>A challenge.</strong> Before reading on, look at the processing times of <span style="color:#1971c2">[Example 6.1](#box-2-ex-pcmax7)</span> and try to find an assignment of the jobs that finishes at time $9$. Then ask yourself why no assignment can finish earlier. The chapter answers both questions.
-
-- Scheduling with identical machines has a famous place in the history of approximation algorithms. In 1966 R. L. Graham proved that any list of jobs, processed greedily, gives a makespan at most $2-1/m$ times the optimal one; in 1969 he proved the better ratio $4/3-1/(3m)$ for the list sorted by non-increasing processing time (the rule called LPT, announced in the paper of 1966).
-
-- These guarantees, and the algorithms behind them, are studied in the chapters on heuristic and approximation algorithms; this chapter introduces the problem and its simplest bound.
-
-## 6.2 The three-field notation
-
-- Scheduling problems are classified with the <strong>three-field notation</strong> $\alpha\,|\,\beta\,|\,\gamma$ of Graham, Lawler, Lenstra and Rinnooy Kan, where:
-
-    1. $\alpha$ describes the <strong>machine environment</strong>: $1$ for a single machine, $P$ for identical parallel machines, $Q$ for parallel machines with different speeds, $R$ for unrelated parallel machines;
-
-    2. $\beta$ describes the <strong>job characteristics</strong>, such as release dates $r_j$ or precedence constraints <em>prec</em>; an empty field means that there are none;
-
-    3. $\gamma$ describes the <strong>objective function</strong>, such as the makespan $C_{\max}$ or the total completion time $\sum_j C_j$.
-
-- In this notation, $P\,||\,C_{\max}$ is the problem of scheduling jobs without additional characteristics on identical parallel machines, minimizing the makespan.
-
-## 6.3 Scheduling on identical parallel machines
+## 6.1 Scheduling on identical parallel machines
 
 <a id="box-1-defPCmax"></a>
 
@@ -67,6 +45,8 @@ title: "Parallel machine scheduling"
     3. for each job $j \in \mathscr{J}$, a <em>processing time</em> $t_j \in \Z_{\ge 1}$,
 
     the problem $P\,||\,C_{\max}$ asks to assign each job to a machine, so that the time needed to complete all the jobs, i.e., the largest total processing time assigned to a machine, is minimized.
+
+- The name $P\,||\,C_{\max}$ comes from the three-field notation of scheduling problems (Section [6.2](#sez-sec-threefield)).
 
 - A <strong>$P\,||\,C_{\max}$ instance</strong> is specified by:
 
@@ -116,7 +96,7 @@ title: "Parallel machine scheduling"
 
 - We denote by $z(I)$ the optimal makespan of the instance $I$.
 
-### 6.3.1 Assumptions
+### 6.1.1 Assumptions
 
 - We make the following assumption:
 
@@ -159,7 +139,19 @@ title: "Parallel machine scheduling"
 
     ![Figure 1](../img/pcmax/fig01.svg){ .fig loading=lazy  }
 
-## 6.4 Counting the solutions
+## 6.2 The three-field notation { #sez-sec-threefield }
+
+- Scheduling problems are classified with the <strong>three-field notation</strong> $\alpha\,|\,\beta\,|\,\gamma$ of Graham, Lawler, Lenstra and Rinnooy Kan, where:
+
+    1. $\alpha$ describes the <strong>machine environment</strong>: $1$ for a single machine, $P$ for identical parallel machines, $Q$ for parallel machines with different speeds, $R$ for unrelated parallel machines;
+
+    2. $\beta$ describes the <strong>job characteristics</strong>, such as release dates $r_j$ or precedence constraints <em>prec</em>; an empty field means that there are none;
+
+    3. $\gamma$ describes the <strong>objective function</strong>, such as the makespan $C_{\max}$ or the total completion time $\sum_j C_j$.
+
+- In this notation, $P\,||\,C_{\max}$ is the problem of scheduling jobs without additional characteristics on identical parallel machines, minimizing the makespan.
+
+## 6.3 Counting the solutions
 
 - Every job can be assigned to any of the $m$ machines, independently of the others: there are $m^n$ assignments $\mathrm{mach}$.
 
@@ -191,7 +183,7 @@ title: "Parallel machine scheduling"
 
 - The growth is exponential in $n$: with $3$ machines, $20$ jobs have $3^{20} \approx 3.5\cdot 10^9$ assignments, and $30$ jobs have $3^{30} \approx 2.1\cdot 10^{14}$.
 
-## 6.5 A first schedule by hand
+## 6.4 A first schedule by hand
 
 - A simple way to build a schedule is to take the jobs one by one, in the order $1,2,\dots,n$, and to assign each job to the machine with the smallest load at that moment; in case of a tie we take the machine with the smallest index.
 
@@ -250,7 +242,7 @@ title: "Parallel machine scheduling"
 
 - We do not know yet whether $11$ is far from the optimal makespan: we need a lower bound.
 
-## 6.6 A combinatorial lower bound
+## 6.5 A combinatorial lower bound
 
 <a id="box-5-obs-pcmaxlb"></a>
 
@@ -284,7 +276,7 @@ title: "Parallel machine scheduling"
 
 - The bound is not always attained. With $m=2$ machines and three jobs of processing times $(4,3,3)$ it gives $\max\{4,\lceil 10/2\rceil\}=5$, but the best schedule is $\{1\},\{2,3\}$, with makespan $6$.
 
-## 6.7 Relation with the bin packing problem
+## 6.6 Relation with the bin packing problem
 
 - Given a value $T$, a schedule with makespan at most $T$ exists if and only if the jobs, seen as items of weight $t_j$, can be packed into $m$ bins of capacity $T$: the machines are the bins and the loads are the total weights of the packing patterns.
 
@@ -309,6 +301,12 @@ title: "Parallel machine scheduling"
     </table></div>
 
 - For this reason the two problems share many ideas: several heuristic algorithms for one of them have a counterpart for the other.
+
+## 6.7 Remarks
+
+- In 1966 R. L. Graham proved that any list of jobs, processed greedily, gives a makespan at most $2-1/m$ times the optimal one.
+
+- In 1969 he proved the better ratio $4/3-1/(3m)$ for the list sorted by non-increasing processing time (the rule called LPT). Both guarantees are proved in the chapter «$P\|C_{\max}$, metric TSP and the limits of approximation».
 
 ## 6.8 Typical mistakes
 

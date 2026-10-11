@@ -487,9 +487,10 @@ title: "Exercises · Dynamic programming for lot sizing"
 
         is an optimal solution. The setups are in periods $1$, $3$, the inventories are $(s_1,\dots,s_{4})=(10,\allowbreak 0,\allowbreak 10,\allowbreak 0)$, and the total cost is
 
-        $$
-        \underbrace{50+70}_{\text{setup}}+\underbrace{2\cdot 40+3\cdot 0+1\cdot 50+2\cdot 0}_{\text{production}}+\underbrace{1\cdot 10+2\cdot 0+2\cdot 10+1\cdot 0}_{\text{holding}}=120+130+30=280.
-        $$
+        \begin{align*}
+        &\underbrace{50+70}_{\text{setup}}+\underbrace{2\cdot 40+3\cdot 0+1\cdot 50+2\cdot 0}_{\text{production}}\\
+        &\quad+\underbrace{1\cdot 10+2\cdot 0+2\cdot 10+1\cdot 0}_{\text{holding}}=120+130+30=280.
+        \end{align*}
 
         The optimal value is
 
@@ -974,9 +975,10 @@ title: "Exercises · Dynamic programming for lot sizing"
 
         is an optimal solution. The setups are in periods $1$, $4$, the inventories are $(s_1,\dots,s_{4})=(50,\allowbreak 10,\allowbreak 0,\allowbreak 0)$, and the total cost is
 
-        $$
-        \underbrace{50+50}_{\text{setup}}+\underbrace{1\cdot 80+3\cdot 0+2\cdot 0+1\cdot 20}_{\text{production}}+\underbrace{1\cdot 50+1\cdot 10+1\cdot 0+2\cdot 0}_{\text{holding}}=100+100+60=260.
-        $$
+        \begin{align*}
+        &\underbrace{50+50}_{\text{setup}}+\underbrace{1\cdot 80+3\cdot 0+2\cdot 0+1\cdot 20}_{\text{production}}\\
+        &\quad+\underbrace{1\cdot 50+1\cdot 10+1\cdot 0+2\cdot 0}_{\text{holding}}=100+100+60=260.
+        \end{align*}
 
         The optimal value is
 
@@ -1600,9 +1602,10 @@ title: "Exercises · Dynamic programming for lot sizing"
 
         is an optimal solution. The setups are in periods $1$, $3$, $4$, the inventories are $(s_1,\dots,s_{5})=(30,\allowbreak 0,\allowbreak 0,\allowbreak 40,\allowbreak 0)$, and the total cost is
 
-        $$
-        \underbrace{70+50+80}_{\text{setup}}+\underbrace{1\cdot 40+1\cdot 0+1\cdot 40+1\cdot 70+2\cdot 0}_{\text{production}}+\underbrace{1\cdot 30+1\cdot 0+2\cdot 0+1\cdot 40+2\cdot 0}_{\text{holding}}=200+150+70=420.
-        $$
+        \begin{align*}
+        &\underbrace{70+50+80}_{\text{setup}}+\underbrace{1\cdot 40+1\cdot 0+1\cdot 40+1\cdot 70+2\cdot 0}_{\text{production}}\\
+        &\quad+\underbrace{1\cdot 30+1\cdot 0+2\cdot 0+1\cdot 40+2\cdot 0}_{\text{holding}}=200+150+70=420.
+        \end{align*}
 
         The optimal value is
 
@@ -1808,13 +1811,13 @@ title: "Exercises · Dynamic programming for lot sizing"
         <div class="tabella" markdown="0"><table>
         <tr>
         <th><span class="arithmatex">\({v}[t][k]\)</span></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
+        <th><span class="arithmatex">\(0\)</span></th>
+        <th><span class="arithmatex">\(1\)</span></th>
+        <th><span class="arithmatex">\(2\)</span></th>
+        <th><span class="arithmatex">\(3\)</span></th>
+        <th><span class="arithmatex">\(4\)</span></th>
+        <th><span class="arithmatex">\(5\)</span></th>
+        <th><span class="arithmatex">\(6\)</span></th>
         </tr>
         <tr>
         <td><span class="arithmatex">\(t=0\)</span></td>
@@ -1861,13 +1864,13 @@ title: "Exercises · Dynamic programming for lot sizing"
         <div class="tabella" markdown="0"><table>
         <tr>
         <th><span class="arithmatex">\({r}[t][k]\)</span></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
+        <th><span class="arithmatex">\(0\)</span></th>
+        <th><span class="arithmatex">\(1\)</span></th>
+        <th><span class="arithmatex">\(2\)</span></th>
+        <th><span class="arithmatex">\(3\)</span></th>
+        <th><span class="arithmatex">\(4\)</span></th>
+        <th><span class="arithmatex">\(5\)</span></th>
+        <th><span class="arithmatex">\(6\)</span></th>
         </tr>
         <tr>
         <td><span class="arithmatex">\(t=0\)</span></td>
@@ -1976,9 +1979,10 @@ title: "Exercises · Dynamic programming for lot sizing"
 
         is an optimal solution. The setups are in periods $1$, $2$, the inventories are $(s_1,\dots,s_{3})=(1,\allowbreak 3,\allowbreak 0)$, and the total cost is
 
-        $$
-        \underbrace{10+5}_{\text{setup}}+\underbrace{1\cdot 2+1\cdot 4+2\cdot 0}_{\text{production}}+\underbrace{1\cdot 1+1\cdot 3+2\cdot 0}_{\text{holding}}=15+6+4=25.
-        $$
+        \begin{align*}
+        &\underbrace{10+5}_{\text{setup}}+\underbrace{1\cdot 2+1\cdot 4+2\cdot 0}_{\text{production}}\\
+        &\quad+\underbrace{1\cdot 1+1\cdot 3+2\cdot 0}_{\text{holding}}=15+6+4=25.
+        \end{align*}
 
         The optimal value is
 
@@ -2211,14 +2215,14 @@ title: "Exercises · Dynamic programming for lot sizing"
         <div class="tabella" markdown="0"><table>
         <tr>
         <th><span class="arithmatex">\({v}[t][k]\)</span></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
-        <th><span class="arithmatex">\(k=7\)</span></th>
+        <th><span class="arithmatex">\(0\)</span></th>
+        <th><span class="arithmatex">\(1\)</span></th>
+        <th><span class="arithmatex">\(2\)</span></th>
+        <th><span class="arithmatex">\(3\)</span></th>
+        <th><span class="arithmatex">\(4\)</span></th>
+        <th><span class="arithmatex">\(5\)</span></th>
+        <th><span class="arithmatex">\(6\)</span></th>
+        <th><span class="arithmatex">\(7\)</span></th>
         </tr>
         <tr>
         <td><span class="arithmatex">\(t=0\)</span></td>
@@ -2280,14 +2284,14 @@ title: "Exercises · Dynamic programming for lot sizing"
         <div class="tabella" markdown="0"><table>
         <tr>
         <th><span class="arithmatex">\({r}[t][k]\)</span></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
-        <th><span class="arithmatex">\(k=7\)</span></th>
+        <th><span class="arithmatex">\(0\)</span></th>
+        <th><span class="arithmatex">\(1\)</span></th>
+        <th><span class="arithmatex">\(2\)</span></th>
+        <th><span class="arithmatex">\(3\)</span></th>
+        <th><span class="arithmatex">\(4\)</span></th>
+        <th><span class="arithmatex">\(5\)</span></th>
+        <th><span class="arithmatex">\(6\)</span></th>
+        <th><span class="arithmatex">\(7\)</span></th>
         </tr>
         <tr>
         <td><span class="arithmatex">\(t=0\)</span></td>
@@ -2427,9 +2431,10 @@ title: "Exercises · Dynamic programming for lot sizing"
 
         is an optimal solution. The setups are in periods $1$, $2$, the inventories are $(s_1,\dots,s_{4})=(1,\allowbreak 3,\allowbreak 2,\allowbreak 0)$, and the total cost is
 
-        $$
-        \underbrace{5+6}_{\text{setup}}+\underbrace{2\cdot 4+1\cdot 3+1\cdot 0+1\cdot 0}_{\text{production}}+\underbrace{1\cdot 1+1\cdot 3+2\cdot 2+2\cdot 0}_{\text{holding}}=11+11+8=30.
-        $$
+        \begin{align*}
+        &\underbrace{5+6}_{\text{setup}}+\underbrace{2\cdot 4+1\cdot 3+1\cdot 0+1\cdot 0}_{\text{production}}\\
+        &\quad+\underbrace{1\cdot 1+1\cdot 3+2\cdot 2+2\cdot 0}_{\text{holding}}=11+11+8=30.
+        \end{align*}
 
         The optimal value is
 

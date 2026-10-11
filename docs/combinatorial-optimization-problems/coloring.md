@@ -6,7 +6,7 @@ title: "Vertex coloring"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 4** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf)
+**Part 1 · Combinatorial optimization problems · Chapter 4** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises](../exercises/coloring.md)
 
 </div>
 
@@ -32,27 +32,23 @@ title: "Vertex coloring"
 
     - explain why the clique bound is not always tight.
 
-## 4.1 Why vertex coloring problems?
+## 4.1 A short review of graphs
 
-- <strong>A story.</strong> Six exams must be scheduled in the exam session, and two exams that share at least one student cannot take place on the same day. What is the minimum number of days? The vertices are the exams, the edges join the exams with students in common, and the colors are the days.
+<a id="box-1-def-graph"></a>
 
-- <strong>History.</strong> Brooks (1941) proved that a connected graph that is neither complete nor an odd cycle can be colored with at most $\Delta$ colors, where $\Delta$ is the largest degree. Karp (1972) included the chromatic number among his $21$ NP-complete problems, and Garey, Johnson and Stockmeyer (1976) proved that deciding whether $3$ colors are enough remains NP-complete on planar graphs of maximum degree $4$.
+!!! definizione "Definition 4.1: graph, neighbourhood, induced graph and complement graph"
 
-- <strong>A challenge.</strong> Before reading on, try to answer two questions on the Petersen graph of <span style="color:#1971c2">[Example 4.2](#box-4-ex-vcp2)</span>. How many colors are needed? How can we prove that fewer colors are not enough, without listing all the partitions? The clique bound is not enough here, and the chapter shows why.
+    - A <strong>graph</strong> $G = (V,E)$ is given by a finite set $V$ of <strong>vertices</strong> and a set $E$ of <strong>edges</strong>, each edge being a $2$-element subset of $V$. We write $n = |V|$ and $m = |E|$; the vertices are labelled $1,2,\dots,n$. All the graphs of this chapter are simple and undirected.
 
-## 4.2 A short review of graphs
+    - Two distinct vertices $u$ and $v$ are <strong>adjacent</strong> if $\{u,v\} \in E$. The <strong>neighbourhood</strong> of a vertex $v$ is the set $N(v) = \{\, u \in V : \{u,v\} \in E \,\}$, and its <strong>degree</strong> is $\deg(v) = |N(v)|$.
 
-- A <strong>graph</strong> $G = (V,E)$ is given by a finite set $V$ of <strong>vertices</strong> and a set $E$ of <strong>edges</strong>, each edge being a $2$-element subset of $V$. We write $n = |V|$ and $m = |E|$; the vertices are labelled $1,2,\dots,n$. All the graphs of this chapter are simple and undirected.
+    - For a subset $U \subseteq V$ the <strong>induced graph</strong> $G[U] = (U, E[U])$ has the vertices of $U$ and the edges of $E$ with both endpoints in $U$.
 
-- Two distinct vertices $u$ and $v$ are <strong>adjacent</strong> if $\{u,v\} \in E$. The <strong>neighbourhood</strong> of a vertex $v$ is the set $N(v) = \{\, u \in V : \{u,v\} \in E \,\}$, and its <strong>degree</strong> is $\deg(v) = |N(v)|$.
+    - The <strong>complement graph</strong> $\overline{G} = (V, \overline{E})$ has the same vertices as $G$, and two distinct vertices are adjacent in $\overline{G}$ if and only if they are not adjacent in $G$.
 
-- For a subset $U \subseteq V$ the <strong>induced graph</strong> $G[U] = (U, E[U])$ has the vertices of $U$ and the edges of $E$ with both endpoints in $U$.
+<a id="box-2-def-clique-stable"></a>
 
-- The <strong>complement graph</strong> $\overline{G} = (V, \overline{E})$ has the same vertices as $G$, and two distinct vertices are adjacent in $\overline{G}$ if and only if they are not adjacent in $G$.
-
-<a id="box-1-def-clique-stable"></a>
-
-!!! definizione "Definition 4.1: clique and stable set"
+!!! definizione "Definition 4.2: clique and stable set"
 
     Let $G = (V,E)$ be a graph.
 
@@ -68,11 +64,11 @@ title: "Vertex coloring"
 
     A clique is a group of vertices that pairwise <em>conflict</em>; a stable set is a group of vertices with no conflict. In a coloring, the vertices of a clique need different colors, and the vertices of a stable set can share one.
 
-## 4.3 The vertex coloring problem
+## 4.2 The vertex coloring problem
 
-<a id="box-2-defVCP"></a>
+<a id="box-3-defVCP"></a>
 
-!!! definizione "Definition 4.2: Vertex Coloring Problem"
+!!! definizione "Definition 4.3: Vertex Coloring Problem"
 
     Given:
 
@@ -155,7 +151,7 @@ title: "Vertex coloring"
 
 - The optimal value of the VCP is the <strong>chromatic number</strong> $\chi(G)$ of the graph: the minimum number of colors (stable sets) needed to color all the vertices. The color classes of a solution are stable sets, and the number of classes is the number of colors used.
 
-<a id="box-3-ex-vcp1"></a>
+<a id="box-4-ex-vcp1"></a>
 
 !!! esempio "Example 4.1: VCP instance: a triangle"
 
@@ -169,9 +165,9 @@ title: "Vertex coloring"
     V = \big\{~ 1,~ 2,~ 3 ~\big\}, \qquad E = \big\{~ \{1,2\},~ \{1,3\},~ \{2,3\} ~\big\}.
     $$
 
-    We call this VCP instance <span style="color:#1971c2">[Example 4.1](#box-3-ex-vcp1)</span>.
+    We call this VCP instance <span style="color:#1971c2">[Example 4.1](#box-4-ex-vcp1)</span>.
 
-<a id="box-4-ex-vcp2"></a>
+<a id="box-5-ex-vcp2"></a>
 
 !!! esempio "Example 4.2: VCP instance: the Petersen graph"
 
@@ -193,9 +189,9 @@ title: "Vertex coloring"
     \end{aligned}
     $$
 
-    We call this VCP instance <span style="color:#1971c2">[Example 4.2](#box-4-ex-vcp2)</span>: it is the reference instance of the chapter.
+    We call this VCP instance <span style="color:#1971c2">[Example 4.2](#box-5-ex-vcp2)</span>: it is the reference instance of the chapter.
 
-### 4.3.1 Assumptions
+### 4.2.1 Assumptions
 
 - We make the following assumptions:
 
@@ -217,11 +213,11 @@ title: "Vertex coloring"
 
     2. the vertices $u$ and $v$ are not adjacent: otherwise $v \in N(u) \subseteq N(v)$, which is impossible in a simple graph, so $u$ and $v$ can share a color.
 
-### 4.3.2 Two simple bounds
+### 4.2.2 Two simple bounds
 
-<a id="box-5-obs-clique-bound"></a>
+<a id="box-6-obs-clique-bound"></a>
 
-!!! teorema "Observation 4.3: clique bound"
+!!! teorema "Observation 4.4: clique bound"
 
     For every graph $G = (V,E)$ we have
 
@@ -233,9 +229,9 @@ title: "Vertex coloring"
 
     Since all vertices in any clique are pairwise adjacent, they must all receive different colors in any VCP feasible solution. Thus, at least $\omega(G)$ different colors are needed to color the vertices of any maximum clique, implying $\omega(G) \le \chi(G)$. <span class="qed">□</span>
 
-<a id="box-6-obs-stable-bound"></a>
+<a id="box-7-obs-stable-bound"></a>
 
-!!! teorema "Observation 4.4: stable set bound"
+!!! teorema "Observation 4.5: stable set bound"
 
     For every graph $G = (V,E)$ we have
 
@@ -249,13 +245,13 @@ title: "Vertex coloring"
 
 - The clique bound is useful when the graph has a large clique, and the stable set bound when its stable sets are small. Both are dual bounds: a clique and a stable set are found without knowing $\chi(G)$.
 
-### 4.3.3 Counting the solutions, a first solution and the bounds
+### 4.2.3 Counting the solutions, a first solution and the bounds
 
-- <strong>Candidate solutions.</strong> The candidate solutions are the partitions of $V$, counted by the Bell numbers (Chapter «Combinatorial optimization problems»). For <span style="color:#1971c2">[Example 4.1](#box-3-ex-vcp1)</span> we have $B(3) = 5$ partitions and only one is feasible: three singletons, since every pair of vertices is adjacent. Hence $\chi(G) = 3$.
+- <strong>Candidate solutions.</strong> The candidate solutions are the partitions of $V$, counted by the Bell numbers (Chapter «Combinatorial optimization problems»). For <span style="color:#1971c2">[Example 4.1](#box-4-ex-vcp1)</span> we have $B(3) = 5$ partitions and only one is feasible: three singletons, since every pair of vertices is adjacent. Hence $\chi(G) = 3$.
 
-- For <span style="color:#1971c2">[Example 4.2](#box-4-ex-vcp2)</span> we have $B(10) = 115\,975$ partitions, and $7\,430$ of them are feasible, that is, have only stable sets as classes.
+- For <span style="color:#1971c2">[Example 4.2](#box-5-ex-vcp2)</span> we have $B(10) = 115\,975$ partitions, and $7\,430$ of them are feasible, that is, have only stable sets as classes.
 
-- <strong>A first solution, by eye.</strong> The coloring shown in <span style="color:#1971c2">[Example 4.2](#box-4-ex-vcp2)</span> uses $3$ colors:
+- <strong>A first solution, by eye.</strong> The coloring shown in <span style="color:#1971c2">[Example 4.2](#box-5-ex-vcp2)</span> uses $3$ colors:
 
     $$
     \mathcal{Q} = \big\{\, \{1,4,7,8\},~ \{2,5,6\},~ \{3,9,10\} \,\big\}.
@@ -268,6 +264,12 @@ title: "Vertex coloring"
 - The vertices $1,2,3,4,5$ form a cycle with $5$ vertices, and so do $6,7,8,9,10$ (the edges of the figure). A stable set contains at most $2$ vertices of each cycle, so $\alpha(G) \le 4$; the set $\{1,4,7,8\}$ shows that $\alpha(G) = 4$.
 
 - The stable set bound gives $\lceil 10/4 \rceil = 3$. The two bounds coincide: the gap is zero and $\chi(G) = 3$.
+
+## 4.3 Remarks
+
+- Brooks (1941) proved that a connected graph that is neither complete nor an odd cycle can be colored with at most $\Delta$ colors, where $\Delta$ is the largest degree.
+
+- Karp (1972) included the chromatic number among his $21$ NP-complete problems. Garey, Johnson and Stockmeyer (1976) proved that deciding whether $3$ colors are enough remains NP-complete on planar graphs of maximum degree $4$.
 
 ## 4.4 Typical mistakes
 
@@ -305,13 +307,13 @@ title: "Vertex coloring"
     <th>from</th>
     </tr>
     <tr>
-    <td><span style="color:#1971c2">[Example 4.1](#box-3-ex-vcp1)</span> (triangle)</td>
+    <td><span style="color:#1971c2">[Example 4.1](#box-4-ex-vcp1)</span> (triangle)</td>
     <td><span class="arithmatex">\(3\)</span> (clique bound)</td>
     <td><span class="arithmatex">\(3\)</span> (by eye)</td>
     <td>this chapter</td>
     </tr>
     <tr>
-    <td><span style="color:#1971c2">[Example 4.2](#box-4-ex-vcp2)</span> (Petersen)</td>
+    <td><span style="color:#1971c2">[Example 4.2](#box-5-ex-vcp2)</span> (Petersen)</td>
     <td><span class="arithmatex">\(3\)</span> (stable set bound)</td>
     <td><span class="arithmatex">\(3\)</span> (by eye)</td>
     <td>this chapter</td>

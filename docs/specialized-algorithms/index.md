@@ -10,7 +10,7 @@
 
     ---
 
-    Why a branch-and-bound algorithm for the KP? · The algorithm for the KP · A worked example · Typical mistakes · …
+    The algorithm for the KP · A worked example · Typical mistakes · In summary
 
     [:octicons-arrow-right-24: Read the chapter](knapsack-branch-and-bound.md) · [Exercises](../exercises/knapsack-branch-and-bound.md)
 

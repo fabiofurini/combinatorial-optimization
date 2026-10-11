@@ -120,7 +120,7 @@ markdown_extensions:
 
 extra_javascript:
   - javascripts/cloudflare-analytics.js?v=bff73345a1
-  - javascripts/mathjax.js?v=38de22cfee
+  - javascripts/mathjax.js?v=1c478de83f
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
   # grafici interattivi: JSXGraph, il motore, poi le ricette (gi-*.js, le aggiunge genera_sito.py)
   - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraphcore.js
@@ -176,14 +176,29 @@ nav:
       - "27. Knapsack: B&B": specialized-algorithms/knapsack-branch-and-bound.md
   - Exercises:
       - exercises/index.md
+      - "1. Combinatorial optimization": exercises/combinatorial-optimization.md
+      - "2. Knapsack": exercises/knapsack.md
+      - "3. Bin packing": exercises/bin-packing.md
+      - "4. Vertex coloring": exercises/coloring.md
+      - "5. TSP": exercises/tsp.md
+      - "6. Machine scheduling": exercises/pcmax.md
+      - "7. Lot sizing": exercises/lot-sizing.md
       - "8. Knapsack": exercises/knapsack-formulations.md
+      - "9. Bin packing": exercises/bin-packing-formulations.md
+      - "10. Vertex coloring": exercises/coloring-formulations.md
+      - "11. TSP": exercises/tsp-formulations.md
+      - "12. Machine scheduling": exercises/pcmax-formulations.md
+      - "13. Lot sizing": exercises/lot-sizing-formulations.md
+      - "14. Principles": exercises/dp-principles.md
       - "15. Knapsack": exercises/dp-knapsack.md
       - "16. Rod cutting, coin change": exercises/dp-rod-cutting-coin-change.md
       - "17. Lot sizing": exercises/dp-lot-sizing.md
+      - "18. Definitions": exercises/heuristics.md
       - "19. Constructive": exercises/constructive-heuristics.md
       - "20. Local search": exercises/local-search.md
       - "21. Metaheuristics": exercises/metaheuristics.md
       - "22. MIP heuristics": exercises/mip-heuristics-classical.md
+      - "23. Definitions": exercises/approximation.md
       - "24. Bin packing": exercises/bin-packing-approximation.md
       - "25. Knapsack": exercises/knapsack-approximation.md
       - "26. P||Cmax, TSP, coloring": exercises/pcmax-tsp-coloring-approximation.md

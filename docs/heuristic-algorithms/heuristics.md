@@ -6,7 +6,7 @@ title: "Heuristic algorithms: definitions"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 18** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf)
+**Part 4 · Heuristic algorithms · Chapter 18** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises](../exercises/heuristics.md)
 
 </div>
 
@@ -32,17 +32,11 @@ title: "Heuristic algorithms: definitions"
 
 ## 18.1 Heuristic algorithms
 
-- Let $\mathscr{P}$ be an <strong>optimization problem</strong>. For every <strong>instance</strong> $I$ of $\mathscr{P}$, let $z(I)$ be the <strong>optimal value</strong> of $\mathscr{P}$ on $I$.
-
-- Many optimization problems of practical relevance are <strong>NP-hard</strong>: no algorithm is known that solves all their instances to optimality in polynomial time, and it is widely believed that none exists. The four problems used as examples in these notes — the knapsack problem, the bin packing problem, the travelling salesman problem and the scheduling problem $P\,||\,C_{\max}$ — are all NP-hard.
-
-- For such problems, an exact algorithm may require a running time that grows exponentially with the size of the instance. When this time is not available, we accept a solution that is <em>good</em>, even if it is not proved to be optimal.
-
 <a id="box-1-def-heuristic"></a>
 
 !!! definizione "Definition 18.1: Heuristic algorithm"
 
-    A <strong>heuristic algorithm</strong> for an optimization problem $\mathscr{P}$ is an algorithm that, for every instance $I$ of $\mathscr{P}$, computes a feasible solution of $I$, without guaranteeing that it is optimal. We denote by $\mathscr{A}(I)$ the value of the solution computed by the heuristic algorithm $\mathscr{A}$ on the instance $I$.
+    Given an <strong>optimization problem</strong> $\mathscr{P}$, let $z(I)$ be the <strong>optimal value</strong> of $\mathscr{P}$ on an <strong>instance</strong> $I$. A <strong>heuristic algorithm</strong> for $\mathscr{P}$ is an algorithm that, for every instance $I$ of $\mathscr{P}$, computes a feasible solution of $I$, without guaranteeing that it is optimal. We denote by $\mathscr{A}(I)$ the value of the solution computed by the heuristic algorithm $\mathscr{A}$ on the instance $I$.
 
 - Since the solution computed by $\mathscr{A}$ is feasible, for every instance $I$
 
@@ -53,9 +47,13 @@ title: "Heuristic algorithms: definitions"
     \end{cases}
     $$
 
-- A heuristic algorithm trades the <strong>quality</strong> of the solution for the <strong>running time</strong>: the point of a heuristic is to compute, in a short time, a solution whose value is close to $z(I)$.
+- The four problems used as examples — the knapsack problem, the bin packing problem, the travelling salesman problem and the scheduling problem $P\,||\,C_{\max}$ — are all <strong>NP-hard</strong>: an exact algorithm may require a running time that grows exponentially with the size of the instance.
 
-- <strong>Approximation algorithms</strong>, studied in a separate set of notes, are heuristic algorithms with a <em>proved</em> worst-case guarantee on the ratio between $\mathscr{A}(I)$ and $z(I)$. Most of the heuristic algorithms used in practice have no such guarantee: their quality is assessed on the instances at hand, as described in Section [18.8](#sez-sec-evaluation).
+- <strong>Approximation algorithms</strong> (chapter «Approximation algorithms: definitions») are heuristic algorithms with a <em>proved</em> worst-case guarantee on the ratio between $\mathscr{A}(I)$ and $z(I)$. Most of the heuristic algorithms used in practice have no such guarantee: their quality is assessed on the instances at hand, as described in Section [18.8](#sez-sec-evaluation).
+
+!!! chiave ""
+
+    A heuristic algorithm trades the <strong>quality</strong> of the solution for the <strong>running time</strong>: the point of a heuristic is to compute, in a short time, a solution whose value is close to $z(I)$.
 
 ## 18.2 The problems and the assumptions { #sez-sec-problems }
 
@@ -266,25 +264,21 @@ title: "Heuristic algorithms: definitions"
     \end{cases}
     $$
 
-<a id="box-6-def-gap"></a>
-
-!!! definizione "Definition 18.2: Gap"
-
-    Let $\mathscr{A}(I)$ be the value of a feasible solution of the instance $I$. The <strong>gap</strong> of $\mathscr{A}(I)$ with respect to a dual bound is
+- The <strong>gap</strong> of a heuristic value $\mathscr{A}(I)$ is the relative gap $\frac{\UB-\LB}{\LB}$ defined in the chapter «Combinatorial optimization problems»: the difference of the two bounds divided by the <strong>lower</strong> one. With the heuristic value in place of the primal bound it reads
 
     $$
     gap(I) =
     \begin{cases}
     \dfrac{\mathscr{A}(I) - \mathrm{LB}(I)}{\mathrm{LB}(I)} & \text{if } \mathscr{P} \text{ is a minimization problem,}\\[3ex]
-    \dfrac{\mathrm{UB}(I) - \mathscr{A}(I)}{\mathrm{UB}(I)} & \text{if } \mathscr{P} \text{ is a maximization problem.}
+    \dfrac{\mathrm{UB}(I) - \mathscr{A}(I)}{\mathscr{A}(I)} & \text{if } \mathscr{P} \text{ is a maximization problem.}
     \end{cases}
     $$
 
 - The <strong>relative error</strong> of $\mathscr{A}$ on $I$, defined in the notes on approximation algorithms, is $\frac{\mathscr{A}(I)-z(I)}{z(I)}$ for a minimization problem and $\frac{z(I)-\mathscr{A}(I)}{z(I)}$ for a maximization problem. It cannot be computed when $z(I)$ is unknown, which is the typical situation; the gap, instead, uses only computed quantities.
 
-<a id="box-7-prop-gap"></a>
+<a id="box-6-prop-gap"></a>
 
-!!! teorema "Proposition 18.3"
+!!! teorema "Proposition 18.2"
 
     For every instance $I$, the relative error of $\mathscr{A}$ on $I$ is at most $gap(I)$.
 
@@ -296,33 +290,33 @@ title: "Heuristic algorithms: definitions"
     \frac{\mathscr{A}(I)-z(I)}{z(I)} = \frac{\mathscr{A}(I)}{z(I)} - 1 \;\le\; \frac{\mathscr{A}(I)}{\mathrm{LB}(I)} - 1 = gap(I).
     $$
 
-    For a maximization problem, $z(I)\le \mathrm{UB}(I)$, hence $\frac{\mathscr{A}(I)}{z(I)} \ge \frac{\mathscr{A}(I)}{\mathrm{UB}(I)}$ and
+    For a maximization problem, $\mathscr{A}(I)\le z(I)\le \mathrm{UB}(I)$, hence
 
     $$
-    \frac{z(I)-\mathscr{A}(I)}{z(I)} = 1 - \frac{\mathscr{A}(I)}{z(I)} \;\le\; 1 - \frac{\mathscr{A}(I)}{\mathrm{UB}(I)} = gap(I).
+    \frac{z(I)-\mathscr{A}(I)}{z(I)} \;\le\; \frac{z(I)-\mathscr{A}(I)}{\mathscr{A}(I)} \;\le\; \frac{\mathrm{UB}(I)-\mathscr{A}(I)}{\mathscr{A}(I)} = gap(I).
     $$
 
     <p class="qed-riga"><span class="qed">□</span></p>
 
 - The gap is therefore a <strong>certificate</strong>: if $gap(I)\le 5\%$, the solution is within $5\%$ of the optimum, even if the optimum is unknown. If $gap(I)=0$, the solution is optimal.
 
-<a id="box-8-ex-gaps"></a>
+<a id="box-7-ex-gaps"></a>
 
 !!! esempio "Example 18.5: Bounds and gaps on the reference instances"
 
-    <strong>KP.</strong> The solution $\{1,3\}$ has weight $8\le 9$ and profit $\mathscr{A}(I)=16$. The LP relaxation, with the items sorted by non-increasing efficiency $(1,3,2,4)$, packs items $1$ and $3$ and a fraction $\frac{1}{4}$ of item $2$, so $z(I)\le 10+6+7\cdot\frac{1}{4}=17.75$ and, the profits being integer, $\mathrm{UB}(I)=17$. Hence $gap(I)=\frac{17-16}{17}\approx 5.9\%$.
+    <strong>KP.</strong> The solution $\{1,3\}$ has weight $8\le 9$ and profit $\mathscr{A}(I)=16$. The LP relaxation, with the items sorted by non-increasing efficiency $(1,3,2,4)$, packs items $1$ and $3$ and a fraction $\frac{1}{4}$ of item $2$, so $z(I)\le 10+6+7\cdot\frac{1}{4}=17.75$ and, the profits being integer, $\mathrm{UB}(I)=17$. Hence $gap(I)=\frac{17-16}{16}=6.25\%$, while the relative error is $\frac{17-16}{17}\approx 5.9\%$.
 
     <strong>BPP.</strong> The packing patterns $\{1\}$, $\{2\}$, $\{3\}$, $\{4,5\}$, $\{6\}$ are feasible and use $\mathscr{A}(I)=5$ bins, while $\mathrm{LB}(I)=\left\lceil \frac{21}{7}\right\rceil=3$. Hence $gap(I)=\frac{5-3}{3}\approx 66.7\%$.
 
-    <strong>TSP.</strong> The tour $(1,3,2,4,5)$ has length $\mathscr{A}(I)=2+4+3+7+9=25$. A dual bound is given by [Proposition 18.4](#box-9-prop-twoedges) below: $\mathrm{LB}(I)=17$. Hence $gap(I)=\frac{25-17}{17}\approx 47.1\%$, while the relative error is $\frac{25-18}{18}\approx 38.9\%$.
+    <strong>TSP.</strong> The tour $(1,3,2,4,5)$ has length $\mathscr{A}(I)=2+4+3+7+9=25$. A dual bound is given by [Proposition 18.3](#box-8-prop-twoedges) below: $\mathrm{LB}(I)=17$. Hence $gap(I)=\frac{25-17}{17}\approx 47.1\%$, while the relative error is $\frac{25-18}{18}\approx 38.9\%$.
 
     <strong>$P\,||\,C_{\max}$.</strong> The solution with $J_1=\{1,5,7\}$, $J_2=\{2,6\}$, $J_3=\{3,4\}$ has makespan $\mathscr{A}(I)=11$, while $\mathrm{LB}(I)=\max\{5,\lceil 27/3\rceil\}=9$. Hence $gap(I)=\frac{11-9}{9}\approx 22.2\%$.
 
-    On the KP, the BPP and $P\,||\,C_{\max}$ the dual bound equals $z(I)$, so the gap equals the relative error; on the TSP the dual bound is weaker, and the gap overestimates the relative error.
+    On the BPP and $P\,||\,C_{\max}$ the dual bound equals $z(I)$, so the gap equals the relative error. On the KP the dual bound also equals $z(I)$, but the gap divides by the smaller value $\mathscr{A}(I)$ and is slightly larger. On the TSP the dual bound is weaker, and the gap overestimates the relative error.
 
-<a id="box-9-prop-twoedges"></a>
+<a id="box-8-prop-twoedges"></a>
 
-!!! teorema "Proposition 18.4"
+!!! teorema "Proposition 18.3"
 
     For every TSP instance $I$, let $a_i$ and $b_i$ be the two smallest distances from city $i$ to the other cities. Then
 
@@ -422,17 +416,17 @@ title: "Heuristic algorithms: definitions"
 
 - Let $\mathscr{F}(I)$ be the set of the feasible solutions of the instance $I$, and let $f(S)$ be the value of the solution $S\in\mathscr{F}(I)$, so that $z(I)$ is the minimum (or maximum) of $f$ over $\mathscr{F}(I)$.
 
-<a id="box-10-def-neigh"></a>
+<a id="box-9-def-neigh"></a>
 
-!!! definizione "Definition 18.5: Neighbourhood"
+!!! definizione "Definition 18.4: Neighbourhood"
 
     A <strong>neighbourhood</strong> is a function $N$ that associates with every feasible solution $S\in\mathscr{F}(I)$ a set $N(S)\subseteq\mathscr{F}(I)$ of feasible solutions, the <strong>neighbours</strong> of $S$. A <strong>move</strong> is the transformation of $S$ into one of its neighbours.
 
 - A neighbourhood is usually defined by a family of small modifications of the representation: change one component of the vector $x$, move one job to another machine, replace two edges of a tour.
 
-<a id="box-11-def-localopt"></a>
+<a id="box-10-def-localopt"></a>
 
-!!! definizione "Definition 18.6: Local optimum"
+!!! definizione "Definition 18.5: Local optimum"
 
     A feasible solution $S\in\mathscr{F}(I)$ is a <strong>local optimum</strong> with respect to the neighbourhood $N$ if no neighbour of $S$ is better than $S$:
 
@@ -447,7 +441,7 @@ title: "Heuristic algorithms: definitions"
 
 - A global optimum is a local optimum for every neighbourhood, but a local optimum need not be a global optimum. Moreover, <strong>being a local optimum depends on the neighbourhood</strong>: the same solution can be a local optimum for one neighbourhood and not for another.
 
-<a id="box-12-ex-kpneigh"></a>
+<a id="box-11-ex-kpneigh"></a>
 
 !!! esempio "Example 18.6: Two neighbourhoods for the KP"
 
@@ -527,9 +521,9 @@ title: "Heuristic algorithms: definitions"
 
     The neighbour $(1,1,0,0)$ has profit $17>16$: $x$ is <strong>not</strong> a local optimum with respect to the swap neighbourhood, and the move leads to the global optimum.
 
-<a id="box-13-def-exact"></a>
+<a id="box-12-def-exact"></a>
 
-!!! definizione "Definition 18.7: Exact neighbourhood"
+!!! definizione "Definition 18.6: Exact neighbourhood"
 
     A neighbourhood $N$ is <strong>exact</strong> if every local optimum with respect to $N$ is a global optimum.
 
@@ -571,9 +565,9 @@ title: "Heuristic algorithms: definitions"
 
     - <strong>Judging a heuristic from one run or one instance.</strong> The same rule, from different starting cities, gives tours of length between $18$ and $25$ on the TSP reference instance.
 
-    - <strong>Confusing the gap with the relative error.</strong> The gap is measured against a dual bound, so it is never smaller than the relative error; they coincide only when the dual bound equals $z(I)$.
+    - <strong>Confusing the gap with the relative error.</strong> The gap is measured against a dual bound, so it is never smaller than the relative error; in a minimization problem they coincide only when the dual bound equals $z(I)$.
 
-    - <strong>Using the wrong denominator.</strong> For a maximization problem the gap is $\frac{\mathrm{UB}(I)-\mathscr{A}(I)}{\mathrm{UB}(I)}$, for a minimization problem $\frac{\mathscr{A}(I)-\mathrm{LB}(I)}{\mathrm{LB}(I)}$.
+    - <strong>Using the wrong denominator.</strong> The gap always divides by the lower bound: for a maximization problem it is $\frac{\mathrm{UB}(I)-\mathscr{A}(I)}{\mathscr{A}(I)}$, for a minimization problem $\frac{\mathscr{A}(I)-\mathrm{LB}(I)}{\mathrm{LB}(I)}$.
 
     - <strong>Forgetting to round the dual bound.</strong> With integer data the bound $17.75$ of the KP is rounded down to $17$, and the bound $16.5$ of the TSP is rounded up to $17$.
 
@@ -605,7 +599,7 @@ title: "Heuristic algorithms: definitions"
     <td>KP (max)</td>
     <td><span class="arithmatex">\(16\)</span></td>
     <td><span class="arithmatex">\(\mathrm{UB}(I)=17\)</span></td>
-    <td><span class="arithmatex">\(5.9\%\)</span></td>
+    <td><span class="arithmatex">\(6.25\%\)</span></td>
     <td><span class="arithmatex">\(17\)</span></td>
     </tr>
     <tr>

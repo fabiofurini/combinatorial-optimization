@@ -51,7 +51,7 @@ title: "Exercises · Constructive heuristics"
 
     2. Apply the greedy algorithm with each of the three orders ($GR_p$, $GR_w$, $GR$), showing the residual capacity $rc$ after each step, and give the three solutions and their profits.
 
-    3. Compute the upper bound $U$ given by the LP relaxation (items by non-increasing efficiency, the split item taken fractionally) and the gap $\frac{\lfloor U\rfloor-\mathscr{A}(I)}{\lfloor U\rfloor}$ of the best of the three solutions.
+    3. Compute the upper bound $U$ given by the LP relaxation (items by non-increasing efficiency, the split item taken fractionally) and the gap $\frac{\lfloor U\rfloor-\mathscr{A}(I)}{\mathscr{A}(I)}$ of the best of the three solutions.
 
     4. Knowing that the optimal value is $z(I)=19$, say which orders find an optimal solution, and compute the relative error of the others. Explain what goes wrong.
 
@@ -59,9 +59,10 @@ title: "Exercises · Constructive heuristics"
 
     1. The efficiencies are
 
-        $$
-        \frac{p_{1}}{w_{1}}=\frac{4}{3}\approx 1.33,\quad \frac{p_{2}}{w_{2}}=\frac{15}{8}\approx 1.88,\quad \frac{p_{3}}{w_{3}}=\frac{11}{7}\approx 1.57,\quad \frac{p_{4}}{w_{4}}=\frac{8}{2}\approx 4.00,\quad \frac{p_{5}}{w_{5}}=\frac{2}{5}\approx 0.40
-        $$
+        \begin{gather*}
+        \frac{p_{1}}{w_{1}}=\frac{4}{3}\approx 1.33,\quad \frac{p_{2}}{w_{2}}=\frac{15}{8}\approx 1.88,\quad \frac{p_{3}}{w_{3}}=\frac{11}{7}\approx 1.57,\\
+        \frac{p_{4}}{w_{4}}=\frac{8}{2}\approx 4.00,\quad \frac{p_{5}}{w_{5}}=\frac{2}{5}\approx 0.40
+        \end{gather*}
 
         and the three orders are
 
@@ -135,7 +136,7 @@ title: "Exercises · Constructive heuristics"
         The best of the three solutions has profit $19$, and
 
         $$
-        gap(I)=\frac{21-19}{21}\approx 9.5\%.
+        gap(I)=\frac{21-19}{19}\approx 10.5\%.
         $$
 
     4. The optimal solution is $\{3,4\}$, with $z(I)=19$ (the bound $\lfloor U\rfloor=21$ is not attained: here the gap overestimates the error). Only $GR$ finds it. $GR_p$ takes item $2$, the most valuable but also the heaviest, which leaves room for nothing else of value: $GR_p(I)=15$, relative error 21.1%. $GR_w$ fills the knapsack with the two lightest items, $4$ and $1$, which have little value: $GR_w(I)=12$, relative error 36.8%. On this instance efficiency is the right criterion.
@@ -179,7 +180,7 @@ title: "Exercises · Constructive heuristics"
 
     2. Apply the greedy algorithm with each of the three orders ($GR_p$, $GR_w$, $GR$), showing the residual capacity $rc$ after each step, and give the three solutions and their profits.
 
-    3. Compute the upper bound $U$ given by the LP relaxation (items by non-increasing efficiency, the split item taken fractionally) and the gap $\frac{\lfloor U\rfloor-\mathscr{A}(I)}{\lfloor U\rfloor}$ of the best of the three solutions.
+    3. Compute the upper bound $U$ given by the LP relaxation (items by non-increasing efficiency, the split item taken fractionally) and the gap $\frac{\lfloor U\rfloor-\mathscr{A}(I)}{\mathscr{A}(I)}$ of the best of the three solutions.
 
     4. Is any of the three solutions optimal? Compute the relative error of the others, and explain why the order by efficiency fails on this instance.
 
@@ -187,9 +188,10 @@ title: "Exercises · Constructive heuristics"
 
     1. The efficiencies are
 
-        $$
-        \frac{p_{1}}{w_{1}}=\frac{9}{7}\approx 1.29,\quad \frac{p_{2}}{w_{2}}=\frac{4}{2}\approx 2.00,\quad \frac{p_{3}}{w_{3}}=\frac{8}{9}\approx 0.89,\quad \frac{p_{4}}{w_{4}}=\frac{6}{5}\approx 1.20,\quad \frac{p_{5}}{w_{5}}=\frac{7}{6}\approx 1.17
-        $$
+        \begin{gather*}
+        \frac{p_{1}}{w_{1}}=\frac{9}{7}\approx 1.29,\quad \frac{p_{2}}{w_{2}}=\frac{4}{2}\approx 2.00,\quad \frac{p_{3}}{w_{3}}=\frac{8}{9}\approx 0.89,\\
+        \frac{p_{4}}{w_{4}}=\frac{6}{5}\approx 1.20,\quad \frac{p_{5}}{w_{5}}=\frac{7}{6}\approx 1.17
+        \end{gather*}
 
         and the three orders are
 
@@ -307,7 +309,7 @@ title: "Exercises · Constructive heuristics"
 
     2. Apply the greedy algorithm with each of the three orders ($GR_p$, $GR_w$, $GR$), showing the residual capacity $rc$ after each step, and give the three solutions and their profits.
 
-    3. Compute the upper bound $U$ given by the LP relaxation (items by non-increasing efficiency, the split item taken fractionally) and the gap $\frac{\lfloor U\rfloor-\mathscr{A}(I)}{\lfloor U\rfloor}$ of the best of the three solutions.
+    3. Compute the upper bound $U$ given by the LP relaxation (items by non-increasing efficiency, the split item taken fractionally) and the gap $\frac{\lfloor U\rfloor-\mathscr{A}(I)}{\mathscr{A}(I)}$ of the best of the three solutions.
 
     4. Find a feasible solution of profit $\lfloor U\rfloor$, and compute the relative error of each of the three greedy solutions. Which choice prevents the greedy by efficiency from finding it?
 
@@ -315,9 +317,10 @@ title: "Exercises · Constructive heuristics"
 
     1. The efficiencies are
 
-        $$
-        \frac{p_{1}}{w_{1}}=\frac{8}{5}\approx 1.60,\quad \frac{p_{2}}{w_{2}}=\frac{13}{9}\approx 1.44,\quad \frac{p_{3}}{w_{3}}=\frac{5}{4}\approx 1.25,\quad \frac{p_{4}}{w_{4}}=\frac{12}{8}\approx 1.50,\quad \frac{p_{5}}{w_{5}}=\frac{7}{2}\approx 3.50
-        $$
+        \begin{gather*}
+        \frac{p_{1}}{w_{1}}=\frac{8}{5}\approx 1.60,\quad \frac{p_{2}}{w_{2}}=\frac{13}{9}\approx 1.44,\quad \frac{p_{3}}{w_{3}}=\frac{5}{4}\approx 1.25,\\
+        \frac{p_{4}}{w_{4}}=\frac{12}{8}\approx 1.50,\quad \frac{p_{5}}{w_{5}}=\frac{7}{2}\approx 3.50
+        \end{gather*}
 
         and the three orders are
 
@@ -391,7 +394,7 @@ title: "Exercises · Constructive heuristics"
         The best of the three solutions has profit $15$, and
 
         $$
-        gap(I)=\frac{19-15}{19}\approx 21.1\%.
+        gap(I)=\frac{19-15}{15}\approx 26.7\%.
         $$
 
     4. Since $GR(I)=15<\lfloor U\rfloor$, the bound does not certify optimality. Indeed the solution $\{4,5\}$ has weight $8+2=10\le 10$ and profit $19=\lfloor U\rfloor$, so it is optimal, $z(I)=19$. The relative errors are 31.6% for $GR_p$, 36.8% for $GR_w$ and 21.1% for $GR$: no order finds the optimum. The optimal solution combines the most efficient item $5$ with item $4$, which comes third in the efficiency order: after item $1$ is selected, item $4$ no longer fits, and the choice of item $1$ is never revised.

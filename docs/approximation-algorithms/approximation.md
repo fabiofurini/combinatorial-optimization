@@ -6,7 +6,7 @@ title: "Approximation algorithms: definitions"
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 23** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf)
+**Part 5 · Approximation algorithms · Chapter 23** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises](../exercises/approximation.md)
 
 </div>
 
@@ -28,23 +28,17 @@ title: "Approximation algorithms: definitions"
 
     - define an approximation scheme, a PTAS and an FPTAS, and translate the accuracy $\varepsilon$ into a performance guarantee.
 
-## 23.1 Why a performance guarantee?
+## 23.1 Approximation algorithms
 
-- A heuristic algorithm is usually tested on a few instances, and it may behave very differently on the next one. A <strong>performance guarantee</strong> is a statement that holds for <em>every</em> instance.
+<a id="box-1-def-heurvalue"></a>
 
-- <strong>A challenge.</strong> A heuristic algorithm for a maximization problem returns the value $40$ on an instance whose optimal value is $50$. How far is it from the optimum? Try to give three different answers before reading on.
+!!! definizione "Definition 23.1: heuristic value"
 
-- The same gap can be measured in three ways: the ratio $\frac{50}{40}=\frac{5}{4}$, the <em>additive</em> error $50-40=10$, and the <em>relative</em> error $\frac{50-40}{50}=\frac{1}{5}$. This chapter defines the three measures, and the next chapters compute the worst of them over all instances.
+    Let $\mathscr{A}$ be a <strong>heuristic algorithm</strong> for an <strong>optimization problem</strong> $\mathscr{P}$. For every <strong>instance</strong> $I$ of $\mathscr{P}$:
 
-## 23.2 Approximation algorithms
+    1. $z(I)$ is the <strong>optimal value</strong> of $\mathscr{P}$ on $I$ (assumed positive);
 
-- Let $\mathscr{A}$ be a <strong>heuristic algorithm</strong> for an <strong>optimization problem</strong> $\mathscr{P}$.
-
-- For every <strong>instance</strong> $I$ of $\mathscr{P}$,
-
-    1. let $z(I)$ be the <strong>optimal value</strong> of $\mathscr{P}$ on $I$ (assumed positive);
-
-    2. let $\mathscr{A}(I)$ be the <strong>heuristic value</strong>, i.e., the objective value of the feasible solution returned by $\mathscr{A}$ on $I$ (assumed positive).
+    2. $\mathscr{A}(I)$ is the <strong>heuristic value</strong>, i.e., the objective value of the feasible solution returned by $\mathscr{A}$ on $I$ (assumed positive).
 
 - We assume that $\mathscr{A}$ always outputs a <strong>feasible solution</strong>. Hence, for every instance $I$,
 
@@ -69,9 +63,13 @@ title: "Approximation algorithms: definitions"
 
     2. <strong>Absolute performance guarantee</strong> (additive guarantee): in this case we measure the quality of the heuristic solution by looking at the <em>absolute error</em>, that is, the difference between the heuristic value and the optimal value.
 
-### 23.2.1 Relative performance guarantee
+### 23.1.1 Relative performance guarantee
 
-- The <strong>performance ratio</strong> of $\mathscr{A}$ on an instance $I$ is
+<a id="box-2-def-pratio"></a>
+
+!!! definizione "Definition 23.2: performance ratio"
+
+    The <strong>performance ratio</strong> of $\mathscr{A}$ on an instance $I$ is
 
     $$
     \begin{cases}
@@ -80,11 +78,11 @@ title: "Approximation algorithms: definitions"
     \end{cases}
     $$
 
-    Under the feasibility assumption, the performance ratio is at least $1$ for every instance $I$.
+- Under the feasibility assumption, the performance ratio is at least $1$ for every instance $I$.
 
-<a id="box-1-def-alpha-approx"></a>
+<a id="box-3-def-alpha-approx"></a>
 
-!!! definizione "Definition 23.1: $\alpha$-approximation algorithm"
+!!! definizione "Definition 23.3: $\alpha$-approximation algorithm"
 
     A heuristic algorithm $\mathscr{A}$ for an optimization problem $\mathscr{P}$ is an <strong>$\alpha$-approximation algorithm</strong> if there exists a constant $\alpha \in [1,+\infty)$ such that, for every instance $I$ of $~\mathscr{P}$,
 
@@ -109,9 +107,9 @@ title: "Approximation algorithms: definitions"
 
     or a sequence of instances $\{I_n\}$ such that the corresponding performance ratios get arbitrarily close to $\alpha$.
 
-<a id="box-2-def-wcr"></a>
+<a id="box-4-def-wcr"></a>
 
-!!! definizione "Definition 23.2: Worst-case performance ratio"
+!!! definizione "Definition 23.4: Worst-case performance ratio"
 
     The <strong>worst-case performance ratio</strong> of $\mathscr{A}$ is
 
@@ -137,7 +135,7 @@ title: "Approximation algorithms: definitions"
 
     - $r(\mathscr{A})$ is also called the <strong>(worst-case) approximation ratio</strong> of $\mathscr{A}$
 
-### 23.2.2 Additive performance guarantee
+### 23.1.2 Additive performance guarantee
 
 - The <strong>additive error</strong> (or <strong>absolute error</strong>) of $\mathscr{A}$ on an instance $I$ is
 
@@ -150,9 +148,9 @@ title: "Approximation algorithms: definitions"
 
     Under the feasibility assumption, this quantity is non-negative for every instance $I$.
 
-<a id="box-3-def-beta-add"></a>
+<a id="box-5-def-beta-add"></a>
 
-!!! definizione "Definition 23.3: $\beta$-additive approximation algorithm"
+!!! definizione "Definition 23.5: $\beta$-additive approximation algorithm"
 
     A heuristic algorithm $\mathscr{A}$ for an optimization problem $\mathscr{P}$ is a <strong>$\beta$-additive approximation algorithm</strong> if there exists a constant $\beta \in [0,+\infty)$ such that, for every instance $I$ of $~\mathscr{P}$,
 
@@ -177,9 +175,9 @@ title: "Approximation algorithms: definitions"
 
     or a sequence of instances $\{I_n\}$ such that the corresponding additive errors get arbitrarily close to $\beta$.
 
-<a id="box-4-def-wcae"></a>
+<a id="box-6-def-wcae"></a>
 
-!!! definizione "Definition 23.4: Worst-case additive error"
+!!! definizione "Definition 23.6: Worst-case additive error"
 
     The <strong>worst-case additive error</strong> of $\mathscr{A}$ is
 
@@ -203,9 +201,9 @@ title: "Approximation algorithms: definitions"
 
     - $e(\mathscr{A})$ is also called the <strong>worst-case absolute (additive) error</strong> of $\mathscr{A}$
 
-## 23.3 Approximation schemes
+## 23.2 Approximation schemes
 
-- The <strong>relative error</strong> (also called <strong>relative gap</strong> or <strong>percentage error</strong>) of $\mathscr{A}$ on an instance $I$ is
+- The <strong>relative error</strong> (also called <strong>percentage error</strong>) of $\mathscr{A}$ on an instance $I$ is
 
     $$
     \begin{cases}
@@ -216,9 +214,11 @@ title: "Approximation algorithms: definitions"
 
     Under the feasibility assumption, this quantity is non-negative for every instance $I$, and it is equal to $0$ if and only if $\mathscr{A}(I)=z(I)$.
 
-<a id="box-5-def-as"></a>
+- The relative error divides by the optimal value $z(I)$, and must not be confused with the gap of the chapter «Combinatorial optimization problems», which divides by the lower bound and is never smaller (chapter «Heuristic algorithms»).
 
-!!! definizione "Definition 23.5: Approximation scheme"
+<a id="box-7-def-as"></a>
+
+!!! definizione "Definition 23.7: Approximation scheme"
 
     An <strong>approximation scheme</strong> for an optimization problem $\mathscr{P}$ is a family of heuristic algorithms $\{\mathscr{A}_{\varepsilon}\}_{\varepsilon \in (0,1)}$ such that, for every $\varepsilon \in (0,1)$ and for every instance $I$ of $\mathscr{P}$,
 
@@ -307,21 +307,21 @@ title: "Approximation algorithms: definitions"
 
 - Not all approximation schemes are equally useful in practice: we distinguish them according to how the running time depends on the input size and on the accuracy $\frac{1}{\varepsilon}$.
 
-<a id="box-6-def-ptas"></a>
+<a id="box-8-def-ptas"></a>
 
-!!! definizione "Definition 23.6: Polynomial-time approximation scheme (PTAS)"
+!!! definizione "Definition 23.8: Polynomial-time approximation scheme (PTAS)"
 
     An approximation scheme $\{\mathscr{A}_{\varepsilon}\}_{\varepsilon\in(0,1)}$ is a <strong>polynomial-time approximation scheme</strong> if, for every fixed $\varepsilon\in(0,1)$, the running time of $\mathscr{A}_{\varepsilon}$ is polynomial in the size of the instance.
 
 - Thus, the running time is polynomial in the input size, but it may grow very fast as $\varepsilon$ decreases (i.e., as the required accuracy increases).
 
-<a id="box-7-def-fptas"></a>
+<a id="box-9-def-fptas"></a>
 
-!!! definizione "Definition 23.7: Fully polynomial-time approximation scheme (FPTAS)"
+!!! definizione "Definition 23.9: Fully polynomial-time approximation scheme (FPTAS)"
 
     An approximation scheme $\{\mathscr{A}_{\varepsilon}\}_{\varepsilon\in(0,1)}$ is a <strong>fully polynomial-time approximation scheme</strong>  if the running time of $\mathscr{A}_{\varepsilon}$ is polynomial both in the size of the instance and in the accuracy $\frac{1}{\varepsilon}$.
 
-## 23.4 Typical mistakes
+## 23.3 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -335,7 +335,7 @@ title: "Approximation algorithms: definitions"
 
     - <strong>PTAS and FPTAS.</strong> The running time of a PTAS may grow like $n^{1/\varepsilon}$; only for an FPTAS it is polynomial in $\frac{1}{\varepsilon}$ as well.
 
-## 23.5 In summary
+## 23.4 In summary
 
 !!! chiave "In summary"
 

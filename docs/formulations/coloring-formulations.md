@@ -6,7 +6,7 @@ title: "Formulations of the vertex coloring problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 10** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf)
+**Part 2 · Formulations and their properties · Chapter 10** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises](../exercises/coloring-formulations.md)
 
 </div>
 

@@ -565,8 +565,8 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
     3. The degrees in $T$ are $\deg(1)=3$, $\deg(2)=2$, $\deg(3)=2$, $\deg(4)=1$, $\deg(5)=1$, $\deg(6)=1$, so $O=\{1,4,5,6\}$. Its three perfect matchings weigh
 
         $$
-        \{\{1,4\},\{5,6\}\}{:}\ 6+9=15,\qquad
-        \{\{1,5\},\{4,6\}\}{:}\ 3+8=11,\qquad
+        \{\{1,4\},\{5,6\}\}{:}\ 6+9=15,\quad
+        \{\{1,5\},\{4,6\}\}{:}\ 3+8=11,\quad
         \{\{1,6\},\{4,5\}\}{:}\ 6+9=15,
         $$
 
@@ -592,11 +592,10 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
 
         so $CH$ finds the optimal tour, which is unique. The inequalities of the proofs are
 
-        $$
-        DT(I)=32\le 2\,d(T)=36\le 2\,z(I)=54,
-        \qquad
+        \begin{gather*}
+        DT(I)=32\le 2\,d(T)=36\le 2\,z(I)=54,\\
         CH(I)=27\le d(T)+d(M)=29\le\frac32\,z(I)=\frac{81}{2}.
-        $$
+        \end{gather*}
 
 <a id="esercizio-26-5"></a>
 
@@ -693,8 +692,8 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
     2. The degrees in $T$ are $\deg(1)=2$, $\deg(2)=2$, $\deg(3)=1$, $\deg(4)=1$, $\deg(5)=1$, $\deg(6)=3$, so $O=\{3,4,5,6\}$. Its perfect matchings weigh
 
         $$
-        \{\{3,4\},\{5,6\}\}{:}\ 8+2=10,\qquad
-        \{\{3,5\},\{4,6\}\}{:}\ 7+6=13,\qquad
+        \{\{3,4\},\{5,6\}\}{:}\ 8+2=10,\quad
+        \{\{3,5\},\{4,6\}\}{:}\ 7+6=13,\quad
         \{\{3,6\},\{4,5\}\}{:}\ 5+6=11,
         $$
 

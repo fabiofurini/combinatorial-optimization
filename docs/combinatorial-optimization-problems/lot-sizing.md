@@ -6,7 +6,7 @@ title: "Capacitated lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 7** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf)
+**Part 1 · Combinatorial optimization problems · Chapter 7** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises](../exercises/lot-sizing.md)
 
 </div>
 
@@ -28,19 +28,7 @@ title: "Capacitated lot sizing"
 
     - compute a lower bound on the cost from the number of setups that the total demand requires.
 
-## 7.1 Why capacitated lot sizing?
-
-- A factory knows the demand of its product in each of the next weeks. Starting the production line costs a fixed amount (the <strong>setup</strong>), and the line can make only a limited quantity per week (the <strong>capacity</strong>). What is made in advance is kept in the warehouse, at a cost for every unit and every week. In which weeks should the factory produce, and how much?
-
-- The decision is a compromise: producing every week avoids the warehouse but pays many setups, producing rarely saves setups but pays the stock, and the capacity limits how much can be anticipated. This is the <strong>capacitated lot sizing problem</strong>.
-
-- <strong>A challenge.</strong> Before reading on, look at the data of <span style="color:#1971c2">[Example 7.1](#box-2-ex-cls5)</span> and try to find a production plan of cost at most $180$. Then ask yourself how many setups every plan needs at least.
-
-- Lot sizing has a classical place in the history of production planning. In 1958 Wagner and Whitin gave a dynamic programming algorithm for the case without capacity and with demand that varies over time. It rests on a property of the optimal plans: one produces only when the stock is empty.
-
-- With capacities the property fails, and the problem is NP-hard (see the chapter «Combinatorial optimization problems»). The dynamic programming approach is the subject of the chapter «Dynamic programming for lot sizing».
-
-## 7.2 The capacitated lot sizing problem
+## 7.1 The capacitated lot sizing problem
 
 <a id="box-1-defCLS"></a>
 
@@ -110,7 +98,7 @@ title: "Capacitated lot sizing"
 
 - We denote by $z(I)$ the cost of an optimal plan $\tilde{\vet{x}}$ of the instance $I$.
 
-### 7.2.1 Assumptions
+### 7.1.1 Assumptions
 
 - We make the following assumptions:
 
@@ -124,7 +112,7 @@ title: "Capacitated lot sizing"
 
     3. The quantities are integer. With integer data, once the periods with a setup are fixed, what remains is a minimum cost flow problem, which has an integer optimal solution: restricting the quantities to integers does not change the optimal cost.
 
-## 7.3 Variants
+## 7.2 Variants
 
 - In the <strong>uncapacitated lot sizing problem</strong> the capacities are not binding, for example $cap_t \ge \sum_u d_u$. It is solved in polynomial time by dynamic programming.
 
@@ -138,7 +126,7 @@ title: "Capacitated lot sizing"
 
 - The models of all these variants, with their big-$M$ constraints, are the subject of the chapter «Formulations of capacitated lot sizing». This chapter studies the problem of the definition above.
 
-## 7.4 The reference instance
+## 7.3 The reference instance
 
 <a id="box-2-ex-cls5"></a>
 
@@ -209,7 +197,7 @@ title: "Capacitated lot sizing"
 
     ![Figure 1](../img/lot-sizing/fig01.svg){ .fig loading=lazy  }
 
-## 7.5 Counting the solutions
+## 7.4 Counting the solutions
 
 - The combinatorial part of the decision is the choice of the periods with a setup: there are $2^m$ subsets of periods. Not all of them are feasible, because the periods with a setup must have enough capacity to produce everything.
 
@@ -264,7 +252,7 @@ title: "Capacitated lot sizing"
 
 - The number of setup choices grows as $2^m$: with $m=52$ weeks it is more than $4\cdot 10^{15}$.
 
-## 7.6 A first plan by hand
+## 7.5 A first plan by hand
 
 - The simplest feasible plan is <strong>lot-for-lot</strong>: in every period we produce exactly the demand of that period. There is no stock, and there are $m$ setups; it is feasible when every demand fits in the capacity of its period.
 
@@ -286,7 +274,7 @@ title: "Capacitated lot sizing"
 
 - We have found the plan of cost $180$ by hand, but we cannot yet tell whether a cheaper plan exists: we need a lower bound.
 
-## 7.7 A combinatorial lower bound
+## 7.6 A combinatorial lower bound
 
 - Let $D=\sum_{t \in T} d_t$ be the total demand. Let $k$ be the smallest number of periods whose capacities sum up to at least $D$, which is found by taking the periods with the largest capacities.
 
@@ -321,6 +309,12 @@ title: "Capacitated lot sizing"
     $$
 
     an absolute gap of $30$, that is a relative gap of $\frac{30}{150}=20\%$. The enumeration of the $94$ plans proves that $180$ is optimal.
+
+## 7.7 Remarks
+
+- In 1958 Wagner and Whitin gave a dynamic programming algorithm for the case without capacity and with demand that varies over time. It rests on a property of the optimal plans: one produces only when the stock is empty (chapter «Dynamic programming for lot sizing»).
+
+- With capacities the property fails, and the problem is NP-hard (chapter «Combinatorial optimization problems»).
 
 ## 7.8 Typical mistakes
 

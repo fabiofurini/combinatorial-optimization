@@ -6,7 +6,7 @@ title: "Combinatorial optimization problems"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 1** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf)
+**Part 1 · Combinatorial optimization problems · Chapter 1** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises](../exercises/combinatorial-optimization.md)
 
 </div>
 
@@ -30,15 +30,7 @@ title: "Combinatorial optimization problems"
 
     - place a problem in the classes P, NP and NP-hard, and tell a pseudo-polynomial algorithm from a polynomial one.
 
-## 1.1 What is combinatorial optimization
-
-- We recall that, given a set $F$ and a function $f$ defined on $F$, the associated <strong>optimization problem</strong> $P$ in maximization (minimization) form asks to find a point $\tilde{\vet{x}}(P) \in F$ such that $f(\tilde{\vet{x}}(P)) \ge f({\vet{x}})$ ($\le$) for all ${\vet{x}} \in F$; the value $z(P) = f(\tilde{\vet{x}}(P))$ is the <strong>optimal value</strong>.
-
-- In many decision problems the feasible solutions are not points of a continuum but <strong>discrete objects</strong>: a set of projects to fund, an order in which to visit customers, a way to split items among containers.
-
-!!! chiave ""
-
-    <strong>Combinatorial optimization</strong> is the study of optimization problems on <strong>discrete structures</strong> and <strong>combinatorial objects</strong>, such as graphs, subsets, permutations, sequences, partitions, coverings and packings.
+## 1.1 Combinatorial optimization problems
 
 <a id="box-1-def-cop"></a>
 
@@ -68,9 +60,13 @@ title: "Combinatorial optimization problems"
     f(S) = \sum_{j \in S} c_j .
     $$
 
-    This is the case of the knapsack problem (profits) and of the travelling salesman problem (distances). Some problems have a different objective, for example the <strong>makespan</strong> of the scheduling problem of Section [1.3](#sez-sec-six), which is a maximum and not a sum.
+    This is the case of the knapsack problem (profits) and of the travelling salesman problem (distances). Some problems have a different objective, for example the <strong>makespan</strong> of the scheduling problem of Section [1.2](#sez-sec-six), which is a maximum and not a sum.
 
 - A <strong>problem</strong> is a general question with symbolic data; an <strong>instance</strong> $I$ of the problem is obtained by fixing the numbers. We denote by $z(I)$ the optimal value of the instance $I$.
+
+!!! chiave ""
+
+    <strong>Combinatorial optimization</strong> is the study of optimization problems on <strong>discrete structures</strong> and <strong>combinatorial objects</strong>, such as graphs, subsets, permutations, sequences, partitions, coverings and packings.
 
 - The <strong>main characteristics</strong> of combinatorial optimization problems are:
 
@@ -78,7 +74,7 @@ title: "Combinatorial optimization problems"
 
     2. the number of feasible solutions is typically <strong>enormous</strong>: it grows exponentially (or faster) with the size of the instance;
 
-    3. finding an optimal solution can be <strong>computationally very difficult</strong> (Section [1.7](#sez-sec-complexity));
+    3. finding an optimal solution can be <strong>computationally very difficult</strong> (Section [1.6](#sez-sec-complexity));
 
     4. specialized algorithms are needed to explore the solution space without enumerating it.
 
@@ -114,92 +110,23 @@ title: "Combinatorial optimization problems"
 </tr>
 </table></div>
 
-- A fifth family, <strong>counting</strong> decisions (how many units to produce, how many operators in a shift), leads to integer quantities; they are modelled by integer variables and are treated in the module <em>Integer linear programming</em>.
+- A fifth family, <strong>counting</strong> decisions (how many units to produce, how many operators in a shift), leads to integer quantities, modelled by integer variables (module <em>Integer Linear Programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/)).
 
-## 1.2 Where combinatorial optimization problems arise
+## 1.2 The six problems of the course { #sez-sec-six }
 
-- Combinatorial optimization problems arise whenever decisions involve <strong>selecting</strong>, <strong>ordering</strong>, <strong>grouping</strong> or <strong>assigning</strong> discrete objects. The following table lists the main application areas with typical problems.
-
-<div class="tabella" markdown="0"><table>
-<tr>
-<th><strong>Area</strong></th>
-<th><strong>Typical problems</strong></th>
-</tr>
-<tr>
-<td>Production planning</td>
-<td>what, when and how much to produce: demand satisfaction over several periods, <strong>lot sizing</strong>, capacity planning, assembly line balancing</td>
-</tr>
-<tr>
-<td>Scheduling</td>
-<td>order and timing of jobs on machines (makespan, tardiness), project scheduling, maintenance scheduling</td>
-</tr>
-<tr>
-<td>Facility location</td>
-<td>where to open warehouses, plants, emergency services, and which clients each one serves</td>
-</tr>
-<tr>
-<td>Packing</td>
-<td>load items into vehicles, containers or pallets; select the most valuable cargo for a single container</td>
-</tr>
-<tr>
-<td>Cutting</td>
-<td>cut bars, sheets, rolls or panels into the required pieces with minimum waste (steel, glass, textile, timber, paper)</td>
-</tr>
-<tr>
-<td>Logistics</td>
-<td>vehicle routing, fleet management, inventory management, distribution network design</td>
-</tr>
-<tr>
-<td>Transportation</td>
-<td>crew scheduling, aircraft routing, train timetabling, cargo loading</td>
-</tr>
-<tr>
-<td>Personnel</td>
-<td>workforce and shift scheduling, nurse rostering, crew pairing</td>
-</tr>
-<tr>
-<td>Network design</td>
-<td>telecommunication, energy, transportation and supply chain networks</td>
-</tr>
-<tr>
-<td>Finance</td>
-<td>portfolio selection with cardinality constraints, index tracking, capital budgeting</td>
-</tr>
-<tr>
-<td>Telecommunications</td>
-<td>frequency assignment, routing, capacity expansion, bandwidth allocation</td>
-</tr>
-<tr>
-<td>Energy</td>
-<td>unit commitment (which plants to switch on), generation scheduling, grid operation</td>
-</tr>
-<tr>
-<td>Healthcare</td>
-<td>surgery scheduling, radiotherapy planning, kidney exchange and organ matching, bed management</td>
-</tr>
-<tr>
-<td>Other areas</td>
-<td>crop planning, sports scheduling, allocation of virtual machines to servers, patrol planning</td>
-</tr>
-</table></div>
-
-!!! chiave ""
-
-    Combinatorial optimization is a fundamental tool for decision making: the parcels we receive, the electricity we use and the flights we take are planned by solving combinatorial optimization problems.
-
-## 1.3 The six problems of the course { #sez-sec-six }
-
-- The course is built around <strong>six problems</strong>. Each one is introduced here with a short story, a definition in words and a small instance; the formal definitions and the variants are in Chapters OC 2–7.
+- The course is built around <strong>six problems</strong>. Each one is defined here in words, with a small instance; the formal definitions and the variants are in Chapters OC 2–7.
 
 - The same problems return in every part of the course, solved each time with a different method; the reference instances of the knapsack, bin packing and coloring problems are introduced in Chapters OC 2–4.
 
-### 1.3.1 Knapsack problem: projects and a budget
+### 1.2.1 Knapsack problem
 
-- <strong>Story.</strong> A company has a budget of $c$ euros and $n$ candidate projects; project $j$ costs $w_j$ and yields a profit $p_j$. Which projects should be funded?
+<a id="box-2-def-oc1-kp"></a>
 
-- <strong>Problem.</strong> Given $n$ items with profits $p_j$ and weights $w_j$, and a capacity $c$, the <strong>knapsack problem</strong> (KP) asks to select a <strong>subset</strong> of items of total weight at most $c$ and maximum total profit.
+!!! definizione "Definition 1.2: Knapsack Problem"
 
-<a id="box-2-ex-oc1-kp"></a>
+    Given $n$ items with profits $p_j$ and weights $w_j$, and a capacity $c$, the <strong>knapsack problem</strong> (KP) asks to select a <strong>subset</strong> of items of total weight at most $c$ and maximum total profit.
+
+<a id="box-3-ex-oc1-kp"></a>
 
 !!! esempio "Example 1.1: a small knapsack instance"
 
@@ -229,31 +156,35 @@ title: "Combinatorial optimization problems"
     </tr>
     </table></div>
 
-    The subset $\{1,3\}$ has weight $5+3=8 \le 9$ and profit $10+6=16$; the subset $\{1,2\}$ has weight $5+4=9 \le 9$ and profit $10+7=17$. We call this instance <span style="color:#1971c2">[Example 1.1](#box-2-ex-oc1-kp)</span>.
+    The subset $\{1,3\}$ has weight $5+3=8 \le 9$ and profit $10+6=16$; the subset $\{1,2\}$ has weight $5+4=9 \le 9$ and profit $10+7=17$. We call this instance <span style="color:#1971c2">[Example 1.1](#box-3-ex-oc1-kp)</span>.
 
-### 1.3.2 Bin packing problem: trucks
+### 1.2.2 Bin packing problem
 
-- <strong>Story.</strong> Parcels of different weights must be shipped with identical trucks of capacity $c$. How many trucks are needed? (The same problem arises when virtual machines are placed on identical servers.)
+<a id="box-4-def-oc1-bpp"></a>
 
-- <strong>Problem.</strong> Given $n$ items with weights $w_j$ and identical bins of capacity $c$, the <strong>bin packing problem</strong> (BPP) asks to <strong>partition</strong> the items into the minimum number of bins, so that the total weight in each bin is at most $c$.
+!!! definizione "Definition 1.3: Bin Packing Problem"
 
-<a id="box-3-ex-oc1-bpp"></a>
+    Given $n$ items with weights $w_j$ and identical bins of capacity $c$, the <strong>bin packing problem</strong> (BPP) asks to <strong>partition</strong> the items into the minimum number of bins, so that the total weight in each bin is at most $c$.
+
+<a id="box-5-ex-oc1-bpp"></a>
 
 !!! esempio "Example 1.2: a small bin packing instance"
 
-    We consider $n=6$ items with weights $\vet{w} = (4,4,5,3,2,3)$ and capacity $c=7$, and we call this instance <span style="color:#1971c2">[Example 1.2](#box-3-ex-oc1-bpp)</span>. The partition $\{1,4\},\{2,6\},\{3,5\}$ uses $3$ bins, each one filled exactly:
+    We consider $n=6$ items with weights $\vet{w} = (4,4,5,3,2,3)$ and capacity $c=7$, and we call this instance <span style="color:#1971c2">[Example 1.2](#box-5-ex-oc1-bpp)</span>. The partition $\{1,4\},\{2,6\},\{3,5\}$ uses $3$ bins, each one filled exactly:
 
     ![Figure 1](../img/combinatorial-optimization/fig01.svg){ .fig loading=lazy  }
 
-### 1.3.3 Vertex coloring problem: the exam calendar
+### 1.2.3 Vertex coloring problem
 
-- <strong>Story.</strong> Six exams must be scheduled in the exam session. Two exams that share at least one student cannot take place on the same day. What is the minimum number of days?
+<a id="box-6-def-oc1-vcp"></a>
 
-- <strong>Problem.</strong> Given a graph $G=(V, E)$, the <strong>vertex coloring problem</strong> (VCP) asks to assign a color to each vertex so that adjacent vertices have different colors, using the minimum number of colors. Equivalently, it asks to <strong>partition</strong> $V$ into the minimum number of <strong>stable sets</strong> (sets of pairwise non-adjacent vertices). The minimum is the <strong>chromatic number</strong> $\chi(G)$.
+!!! definizione "Definition 1.4: Vertex Coloring Problem"
 
-- In the story, the vertices are the exams, the edges join exams with students in common, and the colors are the days.
+    Given a graph $G=(V, E)$, the <strong>vertex coloring problem</strong> (VCP) asks to assign a color to each vertex so that adjacent vertices have different colors, using the minimum number of colors. Equivalently, it asks to <strong>partition</strong> $V$ into the minimum number of <strong>stable sets</strong> (sets of pairwise non-adjacent vertices). The minimum is the <strong>chromatic number</strong> $\chi(G)$.
 
-<a id="box-4-ex-oc1-vcp"></a>
+- In <span style="color:#1971c2">[Example 1.3](#box-7-ex-oc1-vcp)</span> the vertices are exams, the edges join the exams with students in common, and the colors are the days of the exam session.
+
+<a id="box-7-ex-oc1-vcp"></a>
 
 !!! esempio "Example 1.3: an exam calendar"
 
@@ -267,15 +198,17 @@ title: "Combinatorial optimization problems"
 
     ![Figure 2](../img/combinatorial-optimization/fig02.svg){ .fig loading=lazy  }
 
-    We call this instance <span style="color:#1971c2">[Example 1.3](#box-4-ex-oc1-vcp)</span>.
+    We call this instance <span style="color:#1971c2">[Example 1.3](#box-7-ex-oc1-vcp)</span>.
 
-### 1.3.4 Travelling salesman problem: a delivery tour
+### 1.2.4 Travelling salesman problem
 
-- <strong>Story.</strong> A courier leaves the depot, must visit $n-1$ customers once each and come back. Which tour is the shortest?
+<a id="box-8-def-oc1-tsp"></a>
 
-- <strong>Problem.</strong> Given $n$ cities and the distance $d_{ij}$ between each pair of cities, the <strong>travelling salesman problem</strong> (TSP) asks to find a <strong>tour</strong>, that is a cyclic <strong>ordering</strong> of the cities visiting each city exactly once, of minimum total length.
+!!! definizione "Definition 1.5: Travelling Salesman Problem"
 
-<a id="box-5-ex-oc1-tsp"></a>
+    Given $n$ cities and the distance $d_{ij}$ between each pair of cities, the <strong>travelling salesman problem</strong> (TSP) asks to find a <strong>tour</strong>, that is a cyclic <strong>ordering</strong> of the cities visiting each city exactly once, of minimum total length.
+
+<a id="box-9-ex-oc1-tsp"></a>
 
 !!! esempio "Example 1.4: a small TSP instance"
 
@@ -336,77 +269,74 @@ title: "Combinatorial optimization problems"
 
     ![Figure 3](../img/combinatorial-optimization/fig03.svg){ .fig loading=lazy  }
 
-    We call this instance <span style="color:#1971c2">[Example 1.4](#box-5-ex-oc1-tsp)</span>.
+    We call this instance <span style="color:#1971c2">[Example 1.4](#box-9-ex-oc1-tsp)</span>.
 
-### 1.3.5 Scheduling on identical parallel machines: jobs on printers
+### 1.2.5 Scheduling on identical parallel machines
 
-- <strong>Story.</strong> Seven print jobs must be sent to three identical printers. Each job runs on one printer without interruption. How should the jobs be distributed so that all of them are finished as early as possible?
+<a id="box-10-def-oc1-pcm"></a>
 
-- <strong>Problem.</strong> Given $n$ jobs with processing times $t_j$ and $m$ identical machines, the problem $P\|C_{\max}$ asks to <strong>assign</strong> each job to a machine so as to minimize the <strong>makespan</strong> $C_{\max}$, that is the largest load $L_h$ of a machine.
+!!! definizione "Definition 1.6: Scheduling on identical parallel machines"
 
-<a id="box-6-ex-oc1-pcm"></a>
+    Given $n$ jobs with processing times $t_j$ and $m$ identical machines, the problem $P\|C_{\max}$ asks to <strong>assign</strong> each job to a machine so as to minimize the <strong>makespan</strong> $C_{\max}$, that is the largest load $L_h$ of a machine.
+
+<a id="box-11-ex-oc1-pcm"></a>
 
 !!! esempio "Example 1.5: a small $P\|C_{\max}$ instance"
 
-    We consider $n=7$ jobs with $\vet{t}=(5,5,4,4,3,3,3)$ and $m=3$ machines, and we call this instance <span style="color:#1971c2">[Example 1.5](#box-6-ex-oc1-pcm)</span>. The assignment $J_1=\{1,3\}$, $J_2=\{2,4\}$, $J_3=\{5,6,7\}$ gives the loads $L_1=5+4=9$, $L_2=5+4=9$, $L_3=3+3+3=9$, hence $C_{\max}=9$:
+    We consider $n=7$ jobs with $\vet{t}=(5,5,4,4,3,3,3)$ and $m=3$ machines, and we call this instance <span style="color:#1971c2">[Example 1.5](#box-11-ex-oc1-pcm)</span>. The assignment $J_1=\{1,3\}$, $J_2=\{2,4\}$, $J_3=\{5,6,7\}$ gives the loads $L_1=5+4=9$, $L_2=5+4=9$, $L_3=3+3+3=9$, hence $C_{\max}=9$:
 
     ![Figure 4](../img/combinatorial-optimization/fig04.svg){ .fig loading=lazy  }
 
-### 1.3.6 Capacitated lot sizing: a production plan
+### 1.2.6 Capacitated lot sizing
 
-- <strong>Story.</strong> A factory knows the demand of its product for the next $m$ periods (weeks). Producing in a period requires a <strong>setup</strong> (a fixed cost to prepare the line) and is limited by the capacity of the line; what is produced in advance is kept in stock, at a holding cost. In which periods should the factory produce, and how much?
+<a id="box-12-def-oc1-cls"></a>
 
-- <strong>Problem.</strong> The <strong>capacitated lot sizing problem</strong> (CLS) asks to choose the periods with a setup and the production quantities, so that the demand of every period is satisfied, the capacities are respected and the total cost (setup, production and holding costs) is minimum.
+!!! definizione "Definition 1.7: Capacitated Lot Sizing Problem"
+
+    Given $m$ periods and, for each period, a demand, a production capacity, a setup cost (a fixed cost paid when the line produces), a unit production cost and a unit holding cost for the stock, the <strong>capacitated lot sizing problem</strong> (CLS) asks to choose the periods with a setup and the production quantities, so that the demand of every period is satisfied, the capacities are respected and the total cost (setup, production and holding costs) is minimum.
 
 - The combinatorial part of the decision is the <strong>subset</strong> of periods with a setup: with $m$ periods there are $2^m$ possible choices. Once the setups are fixed, the quantities are found by linear programming.
 
 <div class="tabella" markdown="0"><table>
 <tr>
 <th><strong>Problem</strong></th>
-<th><strong>Story</strong></th>
 <th><strong>A solution is</strong></th>
 </tr>
 <tr>
 <td>knapsack (KP)</td>
-<td>projects with a budget</td>
 <td>a subset of items</td>
 </tr>
 <tr>
 <td>bin packing (BPP)</td>
-<td>trucks</td>
 <td>a partition of the items into bins</td>
 </tr>
 <tr>
 <td>vertex coloring (VCP)</td>
-<td>exam calendar</td>
 <td>a partition into stable sets</td>
 </tr>
 <tr>
 <td>TSP</td>
-<td>delivery tour</td>
 <td>a cyclic ordering of the cities</td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(P\|C_{\max}\)</span></td>
-<td>jobs on printers</td>
 <td>an assignment of jobs to machines</td>
 </tr>
 <tr>
 <td>lot sizing (CLS)</td>
-<td>production plan</td>
 <td>setup periods and quantities</td>
 </tr>
 </table></div>
 
-## 1.4 Counting the solutions { #sez-sec-counting }
+## 1.3 Counting the solutions { #sez-sec-counting }
 
 - Before solving a problem we ask <strong>how many</strong> candidate solutions it has. The answer depends only on the combinatorial object: subsets, orderings or partitions.
 
-### 1.4.1 Subsets
+### 1.3.1 Subsets
 
-<a id="box-7-prop-subsets"></a>
+<a id="box-13-prop-subsets"></a>
 
-!!! teorema "Proposition 1.2"
+!!! teorema "Proposition 1.8"
 
     A set with $n$ elements has $2^n$ subsets.
 
@@ -424,13 +354,13 @@ title: "Combinatorial optimization problems"
 
 - The candidate solutions of the knapsack problem with $n$ items and the setup choices of the lot sizing problem with $m$ periods are subsets: $2^n$ and $2^m$ of them, respectively.
 
-### 1.4.2 Orderings and tours
+### 1.3.2 Orderings and tours
 
 - The $n$ elements of a set can be ordered in $n! = n \cdot (n-1) \cdots 2 \cdot 1$ ways (<strong>permutations</strong>).
 
-<a id="box-8-prop-tours"></a>
+<a id="box-14-prop-tours"></a>
 
-!!! teorema "Proposition 1.3"
+!!! teorema "Proposition 1.9"
 
     For $n \ge 3$ cities with symmetric distances, the number of distinct tours is
 
@@ -442,11 +372,11 @@ title: "Combinatorial optimization problems"
 
     A tour is a cyclic sequence of the $n$ cities. Since the starting city does not change the tour, we can always start from city $1$: the remaining $n-1$ cities can be ordered in $(n-1)!$ ways. Each tour is obtained twice, once for each direction of travel, for example $(1,3,5,2,4)$ and $(1,4,2,5,3)$, and both directions have the same length when the distances are symmetric. Hence the number of distinct tours is $(n-1)!/2$. <span class="qed">□</span>
 
-<a id="box-9-ex-oc1-count-tsp"></a>
+<a id="box-15-ex-oc1-count-tsp"></a>
 
 !!! esempio "Example 1.6: counting the tours"
 
-    For the TSP of <span style="color:#1971c2">[Example 1.4](#box-5-ex-oc1-tsp)</span> we have $(5-1)!/2 = 24/2 = 12$ tours. Their lengths, computed by enumeration, are:
+    For the TSP of <span style="color:#1971c2">[Example 1.4](#box-9-ex-oc1-tsp)</span> we have $(5-1)!/2 = 24/2 = 12$ tours. Their lengths, computed by enumeration, are:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -501,7 +431,7 @@ title: "Combinatorial optimization problems"
 
     The tour $(1,3,5,2,4)$ is the unique optimal tour, and $z(I)=18$.
 
-### 1.4.3 Partitions and Bell numbers
+### 1.3.3 Partitions and Bell numbers
 
 - A <strong>partition</strong> of a finite set $A$ is a collection of non-empty, pairwise disjoint subsets of $A$ whose union is $A$. The solutions of the bin packing problem and of the vertex coloring problem are partitions (of the items and of the vertices).
 
@@ -525,7 +455,7 @@ title: "Combinatorial optimization problems"
 
 - An <strong>assignment</strong> of $n$ jobs to $m$ machines is a function from jobs to machines: there are $m^n$ of them. Since the machines of $P\|C_{\max}$ are identical, two assignments that differ only by a renaming of the machines are the same schedule; the distinct schedules are the partitions of the jobs into at most $m$ blocks.
 
-<a id="box-10-ex-oc1-count"></a>
+<a id="box-16-ex-oc1-count"></a>
 
 !!! esempio "Example 1.7: how many candidate solutions"
 
@@ -539,31 +469,31 @@ title: "Combinatorial optimization problems"
     <th>feasible</th>
     </tr>
     <tr>
-    <td>KP, <span style="color:#1971c2">[Example 1.1](#box-2-ex-oc1-kp)</span></td>
+    <td>KP, <span style="color:#1971c2">[Example 1.1](#box-3-ex-oc1-kp)</span></td>
     <td>subsets of <span class="arithmatex">\(4\)</span> items</td>
     <td><span class="arithmatex">\(2^4=16\)</span></td>
     <td><span class="arithmatex">\(11\)</span></td>
     </tr>
     <tr>
-    <td>BPP, <span style="color:#1971c2">[Example 1.2](#box-3-ex-oc1-bpp)</span></td>
+    <td>BPP, <span style="color:#1971c2">[Example 1.2](#box-5-ex-oc1-bpp)</span></td>
     <td>partitions of <span class="arithmatex">\(6\)</span> items</td>
     <td><span class="arithmatex">\(B(6)=203\)</span></td>
     <td><span class="arithmatex">\(30\)</span></td>
     </tr>
     <tr>
-    <td>VCP, <span style="color:#1971c2">[Example 1.3](#box-4-ex-oc1-vcp)</span></td>
+    <td>VCP, <span style="color:#1971c2">[Example 1.3](#box-7-ex-oc1-vcp)</span></td>
     <td>partitions of <span class="arithmatex">\(6\)</span> vertices</td>
     <td><span class="arithmatex">\(B(6)=203\)</span></td>
     <td><span class="arithmatex">\(22\)</span></td>
     </tr>
     <tr>
-    <td>TSP, <span style="color:#1971c2">[Example 1.4](#box-5-ex-oc1-tsp)</span></td>
+    <td>TSP, <span style="color:#1971c2">[Example 1.4](#box-9-ex-oc1-tsp)</span></td>
     <td>tours of <span class="arithmatex">\(5\)</span> cities</td>
     <td><span class="arithmatex">\(4!/2=12\)</span></td>
     <td><span class="arithmatex">\(12\)</span></td>
     </tr>
     <tr>
-    <td><span class="arithmatex">\(P\|C_{\max}\)</span>, <span style="color:#1971c2">[Example 1.5](#box-6-ex-oc1-pcm)</span></td>
+    <td><span class="arithmatex">\(P\|C_{\max}\)</span>, <span style="color:#1971c2">[Example 1.5](#box-11-ex-oc1-pcm)</span></td>
     <td>assignments of <span class="arithmatex">\(7\)</span> jobs</td>
     <td><span class="arithmatex">\(3^7=2187\)</span></td>
     <td><span class="arithmatex">\(2187\)</span></td>
@@ -578,7 +508,7 @@ title: "Combinatorial optimization problems"
 
     For the bin packing instance, a partition is feasible when every block weighs at most $7$; for the coloring instance, when every block is a stable set. The $365$ schedules of $P\|C_{\max}$ are the partitions of $7$ jobs into $1$, $2$ or $3$ blocks ($1$, $63$ and $301$ of them).
 
-## 1.5 Combinatorial explosion and brute force { #sez-sec-bruteforce }
+## 1.4 Combinatorial explosion and brute force { #sez-sec-bruteforce }
 
 - Since the feasible region is finite, a combinatorial optimization problem can always be solved by <strong>complete enumeration</strong>: we list all candidate solutions, discard the infeasible ones and keep the best. This algorithm is called <strong>brute force</strong>.
 
@@ -598,11 +528,11 @@ title: "Combinatorial optimization problems"
 
     - **Step 2:** <strong>Output</strong>. Return $\tilde S = \bar S$ and $z(I) = \LB$. <code>STOP</code>
 
-<a id="box-11-ex-oc1-bf-kp"></a>
+<a id="box-17-ex-oc1-bf-kp"></a>
 
 !!! esempio "Example 1.8: brute force on the knapsack instance"
 
-    For the knapsack instance of <span style="color:#1971c2">[Example 1.1](#box-2-ex-oc1-kp)</span> the $2^4=16$ subsets are:
+    For the knapsack instance of <span style="color:#1971c2">[Example 1.1](#box-3-ex-oc1-kp)</span> the $2^4=16$ subsets are:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -699,7 +629,7 @@ title: "Combinatorial optimization problems"
 
     Among the $11$ feasible subsets, the best one is $\tilde S = \{1,2\}$, with $z(I)=17$. It is the only optimal solution: the infeasible subset $\{2,3,4\}$ also has profit $17$, but weight $10 > 9$.
 
-### 1.5.1 Exponential growth
+### 1.4.1 Exponential growth
 
 - Brute force works for the small instances above, but the number of candidates grows very quickly with the size $n$ of the instance. The following table compares polynomial and exponential growth.
 
@@ -764,7 +694,7 @@ title: "Combinatorial optimization problems"
 
 ![Figure 5](../img/combinatorial-optimization/fig05.svg){ .fig .cornice loading=lazy style="width:65%" }
 
-### 1.5.2 Computing times
+### 1.4.2 Computing times
 
 - We assume that a computer evaluates $10^9$ candidate solutions per second, and we compute the time of a complete enumeration (one year $=365.25$ days):
 
@@ -879,13 +809,13 @@ title: "Combinatorial optimization problems"
 
     Complete enumeration is possible only for <strong>very small instances</strong>. Faster computers do not help: an exponential number of candidates defeats any constant speed-up. We need smarter approaches, which <strong>exclude</strong> whole parts of the solution space without exploring them.
 
-## 1.6 Primal bounds, dual bounds and gap { #sez-sec-bounds }
+## 1.5 Primal bounds, dual bounds and gap { #sez-sec-bounds }
 
 - The smarter approaches rest on a simple idea: instead of computing $z(I)$ directly, we <strong>enclose</strong> it between two numbers. One comes from a feasible solution, the other from an argument that holds for <em>all</em> feasible solutions.
 
-<a id="box-12-def-bounds"></a>
+<a id="box-18-def-bounds"></a>
 
-!!! definizione "Definition 1.4: primal and dual bounds"
+!!! definizione "Definition 1.10: primal and dual bounds"
 
     Consider an instance $I$ of a combinatorial optimization problem with feasible solutions $\mathcal F$, objective function $f$ and optimal value $z(I)$.
 
@@ -905,23 +835,25 @@ title: "Combinatorial optimization problems"
 
 ![Figure 6](../img/combinatorial-optimization/fig06.svg){ .fig loading=lazy  }
 
-<a id="box-13-def-gap"></a>
+<a id="box-19-def-gap"></a>
 
-!!! definizione "Definition 1.5: gap"
+!!! definizione "Definition 1.11: gap"
 
-    Given a primal bound $\bar z = f(\bar S)$ and a dual bound $\beta$ of an instance $I$, the <strong>absolute gap</strong> is $|\beta - \bar z|$ and, for $\bar z \neq 0$, the <strong>relative gap</strong> is
+    Let $\LB \le z(I) \le \UB$ be a lower and an upper bound of an instance $I$, one primal and one dual. The <strong>absolute gap</strong> is $\UB - \LB$ and, for $\LB \neq 0$, the <strong>relative gap</strong> (or simply <strong>gap</strong>) is
 
     $$
-    \frac{|\beta - \bar z|}{|\bar z|}.
+    gap(I) = \frac{\UB - \LB}{|\LB|}.
     $$
 
-- The relative gap is the measure reported by MIP solvers during the search: it says by how much, at most, the best solution found can be improved, relative to its value.
+- The denominator is always the <strong>lower bound</strong>: in the maximization form it is the value of the feasible solution, as in the optimality gap of the integer linear programming module; in the minimization form it is the dual bound.
+
+- With this choice the gap is never smaller than the relative error of the feasible solution with respect to $z(I)$ (chapter «Heuristic algorithms»): a gap of $5\%$ guarantees a solution within $5\%$ of the optimum.
 
 - If the gap is zero, the feasible solution $\bar S$ is optimal and the dual bound is a <strong>certificate</strong> of its optimality.
 
-<a id="box-14-obs-rounding"></a>
+<a id="box-20-obs-rounding"></a>
 
-!!! teorema "Observation 1.6"
+!!! teorema "Observation 1.12"
 
     If $f(S) \in \Z$ for every $S \in \mathcal F$, then in the maximization form $\lfloor \beta \rfloor$ is also a dual bound, and in the minimization form $\lceil \beta \rceil$ is also a dual bound.
 
@@ -929,11 +861,11 @@ title: "Combinatorial optimization problems"
 
     In the maximization form, for every $S \in \mathcal F$ we have $f(S) \le \beta$ and $f(S) \in \Z$; the largest integer not greater than $\beta$ is $\lfloor \beta \rfloor$, hence $f(S) \le \lfloor \beta \rfloor$. The minimization form is analogous. <span class="qed">□</span>
 
-<a id="box-15-ex-oc1-bounds"></a>
+<a id="box-21-ex-oc1-bounds"></a>
 
 !!! esempio "Example 1.9: bounds on the small instances"
 
-    <strong>Knapsack</strong> (<span style="color:#1971c2">[Example 1.1](#box-2-ex-oc1-kp)</span>, maximization).
+    <strong>Knapsack</strong> (<span style="color:#1971c2">[Example 1.1](#box-3-ex-oc1-kp)</span>, maximization).
 
     - <em>Primal bound.</em> The greedy algorithm inserts the items by non-increasing efficiency $p_j/w_j$: the efficiencies are $2$, $\tfrac{7}{4}$, $2$, $\tfrac{4}{3}$, so the order is $1,3,2,4$ (ties by index). It inserts items $1$ and $3$ (residual capacity $1$), and items $2$ and $4$ do not fit: $\LB = 16$.
 
@@ -943,21 +875,21 @@ title: "Combinatorial optimization problems"
         \UB = 10 + 6 + \tfrac{1}{4} \cdot 7 = \tfrac{71}{4} = 17.75 .
         $$
 
-    - The profits are integer, so $\lfloor 17.75 \rfloor = 17$ is a dual bound ([Observation 1.6](#box-14-obs-rounding)). The gap between $16$ and $17$ is $1$ (relative gap $\tfrac{1}{16} = 6.25\%$). The solution $\{1,2\}$ of value $17$ closes it, and it is optimal.
+    - The profits are integer, so $\lfloor 17.75 \rfloor = 17$ is a dual bound ([Observation 1.12](#box-20-obs-rounding)). The gap between $16$ and $17$ is $1$ (relative gap $\tfrac{1}{16} = 6.25\%$). The solution $\{1,2\}$ of value $17$ closes it, and it is optimal.
 
-    <strong>Bin packing</strong> (<span style="color:#1971c2">[Example 1.2](#box-3-ex-oc1-bpp)</span>, minimization).
+    <strong>Bin packing</strong> (<span style="color:#1971c2">[Example 1.2](#box-5-ex-oc1-bpp)</span>, minimization).
 
     - <em>Primal bound.</em> First Fit puts each item into the first bin where it fits and returns $\{1,4\},\{2,5\},\{3\},\{6\}$: $\UB = 4$.
 
-    - <em>Dual bound.</em> Each bin holds at most $7$ of the total weight $21$, so $\LB = \lceil 21/7 \rceil = 3$. The solution of <span style="color:#1971c2">[Example 1.2](#box-3-ex-oc1-bpp)</span> uses $3$ bins and is optimal.
+    - <em>Dual bound.</em> Each bin holds at most $7$ of the total weight $21$, so $\LB = \lceil 21/7 \rceil = 3$. The solution of <span style="color:#1971c2">[Example 1.2](#box-5-ex-oc1-bpp)</span> uses $3$ bins and is optimal.
 
-    <strong>Scheduling</strong> (<span style="color:#1971c2">[Example 1.5](#box-6-ex-oc1-pcm)</span>, minimization).
+    <strong>Scheduling</strong> (<span style="color:#1971c2">[Example 1.5](#box-11-ex-oc1-pcm)</span>, minimization).
 
     - <em>Primal bound.</em> The LPT rule (longest job first, on the least loaded machine) gives the loads $11, 8, 8$: $\UB = 11$.
 
-    - <em>Dual bound.</em> The makespan is at least the average load and at least the longest job: $\LB = \max\{\lceil 27/3 \rceil, 5\} = 9$. The schedule of <span style="color:#1971c2">[Example 1.5](#box-6-ex-oc1-pcm)</span> has makespan $9$ and is optimal.
+    - <em>Dual bound.</em> The makespan is at least the average load and at least the longest job: $\LB = \max\{\lceil 27/3 \rceil, 5\} = 9$. The schedule of <span style="color:#1971c2">[Example 1.5](#box-11-ex-oc1-pcm)</span> has makespan $9$ and is optimal.
 
-    <strong>TSP</strong> (<span style="color:#1971c2">[Example 1.4](#box-5-ex-oc1-tsp)</span>, minimization).
+    <strong>TSP</strong> (<span style="color:#1971c2">[Example 1.4](#box-9-ex-oc1-tsp)</span>, minimization).
 
     - <em>Primal bound.</em> The nearest neighbour heuristic from city $1$ builds the tour $(1,3,2,4,5)$ of length $25$: $\UB = 25$.
 
@@ -968,7 +900,7 @@ title: "Combinatorial optimization problems"
         = \Big\lceil \tfrac{33}{2} \Big\rceil = 17 .
         $$
 
-    - The optimal tour has length $18$: a gap of $1$ remains, and only the enumeration of <span style="color:#1971c2">[Example 1.6](#box-9-ex-oc1-count-tsp)</span> certifies the optimum.
+    - The optimal tour has length $18$: a gap of $1$ remains, and only the enumeration of <span style="color:#1971c2">[Example 1.6](#box-15-ex-oc1-count-tsp)</span> certifies the optimum.
 
 - These bounds start the <strong>dashboard</strong> of the course: for each instance we record the best primal and dual bounds found so far. Every following chapter improves one side or the other.
 
@@ -1010,7 +942,7 @@ title: "Combinatorial optimization problems"
 </tr>
 </table></div>
 
-## 1.7 A glimpse of computational complexity { #sez-sec-complexity }
+## 1.6 A glimpse of computational complexity { #sez-sec-complexity }
 
 - Brute force takes exponential time. Is there an algorithm that solves these problems in polynomial time? Computational complexity classifies problems according to this question; here we give only the definitions needed in the course.
 
@@ -1020,9 +952,9 @@ title: "Combinatorial optimization problems"
 
 - The <strong>decision version</strong> of an optimization problem asks a yes/no question, for example: “is there a feasible subset with profit at least $k$?”.
 
-<a id="box-16-def-pnp"></a>
+<a id="box-22-def-pnp"></a>
 
-!!! definizione "Definition 1.7: the classes P and NP"
+!!! definizione "Definition 1.13: the classes P and NP"
 
     1. <strong>P</strong> is the class of decision problems that can be solved by a polynomial algorithm.
 
@@ -1032,13 +964,13 @@ title: "Combinatorial optimization problems"
 
 - It is not known whether $P = NP$. No polynomial algorithm is known for any NP-complete problem, and it is widely believed that none exists: for an NP-hard problem we do not expect a polynomial exact algorithm.
 
-### 1.7.1 Pseudo-polynomial algorithms and strong NP-hardness
+### 1.6.1 Pseudo-polynomial algorithms and strong NP-hardness
 
 - Some NP-hard problems can be solved in time polynomial in $n$ <strong>and in the value</strong> of the numbers of the instance. For example, the knapsack problem with integer data can be solved by dynamic programming in $O(n\,c)$ time (Part III of the course). This is not polynomial: $c$ is exponential in its number of bits $\log_2 c$.
 
-<a id="box-17-def-pseudo"></a>
+<a id="box-23-def-pseudo"></a>
 
-!!! definizione "Definition 1.8: pseudo-polynomial algorithm, weak and strong NP-hardness"
+!!! definizione "Definition 1.14: pseudo-polynomial algorithm, weak and strong NP-hardness"
 
     1. An algorithm is <strong>pseudo-polynomial</strong> if its running time is bounded by a polynomial in the size of the instance and in the largest number appearing in it.
 
@@ -1090,7 +1022,7 @@ title: "Combinatorial optimization problems"
 
     NP-hardness does not mean that an instance cannot be solved: it means that no algorithm is expected to solve <em>every</em> instance in polynomial time. In practice we combine <strong>exact methods</strong> that close the gap between primal and dual bounds, <strong>heuristics</strong> that find good solutions quickly, and <strong>approximation algorithms</strong> that guarantee a bounded gap in the worst case.
 
-## 1.8 Roadmap of the course
+## 1.7 Roadmap of the course
 
 - The guiding question of the course is: <strong>how do we solve a combinatorial optimization problem, exactly or not, and how do we certify how far we are from the optimum?</strong>
 
@@ -1148,21 +1080,21 @@ title: "Combinatorial optimization problems"
 
 - The arrows refer to a maximization problem: the primal side raises the lower bound, the dual side lowers the upper bound, and an exact method stops when the two meet.
 
-## 1.9 Typical mistakes
+## 1.8 Typical mistakes
 
 !!! attenzione "Warning"
 
-    - <strong>Confusing candidate and feasible solutions.</strong> The numbers $2^n$, $(n-1)!/2$ and $B(n)$ count the candidates; the feasible solutions can be far fewer, for example $11$ subsets out of $16$ in <span style="color:#1971c2">[Example 1.1](#box-2-ex-oc1-kp)</span>.
+    - <strong>Confusing candidate and feasible solutions.</strong> The numbers $2^n$, $(n-1)!/2$ and $B(n)$ count the candidates; the feasible solutions can be far fewer, for example $11$ subsets out of $16$ in <span style="color:#1971c2">[Example 1.1](#box-3-ex-oc1-kp)</span>.
 
     - <strong>Exchanging the two directions of the bounds.</strong> In a maximization problem a primal bound is a lower bound and a dual bound is an upper bound; in a minimization problem the roles are exchanged.
 
-    - <strong>Rounding a dual bound when the objective is not integer.</strong> The rounding of [Observation 1.6](#box-14-obs-rounding) needs $f(S) \in \Z$ for every feasible solution.
+    - <strong>Rounding a dual bound when the objective is not integer.</strong> The rounding of [Observation 1.12](#box-20-obs-rounding) needs $f(S) \in \Z$ for every feasible solution.
 
     - <strong>Counting equivalent solutions twice.</strong> A tour and its reverse are the same tour, and two assignments that differ by a renaming of identical machines are the same schedule.
 
     - <strong>Reading NP-hard as unsolvable.</strong> NP-hardness is a statement on the worst case: many instances of practical size are solved, and the rest of the course shows how.
 
-## 1.10 In summary
+## 1.9 In summary
 
 !!! chiave "In summary"
 
@@ -1186,32 +1118,32 @@ title: "Combinatorial optimization problems"
     <th>from</th>
     </tr>
     <tr>
-    <td>KP, <span style="color:#1971c2">[Example 1.1](#box-2-ex-oc1-kp)</span> (max)</td>
+    <td>KP, <span style="color:#1971c2">[Example 1.1](#box-3-ex-oc1-kp)</span> (max)</td>
     <td><span class="arithmatex">\(16\)</span> (greedy)</td>
     <td><span class="arithmatex">\(17\)</span> (<span class="arithmatex">\(\lfloor 71/4 \rfloor\)</span>)</td>
     <td>this chapter</td>
     </tr>
     <tr>
-    <td>BPP, <span style="color:#1971c2">[Example 1.2](#box-3-ex-oc1-bpp)</span> (min)</td>
+    <td>BPP, <span style="color:#1971c2">[Example 1.2](#box-5-ex-oc1-bpp)</span> (min)</td>
     <td><span class="arithmatex">\(3\)</span> (<span class="arithmatex">\(\lceil 21/7 \rceil\)</span>)</td>
     <td><span class="arithmatex">\(4\)</span> (First Fit)</td>
     <td>this chapter</td>
     </tr>
     <tr>
-    <td><span class="arithmatex">\(P\|C_{\max}\)</span>, <span style="color:#1971c2">[Example 1.5](#box-6-ex-oc1-pcm)</span> (min)</td>
+    <td><span class="arithmatex">\(P\|C_{\max}\)</span>, <span style="color:#1971c2">[Example 1.5](#box-11-ex-oc1-pcm)</span> (min)</td>
     <td><span class="arithmatex">\(9\)</span> (average load)</td>
     <td><span class="arithmatex">\(11\)</span> (LPT)</td>
     <td>this chapter</td>
     </tr>
     <tr>
-    <td>TSP, <span style="color:#1971c2">[Example 1.4](#box-5-ex-oc1-tsp)</span> (min)</td>
+    <td>TSP, <span style="color:#1971c2">[Example 1.4](#box-9-ex-oc1-tsp)</span> (min)</td>
     <td><span class="arithmatex">\(17\)</span> (two shortest edges)</td>
     <td><span class="arithmatex">\(25\)</span> (nearest neighbour)</td>
     <td>this chapter</td>
     </tr>
     </table></div>
 
-## 1.11 Exercises
+## 1.10 Exercises
 
 !!! esercizio "Exercise: Recognizing the problems (basic)"
 
@@ -1420,6 +1352,6 @@ title: "Combinatorial optimization problems"
 
     1. LPT assigns job $1$ ($5$) to $M_1$ and job $2$ ($4$) to $M_2$; job $3$ ($3$) to $M_2$ (load $7$); job $4$ ($3$) to $M_1$ (load $8$); job $5$ ($3$) to $M_2$ (load $10$). Hence $J_1 = \{1,4\}$, $J_2 = \{2,3,5\}$ and $C_{\max} = 10$. It is the value of a feasible solution of a minimization problem, hence a primal bound: $\UB = 10$.
 
-    2. $\sum_j t_j = 18$, hence $\LB = \max\{\lceil 18/2 \rceil, 5\} = 9$. The absolute gap is $10-9 = 1$ and the relative gap is $\tfrac{1}{10} = 10\%$.
+    2. $\sum_j t_j = 18$, hence $\LB = \max\{\lceil 18/2 \rceil, 5\} = 9$. The absolute gap is $10-9 = 1$ and the relative gap is $\tfrac{1}{9} \approx 11.1\%$.
 
     3. The schedule $J_1 = \{1,2\}$, $J_2 = \{3,4,5\}$ has loads $5+4 = 9$ and $3+3+3 = 9$, hence $C_{\max} = 9 = \LB$. The gap is zero, so this schedule is optimal and $z(I) = 9$.

@@ -6,7 +6,7 @@ title: "Formulations of the bin packing problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 9** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf)
+**Part 2 · Formulations and their properties · Chapter 9** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises](../exercises/bin-packing-formulations.md)
 
 </div>
 

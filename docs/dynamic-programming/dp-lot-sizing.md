@@ -40,12 +40,6 @@ title: "Dynamic programming for lot sizing"
 
 ## 17.1 Problem definition
 
-- A company plans the production of <strong>one product</strong> over a horizon of $m$ time periods (weeks, months, …). The demand of each period must be satisfied, either by the production of the period or by the inventory kept from the previous periods.
-
-- Producing in a period requires a <strong>setup</strong>, which has a fixed cost, independent of the produced quantity; each produced unit has a variable cost, and each unit kept in stock at the end of a period has a holding cost. Producing rarely saves setup costs but increases the holding costs: the problem is to find the best compromise.
-
-- This is the lot-sizing problem of the chapter on lot sizing, restricted to a <strong>single product</strong>: we drop the product index $p$, we measure the capacity in units of product (variable production time $vt_t=1$, no setup time), and we assume that there is no initial inventory.
-
 <a id="box-1-defULS"></a>
 
 !!! definizione "Definition 17.1: Uncapacitated Lot-Sizing Problem"
@@ -59,6 +53,8 @@ title: "Dynamic programming for lot sizing"
     3. for each period $t \in T$, a <em>setup cost</em> $sc_t \in \Z_{\ge 0}$, a <em>variable production cost</em> $vc_t \in \Z_{\ge 0}$ per unit, and a <em>holding cost</em> $hc_t \in \Z_{\ge 0}$ per unit in stock at the end of period $t$,
 
     the <strong>Uncapacitated Lot-Sizing Problem</strong> (ULS) asks to decide how many units to produce in each period, so that, starting with an empty inventory and ending with an empty inventory, the demand of every period is satisfied, and the total cost of setups, production, and holding is minimized.
+
+- This is the lot-sizing problem of the chapter on lot sizing, restricted to a <strong>single product</strong>: we drop the product index $p$, we measure the capacity in units of product (variable production time $vt_t=1$, no setup time), and we assume that there is no initial inventory.
 
 - For any $j,t \in T$, we denote by
 

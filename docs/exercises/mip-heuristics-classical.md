@@ -254,7 +254,7 @@ title: "Exercises · MIP heuristics for the classical problems"
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th>out  in</th>
+        <th>out \ in</th>
         <th><span class="arithmatex">\(1\)</span></th>
         <th><span class="arithmatex">\(3\)</span></th>
         <th><span class="arithmatex">\(5\)</span></th>
@@ -356,7 +356,7 @@ title: "Exercises · MIP heuristics for the classical problems"
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th>out  in</th>
+        <th>out \ in</th>
         <th><span class="arithmatex">\(4\)</span></th>
         <th><span class="arithmatex">\(5\)</span></th>
         <th><span class="arithmatex">\(6\)</span></th>

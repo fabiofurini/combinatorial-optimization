@@ -30,9 +30,19 @@ title: "Constructive heuristics"
 
     - compare the results with the dual bounds, and explain when a constructive heuristic fails.
 
-## 19.1 The problems and the assumptions { #sez-sec-problems }
+## 19.1 Constructive heuristics { #sez-sec-constructive }
 
-- A <strong>constructive heuristic</strong> builds one feasible solution step by step: it starts from an empty solution and extends it with one element at a time, until the solution is complete. These notes study how the choice of the element to add is made, and why this choice decides the quality of the result.
+<a id="box-1-def-constructive"></a>
+
+!!! definizione "Definition 19.1: Constructive heuristic"
+
+    A <strong>constructive heuristic</strong> is a heuristic algorithm that builds one feasible solution step by step: it starts from the empty <strong>partial solution</strong> and extends it with one element at a time, until the solution is complete.
+
+- The elements depend on the problem: the items selected for the knapsack, the assignments of items to bins and of jobs to machines, the edges of a tour.
+
+- The quality of the result depends on how the element to add is chosen at every step (Section [19.3](#sez-sec-greedy)).
+
+## 19.2 The problems and the assumptions { #sez-sec-problems }
 
 - The heuristics are illustrated on the four problems of the notes on heuristic algorithms: the knapsack problem (KP), the bin packing problem (BPP), the travelling salesman problem (TSP) and the scheduling problem $P\,||\,C_{\max}$. Their definitions are given in the notes on combinatorial optimization problems, and the assumptions and the notation in the notes on the definitions of heuristic algorithms; we recall the essentials.
 
@@ -123,15 +133,21 @@ title: "Constructive heuristics"
 
 ![Figure 1](../img/constructive-heuristics/fig01.svg){ .fig loading=lazy  }
 
-## 19.2 The greedy paradigm { #sez-sec-greedy }
+## 19.3 The greedy paradigm { #sez-sec-greedy }
 
 - A solution of each of the four problems is made of <strong>elements</strong>: the items selected for the knapsack, the assignments of items to bins and of jobs to machines, the edges of a tour. A constructive heuristic starts from the empty <strong>partial solution</strong> and adds one element at a time.
 
 - At every step three questions must be answered: <strong>which elements can be added</strong> (the candidates), <strong>which one is added</strong> (the selection criterion), and <strong>whether the result can still be completed to a feasible solution</strong> (the feasibility test). A <strong>greedy</strong> heuristic answers the second question in the simplest way: it adds the candidate that looks best <em>now</em>, according to a criterion that measures the immediate benefit of the element.
 
+<a id="box-2-def-greedy"></a>
+
+!!! definizione "Definition 19.2: Greedy algorithm"
+
+    A <strong>greedy algorithm</strong> is a constructive heuristic that builds a solution by repeatedly selecting, among the candidate elements, the one that is best according to a <em>selection criterion</em>; the element is added to the partial solution if the feasibility test allows it, and is discarded otherwise.
+
 !!! chiave ""
 
-    A <em>greedy algorithm</em> builds a solution by repeatedly selecting, among the candidate elements, the one that is best according to a <em>selection criterion</em>; the element is added to the partial solution if the feasibility test allows it, and is discarded otherwise. Each decision is taken once and for all: <em>a choice, once made, is never revised</em>.
+    In a greedy algorithm each decision is taken once and for all: <em>a choice, once made, is never revised</em>.
 
 - The pseudo-code below is a template rather than an algorithm: the set of candidates, the criterion and the test are the three parts that every specific heuristic of these notes fills in.
 
@@ -184,7 +200,7 @@ title: "Constructive heuristics"
 </tr>
 </table></div>
 
-## 19.3 The knapsack problem: which order? { #sez-sec-KP }
+## 19.4 The knapsack problem: which order? { #sez-sec-KP }
 
 - For the KP the elements are the items, and the feasibility test is the capacity constraint: an item is selected if its weight does not exceed the residual capacity $rc$. Since the test is fixed, a greedy heuristic for the KP is completely determined by the <strong>order</strong> in which the items are examined. Three orders are natural:
 
@@ -223,7 +239,7 @@ title: "Constructive heuristics"
 
 - The three heuristics differ only in the order $\rho$, computed once by sorting the items in $O(n\log n)$ time. Each criterion captures one aspect of a good solution and ignores the other: the profit ignores how much capacity an item consumes, the weight ignores how much an item is worth, and the efficiency balances the two, but ignores how well the items fill the knapsack.
 
-<a id="box-1-ex-kp3"></a>
+<a id="box-3-ex-kp3"></a>
 
 !!! esempio "Example 19.1: Three orders on the KP reference instance"
 
@@ -305,7 +321,7 @@ title: "Constructive heuristics"
 
 - The remedy studied in the notes on approximation algorithms is to <strong>combine</strong> two solutions: the Ext-Greedy algorithm returns the better of the solution of $GR$ and of the best single item, and this simple combination guarantees $\frac{z(I)}{GR^e(I)}\le 2$. Running several greedy heuristics and keeping the best solution is a general and cheap way to protect against the weakness of each single criterion.
 
-## 19.4 The bin packing problem: first sort, then pack { #sez-sec-BPP }
+## 19.5 The bin packing problem: first sort, then pack { #sez-sec-BPP }
 
 - The notes on approximation algorithms for the BPP study four greedy heuristics that process the items <strong>in the input order</strong> and differ in the rule used to choose the bin: Next Fit (NF) keeps a single open bin, while First Fit (FF), Best Fit (BF) and Worst Fit (WF) keep all the bins and choose, among those in which the item fits, the first opened, the fullest or the emptiest one. On the BPP reference instance ($c=7$, $w=(4,4,5,3,2,3)$, $z(I)=3$) they give
 
@@ -317,7 +333,7 @@ title: "Constructive heuristics"
 
 - <strong>Why the large items first.</strong> The difficult items of a BPP instance are the large ones: two items larger than $\frac{c}{2}$ never share a bin, and a large item fits only into a bin that is still almost empty. Small items, on the contrary, can fill the gaps left in any bin. If the small items come first, they are spread over the bins and occupy the space that the large items will need later; if the large items come first, each of them gets its own bin, and the small items are then used to fill the gaps.
 
-### 19.4.1 First Fit Decreasing { #sez-sec-FFD }
+### 19.5.1 First Fit Decreasing { #sez-sec-FFD }
 
 !!! chiave ""
 
@@ -335,7 +351,7 @@ title: "Constructive heuristics"
 
 - The packing loop is exactly the loop of FF: the only difference is the line that computes the order $\rho$. Sorting costs $O(n\log n)$, and FFD runs in the same time as FF, $O(n^2)$ with the simple scan of the bins.
 
-<a id="box-2-ex-ffd"></a>
+<a id="box-4-ex-ffd"></a>
 
 !!! esempio "Example 19.2: FF and FFD on the BPP reference instance"
 
@@ -367,7 +383,7 @@ title: "Constructive heuristics"
 
     In FF the small item $5$ arrives before the large item $6$ and takes the space that item $6$ would need in bin $2$; in FFD item $5$ comes last and fills the gap of bin $1$.
 
-### 19.4.2 Best Fit Decreasing { #sez-sec-BFD }
+### 19.5.2 Best Fit Decreasing { #sez-sec-BFD }
 
 !!! chiave ""
 
@@ -385,13 +401,13 @@ title: "Constructive heuristics"
 
 - Again, the packing loop is that of BF, preceded by the sorting.
 
-<a id="box-3-ex-bfd"></a>
+<a id="box-5-ex-bfd"></a>
 
 !!! esempio "Example 19.3: BFD on the BPP reference instance"
 
     The order is $\rho=(3,1,2,4,6,5)$, as for FFD. Items $3$, $1$ and $2$ open bins $1$, $2$, $3$, with residual capacities $2,3,3$. Item $4$ (weight $3$) fits into bins $2$ and $3$, both with residual capacity $3$: the tie is broken in favour of bin $2$, and $rc[2]=0$. Item $6$ (weight $3$) fits only into bin $3$, and $rc[3]=0$. Item $5$ (weight $2$) fits only into bin $1$, and $rc[1]=0$. BFD returns the same packing patterns as FFD, $P_1=\{3,5\}$, $P_2=\{1,4\}$, $P_3=\{2,6\}$, and $BFD(I)=3$.
 
-### 19.4.3 What sorting gives, and what it does not
+### 19.5.3 What sorting gives, and what it does not
 
 - <strong>A better guarantee.</strong> Sorting the items improves the worst case. The notes on approximation algorithms show that FF and BF have worst-case performance ratio $\frac{17}{10}$. For FFD it is known that
 
@@ -403,7 +419,7 @@ title: "Constructive heuristics"
 
 - <strong>Not a better solution on every instance.</strong> A worst-case guarantee compares the algorithm with the optimum, not with another algorithm: on some instances the input order is luckier than the sorted one.
 
-<a id="box-4-ex-ffdworse"></a>
+<a id="box-6-ex-ffdworse"></a>
 
 !!! esempio "Example 19.4: Sorting can hurt"
 
@@ -415,11 +431,11 @@ title: "Constructive heuristics"
 
     The two items of weight $3$, packed together by FFD, waste one unit of capacity in bin $1$; the input order happened to pair each of them with two items of weight $2$, filling both bins exactly.
 
-## 19.5 Scheduling on parallel machines: longest jobs first { #sez-sec-PCM }
+## 19.6 Scheduling on parallel machines: longest jobs first { #sez-sec-PCM }
 
 - For $P\,||\,C_{\max}$ the elements are the assignments of jobs to machines, and every assignment is feasible. A natural greedy rule assigns each job to the machine that is currently <strong>least loaded</strong>, so that the loads grow as evenly as possible. As for the BPP, the rule chooses the machine, and the order of the jobs is a second, independent, choice.
 
-### 19.5.1 List scheduling { #sez-sec-LIST }
+### 19.6.1 List scheduling { #sez-sec-LIST }
 
 !!! chiave ""
 
@@ -436,7 +452,7 @@ title: "Constructive heuristics"
 
 - On the reference instance, $t=(5,5,4,4,3,3,3)$, the jobs are listed by non-increasing processing time, which is a favourable order. To see the effect of the order, the example examines the same jobs in the reverse list.
 
-<a id="box-5-ex-list"></a>
+<a id="box-7-ex-list"></a>
 
 !!! esempio "Example 19.5: $LIST$ on the reference instance, shortest jobs first"
 
@@ -499,9 +515,9 @@ title: "Constructive heuristics"
 
     The last job of the list is one of the longest: when it arrives, the least loaded machine already has load $7$, and the makespan jumps to $12$, three units above the lower bound $9$ (dashed grey line).
 
-<a id="box-6-prop-graham66"></a>
+<a id="box-8-prop-graham66"></a>
 
-!!! teorema "Proposition 19.1"
+!!! teorema "Proposition 19.3"
 
     For every $P\,||\,C_{\max}$ instance $I$ and every list $\rho$,
 
@@ -521,7 +537,7 @@ title: "Constructive heuristics"
 
 - On the example, $LIST(I)=12\le \frac{5}{3}\cdot 9=15$.
 
-### 19.5.2 Longest processing time first { #sez-sec-LPT }
+### 19.6.2 Longest processing time first { #sez-sec-LPT }
 
 !!! chiave ""
 
@@ -535,7 +551,7 @@ title: "Constructive heuristics"
 
 - $LPT$ runs in $O(n\log n + n\log m)$ time.
 
-<a id="box-7-ex-lpt"></a>
+<a id="box-9-ex-lpt"></a>
 
 !!! esempio "Example 19.6: $LPT$ on the reference instance"
 
@@ -545,9 +561,9 @@ title: "Constructive heuristics"
 
     The elementary lower bound of the notes on combinatorial optimization problems, already used in the notes on the definitions of heuristic algorithms, gives $z(I)\ge\max\left\{\max_j t_j,\left\lceil\frac{\sum_j t_j}{m}\right\rceil\right\}=\max\{5,9\}=9$, and $z(I)=9$. Sorting improves the makespan from $12$ to $11$, but $LPT$ is not optimal: after six jobs the loads are perfectly balanced, $(8,8,8)$, and the seventh job unbalances them by $3$.
 
-<a id="box-8-prop-graham69"></a>
+<a id="box-10-prop-graham69"></a>
 
-!!! teorema "Proposition 19.2"
+!!! teorema "Proposition 19.4"
 
     For every $P\,||\,C_{\max}$ instance $I$,
 
@@ -571,9 +587,9 @@ title: "Constructive heuristics"
     \frac{LPT(I)}{z(I)}=\frac{11}{9}.
     $$
 
-    The reference instance attains Graham's bound exactly: it belongs to the family of instances, given by Graham, with $2m+1$ jobs of processing times $2m-1,2m-1,2m-2,2m-2,\dots,m+1,m+1,m,m,m$, on which $LPT$ gives $4m-1$ and the optimum is $3m$. For $m=3$ these are the times $(5,5,4,4,3,3,3)$. The bound of [Proposition 19.2](#box-8-prop-graham69) therefore cannot be improved.
+    The reference instance attains Graham's bound exactly: it belongs to the family of instances, given by Graham, with $2m+1$ jobs of processing times $2m-1,2m-1,2m-2,2m-2,\dots,m+1,m+1,m,m,m$, on which $LPT$ gives $4m-1$ and the optimum is $3m$. For $m=3$ these are the times $(5,5,4,4,3,3,3)$. The bound of [Proposition 19.4](#box-10-prop-graham69) therefore cannot be improved.
 
-## 19.6 The travelling salesman problem: append or insert? { #sez-sec-TSP }
+## 19.7 The travelling salesman problem: append or insert? { #sez-sec-TSP }
 
 - For the TSP every permutation of the cities is a feasible tour, so the feasibility test is trivial, and the whole design is in the selection criterion. Two families of constructive heuristics are natural, and they differ in <strong>where</strong> the new city is placed:
 
@@ -581,7 +597,7 @@ title: "Constructive heuristics"
 
     - <strong>insert</strong>: the partial solution is a closed subtour, and the new city is inserted between two consecutive cities, wherever it costs least.
 
-### 19.6.1 Nearest neighbour { #sez-sec-NN }
+### 19.7.1 Nearest neighbour { #sez-sec-NN }
 
 !!! chiave ""
 
@@ -598,7 +614,7 @@ title: "Constructive heuristics"
 
 - <strong>The weakness of $NN$</strong> is visible in its last steps: the cities that are left are those that were never the nearest to anything, often far from each other and from $s$, and the closing edge back to $s$ is not chosen at all, it is forced.
 
-<a id="box-9-ex-nn"></a>
+<a id="box-11-ex-nn"></a>
 
 !!! esempio "Example 19.7: $NN$ on the TSP reference instance"
 
@@ -624,7 +640,7 @@ title: "Constructive heuristics"
 
     ![Figure 5](../img/constructive-heuristics/fig05.svg){ .fig loading=lazy  }
 
-### 19.6.2 Multi-start nearest neighbour { #sez-sec-MSNN }
+### 19.7.2 Multi-start nearest neighbour { #sez-sec-MSNN }
 
 - The result of $NN$ depends on the starting city, which is an arbitrary choice: the tour is a cycle and has no natural first city. Since $NN$ is fast, it can simply be run from every city.
 
@@ -638,7 +654,7 @@ title: "Constructive heuristics"
 
 - The running time is $n$ times that of $NN$, i.e., $O(n^3)$. Multi-start is the simplest way to turn an arbitrary choice into a search: each start gives a different solution, and the best one is kept.
 
-<a id="box-10-ex-msnn"></a>
+<a id="box-12-ex-msnn"></a>
 
 !!! esempio "Example 19.8: Multi-start $NN$ on the TSP reference instance"
 
@@ -675,7 +691,7 @@ title: "Constructive heuristics"
 
     ![Figure 6](../img/constructive-heuristics/fig06.svg){ .fig loading=lazy  }
 
-### 19.6.3 Insertion heuristics { #sez-sec-INS }
+### 19.7.3 Insertion heuristics { #sez-sec-INS }
 
 - $NN$ can only add a city at the end of a path. An <strong>insertion heuristic</strong> keeps a closed <em>subtour</em> $T$ through some of the cities, and inserts the new city wherever it is cheapest. Inserting city $k$ between two consecutive cities $i$ and $j$ of $T$ replaces the edge $(i,j)$ with the edges $(i,k)$ and $(k,j)$, and increases the length by the <strong>insertion cost</strong>
 
@@ -724,7 +740,7 @@ title: "Constructive heuristics"
 
 - With the distances $d(q,T)$ and the minimum insertion costs updated incrementally after each insertion, $NI$ and $FI$ run in $O(n^2)$ time; a simple implementation of $CI$ runs in $O(n^3)$.
 
-<a id="box-11-ex-ni"></a>
+<a id="box-13-ex-ni"></a>
 
 !!! esempio "Example 19.9: $NI$ and $CI$ on the TSP reference instance"
 
@@ -773,7 +789,7 @@ title: "Constructive heuristics"
 
     ![Figure 7](../img/constructive-heuristics/fig07.svg){ .fig loading=lazy  }
 
-<a id="box-12-ex-fi"></a>
+<a id="box-14-ex-fi"></a>
 
 !!! esempio "Example 19.10: $FI$ on the TSP reference instance"
 
@@ -818,11 +834,11 @@ title: "Constructive heuristics"
 
 - <strong>What is known in the worst case.</strong> On metric instances, $NI$ and $CI$ never return a tour longer than twice the optimal one, while the ratio of $NN$ can grow like $\log n$ and only a logarithmic bound is known for $FI$ (D.J. Rosenkrantz, R.E. Stearns, P.M. Lewis, <em>An analysis of several heuristics for the traveling salesman problem</em>, SIAM Journal on Computing 6 (1977) 563–581). In practice, on Euclidean instances, $FI$ is usually the best of the insertion heuristics, and $NN$ tours are typically about $25\%$ longer than the optimum.
 
-### 19.6.4 A comparison on a larger instance { #sez-sec-TSP6 }
+### 19.7.4 A comparison on a larger instance { #sez-sec-TSP6 }
 
 - On the reference instance the three insertion heuristics, from every starting city, all find the optimal tour, and the differences between the rules do not show. To compare them we use a second TSP instance, with $6$ cities in the plane and distances equal to the Euclidean distances rounded to the nearest integer. The instance is metric (checked on all the triples of cities).
 
-<a id="box-13-ex-tsp6"></a>
+<a id="box-15-ex-tsp6"></a>
 
 !!! esempio "Example 19.11: A TSP instance with $6$ cities"
 
@@ -952,7 +968,7 @@ title: "Constructive heuristics"
 
     All six $NN$ tours contain the edge $(4,5)$, of length $9$, the longest of the instance: cities $4$ and $5$ are at opposite ends of the instance, and $NN$, from whatever city it starts, leaves at least one of them to the last steps, when the only way left is the long one.
 
-## 19.7 Randomized construction { #sez-sec-RCL }
+## 19.8 Randomized construction { #sez-sec-RCL }
 
 - A greedy heuristic is deterministic: run twice on the same instance, it returns the same solution. The multi-start $NN$ obtains different solutions by changing the starting city, but the number of starts is limited to $n$. A more flexible way to obtain many different, and still good, solutions is to <strong>randomize the choice</strong>: at each step, instead of the best candidate, choose at random one of the <em>good</em> candidates.
 
@@ -989,7 +1005,7 @@ title: "Constructive heuristics"
 
 - Repeating the construction with the same generator — the seed is <em>not</em> reset between two runs — gives different tours; the best one is kept. The parameter $\alpha$ balances quality and variety: a small $\alpha$ gives tours close to the $NN$ tour, a large $\alpha$ gives very different but usually poor tours.
 
-<a id="box-14-ex-rnn"></a>
+<a id="box-16-ex-rnn"></a>
 
 !!! esempio "Example 19.12: $RNN_{0.3}$ on the TSP reference instance"
 
@@ -1032,7 +1048,7 @@ title: "Constructive heuristics"
 
     The four runs give $25,18,25,23$: the second one finds the optimal tour, which $NN$ from city $1$ misses. The randomization has turned a single deterministic answer into a small search.
 
-## 19.8 Look-ahead and regret { #sez-sec-LOOK }
+## 19.9 Look-ahead and regret { #sez-sec-LOOK }
 
 - A greedy criterion asks: <em>which choice is best now?</em> Its myopia can be reduced by asking two different questions:
 
@@ -1042,7 +1058,7 @@ title: "Constructive heuristics"
 
     Both ideas cost more time per step than the plain greedy criterion, and both keep the essential feature of a constructive heuristic: the choice made is final.
 
-### 19.8.1 Regret insertion { #sez-sec-REG }
+### 19.9.1 Regret insertion { #sez-sec-REG }
 
 - For an insertion heuristic, let $\Delta^{1}_q\le\Delta^{2}_q$ be the two smallest insertion costs of city $q$ over the edges of the current subtour (with $\Delta^2_q=\Delta^1_q$ if the subtour has a single edge). The <strong>regret</strong> of $q$ is
 
@@ -1066,11 +1082,11 @@ title: "Constructive heuristics"
 
 - As long as all the regrets are $0$, the tie-breaking rule makes $REG_2$ behave like $CI$.
 
-<a id="box-15-ex-reg"></a>
+<a id="box-17-ex-reg"></a>
 
 !!! esempio "Example 19.13: $REG_2$ against $CI$ on the $6$-city instance"
 
-    On the instance of [Example 19.11](#box-13-ex-tsp6), from city $1$. In the first two steps all the regrets are $0$ (the subtours $(1)$ and $(1,6)$ have one edge, or two copies of the same edge), and both $REG_2$ and $CI$ insert city $6$ (cost $4$) and then city $3$ (cost $5$), obtaining $(1,3,6)$ of length $9$. At the third step the insertion costs on the edges $(1,3)$, $(3,6)$, $(6,1)$ are
+    On the instance of [Example 19.11](#box-15-ex-tsp6), from city $1$. In the first two steps all the regrets are $0$ (the subtours $(1)$ and $(1,6)$ have one edge, or two copies of the same edge), and both $REG_2$ and $CI$ insert city $6$ (cost $4$) and then city $3$ (cost $5$), obtaining $(1,3,6)$ of length $9$. At the third step the insertion costs on the edges $(1,3)$, $(3,6)$, $(6,1)$ are
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -1135,7 +1151,7 @@ title: "Constructive heuristics"
 
     At step $4$ of $REG_2$ the costs of city $2$ on the edges of $(1,4,3,6)$ are $(6,2,2,7)$, regret $0$, and those of city $5$ are $(10,10,5,6)$, regret $1$: city $5$ goes first. City $2$, postponed twice, is finally inserted for $1$ instead of $2$, between cities $3$ and $5$. $REG_2(I)=19=z(I)$, while $CI(I)=20$.
 
-### 19.8.2 Look-ahead: the pilot method { #sez-sec-PILOT }
+### 19.9.2 Look-ahead: the pilot method { #sez-sec-PILOT }
 
 !!! chiave ""
 
@@ -1149,7 +1165,7 @@ title: "Constructive heuristics"
 
 - <strong>The pilot method is never worse than its pilot.</strong> At the first step, the candidate chosen by $NN$ is among those tried, and its completion is the $NN$ tour from $s$, so the best completion found has length at most $NN(I)$. At every later step, the completion of the chosen candidate is again among the completions tried at the next step (the candidate that $NN$ would append), so the length of the best completion never increases. The final tour is the last completion, hence $PILOT$-$NN(I)\le NN(I)$ from the same starting city.
 
-<a id="box-16-ex-pilot"></a>
+<a id="box-18-ex-pilot"></a>
 
 !!! esempio "Example 19.14: $PILOT$-$NN$ on the TSP reference instance"
 
@@ -1183,9 +1199,9 @@ title: "Constructive heuristics"
     </tr>
     </table></div>
 
-    $PILOT$-$NN$ goes first to city $5$, the <em>farthest</em> from city $1$, something $NN$ would never do, and returns $(1,5,2,4,3)$ with $L=9+4+3+4+2=22$, against $NN(I)=25$ from the same city. The optimum $18$ is not reached: the look-ahead is only as good as the pilot that performs it. On the $6$-city instance of [Example 19.11](#box-13-ex-tsp6), $PILOT$-$NN$ from city $1$ gives $20$, against $25$ for $NN$.
+    $PILOT$-$NN$ goes first to city $5$, the <em>farthest</em> from city $1$, something $NN$ would never do, and returns $(1,5,2,4,3)$ with $L=9+4+3+4+2=22$, against $NN(I)=25$ from the same city. The optimum $18$ is not reached: the look-ahead is only as good as the pilot that performs it. On the $6$-city instance of [Example 19.11](#box-15-ex-tsp6), $PILOT$-$NN$ from city $1$ gives $20$, against $25$ for $NN$.
 
-## 19.9 What constructive heuristics give, and what they do not { #sez-sec-WHAT }
+## 19.10 What constructive heuristics give, and what they do not { #sez-sec-WHAT }
 
 - The table collects the results on the four reference instances, with the dual bounds of the notes on the definitions of heuristic algorithms ($\UB$ for the KP, $\LB$ for the other problems) and the gap of the best heuristic solution.
 
@@ -1236,7 +1252,7 @@ title: "Constructive heuristics"
 
 - <strong>A choice is never revised.</strong> Every heuristic of these notes stops as soon as the solution is complete, and every decision taken along the way is final. In the $LPT$ schedule, job $7$ is put on machine $1$ when the three loads are equal, and the makespan $11$ is fixed at that moment; in the $NN$ tour from city $1$, the edge $(5,1)$ of length $9$ is the consequence of the very first choices. Looking at the Gantt chart or at the tour, a better solution seems close; but a constructive heuristic has no mechanism to go back.
 
-- <strong>The order decides everything.</strong> The examples of these notes show the same lesson on four problems: sorting the elements in the right order (efficiency, decreasing weights, longest jobs first) is the main design choice; still, no order is the best on every instance ([Example 19.1](#box-1-ex-kp3), [Example 19.4](#box-4-ex-ffdworse)), and running several orders, several starting points or several randomized constructions, and keeping the best solution, is a cheap and effective protection.
+- <strong>The order decides everything.</strong> The examples of these notes show the same lesson on four problems: sorting the elements in the right order (efficiency, decreasing weights, longest jobs first) is the main design choice; still, no order is the best on every instance ([Example 19.1](#box-3-ex-kp3), [Example 19.4](#box-6-ex-ffdworse)), and running several orders, several starting points or several randomized constructions, and keeping the best solution, is a cheap and effective protection.
 
 - <strong>Cheap, and useful as a start.</strong> Constructive heuristics are fast, and they are rarely used alone: their solutions are the starting points of the methods that try to improve a complete solution. The next notes, on local search, start from the solutions computed here and modify them, a little at a time, as long as they improve.
 
@@ -1244,13 +1260,13 @@ title: "Constructive heuristics"
 
     A constructive heuristic builds one solution, one element at a time, choosing at each step the element that looks best now. The order of the choices decides the quality of the result, and a choice, once made, is never revised.
 
-## 19.10 Typical mistakes
+## 19.11 Typical mistakes
 
 !!! attenzione "Warning"
 
     - <strong>Expecting the greedy by efficiency to be optimal.</strong> It can be arbitrarily bad, and so can each of the other two orders: the notes contain a family of instances for each of them.
 
-    - <strong>Believing that sorting always helps.</strong> FFD can be worse than FF ([Example 19.4](#box-4-ex-ffdworse)).
+    - <strong>Believing that sorting always helps.</strong> FFD can be worse than FF ([Example 19.4](#box-6-ex-ffdworse)).
 
     - <strong>Breaking ties in the wrong way.</strong> Every example uses one fixed rule (smallest index, first bin that fits, fullest bin for BF): changing it changes the solution.
 
@@ -1258,7 +1274,7 @@ title: "Constructive heuristics"
 
     - <strong>Reading $\mathscr{A}(I)$ as a bound on $z(I)$.</strong> It is only a primal bound.
 
-## 19.11 In summary
+## 19.12 In summary
 
 !!! chiave "In summary"
 
@@ -1310,7 +1326,7 @@ title: "Constructive heuristics"
     </tr>
     </table></div>
 
-## 19.12 <code>C++</code> implementation { #sez-sec-CODE }
+## 19.13 <code>C++</code> implementation { #sez-sec-CODE }
 
 - The folder <code>CONSTR\_HEUR\_CODE</code> contains a <code>C++</code> implementation of the heuristics of these notes, one function per file, with the same names and the same steps as the pseudo-codes. Items, bins, jobs, machines and cities are indexed from $0$; the algorithmic logic is unchanged, and ties are always broken in favour of the smallest index.
 
@@ -1358,9 +1374,9 @@ title: "Constructive heuristics"
     #endif
     ```
 
-### 19.12.1 Sorting
+### 19.13.1 Sorting
 
-- The orders of the KP items (Section [19.3](#sez-sec-KP)) and the decreasing order used by FFD, BFD and $LPT$ are computed by insertion sort, which keeps the index order among equal keys. The efficiencies are compared without divisions: $\frac{p_i}{w_i}>\frac{p_j}{w_j}$ if and only if $p_iw_j>p_jw_i$.
+- The orders of the KP items (Section [19.4](#sez-sec-KP)) and the decreasing order used by FFD, BFD and $LPT$ are computed by insertion sort, which keeps the index order among equal keys. The efficiencies are compared without divisions: $\frac{p_i}{w_i}>\frac{p_j}{w_j}$ if and only if $p_iw_j>p_jw_i$.
 
 ??? codice "KPOrder.cpp"
 
@@ -1413,7 +1429,7 @@ title: "Constructive heuristics"
     }
     ```
 
-### 19.12.2 The knapsack problem
+### 19.13.2 The knapsack problem
 
 ??? codice "GreedyOrderKP.cpp"
 
@@ -1445,7 +1461,7 @@ title: "Constructive heuristics"
     }
     ```
 
-### 19.12.3 The bin packing problem
+### 19.13.3 The bin packing problem
 
 ??? codice "FirstFitDecreasing.cpp"
 
@@ -1532,7 +1548,7 @@ title: "Constructive heuristics"
     }
     ```
 
-### 19.12.4 Scheduling on parallel machines
+### 19.13.4 Scheduling on parallel machines
 
 ??? codice "ListScheduling.cpp"
 
@@ -1588,7 +1604,7 @@ title: "Constructive heuristics"
     }
     ```
 
-### 19.12.5 The travelling salesman problem
+### 19.13.5 The travelling salesman problem
 
 - The distances are stored in an $n\times n$ matrix <code>d</code>, and a tour in an array of $n$ cities.
 
@@ -1748,7 +1764,7 @@ title: "Constructive heuristics"
     }
     ```
 
-### 19.12.6 Randomized construction
+### 19.13.6 Randomized construction
 
 - The threshold of the RCL is tested in integer arithmetic, with $\alpha$ given as a fraction $\frac{\alpha_{num}}{\alpha_{den}}$, so that no rounding error can change the list.
 
@@ -1822,7 +1838,7 @@ title: "Constructive heuristics"
     }
     ```
 
-### 19.12.7 Regret and look-ahead
+### 19.13.7 Regret and look-ahead
 
 ??? codice "Regret2Insertion.cpp"
 

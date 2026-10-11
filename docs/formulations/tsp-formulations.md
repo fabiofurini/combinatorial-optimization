@@ -6,7 +6,7 @@ title: "Formulations of the travelling salesman problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 11** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf)
+**Part 2 · Formulations and their properties · Chapter 11** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises](../exercises/tsp-formulations.md)
 
 </div>
 
@@ -70,11 +70,11 @@ title: "Formulations of the travelling salesman problem"
     \toprule
     d_{ij}&1&2&3&4&5\\
     \midrule
-    1&---&5&2&2&9\\
-    2&5&---&4&3&4\\
-    3&2&4&---&4&7\\
-    4&2&3&4&---&7\\
-    5&9&4&7&7&---\\
+    1&-&5&2&2&9\\
+    2&5&-&4&3&4\\
+    3&2&4&-&4&7\\
+    4&2&3&4&-&7\\
+    5&9&4&7&7&-\\
     \bottomrule
     \end{array}
     $$

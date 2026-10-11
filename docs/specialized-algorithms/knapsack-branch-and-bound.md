@@ -28,25 +28,13 @@ title: "Knapsack: branch-and-bound on the critical item"
 
     - explain why the algorithm is simpler than the general one, and what stays the same.
 
-## 27.1 Why a branch-and-bound algorithm for the KP?
+## 27.1 The algorithm for the KP
 
-- <strong>A challenge.</strong> A knapsack of capacity $9$ and six items with profits $(6,5,8,9,6,7)$ and weights $(2,3,6,7,5,9)$. Find the optimal value of the LP relaxation <em>without</em> the simplex algorithm. Hint: think of the efficiency $\frac{p_j}{w_j}$ of each item.
+<a id="box-1-def-LPKPk"></a>
 
-- The general algorithm solves the LP problem of every node with the dual simplex algorithm. For the KP this is not needed: the LP problem of every node is again a knapsack LP problem, solved by sorting the items by efficiency. This chapter shows what the general algorithm becomes in this case.
+!!! definizione "Definition 27.1: branching node and $\LP_{\KP}^k$ problem"
 
-## 27.2 The algorithm for the KP
-
-- Chosen a branching variable $x_j$ associated to an item $j \in \mathscr{I}$, the branching constraints of the  branch-and-bound algorithm to solve the $\ILP_{\KP}$ model have the following form:
-
-    $$
-    x_j \le 0 \text{    and    } x_j \ge 1
-    $$
-
-    They have the effect of <strong>unselecting</strong> or <strong>selecting</strong> an item.
-
-!!! chiave ""
-
-    In a branching node $k$ of a branch-and-bound tree,  we have:
+    In the branch-and-bound algorithm for the $\ILP_{\KP}$ model, the branching constraints on a variable $x_j$, $j \in \mathscr{I}$, are $x_j \le 0$ and $x_j \ge 1$. In a branching node $k$ of the branch-and-bound tree, we have:
 
     1. a subset of <strong>unselected  items</strong> $\rightsquigarrow$  denoted $\mathscr{I}_\text{out}^k$
 
@@ -54,7 +42,7 @@ title: "Knapsack: branch-and-bound on the critical item"
 
     3. a subset of <strong>remaining items</strong> $\rightsquigarrow$  denoted  $\mathscr{I}^k := \mathscr{I} \setminus \left\{\mathscr{I}^k_\text{out} \cup \mathscr{I}^k_\text{in} \right\}$
 
-- A  $\LP_{\KP}$ problem associated to a branching node $k$, called the $\LP_{\KP}^k$ problem,  reads as follows:
+    The $\LP_{\KP}$ problem associated to node $k$, called the $\LP_{\KP}^k$ problem, reads as follows:
 
     \begin{align*}
     &&    \max \;\;{\sum_{j \in \mathscr{I}} p_j \, x_j}                                \\[1.5ex]
@@ -64,6 +52,8 @@ title: "Knapsack: branch-and-bound on the critical item"
     && x_j                        &\le  1, & \forall j \in \mathscr{I},\\[1.5ex]
     &&x_j                        &\ge  0, & \forall j \in \mathscr{I}.
     \end{align*}
+
+- The branching constraints $x_j \le 0$ and $x_j \ge 1$ have the effect of <strong>unselecting</strong> or <strong>selecting</strong> an item.
 
 !!! chiave ""
 
@@ -84,7 +74,7 @@ title: "Knapsack: branch-and-bound on the critical item"
 
     3. there is an objective-function constant  $p(k):=\sum_{j \in \mathscr{I}^k_\text{in} } p_j$
 
-### 27.2.1 Solving the $\LP_{\KP}^k$ problem of a node
+### 27.1.1 Solving the $\LP_{\KP}^k$ problem of a node
 
 - The problem $\LP_{\KP}^k$ is a knapsack LP problem on the items of $\mathscr{I}^k$, with capacity $c(k)$: it is solved by the formulas of Dantzig, without any simplex iteration. The items of $\mathscr{I}^k$ are kept in the order of non-increasing efficiency.
 
@@ -108,13 +98,13 @@ title: "Knapsack: branch-and-bound on the critical item"
 
     In every node at most one variable is fractional, the one of the split item, and the value of the node is the Dantzig bound of a smaller knapsack: the node is solved by a scan of the items.
 
-### 27.2.2 Branching-variable selection strategy
+### 27.1.2 Branching-variable selection strategy
 
 - The optimal solution of an $\LP_{\KP}^k$ problem given by the formulas of the previous subsection has at most one fractional variable, the one associated to the split item. <strong>Branching can be performed on the variable associated to the split item</strong>: this branching-variable selection strategy is called split-item strategy.
 
 - The optimal solution of an $\LP_{\KP}$ problem is not unique when some items have equal efficiency: the other optimal solutions can have more fractional variables, for instance $x=(\frac12,\frac12)$ for $p=(2,2)$, $w=(2,2)$, $c=2$. Here, as in the general algorithm, we always use the solution given by the formulas.
 
-### 27.2.3 What changes with respect to the general algorithm
+### 27.1.3 What changes with respect to the general algorithm
 
 - The algorithm is the LP-based branch-and-bound algorithm of the module <em>Integer linear programming</em> ([Chapter 7 «Branch-and-bound»](https://fabiofurini.github.io/integer-linear-programming/exact-methods/bb/)), with its problem list, its pruning criteria and its optimality gap.
 
@@ -124,9 +114,9 @@ title: "Knapsack: branch-and-bound on the critical item"
 
 - <strong>Node selection.</strong> The node of the problem list is extracted with the FIFO or the LIFO rule, and the down-branching node is solved before the up-branching node; the nodes are numbered in the order of resolution. The lower bound written in a node is the value at the moment of its resolution.
 
-## 27.3 A worked example
+## 27.2 A worked example
 
-<a id="box-1-texexpbox1"></a>
+<a id="box-2-texexpbox1"></a>
 
 !!! esempio "Example 27.1: The $\ILP_{\KP}$ model"
 
@@ -212,7 +202,7 @@ title: "Knapsack: branch-and-bound on the critical item"
     \frac{6}{2} ~~\ge~~ \frac{5}{3} ~~\ge~~ \frac{8}{6} ~~\ge~~ \frac{9}{7} ~~\ge~~ \frac{6}{5} ~~\ge~~ \frac{7}{9}
     $$
 
-<a id="box-2-texexpbox2"></a>
+<a id="box-3-texexpbox2"></a>
 
 !!! esempio "Example 27.2: Branch-and-bound algorithm for the $\ILP_{\KP}$ model"
 
@@ -237,13 +227,13 @@ title: "Knapsack: branch-and-bound on the critical item"
         For the $\LP^1_{\KP}$ problem, the split item is $s=3$ and the residual capacity is $\mathit{rc} = 4$. An  optimal solution $\tilde{\vet x}(\,\LP^1_{\KP}\,)$ is:
 
         $$
-        \tilde{x}_1=1,~~\tilde{x}_2=1,~~\tilde{x}_3=\frac{4}{6},~~\tilde{x}_4=0,~~\tilde{x}_5=0,~~\tilde{x}_6=0
+        \tilde{x}_1=1,~~\tilde{x}_2=1,~~\tilde{x}_3=\frac{2}{3},~~\tilde{x}_4=0,~~\tilde{x}_5=0,~~\tilde{x}_6=0
         $$
 
         the optimal value is:
 
         $$
-        z(~\LP^1_{\KP}~) = 6 \cdot 1 + 5 \cdot 1 +  8 \cdot \frac{4}{6} =\frac{49}{3}
+        z(~\LP^1_{\KP}~) = 6 \cdot 1 + 5 \cdot 1 +  8 \cdot \frac{2}{3} =\frac{49}{3}
         $$
 
         The optimal solution $\tilde{\vet x}(\,\LP^1_{\KP}\,)$ is <strong>fractional</strong> and the $\LP^1_{\KP}$ problem is <strong>feasible</strong>, so the $\LP^1_{\KP}$ problem is inserted in the problem list $L$ and the lower bound $\LB$ is set to $15$ ($\LB(\bar{\vet x})= 15$).
@@ -392,7 +382,7 @@ title: "Knapsack: branch-and-bound on the critical item"
 
     ![Figure 3](../img/knapsack-branch-and-bound/fig03.svg){ .fig loading=lazy  }
 
-## 27.4 Typical mistakes
+## 27.3 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -406,7 +396,7 @@ title: "Knapsack: branch-and-bound on the critical item"
 
     - <strong>Numbering the skipped children.</strong> A child that is not solved does not receive a node index, exactly as in the general algorithm.
 
-## 27.5 In summary
+## 27.4 In summary
 
 !!! chiave "In summary"
 

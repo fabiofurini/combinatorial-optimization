@@ -6,7 +6,7 @@ title: "The travelling salesman problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 5** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf)
+**Part 1 · Combinatorial optimization problems · Chapter 5** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises](../exercises/tsp.md)
 
 </div>
 
@@ -30,19 +30,7 @@ title: "The travelling salesman problem"
 
     - compute a lower bound on the optimal length from the two shortest edges of every city, and measure the gap with a tour.
 
-## 5.1 Why the travelling salesman problem?
-
-- A courier leaves the depot, must deliver a parcel to each of the other cities and come back to the depot. In which order should the cities be visited, so that the total distance travelled is the smallest possible? This is the <strong>travelling salesman problem</strong>.
-
-- <strong>A challenge.</strong> Before reading on, look at the distances of <span style="color:#1971c2">[Example 5.1](#box-2-ex-tsp5)</span> and try to find a short tour of the $5$ cities. Then ask yourself how you could <u>prove</u> that no shorter tour exists. The chapter answers both questions.
-
-- The TSP is one of the most studied problems of combinatorial optimization, and it has long been the test bench of exact algorithms. The largest instance solved to optimality, called pla85900, has $85\,900$ points, which come from a chip design problem. It was solved in 2005–2006 with the Concorde code, and the optimal tour, of length $142\,382\,641$, was certified in a paper of 2009 by Applegate, Bixby, Chvátal, Cook, Espinoza, Goycoolea and Helsgaun.
-
-- On the road maps of real countries, the record of 2025 is the instance korea81998, with $81\,998$ bars of South Korea. These results need very large computations; the instances of this chapter are tiny.
-
-- The TSP is strongly NP-hard (see the chapter «Combinatorial optimization problems»), so no efficient exact algorithm is expected. Approximation algorithms, such as that of Christofides (1976), are studied later in the module.
-
-## 5.2 The travelling salesman problem
+## 5.1 The travelling salesman problem
 
 <a id="box-1-defTSP"></a>
 
@@ -100,7 +88,7 @@ title: "The travelling salesman problem"
 
 - We denote by $z(I)$ the length of an optimal tour $\tilde{\sigma}$ of the instance $I$.
 
-### 5.2.1 Assumptions
+### 5.1.1 Assumptions
 
 - We make the following assumptions:
 
@@ -179,7 +167,7 @@ title: "The travelling salesman problem"
 
     Its length is $L(\sigma)=d_{13}+d_{35}+d_{52}+d_{24}+d_{41}=2+7+4+3+2=18$.
 
-## 5.3 Variants: metric and asymmetric TSP
+## 5.2 Variants: metric and asymmetric TSP
 
 - Several heuristic algorithms for the TSP behave well, and some of them have a performance guarantee, only if the distances satisfy the triangle inequality: going directly from $i$ to $j$ is never longer than going through a third city.
 
@@ -204,7 +192,7 @@ title: "The travelling salesman problem"
 
 - The TSP is the special case of the ATSP in which $d_{ij}=d_{ji}$ for all $i,j$.
 
-## 5.4 Counting the tours
+## 5.3 Counting the tours
 
 <a id="box-4-prop-tsp-count"></a>
 
@@ -302,7 +290,7 @@ title: "The travelling salesman problem"
 
 - A computer that evaluates $10^9$ tours per second needs about $6.1\cdot 10^{7}$ seconds, that is about two years, to list the tours of $20$ cities. Enumeration is therefore useful only as a check on tiny instances, and the algorithms of this course must do better.
 
-## 5.5 A first tour by hand
+## 5.4 A first tour by hand
 
 - The simplest way to build a tour is the <strong>nearest neighbour rule</strong>: start from a city and, as long as there are unvisited cities, move to the closest unvisited one; at the end, return to the starting city. In case of a tie we take the city with the smallest index.
 
@@ -326,7 +314,7 @@ title: "The travelling salesman problem"
 
 - From the nearest neighbour tour alone we cannot tell how far we are from the optimum: we need a lower bound.
 
-## 5.6 A combinatorial lower bound
+## 5.5 A combinatorial lower bound
 
 - For a city $i$, let $a_i \le b_i$ be the two smallest distances from $i$ to the other cities.
 
@@ -398,6 +386,14 @@ title: "The travelling salesman problem"
     $$
 
     an absolute gap of $8$, that is a relative gap of $\frac{8}{17} \approx 47.1\%$. The tour $(1,3,5,2,4)$ of length $18$ closes most of it, and only the enumeration of the $12$ tours proves that $18$ is optimal.
+
+## 5.6 Remarks
+
+- The largest instance solved to optimality, pla85900, has $85\,900$ points from a chip design problem. It was solved in 2005–2006 with the Concorde code; the optimal tour, of length $142\,382\,641$, was certified in 2009 by Applegate, Bixby, Chvátal, Cook, Espinoza, Goycoolea and Helsgaun.
+
+- On the road maps of real countries, the record of 2025 is the instance korea81998, with $81\,998$ bars of South Korea.
+
+- The TSP is strongly NP-hard (chapter «Combinatorial optimization problems»). The approximation algorithm of Christofides (1976) is in the chapter «$P\|C_{\max}$, metric TSP and the limits of approximation».
 
 ## 5.7 Typical mistakes
 

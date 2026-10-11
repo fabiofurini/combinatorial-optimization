@@ -6,7 +6,7 @@ title: "Knapsack problems"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 2** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf)
+**Part 1 · Combinatorial optimization problems · Chapter 2** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises](../exercises/knapsack.md)
 
 </div>
 
@@ -30,21 +30,7 @@ title: "Knapsack problems"
 
     - tell the variants apart: copies of the items, several resources, several knapsacks, classes of items.
 
-## 2.1 Why knapsack problems?
-
-- <strong>A story.</strong> A fund has a budget of $c$ euros and $n$ candidate projects: project $j$ costs $w_j$ euros and brings a profit $p_j$. Which projects should be financed to maximize the total profit?
-
-- The same structure appears when we load the most valuable cargo into a truck, choose the advertisements for a limited space or select the investments of a limited budget.
-
-- <strong>History.</strong> The problem was studied in the early days of integer programming. Dantzig (1957) sorted the items by non-increasing efficiency $p_j/w_j$ and used this order to solve the continuous version, an idea that returns in the bounds of the course.
-
-- Karp (1972) put the subset sum problem, called knapsack in his paper, among the first $21$ NP-complete problems. The KP contains the SSP as the special case $p_j = w_j$, so it is NP-hard.
-
-- Ibarra and Kim (1975) gave the first fully polynomial-time approximation scheme for the knapsack problem (Chapter «Approximation algorithms for the knapsack problem»).
-
-- <strong>A challenge.</strong> Before reading on, try to answer two questions on <span style="color:#1971c2">[Example 2.1](#box-2-ex-kp)</span>. How many subsets of items are feasible, and which one is best? How can we be sure that nothing better exists, without listing all the subsets? The chapter answers the first question and gives a first bound for the second.
-
-## 2.2 The knapsack problem
+## 2.1 The knapsack problem
 
 <a id="box-1-defKP"></a>
 
@@ -139,7 +125,7 @@ title: "Knapsack problems"
 
     We call this KP instance <span style="color:#1971c2">[Example 2.1](#box-2-ex-kp)</span>: it is the reference instance of the chapter.
 
-### 2.2.1 Assumptions
+### 2.1.1 Assumptions
 
 - We make the following assumptions:
 
@@ -155,7 +141,7 @@ title: "Knapsack problems"
         w_j \le c,~~~~ \forall j \in \mathscr{I}
         $$
 
-### 2.2.2 Counting the solutions, a first solution and a simple bound
+### 2.1.2 Counting the solutions, a first solution and a simple bound
 
 - <strong>Candidate solutions.</strong> Every subset of $\mathscr{I}$ is a candidate solution, so there are $2^n$ of them (Chapter «Combinatorial optimization problems»). For <span style="color:#1971c2">[Example 2.1](#box-2-ex-kp)</span> we have $2^6 = 64$.
 
@@ -207,7 +193,7 @@ title: "Knapsack problems"
 
 - <strong>The gap.</strong> We have $15 \le z(I) \le 17$: the absolute gap is $2$ and the relative gap is $\tfrac{2}{15}$. Listing the $13$ feasible subsets shows that $\{1,4\}$ is the unique optimal solution and $z(I) = 15$; for larger instances we need stronger bounds, which come from relaxations (module <em>Integer linear programming</em> and Chapter «Knapsack: formulations and bounds»).
 
-## 2.3 The subset sum problem
+## 2.2 The subset sum problem
 
 <a id="box-4-defSSP"></a>
 
@@ -308,7 +294,7 @@ title: "Knapsack problems"
 
     If $\sum_{j\in \tilde{S}} w_j = c$, then the answer to the SSP is <strong>yes</strong>; otherwise, if $\sum_{j\in \tilde{S}} w_j < c$, the answer is <strong>no</strong>.
 
-### 2.3.1 Assumptions
+### 2.2.1 Assumptions
 
 - We make the following assumptions:
 
@@ -324,7 +310,7 @@ title: "Knapsack problems"
         w_j \le c,~~~~ \forall j \in \mathscr{I}
         $$
 
-## 2.4 The bounded knapsack problem
+## 2.3 The bounded knapsack problem
 
 <a id="box-6-defBKP"></a>
 
@@ -501,7 +487,7 @@ title: "Knapsack problems"
     </tr>
     </table></div>
 
-### 2.4.1 Assumptions
+### 2.3.1 Assumptions
 
 - We make the following assumptions:
 
@@ -523,7 +509,7 @@ title: "Knapsack problems"
         b_j \, w_j \le c, \qquad \forall j \in \mathscr{I}
         $$
 
-## 2.5 The unbounded knapsack problem
+## 2.4 The unbounded knapsack problem
 
 <a id="box-8-defUKP"></a>
 
@@ -718,7 +704,7 @@ title: "Knapsack problems"
     </tr>
     </table></div>
 
-### 2.5.1 Assumptions
+### 2.4.1 Assumptions
 
 - We make the following assumptions:
 
@@ -734,7 +720,7 @@ title: "Knapsack problems"
         w_j \le c, \qquad \forall j \in \mathscr{I}
         $$
 
-## 2.6 The multidimensional knapsack problem
+## 2.5 The multidimensional knapsack problem
 
 <a id="box-10-defMDKP"></a>
 
@@ -839,7 +825,7 @@ title: "Knapsack problems"
     </tr>
     </table></div>
 
-### 2.6.1 Assumptions
+### 2.5.1 Assumptions
 
 - We make the following assumptions:
 
@@ -855,7 +841,7 @@ title: "Knapsack problems"
         w_{dj} \le c_d, \qquad \forall\, d\in \mathscr{D},\ \forall\, j\in \mathscr{I}.
         $$
 
-## 2.7 The multiple knapsack problem
+## 2.6 The multiple knapsack problem
 
 <a id="box-12-defMKP"></a>
 
@@ -972,7 +958,7 @@ title: "Knapsack problems"
     </tr>
     </table></div>
 
-### 2.7.1 Assumptions
+### 2.6.1 Assumptions
 
 - We make the following assumptions:
 
@@ -988,7 +974,7 @@ title: "Knapsack problems"
         \exists\, k\in \mathscr{K}\ \text{such that}\ w_j \le c_k, \qquad \forall\, j\in \mathscr{I}.
         $$
 
-## 2.8 The multiple-choice knapsack problem
+## 2.7 The multiple-choice knapsack problem
 
 <a id="box-14-defMCKP"></a>
 
@@ -1108,7 +1094,7 @@ title: "Knapsack problems"
     </tr>
     </table></div>
 
-### 2.8.1 Assumptions
+### 2.7.1 Assumptions
 
 - We make the following assumptions:
 
@@ -1124,7 +1110,7 @@ title: "Knapsack problems"
         \sum_{h=1}^{q}\ \min_{j\in \mathscr{J}_h} w_j \;\le\; c.
         $$
 
-## 2.9 The knapsack problem with setups
+## 2.8 The knapsack problem with setups
 
 <a id="box-16-defKPS"></a>
 
@@ -1247,7 +1233,7 @@ title: "Knapsack problems"
     </tr>
     </table></div>
 
-### 2.9.1 Assumptions
+### 2.8.1 Assumptions
 
 - We make the following assumptions:
 
@@ -1263,7 +1249,7 @@ title: "Knapsack problems"
         w_j + s_h \le c \qquad \forall\, h\in\{1,2,\dots,q\},\ \forall\, j\in \mathscr{J}_h.
         $$
 
-## 2.10 The variants at a glance
+## 2.9 The variants at a glance
 
 - The table lists, for the instance of each section, the number of candidate solutions, the number of feasible solutions and the optimal value, computed by enumeration. In the BKP and in the UKP a candidate solution is the vector of the numbers of copies of every item, so that identical copies are not counted twice.
 
@@ -1345,6 +1331,14 @@ title: "Knapsack problems"
 </table></div>
 
 - In the MCKP only $3$ of the $8$ choices of one item per class fit in the knapsack: the feasibility condition of the assumptions is not a formality.
+
+## 2.10 Remarks
+
+- Dantzig (1957) sorted the items by non-increasing efficiency $p_j/w_j$ and used this order to solve the continuous version of the KP; the same order returns in the bounds of the following chapters.
+
+- Karp (1972) put the subset sum problem, called knapsack in his paper, among the first $21$ NP-complete problems. The KP contains the SSP as the special case $p_j = w_j$, so it is NP-hard.
+
+- Ibarra and Kim (1975) gave the first fully polynomial-time approximation scheme for the KP (Chapter «Approximation algorithms for the knapsack problem»).
 
 ## 2.11 Typical mistakes
 

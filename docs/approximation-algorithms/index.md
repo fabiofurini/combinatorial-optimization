@@ -10,15 +10,15 @@
 
     ---
 
-    Why a performance guarantee? · Approximation algorithms · Approximation schemes · Typical mistakes · …
+    Approximation algorithms · Approximation schemes · Typical mistakes · In summary
 
-    [:octicons-arrow-right-24: Read the chapter](approximation.md)
+    [:octicons-arrow-right-24: Read the chapter](approximation.md) · [Exercises](../exercises/approximation.md)
 
 -   **24. Approximation algorithms for bin packing**
 
     ---
 
-    Why bin packing algorithms? · The problem and the assumptions · The Next Fit · The Any Fit class · …
+    The problem and the assumptions · The Next Fit · The Any Fit class · Half-full property · …
 
     [:octicons-arrow-right-24: Read the chapter](bin-packing-approximation.md) · [Exercises](../exercises/bin-packing-approximation.md)
 
@@ -26,7 +26,7 @@
 
     ---
 
-    Why approximation algorithms for the KP? · The problem and the assumptions · Split item and residual capacity · The greedy algorithm · …
+    The problem and the assumptions · Split item and residual capacity · The greedy algorithm · The Ext-Greedy algorithm · …
 
     [:octicons-arrow-right-24: Read the chapter](knapsack-approximation.md) · [Exercises](../exercises/knapsack-approximation.md)
 
@@ -34,7 +34,7 @@
 
     ---
 
-    Why guarantees, and why limits? · The problems and the assumptions · Scheduling on parallel machines · The metric TSP · …
+    The problems and the assumptions · Scheduling on parallel machines · The metric TSP · Vertex coloring · …
 
     [:octicons-arrow-right-24: Read the chapter](pcmax-tsp-coloring-approximation.md) · [Exercises](../exercises/pcmax-tsp-coloring-approximation.md)
 
