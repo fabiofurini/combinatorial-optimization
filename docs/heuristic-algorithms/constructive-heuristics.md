@@ -1953,3 +1953,7 @@ title: "Constructive heuristics"
         return TourLength(n, d, tour);
     }
     ```
+
+<!-- laboratorio-interattivo: sezione generata da interattivi.py -->
+
+:material-flask-outline: **In the interactive lab:** [Bin packing heuristics](../lab/bin-packing-heuristics.md), [List scheduling and LPT](../lab/list-scheduling-lpt.md), [Vertex coloring: greedy and DSATUR](../lab/coloring-greedy-dsatur.md).

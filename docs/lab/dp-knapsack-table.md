@@ -1,0 +1,14 @@
+---
+hide:
+  - navigation
+  - toc
+title: "DP table for the knapsack"
+---
+
+[← Lab](index.md) · Chapter: [Dynamic programming for knapsack problems](../dynamic-programming/dp-knapsack.md)
+
+# DP table for the knapsack
+
+The table v(j,k) fills one cell at a time, with the two choices that determine it; then the reconstruction of the solution. ◀ ▶ one step at a time, «Run» to watch them all (choose the speed); «Edit…» changes the instance.
+
+<div class="gi gi-app-intera" data-grafico="oc-dp-knapsack"></div>

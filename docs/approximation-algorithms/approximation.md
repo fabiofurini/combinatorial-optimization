@@ -346,3 +346,7 @@ title: "Approximation algorithms: definitions"
     - An approximation scheme has relative error at most $\varepsilon$ for every $\varepsilon \in (0,1)$; it is a PTAS if the running time is polynomial in the size of the instance for every fixed $\varepsilon$, and an FPTAS if it is polynomial in $\frac{1}{\varepsilon}$ too.
 
     <strong>Dashboard.</strong> A guarantee bounds the gap between a heuristic solution (a lower bound on $z(I)$ for a maximization problem, an upper bound for a minimization problem) and the optimal value, on every instance. The next chapters fill the dashboard of the reference instances with the values of the heuristic algorithms and with their guarantees.
+
+<!-- laboratorio-interattivo: sezione generata da interattivi.py -->
+
+:material-flask-outline: **In the interactive lab:** [Tight instances](../lab/tight-instances.md).

@@ -450,3 +450,7 @@ title: "Knapsack: branch-and-bound on the critical item"
     <td>empty list, <span class="arithmatex">\(5\)</span> nodes</td>
     </tr>
     </table></div>
+
+<!-- laboratorio-interattivo: sezione generata da interattivi.py -->
+
+:material-flask-outline: **In the interactive lab:** [Branch-and-bound for the knapsack](../lab/knapsack-branch-and-bound.md).

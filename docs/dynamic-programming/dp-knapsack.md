@@ -7707,3 +7707,7 @@ $$
     <td>optimal value, solution <span class="arithmatex">\((2,2,0)\)</span></td>
     </tr>
     </table></div>
+
+<!-- laboratorio-interattivo: sezione generata da interattivi.py -->
+
+:material-flask-outline: **In the interactive lab:** [DP table for the knapsack](../lab/dp-knapsack-table.md).

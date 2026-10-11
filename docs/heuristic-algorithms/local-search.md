@@ -2309,3 +2309,7 @@ VND({ [&]() { return TwoOptStep(n, d, pi, FIRST); },
         return pi;
     }
     ```
+
+<!-- laboratorio-interattivo: sezione generata da interattivi.py -->
+
+:material-flask-outline: **In the interactive lab:** [TSP: nearest neighbour and 2-opt](../lab/tsp-nn-2opt.md).
