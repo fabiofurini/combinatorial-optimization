@@ -1,0 +1,32 @@
+# Only what students need goes to GitHub (REGOLE_MODULI_TEMATICI §0.5, §1):
+# docs/ (PDFs in docs/pdf/), mkdocs.yml, README.md, LICENSE, LICENSE-CODE, CITATION.cff, .github/,
+# notebooks/ and data/ when they exist.
+
+# revised notes (private: local git repository)
+note/
+# generated volumes: lecture notes, exercise books, catalogue (tex and PDF; online only the PDFs in docs/pdf/)
+volumes/
+# slide sources (private: local git repository)
+slides/
+# generators, engine and tests (private: they contain the LaTeX of the notes)
+python/
+# never LaTeX sources on GitHub
+*.tex
+# copy of the original material: never on GitHub
+materiale_sorgente/
+# intermediate products and built site
+build/
+site/
+# Python and LaTeX
+__pycache__/
+*.pyc
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+# misc
+.DS_Store
+*conflicted copy*
