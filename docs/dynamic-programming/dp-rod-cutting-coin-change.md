@@ -18,7 +18,7 @@ title: "Rod cutting and coin change"
 
     - From this module, the chapter «Dynamic programming for knapsack problems»: the pairs (item, capacity) and the reconstruction of a solution, which return here.
 
-    - From the module <em>Algorithms</em>: how to read pseudocode and how to count the steps of an algorithm.
+    - From the module <em>Algorithms</em>: how to read [pseudocode (Chapter 2)](https://fabiofurini.github.io/algorithms/basic-algorithms/02-pseudo-code/) and how to count the steps of an algorithm ([Chapter 12 «Running time»](https://fabiofurini.github.io/algorithms/analysis/12-running-time/)).
 
 !!! chiave "Objectives"
 
@@ -323,15 +323,11 @@ title: "Rod cutting and coin change"
 
     - A <strong>second method</strong> to compute the optimal value $v(n)$ of the RCP instance is the <strong>bottom-up approach</strong>. The method starts from the base case $v(0)=0$ and evaluates formula $\eqref{eq:1}$ for increasing rod lengths $\ell \in \{1,2,\dots,n\}$: each value $v(\ell)$ is computed using the already-computed values $v(0), v(1), \dots, v(\ell-1)$, until the value $v(n)$ of the RCP instance is obtained.
 
-        <div class="minipage" style="width:100%" markdown>
-
         This is the pseudo-code of the <strong>DP algorithm using the bottom-up approach</strong>:
 
         !!! algoritmo "Algorithm: DP1"
 
             <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> An RCP instance given by the length <span class="arithmatex">\(n\)</span> of the rod and an array <span class="arithmatex">\(p[1..n]\)</span> of piece profits</div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value of the RCP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP1(<span class="arithmatex">\(n,p\)</span>)</div><div class="pc" style="--liv:1" id="box-6-bu-a"><span class="pc-n">2</span><span class="arithmatex">\({v} := \textnormal{new array}[0..n]\)</span></div><div class="pc" style="--liv:1" id="box-7-bu-b"><span class="pc-n">3</span><span class="arithmatex">\({v}[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-8-bu-c"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(\ell := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-9-bu-d"><span class="pc-n">5</span><span class="arithmatex">\(\mathit{m} := 0\)</span></div><div class="pc" style="--liv:2" id="box-10-bu-e"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(\ell\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-11-bu-f"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(\mathit{m} < p[j] + {v}[\ell-j]\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-12-bu-g"><span class="pc-n">8</span><span class="arithmatex">\(\mathit{m} \leftarrow p[j] + {v}[\ell-j]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:2" id="box-13-bu-h"><span class="pc-n">11</span><span class="arithmatex">\({v}[\ell] \leftarrow \mathit{m}\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-14-bu-i"><span class="pc-n">13</span><strong>return</strong> <span class="arithmatex">\({v}[n]\)</span></div></div>
-
-        </div>
 
         - The vector ${v}[0..n]$ is the <strong>lookup table</strong>: it stores the optimal values of all subproblems, with the base case ${v}[0]=0$.
 
@@ -542,15 +538,11 @@ title: "Rod cutting and coin change"
 
     - Starting from $\ell=n$, the value ${s}[\ell]$ gives the length of the first piece to cut; the remaining rod has length $\ell-{s}[\ell]$, and the same rule can be applied again, and so on, until the residual length reaches $0$.
 
-        <div class="minipage" style="width:100%" markdown>
-
         This is the pseudo-code of the <strong>DP algorithm using the bottom-up approach</strong> with the storing of the information necessary to compute an optimal solution:
 
         !!! algoritmo "Algorithm: DP1\_InfoSol"
 
             <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> An RCP instance given by the length <span class="arithmatex">\(n\)</span> of the rod and an array <span class="arithmatex">\(p[1..n]\)</span> of piece profits</div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value of the RCP instance and the information vector <span class="arithmatex">\({s}[1..n]\)</span></div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP1_InfoSol(<span class="arithmatex">\(n,p\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\({v} := \textnormal{new array}[0..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><span class="arithmatex">\({s} := \textnormal{new array}[1..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">4</span><span class="arithmatex">\({v}[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>for</strong> <span class="arithmatex">\(\ell := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">6</span><span class="arithmatex">\(\mathit{m} := 0\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">7</span><span class="arithmatex">\(\mathit{t} := 0\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(\ell\)</span> <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>if</strong> <span class="arithmatex">\(\mathit{m} < p[j] + {v}[\ell-j]\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">10</span><span class="arithmatex">\(\mathit{m} \leftarrow p[j] + {v}[\ell-j]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">11</span><span class="arithmatex">\(\mathit{t} \leftarrow j\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">13</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">14</span><span class="arithmatex">\({v}[\ell] \leftarrow \mathit{m}\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">15</span><span class="arithmatex">\({s}[\ell] \leftarrow \mathit{t}\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">17</span><strong>return</strong> <span class="arithmatex">\({v}[n], {s}\)</span></div></div>
-
-        </div>
 
         - The DP algorithm uses the additional temporary variable $\mathit{t}$ to keep track of the decision made when $\mathit{m}$ is updated. If a first piece of length $j$ is selected, $\mathit{t}\leftarrow j$ stores this decision. At the end of the inner loop, ${s}[\ell]\leftarrow \mathit{t}$ stores the length of the selected first piece, together with the optimal value ${v}[\ell]\leftarrow \mathit{m}$.
 
@@ -1177,15 +1169,11 @@ title: "Rod cutting and coin change"
 
     - A <strong>second method</strong> to compute the optimal value $v(n,n)$ of the RCP instance is the <strong>bottom-up approach</strong>. The method starts from the base cases $v(0,0)=0$ and $v(0,\ell)=-\infty$ for all $\ell \in \{1,\dots,n\}$ and evaluates formula $\eqref{eq:rcpalt}$ for increasing values of $j \in \{1,2,\dots,n\}$ and $\ell \in \{0,1,\dots,n\}$: each value $v(j,\ell)$ is computed using already-computed values, until the value $v(n,n)$ of the RCP instance is obtained.
 
-        <div class="minipage" style="width:100%" markdown>
-
         This is the pseudo-code of the <strong>DP algorithm using the bottom-up approach</strong>:
 
         !!! algoritmo "Algorithm: DP2"
 
             <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> An RCP instance given by the length <span class="arithmatex">\(n\)</span> of the rod and an array <span class="arithmatex">\(p[1..n]\)</span> of piece profits</div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value of the RCP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP2(<span class="arithmatex">\(n,p\)</span>)</div><div class="pc" style="--liv:1" id="box-21-bu2-a"><span class="pc-n">2</span><span class="arithmatex">\({v} := \textnormal{new array}[0..n][0..n]\)</span></div><div class="pc" style="--liv:1" id="box-22-bu2-b"><span class="pc-n">3</span><span class="arithmatex">\({v}[0][0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-23-bu2-c"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(\ell := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-24-bu2-d"><span class="pc-n">5</span><span class="arithmatex">\({v}[0][\ell] \leftarrow -\infty\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-25-bu2-e"><span class="pc-n">7</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-26-bu2-f"><span class="pc-n">8</span><strong>for</strong> <span class="arithmatex">\(\ell := 0\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-27-bu2-g"><span class="pc-n">9</span><strong>if</strong> <span class="arithmatex">\(j > \ell\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-28-bu2-h"><span class="pc-n">10</span><span class="arithmatex">\({v}[j][\ell] \leftarrow {v}[j-1][\ell]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">11</span><strong>else</strong></div><div class="pc" style="--liv:4" id="box-29-bu2-i"><span class="pc-n">12</span><strong>if</strong> <span class="arithmatex">\(p[j] + {v}[j][\ell-j] > {v}[j-1][\ell]\)</span>  <strong>then</strong></div><div class="pc" style="--liv:5" id="box-30-bu2-j"><span class="pc-n">13</span><span class="arithmatex">\({v}[j][\ell] \leftarrow p[j] + {v}[j][\ell-j]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">14</span><strong>else</strong></div><div class="pc" style="--liv:5" id="box-31-bu2-k"><span class="pc-n">15</span><span class="arithmatex">\({v}[j][\ell] \leftarrow {v}[j-1][\ell]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">17</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">18</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">19</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-32-bu2-l"><span class="pc-n">20</span><strong>return</strong> <span class="arithmatex">\({v}[n][n]\)</span></div></div>
-
-        </div>
 
         - The matrix ${v}[0..n][0..n]$ is the <strong>lookup table</strong>: it stores the optimal values of all subproblems.
 
@@ -1448,15 +1436,11 @@ title: "Rod cutting and coin change"
 
     - Starting from $j=n$ and $\ell=n$, if ${s}[j][\ell]=0$, then piece length $j$ is not used and $j$ is decreased by $1$. If ${s}[j][\ell]=1$, then one piece of length $j$ is used and the residual rod length becomes $\ell-j$. The procedure stops when the residual length reaches $0$.
 
-        <div class="minipage" style="width:100%" markdown>
-
         This is the pseudo-code of the <strong>DP algorithm using the bottom-up approach</strong> with the storing of the information necessary to compute an optimal solution:
 
         !!! algoritmo "Algorithm: DP2\_InfoSol"
 
             <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> An RCP instance given by the length <span class="arithmatex">\(n\)</span> of the rod and an array <span class="arithmatex">\(p[1..n]\)</span> of piece profits</div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value of the RCP instance and the matrix of binary information <span class="arithmatex">\({s}[0..n][0..n]\)</span></div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP2_InfoSol(<span class="arithmatex">\(n,p\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\({v} := \textnormal{new array}[0..n][0..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><span class="arithmatex">\({s} := \textnormal{new array}[0..n][0..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">4</span><span class="arithmatex">\({v}[0][0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><span class="arithmatex">\({s}[0][0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(\ell := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">7</span><span class="arithmatex">\({v}[0][\ell] \leftarrow -\infty\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><span class="arithmatex">\({s}[0][\ell] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">9</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">11</span><strong>for</strong> <span class="arithmatex">\(\ell := 0\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">12</span><strong>if</strong> <span class="arithmatex">\(j > \ell\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">13</span><span class="arithmatex">\({v}[j][\ell] \leftarrow {v}[j-1][\ell]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">14</span><span class="arithmatex">\({s}[j][\ell] \leftarrow 0\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">15</span><strong>else</strong></div><div class="pc" style="--liv:4"><span class="pc-n">16</span><strong>if</strong> <span class="arithmatex">\(p[j] + {v}[j][\ell-j] > {v}[j-1][\ell]\)</span> <strong>then</strong></div><div class="pc" style="--liv:5"><span class="pc-n">17</span><span class="arithmatex">\({v}[j][\ell] \leftarrow p[j] + {v}[j][\ell-j]\)</span></div><div class="pc" style="--liv:5"><span class="pc-n">18</span><span class="arithmatex">\({s}[j][\ell] \leftarrow 1\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">19</span><strong>else</strong></div><div class="pc" style="--liv:5"><span class="pc-n">20</span><span class="arithmatex">\({v}[j][\ell] \leftarrow {v}[j-1][\ell]\)</span></div><div class="pc" style="--liv:5"><span class="pc-n">21</span><span class="arithmatex">\({s}[j][\ell] \leftarrow 0\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">22</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">23</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">24</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">25</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">26</span><strong>return</strong> <span class="arithmatex">\({v}[n][n], {s}\)</span></div></div>
-
-        </div>
 
         - The DP algorithm uses the additional matrix ${s}$, which keeps track of the decision made when ${v}[j][\ell]$ is computed. If one piece of length $j$ is selected, ${s}[j][\ell]\leftarrow 1$ stores this decision; otherwise, ${s}[j][\ell]\leftarrow 0$ stores that piece length $j$ is not used.
 
@@ -2118,7 +2102,7 @@ title: "Rod cutting and coin change"
 
     - From this module, the chapter «Principles of dynamic programming»: optimal substructure, overlapping subproblems, base cases.
 
-    - From the module <em>Algorithms</em>: pseudocode conventions and the size of the input.
+    - From the module <em>Algorithms</em>: [pseudocode conventions (Chapter 2)](https://fabiofurini.github.io/algorithms/basic-algorithms/02-pseudo-code/) and [the size of the input (Chapter 11)](https://fabiofurini.github.io/algorithms/analysis/11-input-size/).
 
 !!! chiave "Objectives"
 
@@ -2126,7 +2110,7 @@ title: "Rod cutting and coin change"
 
     - explain why the CCP asks for an exact amount and why an instance can be infeasible;
 
-    - write the recurrence $g(k)$ with the value $+\infty$ for the amounts that cannot be returned;
+    - write the recurrence $v(k)$ with the value $+\infty$ for the amounts that cannot be returned;
 
     - run the DP algorithm by hand, following the comparisons with the running best value $m$;
 
@@ -2202,36 +2186,36 @@ title: "Rod cutting and coin change"
 
     !!! chiave ""
 
-        For any $k \in \{0,1,\dots,c\}$, let $g(k)$ be the optimal value of the CCP subinstance given by:
+        For any $k \in \{0,1,\dots,c\}$, let $v(k)$ be the optimal value of the CCP subinstance given by:
 
         1. an integer amount of change $k$ to return,
 
         2. the same set $\{1,2,\dots,n\}$ of denominations, each available in unlimited supply.
 
-        The recursive formula to compute $g(k)$ reads as follows:
+        The recursive formula to compute $v(k)$ reads as follows:
 
         \begin{equation*}
         \label{eq:ccp}
-        g(k)= \left\{ \begin{array}{ll}
+        v(k)= \left\{ \begin{array}{ll}
         0                                                                 & \textrm{if $k=0$,}                                              \\[2ex]
         +\infty                                                          & \textrm{if $k\ge 1$ and $w_j>k$ for every $j\in\{1,2,\dots,n\}$,} \\[2ex]
-        \displaystyle \min_{j \,:\, w_j \,\le\, k} \big\{ 1 + g(k-w_j) \big\} & \textrm{if $k\ge 1$ and $w_j\le k$ for some $j\in\{1,2,\dots,n\}$.}
+        \displaystyle \min_{j \,:\, w_j \,\le\, k} \big\{ 1 + v(k-w_j) \big\} & \textrm{if $k\ge 1$ and $w_j\le k$ for some $j\in\{1,2,\dots,n\}$.}
         \end{array} \right. \tag{16.3}
         \end{equation*}
 
-    - The recursive decomposition process of formula $\eqref{eq:ccp}$ generates at most $n$ <strong>independent subproblems</strong>, corresponding to the possible choices of a denomination $j$, with $w_j\le k$, used as one of the coins returning the amount of change $k$. The base case is $g(0)=0$ since no coin is needed to return a null amount of change, and $g(k)=+\infty$ if no denomination is small enough to be used, since in this case the amount of change $k$ cannot be returned at all.
+    - The recursive decomposition process of formula $\eqref{eq:ccp}$ generates at most $n$ <strong>independent subproblems</strong>, corresponding to the possible choices of a denomination $j$, with $w_j\le k$, used as one of the coins returning the amount of change $k$. The base case is $v(0)=0$ since no coin is needed to return a null amount of change, and $v(k)=+\infty$ if no denomination is small enough to be used, since in this case the amount of change $k$ cannot be returned at all.
 
-    - The optimal value $g(k)$ is obtained by trying every denomination $j$ with $w_j\le k$ and selecting the one that minimizes the sum $1+g(k-w_j)$ of the single coin of denomination $j$ and the optimal value of the residual subproblem, returning the remaining amount of change $k-w_j$.
+    - The optimal value $v(k)$ is obtained by trying every denomination $j$ with $w_j\le k$ and selecting the one that minimizes the sum $1+v(k-w_j)$ of the single coin of denomination $j$ and the optimal value of the residual subproblem, returning the remaining amount of change $k-w_j$.
 
     - Hence, an optimal solution for the subinstance with amount of change $k$ is built by combining the chosen coin of denomination $j$ with an optimal solution of the corresponding residual subproblem, returning the amount of change $k-w_j$.
 
         $\rightsquigarrow$ <strong>Optimal Substructure verified!</strong>
 
-    - Different choices of the denomination used as the first coin, possibly made for different values of $k$, can lead to the same residual amount of change, and therefore the same value $g(k)$ may need to be computed several times during the recursive evaluation of formula $\eqref{eq:ccp}$.
+    - Different choices of the denomination used as the first coin, possibly made for different values of $k$, can lead to the same residual amount of change, and therefore the same value $v(k)$ may need to be computed several times during the recursive evaluation of formula $\eqref{eq:ccp}$.
 
         $\rightsquigarrow$ <strong>Overlapping Subproblems verified!</strong>
 
-    - A <strong>first method</strong> to compute the optimal value $g(c)$ of the CCP instance is the <strong>top-down approach</strong>. The method starts from the call with $k=c$ and evaluates formula $\eqref{eq:ccp}$ recursively: each call tries every denomination $j$ with $w_j\le k$, until the amount of change is equal to $0$ or no denomination is small enough to be used.
+    - A <strong>first method</strong> to compute the optimal value $v(c)$ of the CCP instance is the <strong>top-down approach</strong>. The method starts from the call with $k=c$ and evaluates formula $\eqref{eq:ccp}$ recursively: each call tries every denomination $j$ with $w_j\le k$, until the amount of change is equal to $0$ or no denomination is small enough to be used.
 
     - The <strong>recursion tree</strong> of the function $g$ has one node for each recursive call, labeled with the function call it represents. The root represents the initial call. The children of a node represent the recursive calls made by that call. The leaf nodes represent the base cases.
 
@@ -2239,13 +2223,13 @@ title: "Rod cutting and coin change"
 
         !!! esempio "Example 16.16: Recursion tree"
 
-            We consider the CCP instance of <span style="color:#1971c2">Example 1</span>. This is the recursion tree of the top-down approach to compute $g(10)$:
+            We consider the CCP instance of <span style="color:#1971c2">Example 1</span>. This is the recursion tree of the top-down approach to compute $v(10)$:
 
             ![Figure 5](../img/dp-rod-cutting-coin-change/fig05.svg){ .fig loading=lazy  }
 
-            The function $g$ is called $42$ times, and the same subproblems are solved multiple times: $g(0)$ is called $14$ times, $g(1)$ is called $8$ times, $g(2)$ is called $6$ times, $g(3)$ is called $5$ times, $g(4)$ is called $2$ times, and $g(5)$ is called $3$ times. All the other calls are made only once.
+            The function $g$ is called $42$ times, and the same subproblems are solved multiple times: $v(0)$ is called $14$ times, $v(1)$ is called $8$ times, $v(2)$ is called $6$ times, $v(3)$ is called $5$ times, $v(4)$ is called $2$ times, and $v(5)$ is called $3$ times. All the other calls are made only once.
 
-    - The value $g(k)$ can be computed once the values $g(k')$, for every smaller amount of change $k'<k$, are known. Therefore, all values $g(k)$ can be computed by considering the amount of change $k$ in increasing order.
+    - The value $v(k)$ can be computed once the values $v(k')$, for every smaller amount of change $k'<k$, are known. Therefore, all values $v(k)$ can be computed by considering the amount of change $k$ in increasing order.
 
         <a id="box-40-texccpvalues"></a>
 
@@ -2255,55 +2239,51 @@ title: "Rod cutting and coin change"
 
             The values of the function $g$ are computed as follows:
 
-            - The base case gives $g(0)=0$.
+            - The base case gives $v(0)=0$.
 
-            - Once we have computed $g(0)$, we can compute $g(1)$: since no denomination satisfies $w_j\le 1$, we obtain
-
-                $$
-                g(1) = +\infty.
-                $$
-
-            - Once we have computed $g(0)$, we can compute $g(2)$:
+            - Once we have computed $v(0)$, we can compute $v(1)$: since no denomination satisfies $w_j\le 1$, we obtain
 
                 $$
-                g(2) = 1+g(0) = 1+0 = 1.
+                v(1) = +\infty.
                 $$
 
-            - Once we have computed $g(1)$ and $g(2)$, we can compute $g(4)$, trying every denomination $j$ with $w_j\le 4$:
+            - Once we have computed $v(0)$, we can compute $v(2)$:
 
                 $$
-                g(4) = \min\{1+g(2),\,1+g(1)\} = \min\{1+1,\,1+\infty\} = 2.
+                v(2) = 1+v(0) = 1+0 = 1.
                 $$
 
-            - Once we have computed $g(2)$, $g(4)$, and $g(5)$, we can compute $g(7)$, trying every denomination $j$ with $w_j\le 7$:
+            - Once we have computed $v(1)$ and $v(2)$, we can compute $v(4)$, trying every denomination $j$ with $w_j\le 4$:
 
                 $$
-                g(7) = \min\{1+g(5),\,1+g(4),\,1+g(2)\} = \min\{1+1,\,1+2,\,1+1\} = 2.
+                v(4) = \min\{1+v(2),\,1+v(1)\} = \min\{1+1,\,1+\infty\} = 2.
+                $$
+
+            - Once we have computed $v(2)$, $v(4)$, and $v(5)$, we can compute $v(7)$, trying every denomination $j$ with $w_j\le 7$:
+
+                $$
+                v(7) = \min\{1+v(5),\,1+v(4),\,1+v(2)\} = \min\{1+1,\,1+2,\,1+1\} = 2.
                 $$
 
                 Here, the denominations $w_1=2$ and $w_3=5$ are tied: both give value $2$. Since the bottom-up algorithm only updates the optimal value when a strictly smaller value is found, the first denomination achieving the minimum, $w_1=2$, is the one recorded.
 
-            - Finally, once we have computed $g(5)$, $g(7)$, and $g(8)$, we can compute $g(10)$, trying every denomination $j$ with $w_j\le 10$:
+            - Finally, once we have computed $v(5)$, $v(7)$, and $v(8)$, we can compute $v(10)$, trying every denomination $j$ with $w_j\le 10$:
 
                 $$
-                g(10) = \min\{1+g(8),\,1+g(7),\,1+g(5)\} = \min\{1+2,\,1+2,\,1+1\} = 2.
+                v(10) = \min\{1+v(8),\,1+v(7),\,1+v(5)\} = \min\{1+2,\,1+2,\,1+1\} = 2.
                 $$
 
     - We can avoid solving the same subproblems repeatedly by storing the value of each subproblem as soon as it is computed. The values are stored in a <strong>lookup table</strong>.
 
-    - Since solving any particular subproblem depends only on subproblems with a smaller amount of change, we can solve the subproblems in increasing order of $k$, starting from the base case $g(0)=0$ and building up to $g(c)$: this observation naturally leads to a <strong>much more efficient method</strong> to compute the optimal value $g(c)$ of the CCP instance.
+    - Since solving any particular subproblem depends only on subproblems with a smaller amount of change, we can solve the subproblems in increasing order of $k$, starting from the base case $v(0)=0$ and building up to $v(c)$: this observation naturally leads to a <strong>much more efficient method</strong> to compute the optimal value $v(c)$ of the CCP instance.
 
-    - A <strong>second method</strong> to compute the optimal value $g(c)$ of the CCP instance is the <strong>bottom-up approach</strong>. The method starts from the base case and evaluates formula $\eqref{eq:ccp}$ for increasing values of $k \in \{1,2,\dots,c\}$: each value $g(k)$ is computed using already-computed values, until the value $g(c)$ of the CCP instance is obtained.
-
-        <div class="minipage" style="width:100%" markdown>
+    - A <strong>second method</strong> to compute the optimal value $v(c)$ of the CCP instance is the <strong>bottom-up approach</strong>. The method starts from the base case and evaluates formula $\eqref{eq:ccp}$ for increasing values of $k \in \{1,2,\dots,c\}$: each value $v(k)$ is computed using already-computed values, until the value $v(c)$ of the CCP instance is obtained.
 
         This is the pseudo-code of the <strong>DP algorithm using the bottom-up approach</strong>:
 
         !!! algoritmo "Algorithm: CCP\_DP"
 
             <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A CCP instance given by <span class="arithmatex">\(n\)</span>, the array <span class="arithmatex">\(w[1..n]\)</span> of denominations, and the amount of change <span class="arithmatex">\(c\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> CCP_DP(<span class="arithmatex">\(n,w,c\)</span>)</div><div class="pc" style="--liv:1" id="box-41-ccpbu-a"><span class="pc-n">2</span><span class="arithmatex">\(g := \textnormal{new array}[0..c]\)</span></div><div class="pc" style="--liv:1" id="box-42-ccpbu-b"><span class="pc-n">3</span><span class="arithmatex">\(g[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-43-ccpbu-c"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(k := 1\)</span> <strong>to</strong> <span class="arithmatex">\(c\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-44-ccpbu-d"><span class="pc-n">5</span><span class="arithmatex">\(m := +\infty\)</span></div><div class="pc" style="--liv:2" id="box-45-ccpbu-e"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-46-ccpbu-f"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(w[j]\le k\)</span>  and <span class="arithmatex">\(1+g[k-w[j]] < m\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-47-ccpbu-g"><span class="pc-n">8</span><span class="arithmatex">\(m \leftarrow 1+g[k-w[j]]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:2" id="box-48-ccpbu-h"><span class="pc-n">11</span><span class="arithmatex">\(g[k] \leftarrow m\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-49-ccpbu-i"><span class="pc-n">13</span><strong>return</strong> <span class="arithmatex">\(g[c]\)</span></div></div>
-
-        </div>
 
         - The array $g[0..c]$ is the <strong>lookup table</strong>: it stores the optimal values of all subproblems.
 
@@ -2735,15 +2715,11 @@ title: "Rod cutting and coin change"
 
     - More precisely, $s[k]$ is equal to the index $j$ of the denomination $w_j$ that minimizes the right-hand side of formula $\eqref{eq:ccp}$ when computing $g[k]$.
 
-        <div class="minipage" style="width:100%" markdown>
-
         This is the pseudo-code of the <strong>DP algorithm using the bottom-up approach</strong> with the storing of the information necessary to construct an optimal solution:
 
         !!! algoritmo "Algorithm: CCP\_DP\_InfoSol"
 
             <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A CCP instance given by <span class="arithmatex">\(n\)</span>, the array <span class="arithmatex">\(w[1..n]\)</span> of denominations, and the amount of change <span class="arithmatex">\(c\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value and the array <span class="arithmatex">\(s[0..c]\)</span> of the indices of the denominations used</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> CCP_DP_InfoSol(<span class="arithmatex">\(n,w,c\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(g := \textnormal{new array}[0..c]\)</span>; <span class="arithmatex">\(s := \textnormal{new array}[0..c]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><span class="arithmatex">\(g[0] \leftarrow 0\)</span>; <span class="arithmatex">\(s[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(k := 1\)</span> <strong>to</strong> <span class="arithmatex">\(c\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">5</span><span class="arithmatex">\(m := +\infty\)</span>; <span class="arithmatex">\(t := 0\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(w[j]\le k\)</span>  and <span class="arithmatex">\(1+g[k-w[j]] < m\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">8</span><span class="arithmatex">\(m \leftarrow 1+g[k-w[j]]\)</span>; <span class="arithmatex">\(t \leftarrow j\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">11</span><span class="arithmatex">\(g[k] \leftarrow m\)</span>; <span class="arithmatex">\(s[k] \leftarrow t\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">13</span><strong>return</strong> <span class="arithmatex">\(g[c], s\)</span></div></div>
-
-        </div>
 
         - The DP algorithm uses the additional temporary variable $t$ to keep track of the decision made when $m$ is updated. If the denomination $w[j]$ is used, $t \leftarrow j$ stores its index. At the end of the inner loop, $s[k]\leftarrow t$ stores the index of the denomination of the coin used, together with the optimal value $g[k]\leftarrow m$.
 
@@ -2886,7 +2862,7 @@ title: "Rod cutting and coin change"
             (0,0,2)
             $$
 
-            is an optimal solution: it uses two coins of denomination $w_3=5$. The corresponding total value is $2\cdot5=10=c$. The corresponding optimal value is $g(10)=2$.
+            is an optimal solution: it uses two coins of denomination $w_3=5$. The corresponding total value is $2\cdot5=10=c$. The corresponding optimal value is $v(10)=2$.
 
 #### Number of steps
 
@@ -2958,7 +2934,7 @@ title: "Rod cutting and coin change"
 
 !!! attenzione "Warning"
 
-    - <strong>Using $0$ instead of $+\infty$.</strong> An amount that cannot be returned has $g(k)=+\infty$; with the value $0$ the DP algorithm would claim that no coin is needed.
+    - <strong>Using $0$ instead of $+\infty$.</strong> An amount that cannot be returned has $v(k)=+\infty$; with the value $0$ the DP algorithm would claim that no coin is needed.
 
     - <strong>Reconstructing an infeasible instance.</strong> If $g[c]=+\infty$ then $s[c]=0$ and the reconstruction would never stop: the DP algorithm must first check that $g[c]<+\infty$.
 
@@ -2970,9 +2946,9 @@ title: "Rod cutting and coin change"
 
 !!! chiave "In summary"
 
-    - The CCP asks for the minimum number of coins whose total value is exactly $c$; the instance is infeasible when $g(c)=+\infty$.
+    - The CCP asks for the minimum number of coins whose total value is exactly $c$; the instance is infeasible when $v(c)=+\infty$.
 
-    - The recurrence $g(k)=\min_{j:\,w_j\le k}\{1+g(k-w_j)\}$ is computed bottom-up in $\Theta(nc)$ steps, which is pseudo-polynomial.
+    - The recurrence $v(k)=\min_{j:\,w_j\le k}\{1+v(k-w_j)\}$ is computed bottom-up in $\Theta(nc)$ steps, which is pseudo-polynomial.
 
     - An optimal solution is read backwards from $s[c]$, the index of the last coin used, and only if $g[c]<+\infty$.
 

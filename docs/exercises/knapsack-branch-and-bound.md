@@ -6,13 +6,13 @@ title: "Exercises · Knapsack: branch-and-bound on the critical item"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 26** · each solution opens with a click · [:material-book-open-variant: Chapter 26](../specialized-algorithms/knapsack-branch-and-bound.md)
+**Exercises · Chapter 27** · each solution opens with a click · [:material-book-open-variant: Chapter 27](../specialized-algorithms/knapsack-branch-and-bound.md)
 
 </div>
 
-<a id="esercizio-26-1"></a>
+<a id="esercizio-27-1"></a>
 
-!!! esercizio "Exercise 26.1: Branch-and-Bound Algorithm for the Knapsack Problem (P1)"
+!!! esercizio "Exercise 27.1: Branch-and-Bound Algorithm for the Knapsack Problem (P1)"
 
     We consider a knapsack capacity $c=11$ and a set $\mathscr{I}=\{1,2,3,4,5\}$ of $5$ items ($n=5$) with the following profits and weights:
 
@@ -190,9 +190,9 @@ title: "Exercises · Knapsack: branch-and-bound on the critical item"
 
         ![Figure 2](../img/ex-knapsack-branch-and-bound/fig02.svg){ .fig loading=lazy  }
 
-<a id="esercizio-26-2"></a>
+<a id="esercizio-27-2"></a>
 
-!!! esercizio "Exercise 26.2: Branch-and-Bound Algorithm for the Knapsack Problem (P2)"
+!!! esercizio "Exercise 27.2: Branch-and-Bound Algorithm for the Knapsack Problem (P2)"
 
     We consider a knapsack capacity $c=8$ and a set $\mathscr{I}=\{1,2,3,4\}$ of $4$ items ($n=4$) with the following profits and weights:
 
@@ -474,9 +474,9 @@ title: "Exercises · Knapsack: branch-and-bound on the critical item"
 
         ![Figure 6](../img/ex-knapsack-branch-and-bound/fig06.svg){ .fig loading=lazy  }
 
-<a id="esercizio-26-3"></a>
+<a id="esercizio-27-3"></a>
 
-!!! esercizio "Exercise 26.3: Branch-and-Bound Algorithm for the Knapsack Problem (P3)"
+!!! esercizio "Exercise 27.3: Branch-and-Bound Algorithm for the Knapsack Problem (P3)"
 
     We consider a knapsack capacity $c=15$ and a set $\mathscr{I}=\{1,2,3,4\}$ of $4$ items ($n=4$) with the following profits and weights:
 
@@ -796,9 +796,9 @@ title: "Exercises · Knapsack: branch-and-bound on the critical item"
 
         ![Figure 11](../img/ex-knapsack-branch-and-bound/fig11.svg){ .fig loading=lazy  }
 
-<a id="esercizio-26-4"></a>
+<a id="esercizio-27-4"></a>
 
-!!! esercizio "Exercise 26.4: Branch-and-bound Algorithm for the Knapsack Problem (P4)"
+!!! esercizio "Exercise 27.4: Branch-and-bound Algorithm for the Knapsack Problem (P4)"
 
     We consider a knapsack capacity $c=9$ and a set $\mathscr{I}=\{1,2,3,4,5,6\}$ of $6$ items ($n=6$) with the following profits and weights:
 

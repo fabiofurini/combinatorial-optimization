@@ -70,8 +70,6 @@ title: "Constructive heuristics"
 
 - In the figures, the five cities of the TSP reference instance are always drawn in the same positions, on a pentagon, in the order $(1,3,5,2,4)$ of the optimal tour: the optimal tour is then the boundary of the pentagon, and every tour that uses a diagonal is visibly different from it. The figure shows the distances of the instance and, in bold, its optimal tour.
 
-<div class="minipage" style="width:40%" markdown>
-
 <div class="tabella" markdown="0"><table>
 <tr>
 <th><span class="arithmatex">\(d_{ij}\)</span></th>
@@ -123,13 +121,7 @@ title: "Constructive heuristics"
 </tr>
 </table></div>
 
-</div>
-
-<div class="minipage" style="width:40%" markdown>
-
 ![Figure 1](../img/constructive-heuristics/fig01.svg){ .fig loading=lazy  }
-
-</div>
 
 ## 19.2 The greedy paradigm { #sez-sec-greedy }
 
@@ -407,7 +399,7 @@ title: "Constructive heuristics"
     FFD(I) \;\le\; \frac{11}{9}\, z(I) + \frac{6}{9} \qquad \text{for every BPP instance } I,
     $$
 
-    and that the bound is tight. A bound of the form $\frac{11}{9}z(I)+4$ was first proved for both FFD and BFD by D.S. Johnson, A. Demers, J.D. Ullman, M.R. Garey and R.L. Graham (<em>Worst-case performance bounds for simple one-dimensional packing algorithms</em>, SIAM Journal on Computing 3 (1974) 299–325); the tight additive constant is due to G. Dósa (<em>The tight bound of First Fit Decreasing bin-packing algorithm is $FFD(I)\le 11/9\,OPT(I)+6/9$</em>, ESCAPE 2007, LNCS 4614, pp. 1–11). The proofs are beyond the scope of these notes.
+    and that the bound is tight. A bound of the form $\frac{11}{9}z(I)+4$ was first proved for both FFD and BFD by D.S. Johnson, A. Demers, J.D. Ullman, M.R. Garey and R.L. Graham (<em>Worst-case performance bounds for simple one-dimensional packing algorithms</em>, SIAM Journal on Computing 3 (1974) 299–325); the tight additive constant is due to G. Dósa (<em>The tight bound of First Fit Decreasing bin-packing algorithm is $FFD(I)\le 11/9\,OPT(I)+6/9$</em>, ESCAPE 2007, LNCS 4614, pp. 1–11).
 
 - <strong>Not a better solution on every instance.</strong> A worst-case guarantee compares the algorithm with the optimum, not with another algorithm: on some instances the input order is luckier than the sorted one.
 

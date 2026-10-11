@@ -14,7 +14,7 @@ title: "Heuristic algorithms: definitions"
 
     - From this module, the chapters «Knapsack problems», «Bin packing problems», «Travelling salesman problems» and «Parallel machine scheduling»: instances, feasible solutions and optimal values of the four problems used as examples.
 
-    - From the module <em>Integer linear programming</em>, the chapter «LP relaxation and dual bounds»: the LP relaxation as a source of dual bounds. A short recap is given here for the knapsack problem.
+    - From the module <em>Integer linear programming</em>, [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): the LP relaxation as a source of dual bounds. A short recap is given here for the knapsack problem.
 
 !!! chiave "Objectives"
 

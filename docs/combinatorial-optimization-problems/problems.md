@@ -9,8 +9,8 @@ The course solves six combinatorial optimization problems in every way: for each
 - Chapter 2: [Knapsack problems](../combinatorial-optimization-problems/knapsack.md)
 - Chapter 8: [Formulations of the knapsack problem](../formulations/knapsack-formulations.md)
 - Chapter 15: [Dynamic programming for knapsack problems](../dynamic-programming/dp-knapsack.md)
-- Chapter 24: [Approximation algorithms for the knapsack problem](../approximation-algorithms/knapsack-approximation.md)
-- Chapter 26: [Knapsack: branch-and-bound on the critical item](../specialized-algorithms/knapsack-branch-and-bound.md)
+- Chapter 25: [Approximation algorithms for the knapsack problem](../approximation-algorithms/knapsack-approximation.md)
+- Chapter 27: [Knapsack: branch-and-bound on the critical item](../specialized-algorithms/knapsack-branch-and-bound.md)
 
 ## Bin packing (BPP)
 
@@ -18,7 +18,7 @@ The course solves six combinatorial optimization problems in every way: for each
 
 - Chapter 3: [Bin packing and cutting stock](../combinatorial-optimization-problems/bin-packing.md)
 - Chapter 9: [Formulations of the bin packing problem](../formulations/bin-packing-formulations.md)
-- Chapter 23: [Approximation algorithms for bin packing](../approximation-algorithms/bin-packing-approximation.md)
+- Chapter 24: [Approximation algorithms for bin packing](../approximation-algorithms/bin-packing-approximation.md)
 
 ## Vertex coloring (VCP)
 
@@ -26,7 +26,7 @@ The course solves six combinatorial optimization problems in every way: for each
 
 - Chapter 4: [Vertex coloring](../combinatorial-optimization-problems/coloring.md)
 - Chapter 10: [Formulations of the vertex coloring problem](../formulations/coloring-formulations.md)
-- Chapter 25: [P|Cmax, metric TSP and the limits of approximation](../approximation-algorithms/pcmax-tsp-coloring-approximation.md)
+- Chapter 26: [P|Cmax, metric TSP and the limits of approximation](../approximation-algorithms/pcmax-tsp-coloring-approximation.md)
 
 ## Travelling salesman (TSP)
 
@@ -34,7 +34,7 @@ The course solves six combinatorial optimization problems in every way: for each
 
 - Chapter 5: [The travelling salesman problem](../combinatorial-optimization-problems/tsp.md)
 - Chapter 11: [Formulations of the travelling salesman problem](../formulations/tsp-formulations.md)
-- Chapter 25: [P|Cmax, metric TSP and the limits of approximation](../approximation-algorithms/pcmax-tsp-coloring-approximation.md)
+- Chapter 26: [P|Cmax, metric TSP and the limits of approximation](../approximation-algorithms/pcmax-tsp-coloring-approximation.md)
 
 ## Parallel machine scheduling (P||Cmax)
 
@@ -42,7 +42,7 @@ The course solves six combinatorial optimization problems in every way: for each
 
 - Chapter 6: [Parallel machine scheduling](../combinatorial-optimization-problems/pcmax.md)
 - Chapter 12: [Formulations of parallel machine scheduling](../formulations/pcmax-formulations.md)
-- Chapter 25: [P|Cmax, metric TSP and the limits of approximation](../approximation-algorithms/pcmax-tsp-coloring-approximation.md)
+- Chapter 26: [P|Cmax, metric TSP and the limits of approximation](../approximation-algorithms/pcmax-tsp-coloring-approximation.md)
 
 ## Capacitated lot sizing (CLSP)
 

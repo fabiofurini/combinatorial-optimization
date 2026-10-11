@@ -195,57 +195,70 @@
     - 21.11 Typical mistakes
     - 21.12 In summary
     - 21.13 <code>C++</code> implementation
+22. [MIP heuristics for the classical problems](heuristic-algorithms/mip-heuristics-classical.md)
+    - 22.1 From the methods to the classical problems
+    - 22.2 The problems and their MIP models
+    - 22.3 Rounding
+    - 22.4 Diving
+    - 22.5 The feasibility pump
+    - 22.6 RINS, local branching and proximity search
+    - 22.7 Relax-and-fix and fix-and-optimize on lot sizing
+    - 22.8 Heuristics inside the solver
+    - 22.9 What the MIP-based heuristics give
+    - 22.10 <code>Python</code> implementation
+    - 22.11 Typical mistakes
+    - 22.12 In summary
 
 ## [Approximation algorithms](approximation-algorithms/index.md)
 
-22. [Approximation algorithms: definitions](approximation-algorithms/approximation.md)
-    - 22.1 Why a performance guarantee?
-    - 22.2 Approximation algorithms
-    - 22.3 Approximation schemes
-    - 22.4 Typical mistakes
-    - 22.5 In summary
-23. [Approximation algorithms for bin packing](approximation-algorithms/bin-packing-approximation.md)
-    - 23.1 Why bin packing algorithms?
-    - 23.2 The problem and the assumptions
-    - 23.3 The Next Fit
-    - 23.4 The Any Fit class
-    - 23.5 Half-full property
-    - 23.6 Performance guarantees
-    - 23.7 Typical mistakes
-    - 23.8 In summary
-    - 23.9 <code>C++</code> implementation
-24. [Approximation algorithms for the knapsack problem](approximation-algorithms/knapsack-approximation.md)
-    - 24.1 Why approximation algorithms for the KP?
+23. [Approximation algorithms: definitions](approximation-algorithms/approximation.md)
+    - 23.1 Why a performance guarantee?
+    - 23.2 Approximation algorithms
+    - 23.3 Approximation schemes
+    - 23.4 Typical mistakes
+    - 23.5 In summary
+24. [Approximation algorithms for bin packing](approximation-algorithms/bin-packing-approximation.md)
+    - 24.1 Why bin packing algorithms?
     - 24.2 The problem and the assumptions
-    - 24.3 Split item and residual capacity
-    - 24.4 The greedy algorithm
-    - 24.5 The Ext-Greedy algorithm
-    - 24.6 The $H^2$ algorithm
-    - 24.7 The $H^{\ell}$ algorithm
-    - 24.8 The Basic-FPTAS algorithm
-    - 24.9 Performance guarantees
-    - 24.10 Absolute performance guarantee
-    - 24.11 Typical mistakes
-    - 24.12 In summary
-    - 24.13 <code>C++</code> implementation
-25. [P|Cmax, metric TSP and the limits of approximation](approximation-algorithms/pcmax-tsp-coloring-approximation.md)
-    - 25.1 Why guarantees, and why limits?
-    - 25.2 The problems and the assumptions
-    - 25.3 Scheduling on parallel machines
-    - 25.4 The metric TSP
-    - 25.5 Vertex coloring
-    - 25.6 Structural properties
-    - 25.7 Performance guarantees
-    - 25.8 The limits of approximation
-    - 25.9 Sources
-    - 25.10 Typical mistakes
-    - 25.11 In summary
+    - 24.3 The Next Fit
+    - 24.4 The Any Fit class
+    - 24.5 Half-full property
+    - 24.6 Performance guarantees
+    - 24.7 Typical mistakes
+    - 24.8 In summary
+    - 24.9 <code>C++</code> implementation
+25. [Approximation algorithms for the knapsack problem](approximation-algorithms/knapsack-approximation.md)
+    - 25.1 Why approximation algorithms for the KP?
+    - 25.2 The problem and the assumptions
+    - 25.3 Split item and residual capacity
+    - 25.4 The greedy algorithm
+    - 25.5 The Ext-Greedy algorithm
+    - 25.6 The $H^2$ algorithm
+    - 25.7 The $H^{\ell}$ algorithm
+    - 25.8 The Basic-FPTAS algorithm
+    - 25.9 Performance guarantees
+    - 25.10 Absolute performance guarantee
+    - 25.11 Typical mistakes
+    - 25.12 In summary
+    - 25.13 <code>C++</code> implementation
+26. [P|Cmax, metric TSP and the limits of approximation](approximation-algorithms/pcmax-tsp-coloring-approximation.md)
+    - 26.1 Why guarantees, and why limits?
+    - 26.2 The problems and the assumptions
+    - 26.3 Scheduling on parallel machines
+    - 26.4 The metric TSP
+    - 26.5 Vertex coloring
+    - 26.6 Structural properties
+    - 26.7 Performance guarantees
+    - 26.8 The limits of approximation
+    - 26.9 Sources
+    - 26.10 Typical mistakes
+    - 26.11 In summary
 
 ## [Specialized algorithms](specialized-algorithms/index.md)
 
-26. [Knapsack: branch-and-bound on the critical item](specialized-algorithms/knapsack-branch-and-bound.md)
-    - 26.1 Why a branch-and-bound algorithm for the KP?
-    - 26.2 The algorithm for the KP
-    - 26.3 A worked example
-    - 26.4 Typical mistakes
-    - 26.5 In summary
+27. [Knapsack: branch-and-bound on the critical item](specialized-algorithms/knapsack-branch-and-bound.md)
+    - 27.1 Why a branch-and-bound algorithm for the KP?
+    - 27.2 The algorithm for the KP
+    - 27.3 A worked example
+    - 27.4 Typical mistakes
+    - 27.5 In summary

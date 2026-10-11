@@ -16,7 +16,7 @@ title: "Principles of dynamic programming"
 
     - From this module, the chapter «Knapsack problems»: the KP, used as the running example of the following chapters.
 
-    - From the module <em>Algorithms</em>: pseudocode, recursion, and the growth of the running time of an algorithm.
+    - From the module <em>Algorithms</em>: [pseudocode (Chapter 2)](https://fabiofurini.github.io/algorithms/basic-algorithms/02-pseudo-code/), [recursion (Chapter 14)](https://fabiofurini.github.io/algorithms/recursion/14-recursion/), and the growth of the running time of an algorithm ([Chapter 10 «Asymptotic growth»](https://fabiofurini.github.io/algorithms/asymptotics/10-asymptotic-growth/)).
 
 !!! chiave "Objectives"
 
@@ -217,7 +217,7 @@ title: "Principles of dynamic programming"
 </tr>
 <tr>
 <td>CCP</td>
-<td><span class="arithmatex">\(g(k)\)</span></td>
+<td><span class="arithmatex">\(v(k)\)</span></td>
 <td>amounts of change</td>
 <td><span class="arithmatex">\(\Theta(nc)\)</span></td>
 </tr>

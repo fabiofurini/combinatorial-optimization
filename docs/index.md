@@ -85,7 +85,7 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
     ---
 
-    18\. Definitions · 19\. Constructive · 20\. Local search · 21\. Metaheuristics
+    18\. Definitions · 19\. Constructive · 20\. Local search · 21\. Metaheuristics · 22\. MIP heuristics
 
     [:octicons-arrow-right-24: The chapters](heuristic-algorithms/index.md)
 
@@ -93,7 +93,7 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
     ---
 
-    22\. Definitions · 23\. Bin packing · 24\. Knapsack · 25\. P||Cmax, TSP, coloring
+    23\. Definitions · 24\. Bin packing · 25\. Knapsack · 26\. P||Cmax, TSP, coloring
 
     [:octicons-arrow-right-24: The chapters](approximation-algorithms/index.md)
 
@@ -101,7 +101,7 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
     ---
 
-    26\. Knapsack: B&B
+    27\. Knapsack: B&B
 
     [:octicons-arrow-right-24: The chapters](specialized-algorithms/index.md)
 

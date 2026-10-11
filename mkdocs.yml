@@ -164,15 +164,16 @@ nav:
       - "19. Constructive": heuristic-algorithms/constructive-heuristics.md
       - "20. Local search": heuristic-algorithms/local-search.md
       - "21. Metaheuristics": heuristic-algorithms/metaheuristics.md
+      - "22. MIP heuristics": heuristic-algorithms/mip-heuristics-classical.md
   - Approximation:
       - approximation-algorithms/index.md
-      - "22. Definitions": approximation-algorithms/approximation.md
-      - "23. Bin packing": approximation-algorithms/bin-packing-approximation.md
-      - "24. Knapsack": approximation-algorithms/knapsack-approximation.md
-      - "25. P||Cmax, TSP, coloring": approximation-algorithms/pcmax-tsp-coloring-approximation.md
+      - "23. Definitions": approximation-algorithms/approximation.md
+      - "24. Bin packing": approximation-algorithms/bin-packing-approximation.md
+      - "25. Knapsack": approximation-algorithms/knapsack-approximation.md
+      - "26. P||Cmax, TSP, coloring": approximation-algorithms/pcmax-tsp-coloring-approximation.md
   - Specialized:
       - specialized-algorithms/index.md
-      - "26. Knapsack: B&B": specialized-algorithms/knapsack-branch-and-bound.md
+      - "27. Knapsack: B&B": specialized-algorithms/knapsack-branch-and-bound.md
   - Exercises:
       - exercises/index.md
       - "8. Knapsack": exercises/knapsack-formulations.md
@@ -182,10 +183,11 @@ nav:
       - "19. Constructive": exercises/constructive-heuristics.md
       - "20. Local search": exercises/local-search.md
       - "21. Metaheuristics": exercises/metaheuristics.md
-      - "23. Bin packing": exercises/bin-packing-approximation.md
-      - "24. Knapsack": exercises/knapsack-approximation.md
-      - "25. P||Cmax, TSP, coloring": exercises/pcmax-tsp-coloring-approximation.md
-      - "26. Knapsack: B&B": exercises/knapsack-branch-and-bound.md
+      - "22. MIP heuristics": exercises/mip-heuristics-classical.md
+      - "24. Bin packing": exercises/bin-packing-approximation.md
+      - "25. Knapsack": exercises/knapsack-approximation.md
+      - "26. P||Cmax, TSP, coloring": exercises/pcmax-tsp-coloring-approximation.md
+      - "27. Knapsack: B&B": exercises/knapsack-branch-and-bound.md
   - Lab: lab/index.md
   - Downloads: downloads.md
   - Index: full-index.md

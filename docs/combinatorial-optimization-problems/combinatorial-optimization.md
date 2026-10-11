@@ -257,8 +257,6 @@ title: "Combinatorial optimization problems"
 
 !!! esempio "Example 1.3: an exam calendar"
 
-    <div class="minipage" style="width:49%" markdown>
-
     We consider the exams 1 Calculus, 2 Linear algebra, 3 Physics, 4 Programming, 5 Statistics and 6 Operations research, with the conflicts
 
     $$
@@ -267,13 +265,7 @@ title: "Combinatorial optimization problems"
 
     The coloring on the right uses $3$ days: day 1 for $\{1,4\}$, day 2 for $\{2,5\}$, day 3 for $\{3,6\}$. Fewer days are impossible, since the exams $1,2,3$ are pairwise in conflict.
 
-    </div>
-
-    <div class="minipage" style="width:42%" markdown>
-
     ![Figure 2](../img/combinatorial-optimization/fig02.svg){ .fig loading=lazy  }
-
-    </div>
 
     We call this instance <span style="color:#1971c2">[Example 1.3](#box-4-ex-oc1-vcp)</span>.
 
@@ -286,8 +278,6 @@ title: "Combinatorial optimization problems"
 <a id="box-5-ex-oc1-tsp"></a>
 
 !!! esempio "Example 1.4: a small TSP instance"
-
-    <div class="minipage" style="width:48%" markdown>
 
     We consider $n=5$ cities with the symmetric distances
 
@@ -344,13 +334,7 @@ title: "Combinatorial optimization problems"
 
     The tour $(1,3,5,2,4)$, in bold, has length $2+7+4+3+2=18$.
 
-    </div>
-
-    <div class="minipage" style="width:46%" markdown>
-
     ![Figure 3](../img/combinatorial-optimization/fig03.svg){ .fig loading=lazy  }
-
-    </div>
 
     We call this instance <span style="color:#1971c2">[Example 1.4](#box-5-ex-oc1-tsp)</span>.
 

@@ -38,4 +38,12 @@
 
     [:octicons-arrow-right-24: Read the chapter](metaheuristics.md) · [Exercises](../exercises/metaheuristics.md)
 
+-   **22. MIP heuristics for the classical problems**
+
+    ---
+
+    From the methods to the classical problems · The problems and their MIP models · Rounding · Diving · …
+
+    [:octicons-arrow-right-24: Read the chapter](mip-heuristics-classical.md) · [Exercises](../exercises/mip-heuristics-classical.md)
+
 </div>

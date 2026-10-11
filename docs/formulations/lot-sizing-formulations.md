@@ -12,7 +12,7 @@ title: "Formulations of capacitated lot sizing"
 
 !!! nota "Prerequisites"
 
-    - From the module <em>Integer linear programming</em>, the chapters «Integer linear programming» and «LP relaxation and dual bounds»: ILP problems, LP relaxations and lower bounds.
+    - From the module <em>Integer linear programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/) and [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): ILP problems, LP relaxations and lower bounds.
 
     - From this module, the chapter «Capacitated lot sizing»: the problem, the plans and the reference instance.
 

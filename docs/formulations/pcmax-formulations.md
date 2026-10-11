@@ -12,9 +12,9 @@ title: "Formulations of parallel machine scheduling"
 
 !!! nota "Prerequisites"
 
-    - From the module <em>Linear Programming</em>, Chapter 9 «Duality theory»: the dual of an LP problem, weak and strong duality.
+    - From the module <em>Linear Programming</em>, [[Chapter 9 «Duality theory»](https://fabiofurini.github.io/linear-programming/duality/09-duality/)](https://fabiofurini.github.io/linear-programming/duality/09-duality/): the dual of an LP problem, weak and strong duality.
 
-    - From the module <em>Integer linear programming</em>, the chapters «Integer linear programming» and «LP relaxation and dual bounds»: ILP problems, LP relaxations and bounds.
+    - From the module <em>Integer linear programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/) and [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): ILP problems, LP relaxations and bounds.
 
     - From this module, the chapter «Parallel machine scheduling»: the problem, the makespan and the instance of Example 1.
 

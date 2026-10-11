@@ -33,15 +33,16 @@ Exercises with **worked solutions**, chapter by chapter. Try each exercise on yo
 - [19. Constructive heuristics](constructive-heuristics.md) · 12 exercises
 - [20. Local search](local-search.md) · 12 exercises
 - [21. Metaheuristics](metaheuristics.md) · 17 exercises
+- [22. MIP heuristics for the classical problems](mip-heuristics-classical.md) · 5 exercises
 - 18. Heuristic algorithms: definitions · *in preparation*
 
 ## Approximation algorithms
 
-- [23. Approximation algorithms for bin packing](bin-packing-approximation.md) · 12 exercises
-- [24. Approximation algorithms for the knapsack problem](knapsack-approximation.md) · 15 exercises
-- [25. P|Cmax, metric TSP and the limits of approximation](pcmax-tsp-coloring-approximation.md) · 9 exercises
-- 22. Approximation algorithms: definitions · *in preparation*
+- [24. Approximation algorithms for bin packing](bin-packing-approximation.md) · 12 exercises
+- [25. Approximation algorithms for the knapsack problem](knapsack-approximation.md) · 15 exercises
+- [26. P|Cmax, metric TSP and the limits of approximation](pcmax-tsp-coloring-approximation.md) · 9 exercises
+- 23. Approximation algorithms: definitions · *in preparation*
 
 ## Specialized algorithms
 
-- [26. Knapsack: branch-and-bound on the critical item](knapsack-branch-and-bound.md) · 4 exercises
+- [27. Knapsack: branch-and-bound on the critical item](knapsack-branch-and-bound.md) · 4 exercises
