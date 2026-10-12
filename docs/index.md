@@ -18,8 +18,8 @@ professor at [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
 
 **The course lecture notes, online**: knapsack, bin packing, vertex coloring, maximum clique, TSP, parallel machine scheduling and lot sizing, solved in every way: formulations and their properties, dynamic programming, heuristic and approximation algorithms, problem-specific branch-and-bound; with definitions, results with proofs, examples worked out step by step and exercises with solutions.
 
-[:material-star-outline: Start with the selected problems :material-arrow-right:](selected-problems/index.md){ .md-button .md-button--primary }
-[The chapters](combinatorial-optimization-problems/index.md){ .md-button }
+[Start :material-arrow-right:](combinatorial-optimization-problems/index.md){ .md-button .md-button--primary }
+[:material-star-outline: Selected problems](selected-problems/index.md){ .md-button }
 [The exercises](exercises/index.md){ .md-button }
 [:material-view-list: Catalogue of problems](catalogue/index.md){ .md-button }
 [:material-download: Download the lecture notes (PDF)](downloads.md){ .md-button }
@@ -59,14 +59,6 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
 <div class="grid cards" markdown>
 
--   :material-star-outline: **Selected problems**
-
-    ---
-
-    The problems on which the whole course focuses: for each one, everything the course does on it — where it is treated, the techniques and the exercises.
-
-    [:octicons-arrow-right-24: The selected problems](selected-problems/index.md)
-
 -   :material-puzzle-outline: **1 · Combinatorial optimization problems**
 
     ---
@@ -74,6 +66,14 @@ Each chapter is one of the course notes, with the same numbers and the same colo
     1\. Combinatorial optimization · 2\. Knapsack · 3\. Bin packing · 4\. Vertex coloring · 5\. Maximum clique · 6\. TSP · 7\. Machine scheduling · 8\. Lot sizing
 
     [:octicons-arrow-right-24: The chapters](combinatorial-optimization-problems/index.md)
+
+-   :material-star-outline: **Selected problems**
+
+    ---
+
+    The problems on which the whole course focuses: for each one, everything the course does on it — where it is treated, the techniques and the exercises.
+
+    [:octicons-arrow-right-24: The selected problems](selected-problems/index.md)
 
 -   :material-function-variant: **2 · Formulations and their properties**
 

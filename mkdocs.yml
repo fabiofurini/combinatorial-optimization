@@ -154,17 +154,7 @@ extra_javascript:
 
 nav:
   - Home: index.md
-  - Selected problems:
-      - selected-problems/index.md
-      - "Comparison": selected-problems/at-a-glance.md
-      - "KP": selected-problems/knapsack.md
-      - "BPP": selected-problems/bin-packing.md
-      - "VCP": selected-problems/vertex-coloring.md
-      - "MCP": selected-problems/maximum-clique.md
-      - "TSP": selected-problems/tsp.md
-      - "P||Cmax": selected-problems/pcmax.md
-      - "CLS": selected-problems/lot-sizing.md
-  - Problems:
+  - Combinatorial optimization:
       - combinatorial-optimization-problems/index.md
       - "The problems at a glance": combinatorial-optimization-problems/problems.md
       - "1. Combinatorial optimization": combinatorial-optimization-problems/combinatorial-optimization.md
@@ -198,6 +188,16 @@ nav:
           - combinatorial-optimization-problems/lot-sizing/index.md
           - "Variants": combinatorial-optimization-problems/lot-sizing/variants.md
           - "Remarks and summary": combinatorial-optimization-problems/lot-sizing/remarks-and-summary.md
+  - Selected problems:
+      - selected-problems/index.md
+      - "Comparison": selected-problems/at-a-glance.md
+      - "KP": selected-problems/knapsack.md
+      - "BPP": selected-problems/bin-packing.md
+      - "VCP": selected-problems/vertex-coloring.md
+      - "MCP": selected-problems/maximum-clique.md
+      - "TSP": selected-problems/tsp.md
+      - "P||Cmax": selected-problems/pcmax.md
+      - "CLS": selected-problems/lot-sizing.md
   - Formulations:
       - formulations/index.md
       - "9. Knapsack": formulations/knapsack-formulations.md
