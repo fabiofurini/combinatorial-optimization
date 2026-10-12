@@ -12,9 +12,9 @@ title: "Scheduling problems"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter «Combinatorial optimization problems»: what a combinatorial optimization problem is, the number of candidate solutions, and primal and dual bounds.
+    - From this module, [Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): what a combinatorial optimization problem is, the number of candidate solutions, primal and dual bounds, and the partitions of a set (Bell numbers).
 
-    - From the same chapter, the reference $P\,||\,C_{\max}$ instance with $7$ jobs and $3$ machines, and the partitions of a set (Bell and Stirling numbers).
+    - From this module, [Chapter 3 «Packing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/): the bin packing problem.
 
 !!! chiave "Objectives"
 

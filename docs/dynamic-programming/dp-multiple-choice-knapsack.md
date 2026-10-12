@@ -12,7 +12,7 @@ title: "DP for the multiple-choice knapsack problem"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter [«DP for the 0/1 knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/): the recurrence $v(j,k)$ over items and capacities, the matrix $s$ of the decisions and the reconstruction of a solution.
+    - From this module, the chapter [«DP for the 0/1 knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/): the recurrence $v(j,k)$ of the 0/1 knapsack problem (KP) over items and capacities, the matrix $s$ of the decisions and the reconstruction of a solution.
 
     - From this module, the chapter [«Knapsack problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem/): the multiple-choice knapsack problem, its classes $\mathscr{J}_h$ and its feasibility condition.
 
@@ -49,7 +49,7 @@ The problem of this chapter is the [multiple-choice knapsack problem (MCKP)](htt
     \end{array}
     $$
 
-    We refer to this MCKP instance as <span style="color:#1971c2">Example 1</span>.
+    We refer to this MCKP instance as <span style="color:#1971c2">[Example 21.1](#box-1-texmckpex1)</span>.
 
 - A feasible solution chooses exactly one item in each class, so it is described by the selected subset $S\subseteq\mathscr{I}$, with $|S\cap\mathscr{J}_h|=1$ for every class $h$, or by the binary vector $(x_1,x_2,\dots,x_n)$ of $S$.
 
@@ -57,7 +57,7 @@ The problem of this chapter is the [multiple-choice knapsack problem (MCKP)](htt
 
 - <u>Step 1</u>: computation of the optimal value
 
-    !!! chiave ""
+    !!! formula ""
 
         For any $h \in \{0,1,\dots,q\}$ and $k \in \{0,1,\dots,c\}$, let $v(h,k)$ be the optimal value of the MCKP subinstance given by:
 
@@ -122,7 +122,7 @@ The problem of this chapter is the [multiple-choice knapsack problem (MCKP)](htt
 
     !!! esempio "Example 21.2: Execution of the DP algorithm"
 
-        We consider the MCKP instance of <span style="color:#1971c2">Example 1</span>, with capacity $c=10$ and classes $\mathscr{J}_1=\{1,2\}$, $\mathscr{J}_2=\{3,4,5\}$, $\mathscr{J}_3=\{6,7\}$.
+        We consider the MCKP instance of <span style="color:#1971c2">[Example 21.1](#box-1-texmckpex1)</span>, with capacity $c=10$ and classes $\mathscr{J}_1=\{1,2\}$, $\mathscr{J}_2=\{3,4,5\}$, $\mathscr{J}_3=\{6,7\}$.
 
         For each step of the DP algorithm with $h\ge 1$, the table shows the values of $h$ and $k$, the cells $v[h][k]$ and $s[h][k]$, and the operation performed. The row $h=0$ is $v[0][k]=0$ and $s[0][k]=0$ for every $k$.
 
@@ -421,7 +421,7 @@ The problem of this chapter is the [multiple-choice knapsack problem (MCKP)](htt
 
     !!! esempio "Example 21.3: Computing an optimal solution"
 
-        After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we start from $h=3$ and $k=10$:
+        After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 21.1](#box-1-texmckpex1)</span>, we start from $h=3$ and $k=10$:
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -468,7 +468,7 @@ The problem of this chapter is the [multiple-choice knapsack problem (MCKP)](htt
 
         !!! chiave ""
 
-            An optimal solution of the MCKP instance of <span style="color:#1971c2">Example 1</span> is $S=\{2,4,7\}$, that is, the vector $x=(0,1,0,1,0,0,1)$. Its total weight is $4+2+3=9\le c$ and its optimal value is $v(3,10)=20$.
+            An optimal solution of the MCKP instance of <span style="color:#1971c2">[Example 21.1](#box-1-texmckpex1)</span> is $S=\{2,4,7\}$, that is, the vector $x=(0,1,0,1,0,0,1)$. Its total weight is $4+2+3=9\le c$ and its optimal value is $v(3,10)=20$.
 
 ### 21.1.1 Number of steps
 
@@ -534,7 +534,7 @@ The problem of this chapter is the [multiple-choice knapsack problem (MCKP)](htt
 
     - The DP algorithm executes $\Theta(c\sum_{h=1}^{q}|\mathscr{J}_h|)=\Theta(nc)$ steps.
 
-    <strong>Dashboard of the MCKP example.</strong> Example 1 ($c=10$, three classes):
+    <strong>Dashboard of the MCKP example.</strong> [Example 21.1](#box-1-texmckpex1) ($c=10$, three classes):
 
     <div class="tabella" markdown="0"><table>
     <tr>

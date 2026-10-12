@@ -6,7 +6,7 @@ title: "DP for the coin change problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 27** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Coin change](../exercises/dp-coin-change.md)
+**Part 3 · Dynamic programming · Chapter 27** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Coin change (CCP)](../exercises/dp-coin-change.md)
 
 </div>
 
@@ -14,7 +14,7 @@ title: "DP for the coin change problem"
 
     - From this module, the chapter [«DP for the unbounded knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-unbounded-knapsack/): unlimited supply of every item type, and the reconstruction of a solution.
 
-    - From this module, the chapter «Principles of dynamic programming»: optimal substructure, overlapping subproblems, base cases.
+    - From this module, the chapter [«Principles of dynamic programming»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/): optimal substructure, overlapping subproblems, base cases.
 
     - From the module <em>Algorithms</em>: [pseudocode conventions (Chapter 2)](https://fabiofurini.github.io/algorithms/basic-algorithms/02-pseudo-code/) and [the size of the input (Chapter 11)](https://fabiofurini.github.io/algorithms/analysis/11-input-size/).
 
@@ -46,11 +46,11 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
     w = (2,3,5).
     $$
 
-    We refer to this CCP instance as <span style="color:#1971c2">Example 1</span>.
+    We refer to this CCP instance as <span style="color:#1971c2">[Example 27.1](#box-1-texccpex1)</span>.
 
 !!! chiave ""
 
-    Unlike the 0/1 Knapsack Problem, where the total weight of the selected items must not exceed the capacity, the CCP requires the total value of the selected coins to be <em>exactly equal</em> to $c$. Moreover, since every denomination is available in unlimited supply, the number of coins of a given denomination used in a solution is not bounded a priori.
+    Unlike the 0/1 knapsack problem (KP), where the total weight of the selected items must not exceed the capacity, the CCP requires the total value of the selected coins to be <em>exactly equal</em> to $c$. Moreover, since every denomination is available in unlimited supply, the number of coins of a given denomination used in a solution is not bounded a priori.
 
 ### 27.1.1 Encoding of feasible solutions
 
@@ -67,7 +67,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
     where each component has the following meaning:
 
     $$
-    x_j = \text{number of coins of denomination } j \text{ used}, \qquad \forall j \in \{1,2,\dots,n\}, \quad x_j \ge 0.
+    x_j = \text{number of coins of denomination } j \text{ used}, \qquad \forall j \in \{1,2,\dots,n\}, \quad x_j \in \Z_{\ge 0}.
     $$
 
     Since the solution is feasible, the total value of the selected coins must be exactly equal to $c$:
@@ -88,7 +88,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
 - <u>Step 1</u>: computation of the optimal value
 
-    !!! chiave ""
+    !!! formula ""
 
         For any $k \in \{0,1,\dots,c\}$, let $v(k)$ be the optimal value of the CCP subinstance given by:
 
@@ -129,7 +129,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
         !!! esempio "Example 27.2: Recursion tree"
 
-            We consider the CCP instance of <span style="color:#1971c2">Example 1</span>. This is the recursion tree of the top-down approach to compute $v(10)$:
+            We consider the CCP instance of <span style="color:#1971c2">[Example 27.1](#box-1-texccpex1)</span>. This is the recursion tree of the top-down approach to compute $v(10)$:
 
             ![Figure 1](../img/dp-coin-change/fig01.svg){ .fig loading=lazy  }
 
@@ -141,7 +141,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
         !!! esempio "Example 27.3: Computing the values of the $v$ function"
 
-            We consider the CCP instance of <span style="color:#1971c2">Example 1</span>, with amount of change $c=10$ to return and denominations $w=(2,3,5)$.
+            We consider the CCP instance of <span style="color:#1971c2">[Example 27.1](#box-1-texccpex1)</span>, with amount of change $c=10$ to return and denominations $w=(2,3,5)$.
 
             The values of the function $v$ are computed as follows:
 
@@ -205,7 +205,9 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
     - We can avoid solving the same subproblems repeatedly by storing the value of each subproblem as soon as it is computed. The values are stored in a <strong>lookup table</strong>.
 
-    - Since solving any particular subproblem depends only on subproblems with a smaller amount of change, we can solve the subproblems in increasing order of $k$, starting from the base case $v(0)=0$ and building up to $v(c)$: this observation naturally leads to a <strong>much more efficient method</strong> to compute the optimal value $v(c)$ of the CCP instance.
+    - Since solving any particular subproblem depends only on subproblems with a smaller amount of change, we can solve the subproblems in increasing order of $k$, starting from the base case $v(0)=0$ and building up to $v(c)$.
+
+    - This observation naturally leads to a <strong>much more efficient method</strong> to compute the optimal value $v(c)$ of the CCP instance.
 
     - A <strong>second method</strong> to compute the optimal value $v(c)$ of the CCP instance is the <strong>bottom-up approach</strong>. The method starts from the base case and evaluates formula $\eqref{eq:ccp}$ for increasing values of $k \in \{1,2,\dots,c\}$: each value $v(k)$ is computed using already-computed values, until the value $v(c)$ of the CCP instance is obtained.
 
@@ -231,7 +233,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
         !!! esempio "Example 27.4: Execution of the DP algorithm"
 
-            We consider the CCP instance of <span style="color:#1971c2">Example 1</span>, with amount of change $c=10$ to return and denominations $w=(2,3,5)$.
+            We consider the CCP instance of <span style="color:#1971c2">[Example 27.1](#box-1-texccpex1)</span>, with amount of change $c=10$ to return and denominations $w=(2,3,5)$.
 
             For each step of the DP algorithm, the table shows the values of $k$ and $j$, the cell $v[k]$, the current value of $m$, and the comparison performed. The cell of $m$ is highlighted in <mark>red</mark> when updated; the cell of $v[k]$ is highlighted in <mark>blue</mark> when assigned.
 
@@ -634,7 +636,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
         !!! esempio "Example 27.5: Computation of the additional information"
 
-            We consider the CCP instance of <span style="color:#1971c2">Example 1</span>, with amount of change $c=10$ to return and denominations $w=(2,3,5)$.
+            We consider the CCP instance of <span style="color:#1971c2">[Example 27.1](#box-1-texccpex1)</span>, with amount of change $c=10$ to return and denominations $w=(2,3,5)$.
 
             This is the array $s$ after the execution of the DP algorithm:
 
@@ -666,7 +668,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
         !!! esempio "Example 27.6: Computing an optimal solution"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following array $s$:
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 27.1](#box-1-texccpex1)</span>, we have the following array $s$:
 
             $$
             \begin{array}{l|rrrrrrrrrrr}
@@ -813,7 +815,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
     - An optimal solution is read backwards from $s[c]$, the index of the denomination of the first coin chosen for the amount $c$, and only if $v[c]<+\infty$.
 
-    <strong>Dashboard of the CCP example.</strong> Example 1 ($c=10$, $w=(2,3,5)$):
+    <strong>Dashboard of the CCP example.</strong> [Example 27.1](#box-1-texccpex1) ($c=10$, $w=(2,3,5)$):
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -832,4 +834,4 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Coin change](../exercises/dp-coin-change.md)
+**Exercises on this chapter:** [:material-pencil: Coin change (CCP)](../exercises/dp-coin-change.md)

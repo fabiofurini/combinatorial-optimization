@@ -30,7 +30,11 @@ title: "Asymmetric travelling salesman problem (ATSP)"
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp/#sez-sec-tsp-variants">Ch. 6 «Routing problems»</a></td>
 </tr>
 <tr>
+<td><strong>Formulations</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/tsp-formulations/ilp-models-for-the-metric-and-asymmetric-tsp/#eq-ILP-ATSP">Ch. 13 «Formulations of routing problems»</a></td>
+</tr>
+<tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp/#esercizio-6-5">Exercise 6.5</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp/#esercizio-6-5">Exercise 6.5</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp-formulations/#esercizio-13-6">Exercise 13.6</a></td>
 </tr>
 </table></div>

@@ -1,8 +1,8 @@
 ---
-title: "Exercises · Approximation for P|Cmax"
+title: "Exercises · Approximation for P||Cmax"
 ---
 
-# Exercises · Approximation for P|Cmax
+# Exercises · Approximation for P||Cmax
 
 <div class="info-capitolo" markdown>
 

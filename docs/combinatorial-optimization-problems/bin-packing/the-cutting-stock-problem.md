@@ -139,6 +139,8 @@ title: "Cutting stock"
 
     ![Figure 2](../../img/bin-packing/fig02.svg){ .fig loading=lazy  }
 
+    We call this CSP instance <span style="color:#1971c2">[Example 3.2](#box-5-ex-csp)</span>: it is the reference CSP instance of the chapter.
+
 ## 3.3.1 Assumptions
 
 - We make the following assumptions:

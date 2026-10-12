@@ -6,17 +6,17 @@ title: "Approximation algorithms for bin packing"
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 36** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Bin packing (BPP)](../exercises/bin-packing-approximation.md)
+**Part 5 · Approximation algorithms · Chapter 36** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Bin packing (BPP)](../exercises/bin-packing-approximation.md) · [:material-gesture-tap: App: Tight instances](../lab/tight-instances.md)
 
 </div>
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter «Principles of approximation algorithms»: performance ratio, relative performance guarantee, tight guarantee and worst-case performance ratio $r(\mathscr{A})$.
+    - From this module, the chapter [«Principles of approximation algorithms»](approximation.md): performance ratio, relative performance guarantee, tight guarantee and worst-case performance ratio $r(\mathscr{A})$.
 
-    - From this module, the chapter «Bin packing problems»: the BPP, its instances and the counting lower bound $\left\lceil \frac{\sum_{i\in\mathscr{I}} w_i}{c} \right\rceil$ on the optimal value.
+    - From this module, the chapter [«Packing problems»](../combinatorial-optimization-problems/bin-packing/index.md): the BPP, its instances and the counting lower bound $\left\lceil \frac{\sum_{i\in\mathscr{I}} w_i}{c} \right\rceil$ on the optimal value.
 
-    - From this module, the chapter «Constructive heuristics»: heuristic algorithms that build a solution one item at a time.
+    - From this module, the chapter [«Constructive heuristics»](../heuristic-algorithms/constructive-heuristics/index.md): heuristic algorithms that build a solution one item at a time.
 
 !!! chiave "Objectives"
 
@@ -32,7 +32,7 @@ title: "Approximation algorithms for bin packing"
 
     - run the four algorithms in Python and <code>C++</code>, in the Colab notebooks of the chapter.
 
-The problem of this chapter is the [bin packing problem (BPP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/): its definition and its assumptions are on its page.
+The problem of this chapter is the [bin packing problem (BPP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/the-bin-packing-problem/): its definition and its assumptions are on its page.
 
 ## 36.1 Notation
 
@@ -40,7 +40,7 @@ The problem of this chapter is the [bin packing problem (BPP)](https://fabiofuri
 
 - A <strong>BPP feasible solution</strong> is a partition of $\mathscr{I}$ into nonempty <strong>packing patterns</strong>, i.e., subsets of items each assigned to one bin, such that the total weight of every packing pattern does not exceed the bin capacity $c$.
 
-- We denote by $z(I)$ the <strong>optimal value</strong> of the BPP on the instance $I$, i.e., the minimum number of bins, and by $\mathscr{A}(I)$ the number of bins used by the feasible solution returned by a heuristic algorithm $\mathscr{A}$. Since every heuristic of this document returns a feasible solution,
+- We denote by $z(I)$ the <strong>optimal value</strong> of the BPP on the instance $I$, i.e., the minimum number of bins, and by $\mathscr{A}(I)$ the number of bins used by the feasible solution returned by a heuristic algorithm $\mathscr{A}$. Since every heuristic algorithm of this chapter returns a feasible solution,
 
     $$
     \mathscr{A}(I) \ge z(I) ~~~~~~~\text{and}~~~~~~~ \frac{\mathscr{A}(I)}{z(I)} \ge 1
@@ -485,7 +485,7 @@ The problem of this chapter is the [bin packing problem (BPP)](https://fabiofuri
 
 - The <strong>half-full property</strong> of a feasible BPP solution states that, with the exception of at most one bin, all bins are filled to more than half of their capacity, or equivalently, that for any pair of distinct bins at least one of them is filled to more than half capacity.
 
-- The half-full property alone does <em>not</em> guarantee that two bins cannot be merged: for instance, with $c=10$ two bins of total weight $6$ and $1$ satisfy the property but can be merged into a single bin. Its role is different: it is exactly what is needed to prove a relative performance guarantee of $2$ (see the proposition at the end of this section).
+- The half-full property alone does <em>not</em> guarantee that two bins cannot be merged: for instance, with $c=10$ two bins of total weight $6$ and $1$ satisfy the property but can be merged into a single bin. Its role is different: it is exactly what is needed to prove a relative performance guarantee of $2$.
 
 <a id="box-11-def-halffull"></a>
 
@@ -782,7 +782,7 @@ The problem of this chapter is the [bin packing problem (BPP)](https://fabiofuri
     .
     $$
 
-    Since $z(I)\in\mathbb{Z}$, it follows that
+    Since $z(I)$ is an integer, it follows that
 
     $$
     z(I)\ge \Big\lfloor \frac{k}{2}\Big\rfloor +1.
@@ -1105,3 +1105,7 @@ The problem of this chapter is the [bin packing problem (BPP)](https://fabiofuri
 ---
 
 **Exercises on this chapter:** [:material-pencil: Bin packing (BPP)](../exercises/bin-packing-approximation.md)
+
+<!-- laboratorio-interattivo: sezione generata da interattivi.py -->
+
+:material-flask-outline: **In the interactive lab:** [Tight instances](../lab/tight-instances.md#voce=nf).

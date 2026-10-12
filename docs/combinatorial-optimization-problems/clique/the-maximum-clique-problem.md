@@ -72,17 +72,17 @@ title: "Maximum clique"
 
     The MCP on $G$ and the MSSP on $\overline{G}$ are the same problem: a maximum clique of $G$ is a maximum stable set of $\overline{G}$. Whatever we learn on one of the two problems holds for the other one.
 
-- A <strong>MCP instance</strong> is specified by:
+- An <strong>MCP instance</strong> is specified by:
 
     1. two integer numbers: the number of vertices $n \in \Z_{\ge 1}$ and the number of edges $m \in \Z_{\ge 1}$;
 
     2. two vectors of integer numbers of length $m$: $\vet{u} \in \Z_{\ge 1}^m$ and $\vet{v} \in \Z_{\ge 1}^m$, with the two endpoints of the edges.
 
-- A <strong>MCP feasible solution</strong> is a clique $K \subseteq V$. The empty set and a single vertex are cliques, so every instance has feasible solutions.
+- An <strong>MCP feasible solution</strong> is a clique $K \subseteq V$. The empty set and a single vertex are cliques, so every instance has feasible solutions.
 
 !!! chiave ""
 
-    Given a MCP instance, the MCP can be formally stated as:
+    Given an MCP instance, the MCP can be formally stated as:
 
     \begin{equation*}
     \label{mcpP:MCP}
@@ -124,7 +124,7 @@ title: "Maximum clique"
 
     In $\overline{G}$ the red vertices form a stable set: they take one vertex from each of the $4$ edges. We call this MCP instance <span style="color:#1971c2">[Example 5.2](#box-7-mcpP-ex2)</span>.
 
-- The Petersen graph of the chapter «Coloring problems» has no triangle, so its largest cliques are its edges and $\omega(G)=2$.
+- The Petersen graph of [Chapter 4 «Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/the-vertex-coloring-problem/) has no triangle, so its largest cliques are its edges and $\omega(G)=2$.
 
 ## 5.2.1 Assumptions
 
@@ -209,7 +209,7 @@ title: "Maximum clique"
 
 ??? dimostrazione "Proof"
 
-    The vertices of a clique are pairwise adjacent, so they take pairwise different colors: a coloring with $k$ colors has $k \ge |K|$ for every clique $K$. This is the clique bound of the chapter «Coloring problems», read from the side of the clique. <span class="qed">□</span>
+    The vertices of a clique are pairwise adjacent, so they take pairwise different colors: a coloring with $k$ colors has $k \ge |K|$ for every clique $K$. This is the clique bound of Chapter 4 [«Coloring problems»](../coloring/index.md), read from the side of the clique. <span class="qed">□</span>
 
 - <strong>Bounds on <span style="color:#1971c2">[Example 5.1](#box-6-mcpP-ex1)</span>.</strong> Vertices $1$ and $3$ have degree $3$, the other five have degree $2$. The degree bound gives $\Delta+1=4$, and the edge bound gives $4$ too, since $4\cdot 3/2 = 6 \le 8 < 10 = 5 \cdot 4/2$.
 

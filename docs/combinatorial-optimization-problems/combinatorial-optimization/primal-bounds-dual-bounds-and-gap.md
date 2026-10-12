@@ -54,9 +54,9 @@ title: "Primal bounds, dual bounds and gap"
     gap(I) = \frac{\UB - \LB}{|\LB|}.
     $$
 
-- The denominator is always the <strong>lower bound</strong>: in the maximization form it is the value of the feasible solution, as in the optimality gap of the integer linear programming module; in the minimization form it is the dual bound.
+- The denominator is always the <strong>lower bound</strong>: in the maximization form it is the value of the feasible solution, as in the optimality gap of the module <em>Integer linear programming</em>, [Chapter 2 «Primal and dual bounds»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/); in the minimization form it is the dual bound.
 
-- With this choice the gap is never smaller than the relative error of the feasible solution with respect to $z(I)$ (chapter «Heuristic algorithms»): a gap of $5\%$ guarantees a solution within $5\%$ of the optimum.
+- With this choice the gap is never smaller than the relative error $|f(\bar S) - z(I)|/z(I)$ of the feasible solution $\bar S$: a gap of $5\%$ guarantees a solution within $5\%$ of the optimum.
 
 - If the gap is zero, the feasible solution $\bar S$ is optimal and the dual bound is a <strong>certificate</strong> of its optimality.
 

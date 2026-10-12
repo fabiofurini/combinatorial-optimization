@@ -77,7 +77,7 @@ The problem of this section is the Cutting Stock Problem (CSP), defined in [Chap
     \end{array}
     $$
 
-    This is the CSP instance of the chapter «Packing problems», where a solution with $3$ bins is found by eye: hence $m=3$ is a valid upper bound. The $\mathrm{ILP}_{\mathrm{CSP}}$ model with $m=3$ for this CSP instance is:
+    This is the CSP instance of [Chapter 3 «Packing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem/), where a solution with $3$ bins is found by eye: hence $m=3$ is a valid upper bound. The $\mathrm{ILP}_{\mathrm{CSP}}$ model with $m=3$ for this CSP instance is:
 
     $$
     \begin{array}{rlcl}
@@ -101,7 +101,7 @@ The problem of this section is the Cutting Stock Problem (CSP), defined in [Chap
     \tilde{y}_1 = \tilde{y}_2 = \tilde{y}_3 = 1,
     $$
 
-    with all the other variables equal to $0$. The optimal value is $z(\mathrm{ILP}_{\mathrm{CSP}}) = 3$, as found in the chapter «Packing problems». The bins contain one copy of items $1$ and $4$ (weight $10$), three copies of item $3$ (weight $9$), and one copy of items $1$ and $2$ (weight $9$). The optimal solution is not unique: the solution of that chapter, with the bins $\{4,1\}$, $\{1,3,3\}$ and $\{2,3\}$, also uses $3$ bins.
+    with all the other variables equal to $0$. The optimal value is $z(\mathrm{ILP}_{\mathrm{CSP}}) = 3$, as found in Chapter 3. The bins contain one copy of items $1$ and $4$ (weight $10$), three copies of item $3$ (weight $9$), and one copy of items $1$ and $2$ (weight $9$). The optimal solution is not unique: the solution of Chapter 3, with the bins $\{4,1\}$, $\{1,3,3\}$ and $\{2,3\}$, also uses $3$ bins.
 
 ## 10.6 Typical mistakes
 
@@ -109,7 +109,7 @@ The problem of this section is the Cutting Stock Problem (CSP), defined in [Chap
 
     - <strong>Choosing $m$ too small.</strong> The number $m$ of bins must be an upper bound on the number of bins of an optimal solution: with $m < z(\mathrm{ILP}_{\mathrm{BPP}})$ the model has no feasible solution. The value $m=n$ is always valid.
 
-    - <strong>Forgetting to round up.</strong> The optimal value of the $\mathrm{ILP}_{\mathrm{BPP}}$ model is an integer, so the lower bound from the relaxations is $\lceil \sum_{j} w_j / c \rceil$; in Example 1 it is $\lceil \tfrac{8}{5} \rceil = 2$, not $\tfrac{8}{5}$.
+    - <strong>Forgetting to round up.</strong> The optimal value of the $\mathrm{ILP}_{\mathrm{BPP}}$ model is an integer, so the lower bound from the relaxations is $\lceil \sum_{j} w_j / c \rceil$; in [Example 10.1](an-ilp-model-for-the-bin-packing-problem.md#box-1-texexpbox_ilp_bpp) it is $\lceil \tfrac{8}{5} \rceil = 2$, not $\tfrac{8}{5}$.
 
     - <strong>Believing that the model counts only non-empty bins.</strong> The constraints allow $y_b=1$ for an empty bin: it is the objective function that switches such bins off, in every optimal solution.
 
@@ -131,9 +131,9 @@ The problem of this section is the Cutting Stock Problem (CSP), defined in [Chap
 
     - The ratio between $z(\mathrm{LP}_{\mathrm{BPP}})$ and $z(\mathrm{ILP}_{\mathrm{BPP}})$ is at least $\tfrac{1}{2}$, and the value $\tfrac{1}{2}$ is asymptotically attained; the same holds for $\lceil z(\mathrm{LP}_{\mathrm{BPP}}) \rceil$.
 
-    - The $\mathrm{ILP}_{\mathrm{CSP}}$ model has the structure of the $\mathrm{ILP}_{\mathrm{BPP}}$ model, with $mn$ integer variables $x_{jb}$ that count the copies and the demands $d_j$ on the right-hand side; on the CSP instance of the chapter «Packing problems» its optimal value is $3$.
+    - The $\mathrm{ILP}_{\mathrm{CSP}}$ model has the structure of the $\mathrm{ILP}_{\mathrm{BPP}}$ model, with $mn$ integer variables $x_{jb}$ that count the copies and the demands $d_j$ on the right-hand side; on the CSP instance of Chapter 3 its optimal value is $3$.
 
-    <strong>Dashboard of Example 1.</strong> Bounds on $z(\mathrm{ILP}_{\mathrm{BPP}})$ computed in this chapter:
+    <strong>Dashboard of [Example 10.1](an-ilp-model-for-the-bin-packing-problem.md#box-1-texexpbox_ilp_bpp).</strong> Bounds on $z(\mathrm{ILP}_{\mathrm{BPP}})$ computed in this chapter:
 
     <div class="tabella" markdown="0"><table>
     <tr>

@@ -6,13 +6,13 @@ title: "Constructive heuristics"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 30** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
+**Part 4 · Heuristic algorithms · Chapter 30** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive heuristics](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md) · [:material-gesture-tap: App: Vertex coloring: greedy and DSATUR](../../lab/coloring-greedy-dsatur.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
 
 </div>
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter «Heuristic algorithms»: primal and dual bounds, the gap, and the four reference instances.
+    - From this module, the chapter [«Heuristic algorithms: definitions»](https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/heuristics/): primal and dual bounds, the gap, and the four reference instances.
 
     - From this module, the chapters on the problems: the KP, the BPP, $P\,||\,C_{\max}$ and the TSP.
 
@@ -112,8 +112,8 @@ title: "Constructive heuristics"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Constructive](../../exercises/constructive-heuristics.md)
+**Exercises on this chapter:** [:material-pencil: Constructive heuristics](../../exercises/constructive-heuristics.md)
 
 <!-- laboratorio-interattivo: sezione generata da interattivi.py -->
 
-:material-flask-outline: **In the interactive lab:** [Bin packing heuristics](../../lab/bin-packing-heuristics.md), [List scheduling and LPT](../../lab/list-scheduling-lpt.md).
+:material-flask-outline: **In the interactive lab:** [Bin packing heuristics](../../lab/bin-packing-heuristics.md), [List scheduling and LPT](../../lab/list-scheduling-lpt.md), [Vertex coloring: greedy and DSATUR](../../lab/coloring-greedy-dsatur.md), [TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md).

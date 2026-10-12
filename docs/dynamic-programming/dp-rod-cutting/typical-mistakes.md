@@ -6,7 +6,7 @@ title: "Typical mistakes · In summary"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 28** · [:material-book-open-variant: Chapter 28: Rod cutting](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting](../../exercises/dp-rod-cutting.md)
+**Part 3 · Dynamic programming · Chapter 28** · [:material-book-open-variant: Chapter 28: Rod cutting (RCP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting (RCP)](../../exercises/dp-rod-cutting.md)
 
 </div>
 
@@ -34,7 +34,7 @@ title: "Typical mistakes · In summary"
 
     - The vector ${s}$ of the first pieces gives an optimal solution for every rod length at no extra cost.
 
-    <strong>Dashboard of the RCP example.</strong> Example 1 (rod of length $4$):
+    <strong>Dashboard of the RCP example.</strong> [Example 28.1](index.md#box-1-texexpbox1) (rod of length $4$):
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -53,5 +53,5 @@ title: "Typical mistakes · In summary"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Rod cutting](../../exercises/dp-rod-cutting.md)
+**Exercises on this chapter:** [:material-pencil: Rod cutting (RCP)](../../exercises/dp-rod-cutting.md)
 

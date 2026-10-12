@@ -6,7 +6,7 @@ title: "A second DP algorithm: An implementation with lists"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 17** · [:material-book-open-variant: Chapter 17: 0/1 knapsack (KP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP table for the knapsack](../../lab/dp-knapsack-table.md)
+**Part 3 · Dynamic programming · Chapter 17** · [:material-book-open-variant: Chapter 17: 0/1 knapsack (KP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP tables for the knapsack problems](../../lab/dp-knapsack-table.md)
 
 </div>
 
@@ -14,7 +14,9 @@ title: "A second DP algorithm: An implementation with lists"
 
     - The DP algorithm of this section stores one value for every pair given by an item and a target profit, that is $(n+1)(P+1)$ values in total. Many of these values are equal to $+\infty$, because no subset of the available items has that total profit.
 
-    - This subsection describes a <strong>different implementation of the same DP algorithm</strong>. The recursive decomposition and the optimal substructure are the ones of formula $\eqref{eq:2}$: what changes is the data structure. Instead of a whole row of the matrix, only the pairs that are actually obtained by a subset of items are stored, and among them only those that can lead to an optimal solution. These pairs are kept in a list, one list for each item.
+    - This subsection describes a <strong>different implementation of the same DP algorithm</strong>. The recursive decomposition and the optimal substructure are the ones of formula $\eqref{eq:2}$: what changes is the data structure.
+
+    - Instead of a whole row of the matrix, only the pairs that are actually obtained by a subset of items are stored, and among them only those that can lead to an optimal solution. These pairs are kept in a list, one list for each item.
 
     !!! chiave ""
 
@@ -34,9 +36,11 @@ title: "A second DP algorithm: An implementation with lists"
 
             A state is <strong>non-dominated</strong> if no other state dominates it.
 
-    - A dominated state can be discarded. Indeed, let $(w,p)$ dominate $(w',p')$ and let $S'$ be a subset of the remaining items that can be added to $(w',p')$ without exceeding the capacity. Since $w\le w'$, the same subset $S'$ can also be added to $(w,p)$, and since $p\ge p'$ the resulting total profit is not smaller. Therefore no optimal solution is lost.
+    - A dominated state can be discarded. Indeed, let $(w,p)$ dominate $(w',p')$ and let $S'$ be a subset of the remaining items that can be added to $(w',p')$ without exceeding the capacity.
 
-        !!! chiave ""
+    - Since $w\le w'$, the same subset $S'$ can also be added to $(w,p)$, and since $p\ge p'$ the resulting total profit is not smaller. Therefore no optimal solution is lost.
+
+        !!! formula ""
 
             For any $j \in \{0,1,\dots,n\}$, let $L_j$ be the list of the non-dominated states that can be obtained by selecting a subset of the items $\{1,2,\dots,j\}$, sorted by strictly increasing weight.
 
@@ -56,7 +60,9 @@ title: "A second DP algorithm: An implementation with lists"
             M_j=\big\{\,(w+w_j,\;p+p_j)\;:\;(w,p)\in L_{j-1}\,\big\}.
             $$
 
-    - The recursive decomposition process of formula $\eqref{eq:6}$ generates $2$ <strong>independent subproblems</strong> for each state of $L_{j-1}$, corresponding to whether or not to select item $j$. If item $j$ is not selected, the state is unchanged and belongs to $L_{j-1}$. If item $j$ is selected, the state becomes $(w+w_j,p+p_j)$ and belongs to $M_j$. Here, $L_0=\{(0,0)\}$ since the only subset of an empty set of items is the empty subset.
+    - The recursive decomposition process of formula $\eqref{eq:6}$ generates $2$ <strong>independent subproblems</strong> for each state of $L_{j-1}$, corresponding to whether or not to select item $j$. If item $j$ is not selected, the state is unchanged and belongs to $L_{j-1}$. If item $j$ is selected, the state becomes $(w+w_j,p+p_j)$ and belongs to $M_j$.
+
+    - Here, $L_0=\{(0,0)\}$ since the only subset of an empty set of items is the empty subset.
 
     - As in formula $\eqref{eq:2}$, the knapsack capacity does not appear in the recursion: the list $L_j$ collects the states of <em>all</em> the subsets of the items $\{1,2,\dots,j\}$, including those whose total weight exceeds the capacity.
 
@@ -304,9 +310,9 @@ title: "A second DP algorithm: An implementation with lists"
 
             For instance, the state $L_3[4]=(5,7)$ has ${\sigma}_3[4]=1$ and ${\rho}_3[4]=2$: it is obtained by selecting item $3$ from the state $L_2[2]=(2,3)$, since $2+w_3=2+3=5$ and $3+p_3=3+4=7$.
 
-    - The reconstruction starts from the position $h^\star$ of the state that attains the maximum of formula $\eqref{eq:7}$, that is the position at which the last loop of <code>DP2\_Lists</code> updates $z$ for the last time. It is not in general the last position of $L_n$, because the last states of $L_n$ may have a total weight larger than the knapsack capacity.
+    - The reconstruction starts from the position $\tilde h$ of the state that attains the maximum of formula $\eqref{eq:7}$, that is the position at which the last loop of <code>DP2\_Lists</code> updates $z$ for the last time. It is not in general the last position of $L_n$, because the last states of $L_n$ may have a total weight larger than the knapsack capacity.
 
-    - An optimal solution is then reconstructed by scanning the items from $j=n$ down to $j=1$, starting from $h=h^\star$:
+    - An optimal solution is then reconstructed by scanning the items from $j=n$ down to $j=1$, starting from $h=\tilde h$:
 
         $$
         \begin{array}{ll}
@@ -314,11 +320,11 @@ title: "A second DP algorithm: An implementation with lists"
         \end{array}
         $$
 
-        This yields the vector $(x_1,x_2,\dots,x_n)$, where $x_j$ is equal to $1$ if item $j$ is selected in an optimal solution, and $0$ otherwise.
+    - This yields the vector $(x_1,x_2,\dots,x_n)$, where $x_j$ is equal to $1$ if item $j$ is selected in an optimal solution, and $0$ otherwise.
 
         !!! algoritmo "Algorithm: DP2\_Lists\_Reconstruct"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> The number <span class="arithmatex">\(n\)</span> of items, the position <span class="arithmatex">\(h^\star\)</span> of the optimal state in <span class="arithmatex">\(L_n\)</span>, and the stored values <span class="arithmatex">\({\sigma}\)</span> and <span class="arithmatex">\({\rho}\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> An optimal solution of the KP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP2_Lists_Reconstruct(<span class="arithmatex">\(n,h^\star,\sigma,\rho\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(x := \textnormal{new array}[1..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(x[j] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><span class="arithmatex">\(h := h^\star\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><strong>for</strong> <span class="arithmatex">\(j := n\)</span> <strong>to</strong> <span class="arithmatex">\(1\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><span class="arithmatex">\(x[j] \leftarrow {\sigma}_j[h]\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">9</span><span class="arithmatex">\(h \leftarrow {\rho}_j[h]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">11</span><strong>return</strong> <span class="arithmatex">\(x\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> The number <span class="arithmatex">\(n\)</span> of items, the position <span class="arithmatex">\(\tilde h\)</span> of the optimal state in <span class="arithmatex">\(L_n\)</span>, and the stored values <span class="arithmatex">\({\sigma}\)</span> and <span class="arithmatex">\({\rho}\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> An optimal solution of the KP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP2_Lists_Reconstruct(<span class="arithmatex">\(n,\tilde h,\sigma,\rho\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(x := \textnormal{new array}[1..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(x[j] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><span class="arithmatex">\(h := \tilde h\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><strong>for</strong> <span class="arithmatex">\(j := n\)</span> <strong>to</strong> <span class="arithmatex">\(1\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><span class="arithmatex">\(x[j] \leftarrow {\sigma}_j[h]\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">9</span><span class="arithmatex">\(h \leftarrow {\rho}_j[h]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">11</span><strong>return</strong> <span class="arithmatex">\(x\)</span></div></div>
 
         <a id="box-124-texkp4sol"></a>
 
@@ -330,9 +336,9 @@ title: "A second DP algorithm: An implementation with lists"
             L_3=\big\{(0,0),(2,3),(3,4),(5,7),(8,10)\big\}
             $$
 
-            and the maximum of formula $\eqref{eq:7}$ is attained by the state $L_3[4]=(5,7)$, so that $h^\star=4$ and the optimal value is $7$.
+            and the maximum of formula $\eqref{eq:7}$ is attained by the state $L_3[4]=(5,7)$, so that $\tilde h=4$ and the optimal value is $7$.
 
-            We can reconstruct an optimal solution by starting from $j=3$ and $h=h^\star=4$ as follows:
+            We can reconstruct an optimal solution by starting from $j=3$ and $h=\tilde h=4$ as follows:
 
             <div class="tabella" markdown="0"><table>
             <tr>

@@ -51,11 +51,15 @@ title: "Uncapacitated lot sizing problem (ULS)"
 </tr>
 <tr>
 <td><strong>Dynamic programming</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/#box-3-thmZIO">Ch. 25 «DP for the uncapacitated lot sizing problem»</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/#164-the-dp-algorithms-of-this-module">Ch. 16 «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/#box-3-thmZIO">Ch. 25 «DP for the uncapacitated lot sizing problem»</a></td>
 </tr>
 <tr>
 <td><strong>MIP heuristics</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/mip-heuristics-classical/#box-16-ex-rfcourse">Ch. 33 «MIP heuristics for the classical problems»</a></td>
+</tr>
+<tr>
+<td><strong>Exercises</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/lot-sizing/#esercizio-8-4">Exercise 8.4</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/lot-sizing-formulations/#esercizio-15-6">Exercise 15.6</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-lot-sizing/">Ch. 25 (3 exercises)</a></td>
 </tr>
 <tr>
 <td><strong>Reference instances</strong></td>

@@ -77,9 +77,9 @@ title: "Exercises · Metaheuristics"
 
     $$
     \begin{array}{l|ccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
-    \hline {p_i} & {11} & {5} & {18} & {8} & {8} \\
-    {w_i} & {5} & {3} & {11} & {6} & {7} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\
+    \hline {p_j} & {11} & {5} & {18} & {8} & {8} \\
+    {w_j} & {5} & {3} & {11} & {6} & {7} \\
     \hline
     \end{array}
     $$
@@ -87,7 +87,7 @@ title: "Exercises · Metaheuristics"
     Simulated annealing with the flip neighbourhood maximizes
 
     $$
-    f_\beta(x)=\sum_i p_ix_i-\beta\max\Big\{0,\sum_i w_ix_i-c\Big\},
+    f_\beta(x)=\sum_j p_jx_j-\beta\max\Big\{0,\sum_j w_jx_j-c\Big\},
     $$
 
     with $T_0=4$, $\alpha=0.8$, $L=2$, $T_{\min}=1.7$. At each iteration $u$ chooses the item $1+\lfloor 5u\rfloor$ to flip and $v$ is used in the acceptance test. The random numbers are $0.63$, $0.11$, $0.17$, $0.66$, $0.38$, $0.94$, $0.58$, $0.59$, $0.69$, $0.67$, $0.39$, $0.62$, $0.69$, $0.07$, $0.59$, $0.42$.
@@ -310,9 +310,9 @@ title: "Exercises · Metaheuristics"
 
     **Questions**
 
-    1. Compute the nearest neighbour tour $\pi$ from city $1$ and show that it is a local optimum for 2-opt.
+    1. Compute the nearest neighbour tour $\sigma$ from city $1$ and show that it is a local optimum for 2-opt.
 
-    2. Perform the first iteration of tabu search from $\pi$: which move is chosen, and which edges become tabu?
+    2. Perform the first iteration of tabu search from $\sigma$: which move is chosen, and which edges become tabu?
 
     3. Perform the second and the third iteration.
 
@@ -320,7 +320,7 @@ title: "Exercises · Metaheuristics"
 
 ??? soluzione "Solution"
 
-    1. $\pi=(1,3,2,6,5,4)$, of length $22$; the deltas of its neighbours are $(1,3)$: $+7$, $(1,4)$: $+7$, $(1,5)$: $+5$, $(2,4)$: $+0$, $(2,5)$: $+0$, $(2,6)$: $+0$, $(3,5)$: $+0$, $(3,6)$: $+1$, $(4,6)$: $+4$: none is negative, so $\pi$ is a 2-opt local optimum.
+    1. $\sigma=(1,3,2,6,5,4)$, of length $22$; the deltas of its neighbours are $(1,3)$: $+7$, $(1,4)$: $+7$, $(1,5)$: $+5$, $(2,4)$: $+0$, $(2,5)$: $+0$, $(2,6)$: $+0$, $(3,5)$: $+0$, $(3,6)$: $+1$, $(4,6)$: $+4$: none is negative, so $\sigma$ is a 2-opt local optimum.
 
     2. From $(1,3,2,6,5,4)$ the neighbours have $\delta$: $(1,3)$: $+7$, $(1,4)$: $+7$, $(1,5)$: $+5$, $(2,4)$: $+0$, $(2,5)$: $+0$, $(2,6)$: $+0$, $(3,5)$: $+0$, $(3,6)$: $+1$, $(4,6)$: $+4$. The best non-tabu move is $(2,4)$ with $\delta=0$: it removes the edges $(3,2)$, $(6,5)$, which become tabu until iteration $3$; new tour $(1,3,6,2,5,4)$ of length $22$. The search moves although no move improves: it leaves the local optimum through a tour of the same length.
 
@@ -351,7 +351,7 @@ title: "Exercises · Metaheuristics"
     \end{array}
     $$
 
-    The 2-opt local optimum is the nearest neighbour tour $(1,3,2,6,5,4)$ of length $22$. Iterated local search uses the double-bridge kick with cut positions $p_1=1+\lfloor u_1(n-3)\rfloor$, $p_2=p_1+1+\lfloor u_2(n-2-p_1)\rfloor$, $p_3=p_2+1+\lfloor u_3(n-1-p_2)\rfloor$ ($A=\pi_1..\pi_{p_1}$, $B=\pi_{p_1+1}..\pi_{p_2}$, $C=\pi_{p_2+1}..\pi_{p_3}$, $D=\pi_{p_3+1}..\pi_n$, new tour $A\,C\,B\,D$), the 2-opt local search with best improvement, and accepts a new local optimum if it is shorter. The random numbers are $0.13$, $0.76$, $0.46$.
+    The 2-opt local optimum is the nearest neighbour tour $(1,3,2,6,5,4)$ of length $22$. Iterated local search uses the double-bridge kick with cut positions $p_1=1+\lfloor u_1(n-3)\rfloor$, $p_2=p_1+1+\lfloor u_2(n-2-p_1)\rfloor$, $p_3=p_2+1+\lfloor u_3(n-1-p_2)\rfloor$ ($A=\sigma_1..\sigma_{p_1}$, $B=\sigma_{p_1+1}..\sigma_{p_2}$, $C=\sigma_{p_2+1}..\sigma_{p_3}$, $D=\sigma_{p_3+1}..\sigma_n$, new tour $A\,C\,B\,D$), the 2-opt local search with best improvement, and accepts a new local optimum if it is shorter. The random numbers are $0.13$, $0.76$, $0.46$.
 
     **Questions**
 
@@ -392,7 +392,7 @@ title: "Exercises · Metaheuristics"
     \end{array}
     $$
 
-    The 2-opt local optimum is the nearest neighbour tour $(1,3,2,6,5,4)$ of length $22$. Iterated local search uses the double-bridge kick with cut positions $p_1=1+\lfloor u_1(n-3)\rfloor$, $p_2=p_1+1+\lfloor u_2(n-2-p_1)\rfloor$, $p_3=p_2+1+\lfloor u_3(n-1-p_2)\rfloor$ ($A=\pi_1..\pi_{p_1}$, $B=\pi_{p_1+1}..\pi_{p_2}$, $C=\pi_{p_2+1}..\pi_{p_3}$, $D=\pi_{p_3+1}..\pi_n$, new tour $A\,C\,B\,D$), the 2-opt local search with best improvement, and accepts a new local optimum if it is shorter. The random numbers are $0.16$, $0.13$, $0.01$.
+    The 2-opt local optimum is the nearest neighbour tour $(1,3,2,6,5,4)$ of length $22$. Iterated local search uses the double-bridge kick with cut positions $p_1=1+\lfloor u_1(n-3)\rfloor$, $p_2=p_1+1+\lfloor u_2(n-2-p_1)\rfloor$, $p_3=p_2+1+\lfloor u_3(n-1-p_2)\rfloor$ ($A=\sigma_1..\sigma_{p_1}$, $B=\sigma_{p_1+1}..\sigma_{p_2}$, $C=\sigma_{p_2+1}..\sigma_{p_3}$, $D=\sigma_{p_3+1}..\sigma_n$, new tour $A\,C\,B\,D$), the 2-opt local search with best improvement, and accepts a new local optimum if it is shorter. The random numbers are $0.16$, $0.13$, $0.01$.
 
     **Questions**
 
@@ -454,9 +454,9 @@ title: "Exercises · Metaheuristics"
 
     $$
     \begin{array}{l|ccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
-    \hline {p_i} & {11} & {5} & {18} & {8} & {8} \\
-    {w_i} & {5} & {3} & {11} & {6} & {7} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\
+    \hline {p_j} & {11} & {5} & {18} & {8} & {8} \\
+    {w_j} & {5} & {3} & {11} & {6} & {7} \\
     \hline
     \end{array}
     $$
@@ -532,9 +532,9 @@ title: "Exercises · Metaheuristics"
 
     $$
     \begin{array}{l|ccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
-    \hline {p_i} & {11} & {5} & {18} & {8} & {8} \\
-    {w_i} & {5} & {3} & {11} & {6} & {7} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\
+    \hline {p_j} & {11} & {5} & {18} & {8} & {8} \\
+    {w_j} & {5} & {3} & {11} & {6} & {7} \\
     \hline
     \end{array}
     $$
@@ -575,11 +575,11 @@ title: "Exercises · Metaheuristics"
 
 !!! esercizio "Exercise 32.13: Large neighbourhood search 1"
 
-    Bins of capacity $c=10$ and $8$ items with weights $w=(2,7,5,5,3,2,6,6)$. LNS empties the least loaded bin (ties: smallest index) and one other bin chosen at random (the bin in position $1+\lfloor u\cdot(nb-1)\rfloor$ among the others), repacks the removed items by FFD into new bins, keeps the other bins, and accepts the new packing if it uses fewer bins, or as many bins and a sum of squared loads not smaller. It stops when $nb$ reaches $\lceil\sum_iw_i/c\rceil$. The random numbers are $0.13$, $0.76$, $0.46$.
+    Bins of capacity $c=10$ and $8$ items with weights $w=(2,7,5,5,3,2,6,6)$. LNS empties the least loaded bin (ties: smallest index) and one other bin chosen at random (the bin in position $1+\lfloor u\cdot(nb-1)\rfloor$ among the others), repacks the removed items by FFD into new bins, keeps the other bins, and accepts the new packing if it uses fewer bins, or as many bins and a sum of squared loads not smaller. It stops when $nb$ reaches $\lceil\sum_jw_j/c\rceil$. The random numbers are $0.13$, $0.76$, $0.46$.
 
     **Questions**
 
-    1. Compute the First Fit packing and the lower bound $\lceil\sum_iw_i/c\rceil$.
+    1. Compute the First Fit packing and the lower bound $\lceil\sum_jw_j/c\rceil$.
 
     2. Perform the first iteration of LNS.
 
@@ -589,7 +589,7 @@ title: "Exercises · Metaheuristics"
 
 ??? soluzione "Solution"
 
-    1. First Fit gives $P_{1}=\{1,2\}$, $P_{2}=\{3,4\}$, $P_{3}=\{5,6\}$, $P_{4}=\{7\}$, $P_{5}=\{8\}$: $5$ bins. $\sum_iw_i=36$, so at least $\lceil 36/10\rceil=4$ bins are needed.
+    1. First Fit gives $P_{1}=\{1,2\}$, $P_{2}=\{3,4\}$, $P_{3}=\{5,6\}$, $P_{4}=\{7\}$, $P_{5}=\{8\}$: $5$ bins. $\sum_jw_j=36$, so at least $\lceil 36/10\rceil=4$ bins are needed.
 
     2. - Iteration $1$: loads $(9,10,5,6,6)$; emptied bins $P_{3},P_{1}$; removed items $\{1,2,5,6\}$; FFD repacking: $P_{1}=\{3,4\}$, $P_{2}=\{7\}$, $P_{3}=\{8\}$, $P_{4}=\{2,5\}$, $P_{5}=\{1,6\}$; $nb'=5$, $\sum_b(\cdot)^2$: $278\to 288$: accepted.
 
@@ -646,7 +646,7 @@ title: "Exercises · Metaheuristics"
     \end{array}
     $$
 
-    LNS starts from the nearest neighbour tour $(1,3,2,6,5,4)$ (length $22$), removes $q=2$ cities at random (the city in position $2+\lfloor u(|\pi|-1)\rfloor$ of the current partial tour, so that city $1$ is never removed), reinserts them in the order of removal by cheapest insertion (ties: first position), and accepts the new tour if it is shorter. The random numbers are $0.68$, $0.16$, $0.84$, $0.92$.
+    LNS starts from the nearest neighbour tour $(1,3,2,6,5,4)$ (length $22$), removes $q=2$ cities at random (the city in position $2+\lfloor u(|\sigma|-1)\rfloor$ of the current partial tour, so that city $1$ is never removed), reinserts them in the order of removal by cheapest insertion (ties: first position), and accepts the new tour if it is shorter. The random numbers are $0.68$, $0.16$, $0.84$, $0.92$.
 
     **Questions**
 
@@ -678,9 +678,9 @@ title: "Exercises · Metaheuristics"
 
     $$
     \begin{array}{l|ccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
-    \hline {p_i} & {11} & {5} & {18} & {8} & {8} \\
-    {w_i} & {5} & {3} & {11} & {6} & {7} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\
+    \hline {p_j} & {11} & {5} & {18} & {8} & {8} \\
+    {w_j} & {5} & {3} & {11} & {6} & {7} \\
     \hline
     \end{array}
     $$
@@ -715,9 +715,9 @@ title: "Exercises · Metaheuristics"
 
     $$
     \begin{array}{l|ccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
-    \hline {p_i} & {11} & {5} & {18} & {8} & {8} \\
-    {w_i} & {5} & {3} & {11} & {6} & {7} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\
+    \hline {p_j} & {11} & {5} & {18} & {8} & {8} \\
+    {w_j} & {5} & {3} & {11} & {6} & {7} \\
     \hline
     \end{array}
     $$

@@ -316,7 +316,7 @@ title: "Exercises · Routing problems"
 
         and the same two with $d_{31}$. All the other $20$ inequalities hold. Going from $1$ to $3$ directly is longer than going through city $2$ or city $4$.
 
-    2. $d_{13}$ must satisfy $d_{13}\le 9$ and $d_{13}\le 9$; when $d_{13}$ is on the right-hand side, decreasing it from $10$ cannot violate an inequality that already holds. The largest value is $d_{13}=9$.
+    2. $d_{13}$ must satisfy $d_{13}\le d_{12}+d_{23}=9$ and $d_{13}\le d_{14}+d_{43}=9$; when $d_{13}$ is on the right-hand side, decreasing it from $10$ cannot violate an inequality that already holds. The largest value is $d_{13}=9$.
 
     3. The three tours are:
 
@@ -433,7 +433,7 @@ title: "Exercises · Routing problems"
 
     **Questions**
 
-    1. Write the instance as a combinatorial optimization problem in the form of the definition of the chapter [«Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): take as ground set $\mathscr{U}$ the set of the edges, and describe the feasible solutions $\mathcal{F}$ and the objective function $f$. How many subsets does $\mathscr{U}$ have?
+    1. Write the instance as a combinatorial optimization problem in the form of the definition of [Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): take as ground set $\mathscr{U}$ the set of the edges, and describe the feasible solutions $\mathcal{F}$ and the objective function $f$. How many subsets does $\mathscr{U}$ have?
 
     2. How many subsets of $\mathscr{U}$ have exactly $4$ edges? How many of them are tours? Explain why the others are not feasible.
 

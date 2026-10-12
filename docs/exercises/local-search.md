@@ -20,14 +20,14 @@ title: "Exercises · Local search"
 
     $$
     \begin{array}{l|ccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
-    \hline {p_i} & {10} & {7} & {13} & {14} & {8} \\[1ex]
-    {w_i} & {2} & {3} & {8} & {9} & {7} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\[1ex]
+    \hline {p_j} & {10} & {7} & {13} & {14} & {8} \\[1ex]
+    {w_j} & {2} & {3} & {8} & {9} & {7} \\
     \hline
     \end{array}
     $$
 
-    The items are sorted by non-increasing efficiency. The neighbourhood flip+swap contains the feasible vectors obtained by a flip (add or remove one item) or by a swap (remove a selected item $i$, add an unselected item $k$); the flips are examined first, for $i=1,\dots,n$, then the swaps, for increasing $i$ and, for each $i$, increasing $k$. Ties in best improvement are broken in favour of the move examined first.
+    The items are sorted by non-increasing efficiency. The neighbourhood flip+swap contains the feasible vectors obtained by a flip (add or remove one item) or by a swap (remove a selected item $j$, add an unselected item $k$); the flips are examined first, for $j=1,\dots,n$, then the swaps, for increasing $j$ and, for each $j$, increasing $k$. Ties in best improvement are broken in favour of the move examined first.
 
     **Questions**
 
@@ -445,14 +445,14 @@ title: "Exercises · Local search"
 
     $$
     \begin{array}{l|ccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
-    \hline {p_i} & {8} & {9} & {14} & {11} & {9} \\[1ex]
-    {w_i} & {3} & {5} & {9} & {9} & {8} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\[1ex]
+    \hline {p_j} & {8} & {9} & {14} & {11} & {9} \\[1ex]
+    {w_j} & {3} & {5} & {9} & {9} & {8} \\
     \hline
     \end{array}
     $$
 
-    The items are sorted by non-increasing efficiency. The neighbourhood flip+swap contains the feasible vectors obtained by a flip (add or remove one item) or by a swap (remove a selected item $i$, add an unselected item $k$); the flips are examined first, for $i=1,\dots,n$, then the swaps, for increasing $i$ and, for each $i$, increasing $k$. Ties in best improvement are broken in favour of the move examined first.
+    The items are sorted by non-increasing efficiency. The neighbourhood flip+swap contains the feasible vectors obtained by a flip (add or remove one item) or by a swap (remove a selected item $j$, add an unselected item $k$); the flips are examined first, for $j=1,\dots,n$, then the swaps, for increasing $j$ and, for each $j$, increasing $k$. Ties in best improvement are broken in favour of the move examined first.
 
     **Questions**
 
@@ -858,14 +858,14 @@ title: "Exercises · Local search"
 
     $$
     \begin{array}{l|ccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
-    \hline {p_i} & {14} & {7} & {10} & {8} & {6} \\[1ex]
-    {w_i} & {4} & {4} & {7} & {7} & {9} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\[1ex]
+    \hline {p_j} & {14} & {7} & {10} & {8} & {6} \\[1ex]
+    {w_j} & {4} & {4} & {7} & {7} & {9} \\
     \hline
     \end{array}
     $$
 
-    The items are sorted by non-increasing efficiency. With penalties, the local search maximizes $g_\alpha(x)=\sum_i p_ix_i-\alpha\max\{0,\sum_i w_ix_i-c\}$ over all the binary vectors, with the flip neighbourhood (flips examined for $i=1,\dots,n$) and the best-improvement rule.
+    The items are sorted by non-increasing efficiency. With penalties, the local search maximizes $g_\alpha(x)=\sum_j p_jx_j-\alpha\max\{0,\sum_j w_jx_j-c\}$ over all the binary vectors, with the flip neighbourhood (flips examined for $j=1,\dots,n$) and the best-improvement rule.
 
     **Questions**
 
@@ -1321,7 +1321,7 @@ title: "Exercises · Local search"
 
         No flip increases $g_{3}$: the search stops in $x=(1,1,0,0,0)$, of weight $8$ and profit $21$.
 
-        With $\alpha=3$ the search does not move: it behaves as the feasible search and stops in the solution of $GR$, of profit $21$. A small $\alpha$ ($1$) lets the search stop among infeasible vectors; a large $\alpha$ ($3$) forbids it to cross the infeasible region; here only $\alpha=2$ reaches the optimum. If $\alpha>\max_i p_i=14$, every infeasible vector has an improving flip (removing any selected item decreases the excess by at least $1$ and gains at least $\alpha-p_i>0$), so all the local optima are feasible; but then, from a feasible vector, no flip that creates an excess is improving, and the search never leaves the feasible region.
+        With $\alpha=3$ the search does not move: it behaves as the feasible search and stops in the solution of $GR$, of profit $21$. A small $\alpha$ ($1$) lets the search stop among infeasible vectors; a large $\alpha$ ($3$) forbids it to cross the infeasible region; here only $\alpha=2$ reaches the optimum. If $\alpha>\max_j p_j=14$, every infeasible vector has an improving flip (removing any selected item decreases the excess by at least $1$ and gains at least $\alpha-p_j>0$), so all the local optima are feasible; but then, from a feasible vector, no flip that creates an excess is improving, and the search never leaves the feasible region.
 
 ## Bin packing
 
@@ -1333,17 +1333,17 @@ title: "Exercises · Local search"
 
     $$
     \begin{array}{l|ccccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} & {i=7} \\[1ex]
-    \hline {w_i} & {2} & {3} & {2} & {7} & {4} & {7} & {4} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} & {j=7} \\[1ex]
+    \hline {w_j} & {2} & {3} & {2} & {7} & {4} & {7} & {4} \\
     \hline
     \end{array}
     $$
 
-    The bins are labelled $1,2,\dots$ in the order in which $FF$ opens them, and keep their label. A <em>move</em> puts one item into another non-empty bin where it fits (examined for $i=1,\dots,n$ and, for each $i$, for increasing bin label); a <em>swap</em> exchanges two items $i<k$ of different weight in different bins, if both bins stay feasible. The auxiliary objective $SQ=\sum_b L_b^2$ is maximized; the gain of a transfer of $\delta$ from bin $a$ to bin $b$ is $2\delta(L_b-L_a+\delta)$ (a move of item $i$ transfers $\delta=w_i$, a swap of item $i$ in bin $a$ and item $k$ in bin $b$ transfers $\delta=w_i-w_k$). Best improvement breaks ties in favour of the move examined first.
+    The bins are labelled $1,2,\dots$ in the order in which $FF$ opens them, and keep their label. A <em>move</em> puts one item into another non-empty bin where it fits (examined for $j=1,\dots,n$ and, for each $j$, for increasing bin label); a <em>swap</em> exchanges two items $j<k$ of different weight in different bins, if both bins stay feasible. The auxiliary objective $SQ=\sum_b L_b^2$ is maximized; the gain of a transfer of $\delta$ from bin $a$ to bin $b$ is $2\delta(L_b-L_a+\delta)$ (a move of item $j$ transfers $\delta=w_j$, a swap of item $j$ in bin $a$ and item $k$ in bin $b$ transfers $\delta=w_j-w_k$). Best improvement breaks ties in favour of the move examined first.
 
     **Questions**
 
-    1. Compute the solution of First Fit ($FF$), its number of bins and the lower bound $\lceil\sum_i w_i/c\rceil$.
+    1. Compute the solution of First Fit ($FF$), its number of bins and the lower bound $\lceil\sum_j w_j/c\rceil$.
 
     2. Apply the move local search with the objective $nb$ (number of bins), starting from the solution of $FF$. Why does it stop?
 
@@ -1635,17 +1635,17 @@ title: "Exercises · Local search"
 
     $$
     \begin{array}{l|cccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} \\[1ex]
-    \hline {w_i} & {2} & {3} & {4} & {5} & {4} & {2} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\[1ex]
+    \hline {w_j} & {2} & {3} & {4} & {5} & {4} & {2} \\
     \hline
     \end{array}
     $$
 
-    The bins are labelled $1,2,\dots$ in the order in which $FF$ opens them, and keep their label. A <em>move</em> puts one item into another non-empty bin where it fits (examined for $i=1,\dots,n$ and, for each $i$, for increasing bin label); a <em>swap</em> exchanges two items $i<k$ of different weight in different bins, if both bins stay feasible. The auxiliary objective $SQ=\sum_b L_b^2$ is maximized; the gain of a transfer of $\delta$ from bin $a$ to bin $b$ is $2\delta(L_b-L_a+\delta)$ (a move of item $i$ transfers $\delta=w_i$, a swap of item $i$ in bin $a$ and item $k$ in bin $b$ transfers $\delta=w_i-w_k$). Best improvement breaks ties in favour of the move examined first.
+    The bins are labelled $1,2,\dots$ in the order in which $FF$ opens them, and keep their label. A <em>move</em> puts one item into another non-empty bin where it fits (examined for $j=1,\dots,n$ and, for each $j$, for increasing bin label); a <em>swap</em> exchanges two items $j<k$ of different weight in different bins, if both bins stay feasible. The auxiliary objective $SQ=\sum_b L_b^2$ is maximized; the gain of a transfer of $\delta$ from bin $a$ to bin $b$ is $2\delta(L_b-L_a+\delta)$ (a move of item $j$ transfers $\delta=w_j$, a swap of item $j$ in bin $a$ and item $k$ in bin $b$ transfers $\delta=w_j-w_k$). Best improvement breaks ties in favour of the move examined first.
 
     **Questions**
 
-    1. Compute the solution of First Fit ($FF$) and the lower bound $\lceil\sum_i w_i/c\rceil$.
+    1. Compute the solution of First Fit ($FF$) and the lower bound $\lceil\sum_j w_j/c\rceil$.
 
     2. Apply the move local search with the auxiliary objective $SQ$ and the best-improvement rule, starting from the solution of $FF$.
 
@@ -1965,8 +1965,6 @@ title: "Exercises · Local search"
 
         Iteration 5 (swap): packing patterns $\{1,3,5\}, \{2,4,6\}$, loads $(10,10)$, $nb=2$, $SQ=200$. There is no feasible swap.
 
-        No swap is improving.
-
         $VND$ stops with packing patterns $\{1,3,5\}, \{2,4,6\}$: $2=\lceil 20/10\rceil$ bins, an <strong>optimal</strong> solution. The solution of $FF$ is a local optimum for move, the swap alone cannot change the number of bins, but the swap prepares a move that empties a bin: the local optimum <strong>depends on the neighbourhood</strong>, and combining the two neighbourhoods reaches the optimum.
 
 <a id="esercizio-31-6"></a>
@@ -1977,21 +1975,21 @@ title: "Exercises · Local search"
 
     $$
     \begin{array}{l|ccccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} & {i=7} \\[1ex]
-    \hline {w_i} & {5} & {3} & {3} & {2} & {8} & {4} & {4} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} & {j=7} \\[1ex]
+    \hline {w_j} & {5} & {3} & {3} & {2} & {8} & {4} & {4} \\
     \hline
     \end{array}
     $$
 
-    The bins are labelled $1,2,\dots$ in the order in which $FF$ opens them, and keep their label. A <em>move</em> puts one item into another non-empty bin where it fits (examined for $i=1,\dots,n$ and, for each $i$, for increasing bin label); a <em>swap</em> exchanges two items $i<k$ of different weight in different bins, if both bins stay feasible. The auxiliary objective $SQ=\sum_b L_b^2$ is maximized; the gain of a transfer of $\delta$ from bin $a$ to bin $b$ is $2\delta(L_b-L_a+\delta)$ (a move of item $i$ transfers $\delta=w_i$, a swap of item $i$ in bin $a$ and item $k$ in bin $b$ transfers $\delta=w_i-w_k$). Best improvement breaks ties in favour of the move examined first.
+    The bins are labelled $1,2,\dots$ in the order in which $FF$ opens them, and keep their label. A <em>move</em> puts one item into another non-empty bin where it fits (examined for $j=1,\dots,n$ and, for each $j$, for increasing bin label); a <em>swap</em> exchanges two items $j<k$ of different weight in different bins, if both bins stay feasible. The auxiliary objective $SQ=\sum_b L_b^2$ is maximized; the gain of a transfer of $\delta$ from bin $a$ to bin $b$ is $2\delta(L_b-L_a+\delta)$ (a move of item $j$ transfers $\delta=w_j$, a swap of item $j$ in bin $a$ and item $k$ in bin $b$ transfers $\delta=w_j-w_k$). Best improvement breaks ties in favour of the move examined first.
 
     **Questions**
 
-    1. Compute the solution of First Fit ($FF$) and the lower bound $\lceil\sum_i w_i/c\rceil$.
+    1. Compute the solution of First Fit ($FF$) and the lower bound $\lceil\sum_j w_j/c\rceil$.
 
     2. Apply the variable neighbourhood descent with $N_1=$ move and $N_2=$ swap (objective $SQ$, best improvement), starting from the solution of $FF$.
 
-    3. Find a packing that uses $\lceil\sum_i w_i/c\rceil$ bins.
+    3. Find a packing that uses $\lceil\sum_j w_j/c\rceil$ bins.
 
     4. Explain why the local search cannot reach that packing from its local optimum.
 
@@ -2205,7 +2203,7 @@ title: "Exercises · Local search"
     \end{array}
     $$
 
-    A tour $\pi=(\pi_1,\dots,\pi_n)$ keeps city $1$ in the first position. The 2-opt move $(i,j)$, for $i=1,\dots,n-2$ and $j=i+2,\dots,n$ (except $(1,n)$), examined in this order, removes the edges $\{\pi_i,\pi_{i+1}\}$, $\{\pi_j,\pi_{j+1}\}$ (with $\pi_{n+1}=\pi_1$), reverses $\pi_{i+1},\dots,\pi_j$, and changes the length by $\Delta=d_{\pi_i\pi_j}+d_{\pi_{i+1}\pi_{j+1}}-d_{\pi_i\pi_{i+1}}-d_{\pi_j\pi_{j+1}}$. Best improvement breaks ties in favour of the move examined first. The nearest neighbour heuristic $NN$ breaks ties in favour of the city of smallest index.
+    A tour $\sigma=(\sigma_1,\dots,\sigma_n)$ keeps city $1$ in the first position. The 2-opt move $(i,j)$, for $i=1,\dots,n-2$ and $j=i+2,\dots,n$ (except $(1,n)$), examined in this order, removes the edges $\{\sigma_i,\sigma_{i+1}\}$, $\{\sigma_j,\sigma_{j+1}\}$ (with $\sigma_{n+1}=\sigma_1$), reverses $\sigma_{i+1},\dots,\sigma_j$, and changes the length by $\Delta=d_{\sigma_i\sigma_j}+d_{\sigma_{i+1}\sigma_{j+1}}-d_{\sigma_i\sigma_{i+1}}-d_{\sigma_j\sigma_{j+1}}$. Best improvement breaks ties in favour of the move examined first. The nearest neighbour heuristic $NN$ breaks ties in favour of the city of smallest index.
 
     **Questions**
 
@@ -2215,7 +2213,7 @@ title: "Exercises · Local search"
 
     3. Apply the 2-opt local search with the best-improvement rule, starting from the tour of $NN$.
 
-    4. The optimal value is $z(I)=23$. Is the final tour optimal? How many moves were made, compared with the bound $L(\pi^0)-z(I)$ on the number of moves?
+    4. The optimal value is $z(I)=23$. Is the final tour optimal? How many moves were made, compared with the bound $L(\sigma^0)-z(I)$ on the number of moves?
 
 ??? soluzione "Solution"
 
@@ -2231,7 +2229,7 @@ title: "Exercises · Local search"
 
         - the tour goes back to city $1$ ($d_{2,1}=7$).
 
-        The tour is $\pi=(1,4,6,3,5,2)$, of length $27$.
+        The tour is $\sigma=(1,4,6,3,5,2)$, of length $27$.
 
     2. The $9$ moves of the tour of $NN$ are
 
@@ -2320,7 +2318,7 @@ title: "Exercises · Local search"
 
         For example, the move $(1,3)$ gives the tour $(1,6,4,3,5,2)$, of length $6+3+5+5+7+7=33=27+6$.
 
-    3. Iteration 1: $\pi=(1,4,6,3,5,2)$, length $27$.
+    3. Iteration 1: $\sigma=(1,4,6,3,5,2)$, length $27$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -2407,7 +2405,7 @@ title: "Exercises · Local search"
 
         The move $(4,6)$ is accepted after 9 evaluations.
 
-        Iteration 2: $\pi=(1,4,6,3,2,5)$, length $25$.
+        Iteration 2: $\sigma=(1,4,6,3,2,5)$, length $25$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -2494,7 +2492,7 @@ title: "Exercises · Local search"
 
         The move $(2,5)$ is accepted after 9 evaluations.
 
-        Iteration 3: $\pi=(1,4,2,3,6,5)$, length $24$.
+        Iteration 3: $\sigma=(1,4,2,3,6,5)$, length $24$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -2581,7 +2579,7 @@ title: "Exercises · Local search"
 
         The move $(3,5)$ is accepted after 9 evaluations.
 
-        Iteration 4: $\pi=(1,4,2,6,3,5)$, length $23$.
+        Iteration 4: $\sigma=(1,4,2,6,3,5)$, length $23$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -2666,7 +2664,7 @@ title: "Exercises · Local search"
         </tr>
         </table></div>
 
-        No move has $\Delta<0$: $\pi=(1,4,2,6,3,5)$ is a 2-opt <strong>local optimum</strong> (9 evaluations).
+        No move has $\Delta<0$: $\sigma=(1,4,2,6,3,5)$ is a 2-opt <strong>local optimum</strong> (9 evaluations).
 
         The search makes 3 moves: $27\to25\to24\to23$.
 
@@ -2691,7 +2689,7 @@ title: "Exercises · Local search"
     \end{array}
     $$
 
-    A tour $\pi=(\pi_1,\dots,\pi_n)$ keeps city $1$ in the first position. The 2-opt move $(i,j)$, for $i=1,\dots,n-2$ and $j=i+2,\dots,n$ (except $(1,n)$), examined in this order, removes the edges $\{\pi_i,\pi_{i+1}\}$, $\{\pi_j,\pi_{j+1}\}$ (with $\pi_{n+1}=\pi_1$), reverses $\pi_{i+1},\dots,\pi_j$, and changes the length by $\Delta=d_{\pi_i\pi_j}+d_{\pi_{i+1}\pi_{j+1}}-d_{\pi_i\pi_{i+1}}-d_{\pi_j\pi_{j+1}}$. Best improvement breaks ties in favour of the move examined first. The nearest neighbour heuristic $NN$ breaks ties in favour of the city of smallest index.
+    A tour $\sigma=(\sigma_1,\dots,\sigma_n)$ keeps city $1$ in the first position. The 2-opt move $(i,j)$, for $i=1,\dots,n-2$ and $j=i+2,\dots,n$ (except $(1,n)$), examined in this order, removes the edges $\{\sigma_i,\sigma_{i+1}\}$, $\{\sigma_j,\sigma_{j+1}\}$ (with $\sigma_{n+1}=\sigma_1$), reverses $\sigma_{i+1},\dots,\sigma_j$, and changes the length by $\Delta=d_{\sigma_i\sigma_j}+d_{\sigma_{i+1}\sigma_{j+1}}-d_{\sigma_i\sigma_{i+1}}-d_{\sigma_j\sigma_{j+1}}$. Best improvement breaks ties in favour of the move examined first. The nearest neighbour heuristic $NN$ breaks ties in favour of the city of smallest index.
 
     **Questions**
 
@@ -2717,9 +2715,9 @@ title: "Exercises · Local search"
 
         - the tour goes back to city $1$ ($d_{2,1}=8$).
 
-        The tour is $\pi=(1,3,6,4,5,2)$, of length $33$.
+        The tour is $\sigma=(1,3,6,4,5,2)$, of length $33$.
 
-    2. Iteration 1: $\pi=(1,3,6,4,5,2)$, length $33$.
+    2. Iteration 1: $\sigma=(1,3,6,4,5,2)$, length $33$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -2806,7 +2804,7 @@ title: "Exercises · Local search"
 
         The move $(1,5)$ is accepted after 3 evaluations.
 
-        Iteration 2: $\pi=(1,5,4,6,3,2)$, length $32$.
+        Iteration 2: $\sigma=(1,5,4,6,3,2)$, length $32$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -2893,7 +2891,7 @@ title: "Exercises · Local search"
 
         The move $(2,6)$ is accepted after 6 evaluations.
 
-        Iteration 3: $\pi=(1,5,2,3,6,4)$, length $31$.
+        Iteration 3: $\sigma=(1,5,2,3,6,4)$, length $31$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -2980,7 +2978,7 @@ title: "Exercises · Local search"
 
         The move $(3,5)$ is accepted after 7 evaluations.
 
-        Iteration 4: $\pi=(1,5,2,6,3,4)$, length $30$.
+        Iteration 4: $\sigma=(1,5,2,6,3,4)$, length $30$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -3065,11 +3063,11 @@ title: "Exercises · Local search"
         </tr>
         </table></div>
 
-        No move has $\Delta<0$: $\pi=(1,5,2,6,3,4)$ is a 2-opt <strong>local optimum</strong> (9 evaluations).
+        No move has $\Delta<0$: $\sigma=(1,5,2,6,3,4)$ is a 2-opt <strong>local optimum</strong> (9 evaluations).
 
         First improvement makes 3 moves, $33\to32\to31\to30$, with 25 evaluations in total.
 
-    3. Iteration 1: $\pi=(1,3,6,4,5,2)$, length $33$.
+    3. Iteration 1: $\sigma=(1,3,6,4,5,2)$, length $33$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -3156,7 +3154,7 @@ title: "Exercises · Local search"
 
         The move $(4,6)$ is accepted after 9 evaluations.
 
-        Iteration 2: $\pi=(1,3,6,4,2,5)$, length $31$.
+        Iteration 2: $\sigma=(1,3,6,4,2,5)$, length $31$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -3241,7 +3239,7 @@ title: "Exercises · Local search"
         </tr>
         </table></div>
 
-        No move has $\Delta<0$: $\pi=(1,3,6,4,2,5)$ is a 2-opt <strong>local optimum</strong> (9 evaluations).
+        No move has $\Delta<0$: $\sigma=(1,3,6,4,2,5)$ is a 2-opt <strong>local optimum</strong> (9 evaluations).
 
         Best improvement makes 1 move, $33\to31$, with 18 evaluations in total.
 
@@ -3266,7 +3264,7 @@ title: "Exercises · Local search"
     \end{array}
     $$
 
-    A tour $\pi=(\pi_1,\dots,\pi_n)$ keeps city $1$ in the first position. The 2-opt move $(i,j)$, for $i=1,\dots,n-2$ and $j=i+2,\dots,n$ (except $(1,n)$), examined in this order, removes the edges $\{\pi_i,\pi_{i+1}\}$, $\{\pi_j,\pi_{j+1}\}$ (with $\pi_{n+1}=\pi_1$), reverses $\pi_{i+1},\dots,\pi_j$, and changes the length by $\Delta=d_{\pi_i\pi_j}+d_{\pi_{i+1}\pi_{j+1}}-d_{\pi_i\pi_{i+1}}-d_{\pi_j\pi_{j+1}}$. Best improvement breaks ties in favour of the move examined first. The nearest neighbour heuristic $NN$ breaks ties in favour of the city of smallest index. An Or-opt move with $\ell=1$ takes one city $\pi_i$ ($i\ge 2$) and inserts it between two consecutive cities $\pi_k,\pi_{k+1}$ not adjacent to it ($k\ne i-1,i$); with $p=\pi_{i-1}$, $q=\pi_{i+1}$, $s=\pi_i$, $a=\pi_k$, $b=\pi_{k+1}$ it changes the length by $\Delta=d_{pq}+d_{as}+d_{sb}-d_{ps}-d_{sq}-d_{ab}$. The moves are examined for $i=2,\dots,n$ and $k=1,\dots,n$.
+    A tour $\sigma=(\sigma_1,\dots,\sigma_n)$ keeps city $1$ in the first position. The 2-opt move $(i,j)$, for $i=1,\dots,n-2$ and $j=i+2,\dots,n$ (except $(1,n)$), examined in this order, removes the edges $\{\sigma_i,\sigma_{i+1}\}$, $\{\sigma_j,\sigma_{j+1}\}$ (with $\sigma_{n+1}=\sigma_1$), reverses $\sigma_{i+1},\dots,\sigma_j$, and changes the length by $\Delta=d_{\sigma_i\sigma_j}+d_{\sigma_{i+1}\sigma_{j+1}}-d_{\sigma_i\sigma_{i+1}}-d_{\sigma_j\sigma_{j+1}}$. Best improvement breaks ties in favour of the move examined first. The nearest neighbour heuristic $NN$ breaks ties in favour of the city of smallest index. An Or-opt move with $\ell=1$ takes one city $\sigma_i$ ($i\ge 2$) and inserts it between two consecutive cities $\sigma_k,\sigma_{k+1}$ not adjacent to it ($k\ne i-1,i$); with $p=\sigma_{i-1}$, $q=\sigma_{i+1}$, $s=\sigma_i$, $a=\sigma_k$, $b=\sigma_{k+1}$ it changes the length by $\Delta=d_{pq}+d_{as}+d_{sb}-d_{ps}-d_{sq}-d_{ab}$. The moves are examined for $i=2,\dots,n$ and $k=1,\dots,n$.
 
     **Questions**
 
@@ -3292,7 +3290,7 @@ title: "Exercises · Local search"
 
         - the tour goes back to city $1$ ($d_{6,1}=9$).
 
-        The tour is $\pi=(1,2,4,5,3,6)$, of length $37$.
+        The tour is $\sigma=(1,2,4,5,3,6)$, of length $37$.
 
     2. The 2-opt moves of the tour of $NN$ are
 

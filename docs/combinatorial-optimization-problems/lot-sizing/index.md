@@ -12,7 +12,7 @@ title: "Lot sizing problems"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter «Combinatorial optimization problems»: what a combinatorial optimization problem is, the number of candidate solutions, and primal and dual bounds.
+    - From this module, [Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): what a combinatorial optimization problem is, the number of candidate solutions, and primal and dual bounds.
 
 !!! chiave "Objectives"
 
@@ -63,25 +63,25 @@ title: "Lot sizing problems"
 </tr>
 <tr>
 <td>several products and setup times</td>
-<td></td>
+<td>MLS</td>
 <td>products sharing the time of each period</td>
 <td><a href="variants/#sez-sec-ls-variants">8.6</a></td>
 </tr>
 <tr>
 <td>initial stock</td>
-<td></td>
+<td>LS-SI</td>
 <td>the initial stock is a decision</td>
 <td><a href="variants/#sez-sec-ls-variants">8.6</a></td>
 </tr>
 <tr>
 <td>overtime</td>
-<td></td>
+<td>LS-OT</td>
 <td>extra capacity at a higher cost</td>
 <td><a href="variants/#sez-sec-ls-variants">8.6</a></td>
 </tr>
 <tr>
 <td>unsatisfied demand</td>
-<td></td>
+<td>LS-UD</td>
 <td>part of the demand lost at a penalty</td>
 <td><a href="variants/#sez-sec-ls-variants">8.6</a></td>
 </tr>
@@ -103,7 +103,7 @@ title: "Lot sizing problems"
 
 -   **8.6 Variants**
 
-    Typical mistakes · In summary
+    Several products and setup times · Initial stock · Overtime · Unsatisfied demand · Remarks
 
     [:octicons-arrow-right-24: Open](variants.md)
 

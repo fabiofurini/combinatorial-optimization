@@ -65,11 +65,11 @@ title: "The travelling salesman problem (TSP)"
 </tr>
 <tr>
 <td><strong>Approximation</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/tsp-approximation/#393-the-double-tree-and-the-christofides-algorithms">Ch. 39 «The TSP: the general case and the metric case»</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/tsp-approximation/#sez-sec-DT">Ch. 39 «The TSP: the general case and the metric case»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp/">Ch. 6 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp-formulations/">Ch. 13 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/heuristics/#esercizio-29-3">Exercise 29.3</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/constructive-heuristics/">Ch. 30 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/local-search/">Ch. 31 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/metaheuristics/">Ch. 32 (7 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp-approximation/">Ch. 39 (3 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp/">Ch. 6 (7 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp-formulations/">Ch. 13 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/heuristics/#esercizio-29-3">Exercise 29.3</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/constructive-heuristics/">Ch. 30 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/local-search/">Ch. 31 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/metaheuristics/">Ch. 32 (7 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp-approximation/">Ch. 39 (3 exercises)</a></td>
 </tr>
 <tr>
 <td><strong>Reference instances</strong></td>

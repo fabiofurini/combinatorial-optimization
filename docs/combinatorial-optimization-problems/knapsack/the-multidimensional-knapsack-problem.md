@@ -28,7 +28,7 @@ title: "Multidimensional knapsack"
 
     the <strong>Multidimensional Knapsack Problem</strong> (MDKP) asks to decide which items to insert into the knapsack, so that for every dimension the total weight of the selected items does not exceed the corresponding capacity, and the total profit of the selected items is maximized.
 
-- A <strong>MDKP instance</strong> is specified by:
+- An <strong>MDKP instance</strong> is specified by:
 
     1. two integer numbers:
 
@@ -46,9 +46,9 @@ title: "Multidimensional knapsack"
 
     4. one matrix of integer numbers with $k$ rows and $n$ columns:
 
-        - $\vet{W} \in \Z_{\ge 1}^{k \times n}$,  containing the  the weight of the items for each dimension.
+        - $\vet{W} \in \Z_{\ge 1}^{k \times n}$,  containing the weights of the items for each dimension.
 
-- A <strong>MDKP feasible solution</strong> is a subset of items
+- An <strong>MDKP feasible solution</strong> is a subset of items
 
     $$
     S \subseteq \mathscr{I}
@@ -64,7 +64,7 @@ title: "Multidimensional knapsack"
 
     !!! chiave ""
 
-        Given a MDKP instance, the MDKP can be formally stated as:
+        Given an MDKP instance, the MDKP can be formally stated as:
 
         \begin{equation*}
         \label{MDKP}

@@ -63,7 +63,7 @@ title: "The bin packing problem (BPP)"
 </tr>
 <tr>
 <td><strong>MIP heuristics</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/mip-heuristics-classical/#3322-the-bin-packing-problem">Ch. 33 «MIP heuristics for the classical problems»</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/mip-heuristics-classical/#eq-eq-bpp">Ch. 33 «MIP heuristics for the classical problems»</a></td>
 </tr>
 <tr>
 <td><strong>Approximation</strong></td>
@@ -71,7 +71,7 @@ title: "The bin packing problem (BPP)"
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/bin-packing/">Ch. 3 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/pcmax/#esercizio-7-5">Exercise 7.5</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/bin-packing-formulations/">Ch. 10 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/heuristics/#esercizio-29-2">Exercise 29.2</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/constructive-heuristics/">Ch. 30 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/local-search/">Ch. 31 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/metaheuristics/">Ch. 32 (2 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/approximation/#esercizio-34-3">Exercise 34.3</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/bin-packing-approximation/">Ch. 36 (12 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/bin-packing/">Ch. 3 (6 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/pcmax/#esercizio-7-5">Exercise 7.5</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/bin-packing-formulations/">Ch. 10 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/heuristics/#esercizio-29-2">Exercise 29.2</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/constructive-heuristics/">Ch. 30 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/local-search/">Ch. 31 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/metaheuristics/">Ch. 32 (2 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/approximation/#esercizio-34-3">Exercise 34.3</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/bin-packing-approximation/">Ch. 36 (12 exercises)</a></td>
 </tr>
 <tr>
 <td><strong>Reference instances</strong></td>
@@ -116,5 +116,3 @@ title: "The bin packing problem (BPP)"
 - Every Any Fit algorithm is half-full, hence a $2$-approximation ([Ch. 36](../approximation-algorithms/bin-packing-approximation.md#364-half-full-property)).
 
 - $r(NF) = r(WF) = 2$ and $r(FF) = r(BF) = \frac{17}{10}$ ([Ch. 36](../approximation-algorithms/bin-packing-approximation.md#box-20-propFF)).
-
-- No polynomial algorithm has a ratio below $\frac32$ unless $P=NP$: deciding whether $2$ bins suffice is PARTITION ([Ch. 36](../approximation-algorithms/bin-packing-approximation.md)).

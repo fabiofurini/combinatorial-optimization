@@ -31,6 +31,10 @@ title: "Lot sizing with several products and setup times (MLS)"
 </tr>
 <tr>
 <td><strong>Formulations</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/ilp-models-for-the-variants/#1572-several-products-and-setup-times">Ch. 15 «Formulations of lot sizing problems»</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/ilp-models-for-the-variants/#eq-CLSPm-bigM">Ch. 15 «Formulations of lot sizing problems»</a></td>
+</tr>
+<tr>
+<td><strong>Exercises</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/lot-sizing-formulations/#esercizio-15-7">Exercise 15.7</a></td>
 </tr>
 </table></div>

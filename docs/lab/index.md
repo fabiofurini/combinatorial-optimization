@@ -8,29 +8,15 @@ hide:
 Here you can get your hands on combinatorial optimization: each app runs an algorithm step by step on the reference instances of the course,
 which you can also change. Pick an app: it opens full page. Everything runs in the browser; the numbers are computed by the algorithm, not typed by hand.
 
-## Combinatorial optimization problems
-
-<div class="grid cards" markdown>
-
--   :material-graph-outline: **Vertex coloring: greedy and DSATUR**
-
-    ---
-
-    The graph is colored vertex by vertex with greedy and DSATUR: Petersen, crown graph or a random graph.
-
-    [Open the app →](coloring-greedy-dsatur.md)
-
-</div>
-
 ## Dynamic programming
 
 <div class="grid cards" markdown>
 
--   :material-table-large: **DP table for the knapsack**
+-   :material-table-large: **DP tables for the knapsack problems**
 
     ---
 
-    The table v(j,k) fills one cell at a time, with the two choices that determine it; then the reconstruction of the solution.
+    0/1, unbounded, bounded knapsack and subset sum: the table fills one cell at a time, with the cells it depends on; then the reconstruction of the solution.
 
     [Open the app →](dp-knapsack-table.md)
 
@@ -48,13 +34,13 @@ which you can also change. Pick an app: it opens full page. Everything runs in t
 
     [Open the app →](bin-packing-heuristics.md)
 
--   :material-chart-gantt: **List scheduling and LPT**
+-   :material-graph-outline: **Vertex coloring: greedy and DSATUR**
 
     ---
 
-    The Gantt chart is built job by job; next to it the bound max{max t_j, ⌈Σ t_j / m⌉} and the optimum.
+    The graph is colored vertex by vertex with greedy and DSATUR: Petersen, crown graph or a random graph.
 
-    [Open the app →](list-scheduling-lpt.md)
+    [Open the app →](coloring-greedy-dsatur.md)
 
 -   :material-map-marker-path: **TSP: nearest neighbour and 2-opt**
 
@@ -63,6 +49,14 @@ which you can also change. Pick an app: it opens full page. Everything runs in t
     The tour is built city by city and then 2-opt improves it: on the course instance or in the plane, with cities to drag.
 
     [Open the app →](tsp-nn-2opt.md)
+
+-   :material-chart-gantt: **List scheduling and LPT**
+
+    ---
+
+    The Gantt chart is built job by job; next to it the bound max{max t_j, ⌈Σ t_j / m⌉} and the optimum.
+
+    [Open the app →](list-scheduling-lpt.md)
 
 </div>
 

@@ -6,13 +6,15 @@ title: "A second DP algorithm"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 17** · [:material-book-open-variant: Chapter 17: 0/1 knapsack (KP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP table for the knapsack](../../lab/dp-knapsack-table.md)
+**Part 3 · Dynamic programming · Chapter 17** · [:material-book-open-variant: Chapter 17: 0/1 knapsack (KP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP tables for the knapsack problems](../../lab/dp-knapsack-table.md)
 
 </div>
 
 - <u>Step 1</u>: computation of the optimal value
 
-    - In the DP algorithm of the previous section, a subproblem is identified by a capacity value, and its optimal value is the maximum total profit that can be obtained without exceeding that capacity. In the DP algorithm of this section, the roles of the profits and of the weights are exchanged: a subproblem is identified by a profit value, and its optimal value is the minimum total weight needed to obtain exactly that profit.
+    - In the DP algorithm of the previous section, a subproblem is identified by a capacity value, and its optimal value is the maximum total profit that can be obtained without exceeding that capacity.
+
+    - In the DP algorithm of this section, the roles of the profits and of the weights are exchanged: a subproblem is identified by a profit value, and its optimal value is the minimum total weight needed to obtain exactly that profit.
 
     - Since each profit $p_j$ is a positive integer and each item can be selected at most once, the total profit of a feasible solution is an integer between $0$ and the total profit of all the items
 
@@ -20,9 +22,9 @@ title: "A second DP algorithm"
         P=\sum_{j=1}^{n} p_j.
         $$
 
-        Therefore, it is enough to consider the profit values $q \in \{0,1,\dots,P\}$.
+    - Therefore, it is enough to consider the profit values $q \in \{0,1,\dots,P\}$.
 
-    - The number of subproblems of this DP algorithm grows with the total profit $P$. To keep the number of subproblems small, the DP algorithm is illustrated on the following KP instance, which has the same item weights and the same knapsack capacity as the KP instance of <span style="color:#1971c2">Example 1</span>, and smaller item profits.
+    - The number of subproblems of this DP algorithm grows with the total profit $P$. To keep the number of subproblems small, the DP algorithm is illustrated on the following KP instance, which has the same item weights and the same knapsack capacity as the KP instance of <span style="color:#1971c2">[Example 17.1](index.md#box-1-texexpbox1)</span>, and smaller item profits.
 
     <a id="box-54-texkp2instance"></a>
 
@@ -41,7 +43,7 @@ title: "A second DP algorithm"
 
         We refer to this KP instance as <span style="color:#1971c2">[Example 17.13](#box-54-texkp2instance)</span>.
 
-    !!! chiave ""
+    !!! formula ""
 
         For any $j \in \{0,1,\dots,n\}$ and $q \in \{0,1,\dots,P\}$, let $u(j,q)$ be the optimal value of the minimum-weight subinstance given by:
 
@@ -65,7 +67,9 @@ title: "A second DP algorithm"
         \end{array} \right. \tag{17.4}
         \end{equation*}
 
-    - The recursive decomposition process of formula $\eqref{eq:2}$ generates at most $2$ <strong>independent subproblems</strong>, corresponding to whether or not to select item $j$ to reach the target profit $q$. If $p_j>q$, selecting item $j$ would exceed the target profit, and therefore the only feasible option is not to select it. Here, $u(j,0)=0$ since the empty subset has total profit $0$ and total weight $0$. Moreover, $u(0,q)=+\infty$ for $q\ge 1$: in this case no item is available, so no subset has total profit equal to $q$. The value $+\infty$ is used to rule out this infeasible case.
+    - The recursive decomposition process of formula $\eqref{eq:2}$ generates at most $2$ <strong>independent subproblems</strong>, corresponding to whether or not to select item $j$ to reach the target profit $q$. If $p_j>q$, selecting item $j$ would exceed the target profit, and therefore the only feasible option is not to select it.
+
+    - Here, $u(j,0)=0$ since the empty subset has total profit $0$ and total weight $0$. Moreover, $u(0,q)=+\infty$ for $q\ge 1$: in this case no item is available, so no subset has total profit equal to $q$. The value $+\infty$ is used to rule out this infeasible case.
 
     - If $p_j\le q$, the optimal value $u(j,q)$ is obtained by trying the two possible options, selecting or not selecting item $j$, and selecting the one that minimizes the total weight. The corresponding values are $w_j+u(j-1,q-p_j)$ and $u(j-1,q)$, respectively. If $p_j>q$, item $j$ cannot be selected, and therefore $u(j,q)=u(j-1,q)$.
 
@@ -90,7 +94,9 @@ title: "A second DP algorithm"
 
         - The set in formula $\eqref{eq:3}$ is never empty, since $u(n,0)=0\le c$, and therefore the maximum is always well defined.
 
-    - A <strong>first method</strong> to compute the optimal value of the KP instance is the <strong>top-down approach</strong>. The method evaluates formula $\eqref{eq:2}$ recursively, starting from the call with $j=n$, for each target profit $q \in \{0,1,\dots,P\}$: each call considers item $j$ and either does not select it, or also considers selecting it when its profit does not exceed the target profit. The recursion stops when no items are left or when the target profit is equal to $0$. Finally, formula $\eqref{eq:3}$ is applied to the computed values.
+    - A <strong>first method</strong> to compute the optimal value of the KP instance is the <strong>top-down approach</strong>.
+
+    - The method evaluates formula $\eqref{eq:2}$ recursively, starting from the call with $j=n$, for each target profit $q \in \{0,1,\dots,P\}$: each call considers item $j$ and either does not select it, or also considers selecting it when its profit does not exceed the target profit. The recursion stops when no items are left or when the target profit is equal to $0$. Finally, formula $\eqref{eq:3}$ is applied to the computed values.
 
     - The <strong>recursion tree</strong> of the function $u$ has one node for each recursive call, labeled with the function call it represents. The root represents the initial call. The children of a node represent the recursive calls made by that call. The leaf nodes represent the base cases.
 
@@ -104,7 +110,9 @@ title: "A second DP algorithm"
 
             The function is called $13$ times, and the same subproblem is solved more than once: $u(0,4)$ is called $2$ times (shown with a red border). Moreover, the top-down approach must be applied to every target profit $q \in \{0,1,\dots,10\}$, and the same subproblem is generated by different initial calls: for instance, the initial call $u(3,3)$ generates the calls $u(2,3)$, $u(1,3)$, $u(1,0)$, $u(0,3)$, and $u(0,0)$, which are already generated by the initial call $u(3,7)$ shown above.
 
-    - The value $u(j,q)$ can be computed once the values required by the right-hand side of formula $\eqref{eq:2}$ are known. In particular, $u(j-1,q)$ is needed when item $j$ is not selected and, if $p_j\le q$, $u(j-1,q-p_j)$ is needed when item $j$ is selected. Therefore, for a fixed value of $j$, all values $u(j,q)$ can be computed by considering the profit values $q$ in increasing order.
+    - The value $u(j,q)$ can be computed once the values required by the right-hand side of formula $\eqref{eq:2}$ are known. In particular, $u(j-1,q)$ is needed when item $j$ is not selected and, if $p_j\le q$, $u(j-1,q-p_j)$ is needed when item $j$ is selected.
+
+    - Therefore, for a fixed value of $j$, all values $u(j,q)$ can be computed by considering the profit values $q$ in increasing order.
 
         <a id="box-56-texkp2smallervalues"></a>
 
@@ -128,7 +136,7 @@ title: "A second DP algorithm"
             - The first case of formula $\eqref{eq:2}$ ($q=0$) gives the base case:
 
                 $$
-                u(1,0) = u(0,0) = 0
+                u(1,0) = 0
                 $$
 
             - Once we have computed the base cases, we can compute $u(1,3)$:
@@ -169,9 +177,13 @@ title: "A second DP algorithm"
 
     - We can avoid solving the same subproblems repeatedly by storing the value of each subproblem as soon as it is computed. The values are stored in a <strong>lookup table</strong>.
 
-    - Since solving any particular subproblem depends only on subproblems with a smaller value of $j$, we can solve the subproblems in increasing order of $j$ and, for each fixed value of $j$, in increasing order of target profit, starting from the base cases $u(0,0)=0$, $u(0,q)=+\infty$ for all $q \in \{1,2,\dots,P\}$, and $u(j,0)=0$, and building up to the values $u(n,q)$ for all $q \in \{0,1,\dots,P\}$: this observation naturally leads to a <strong>much more efficient method</strong> to compute the optimal value of the KP instance.
+    - Since solving any particular subproblem depends only on subproblems with a smaller value of $j$, we can solve the subproblems in increasing order of $j$ and, for each fixed value of $j$, in increasing order of target profit, starting from the base cases $u(0,0)=0$, $u(0,q)=+\infty$ for all $q \in \{1,2,\dots,P\}$, and $u(j,0)=0$, and building up to the values $u(n,q)$ for all $q \in \{0,1,\dots,P\}$.
 
-    - A <strong>second method</strong> to compute the optimal value of the KP instance is the <strong>bottom-up approach</strong>. The method starts from the base cases and evaluates formula $\eqref{eq:2}$ for increasing values of $j \in \{1,2,\dots,n\}$ and $q \in \{0,1,\dots,P\}$: each value $u(j,q)$ is computed using already-computed values, until all the values $u(n,q)$ are obtained. The optimal value of the KP instance is then obtained by applying formula $\eqref{eq:3}$.
+    - This observation naturally leads to a <strong>much more efficient method</strong> to compute the optimal value of the KP instance.
+
+    - A <strong>second method</strong> to compute the optimal value of the KP instance is the <strong>bottom-up approach</strong>.
+
+    - The method starts from the base cases and evaluates formula $\eqref{eq:2}$ for increasing values of $j \in \{1,2,\dots,n\}$ and $q \in \{0,1,\dots,P\}$: each value $u(j,q)$ is computed using already-computed values, until all the values $u(n,q)$ are obtained. The optimal value of the KP instance is then obtained by applying formula $\eqref{eq:3}$.
 
         This is the pseudo-code of the <strong>DP algorithm using the bottom-up approach</strong>:
 
@@ -193,7 +205,9 @@ title: "A second DP algorithm"
 
         - Otherwise, the DP algorithm compares the value obtained by not selecting item $j$, namely ${u}[j-1][q]$, with the value obtained by selecting item $j$, namely $w[j]+{u}[j-1][q-p[j]]$.
 
-        - The auxiliary variable $z$ stores the largest target profit whose minimum total weight does not exceed the knapsack capacity. It is initialized to $0$, which is always a feasible target profit since ${u}[n][0]=0\le c$. The last loop scans the target profits in increasing order and updates $z$ whenever ${u}[n][q]\le c$, so that at the end $z$ is the maximum of formula $\eqref{eq:3}$.
+        - The auxiliary variable $z$ stores the largest target profit whose minimum total weight does not exceed the knapsack capacity. It is initialized to $0$, which is always a feasible target profit since ${u}[n][0]=0\le c$.
+
+        - The last loop scans the target profits in increasing order and updates $z$ whenever ${u}[n][q]\le c$, so that at the end $z$ is the maximum of formula $\eqref{eq:3}$.
 
         - Finally, the optimal value of the KP instance is returned as $z$.
 
@@ -573,7 +587,9 @@ title: "A second DP algorithm"
 
     - The vector is initialized with the base cases ${u}[0]=0$ and ${u}[q]=+\infty$ for all $q \in \{1,2,\dots,P\}$, which correspond to the row $j=0$ of the matrix. Then, for each item $j \in \{1,2,\dots,n\}$, the vector is updated so that it contains the row $j$ of the matrix.
 
-    - The order in which the cells are updated is essential. When the cell ${u}[q]$ is updated for item $j$, the value ${u}[q-p_j]$ must still be the one of the row $j-1$, that is $u(j-1,q-p_j)$. Since $q-p_j<q$, this is guaranteed if the target profits are considered in <strong>decreasing</strong> order $q=P,P-1,\dots,p_j$: when the cell $q$ is updated, the cell $q-p_j$ has not been updated yet during the current pass.
+    - The order in which the cells are updated is essential. When the cell ${u}[q]$ is updated for item $j$, the value ${u}[q-p_j]$ must still be the one of the row $j-1$, that is $u(j-1,q-p_j)$.
+
+    - Since $q-p_j<q$, this is guaranteed if the target profits are considered in <strong>decreasing</strong> order $q=P,P-1,\dots,p_j$: when the cell $q$ is updated, the cell $q-p_j$ has not been updated yet during the current pass.
 
     - If the target profits were considered in increasing order, the value ${u}[q-p_j]$ would already be the one of the row $j$, that is $u(j,q-p_j)$, and item $j$ could be selected more than once, which is not allowed in the KP.
 
@@ -1168,7 +1184,7 @@ title: "A second DP algorithm"
         \end{array}
         $$
 
-        This yields the vector $(x_1,x_2,\dots,x_n)$, where $x_j$ is equal to $1$ if item $j$ is selected in an optimal solution, and $0$ otherwise.
+    - This yields the vector $(x_1,x_2,\dots,x_n)$, where $x_j$ is equal to $1$ if item $j$ is selected in an optimal solution, and $0$ otherwise.
 
         !!! algoritmo "Algorithm: DP2\_Reconstruct"
 

@@ -28,7 +28,7 @@ title: "Multiple-choice knapsack"
 
     the <strong>Multiple-Choice Knapsack Problem</strong> (MCKP) asks to decide which items to insert into the knapsack, so that exactly one item is selected from each class, the total weight of the selected items does not exceed the knapsack capacity, and the total profit of the selected items is maximized.
 
-- A <strong>MCKP instance</strong> is specified by:
+- An <strong>MCKP instance</strong> is specified by:
 
     1. two integer numbers:
 
@@ -52,7 +52,7 @@ title: "Multiple-choice knapsack"
 
         - $\{ \mathscr{J}_1, \mathscr{J}_2, \dots, \mathscr{J}_q \}$, a partition of $\mathscr{I}$ into $q$ classes, where $\mathscr{J}_h \subseteq \mathscr{I}$ is the set of items belonging to class $h$.
 
-- A <strong>MCKP feasible solution</strong> is a subset of items
+- An <strong>MCKP feasible solution</strong> is a subset of items
 
     $$
     S \subseteq \mathscr{I}
@@ -76,7 +76,7 @@ title: "Multiple-choice knapsack"
 
     !!! chiave ""
 
-        Given a MCKP instance, the MCKP can be formally stated as:
+        Given an MCKP instance, the MCKP can be formally stated as:
 
         \begin{equation*}
         \label{MCKP}
@@ -128,7 +128,7 @@ title: "Multiple-choice knapsack"
     </tr>
     </table></div>
 
-    In the drawing every class is a coloured group, and the item chosen in each class is drawn solid, the other one dashed. The optimal solution $\{1,4,5\}$ fills the knapsack, with weight $4+8+3=15$ and profit $6+7+4=17$.
+    In the drawing every class is a coloured group, and the item chosen in each class is drawn solid, the other one dashed. An optimal solution, $\{1,4,5\}$, fills the knapsack, with weight $4+8+3=15$ and profit $6+7+4=17$.
 
     ![Figure 7](../../img/knapsack/fig07.svg){ .fig loading=lazy  }
 

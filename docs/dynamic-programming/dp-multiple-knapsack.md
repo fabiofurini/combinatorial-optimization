@@ -12,7 +12,7 @@ title: "DP for the multiple knapsack problem"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter [«DP for the 0/1 knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/): the recurrence $v(j,k)$ over items and capacities, the matrix $s$ of the decisions and the reconstruction of a solution.
+    - From this module, the chapter [«DP for the 0/1 knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/): the recurrence $v(j,k)$ of the 0/1 knapsack problem (KP) over items and capacities, the matrix $s$ of the decisions and the reconstruction of a solution.
 
     - From this module, the chapter [«Knapsack problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-multiple-knapsack-problem/): the multiple knapsack problem, with $m$ knapsacks of capacities $c_1,\dots,c_m$.
 
@@ -55,11 +55,11 @@ The problem of this chapter is the [multiple knapsack problem (MKP)](https://fab
     \end{array}
     $$
 
-    We refer to this MKP instance as <span style="color:#1971c2">Example 1</span>.
+    We refer to this MKP instance as <span style="color:#1971c2">[Example 24.1](#box-1-texmkpex1)</span>.
 
 - <u>Step 1</u>: computation of the optimal value
 
-    !!! chiave ""
+    !!! formula ""
 
         For any $j \in \{0,1,\dots,n\}$ and any vector $\vet{k}=(k_1,k_2,\dots,k_m)$ with $k_i \in \{0,1,\dots,c_i\}$ for every $i\in\mathscr{K}$, let $v(j,\vet{k})=v(j,k_1,\dots,k_m)$ be the optimal value of the MKP subinstance given by:
 
@@ -116,9 +116,9 @@ The problem of this chapter is the [multiple knapsack problem (MKP)](https://fab
 
     !!! esempio "Example 24.2: Execution of the DP algorithm"
 
-        We consider the MKP instance of <span style="color:#1971c2">Example 1</span>, with capacities $c_1=5$ and $c_2=4$. The row $j=0$ is $v[0][\vet{k}]=0$ for every $\vet{k}$. For each item $j$ we compute the matrix $v[j][k_1][k_2]$, with one row for each $k_1\in\{0,1,\dots,5\}$ and one column for each $k_2\in\{0,1,\dots,4\}$.
+        We consider the MKP instance of <span style="color:#1971c2">[Example 24.1](#box-1-texmkpex1)</span>, with capacities $c_1=5$ and $c_2=4$. The row $j=0$ is $v[0][\vet{k}]=0$ for every $\vet{k}$. For each item $j$ we compute the matrix $v[j][k_1][k_2]$, with one row for each $k_1\in\{0,1,\dots,5\}$ and one column for each $k_2\in\{0,1,\dots,4\}$.
 
-        These are the computations of the cell $\vet{k}=\vet{c}=(5,4)$ for each item, and of the cells used later by the reconstruction:
+        These are the computations of the cell $\vet{k}=\vet{c}=(5,4)$ for each item, and of the cells used by the reconstruction:
 
         - $v[1][(5,4)]=\max\{v[0][(5,4)],\,p_1+v[0][(2,4)],\,p_1+v[0][(5,1)]\}=\max\{0,\,3+0,\,3+0\}=3$
 
@@ -198,7 +198,7 @@ The problem of this chapter is the [multiple knapsack problem (MKP)](https://fab
 
     !!! esempio "Example 24.3: The tables $s$"
 
-        For the instance of <span style="color:#1971c2">Example 1</span>, these are the matrices $s[j][k_1][k_2]$ computed by the DP algorithm: $0$ means that item $j$ is left out, $1$ and $2$ the knapsack into which it is inserted.
+        For the instance of <span style="color:#1971c2">[Example 24.1](#box-1-texmkpex1)</span>, these are the matrices $s[j][k_1][k_2]$ computed by the DP algorithm: $0$ means that item $j$ is left out, $1$ and $2$ the knapsack into which it is inserted.
 
         Item $j=1$, with $p_1=3$ and $w_1=3$:
 
@@ -274,7 +274,7 @@ The problem of this chapter is the [multiple knapsack problem (MKP)](https://fab
 
     !!! esempio "Example 24.4: Computing an optimal solution"
 
-        After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we start from $j=4$ and $\vet{k}=(5,4)$:
+        After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 24.1](#box-1-texmkpex1)</span>, we start from $j=4$ and $\vet{k}=(5,4)$:
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -347,7 +347,7 @@ The problem of this chapter is the [multiple knapsack problem (MKP)](https://fab
 
         !!! chiave ""
 
-            The vector $a=(1,2,0,1)$ is an optimal solution of the MKP instance of <span style="color:#1971c2">Example 1</span>: knapsack $1$ contains the items $\{1,4\}$, of total weight $3+2=5\le c_1$, and knapsack $2$ contains the items $\{2\}$, of total weight $4=4\le c_2$. The optimal value is $v(4,5,4)=17$.
+            The vector $a=(1,2,0,1)$ is an optimal solution of the MKP instance of <span style="color:#1971c2">[Example 24.1](#box-1-texmkpex1)</span>: knapsack $1$ contains the items $\{1,4\}$, of total weight $3+2=5\le c_1$, and knapsack $2$ contains the items $\{2\}$, of total weight $4\le c_2$. The optimal value is $v(4,5,4)=17$.
 
         Filling the knapsacks one after the other is not enough: the best filling of knapsack $1$ alone is $\{2\}$, of profit $9$, and the best filling of knapsack $2$ with the remaining items is $\{3\}$, of profit $7$, for a total of $16<17$.
 
@@ -415,7 +415,7 @@ The problem of this chapter is the [multiple knapsack problem (MKP)](https://fab
 
     - The tables $s$ store the knapsack of each item, and an optimal solution is read backwards from $(n,\vet{c})$.
 
-    <strong>Dashboard of the MKP example.</strong> Example 1 ($\vet{c}=(5,4)$, four items):
+    <strong>Dashboard of the MKP example.</strong> [Example 24.1](#box-1-texmkpex1) ($\vet{c}=(5,4)$, four items):
 
     <div class="tabella" markdown="0"><table>
     <tr>

@@ -27,7 +27,7 @@ title: "Variable neighbourhood search"
 
 - <strong>Shaking</strong> diversifies, and the size $k$ controls how much: small $k$ explores the solutions close to the current local optimum, larger $k$ goes farther only when the closer ones have failed. The <strong>local search</strong> intensifies. Returning to $k=1$ after every improvement concentrates the search near the new, better solution.
 
-- The variable neighbourhood descent ($VND$) of the notes on local search also uses several neighbourhoods, but <em>deterministically</em>: it explores them completely, one after the other, and stops at a solution that is a local optimum for all of them. $VNS$ explores the large neighbourhoods only by <em>random samples</em>, which is what makes very large neighbourhoods usable; the local search inside $VNS$ can itself be a $VND$.
+- The variable neighbourhood descent ($VND$) of the chapter [«Local search»](../local-search/index.md) also uses several neighbourhoods, but <em>deterministically</em>: it explores them completely, one after the other, and stops at a solution that is a local optimum for all of them. $VNS$ explores the large neighbourhoods only by <em>random samples</em>, which is what makes very large neighbourhoods usable; the local search inside $VNS$ can itself be a $VND$.
 
 - Here $N_k$ contains the assignments obtained by moving $k$ jobs (or fewer, if the same job is drawn twice). Since a swap of two jobs is the combination of two moves, $N_2$ contains the swap neighbourhood: shaking with $k=2$ can reproduce the swaps that the move neighbourhood cannot see.
 

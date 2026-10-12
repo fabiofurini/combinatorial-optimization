@@ -10,6 +10,8 @@ title: "Capacitated lot sizing"
 
 </div>
 
+The Capacitated Lot Sizing Problem and its reference instance (Example 8.1) are defined in [Chapter 8 «Lot sizing problems», Section 8.2](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem/).
+
 - The CLS has two formulations: the big-$M$ formulation $\mathrm{ILP}_{\mathrm{CLSP}}$ of Section [15.3](#sez-sec-lsf-bigM) and the shortest-path formulation $\mathrm{MIP}^{\mathrm{SP}}_{\mathrm{CLSP}}$ of Section [15.5](#sez-sec-lsf-SP).
 
 - Section [15.6](#sez-sec-lsf-compare) compares the bounds of their Linear Programming relaxations on the reference instance.
@@ -45,7 +47,7 @@ title: "Capacitated lot sizing"
 
 !!! chiave ""
 
-    Using these variables, an Integer Linear Programming (ILP) model for the capacitated lot-sizing problem (CLS) reads as follows:
+    Using these variables, an Integer Linear Programming (ILP) model for the capacitated lot sizing problem (CLS) reads as follows:
 
     <a id="eq-CLS-bigM"></a>
 
@@ -147,7 +149,7 @@ title: "Capacitated lot sizing"
     </tr>
     </table></div>
 
-    This is the reference instance of the chapter «Lot sizing problems». The big-M values are:
+    This is the instance of Example 8.1 of [Chapter 8 «Lot sizing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/). The big-M values are:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -224,7 +226,7 @@ title: "Capacitated lot sizing"
     \tilde{\vet y}=(1,0,1,1,0),\qquad \tilde{\vet x}=(3,0,4,4,0),\qquad \tilde{\vet s}=(1,0,1,1,0)
     $$
 
-    The optimal value $z(\mathrm{ILP}_{\mathrm{CLSP}})$ is $3\cdot 50+3\cdot 10=180$, the cost of the optimal plan of the chapter «Lot sizing problems». The weak big-M values give the same optimal solution.
+    The optimal value $z(\mathrm{ILP}_{\mathrm{CLSP}})$ is $3\cdot 50+3\cdot 10=180$, the cost of the optimal plan found by enumeration in [Chapter 8 «Lot sizing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/). The weak big-M values give the same optimal solution.
 
 ## 15.4 The Linear Programming relaxation of the big-M formulation
 
@@ -499,7 +501,7 @@ title: "Capacitated lot sizing"
 
 - The formulations have the same optimal value $z(\mathrm{ILP}_{\mathrm{CLSP}})=z(\mathrm{MIP}^{\mathrm{SP}}_{\mathrm{CLSP}})=180$, but their LP relaxations have different optimal values. On the reference instance the lower bounds, computed with the exact simplex algorithm and checked with Gurobi, are the following.
 
-- The last column is the gap of Chapter «Combinatorial optimization problems» between the bound and the optimal value; it is undefined for the bound $0$.
+- The last column is the gap of [Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/) between the bound and the optimal value; it is undefined for the bound $0$.
 
 <div class="tabella" markdown="0"><table>
 <tr>

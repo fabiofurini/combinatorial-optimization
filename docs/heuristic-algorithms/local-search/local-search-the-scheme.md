@@ -52,19 +52,19 @@ title: "Local search: the scheme · Neighbourhoods for the four problems"
 
 ### 31.4.1 KP: flip and swap
 
-- The <strong>flip</strong> neighbourhood, defined in the notes on definitions, changes one component of $x$, i.e., adds or removes one item; it has $n$ elements before the feasibility test. The flips are examined for $i=1,2,\dots,n$.
+- The <strong>flip</strong> neighbourhood, defined in the chapter [«Heuristic algorithms: definitions»](../heuristics.md), changes one component of $x$, i.e., adds or removes one item; it has $n$ elements before the feasibility test. The flips are examined for $j=1,2,\dots,n$.
 
-- The <strong>swap</strong> neighbourhood removes one selected item $i$ and adds one unselected item $k$. If $S$ is the set of the selected items, it has $|S|\,(n-|S|)\le n^2/4$ elements; the swaps are examined for $i\in S$ in increasing order and, for each $i$, for $k\notin S$ in increasing order.
+- The <strong>swap</strong> neighbourhood removes one selected item $j$ and adds one unselected item $k$. If $S$ is the set of the selected items, it has $|S|\,(n-|S|)\le n^2/4$ elements; the swaps are examined for $j\in S$ in increasing order and, for each $j$, for $k\notin S$ in increasing order.
 
 - The two neighbourhoods are complementary: a flip changes the number of selected items, a swap keeps it. The neighbourhood <strong>flip+swap</strong> is their union, with the flips examined first.
 
 ### 31.4.2 BPP: move and swap
 
-- The <strong>move</strong> neighbourhood moves one item $i$ from its bin $a=bin_i$ to another non-empty bin $b$ with $L_b+w_i\le c$. It has at most $n\,(nb-1)$ elements; the moves are examined for $i=1,2,\dots,n$ and, for each $i$, for the bins in increasing order of their label.
+- The <strong>move</strong> neighbourhood moves one item $j$ from its bin $a=bin_j$ to another non-empty bin $b$ with $L_b+w_j\le c$. It has at most $n\,(nb-1)$ elements; the moves are examined for $j=1,2,\dots,n$ and, for each $j$, for the bins in increasing order of their label.
 
 - Moving an item into an empty bin is never useful: it cannot decrease the number of bins. The bins keep the labels of the starting solution; a bin emptied by a move simply disappears.
 
-- The <strong>swap</strong> neighbourhood exchanges two items $i<k$ in different bins, provided that both bins remain feasible: $L_{bin_i}-w_i+w_k\le c$ and $L_{bin_k}-w_k+w_i\le c$. Exchanging two items of equal weight does not change any load, and is not considered. It has at most $\frac{n(n-1)}{2}$ elements, examined for $i=1,\dots,n$ and $k=i+1,\dots,n$.
+- The <strong>swap</strong> neighbourhood exchanges two items $j<k$ in different bins, provided that both bins remain feasible: $L_{bin_j}-w_j+w_k\le c$ and $L_{bin_k}-w_k+w_j\le c$. Exchanging two items of equal weight does not change any load, and is not considered. It has at most $\frac{n(n-1)}{2}$ elements, examined for $j=1,\dots,n$ and $k=j+1,\dots,n$.
 
 ### 31.4.3 TSP: 2-opt and Or-opt
 
@@ -110,25 +110,25 @@ title: "Local search: the scheme · Neighbourhoods for the four problems"
 <tr>
 <td>KP</td>
 <td>flip</td>
-<td>add or remove item <span class="arithmatex">\(i\)</span></td>
+<td>add or remove item <span class="arithmatex">\(j\)</span></td>
 <td><span class="arithmatex">\(n\)</span></td>
 </tr>
 <tr>
 <td>KP</td>
 <td>swap</td>
-<td>item <span class="arithmatex">\(i\)</span> out, item <span class="arithmatex">\(k\)</span> in</td>
+<td>item <span class="arithmatex">\(j\)</span> out, item <span class="arithmatex">\(k\)</span> in</td>
 <td><span class="arithmatex">\(|S|(n-|S|)\le \frac{n^2}{4}\)</span></td>
 </tr>
 <tr>
 <td>BPP</td>
 <td>move</td>
-<td>item <span class="arithmatex">\(i\)</span> to another bin</td>
+<td>item <span class="arithmatex">\(j\)</span> to another bin</td>
 <td><span class="arithmatex">\(\le n\,(nb-1)\)</span></td>
 </tr>
 <tr>
 <td>BPP</td>
 <td>swap</td>
-<td>exchange items <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(k\)</span></td>
+<td>exchange items <span class="arithmatex">\(j\)</span> and <span class="arithmatex">\(k\)</span></td>
 <td><span class="arithmatex">\(\le \frac{n(n-1)}{2}\)</span></td>
 </tr>
 <tr>

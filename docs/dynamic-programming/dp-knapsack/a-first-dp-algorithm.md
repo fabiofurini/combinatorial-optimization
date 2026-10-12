@@ -6,13 +6,13 @@ title: "A first DP algorithm"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 17** · [:material-book-open-variant: Chapter 17: 0/1 knapsack (KP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP table for the knapsack](../../lab/dp-knapsack-table.md)
+**Part 3 · Dynamic programming · Chapter 17** · [:material-book-open-variant: Chapter 17: 0/1 knapsack (KP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP tables for the knapsack problems](../../lab/dp-knapsack-table.md)
 
 </div>
 
 - <u>Step 1</u>: computation of the optimal value
 
-    !!! chiave ""
+    !!! formula ""
 
         For any $j \in \{0,1,\dots,n\}$ and $k \in \{0,1,\dots,c\}$, let $v(j,k)$ be the optimal value of the KP subinstance given by:
 
@@ -33,7 +33,9 @@ title: "A first DP algorithm"
         \end{array} \right. \tag{17.1}
         \end{equation*}
 
-    - The recursive decomposition process of formula $\eqref{eq:1}$ generates at most $2$ <strong>independent subproblems</strong>, corresponding to whether or not to select item $j$ for a knapsack of capacity $k$. If $w_j>k$, item $j$ cannot be selected, and therefore the only feasible option is not to select it. Here, $v(0,k)=0$ since no item is available, and $v(j,0)=0$ since no capacity is available.
+    - The recursive decomposition process of formula $\eqref{eq:1}$ generates at most $2$ <strong>independent subproblems</strong>, corresponding to whether or not to select item $j$ for a knapsack of capacity $k$. If $w_j>k$, item $j$ cannot be selected, and therefore the only feasible option is not to select it.
+
+    - Here, $v(0,k)=0$ since no item is available, and $v(j,0)=0$ since no capacity is available.
 
     - If $w_j\le k$, the optimal value $v(j,k)$ is obtained by trying the two possible options, selecting or not selecting item $j$, and selecting the one that maximizes the profit. The corresponding values are $p_j+v(j-1,k-w_j)$ and $v(j-1,k)$, respectively. If $w_j>k$, item $j$ cannot be selected, and therefore $v(j,k)=v(j-1,k)$.
 
@@ -45,7 +47,9 @@ title: "A first DP algorithm"
 
         $\rightsquigarrow$ <strong>Overlapping Subproblems verified!</strong>
 
-    - A <strong>first method</strong> to compute the optimal value $v(n,c)$ of the KP instance is the <strong>top-down approach</strong>. The method starts from the call with $j=n$ and $k=c$ and evaluates formula $\eqref{eq:1}$ recursively: each call considers item $j$ and either does not select it, or also considers selecting it when it fits. The recursion stops when no items are left or when the residual capacity is equal to $0$.
+    - A <strong>first method</strong> to compute the optimal value $v(n,c)$ of the KP instance is the <strong>top-down approach</strong>.
+
+    - The method starts from the call with $j=n$ and $k=c$ and evaluates formula $\eqref{eq:1}$ recursively: each call considers item $j$ and either does not select it, or also considers selecting it when it fits. The recursion stops when no items are left or when the residual capacity is equal to $0$.
 
     - The <strong>recursion tree</strong> of the function $v$ has one node for each recursive call, labeled with the function call it represents. The root represents the initial call. The children of a node represent the recursive calls made by that call. The leaf nodes represent the base cases.
 
@@ -53,19 +57,21 @@ title: "A first DP algorithm"
 
         !!! esempio "Example 17.3: Recursion tree"
 
-            We consider the KP instance of <span style="color:#1971c2">Example 1</span>. This is the recursion tree of the top-down approach to compute $v(3,5)$:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.1](index.md#box-1-texexpbox1)</span>. This is the recursion tree of the top-down approach to compute $v(3,5)$:
 
             ![Figure 3](../../img/dp-knapsack/fig03.svg){ .fig loading=lazy  }
 
             The function is called $12$ times, and the same subproblem is solved more than once: $v(1,2)$ is called $2$ times (shown with a red border), and so are $v(0,2)$ and $v(0,0)$.
 
-    - The value $v(j,k)$ can be computed once the values required by the right-hand side of formula $\eqref{eq:1}$ are known. In particular, ${v}(j-1,k)$ is needed when item $j$ is not selected and, if $w_j\le k$, ${v}(j-1,k-w_j)$ is needed when item $j$ is selected. Therefore, for a fixed value of $j$, all values $v(j,k)$ can be computed by considering the capacity values $k$ in increasing order.
+    - The value $v(j,k)$ can be computed once the values required by the right-hand side of formula $\eqref{eq:1}$ are known. In particular, ${v}(j-1,k)$ is needed when item $j$ is not selected and, if $w_j\le k$, ${v}(j-1,k-w_j)$ is needed when item $j$ is selected.
+
+    - Therefore, for a fixed value of $j$, all values $v(j,k)$ can be computed by considering the capacity values $k$ in increasing order.
 
         <a id="box-4-texkpsmallervalues"></a>
 
         !!! esempio "Example 17.4: Computing the values of the $v$ function"
 
-            We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.1](index.md#box-1-texexpbox1)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrr}
@@ -112,9 +118,13 @@ title: "A first DP algorithm"
 
     - We can avoid solving the same subproblems repeatedly by storing the value of each subproblem as soon as it is computed. The values are stored in a <strong>lookup table</strong>.
 
-    - Since solving any particular subproblem depends only on subproblems with a smaller value of $j$, we can solve the subproblems in increasing order of $j$ and, for each fixed value of $j$, in increasing order of capacity, starting from the base cases $v(0,k)=0$ and $v(j,0)=0$ and building up to $v(n,c)$: this observation naturally leads to a <strong>much more efficient method</strong> to compute the optimal value $v(n,c)$ of the KP instance.
+    - Since solving any particular subproblem depends only on subproblems with a smaller value of $j$, we can solve the subproblems in increasing order of $j$ and, for each fixed value of $j$, in increasing order of capacity, starting from the base cases $v(0,k)=0$ and $v(j,0)=0$ and building up to $v(n,c)$.
 
-    - A <strong>second method</strong> to compute the optimal value $v(n,c)$ of the KP instance is the <strong>bottom-up approach</strong>. The method starts from the base cases and evaluates formula $\eqref{eq:1}$ for increasing values of $j \in \{1,2,\dots,n\}$ and $k \in \{0,1,\dots,c\}$: each value $v(j,k)$ is computed using already-computed values, until the value $v(n,c)$ of the KP instance is obtained.
+    - This observation naturally leads to a <strong>much more efficient method</strong> to compute the optimal value $v(n,c)$ of the KP instance.
+
+    - A <strong>second method</strong> to compute the optimal value $v(n,c)$ of the KP instance is the <strong>bottom-up approach</strong>.
+
+    - The method starts from the base cases and evaluates formula $\eqref{eq:1}$ for increasing values of $j \in \{1,2,\dots,n\}$ and $k \in \{0,1,\dots,c\}$: each value $v(j,k)$ is computed using already-computed values, until the value $v(n,c)$ of the KP instance is obtained.
 
         This is the pseudo-code of the <strong>DP algorithm using the bottom-up approach</strong>:
 
@@ -140,7 +150,7 @@ title: "A first DP algorithm"
 
         !!! esempio "Example 17.5: Execution of the DP algorithm"
 
-            We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.1](index.md#box-1-texexpbox1)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrr}
@@ -325,7 +335,9 @@ title: "A first DP algorithm"
 
     - The vector is initialized with the base cases ${v}[k]=0$ for all $k \in \{0,1,\dots,c\}$, which correspond to the row $j=0$ of the matrix. Then, for each item $j \in \{1,2,\dots,n\}$, the vector is updated so that it contains the row $j$ of the matrix.
 
-    - The order in which the cells are updated is essential. When the cell ${v}[k]$ is updated for item $j$, the value ${v}[k-w_j]$ must still be the one of the row $j-1$, that is $v(j-1,k-w_j)$. Since $k-w_j<k$, this is guaranteed if the capacity values are considered in <strong>decreasing</strong> order $k=c,c-1,\dots,w_j$: when the cell $k$ is updated, the cell $k-w_j$ has not been updated yet during the current pass.
+    - The order in which the cells are updated is essential. When the cell ${v}[k]$ is updated for item $j$, the value ${v}[k-w_j]$ must still be the one of the row $j-1$, that is $v(j-1,k-w_j)$.
+
+    - Since $k-w_j<k$, this is guaranteed if the capacity values are considered in <strong>decreasing</strong> order $k=c,c-1,\dots,w_j$: when the cell $k$ is updated, the cell $k-w_j$ has not been updated yet during the current pass.
 
     - If the capacity values were considered in increasing order, the value ${v}[k-w_j]$ would already be the one of the row $j$, that is $v(j,k-w_j)$, and item $j$ could be selected more than once, which is not allowed in the KP.
 
@@ -353,7 +365,7 @@ title: "A first DP algorithm"
 
         !!! esempio "Example 17.6: Execution of the DP algorithm using a single vector"
 
-            We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.1](index.md#box-1-texexpbox1)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrr}
@@ -509,7 +521,7 @@ title: "A first DP algorithm"
 
         !!! esempio "Example 17.7: Computation of the additional information"
 
-            We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.1](index.md#box-1-texexpbox1)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrr}
@@ -697,7 +709,7 @@ title: "A first DP algorithm"
         \end{array}
         $$
 
-        This yields the vector $(x_1,x_2,\dots,x_n)$, where $x_j$ is equal to $1$ if item $j$ is selected in an optimal solution, and $0$ otherwise.
+    - This yields the vector $(x_1,x_2,\dots,x_n)$, where $x_j$ is equal to $1$ if item $j$ is selected in an optimal solution, and $0$ otherwise.
 
         !!! algoritmo "Algorithm: DP\_Reconstruct"
 
@@ -707,7 +719,7 @@ title: "A first DP algorithm"
 
         !!! esempio "Example 17.8: Computing an optimal solution"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following matrix ${s}$:
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 17.1](index.md#box-1-texexpbox1)</span>, we have the following matrix ${s}$:
 
             $$
             \begin{array}{l|rrrrrr}

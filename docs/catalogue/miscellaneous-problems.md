@@ -12,9 +12,9 @@ title: "Miscellaneous problems"
 
 <a id="sec:cat-pagina-miscellaneous-problems"></a>
 
-- The rod cutting problem asks how to cut a rod of integer length into pieces of integer length so that the total profit of the pieces is maximized.
+- In the rod cutting problem a rod of length $n$ is cut into pieces of integer length $\ell$ with profits $p_\ell$; the total length of the pieces equals $n$ and their total profit is maximized.
 
-- The coin change problem asks how to pay an amount with coins of given values using the minimum number of coins.
+- In the coin change problem an amount $c$ is returned with coins of the denominations $w_1,\dots,w_n$, each in unlimited supply; the total value equals $c$ and the number of coins is minimized.
 
 <div class="tabella" markdown="0"><table>
 <tr>

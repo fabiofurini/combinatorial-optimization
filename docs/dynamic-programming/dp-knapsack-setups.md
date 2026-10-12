@@ -12,7 +12,7 @@ title: "DP for the knapsack problem with setups"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter [«DP for the 0/1 knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/): the recurrence $v(j,k)$ over items and capacities, the matrix $s$ of the decisions and the reconstruction of a solution.
+    - From this module, the chapter [«DP for the 0/1 knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/): the recurrence $v(j,k)$ of the 0/1 knapsack problem (KP) over items and capacities, the matrix $s$ of the decisions and the reconstruction of a solution.
 
     - From this module, the chapter [«Knapsack problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups/): the knapsack problem with setups, its classes, setup costs $f_h$ and setup weights $s_h$.
 
@@ -53,7 +53,7 @@ The problem of this chapter is the [knapsack problem with setups (KPS)](https://
     \end{array}
     $$
 
-    We refer to this KPS instance as <span style="color:#1971c2">Example 1</span>.
+    We refer to this KPS instance as <span style="color:#1971c2">[Example 23.1](#box-1-texkpsex1)</span>.
 
 - <u>Step 1</u>: computation of the optimal value
 
@@ -61,7 +61,7 @@ The problem of this chapter is the [knapsack problem with setups (KPS)](https://
 
     - Inside an open class, the choice of the items is a KP: the DP algorithm of the KP runs over the items of the class, starting from the value left after paying the setup.
 
-    !!! chiave ""
+    !!! formula ""
 
         For any $h \in \{0,1,\dots,q\}$ and $k \in \{0,1,\dots,c\}$, let $v(h,k)$ be the optimal value of the KPS subinstance with capacity $k$ and the classes $\mathscr{J}_1,\dots,\mathscr{J}_h$. For any $h \in \{1,\dots,q\}$ and $i \in \{0,1,\dots,t_h\}$, let $u(h,i,k)$ be the optimal value of the same subinstance when class $h$ is open (its setup is paid) and only its first $i$ items are available, with $u(h,i,k)=-\infty$ if the setup weight does not fit.
 
@@ -129,7 +129,7 @@ The problem of this chapter is the [knapsack problem with setups (KPS)](https://
 
     !!! esempio "Example 23.2: Execution of the DP algorithm"
 
-        We consider the KPS instance of <span style="color:#1971c2">Example 1</span>. The rows are computed in the order of the table below, each one for $k=0,1,\dots,10$; these are some of the computations:
+        We consider the KPS instance of <span style="color:#1971c2">[Example 23.1](#box-1-texkpsex1)</span>. The rows are computed in the order of the table below, each one for $k=0,1,\dots,10$; these are some of the computations:
 
         - $u[1][0][1]=-\infty$, since $k=1<s_1=2$
 
@@ -312,7 +312,7 @@ The problem of this chapter is the [knapsack problem with setups (KPS)](https://
 
     !!! esempio "Example 23.3: The choice tables"
 
-        For the instance of <span style="color:#1971c2">Example 1</span>, these are the choice tables computed by the DP algorithm: the rows $s[h][i][\cdot]$ of the items, and the rows $o[h][\cdot]$ of the classes.
+        For the instance of <span style="color:#1971c2">[Example 23.1](#box-1-texkpsex1)</span>, these are the choice tables computed by the DP algorithm: the rows $s[h][i][\cdot]$ of the items, and the rows $o[h][\cdot]$ of the classes.
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -441,7 +441,7 @@ The problem of this chapter is the [knapsack problem with setups (KPS)](https://
 
     !!! esempio "Example 23.4: Computing an optimal solution"
 
-        After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we start from $h=2$ and $k=10$:
+        After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 23.1](#box-1-texkpsex1)</span>, we start from $h=2$ and $k=10$:
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -544,9 +544,9 @@ The problem of this chapter is the [knapsack problem with setups (KPS)](https://
 
         !!! chiave ""
 
-            The vector $x=(0,0,1,1,1)$ is an optimal solution of the KPS instance of <span style="color:#1971c2">Example 1</span>: only class $2$ is open, and the items $\{3,4,5\}$ are selected. Its total weight is $2+4+1+s_2=8\le c$ and its optimal value is $v(2,10)=4+7+3-f_2=11$.
+            The vector $x=(0,0,1,1,1)$ is an optimal solution of the KPS instance of <span style="color:#1971c2">[Example 23.1](#box-1-texkpsex1)</span>: only class $2$ is open, and the items $\{3,4,5\}$ are selected. Its total weight is $2+4+1+s_2=8\le c$ and its optimal value is $v(2,10)=4+7+3-f_2=11$.
 
-        Class $1$ contains the most efficient items, but it stays closed. With class $1$ alone the best value is $v[1][10]=9$, while the open class $2$ gives $u[2][3][10]=11$; after its items and its setup weight only $k=2$ is left for class $1$, and $o[1][2]=0$.
+        The items of class $1$ have the larger ratio between total revenue and total weight ($11/5$ against $14/7$), but class $1$ stays closed. With class $1$ alone the best value is $v[1][10]=9$, while the open class $2$ gives $u[2][3][10]=11$; after its items and its setup weight only $k=2$ is left for class $1$, and $o[1][2]=0$.
 
 ### 23.1.1 Number of steps
 
@@ -608,7 +608,7 @@ The problem of this chapter is the [knapsack problem with setups (KPS)](https://
 
     - The DP algorithm executes $\Theta(nc)$ steps, as the DP algorithm of the KP.
 
-    <strong>Dashboard of the KPS example.</strong> Example 1 ($c=10$, two classes):
+    <strong>Dashboard of the KPS example.</strong> [Example 23.1](#box-1-texkpsex1) ($c=10$, two classes):
 
     <div class="tabella" markdown="0"><table>
     <tr>

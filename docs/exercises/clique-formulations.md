@@ -12,7 +12,7 @@ title: "Exercises · Formulations of clique problems"
 
 !!! chiave ""
 
-    <strong>Formulations used in these exercises.</strong> The two models of the chapter [Formulations of clique problems](https://fabiofurini.github.io/combinatorial-optimization/formulations/clique-formulations/), where $\overline{E}$ is the set of non-edges of $G$ and $\mathcal{Q}$ the set of the maximal stable sets of $G$ (the maximal cliques of the complement graph). The edge formulation $\mathrm{ILP}_{\mathrm{MCP}}$:
+    <strong>Formulations used in these exercises.</strong> The models of the chapter [Formulations of clique problems](https://fabiofurini.github.io/combinatorial-optimization/formulations/clique-formulations/), where $\overline{E}$ is the set of non-edges of $G$ and $\mathcal{Q}$ the set of the maximal stable sets of $G$ (the maximal cliques of the complement graph). The edge formulation $\mathrm{ILP}_{\mathrm{MCP}}$:
 
     \begin{align*}
     && \max ~~ \sum_{v\in V} x_v \tag{M0}\\
@@ -28,7 +28,16 @@ title: "Exercises · Formulations of clique problems"
     && x_v &\in\{0,1\}, & \forall v\in V. \tag{M5}
     \end{align*}
 
-    The relaxation $\mathrm{LP}_{\mathrm{MCP}}$ relaxes (M2) into $0\le x_v\le 1$; the relaxation $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ relaxes (M5) into $x_v\ge 0$, since (M4) gives $x_v\le 1$.
+    The relaxation $\mathrm{LP}_{\mathrm{MCP}}$ relaxes (M2) into $0\le x_v\le 1$; the relaxation $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ relaxes (M5) into $x_v\ge 0$, since (M4) gives $x_v\le 1$. The models $\mathrm{ILP}_{\mathrm{MSSP}}$ and $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$ of the MSSP are (M0)–(M2) with (M1) written on the edges of $G$, and (M3)–(M5) with (M4) written on the maximal cliques of $G$. The model $\mathrm{ILP}^{\mathrm{VW}}_{\mathrm{MCP}}$ of the VWMCP is (M0)–(M2) with the objective function $\max \sum_{v\in V} w_v\,x_v$. The model $\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}}$ of the EWMCP adds a binary variable $y_{uv}$ for each edge $\{u,v\}\in E$:
+
+    \begin{align*}
+    && \max ~~ \sum_{\{u,v\}\in E} r_{uv}\,y_{uv} \tag{M6}\\
+    && \text{subject to} \quad y_{uv} &\le x_u, & \forall\{u,v\}\in E, \tag{M7}\\
+    && y_{uv} &\le x_v, & \forall\{u,v\}\in E, \tag{M8}\\
+    && x_u+x_v &\le 1, & \forall\{u,v\}\in\overline{E}, \tag{M9}\\
+    && x_v &\in\{0,1\}, & \forall v\in V, \tag{M10}\\
+    && y_{uv} &\in\{0,1\}, & \forall\{u,v\}\in E. \tag{M11}
+    \end{align*}
 
 <a id="esercizio-12-1"></a>
 
@@ -273,7 +282,7 @@ title: "Exercises · Formulations of clique problems"
 
     1. List the maximal stable sets of $W_5$, that is, the maximal cliques of $\overline{W_5}$.
 
-    2. Write the $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ model and its dual, and say which coloring formulation the dual relaxes.
+    2. Write the $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ model and its dual $D(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})$, and say which coloring formulation the dual relaxes.
 
     3. Find a primal solution and a dual solution of value $\frac{7}{2}$. What can you conclude?
 
@@ -298,7 +307,7 @@ title: "Exercises · Formulations of clique problems"
         \end{array}
         $$
 
-        With a non-negative dual variable $\pi_Q$ per constraint (index $Q$ written as its vertices), the dual is
+        With a non-negative dual variable $\pi_Q$ per constraint (index $Q$ written as its vertices), the dual $D(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})$ is
 
         $$
         \begin{array}{rrrrrrrcl}
@@ -313,7 +322,7 @@ title: "Exercises · Formulations of clique problems"
         \end{array}
         $$
 
-        It is the LP relaxation of the coloring formulation with the maximal stable sets: every vertex must be covered by a chosen stable set.
+        It is the LP relaxation of the stable set formulation $\mathrm{ILP}^{\mathrm{ST}}_{\mathrm{VCP}}$ of the VCP, with the maximal stable sets: every vertex must be covered by a chosen stable set.
 
     3. The primal point $\bar x_1=\dots=\bar x_5=\frac{1}{2}$, $\bar x_6=1$ satisfies all the constraints and has value $\frac{5}{2}+1=\frac{7}{2}$. The dual point $\bar\pi_Q=\frac{1}{2}$ for the five pairs and $\bar\pi_{6}=1$ covers every vertex of the cycle with $\frac{1}{2}+\frac{1}{2}=1$ and vertex $6$ with $1$, and has value $\frac{7}{2}$. Equal values: by weak duality both are optimal, and $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})=\frac{7}{2}$ (Gurobi agrees).
 

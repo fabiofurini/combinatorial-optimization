@@ -6,7 +6,7 @@ title: "Exercises · DP for the rod cutting problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 28** · each solution opens with a click · [:material-book-open-variant: Chapter 28: Rod cutting](../dynamic-programming/dp-rod-cutting/index.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
+**Exercises · Chapter 28** · each solution opens with a click · [:material-book-open-variant: Chapter 28: Rod cutting (RCP)](../dynamic-programming/dp-rod-cutting/index.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
 
 </div>
 
@@ -18,8 +18,8 @@ title: "Exercises · DP for the rod cutting problem"
 
     $$
     \begin{array}{l|rrrrrr}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} \\
-    \hline {p_i} & {2} & {5} & {7} & {8} & {10} & {13} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\
+    \hline {p_j} & {2} & {5} & {7} & {8} & {10} & {13} \\
     \hline
     \end{array}
     $$
@@ -38,12 +38,12 @@ title: "Exercises · DP for the rod cutting problem"
 
     1. Step-by-step execution of the first bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $\ell$ and $i$, the cells $v[\ell]$ and $s[\ell]$, the current value of $\mathit{m}$, and the current value of $\mathit{t}$. The cell of $\mathit{m}$ is highlighted in <mark>red</mark> when updated; the cell of $\mathit{t}$ is highlighted in <mark>blue</mark> when updated; the cells of $v[\ell]$ and $s[\ell]$ are highlighted in <mark>blue</mark> when assigned.
+        For each step of the DP algorithm, the table shows the values of $\ell$ and $j$, the cells $v[\ell]$ and $s[\ell]$, the current value of $\mathit{m}$, and the current value of $\mathit{t}$. The cell of $\mathit{m}$ is highlighted in <mark>red</mark> when updated; the cell of $\mathit{t}$ is highlighted in <mark>blue</mark> when updated; the cells of $v[\ell]$ and $s[\ell]$ are highlighted in <mark>blue</mark> when assigned.
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th><span class="arithmatex">\(\ell\)</span></th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(v[\ell]\)</span></th>
         <th><span class="arithmatex">\(s[\ell]\)</span></th>
         <th><span class="arithmatex">\(\mathit{m}\)</span></th>
@@ -393,15 +393,15 @@ title: "Exercises · DP for the rod cutting problem"
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
-        <th><span class="arithmatex">\(s[i]\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(s[j]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
         <th><span class="arithmatex">\(x[4]\)</span></th>
         <th><span class="arithmatex">\(x[5]\)</span></th>
         <th><span class="arithmatex">\(x[6]\)</span></th>
-        <th>Update of <span class="arithmatex">\(i\)</span></th>
+        <th>Update of <span class="arithmatex">\(j\)</span></th>
         </tr>
         <tr>
         <td>\-</td>
@@ -413,7 +413,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=6\)</span></td>
+        <td><span class="arithmatex">\(j=6\)</span></td>
         </tr>
         <tr>
         <td>1</td>
@@ -425,7 +425,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=6-2=4\)</span></td>
+        <td><span class="arithmatex">\(j=6-2=4\)</span></td>
         </tr>
         <tr>
         <td>2</td>
@@ -437,7 +437,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=4-2=2\)</span></td>
+        <td><span class="arithmatex">\(j=4-2=2\)</span></td>
         </tr>
         <tr>
         <td>3</td>
@@ -449,7 +449,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=2-2=0\)</span></td>
+        <td><span class="arithmatex">\(j=2-2=0\)</span></td>
         </tr>
         </table></div>
 
@@ -467,14 +467,14 @@ title: "Exercises · DP for the rod cutting problem"
 
     3. Step-by-step execution of the second bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $\ell$, the cells ${v}[i][\ell]$ and ${s}[i][\ell]$, and the operation performed. The cells are computed for increasing values of $i$ and, for each fixed value of $i$, for increasing values of $\ell$.
+        For each step of the DP algorithm, the table shows the values of $j$ and $\ell$, the cells ${v}[j][\ell]$ and ${s}[j][\ell]$, and the operation performed. The cells are computed for increasing values of $j$ and, for each fixed value of $j$, for increasing values of $\ell$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(\ell\)</span></th>
-        <th><span class="arithmatex">\({v}[i][\ell]\)</span></th>
-        <th><span class="arithmatex">\({s}[i][\ell]\)</span></th>
+        <th><span class="arithmatex">\({v}[j][\ell]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][\ell]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -531,7 +531,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[1][0]\leftarrow {v}[0][0]=0\)</span>, <span class="arithmatex">\({s}[1][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[1][0]\leftarrow {v}[0][0]=0\)</span>, <span class="arithmatex">\({s}[1][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(1\)</span></td>
@@ -580,14 +580,14 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[2][0]\leftarrow {v}[1][0]=0\)</span>, <span class="arithmatex">\({s}[2][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[2][0]\leftarrow {v}[1][0]=0\)</span>, <span class="arithmatex">\({s}[2][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(2\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>2</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[2][1]\leftarrow {v}[1][1]=2\)</span>, <span class="arithmatex">\({s}[2][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[2][1]\leftarrow {v}[1][1]=2\)</span>, <span class="arithmatex">\({s}[2][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(2\)</span></td>
@@ -629,21 +629,21 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[3][0]\leftarrow {v}[2][0]=0\)</span>, <span class="arithmatex">\({s}[3][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[3][0]\leftarrow {v}[2][0]=0\)</span>, <span class="arithmatex">\({s}[3][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(3\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>2</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[3][1]\leftarrow {v}[2][1]=2\)</span>, <span class="arithmatex">\({s}[3][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[3][1]\leftarrow {v}[2][1]=2\)</span>, <span class="arithmatex">\({s}[3][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(3\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>5</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[3][2]\leftarrow {v}[2][2]=5\)</span>, <span class="arithmatex">\({s}[3][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[3][2]\leftarrow {v}[2][2]=5\)</span>, <span class="arithmatex">\({s}[3][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(3\)</span></td>
@@ -678,28 +678,28 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][0]\leftarrow {v}[3][0]=0\)</span>, <span class="arithmatex">\({s}[4][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][0]\leftarrow {v}[3][0]=0\)</span>, <span class="arithmatex">\({s}[4][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>2</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][1]\leftarrow {v}[3][1]=2\)</span>, <span class="arithmatex">\({s}[4][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][1]\leftarrow {v}[3][1]=2\)</span>, <span class="arithmatex">\({s}[4][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>5</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][2]\leftarrow {v}[3][2]=5\)</span>, <span class="arithmatex">\({s}[4][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][2]\leftarrow {v}[3][2]=5\)</span>, <span class="arithmatex">\({s}[4][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
         <td><span class="arithmatex">\(3\)</span></td>
         <td>7</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][3]\leftarrow {v}[3][3]=7\)</span>, <span class="arithmatex">\({s}[4][3]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][3]\leftarrow {v}[3][3]=7\)</span>, <span class="arithmatex">\({s}[4][3]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
@@ -727,35 +727,35 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][0]\leftarrow {v}[4][0]=0\)</span>, <span class="arithmatex">\({s}[5][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][0]\leftarrow {v}[4][0]=0\)</span>, <span class="arithmatex">\({s}[5][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>2</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][1]\leftarrow {v}[4][1]=2\)</span>, <span class="arithmatex">\({s}[5][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][1]\leftarrow {v}[4][1]=2\)</span>, <span class="arithmatex">\({s}[5][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>5</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][2]\leftarrow {v}[4][2]=5\)</span>, <span class="arithmatex">\({s}[5][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][2]\leftarrow {v}[4][2]=5\)</span>, <span class="arithmatex">\({s}[5][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(3\)</span></td>
         <td>7</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][3]\leftarrow {v}[4][3]=7\)</span>, <span class="arithmatex">\({s}[5][3]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][3]\leftarrow {v}[4][3]=7\)</span>, <span class="arithmatex">\({s}[5][3]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(4\)</span></td>
         <td>10</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][4]\leftarrow {v}[4][4]=10\)</span>, <span class="arithmatex">\({s}[5][4]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][4]\leftarrow {v}[4][4]=10\)</span>, <span class="arithmatex">\({s}[5][4]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
@@ -776,42 +776,42 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][0]\leftarrow {v}[5][0]=0\)</span>, <span class="arithmatex">\({s}[6][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][0]\leftarrow {v}[5][0]=0\)</span>, <span class="arithmatex">\({s}[6][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>2</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][1]\leftarrow {v}[5][1]=2\)</span>, <span class="arithmatex">\({s}[6][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][1]\leftarrow {v}[5][1]=2\)</span>, <span class="arithmatex">\({s}[6][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>5</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][2]\leftarrow {v}[5][2]=5\)</span>, <span class="arithmatex">\({s}[6][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][2]\leftarrow {v}[5][2]=5\)</span>, <span class="arithmatex">\({s}[6][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
         <td><span class="arithmatex">\(3\)</span></td>
         <td>7</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][3]\leftarrow {v}[5][3]=7\)</span>, <span class="arithmatex">\({s}[6][3]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][3]\leftarrow {v}[5][3]=7\)</span>, <span class="arithmatex">\({s}[6][3]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
         <td><span class="arithmatex">\(4\)</span></td>
         <td>10</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][4]\leftarrow {v}[5][4]=10\)</span>, <span class="arithmatex">\({s}[6][4]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][4]\leftarrow {v}[5][4]=10\)</span>, <span class="arithmatex">\({s}[6][4]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
         <td><span class="arithmatex">\(5\)</span></td>
         <td>12</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][5]\leftarrow {v}[5][5]=12\)</span>, <span class="arithmatex">\({s}[6][5]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][5]\leftarrow {v}[5][5]=12\)</span>, <span class="arithmatex">\({s}[6][5]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
@@ -826,28 +826,28 @@ title: "Exercises · DP for the rod cutting problem"
 
         $$
         \begin{array}{l|rrrrrrr}
-        \hline {{v}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
-        \hline {i=0} & 0 & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} \\
-        {i=1} & 0 & 2 & 4 & 6 & 8 & 10 & 12 \\
-        {i=2} & 0 & 2 & 5 & 7 & 10 & 12 & 15 \\
-        {i=3} & 0 & 2 & 5 & 7 & 10 & 12 & 15 \\
-        {i=4} & 0 & 2 & 5 & 7 & 10 & 12 & 15 \\
-        {i=5} & 0 & 2 & 5 & 7 & 10 & 12 & 15 \\
-        {i=6} & 0 & 2 & 5 & 7 & 10 & 12 & 15 \\
+        \hline {{v}[j][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {j=0} & 0 & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} \\
+        {j=1} & 0 & 2 & 4 & 6 & 8 & 10 & 12 \\
+        {j=2} & 0 & 2 & 5 & 7 & 10 & 12 & 15 \\
+        {j=3} & 0 & 2 & 5 & 7 & 10 & 12 & 15 \\
+        {j=4} & 0 & 2 & 5 & 7 & 10 & 12 & 15 \\
+        {j=5} & 0 & 2 & 5 & 7 & 10 & 12 & 15 \\
+        {j=6} & 0 & 2 & 5 & 7 & 10 & 12 & 15 \\
         \hline
         \end{array}
         $$
 
         $$
         \begin{array}{l|rrrrrrr}
-        \hline {{s}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=6} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {{s}[j][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=6} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
@@ -859,9 +859,9 @@ title: "Exercises · DP for the rod cutting problem"
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(\ell\)</span></th>
-        <th><span class="arithmatex">\({s}[i][\ell]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][\ell]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
@@ -881,7 +881,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 5\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 5\)</span></td>
         </tr>
         <tr>
         <td>2</td>
@@ -894,7 +894,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 4\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 4\)</span></td>
         </tr>
         <tr>
         <td>3</td>
@@ -907,7 +907,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 3\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 3\)</span></td>
         </tr>
         <tr>
         <td>4</td>
@@ -920,7 +920,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 2\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 2\)</span></td>
         </tr>
         <tr>
         <td>5</td>
@@ -983,8 +983,8 @@ title: "Exercises · DP for the rod cutting problem"
 
     $$
     \begin{array}{l|rrrrr}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
-    \hline {p_i} & {1} & {4} & {6} & {8} & {9} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\
+    \hline {p_j} & {1} & {4} & {6} & {8} & {9} \\
     \hline
     \end{array}
     $$
@@ -1003,12 +1003,12 @@ title: "Exercises · DP for the rod cutting problem"
 
     1. Step-by-step execution of the first bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $\ell$ and $i$, the cells $v[\ell]$ and $s[\ell]$, the current value of $\mathit{m}$, and the current value of $\mathit{t}$. The cell of $\mathit{m}$ is highlighted in <mark>red</mark> when updated; the cell of $\mathit{t}$ is highlighted in <mark>blue</mark> when updated; the cells of $v[\ell]$ and $s[\ell]$ are highlighted in <mark>blue</mark> when assigned.
+        For each step of the DP algorithm, the table shows the values of $\ell$ and $j$, the cells $v[\ell]$ and $s[\ell]$, the current value of $\mathit{m}$, and the current value of $\mathit{t}$. The cell of $\mathit{m}$ is highlighted in <mark>red</mark> when updated; the cell of $\mathit{t}$ is highlighted in <mark>blue</mark> when updated; the cells of $v[\ell]$ and $s[\ell]$ are highlighted in <mark>blue</mark> when assigned.
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th><span class="arithmatex">\(\ell\)</span></th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(v[\ell]\)</span></th>
         <th><span class="arithmatex">\(s[\ell]\)</span></th>
         <th><span class="arithmatex">\(\mathit{m}\)</span></th>
@@ -1286,14 +1286,14 @@ title: "Exercises · DP for the rod cutting problem"
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
-        <th><span class="arithmatex">\(s[i]\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(s[j]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
         <th><span class="arithmatex">\(x[4]\)</span></th>
         <th><span class="arithmatex">\(x[5]\)</span></th>
-        <th>Update of <span class="arithmatex">\(i\)</span></th>
+        <th>Update of <span class="arithmatex">\(j\)</span></th>
         </tr>
         <tr>
         <td>\-</td>
@@ -1304,7 +1304,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=5\)</span></td>
+        <td><span class="arithmatex">\(j=5\)</span></td>
         </tr>
         <tr>
         <td>1</td>
@@ -1315,7 +1315,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=5-2=3\)</span></td>
+        <td><span class="arithmatex">\(j=5-2=3\)</span></td>
         </tr>
         <tr>
         <td>2</td>
@@ -1326,7 +1326,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td class="cella-blu">1</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=3-3=0\)</span></td>
+        <td><span class="arithmatex">\(j=3-3=0\)</span></td>
         </tr>
         </table></div>
 
@@ -1344,14 +1344,14 @@ title: "Exercises · DP for the rod cutting problem"
 
     3. Step-by-step execution of the second bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $\ell$, the cells ${v}[i][\ell]$ and ${s}[i][\ell]$, and the operation performed. The cells are computed for increasing values of $i$ and, for each fixed value of $i$, for increasing values of $\ell$.
+        For each step of the DP algorithm, the table shows the values of $j$ and $\ell$, the cells ${v}[j][\ell]$ and ${s}[j][\ell]$, and the operation performed. The cells are computed for increasing values of $j$ and, for each fixed value of $j$, for increasing values of $\ell$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(\ell\)</span></th>
-        <th><span class="arithmatex">\({v}[i][\ell]\)</span></th>
-        <th><span class="arithmatex">\({s}[i][\ell]\)</span></th>
+        <th><span class="arithmatex">\({v}[j][\ell]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][\ell]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -1401,7 +1401,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[1][0]\leftarrow {v}[0][0]=0\)</span>, <span class="arithmatex">\({s}[1][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[1][0]\leftarrow {v}[0][0]=0\)</span>, <span class="arithmatex">\({s}[1][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(1\)</span></td>
@@ -1443,14 +1443,14 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[2][0]\leftarrow {v}[1][0]=0\)</span>, <span class="arithmatex">\({s}[2][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[2][0]\leftarrow {v}[1][0]=0\)</span>, <span class="arithmatex">\({s}[2][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(2\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>1</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[2][1]\leftarrow {v}[1][1]=1\)</span>, <span class="arithmatex">\({s}[2][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[2][1]\leftarrow {v}[1][1]=1\)</span>, <span class="arithmatex">\({s}[2][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(2\)</span></td>
@@ -1485,21 +1485,21 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[3][0]\leftarrow {v}[2][0]=0\)</span>, <span class="arithmatex">\({s}[3][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[3][0]\leftarrow {v}[2][0]=0\)</span>, <span class="arithmatex">\({s}[3][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(3\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>1</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[3][1]\leftarrow {v}[2][1]=1\)</span>, <span class="arithmatex">\({s}[3][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[3][1]\leftarrow {v}[2][1]=1\)</span>, <span class="arithmatex">\({s}[3][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(3\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>4</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[3][2]\leftarrow {v}[2][2]=4\)</span>, <span class="arithmatex">\({s}[3][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[3][2]\leftarrow {v}[2][2]=4\)</span>, <span class="arithmatex">\({s}[3][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(3\)</span></td>
@@ -1527,28 +1527,28 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][0]\leftarrow {v}[3][0]=0\)</span>, <span class="arithmatex">\({s}[4][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][0]\leftarrow {v}[3][0]=0\)</span>, <span class="arithmatex">\({s}[4][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>1</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][1]\leftarrow {v}[3][1]=1\)</span>, <span class="arithmatex">\({s}[4][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][1]\leftarrow {v}[3][1]=1\)</span>, <span class="arithmatex">\({s}[4][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>4</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][2]\leftarrow {v}[3][2]=4\)</span>, <span class="arithmatex">\({s}[4][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][2]\leftarrow {v}[3][2]=4\)</span>, <span class="arithmatex">\({s}[4][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
         <td><span class="arithmatex">\(3\)</span></td>
         <td>6</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][3]\leftarrow {v}[3][3]=6\)</span>, <span class="arithmatex">\({s}[4][3]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][3]\leftarrow {v}[3][3]=6\)</span>, <span class="arithmatex">\({s}[4][3]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
@@ -1569,35 +1569,35 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][0]\leftarrow {v}[4][0]=0\)</span>, <span class="arithmatex">\({s}[5][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][0]\leftarrow {v}[4][0]=0\)</span>, <span class="arithmatex">\({s}[5][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>1</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][1]\leftarrow {v}[4][1]=1\)</span>, <span class="arithmatex">\({s}[5][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][1]\leftarrow {v}[4][1]=1\)</span>, <span class="arithmatex">\({s}[5][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>4</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][2]\leftarrow {v}[4][2]=4\)</span>, <span class="arithmatex">\({s}[5][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][2]\leftarrow {v}[4][2]=4\)</span>, <span class="arithmatex">\({s}[5][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(3\)</span></td>
         <td>6</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][3]\leftarrow {v}[4][3]=6\)</span>, <span class="arithmatex">\({s}[5][3]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][3]\leftarrow {v}[4][3]=6\)</span>, <span class="arithmatex">\({s}[5][3]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(4\)</span></td>
         <td>8</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][4]\leftarrow {v}[4][4]=8\)</span>, <span class="arithmatex">\({s}[5][4]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][4]\leftarrow {v}[4][4]=8\)</span>, <span class="arithmatex">\({s}[5][4]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
@@ -1612,26 +1612,26 @@ title: "Exercises · DP for the rod cutting problem"
 
         $$
         \begin{array}{l|rrrrrr}
-        \hline {{v}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
-        \hline {i=0} & 0 & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} \\
-        {i=1} & 0 & 1 & 2 & 3 & 4 & 5 \\
-        {i=2} & 0 & 1 & 4 & 5 & 8 & 9 \\
-        {i=3} & 0 & 1 & 4 & 6 & 8 & 10 \\
-        {i=4} & 0 & 1 & 4 & 6 & 8 & 10 \\
-        {i=5} & 0 & 1 & 4 & 6 & 8 & 10 \\
+        \hline {{v}[j][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
+        \hline {j=0} & 0 & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} \\
+        {j=1} & 0 & 1 & 2 & 3 & 4 & 5 \\
+        {j=2} & 0 & 1 & 4 & 5 & 8 & 9 \\
+        {j=3} & 0 & 1 & 4 & 6 & 8 & 10 \\
+        {j=4} & 0 & 1 & 4 & 6 & 8 & 10 \\
+        {j=5} & 0 & 1 & 4 & 6 & 8 & 10 \\
         \hline
         \end{array}
         $$
 
         $$
         \begin{array}{l|rrrrrr}
-        \hline {{s}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 1 & 0 & 1 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {{s}[j][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 1 & 0 & 1 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=5} & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
@@ -1643,9 +1643,9 @@ title: "Exercises · DP for the rod cutting problem"
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(\ell\)</span></th>
-        <th><span class="arithmatex">\({s}[i][\ell]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][\ell]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
@@ -1663,7 +1663,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 4\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 4\)</span></td>
         </tr>
         <tr>
         <td>2</td>
@@ -1675,7 +1675,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 3\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 3\)</span></td>
         </tr>
         <tr>
         <td>3</td>
@@ -1699,7 +1699,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>1</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 2\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 2\)</span></td>
         </tr>
         <tr>
         <td>5</td>
@@ -1735,8 +1735,8 @@ title: "Exercises · DP for the rod cutting problem"
 
     $$
     \begin{array}{l|rrrrr}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
-    \hline {p_i} & {3} & {5} & {8} & {9} & {10} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\
+    \hline {p_j} & {3} & {5} & {8} & {9} & {10} \\
     \hline
     \end{array}
     $$
@@ -1755,12 +1755,12 @@ title: "Exercises · DP for the rod cutting problem"
 
     1. Step-by-step execution of the first bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $\ell$ and $i$, the cells $v[\ell]$ and $s[\ell]$, the current value of $\mathit{m}$, and the current value of $\mathit{t}$. The cell of $\mathit{m}$ is highlighted in <mark>red</mark> when updated; the cell of $\mathit{t}$ is highlighted in <mark>blue</mark> when updated; the cells of $v[\ell]$ and $s[\ell]$ are highlighted in <mark>blue</mark> when assigned.
+        For each step of the DP algorithm, the table shows the values of $\ell$ and $j$, the cells $v[\ell]$ and $s[\ell]$, the current value of $\mathit{m}$, and the current value of $\mathit{t}$. The cell of $\mathit{m}$ is highlighted in <mark>red</mark> when updated; the cell of $\mathit{t}$ is highlighted in <mark>blue</mark> when updated; the cells of $v[\ell]$ and $s[\ell]$ are highlighted in <mark>blue</mark> when assigned.
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th><span class="arithmatex">\(\ell\)</span></th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(v[\ell]\)</span></th>
         <th><span class="arithmatex">\(s[\ell]\)</span></th>
         <th><span class="arithmatex">\(\mathit{m}\)</span></th>
@@ -2038,14 +2038,14 @@ title: "Exercises · DP for the rod cutting problem"
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
-        <th><span class="arithmatex">\(s[i]\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(s[j]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
         <th><span class="arithmatex">\(x[4]\)</span></th>
         <th><span class="arithmatex">\(x[5]\)</span></th>
-        <th>Update of <span class="arithmatex">\(i\)</span></th>
+        <th>Update of <span class="arithmatex">\(j\)</span></th>
         </tr>
         <tr>
         <td>\-</td>
@@ -2056,7 +2056,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=5\)</span></td>
+        <td><span class="arithmatex">\(j=5\)</span></td>
         </tr>
         <tr>
         <td>1</td>
@@ -2067,7 +2067,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=5-1=4\)</span></td>
+        <td><span class="arithmatex">\(j=5-1=4\)</span></td>
         </tr>
         <tr>
         <td>2</td>
@@ -2078,7 +2078,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=4-1=3\)</span></td>
+        <td><span class="arithmatex">\(j=4-1=3\)</span></td>
         </tr>
         <tr>
         <td>3</td>
@@ -2089,7 +2089,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=3-1=2\)</span></td>
+        <td><span class="arithmatex">\(j=3-1=2\)</span></td>
         </tr>
         <tr>
         <td>4</td>
@@ -2100,7 +2100,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=2-1=1\)</span></td>
+        <td><span class="arithmatex">\(j=2-1=1\)</span></td>
         </tr>
         <tr>
         <td>5</td>
@@ -2111,7 +2111,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=1-1=0\)</span></td>
+        <td><span class="arithmatex">\(j=1-1=0\)</span></td>
         </tr>
         </table></div>
 
@@ -2129,14 +2129,14 @@ title: "Exercises · DP for the rod cutting problem"
 
     3. Step-by-step execution of the second bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $\ell$, the cells ${v}[i][\ell]$ and ${s}[i][\ell]$, and the operation performed. The cells are computed for increasing values of $i$ and, for each fixed value of $i$, for increasing values of $\ell$.
+        For each step of the DP algorithm, the table shows the values of $j$ and $\ell$, the cells ${v}[j][\ell]$ and ${s}[j][\ell]$, and the operation performed. The cells are computed for increasing values of $j$ and, for each fixed value of $j$, for increasing values of $\ell$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(\ell\)</span></th>
-        <th><span class="arithmatex">\({v}[i][\ell]\)</span></th>
-        <th><span class="arithmatex">\({s}[i][\ell]\)</span></th>
+        <th><span class="arithmatex">\({v}[j][\ell]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][\ell]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -2186,7 +2186,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[1][0]\leftarrow {v}[0][0]=0\)</span>, <span class="arithmatex">\({s}[1][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[1][0]\leftarrow {v}[0][0]=0\)</span>, <span class="arithmatex">\({s}[1][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(1\)</span></td>
@@ -2228,14 +2228,14 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[2][0]\leftarrow {v}[1][0]=0\)</span>, <span class="arithmatex">\({s}[2][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[2][0]\leftarrow {v}[1][0]=0\)</span>, <span class="arithmatex">\({s}[2][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(2\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>3</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[2][1]\leftarrow {v}[1][1]=3\)</span>, <span class="arithmatex">\({s}[2][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[2][1]\leftarrow {v}[1][1]=3\)</span>, <span class="arithmatex">\({s}[2][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(2\)</span></td>
@@ -2270,21 +2270,21 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[3][0]\leftarrow {v}[2][0]=0\)</span>, <span class="arithmatex">\({s}[3][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[3][0]\leftarrow {v}[2][0]=0\)</span>, <span class="arithmatex">\({s}[3][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(3\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>3</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[3][1]\leftarrow {v}[2][1]=3\)</span>, <span class="arithmatex">\({s}[3][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[3][1]\leftarrow {v}[2][1]=3\)</span>, <span class="arithmatex">\({s}[3][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(3\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>6</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[3][2]\leftarrow {v}[2][2]=6\)</span>, <span class="arithmatex">\({s}[3][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[3][2]\leftarrow {v}[2][2]=6\)</span>, <span class="arithmatex">\({s}[3][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(3\)</span></td>
@@ -2312,28 +2312,28 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][0]\leftarrow {v}[3][0]=0\)</span>, <span class="arithmatex">\({s}[4][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][0]\leftarrow {v}[3][0]=0\)</span>, <span class="arithmatex">\({s}[4][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>3</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][1]\leftarrow {v}[3][1]=3\)</span>, <span class="arithmatex">\({s}[4][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][1]\leftarrow {v}[3][1]=3\)</span>, <span class="arithmatex">\({s}[4][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>6</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][2]\leftarrow {v}[3][2]=6\)</span>, <span class="arithmatex">\({s}[4][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][2]\leftarrow {v}[3][2]=6\)</span>, <span class="arithmatex">\({s}[4][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
         <td><span class="arithmatex">\(3\)</span></td>
         <td>9</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][3]\leftarrow {v}[3][3]=9\)</span>, <span class="arithmatex">\({s}[4][3]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][3]\leftarrow {v}[3][3]=9\)</span>, <span class="arithmatex">\({s}[4][3]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
@@ -2354,35 +2354,35 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][0]\leftarrow {v}[4][0]=0\)</span>, <span class="arithmatex">\({s}[5][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][0]\leftarrow {v}[4][0]=0\)</span>, <span class="arithmatex">\({s}[5][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>3</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][1]\leftarrow {v}[4][1]=3\)</span>, <span class="arithmatex">\({s}[5][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][1]\leftarrow {v}[4][1]=3\)</span>, <span class="arithmatex">\({s}[5][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>6</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][2]\leftarrow {v}[4][2]=6\)</span>, <span class="arithmatex">\({s}[5][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][2]\leftarrow {v}[4][2]=6\)</span>, <span class="arithmatex">\({s}[5][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(3\)</span></td>
         <td>9</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][3]\leftarrow {v}[4][3]=9\)</span>, <span class="arithmatex">\({s}[5][3]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][3]\leftarrow {v}[4][3]=9\)</span>, <span class="arithmatex">\({s}[5][3]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(4\)</span></td>
         <td>12</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][4]\leftarrow {v}[4][4]=12\)</span>, <span class="arithmatex">\({s}[5][4]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][4]\leftarrow {v}[4][4]=12\)</span>, <span class="arithmatex">\({s}[5][4]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
@@ -2397,26 +2397,26 @@ title: "Exercises · DP for the rod cutting problem"
 
         $$
         \begin{array}{l|rrrrrr}
-        \hline {{v}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
-        \hline {i=0} & 0 & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} \\
-        {i=1} & 0 & 3 & 6 & 9 & 12 & 15 \\
-        {i=2} & 0 & 3 & 6 & 9 & 12 & 15 \\
-        {i=3} & 0 & 3 & 6 & 9 & 12 & 15 \\
-        {i=4} & 0 & 3 & 6 & 9 & 12 & 15 \\
-        {i=5} & 0 & 3 & 6 & 9 & 12 & 15 \\
+        \hline {{v}[j][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
+        \hline {j=0} & 0 & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} \\
+        {j=1} & 0 & 3 & 6 & 9 & 12 & 15 \\
+        {j=2} & 0 & 3 & 6 & 9 & 12 & 15 \\
+        {j=3} & 0 & 3 & 6 & 9 & 12 & 15 \\
+        {j=4} & 0 & 3 & 6 & 9 & 12 & 15 \\
+        {j=5} & 0 & 3 & 6 & 9 & 12 & 15 \\
         \hline
         \end{array}
         $$
 
         $$
         \begin{array}{l|rrrrrr}
-        \hline {{s}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {{s}[j][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=5} & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
@@ -2428,9 +2428,9 @@ title: "Exercises · DP for the rod cutting problem"
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(\ell\)</span></th>
-        <th><span class="arithmatex">\({s}[i][\ell]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][\ell]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
@@ -2448,7 +2448,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 4\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 4\)</span></td>
         </tr>
         <tr>
         <td>2</td>
@@ -2460,7 +2460,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 3\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 3\)</span></td>
         </tr>
         <tr>
         <td>3</td>
@@ -2472,7 +2472,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 2\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 2\)</span></td>
         </tr>
         <tr>
         <td>4</td>
@@ -2484,7 +2484,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 1\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 1\)</span></td>
         </tr>
         <tr>
         <td>5</td>
@@ -2568,8 +2568,8 @@ title: "Exercises · DP for the rod cutting problem"
 
     $$
     \begin{array}{l|rrrrrr}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} \\
-    \hline {p_i} & {2} & {6} & {7} & {11} & {13} & {17} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\
+    \hline {p_j} & {2} & {6} & {7} & {11} & {13} & {17} \\
     \hline
     \end{array}
     $$
@@ -2588,12 +2588,12 @@ title: "Exercises · DP for the rod cutting problem"
 
     1. Step-by-step execution of the first bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $\ell$ and $i$, the cells $v[\ell]$ and $s[\ell]$, the current value of $\mathit{m}$, and the current value of $\mathit{t}$. The cell of $\mathit{m}$ is highlighted in <mark>red</mark> when updated; the cell of $\mathit{t}$ is highlighted in <mark>blue</mark> when updated; the cells of $v[\ell]$ and $s[\ell]$ are highlighted in <mark>blue</mark> when assigned.
+        For each step of the DP algorithm, the table shows the values of $\ell$ and $j$, the cells $v[\ell]$ and $s[\ell]$, the current value of $\mathit{m}$, and the current value of $\mathit{t}$. The cell of $\mathit{m}$ is highlighted in <mark>red</mark> when updated; the cell of $\mathit{t}$ is highlighted in <mark>blue</mark> when updated; the cells of $v[\ell]$ and $s[\ell]$ are highlighted in <mark>blue</mark> when assigned.
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th><span class="arithmatex">\(\ell\)</span></th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(v[\ell]\)</span></th>
         <th><span class="arithmatex">\(s[\ell]\)</span></th>
         <th><span class="arithmatex">\(\mathit{m}\)</span></th>
@@ -2943,15 +2943,15 @@ title: "Exercises · DP for the rod cutting problem"
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
-        <th><span class="arithmatex">\(s[i]\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(s[j]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
         <th><span class="arithmatex">\(x[4]\)</span></th>
         <th><span class="arithmatex">\(x[5]\)</span></th>
         <th><span class="arithmatex">\(x[6]\)</span></th>
-        <th>Update of <span class="arithmatex">\(i\)</span></th>
+        <th>Update of <span class="arithmatex">\(j\)</span></th>
         </tr>
         <tr>
         <td>\-</td>
@@ -2963,7 +2963,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=6\)</span></td>
+        <td><span class="arithmatex">\(j=6\)</span></td>
         </tr>
         <tr>
         <td>1</td>
@@ -2975,7 +2975,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=6-2=4\)</span></td>
+        <td><span class="arithmatex">\(j=6-2=4\)</span></td>
         </tr>
         <tr>
         <td>2</td>
@@ -2987,7 +2987,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=4-2=2\)</span></td>
+        <td><span class="arithmatex">\(j=4-2=2\)</span></td>
         </tr>
         <tr>
         <td>3</td>
@@ -2999,7 +2999,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=2-2=0\)</span></td>
+        <td><span class="arithmatex">\(j=2-2=0\)</span></td>
         </tr>
         </table></div>
 
@@ -3017,14 +3017,14 @@ title: "Exercises · DP for the rod cutting problem"
 
     3. Step-by-step execution of the second bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $\ell$, the cells ${v}[i][\ell]$ and ${s}[i][\ell]$, and the operation performed. The cells are computed for increasing values of $i$ and, for each fixed value of $i$, for increasing values of $\ell$.
+        For each step of the DP algorithm, the table shows the values of $j$ and $\ell$, the cells ${v}[j][\ell]$ and ${s}[j][\ell]$, and the operation performed. The cells are computed for increasing values of $j$ and, for each fixed value of $j$, for increasing values of $\ell$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(\ell\)</span></th>
-        <th><span class="arithmatex">\({v}[i][\ell]\)</span></th>
-        <th><span class="arithmatex">\({s}[i][\ell]\)</span></th>
+        <th><span class="arithmatex">\({v}[j][\ell]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][\ell]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -3081,7 +3081,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[1][0]\leftarrow {v}[0][0]=0\)</span>, <span class="arithmatex">\({s}[1][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[1][0]\leftarrow {v}[0][0]=0\)</span>, <span class="arithmatex">\({s}[1][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(1\)</span></td>
@@ -3130,14 +3130,14 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[2][0]\leftarrow {v}[1][0]=0\)</span>, <span class="arithmatex">\({s}[2][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[2][0]\leftarrow {v}[1][0]=0\)</span>, <span class="arithmatex">\({s}[2][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(2\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>2</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[2][1]\leftarrow {v}[1][1]=2\)</span>, <span class="arithmatex">\({s}[2][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[2][1]\leftarrow {v}[1][1]=2\)</span>, <span class="arithmatex">\({s}[2][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(2\)</span></td>
@@ -3179,21 +3179,21 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[3][0]\leftarrow {v}[2][0]=0\)</span>, <span class="arithmatex">\({s}[3][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[3][0]\leftarrow {v}[2][0]=0\)</span>, <span class="arithmatex">\({s}[3][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(3\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>2</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[3][1]\leftarrow {v}[2][1]=2\)</span>, <span class="arithmatex">\({s}[3][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[3][1]\leftarrow {v}[2][1]=2\)</span>, <span class="arithmatex">\({s}[3][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(3\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>6</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[3][2]\leftarrow {v}[2][2]=6\)</span>, <span class="arithmatex">\({s}[3][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[3][2]\leftarrow {v}[2][2]=6\)</span>, <span class="arithmatex">\({s}[3][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(3\)</span></td>
@@ -3228,28 +3228,28 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][0]\leftarrow {v}[3][0]=0\)</span>, <span class="arithmatex">\({s}[4][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][0]\leftarrow {v}[3][0]=0\)</span>, <span class="arithmatex">\({s}[4][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>2</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][1]\leftarrow {v}[3][1]=2\)</span>, <span class="arithmatex">\({s}[4][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][1]\leftarrow {v}[3][1]=2\)</span>, <span class="arithmatex">\({s}[4][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>6</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][2]\leftarrow {v}[3][2]=6\)</span>, <span class="arithmatex">\({s}[4][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][2]\leftarrow {v}[3][2]=6\)</span>, <span class="arithmatex">\({s}[4][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
         <td><span class="arithmatex">\(3\)</span></td>
         <td>8</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][3]\leftarrow {v}[3][3]=8\)</span>, <span class="arithmatex">\({s}[4][3]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][3]\leftarrow {v}[3][3]=8\)</span>, <span class="arithmatex">\({s}[4][3]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
@@ -3277,35 +3277,35 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][0]\leftarrow {v}[4][0]=0\)</span>, <span class="arithmatex">\({s}[5][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][0]\leftarrow {v}[4][0]=0\)</span>, <span class="arithmatex">\({s}[5][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>2</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][1]\leftarrow {v}[4][1]=2\)</span>, <span class="arithmatex">\({s}[5][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][1]\leftarrow {v}[4][1]=2\)</span>, <span class="arithmatex">\({s}[5][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>6</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][2]\leftarrow {v}[4][2]=6\)</span>, <span class="arithmatex">\({s}[5][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][2]\leftarrow {v}[4][2]=6\)</span>, <span class="arithmatex">\({s}[5][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(3\)</span></td>
         <td>8</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][3]\leftarrow {v}[4][3]=8\)</span>, <span class="arithmatex">\({s}[5][3]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][3]\leftarrow {v}[4][3]=8\)</span>, <span class="arithmatex">\({s}[5][3]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(4\)</span></td>
         <td>12</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][4]\leftarrow {v}[4][4]=12\)</span>, <span class="arithmatex">\({s}[5][4]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][4]\leftarrow {v}[4][4]=12\)</span>, <span class="arithmatex">\({s}[5][4]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
@@ -3326,42 +3326,42 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][0]\leftarrow {v}[5][0]=0\)</span>, <span class="arithmatex">\({s}[6][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][0]\leftarrow {v}[5][0]=0\)</span>, <span class="arithmatex">\({s}[6][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>2</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][1]\leftarrow {v}[5][1]=2\)</span>, <span class="arithmatex">\({s}[6][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][1]\leftarrow {v}[5][1]=2\)</span>, <span class="arithmatex">\({s}[6][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>6</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][2]\leftarrow {v}[5][2]=6\)</span>, <span class="arithmatex">\({s}[6][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][2]\leftarrow {v}[5][2]=6\)</span>, <span class="arithmatex">\({s}[6][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
         <td><span class="arithmatex">\(3\)</span></td>
         <td>8</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][3]\leftarrow {v}[5][3]=8\)</span>, <span class="arithmatex">\({s}[6][3]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][3]\leftarrow {v}[5][3]=8\)</span>, <span class="arithmatex">\({s}[6][3]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
         <td><span class="arithmatex">\(4\)</span></td>
         <td>12</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][4]\leftarrow {v}[5][4]=12\)</span>, <span class="arithmatex">\({s}[6][4]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][4]\leftarrow {v}[5][4]=12\)</span>, <span class="arithmatex">\({s}[6][4]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
         <td><span class="arithmatex">\(5\)</span></td>
         <td>14</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][5]\leftarrow {v}[5][5]=14\)</span>, <span class="arithmatex">\({s}[6][5]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][5]\leftarrow {v}[5][5]=14\)</span>, <span class="arithmatex">\({s}[6][5]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
@@ -3376,28 +3376,28 @@ title: "Exercises · DP for the rod cutting problem"
 
         $$
         \begin{array}{l|rrrrrrr}
-        \hline {{v}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
-        \hline {i=0} & 0 & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} \\
-        {i=1} & 0 & 2 & 4 & 6 & 8 & 10 & 12 \\
-        {i=2} & 0 & 2 & 6 & 8 & 12 & 14 & 18 \\
-        {i=3} & 0 & 2 & 6 & 8 & 12 & 14 & 18 \\
-        {i=4} & 0 & 2 & 6 & 8 & 12 & 14 & 18 \\
-        {i=5} & 0 & 2 & 6 & 8 & 12 & 14 & 18 \\
-        {i=6} & 0 & 2 & 6 & 8 & 12 & 14 & 18 \\
+        \hline {{v}[j][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {j=0} & 0 & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} \\
+        {j=1} & 0 & 2 & 4 & 6 & 8 & 10 & 12 \\
+        {j=2} & 0 & 2 & 6 & 8 & 12 & 14 & 18 \\
+        {j=3} & 0 & 2 & 6 & 8 & 12 & 14 & 18 \\
+        {j=4} & 0 & 2 & 6 & 8 & 12 & 14 & 18 \\
+        {j=5} & 0 & 2 & 6 & 8 & 12 & 14 & 18 \\
+        {j=6} & 0 & 2 & 6 & 8 & 12 & 14 & 18 \\
         \hline
         \end{array}
         $$
 
         $$
         \begin{array}{l|rrrrrrr}
-        \hline {{s}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=6} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {{s}[j][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=6} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
@@ -3409,9 +3409,9 @@ title: "Exercises · DP for the rod cutting problem"
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(\ell\)</span></th>
-        <th><span class="arithmatex">\({s}[i][\ell]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][\ell]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
@@ -3431,7 +3431,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 5\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 5\)</span></td>
         </tr>
         <tr>
         <td>2</td>
@@ -3444,7 +3444,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 4\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 4\)</span></td>
         </tr>
         <tr>
         <td>3</td>
@@ -3457,7 +3457,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 3\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 3\)</span></td>
         </tr>
         <tr>
         <td>4</td>
@@ -3470,7 +3470,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 2\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 2\)</span></td>
         </tr>
         <tr>
         <td>5</td>
@@ -3533,8 +3533,8 @@ title: "Exercises · DP for the rod cutting problem"
 
     $$
     \begin{array}{l|rrrrrr}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} \\
-    \hline {p_i} & {1} & {5} & {8} & {9} & {12} & {14} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\
+    \hline {p_j} & {1} & {5} & {8} & {9} & {12} & {14} \\
     \hline
     \end{array}
     $$
@@ -3553,12 +3553,12 @@ title: "Exercises · DP for the rod cutting problem"
 
     1. Step-by-step execution of the first bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $\ell$ and $i$, the cells $v[\ell]$ and $s[\ell]$, the current value of $\mathit{m}$, and the current value of $\mathit{t}$. The cell of $\mathit{m}$ is highlighted in <mark>red</mark> when updated; the cell of $\mathit{t}$ is highlighted in <mark>blue</mark> when updated; the cells of $v[\ell]$ and $s[\ell]$ are highlighted in <mark>blue</mark> when assigned.
+        For each step of the DP algorithm, the table shows the values of $\ell$ and $j$, the cells $v[\ell]$ and $s[\ell]$, the current value of $\mathit{m}$, and the current value of $\mathit{t}$. The cell of $\mathit{m}$ is highlighted in <mark>red</mark> when updated; the cell of $\mathit{t}$ is highlighted in <mark>blue</mark> when updated; the cells of $v[\ell]$ and $s[\ell]$ are highlighted in <mark>blue</mark> when assigned.
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th><span class="arithmatex">\(\ell\)</span></th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(v[\ell]\)</span></th>
         <th><span class="arithmatex">\(s[\ell]\)</span></th>
         <th><span class="arithmatex">\(\mathit{m}\)</span></th>
@@ -3908,15 +3908,15 @@ title: "Exercises · DP for the rod cutting problem"
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
-        <th><span class="arithmatex">\(s[i]\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(s[j]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
         <th><span class="arithmatex">\(x[4]\)</span></th>
         <th><span class="arithmatex">\(x[5]\)</span></th>
         <th><span class="arithmatex">\(x[6]\)</span></th>
-        <th>Update of <span class="arithmatex">\(i\)</span></th>
+        <th>Update of <span class="arithmatex">\(j\)</span></th>
         </tr>
         <tr>
         <td>\-</td>
@@ -3928,7 +3928,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=6\)</span></td>
+        <td><span class="arithmatex">\(j=6\)</span></td>
         </tr>
         <tr>
         <td>1</td>
@@ -3940,7 +3940,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=6-3=3\)</span></td>
+        <td><span class="arithmatex">\(j=6-3=3\)</span></td>
         </tr>
         <tr>
         <td>2</td>
@@ -3952,7 +3952,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=3-3=0\)</span></td>
+        <td><span class="arithmatex">\(j=3-3=0\)</span></td>
         </tr>
         </table></div>
 
@@ -3970,14 +3970,14 @@ title: "Exercises · DP for the rod cutting problem"
 
     3. Step-by-step execution of the second bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $\ell$, the cells ${v}[i][\ell]$ and ${s}[i][\ell]$, and the operation performed. The cells are computed for increasing values of $i$ and, for each fixed value of $i$, for increasing values of $\ell$.
+        For each step of the DP algorithm, the table shows the values of $j$ and $\ell$, the cells ${v}[j][\ell]$ and ${s}[j][\ell]$, and the operation performed. The cells are computed for increasing values of $j$ and, for each fixed value of $j$, for increasing values of $\ell$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(\ell\)</span></th>
-        <th><span class="arithmatex">\({v}[i][\ell]\)</span></th>
-        <th><span class="arithmatex">\({s}[i][\ell]\)</span></th>
+        <th><span class="arithmatex">\({v}[j][\ell]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][\ell]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -4034,7 +4034,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[1][0]\leftarrow {v}[0][0]=0\)</span>, <span class="arithmatex">\({s}[1][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[1][0]\leftarrow {v}[0][0]=0\)</span>, <span class="arithmatex">\({s}[1][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(1\)</span></td>
@@ -4083,14 +4083,14 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[2][0]\leftarrow {v}[1][0]=0\)</span>, <span class="arithmatex">\({s}[2][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[2][0]\leftarrow {v}[1][0]=0\)</span>, <span class="arithmatex">\({s}[2][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(2\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>1</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[2][1]\leftarrow {v}[1][1]=1\)</span>, <span class="arithmatex">\({s}[2][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[2][1]\leftarrow {v}[1][1]=1\)</span>, <span class="arithmatex">\({s}[2][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(2\)</span></td>
@@ -4132,21 +4132,21 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[3][0]\leftarrow {v}[2][0]=0\)</span>, <span class="arithmatex">\({s}[3][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[3][0]\leftarrow {v}[2][0]=0\)</span>, <span class="arithmatex">\({s}[3][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(3\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>1</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[3][1]\leftarrow {v}[2][1]=1\)</span>, <span class="arithmatex">\({s}[3][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[3][1]\leftarrow {v}[2][1]=1\)</span>, <span class="arithmatex">\({s}[3][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(3\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>5</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[3][2]\leftarrow {v}[2][2]=5\)</span>, <span class="arithmatex">\({s}[3][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[3][2]\leftarrow {v}[2][2]=5\)</span>, <span class="arithmatex">\({s}[3][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(3\)</span></td>
@@ -4181,28 +4181,28 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][0]\leftarrow {v}[3][0]=0\)</span>, <span class="arithmatex">\({s}[4][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][0]\leftarrow {v}[3][0]=0\)</span>, <span class="arithmatex">\({s}[4][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>1</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][1]\leftarrow {v}[3][1]=1\)</span>, <span class="arithmatex">\({s}[4][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][1]\leftarrow {v}[3][1]=1\)</span>, <span class="arithmatex">\({s}[4][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>5</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][2]\leftarrow {v}[3][2]=5\)</span>, <span class="arithmatex">\({s}[4][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][2]\leftarrow {v}[3][2]=5\)</span>, <span class="arithmatex">\({s}[4][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
         <td><span class="arithmatex">\(3\)</span></td>
         <td>8</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[4][3]\leftarrow {v}[3][3]=8\)</span>, <span class="arithmatex">\({s}[4][3]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[4][3]\leftarrow {v}[3][3]=8\)</span>, <span class="arithmatex">\({s}[4][3]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(4\)</span></td>
@@ -4230,35 +4230,35 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][0]\leftarrow {v}[4][0]=0\)</span>, <span class="arithmatex">\({s}[5][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][0]\leftarrow {v}[4][0]=0\)</span>, <span class="arithmatex">\({s}[5][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>1</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][1]\leftarrow {v}[4][1]=1\)</span>, <span class="arithmatex">\({s}[5][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][1]\leftarrow {v}[4][1]=1\)</span>, <span class="arithmatex">\({s}[5][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>5</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][2]\leftarrow {v}[4][2]=5\)</span>, <span class="arithmatex">\({s}[5][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][2]\leftarrow {v}[4][2]=5\)</span>, <span class="arithmatex">\({s}[5][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(3\)</span></td>
         <td>8</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][3]\leftarrow {v}[4][3]=8\)</span>, <span class="arithmatex">\({s}[5][3]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][3]\leftarrow {v}[4][3]=8\)</span>, <span class="arithmatex">\({s}[5][3]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
         <td><span class="arithmatex">\(4\)</span></td>
         <td>10</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[5][4]\leftarrow {v}[4][4]=10\)</span>, <span class="arithmatex">\({s}[5][4]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[5][4]\leftarrow {v}[4][4]=10\)</span>, <span class="arithmatex">\({s}[5][4]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(5\)</span></td>
@@ -4279,42 +4279,42 @@ title: "Exercises · DP for the rod cutting problem"
         <td><span class="arithmatex">\(0\)</span></td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][0]\leftarrow {v}[5][0]=0\)</span>, <span class="arithmatex">\({s}[6][0]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][0]\leftarrow {v}[5][0]=0\)</span>, <span class="arithmatex">\({s}[6][0]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
         <td><span class="arithmatex">\(1\)</span></td>
         <td>1</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][1]\leftarrow {v}[5][1]=1\)</span>, <span class="arithmatex">\({s}[6][1]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][1]\leftarrow {v}[5][1]=1\)</span>, <span class="arithmatex">\({s}[6][1]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
         <td><span class="arithmatex">\(2\)</span></td>
         <td>5</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][2]\leftarrow {v}[5][2]=5\)</span>, <span class="arithmatex">\({s}[6][2]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][2]\leftarrow {v}[5][2]=5\)</span>, <span class="arithmatex">\({s}[6][2]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
         <td><span class="arithmatex">\(3\)</span></td>
         <td>8</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][3]\leftarrow {v}[5][3]=8\)</span>, <span class="arithmatex">\({s}[6][3]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][3]\leftarrow {v}[5][3]=8\)</span>, <span class="arithmatex">\({s}[6][3]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
         <td><span class="arithmatex">\(4\)</span></td>
         <td>10</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][4]\leftarrow {v}[5][4]=10\)</span>, <span class="arithmatex">\({s}[6][4]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][4]\leftarrow {v}[5][4]=10\)</span>, <span class="arithmatex">\({s}[6][4]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
         <td><span class="arithmatex">\(5\)</span></td>
         <td>13</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i>\ell\)</span>: <span class="arithmatex">\({v}[6][5]\leftarrow {v}[5][5]=13\)</span>, <span class="arithmatex">\({s}[6][5]\leftarrow 0\)</span></td>
+        <td><span class="arithmatex">\(j>\ell\)</span>: <span class="arithmatex">\({v}[6][5]\leftarrow {v}[5][5]=13\)</span>, <span class="arithmatex">\({s}[6][5]\leftarrow 0\)</span></td>
         </tr>
         <tr>
         <td><span class="arithmatex">\(6\)</span></td>
@@ -4329,28 +4329,28 @@ title: "Exercises · DP for the rod cutting problem"
 
         $$
         \begin{array}{l|rrrrrrr}
-        \hline {{v}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
-        \hline {i=0} & 0 & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} \\
-        {i=1} & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
-        {i=2} & 0 & 1 & 5 & 6 & 10 & 11 & 15 \\
-        {i=3} & 0 & 1 & 5 & 8 & 10 & 13 & 16 \\
-        {i=4} & 0 & 1 & 5 & 8 & 10 & 13 & 16 \\
-        {i=5} & 0 & 1 & 5 & 8 & 10 & 13 & 16 \\
-        {i=6} & 0 & 1 & 5 & 8 & 10 & 13 & 16 \\
+        \hline {{v}[j][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {j=0} & 0 & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} \\
+        {j=1} & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
+        {j=2} & 0 & 1 & 5 & 6 & 10 & 11 & 15 \\
+        {j=3} & 0 & 1 & 5 & 8 & 10 & 13 & 16 \\
+        {j=4} & 0 & 1 & 5 & 8 & 10 & 13 & 16 \\
+        {j=5} & 0 & 1 & 5 & 8 & 10 & 13 & 16 \\
+        {j=6} & 0 & 1 & 5 & 8 & 10 & 13 & 16 \\
         \hline
         \end{array}
         $$
 
         $$
         \begin{array}{l|rrrrrrr}
-        \hline {{s}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 1 & 0 & 1 & 1 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=6} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {{s}[j][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 1 & 0 & 1 & 1 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=6} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
@@ -4362,9 +4362,9 @@ title: "Exercises · DP for the rod cutting problem"
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(\ell\)</span></th>
-        <th><span class="arithmatex">\({s}[i][\ell]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][\ell]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
@@ -4384,7 +4384,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 5\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 5\)</span></td>
         </tr>
         <tr>
         <td>2</td>
@@ -4397,7 +4397,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 4\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 4\)</span></td>
         </tr>
         <tr>
         <td>3</td>
@@ -4410,7 +4410,7 @@ title: "Exercises · DP for the rod cutting problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 3\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 3\)</span></td>
         </tr>
         <tr>
         <td>4</td>

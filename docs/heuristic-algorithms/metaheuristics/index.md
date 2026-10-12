@@ -12,9 +12,9 @@ title: "Metaheuristics"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter «Local search»: neighbourhoods, first and best improvement, variable neighbourhood descent and multi-start.
+    - From this module, the chapter [«Local search»](../local-search/index.md): neighbourhoods, first and best improvement, variable neighbourhood descent and multi-start.
 
-    - From this module, the chapters «Constructive heuristics» (randomized construction) and «Heuristic algorithms» (intensification and diversification, experimental evaluation).
+    - From this module, the chapters [«Constructive heuristics»](../constructive-heuristics/index.md) (randomized construction) and [«Heuristic algorithms: definitions»](../heuristics.md) (intensification and diversification, experimental evaluation).
 
 !!! chiave "Objectives"
 
@@ -38,9 +38,9 @@ title: "Metaheuristics"
 
     A <strong>metaheuristic</strong> is a general strategy that guides a local search beyond the first local optimum, to explore other regions of the set of feasible solutions.
 
-- A metaheuristic is a <em>scheme</em>, not an algorithm: an algorithm is obtained by choosing the representation, the neighbourhoods, the local search and the parameters (Section [32.3](how-to-escape-from-a-local-optimum.md#sez-sec-escape)).
+- A metaheuristic is a <em>scheme</em>, not an algorithm: an algorithm is obtained by choosing the representation, the neighbourhoods, the local search and the parameters.
 
-- Every metaheuristic balances <strong>intensification</strong> and <strong>diversification</strong>, defined in the chapter «Heuristic algorithms: definitions».
+- Every metaheuristic balances <strong>intensification</strong> and <strong>diversification</strong>, defined in the chapter [«Heuristic algorithms: definitions»](../heuristics.md).
 
 !!! chiave ""
 

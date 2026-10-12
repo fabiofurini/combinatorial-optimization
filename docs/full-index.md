@@ -1,18 +1,23 @@
 # Full index
 
-## [Combinatorial optimization problems](combinatorial-optimization-problems/index.md)
+All the pages of the website, in the order of the menu: the chapters with their sections, the catalogue and the other pages.
 
-1. [Combinatorial optimization problems](combinatorial-optimization-problems/combinatorial-optimization/index.md)
+## [Combinatorial optimization](combinatorial-optimization-problems/combinatorial-optimization/index.md)
+
+- **[1. Combinatorial optimization problems](combinatorial-optimization-problems/combinatorial-optimization/index.md)** · [Exercises](exercises/combinatorial-optimization.md)
     - [1.1 Combinatorial optimization problems](combinatorial-optimization-problems/combinatorial-optimization/combinatorial-optimization-problems.md)
     - [1.2 Categories of combinatorial optimization problems](combinatorial-optimization-problems/combinatorial-optimization/categories-of-combinatorial-optimization-problems.md)
     - [1.3 Counting the solutions](combinatorial-optimization-problems/combinatorial-optimization/counting-the-solutions.md)
     - [1.4 Combinatorial explosion and brute force](combinatorial-optimization-problems/combinatorial-optimization/combinatorial-explosion-and-brute-force.md)
     - [1.5 Primal bounds, dual bounds and gap](combinatorial-optimization-problems/combinatorial-optimization/primal-bounds-dual-bounds-and-gap.md)
-    - [1.6 A glimpse of computational complexity](combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md)
-    - [1.7 Typical mistakes](combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md)
-    - [1.8 In summary](combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md)
-2. [Knapsack problems](combinatorial-optimization-problems/knapsack/index.md)
-    - 2.1 Overview of the family
+    - [1.6 A glimpse of computational complexity](combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md#sez-sec-complexity)
+    - [1.7 Typical mistakes](combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md#17-typical-mistakes)
+    - [1.8 In summary](combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md#18-in-summary)
+
+## [Selected problems](selected-problems/index.md)
+
+- **[2. Knapsack problems](combinatorial-optimization-problems/knapsack/index.md)** · [Exercises](exercises/knapsack.md)
+    - [2.1 Overview of the family](combinatorial-optimization-problems/knapsack/index.md#21-overview-of-the-family)
     - [2.2 The 0/1 knapsack problem](combinatorial-optimization-problems/knapsack/the-0-1-knapsack-problem.md)
     - [2.3 The subset sum problem](combinatorial-optimization-problems/knapsack/the-subset-sum-problem.md)
     - [2.4 The bounded knapsack problem](combinatorial-optimization-problems/knapsack/the-bounded-knapsack-problem.md)
@@ -21,70 +26,70 @@
     - [2.7 The multiple knapsack problem](combinatorial-optimization-problems/knapsack/the-multiple-knapsack-problem.md)
     - [2.8 The multiple-choice knapsack problem](combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem.md)
     - [2.9 The knapsack problem with setups](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
-    - [2.10 Remarks](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
-    - [2.11 Typical mistakes](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
-    - [2.12 In summary](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
-3. [Packing problems](combinatorial-optimization-problems/bin-packing/index.md)
-    - 3.1 Overview of the family
+    - [2.10 Remarks](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md#210-remarks)
+    - [2.11 Typical mistakes](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md#211-typical-mistakes)
+    - [2.12 In summary](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md#212-in-summary)
+- **[3. Packing problems](combinatorial-optimization-problems/bin-packing/index.md)** · [Exercises](exercises/bin-packing.md)
+    - [3.1 Overview of the family](combinatorial-optimization-problems/bin-packing/index.md#31-overview-of-the-family)
     - [3.2 The bin packing problem](combinatorial-optimization-problems/bin-packing/the-bin-packing-problem.md)
     - [3.3 The cutting stock problem](combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md)
-    - [3.4 Remarks](combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md)
-    - [3.5 Typical mistakes](combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md)
-    - [3.6 In summary](combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md)
-4. [Coloring problems](combinatorial-optimization-problems/coloring/index.md)
-    - 4.1 Overview of the family
+    - [3.4 Remarks](combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md#34-remarks)
+    - [3.5 Typical mistakes](combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md#35-typical-mistakes)
+    - [3.6 In summary](combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md#36-in-summary)
+- **[4. Coloring problems](combinatorial-optimization-problems/coloring/index.md)** · [Exercises](exercises/coloring.md)
+    - [4.1 Overview of the family](combinatorial-optimization-problems/coloring/index.md#41-overview-of-the-family)
     - [4.2 The vertex coloring problem](combinatorial-optimization-problems/coloring/the-vertex-coloring-problem.md)
-    - [4.3 Remarks](combinatorial-optimization-problems/coloring/the-vertex-coloring-problem.md)
-    - [4.4 Typical mistakes](combinatorial-optimization-problems/coloring/the-vertex-coloring-problem.md)
-    - [4.5 In summary](combinatorial-optimization-problems/coloring/the-vertex-coloring-problem.md)
-5. [Clique problems](combinatorial-optimization-problems/clique/index.md)
-    - 5.1 Overview of the family
+    - [4.3 Remarks](combinatorial-optimization-problems/coloring/the-vertex-coloring-problem.md#43-remarks)
+    - [4.4 Typical mistakes](combinatorial-optimization-problems/coloring/the-vertex-coloring-problem.md#44-typical-mistakes)
+    - [4.5 In summary](combinatorial-optimization-problems/coloring/the-vertex-coloring-problem.md#45-in-summary)
+- **[5. Clique problems](combinatorial-optimization-problems/clique/index.md)** · [Exercises](exercises/clique.md)
+    - [5.1 Overview of the family](combinatorial-optimization-problems/clique/index.md#51-overview-of-the-family)
     - [5.2 The maximum clique problem](combinatorial-optimization-problems/clique/the-maximum-clique-problem.md)
-    - [5.3 Counting the solutions, a first solution and the bounds](combinatorial-optimization-problems/clique/the-maximum-clique-problem.md)
-    - [5.4 Complexity](combinatorial-optimization-problems/clique/the-maximum-clique-problem.md)
+    - [5.3 Counting the solutions, a first solution and the bounds](combinatorial-optimization-problems/clique/the-maximum-clique-problem.md#53-counting-the-solutions-a-first-solution-and-the-bounds)
+    - [5.4 Complexity](combinatorial-optimization-problems/clique/the-maximum-clique-problem.md#54-complexity)
     - [5.5 Weighted variants](combinatorial-optimization-problems/clique/weighted-variants.md)
-    - [5.6 Remarks](combinatorial-optimization-problems/clique/weighted-variants.md)
-    - [5.7 Typical mistakes](combinatorial-optimization-problems/clique/weighted-variants.md)
-    - [5.8 In summary](combinatorial-optimization-problems/clique/weighted-variants.md)
-6. [Routing problems](combinatorial-optimization-problems/tsp/index.md)
-    - 6.1 Overview of the family
+    - [5.6 Remarks](combinatorial-optimization-problems/clique/weighted-variants.md#56-remarks)
+    - [5.7 Typical mistakes](combinatorial-optimization-problems/clique/weighted-variants.md#57-typical-mistakes)
+    - [5.8 In summary](combinatorial-optimization-problems/clique/weighted-variants.md#58-in-summary)
+- **[6. Routing problems](combinatorial-optimization-problems/tsp/index.md)** · [Exercises](exercises/tsp.md)
+    - [6.1 Overview of the family](combinatorial-optimization-problems/tsp/index.md#61-overview-of-the-family)
     - [6.2 The travelling salesman problem](combinatorial-optimization-problems/tsp/the-travelling-salesman-problem.md)
-    - [6.3 Counting the tours](combinatorial-optimization-problems/tsp/the-travelling-salesman-problem.md)
-    - [6.4 A first tour by hand](combinatorial-optimization-problems/tsp/the-travelling-salesman-problem.md)
-    - [6.5 A combinatorial lower bound](combinatorial-optimization-problems/tsp/the-travelling-salesman-problem.md)
+    - [6.3 Counting the tours](combinatorial-optimization-problems/tsp/the-travelling-salesman-problem.md#63-counting-the-tours)
+    - [6.4 A first tour by hand](combinatorial-optimization-problems/tsp/the-travelling-salesman-problem.md#64-a-first-tour-by-hand)
+    - [6.5 A combinatorial lower bound](combinatorial-optimization-problems/tsp/the-travelling-salesman-problem.md#65-a-combinatorial-lower-bound)
     - [6.6 Variants: metric and asymmetric TSP](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
-    - [6.7 Remarks](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
-    - [6.8 Typical mistakes](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
-    - [6.9 In summary](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
-7. [Scheduling problems](combinatorial-optimization-problems/pcmax/index.md)
-    - 7.1 Overview of the family
+    - [6.7 Remarks](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md#67-remarks)
+    - [6.8 Typical mistakes](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md#68-typical-mistakes)
+    - [6.9 In summary](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md#69-in-summary)
+- **[7. Scheduling problems](combinatorial-optimization-problems/pcmax/index.md)** · [Exercises](exercises/pcmax.md)
+    - [7.1 Overview of the family](combinatorial-optimization-problems/pcmax/index.md#71-overview-of-the-family)
     - [7.2 Scheduling on identical parallel machines](combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines.md)
-    - [7.3 Counting the solutions](combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines.md)
-    - [7.4 A first schedule by hand](combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines.md)
-    - [7.5 A combinatorial lower bound](combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines.md)
-    - [7.6 Relation with the bin packing problem](combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines.md)
-    - [7.7 Remarks](combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines.md)
-    - [7.8 Typical mistakes](combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines.md)
-    - [7.9 In summary](combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines.md)
-8. [Lot sizing problems](combinatorial-optimization-problems/lot-sizing/index.md)
-    - 8.1 Overview of the family
+    - [7.3 Counting the solutions](combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines.md#73-counting-the-solutions)
+    - [7.4 A first schedule by hand](combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines.md#sez-sec-pm-list)
+    - [7.5 A combinatorial lower bound](combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines.md#sez-sec-pm-lb)
+    - [7.6 Relation with the bin packing problem](combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines.md#76-relation-with-the-bin-packing-problem)
+    - [7.7 Remarks](combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines.md#77-remarks)
+    - [7.8 Typical mistakes](combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines.md#78-typical-mistakes)
+    - [7.9 In summary](combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines.md#79-in-summary)
+- **[8. Lot sizing problems](combinatorial-optimization-problems/lot-sizing/index.md)** · [Exercises](exercises/lot-sizing.md)
+    - [8.1 Overview of the family](combinatorial-optimization-problems/lot-sizing/index.md#81-overview-of-the-family)
     - [8.2 The capacitated lot sizing problem](combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem.md)
-    - [8.3 Counting the solutions](combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem.md)
-    - [8.4 A first plan by hand](combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem.md)
-    - [8.5 A combinatorial lower bound](combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem.md)
+    - [8.3 Counting the solutions](combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem.md#83-counting-the-solutions)
+    - [8.4 A first plan by hand](combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem.md#84-a-first-plan-by-hand)
+    - [8.5 A combinatorial lower bound](combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem.md#85-a-combinatorial-lower-bound)
     - [8.6 Variants](combinatorial-optimization-problems/lot-sizing/variants.md)
-    - [8.7 Remarks](combinatorial-optimization-problems/lot-sizing/variants.md)
-    - [8.8 Typical mistakes](combinatorial-optimization-problems/lot-sizing/variants.md)
-    - [8.9 In summary](combinatorial-optimization-problems/lot-sizing/variants.md)
+    - [8.7 Remarks](combinatorial-optimization-problems/lot-sizing/variants.md#87-remarks)
+    - [8.8 Typical mistakes](combinatorial-optimization-problems/lot-sizing/variants.md#88-typical-mistakes)
+    - [8.9 In summary](combinatorial-optimization-problems/lot-sizing/variants.md#89-in-summary)
 
-## [Formulations and their properties](formulations/index.md)
+## [Formulations](formulations/index.md)
 
-9. [Formulations of knapsack problems](formulations/knapsack-formulations/index.md)
-    - 9.1 Overview of the family
+- **[9. Formulations of knapsack problems](formulations/knapsack-formulations/index.md)** · [Exercises](exercises/knapsack-formulations.md)
+    - [9.1 Overview of the family](formulations/knapsack-formulations/index.md#91-overview-of-the-family)
     - [9.2 An ILP model for the 0/1 Knapsack Problem](formulations/knapsack-formulations/an-ilp-model-for-the-0-1-knapsack-problem.md)
-    - [9.3 A first Linear Programming relaxation](formulations/knapsack-formulations/an-ilp-model-for-the-0-1-knapsack-problem.md)
-    - [9.4 A second Linear Programming relaxation](formulations/knapsack-formulations/an-ilp-model-for-the-0-1-knapsack-problem.md)
-    - [9.5 0/1 Knapsack Problem upper bounds](formulations/knapsack-formulations/an-ilp-model-for-the-0-1-knapsack-problem.md)
+    - [9.3 A first Linear Programming relaxation](formulations/knapsack-formulations/an-ilp-model-for-the-0-1-knapsack-problem.md#93-a-first-linear-programming-relaxation)
+    - [9.4 A second Linear Programming relaxation](formulations/knapsack-formulations/an-ilp-model-for-the-0-1-knapsack-problem.md#94-a-second-linear-programming-relaxation)
+    - [9.5 0/1 Knapsack Problem upper bounds](formulations/knapsack-formulations/an-ilp-model-for-the-0-1-knapsack-problem.md#95-01-knapsack-problem-upper-bounds)
     - [9.6 An ILP model for the Subset Sum Problem](formulations/knapsack-formulations/an-ilp-model-for-the-subset-sum-problem.md)
     - [9.7 An ILP model for the Bounded Knapsack Problem](formulations/knapsack-formulations/an-ilp-model-for-the-bounded-knapsack-problem.md)
     - [9.8 An ILP model for the Unbounded Knapsack Problem](formulations/knapsack-formulations/an-ilp-model-for-the-unbounded-knapsack-problem.md)
@@ -92,147 +97,156 @@
     - [9.10 An ILP model for the Multiple Knapsack Problem](formulations/knapsack-formulations/an-ilp-model-for-the-multiple-knapsack-problem.md)
     - [9.11 An ILP model for the Multiple-Choice Knapsack Problem](formulations/knapsack-formulations/an-ilp-model-for-the-multiple-choice-knapsack-problem.md)
     - [9.12 An ILP model for the Knapsack Problem with Setups](formulations/knapsack-formulations/an-ilp-model-for-the-knapsack-problem-with-setups.md)
-    - [9.13 Typical mistakes](formulations/knapsack-formulations/an-ilp-model-for-the-knapsack-problem-with-setups.md)
-    - [9.14 In summary](formulations/knapsack-formulations/an-ilp-model-for-the-knapsack-problem-with-setups.md)
-10. [Formulations of packing problems](formulations/bin-packing-formulations/index.md)
-    - 10.1 Overview of the family
+    - [9.13 Typical mistakes](formulations/knapsack-formulations/an-ilp-model-for-the-knapsack-problem-with-setups.md#913-typical-mistakes)
+    - [9.14 In summary](formulations/knapsack-formulations/an-ilp-model-for-the-knapsack-problem-with-setups.md#914-in-summary)
+- **[10. Formulations of packing problems](formulations/bin-packing-formulations/index.md)** · [Exercises](exercises/bin-packing-formulations.md)
+    - [10.1 Overview of the family](formulations/bin-packing-formulations/index.md#101-overview-of-the-family)
     - [10.2 An ILP model for the Bin Packing Problem](formulations/bin-packing-formulations/an-ilp-model-for-the-bin-packing-problem.md)
-    - [10.3 A first Linear Programming relaxation](formulations/bin-packing-formulations/an-ilp-model-for-the-bin-packing-problem.md)
-    - [10.4 A second Linear Programming relaxation](formulations/bin-packing-formulations/an-ilp-model-for-the-bin-packing-problem.md)
+    - [10.3 A first Linear Programming relaxation](formulations/bin-packing-formulations/an-ilp-model-for-the-bin-packing-problem.md#103-a-first-linear-programming-relaxation)
+    - [10.4 A second Linear Programming relaxation](formulations/bin-packing-formulations/an-ilp-model-for-the-bin-packing-problem.md#104-a-second-linear-programming-relaxation)
     - [10.5 An ILP model for the Cutting Stock Problem](formulations/bin-packing-formulations/an-ilp-model-for-the-cutting-stock-problem.md)
-    - [10.6 Typical mistakes](formulations/bin-packing-formulations/an-ilp-model-for-the-cutting-stock-problem.md)
-    - [10.7 In summary](formulations/bin-packing-formulations/an-ilp-model-for-the-cutting-stock-problem.md)
-11. [Formulations of coloring problems](formulations/coloring-formulations/index.md)
-    - 11.1 Overview of the family
+    - [10.6 Typical mistakes](formulations/bin-packing-formulations/an-ilp-model-for-the-cutting-stock-problem.md#106-typical-mistakes)
+    - [10.7 In summary](formulations/bin-packing-formulations/an-ilp-model-for-the-cutting-stock-problem.md#107-in-summary)
+- **[11. Formulations of coloring problems](formulations/coloring-formulations/index.md)** · [Exercises](exercises/coloring-formulations.md)
+    - [11.1 Overview of the family](formulations/coloring-formulations/index.md#111-overview-of-the-family)
     - [11.2 An ILP model for the Vertex Coloring Problem](formulations/coloring-formulations/an-ilp-model-for-the-vertex-coloring-problem.md)
-    - [11.3 A first Linear Programming relaxation](formulations/coloring-formulations/an-ilp-model-for-the-vertex-coloring-problem.md)
-    - [11.4 A second Linear Programming relaxation](formulations/coloring-formulations/an-ilp-model-for-the-vertex-coloring-problem.md)
-    - [11.5 Typical mistakes](formulations/coloring-formulations/an-ilp-model-for-the-vertex-coloring-problem.md)
-    - [11.6 In summary](formulations/coloring-formulations/an-ilp-model-for-the-vertex-coloring-problem.md)
-12. [Formulations of clique problems](formulations/clique-formulations/index.md)
-    - 12.1 Overview of the family
+    - [11.3 A first Linear Programming relaxation](formulations/coloring-formulations/an-ilp-model-for-the-vertex-coloring-problem.md#113-a-first-linear-programming-relaxation)
+    - [11.4 A second Linear Programming relaxation](formulations/coloring-formulations/an-ilp-model-for-the-vertex-coloring-problem.md#114-a-second-linear-programming-relaxation)
+    - [11.5 Typical mistakes](formulations/coloring-formulations/an-ilp-model-for-the-vertex-coloring-problem.md#115-typical-mistakes)
+    - [11.6 In summary](formulations/coloring-formulations/an-ilp-model-for-the-vertex-coloring-problem.md#116-in-summary)
+- **[12. Formulations of clique problems](formulations/clique-formulations/index.md)** · [Exercises](exercises/clique-formulations.md)
+    - [12.1 Overview of the family](formulations/clique-formulations/index.md#121-overview-of-the-family)
     - [12.2 An ILP model for the Maximum Clique Problem: the edge formulation](formulations/clique-formulations/an-ilp-model-for-the-maximum-clique-problem-the-edge-formula.md)
-    - [12.3 A first Linear Programming relaxation](formulations/clique-formulations/an-ilp-model-for-the-maximum-clique-problem-the-edge-formula.md)
-    - [12.4 A second Linear Programming relaxation](formulations/clique-formulations/an-ilp-model-for-the-maximum-clique-problem-the-edge-formula.md)
-    - [12.5 Clique inequalities: a stronger formulation](formulations/clique-formulations/an-ilp-model-for-the-maximum-clique-problem-the-edge-formula.md)
-    - [12.6 The relation with vertex coloring](formulations/clique-formulations/an-ilp-model-for-the-maximum-clique-problem-the-edge-formula.md)
-    - [12.7 Stable sets on the complement graph](formulations/clique-formulations/an-ilp-model-for-the-maximum-clique-problem-the-edge-formula.md)
+    - [12.3 A first Linear Programming relaxation](formulations/clique-formulations/an-ilp-model-for-the-maximum-clique-problem-the-edge-formula.md#123-a-first-linear-programming-relaxation)
+    - [12.4 A second Linear Programming relaxation](formulations/clique-formulations/an-ilp-model-for-the-maximum-clique-problem-the-edge-formula.md#124-a-second-linear-programming-relaxation)
+    - [12.5 Clique inequalities: a stronger formulation](formulations/clique-formulations/an-ilp-model-for-the-maximum-clique-problem-the-edge-formula.md#sez-sec-mcpf-CL)
+    - [12.6 The relation with vertex coloring](formulations/clique-formulations/an-ilp-model-for-the-maximum-clique-problem-the-edge-formula.md#126-the-relation-with-vertex-coloring)
+    - [12.7 Stable sets on the complement graph](formulations/clique-formulations/an-ilp-model-for-the-maximum-clique-problem-the-edge-formula.md#sez-sec-mcpf-MSSP)
     - [12.8 ILP models for the weighted variants](formulations/clique-formulations/ilp-models-for-the-weighted-variants.md)
-    - [12.9 Typical mistakes](formulations/clique-formulations/ilp-models-for-the-weighted-variants.md)
-    - [12.10 In summary](formulations/clique-formulations/ilp-models-for-the-weighted-variants.md)
-13. [Formulations of routing problems](formulations/tsp-formulations/index.md)
-    - 13.1 Overview of the family
+    - [12.9 Typical mistakes](formulations/clique-formulations/ilp-models-for-the-weighted-variants.md#129-typical-mistakes)
+    - [12.10 In summary](formulations/clique-formulations/ilp-models-for-the-weighted-variants.md#1210-in-summary)
+- **[13. Formulations of routing problems](formulations/tsp-formulations/index.md)** · [Exercises](exercises/tsp-formulations.md)
+    - [13.1 Overview of the family](formulations/tsp-formulations/index.md#131-overview-of-the-family)
     - [13.2 ILP models for the Travelling Salesman Problem](formulations/tsp-formulations/ilp-models-for-the-travelling-salesman-problem.md)
-    - [13.3 A model with position variables (MTZ)](formulations/tsp-formulations/ilp-models-for-the-travelling-salesman-problem.md)
-    - [13.4 A model with subtour elimination constraints (DFJ)](formulations/tsp-formulations/ilp-models-for-the-travelling-salesman-problem.md)
-    - [13.5 Linear Programming relaxations](formulations/tsp-formulations/ilp-models-for-the-travelling-salesman-problem.md)
+    - [13.3 A model with position variables (MTZ)](formulations/tsp-formulations/ilp-models-for-the-travelling-salesman-problem.md#sez-sec-tspf-MTZ)
+    - [13.4 A model with subtour elimination constraints (DFJ)](formulations/tsp-formulations/ilp-models-for-the-travelling-salesman-problem.md#sez-sec-tspf-DFJ)
+    - [13.5 Linear Programming relaxations](formulations/tsp-formulations/ilp-models-for-the-travelling-salesman-problem.md#sez-sec-tspf-LP)
     - [13.6 ILP models for the metric and asymmetric TSP](formulations/tsp-formulations/ilp-models-for-the-metric-and-asymmetric-tsp.md)
-    - [13.7 Typical mistakes](formulations/tsp-formulations/ilp-models-for-the-metric-and-asymmetric-tsp.md)
-    - [13.8 In summary](formulations/tsp-formulations/ilp-models-for-the-metric-and-asymmetric-tsp.md)
-14. [Formulations of scheduling problems](formulations/pcmax-formulations/index.md)
-    - 14.1 Overview of the family
+    - [13.7 Typical mistakes](formulations/tsp-formulations/ilp-models-for-the-metric-and-asymmetric-tsp.md#137-typical-mistakes)
+    - [13.8 In summary](formulations/tsp-formulations/ilp-models-for-the-metric-and-asymmetric-tsp.md#138-in-summary)
+- **[14. Formulations of scheduling problems](formulations/pcmax-formulations/index.md)** · [Exercises](exercises/pcmax-formulations.md)
+    - [14.1 Overview of the family](formulations/pcmax-formulations/index.md#141-overview-of-the-family)
     - [14.2 An ILP model for the Scheduling on Identical Parallel Machines Problem](formulations/pcmax-formulations/an-ilp-model-for-the-scheduling-on-identical-parallel-machin.md)
-    - [14.3 A first Linear Programming relaxation](formulations/pcmax-formulations/an-ilp-model-for-the-scheduling-on-identical-parallel-machin.md)
-    - [14.4 A second Linear Programming relaxation](formulations/pcmax-formulations/an-ilp-model-for-the-scheduling-on-identical-parallel-machin.md)
-    - [14.5 Additional considerations](formulations/pcmax-formulations/an-ilp-model-for-the-scheduling-on-identical-parallel-machin.md)
-    - [14.6 Typical mistakes](formulations/pcmax-formulations/an-ilp-model-for-the-scheduling-on-identical-parallel-machin.md)
-    - [14.7 In summary](formulations/pcmax-formulations/an-ilp-model-for-the-scheduling-on-identical-parallel-machin.md)
-15. [Formulations of lot sizing problems](formulations/lot-sizing-formulations/index.md)
-    - 15.1 Overview of the family
+    - [14.3 A first Linear Programming relaxation](formulations/pcmax-formulations/an-ilp-model-for-the-scheduling-on-identical-parallel-machin.md#143-a-first-linear-programming-relaxation)
+    - [14.4 A second Linear Programming relaxation](formulations/pcmax-formulations/an-ilp-model-for-the-scheduling-on-identical-parallel-machin.md#144-a-second-linear-programming-relaxation)
+    - [14.5 Additional considerations](formulations/pcmax-formulations/an-ilp-model-for-the-scheduling-on-identical-parallel-machin.md#145-additional-considerations)
+    - [14.6 Typical mistakes](formulations/pcmax-formulations/an-ilp-model-for-the-scheduling-on-identical-parallel-machin.md#146-typical-mistakes)
+    - [14.7 In summary](formulations/pcmax-formulations/an-ilp-model-for-the-scheduling-on-identical-parallel-machin.md#147-in-summary)
+- **[15. Formulations of lot sizing problems](formulations/lot-sizing-formulations/index.md)** · [Exercises](exercises/lot-sizing-formulations.md)
+    - [15.1 Overview of the family](formulations/lot-sizing-formulations/index.md#151-overview-of-the-family)
     - [15.2 ILP models for the Capacitated Lot Sizing Problem](formulations/lot-sizing-formulations/ilp-models-for-the-capacitated-lot-sizing-problem.md)
-    - [15.3 A formulation with a big-M link](formulations/lot-sizing-formulations/ilp-models-for-the-capacitated-lot-sizing-problem.md)
-    - [15.4 The Linear Programming relaxation of the big-M formulation](formulations/lot-sizing-formulations/ilp-models-for-the-capacitated-lot-sizing-problem.md)
-    - [15.5 A shortest-path formulation](formulations/lot-sizing-formulations/ilp-models-for-the-capacitated-lot-sizing-problem.md)
-    - [15.6 Comparing the formulations](formulations/lot-sizing-formulations/ilp-models-for-the-capacitated-lot-sizing-problem.md)
+    - [15.3 A formulation with a big-M link](formulations/lot-sizing-formulations/ilp-models-for-the-capacitated-lot-sizing-problem.md#sez-sec-lsf-bigM)
+    - [15.4 The Linear Programming relaxation of the big-M formulation](formulations/lot-sizing-formulations/ilp-models-for-the-capacitated-lot-sizing-problem.md#154-the-linear-programming-relaxation-of-the-big-m-formulation)
+    - [15.5 A shortest-path formulation](formulations/lot-sizing-formulations/ilp-models-for-the-capacitated-lot-sizing-problem.md#sez-sec-lsf-SP)
+    - [15.6 Comparing the formulations](formulations/lot-sizing-formulations/ilp-models-for-the-capacitated-lot-sizing-problem.md#sez-sec-lsf-compare)
     - [15.7 ILP models for the variants](formulations/lot-sizing-formulations/ilp-models-for-the-variants.md)
-    - [15.8 Typical mistakes](formulations/lot-sizing-formulations/ilp-models-for-the-variants.md)
-    - [15.9 In summary](formulations/lot-sizing-formulations/ilp-models-for-the-variants.md)
+    - [15.8 Typical mistakes](formulations/lot-sizing-formulations/ilp-models-for-the-variants.md#158-typical-mistakes)
+    - [15.9 In summary](formulations/lot-sizing-formulations/ilp-models-for-the-variants.md#159-in-summary)
 
 ## [Dynamic programming](dynamic-programming/index.md)
 
-16. [Principles of dynamic programming](dynamic-programming/dp-principles.md)
-    - 16.1 Divide, conquer and combine
-    - 16.2 Problem properties required by DP algorithms
-    - 16.3 Steps for designing a DP algorithm
-    - 16.4 The DP algorithms of this module
-    - 16.5 Typical mistakes
-    - 16.6 In summary
-17. [DP for the 0/1 knapsack problem](dynamic-programming/dp-knapsack/index.md)
-    - 17.1 Instances and feasible solutions
+- **[16. Principles of dynamic programming](dynamic-programming/dp-principles.md)** · [Exercises](exercises/dp-principles.md)
+    - [16.1 Divide, conquer and combine](dynamic-programming/dp-principles.md#161-divide-conquer-and-combine)
+    - [16.2 Problem properties required by DP algorithms](dynamic-programming/dp-principles.md#sez-sec-dp-properties)
+    - [16.3 Steps for designing a DP algorithm](dynamic-programming/dp-principles.md#163-steps-for-designing-a-dp-algorithm)
+    - [16.4 The DP algorithms of this module](dynamic-programming/dp-principles.md#164-the-dp-algorithms-of-this-module)
+    - [16.5 Typical mistakes](dynamic-programming/dp-principles.md#165-typical-mistakes)
+    - [16.6 In summary](dynamic-programming/dp-principles.md#166-in-summary)
+
+### Knapsack problems
+
+- **[17. DP for the 0/1 knapsack problem](dynamic-programming/dp-knapsack/index.md)** · [Exercises](exercises/dp-knapsack.md)
+    - [17.1 Instances and feasible solutions](dynamic-programming/dp-knapsack/index.md#171-instances-and-feasible-solutions)
     - [17.2 A first DP algorithm](dynamic-programming/dp-knapsack/a-first-dp-algorithm.md)
     - [17.3 A second DP algorithm](dynamic-programming/dp-knapsack/a-second-dp-algorithm.md)
-    - [17.4 Typical mistakes](dynamic-programming/dp-knapsack/typical-mistakes.md)
-    - [17.5 In summary](dynamic-programming/dp-knapsack/typical-mistakes.md)
-18. [DP for the unbounded knapsack problem](dynamic-programming/dp-unbounded-knapsack/index.md)
-    - 18.1 Instances and feasible solutions
+    - [17.4 Typical mistakes](dynamic-programming/dp-knapsack/typical-mistakes.md#174-typical-mistakes)
+    - [17.5 In summary](dynamic-programming/dp-knapsack/typical-mistakes.md#175-in-summary)
+- **[18. DP for the unbounded knapsack problem](dynamic-programming/dp-unbounded-knapsack/index.md)** · [Exercises](exercises/dp-unbounded-knapsack.md)
+    - [18.1 Instances and feasible solutions](dynamic-programming/dp-unbounded-knapsack/index.md#181-instances-and-feasible-solutions)
     - [18.2 A first DP algorithm](dynamic-programming/dp-unbounded-knapsack/a-first-dp-algorithm.md)
     - [18.3 A second DP algorithm](dynamic-programming/dp-unbounded-knapsack/a-second-dp-algorithm.md)
-    - [18.4 Typical mistakes](dynamic-programming/dp-unbounded-knapsack/typical-mistakes.md)
-    - [18.5 In summary](dynamic-programming/dp-unbounded-knapsack/typical-mistakes.md)
-19. [DP for the bounded knapsack problem](dynamic-programming/dp-bounded-knapsack.md)
-    - 19.1 Instances and feasible solutions
-    - 19.2 A DP algorithm
-    - 19.3 Typical mistakes
-    - 19.4 In summary
-20. [DP for the subset sum problem](dynamic-programming/dp-subset-sum.md)
-    - 20.1 A DP algorithm
-    - 20.2 Typical mistakes
-    - 20.3 In summary
-21. [DP for the multiple-choice knapsack problem](dynamic-programming/dp-multiple-choice-knapsack.md)
-    - 21.1 A DP algorithm
-    - 21.2 Typical mistakes
-    - 21.3 In summary
-22. [DP for the multidimensional knapsack problem](dynamic-programming/dp-multidimensional-knapsack.md)
-    - 22.1 A DP algorithm
-    - 22.2 Typical mistakes
-    - 22.3 In summary
-23. [DP for the knapsack problem with setups](dynamic-programming/dp-knapsack-setups.md)
-    - 23.1 A DP algorithm
-    - 23.2 Typical mistakes
-    - 23.3 In summary
-24. [DP for the multiple knapsack problem](dynamic-programming/dp-multiple-knapsack.md)
-    - 24.1 A DP algorithm
-    - 24.2 Typical mistakes
-    - 24.3 In summary
-25. [DP for the uncapacitated lot sizing problem](dynamic-programming/dp-lot-sizing/index.md)
-    - 25.1 Notation, model and feasible solutions
+    - [18.4 Typical mistakes](dynamic-programming/dp-unbounded-knapsack/typical-mistakes.md#184-typical-mistakes)
+    - [18.5 In summary](dynamic-programming/dp-unbounded-knapsack/typical-mistakes.md#185-in-summary)
+- **[19. DP for the bounded knapsack problem](dynamic-programming/dp-bounded-knapsack.md)** · [Exercises](exercises/dp-bounded-knapsack.md)
+    - [19.1 Instances and feasible solutions](dynamic-programming/dp-bounded-knapsack.md#191-instances-and-feasible-solutions)
+    - [19.2 A DP algorithm](dynamic-programming/dp-bounded-knapsack.md#192-a-dp-algorithm)
+    - [19.3 Typical mistakes](dynamic-programming/dp-bounded-knapsack.md#193-typical-mistakes)
+    - [19.4 In summary](dynamic-programming/dp-bounded-knapsack.md#194-in-summary)
+- **[20. DP for the subset sum problem](dynamic-programming/dp-subset-sum.md)** · [Exercises](exercises/dp-subset-sum.md)
+    - [20.1 A DP algorithm](dynamic-programming/dp-subset-sum.md#201-a-dp-algorithm)
+    - [20.2 Typical mistakes](dynamic-programming/dp-subset-sum.md#202-typical-mistakes)
+    - [20.3 In summary](dynamic-programming/dp-subset-sum.md#203-in-summary)
+- **[21. DP for the multiple-choice knapsack problem](dynamic-programming/dp-multiple-choice-knapsack.md)** · [Exercises](exercises/dp-multiple-choice-knapsack.md)
+    - [21.1 A DP algorithm](dynamic-programming/dp-multiple-choice-knapsack.md#211-a-dp-algorithm)
+    - [21.2 Typical mistakes](dynamic-programming/dp-multiple-choice-knapsack.md#212-typical-mistakes)
+    - [21.3 In summary](dynamic-programming/dp-multiple-choice-knapsack.md#213-in-summary)
+- **[22. DP for the multidimensional knapsack problem](dynamic-programming/dp-multidimensional-knapsack.md)** · [Exercises](exercises/dp-multidimensional-knapsack.md)
+    - [22.1 A DP algorithm](dynamic-programming/dp-multidimensional-knapsack.md#221-a-dp-algorithm)
+    - [22.2 Typical mistakes](dynamic-programming/dp-multidimensional-knapsack.md#222-typical-mistakes)
+    - [22.3 In summary](dynamic-programming/dp-multidimensional-knapsack.md#223-in-summary)
+- **[23. DP for the knapsack problem with setups](dynamic-programming/dp-knapsack-setups.md)** · [Exercises](exercises/dp-knapsack-setups.md)
+    - [23.1 A DP algorithm](dynamic-programming/dp-knapsack-setups.md#231-a-dp-algorithm)
+    - [23.2 Typical mistakes](dynamic-programming/dp-knapsack-setups.md#232-typical-mistakes)
+    - [23.3 In summary](dynamic-programming/dp-knapsack-setups.md#233-in-summary)
+- **[24. DP for the multiple knapsack problem](dynamic-programming/dp-multiple-knapsack.md)** · [Exercises](exercises/dp-multiple-knapsack.md)
+    - [24.1 A DP algorithm](dynamic-programming/dp-multiple-knapsack.md#241-a-dp-algorithm)
+    - [24.2 Typical mistakes](dynamic-programming/dp-multiple-knapsack.md#242-typical-mistakes)
+    - [24.3 In summary](dynamic-programming/dp-multiple-knapsack.md#243-in-summary)
+
+### Lot sizing problems
+
+- **[25. DP for the uncapacitated lot sizing problem](dynamic-programming/dp-lot-sizing/index.md)** · [Exercises](exercises/dp-lot-sizing.md)
+    - [25.1 Notation, model and feasible solutions](dynamic-programming/dp-lot-sizing/index.md#251-notation-model-and-feasible-solutions)
     - [25.2 A DP algorithm for the ULS](dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls.md)
-    - [25.3 Typical mistakes](dynamic-programming/dp-lot-sizing/typical-mistakes.md)
-    - [25.4 In summary](dynamic-programming/dp-lot-sizing/typical-mistakes.md)
-26. [DP for the capacitated lot sizing problem](dynamic-programming/dp-capacitated-lot-sizing.md)
-    - 26.1 Notation, model and feasible solutions
-    - 26.2 A DP algorithm for the CLS
-    - 26.3 Typical mistakes
-    - 26.4 In summary
-27. [DP for the coin change problem](dynamic-programming/dp-coin-change.md)
-    - 27.1 Instances and feasible solutions
-    - 27.2 A DP algorithm
-    - 27.3 Typical mistakes
-    - 27.4 In summary
-28. [DP for the rod cutting problem](dynamic-programming/dp-rod-cutting/index.md)
-    - 28.1 Instances and feasible solutions
+    - [25.3 Typical mistakes](dynamic-programming/dp-lot-sizing/typical-mistakes.md#253-typical-mistakes)
+    - [25.4 In summary](dynamic-programming/dp-lot-sizing/typical-mistakes.md#254-in-summary)
+- **[26. DP for the capacitated lot sizing problem](dynamic-programming/dp-capacitated-lot-sizing.md)** · [Exercises](exercises/dp-capacitated-lot-sizing.md)
+    - [26.1 Notation, model and feasible solutions](dynamic-programming/dp-capacitated-lot-sizing.md#261-notation-model-and-feasible-solutions)
+    - [26.2 A DP algorithm for the CLS](dynamic-programming/dp-capacitated-lot-sizing.md#262-a-dp-algorithm-for-the-cls)
+    - [26.3 Typical mistakes](dynamic-programming/dp-capacitated-lot-sizing.md#263-typical-mistakes)
+    - [26.4 In summary](dynamic-programming/dp-capacitated-lot-sizing.md#264-in-summary)
+
+### Miscellaneous problems
+
+- **[27. DP for the coin change problem](dynamic-programming/dp-coin-change.md)** · [Exercises](exercises/dp-coin-change.md)
+    - [27.1 Instances and feasible solutions](dynamic-programming/dp-coin-change.md#271-instances-and-feasible-solutions)
+    - [27.2 A DP algorithm](dynamic-programming/dp-coin-change.md#272-a-dp-algorithm)
+    - [27.3 Typical mistakes](dynamic-programming/dp-coin-change.md#273-typical-mistakes)
+    - [27.4 In summary](dynamic-programming/dp-coin-change.md#274-in-summary)
+- **[28. DP for the rod cutting problem](dynamic-programming/dp-rod-cutting/index.md)** · [Exercises](exercises/dp-rod-cutting.md)
+    - [28.1 Instances and feasible solutions](dynamic-programming/dp-rod-cutting/index.md#281-instances-and-feasible-solutions)
     - [28.2 A first DP algorithm](dynamic-programming/dp-rod-cutting/a-first-dp-algorithm.md)
     - [28.3 A second DP algorithm](dynamic-programming/dp-rod-cutting/a-second-dp-algorithm.md)
-    - [28.4 Typical mistakes](dynamic-programming/dp-rod-cutting/typical-mistakes.md)
-    - [28.5 In summary](dynamic-programming/dp-rod-cutting/typical-mistakes.md)
+    - [28.4 Typical mistakes](dynamic-programming/dp-rod-cutting/typical-mistakes.md#284-typical-mistakes)
+    - [28.5 In summary](dynamic-programming/dp-rod-cutting/typical-mistakes.md#285-in-summary)
 
-## [Heuristic algorithms](heuristic-algorithms/index.md)
+## [Heuristics](heuristic-algorithms/index.md)
 
-29. [Heuristic algorithms: definitions](heuristic-algorithms/heuristics.md)
-    - 29.1 Heuristic algorithms
-    - 29.2 The problems and the assumptions
-    - 29.3 Primal and dual bounds
-    - 29.4 Classification of heuristic algorithms
-    - 29.5 Solution representation and search space
-    - 29.6 Neighbourhoods and local optima
-    - 29.7 Intensification and diversification
-    - 29.8 How to evaluate a heuristic algorithm
-    - 29.9 Typical mistakes
-    - 29.10 In summary
-30. [Constructive heuristics](heuristic-algorithms/constructive-heuristics/index.md)
-    - 30.1 Constructive heuristics
-    - [30.2 The problems and the assumptions](heuristic-algorithms/constructive-heuristics/the-problems-and-the-assumptions.md)
-    - [30.3 The greedy paradigm](heuristic-algorithms/constructive-heuristics/the-problems-and-the-assumptions.md)
+- **[29. Heuristic algorithms: definitions](heuristic-algorithms/heuristics.md)** · [Exercises](exercises/heuristics.md)
+    - [29.1 Heuristic algorithms](heuristic-algorithms/heuristics.md#291-heuristic-algorithms)
+    - [29.2 The problems and the assumptions](heuristic-algorithms/heuristics.md#sez-sec-problems)
+    - [29.3 Primal and dual bounds](heuristic-algorithms/heuristics.md#293-primal-and-dual-bounds)
+    - [29.4 Classification of heuristic algorithms](heuristic-algorithms/heuristics.md#294-classification-of-heuristic-algorithms)
+    - [29.5 Solution representation and search space](heuristic-algorithms/heuristics.md#295-solution-representation-and-search-space)
+    - [29.6 Neighbourhoods and local optima](heuristic-algorithms/heuristics.md#296-neighbourhoods-and-local-optima)
+    - [29.7 Intensification and diversification](heuristic-algorithms/heuristics.md#297-intensification-and-diversification)
+    - [29.8 How to evaluate a heuristic algorithm](heuristic-algorithms/heuristics.md#sez-sec-evaluation)
+    - [29.9 Typical mistakes](heuristic-algorithms/heuristics.md#299-typical-mistakes)
+    - [29.10 In summary](heuristic-algorithms/heuristics.md#2910-in-summary)
+- **[30. Constructive heuristics](heuristic-algorithms/constructive-heuristics/index.md)** · [Exercises](exercises/constructive-heuristics.md)
+    - [30.1 Constructive heuristics](heuristic-algorithms/constructive-heuristics/index.md#sez-sec-constructive)
+    - [30.2 The problems and the assumptions](heuristic-algorithms/constructive-heuristics/the-problems-and-the-assumptions.md#sez-sec-problems)
+    - [30.3 The greedy paradigm](heuristic-algorithms/constructive-heuristics/the-problems-and-the-assumptions.md#sez-sec-greedy)
     - [30.4 The 0/1 knapsack problem: which order?](heuristic-algorithms/constructive-heuristics/the-0-1-knapsack-problem-which-order.md)
     - [30.5 The bin packing problem: first sort, then pack](heuristic-algorithms/constructive-heuristics/the-bin-packing-problem-first-sort-then-pack.md)
     - [30.6 Scheduling on parallel machines: longest jobs first](heuristic-algorithms/constructive-heuristics/scheduling-on-parallel-machines-longest-jobs-first.md)
@@ -241,13 +255,13 @@
     - [30.9 Randomized construction](heuristic-algorithms/constructive-heuristics/randomized-construction.md)
     - [30.10 Look-ahead and regret](heuristic-algorithms/constructive-heuristics/look-ahead-and-regret.md)
     - [30.11 What constructive heuristics give, and what they do not](heuristic-algorithms/constructive-heuristics/what-constructive-heuristics-give-and-what-they-do-not.md)
-    - [30.12 Typical mistakes](heuristic-algorithms/constructive-heuristics/typical-mistakes.md)
-    - [30.13 In summary](heuristic-algorithms/constructive-heuristics/typical-mistakes.md)
-31. [Local search](heuristic-algorithms/local-search/index.md)
-    - 31.1 Local search
+    - [30.12 Typical mistakes](heuristic-algorithms/constructive-heuristics/typical-mistakes.md#3012-typical-mistakes)
+    - [30.13 In summary](heuristic-algorithms/constructive-heuristics/typical-mistakes.md#3013-in-summary)
+- **[31. Local search](heuristic-algorithms/local-search/index.md)** · [Exercises](exercises/local-search.md)
+    - [31.1 Local search](heuristic-algorithms/local-search/index.md#sez-sec-ls)
     - [31.2 The problems, the assumptions and the starting solutions](heuristic-algorithms/local-search/the-problems-the-assumptions-and-the-starting-solutions.md)
-    - [31.3 Local search: the scheme](heuristic-algorithms/local-search/local-search-the-scheme.md)
-    - [31.4 Neighbourhoods for the four problems](heuristic-algorithms/local-search/local-search-the-scheme.md)
+    - [31.3 Local search: the scheme](heuristic-algorithms/local-search/local-search-the-scheme.md#sez-sec-scheme)
+    - [31.4 Neighbourhoods for the four problems](heuristic-algorithms/local-search/local-search-the-scheme.md#sez-sec-neigh)
     - [31.5 First improvement and best improvement](heuristic-algorithms/local-search/first-improvement-and-best-improvement.md)
     - [31.6 Evaluating a move incrementally](heuristic-algorithms/local-search/evaluating-a-move-incrementally.md)
     - [31.7 TSP: 2-opt and Or-opt](heuristic-algorithms/local-search/tsp-2-opt-and-or-opt.md)
@@ -256,13 +270,13 @@
     - [31.10 KP: feasibility and penalties](heuristic-algorithms/local-search/kp-feasibility-and-penalties.md)
     - [31.11 Variable neighbourhood descent](heuristic-algorithms/local-search/variable-neighbourhood-descent.md)
     - [31.12 Multi-start local search](heuristic-algorithms/local-search/multi-start-local-search.md)
-    - [31.13 Typical mistakes](heuristic-algorithms/local-search/typical-mistakes.md)
-    - [31.14 In summary](heuristic-algorithms/local-search/typical-mistakes.md)
-32. [Metaheuristics](heuristic-algorithms/metaheuristics/index.md)
-    - 32.1 Metaheuristics
+    - [31.13 Typical mistakes](heuristic-algorithms/local-search/typical-mistakes.md#3113-typical-mistakes)
+    - [31.14 In summary](heuristic-algorithms/local-search/typical-mistakes.md#3114-in-summary)
+- **[32. Metaheuristics](heuristic-algorithms/metaheuristics/index.md)** · [Exercises](exercises/metaheuristics.md)
+    - [32.1 Metaheuristics](heuristic-algorithms/metaheuristics/index.md#sez-sec-metaheuristic)
     - [32.2 The problems and the assumptions](heuristic-algorithms/metaheuristics/the-problems-and-the-assumptions.md)
-    - [32.3 How to escape from a local optimum](heuristic-algorithms/metaheuristics/how-to-escape-from-a-local-optimum.md)
-    - [32.4 Simulated annealing](heuristic-algorithms/metaheuristics/how-to-escape-from-a-local-optimum.md)
+    - [32.3 How to escape from a local optimum](heuristic-algorithms/metaheuristics/how-to-escape-from-a-local-optimum.md#sez-sec-escape)
+    - [32.4 Simulated annealing](heuristic-algorithms/metaheuristics/how-to-escape-from-a-local-optimum.md#sez-sec-sa)
     - [32.5 Tabu search](heuristic-algorithms/metaheuristics/tabu-search.md)
     - [32.6 Iterated local search](heuristic-algorithms/metaheuristics/iterated-local-search.md)
     - [32.7 Variable neighbourhood search](heuristic-algorithms/metaheuristics/variable-neighbourhood-search.md)
@@ -270,92 +284,134 @@
     - [32.9 Large neighbourhood search](heuristic-algorithms/metaheuristics/large-neighbourhood-search.md)
     - [32.10 Population-based methods: genetic and memetic algorithms](heuristic-algorithms/metaheuristics/population-based-methods-genetic-and-memetic-algorithms.md)
     - [32.11 Comparison and conclusions](heuristic-algorithms/metaheuristics/comparison-and-conclusions.md)
-    - [32.12 Typical mistakes](heuristic-algorithms/metaheuristics/typical-mistakes.md)
-    - [32.13 In summary](heuristic-algorithms/metaheuristics/typical-mistakes.md)
-33. [MIP heuristics for the classical problems](heuristic-algorithms/mip-heuristics-classical.md)
-    - 33.1 MIP-based heuristics
-    - 33.2 The problems and their MIP models
-    - 33.3 Rounding
-    - 33.4 Diving
-    - 33.5 The feasibility pump
-    - 33.6 RINS, local branching and proximity search
-    - 33.7 Relax-and-fix and fix-and-optimize on lot sizing
-    - 33.8 Heuristics inside the solver
-    - 33.9 What the MIP-based heuristics give
-    - 33.11 Typical mistakes
-    - 33.12 In summary
+    - [32.12 Typical mistakes](heuristic-algorithms/metaheuristics/typical-mistakes.md#3212-typical-mistakes)
+    - [32.13 In summary](heuristic-algorithms/metaheuristics/typical-mistakes.md#3213-in-summary)
+- **[33. MIP heuristics for the classical problems](heuristic-algorithms/mip-heuristics-classical.md)** · [Exercises](exercises/mip-heuristics-classical.md)
+    - [33.1 MIP-based heuristics](heuristic-algorithms/mip-heuristics-classical.md#sez-sec-intro)
+    - [33.2 The problems and their MIP models](heuristic-algorithms/mip-heuristics-classical.md#sez-sec-models)
+    - [33.3 Rounding](heuristic-algorithms/mip-heuristics-classical.md#sez-sec-rounding)
+    - [33.4 Diving](heuristic-algorithms/mip-heuristics-classical.md#sez-sec-diving)
+    - [33.5 The feasibility pump](heuristic-algorithms/mip-heuristics-classical.md#sez-sec-fp)
+    - [33.6 RINS, local branching and proximity search](heuristic-algorithms/mip-heuristics-classical.md#sez-sec-submip)
+    - [33.7 Relax-and-fix and fix-and-optimize on lot sizing](heuristic-algorithms/mip-heuristics-classical.md#sez-sec-rf)
+    - [33.8 Heuristics inside the solver](heuristic-algorithms/mip-heuristics-classical.md#sez-sec-gurobi)
+    - [33.9 What the MIP-based heuristics give](heuristic-algorithms/mip-heuristics-classical.md#sez-sec-give)
+    - [33.10 Typical mistakes](heuristic-algorithms/mip-heuristics-classical.md#sez-sec-mistakes)
+    - [33.11 In summary](heuristic-algorithms/mip-heuristics-classical.md#sez-sec-summary)
 
-## [Approximation algorithms](approximation-algorithms/index.md)
+## [Approximation](approximation-algorithms/index.md)
 
-34. [Principles of approximation algorithms](approximation-algorithms/approximation.md)
-    - 34.1 Approximation algorithms
-    - 34.2 Approximation schemes
-    - 34.3 Typical mistakes
-    - 34.4 In summary
-35. [Approximation algorithms for the knapsack problem](approximation-algorithms/knapsack-approximation.md)
-    - 35.1 Notation
-    - 35.2 Split item and residual capacity
-    - 35.3 The greedy algorithm
-    - 35.4 The Ext-Greedy algorithm
-    - 35.5 The $H^2$ algorithm
-    - 35.6 The $H^{\ell}$ algorithm
-    - 35.7 The Basic-FPTAS algorithm
-    - 35.8 Performance guarantees
-    - 35.9 Absolute performance guarantee
-    - 35.10 Typical mistakes
-    - 35.11 In summary
-36. [Approximation algorithms for bin packing](approximation-algorithms/bin-packing-approximation.md)
-    - 36.1 Notation
-    - 36.2 The Next Fit
-    - 36.3 The Any Fit class
-    - 36.4 Half-full property
-    - 36.5 Performance guarantees
-    - 36.6 Typical mistakes
-    - 36.7 In summary
-37. [Vertex coloring: limits of approximation](approximation-algorithms/coloring-inapproximability.md)
-    - 37.1 Notation
-    - 37.2 The VCP is not approximable
-    - 37.3 Special cases
-    - 37.4 Examples
-    - 37.5 Sources
-    - 37.6 Typical mistakes
-    - 37.7 In summary
-38. [Maximum clique: limits of approximation](approximation-algorithms/clique-inapproximability.md)
-    - 38.1 Notation
-    - 38.2 The MCP is not approximable
-    - 38.3 Special cases
-    - 38.4 Example
-    - 38.5 Sources
-    - 38.6 Typical mistakes
-    - 38.7 In summary
-39. [The TSP: the general case and the metric case](approximation-algorithms/tsp-approximation.md)
-    - 39.1 The general TSP is not approximable
-    - 39.2 A special case: the metric TSP
-    - 39.3 The double tree and the Christofides algorithms
-    - 39.4 Structural properties
-    - 39.5 Performance guarantees
-    - 39.6 Sources
-    - 39.7 Typical mistakes
-    - 39.8 In summary
-40. [Approximation for P|Cmax](approximation-algorithms/pcmax-approximation.md)
-    - 40.1 Notation
-    - 40.2 The algorithms $LIST$ and $LPT$
-    - 40.3 A property of list scheduling
-    - 40.4 Performance guarantees
-    - 40.5 Sources
-    - 40.6 Typical mistakes
-    - 40.7 In summary
+- **[34. Principles of approximation algorithms](approximation-algorithms/approximation.md)** · [Exercises](exercises/approximation.md)
+    - [34.1 Approximation algorithms](approximation-algorithms/approximation.md#341-approximation-algorithms)
+    - [34.2 Approximation schemes](approximation-algorithms/approximation.md#342-approximation-schemes)
+    - [34.3 Typical mistakes](approximation-algorithms/approximation.md#343-typical-mistakes)
+    - [34.4 In summary](approximation-algorithms/approximation.md#344-in-summary)
+
+### Knapsack problems
+
+- **[35. Approximation algorithms for the knapsack problem](approximation-algorithms/knapsack-approximation.md)** · [Exercises](exercises/knapsack-approximation.md)
+    - [35.1 Notation](approximation-algorithms/knapsack-approximation.md#351-notation)
+    - [35.2 Split item and residual capacity](approximation-algorithms/knapsack-approximation.md#352-split-item-and-residual-capacity)
+    - [35.3 The greedy algorithm](approximation-algorithms/knapsack-approximation.md#353-the-greedy-algorithm)
+    - [35.4 The Ext-Greedy algorithm](approximation-algorithms/knapsack-approximation.md#354-the-ext-greedy-algorithm)
+    - [35.5 The $H^2$ algorithm](approximation-algorithms/knapsack-approximation.md#sez-sec-H2)
+    - [35.6 The $H^{\ell}$ algorithm](approximation-algorithms/knapsack-approximation.md#356-the-hell-algorithm)
+    - [35.7 The Basic-FPTAS algorithm](approximation-algorithms/knapsack-approximation.md#357-the-basic-fptas-algorithm)
+    - [35.8 Performance guarantees](approximation-algorithms/knapsack-approximation.md#358-performance-guarantees)
+    - [35.9 Absolute performance guarantee](approximation-algorithms/knapsack-approximation.md#359-absolute-performance-guarantee)
+    - [35.10 Typical mistakes](approximation-algorithms/knapsack-approximation.md#3510-typical-mistakes)
+    - [35.11 In summary](approximation-algorithms/knapsack-approximation.md#3511-in-summary)
+
+### Packing problems
+
+- **[36. Approximation algorithms for bin packing](approximation-algorithms/bin-packing-approximation.md)** · [Exercises](exercises/bin-packing-approximation.md)
+    - [36.1 Notation](approximation-algorithms/bin-packing-approximation.md#361-notation)
+    - [36.2 The Next Fit](approximation-algorithms/bin-packing-approximation.md#sez-sec-NF)
+    - [36.3 The Any Fit class](approximation-algorithms/bin-packing-approximation.md#sez-sec-AF)
+    - [36.4 Half-full property](approximation-algorithms/bin-packing-approximation.md#364-half-full-property)
+    - [36.5 Performance guarantees](approximation-algorithms/bin-packing-approximation.md#365-performance-guarantees)
+    - [36.6 Typical mistakes](approximation-algorithms/bin-packing-approximation.md#366-typical-mistakes)
+    - [36.7 In summary](approximation-algorithms/bin-packing-approximation.md#367-in-summary)
+
+### Coloring problems
+
+- **[37. Vertex coloring: limits of approximation](approximation-algorithms/coloring-inapproximability.md)** · [Exercises](exercises/coloring-inapproximability.md)
+    - [37.1 Notation](approximation-algorithms/coloring-inapproximability.md#371-notation)
+    - [37.2 The VCP is not approximable](approximation-algorithms/coloring-inapproximability.md#372-the-vcp-is-not-approximable)
+    - [37.3 Special cases](approximation-algorithms/coloring-inapproximability.md#373-special-cases)
+    - [37.4 Examples](approximation-algorithms/coloring-inapproximability.md#374-examples)
+    - [37.5 Sources](approximation-algorithms/coloring-inapproximability.md#375-sources)
+    - [37.6 Typical mistakes](approximation-algorithms/coloring-inapproximability.md#376-typical-mistakes)
+    - [37.7 In summary](approximation-algorithms/coloring-inapproximability.md#377-in-summary)
+
+### Clique problems
+
+- **[38. Maximum clique: limits of approximation](approximation-algorithms/clique-inapproximability.md)** · [Exercises](exercises/clique-inapproximability.md)
+    - [38.1 Notation](approximation-algorithms/clique-inapproximability.md#381-notation)
+    - [38.2 The MCP is not approximable](approximation-algorithms/clique-inapproximability.md#382-the-mcp-is-not-approximable)
+    - [38.3 Special cases](approximation-algorithms/clique-inapproximability.md#383-special-cases)
+    - [38.4 Example](approximation-algorithms/clique-inapproximability.md#384-example)
+    - [38.5 Sources](approximation-algorithms/clique-inapproximability.md#385-sources)
+    - [38.6 Typical mistakes](approximation-algorithms/clique-inapproximability.md#386-typical-mistakes)
+    - [38.7 In summary](approximation-algorithms/clique-inapproximability.md#387-in-summary)
+
+### Routing problems
+
+- **[39. The TSP: the general case and the metric case](approximation-algorithms/tsp-approximation.md)** · [Exercises](exercises/tsp-approximation.md)
+    - [39.1 The general TSP is not approximable](approximation-algorithms/tsp-approximation.md#391-the-general-tsp-is-not-approximable)
+    - [39.2 A special case: the metric TSP](approximation-algorithms/tsp-approximation.md#392-a-special-case-the-metric-tsp)
+    - [39.3 The double tree and the Christofides algorithms](approximation-algorithms/tsp-approximation.md#393-the-double-tree-and-the-christofides-algorithms)
+    - [39.4 Structural properties](approximation-algorithms/tsp-approximation.md#394-structural-properties)
+    - [39.5 Performance guarantees](approximation-algorithms/tsp-approximation.md#395-performance-guarantees)
+    - [39.6 Sources](approximation-algorithms/tsp-approximation.md#396-sources)
+    - [39.7 Typical mistakes](approximation-algorithms/tsp-approximation.md#397-typical-mistakes)
+    - [39.8 In summary](approximation-algorithms/tsp-approximation.md#398-in-summary)
+
+### Scheduling problems
+
+- **[40. Approximation for P||Cmax](approximation-algorithms/pcmax-approximation.md)** · [Exercises](exercises/pcmax-approximation.md)
+    - [40.1 Notation](approximation-algorithms/pcmax-approximation.md#401-notation)
+    - [40.2 The algorithms $LIST$ and $LPT$](approximation-algorithms/pcmax-approximation.md#402-the-algorithms-list-and-lpt)
+    - [40.3 A property of list scheduling](approximation-algorithms/pcmax-approximation.md#403-a-property-of-list-scheduling)
+    - [40.4 Performance guarantees](approximation-algorithms/pcmax-approximation.md#404-performance-guarantees)
+    - [40.5 Sources](approximation-algorithms/pcmax-approximation.md#405-sources)
+    - [40.6 Typical mistakes](approximation-algorithms/pcmax-approximation.md#406-typical-mistakes)
+    - [40.7 In summary](approximation-algorithms/pcmax-approximation.md#407-in-summary)
 
 ## [Ad hoc algorithms](specialized-algorithms/index.md)
 
-41. [Knapsack: branch-and-bound on the critical item](specialized-algorithms/knapsack-branch-and-bound.md)
-    - 41.1 The algorithm for the KP
-    - 41.2 A worked example
-    - 41.3 Typical mistakes
-    - 41.4 In summary
-42. [Vertex coloring: the DSATUR branch-and-bound](specialized-algorithms/dsatur-branch-and-bound.md)
-    - 42.1 The algorithm for the VCP
-    - 42.2 A worked example
-    - 42.3 Remarks
-    - 42.4 Typical mistakes
-    - 42.5 In summary
+### Knapsack problems
+
+- **[41. Knapsack: branch-and-bound on the critical item](specialized-algorithms/knapsack-branch-and-bound.md)** · [Exercises](exercises/knapsack-branch-and-bound.md)
+    - [41.1 The algorithm for the KP](specialized-algorithms/knapsack-branch-and-bound.md#411-the-algorithm-for-the-kp)
+    - [41.2 A worked example](specialized-algorithms/knapsack-branch-and-bound.md#412-a-worked-example)
+    - [41.3 Typical mistakes](specialized-algorithms/knapsack-branch-and-bound.md#413-typical-mistakes)
+    - [41.4 In summary](specialized-algorithms/knapsack-branch-and-bound.md#414-in-summary)
+
+### Coloring problems
+
+- **[42. Vertex coloring: the DSATUR branch-and-bound](specialized-algorithms/dsatur-branch-and-bound.md)** · [Exercises](exercises/dsatur-branch-and-bound.md)
+    - [42.1 The algorithm for the VCP](specialized-algorithms/dsatur-branch-and-bound.md#sez-sec-DSATURBB)
+    - [42.2 A worked example](specialized-algorithms/dsatur-branch-and-bound.md#sez-sec-DSATURBBex)
+    - [42.3 Remarks](specialized-algorithms/dsatur-branch-and-bound.md#sez-sec-DSATURBBrem)
+    - [42.4 Typical mistakes](specialized-algorithms/dsatur-branch-and-bound.md#424-typical-mistakes)
+    - [42.5 In summary](specialized-algorithms/dsatur-branch-and-bound.md#425-in-summary)
+
+## [Catalogue](catalogue/index.md)
+
+- [The problems at a glance](combinatorial-optimization-problems/problems.md)
+- [Knapsack problems](catalogue/knapsack-problems.md): [0/1 knapsack (KP)](catalogue/knapsack-problem.md) · [Subset sum (SSP)](catalogue/subset-sum-problem.md) · [Bounded knapsack (BKP)](catalogue/bounded-knapsack-problem.md) · [Unbounded knapsack (UKP)](catalogue/unbounded-knapsack-problem.md) · [Multidimensional knapsack (MDKP)](catalogue/multidimensional-knapsack-problem.md) · [Multiple knapsack (MKP)](catalogue/multiple-knapsack-problem.md) · [Multiple-choice knapsack (MCKP)](catalogue/multiple-choice-knapsack-problem.md) · [Knapsack with setups (KPS)](catalogue/knapsack-problem-with-setups.md)
+- [Packing problems](catalogue/packing-problems.md): [Bin packing (BPP)](catalogue/bin-packing-problem.md) · [Cutting stock (CSP)](catalogue/cutting-stock-problem.md)
+- [Coloring problems](catalogue/coloring-problems.md): [Vertex coloring (VCP)](catalogue/vertex-coloring-problem.md)
+- [Clique problems](catalogue/clique-problems.md): [Maximum clique (MCP)](catalogue/maximum-clique-problem.md) · [Maximum stable set (MSSP)](catalogue/maximum-stable-set-problem.md) · [Vertex-weighted maximum clique (VWMCP)](catalogue/vertex-weighted-maximum-clique-problem.md) · [Edge-weighted maximum clique (EWMCP)](catalogue/edge-weighted-maximum-clique-problem.md)
+- [Routing problems](catalogue/routing-problems.md): [Travelling salesman (TSP)](catalogue/travelling-salesman-problem.md) · [Metric TSP](catalogue/metric-travelling-salesman-problem.md) · [Asymmetric TSP (ATSP)](catalogue/asymmetric-travelling-salesman-problem.md) · [Hamiltonian cycle (HCP)](catalogue/hamiltonian-cycle-problem.md)
+- [Scheduling problems](catalogue/scheduling-problems.md): [Identical parallel machines (P||Cmax)](catalogue/scheduling-on-identical-parallel-machines.md) · [Fixed number of identical machines (Pm||Cmax)](catalogue/scheduling-on-a-fixed-number-of-identical-machines.md) · [Parallel machines with different speeds (Q||Cmax)](catalogue/scheduling-on-parallel-machines-with-different-speeds.md) · [Unrelated parallel machines (R||Cmax)](catalogue/scheduling-on-unrelated-parallel-machines.md)
+- [Lot sizing problems](catalogue/lot-sizing-problems.md): [Capacitated lot sizing (CLS)](catalogue/capacitated-lot-sizing.md) · [Uncapacitated lot sizing (ULS)](catalogue/uncapacitated-lot-sizing-problem.md) · [Capacitated lot sizing with constant capacity (CLS-C)](catalogue/capacitated-lot-sizing-with-constant-capacity.md) · [Lot sizing with several products and setup times (MLS)](catalogue/lot-sizing-with-several-products-and-setup-times.md) · [Lot sizing with initial stock (LS-SI)](catalogue/lot-sizing-with-initial-stock.md) · [Lot sizing with overtime (LS-OT)](catalogue/lot-sizing-with-overtime.md) · [Lot sizing with unsatisfied demand (LS-UD)](catalogue/lot-sizing-with-unsatisfied-demand.md)
+- [Miscellaneous problems](catalogue/miscellaneous-problems.md): [Rod cutting (RCP)](catalogue/rod-cutting-problem.md) · [Coin change (CCP)](catalogue/coin-change-problem.md)
+
+## Other pages
+
+- [Exercises](exercises/index.md)
+- [Lab](lab/index.md)
+- [Downloads](downloads.md)
+- [Colab notebooks](notebooks.md)

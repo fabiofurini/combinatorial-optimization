@@ -131,7 +131,7 @@ title: "Knapsack with setups"
     </tr>
     </table></div>
 
-    In the drawing the classes have two colours, and a darker block is the setup of a class, with its weight $s_h$ and its cost $f_h$. The optimal solution $\{1,2,3,6\}$ activates both classes: the weight is $(2+4+5+3)+(3+2)=19\le 20$ and the value is $(6+8+5+4)-(3+4)=16$.
+    In the drawing the classes have two colours, and a darker block is the setup of a class, with its weight $s_h$ and its cost $f_h$. An optimal solution, $\{1,2,3,6\}$, activates both classes: the weight is $(2+4+5+3)+(3+2)=19\le 20$ and the value is $(6+8+5+4)-(3+4)=16$.
 
     ![Figure 8](../../img/knapsack/fig08.svg){ .fig loading=lazy  }
 

@@ -29,11 +29,11 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     **Questions**
 
-    1. Verify that the items are sorted by non-increasing efficiency, and determine the split item $s$ and the residual capacity $\bar c$.
+    1. Verify that the items are sorted by non-increasing efficiency, and determine the split item $s$ and the residual capacity $\mathit{rc}$.
 
     2. Apply the greedy algorithm ($GR$) to this instance. Show the execution step by step, indicating at each iteration whether the item is selected and the resulting residual capacity. State the solution $S$ returned by $GR$ and $GR(I)$.
 
-    3. Compute the upper bound $U=\sum_{i=1}^{s-1}p_i + p_s\,\frac{\bar c}{w_s}$ on $z(I)$ given by the LP relaxation, and deduce an upper bound on the performance ratio $\frac{z(I)}{GR(I)}$.
+    3. Compute the upper bound $U=\sum_{i=1}^{s-1}p_i + p_s\,\frac{\mathit{rc}}{w_s}$ on $z(I)$ given by the LP relaxation, and deduce an upper bound on the performance ratio $\frac{z(I)}{GR(I)}$.
 
     4. Determine whether $GR$ finds an optimal solution on this instance, either by showing that $GR(I)$ attains the upper bound $\lfloor U\rfloor$, or by exhibiting a feasible solution of larger profit.
 
@@ -56,7 +56,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         \sum_{i=1}^{4} w_i = 3+2+3+9 = 17 > 15,
         $$
 
-        the split item is $s=4$ and the residual capacity is $\bar c = 15 - 8 = 7$.
+        the split item is $s=4$ and the residual capacity is $\mathit{rc} = 15 - 8 = 7$.
 
     2. Initially $rc:=c=15$. The execution of $GR$ proceeds as follows:
 
@@ -76,7 +76,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         GR(I)=12+6+6+6=30.
         $$
 
-        Note that $GR$ selects all the items preceding the split item, does not select the split item $4$, and also selects item $5$, which follows it.
+        $GR$ selects all the items preceding the split item, does not select the split item $4$, and also selects item $5$, which follows it.
 
     3. The LP relaxation gives
 
@@ -87,7 +87,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         and since $z(I)$ is integer, $z(I)\le \lfloor U\rfloor = 30$. Hence
 
         $$
-        \frac{z(I)}{GR(I)} \le \frac{30}{30} \approx 1 .
+        \frac{z(I)}{GR(I)} \le \frac{30}{30} = 1 .
         $$
 
     4. Since $GR(I)=30=\lfloor U\rfloor$, no feasible solution has a larger profit: $GR$ finds an <strong>optimal</strong> solution on this instance, and $z(I)=30$.
@@ -109,11 +109,11 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     **Questions**
 
-    1. Verify that the items are sorted by non-increasing efficiency, and determine the split item $s$ and the residual capacity $\bar c$.
+    1. Verify that the items are sorted by non-increasing efficiency, and determine the split item $s$ and the residual capacity $\mathit{rc}$.
 
     2. Apply the greedy algorithm ($GR$) to this instance. Show the execution step by step, indicating at each iteration whether the item is selected and the resulting residual capacity. State the solution $S$ returned by $GR$ and $GR(I)$.
 
-    3. Compute the upper bound $U=\sum_{i=1}^{s-1}p_i + p_s\,\frac{\bar c}{w_s}$ on $z(I)$ given by the LP relaxation, and deduce an upper bound on the performance ratio $\frac{z(I)}{GR(I)}$.
+    3. Compute the upper bound $U=\sum_{i=1}^{s-1}p_i + p_s\,\frac{\mathit{rc}}{w_s}$ on $z(I)$ given by the LP relaxation, and deduce an upper bound on the performance ratio $\frac{z(I)}{GR(I)}$.
 
     4. Determine whether $GR$ finds an optimal solution on this instance, either by showing that $GR(I)$ attains the upper bound $\lfloor U\rfloor$, or by exhibiting a feasible solution of larger profit.
 
@@ -136,7 +136,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         \sum_{i=1}^{5} w_i = 1+1+1+4+8 = 15 > 13,
         $$
 
-        the split item is $s=5$ and the residual capacity is $\bar c = 13 - 7 = 6$.
+        the split item is $s=5$ and the residual capacity is $\mathit{rc} = 13 - 7 = 6$.
 
     2. Initially $rc:=c=13$. The execution of $GR$ proceeds as follows:
 
@@ -158,7 +158,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         GR(I)=10+6+3+7+2=28.
         $$
 
-        Note that $GR$ selects all the items preceding the split item, does not select the split item $5$, and also selects item $6$, which follows it.
+        $GR$ selects all the items preceding the split item, does not select the split item $5$, and also selects item $6$, which follows it.
 
     3. The LP relaxation gives
 
@@ -169,16 +169,16 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         and since $z(I)$ is integer, $z(I)\le \lfloor U\rfloor = 34$. Hence
 
         $$
-        \frac{z(I)}{GR(I)} \le \frac{34}{28} \approx 1.21 .
+        \frac{z(I)}{GR(I)} \le \frac{34}{28}=\frac{17}{14} \approx 1.21 .
         $$
 
-    4. The solution $S^*=\{1,2,3,5\}$, of weight $1+1+1+8=11\le 13$ and profit $z(I)=10+6+3+11=30$ is feasible and has a larger profit than $GR(I)=28$. Hence $GR$ does <strong>not</strong> find an optimal solution on this instance; the solution $S^*$ is optimal (this can be checked by enumerating the feasible solutions), and the performance ratio is
+    4. The solution $\tilde{S}=\{1,2,3,5\}$, of weight $1+1+1+8=11\le 13$ and profit $z(I)=10+6+3+11=30$ is feasible and has a larger profit than $GR(I)=28$. Hence $GR$ does <strong>not</strong> find an optimal solution on this instance; the solution $\tilde{S}$ is optimal (this can be checked by enumerating the feasible solutions), and the performance ratio is
 
         $$
-        \frac{z(I)}{GR(I)}=\frac{30}{28}\approx 1.07 .
+        \frac{z(I)}{GR(I)}=\frac{30}{28}=\frac{15}{14}\approx 1.07 .
         $$
 
-        Note that the item of maximum profit, item $5$ with $p_{5}=11$, is not selected by $GR$: its low efficiency puts it late in the order, when the residual capacity is no longer sufficient.
+        The item of maximum profit, item $5$ with $p_{5}=11$, is not selected by $GR$: its low efficiency puts it late in the order, when the residual capacity is no longer sufficient.
 
 <a id="esercizio-35-3"></a>
 
@@ -197,11 +197,11 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     **Questions**
 
-    1. Verify that the items are sorted by non-increasing efficiency, and determine the split item $s$ and the residual capacity $\bar c$.
+    1. Verify that the items are sorted by non-increasing efficiency, and determine the split item $s$ and the residual capacity $\mathit{rc}$.
 
     2. Apply the greedy algorithm ($GR$) to this instance. Show the execution step by step, indicating at each iteration whether the item is selected and the resulting residual capacity. State the solution $S$ returned by $GR$ and $GR(I)$.
 
-    3. Compute the upper bound $U=\sum_{i=1}^{s-1}p_i + p_s\,\frac{\bar c}{w_s}$ on $z(I)$ given by the LP relaxation, and deduce an upper bound on the performance ratio $\frac{z(I)}{GR(I)}$.
+    3. Compute the upper bound $U=\sum_{i=1}^{s-1}p_i + p_s\,\frac{\mathit{rc}}{w_s}$ on $z(I)$ given by the LP relaxation, and deduce an upper bound on the performance ratio $\frac{z(I)}{GR(I)}$.
 
     4. Determine whether $GR$ finds an optimal solution on this instance, either by showing that $GR(I)$ attains the upper bound $\lfloor U\rfloor$, or by exhibiting a feasible solution of larger profit.
 
@@ -224,7 +224,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         \sum_{i=1}^{3} w_i = 3+3+9 = 15 > 12,
         $$
 
-        the split item is $s=3$ and the residual capacity is $\bar c = 12 - 6 = 6$.
+        the split item is $s=3$ and the residual capacity is $\mathit{rc} = 12 - 6 = 6$.
 
     2. Initially $rc:=c=12$. The execution of $GR$ proceeds as follows:
 
@@ -249,22 +249,22 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
     3. The LP relaxation gives
 
         $$
-        z(I)\le U = 8+7 + 18\cdot\frac{6}{9} = 27 \approx 27 ,
+        z(I)\le U = 8+7 + 18\cdot\frac{6}{9} = 27 ,
         $$
 
         and since $z(I)$ is integer, $z(I)\le \lfloor U\rfloor = 27$. Hence
 
         $$
-        \frac{z(I)}{GR(I)} \le \frac{27}{15} \approx 1.8 .
+        \frac{z(I)}{GR(I)} \le \frac{27}{15}=\frac{9}{5}=1.8 .
         $$
 
-    4. The solution $S^*=\{1,3\}$, of weight $3+9=12\le 12$ and profit $z(I)=8+18=26$ is feasible and has a larger profit than $GR(I)=15$. Hence $GR$ does <strong>not</strong> find an optimal solution on this instance; the solution $S^*$ is optimal (this can be checked by enumerating the feasible solutions), and the performance ratio is
+    4. The solution $\tilde{S}=\{1,3\}$, of weight $3+9=12\le 12$ and profit $z(I)=8+18=26$ is feasible and has a larger profit than $GR(I)=15$. Hence $GR$ does <strong>not</strong> find an optimal solution on this instance; the solution $\tilde{S}$ is optimal (this can be checked by enumerating the feasible solutions), and the performance ratio is
 
         $$
         \frac{z(I)}{GR(I)}=\frac{26}{15}\approx 1.73 .
         $$
 
-        Note that the item of maximum profit, item $3$ with $p_{3}=18$, is not selected by $GR$: its low efficiency puts it late in the order, when the residual capacity is no longer sufficient.
+        The item of maximum profit, item $3$ with $p_{3}=18$, is not selected by $GR$: its low efficiency puts it late in the order, when the residual capacity is no longer sufficient.
 
 ## Extended greedy algorithm
 
@@ -287,7 +287,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     1. Apply the greedy algorithm ($GR$) to this instance step by step, and state $GR(I)$.
 
-    2. Determine the maximum profit $\hat p$ and the best single-item feasible solution $\hat S$. State the solution returned by the Ext-Greedy algorithm ($GR^e$) and $GR^e(I)$.
+    2. Determine the maximum profit $p_{\max}$ and the best single-item feasible solution $\bar{S}$. State the solution returned by the Ext-Greedy algorithm ($GR^e$) and $GR^e(I)$.
 
     3. Determine the split item $s$ and verify the two inequalities $\sum_{i=1}^{s-1}p_i\le GR^e(I)$ and $p_s\le GR^e(I)$ used in the proof of the performance guarantee of $GR^e$. Deduce an upper bound on $z(I)$.
 
@@ -318,7 +318,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
         Hence $GR$ returns $S=\{1,2,3\}$ and $GR(I)=11+5+3=19$.
 
-    2. The maximum profit is $\hat p = p_{1} = 11$, and item $1$ fits into the knapsack ($w_{1}=8\le 22$), so $\hat S=\{1\}$. Since $GR(I)=19\ge \hat p=11$, $GR^e$ keeps the greedy solution:
+    2. The maximum profit is $p_{\max} = p_{1} = 11$, and item $1$ fits into the knapsack ($w_{1}=8\le 22$), so $\bar{S}=\{1\}$. Since $GR(I)=19\ge p_{\max}=11$, $GR^e$ keeps the greedy solution:
 
         $$
         GR^e(I)=GR(I)=19 .
@@ -338,7 +338,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         z(I) \;\le\; \sum_{i=1}^{s-1}p_i + p_s \;=\; 23 \;\le\; 2\,GR^e(I) = 38 .
         $$
 
-    4. The solution $S^*=\{1,2,4\}$, of weight $8+4+9=21\le 22$ and profit $z(I)=11+5+4=20$ is feasible and better than the one returned by $GR^e$, so $GR^e$ does <strong>not</strong> find an optimal solution; $S^*$ is optimal (this can be checked by enumerating the feasible solutions). The performance ratio is
+    4. The solution $\tilde{S}=\{1,2,4\}$, of weight $8+4+9=21\le 22$ and profit $z(I)=11+5+4=20$ is feasible and better than the one returned by $GR^e$, so $GR^e$ does <strong>not</strong> find an optimal solution; $\tilde{S}$ is optimal (this can be checked by enumerating the feasible solutions). The performance ratio is
 
         $$
         \frac{z(I)}{GR^e(I)}=\frac{20}{19}\approx 1.05 \;\le\; 2,
@@ -365,7 +365,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     1. Apply the greedy algorithm ($GR$) to this instance step by step, and state $GR(I)$.
 
-    2. Determine the maximum profit $\hat p$ and the best single-item feasible solution $\hat S$. State the solution returned by the Ext-Greedy algorithm ($GR^e$) and $GR^e(I)$.
+    2. Determine the maximum profit $p_{\max}$ and the best single-item feasible solution $\bar{S}$. State the solution returned by the Ext-Greedy algorithm ($GR^e$) and $GR^e(I)$.
 
     3. Determine the split item $s$ and verify the two inequalities $\sum_{i=1}^{s-1}p_i\le GR^e(I)$ and $p_s\le GR^e(I)$ used in the proof of the performance guarantee of $GR^e$. Deduce an upper bound on $z(I)$.
 
@@ -394,18 +394,18 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
         5. Item $5$ (weight $w_{5}=6$): $w_{5}=6> rc=3$, so the item is not selected.
 
-        Hence $GR$ returns $S=\{1\}$ and $GR(I)=16=16$.
+        Hence $GR$ returns $S=\{1\}$ and $GR(I)=16$.
 
-    2. The maximum profit is $\hat p = p_{2} = 19$, and item $2$ fits into the knapsack ($w_{2}=8\le 8$), so $\hat S=\{2\}$. Since $GR(I)=16<\hat p=19$, $GR^e$ replaces the greedy solution with $\hat S$:
+    2. The maximum profit is $p_{\max} = p_{2} = 19$, and item $2$ fits into the knapsack ($w_{2}=8\le 8$), so $\bar{S}=\{2\}$. Since $GR(I)=16<p_{\max}=19$, $GR^e$ replaces the greedy solution with $\bar{S}$:
 
         $$
-        GR^e(I)=\hat p=19 .
+        GR^e(I)=p_{\max}=19 .
         $$
 
     3. Since $\sum_{i=1}^{1} w_i=5\le 8$ and $\sum_{i=1}^{2} w_i=13> 8$, the split item is $s=2$. Then
 
         $$
-        \sum_{i=1}^{s-1}p_i = 16 = 16 \le GR^e(I)=19
+        \sum_{i=1}^{s-1}p_i = 16 \le GR^e(I)=19
         \qquad\text{and}\qquad
         p_s = p_{2} = 19 \le GR^e(I)=19,
         $$
@@ -416,7 +416,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         z(I) \;\le\; \sum_{i=1}^{s-1}p_i + p_s \;=\; 35 \;\le\; 2\,GR^e(I) = 38 .
         $$
 
-    4. The solution returned by $GR^e$ is <strong>optimal</strong>: $S^*=\{2\}$, of weight $8=8\le 8$ and profit $z(I)=19=19$. The performance ratio is $\frac{z(I)}{GR^e(I)}=1$.
+    4. The solution returned by $GR^e$ is <strong>optimal</strong>: $\tilde{S}=\{2\}$, of weight $8\le 8$ and profit $z(I)=19$. The performance ratio is $\frac{z(I)}{GR^e(I)}=1$.
 
 <a id="esercizio-35-6"></a>
 
@@ -437,7 +437,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     1. Apply the greedy algorithm ($GR$) to this instance step by step, and state $GR(I)$.
 
-    2. Determine the maximum profit $\hat p$ and the best single-item feasible solution $\hat S$. State the solution returned by the Ext-Greedy algorithm ($GR^e$) and $GR^e(I)$.
+    2. Determine the maximum profit $p_{\max}$ and the best single-item feasible solution $\bar{S}$. State the solution returned by the Ext-Greedy algorithm ($GR^e$) and $GR^e(I)$.
 
     3. Determine the split item $s$ and verify the two inequalities $\sum_{i=1}^{s-1}p_i\le GR^e(I)$ and $p_s\le GR^e(I)$ used in the proof of the performance guarantee of $GR^e$. Deduce an upper bound on $z(I)$.
 
@@ -461,7 +461,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
         Hence $GR$ returns $S=\{1,2\}$ and $GR(I)=2+8=10$.
 
-    2. The maximum profit is $\hat p = p_{2} = 8$, and item $2$ fits into the knapsack ($w_{2}=8\le 16$), so $\hat S=\{2\}$. Since $GR(I)=10\ge \hat p=8$, $GR^e$ keeps the greedy solution:
+    2. The maximum profit is $p_{\max} = p_{2} = 8$, and item $2$ fits into the knapsack ($w_{2}=8\le 16$), so $\bar{S}=\{2\}$. Since $GR(I)=10\ge p_{\max}=8$, $GR^e$ keeps the greedy solution:
 
         $$
         GR^e(I)=GR(I)=10 .
@@ -481,10 +481,10 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         z(I) \;\le\; \sum_{i=1}^{s-1}p_i + p_s \;=\; 18 \;\le\; 2\,GR^e(I) = 20 .
         $$
 
-    4. The solution $S^*=\{2,3\}$, of weight $8+8=16\le 16$ and profit $z(I)=8+8=16$ is feasible and better than the one returned by $GR^e$, so $GR^e$ does <strong>not</strong> find an optimal solution; $S^*$ is optimal (this can be checked by enumerating the feasible solutions). The performance ratio is
+    4. The solution $\tilde{S}=\{2,3\}$, of weight $8+8=16\le 16$ and profit $z(I)=8+8=16$ is feasible and better than the one returned by $GR^e$, so $GR^e$ does <strong>not</strong> find an optimal solution; $\tilde{S}$ is optimal (this can be checked by enumerating the feasible solutions). The performance ratio is
 
         $$
-        \frac{z(I)}{GR^e(I)}=\frac{16}{10}\approx 1.6 \;\le\; 2,
+        \frac{z(I)}{GR^e(I)}=\frac{16}{10}=\frac{8}{5}=1.6 \;\le\; 2,
         $$
 
         as guaranteed.
@@ -512,7 +512,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     1. Verify that the items are sorted by non-increasing efficiency, and determine the set $\mathscr{P}$ of the feasible pairs of items.
 
-    2. Apply the $H^2$ algorithm to this instance: for each feasible pair $(i,k)$ compute the residual capacity $\bar c$, the residual set $\mathscr{I}(i,k)$, the value of $GR^e$ on the residual instance and the value $lb(i,k)$.
+    2. Apply the $H^2$ algorithm to this instance: for each feasible pair $(i,k)$ compute the residual capacity $\mathit{rc}$, the residual set $\mathscr{I}(i,k)$, the value of $GR^e$ on the residual instance and the value $lb(i,k)$.
 
     3. State the solution returned by $H^2$ and $H^2(I)$.
 
@@ -535,13 +535,13 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         \mathscr{P}=\big\{(1,3),(2,3),(3,4)\big\}.
         $$
 
-    2. The algorithm starts from the best single item, $lb=p_{\max}=p_{2}=9$. For each feasible pair, the residual set keeps the items $j\notin\{i,k\}$ with $p_j\le\min\{p_i,p_k\}$ and $w_j\le\bar c$:
+    2. The algorithm starts from the best single item, $lb=p_{\max}=p_{2}=9$. For each feasible pair, the residual set keeps the items $j\notin\{i,k\}$ with $p_j\le\min\{p_i,p_k\}$ and $w_j\le\mathit{rc}$:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>pair</th>
         <th>weight</th>
-        <th><span class="arithmatex">\(\bar c\)</span></th>
+        <th><span class="arithmatex">\(\mathit{rc}\)</span></th>
         <th>residual set</th>
         <th><span class="arithmatex">\(GR^e\)</span> on the residual</th>
         <th>value</th>
@@ -613,7 +613,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         H^2(I)=11 .
         $$
 
-    4. On this instance $GR^e(I)=10$, so $H^2$ improves on $GR^e$. The solution returned by $H^2$ is <strong>optimal</strong>: $S^*=\{2,3\}$, of weight $8+3=11\le 11$ and profit $z(I)=9+2=11$, and the performance ratio is $1$.
+    4. On this instance $GR^e(I)=10$, so $H^2$ improves on $GR^e$. The solution returned by $H^2$ is <strong>optimal</strong>: $\tilde{S}=\{2,3\}$, of weight $8+3=11\le 11$ and profit $z(I)=9+2=11$, and the performance ratio is $1$.
 
 <a id="esercizio-35-8"></a>
 
@@ -634,7 +634,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     1. Verify that the items are sorted by non-increasing efficiency, and determine the set $\mathscr{P}$ of the feasible pairs of items.
 
-    2. Apply the $H^2$ algorithm to this instance: for each feasible pair $(i,k)$ compute the residual capacity $\bar c$, the residual set $\mathscr{I}(i,k)$, the value of $GR^e$ on the residual instance and the value $lb(i,k)$.
+    2. Apply the $H^2$ algorithm to this instance: for each feasible pair $(i,k)$ compute the residual capacity $\mathit{rc}$, the residual set $\mathscr{I}(i,k)$, the value of $GR^e$ on the residual instance and the value $lb(i,k)$.
 
     3. State the solution returned by $H^2$ and $H^2(I)$.
 
@@ -657,13 +657,13 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         \mathscr{P}=\big\{(1,2),(1,3),(1,4),(1,5),(2,3),(2,4),(2,5),(3,4),(3,5),(4,5)\big\}.
         $$
 
-    2. The algorithm starts from the best single item, $lb=p_{\max}=p_{5}=15$. For each feasible pair, the residual set keeps the items $j\notin\{i,k\}$ with $p_j\le\min\{p_i,p_k\}$ and $w_j\le\bar c$:
+    2. The algorithm starts from the best single item, $lb=p_{\max}=p_{5}=15$. For each feasible pair, the residual set keeps the items $j\notin\{i,k\}$ with $p_j\le\min\{p_i,p_k\}$ and $w_j\le\mathit{rc}$:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>pair</th>
         <th>weight</th>
-        <th><span class="arithmatex">\(\bar c\)</span></th>
+        <th><span class="arithmatex">\(\mathit{rc}\)</span></th>
         <th>residual set</th>
         <th><span class="arithmatex">\(GR^e\)</span> on the residual</th>
         <th>value</th>
@@ -756,7 +756,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         H^2(I)=43 .
         $$
 
-    4. On this instance $GR^e(I)=38$, so $H^2$ improves on $GR^e$. The solution $S^*=\{1,2,4,5\}$, of weight $1+1+5+8=15\le 15$ and profit $z(I)=14+9+10+15=48$ is better, so $H^2$ does <strong>not</strong> find an optimal solution; $S^*$ is optimal (this can be checked by enumerating the feasible solutions). The performance ratio is
+    4. On this instance $GR^e(I)=38$, so $H^2$ improves on $GR^e$. The solution $\tilde{S}=\{1,2,4,5\}$, of weight $1+1+5+8=15\le 15$ and profit $z(I)=14+9+10+15=48$ is better, so $H^2$ does <strong>not</strong> find an optimal solution; $\tilde{S}$ is optimal (this can be checked by enumerating the feasible solutions). The performance ratio is
 
         $$
         \frac{z(I)}{H^2(I)}=\frac{48}{43}\approx 1.12\;\le\;\frac{4}{3}\approx 1.33,
@@ -783,7 +783,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     1. Verify that the items are sorted by non-increasing efficiency, and determine the set $\mathscr{P}$ of the feasible pairs of items.
 
-    2. Apply the $H^2$ algorithm to this instance: for each feasible pair $(i,k)$ compute the residual capacity $\bar c$, the residual set $\mathscr{I}(i,k)$, the value of $GR^e$ on the residual instance and the value $lb(i,k)$.
+    2. Apply the $H^2$ algorithm to this instance: for each feasible pair $(i,k)$ compute the residual capacity $\mathit{rc}$, the residual set $\mathscr{I}(i,k)$, the value of $GR^e$ on the residual instance and the value $lb(i,k)$.
 
     3. State the solution returned by $H^2$ and $H^2(I)$.
 
@@ -806,13 +806,13 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         \mathscr{P}=\big\{(1,2),(1,3),(1,4),(1,5),(2,3),(2,4),(2,5),(3,4),(3,5),(4,5)\big\}.
         $$
 
-    2. The algorithm starts from the best single item, $lb=p_{\max}=p_{1}=13$. For each feasible pair, the residual set keeps the items $j\notin\{i,k\}$ with $p_j\le\min\{p_i,p_k\}$ and $w_j\le\bar c$:
+    2. The algorithm starts from the best single item, $lb=p_{\max}=p_{1}=13$. For each feasible pair, the residual set keeps the items $j\notin\{i,k\}$ with $p_j\le\min\{p_i,p_k\}$ and $w_j\le\mathit{rc}$:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>pair</th>
         <th>weight</th>
-        <th><span class="arithmatex">\(\bar c\)</span></th>
+        <th><span class="arithmatex">\(\mathit{rc}\)</span></th>
         <th>residual set</th>
         <th><span class="arithmatex">\(GR^e\)</span> on the residual</th>
         <th>value</th>
@@ -905,7 +905,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         H^2(I)=31 .
         $$
 
-    4. On this instance $GR^e(I)=31$, the same value as $H^2$. The solution $S^*=\{1,2,3,5\}$, of weight $1+1+3+5=10\le 10$ and profit $z(I)=13+5+8+7=33$ is better, so $H^2$ does <strong>not</strong> find an optimal solution; $S^*$ is optimal (this can be checked by enumerating the feasible solutions). The performance ratio is
+    4. On this instance $GR^e(I)=31$, the same value as $H^2$. The solution $\tilde{S}=\{1,2,3,5\}$, of weight $1+1+3+5=10\le 10$ and profit $z(I)=13+5+8+7=33$ is better, so $H^2$ does <strong>not</strong> find an optimal solution; $\tilde{S}$ is optimal (this can be checked by enumerating the feasible solutions). The performance ratio is
 
         $$
         \frac{z(I)}{H^2(I)}=\frac{33}{31}\approx 1.06\;\le\;\frac{4}{3}\approx 1.33,
@@ -934,7 +934,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     1. We apply the $H^{\ell}$ algorithm with $\ell=3$. Compute the best feasible solution made of at most $\ell-1=2$ items.
 
-    2. For each feasible set $L$ of exactly $\ell=3$ items, compute the residual capacity $\bar c$, the residual set $\mathscr{I}(L)$, the value of $GR^e$ on the residual instance and the value $lb(L)$.
+    2. For each feasible set $L$ of exactly $\ell=3$ items, compute the residual capacity $\mathit{rc}$, the residual set $\mathscr{I}(L)$, the value of $GR^e$ on the residual instance and the value $lb(L)$.
 
     3. State the solution returned by $H^{3}$ and $H^{3}(I)$.
 
@@ -944,13 +944,13 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     1. The best feasible solution with at most $2$ items is $\{1,2\}$, of weight $1+2=3\le 16$ and profit $14+13=27$.
 
-    2. For each set $L$ of $3$ items, the residual set keeps the items $j\notin L$ with $p_j\le\min\{p_i:i\in L\}$ and $w_j\le\bar c$:
+    2. For each set $L$ of $3$ items, the residual set keeps the items $j\notin L$ with $p_j\le\min\{p_i:i\in L\}$ and $w_j\le\mathit{rc}$:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>set <span class="arithmatex">\(L\)</span></th>
         <th>weight</th>
-        <th><span class="arithmatex">\(\bar c\)</span></th>
+        <th><span class="arithmatex">\(\mathit{rc}\)</span></th>
         <th>residual set</th>
         <th><span class="arithmatex">\(GR^e\)</span> on the residual</th>
         <th>value</th>
@@ -1043,7 +1043,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         H^{3}(I)=51 .
         $$
 
-    4. The solution returned by $H^{3}$ is <strong>optimal</strong>: $S^*=\{1,2,3,5\}$, of weight $1+2+3+9=15\le 16$ and profit $z(I)=14+13+13+11=51$, and the performance ratio is $1$. For comparison, on this instance $H^2(I)=50$: guessing three items instead of two is enough to find the optimal solution.
+    4. The solution returned by $H^{3}$ is <strong>optimal</strong>: $\tilde{S}=\{1,2,3,5\}$, of weight $1+2+3+9=15\le 16$ and profit $z(I)=14+13+13+11=51$, and the performance ratio is $1$. For comparison, on this instance $H^2(I)=50$: guessing three items instead of two is enough to find the optimal solution.
 
 <a id="esercizio-35-11"></a>
 
@@ -1064,7 +1064,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     1. We apply the $H^{\ell}$ algorithm with $\ell=3$. Compute the best feasible solution made of at most $\ell-1=2$ items.
 
-    2. For each feasible set $L$ of exactly $\ell=3$ items, compute the residual capacity $\bar c$, the residual set $\mathscr{I}(L)$, the value of $GR^e$ on the residual instance and the value $lb(L)$.
+    2. For each feasible set $L$ of exactly $\ell=3$ items, compute the residual capacity $\mathit{rc}$, the residual set $\mathscr{I}(L)$, the value of $GR^e$ on the residual instance and the value $lb(L)$.
 
     3. State the solution returned by $H^{3}$ and $H^{3}(I)$.
 
@@ -1074,13 +1074,13 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     1. The best feasible solution with at most $2$ items is $\{2,3\}$, of weight $4+4=8\le 20$ and profit $4+4=8$.
 
-    2. For each set $L$ of $3$ items, the residual set keeps the items $j\notin L$ with $p_j\le\min\{p_i:i\in L\}$ and $w_j\le\bar c$:
+    2. For each set $L$ of $3$ items, the residual set keeps the items $j\notin L$ with $p_j\le\min\{p_i:i\in L\}$ and $w_j\le\mathit{rc}$:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>set <span class="arithmatex">\(L\)</span></th>
         <th>weight</th>
-        <th><span class="arithmatex">\(\bar c\)</span></th>
+        <th><span class="arithmatex">\(\mathit{rc}\)</span></th>
         <th>residual set</th>
         <th><span class="arithmatex">\(GR^e\)</span> on the residual</th>
         <th>value</th>
@@ -1253,10 +1253,10 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         H^{3}(I)=18 .
         $$
 
-    4. The solution $S^*=\{2,3,4,5,6\}$, of weight $4+4+4+4+4=20\le 20$ and profit $z(I)=4+4+4+4+4=20$ is better, so $H^{3}$ does <strong>not</strong> find an optimal solution; $S^*$ is optimal (this can be checked by enumerating the feasible solutions). The performance ratio is
+    4. The solution $\tilde{S}=\{2,3,4,5,6\}$, of weight $4+4+4+4+4=20\le 20$ and profit $z(I)=4+4+4+4+4=20$ is better, so $H^{3}$ does <strong>not</strong> find an optimal solution; $\tilde{S}$ is optimal (this can be checked by enumerating the feasible solutions). The performance ratio is
 
         $$
-        \frac{z(I)}{H^{3}(I)}=\frac{20}{18}\approx 1.11\;\le\;\frac{5}{4}=1.25,
+        \frac{z(I)}{H^{3}(I)}=\frac{20}{18}=\frac{10}{9}\approx 1.11\;\le\;\frac{5}{4}=1.25,
         $$
 
         as guaranteed. For comparison, on this instance $H^2(I)=18$.
@@ -1282,7 +1282,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     1. We apply the $H^{\ell}$ algorithm with $\ell=3$. Compute the best feasible solution made of at most $\ell-1=2$ items.
 
-    2. For each feasible set $L$ of exactly $\ell=3$ items, compute the residual capacity $\bar c$, the residual set $\mathscr{I}(L)$, the value of $GR^e$ on the residual instance and the value $lb(L)$.
+    2. For each feasible set $L$ of exactly $\ell=3$ items, compute the residual capacity $\mathit{rc}$, the residual set $\mathscr{I}(L)$, the value of $GR^e$ on the residual instance and the value $lb(L)$.
 
     3. State the solution returned by $H^{3}$ and $H^{3}(I)$.
 
@@ -1292,13 +1292,13 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     1. The best feasible solution with at most $2$ items is $\{1,2\}$, of weight $1+2=3\le 18$ and profit $15+15=30$.
 
-    2. For each set $L$ of $3$ items, the residual set keeps the items $j\notin L$ with $p_j\le\min\{p_i:i\in L\}$ and $w_j\le\bar c$:
+    2. For each set $L$ of $3$ items, the residual set keeps the items $j\notin L$ with $p_j\le\min\{p_i:i\in L\}$ and $w_j\le\mathit{rc}$:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>set <span class="arithmatex">\(L\)</span></th>
         <th>weight</th>
-        <th><span class="arithmatex">\(\bar c\)</span></th>
+        <th><span class="arithmatex">\(\mathit{rc}\)</span></th>
         <th>residual set</th>
         <th><span class="arithmatex">\(GR^e\)</span> on the residual</th>
         <th>value</th>
@@ -1471,7 +1471,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         H^{3}(I)=64 .
         $$
 
-    4. The solution $S^*=\{1,2,3,4,6\}$, of weight $1+2+3+2+9=17\le 18$ and profit $z(I)=15+15+14+8+13=65$ is better, so $H^{3}$ does <strong>not</strong> find an optimal solution; $S^*$ is optimal (this can be checked by enumerating the feasible solutions). The performance ratio is
+    4. The solution $\tilde{S}=\{1,2,3,4,6\}$, of weight $1+2+3+2+9=17\le 18$ and profit $z(I)=15+15+14+8+13=65$ is better, so $H^{3}$ does <strong>not</strong> find an optimal solution; $\tilde{S}$ is optimal (this can be checked by enumerating the feasible solutions). The performance ratio is
 
         $$
         \frac{z(I)}{H^{3}(I)}=\frac{65}{64}\approx 1.02\;\le\;\frac{5}{4}=1.25,
@@ -1510,13 +1510,13 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         p'_j=\left\lfloor\frac{p_j}{K}\right\rfloor \quad \text{for all } j\in\mathscr{I}.
         $$
 
-    3. Solve the scaled instance by dynamic programming by profits, i.e., compute the minimum weights $u(i,q)$ and find the largest profit $q$ such that $u(4,q)\le c$.
+    3. Solve the scaled instance by dynamic programming by profits, i.e., compute the minimum weights $u(j,q)$ and find the largest profit $q$ such that $u(4,q)\le c$.
 
     4. State the solution returned by $FP^{\varepsilon}$, its profit $FP^{\varepsilon}(I)$ in the original instance, and compare it with $GR^e(I)$ and $z(I)$. Compute the performance ratio and compare it with the guarantee $\frac{1}{1-\varepsilon}$.
 
 ??? soluzione "Solution"
 
-    1. The items are sorted by non-increasing efficiency. $GR$ selects the items $\{1,2,4\}$, with $GR(I)=24+11+5=40$; the maximum profit is $\hat p=p_{1}=24$. Hence
+    1. The items are sorted by non-increasing efficiency. $GR$ selects the items $\{1,2,4\}$, with $GR(I)=24+11+5=40$; the maximum profit is $p_{\max}=p_{1}=24$. Hence
 
         $$
         GR^e(I)=40 .
@@ -1536,7 +1536,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
         The total scaled profit is $P'=4+2+4+1=11$.
 
-    3. The minimum weights $u(i,q)$ of a subset of $\{1,\dots,i\}$ with scaled profit exactly $q$ are (only the values of $q$ that can be attained are reported; $\infty$ means that $q$ cannot be attained with the first $i$ items):
+    3. The minimum weights $u(j,q)$ of a subset of $\{1,\dots,j\}$ with scaled profit exactly $q$ are (only the values of $q$ that can be attained are reported; $\infty$ means that $q$ cannot be attained with the first $j$ items):
 
         $$
         \begin{array}{c|ccccccccccc}
@@ -1570,7 +1570,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         FP^{\varepsilon}(I)=24+23=47
         $$
 
-        in the original instance, better than $GR^e(I)=40$. The solution is <strong>optimal</strong>: $S^*=\{1,3\}$, of weight $2+9=11\le 13$ and profit $z(I)=24+23=47$, and the performance ratio is $1$.
+        in the original instance, better than $GR^e(I)=40$. The solution is <strong>optimal</strong>: $\tilde{S}=\{1,3\}$, of weight $2+9=11\le 13$ and profit $z(I)=24+23=47$, and the performance ratio is $1$.
 
 <a id="esercizio-35-14"></a>
 
@@ -1601,13 +1601,13 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         p'_j=\left\lfloor\frac{p_j}{K}\right\rfloor \quad \text{for all } j\in\mathscr{I}.
         $$
 
-    3. Solve the scaled instance by dynamic programming by profits, i.e., compute the minimum weights $u(i,q)$ and find the largest profit $q$ such that $u(4,q)\le c$.
+    3. Solve the scaled instance by dynamic programming by profits, i.e., compute the minimum weights $u(j,q)$ and find the largest profit $q$ such that $u(4,q)\le c$.
 
     4. State the solution returned by $FP^{\varepsilon}$, its profit $FP^{\varepsilon}(I)$ in the original instance, and compare it with $GR^e(I)$ and $z(I)$. Compute the performance ratio and compare it with the guarantee $\frac{1}{1-\varepsilon}$.
 
 ??? soluzione "Solution"
 
-    1. The items are sorted by non-increasing efficiency. $GR$ selects the items $\{1,2,3\}$, with $GR(I)=14+12+14=40$; the maximum profit is $\hat p=p_{4}=18$. Hence
+    1. The items are sorted by non-increasing efficiency. $GR$ selects the items $\{1,2,3\}$, with $GR(I)=14+12+14=40$; the maximum profit is $p_{\max}=p_{4}=18$. Hence
 
         $$
         GR^e(I)=40 .
@@ -1627,7 +1627,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
         The total scaled profit is $P'=2+2+2+3=9$.
 
-    3. The minimum weights $u(i,q)$ of a subset of $\{1,\dots,i\}$ with scaled profit exactly $q$ are (only the values of $q$ that can be attained are reported; $\infty$ means that $q$ cannot be attained with the first $i$ items):
+    3. The minimum weights $u(j,q)$ of a subset of $\{1,\dots,j\}$ with scaled profit exactly $q$ are (only the values of $q$ that can be attained are reported; $\infty$ means that $q$ cannot be attained with the first $j$ items):
 
         $$
         \begin{array}{c|cccccccc}
@@ -1649,10 +1649,10 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         FP^{\varepsilon}(I)=14+12+18=44
         $$
 
-        in the original instance, better than $GR^e(I)=40$. The solution $S^*=\{1,3,4\}$, of weight $3+5+7=15\le 16$ and profit $z(I)=14+14+18=46$ is better, so $FP^{\varepsilon}$ does <strong>not</strong> find an optimal solution; $S^*$ is optimal (this can be checked by enumerating the feasible solutions). The performance ratio is
+        in the original instance, better than $GR^e(I)=40$. The solution $\tilde{S}=\{1,3,4\}$, of weight $3+5+7=15\le 16$ and profit $z(I)=14+14+18=46$ is better, so $FP^{\varepsilon}$ does <strong>not</strong> find an optimal solution; $\tilde{S}$ is optimal (this can be checked by enumerating the feasible solutions). The performance ratio is
 
         $$
-        \frac{z(I)}{FP^{\varepsilon}(I)}=\frac{46}{44}\approx 1.05\;\le\;\frac{1}{1-\varepsilon}=2,
+        \frac{z(I)}{FP^{\varepsilon}(I)}=\frac{46}{44}=\frac{23}{22}\approx 1.05\;\le\;\frac{1}{1-\varepsilon}=2,
         $$
 
         as guaranteed.
@@ -1686,13 +1686,13 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         p'_j=\left\lfloor\frac{p_j}{K}\right\rfloor \quad \text{for all } j\in\mathscr{I}.
         $$
 
-    3. Solve the scaled instance by dynamic programming by profits, i.e., compute the minimum weights $u(i,q)$ and find the largest profit $q$ such that $u(4,q)\le c$.
+    3. Solve the scaled instance by dynamic programming by profits, i.e., compute the minimum weights $u(j,q)$ and find the largest profit $q$ such that $u(4,q)\le c$.
 
     4. State the solution returned by $FP^{\varepsilon}$, its profit $FP^{\varepsilon}(I)$ in the original instance, and compare it with $GR^e(I)$ and $z(I)$. Compute the performance ratio and compare it with the guarantee $\frac{1}{1-\varepsilon}$.
 
 ??? soluzione "Solution"
 
-    1. The items are sorted by non-increasing efficiency. $GR$ selects the items $\{1,2,3\}$, with $GR(I)=14+12+14=40$; the maximum profit is $\hat p=p_{4}=18$. Hence
+    1. The items are sorted by non-increasing efficiency. $GR$ selects the items $\{1,2,3\}$, with $GR(I)=14+12+14=40$; the maximum profit is $p_{\max}=p_{4}=18$. Hence
 
         $$
         GR^e(I)=40 .
@@ -1712,7 +1712,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
         The total scaled profit is $P'=5+4+5+7=21$.
 
-    3. The minimum weights $u(i,q)$ of a subset of $\{1,\dots,i\}$ with scaled profit exactly $q$ are (only the values of $q$ that can be attained are reported; $\infty$ means that $q$ cannot be attained with the first $i$ items):
+    3. The minimum weights $u(j,q)$ of a subset of $\{1,\dots,j\}$ with scaled profit exactly $q$ are (only the values of $q$ that can be attained are reported; $\infty$ means that $q$ cannot be attained with the first $j$ items):
 
         $$
         \begin{array}{c|ccccccccccc}
@@ -1746,6 +1746,6 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
         FP^{\varepsilon}(I)=14+14+18=46
         $$
 
-        in the original instance, better than $GR^e(I)=40$. The solution is <strong>optimal</strong>: $S^*=\{1,3,4\}$, of weight $3+5+7=15\le 16$ and profit $z(I)=14+14+18=46$, and the performance ratio is $1$.
+        in the original instance, better than $GR^e(I)=40$. The solution is <strong>optimal</strong>: $\tilde{S}=\{1,3,4\}$, of weight $3+5+7=15\le 16$ and profit $z(I)=14+14+18=46$, and the performance ratio is $1$.
 
     - <strong>Remark.</strong> This is the instance of the exercise Basic-FPTAS 2, solved there with $\varepsilon=\frac{1}{2}$. Halving $\varepsilon$ halves the scaling factor $K$: the scaled profits are finer, the dynamic programming table is longer ($P'$ grows), and the optimal solution is found.

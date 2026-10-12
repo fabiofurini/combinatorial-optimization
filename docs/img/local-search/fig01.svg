@@ -239,8 +239,8 @@
 <g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
 <use xlink:href="#glyph-3-0" x="319.992458" y="18.762"/>
 </g>
-<path fill="none" stroke-width="1.19553" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 50%, 0%)" stroke-opacity="1" stroke-miterlimit="10" d="M 187.089188 51.390125 L 187.089188 5.300281 " transform="matrix(1, 0, 0, -1, 20.403, 81.187)"/>
-<path fill="none" stroke-width="1.19553" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 50%, 0%)" stroke-opacity="1" stroke-miterlimit="10" d="M 277.800125 5.300281 L 277.800125 51.390125 " transform="matrix(1, 0, 0, -1, 20.403, 81.187)"/>
+<path fill="none" stroke-width="1.19553" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 0%, 69.999695%)" stroke-opacity="1" stroke-miterlimit="10" d="M 187.089188 51.390125 L 187.089188 5.300281 " transform="matrix(1, 0, 0, -1, 20.403, 81.187)"/>
+<path fill="none" stroke-width="1.19553" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 0%, 69.999695%)" stroke-opacity="1" stroke-miterlimit="10" d="M 277.800125 5.300281 L 277.800125 51.390125 " transform="matrix(1, 0, 0, -1, 20.403, 81.187)"/>
 <path fill="none" stroke-width="0.79701" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(25%, 25%, 25%)" stroke-opacity="1" stroke-miterlimit="10" d="M 191.030594 -3.547375 C 214.405594 -24.586438 246.600906 -25.473156 270.722 -6.207531 " transform="matrix(1, 0, 0, -1, 20.403, 81.187)"/>
 <path fill-rule="nonzero" fill="rgb(25%, 25%, 25%)" fill-opacity="1" stroke-width="0.79701" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(25%, 25%, 25%)" stroke-opacity="1" stroke-miterlimit="10" d="M 5.441365 0.000315186 L 1.286471 1.570592 L 2.663859 -0.00132759 L 1.28828 -1.570046 Z M 5.441365 0.000315186 " transform="matrix(0.76405, -0.64508, -0.64508, -0.76405, 289.23726, 88.9752)"/>
 <path fill="none" stroke-width="0.79701" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(25%, 25%, 25%)" stroke-opacity="1" stroke-miterlimit="10" d="M 273.858719 60.241687 C 250.479813 81.28075 218.2845 82.167469 194.163406 62.901844 " transform="matrix(1, 0, 0, -1, 20.403, 81.187)"/>

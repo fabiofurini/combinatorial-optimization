@@ -12,7 +12,7 @@ title: "Exercises · Approximation algorithms for bin packing"
 
 !!! formula "Property used in these exercises"
 
-    The <strong>half-full property</strong> of the chapter [Bin packing approximation](https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/bin-packing-approximation/): a feasible solution with packing patterns $P_1,\dots,P_k$ satisfies it when at most one packing pattern has total weight at most $c/2$, that is
+    The <strong>half-full property</strong> of the chapter [Approximation algorithms for bin packing](https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/bin-packing-approximation/): a feasible solution with packing patterns $P_1,\dots,P_k$ satisfies it when at most one packing pattern has total weight at most $c/2$, that is
 
     \begin{equation*}
     \Big|\Big\{\, b\in\{1,\dots,k\} ~:~ \sum_{i\in P_b} w_i \le \frac{c}{2} \,\Big\}\Big| \;\le\; 1 . \tag{H}

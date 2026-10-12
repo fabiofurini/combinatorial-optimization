@@ -6,15 +6,15 @@ title: "DP for the bounded knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 19** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Bounded knapsack (BKP)](../exercises/dp-bounded-knapsack.md)
+**Part 3 · Dynamic programming · Chapter 19** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Bounded knapsack (BKP)](../exercises/dp-bounded-knapsack.md) · [:material-gesture-tap: App: DP tables for the knapsack problems](../lab/dp-knapsack-table.md)
 
 </div>
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapters [«DP for the 0/1 knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/) and [«DP for the unbounded knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-unbounded-knapsack/): the recurrence $v(j,k)$ over items and capacities, and the reconstruction of a solution.
+    - From this module, the chapters [«DP for the 0/1 knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/) and [«DP for the unbounded knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-unbounded-knapsack/): the recurrence $v(j,k)$ of the 0/1 knapsack problem (KP) and of the unbounded knapsack problem (UKP) over items and capacities, and the reconstruction of a solution.
 
-    - From this module, the chapter «Principles of dynamic programming»: optimal substructure, overlapping subproblems, base cases.
+    - From this module, the chapter [«Principles of dynamic programming»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/): optimal substructure, overlapping subproblems, base cases.
 
     - From the module <em>Algorithms</em>: [pseudocode conventions (Chapter 2)](https://fabiofurini.github.io/algorithms/basic-algorithms/02-pseudo-code/) and [the size of the input (Chapter 11)](https://fabiofurini.github.io/algorithms/analysis/11-input-size/).
 
@@ -50,11 +50,11 @@ The problem of this chapter is the [bounded knapsack problem (BKP)](https://fabi
     \end{array}
     $$
 
-    We refer to this BKP instance as <span style="color:#1971c2">Example 1</span>.
+    We refer to this BKP instance as <span style="color:#1971c2">[Example 19.1](#box-1-texbkpex1)</span>.
 
 !!! chiave ""
 
-    The main difference with the 0/1 Knapsack Problem is that each item type may be selected more than once: variable $x_j$ is no longer binary, but it is bounded by $b_j$. The BKP reduces to the 0/1 Knapsack Problem when $b_j=1$ for every item type $j$, and to the Unbounded Knapsack Problem when every bound $b_j$ is large enough not to be binding.
+    The main difference with the 0/1 knapsack problem (KP) is that each item type may be selected more than once: variable $x_j$ is no longer binary, but it is bounded by $b_j$. The BKP reduces to the KP when $b_j=1$ for every item type $j$, and to the unbounded knapsack problem (UKP) when every bound $b_j$ is large enough not to be binding.
 
 - The number of possible vectors $(x_1,x_2,\dots,x_n)$, with $x_j \in \{0,1,\dots,b_j\}$ for every item type $j$, is
 
@@ -98,7 +98,7 @@ The problem of this chapter is the [bounded knapsack problem (BKP)](https://fabi
 
 - <u>Step 1</u>: computation of the optimal value
 
-    !!! chiave ""
+    !!! formula ""
 
         For any $j \in \{0,1,\dots,n\}$ and $k \in \{0,1,\dots,c\}$, let $v(j,k)$ be the optimal value of the BKP subinstance given by:
 
@@ -140,7 +140,7 @@ The problem of this chapter is the [bounded knapsack problem (BKP)](https://fabi
 
         !!! esempio "Example 19.2: Recursion tree"
 
-            We consider the BKP instance of <span style="color:#1971c2">Example 1</span>. This is the recursion tree of the top-down approach to compute $v(3,10)$:
+            We consider the BKP instance of <span style="color:#1971c2">[Example 19.1](#box-1-texbkpex1)</span>. This is the recursion tree of the top-down approach to compute $v(3,10)$:
 
             ![Figure 1](../img/dp-bounded-knapsack/fig01.svg){ .fig loading=lazy  }
 
@@ -152,7 +152,7 @@ The problem of this chapter is the [bounded knapsack problem (BKP)](https://fabi
 
         !!! esempio "Example 19.3: Computing the values of the $v$ function"
 
-            We consider the BKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=10$ and the following profits, weights, and bounds:
+            We consider the BKP instance of <span style="color:#1971c2">[Example 19.1](#box-1-texbkpex1)</span> with a knapsack of capacity $c=10$ and the following profits, weights, and bounds:
 
             $$
             \begin{array}{l|rrr}
@@ -242,7 +242,7 @@ The problem of this chapter is the [bounded knapsack problem (BKP)](https://fabi
 
         !!! esempio "Example 19.4: Execution of the DP algorithm"
 
-            We consider the BKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=10$ and the following profits, weights, and bounds:
+            We consider the BKP instance of <span style="color:#1971c2">[Example 19.1](#box-1-texbkpex1)</span> with a knapsack of capacity $c=10$ and the following profits, weights, and bounds:
 
             $$
             \begin{array}{l|rrr}
@@ -573,7 +573,7 @@ The problem of this chapter is the [bounded knapsack problem (BKP)](https://fabi
 
         !!! esempio "Example 19.5: Computation of the additional information"
 
-            We consider the BKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=10$ and the following profits, weights, and bounds:
+            We consider the BKP instance of <span style="color:#1971c2">[Example 19.1](#box-1-texbkpex1)</span> with a knapsack of capacity $c=10$ and the following profits, weights, and bounds:
 
             $$
             \begin{array}{l|rrr}
@@ -825,7 +825,7 @@ The problem of this chapter is the [bounded knapsack problem (BKP)](https://fabi
 
         !!! esempio "Example 19.6: Computing an optimal solution"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following matrix $s$:
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 19.1](#box-1-texbkpex1)</span>, we have the following matrix $s$:
 
             $$
             \begin{array}{l|rrrrrrrrrrr}
@@ -1003,7 +1003,7 @@ The problem of this chapter is the [bounded knapsack problem (BKP)](https://fabi
 
     - Replacing $b_j$ by $\min\{b_j,\lfloor c/w_j\rfloor\}$ keeps the problem unchanged and gives $b_{\max}\le c$.
 
-    <strong>Dashboard of the BKP example.</strong> Example 1 ($c=10$, three item types):
+    <strong>Dashboard of the BKP example.</strong> [Example 19.1](#box-1-texbkpex1) ($c=10$, three item types):
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -1023,3 +1023,7 @@ The problem of this chapter is the [bounded knapsack problem (BKP)](https://fabi
 ---
 
 **Exercises on this chapter:** [:material-pencil: Bounded knapsack (BKP)](../exercises/dp-bounded-knapsack.md)
+
+<!-- laboratorio-interattivo: sezione generata da interattivi.py -->
+
+:material-flask-outline: **In the interactive lab:** [DP tables for the knapsack problems](../lab/dp-knapsack-table.md#voce=bkp).

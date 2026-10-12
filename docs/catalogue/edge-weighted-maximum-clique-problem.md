@@ -16,9 +16,9 @@ title: "Edge-weighted maximum clique problem (EWMCP)"
 
 !!! definizione "Definition 1: Edge-weighted maximum clique problem"
 
-    1. Given a graph $G$ and a vertex-weight vector $\vet{w}$, the <strong>vertex-weighted maximum clique problem</strong> asks to find a clique $K$ of $G$ with maximum total vertex weight $w(K)$.
+    1. Given a graph $G$ and a vertex-weight vector $\vet{w}$, the <strong>vertex-weighted maximum clique problem</strong> (VWMCP) asks to find a clique $K$ of $G$ with maximum total vertex weight $w(K)$.
 
-    2. Given a graph $G$ and an edge-weight vector $\vet{r}$, the <strong>edge-weighted maximum clique problem</strong> asks to find a clique $K$ of $G$ with maximum total edge weight $r(K)$.
+    2. Given a graph $G$ and an edge-weight vector $\vet{r}$, the <strong>edge-weighted maximum clique problem</strong> (EWMCP) asks to find a clique $K$ of $G$ with maximum total edge weight $r(K)$.
 
 ## What the course does on this problem { #sez-sec-cat-ewmcp-vert }
 
@@ -33,7 +33,7 @@ title: "Edge-weighted maximum clique problem (EWMCP)"
 </tr>
 <tr>
 <td><strong>Formulations</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/clique-formulations/">Ch. 12 «Formulations of clique problems»</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/clique-formulations/ilp-models-for-the-weighted-variants/#eq-mcpF-EW">Ch. 12 «Formulations of clique problems»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>

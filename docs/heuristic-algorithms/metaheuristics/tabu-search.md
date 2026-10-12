@@ -44,7 +44,7 @@ title: "Tabu search"
 
 !!! esempio "Example 32.5: $TS$ on the $P\,||\,C_{\max}$ reference instance"
 
-    We start from the solution computed by LPT in the notes on constructive heuristics, $J_1=\{1,5,7\}$, $J_2=\{2,6\}$, $J_3=\{3,4\}$, with loads $(11,8,8)$, $C_{\max}=11$ and $\sum_h L_h^2=249$. It is a local optimum for the move neighbourhood: at the first iteration the $14$ neighbours are
+    We start from the solution computed by LPT in the chapter [«Constructive heuristics»](../constructive-heuristics/index.md), $J_1=\{1,5,7\}$, $J_2=\{2,6\}$, $J_3=\{3,4\}$, with loads $(11,8,8)$, $C_{\max}=11$ and $\sum_h L_h^2=249$. It is a local optimum for the move neighbourhood: at the first iteration the $14$ neighbours are
 
     <div class="tabella" markdown="0"><table>
     <tr>

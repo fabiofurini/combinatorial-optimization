@@ -73,13 +73,13 @@ title: "Clique problems"
 </tr>
 <tr>
 <td>vertex-weighted maximum clique problem</td>
-<td></td>
+<td>VWMCP</td>
 <td>maximum total vertex weight</td>
 <td><a href="weighted-variants/#sez-sec-mcp-weighted">5.5</a></td>
 </tr>
 <tr>
 <td>edge-weighted maximum clique problem</td>
-<td></td>
+<td>EWMCP</td>
 <td>maximum total edge weight</td>
 <td><a href="weighted-variants/#sez-sec-mcp-weighted">5.5</a></td>
 </tr>

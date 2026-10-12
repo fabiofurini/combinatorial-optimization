@@ -166,7 +166,7 @@ The problem of this chapter is the [maximum clique problem (MCP)](https://fabiof
 
 ### 38.3.3 The maximum stable set problem
 
-- By $\omega(G)=\alpha(\overline{G})$ (chapter «Clique problems»), a stable set of $G$ is a clique of $\overline{G}$, which is built in $O(n^2)$ time and has the same $n$.
+- By $\omega(G)=\alpha(\overline{G})$ (chapter [«Clique problems»](../combinatorial-optimization-problems/clique/index.md)), a stable set of $G$ is a clique of $\overline{G}$, which is built in $O(n^2)$ time and has the same $n$.
 
 - An algorithm with ratio $\rho(n)$ for one of the two problems, applied to the complement graph, has the same ratio $\rho(n)$ for the other one.
 

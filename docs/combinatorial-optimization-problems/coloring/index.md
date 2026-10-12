@@ -12,9 +12,9 @@ title: "Coloring problems"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter «Combinatorial optimization problems»: instances, feasible solutions, primal and dual bounds, the gap, and the Bell numbers that count the partitions of a set.
+    - From this module, [Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): instances, feasible solutions, primal and dual bounds, the gap, and the Bell numbers that count the partitions of a set.
 
-    - From the chapter «Packing problems»: the weight bound as an example of a dual bound.
+    - From [Chapter 3 «Packing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/): the weight bound as an example of a dual bound.
 
     - No knowledge of graph theory is needed: the definitions used here are recalled in a short section.
 

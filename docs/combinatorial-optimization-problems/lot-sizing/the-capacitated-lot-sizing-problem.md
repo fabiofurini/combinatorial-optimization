@@ -135,7 +135,7 @@ title: "Capacitated lot sizing"
     </tr>
     </table></div>
 
-    This is the lot sizing instance of the course on MIP heuristics, with the demands counted in units of ten items. The total demand is $2+1+3+4+1=11$. We call this CLS instance <span style="color:#1971c2">[Example 8.1](#box-2-ex-cls5)</span>: it is the reference instance of the chapter.
+    The total demand is $2+1+3+4+1=11$. We call this CLS instance <span style="color:#1971c2">[Example 8.1](#box-2-ex-cls5)</span>: it is the reference instance of the chapter.
 
     The plan $\vet{x}=(3,0,4,4,0)$ is feasible: the stocks are $s=(1,0,1,1,0)$, all non-negative, with $s_5=0$, and every quantity is at most $4$. There are $3$ setups, in the periods $1$, $3$ and $4$:
 
@@ -153,7 +153,7 @@ title: "Capacitated lot sizing"
 
 - We make the following assumptions:
 
-    1. The stock is empty at the beginning and at the end of the horizon. Leaving stock at the end only adds cost, so no optimal plan needs it; an initial stock is a variant of the problem (next section).
+    1. The stock is empty at the beginning and at the end of the horizon. Leaving stock at the end only adds cost, so no optimal plan needs it; an initial stock is a variant of the problem (Section [8.6](variants.md#sez-sec-ls-variants)).
 
     2. The capacities allow to satisfy the demands, period after period (otherwise there is no feasible plan). Formally:
 

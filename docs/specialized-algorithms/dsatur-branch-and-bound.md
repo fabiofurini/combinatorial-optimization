@@ -6,7 +6,7 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
 <div class="info-capitolo" markdown>
 
-**Part 6 · Ad hoc algorithms · Chapter 42** · [:material-file-pdf-box: Lecture notes, volume 6 (PDF)](../pdf/lecture-notes-6-specialized-algorithms.pdf) · [:material-pencil: Exercises: Vertex coloring (DSATUR)](../exercises/dsatur-branch-and-bound.md)
+**Part 6 · Ad hoc algorithms · Chapter 42** · [:material-file-pdf-box: Lecture notes, volume 6 (PDF)](../pdf/lecture-notes-6-specialized-algorithms.pdf) · [:material-pencil: Exercises: Vertex coloring (VCP)](../exercises/dsatur-branch-and-bound.md)
 
 </div>
 
@@ -16,7 +16,7 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
     - From this module, [Chapter 4 «Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/): the vertex coloring problem, cliques, stable sets and the clique bound $\omega(G)\le\chi(G)$.
 
-    - From this module, [Chapter 29 «Constructive heuristics»](https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur/#sez-sec-VCPgreedy): the saturation degree and the $DSATUR$ heuristic.
+    - From this module, [Chapter 30 «Constructive heuristics»](https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur/): the saturation degree and the $DSATUR$ heuristic.
 
 !!! chiave "Objectives"
 
@@ -30,9 +30,9 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
     - execute the DSATUR branch-and-bound algorithm by hand and prove that it is exact.
 
-## 42.1 The algorithm for the VCP { #sez-sec-DSATURBB }
+The problem of this chapter is the [vertex coloring problem (VCP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/the-vertex-coloring-problem/): its definition and its assumptions are on its page. On a graph $G=(V,E)$, its optimal value is the chromatic number $\chi(G)$.
 
-- The vertex coloring problem (VCP) on a graph $G=(V,E)$ is defined in [Chapter 4 «Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/the-vertex-coloring-problem/#box-3-defVCP); its optimal value is the chromatic number $\chi(G)$.
+## 42.1 The algorithm for the VCP { #sez-sec-DSATURBB }
 
 <a id="box-1-def-VCPnode"></a>
 
@@ -84,7 +84,7 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
 - The VCP is a minimization problem: the incumbent solution gives the <strong>upper bound</strong> $\UB$, and a lower bound comes from a clique.
 
-- <strong>Upper bound.</strong> Before branching, the $DSATUR$ heuristic of [Chapter 29 «Constructive heuristics»](https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur/#sez-sec-VCPgreedy) gives the first incumbent solution, and $\UB$ is its number of colors.
+- <strong>Upper bound.</strong> Before branching, the $DSATUR$ heuristic of [Chapter 30 «Constructive heuristics»](https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur/) gives the first incumbent solution, and $\UB$ is its number of colors.
 
 - <strong>Greedy clique.</strong> The vertices are scanned by non-increasing degree (ties: smallest index), and a vertex enters $K$ if it is adjacent to all the vertices already in $K$. The set $K=\{k_1,\dots,k_r\}$ is a maximal clique, and $\LB := r \le \omega(G)\le\chi(G)$.
 
@@ -140,9 +140,9 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
     - **Step 3:** <strong>Branching</strong>
 
-        Select $v\in U^k$ of maximum $\mathit{sat}_k(v)$, then maximum $\mathit{du}_k(v)$, then smallest index. For each color $c\in F_k(v)\cup\{q(k)+1\}$, in increasing order, create node $c+1$ as node $k$ with $\mathit{col}(v)=c$, evaluate it with the <strong>node sub-procedure</strong>, and set $c\leftarrow c+1$. Insert the surviving children into $L$ in decreasing order of color and go to Step 1.
+        Select $v\in U^k$ of maximum $\mathit{sat}_k(v)$, then maximum $\mathit{du}_k(v)$, then smallest index. For each color $a\in F_k(v)\cup\{q(k)+1\}$, in increasing order, create node $c+1$ as node $k$ with $\mathit{col}(v)=a$, evaluate it with the <strong>node sub-procedure</strong>, and set $c\leftarrow c+1$. Insert the surviving children into $L$ in decreasing order of color and go to Step 1.
 
-- In Step 3, the counter $c$ of the nodes and the color $c$ of the child are two different numbers: the node created is the one with the next free index.
+- In Step 3, the counter $c$ of the nodes gives the next free index, and $a$ is the color given to $v$ in the child.
 
 - This is the pseudocode of the <strong>node sub-procedure</strong>.
 
@@ -209,7 +209,7 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
     - <span style="color:#e03131"><strong>Initialization</strong></span>
 
-        1. The $DSATUR$ heuristic (Example «$DSATUR$ on the Petersen graph» of [Chapter 29](https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur/#box-17-ex-dsatur)) colors the vertices in the order $1,2,3,4,5,6,8,7,9,10$ and gives the incumbent solution
+        1. The $DSATUR$ heuristic (Example «$DSATUR$ on the Petersen graph» of [Chapter 30](https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur/#box-17-ex-dsatur)) colors the vertices in the order $1,2,3,4,5,6,8,7,9,10$ and gives the incumbent solution
 
             $$
             \bar{\mathcal{Q}} = \big\{\, \{1,3,7\},~ \{2,4,6,10\},~ \{5,8,9\} \,\big\}, \qquad \UB = 3 .
@@ -327,7 +327,7 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
 - The algorithm does not improve the incumbent solution: it proves that $\UB=3$ is optimal. The proof is the odd cycle $1,2,3,4,5$, found by the search in three levels.
 
-- Without the pruning, the tree of the Petersen graph has $9\,776$ nodes and $7\,430$ leaves, one for each feasible partition counted in [Chapter 4](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/), as [Proposition 42.2](#box-2-prop-nosym) predicts.
+- Without the pruning, the tree of the Petersen graph has $9\,776$ nodes and $7\,430$ leaves, one for each feasible partition counted in [Chapter 4](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/the-vertex-coloring-problem/), as [Proposition 42.2](#box-2-prop-nosym) predicts.
 
 ## 42.3 Remarks { #sez-sec-DSATURBBrem }
 
@@ -381,7 +381,7 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
     <td><span class="arithmatex">\(\omega(G)=2\)</span></td>
     </tr>
     <tr>
-    <td><span class="arithmatex">\(DSATUR\)</span> (Chapter 29)</td>
+    <td><span class="arithmatex">\(DSATUR\)</span> (Chapter 30)</td>
     <td>–</td>
     <td><span class="arithmatex">\(3\)</span></td>
     <td><span class="arithmatex">\(\{1,3,7\}\)</span>, <span class="arithmatex">\(\{2,4,6,10\}\)</span>, <span class="arithmatex">\(\{5,8,9\}\)</span></td>
@@ -402,4 +402,4 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Vertex coloring (DSATUR)](../exercises/dsatur-branch-and-bound.md)
+**Exercises on this chapter:** [:material-pencil: Vertex coloring (VCP)](../exercises/dsatur-branch-and-bound.md)

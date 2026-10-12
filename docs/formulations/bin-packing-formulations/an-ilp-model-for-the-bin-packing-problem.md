@@ -10,6 +10,8 @@ title: "Bin packing"
 
 </div>
 
+The problem of this section is the Bin Packing Problem (BPP), defined in [Chapter 3 «Packing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/the-bin-packing-problem/).
+
 - Given an upper bound $m \in \Z_{\ge 2}$ on the number of bins used in any optimal BPP solution, we introduce the following $mn$ <strong>binary variables</strong>:
 
     $$
@@ -88,7 +90,7 @@ title: "Bin packing"
     \end{array}
     $$
 
-    We refer to this BPP instance as <span style="color:#1971c2">Example 1</span>.
+    We refer to this BPP instance as <span style="color:#1971c2">[Example 10.1](#box-1-texexpbox_ilp_bpp)</span>.
 
     The $\mathrm{ILP}_{\mathrm{BPP}}$ model with $m=3$ for this BPP instance is:
 
@@ -142,13 +144,13 @@ title: "Bin packing"
     && y_b &\ge 0, & \forall b \in \mathscr{B}. \label{cons3_BPP_LP} \tag{10.2b}
     \end{align*}
 
-    The obtained LP model is referred to as the $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ model.
+    This LP model is referred to as the $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ model.
 
 <a id="box-2-texexpbox_lp0_bpp"></a>
 
 !!! esempio "Example 10.2: $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ model"
 
-    The $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
+    The $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ model for the BPP instance of <span style="color:#1971c2">[Example 10.1](#box-1-texexpbox_ilp_bpp)</span> is:
 
     $$
     \begin{array}{rccccccccccccr}
@@ -201,13 +203,13 @@ title: "Bin packing"
     && \pi_b &\ge 0, & \forall b \in \mathscr{B}. \label{cons4_D} \tag{10.3e}
     \end{align*}
 
-    The obtained model is referred to as the dual $D(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ model.
+    This LP model is referred to as the dual $D(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ model.
 
 <a id="box-3-texexpbox_dlp0_bpp"></a>
 
 !!! esempio "Example 10.3: $D(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ model"
 
-    The  dual $D(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
+    The dual $D(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ model for the BPP instance of <span style="color:#1971c2">[Example 10.1](#box-1-texexpbox_ilp_bpp)</span> is:
 
     $$
     \begin{array}{rccccccr}
@@ -430,7 +432,7 @@ title: "Bin packing"
 
 !!! esempio "Example 10.4: $\mathrm{LP}_{\mathrm{BPP}}$ model"
 
-    The  $\mathrm{LP}_{\mathrm{BPP}}$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
+    The  $\mathrm{LP}_{\mathrm{BPP}}$ model for the BPP instance of <span style="color:#1971c2">[Example 10.1](#box-1-texexpbox_ilp_bpp)</span> is:
 
     $$
     \begin{array}{rccccccccccccr}
@@ -485,7 +487,7 @@ title: "Bin packing"
 
 !!! esempio "Example 10.5: $D(\mathrm{LP}_{\mathrm{BPP}})$ model"
 
-    The  $D(\mathrm{LP}_{\mathrm{BPP}})$ model of <span style="color:#1971c2">Example 1</span> is:
+    The  $D(\mathrm{LP}_{\mathrm{BPP}})$ model of <span style="color:#1971c2">[Example 10.1](#box-1-texexpbox_ilp_bpp)</span> is:
 
     $$
     \begin{array}{rcccccccccc}

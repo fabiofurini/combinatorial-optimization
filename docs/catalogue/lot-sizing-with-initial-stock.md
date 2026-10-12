@@ -31,6 +31,6 @@ title: "Lot sizing with initial stock (LS-SI)"
 </tr>
 <tr>
 <td><strong>Formulations</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/ilp-models-for-the-variants/#1572-several-products-and-setup-times">Ch. 15 «Formulations of lot sizing problems»</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/ilp-models-for-the-variants/#eq-CLSP-bigM">Ch. 15 «Formulations of lot sizing problems»</a></td>
 </tr>
 </table></div>

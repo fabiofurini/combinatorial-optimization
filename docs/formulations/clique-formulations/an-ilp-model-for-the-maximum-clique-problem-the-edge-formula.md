@@ -10,6 +10,8 @@ title: "Maximum clique"
 
 </div>
 
+The problem of this section is the Maximum Clique Problem (MCP), defined in [Chapter 5 «Clique problems», Section 5.2](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/clique/the-maximum-clique-problem/).
+
 - Given a simple graph $G=(V,E)$, with $V=\{1,2,\dots,n\}$ and $m$ edges, we denote by
 
     $$
@@ -56,7 +58,7 @@ title: "Maximum clique"
 
 !!! esempio "Example 12.1: MCP instance"
 
-    We consider the graph $G$ with $7$ vertices made of the cycle $1,2,\dots,7,1$ and the chord $\{1,3\}$ (the reference instance of the chapter «Clique problems»), and its complement $\overline{G}$:
+    We consider the graph $G$ with $7$ vertices made of the cycle $1,2,\dots,7,1$ and the chord $\{1,3\}$ (the reference instance of Chapter 5 [«Clique problems»](../../combinatorial-optimization-problems/clique/index.md)), and its complement $\overline{G}$:
 
     ![Figure 1](../../img/clique-formulations/fig01.svg){ .fig loading=lazy  }
 
@@ -376,7 +378,7 @@ title: "Maximum clique"
 
 - Every edge of $\overline{G}$ lies in a maximal clique, so each constraint $\eqref{mcpF:nonedge}$ is implied by a constraint $\eqref{mcpF:cl}$: the two models have the same feasible solutions.
 
-- The family $\mathcal{Q}$ can be very large: Moon and Moser (1965) showed graphs with $3^{n/3}$ maximal cliques. In practice the inequalities are added only when they are violated, as in the chapter «Valid inequalities» of the module <em>Integer linear programming</em>.
+- The family $\mathcal{Q}$ can be very large: Moon and Moser (1965) showed graphs with $3^{n/3}$ maximal cliques. In practice the inequalities are added only when they are violated, as in [Chapter 4 «Valid inequalities»](https://fabiofurini.github.io/integer-linear-programming/formulations/valid-inequalities/) of the module <em>Integer linear programming</em>.
 
 <a id="box-9-mcpF-ex-cl"></a>
 
@@ -476,7 +478,7 @@ title: "Maximum clique"
 
 ## 12.6 The relation with vertex coloring
 
-- In a coloring of $G$ the vertices of a clique take pairwise different colors, hence (chapter «Coloring problems»)
+- In a coloring of $G$ the vertices of a clique take pairwise different colors, hence (Chapter 4 [«Coloring problems»](../../combinatorial-optimization-problems/coloring/index.md))
 
     $$
     \omega(G)\le\chi(G).
@@ -604,7 +606,7 @@ title: "Maximum clique"
 
 ## 12.7 Stable sets on the complement graph { #sez-sec-mcpf-MSSP }
 
-The problem of this section is the Maximum Stable Set Problem (MSSP), defined in [Chapter 5 «Clique problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/clique/).
+The problem of this section is the Maximum Stable Set Problem (MSSP), defined in [Chapter 5 «Clique problems», Section 5.2](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/clique/the-maximum-clique-problem/).
 
 - Given a simple graph $G=(V,E)$, with $V=\{1,2,\dots,n\}$ and $m$ edges, we introduce the following $n$ <strong>binary variables</strong>:
 

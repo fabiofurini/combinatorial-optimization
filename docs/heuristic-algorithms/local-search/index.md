@@ -12,9 +12,9 @@ title: "Local search"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter «Heuristic algorithms»: neighbourhoods, local optima, intensification and diversification.
+    - From this module, the chapter [«Heuristic algorithms: definitions»](https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/heuristics/): neighbourhoods, local optima, intensification and diversification.
 
-    - From this module, the chapter «Constructive heuristics»: the starting solutions used here.
+    - From this module, the chapter [«Constructive heuristics»](https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/): the starting solutions used here.
 
 !!! chiave "Objectives"
 
@@ -38,7 +38,7 @@ title: "Local search"
 
     Given a neighbourhood $N$, a <strong>local search</strong> (denoted by $LS$) is an improvement heuristic. It starts from a feasible solution and, at every iteration, looks in the neighbourhood of the current solution for a <em>better</em> solution. If it finds one, it moves to it and repeats; if no neighbour is better, the current solution is a local optimum with respect to $N$, and the search stops.
 
-- The <strong>neighbourhood</strong> $N(S)$ of a feasible solution $S$, the <strong>move</strong> from $S$ to a neighbour and the <strong>local optimum</strong> with respect to $N$ are defined in the chapter «Heuristic algorithms: definitions».
+- The <strong>neighbourhood</strong> $N(S)$ of a feasible solution $S$, the <strong>move</strong> from $S$ to a neighbour and the <strong>local optimum</strong> with respect to $N$ are defined in the chapter [«Heuristic algorithms: definitions»](../heuristics.md).
 
 !!! chiave ""
 

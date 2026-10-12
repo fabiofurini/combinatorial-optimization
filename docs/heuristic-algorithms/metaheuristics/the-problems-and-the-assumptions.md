@@ -10,7 +10,7 @@ title: "The problems and the assumptions"
 
 </div>
 
-- The metaheuristics of these notes are illustrated on the four combinatorial optimization problems of the notes on heuristic algorithms. Their definitions and assumptions are given in the notes on combinatorial optimization problems; we recall them briefly.
+- The metaheuristics are illustrated on the four problems of the chapter [«Heuristic algorithms: definitions»](../heuristics.md): the [0/1 knapsack problem (KP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-0-1-knapsack-problem/), the [bin packing problem (BPP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/the-bin-packing-problem/), the [travelling salesman problem (TSP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/the-travelling-salesman-problem/) and [$P\,||\,C_{\max}$](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines/). Their definitions and assumptions are on their pages; we recall the notation.
 
 <div class="tabella" markdown="0"><table>
 <tr>
@@ -21,13 +21,13 @@ title: "The problems and the assumptions"
 </tr>
 <tr>
 <td>KP</td>
-<td>items <span class="arithmatex">\(\mathscr{I}\)</span>, profits <span class="arithmatex">\(p_i\)</span>, weights <span class="arithmatex">\(w_i\)</span>, capacity <span class="arithmatex">\(c\)</span></td>
+<td>items <span class="arithmatex">\(\mathscr{I}\)</span>, profits <span class="arithmatex">\(p_j\)</span>, weights <span class="arithmatex">\(w_j\)</span>, capacity <span class="arithmatex">\(c\)</span></td>
 <td>subset of items</td>
 <td>max total profit</td>
 </tr>
 <tr>
 <td>BPP</td>
-<td>items <span class="arithmatex">\(\mathscr{I}\)</span>, weights <span class="arithmatex">\(w_i\)</span>, capacity <span class="arithmatex">\(c\)</span></td>
+<td>items <span class="arithmatex">\(\mathscr{I}\)</span>, weights <span class="arithmatex">\(w_j\)</span>, capacity <span class="arithmatex">\(c\)</span></td>
 <td>patterns <span class="arithmatex">\(P_b\)</span></td>
 <td>min number of bins</td>
 </tr>
@@ -45,13 +45,13 @@ title: "The problems and the assumptions"
 </tr>
 </table></div>
 
-- Every instance satisfies the assumptions of its problem: $w_i\le c$ for all items and $\sum_i w_i > c$ for the KP and the BPP; $n\ge 3$ and symmetric distances for the TSP; $n>m$ for $P\,||\,C_{\max}$. For $P\,||\,C_{\max}$, $L_h=\sum_{j\in J_h}t_j$ is the <strong>load</strong> of machine $h$ and $C_{\max}=\max_h L_h$.
+- Every instance satisfies the assumptions of its problem: $w_j\le c$ for all items and $\sum_j w_j > c$ for the KP and the BPP; $n\ge 3$ and symmetric distances for the TSP; $n>m$ for $P\,||\,C_{\max}$. For $P\,||\,C_{\max}$, $L_h=\sum_{j\in J_h}t_j$ is the <strong>load</strong> of machine $h$ and $C_{\max}=\max_h L_h$.
 
-- As in the notes on heuristic algorithms, $\mathscr{A}(I)$ is the value of the solution computed by the algorithm $\mathscr{A}$ on the instance $I$, and $z(I)$ is the optimal value. We write $f(S)$ for the value of a solution $S$, and we describe the algorithms for a <strong>minimization</strong> problem; for the KP, a maximization problem, the inequalities are reversed.
+- As in the chapter [«Heuristic algorithms: definitions»](../heuristics.md), $\mathscr{A}(I)$ is the value of the solution computed by the algorithm $\mathscr{A}$ on the instance $I$, and $z(I)$ is the optimal value. We write $f(S)$ for the value of a solution $S$, and we describe the algorithms for a <strong>minimization</strong> problem; for the KP, a maximization problem, the inequalities are reversed.
 
 ## 32.2.1 The neighbourhoods { #sez-sec-neigh }
 
-- All the metaheuristics of these notes are built on the neighbourhoods of the notes on local search. We recall them by name, with the moves that define them; $n$ is the number of items, cities or jobs.
+- All the metaheuristics of this chapter are built on the neighbourhoods of the chapter [«Local search»](../local-search/index.md). We recall them by name, with the moves that define them; $n$ is the number of items, cities or jobs.
 
 <div class="tabella" markdown="0"><table>
 <tr>
@@ -118,19 +118,19 @@ title: "The problems and the assumptions"
 
 - The objectives of the BPP and of $P\,||\,C_{\max}$ are <strong>flat</strong>: most moves do not change the number of bins, or the makespan. Two solutions with the same value are then compared with an <strong>auxiliary objective</strong>:
 
-    - BPP: the sum of the squared loads $\sum_b \big(\sum_{i\in P_b} w_i\big)^2$, to be <em>maximized</em>: it grows when the items concentrate in fewer, fuller bins;
+    - BPP: the sum of the squared loads $\sum_b \big(\sum_{j\in P_b} w_j\big)^2$, to be <em>maximized</em>: it grows when the items concentrate in fewer, fuller bins;
 
     - $P\,||\,C_{\max}$: the sum of the squared loads $\sum_h L_h^2$, to be <em>minimized</em>: it decreases when the loads become balanced.
 
-    For $P\,||\,C_{\max}$ we compare two solutions <strong>lexicographically</strong>: first by $C_{\max}$, and if the makespans are equal, by $\sum_h L_h^2$. For move and swap this selects the same improving moves as the auxiliary objective $\sum_h L_h^2$ of the notes on local search: a transfer that decreases $\sum_h L_h^2$ never increases $C_{\max}$, and a transfer that decreases $C_{\max}$ also decreases $\sum_h L_h^2$.
+    For $P\,||\,C_{\max}$ we compare two solutions <strong>lexicographically</strong>: first by $C_{\max}$, and if the makespans are equal, by $\sum_h L_h^2$. For move and swap this selects the same improving moves as the auxiliary objective $\sum_h L_h^2$ of the chapter [«Local search»](../local-search/index.md): a transfer that decreases $\sum_h L_h^2$ never increases $C_{\max}$, and a transfer that decreases $C_{\max}$ also decreases $\sum_h L_h^2$.
 
-- For the KP the flip neighbourhood contains infeasible solutions (adding an item may exceed the capacity). A local search either discards them or accepts them with a <strong>penalty</strong> on the excess weight; both options appear in these notes.
+- For the KP the flip neighbourhood contains infeasible solutions (adding an item may exceed the capacity). A local search either discards them or accepts them with a <strong>penalty</strong> on the excess weight; both options appear in this chapter.
 
-- The <strong>local searches</strong> used inside the metaheuristics are the descents of the notes on local search: TWOOPTLS (2-opt, best improvement) for the TSP, MOVEDESCENT (move, best improvement, lexicographic comparison) for $P\,||\,C_{\max}$, and KPLOCALSEARCH (feasible flips and swaps, best improvement) for the KP. In every best-improvement descent, ties between equally good moves are broken in favour of the first move found, scanning the indices in increasing order.
+- The <strong>local searches</strong> used inside the metaheuristics are the descents of the chapter [«Local search»](../local-search/index.md): TWOOPTLS (2-opt, best improvement) for the TSP, MOVEDESCENT (move, best improvement, lexicographic comparison) for $P\,||\,C_{\max}$, and KPLOCALSEARCH (feasible flips and swaps, best improvement) for the KP. In every best-improvement descent, ties between equally good moves are broken in favour of the first move found, scanning the indices in increasing order.
 
 ## 32.2.2 Random numbers { #sez-sec-random }
 
-- Most metaheuristics make <strong>random choices</strong>. To make every example and every exercise reproducible, all the random numbers of these notes, and of the code in the Colab notebooks of the chapter, are produced by the <strong>minimal standard generator</strong> of Park and Miller (1988):
+- Most metaheuristics make <strong>random choices</strong>. To make every example and every exercise reproducible, all the random numbers of this chapter, and of the code in the Colab notebooks of the chapter, are produced by the <strong>minimal standard generator</strong> of Park and Miller (1988):
 
 !!! chiave ""
 
@@ -152,7 +152,7 @@ title: "The problems and the assumptions"
 
 ## 32.2.3 The instances { #sez-sec-instances }
 
-- The worked examples use the four <strong>reference instances</strong> of the notes on heuristic algorithms, whose optimal values are known:
+- The worked examples use the four <strong>reference instances</strong> of the chapter [«Heuristic algorithms: definitions»](../heuristics.md), whose optimal values are known:
 
 <div class="tabella" markdown="0"><table>
 <tr>
@@ -228,12 +228,12 @@ $$
 
     $$
     \begin{array}{l|cccccccccc}
-    \hline {i} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} & {9} & {10} \\
-    \hline {p_i} & {54} & {55} & {55} & {52} & {58} & {42} & {53} & {53} & {22} & {64} \\
-    {w_i} & {39} & {43} & {49} & {47} & {44} & {35} & {43} & {44} & {16} & {50} \\
-    \hline \hline {i} & {11} & {12} & {13} & {14} & {15} & {16} & {17} & {18} & {19} & {20} \\
-    \hline {p_i} & {54} & {51} & {39} & {49} & {53} & {46} & {28} & {64} & {58} & {34} \\
-    {w_i} & {40} & {42} & {28} & {38} & {46} & {39} & {14} & {50} & {45} & {27} \\
+    \hline {j} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} & {9} & {10} \\
+    \hline {p_j} & {54} & {55} & {55} & {52} & {58} & {42} & {53} & {53} & {22} & {64} \\
+    {w_j} & {39} & {43} & {49} & {47} & {44} & {35} & {43} & {44} & {16} & {50} \\
+    \hline \hline {j} & {11} & {12} & {13} & {14} & {15} & {16} & {17} & {18} & {19} & {20} \\
+    \hline {p_j} & {54} & {51} & {39} & {49} & {53} & {46} & {28} & {64} & {58} & {34} \\
+    {w_j} & {40} & {42} & {28} & {38} & {46} & {39} & {14} & {50} & {45} & {27} \\
     \hline
     \end{array}
     $$

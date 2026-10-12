@@ -10,6 +10,8 @@ title: "Vertex coloring"
 
 </div>
 
+The Vertex Coloring Problem and its assumptions are defined in [Chapter 4 «Coloring problems», Section 4.2](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/the-vertex-coloring-problem/).
+
 - Given a graph $G=(V,E)$, for a vertex $v \in V$ we denote by $\delta(v)$ the set of the edges incident to $v$.
 
 - Given an upper bound $k \in \Z_{\ge 2}$ on the number of colors used in any optimal VCP solution, we introduce the following $k\;\underbrace{|V|}_{=n}$ binary variables:
@@ -90,7 +92,7 @@ title: "Vertex coloring"
     V = \big\{~ 1,~ 2,~ 3 ~\big\}, \qquad E = \big\{~ \{1,2\},~ \{1,3\},~ \{2,3\} ~\big\}.
     $$
 
-    We refer to this VCP instance as <span style="color:#1971c2">Example 1</span>.
+    We refer to this VCP instance as <span style="color:#1971c2">[Example 11.1](#box-1-texexpbox_ilp_vcp)</span>.
 
     The  $\mathrm{ILP}_{\mathrm{VCP}}$ model with $k=3$ for this instance is:
 
@@ -138,7 +140,7 @@ title: "Vertex coloring"
 
 !!! esempio "Example 11.2: $\mathrm{LP}\text{-}0_{\mathrm{VCP}}$ model"
 
-    The  $\mathrm{LP}\text{-}0_{\mathrm{VCP}}$ model for the VCP instance of <span style="color:#1971c2">Example 1</span> is:
+    The  $\mathrm{LP}\text{-}0_{\mathrm{VCP}}$ model for the VCP instance of <span style="color:#1971c2">[Example 11.1](#box-1-texexpbox_ilp_vcp)</span> is:
 
     $$
     \begin{array}{rccccccccccccr}
@@ -197,7 +199,7 @@ title: "Vertex coloring"
 
 !!! esempio "Example 11.3: $D(\mathrm{LP}\text{-}0_{\mathrm{VCP}})$ model"
 
-    The  dual $D(\mathrm{LP}\text{-}0_{\mathrm{VCP}})$ model for the VCP instance of <span style="color:#1971c2">Example 1</span> is:
+    The dual $D(\mathrm{LP}\text{-}0_{\mathrm{VCP}})$ model for the VCP instance of <span style="color:#1971c2">[Example 11.1](#box-1-texexpbox_ilp_vcp)</span> is:
 
     $$
     \begin{array}{rccccccccccccr}
@@ -444,7 +446,7 @@ title: "Vertex coloring"
 
 !!! esempio "Example 11.4: $\mathrm{LP}_{\mathrm{VCP}}$ model"
 
-    The  $\mathrm{LP}_{\mathrm{VCP}}$ model for the VCP instance of <span style="color:#1971c2">Example 1</span> is:
+    The  $\mathrm{LP}_{\mathrm{VCP}}$ model for the VCP instance of <span style="color:#1971c2">[Example 11.1](#box-1-texexpbox_ilp_vcp)</span> is:
 
     $$
     \begin{array}{rccccccccccccr}
@@ -503,7 +505,7 @@ title: "Vertex coloring"
 
 !!! esempio "Example 11.5: $D(\mathrm{LP}_{\mathrm{VCP}})$ model"
 
-    The  dual $D(\mathrm{LP}_{\mathrm{VCP}})$ model for the VCP instance of <span style="color:#1971c2">Example 1</span> is:
+    The dual $D(\mathrm{LP}_{\mathrm{VCP}})$ model for the VCP instance of <span style="color:#1971c2">[Example 11.1](#box-1-texexpbox_ilp_vcp)</span> is:
 
     $$
     \begin{array}{rcccccccccccccccr}
@@ -643,7 +645,7 @@ title: "Vertex coloring"
 
     - The bound $2$ is very weak: a formulation that must color graphs needs additional valid inequalities.
 
-    <strong>Dashboard of Example 1</strong> (triangle). Bounds on $z(\mathrm{ILP}_{\mathrm{VCP}})$ computed in this chapter:
+    <strong>Dashboard of [Example 11.1](#box-1-texexpbox_ilp_vcp)</strong> (triangle). Bounds on $z(\mathrm{ILP}_{\mathrm{VCP}})$ computed in this chapter:
 
     <div class="tabella" markdown="0"><table>
     <tr>

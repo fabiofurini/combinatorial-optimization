@@ -54,12 +54,16 @@ title: "Unbounded knapsack problem (UKP)"
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-unbounded-knapsack-problem/#box-8-defUKP">Ch. 2 «Knapsack problems»</a></td>
 </tr>
 <tr>
+<td><strong>Formulations</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/an-ilp-model-for-the-unbounded-knapsack-problem/#sez-sec-kpf-UKP">Ch. 9 «Formulations of knapsack problems»</a></td>
+</tr>
+<tr>
 <td><strong>Dynamic programming</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/#164-the-dp-algorithms-of-this-module">Ch. 16 «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-unbounded-knapsack/">Ch. 18 «DP for the unbounded knapsack problem»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-coin-change/">Ch. 27 «DP for the coin change problem»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-rod-cutting/">Ch. 28 «DP for the rod cutting problem»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-3">Exercise 2.3</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-unbounded-knapsack/">Ch. 18 (5 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-3">Exercise 2.3</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/#esercizio-9-8">Exercise 9.8</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-unbounded-knapsack/">Ch. 18 (5 exercises)</a></td>
 </tr>
 <tr>
 <td><strong>Reference instances</strong></td>

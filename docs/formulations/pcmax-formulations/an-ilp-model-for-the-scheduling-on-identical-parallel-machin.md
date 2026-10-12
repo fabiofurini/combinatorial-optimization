@@ -10,6 +10,8 @@ title: "Scheduling on identical parallel machines"
 
 </div>
 
+The problem of this section is the scheduling on identical parallel machines ($P\|C_{\max}$), defined in [Chapter 7 «Scheduling problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines/).
+
 - Given $m$ identical machines and a set $\mathscr{J}=\{1,2,\ldots,n\}$ of $n$ jobs, with processing times $t_j$, we denote by $\mathscr{H}=\{1,2,\ldots,m\}$ the set of machines.
 
 - We introduce the following $nm$ <strong>binary variables</strong>:
@@ -31,7 +33,7 @@ title: "Scheduling on identical parallel machines"
 
 !!! chiave ""
 
-    Using these variables, an Integer Linear Programming (ILP) model for $P\|C_{\max}$ reads as follows:
+    Using these variables, an Integer Linear Programming (ILP) model for the Scheduling on Identical Parallel Machines Problem ($P\|C_{\max}$) reads as follows:
 
     <a id="eq-ILP-PCMAX"></a>
 
@@ -92,7 +94,7 @@ title: "Scheduling on identical parallel machines"
     \end{array}
     $$
 
-    This is the instance of Example 1 of the chapter «Scheduling problems»; we refer to it as <span style="color:#1971c2">[Example 14.1](#box-1-ex-PCMAX-ILP)</span>. The $\mathrm{ILP}_{P\|C_{\max}}$ model for this instance is:
+    This is the instance of Example 7.1 of [Chapter 7 «Scheduling problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines/); we refer to it as <span style="color:#1971c2">[Example 14.1](#box-1-ex-PCMAX-ILP)</span>. The $\mathrm{ILP}_{P\|C_{\max}}$ model for this instance is:
 
     $$
     \begin{array}{rlcl}

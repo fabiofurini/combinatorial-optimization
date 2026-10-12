@@ -60,12 +60,16 @@ title: "Bounded knapsack problem (BKP)"
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-bounded-knapsack-problem/#box-6-defBKP">Ch. 2 «Knapsack problems»</a></td>
 </tr>
 <tr>
+<td><strong>Formulations</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/an-ilp-model-for-the-bounded-knapsack-problem/#sez-sec-kpf-BKP">Ch. 9 «Formulations of knapsack problems»</a></td>
+</tr>
+<tr>
 <td><strong>Dynamic programming</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-bounded-knapsack/">Ch. 19 «DP for the bounded knapsack problem»</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/#164-the-dp-algorithms-of-this-module">Ch. 16 «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-bounded-knapsack/">Ch. 19 «DP for the bounded knapsack problem»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-3">Exercise 2.3</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-bounded-knapsack/">Ch. 19 (5 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-3">Exercise 2.3</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/#esercizio-9-7">Exercise 9.7</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-bounded-knapsack/">Ch. 19 (5 exercises)</a></td>
 </tr>
 <tr>
 <td><strong>Reference instances</strong></td>

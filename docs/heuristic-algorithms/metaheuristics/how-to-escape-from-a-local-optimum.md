@@ -65,7 +65,7 @@ title: "How to escape from a local optimum · Simulated annealing"
 
 - The first two ways keep <strong>one current solution</strong> and change the <strong>acceptance rule</strong> of the local search: they walk out of the valley through worse solutions. The next four <strong>jump</strong>: they generate a new starting point, far enough to leave the valley but close enough to keep what is good. The last one keeps <strong>many solutions</strong> at the same time.
 
-- Every metaheuristic must balance <strong>intensification</strong> (descend to the bottom of the current valley) and <strong>diversification</strong> (leave it for another one). For each method we point out which component does what, and Section [32.11](comparison-and-conclusions.md#sez-sec-closing) compares them.
+- Every metaheuristic must balance <strong>intensification</strong> (descend to the bottom of the current valley) and <strong>diversification</strong> (leave it for another one). For each method we point out which component does what.
 
 - A metaheuristic is a <em>scheme</em>, not an algorithm: to obtain an algorithm one must choose the representation, the neighbourhoods, the local search and the parameters, and these choices matter at least as much as the scheme. We present every metaheuristic on the problems where its idea is most natural, not on all four.
 
@@ -132,7 +132,7 @@ title: "How to escape from a local optimum · Simulated annealing"
 
 !!! esempio "Example 32.3: $SA$ with the 2-opt neighbourhood on the TSP reference instance"
 
-    We start from the tour computed by the nearest neighbour heuristic from city $1$ in the notes on constructive heuristics, $\sigma=(1,3,2,4,5)$ of length $25$, with $T_0=5$, $\alpha=0.8$, $L=2$ and $T_{\min}=3$: the temperatures are $5$, $4$ and $3.2$ (then $2.56\le 3$ stops the search), for a total of $6$ iterations. The $M=5$ moves of 2-opt on $5$ cities are numbered
+    We start from the tour computed by the nearest neighbour heuristic from city $1$ in the chapter [«Constructive heuristics»](../constructive-heuristics/index.md), $\sigma=(1,3,2,4,5)$ of length $25$, with $T_0=5$, $\alpha=0.8$, $L=2$ and $T_{\min}=3$: the temperatures are $5$, $4$ and $3.2$ (then $2.56\le 3$ stops the search), for a total of $6$ iterations. The $M=5$ moves of 2-opt on $5$ cities are numbered
 
     $$
     1:(1,3),\quad 2:(1,4),\quad 3:(2,4),\quad 4:(2,5),\quad 5:(3,5),
@@ -229,7 +229,7 @@ title: "How to escape from a local optimum · Simulated annealing"
 
     At iterations $1$ and $3$ a <strong>worse</strong> tour is accepted ($25\to 29$ and $22\to 24$), because $v$ is smaller than the acceptance probability; at iterations $5$ and $6$ the temperature is lower, the worsening moves are less likely to be accepted, and both are rejected. The best tour, $(1,4,2,5,3)$, is the optimal tour $(1,3,5,2,4)$ traversed in the opposite direction: $SA(I)=18=z(I)$.
 
-- On this small instance the optimal tour is the only 2-opt local optimum among the $12$ tours, so a 2-opt local search would reach it as well: the example shows the mechanics of $SA$; its ability to escape from local optima needs instances with bad local optima, as the next ones.
+- On this small instance the optimal tour is the only 2-opt local optimum among the $12$ tours, so a 2-opt local search would reach it as well: the example shows the mechanics of $SA$; its ability to escape from local optima shows on instances with bad local optima.
 
 ### 32.4.3 Infeasible solutions: simulated annealing with a penalty { #sez-sec-sa-kp }
 
@@ -238,7 +238,7 @@ title: "How to escape from a local optimum · Simulated annealing"
 !!! chiave ""
 
     $$
-    f_\beta(x) \;=\; \sum_{i\in\mathscr{I}} p_i x_i \;-\; \beta\cdot \max\Big\{0,\ \sum_{i\in\mathscr{I}} w_i x_i - c\Big\},
+    f_\beta(x) \;=\; \sum_{j\in\mathscr{I}} p_j x_j \;-\; \beta\cdot \max\Big\{0,\ \sum_{j\in\mathscr{I}} w_j x_j - c\Big\},
     \qquad \beta>0 .
     $$
 
@@ -252,7 +252,7 @@ title: "How to escape from a local optimum · Simulated annealing"
 
 !!! esempio "Example 32.4: $SA$ with a penalty on the KP reference instance"
 
-    We start from $x=(1,0,1,0)$, the solution $\{1,3\}$ of the greedy algorithm by efficiency, of profit $16$. It is a local optimum for the flip neighbourhood (notes on heuristic algorithms): its feasible neighbours have profit $6$ and $10$. We use $\beta=3$, $T_0=4$, $\alpha=0.8$, $L=2$, $T_{\min}=2.5$ (temperatures $4$, $3.2$, $2.56$: $6$ iterations) and $seed=3$. At each iteration $u$ chooses the item $k=1+\lfloor 4u\rfloor$ to flip, and $v$ is used in the acceptance test.
+    We start from $x=(1,0,1,0)$, the solution $\{1,3\}$ of the greedy algorithm by efficiency, of profit $16$. It is a local optimum for the flip neighbourhood (chapter [«Heuristic algorithms: definitions»](../heuristics.md)): its feasible neighbours have profit $6$ and $10$. We use $\beta=3$, $T_0=4$, $\alpha=0.8$, $L=2$, $T_{\min}=2.5$ (temperatures $4$, $3.2$, $2.56$: $6$ iterations) and $seed=3$. At each iteration $u$ chooses the item $k=1+\lfloor 4u\rfloor$ to flip, and $v$ is used in the acceptance test.
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -261,7 +261,7 @@ title: "How to escape from a local optimum · Simulated annealing"
     <th><span class="arithmatex">\(u\)</span></th>
     <th><span class="arithmatex">\(k\)</span></th>
     <th><span class="arithmatex">\(y\)</span></th>
-    <th><span class="arithmatex">\(\sum w_iy_i\)</span></th>
+    <th><span class="arithmatex">\(\sum w_jy_j\)</span></th>
     <th><span class="arithmatex">\(f_3(y)\)</span></th>
     <th><span class="arithmatex">\(\delta\)</span></th>
     <th><span class="arithmatex">\(v\)</span> vs <span class="arithmatex">\(e^{-\delta/T}\)</span></th>
@@ -473,7 +473,7 @@ title: "How to escape from a local optimum · Simulated annealing"
 </tr>
 </table></div>
 
-- With $T_0=1$ the temperature is too low from the beginning: few worsening moves are accepted, and $SA$ behaves like a randomized local search. Slower cooling ($\alpha=0.99$) spends more iterations at every temperature range and reaches the optimum in almost every run, at the price of many more iterations. A single run says little: the comparison must look at the distribution over several seeds, as recalled in the notes on heuristic algorithms.
+- With $T_0=1$ the temperature is too low from the beginning: few worsening moves are accepted, and $SA$ behaves like a randomized local search. Slower cooling ($\alpha=0.99$) spends more iterations at every temperature range and reaches the optimum in almost every run, at the price of many more iterations. A single run says little: the comparison must look at the distribution over several seeds, as recalled in the chapter [«Heuristic algorithms: definitions»](../heuristics.md).
 
 ### 32.4.5 Properties { #sez-sec-sa-prop }
 

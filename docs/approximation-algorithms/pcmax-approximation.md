@@ -1,12 +1,12 @@
 ---
-title: "Approximation for P|Cmax"
+title: "Approximation for P||Cmax"
 ---
 
 # Approximation for $P\|C_{\max}$
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 40** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Identical parallel machines (P||Cmax)](../exercises/pcmax-approximation.md)
+**Part 5 · Approximation algorithms · Chapter 40** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Identical parallel machines (P||Cmax)](../exercises/pcmax-approximation.md) · [:material-gesture-tap: App: Tight instances](../lab/tight-instances.md)
 
 </div>
 
@@ -395,3 +395,7 @@ The problem of this chapter is the [scheduling problem on identical parallel mac
 ---
 
 **Exercises on this chapter:** [:material-pencil: Identical parallel machines (P||Cmax)](../exercises/pcmax-approximation.md)
+
+<!-- laboratorio-interattivo: sezione generata da interattivi.py -->
+
+:material-flask-outline: **In the interactive lab:** [Tight instances](../lab/tight-instances.md#voce=lpt).

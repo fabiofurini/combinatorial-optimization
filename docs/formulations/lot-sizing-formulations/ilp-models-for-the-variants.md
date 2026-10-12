@@ -10,7 +10,7 @@ title: "Variants"
 
 </div>
 
-The problems of this section are the variants of the capacitated lot sizing problem defined in [Chapter 8 «Lot sizing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/variants/). Each subsection writes the ILP model of one variant, in the order of that chapter.
+The problems of this section are the variants of the capacitated lot sizing problem defined in [Chapter 8 «Lot sizing problems», Section 8.6](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/variants/). Each subsection writes the ILP model of one variant, in the order of that chapter.
 
 ## 15.7.1 The uncapacitated lot sizing problem
 
@@ -117,7 +117,7 @@ The problems of this section are the variants of the capacitated lot sizing prob
 
 !!! chiave ""
 
-    Using these variables, an Integer Linear Programming (ILP) model for the lot sizing problem with several products and setup times reads as follows:
+    Using these variables, an Integer Linear Programming (ILP) model for the lot sizing problem with several products and setup times (MLS) reads as follows:
 
     <a id="eq-CLSPm-bigM"></a>
 
@@ -257,7 +257,7 @@ The problems of this section are the variants of the capacitated lot sizing prob
 
 !!! chiave ""
 
-    Using these variables, an Integer Linear Programming (ILP) model for the lot sizing problem with initial stock reads as follows:
+    Using these variables, an Integer Linear Programming (ILP) model for the lot sizing problem with initial stock (LS-SI) reads as follows:
 
     <a id="eq-CLSP-bigM"></a>
 
@@ -456,8 +456,10 @@ The problems of this section are the variants of the capacitated lot sizing prob
     && x_{pt} &\le M_{pt}\, y_{pt}, & \forall p \in P,~ \forall t\in T, \label{CLSPLP:M} \tag{15.8e}\\[1ex]
     && s_{pm} &= 0, & \forall p \in P, \label{CLSPLP:end} \tag{15.8f}\\[1ex]
     && y_{pt} &\le 1, & \forall p \in P,~ \forall t\in T, \label{CLSPLP:ub} \tag{15.8g}\\[1ex]
-    && x_{pt},\; s_{pt},\; y_{pt} &\ge 0, & \forall p \in P,~ \forall t\in T, \label{CLSPLP:nn} \tag{15.8h}\\[1ex]
-    && si_{p} &\ge 0, & \forall p \in P. \label{CLSPLP:si} \tag{15.8i}
+    && x_{pt} &\ge 0, & \forall p \in P,~ \forall t\in T, \label{CLSPLP:nn} \tag{15.8h}\\[1ex]
+    && s_{pt} &\ge 0, & \forall p \in P,~ \forall t\in T, \label{CLSPLP:nns} \tag{15.8i}\\[1ex]
+    && y_{pt} &\ge 0, & \forall p \in P,~ \forall t\in T, \label{CLSPLP:nny} \tag{15.8j}\\[1ex]
+    && si_{p} &\ge 0, & \forall p \in P. \label{CLSPLP:si} \tag{15.8k}
     \end{align*}
 
     This LP model is referred to as the $\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{SI}}$ model.
@@ -472,7 +474,7 @@ The problems of this section are the variants of the capacitated lot sizing prob
 
 !!! chiave ""
 
-    Using these variables, a MIP model for the CLS with several products, setup times and initial inventory reads as follows:
+    Using these variables, a Mixed Integer Linear Programming (MIP) model for the lot sizing problem with initial stock (LS-SI) reads as follows:
 
     <a id="eq-CLSP-SP"></a>
 
@@ -491,6 +493,18 @@ The problems of this section are the variants of the capacitated lot sizing prob
     \end{align*}
 
     This MIP model is referred to as the $\mathrm{MIP}^{\mathrm{SP},\mathrm{SI}}_{\mathrm{CLSP}}$ model. Relaxing constraints $\eqref{CLSPSP7}$ into $0\le y_{pt}\le 1$ and removing constraints $\eqref{CLSPSP-intx}$ and $\eqref{CLSPSP-intsi}$ gives the LP model referred to as the $\mathrm{LP}^{\mathrm{SP},\mathrm{SI}}_{\mathrm{CLSP}}$ model.
+
+- Description of the objective function and constraints of the $\mathrm{MIP}^{\mathrm{SP},\mathrm{SI}}_{\mathrm{CLSP}}$ model:
+
+    - the linear objective function $\eqref{obj:CLSP-SP}$ minimizes the cost of the setups, of the initial inventory and of the arcs of the plans of all the products;
+
+    - constraints $\eqref{CLSPSP1}$ and $\eqref{CLSPSP2}$ are the flow constraints of the network of every product, with the arcs $w_{pt}$ of the initial inventory leaving node $0$ ($|P|\,m$ linear constraints);
+
+    - constraints $\eqref{CLSPSP3}$ force the setup of product $p$ in period $t$ if it is produced ($|P|\,m$ linear constraints), and constraints $\eqref{CLSPSP4}$ impose the capacities, setup times included ($m$ linear constraints);
+
+    - constraints $\eqref{CLSPSP-intx}$ and $\eqref{CLSPSP-intsi}$ keep integer the quantities and the initial inventories;
+
+    - finally, constraints $\eqref{CLSPSP5}$–$\eqref{CLSPSP7}$ define the variables of the MIP model.
 
 - The quantity produced is $x_{pt}=\sum_{k=t}^{m} sd_{ptk}\,zv_{ptk}$, and the initial inventory is $si_p=\sum_{t\in T} sd_{p1t}\,w_{pt}$: constraints $\eqref{CLSPSP-intx}$ and $\eqref{CLSPSP-intsi}$ keep them integer, as in the $\mathrm{ILP}_{\mathrm{CLSP}}^{\mathrm{SI}}$ model.
 
@@ -551,7 +565,7 @@ The problems of this section are the variants of the capacitated lot sizing prob
 
 !!! chiave ""
 
-    Using these variables, an Integer Linear Programming (ILP) model for the lot sizing problem with overtime reads as follows:
+    Using these variables, an Integer Linear Programming (ILP) model for the lot sizing problem with overtime (LS-OT) reads as follows:
 
     <a id="eq-CLSPo-bigM"></a>
 
@@ -663,12 +677,13 @@ The problems of this section are the variants of the capacitated lot sizing prob
 
 !!! chiave ""
 
-    Using these variables, an Integer Linear Programming (ILP) model for the lot sizing problem with unsatisfied demand reads as follows:
+    Using these variables, an Integer Linear Programming (ILP) model for the lot sizing problem with unsatisfied demand (LS-UD) reads as follows:
 
     <a id="eq-CLSPu-bigM"></a>
 
     \begin{align*}
-    &&\min ~~ \sum_{p \in P}\sum_{t \in T} \left(sc_{pt}\,y_{pt} + vc_{pt}\,x_{pt} + hc_{pt}\,s_{pt} + cu_{pt}\,\varepsilon_{pt}\right) \label{obj:CLSPu} \tag{15.11a}\\[1ex]
+    &&\min ~~ \sum_{p \in P}\sum_{t \in T} \left(sc_{pt}\,y_{pt} + vc_{pt}\,x_{pt} + hc_{pt}\,s_{pt} \right) + {} \\
+    && \sum_{p \in P}\sum_{t \in T} cu_{pt}\,\varepsilon_{pt} \label{obj:CLSPu} \tag{15.11a}\\[1ex]
     && \text{subject to}\quad s_{p,t-1} + x_{pt} & = d_{pt} - \varepsilon_{pt} + s_{pt}, & \forall p \in P,~\forall t\in T, \label{CLSPu:bal} \tag{15.11b}\\[1ex]
     && \sum_{p \in P}\left(st_{pt}\,y_{pt} + vt_{pt}\,x_{pt}\right) &\leq cap_t, & \forall t\in T, \label{CLSPu:cap} \tag{15.11c}\\[1ex]
     && x_{pt} &\le M_{pt}\, y_{pt}, & \forall p \in P,~ \forall t\in T, \label{CLSPu:M} \tag{15.11d}\\[1ex]
@@ -776,7 +791,7 @@ The problems of this section are the variants of the capacitated lot sizing prob
 
     - The shortest-path formulation writes the plans as paths in a network, with the link $\sum_k zv_{tk} \le y_t$ and no big-M value: its relaxation is the strongest.
 
-    - The three formulations have the same optimal value; they differ in the lower bound and in the size of the model.
+    - The two formulations have the same optimal value; they differ in the lower bound and in the size of the model.
 
     - The ULS model is the big-M model without capacities and with $M_t=D_{t,m}$: on the reference instance its optimal value is $170$.
 

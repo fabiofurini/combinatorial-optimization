@@ -1,6 +1,8 @@
 # Approximation algorithms
 
-*Part 5 of the course, volume 5 of the lecture notes.*
+*Part 5 of the course, volume 5 of the lecture notes: chapters 34–40.*
+
+Approximation algorithms: performance ratios and approximation schemes, with algorithms and worst-case analyses for knapsack, bin packing, the metric TSP and parallel machine scheduling, and the limits of approximation for vertex coloring, maximum clique and the general TSP.
 
 [:material-file-pdf-box: Lecture notes (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf){ .md-button } [:material-file-pdf-box: Exercises (PDF)](../pdf/exercises-5-approximation-algorithms.pdf){ .md-button }
 
@@ -90,7 +92,7 @@
 
 <div class="grid cards" markdown>
 
--   **40. Approximation for P|Cmax**
+-   **40. Approximation for P||Cmax**
 
     ---
 

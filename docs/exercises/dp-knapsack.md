@@ -12,15 +12,15 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
 <a id="esercizio-17-1"></a>
 
-!!! esercizio "Exercise 17.1: Exercise 1: 0/1 Knapsack Problem"
+!!! esercizio "Exercise 17.1: The bottom-up DP algorithm for the KP (4 items, $c=6$)"
 
     Consider the following KP instance, where the knapsack has capacity $c=6$, and the profits and weights associated with the items are:
 
     $$
     \begin{array}{l|rrrr}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\
-    \hline {p_i} & {6} & {7} & {8} & {9} \\
-    {w_i} & {2} & {3} & {4} & {5} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\
+    \hline {p_j} & {6} & {7} & {8} & {9} \\
+    {w_j} & {2} & {3} & {4} & {5} \\
     \hline
     \end{array}
     $$
@@ -35,14 +35,14 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
     1. Step-by-step execution of the bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells ${v}[i][k]$ and ${s}[i][k]$, and the operation performed. The cells are computed for increasing values of $i$ and, for each fixed value of $i$, for increasing values of $k$.
+        For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cells ${v}[j][k]$ and ${s}[j][k]$, and the operation performed. The cells are computed for increasing values of $j$ and, for each fixed value of $j$, for increasing values of $k$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\({v}[i][k]\)</span></th>
-        <th><span class="arithmatex">\({s}[i][k]\)</span></th>
+        <th><span class="arithmatex">\({v}[j][k]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -296,12 +296,12 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrr}
-        \hline {{v}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 6 & 6 & 6 & 6 & 6 \\
-        {i=2} & 0 & 0 & 6 & 7 & 7 & 13 & 13 \\
-        {i=3} & 0 & 0 & 6 & 7 & 8 & 13 & 14 \\
-        {i=4} & 0 & 0 & 6 & 7 & 8 & 13 & 14 \\
+        \hline {{v}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 6 & 6 & 6 & 6 & 6 \\
+        {j=2} & 0 & 0 & 6 & 7 & 7 & 13 & 13 \\
+        {j=3} & 0 & 0 & 6 & 7 & 8 & 13 & 14 \\
+        {j=4} & 0 & 0 & 6 & 7 & 8 & 13 & 14 \\
         \hline
         \end{array}
         $$
@@ -310,12 +310,12 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrr}
-        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {{s}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
@@ -324,24 +324,24 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrr}
-        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {{s}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
 
-        We can reconstruct an optimal solution by starting from $i=4$ and $k=6$ as follows:
+        We can reconstruct an optimal solution by starting from $j=4$ and $k=6$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\({s}[i][k]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][k]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
@@ -419,15 +419,15 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
 <a id="esercizio-17-2"></a>
 
-!!! esercizio "Exercise 17.2: Exercise 2: 0/1 Knapsack Problem"
+!!! esercizio "Exercise 17.2: The bottom-up DP algorithm for the KP (4 items, $c=7$)"
 
     Consider the following KP instance, where the knapsack has capacity $c=7$, and the profits and weights associated with the items are:
 
     $$
     \begin{array}{l|rrrr}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\
-    \hline {p_i} & {4} & {5} & {10} & {11} \\
-    {w_i} & {2} & {3} & {5} & {6} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\
+    \hline {p_j} & {4} & {5} & {10} & {11} \\
+    {w_j} & {2} & {3} & {5} & {6} \\
     \hline
     \end{array}
     $$
@@ -442,14 +442,14 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
     1. Step-by-step execution of the bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells ${v}[i][k]$ and ${s}[i][k]$, and the operation performed. The cells are computed for increasing values of $i$ and, for each fixed value of $i$, for increasing values of $k$.
+        For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cells ${v}[j][k]$ and ${s}[j][k]$, and the operation performed. The cells are computed for increasing values of $j$ and, for each fixed value of $j$, for increasing values of $k$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\({v}[i][k]\)</span></th>
-        <th><span class="arithmatex">\({s}[i][k]\)</span></th>
+        <th><span class="arithmatex">\({v}[j][k]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -738,12 +738,12 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrr}
-        \hline {{v}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 4 & 4 & 4 & 4 & 4 & 4 \\
-        {i=2} & 0 & 0 & 4 & 5 & 5 & 9 & 9 & 9 \\
-        {i=3} & 0 & 0 & 4 & 5 & 5 & 10 & 10 & 14 \\
-        {i=4} & 0 & 0 & 4 & 5 & 5 & 10 & 11 & 14 \\
+        \hline {{v}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 4 & 4 & 4 & 4 & 4 & 4 \\
+        {j=2} & 0 & 0 & 4 & 5 & 5 & 9 & 9 & 9 \\
+        {j=3} & 0 & 0 & 4 & 5 & 5 & 10 & 10 & 14 \\
+        {j=4} & 0 & 0 & 4 & 5 & 5 & 10 & 11 & 14 \\
         \hline
         \end{array}
         $$
@@ -752,12 +752,12 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrr}
-        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+        \hline {{s}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
         \hline
         \end{array}
         $$
@@ -766,24 +766,24 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrr}
-        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+        \hline {{s}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
         \hline
         \end{array}
         $$
 
-        We can reconstruct an optimal solution by starting from $i=4$ and $k=7$ as follows:
+        We can reconstruct an optimal solution by starting from $j=4$ and $k=7$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\({s}[i][k]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][k]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
@@ -861,15 +861,15 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
 <a id="esercizio-17-3"></a>
 
-!!! esercizio "Exercise 17.3: Exercise 3: 0/1 Knapsack Problem"
+!!! esercizio "Exercise 17.3: The bottom-up DP algorithm for the KP (5 items, $c=8$)"
 
     Consider the following KP instance, where the knapsack has capacity $c=8$, and the profits and weights associated with the items are:
 
     $$
     \begin{array}{l|rrrrr}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
-    \hline {p_i} & {3} & {4} & {8} & {8} & {10} \\
-    {w_i} & {1} & {3} & {4} & {5} & {6} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\
+    \hline {p_j} & {3} & {4} & {8} & {8} & {10} \\
+    {w_j} & {1} & {3} & {4} & {5} & {6} \\
     \hline
     \end{array}
     $$
@@ -884,14 +884,14 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
     1. Step-by-step execution of the bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells ${v}[i][k]$ and ${s}[i][k]$, and the operation performed. The cells are computed for increasing values of $i$ and, for each fixed value of $i$, for increasing values of $k$.
+        For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cells ${v}[j][k]$ and ${s}[j][k]$, and the operation performed. The cells are computed for increasing values of $j$ and, for each fixed value of $j$, for increasing values of $k$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\({v}[i][k]\)</span></th>
-        <th><span class="arithmatex">\({s}[i][k]\)</span></th>
+        <th><span class="arithmatex">\({v}[j][k]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -1278,13 +1278,13 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrr}
-        \hline {{v}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3 \\
-        {i=2} & 0 & 3 & 3 & 4 & 7 & 7 & 7 & 7 & 7 \\
-        {i=3} & 0 & 3 & 3 & 4 & 8 & 11 & 11 & 12 & 15 \\
-        {i=4} & 0 & 3 & 3 & 4 & 8 & 11 & 11 & 12 & 15 \\
-        {i=5} & 0 & 3 & 3 & 4 & 8 & 11 & 11 & 13 & 15 \\
+        \hline {{v}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3 \\
+        {j=2} & 0 & 3 & 3 & 4 & 7 & 7 & 7 & 7 & 7 \\
+        {j=3} & 0 & 3 & 3 & 4 & 8 & 11 & 11 & 12 & 15 \\
+        {j=4} & 0 & 3 & 3 & 4 & 8 & 11 & 11 & 12 & 15 \\
+        {j=5} & 0 & 3 & 3 & 4 & 8 & 11 & 11 & 13 & 15 \\
         \hline
         \end{array}
         $$
@@ -1293,13 +1293,13 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrr}
-        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+        \hline {{s}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
         \hline
         \end{array}
         $$
@@ -1308,25 +1308,25 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrr}
-        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+        \hline {{s}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
         \hline
         \end{array}
         $$
 
-        We can reconstruct an optimal solution by starting from $i=5$ and $k=8$ as follows:
+        We can reconstruct an optimal solution by starting from $j=5$ and $k=8$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\({s}[i][k]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][k]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
@@ -1422,15 +1422,15 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
 <a id="esercizio-17-4"></a>
 
-!!! esercizio "Exercise 17.4: Exercise 4: 0/1 Knapsack Problem"
+!!! esercizio "Exercise 17.4: The bottom-up DP algorithm for the KP (5 items, $c=9$)"
 
     Consider the following KP instance, where the knapsack has capacity $c=9$, and the profits and weights associated with the items are:
 
     $$
     \begin{array}{l|rrrrr}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
-    \hline {p_i} & {5} & {6} & {9} & {10} & {13} \\
-    {w_i} & {2} & {4} & {5} & {6} & {7} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\
+    \hline {p_j} & {5} & {6} & {9} & {10} & {13} \\
+    {w_j} & {2} & {4} & {5} & {6} & {7} \\
     \hline
     \end{array}
     $$
@@ -1445,14 +1445,14 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
     1. Step-by-step execution of the bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells ${v}[i][k]$ and ${s}[i][k]$, and the operation performed. The cells are computed for increasing values of $i$ and, for each fixed value of $i$, for increasing values of $k$.
+        For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cells ${v}[j][k]$ and ${s}[j][k]$, and the operation performed. The cells are computed for increasing values of $j$ and, for each fixed value of $j$, for increasing values of $k$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\({v}[i][k]\)</span></th>
-        <th><span class="arithmatex">\({s}[i][k]\)</span></th>
+        <th><span class="arithmatex">\({v}[j][k]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -1881,13 +1881,13 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrr}
-        \hline {{v}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 \\
-        {i=2} & 0 & 0 & 5 & 5 & 6 & 6 & 11 & 11 & 11 & 11 \\
-        {i=3} & 0 & 0 & 5 & 5 & 6 & 9 & 11 & 14 & 14 & 15 \\
-        {i=4} & 0 & 0 & 5 & 5 & 6 & 9 & 11 & 14 & 15 & 15 \\
-        {i=5} & 0 & 0 & 5 & 5 & 6 & 9 & 11 & 14 & 15 & 18 \\
+        \hline {{v}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 \\
+        {j=2} & 0 & 0 & 5 & 5 & 6 & 6 & 11 & 11 & 11 & 11 \\
+        {j=3} & 0 & 0 & 5 & 5 & 6 & 9 & 11 & 14 & 14 & 15 \\
+        {j=4} & 0 & 0 & 5 & 5 & 6 & 9 & 11 & 14 & 15 & 15 \\
+        {j=5} & 0 & 0 & 5 & 5 & 6 & 9 & 11 & 14 & 15 & 18 \\
         \hline
         \end{array}
         $$
@@ -1896,13 +1896,13 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrr}
-        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 1 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
-        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+        \hline {{s}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 1 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+        {j=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
         \hline
         \end{array}
         $$
@@ -1911,25 +1911,25 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrr}
-        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 1 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
-        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+        \hline {{s}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 1 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+        {j=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
         \hline
         \end{array}
         $$
 
-        We can reconstruct an optimal solution by starting from $i=5$ and $k=9$ as follows:
+        We can reconstruct an optimal solution by starting from $j=5$ and $k=9$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\({s}[i][k]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][k]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
@@ -2025,15 +2025,15 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
 <a id="esercizio-17-5"></a>
 
-!!! esercizio "Exercise 17.5: Exercise 5: 0/1 Knapsack Problem"
+!!! esercizio "Exercise 17.5: The bottom-up DP algorithm for the KP (5 items, $c=10$)"
 
     Consider the following KP instance, where the knapsack has capacity $c=10$, and the profits and weights associated with the items are:
 
     $$
     \begin{array}{l|rrrrr}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
-    \hline {p_i} & {2} & {7} & {9} & {12} & {14} \\
-    {w_i} & {1} & {4} & {5} & {7} & {8} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\
+    \hline {p_j} & {2} & {7} & {9} & {12} & {14} \\
+    {w_j} & {1} & {4} & {5} & {7} & {8} \\
     \hline
     \end{array}
     $$
@@ -2048,14 +2048,14 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
     1. Step-by-step execution of the bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells ${v}[i][k]$ and ${s}[i][k]$, and the operation performed. The cells are computed for increasing values of $i$ and, for each fixed value of $i$, for increasing values of $k$.
+        For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cells ${v}[j][k]$ and ${s}[j][k]$, and the operation performed. The cells are computed for increasing values of $j$ and, for each fixed value of $j$, for increasing values of $k$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\({v}[i][k]\)</span></th>
-        <th><span class="arithmatex">\({s}[i][k]\)</span></th>
+        <th><span class="arithmatex">\({v}[j][k]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -2526,13 +2526,13 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrrr}
-        \hline {{v}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 \\
-        {i=2} & 0 & 2 & 2 & 2 & 7 & 9 & 9 & 9 & 9 & 9 & 9 \\
-        {i=3} & 0 & 2 & 2 & 2 & 7 & 9 & 11 & 11 & 11 & 16 & 18 \\
-        {i=4} & 0 & 2 & 2 & 2 & 7 & 9 & 11 & 12 & 14 & 16 & 18 \\
-        {i=5} & 0 & 2 & 2 & 2 & 7 & 9 & 11 & 12 & 14 & 16 & 18 \\
+        \hline {{v}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 \\
+        {j=2} & 0 & 2 & 2 & 2 & 7 & 9 & 9 & 9 & 9 & 9 & 9 \\
+        {j=3} & 0 & 2 & 2 & 2 & 7 & 9 & 11 & 11 & 11 & 16 & 18 \\
+        {j=4} & 0 & 2 & 2 & 2 & 7 & 9 & 11 & 12 & 14 & 16 & 18 \\
+        {j=5} & 0 & 2 & 2 & 2 & 7 & 9 & 11 & 12 & 14 & 16 & 18 \\
         \hline
         \end{array}
         $$
@@ -2541,13 +2541,13 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrrr}
-        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
-        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {{s}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+        {j=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
@@ -2556,25 +2556,25 @@ title: "Exercises · DP for the 0/1 knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrrr}
-        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
-        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {{s}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+        {j=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
 
-        We can reconstruct an optimal solution by starting from $i=5$ and $k=10$ as follows:
+        We can reconstruct an optimal solution by starting from $j=5$ and $k=10$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\({s}[i][k]\)</span></th>
+        <th><span class="arithmatex">\({s}[j][k]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>

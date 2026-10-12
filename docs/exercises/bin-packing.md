@@ -173,7 +173,7 @@ title: "Exercises · Packing problems"
 
 <a id="esercizio-3-4"></a>
 
-!!! esercizio "Exercise 3.4: Copies of the items (cutting stock)"
+!!! esercizio "Exercise 3.4: Copies of the items (CSP)"
 
     We consider the cutting stock instance with capacity $c=10$ and $n=3$ items, with the following weights and required copies:
 

@@ -12,7 +12,7 @@ title: "DP for the multidimensional knapsack problem"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter [«DP for the 0/1 knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/): the recurrence $v(j,k)$ over items and capacities, the matrix $s$ of the decisions and the reconstruction of a solution.
+    - From this module, the chapter [«DP for the 0/1 knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/): the recurrence $v(j,k)$ of the 0/1 knapsack problem (KP) over items and capacities, the matrix $s$ of the decisions and the reconstruction of a solution.
 
     - From this module, the chapter [«Knapsack problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-multidimensional-knapsack-problem/): the multidimensional knapsack problem, with one capacity $c_d$ and one weight $w_{dj}$ for every dimension $d$.
 
@@ -56,11 +56,11 @@ The problem of this chapter is the [multidimensional knapsack problem (MDKP)](ht
     \end{array}
     $$
 
-    We refer to this MDKP instance as <span style="color:#1971c2">Example 1</span>.
+    We refer to this MDKP instance as <span style="color:#1971c2">[Example 22.1](#box-1-texmdkpex1)</span>.
 
 - <u>Step 1</u>: computation of the optimal value
 
-    !!! chiave ""
+    !!! formula ""
 
         For any $j \in \{0,1,\dots,n\}$ and any vector $\vet{k}=(k_1,k_2,\dots,k_m)$ with $k_d \in \{0,1,\dots,c_d\}$ for every $d\in\mathscr{D}$, let $v(j,\vet{k})=v(j,k_1,\dots,k_m)$ be the optimal value of the MDKP subinstance given by:
 
@@ -119,9 +119,9 @@ The problem of this chapter is the [multidimensional knapsack problem (MDKP)](ht
 
     !!! esempio "Example 22.2: Execution of the DP algorithm"
 
-        We consider the MDKP instance of <span style="color:#1971c2">Example 1</span>, with capacities $c_1=5$ and $c_2=4$. The row $j=0$ is $v[0][\vet{k}]=0$ for every $\vet{k}$. For each item $j$ we compute the matrix $v[j][k_1][k_2]$, with one row for each $k_1\in\{0,1,\dots,5\}$ and one column for each $k_2\in\{0,1,\dots,4\}$.
+        We consider the MDKP instance of <span style="color:#1971c2">[Example 22.1](#box-1-texmdkpex1)</span>, with capacities $c_1=5$ and $c_2=4$. The row $j=0$ is $v[0][\vet{k}]=0$ for every $\vet{k}$. For each item $j$ we compute the matrix $v[j][k_1][k_2]$, with one row for each $k_1\in\{0,1,\dots,5\}$ and one column for each $k_2\in\{0,1,\dots,4\}$.
 
-        These are the computations of the cell $\vet{k}=\vet{c}=(5,4)$ for each item, and of the cells used later by the reconstruction:
+        These are the computations of the cell $\vet{k}=\vet{c}=(5,4)$ for each item, and of the cells used by the reconstruction:
 
         - $v[1][(5,4)]=\max\{v[0][(5,4)],\,p_1+v[0][(4,2)]\}=\max\{0,\,9+0\}=9$
 
@@ -197,7 +197,7 @@ The problem of this chapter is the [multidimensional knapsack problem (MDKP)](ht
 
     !!! esempio "Example 22.3: The tables $s$"
 
-        For the instance of <span style="color:#1971c2">Example 1</span>, these are the matrices $s[j][k_1][k_2]$ computed by the DP algorithm; a $1$ means that item $j$ is selected in the optimal solution found for $(j,k_1,k_2)$.
+        For the instance of <span style="color:#1971c2">[Example 22.1](#box-1-texmdkpex1)</span>, these are the matrices $s[j][k_1][k_2]$ computed by the DP algorithm; a $1$ means that item $j$ is selected in the optimal solution found for $(j,k_1,k_2)$.
 
         Item $j=1$, with $p_1=9$ and $\vet{w}_1=(1,2)$:
 
@@ -273,7 +273,7 @@ The problem of this chapter is the [multidimensional knapsack problem (MDKP)](ht
 
     !!! esempio "Example 22.4: Computing an optimal solution"
 
-        After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we start from $j=4$ and $\vet{k}=(5,4)$:
+        After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 22.1](#box-1-texmdkpex1)</span>, we start from $j=4$ and $\vet{k}=(5,4)$:
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -346,7 +346,7 @@ The problem of this chapter is the [multidimensional knapsack problem (MDKP)](ht
 
         !!! chiave ""
 
-            The vector $x=(1,1,0,0)$ is an optimal solution of the MDKP instance of <span style="color:#1971c2">Example 1</span>. Its weights are $1+4=5\le c_1$ and $2+1=3\le c_2$, and its optimal value is $v(4,5,4)=17$.
+            The vector $x=(1,1,0,0)$ is an optimal solution of the MDKP instance of <span style="color:#1971c2">[Example 22.1](#box-1-texmdkpex1)</span>. Its weights are $1+4=5\le c_1$ and $2+1=3\le c_2$, and its optimal value is $v(4,5,4)=17$.
 
         With the first dimension alone, the KP with capacity $c_1=5$ has optimal value $18$, attained by the items $\{1,4\}$; their total weight in the second dimension is $2+4=6>c_2$. Both dimensions must be checked at the same time, as the formula $\eqref{eq:mdkp}$ does.
 
@@ -443,7 +443,7 @@ The problem of this chapter is the [multidimensional knapsack problem (MDKP)](ht
 
     - The tables $s$ give an optimal solution, read backwards from $(n,\vet{c})$.
 
-    <strong>Dashboard of the MDKP example.</strong> Example 1 ($\vet{c}=(5,4)$, four items):
+    <strong>Dashboard of the MDKP example.</strong> [Example 22.1](#box-1-texmdkpex1) ($\vet{c}=(5,4)$, four items):
 
     <div class="tabella" markdown="0"><table>
     <tr>

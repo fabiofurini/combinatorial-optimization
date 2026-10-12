@@ -56,12 +56,16 @@ title: "Multiple knapsack problem (MKP)"
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-multiple-knapsack-problem/#box-12-defMKP">Ch. 2 «Knapsack problems»</a></td>
 </tr>
 <tr>
+<td><strong>Formulations</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/an-ilp-model-for-the-multiple-knapsack-problem/#sez-sec-kpf-MKP">Ch. 9 «Formulations of knapsack problems»</a></td>
+</tr>
+<tr>
 <td><strong>Dynamic programming</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-multiple-knapsack/">Ch. 24 «DP for the multiple knapsack problem»</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/#164-the-dp-algorithms-of-this-module">Ch. 16 «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-multiple-knapsack/">Ch. 24 «DP for the multiple knapsack problem»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-4">Exercise 2.4</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-multiple-knapsack/">Ch. 24 (5 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-4">Exercise 2.4</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/#esercizio-9-10">Exercise 9.10</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-multiple-knapsack/">Ch. 24 (5 exercises)</a></td>
 </tr>
 <tr>
 <td><strong>Reference instances</strong></td>

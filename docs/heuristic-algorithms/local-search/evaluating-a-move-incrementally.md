@@ -51,18 +51,18 @@ title: "Evaluating a move incrementally"
 <th>time</th>
 </tr>
 <tr>
-<td>KP, flip of <span class="arithmatex">\(i\)</span></td>
-<td>profit <span class="arithmatex">\(\pm p_i\)</span>, weight <span class="arithmatex">\(\pm w_i\)</span></td>
+<td>KP, flip of <span class="arithmatex">\(j\)</span></td>
+<td>profit <span class="arithmatex">\(\pm p_j\)</span>, weight <span class="arithmatex">\(\pm w_j\)</span></td>
 <td><span class="arithmatex">\(O(1)\)</span></td>
 </tr>
 <tr>
-<td>KP, swap <span class="arithmatex">\(i\)</span> out, <span class="arithmatex">\(k\)</span> in</td>
-<td>profit <span class="arithmatex">\(+p_k-p_i\)</span>, weight <span class="arithmatex">\(+w_k-w_i\)</span></td>
+<td>KP, swap <span class="arithmatex">\(j\)</span> out, <span class="arithmatex">\(k\)</span> in</td>
+<td>profit <span class="arithmatex">\(+p_k-p_j\)</span>, weight <span class="arithmatex">\(+w_k-w_j\)</span></td>
 <td><span class="arithmatex">\(O(1)\)</span></td>
 </tr>
 <tr>
-<td>BPP, move <span class="arithmatex">\(i\)</span> from <span class="arithmatex">\(a\)</span> to <span class="arithmatex">\(b\)</span></td>
-<td><span class="arithmatex">\(L_a-w_i\)</span>, <span class="arithmatex">\(L_b+w_i\)</span>; bin <span class="arithmatex">\(a\)</span> is emptied iff <span class="arithmatex">\(L_a=w_i\)</span></td>
+<td>BPP, move <span class="arithmatex">\(j\)</span> from <span class="arithmatex">\(a\)</span> to <span class="arithmatex">\(b\)</span></td>
+<td><span class="arithmatex">\(L_a-w_j\)</span>, <span class="arithmatex">\(L_b+w_j\)</span>; bin <span class="arithmatex">\(a\)</span> is emptied iff <span class="arithmatex">\(L_a=w_j\)</span></td>
 <td><span class="arithmatex">\(O(1)\)</span></td>
 </tr>
 <tr>

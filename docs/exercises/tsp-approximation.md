@@ -6,7 +6,7 @@ title: "Exercises · The TSP: the general case and the metric case"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 39** · each solution opens with a click · [:material-book-open-variant: Chapter 39: General and metric TSP](../approximation-algorithms/tsp-approximation.md) · [:material-file-pdf-box: Exercises, volume 5 (PDF)](../pdf/exercises-5-approximation-algorithms.pdf)
+**Exercises · Chapter 39** · each solution opens with a click · [:material-book-open-variant: Chapter 39: Travelling salesman (TSP)](../approximation-algorithms/tsp-approximation.md) · [:material-file-pdf-box: Exercises, volume 5 (PDF)](../pdf/exercises-5-approximation-algorithms.pdf)
 
 </div>
 

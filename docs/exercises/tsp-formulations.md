@@ -12,7 +12,7 @@ title: "Exercises · Formulations of routing problems"
 
 !!! chiave ""
 
-    <strong>Formulations used in these exercises.</strong> The two models of the chapter [Formulations of routing problems](https://fabiofurini.github.io/combinatorial-optimization/formulations/tsp-formulations/), on the arcs $A=\{(i,j): i,j\in\mathscr{V},~i\neq j\}$. The model $\mathrm{ILP}^{\mathrm{MTZ}}_{\mathrm{TSP}}$:
+    <strong>Formulations used in these exercises.</strong> The models of [Chapter 13 «Formulations of routing problems»](https://fabiofurini.github.io/combinatorial-optimization/formulations/tsp-formulations/), on the arcs $A=\{(i,j): i,j\in\mathscr{V},~i\neq j\}$. The model $\mathrm{ILP}^{\mathrm{MTZ}}_{\mathrm{TSP}}$:
 
     \begin{align*}
     && \min ~~ \sum_{(i,j)\in A} d_{ij}\,x_{ij} \tag{T0}\\
@@ -33,7 +33,7 @@ title: "Exercises · Formulations of routing problems"
     && x_{ij} &\in\{0,1\}, & \forall (i,j)\in A. \tag{T3}
     \end{align*}
 
-    The relaxations $\mathrm{LP}^{\mathrm{MTZ}}_{\mathrm{TSP}}$ and $\mathrm{LP}^{\mathrm{DFJ}}_{\mathrm{TSP}}$ relax (T3) into $x_{ij}\ge 0$ (the bounds $x_{ij}\le 1$ are implied by (T1)).
+    The assignment relaxation $\mathrm{LP}\text{-}0_{\mathrm{TSP}}$ keeps only (T0), (T1), (T2) and $x_{ij}\ge 0$. The relaxations $\mathrm{LP}^{\mathrm{MTZ}}_{\mathrm{TSP}}$ and $\mathrm{LP}^{\mathrm{DFJ}}_{\mathrm{TSP}}$ relax (T3) into $x_{ij}\ge 0$ (the bounds $x_{ij}\le 1$ are implied by (T1)). The model $\mathrm{ILP}_{\mathrm{ATSP}}$ of the asymmetric TSP is the model $\mathrm{ILP}^{\mathrm{DFJ}}_{\mathrm{TSP}}$ with distances $d_{ij}$ that may differ from $d_{ji}$.
 
 <a id="esercizio-13-1"></a>
 
@@ -43,14 +43,14 @@ title: "Exercises · Formulations of routing problems"
 
     $$
     \begin{array}{c|cccc}
-    \hline
+    \toprule
     d_{ij} & 1 & 2 & 3 & 4\\
-    \hline
+    \midrule
     1 & - & 3 & 5 & 4\\
     2 & 3 & - & 4 & 6\\
     3 & 5 & 4 & - & 2\\
     4 & 4 & 6 & 2 & -\\
-    \hline
+    \bottomrule
     \end{array}
     $$
 
@@ -151,14 +151,14 @@ title: "Exercises · Formulations of routing problems"
 
     $$
     \begin{array}{c|cccc}
-    \hline
+    \toprule
     d_{ij} & 1 & 2 & 3 & 4\\
-    \hline
+    \midrule
     1 & - & 3 & 5 & 4\\
     2 & 3 & - & 4 & 6\\
     3 & 5 & 4 & - & 2\\
     4 & 4 & 6 & 2 & -\\
-    \hline
+    \bottomrule
     \end{array}
     $$
 
@@ -170,7 +170,7 @@ title: "Exercises · Formulations of routing problems"
 
     3. Do the same for the arcs $(1,3)$, $(3,1)$, $(2,4)$, $(4,2)$, which form two subtours both of length $22$.
 
-    4. Solve with Gurobi the assignment relaxation (degree constraints only), the relaxation $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$ and the model $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$, and compare the values.
+    4. Solve with Gurobi the assignment relaxation $\mathrm{LP}\text{-}0_{\mathrm{TSP}}$ (degree constraints only), the relaxation $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$ and the model $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$, and compare the values.
 
 ??? soluzione "Solution"
 
@@ -187,7 +187,7 @@ title: "Exercises · Formulations of routing problems"
 
     3. The arcs form $1\to 3\to 1$ and $2\to 4\to 2$. The subtour without city $1$ is on $\{2,4\}$: $x_{24}+x_{42}=2>1$. One set $S$ is enough for every solution with subtours, because one of the subtours never contains city $1$.
 
-    4. Gurobi gives the assignment relaxation $10$, $z(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{DFJ}})=13$ and $z(\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}})=13$, attained by the tour $(1,2,3,4)$. The subtour elimination constraints raise the bound from $10$ to $13$, which is the optimal value.
+    4. Gurobi gives $z(\mathrm{LP}\text{-}0_{\mathrm{TSP}})=10$ for the assignment relaxation, $z(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{DFJ}})=13$ and $z(\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}})=13$, attained by the tour $(1,2,3,4)$. The subtour elimination constraints raise the bound from $10$ to $13$, which is the optimal value.
 
 <a id="esercizio-13-3"></a>
 
@@ -197,15 +197,15 @@ title: "Exercises · Formulations of routing problems"
 
     $$
     \begin{array}{c|ccccc}
-    \hline
+    \toprule
     d_{ij} & 1 & 2 & 3 & 4 & 5\\
-    \hline
+    \midrule
     1 & - & 2 & 3 & 3 & 7\\
     2 & 2 & - & 4 & 12 & 6\\
     3 & 3 & 4 & - & 6 & 11\\
     4 & 3 & 12 & 6 & - & 5\\
     5 & 7 & 6 & 11 & 5 & -\\
-    \hline
+    \bottomrule
     \end{array}
     $$
 
@@ -255,27 +255,27 @@ title: "Exercises · Formulations of routing problems"
 
     $$
     \begin{array}{c|ccccc}
-    \hline
+    \toprule
     d_{ij} & 1 & 2 & 3 & 4 & 5\\
-    \hline
+    \midrule
     1 & - & 5 & 12 & 2 & 9\\
     2 & 5 & - & 2 & 8 & 12\\
     3 & 12 & 2 & - & 9 & 9\\
     4 & 2 & 8 & 9 & - & 5\\
     5 & 9 & 12 & 9 & 5 & -\\
-    \hline
+    \bottomrule
     \end{array}
     $$
 
     **Questions**
 
-    1. Count the variables and the constraints (besides the domains) of the three relaxations: degree constraints only, $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ and $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$.
+    1. Count the variables and the constraints (besides the domains) of the three relaxations: $\mathrm{LP}\text{-}0_{\mathrm{TSP}}$ (degree constraints only), $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ and $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$.
 
     2. Solve the three relaxations with Gurobi and report their optimal solutions.
 
     3. Find the optimal tour by enumerating the $12$ distinct tours, and compute the gap $\frac{z-\LB}{\LB}$ of each bound.
 
-    4. Show that the optimal solution of $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ found by Gurobi lies in the weak region of the chapter, and that it violates subtour elimination constraints.
+    4. Show that the optimal solution of $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ found by Gurobi lies in the weak region of Proposition 13.3 of the chapter, and that it violates subtour elimination constraints.
 
 ??? soluzione "Solution"
 
@@ -288,7 +288,7 @@ title: "Exercises · Formulations of routing problems"
         <th>constraints</th>
         </tr>
         <tr>
-        <td>degree constraints only</td>
+        <td><span class="arithmatex">\(\mathrm{LP}\text{-}0_{\mathrm{TSP}}\)</span> (degree constraints only)</td>
         <td><span class="arithmatex">\(20\)</span></td>
         <td><span class="arithmatex">\(10\)</span></td>
         </tr>
@@ -304,7 +304,7 @@ title: "Exercises · Formulations of routing problems"
         </tr>
         </table></div>
 
-    2. - Degree constraints only: value $20$, with $x_{15}=x_{23}=x_{32}=x_{41}=x_{54}=1$: the subtours $1\to 5\to 4\to 1$, $2\to 3\to 2$.
+    2. - $\mathrm{LP}\text{-}0_{\mathrm{TSP}}$: value $20$, with $x_{15}=x_{23}=x_{32}=x_{41}=x_{54}=1$: the subtours $1\to 5\to 4\to 1$, $2\to 3\to 2$.
 
         - $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$: value $\frac{43}{2}$, with $x_{14}=x_{23}=x_{32}=x_{45}=\frac{3}{4},~~x_{51}=\frac{1}{2},~~x_{12}=x_{21}=x_{35}=x_{41}=x_{53}=x_{54}=\frac{1}{4}$ and $u_2=u_3=u_4=u_5=1$.
 
@@ -319,7 +319,7 @@ title: "Exercises · Formulations of routing problems"
         <th>gap from <span class="arithmatex">\(23\)</span></th>
         </tr>
         <tr>
-        <td>degree constraints only</td>
+        <td><span class="arithmatex">\(\mathrm{LP}\text{-}0_{\mathrm{TSP}}\)</span> (degree constraints only)</td>
         <td><span class="arithmatex">\(20\)</span></td>
         <td><span class="arithmatex">\(15.0\%\)</span></td>
         </tr>
@@ -337,7 +337,7 @@ title: "Exercises · Formulations of routing problems"
 
         The DFJ relaxation closes the gap on this instance.
 
-    4. Every arc $(i,j)$ with $i,j\neq 1$ has $x_{ij}\le\frac{3}{4}=\frac{n-2}{n-1}$, and all the positions are $1$: this is the weak region of the chapter, where every constraint (MTZ) reads $4x_{ij}\le 3$. For $S=\{2,3\}$ the arcs inside $S$ have total value $\frac{3}{2}>1$: the subtour elimination constraint of $S$ is violated, and the DFJ relaxation cuts this point off.
+    4. Every arc $(i,j)$ with $i,j\neq 1$ has $x_{ij}\le\frac{3}{4}=\frac{n-2}{n-1}$, and all the positions are $1$: this is the weak region of Proposition 13.3, where every constraint (MTZ) reads $4x_{ij}\le 3$. For $S=\{2,3\}$ the arcs inside $S$ have total value $\frac{3}{2}>1$: the subtour elimination constraint of $S$ is violated, and the DFJ relaxation cuts this point off.
 
 <a id="esercizio-13-5"></a>
 
@@ -347,15 +347,15 @@ title: "Exercises · Formulations of routing problems"
 
     $$
     \begin{array}{c|ccccc}
-    \hline
+    \toprule
     d_{ij} & 1 & 2 & 3 & 4 & 5\\
-    \hline
+    \midrule
     1 & - & 4 & 10 & 2 & 8\\
     2 & 4 & - & 11 & 2 & 5\\
     3 & 10 & 11 & - & 4 & 2\\
     4 & 2 & 2 & 4 & - & 2\\
     5 & 8 & 5 & 2 & 2 & -\\
-    \hline
+    \bottomrule
     \end{array}
     $$
 
@@ -363,7 +363,7 @@ title: "Exercises · Formulations of routing problems"
 
     **Questions**
 
-    1. Solve the relaxation with the degree constraints only (Gurobi), and describe its optimal solution.
+    1. Solve the assignment relaxation $\mathrm{LP}\text{-}0_{\mathrm{TSP}}$ (degree constraints only) with Gurobi, and describe its optimal solution.
 
     2. Add the subtour elimination constraint of the subtour that does not contain city $1$, solve again and repeat, until the solution is a tour. Give the value of each relaxation.
 
@@ -396,7 +396,7 @@ title: "Exercises · Formulations of routing problems"
         <th>gap from <span class="arithmatex">\(17\)</span></th>
         </tr>
         <tr>
-        <td>degree constraints only</td>
+        <td><span class="arithmatex">\(\mathrm{LP}\text{-}0_{\mathrm{TSP}}\)</span> (degree constraints only)</td>
         <td><span class="arithmatex">\(12\)</span></td>
         <td><span class="arithmatex">\(41.7\%\)</span></td>
         </tr>
@@ -427,14 +427,14 @@ title: "Exercises · Formulations of routing problems"
 
     $$
     \begin{array}{c|cccc}
-    \hline
+    \toprule
     d_{ij} & 1 & 2 & 3 & 4\\
-    \hline
+    \midrule
     1 & - & 8 & 7 & 5\\
     2 & 8 & - & 3 & 6\\
     3 & 9 & 8 & - & 8\\
     4 & 2 & 9 & 9 & -\\
-    \hline
+    \bottomrule
     \end{array}
     $$
 

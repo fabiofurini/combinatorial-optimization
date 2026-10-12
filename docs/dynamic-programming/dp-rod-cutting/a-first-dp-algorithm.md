@@ -6,13 +6,13 @@ title: "A first DP algorithm"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 28** · [:material-book-open-variant: Chapter 28: Rod cutting](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting](../../exercises/dp-rod-cutting.md)
+**Part 3 · Dynamic programming · Chapter 28** · [:material-book-open-variant: Chapter 28: Rod cutting (RCP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting (RCP)](../../exercises/dp-rod-cutting.md)
 
 </div>
 
 - <u>Step 1</u>: computation of the optimal value
 
-    !!! chiave ""
+    !!! formula ""
 
         For any $\ell \in \{0,1,\dots,n\}$, let $v(\ell)$ be the optimal value of the RCP subinstance given by:
 
@@ -52,7 +52,7 @@ title: "A first DP algorithm"
 
         !!! esempio "Example 28.3: Recursion tree"
 
-            We consider the RCP instance of <span style="color:#1971c2">Example 1</span>. This is the recursion tree of the top-down approach to compute $v(4)$:
+            We consider the RCP instance of <span style="color:#1971c2">[Example 28.1](index.md#box-1-texexpbox1)</span>. This is the recursion tree of the top-down approach to compute $v(4)$:
 
             ![Figure 3](../../img/dp-rod-cutting/fig03.svg){ .fig loading=lazy  }
 
@@ -64,7 +64,7 @@ title: "A first DP algorithm"
 
         !!! esempio "Example 28.4: Computing the values of the $v$ function"
 
-            We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
+            We consider the RCP instance of  <span style="color:#1971c2">[Example 28.1](index.md#box-1-texexpbox1)</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
             $$
             \begin{array}{l|rrrrrrr}
@@ -126,7 +126,7 @@ title: "A first DP algorithm"
 
         !!! esempio "Example 28.5: Execution of the DP algorithm"
 
-            We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
+            We consider the RCP instance of  <span style="color:#1971c2">[Example 28.1](index.md#box-1-texexpbox1)</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
             $$
             \begin{array}{l|rrrrrrr}
@@ -313,7 +313,7 @@ title: "A first DP algorithm"
 
         !!! esempio "Example 28.6: Computation of the additional information"
 
-            We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
+            We consider the RCP instance of  <span style="color:#1971c2">[Example 28.1](index.md#box-1-texexpbox1)</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
             $$
             \begin{array}{l|rrrrrrr}
@@ -518,7 +518,7 @@ title: "A first DP algorithm"
 
         !!! esempio "Example 28.7: Computing an optimal solution"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following vector ${s}$:
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 28.1](index.md#box-1-texexpbox1)</span>, we have the following vector ${s}$:
 
             $$
             \begin{array}{l|rrrr}
@@ -585,7 +585,7 @@ title: "A first DP algorithm"
 
         !!! esempio "Example 28.8: Computing optimal solutions for rod lengths 3 and 2"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following vector ${s}$:
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 28.1](index.md#box-1-texexpbox1)</span>, we have the following vector ${s}$:
 
             $$
             \begin{array}{l|rrrr}

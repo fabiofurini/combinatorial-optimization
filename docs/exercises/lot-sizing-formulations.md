@@ -12,7 +12,7 @@ title: "Exercises · Formulations of lot sizing problems"
 
 !!! chiave ""
 
-    <strong>Formulations used in these exercises.</strong> The two formulations of the chapter [Formulations of lot sizing problems](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/), on the periods $T=\{1,\dots,m\}$, with $D_{t,k}=\sum_{s=t}^{k}d_s$. The big-M formulation $\mathrm{ILP}_{\mathrm{CLSP}}$:
+    <strong>Formulations used in these exercises.</strong> The models of [Chapter 15 «Formulations of lot sizing problems»](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/), on the periods $T=\{1,\dots,m\}$, with $D_{t,k}=\sum_{s=t}^{k}d_s$. The big-M formulation $\mathrm{ILP}_{\mathrm{CLSP}}$:
 
     \begin{align*}
     && \min ~~ \sum_{t\in T}\left(sc_t\,y_t+vc_t\,x_t+hc_t\,s_t\right) \tag{L0}\\
@@ -43,13 +43,48 @@ title: "Exercises · Formulations of lot sizing problems"
     cv_{tk}=vc_t\,D_{t,k}+\sum_{s=t+1}^{k}\sum_{u=t}^{s-1}hc_u\,d_s . \tag{S7}
     \end{equation*}
 
-    The LP relaxations relax the domains into $x_t,s_t\ge 0$ and $0\le y_t\le 1$.
+    The LP relaxations relax the domains into $x_t,s_t\ge 0$ and $0\le y_t\le 1$: they are the models $\mathrm{LP}^{\mathrm{dem}}_{\mathrm{CLSP}}$, $\mathrm{LP}^{\mathrm{cap}}_{\mathrm{CLSP}}$ and $\mathrm{LP}^{\mathrm{strong}}_{\mathrm{CLSP}}$ of $\mathrm{ILP}_{\mathrm{CLSP}}$ with the three big-M values, and the model $\mathrm{LP}^{\mathrm{SP}}_{\mathrm{CLSP}}$ of $\mathrm{MIP}^{\mathrm{SP}}_{\mathrm{CLSP}}$.
+
+    The model $\mathrm{ILP}_{\mathrm{ULS}}$ of the uncapacitated lot sizing problem (ULS) is $\mathrm{ILP}_{\mathrm{CLSP}}$ without the capacity constraints (L3) and with $M_t=D_{t,m}$ in (L2).
+
+    The model $\mathrm{ILP}^{P}_{\mathrm{CLSP}}$ of the lot sizing problem with several products $p\in P$ and setup times (MLS), with $sd_{ptk}=\sum_{u=t}^{k}d_{pu}$:
+
+    \begin{align*}
+    && \min ~~ \sum_{p\in P}\sum_{t\in T}\left(sc_{pt}\,y_{pt}+vc_{pt}\,x_{pt}+hc_{pt}\,s_{pt}\right) \tag{P0}\\
+    && \text{subject to} \quad s_{p,t-1}+x_{pt} &= d_{pt}+s_{pt}, & \forall p\in P,~\forall t\in T, \tag{P1}\\
+    && \sum_{p\in P}\left(st_{pt}\,y_{pt}+vt_{pt}\,x_{pt}\right) &\le cap_t, & \forall t\in T, \tag{P2}\\
+    && x_{pt} &\le M_{pt}\,y_{pt}, & \forall p\in P,~\forall t\in T, \tag{P3}\\
+    && s_{p0}=s_{pm} &= 0, & \forall p\in P, \tag{P4}\\
+    && x_{pt} &\in\Z_{\ge 0}, & \forall p\in P,~\forall t\in T, \tag{P5}\\
+    && s_{pt} &\in\Z_{\ge 0}, & \forall p\in P,~\forall t\in T, \tag{P6}\\
+    && y_{pt} &\in\{0,1\}, & \forall p\in P,~\forall t\in T, \tag{P7}
+    \end{align*}
+
+    with the strong big-M values $M_{pt}=\min\{\lfloor (cap_t-st_{pt})/vt_{pt}\rfloor,~sd_{ptm}\}$.
+
+    The model $\mathrm{ILP}^{\mathrm{OT}}_{\mathrm{CLSP}}$ with overtime (LS-OT) adds $\sum_{t\in T}(cw_t\,\mu_t+co_t\,\nu_t)$ to (P0), replaces $cap_t$ with $\mu_t+\nu_t$ in (P2), uses $cap^{N}_t+cap^{O}_t$ in place of $cap_t$ in the big-M values, and adds:
+
+    \begin{align*}
+    && \mu_t &\le cap^{N}_t, & \forall t\in T, \tag{O1}\\
+    && \nu_t &\le cap^{O}_t, & \forall t\in T, \tag{O2}\\
+    && \mu_t &\in\Z_{\ge 0}, & \forall t\in T, \tag{O3}\\
+    && \nu_t &\in\Z_{\ge 0}, & \forall t\in T. \tag{O4}
+    \end{align*}
+
+    The model $\mathrm{ILP}^{\mathrm{UD}}_{\mathrm{CLSP}}$ with unsatisfied demand (LS-UD) adds $\sum_{p\in P}\sum_{t\in T}cu_{pt}\,\varepsilon_{pt}$ to (P0), replaces $d_{pt}$ with $d_{pt}-\varepsilon_{pt}$ in (P1), and adds:
+
+    \begin{align*}
+    && \varepsilon_{pt} &\le d_{pt}, & \forall p\in P,~\forall t\in T, \tag{U1}\\
+    && \varepsilon_{pt} &\in\Z_{\ge 0}, & \forall p\in P,~\forall t\in T. \tag{U2}
+    \end{align*}
+
+    With one product the index $p$ is dropped.
 
 <a id="esercizio-15-1"></a>
 
 !!! esercizio "Exercise 15.1: The big-M formulation of lot sizing (1)"
 
-    We consider a capacitated lot-sizing instance with $m=4$ periods, $s_0=s_4=0$ and the following data:
+    We consider a capacitated lot sizing instance with $m=4$ periods, $s_0=s_4=0$ and the following data:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -168,7 +203,7 @@ title: "Exercises · Formulations of lot sizing problems"
         \end{array}
         $$
 
-    3. There are $m=4$ variables $x_t$, $5$ variables $s_0,\dots,s_4$ and $4$ variables $y_t$, so $13$ variables. There are $4$ balance constraints, $4$ big-M constraints, $4$ capacity constraints and the $2$ constraints on the inventories at the ends, so $14$ linear constraints.
+    3. There are $m=4$ variables $x_t$, $4$ variables $s_1,\dots,s_4$ and $4$ variables $y_t$, so $12$ variables ($s_0=0$ is a constant). There are $4$ balance constraints, $4$ big-M constraints, $4$ capacity constraints and the constraint $s_4=0$, so $13$ linear constraints.
 
     4. Gurobi gives $z(\mathrm{ILP}_{\mathrm{CLSP}})=130$, with the plan $\tilde{\vet x}=(2,4,0,3)$, the inventories $(s_1,\dots,s_4)=(1,1,0,0)$ and the setups $\tilde{\vet y}=(1,1,0,1)$. The cost is $3\cdot 40$ for the setups plus $5\cdot(1+1)=10$ for the holding, that is $130$. By enumeration of the plans, the optimal plan is unique.
 
@@ -176,7 +211,7 @@ title: "Exercises · Formulations of lot sizing problems"
 
 !!! esercizio "Exercise 15.2: Big-M values and LP bounds for lot sizing (1)"
 
-    We consider a capacitated lot-sizing instance with $m=4$ periods, $s_0=s_4=0$ and the following data:
+    We consider a capacitated lot sizing instance with $m=4$ periods, $s_0=s_4=0$ and the following data:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -298,9 +333,9 @@ title: "Exercises · Formulations of lot sizing problems"
 
 <a id="esercizio-15-3"></a>
 
-!!! esercizio "Exercise 15.3: Feasible solutions of the lot-sizing formulation (1)"
+!!! esercizio "Exercise 15.3: Feasible solutions of the lot sizing formulation (1)"
 
-    We consider a capacitated lot-sizing instance with $m=4$ periods, $s_0=s_4=0$ and the following data:
+    We consider a capacitated lot sizing instance with $m=4$ periods, $s_0=s_4=0$ and the following data:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -401,7 +436,7 @@ title: "Exercises · Formulations of lot sizing problems"
 
 !!! esercizio "Exercise 15.4: The shortest-path formulation of lot sizing (1)"
 
-    We consider a capacitated lot-sizing instance with $m=4$ periods, $s_0=s_4=0$ and the following data:
+    We consider a capacitated lot sizing instance with $m=4$ periods, $s_0=s_4=0$ and the following data:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -511,9 +546,9 @@ title: "Exercises · Formulations of lot sizing problems"
 
 <a id="esercizio-15-5"></a>
 
-!!! esercizio "Exercise 15.5: Comparing the lot-sizing formulations (1)"
+!!! esercizio "Exercise 15.5: Comparing the lot sizing formulations (1)"
 
-    We consider a capacitated lot-sizing instance with $m=5$ periods, $s_0=s_5=0$ and the following data:
+    We consider a capacitated lot sizing instance with $m=5$ periods, $s_0=s_5=0$ and the following data:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -689,7 +724,7 @@ title: "Exercises · Formulations of lot sizing problems"
 
 !!! esercizio "Exercise 15.6: ILP model of the uncapacitated lot sizing problem"
 
-    We consider an uncapacitated lot-sizing instance (ULS) with $m=4$ periods, $s_0=s_4=0$ and the following data:
+    We consider an uncapacitated lot sizing instance (ULS) with $m=4$ periods, $s_0=s_4=0$ and the following data:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -981,7 +1016,7 @@ title: "Exercises · Formulations of lot sizing problems"
 
 !!! esercizio "Exercise 15.9: ILP model of lot sizing with unsatisfied demand"
 
-    We consider a capacitated lot-sizing instance with $m=4$ periods, $s_0=s_4=0$ and the following data:
+    We consider a capacitated lot sizing instance with $m=4$ periods, $s_0=s_4=0$ and the following data:
 
     <div class="tabella" markdown="0"><table>
     <tr>

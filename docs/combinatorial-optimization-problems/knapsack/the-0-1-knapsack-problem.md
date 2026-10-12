@@ -125,7 +125,7 @@ title: "0/1 knapsack"
 
 ## 2.2.2 Counting the solutions, a first solution and a simple bound
 
-- <strong>Candidate solutions.</strong> Every subset of $\mathscr{I}$ is a candidate solution, so there are $2^n$ of them (Chapter «Combinatorial optimization problems»). For <span style="color:#1971c2">[Example 2.1](#box-2-ex-kp)</span> we have $2^6 = 64$.
+- <strong>Candidate solutions.</strong> Every subset of $\mathscr{I}$ is a candidate solution, so there are $2^n$ of them ([Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/counting-the-solutions/)). For <span style="color:#1971c2">[Example 2.1](#box-2-ex-kp)</span> we have $2^6 = 64$.
 
 - <strong>Feasible solutions.</strong> The three lightest items weigh $2+3+5 = 10 > 9$, so no subset with three or more items is feasible. The feasible solutions are the empty set, the $6$ singletons and the $6$ pairs of the following table: $13$ solutions out of $64$.
 
@@ -173,7 +173,7 @@ title: "0/1 knapsack"
 
 - <strong>A first dual bound.</strong> In <span style="color:#1971c2">[Example 2.1](#box-2-ex-kp)</span> we have $\bar k = 2$, since $2+3 = 5 \le 9$ and $2+3+5 = 10 > 9$. The two largest profits are $9$ and $8$, so $\UB = 17$. The sum of all the profits, $41$, is a much weaker dual bound.
 
-- <strong>The gap.</strong> We have $15 \le z(I) \le 17$: the absolute gap is $2$ and the relative gap is $\tfrac{2}{15}$. Listing the $13$ feasible subsets shows that $\{1,4\}$ is the unique optimal solution and $z(I) = 15$; for larger instances we need stronger bounds, which come from relaxations (module <em>Integer linear programming</em>).
+- <strong>The gap.</strong> We have $15 \le z(I) \le 17$: the absolute gap is $2$ and the relative gap is $\tfrac{2}{15}$. Listing the $13$ feasible subsets shows that $\{1,4\}$ is the unique optimal solution and $z(I) = 15$; for larger instances we need stronger bounds, which come from relaxations (module <em>Integer linear programming</em>, [Chapter 2 «Primal and dual bounds»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/)).
 
 ---
 

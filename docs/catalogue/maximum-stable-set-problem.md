@@ -45,7 +45,7 @@ title: "Maximum stable set problem (MSSP)"
 </tr>
 <tr>
 <td><strong>Formulations</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/clique-formulations/">Ch. 12 «Formulations of clique problems»</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/clique-formulations/an-ilp-model-for-the-maximum-clique-problem-the-edge-formula/#sez-sec-mcpf-MSSP">Ch. 12 «Formulations of clique problems»</a></td>
 </tr>
 <tr>
 <td><strong>Limits of approximation</strong></td>

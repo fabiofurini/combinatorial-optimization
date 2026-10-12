@@ -12,17 +12,17 @@ title: "DP for the uncapacitated lot sizing problem"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapters on lot sizing: the single-item problem, its MIP model with the variables $x_t$, $s_t$, $y_t$, and the example of the MIP course.
+    - From this module, the chapters [«Lot sizing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/) and [«Formulations of lot sizing problems»](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/): the single-item problem, its reference instance, and its ILP model with the variables $x_t$, $s_t$, $y_t$.
 
-    - From this module, the chapter «Principles of dynamic programming» and the DP algorithms of the previous chapters: recurrence, base cases, lookup table and reconstruction of a solution.
+    - From this module, the chapter [«Principles of dynamic programming»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/) and the DP algorithms of the previous chapters: recurrence, base cases, lookup table and reconstruction of a solution.
 
     - From the module <em>Algorithms</em>: [pseudocode (Chapter 2)](https://fabiofurini.github.io/algorithms/basic-algorithms/02-pseudo-code/), and [the size of the input (Chapter 11)](https://fabiofurini.github.io/algorithms/analysis/11-input-size/).
 
 !!! nota "Where we were"
 
-    - <strong>As a problem and as a model</strong>: single-item lot sizing, its MIP model and its formulations (lot-sizing chapters).
+    - <strong>As a problem and as a model</strong>: single-item lot sizing and its ILP formulations (Chapter 8 [«Lot sizing problems»](../../combinatorial-optimization-problems/lot-sizing/index.md) and Chapter 15 [«Formulations of lot sizing problems»](../../formulations/lot-sizing-formulations/index.md)).
 
-    - <strong>Now, as a table</strong>: the DP algorithm of Wagner and Whitin gives the optimal value of the uncapacitated problem in $\Theta(m^2)$ steps; the capacitated problem has its DP algorithm in the chapter [«DP for the capacitated lot sizing problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-capacitated-lot-sizing/).
+    - <strong>Now, as a table</strong>: the DP algorithm of Wagner and Whitin gives the optimal value of the uncapacitated problem in $\Theta(m^2)$ steps.
 
 !!! chiave "Objectives"
 
@@ -38,7 +38,7 @@ title: "DP for the uncapacitated lot sizing problem"
 
     - count the steps of the DP algorithm, and show that they are $\Theta(m^2)$.
 
-The problem of this chapter is the [uncapacitated lot-sizing problem (ULS)](https://fabiofurini.github.io/combinatorial-optimization/catalogue/uncapacitated-lot-sizing-problem/): its definition and its assumptions are on its page.
+The problem of this chapter is the [uncapacitated lot sizing problem (ULS)](https://fabiofurini.github.io/combinatorial-optimization/catalogue/uncapacitated-lot-sizing-problem/): its definition and its assumptions are on its page.
 
 ## 25.1 Notation, model and feasible solutions
 
@@ -54,7 +54,7 @@ The problem of this chapter is the [uncapacitated lot-sizing problem (ULS)](http
 
 !!! chiave ""
 
-    We recall the $\mathrm{ILP}_{\mathrm{ULS}}$ model of the Uncapacitated Lot-Sizing Problem (ULS):
+    We recall the $\mathrm{ILP}_{\mathrm{ULS}}$ model of the uncapacitated lot sizing problem (ULS):
 
     <a id="eq-uls-model"></a>
 
@@ -99,7 +99,7 @@ The problem of this chapter is the [uncapacitated lot-sizing problem (ULS)](http
     \end{array}
     $$
 
-    We refer to this ULS instance as <span style="color:#1971c2">[Example 25.1](#box-1-texuls1)</span>. It is the uncapacitated instance used in the MIP course (setup cost $50$, holding cost $1$, no variable production cost).
+    We refer to this ULS instance as <span style="color:#1971c2">[Example 25.1](#box-1-texuls1)</span>. It is the reference instance of Chapter 8 [«Lot sizing problems»](../../combinatorial-optimization-problems/lot-sizing/index.md), counted in single items instead of units of ten and without the capacities (setup cost $50$, holding cost $1$, no variable production cost).
 
 ### 25.1.1 Encoding of feasible solutions
 
@@ -127,7 +127,7 @@ The problem of this chapter is the [uncapacitated lot-sizing problem (ULS)](http
     \qquad \forall t \in \{1,2,\dots,m\}.
     $$
 
-    Since the solution is feasible, the inventories are nonnegative and the last one is empty:
+    Since the solution is feasible, the inventories are non-negative and the last one is empty:
 
     $$
     s_t \ge 0 \quad \forall t \in \{1,2,\dots,m-1\}, \qquad s_m=0.

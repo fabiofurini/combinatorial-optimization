@@ -12,7 +12,7 @@ title: "Heuristic algorithms: definitions"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapters «Knapsack problems», «Bin packing problems», «Travelling salesman problems» and «Scheduling problems»: instances, feasible solutions and optimal values of the four problems used as examples.
+    - From this module, the chapters [«Knapsack problems»](../combinatorial-optimization-problems/knapsack/index.md), [«Packing problems»](../combinatorial-optimization-problems/bin-packing/index.md), [«Routing problems»](../combinatorial-optimization-problems/tsp/index.md) and [«Scheduling problems»](../combinatorial-optimization-problems/pcmax/index.md): instances, feasible solutions and optimal values of the four problems used as examples.
 
     - From the module <em>Integer linear programming</em>, [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): the LP relaxation as a source of dual bounds. A short recap is given here for the 0/1 knapsack problem.
 
@@ -49,7 +49,7 @@ title: "Heuristic algorithms: definitions"
 
 - The four problems used as examples — the 0/1 knapsack problem, the bin packing problem, the travelling salesman problem and the scheduling problem $P\,||\,C_{\max}$ — are all <strong>NP-hard</strong>: an exact algorithm may require a running time that grows exponentially with the size of the instance.
 
-- <strong>Approximation algorithms</strong> (chapter «Principles of approximation algorithms») are heuristic algorithms with a <em>proved</em> worst-case guarantee on the ratio between $\mathscr{A}(I)$ and $z(I)$. Most of the heuristic algorithms used in practice have no such guarantee: their quality is assessed on the instances at hand, as described in Section [29.8](#sez-sec-evaluation).
+- <strong>Approximation algorithms</strong> are heuristic algorithms with a <em>proved</em> worst-case guarantee on the ratio between $\mathscr{A}(I)$ and $z(I)$. Most of the heuristic algorithms used in practice have no such guarantee: their quality is assessed on the instances at hand, as described in Section [29.8](#sez-sec-evaluation).
 
 !!! chiave ""
 
@@ -57,7 +57,7 @@ title: "Heuristic algorithms: definitions"
 
 ## 29.2 The problems and the assumptions { #sez-sec-problems }
 
-- The heuristic algorithms of these notes are illustrated on four classical combinatorial optimization problems. Their definitions and assumptions are given in the notes on combinatorial optimization problems; we recall them briefly.
+- The heuristic algorithms of these notes are illustrated on four classical combinatorial optimization problems: the [0/1 knapsack problem (KP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-0-1-knapsack-problem/), the [bin packing problem (BPP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/the-bin-packing-problem/), the [travelling salesman problem (TSP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/the-travelling-salesman-problem/) and [$P\,||\,C_{\max}$](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines/). Their definitions and assumptions are on their pages; the table recalls the notation.
 
 <div class="tabella" markdown="0"><table>
 <tr>
@@ -68,13 +68,13 @@ title: "Heuristic algorithms: definitions"
 </tr>
 <tr>
 <td>KP</td>
-<td>items <span class="arithmatex">\(\mathscr{I}\)</span>, profits <span class="arithmatex">\(p_i\)</span>, weights <span class="arithmatex">\(w_i\)</span>, capacity <span class="arithmatex">\(c\)</span></td>
+<td>items <span class="arithmatex">\(\mathscr{I}\)</span>, profits <span class="arithmatex">\(p_j\)</span>, weights <span class="arithmatex">\(w_j\)</span>, capacity <span class="arithmatex">\(c\)</span></td>
 <td>subset of items</td>
 <td>max total profit</td>
 </tr>
 <tr>
 <td>BPP</td>
-<td>items <span class="arithmatex">\(\mathscr{I}\)</span>, weights <span class="arithmatex">\(w_i\)</span>, capacity <span class="arithmatex">\(c\)</span></td>
+<td>items <span class="arithmatex">\(\mathscr{I}\)</span>, weights <span class="arithmatex">\(w_j\)</span>, capacity <span class="arithmatex">\(c\)</span></td>
 <td>packing patterns</td>
 <td>min number of bins</td>
 </tr>
@@ -92,9 +92,9 @@ title: "Heuristic algorithms: definitions"
 </tr>
 </table></div>
 
-- We assume that every instance satisfies the assumptions of its problem: $w_i\le c$ for all items and $\sum_i w_i > c$ for the KP and the BPP; $n\ge 3$ and symmetric distances for the TSP; $n>m$ for $P\,||\,C_{\max}$.
+- We assume that every instance satisfies the assumptions of its problem: $w_j\le c$ for all items and $\sum_j w_j > c$ for the KP and the BPP; $n\ge 3$ and symmetric distances for the TSP; $n>m$ for $P\,||\,C_{\max}$.
 
-- The following four instances, which are also the instances of the MIP modelling course, are used throughout the notes on heuristic algorithms. Their optimal values are known, so the quality of every heuristic solution can be measured exactly.
+- The following four instances are used throughout the notes on heuristic algorithms. Their optimal values are known, so the quality of every heuristic solution can be measured exactly.
 
 <a id="box-2-ex-refKP"></a>
 
@@ -104,14 +104,14 @@ title: "Heuristic algorithms: definitions"
 
     $$
     \begin{array}{l|cccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\[1ex]
-    \hline {p_i} & {10} & {7} & {6} & {4} \\
-    {w_i} & {5} & {4} & {3} & {3} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\[1ex]
+    \hline {p_j} & {10} & {7} & {6} & {4} \\
+    {w_j} & {5} & {4} & {3} & {3} \\
     \hline
     \end{array}
     $$
 
-    The optimal solution is $S^*=\{1,2\}$, of weight $9$ and profit $z(I)=17$.
+    The optimal solution is $\tilde S=\{1,2\}$, of weight $9$ and profit $z(I)=17$.
 
 <a id="box-3-ex-refBPP"></a>
 
@@ -121,8 +121,8 @@ title: "Heuristic algorithms: definitions"
 
     $$
     \begin{array}{l|cccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} \\[1ex]
-    \hline {w_i} & {4} & {4} & {5} & {3} & {2} & {3} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\[1ex]
+    \hline {w_j} & {4} & {4} & {5} & {3} & {2} & {3} \\
     \hline
     \end{array}
     $$
@@ -182,7 +182,7 @@ title: "Heuristic algorithms: definitions"
     \end{cases}
     $$
 
-- The <strong>gap</strong> of a heuristic value $\mathscr{A}(I)$ is the relative gap $\frac{\UB-\LB}{\LB}$ defined in the chapter «Combinatorial optimization problems»: the difference of the two bounds divided by the <strong>lower</strong> one. With the heuristic value in place of the primal bound it reads
+- The <strong>gap</strong> of a heuristic value $\mathscr{A}(I)$ is the relative gap $\frac{\UB-\LB}{\LB}$ defined in the chapter [«Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization/index.md): the difference of the two bounds divided by the <strong>lower</strong> one. With the heuristic value in place of the primal bound it reads
 
     $$
     gap(I) =
@@ -192,7 +192,7 @@ title: "Heuristic algorithms: definitions"
     \end{cases}
     $$
 
-- The <strong>relative error</strong> of $\mathscr{A}$ on $I$, defined in the notes on approximation algorithms, is $\frac{\mathscr{A}(I)-z(I)}{z(I)}$ for a minimization problem and $\frac{z(I)-\mathscr{A}(I)}{z(I)}$ for a maximization problem. It cannot be computed when $z(I)$ is unknown, which is the typical situation; the gap, instead, uses only computed quantities.
+- The <strong>relative error</strong> of $\mathscr{A}$ on $I$ is $\frac{\mathscr{A}(I)-z(I)}{z(I)}$ for a minimization problem and $\frac{z(I)-\mathscr{A}(I)}{z(I)}$ for a maximization problem. It cannot be computed when $z(I)$ is unknown, which is the typical situation; the gap, instead, uses only computed quantities.
 
 <a id="box-6-prop-gap"></a>
 
@@ -260,7 +260,7 @@ title: "Heuristic algorithms: definitions"
 
 ## 29.4 Classification of heuristic algorithms
 
-- Heuristic algorithms are classified according to how they produce and use solutions. The four classes below are the subject of the following notes on heuristic algorithms.
+- Heuristic algorithms are classified according to how they produce and use solutions, in the four classes below.
 
 <div class="tabella" markdown="0"><table>
 <tr>
@@ -308,7 +308,7 @@ title: "Heuristic algorithms: definitions"
 </tr>
 <tr>
 <td>BPP</td>
-<td>vector <span class="arithmatex">\(bin\)</span>, with <span class="arithmatex">\(bin_i\)</span> the bin of item <span class="arithmatex">\(i\)</span></td>
+<td>vector <span class="arithmatex">\(bin\)</span>, with <span class="arithmatex">\(bin_j\)</span> the bin of item <span class="arithmatex">\(j\)</span></td>
 <td>at most <span class="arithmatex">\(n^n\)</span></td>
 <td>not always: a bin can be overfull</td>
 </tr>
@@ -326,7 +326,7 @@ title: "Heuristic algorithms: definitions"
 </tr>
 </table></div>
 
-- When the representation can describe infeasible objects, a heuristic must either restrict itself to feasible ones or accept infeasible ones and penalize them. This is the first of the design choices discussed in the notes on local search.
+- When the representation can describe infeasible objects, a heuristic must either restrict itself to feasible ones or accept infeasible ones and penalize them.
 
 - The search spaces grow very quickly: a TSP with $n=20$ cities has $\frac{19!}{2}\approx 6\cdot 10^{16}$ distinct tours. A heuristic explores only a tiny part of the search space, and the question is <em>which</em> part.
 
@@ -499,7 +499,7 @@ title: "Heuristic algorithms: definitions"
 
     - The gap compares the heuristic value with the best dual bound, and it is an upper bound on the relative error.
 
-    - Heuristic algorithms are constructive, improvement (local search) or metaheuristic; a neighbourhood defines the local optima, and the search balances intensification and diversification.
+    - Heuristic algorithms are constructive, local search, metaheuristic or MIP-based; a neighbourhood defines the local optima, and the search balances intensification and diversification.
 
     - Quality is assessed on many instances and, for random methods, on many seeds.
 

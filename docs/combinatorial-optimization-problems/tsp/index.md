@@ -12,7 +12,7 @@ title: "Routing problems"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter «Combinatorial optimization problems»: what a combinatorial optimization problem is, how the number of solutions explodes, and the notions of primal bound, dual bound and gap.
+    - From this module, [Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): what a combinatorial optimization problem is, how the number of solutions explodes, and the notions of primal bound, dual bound and gap.
 
     - From the same chapter, the reference TSP instance with $5$ cities, which this chapter studies in detail.
 
@@ -87,7 +87,7 @@ title: "Routing problems"
 
 -   **6.6 Variants: metric and asymmetric TSP**
 
-    Typical mistakes · In summary
+    The asymmetric travelling salesman problem · Remarks · Typical mistakes · In summary
 
     [:octicons-arrow-right-24: Open](variants-metric-and-asymmetric-tsp.md)
 

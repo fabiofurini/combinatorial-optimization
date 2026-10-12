@@ -1,5 +1,5 @@
 ---
-title: "Scheduling on a fixed number of identical machines (Pm|Cmax)"
+title: "Scheduling on a fixed number of identical machines (Pm||Cmax)"
 ---
 
 # Scheduling on a fixed number of identical machines ($Pm\|C_{\max}$)
@@ -27,6 +27,14 @@ title: "Scheduling on a fixed number of identical machines (Pm|Cmax)"
 </tr>
 <tr>
 <td><strong>Definition</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity/#sez-sec-complexity">Ch. 1 «Combinatorial optimization problems»</a></td>
+<td>This page</td>
+</tr>
+<tr>
+<td><strong>Dynamic programming</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/">Ch. 16 «Principles of dynamic programming»</a></td>
+</tr>
+<tr>
+<td><strong>Exercises</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-principles/#esercizio-16-3">Exercise 16.3</a></td>
 </tr>
 </table></div>

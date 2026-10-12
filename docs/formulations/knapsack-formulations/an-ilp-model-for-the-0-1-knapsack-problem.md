@@ -10,6 +10,8 @@ title: "0/1 knapsack"
 
 </div>
 
+The 0/1 Knapsack Problem and its reference instance (Example 2.1) are defined in [Chapter 2 «Knapsack problems», Section 2.2](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-0-1-knapsack-problem/).
+
 - We introduce the following  $n$ <strong>binary variables</strong>:
 
     \begin{equation*}
@@ -57,7 +59,7 @@ title: "0/1 knapsack"
     \end{array}
     $$
 
-    We refer to this KP instance as <span style="color:#1971c2">Example 1</span>. The  $\mathrm{ILP}_{\mathrm{KP}}$ model for this KP instance is:
+    This is the KP instance of Example 2.1, and we refer to it as <span style="color:#1971c2">[Example 9.1](#box-1-texexp_ilp_kp)</span>. The  $\mathrm{ILP}_{\mathrm{KP}}$ model for this KP instance is:
 
     $$
     \begin{array}{rrrrrrrrrrrrr}
@@ -83,7 +85,7 @@ title: "0/1 knapsack"
 
     \begin{equation*}
     \label{cons2_KP_LP}
-    x_j \ge 0,~~~~~~ \forall j \in \mathscr{I}, \tag{9.3}
+    x_j \ge 0,~~~~~~ \forall j \in \mathscr{I}. \tag{9.3}
     \end{equation*}
 
     This LP model is referred to as the $\mathrm{LP}\text{-}0_{\mathrm{KP}}$ model.
@@ -92,7 +94,7 @@ title: "0/1 knapsack"
 
 !!! esempio "Example 9.2: $\mathrm{LP}\text{-}0_{\mathrm{KP}}$ model"
 
-    The  $\mathrm{LP}\text{-}0_{\mathrm{KP}}$ model for the KP instance of <span style="color:#1971c2">Example 1</span> is:
+    The  $\mathrm{LP}\text{-}0_{\mathrm{KP}}$ model for the KP instance of <span style="color:#1971c2">[Example 9.1](#box-1-texexp_ilp_kp)</span> is:
 
     $$
     \begin{array}{rrrrrrrrrrrrr}
@@ -132,7 +134,7 @@ title: "0/1 knapsack"
 
 !!! esempio "Example 9.3: $D(\mathrm{LP}\text{-}0_{\mathrm{KP}})$ model"
 
-    The dual $D(\mathrm{LP}\text{-}0_{\mathrm{KP}})$ model for the KP instance of <span style="color:#1971c2">Example 1</span> is:
+    The dual $D(\mathrm{LP}\text{-}0_{\mathrm{KP}})$ model for the KP instance of <span style="color:#1971c2">[Example 9.1](#box-1-texexp_ilp_kp)</span> is:
 
     $$
     \begin{array}{rrrrrrrrrrrrrrrr}
@@ -157,7 +159,7 @@ title: "0/1 knapsack"
 
 - The following proposition provides formulas to compute an optimal solution of the primal $\mathrm{LP}\text{-}0_{\mathrm{KP}}$ model and of the dual $D(\mathrm{LP}\text{-}0_{\mathrm{KP}})$ model.
 
-<a id="box-4-propXX"></a>
+<a id="box-4-propLP0KP"></a>
 
 !!! teorema "Proposition 9.1"
 
@@ -177,7 +179,7 @@ title: "0/1 knapsack"
     \tilde{\pi}= \frac{p_1}{w_1}. \tag{9.6}
     \end{equation*}
 
-<a id="box-5-propXX"></a>
+<a id="box-5-corLP0KP"></a>
 
 !!! teorema "Corollary 9.2"
 
@@ -242,20 +244,20 @@ title: "0/1 knapsack"
 
 !!! chiave ""
 
-    To obtain a LP relaxation of the ILP model,  we relax  constraints $\eqref{cons2_KP}$  with the following ones:
+    To obtain an LP relaxation of the $\mathrm{ILP}_{\mathrm{KP}}$ model,  we relax  constraints $\eqref{cons2_KP}$  with the following ones:
 
     \begin{align*}
     && x_j &\le 1,& \forall j \in \mathscr{I}, \label{cons2_KP_LP_bis} \tag{9.8a}\\[2ex]
     &&  x_j &\ge 0,& \forall j \in \mathscr{I}. \label{cons2_KP_LP_tris} \tag{9.8b}
     \end{align*}
 
-    The obtained LP model is referred to as the $\mathrm{LP}_{\mathrm{KP}}$ model.
+    This LP model is referred to as the $\mathrm{LP}_{\mathrm{KP}}$ model.
 
 <a id="box-6-texexp_lp_kp"></a>
 
 !!! esempio "Example 9.4: $\mathrm{LP}_{\mathrm{KP}}$ model"
 
-    The  $\mathrm{LP}_{\mathrm{KP}}$ model for the KP instance of <span style="color:#1971c2">Example 1</span> is:
+    The  $\mathrm{LP}_{\mathrm{KP}}$ model for the KP instance of <span style="color:#1971c2">[Example 9.1](#box-1-texexp_ilp_kp)</span> is:
 
     $$
     \begin{array}{rrrrrrrrrrrrr}
@@ -302,7 +304,7 @@ title: "0/1 knapsack"
 
 !!! esempio "Example 9.5: $D(\mathrm{LP}_{\mathrm{KP}})$ model"
 
-    The  dual $D(\mathrm{LP}_{\mathrm{KP}})$ model for the KP instance of <span style="color:#1971c2">Example 1</span> is:
+    The  dual $D(\mathrm{LP}_{\mathrm{KP}})$ model for the KP instance of <span style="color:#1971c2">[Example 9.1](#box-1-texexp_ilp_kp)</span> is:
 
     $$
     \begin{array}{rrrrrrrrrrrrrrrr}
@@ -344,7 +346,7 @@ title: "0/1 knapsack"
 
 !!! esempio "Example 9.6: item efficiencies"
 
-    Let us consider the KP instance of <span style="color:#1971c2">Example 1</span>. We have:
+    Let us consider the KP instance of <span style="color:#1971c2">[Example 9.1](#box-1-texexp_ilp_kp)</span>. We have:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -435,7 +437,7 @@ title: "0/1 knapsack"
 
 !!! esempio "Example 9.7: split item and residual capacity"
 
-    For the KP instance of <span style="color:#1971c2">Example 1</span>, the split item is $s=3$ since:
+    For the KP instance of <span style="color:#1971c2">[Example 9.1](#box-1-texexp_ilp_kp)</span>, the split item is $s=3$ since:
 
     $$
     \sum_{j=1}^{2} w_j = 2+3= 5 \le 9 \text{   and   } \sum_{j=1}^{3} w_j = 2+3 + 6= 11 > 9
@@ -581,7 +583,7 @@ title: "0/1 knapsack"
     \hat{x}_k= \bar{x}_k - \frac{d}{w_k} \ge 0 \text{     and   } \hat{x}_h=\bar{x}_h + \frac{d}{w_h} \le 1
     $$
 
-    Notice that $\hat{x}_k \ge 0$ and $\hat{x}_h \le 1$ due to the definition of $d$, and $\hat{\vet x}$ is a feasible solution since:
+    By the definition of $d$, we have $\hat{x}_k \ge 0$ and $\hat{x}_h \le 1$, and $\hat{\vet x}$ is a feasible solution since:
 
     $$
     \sum_{j \in \mathscr{I}} w_j \: \hat{x}_j = \sum_{j \in \mathscr{I}} w_j \: \bar{x}_j +w_h \: \frac{d}{w_h} - w_k \: \frac{d}{w_k} =  \sum_{j \in \mathscr{I}} w_j \: \bar{x}_j = c
@@ -601,7 +603,7 @@ title: "0/1 knapsack"
 
 !!! esempio "Example 9.8: Primal and dual LP solutions"
 
-    For the KP instance of <span style="color:#1971c2">Example 1</span>,  we have $s=3$ and $\mathit{rc} = 4$.
+    For the KP instance of <span style="color:#1971c2">[Example 9.1](#box-1-texexp_ilp_kp)</span>,  we have $s=3$ and $\mathit{rc} = 4$.
 
     Using formulas  $\eqref{PP}$, we can compute the following optimal solution of the $\mathrm{LP}_{\mathrm{KP}}$ model:
 
@@ -799,7 +801,7 @@ title: "0/1 knapsack"
 
 !!! esempio "Example 9.9: Dantzig and Martello-Toth upper bound"
 
-    For the KP instance of <span style="color:#1971c2">Example 1</span>,  using formula $\eqref{DANTZIG}$,  we can compute the Dantzig upper bound:
+    For the KP instance of <span style="color:#1971c2">[Example 9.1](#box-1-texexp_ilp_kp)</span>,  using formula $\eqref{DANTZIG}$,  we can compute the Dantzig upper bound:
 
     $$
     \UB_{\mathrm{D}} = \sum_{j=1}^{2} p_j + \left\lfloor p_3  \; \frac{\mathit{rc}}{w_3} \right\rfloor = 6+5 + \left\lfloor 8 ~ \frac{2}{3} \right\rfloor = 11 + \left\lfloor \frac{16}{3} \right\rfloor =16

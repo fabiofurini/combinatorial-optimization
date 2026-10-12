@@ -12,15 +12,15 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
 <a id="esercizio-18-1"></a>
 
-!!! esercizio "Exercise 18.1: Exercise 1: Unbounded Knapsack Problem"
+!!! esercizio "Exercise 18.1: The two DP algorithms for the UKP (4 item types, $c=7$)"
 
     Consider the following UKP instance, where the knapsack has capacity $c=7$, each item type is available in infinitely many copies, and the profits and weights associated with the item types are:
 
     $$
     \begin{array}{l|rrrr}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\
-    \hline {p_i} & 4 & 5 & 10 & 11 \\
-    {w_i} & 2 & 3 & 5 & 6 \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\
+    \hline {p_j} & 4 & 5 & 10 & 11 \\
+    {w_j} & 2 & 3 & 5 & 6 \\
     \hline
     \end{array}
     $$
@@ -39,12 +39,12 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
     1. Step-by-step execution of the first bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $k$ and $i$, the cells $v[k]$ and $s[k]$, the current value of $m$, the current value of $t$, and the operation performed.
+        For each step of the DP algorithm, the table shows the values of $k$ and $j$, the cells $v[k]$ and $s[k]$, the current value of $m$, the current value of $t$, and the operation performed.
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(v[k]\)</span></th>
         <th><span class="arithmatex">\(s[k]\)</span></th>
         <th><span class="arithmatex">\(m\)</span></th>
@@ -529,14 +529,14 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
     3. Step-by-step execution of the second bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed. All entries in row $i=0$ are initialized to $0$.
+        For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cells $v[j][k]$ and $s[j][k]$, and the operation performed. All entries in row $j=0$ are initialized to $0$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(v[i][k]\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(v[j][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -825,12 +825,12 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrr}
-        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 4 & 4 & 8 & 8 & 12 & 12 \\
-        {i=2} & 0 & 0 & 4 & 5 & 8 & 9 & 12 & 13 \\
-        {i=3} & 0 & 0 & 4 & 5 & 8 & 10 & 12 & 14 \\
-        {i=4} & 0 & 0 & 4 & 5 & 8 & 10 & 12 & 14 \\
+        \hline {v[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 4 & 4 & 8 & 8 & 12 & 12 \\
+        {j=2} & 0 & 0 & 4 & 5 & 8 & 9 & 12 & 13 \\
+        {j=3} & 0 & 0 & 4 & 5 & 8 & 10 & 12 & 14 \\
+        {j=4} & 0 & 0 & 4 & 5 & 8 & 10 & 12 & 14 \\
         \hline
         \end{array}
         $$
@@ -839,12 +839,12 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
@@ -853,24 +853,24 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
 
-        We can reconstruct an optimal solution by starting from $i=4$ and $k=7$ as follows:
+        We can reconstruct an optimal solution by starting from $j=4$ and $k=7$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
@@ -886,7 +886,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=4\)</span>, <span class="arithmatex">\(k=7\)</span></td>
+        <td><span class="arithmatex">\(j=4\)</span>, <span class="arithmatex">\(k=7\)</span></td>
         </tr>
         <tr>
         <td>1</td>
@@ -897,7 +897,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 3\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 3\)</span></td>
         </tr>
         <tr>
         <td>2</td>
@@ -919,7 +919,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td class="cella-blu">1</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 2\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 2\)</span></td>
         </tr>
         <tr>
         <td>4</td>
@@ -930,7 +930,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td class="cella-blu">1</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 1\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 1\)</span></td>
         </tr>
         <tr>
         <td>5</td>
@@ -959,15 +959,15 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
 <a id="esercizio-18-2"></a>
 
-!!! esercizio "Exercise 18.2: Exercise 2: Unbounded Knapsack Problem"
+!!! esercizio "Exercise 18.2: The two DP algorithms for the UKP (5 item types, $c=8$)"
 
     Consider the following UKP instance, where the knapsack has capacity $c=8$, each item type is available in infinitely many copies, and the profits and weights associated with the item types are:
 
     $$
     \begin{array}{l|rrrrr}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
-    \hline {p_i} & 2 & 5 & 7 & 8 & 10 \\
-    {w_i} & 1 & 2 & 3 & 4 & 5 \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\
+    \hline {p_j} & 2 & 5 & 7 & 8 & 10 \\
+    {w_j} & 1 & 2 & 3 & 4 & 5 \\
     \hline
     \end{array}
     $$
@@ -986,12 +986,12 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
     1. Step-by-step execution of the first bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $k$ and $i$, the cells $v[k]$ and $s[k]$, the current value of $m$, the current value of $t$, and the operation performed.
+        For each step of the DP algorithm, the table shows the values of $k$ and $j$, the cells $v[k]$ and $s[k]$, the current value of $m$, the current value of $t$, and the operation performed.
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(v[k]\)</span></th>
         <th><span class="arithmatex">\(s[k]\)</span></th>
         <th><span class="arithmatex">\(m\)</span></th>
@@ -1628,14 +1628,14 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
     3. Step-by-step execution of the second bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed. All entries in row $i=0$ are initialized to $0$.
+        For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cells $v[j][k]$ and $s[j][k]$, and the operation performed. All entries in row $j=0$ are initialized to $0$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(v[i][k]\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(v[j][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -2022,13 +2022,13 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrr}
-        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 2 & 4 & 6 & 8 & 10 & 12 & 14 & 16 \\
-        {i=2} & 0 & 2 & 5 & 7 & 10 & 12 & 15 & 17 & 20 \\
-        {i=3} & 0 & 2 & 5 & 7 & 10 & 12 & 15 & 17 & 20 \\
-        {i=4} & 0 & 2 & 5 & 7 & 10 & 12 & 15 & 17 & 20 \\
-        {i=5} & 0 & 2 & 5 & 7 & 10 & 12 & 15 & 17 & 20 \\
+        \hline {v[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 2 & 4 & 6 & 8 & 10 & 12 & 14 & 16 \\
+        {j=2} & 0 & 2 & 5 & 7 & 10 & 12 & 15 & 17 & 20 \\
+        {j=3} & 0 & 2 & 5 & 7 & 10 & 12 & 15 & 17 & 20 \\
+        {j=4} & 0 & 2 & 5 & 7 & 10 & 12 & 15 & 17 & 20 \\
+        {j=5} & 0 & 2 & 5 & 7 & 10 & 12 & 15 & 17 & 20 \\
         \hline
         \end{array}
         $$
@@ -2037,13 +2037,13 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
@@ -2052,25 +2052,25 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
 
-        We can reconstruct an optimal solution by starting from $i=5$ and $k=8$ as follows:
+        We can reconstruct an optimal solution by starting from $j=5$ and $k=8$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
@@ -2088,7 +2088,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=5\)</span>, <span class="arithmatex">\(k=8\)</span></td>
+        <td><span class="arithmatex">\(j=5\)</span>, <span class="arithmatex">\(k=8\)</span></td>
         </tr>
         <tr>
         <td>1</td>
@@ -2100,7 +2100,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 4\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 4\)</span></td>
         </tr>
         <tr>
         <td>2</td>
@@ -2112,7 +2112,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 3\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 3\)</span></td>
         </tr>
         <tr>
         <td>3</td>
@@ -2124,7 +2124,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 2\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 2\)</span></td>
         </tr>
         <tr>
         <td>4</td>
@@ -2190,15 +2190,15 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
 <a id="esercizio-18-3"></a>
 
-!!! esercizio "Exercise 18.3: Exercise 3: Unbounded Knapsack Problem"
+!!! esercizio "Exercise 18.3: The two DP algorithms for the UKP (4 item types, $c=10$)"
 
     Consider the following UKP instance, where the knapsack has capacity $c=10$, each item type is available in infinitely many copies, and the profits and weights associated with the item types are:
 
     $$
     \begin{array}{l|rrrr}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\
-    \hline {p_i} & 6 & 10 & 12 & 13 \\
-    {w_i} & 3 & 4 & 6 & 7 \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\
+    \hline {p_j} & 6 & 10 & 12 & 13 \\
+    {w_j} & 3 & 4 & 6 & 7 \\
     \hline
     \end{array}
     $$
@@ -2217,12 +2217,12 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
     1. Step-by-step execution of the first bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $k$ and $i$, the cells $v[k]$ and $s[k]$, the current value of $m$, the current value of $t$, and the operation performed.
+        For each step of the DP algorithm, the table shows the values of $k$ and $j$, the cells $v[k]$ and $s[k]$, the current value of $m$, the current value of $t$, and the operation performed.
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(v[k]\)</span></th>
         <th><span class="arithmatex">\(s[k]\)</span></th>
         <th><span class="arithmatex">\(m\)</span></th>
@@ -2879,14 +2879,14 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
     3. Step-by-step execution of the second bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed. All entries in row $i=0$ are initialized to $0$.
+        For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cells $v[j][k]$ and $s[j][k]$, and the operation performed. All entries in row $j=0$ are initialized to $0$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(v[i][k]\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(v[j][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -3280,12 +3280,12 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrrr}
-        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 0 & 6 & 6 & 6 & 12 & 12 & 12 & 18 & 18 \\
-        {i=2} & 0 & 0 & 0 & 6 & 10 & 10 & 12 & 16 & 20 & 20 & 22 \\
-        {i=3} & 0 & 0 & 0 & 6 & 10 & 10 & 12 & 16 & 20 & 20 & 22 \\
-        {i=4} & 0 & 0 & 0 & 6 & 10 & 10 & 12 & 16 & 20 & 20 & 22 \\
+        \hline {v[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 0 & 6 & 6 & 6 & 12 & 12 & 12 & 18 & 18 \\
+        {j=2} & 0 & 0 & 0 & 6 & 10 & 10 & 12 & 16 & 20 & 20 & 22 \\
+        {j=3} & 0 & 0 & 0 & 6 & 10 & 10 & 12 & 16 & 20 & 20 & 22 \\
+        {j=4} & 0 & 0 & 0 & 6 & 10 & 10 & 12 & 16 & 20 & 20 & 22 \\
         \hline
         \end{array}
         $$
@@ -3294,12 +3294,12 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
@@ -3308,24 +3308,24 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
 
-        We can reconstruct an optimal solution by starting from $i=4$ and $k=10$ as follows:
+        We can reconstruct an optimal solution by starting from $j=4$ and $k=10$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
@@ -3341,7 +3341,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=4\)</span>, <span class="arithmatex">\(k=10\)</span></td>
+        <td><span class="arithmatex">\(j=4\)</span>, <span class="arithmatex">\(k=10\)</span></td>
         </tr>
         <tr>
         <td>1</td>
@@ -3352,7 +3352,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 3\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 3\)</span></td>
         </tr>
         <tr>
         <td>2</td>
@@ -3363,7 +3363,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 2\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 2\)</span></td>
         </tr>
         <tr>
         <td>3</td>
@@ -3385,7 +3385,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td class="cella-blu">1</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 1\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 1\)</span></td>
         </tr>
         <tr>
         <td>5</td>
@@ -3427,15 +3427,15 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
 <a id="esercizio-18-4"></a>
 
-!!! esercizio "Exercise 18.4: Exercise 4: Unbounded Knapsack Problem"
+!!! esercizio "Exercise 18.4: The two DP algorithms for the UKP (4 item types, $c=9$)"
 
     Consider the following UKP instance, where the knapsack has capacity $c=9$, each item type is available in infinitely many copies, and the profits and weights associated with the item types are:
 
     $$
     \begin{array}{l|rrrr}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\
-    \hline {p_i} & 5 & 6 & 14 & 18 \\
-    {w_i} & 2 & 3 & 6 & 7 \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\
+    \hline {p_j} & 5 & 6 & 14 & 18 \\
+    {w_j} & 2 & 3 & 6 & 7 \\
     \hline
     \end{array}
     $$
@@ -3454,12 +3454,12 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
     1. Step-by-step execution of the first bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $k$ and $i$, the cells $v[k]$ and $s[k]$, the current value of $m$, the current value of $t$, and the operation performed.
+        For each step of the DP algorithm, the table shows the values of $k$ and $j$, the cells $v[k]$ and $s[k]$, the current value of $m$, the current value of $t$, and the operation performed.
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(v[k]\)</span></th>
         <th><span class="arithmatex">\(s[k]\)</span></th>
         <th><span class="arithmatex">\(m\)</span></th>
@@ -4052,14 +4052,14 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
     3. Step-by-step execution of the second bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed. All entries in row $i=0$ are initialized to $0$.
+        For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cells $v[j][k]$ and $s[j][k]$, and the operation performed. All entries in row $j=0$ are initialized to $0$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(v[i][k]\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(v[j][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -4418,12 +4418,12 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrr}
-        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 5 & 5 & 10 & 10 & 15 & 15 & 20 & 20 \\
-        {i=2} & 0 & 0 & 5 & 6 & 10 & 11 & 15 & 16 & 20 & 21 \\
-        {i=3} & 0 & 0 & 5 & 6 & 10 & 11 & 15 & 16 & 20 & 21 \\
-        {i=4} & 0 & 0 & 5 & 6 & 10 & 11 & 15 & 18 & 20 & 23 \\
+        \hline {v[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 5 & 5 & 10 & 10 & 15 & 15 & 20 & 20 \\
+        {j=2} & 0 & 0 & 5 & 6 & 10 & 11 & 15 & 16 & 20 & 21 \\
+        {j=3} & 0 & 0 & 5 & 6 & 10 & 11 & 15 & 16 & 20 & 21 \\
+        {j=4} & 0 & 0 & 5 & 6 & 10 & 11 & 15 & 18 & 20 & 23 \\
         \hline
         \end{array}
         $$
@@ -4432,12 +4432,12 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
         \hline
         \end{array}
         $$
@@ -4446,24 +4446,24 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
         \hline
         \end{array}
         $$
 
-        We can reconstruct an optimal solution by starting from $i=4$ and $k=9$ as follows:
+        We can reconstruct an optimal solution by starting from $j=4$ and $k=9$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
@@ -4479,7 +4479,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=4\)</span>, <span class="arithmatex">\(k=9\)</span></td>
+        <td><span class="arithmatex">\(j=4\)</span>, <span class="arithmatex">\(k=9\)</span></td>
         </tr>
         <tr>
         <td>1</td>
@@ -4501,7 +4501,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td>0</td>
         <td class="cella-blu">1</td>
-        <td><span class="arithmatex">\(i\leftarrow 3\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 3\)</span></td>
         </tr>
         <tr>
         <td>3</td>
@@ -4512,7 +4512,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td>0</td>
         <td class="cella-blu">1</td>
-        <td><span class="arithmatex">\(i\leftarrow 2\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 2\)</span></td>
         </tr>
         <tr>
         <td>4</td>
@@ -4523,7 +4523,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td>0</td>
         <td class="cella-blu">1</td>
-        <td><span class="arithmatex">\(i\leftarrow 1\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 1\)</span></td>
         </tr>
         <tr>
         <td>5</td>
@@ -4552,15 +4552,15 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
 <a id="esercizio-18-5"></a>
 
-!!! esercizio "Exercise 18.5: Exercise 5: Unbounded Knapsack Problem"
+!!! esercizio "Exercise 18.5: The two DP algorithms for the UKP (5 item types, $c=11$)"
 
     Consider the following UKP instance, where the knapsack has capacity $c=11$, each item type is available in infinitely many copies, and the profits and weights associated with the item types are:
 
     $$
     \begin{array}{l|rrrrr}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
-    \hline {p_i} & 3 & 9 & 10 & 16 & 17 \\
-    {w_i} & 2 & 5 & 6 & 9 & 10 \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\
+    \hline {p_j} & 3 & 9 & 10 & 16 & 17 \\
+    {w_j} & 2 & 5 & 6 & 9 & 10 \\
     \hline
     \end{array}
     $$
@@ -4579,12 +4579,12 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
     1. Step-by-step execution of the first bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $k$ and $i$, the cells $v[k]$ and $s[k]$, the current value of $m$, the current value of $t$, and the operation performed.
+        For each step of the DP algorithm, the table shows the values of $k$ and $j$, the cells $v[k]$ and $s[k]$, the current value of $m$, the current value of $t$, and the operation performed.
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(v[k]\)</span></th>
         <th><span class="arithmatex">\(s[k]\)</span></th>
         <th><span class="arithmatex">\(m\)</span></th>
@@ -5388,14 +5388,14 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
     3. Step-by-step execution of the second bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed. All entries in row $i=0$ are initialized to $0$.
+        For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cells $v[j][k]$ and $s[j][k]$, and the operation performed. All entries in row $j=0$ are initialized to $0$.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(v[i][k]\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(v[j][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -5908,13 +5908,13 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrrrr}
-        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} & {k=11} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 3 & 3 & 6 & 6 & 9 & 9 & 12 & 12 & 15 & 15 \\
-        {i=2} & 0 & 0 & 3 & 3 & 6 & 9 & 9 & 12 & 12 & 15 & 18 & 18 \\
-        {i=3} & 0 & 0 & 3 & 3 & 6 & 9 & 10 & 12 & 13 & 15 & 18 & 19 \\
-        {i=4} & 0 & 0 & 3 & 3 & 6 & 9 & 10 & 12 & 13 & 16 & 18 & 19 \\
-        {i=5} & 0 & 0 & 3 & 3 & 6 & 9 & 10 & 12 & 13 & 16 & 18 & 19 \\
+        \hline {v[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} & {k=11} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 3 & 3 & 6 & 6 & 9 & 9 & 12 & 12 & 15 & 15 \\
+        {j=2} & 0 & 0 & 3 & 3 & 6 & 9 & 9 & 12 & 12 & 15 & 18 & 18 \\
+        {j=3} & 0 & 0 & 3 & 3 & 6 & 9 & 10 & 12 & 13 & 15 & 18 & 19 \\
+        {j=4} & 0 & 0 & 3 & 3 & 6 & 9 & 10 & 12 & 13 & 16 & 18 & 19 \\
+        {j=5} & 0 & 0 & 3 & 3 & 6 & 9 & 10 & 12 & 13 & 16 & 18 & 19 \\
         \hline
         \end{array}
         $$
@@ -5923,13 +5923,13 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} & {k=11} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 1 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
-        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} & {k=11} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 1 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+        {j=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
@@ -5938,25 +5938,25 @@ title: "Exercises · DP for the unbounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} & {k=11} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 1 \\
-        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
-        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} & {k=11} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 1 \\
+        {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+        {j=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
 
-        We can reconstruct an optimal solution by starting from $i=5$ and $k=11$ as follows:
+        We can reconstruct an optimal solution by starting from $j=5$ and $k=11$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
@@ -5974,7 +5974,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i=5\)</span>, <span class="arithmatex">\(k=11\)</span></td>
+        <td><span class="arithmatex">\(j=5\)</span>, <span class="arithmatex">\(k=11\)</span></td>
         </tr>
         <tr>
         <td>1</td>
@@ -5986,7 +5986,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 4\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 4\)</span></td>
         </tr>
         <tr>
         <td>2</td>
@@ -5998,7 +5998,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td>0</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 3\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 3\)</span></td>
         </tr>
         <tr>
         <td>3</td>
@@ -6022,7 +6022,7 @@ title: "Exercises · DP for the unbounded knapsack problem"
         <td class="cella-blu">1</td>
         <td>0</td>
         <td>0</td>
-        <td><span class="arithmatex">\(i\leftarrow 2\)</span></td>
+        <td><span class="arithmatex">\(j\leftarrow 2\)</span></td>
         </tr>
         <tr>
         <td>5</td>

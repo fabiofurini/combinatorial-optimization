@@ -54,8 +54,12 @@ title: "Cutting stock problem (CSP)"
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem/#box-4-defCSP">Ch. 3 «Packing problems»</a></td>
 </tr>
 <tr>
+<td><strong>Formulations</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/bin-packing-formulations/an-ilp-model-for-the-cutting-stock-problem/#sez-sec-bpf-CSP">Ch. 10 «Formulations of packing problems»</a></td>
+</tr>
+<tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/bin-packing/#esercizio-3-4">Exercise 3.4</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/bin-packing/#esercizio-3-4">Exercise 3.4</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/bin-packing-formulations/#esercizio-10-6">Exercise 10.6</a></td>
 </tr>
 <tr>
 <td><strong>Reference instances</strong></td>

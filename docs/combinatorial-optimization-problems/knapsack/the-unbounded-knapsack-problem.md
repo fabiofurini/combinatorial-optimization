@@ -76,11 +76,11 @@ title: "Unbounded knapsack"
 
     !!! chiave ""
 
-        Given a UKP instance,  UKP can be formally stated as:
+        Given a UKP instance, the UKP can be formally stated as:
 
         \begin{equation*}
         \label{UKP}
-        \tilde{S} \;=\;
+        \tilde{S} \in
         \argmax_{S \subseteq \hat{\mathscr{I}} }
         \left\{ \sum_{(j,k) \in S} p_j
         \;:\; \sum_{(j,k) \in S} w_j \le c \right\}. \tag{2.7}

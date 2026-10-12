@@ -6,17 +6,17 @@ title: "The problems and the assumptions · The greedy paradigm"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
+**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Constructive heuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive heuristics](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md) · [:material-gesture-tap: App: Vertex coloring: greedy and DSATUR](../../lab/coloring-greedy-dsatur.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
 
 </div>
 
 ## 30.2 The problems and the assumptions { #sez-sec-problems }
 
-- The heuristics are illustrated on the four problems of the notes on heuristic algorithms: the 0/1 knapsack problem (KP), the bin packing problem (BPP), the travelling salesman problem (TSP) and the scheduling problem $P\,||\,C_{\max}$; the greedy coloring and $DSATUR$ are applied to the vertex coloring problem (VCP). Their definitions are given in the notes on combinatorial optimization problems, and the assumptions and the notation in the notes on the definitions of heuristic algorithms; we recall the essentials.
+- The heuristics are illustrated on the four problems of the chapter [«Heuristic algorithms: definitions»](../heuristics.md): the [0/1 knapsack problem (KP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-0-1-knapsack-problem/), the [bin packing problem (BPP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/the-bin-packing-problem/), the [travelling salesman problem (TSP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/the-travelling-salesman-problem/) and [$P\,||\,C_{\max}$](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines/); the greedy coloring and $DSATUR$ are applied to the [vertex coloring problem (VCP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/the-vertex-coloring-problem/). Their definitions and assumptions are on their pages; we recall the notation.
 
-- As in the other notes, $\mathscr{A}(I)$ denotes the value of the solution computed by the heuristic $\mathscr{A}$ on the instance $I$, and $z(I)$ the optimal value. For $P\,||\,C_{\max}$, $L_h=\sum_{j\in J_h}t_j$ is the <strong>load</strong> of machine $h$, and the vector $mach$ stores the machine $mach_j$ of every job $j$; for the BPP, the vector $bin$ stores the bin $bin_i$ of every item $i$, and $rc$ denotes a residual capacity.
+- As in the other notes, $\mathscr{A}(I)$ denotes the value of the solution computed by the heuristic $\mathscr{A}$ on the instance $I$, and $z(I)$ the optimal value. For $P\,||\,C_{\max}$, $L_h=\sum_{j\in J_h}t_j$ is the <strong>load</strong> of machine $h$, and the vector $mach$ stores the machine $mach_j$ of every job $j$; for the BPP, the vector $bin$ stores the bin $bin_j$ of every item $j$, and $rc$ denotes a residual capacity.
 
-- The examples use the four <strong>reference instances</strong> of the notes on the definitions of heuristic algorithms, whose optimal values are known:
+- The examples use the four <strong>reference instances</strong> of the chapter [«Heuristic algorithms: definitions»](../heuristics.md), whose optimal values are known:
 
 <div class="tabella" markdown="0"><table>
 <tr>

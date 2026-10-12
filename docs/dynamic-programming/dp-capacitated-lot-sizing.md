@@ -12,13 +12,21 @@ title: "DP for the capacitated lot sizing problem"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter [«DP for the uncapacitated lot sizing problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/): the total demands $D_{j,t}$, the encoding of a production plan and its network, the zero-inventory ordering property, and the instance of its Example 1.
+    - From this module, the chapter [«DP for the uncapacitated lot sizing problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/): the total demands $D_{j,t}$, the encoding of a production plan and its network, the zero-inventory ordering property, and the instance of its Example 25.1.
 
-    - From this module, the chapters on lot sizing: the single-item problem and its MIP model with the variables $x_t$, $s_t$, $y_t$.
+    - From this module, the chapters [«Lot sizing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem/) and [«Formulations of lot sizing problems»](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/): the capacitated problem, its reference instance, and its ILP model with the variables $x_t$, $s_t$, $y_t$.
 
-    - From this module, the chapter «Principles of dynamic programming»: recurrence, base cases, lookup table and reconstruction of a solution.
+    - From this module, the chapter [«Principles of dynamic programming»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/): recurrence, base cases, lookup table and reconstruction of a solution.
 
     - From the module <em>Algorithms</em>: [pseudocode (Chapter 2)](https://fabiofurini.github.io/algorithms/basic-algorithms/02-pseudo-code/), and [the size of the input (Chapter 11)](https://fabiofurini.github.io/algorithms/analysis/11-input-size/).
+
+!!! nota "Where we were"
+
+    - <strong>As a problem and as a model</strong>: the capacitated lot sizing problem and its ILP formulations (Chapter 8 [«Lot sizing problems»](../combinatorial-optimization-problems/lot-sizing/index.md) and Chapter 15 [«Formulations of lot sizing problems»](../formulations/lot-sizing-formulations/index.md)).
+
+    - <strong>As a table, without capacities</strong>: the DP algorithm of Wagner and Whitin of Chapter 25 [«DP for the uncapacitated lot sizing problem»](dp-lot-sizing/index.md), over the production runs, in $\Theta(m^2)$ steps.
+
+    - <strong>Now, with capacities</strong>: a DP algorithm on the pairs (period, inventory), which is pseudo-polynomial.
 
 !!! chiave "Objectives"
 
@@ -38,7 +46,7 @@ The problem of this chapter is the [capacitated lot sizing problem (CLS)](https:
 
 ## 26.1 Notation, model and feasible solutions
 
-- As in the chapter [«DP for the uncapacitated lot sizing problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/), for any $j,t \in T$ we denote by
+- As in [Chapter 25 «DP for the uncapacitated lot sizing problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/), for any $j,t \in T$ we denote by
 
     $$
     D_{j,t}=\sum_{k=j}^{t} d_k
@@ -50,13 +58,15 @@ The problem of this chapter is the [capacitated lot sizing problem (CLS)](https:
 
 - A feasible solution is encoded by the same vector $(x_1,x_2,\dots,x_m)$ as in the ULS, with the inventories $s_t=\sum_{j=1}^{t} x_j-D_{1,t}$, and with the additional requirement $x_t \le cap_t$ for all $t\in T$.
 
-- The <strong>zero-inventory ordering property does not hold</strong> for the CLS: a period may have to produce while units are still in stock, because the capacity does not allow to produce everything in the period where it would be cheapest. The property, and the DP algorithm over the production runs that rests on it, are those of the chapter [«DP for the uncapacitated lot sizing problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/).
+- The <strong>zero-inventory ordering property does not hold</strong> for the CLS: a period may have to produce while units are still in stock, because the capacity does not allow to produce everything in the period where it would be cheapest.
+
+- The property, and the DP algorithm over the production runs that rests on it, are those of [Chapter 25 «DP for the uncapacitated lot sizing problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/).
 
 <a id="box-1-texcls1"></a>
 
 !!! esempio "Example 26.1: Capacitated lot sizing"
 
-    We consider the uncapacitated instance of Example 1 of the chapter [«DP for the uncapacitated lot sizing problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/) (the instance of the MIP course), measured in units of $10$ products (hence the holding cost is $10$ per unit), with a constant capacity of $4$ units per period:
+    We consider the uncapacitated instance of Example 25.1 of [Chapter 25 «DP for the uncapacitated lot sizing problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/), measured in units of $10$ products (hence the holding cost is $10$ per unit), with a constant capacity of $4$ units per period:
 
     $$
     \begin{array}{l|rrrrr}
@@ -70,7 +80,7 @@ The problem of this chapter is the [capacitated lot sizing problem (CLS)](https:
     \end{array}
     $$
 
-    We refer to this CLS instance as <span style="color:#1971c2">[Example 26.1](#box-1-texcls1)</span>. The optimal solution of the uncapacitated instance, in units of $10$, is the vector $(3,\allowbreak 0,\allowbreak 8,\allowbreak 0,\allowbreak 0)$, of cost $170$: it is not feasible for <span style="color:#1971c2">[Example 26.1](#box-1-texcls1)</span>, since period $3$ produces more than $4$ units.
+    We refer to this CLS instance as <span style="color:#1971c2">[Example 26.1](#box-1-texcls1)</span>: it is the reference instance of Chapter 8 [«Lot sizing problems»](../combinatorial-optimization-problems/lot-sizing/index.md). The optimal solution of the uncapacitated instance, in units of $10$, is the vector $(3,\allowbreak 0,\allowbreak 8,\allowbreak 0,\allowbreak 0)$, of cost $170$: it is not feasible for <span style="color:#1971c2">[Example 26.1](#box-1-texcls1)</span>, since period $3$ produces more than $4$ units.
 
 ## 26.2 A DP algorithm for the CLS
 
@@ -89,7 +99,7 @@ The problem of this chapter is the [capacitated lot sizing problem (CLS)](https:
 
     The inventory at the end of period $t$ never exceeds the demand $D_{t+1,m}$ of the following periods, since the inventory must be empty at the end of period $m$.
 
-    !!! chiave ""
+    !!! formula ""
 
         For any $t \in \{1,2,\dots,m\}$ and $k \in \{0,1,\dots,D_{t+1,m}\}$, let $v(t,k)$ be the optimal value of the CLS subinstance given by:
 
@@ -142,7 +152,9 @@ The problem of this chapter is the [capacitated lot sizing problem (CLS)](https:
 
     - A <strong>first method</strong> to compute the optimal value $v(m,0)$ of the CLS instance is the <strong>top-down approach</strong>. The method starts from the call with $(t,k)=(m,0)$ and evaluates formula $\eqref{eq:cls}$ recursively: each call for a state $(t,k)$ triggers further calls for the states $(t-1,k+d_t-x)$, for all $x \in \{0,\dots,\min\{cap_t,k+d_t\}\}$, until one of the base cases $v(0,k)$ is reached.
 
-    - The value $v(t,k)$ can be computed once the values $v(t-1,k')$ are known for all $k'\in\{0,\dots,D_{t,m}\}$. We can avoid solving the same subproblems repeatedly by storing the value of each subproblem as soon as it is computed, in a <strong>lookup table</strong>: the matrix ${v}[0..m][0..D_{1,m}]$, whose cell ${v}[t][k]$ contains $v(t,k)$ for $k\le D_{t+1,m}$ (the other cells are not used).
+    - The value $v(t,k)$ can be computed once the values $v(t-1,k')$ are known for all $k'\in\{0,\dots,D_{t,m}\}$.
+
+    - We can avoid solving the same subproblems repeatedly by storing the value of each subproblem as soon as it is computed, in a <strong>lookup table</strong>: the matrix ${v}[0..m][0..D_{1,m}]$, whose cell ${v}[t][k]$ contains $v(t,k)$ for $k\le D_{t+1,m}$ (the other cells are not used).
 
     - A <strong>second method</strong> to compute the optimal value $v(m,0)$ of the CLS instance is the <strong>bottom-up approach</strong>. The method starts from the base cases $v(0,0)=0$ and $v(0,k)=+\infty$ for all $k\in\{1,\dots,D_{1,m}\}$.
 
@@ -875,7 +887,7 @@ The problem of this chapter is the [capacitated lot sizing problem (CLS)](https:
             \underbrace{50+50+50}_{\text{setup}}+\underbrace{10\cdot 1+10\cdot 0+10\cdot 1+10\cdot 1+10\cdot 0}_{\text{holding}}=150+30=180.
             $$
 
-            The corresponding optimal value is ${v}[5][0]=180$, the same value given by Gurobi on the MIP model; the capacity costs $180-170$ with respect to the uncapacitated instance. The network of the solution is:
+            The corresponding optimal value is ${v}[5][0]=180$, the same value given by Gurobi on the $\mathrm{ILP}_{\mathrm{CLSP}}$ model; the capacity costs $180-170$ with respect to the uncapacitated instance. The network of the solution is:
 
             ![Figure 1](../img/dp-capacitated-lot-sizing/fig01.svg){ .fig loading=lazy  }
 
@@ -923,9 +935,9 @@ The problem of this chapter is the [capacitated lot sizing problem (CLS)](https:
 
 - DP\_CLS\_InfoSol only adds a constant number of operations inside the same loops, and therefore its number of steps has the same order of growth.
 
-- <em>Example.</em> The capacitated instance of the MIP heuristics notes has $6$ periods, demands $(50,\allowbreak 30,\allowbreak 10,\allowbreak 10,\allowbreak 40,\allowbreak 10)$, setup cost $40$, holding cost $1$, and capacity $80$. Measured in units of $10$, it has $35$ states with $t\ge 1$.
+- <em>Example.</em> Consider the capacitated instance with $6$ periods, demands $(50,\allowbreak 30,\allowbreak 10,\allowbreak 10,\allowbreak 40,\allowbreak 10)$, setup cost $40$, holding cost $1$, and capacity $80$. Measured in units of $10$, it has $35$ states with $t\ge 1$.
 
-- The DP algorithm gives the optimal value $160$, with the production plan $(50,\allowbreak 50,\allowbreak 0,\allowbreak 0,\allowbreak 50,\allowbreak 0)$ (in the original units): the same value proved optimal by the MIP solver.
+- The DP algorithm gives the optimal value $160$, with the production plan $(50,\allowbreak 50,\allowbreak 0,\allowbreak 0,\allowbreak 50,\allowbreak 0)$ (in the original units): the same value given by Gurobi on the $\mathrm{ILP}_{\mathrm{CLSP}}$ model.
 
 ### 26.2.3 The case of constant capacity
 

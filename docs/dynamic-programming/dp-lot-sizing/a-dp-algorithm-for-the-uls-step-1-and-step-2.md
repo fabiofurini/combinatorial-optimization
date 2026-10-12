@@ -12,7 +12,7 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
 
 - <u>Step 1</u>: computation of the optimal value
 
-    !!! chiave ""
+    !!! formula ""
 
         For any $t \in \{1,2,\dots,m\}$, let $v(t)$ be the optimal value of the ULS subinstance given by:
 
@@ -34,7 +34,9 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
 
     - The subinstance with periods $\{1,\dots,t\}$ is a ULS instance of the same type: its inventory must be empty at the end of period $t$. Here, $v(0)=0$, since an empty set of periods has no demand and no cost.
 
-    - The recursive decomposition process of formula $\eqref{eq:ww}$ generates $t$ <strong>independent subproblems</strong>, each corresponding to a possible choice of the period $j$ of the <strong>last production run</strong>, which produces the demands of periods $j,\dots,t$. By the zero-inventory ordering property applied to the subinstance, the inventory is empty at the end of period $j-1$, and the residual subproblem is the ULS subinstance with periods $\{1,\dots,j-1\}$.
+    - The recursive decomposition process of formula $\eqref{eq:ww}$ generates $t$ <strong>independent subproblems</strong>, each corresponding to a possible choice of the period $j$ of the <strong>last production run</strong>, which produces the demands of periods $j,\dots,t$.
+
+    - By the zero-inventory ordering property applied to the subinstance, the inventory is empty at the end of period $j-1$, and the residual subproblem is the ULS subinstance with periods $\{1,\dots,j-1\}$.
 
     - The optimal value $v(t)$ is obtained by trying all possible periods of the last production run and selecting the one that minimizes the sum $v(j-1)+c_{j,t}$ of the optimal value of the residual subproblem and the cost of the last run.
 
@@ -364,7 +366,7 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
 
     - After the execution of the DP algorithm, the vector ${v}$ contains the optimal value ${v}[t]$ for every set of periods $\{1,\dots,t\}$.
 
-    - <em>Remark (shortest path).</em> Formula $\eqref{eq:ww}$ computes a shortest path in a network with nodes $0,1,\dots,m$ and one arc from node $j-1$ to node $t$, of cost $c_{j,t}$, for every $j\le t$. The value $v(t)$ is the length of a shortest path from node $0$ to node $t$. This is the shortest-path formulation of the lot-sizing chapters: an arc is a production run.
+    - <em>Remark (shortest path).</em> Formula $\eqref{eq:ww}$ computes a shortest path in a network with nodes $0,1,\dots,m$ and one arc from node $j-1$ to node $t$, of cost $c_{j,t}$, for every $j\le t$. The value $v(t)$ is the length of a shortest path from node $0$ to node $t$. This is the shortest-path formulation of [Chapter 15 «Formulations of lot sizing problems»](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/), without the capacities: an arc is a production run.
 
 - <u>Step 2</u>: computation of an optimal solution
 
@@ -722,7 +724,7 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
             (30,\allowbreak 0,\allowbreak 80,\allowbreak 0,\allowbreak 0)
             $$
 
-            The corresponding optimal value is ${v}[5]=170$, the same value obtained by the enumeration of <span style="color:#1971c2">[Example 25.3](index.md#box-4-texulsenum)</span> and by Gurobi on the MIP model.
+            The corresponding optimal value is ${v}[5]=170$, the same value obtained by the enumeration of <span style="color:#1971c2">[Example 25.3](index.md#box-4-texulsenum)</span> and by Gurobi on the $\mathrm{ILP}_{\mathrm{ULS}}$ model.
 
     - <em>Remark (ties).</em> In the computation of ${v}[5]$, the run in period $4$ gives the same value as the run in period $3$, but the strict comparison keeps $j=3$. Choosing $j=4$ instead leads to the other optimal solution $(30,\allowbreak 0,\allowbreak 30,\allowbreak 50,\allowbreak 0)$ of <span style="color:#1971c2">[Example 25.3](index.md#box-4-texulsenum)</span>. The DP algorithm returns one optimal solution, not all of them.
 

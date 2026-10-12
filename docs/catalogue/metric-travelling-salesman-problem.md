@@ -23,6 +23,8 @@ title: "Metric travelling salesman problem (metric TSP)"
     \qquad \text{for all distinct } i,j,k \in \mathscr{V}.
     $$
 
+    The <strong>metric travelling salesman problem</strong> (metric TSP) is the TSP restricted to metric instances.
+
 ## What the course does on this problem { #sez-sec-cat-metrictsp-vert }
 
 <div class="tabella" markdown="0"><table>
@@ -33,6 +35,14 @@ title: "Metric travelling salesman problem (metric TSP)"
 <tr>
 <td><strong>Definition</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp/#box-8-defMetricTSP">Ch. 6 «Routing problems»</a></td>
+</tr>
+<tr>
+<td><strong>Formulations</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/tsp-formulations/ilp-models-for-the-metric-and-asymmetric-tsp/#sez-sec-tspf-variants">Ch. 13 «Formulations of routing problems»</a></td>
+</tr>
+<tr>
+<td><strong>Heuristics</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/the-travelling-salesman-problem-append-or-insert/#sez-sec-INS">Ch. 30 «Constructive heuristics»</a></td>
 </tr>
 <tr>
 <td><strong>Approximation</strong></td>

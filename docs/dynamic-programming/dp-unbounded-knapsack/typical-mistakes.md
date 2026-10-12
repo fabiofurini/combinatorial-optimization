@@ -6,7 +6,7 @@ title: "Typical mistakes · In summary"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 18** · [:material-book-open-variant: Chapter 18: Unbounded knapsack (UKP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Unbounded knapsack (UKP)](../../exercises/dp-unbounded-knapsack.md)
+**Part 3 · Dynamic programming · Chapter 18** · [:material-book-open-variant: Chapter 18: Unbounded knapsack (UKP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Unbounded knapsack (UKP)](../../exercises/dp-unbounded-knapsack.md) · [:material-gesture-tap: App: DP tables for the knapsack problems](../../lab/dp-knapsack-table.md)
 
 </div>
 
@@ -16,7 +16,7 @@ title: "Typical mistakes · In summary"
 
     - <strong>Using row $j-1$ in the second recurrence.</strong> The term $p_j+v(j,k-w_j)$ refers to the same row $j$: this is what allows several copies of item type $j$.
 
-    - <strong>Assuming that the capacity is filled.</strong> Part of the capacity may stay unused: when no item type fits, $v(k)=0$, not $-\infty$; in Example 1, $v(1)=0$.
+    - <strong>Assuming that the capacity is filled.</strong> Part of the capacity may stay unused: when no item type fits, $v(k)=0$, not $-\infty$; in [Example 18.1](index.md#box-1-texukpex1), $v(1)=0$.
 
     - <strong>Reconstructing past the end.</strong> The reconstruction stops when the residual capacity is $0$, or when $s[k]=0$ in the first DP algorithm and $j=0$ in the second one; otherwise it reads outside the arrays.
 
@@ -34,7 +34,7 @@ title: "Typical mistakes · In summary"
 
     - The running time is pseudo-polynomial, as for the KP.
 
-    <strong>Dashboard of the UKP example.</strong> Example 1 ($c=7$, four item types):
+    <strong>Dashboard of the UKP example.</strong> [Example 18.1](index.md#box-1-texukpex1) ($c=7$, four item types):
 
     <div class="tabella" markdown="0"><table>
     <tr>

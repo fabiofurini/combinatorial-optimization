@@ -12,7 +12,7 @@ title: "Knapsack problems"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter «Combinatorial optimization problems»: instances, feasible solutions, primal and dual bounds and the gap.
+    - From this module, [Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): instances, feasible solutions, primal and dual bounds and the gap.
 
     - From the <em>Preliminaries</em>: subsets of a finite set and the number $2^n$ of subsets.
 

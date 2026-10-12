@@ -9,16 +9,16 @@ hide:
 
 ![Under construction: the website and the course material are still being written](img/under-construction.svg){ width="560" }
 
-**Website under construction.** The material is still being written: slides and interactive apps will follow later.
+**Website under construction.** The material is still being written and revised.
 
 # Combinatorial Optimization
 
 Teaching material conceived and developed by **[Fabio Furini](https://fabiofurini.github.io/)**, associate
 professor at [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
 
-**The course lecture notes, online**: knapsack, bin packing, vertex coloring, maximum clique, TSP, parallel machine scheduling and lot sizing, solved in every way: formulations and their properties, dynamic programming, heuristic and approximation algorithms, ad hoc algorithms; with definitions, results with proofs, examples worked out step by step and exercises with solutions.
+**The course lecture notes, online**: knapsack, packing, coloring, clique, routing, scheduling and lot sizing problems, solved in every way: formulations and their properties, dynamic programming, heuristic, approximation and ad hoc algorithms; with definitions, results with proofs, examples worked out step by step, exercises with solutions, Colab notebooks and interactive apps.
 
-For the students of the Master's degree in Management Engineering at Sapienza, and for anyone who wants to learn how to solve combinatorial optimization problems.
+For the students of the Master's degree in Management Engineering at Sapienza, and for anyone who wants to learn how to solve combinatorial optimization problems. Prerequisites: [Integer Linear Programming](https://fabiofurini.github.io/integer-linear-programming/) for the formulations and [Algorithms](https://fabiofurini.github.io/algorithms/) for the algorithms.
 
 [:material-school: Study the course](combinatorial-optimization-problems/combinatorial-optimization/index.md){ .md-button .md-button--primary }
 [:material-star-outline: Explore the problems](selected-problems/index.md){ .md-button }
@@ -29,27 +29,35 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 
 ## The parts of the course
 
+The same entries as the menu: each card gives its part and its chapters in the lecture notes.
+
 <div class="grid cards" markdown>
 
 -   :material-puzzle-outline: **Combinatorial optimization**
 
     ---
 
-    What a combinatorial optimization problem is: counting the solutions, combinatorial explosion, bounds and gap, complexity.
+    *Part 1 · Chapter 1*
 
-    [:octicons-arrow-right-24: Chapter 1](combinatorial-optimization-problems/combinatorial-optimization/index.md)
+    What a combinatorial optimization problem is: categories, counting the solutions, combinatorial explosion, bounds and gap, complexity.
+
+    [:octicons-arrow-right-24: The chapter](combinatorial-optimization-problems/combinatorial-optimization/index.md)
 
 -   :material-star-outline: **Selected problems**
 
     ---
 
+    *Part 1 · Chapters 2–8*
+
     Knapsack problems · Packing problems · Coloring problems · Clique problems · Routing problems · Scheduling problems · Lot sizing problems
 
-    [:octicons-arrow-right-24: The problems](selected-problems/index.md)
+    [:octicons-arrow-right-24: The families](selected-problems/index.md)
 
--   :material-function-variant: **Formulations and their properties**
+-   :material-function-variant: **Formulations**
 
     ---
+
+    *Part 2 · Chapters 9–15*
 
     Knapsack problems · Packing problems · Coloring problems · Clique problems · Routing problems · Scheduling problems · Lot sizing problems
 
@@ -59,21 +67,27 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 
     ---
 
+    *Part 3 · Chapters 16–28*
+
     Principles · Knapsack problems · Lot sizing problems · Miscellaneous problems
 
     [:octicons-arrow-right-24: The chapters](dynamic-programming/index.md)
 
--   :material-map-marker-path: **Heuristic algorithms**
+-   :material-map-marker-path: **Heuristics**
 
     ---
 
-    29\. Definitions · 30\. Constructive · 31\. Local search · 32\. Metaheuristics · 33\. MIP heuristics
+    *Part 4 · Chapters 29–33*
+
+    Definitions · Constructive heuristics · Local search · Metaheuristics · MIP heuristics
 
     [:octicons-arrow-right-24: The chapters](heuristic-algorithms/index.md)
 
--   :material-approximately-equal: **Approximation algorithms**
+-   :material-approximately-equal: **Approximation**
 
     ---
+
+    *Part 5 · Chapters 34–40*
 
     Principles · Knapsack problems · Packing problems · Coloring problems · Clique problems · Routing problems · Scheduling problems
 
@@ -83,21 +97,37 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 
     ---
 
-    41\. Knapsack · 42\. Vertex coloring (DSATUR)
+    *Part 6 · Chapters 41–42*
+
+    Knapsack problems · Coloring problems
 
     [:octicons-arrow-right-24: The chapters](specialized-algorithms/index.md)
 
--   :material-view-list: **Catalogue of problems**
+-   :material-view-list: **Catalogue**
 
     ---
 
-    All the problems defined in the course, by family: definition, assumptions and what the course does on each one.
+    *All the problems*
+
+    One page per problem, by family: definition, assumptions and what the course does on the problem.
 
     [:octicons-arrow-right-24: The catalogue](catalogue/index.md) · [:material-file-pdf-box: PDF](pdf/combinatorial-problem-catalogue.pdf)
 
--   :simple-googlecolab: **Notebooks in Python and C++**
+-   :material-gesture-tap: **Lab**
 
     ---
+
+    *Interactive apps*
+
+    The algorithms of the course step by step, on the reference instances or on your own.
+
+    [:octicons-arrow-right-24: The apps](lab/index.md)
+
+-   :simple-googlecolab: **Colab notebooks**
+
+    ---
+
+    *Python · C++*
 
     The code of the algorithms of the chapters, to run in Google Colab on the examples and the exercises.
 
@@ -107,7 +137,12 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 
 ## How to use these notes
 
-Each chapter is one of the course notes, with the same numbers and the same colors as the lecture notes: on the website and in the PDF you find everything in the same place.
+- **Website and PDF.** Each chapter of the website is a chapter of the lecture notes, with the same numbers and the same colors; long chapters are split into one page per section or per problem.
+- **At the top of each chapter** a bar with the part, the PDF of the volume, the exercises and the apps of the chapter; at the bottom, the link to the exercises.
+- **By problem.** The catalogue has one page per problem: its definition and the chapters that treat it, technique by technique.
+- **The code.** On the pages the algorithms are in pseudo-code; the «Run in Colab» buttons open the notebook with the code in Python and C++.
+
+The boxes have the same colors as in the lecture notes:
 
 <div class="grid" markdown>
 
@@ -124,7 +159,7 @@ Each chapter is one of the course notes, with the same numbers and the same colo
     In pink the formulas to keep at hand (for example the recurrences of dynamic programming).
 
 !!! algoritmo "Algorithm"
-    The pseudo-code, with numbered lines as in the lecture notes.
+    The pseudo-code, step by step as in the lecture notes.
 
 !!! chiave ""
     **In green** the key point to take away.

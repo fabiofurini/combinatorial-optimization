@@ -104,11 +104,11 @@ The Knapsack Problem with Setups and its reference instance (Example 2.8) are d
 
     - <strong>Forgetting to sort the items.</strong> The formulas [(9.13)](an-ilp-model-for-the-0-1-knapsack-problem.md#mjx-eqn:PP), [(9.14)](an-ilp-model-for-the-0-1-knapsack-problem.md#mjx-eqn:DD) and the bounds hold only if the items are sorted by non-increasing efficiency: with another order the vector [(9.13)](an-ilp-model-for-the-0-1-knapsack-problem.md#mjx-eqn:PP) is feasible but not optimal.
 
-    - <strong>Using $z(\mathrm{LP}\text{-}0_{\mathrm{KP}})$ as the bound.</strong> The first relaxation has no upper bounds on the variables, and it is much weaker: in Example 1 it gives $27$, against $\tfrac{49}{3}$ for the second relaxation.
+    - <strong>Using $z(\mathrm{LP}\text{-}0_{\mathrm{KP}})$ as the bound.</strong> The first relaxation has no upper bounds on the variables, and it is much weaker: in <span style="color:#1971c2">[Example 9.1](an-ilp-model-for-the-0-1-knapsack-problem.md#box-1-texexp_ilp_kp)</span> it gives $27$, against $\tfrac{49}{3}$ for the second relaxation.
 
     - <strong>Rounding when the profits are not integer.</strong> The bounds $\UB_{\mathrm{D}}$ and $\UB_{\mathrm{MT}}$ round down the fractional part: this is valid only because all the profits are integer.
 
-    - <strong>Confusing the split item with the last selected item.</strong> The split item $s$ is the first item that does <u>not</u> fit: in Example 1 it is $s=3$, while the items $1$ and $2$ are selected entirely.
+    - <strong>Confusing the split item with the last selected item.</strong> The split item $s$ is the first item that does <u>not</u> fit: in <span style="color:#1971c2">[Example 9.1](an-ilp-model-for-the-0-1-knapsack-problem.md#box-1-texexp_ilp_kp)</span> it is $s=3$, while the items $1$ and $2$ are selected entirely.
 
     - <strong>Assuming that the LP optimum is unique.</strong> With items of equal efficiency the $\mathrm{LP}_{\mathrm{KP}}$ problem has other optimal solutions; the formulas [(9.13)](an-ilp-model-for-the-0-1-knapsack-problem.md#mjx-eqn:PP) give one of them.
 
@@ -126,9 +126,9 @@ The Knapsack Problem with Setups and its reference instance (Example 2.8) are d
 
     - Rounding down $z(\mathrm{LP}_{\mathrm{KP}})$ gives the Dantzig bound; the Martello-Toth bound considers separately the split item out and in.
 
-    - Each variant of Chapter 2 changes one ingredient of the $\mathrm{ILP}_{\mathrm{KP}}$ model: integer variables (BKP, UKP), one capacity constraint per dimension (MDKP), one variable per item and knapsack (MKP), one equality per class (MCKP), setup variables $y_h$ with $x_j \le y_h$ (KPS); the SSP is the KP with $p_j = w_j$.
+    - Each variant of [Chapter 2 «Knapsack problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/) changes one ingredient of the $\mathrm{ILP}_{\mathrm{KP}}$ model: integer variables (BKP, UKP), one capacity constraint per dimension (MDKP), one variable per item and knapsack (MKP), one equality per class (MCKP), setup variables $y_h$ with $x_j \le y_h$ (KPS); the SSP is the KP with $p_j = w_j$.
 
-    <strong>Dashboard of Example 1.</strong> Upper bounds on $z(\mathrm{ILP}_{\mathrm{KP}})$ computed in this chapter:
+    <strong>Dashboard of <span style="color:#1971c2">[Example 9.1](an-ilp-model-for-the-0-1-knapsack-problem.md#box-1-texexp_ilp_kp)</span>.</strong> Upper bounds on $z(\mathrm{ILP}_{\mathrm{KP}})$ computed in this chapter:
 
     <div class="tabella" markdown="0"><table>
     <tr>

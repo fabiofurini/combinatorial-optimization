@@ -131,7 +131,7 @@ title: "Exercises · Principles of dynamic programming"
 
 !!! esercizio "Exercise 16.2: Writing a recurrence: subset sum via reachable sums"
 
-    Given $n=5$ items with integer weights $w_j$ and a capacity $c=30$, the <strong>subset sum problem</strong> asks for a subset of items of maximum total weight not exceeding $c$:
+    Given $n=5$ items with integer weights $w_j$ and a capacity $c=30$, the optimization version of the <strong>subset sum problem</strong> asks for a subset of items of maximum total weight not exceeding $c$:
 
     $$
     \max\Big\{\sum_{j=1}^n w_jx_j:\ \sum_{j=1}^n w_jx_j\le c,\ x_j\in\{0,1\},\ j=1,\dots,n\Big\}.
@@ -151,7 +151,7 @@ title: "Exercises · Principles of dynamic programming"
 
     **Questions**
 
-    1. Write a recurrence for $R_j$, distinguishing whether item $j$ is used, with the base case. How is the optimal value $z^*$ read from $R_n$?
+    1. Write a recurrence for $R_j$, distinguishing whether item $j$ is used, with the base case. How is the optimal value $z$ read from $R_n$?
 
     2. Compute $R_1,\dots,R_n$. For every reachable sum, store the first index $j$ such that it belongs to $R_j$.
 
@@ -173,10 +173,10 @@ title: "Exercises · Principles of dynamic programming"
             $$
 
             $$
-            z^*=\max\{k:\ k\in R_n\}.
+            z=\max\{k:\ k\in R_n\}.
             $$
 
-        It is the KP of the previous chapter with $p_j=w_j$, written with sets of reachable values.
+        It is the KP with $p_j=w_j$, written with sets of reachable values.
 
     2. The row $j$ lists only the new sums; a sum belongs to $R_j$ if it appears in a row $\le j$:
 
@@ -218,7 +218,7 @@ title: "Exercises · Principles of dynamic programming"
         </tr>
         </table></div>
 
-        So $|R_5|=13$ and $z^*=\max R_5=29$.
+        So $|R_5|=13$ and $z=\max R_5=29$.
 
     3. A sum $k$ appearing first in $R_j$ uses item $j$, and $k-w_j$ lies in $R_{j-1}$:
 
@@ -234,7 +234,7 @@ title: "Exercises · Principles of dynamic programming"
 
     !!! chiave ""
 
-        $z^*=29$ with the items $\{1,2,4\}$; there are $13$ reachable sums, while the subsets are $2^5=32$. The greedy choice by weight gives only $28$.
+        $z=29$ with the items $\{1,2,4\}$; there are $13$ reachable sums, while the subsets are $2^5=32$. The greedy choice by weight gives only $28$.
 
 <a id="esercizio-16-3"></a>
 
@@ -254,7 +254,7 @@ title: "Exercises · Principles of dynamic programming"
 
     **Questions**
 
-    1. Express $C_{\max}$ as a function of $L$. Show that minimizing $C_{\max}$ amounts to a subset sum problem, with capacity $\lfloor P/2\rfloor$, and write the recurrence of its reachable sums.
+    1. Express $C_{\max}$ as a function of $L$. Show that minimizing $C_{\max}$ amounts to the optimization version of the subset sum problem, with capacity $\lfloor P/2\rfloor$, and write the recurrence of its reachable sums.
 
     2. Compute the reachable sums $R_1,\dots,R_n$.
 
@@ -276,7 +276,7 @@ title: "Exercises · Principles of dynamic programming"
             $$
 
             $$
-            C^*_{\max}=P-\max\{k:\ k\in R_n\}.
+            z=P-\max\{k:\ k\in R_n\}.
             $$
 
     2. The row $j$ lists only the new sums:
@@ -324,7 +324,7 @@ title: "Exercises · Principles of dynamic programming"
         </tr>
         </table></div>
 
-        The largest reachable sum is $L=23$, and $C^*_{\max}=46-23=23$, equal to the lower bound $\lceil P/2\rceil=23$.
+        The largest reachable sum is $L=23$, and the optimal makespan is $z=46-23=23$, equal to the lower bound $\lceil P/2\rceil=23$.
 
     3. - $23$ first appears in $R_{3}$: item $3$ is taken, go to $23-10=13$;
 
@@ -336,7 +336,7 @@ title: "Exercises · Principles of dynamic programming"
 
     !!! chiave ""
 
-        $C^*_{\max}=23$, with the jobs $\{1,3\}$ on machine $1$ and $\{2,4,5,6\}$ on machine $2$; LPT gives $24$.
+        The optimal makespan is $z=23$, with the jobs $\{1,3\}$ on machine $1$ and $\{2,4,5,6\}$ on machine $2$; LPT gives $24$.
 
 <a id="esercizio-16-4"></a>
 
@@ -446,20 +446,20 @@ title: "Exercises · Principles of dynamic programming"
 
 !!! esercizio "Exercise 16.5: A two-index table: the multiple-choice knapsack problem"
 
-    In the <strong>multiple-choice knapsack problem</strong> the items are partitioned into classes $K_1,\dots,K_m$, and <strong>exactly one</strong> item per class is chosen, with total weight at most $c$ and maximum total profit:
+    In the <strong>multiple-choice knapsack problem</strong> the items are partitioned into classes $\mathscr J_1,\dots,\mathscr J_q$, and <strong>exactly one</strong> item per class is chosen, with total weight at most $c$ and maximum total profit:
 
     $$
-    \max\Big\{\sum_{h=1}^m\sum_{j\in K_h} p_jx_j:\ \sum_{h=1}^m\sum_{j\in K_h} w_jx_j\le c,\ \sum_{j\in K_h}x_j=1,\ h=1,\dots,m,\ x_j\in\{0,1\}\Big\}.
+    \max\Big\{\sum_{h=1}^q\sum_{j\in \mathscr J_h} p_jx_j:\ \sum_{h=1}^q\sum_{j\in \mathscr J_h} w_jx_j\le c,\ \sum_{j\in \mathscr J_h}x_j=1,\ h=1,\dots,q,\ x_j\in\{0,1\}\Big\}.
     $$
 
-    Here $m=3$, $c=10$ and
+    Here $q=3$, $c=10$ and
 
     <div class="tabella" markdown="0"><table>
     <tr>
     <th>class</th>
-    <th colspan="3"><span class="arithmatex">\(K_1\)</span></th>
-    <th colspan="3"><span class="arithmatex">\(K_2\)</span></th>
-    <th colspan="3"><span class="arithmatex">\(K_3\)</span></th>
+    <th colspan="3"><span class="arithmatex">\(\mathscr J_1\)</span></th>
+    <th colspan="3"><span class="arithmatex">\(\mathscr J_2\)</span></th>
+    <th colspan="3"><span class="arithmatex">\(\mathscr J_3\)</span></th>
     </tr>
     <tr>
     <td><span class="arithmatex">\(j\)</span></td>
@@ -499,13 +499,13 @@ title: "Exercises · Principles of dynamic programming"
     </tr>
     </table></div>
 
-    For $h\in\{0,\dots,m\}$ and $k\in\{0,\dots,c\}$, let $v(h,k)$ be the optimal value with the classes $K_1,\dots,K_h$ only and capacity $k$ ($v(h,k)=-\infty$ if there is no feasible choice).
+    For $h\in\{0,\dots,q\}$ and $k\in\{0,\dots,c\}$, let $v(h,k)$ be the optimal value with the classes $\mathscr J_1,\dots,\mathscr J_h$ only and capacity $k$ ($v(h,k)=-\infty$ if there is no feasible choice).
 
     **Questions**
 
-    1. Write the recurrence for $v(h,k)$, deciding which item of class $K_h$ is chosen, and the base cases. Why does the optimal substructure hold?
+    1. Write the recurrence for $v(h,k)$, deciding which item of class $\mathscr J_h$ is chosen, and the base cases. Why does the optimal substructure hold?
 
-    2. Fill the table of $v(h,k)$ row by row, storing in $s(h,k)$ the item chosen in class $K_h$.
+    2. Fill the table of $v(h,k)$ row by row, storing in $s(h,k)$ the item chosen in class $\mathscr J_h$.
 
     3. Reconstruct an optimal solution.
 
@@ -513,13 +513,13 @@ title: "Exercises · Principles of dynamic programming"
 
 ??? soluzione "Solution"
 
-    1. If item $j\in K_h$ is chosen in an optimal solution of $(h,k)$, the items of $K_1,\dots,K_{h-1}$ form an optimal solution of $(h-1,k-w_j)$: a better one would improve the whole. Hence:
+    1. If item $j\in \mathscr J_h$ is chosen in an optimal solution of $(h,k)$, the items of $\mathscr J_1,\dots,\mathscr J_{h-1}$ form an optimal solution of $(h-1,k-w_j)$: a better one would improve the whole. Hence:
 
         !!! nota ""
 
             $$
             v(h,k)=\left\{\begin{array}{ll}
-            \max\{p_j+v(h-1,k-w_j):\ j\in K_h,\ w_j\le k\} & \textrm{if } h\ge 1,\\[1ex]
+            \max\{p_j+v(h-1,k-w_j):\ j\in \mathscr J_h,\ w_j\le k\} & \textrm{if } h\ge 1,\\[1ex]
             0 & \textrm{if } h=0,
             \end{array}\right.
             $$
@@ -554,11 +554,11 @@ title: "Exercises · Principles of dynamic programming"
 
     3. Starting from $(3,10)$:
 
-        - $s(3,10)=9$: item $9$ of class $K_3$, go to $(2,10-4)=(2,6)$;
+        - $s(3,10)=9$: item $9$ of class $\mathscr J_3$, go to $(2,10-4)=(2,6)$;
 
-        - $s(2,6)=4$: item $4$ of class $K_2$, go to $(1,6-1)=(1,5)$;
+        - $s(2,6)=4$: item $4$ of class $\mathscr J_2$, go to $(1,6-1)=(1,5)$;
 
-        - $s(1,5)=3$: item $3$ of class $K_1$, go to $(0,5-5)=(0,0)$;
+        - $s(1,5)=3$: item $3$ of class $\mathscr J_1$, go to $(0,5-5)=(0,0)$;
 
         The optimal solution is $\{3,4,9\}$, of weight $5+1+4=10\le 10$ and profit $8+2+7=17=v(3,10)$. The visited cells:
 
@@ -577,4 +577,4 @@ title: "Exercises · Principles of dynamic programming"
 
     !!! chiave ""
 
-        $v(3,10)=17$ with the items $\{3,4,9\}$, one per class; the table has $(m+1)(c+1)=44$ cells, while the choices are $27$.
+        $v(3,10)=17$ with the items $\{3,4,9\}$, one per class; the table has $(q+1)(c+1)=44$ cells, while the choices are $27$.

@@ -6,7 +6,7 @@ title: "A first DP algorithm: An implementation with lists"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 17** · [:material-book-open-variant: Chapter 17: 0/1 knapsack (KP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP table for the knapsack](../../lab/dp-knapsack-table.md)
+**Part 3 · Dynamic programming · Chapter 17** · [:material-book-open-variant: Chapter 17: 0/1 knapsack (KP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP tables for the knapsack problems](../../lab/dp-knapsack-table.md)
 
 </div>
 
@@ -14,7 +14,9 @@ title: "A first DP algorithm: An implementation with lists"
 
     - The DP algorithm of this section stores one value for every pair given by an item and a capacity value, that is $(n+1)(c+1)$ values in total. Each row of the matrix ${v}$ is non-decreasing in the capacity value and changes only at a few capacity values: every other cell repeats the value of the cell on its left.
 
-    - This subsection describes a <strong>different implementation of the same DP algorithm</strong>. The recursive decomposition and the optimal substructure are the ones of formula $\eqref{eq:1}$: what changes is the data structure. Instead of a whole row of the matrix, only the pairs at which the row changes are stored, that is only the pairs that are actually obtained by a subset of items. These pairs are kept in a list, one list for each item.
+    - This subsection describes a <strong>different implementation of the same DP algorithm</strong>. The recursive decomposition and the optimal substructure are the ones of formula $\eqref{eq:1}$: what changes is the data structure.
+
+    - Instead of a whole row of the matrix, only the pairs at which the row changes are stored, that is only the pairs that are actually obtained by a subset of items. These pairs are kept in a list, one list for each item.
 
     !!! chiave ""
 
@@ -36,9 +38,11 @@ title: "A first DP algorithm: An implementation with lists"
 
             A state is <strong>non-dominated</strong> if no other state dominates it.
 
-    - A dominated state can be discarded. Indeed, let $(w,p)$ dominate $(w',p')$ and let $S'$ be a subset of the remaining items that can be added to $(w',p')$ without exceeding the capacity. Since $w\le w'$, the same subset $S'$ can also be added to $(w,p)$, and since $p\ge p'$ the resulting total profit is not smaller. Therefore no optimal solution is lost.
+    - A dominated state can be discarded. Indeed, let $(w,p)$ dominate $(w',p')$ and let $S'$ be a subset of the remaining items that can be added to $(w',p')$ without exceeding the capacity.
 
-        !!! chiave ""
+    - Since $w\le w'$, the same subset $S'$ can also be added to $(w,p)$, and since $p\ge p'$ the resulting total profit is not smaller. Therefore no optimal solution is lost.
+
+        !!! formula ""
 
             For any $j \in \{0,1,\dots,n\}$, let $L_j$ be the list of the non-dominated states of the KP subinstance given by:
 
@@ -66,7 +70,9 @@ title: "A first DP algorithm: An implementation with lists"
             M_j=\big\{\,(w+w_j,\;p+p_j)\;:\;(w,p)\in L_{j-1},\ w+w_j\le c\,\big\}.
             $$
 
-    - The recursive decomposition process of formula $\eqref{eq:4}$ generates at most $2$ <strong>independent subproblems</strong> for each state of $L_{j-1}$, corresponding to whether or not to select item $j$. If item $j$ is not selected, the state is unchanged and belongs to $L_{j-1}$. If item $j$ is selected, the state becomes $(w+w_j,p+p_j)$ and belongs to $M_j$; this option is available only when $w+w_j\le c$. Here, $L_0=\{(0,0)\}$ since the only subset of an empty set of items is the empty subset.
+    - The recursive decomposition process of formula $\eqref{eq:4}$ generates at most $2$ <strong>independent subproblems</strong> for each state of $L_{j-1}$, corresponding to whether or not to select item $j$. If item $j$ is not selected, the state is unchanged and belongs to $L_{j-1}$. If item $j$ is selected, the state becomes $(w+w_j,p+p_j)$ and belongs to $M_j$; this option is available only when $w+w_j\le c$.
+
+    - Here, $L_0=\{(0,0)\}$ since the only subset of an empty set of items is the empty subset.
 
     - Hence, every non-dominated state reachable with the items $\{1,2,\dots,j\}$ is built by combining the chosen decision on item $j$ with a non-dominated state reachable with the items $\{1,2,\dots,j-1\}$.
 
@@ -101,7 +107,7 @@ title: "A first DP algorithm: An implementation with lists"
 
         !!! esempio "Example 17.9: The lists of states"
 
-            We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.1](index.md#box-1-texexpbox1)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrr}
@@ -162,7 +168,7 @@ title: "A first DP algorithm: An implementation with lists"
 
         !!! esempio "Example 17.10: Execution of the DP algorithm"
 
-            We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.1](index.md#box-1-texexpbox1)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrr}
@@ -291,7 +297,7 @@ title: "A first DP algorithm: An implementation with lists"
 
         !!! esempio "Example 17.11: Computation of the additional information"
 
-            We consider the KP instance of <span style="color:#1971c2">Example 1</span>. For each item $j$ and each position $h$, the table shows the state $L_j[h]$ and the stored values ${\sigma}_j[h]$ and ${\rho}_j[h]$.
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.1](index.md#box-1-texexpbox1)</span>. For each item $j$ and each position $h$, the table shows the state $L_j[h]$ and the stored values ${\sigma}_j[h]$ and ${\rho}_j[h]$.
 
             $$
             \begin{array}{c|c|c|c|c}
@@ -320,7 +326,7 @@ title: "A first DP algorithm: An implementation with lists"
         \end{array}
         $$
 
-        This yields the vector $(x_1,x_2,\dots,x_n)$, where $x_j$ is equal to $1$ if item $j$ is selected in an optimal solution, and $0$ otherwise.
+    - This yields the vector $(x_1,x_2,\dots,x_n)$, where $x_j$ is equal to $1$ if item $j$ is selected in an optimal solution, and $0$ otherwise.
 
         !!! algoritmo "Algorithm: DP\_Lists\_Reconstruct"
 
@@ -330,7 +336,7 @@ title: "A first DP algorithm: An implementation with lists"
 
         !!! esempio "Example 17.12: Computing an optimal solution"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, the last list is
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 17.1](index.md#box-1-texexpbox1)</span>, the last list is
 
             $$
             L_3=\big\{(0,0),(2,6),(3,8),(5,14)\big\}
@@ -417,13 +423,17 @@ title: "A first DP algorithm: An implementation with lists"
 
 - The states of a list have strictly increasing weights, and every weight belongs to $\{0,1,\dots,c\}$: therefore $|L_j|\le c+1$ for all $j \in \{0,1,\dots,n\}$, and $|M_j|\le|L_{j-1}|$.
 
-- For each item, <code>DP\_Lists</code> scans $L_{j-1}$ once to build $M_j$ and then calls <code>Merge</code>, which scans $|L_{j-1}|+|M_j|\le 2(c+1)$ states and performs a constant number of operations for each of them. Therefore the number of steps executed for each item is $\Theta(c)$ in the worst case, and
+- For each item, <code>DP\_Lists</code> scans $L_{j-1}$ once to build $M_j$ and then calls <code>Merge</code>, which scans $|L_{j-1}|+|M_j|\le 2(c+1)$ states and performs a constant number of operations for each of them.
+
+- Therefore the number of steps executed for each item is $\Theta(c)$ in the worst case, and
 
     $$
     S(n,c)=\Theta(nc).
     $$
 
-- The three implementations have the same order of growth, but they do not store the same amount of information. The matrix ${v}$ always has $(n+1)(c+1)$ cells, while the lists contain only the states that are actually reachable: a list reaches the bound $c+1$ only when every capacity value is the total weight of a subset of the items. On the KP instance of <span style="color:#1971c2">Example 1</span> the lists contain $1$, $2$, $4$, and $4$ states, against the $24$ cells of the matrix ${v}$.
+- The three implementations have the same order of growth, but they do not store the same amount of information. The matrix ${v}$ always has $(n+1)(c+1)$ cells, while the lists contain only the states that are actually reachable: a list reaches the bound $c+1$ only when every capacity value is the total weight of a subset of the items.
+
+- On the KP instance of <span style="color:#1971c2">[Example 17.1](index.md#box-1-texexpbox1)</span> the lists contain $1$, $2$, $4$, and $4$ states, against the $24$ cells of the matrix ${v}$.
 
 - The list $L_j$ also satisfies $|L_j|\le 2^j$, since the items $\{1,2,\dots,j\}$ have $2^j$ subsets. Therefore
 

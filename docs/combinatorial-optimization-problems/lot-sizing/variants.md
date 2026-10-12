@@ -10,23 +10,55 @@ title: "Variants"
 
 </div>
 
-- In the <strong>uncapacitated lot sizing problem</strong> the capacities are not binding, for example $cap_t \ge \sum_u d_u$. It is solved in polynomial time by dynamic programming.
+- Each variant keeps the data of the CLS (periods, demands, costs) and changes one feature of the problem. The definitions below give only what changes.
 
-- With <strong>several products</strong>, a set $P$ of products shares one resource: $d_{pt}$ is the demand of product $p \in P$ in period $t$, and $cap_t$ is the time available in period $t$. Producing a unit of $p$ takes $vt_{pt}$ units of time, and a setup of $p$ costs $sc_{pt}$ and takes $st_{pt}$ units of time.
+## 8.6.1 The uncapacitated lot sizing problem
 
-- With an <strong>initial stock</strong>, the quantity $si_p$ of product $p$ available at the beginning of the horizon is a decision, bought at the cost $fc_p$ per unit.
+<a id="box-7-defULS"></a>
 
-- With <strong>overtime</strong>, the capacity is not fixed: working time in normal hours costs $cw_t$ per unit up to $cap^{N}_t$, and overtime costs $co_t$ per unit up to $cap^{O}_t$.
+!!! definizione "Definition 8.3: Uncapacitated lot sizing problem"
 
-- With <strong>unsatisfied demand</strong>, a part of the demand may be left unsatisfied, at a penalty $cu_{pt}$ per unit.
+    The <strong>uncapacitated lot sizing problem</strong> (ULS) is the CLS in which the capacities are not binding, for example $cap_t \ge \sum_{u \in T} d_u$ for every $t \in T$.
 
-- The models of all these variants, with their big-$M$ constraints, are the subject of the chapter «Formulations of lot sizing problems». This chapter studies the problem of the definition above.
+- The ULS is solved in polynomial time by dynamic programming.
+
+## 8.6.2 Several products and setup times
+
+<a id="box-8-defMLS"></a>
+
+!!! definizione "Definition 8.4: Lot sizing with several products and setup times"
+
+    In the <strong>lot sizing problem with several products and setup times</strong> (MLS) a set $P$ of products shares the resource of each period: $d_{pt}$ is the demand of product $p \in P$ in period $t$, and $cap_t$ is the time available in period $t$. Producing a unit of $p$ takes $vt_{pt}$ units of time, and a setup of $p$ costs $sc_{pt}$ and takes $st_{pt}$ units of time.
+
+## 8.6.3 Initial stock
+
+<a id="box-9-defLSSI"></a>
+
+!!! definizione "Definition 8.5: Lot sizing with initial stock"
+
+    In the <strong>lot sizing problem with initial stock</strong> (LS-SI) the quantity $si_p$ of product $p$ available at the beginning of the horizon is a decision, bought at the cost $fc_p$ per unit.
+
+## 8.6.4 Overtime
+
+<a id="box-10-defLSOT"></a>
+
+!!! definizione "Definition 8.6: Lot sizing with overtime"
+
+    In the <strong>lot sizing problem with overtime</strong> (LS-OT) the capacity is not fixed: working time in normal hours costs $cw_t$ per unit up to $cap^{N}_t$, and overtime costs $co_t$ per unit up to $cap^{O}_t$.
+
+## 8.6.5 Unsatisfied demand
+
+<a id="box-11-defLSUD"></a>
+
+!!! definizione "Definition 8.7: Lot sizing with unsatisfied demand"
+
+    In the <strong>lot sizing problem with unsatisfied demand</strong> (LS-UD) a part of the demand may be left unsatisfied, at a penalty $cu_{pt}$ per unit.
 
 ## 8.7 Remarks
 
 - In 1958 Wagner and Whitin gave a dynamic programming algorithm for the case without capacity and with demand that varies over time. It rests on a property of the optimal plans: one produces only when the stock is empty.
 
-- With capacities the property fails, and the problem is NP-hard (chapter «Combinatorial optimization problems»).
+- With capacities the property fails, and the problem is NP-hard ([Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/)).
 
 ## 8.8 Typical mistakes
 
@@ -54,7 +86,7 @@ title: "Variants"
 
     - With capacities, optimal plans may produce while the stock is positive; without capacities they never do.
 
-    - The variants add products, setup times, initial stock, overtime or unsatisfied demand; their models are in the chapter on formulations.
+    - The variants add products, setup times, initial stock, overtime or unsatisfied demand; their models are in [Chapter 15 «Formulations of lot sizing problems»](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/).
 
     <strong>Dashboard of the CLS instance</strong> (minimization: the lower bound is a dual bound, the upper bound is the cost of a plan):
 

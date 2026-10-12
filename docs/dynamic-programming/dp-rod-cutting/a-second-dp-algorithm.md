@@ -6,13 +6,13 @@ title: "A second DP algorithm"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 28** · [:material-book-open-variant: Chapter 28: Rod cutting](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting](../../exercises/dp-rod-cutting.md)
+**Part 3 · Dynamic programming · Chapter 28** · [:material-book-open-variant: Chapter 28: Rod cutting (RCP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting (RCP)](../../exercises/dp-rod-cutting.md)
 
 </div>
 
 - <u>Step 1</u>: computation of the optimal value
 
-    !!! chiave ""
+    !!! formula ""
 
         For any $j \in \{0,1,\dots,n\}$ and $\ell \in \{0,1,\dots,n\}$, let $v(j,\ell)$ be the optimal value of the RCP subinstance given by:
 
@@ -34,7 +34,11 @@ title: "A second DP algorithm"
         \end{array} \right. \tag{28.2}
         \end{equation*}
 
-    - The recursive decomposition process of formula $\eqref{eq:rcpalt}$ generates at most $2$ <strong>independent subproblems</strong>, corresponding to whether or not to cut a piece of length $j$ from a rod of length $\ell$. If $j>\ell$, a piece of length $j$ cannot be cut from the rod, and therefore the only feasible option is not to cut it. Here, $v(j,0)=0$ since a rod of length $0$ cannot be cut and has profit $0$. Moreover, $v(0,\ell)=-\infty$ for $\ell>0$: in this case no positive piece length is available, so no feasible solution exists for a rod of positive length. The value $-\infty$ is used to rule out this infeasible case.
+    - The recursive decomposition process of formula $\eqref{eq:rcpalt}$ generates at most $2$ <strong>independent subproblems</strong>, corresponding to whether or not to cut a piece of length $j$ from a rod of length $\ell$. If $j>\ell$, a piece of length $j$ cannot be cut from the rod, and therefore the only feasible option is not to cut it.
+
+    - Here, $v(j,0)=0$ since a rod of length $0$ cannot be cut and has profit $0$.
+
+    - Moreover, $v(0,\ell)=-\infty$ for $\ell>0$: in this case no positive piece length is available, so no feasible solution exists for a rod of positive length. The value $-\infty$ is used to rule out this infeasible case.
 
     - If $1 \le j \le \ell$, the optimal value $v(j,\ell)$ is obtained by trying the two possible options, cutting or not cutting a first piece of length $j$, and selecting the one that maximizes the profit. The corresponding values are $p_j+v(j,\ell-j)$ and $v(j-1,\ell)$, respectively. If $1 \le \ell < j$, piece length $j$ cannot be used, and therefore $v(j,\ell)=v(j-1,\ell)$.
 
@@ -54,19 +58,21 @@ title: "A second DP algorithm"
 
         !!! esempio "Example 28.9: Recursion tree"
 
-            We consider the RCP instance of <span style="color:#1971c2">Example 1</span>. This is the recursion tree of the top-down approach to compute $v(4,4)$:
+            We consider the RCP instance of <span style="color:#1971c2">[Example 28.1](index.md#box-1-texexpbox1)</span>. This is the recursion tree of the top-down approach to compute $v(4,4)$:
 
             ![Figure 4](../../img/dp-rod-cutting/fig04.svg){ .fig loading=lazy  }
 
             The function $v$ is called $25$ times, and the same subproblems are solved multiple times: $v(1,2)$ is called $2$ times, $v(0,2)$ is called $2$ times, $v(1,1)$ is called $3$ times, $v(0,1)$ is called $3$ times, and $v(1,0)$ is called $3$ times. All the other calls are made only once.
 
-    - The value $v(j,\ell)$ can be computed once $v(j-1,\ell)$ is known and, when $j\le\ell$, $v(j,\ell-j)$ is also known. Therefore, for a fixed value of $j$, all values $v(j,\ell)$ can be computed by considering the values of $\ell$ in increasing order. Starting from the base cases $v(j,0)=0$ and $v(0,\ell)=-\infty$, the values of the function $v$ can be computed row by row, moving to the next value of $j$ only after all values $v(j,\ell)$ for the current value of $j$ have been computed.
+    - The value $v(j,\ell)$ can be computed once $v(j-1,\ell)$ is known and, when $j\le\ell$, $v(j,\ell-j)$ is also known. Therefore, for a fixed value of $j$, all values $v(j,\ell)$ can be computed by considering the values of $\ell$ in increasing order.
+
+    - Starting from the base cases $v(j,0)=0$ and $v(0,\ell)=-\infty$, the values of the function $v$ can be computed row by row, moving to the next value of $j$ only after all values $v(j,\ell)$ for the current value of $j$ have been computed.
 
         <a id="box-19-texrcpaltvalues"></a>
 
         !!! esempio "Example 28.10: Computing the values of the $v$ function"
 
-            We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
+            We consider the RCP instance of  <span style="color:#1971c2">[Example 28.1](index.md#box-1-texexpbox1)</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
             $$
             \begin{array}{l|rrrrrrr}
@@ -146,7 +152,9 @@ title: "A second DP algorithm"
 
     - We can avoid solving the same subproblems repeatedly by storing the value of each subproblem as soon as it is computed. The values are stored in a <strong>lookup table</strong>.
 
-    - Since solving any particular subproblem depends only on subproblems with a smaller value of $j$, or with the same value of $j$ and a smaller rod length, we can solve the subproblems in increasing order of $j$ and, for each fixed value of $j$, in increasing order of rod length, starting from the base cases $v(0,0)=0$ and $v(0,\ell)=-\infty$ for all $\ell \in \{1,\dots,n\}$ and building up to $v(n,n)$: this observation naturally leads to a <strong>much more efficient method</strong> to compute the optimal value $v(n,n)$ of the RCP instance.
+    - Since solving any particular subproblem depends only on subproblems with a smaller value of $j$, or with the same value of $j$ and a smaller rod length, we can solve the subproblems in increasing order of $j$ and, for each fixed value of $j$, in increasing order of rod length, starting from the base cases $v(0,0)=0$ and $v(0,\ell)=-\infty$ for all $\ell \in \{1,\dots,n\}$ and building up to $v(n,n)$.
+
+    - This observation naturally leads to a <strong>much more efficient method</strong> to compute the optimal value $v(n,n)$ of the RCP instance.
 
     - A <strong>second method</strong> to compute the optimal value $v(n,n)$ of the RCP instance is the <strong>bottom-up approach</strong>. The method starts from the base cases $v(0,0)=0$ and $v(0,\ell)=-\infty$ for all $\ell \in \{1,\dots,n\}$ and evaluates formula $\eqref{eq:rcpalt}$ for increasing values of $j \in \{1,2,\dots,n\}$ and $\ell \in \{0,1,\dots,n\}$: each value $v(j,\ell)$ is computed using already-computed values, until the value $v(n,n)$ of the RCP instance is obtained.
 
@@ -174,7 +182,7 @@ title: "A second DP algorithm"
 
         !!! esempio "Example 28.11: Execution of the DP algorithm"
 
-            We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
+            We consider the RCP instance of  <span style="color:#1971c2">[Example 28.1](index.md#box-1-texexpbox1)</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
             $$
             \begin{array}{l|rrrrrrr}
@@ -381,7 +389,7 @@ title: "A second DP algorithm"
 
         !!! esempio "Example 28.12: Computation of the additional information"
 
-            We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
+            We consider the RCP instance of  <span style="color:#1971c2">[Example 28.1](index.md#box-1-texexpbox1)</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
             $$
             \begin{array}{l|rrrrrrr}
@@ -587,7 +595,7 @@ title: "A second DP algorithm"
 
         !!! esempio "Example 28.13: Computing an optimal solution"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following matrix ${s}$:
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 28.1](index.md#box-1-texexpbox1)</span>, we have the following matrix ${s}$:
 
             $$
             \begin{array}{l|rrrrr}
@@ -673,7 +681,7 @@ title: "A second DP algorithm"
 
         !!! esempio "Example 28.14: Computing optimal solutions"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following matrix ${s}$:
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 28.1](index.md#box-1-texexpbox1)</span>, we have the following matrix ${s}$:
 
             $$
             \begin{array}{l|rrrrr}

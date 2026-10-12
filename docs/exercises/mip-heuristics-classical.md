@@ -20,9 +20,9 @@ title: "Exercises · MIP heuristics for the classical problems"
 
     $$
     \begin{array}{l|ccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
-    \hline {p_i} & {11} & {15} & {18} & {14} & {10} \\[1ex]
-    {w_i} & {3} & {5} & {7} & {10} & {9} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\[1ex]
+    \hline {p_j} & {11} & {15} & {18} & {14} & {10} \\[1ex]
+    {w_j} & {3} & {5} & {7} & {10} & {9} \\
     \hline
     \end{array}
     $$
@@ -76,9 +76,9 @@ title: "Exercises · MIP heuristics for the classical problems"
 
     $$
     \begin{array}{l|ccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
-    \hline {p_i} & {13} & {12} & {14} & {6} & {5} \\[1ex]
-    {w_i} & {2} & {5} & {10} & {6} & {7} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\[1ex]
+    \hline {p_j} & {13} & {12} & {14} & {6} & {5} \\[1ex]
+    {w_j} & {2} & {5} & {10} & {6} & {7} \\
     \hline
     \end{array}
     $$
@@ -101,7 +101,7 @@ title: "Exercises · MIP heuristics for the classical problems"
         \tilde x=\Big(1,1,\frac45,0,0\Big),\qquad z(\LP_{\KP})=13+12+14\cdot\frac45=\frac{181}{5}=36.2 .
         $$
 
-    2. $\rnd{\frac45}=1$ gives $(1,1,1,0,0)$, of weight $17>15$: <strong>infeasible</strong>. Rounding down gives $(1,1,0,0,0)$, feasible (Observation on rounding down), of profit $25$.
+    2. $\rnd{\frac45}=1$ gives $(1,1,1,0,0)$, of weight $17>15$: <strong>infeasible</strong>. Rounding down gives $(1,1,0,0,0)$, feasible (by the observation on rounding down of [Chapter 10 «MIP heuristics»](https://fabiofurini.github.io/integer-linear-programming/mip-heuristics/mip-heuristics/) of the module <em>Integer Linear Programming</em>), of profit $25$.
 
     3. <strong>Step 1.</strong> Fix $x_3:=\rnd{\frac45}=1$. Item $3$ uses $10$; the LP takes item $1$ (residual $3$) and the fraction $\frac35$ of item $2$: $\tilde x=\big(1,\frac35,1,0,0\big)$, of value $14+13+\frac{36}{5}=\frac{171}{5}=34.2$.
 
@@ -153,9 +153,9 @@ title: "Exercises · MIP heuristics for the classical problems"
 
     $$
     \begin{array}{l|cccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} \\[1ex]
-    \hline {p_i} & {18} & {21} & {4} & {19} & {10} & {7} \\[1ex]
-    {w_i} & {8} & {10} & {2} & {12} & {7} & {10} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\[1ex]
+    \hline {p_j} & {18} & {21} & {4} & {19} & {10} & {7} \\[1ex]
+    {w_j} & {8} & {10} & {2} & {12} & {7} & {10} \\
     \hline
     \end{array}
     $$
@@ -166,7 +166,7 @@ title: "Exercises · MIP heuristics for the classical problems"
 
     1. Compute the incumbent $\bar x$ and its profit, and the optimal solution $\tilde x$ of the LP relaxation $\LP_{\KP}$ with its value.
 
-    2. Apply RINS: list the variables fixed by RINS, write the sub-MIP with the cutoff constraint $\sum_i p_ix_i\ge f(\bar x)+1$, and solve it by enumeration.
+    2. Apply RINS: list the variables fixed by RINS, write the sub-MIP with the cutoff constraint $\sum_j p_jx_j\ge f(\bar x)+1$, and solve it by enumeration.
 
     3. Show that local branching with radius $k=2$ around $\bar x$ finds no better solution.
 
@@ -237,9 +237,9 @@ title: "Exercises · MIP heuristics for the classical problems"
 
     $$
     \begin{array}{l|cccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} \\[1ex]
-    \hline {p_i} & {16} & {13} & {8} & {16} & {10} & {9} \\[1ex]
-    {w_i} & {2} & {2} & {4} & {9} & {6} & {8} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\[1ex]
+    \hline {p_j} & {16} & {13} & {8} & {16} & {10} & {9} \\[1ex]
+    {w_j} & {2} & {2} & {4} & {9} & {6} & {8} \\
     \hline
     \end{array}
     $$
@@ -341,4 +341,4 @@ title: "Exercises · MIP heuristics for the classical problems"
 
     3. The cutoff is $C_{\max}\le18$: since the total is $36$, both loads must be exactly $18$, i.e., $M_1$ must lose exactly $1$. A single move would need a job with $t_j=1$: none (distance $2$ is impossible). With two jobs ($r=2$, distance $4$): two jobs leaving $M_1$ would need $t_i+t_j=1$, impossible; a swap of $i\in J_1$ with $j\in J_2$ needs $t_i-t_j=1$, and the only pair is job $1$ ($9$) with job $5$ ($8$). The new incumbent is $J_1=\{2,4,5,6\}$, $J_2=\{1,3\}$, with loads $18$, $18$: makespan $18$, at distance $4$.
 
-    4. The cutoff is $C_{\max}\le17$, but $C_{\max}\ge 36/2=18$ for every assignment: the proximity sub-MIP is infeasible, and the method stops. By the proposition on proximity search, makespan $18$ is <strong>optimal</strong>; it also attains the lower bound of question 1.
+    4. The cutoff is $C_{\max}\le17$, but $C_{\max}\ge 36/2=18$ for every assignment: the proximity sub-MIP is infeasible, and the method stops. By the proposition on proximity search of [Chapter 10 «MIP heuristics»](https://fabiofurini.github.io/integer-linear-programming/mip-heuristics/mip-heuristics/) of the module <em>Integer Linear Programming</em>, makespan $18$ is <strong>optimal</strong>; it also attains the lower bound of question 1.

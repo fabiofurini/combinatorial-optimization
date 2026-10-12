@@ -1,5 +1,5 @@
 ---
-title: "Scheduling on identical parallel machines (P|Cmax)"
+title: "Scheduling on identical parallel machines (P||Cmax)"
 ---
 
 # Scheduling on identical parallel machines ($P\|C_{\max}$)
@@ -61,7 +61,7 @@ title: "Scheduling on identical parallel machines (P|Cmax)"
 </tr>
 <tr>
 <td><strong>Approximation</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/approximation/">Ch. 34 «Principles of approximation algorithms»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/pcmax-approximation/#402-the-algorithms-list-and-lpt">Ch. 40 «Approximation for <span class="arithmatex">\(P\|C_{\max}\)</span>»</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/approximation/">Ch. 34 «Principles of approximation algorithms»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/pcmax-approximation/#sez-sec-LIST">Ch. 40 «Approximation for <span class="arithmatex">\(P\|C_{\max}\)</span>»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>

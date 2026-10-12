@@ -6,13 +6,13 @@ title: "DP for the subset sum problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 20** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Subset sum (SSP)](../exercises/dp-subset-sum.md)
+**Part 3 · Dynamic programming · Chapter 20** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Subset sum (SSP)](../exercises/dp-subset-sum.md) · [:material-gesture-tap: App: DP tables for the knapsack problems](../lab/dp-knapsack-table.md)
 
 </div>
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter [«DP for the 0/1 knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/): the recurrence $v(j,k)$ over items and capacities, the matrix $s$ of the decisions and the reconstruction of a solution.
+    - From this module, the chapter [«DP for the 0/1 knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/): the recurrence $v(j,k)$ of the 0/1 knapsack problem (KP) over items and capacities, the matrix $s$ of the decisions and the reconstruction of a solution.
 
     - From this module, the chapter [«Knapsack problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-subset-sum-problem/): the subset sum problem and its solution as a 0/1 knapsack problem with $p_j=w_j$.
 
@@ -48,7 +48,7 @@ The problem of this chapter is the [subset sum problem (SSP)](https://fabiofurin
     \end{array}
     $$
 
-    We refer to this SSP instance as <span style="color:#1971c2">Example 1</span>.
+    We refer to this SSP instance as <span style="color:#1971c2">[Example 20.1](#box-1-texsspex1)</span>.
 
 - A subset $S\subseteq\mathscr{I}$ is described by the binary vector $(x_1,x_2,\dots,x_n)$, where $x_j=1$ if item $j$ belongs to $S$ and $x_j=0$ otherwise.
 
@@ -56,7 +56,7 @@ The problem of this chapter is the [subset sum problem (SSP)](https://fabiofurin
 
 - <u>Step 1</u>: computation of the answer
 
-    !!! chiave ""
+    !!! formula ""
 
         For any $j \in \{0,1,\dots,n\}$ and $k \in \{0,1,\dots,c\}$, let $r(j,k)\in\{\textit{true},\textit{false}\}$ be the answer of the SSP subinstance given by:
 
@@ -126,7 +126,7 @@ The problem of this chapter is the [subset sum problem (SSP)](https://fabiofurin
 
     !!! esempio "Example 20.2: Execution of the DP algorithm"
 
-        We consider the SSP instance of <span style="color:#1971c2">Example 1</span>, with target value $c=10$ and weights $w=(3,5,4,7)$.
+        We consider the SSP instance of <span style="color:#1971c2">[Example 20.1](#box-1-texsspex1)</span>, with target value $c=10$ and weights $w=(3,5,4,7)$.
 
         For each step of the DP algorithm with $j\ge 1$, the table shows the values of $j$ and $k$, the cells $r[j][k]$ and $s[j][k]$, and the operation performed; $\mathrm{T}$ stands for <em>true</em> and $\mathrm{F}$ for <em>false</em>. The row $j=0$ is $r[0][0]=\mathrm{T}$ and $r[0][k]=\mathrm{F}$ for $k\ge 1$, with $s[0][k]=0$.
 
@@ -504,7 +504,7 @@ The problem of this chapter is the [subset sum problem (SSP)](https://fabiofurin
 
     !!! esempio "Example 20.3: Computing a subset"
 
-        After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we start from $j=4$ and $k=10$:
+        After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 20.1](#box-1-texsspex1)</span>, we start from $j=4$ and $k=10$:
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -577,7 +577,7 @@ The problem of this chapter is the [subset sum problem (SSP)](https://fabiofurin
 
         !!! chiave ""
 
-            The answer to the SSP instance of <span style="color:#1971c2">Example 1</span> is <strong>yes</strong>: the vector $(1,0,0,1)$ selects the subset $\{1,4\}$, whose total weight is $3+7=c$.
+            The answer to the SSP instance of <span style="color:#1971c2">[Example 20.1](#box-1-texsspex1)</span> is <strong>yes</strong>: the vector $(1,0,0,1)$ selects the subset $\{1,4\}$, whose total weight is $3+7=c$.
 
 ### 20.1.1 Number of steps
 
@@ -644,7 +644,7 @@ The problem of this chapter is the [subset sum problem (SSP)](https://fabiofurin
 
     - The DP algorithm executes $\Theta(nc)$ steps, as the DP algorithm of the KP with $p_j=w_j$.
 
-    <strong>Dashboard of the SSP example.</strong> Example 1 ($c=10$, four items):
+    <strong>Dashboard of the SSP example.</strong> [Example 20.1](#box-1-texsspex1) ($c=10$, four items):
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -662,3 +662,7 @@ The problem of this chapter is the [subset sum problem (SSP)](https://fabiofurin
 ---
 
 **Exercises on this chapter:** [:material-pencil: Subset sum (SSP)](../exercises/dp-subset-sum.md)
+
+<!-- laboratorio-interattivo: sezione generata da interattivi.py -->
+
+:material-flask-outline: **In the interactive lab:** [DP tables for the knapsack problems](../lab/dp-knapsack-table.md#voce=ssp).

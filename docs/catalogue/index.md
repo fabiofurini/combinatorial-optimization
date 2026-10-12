@@ -14,7 +14,7 @@ All the problems defined in the course, by family. Each problem has its own page
 
     ---
 
-    Select items of maximum total profit subject to capacity constraints.
+    Select a subset or a multiset of items of maximum total profit subject to capacity constraints.
 
     [0/1 knapsack (KP)](knapsack-problem.md) · [Subset sum (SSP)](subset-sum-problem.md) · [Bounded knapsack (BKP)](bounded-knapsack-problem.md) · [Unbounded knapsack (UKP)](unbounded-knapsack-problem.md) · [Multidimensional knapsack (MDKP)](multidimensional-knapsack-problem.md) · [Multiple knapsack (MKP)](multiple-knapsack-problem.md) · [Multiple-choice knapsack (MCKP)](multiple-choice-knapsack-problem.md) · [Knapsack with setups (KPS)](knapsack-problem-with-setups.md)
 
@@ -84,7 +84,7 @@ All the problems defined in the course, by family. Each problem has its own page
 
     ---
 
-    Rod cutting and coin change, two problems solved by dynamic programming.
+    Problems with an exact total length or amount, solved by dynamic programming.
 
     [Rod cutting (RCP)](rod-cutting-problem.md) · [Coin change (CCP)](coin-change-problem.md)
 

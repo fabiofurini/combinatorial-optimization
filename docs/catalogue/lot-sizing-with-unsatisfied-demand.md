@@ -29,4 +29,12 @@ title: "Lot sizing with unsatisfied demand (LS-UD)"
 <td><strong>Definition</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/variants/#sez-sec-ls-variants">Ch. 8 «Lot sizing problems»</a></td>
 </tr>
+<tr>
+<td><strong>Formulations</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/ilp-models-for-the-variants/#eq-CLSPu-bigM">Ch. 15 «Formulations of lot sizing problems»</a></td>
+</tr>
+<tr>
+<td><strong>Exercises</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/lot-sizing-formulations/#esercizio-15-9">Exercise 15.9</a></td>
+</tr>
 </table></div>

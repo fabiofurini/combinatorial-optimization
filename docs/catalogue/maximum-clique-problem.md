@@ -57,7 +57,7 @@ title: "The maximum clique problem (MCP)"
 </tr>
 <tr>
 <td><strong>Formulations</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/clique-formulations/">Ch. 12 «Formulations of clique problems»</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/clique-formulations/an-ilp-model-for-the-maximum-clique-problem-the-edge-formula/#sez-sec-mcpf-MCP">Ch. 12 «Formulations of clique problems»</a></td>
 </tr>
 <tr>
 <td><strong>Limits of approximation</strong></td>
@@ -83,11 +83,11 @@ title: "The maximum clique problem (MCP)"
 
 ### Formulations { #sez-sec-cat-mcp-formulations }
 
-- The model $\ILP_{\MCP}$ has one binary variable per vertex and one constraint $x_u+x_v\le1$ per non-edge ([Ch. 12](../formulations/clique-formulations/index.md)).
+- The model $\ILP_{\MCP}$ has one binary variable per vertex and one constraint $x_u+x_v\le1$ per non-edge ([Ch. 12](../formulations/clique-formulations/an-ilp-model-for-the-maximum-clique-problem-the-edge-formula.md#eq-mcpF-ILP)).
 
-- $x_v=\frac12$ for all vertices is feasible, so $z(\LP_{\MCP})\ge n/2$: the LP bound can be arbitrarily weak ([Ch. 12](../formulations/clique-formulations/index.md)).
+- $x_v=\frac12$ for all vertices is feasible, so $z(\LP_{\MCP})\ge n/2$: the LP bound can be arbitrarily weak ([Ch. 12](../formulations/clique-formulations/an-ilp-model-for-the-maximum-clique-problem-the-edge-formula.md#box-7-mcpF-prop-gap)).
 
-- Stable set inequalities and odd cycle inequalities strengthen the model ([Ch. 12](../formulations/clique-formulations/index.md)).
+- Clique inequalities on the stable sets of $G$ strengthen the model, and the dual of their relaxation is a VCP relaxation: $\omega(G)\le z(\LP^{\mathrm{CL}}_{\MCP})\le\chi(G)$ ([Ch. 12](../formulations/clique-formulations/an-ilp-model-for-the-maximum-clique-problem-the-edge-formula.md#box-11-mcpF-prop-dual)).
 
 ### Approximation { #sez-sec-cat-mcp-approximation }
 

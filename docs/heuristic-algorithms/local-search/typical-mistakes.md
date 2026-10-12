@@ -65,7 +65,7 @@ title: "Typical mistakes · In summary"
     </tr>
     </table></div>
 
-    The dual bounds come from the notes on heuristic algorithms: the local search alone does not certify its result.
+    The dual bounds come from the chapter [«Heuristic algorithms: definitions»](../heuristics.md): the local search alone does not certify its result.
 
 ---
 

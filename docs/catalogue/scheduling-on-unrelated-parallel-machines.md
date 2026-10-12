@@ -1,5 +1,5 @@
 ---
-title: "Scheduling on unrelated parallel machines (R|Cmax)"
+title: "Scheduling on unrelated parallel machines (R||Cmax)"
 ---
 
 # Scheduling on unrelated parallel machines ($R\|C_{\max}$)

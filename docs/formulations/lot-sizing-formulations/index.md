@@ -12,7 +12,7 @@ title: "Formulations of lot sizing problems"
 
 !!! nota "Prerequisites"
 
-    - From the module <em>Integer linear programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/) and [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): ILP problems, LP relaxations and lower bounds.
+    - From the module <em>Integer linear programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/) and [Chapter 2 «Primal and dual bounds»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): ILP problems, LP relaxations and lower bounds.
 
     - From this module, [Chapter 8 «Lot sizing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/): the problem, its assumptions, the plans and the reference instance.
 
@@ -20,7 +20,7 @@ title: "Formulations of lot sizing problems"
 
     At the end of this chapter you will be able to:
 
-    - write the big-M formulation of the capacitated lot-sizing problem and compute a weak and a strong big-M value;
+    - write the big-M formulation of the capacitated lot sizing problem and compute a weak and a strong big-M value;
 
     - write the shortest-path formulation and interpret its variables as the arcs of a network;
 
@@ -72,25 +72,25 @@ title: "Formulations of lot sizing problems"
 <td><a href="ilp-models-for-the-variants/#sez-sec-lsf-variants">15.7</a></td>
 </tr>
 <tr>
-<td>several products</td>
+<td>MLS</td>
 <td><span class="arithmatex">\(\mathrm{ILP}_{\mathrm{CLSP}}^{P}\)</span></td>
 <td>big-<span class="arithmatex">\(M\)</span>, setup times</td>
 <td><a href="ilp-models-for-the-variants/#sez-sec-lsf-variants">15.7</a></td>
 </tr>
 <tr>
-<td>initial stock</td>
+<td>LS-SI</td>
 <td><span class="arithmatex">\(\mathrm{ILP}_{\mathrm{CLSP}}^{\mathrm{SI}}\)</span></td>
 <td>big-<span class="arithmatex">\(M\)</span>, initial stock variables</td>
 <td><a href="ilp-models-for-the-variants/#sez-sec-lsf-variants">15.7</a></td>
 </tr>
 <tr>
-<td>overtime</td>
+<td>LS-OT</td>
 <td><span class="arithmatex">\(\mathrm{ILP}_{\mathrm{CLSP}}^{\mathrm{OT}}\)</span></td>
 <td>big-<span class="arithmatex">\(M\)</span>, overtime variables</td>
 <td><a href="ilp-models-for-the-variants/#sez-sec-lsf-variants">15.7</a></td>
 </tr>
 <tr>
-<td>unsatisfied demand</td>
+<td>LS-UD</td>
 <td><span class="arithmatex">\(\mathrm{ILP}_{\mathrm{CLSP}}^{\mathrm{UD}}\)</span></td>
 <td>big-<span class="arithmatex">\(M\)</span>, unsatisfied demand variables</td>
 <td><a href="ilp-models-for-the-variants/#sez-sec-lsf-variants">15.7</a></td>

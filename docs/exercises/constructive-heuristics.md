@@ -6,7 +6,7 @@ title: "Exercises · Constructive heuristics"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 30** · each solution opens with a click · [:material-book-open-variant: Chapter 30: Constructive](../heuristic-algorithms/constructive-heuristics/index.md) · [:material-file-pdf-box: Exercises, volume 4 (PDF)](../pdf/exercises-4-heuristic-algorithms.pdf)
+**Exercises · Chapter 30** · each solution opens with a click · [:material-book-open-variant: Chapter 30: Constructive heuristics](../heuristic-algorithms/constructive-heuristics/index.md) · [:material-file-pdf-box: Exercises, volume 4 (PDF)](../pdf/exercises-4-heuristic-algorithms.pdf)
 
 </div>
 
@@ -20,20 +20,20 @@ title: "Exercises · Constructive heuristics"
 
     $$
     \begin{array}{l|ccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
-    \hline {p_i} & {4} & {15} & {11} & {8} & {2} \\[1ex]
-    {w_i} & {3} & {8} & {7} & {2} & {5} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\[1ex]
+    \hline {p_j} & {4} & {15} & {11} & {8} & {2} \\[1ex]
+    {w_j} & {3} & {8} & {7} & {2} & {5} \\
     \hline
     \end{array}
     $$
 
     **Questions**
 
-    1. Sort the items by non-increasing profit, by non-decreasing weight and by non-increasing efficiency $\frac{p_i}{w_i}$ (ties by index).
+    1. Sort the items by non-increasing profit, by non-decreasing weight and by non-increasing efficiency $\frac{p_j}{w_j}$ (ties by index).
 
     2. Apply the greedy algorithm with each of the three orders ($GR_p$, $GR_w$, $GR$), showing the residual capacity $rc$ after each step, and give the three solutions and their profits.
 
-    3. Compute the upper bound $U$ given by the LP relaxation (items by non-increasing efficiency, the split item taken fractionally) and the gap $\frac{\lfloor U\rfloor-\mathscr{A}(I)}{\mathscr{A}(I)}$ of the best of the three solutions.
+    3. Compute the upper bound $\mathrm{UB}$ given by the LP relaxation (items by non-increasing efficiency, the split item taken fractionally) and the gap $\frac{\lfloor \mathrm{UB}\rfloor-\mathscr{A}(I)}{\mathscr{A}(I)}$ of the best of the three solutions.
 
     4. Knowing that the optimal value is $z(I)=19$, say which orders find an optimal solution, and compute the relative error of the others. Explain what goes wrong.
 
@@ -109,10 +109,10 @@ title: "Exercises · Constructive heuristics"
 
         Solution $\{3,4\}$, $GR(I)=11+8=19$.
 
-    3. In the efficiency order $(4,2,3,1,5)$ the items $\{4\}$ fit, with total weight $2$, and the split item is $2$, with residual capacity $\bar c=7$. Hence
+    3. In the efficiency order $(4,2,3,1,5)$ the items $\{4\}$ fit, with total weight $2$, and the split item is $2$, with residual capacity $rc=7$. Hence
 
         $$
-        U=8+15\cdot\frac{7}{8}=\frac{169}{8}\approx 21.12,\qquad \lfloor U\rfloor=21.
+        \mathrm{UB}=8+15\cdot\frac{7}{8}=\frac{169}{8}\approx 21.12,\qquad \lfloor \mathrm{UB}\rfloor=21.
         $$
 
         The best of the three solutions has profit $19$, and
@@ -121,7 +121,7 @@ title: "Exercises · Constructive heuristics"
         gap(I)=\frac{21-19}{19}\approx 10.5\%.
         $$
 
-    4. The optimal solution is $\{3,4\}$, with $z(I)=19$ (the bound $\lfloor U\rfloor=21$ is not attained: here the gap overestimates the error). Only $GR$ finds it. $GR_p$ takes item $2$, the most valuable but also the heaviest, which leaves room for nothing else of value: $GR_p(I)=15$, relative error 21.1%. $GR_w$ fills the knapsack with the two lightest items, $4$ and $1$, which have little value: $GR_w(I)=12$, relative error 36.8%. On this instance efficiency is the right criterion.
+    4. The optimal solution is $\{3,4\}$, with $z(I)=19$ (the bound $\lfloor \mathrm{UB}\rfloor=21$ is not attained: here the gap overestimates the error). Only $GR$ finds it. $GR_p$ takes item $2$, the most valuable but also the heaviest, which leaves room for nothing else of value: $GR_p(I)=15$, relative error 21.1%. $GR_w$ fills the knapsack with the two lightest items, $4$ and $1$, which have little value: $GR_w(I)=12$, relative error 36.8%. On this instance efficiency is the right criterion.
 
 <a id="esercizio-30-2"></a>
 
@@ -131,20 +131,20 @@ title: "Exercises · Constructive heuristics"
 
     $$
     \begin{array}{l|ccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
-    \hline {p_i} & {9} & {4} & {8} & {6} & {7} \\[1ex]
-    {w_i} & {7} & {2} & {9} & {5} & {6} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\[1ex]
+    \hline {p_j} & {9} & {4} & {8} & {6} & {7} \\[1ex]
+    {w_j} & {7} & {2} & {9} & {5} & {6} \\
     \hline
     \end{array}
     $$
 
     **Questions**
 
-    1. Sort the items by non-increasing profit, by non-decreasing weight and by non-increasing efficiency $\frac{p_i}{w_i}$ (ties by index).
+    1. Sort the items by non-increasing profit, by non-decreasing weight and by non-increasing efficiency $\frac{p_j}{w_j}$ (ties by index).
 
     2. Apply the greedy algorithm with each of the three orders ($GR_p$, $GR_w$, $GR$), showing the residual capacity $rc$ after each step, and give the three solutions and their profits.
 
-    3. Compute the upper bound $U$ given by the LP relaxation (items by non-increasing efficiency, the split item taken fractionally) and the gap $\frac{\lfloor U\rfloor-\mathscr{A}(I)}{\mathscr{A}(I)}$ of the best of the three solutions.
+    3. Compute the upper bound $\mathrm{UB}$ given by the LP relaxation (items by non-increasing efficiency, the split item taken fractionally) and the gap $\frac{\lfloor \mathrm{UB}\rfloor-\mathscr{A}(I)}{\mathscr{A}(I)}$ of the best of the three solutions.
 
     4. Is any of the three solutions optimal? Compute the relative error of the others, and explain why the order by efficiency fails on this instance.
 
@@ -220,10 +220,10 @@ title: "Exercises · Constructive heuristics"
 
         Solution $\{1,2\}$, $GR(I)=9+4=13$.
 
-    3. In the efficiency order $(2,1,4,5,3)$ the items $\{2,1\}$ fit, with total weight $9$, and the split item is $4$, with residual capacity $\bar c=4$. Hence
+    3. In the efficiency order $(2,1,4,5,3)$ the items $\{2,1\}$ fit, with total weight $9$, and the split item is $4$, with residual capacity $rc=4$. Hence
 
         $$
-        U=4+9+6\cdot\frac{4}{5}=\frac{89}{5}\approx 17.80,\qquad \lfloor U\rfloor=17.
+        \mathrm{UB}=4+9+6\cdot\frac{4}{5}=\frac{89}{5}\approx 17.80,\qquad \lfloor \mathrm{UB}\rfloor=17.
         $$
 
         The best of the three solutions has profit $17$, and
@@ -232,7 +232,7 @@ title: "Exercises · Constructive heuristics"
         gap(I)=\frac{17-17}{17}=0\%.
         $$
 
-    4. $GR_w(I)=17=\lfloor U\rfloor$, so the solution $\{2,4,5\}$ of $GR_w$ is optimal and $z(I)=17$. $GR$ fails: after the two most efficient items $2$ and $1$ the residual capacity is $13-9=4$, too small for any other item, and $GR(I)=13$, relative error 23.5%. $GR_p(I)=16$ is also worse than $GR_w$, with relative error $\frac{17-16}{17}\approx 5.9\%$. Three light items fill the knapsack exactly ($2+5+6=13$): here what matters is how well the items fill the capacity, which the efficiency ignores.
+    4. $GR_w(I)=17=\lfloor \mathrm{UB}\rfloor$, so the solution $\{2,4,5\}$ of $GR_w$ is optimal and $z(I)=17$. $GR$ fails: after the two most efficient items $2$ and $1$ the residual capacity is $13-9=4$, too small for any other item, and $GR(I)=13$, relative error 23.5%. $GR_p(I)=16$ is also worse than $GR_w$, with relative error $\frac{17-16}{17}\approx 5.9\%$. Three light items fill the knapsack exactly ($2+5+6=13$): here what matters is how well the items fill the capacity, which the efficiency ignores.
 
 <a id="esercizio-30-3"></a>
 
@@ -242,22 +242,22 @@ title: "Exercises · Constructive heuristics"
 
     $$
     \begin{array}{l|ccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
-    \hline {p_i} & {8} & {13} & {5} & {12} & {7} \\[1ex]
-    {w_i} & {5} & {9} & {4} & {8} & {2} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\[1ex]
+    \hline {p_j} & {8} & {13} & {5} & {12} & {7} \\[1ex]
+    {w_j} & {5} & {9} & {4} & {8} & {2} \\
     \hline
     \end{array}
     $$
 
     **Questions**
 
-    1. Sort the items by non-increasing profit, by non-decreasing weight and by non-increasing efficiency $\frac{p_i}{w_i}$ (ties by index).
+    1. Sort the items by non-increasing profit, by non-decreasing weight and by non-increasing efficiency $\frac{p_j}{w_j}$ (ties by index).
 
     2. Apply the greedy algorithm with each of the three orders ($GR_p$, $GR_w$, $GR$), showing the residual capacity $rc$ after each step, and give the three solutions and their profits.
 
-    3. Compute the upper bound $U$ given by the LP relaxation (items by non-increasing efficiency, the split item taken fractionally) and the gap $\frac{\lfloor U\rfloor-\mathscr{A}(I)}{\mathscr{A}(I)}$ of the best of the three solutions.
+    3. Compute the upper bound $\mathrm{UB}$ given by the LP relaxation (items by non-increasing efficiency, the split item taken fractionally) and the gap $\frac{\lfloor \mathrm{UB}\rfloor-\mathscr{A}(I)}{\mathscr{A}(I)}$ of the best of the three solutions.
 
-    4. Find a feasible solution of profit $\lfloor U\rfloor$, and compute the relative error of each of the three greedy solutions. Which choice prevents the greedy by efficiency from finding it?
+    4. Find a feasible solution of profit $\lfloor \mathrm{UB}\rfloor$, and compute the relative error of each of the three greedy solutions. Which choice prevents the greedy by efficiency from finding it?
 
 ??? soluzione "Solution"
 
@@ -331,10 +331,10 @@ title: "Exercises · Constructive heuristics"
 
         Solution $\{1,5\}$, $GR(I)=8+7=15$.
 
-    3. In the efficiency order $(5,1,4,2,3)$ the items $\{5,1\}$ fit, with total weight $7$, and the split item is $4$, with residual capacity $\bar c=3$. Hence
+    3. In the efficiency order $(5,1,4,2,3)$ the items $\{5,1\}$ fit, with total weight $7$, and the split item is $4$, with residual capacity $rc=3$. Hence
 
         $$
-        U=7+8+12\cdot\frac{3}{8}=\frac{39}{2}\approx 19.50,\qquad \lfloor U\rfloor=19.
+        \mathrm{UB}=7+8+12\cdot\frac{3}{8}=\frac{39}{2}\approx 19.50,\qquad \lfloor \mathrm{UB}\rfloor=19.
         $$
 
         The best of the three solutions has profit $15$, and
@@ -343,7 +343,7 @@ title: "Exercises · Constructive heuristics"
         gap(I)=\frac{19-15}{15}\approx 26.7\%.
         $$
 
-    4. Since $GR(I)=15<\lfloor U\rfloor$, the bound does not certify optimality. Indeed the solution $\{4,5\}$ has weight $8+2=10\le 10$ and profit $19=\lfloor U\rfloor$, so it is optimal, $z(I)=19$. The relative errors are 31.6% for $GR_p$, 36.8% for $GR_w$ and 21.1% for $GR$: no order finds the optimum. The optimal solution combines the most efficient item $5$ with item $4$, which comes third in the efficiency order: after item $1$ is selected, item $4$ no longer fits, and the choice of item $1$ is never revised.
+    4. Since $GR(I)=15<\lfloor \mathrm{UB}\rfloor$, the bound does not certify optimality. Indeed the solution $\{4,5\}$ has weight $8+2=10\le 10$ and profit $19=\lfloor \mathrm{UB}\rfloor$, so it is optimal, $z(I)=19$. The relative errors are 31.6% for $GR_p$, 36.8% for $GR_w$ and 21.1% for $GR$: no order finds the optimum. The optimal solution combines the most efficient item $5$ with item $4$, which comes third in the efficiency order: after item $1$ is selected, item $4$ no longer fits, and the choice of item $1$ is never revised.
 
 ## Bin packing: decreasing heuristics
 
@@ -355,8 +355,8 @@ title: "Exercises · Constructive heuristics"
 
     $$
     \begin{array}{l|ccccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} & {i=7} \\[1ex]
-    \hline {w_i} & {3} & {3} & {5} & {2} & {6} & {2} & {6} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} & {j=7} \\[1ex]
+    \hline {w_j} & {3} & {3} & {5} & {2} & {6} & {2} & {6} \\
     \hline
     \end{array}
     $$
@@ -369,7 +369,7 @@ title: "Exercises · Constructive heuristics"
 
     3. Apply Best Fit Decreasing (BFD), and compare its packing patterns with those of FFD.
 
-    4. Compute the lower bound $\left\lceil\frac{\sum_i w_i}{c}\right\rceil$. Which solutions are optimal? Explain why sorting helps here.
+    4. Compute the lower bound $\left\lceil\frac{\sum_j w_j}{c}\right\rceil$. Which solutions are optimal? Explain why sorting helps here.
 
 ??? soluzione "Solution"
 
@@ -453,8 +453,8 @@ title: "Exercises · Constructive heuristics"
 
     $$
     \begin{array}{l|cccccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} & {i=7} & {i=8} \\[1ex]
-    \hline {w_i} & {2} & {6} & {3} & {5} & {4} & {2} & {6} & {2} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} & {j=7} & {j=8} \\[1ex]
+    \hline {w_j} & {2} & {6} & {3} & {5} & {4} & {2} & {6} & {2} \\
     \hline
     \end{array}
     $$
@@ -467,7 +467,7 @@ title: "Exercises · Constructive heuristics"
 
     3. Apply Best Fit Decreasing (BFD), and compare its packing patterns with those of FFD.
 
-    4. Compute the lower bound $\left\lceil\frac{\sum_i w_i}{c}\right\rceil$. Which solutions are optimal? Explain why sorting does not help here.
+    4. Compute the lower bound $\left\lceil\frac{\sum_j w_j}{c}\right\rceil$. Which solutions are optimal? Explain why sorting does not help here.
 
 ??? soluzione "Solution"
 
@@ -557,8 +557,8 @@ title: "Exercises · Constructive heuristics"
 
     $$
     \begin{array}{l|ccccccc}
-    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} & {i=7} \\[1ex]
-    \hline {w_i} & {4} & {4} & {5} & {7} & {2} & {2} & {4} \\
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} & {j=7} \\[1ex]
+    \hline {w_j} & {4} & {4} & {5} & {7} & {2} & {2} & {4} \\
     \hline
     \end{array}
     $$
@@ -571,7 +571,7 @@ title: "Exercises · Constructive heuristics"
 
     3. Apply Best Fit Decreasing (BFD), and compare its packing patterns with those of FFD.
 
-    4. Compute the lower bound $\left\lceil\frac{\sum_i w_i}{c}\right\rceil$ and compare the four rules FF, BF (both in the input order), FFD and BFD.
+    4. Compute the lower bound $\left\lceil\frac{\sum_j w_j}{c}\right\rceil$ and compare the four rules FF, BF (both in the input order), FFD and BFD.
 
 ??? soluzione "Solution"
 

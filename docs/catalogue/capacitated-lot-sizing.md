@@ -30,7 +30,7 @@ title: "Capacitated lot sizing (CLS)"
 
 - We make the following assumptions:
 
-    1. The stock is empty at the beginning and at the end of the horizon. Leaving stock at the end only adds cost, so no optimal plan needs it; an initial stock is a variant of the problem (next section).
+    1. The stock is empty at the beginning and at the end of the horizon. Leaving stock at the end only adds cost, so no optimal plan needs it; an initial stock is a variant of the problem (Section.
 
     2. The capacities allow to satisfy the demands, period after period (otherwise there is no feasible plan). Formally:
 
@@ -57,7 +57,7 @@ title: "Capacitated lot sizing (CLS)"
 </tr>
 <tr>
 <td><strong>Dynamic programming</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/">Ch. 25 «DP for the uncapacitated lot sizing problem»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-capacitated-lot-sizing/">Ch. 26 «DP for the capacitated lot sizing problem»</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/#164-the-dp-algorithms-of-this-module">Ch. 16 «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-capacitated-lot-sizing/">Ch. 26 «DP for the capacitated lot sizing problem»</a></td>
 </tr>
 <tr>
 <td><strong>MIP heuristics</strong></td>
@@ -65,7 +65,7 @@ title: "Capacitated lot sizing (CLS)"
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/lot-sizing/">Ch. 8 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/lot-sizing-formulations/">Ch. 15 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-lot-sizing/">Ch. 25 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-capacitated-lot-sizing/">Ch. 26 (2 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/lot-sizing/">Ch. 8 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/lot-sizing-formulations/">Ch. 15 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-capacitated-lot-sizing/">Ch. 26 (2 exercises)</a></td>
 </tr>
 <tr>
 <td><strong>Reference instances</strong></td>

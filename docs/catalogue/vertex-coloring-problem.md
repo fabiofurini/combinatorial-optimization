@@ -72,6 +72,10 @@ title: "The vertex coloring problem (VCP)"
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/coloring-formulations/">Ch. 11 «Formulations of coloring problems»</a></td>
 </tr>
 <tr>
+<td><strong>Heuristics</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur/#sez-sec-VCPgreedy">Ch. 30 «Constructive heuristics»</a></td>
+</tr>
+<tr>
 <td><strong>Limits of approximation</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/coloring-inapproximability/">Ch. 37 «Vertex coloring: limits of approximation»</a></td>
 </tr>
@@ -81,7 +85,7 @@ title: "The vertex coloring problem (VCP)"
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring/">Ch. 4 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring-formulations/">Ch. 11 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring-inapproximability/">Ch. 37 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dsatur-branch-and-bound/">Ch. 42 (5 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring/">Ch. 4 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring-formulations/">Ch. 11 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/constructive-heuristics/">Ch. 30 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring-inapproximability/">Ch. 37 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dsatur-branch-and-bound/">Ch. 42 (5 exercises)</a></td>
 </tr>
 <tr>
 <td><strong>Reference instances</strong></td>

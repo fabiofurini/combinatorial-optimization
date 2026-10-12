@@ -18,10 +18,10 @@ title: "Exercises · DP for the bounded knapsack problem"
 
     $$
     \begin{array}{l|rr}
-    \hline  & {i=1} & {i=2} \\
-    \hline {p_i} & 4 & 5 \\
-    {w_i} & 2 & 3 \\
-    {b_i} & 2 & 1 \\
+    \hline  & {j=1} & {j=2} \\
+    \hline {p_j} & 4 & 5 \\
+    {w_j} & 2 & 3 \\
+    {b_j} & 2 & 1 \\
     \hline
     \end{array}
     $$
@@ -36,14 +36,14 @@ title: "Exercises · DP for the bounded knapsack problem"
 
     1. Step-by-step execution of the bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed.
+        For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cells $v[j][k]$ and $s[j][k]$, and the operation performed.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(v[i][k]\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(v[j][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -199,10 +199,10 @@ title: "Exercises · DP for the bounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrr}
-        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 4 & 4 & 8 & 8 & 8 \\
-        {i=2} & 0 & 0 & 4 & 5 & 8 & 9 & 9 \\
+        \hline {v[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 4 & 4 & 8 & 8 & 8 \\
+        {j=2} & 0 & 0 & 4 & 5 & 8 & 9 & 9 \\
         \hline
         \end{array}
         $$
@@ -211,10 +211,10 @@ title: "Exercises · DP for the bounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 1 & 1 & 2 & 2 & 2 \\
-        {i=2} & 0 & 0 & 0 & 1 & 0 & 1 & 1 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 1 & 1 & 2 & 2 & 2 \\
+        {j=2} & 0 & 0 & 0 & 1 & 0 & 1 & 1 \\
         \hline
         \end{array}
         $$
@@ -223,22 +223,22 @@ title: "Exercises · DP for the bounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 1 & 1 & 2 & 2 & 2 \\
-        {i=2} & 0 & 0 & 0 & 1 & 0 & 1 & 1 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 1 & 1 & 2 & 2 & 2 \\
+        {j=2} & 0 & 0 & 0 & 1 & 0 & 1 & 1 \\
         \hline
         \end{array}
         $$
 
-        We can reconstruct an optimal solution by starting from $i=2$ and $k=6$ as follows:
+        We can reconstruct an optimal solution by starting from $j=2$ and $k=6$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th>Action</th>
@@ -292,10 +292,10 @@ title: "Exercises · DP for the bounded knapsack problem"
 
     $$
     \begin{array}{l|rr}
-    \hline  & {i=1} & {i=2} \\
-    \hline {p_i} & 3 & 8 \\
-    {w_i} & 1 & 4 \\
-    {b_i} & 3 & 1 \\
+    \hline  & {j=1} & {j=2} \\
+    \hline {p_j} & 3 & 8 \\
+    {w_j} & 1 & 4 \\
+    {b_j} & 3 & 1 \\
     \hline
     \end{array}
     $$
@@ -310,14 +310,14 @@ title: "Exercises · DP for the bounded knapsack problem"
 
     1. Step-by-step execution of the bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed.
+        For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cells $v[j][k]$ and $s[j][k]$, and the operation performed.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(v[i][k]\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(v[j][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -494,10 +494,10 @@ title: "Exercises · DP for the bounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrr}
-        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 3 & 6 & 9 & 9 & 9 & 9 & 9 \\
-        {i=2} & 0 & 3 & 6 & 9 & 9 & 11 & 14 & 17 \\
+        \hline {v[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 3 & 6 & 9 & 9 & 9 & 9 & 9 \\
+        {j=2} & 0 & 3 & 6 & 9 & 9 & 11 & 14 & 17 \\
         \hline
         \end{array}
         $$
@@ -506,10 +506,10 @@ title: "Exercises · DP for the bounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 1 & 2 & 3 & 3 & 3 & 3 & 3 \\
-        {i=2} & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 1 & 2 & 3 & 3 & 3 & 3 & 3 \\
+        {j=2} & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
         \hline
         \end{array}
         $$
@@ -518,22 +518,22 @@ title: "Exercises · DP for the bounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 1 & 2 & 3 & 3 & 3 & 3 & 3 \\
-        {i=2} & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 1 & 2 & 3 & 3 & 3 & 3 & 3 \\
+        {j=2} & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
         \hline
         \end{array}
         $$
 
-        We can reconstruct an optimal solution by starting from $i=2$ and $k=7$ as follows:
+        We can reconstruct an optimal solution by starting from $j=2$ and $k=7$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th>Action</th>
@@ -587,10 +587,10 @@ title: "Exercises · DP for the bounded knapsack problem"
 
     $$
     \begin{array}{l|rrr}
-    \hline  & {i=1} & {i=2} & {i=3} \\
-    \hline {p_i} & 2 & 3 & 4 \\
-    {w_i} & 1 & 2 & 3 \\
-    {b_i} & 1 & 1 & 1 \\
+    \hline  & {j=1} & {j=2} & {j=3} \\
+    \hline {p_j} & 2 & 3 & 4 \\
+    {w_j} & 1 & 2 & 3 \\
+    {b_j} & 1 & 1 & 1 \\
     \hline
     \end{array}
     $$
@@ -605,14 +605,14 @@ title: "Exercises · DP for the bounded knapsack problem"
 
     1. Step-by-step execution of the bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed.
+        For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cells $v[j][k]$ and $s[j][k]$, and the operation performed.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(v[i][k]\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(v[j][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -789,11 +789,11 @@ title: "Exercises · DP for the bounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrr}
-        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 2 & 2 & 2 & 2 & 2 \\
-        {i=2} & 0 & 2 & 3 & 5 & 5 & 5 \\
-        {i=3} & 0 & 2 & 3 & 5 & 6 & 7 \\
+        \hline {v[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 2 & 2 & 2 & 2 & 2 \\
+        {j=2} & 0 & 2 & 3 & 5 & 5 & 5 \\
+        {j=3} & 0 & 2 & 3 & 5 & 6 & 7 \\
         \hline
         \end{array}
         $$
@@ -802,11 +802,11 @@ title: "Exercises · DP for the bounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 1 & 1 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 1 & 1 \\
         \hline
         \end{array}
         $$
@@ -815,23 +815,23 @@ title: "Exercises · DP for the bounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 \\
-        {i=2} & 0 & 0 & 1 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 0 & 0 & 1 & 1 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {j=2} & 0 & 0 & 1 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 0 & 0 & 1 & 1 \\
         \hline
         \end{array}
         $$
 
-        We can reconstruct an optimal solution by starting from $i=3$ and $k=5$ as follows:
+        We can reconstruct an optimal solution by starting from $j=3$ and $k=5$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>
@@ -899,10 +899,10 @@ title: "Exercises · DP for the bounded knapsack problem"
 
     $$
     \begin{array}{l|rr}
-    \hline  & {i=1} & {i=2} \\
-    \hline {p_i} & 5 & 9 \\
-    {w_i} & 2 & 5 \\
-    {b_i} & 3 & 1 \\
+    \hline  & {j=1} & {j=2} \\
+    \hline {p_j} & 5 & 9 \\
+    {w_j} & 2 & 5 \\
+    {b_j} & 3 & 1 \\
     \hline
     \end{array}
     $$
@@ -917,14 +917,14 @@ title: "Exercises · DP for the bounded knapsack problem"
 
     1. Step-by-step execution of the bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed.
+        For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cells $v[j][k]$ and $s[j][k]$, and the operation performed.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(v[i][k]\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(v[j][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -1122,10 +1122,10 @@ title: "Exercises · DP for the bounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrr}
-        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 5 & 5 & 10 & 10 & 15 & 15 & 15 \\
-        {i=2} & 0 & 0 & 5 & 5 & 10 & 10 & 15 & 15 & 15 \\
+        \hline {v[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 5 & 5 & 10 & 10 & 15 & 15 & 15 \\
+        {j=2} & 0 & 0 & 5 & 5 & 10 & 10 & 15 & 15 & 15 \\
         \hline
         \end{array}
         $$
@@ -1134,10 +1134,10 @@ title: "Exercises · DP for the bounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 1 & 1 & 2 & 2 & 3 & 3 & 3 \\
-        {i=2} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 1 & 1 & 2 & 2 & 3 & 3 & 3 \\
+        {j=2} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
@@ -1146,22 +1146,22 @@ title: "Exercises · DP for the bounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 1 & 1 & 2 & 2 & 3 & 3 & 3 \\
-        {i=2} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 1 & 1 & 2 & 2 & 3 & 3 & 3 \\
+        {j=2} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
         \hline
         \end{array}
         $$
 
-        We can reconstruct an optimal solution by starting from $i=2$ and $k=8$ as follows:
+        We can reconstruct an optimal solution by starting from $j=2$ and $k=8$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th>Action</th>
@@ -1215,10 +1215,10 @@ title: "Exercises · DP for the bounded knapsack problem"
 
     $$
     \begin{array}{l|rrr}
-    \hline  & {i=1} & {i=2} & {i=3} \\
-    \hline {p_i} & 4 & 5 & 3 \\
-    {w_i} & 3 & 4 & 2 \\
-    {b_i} & 2 & 1 & 2 \\
+    \hline  & {j=1} & {j=2} & {j=3} \\
+    \hline {p_j} & 4 & 5 & 3 \\
+    {w_j} & 3 & 4 & 2 \\
+    {b_j} & 2 & 1 & 2 \\
     \hline
     \end{array}
     $$
@@ -1233,14 +1233,14 @@ title: "Exercises · DP for the bounded knapsack problem"
 
     1. Step-by-step execution of the bottom-up DP algorithm
 
-        For each step of the DP algorithm, the table shows the values of $i$ and $k$, the cells $v[i][k]$ and $s[i][k]$, and the operation performed.
+        For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cells $v[j][k]$ and $s[j][k]$, and the operation performed.
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(v[i][k]\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(v[j][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th>Action</th>
         </tr>
         <tr>
@@ -1529,11 +1529,11 @@ title: "Exercises · DP for the bounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrr}
-        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 0 & 4 & 4 & 4 & 8 & 8 & 8 & 8 \\
-        {i=2} & 0 & 0 & 0 & 4 & 5 & 5 & 8 & 9 & 9 & 9 \\
-        {i=3} & 0 & 0 & 3 & 4 & 6 & 7 & 8 & 10 & 11 & 12 \\
+        \hline {v[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 0 & 4 & 4 & 4 & 8 & 8 & 8 & 8 \\
+        {j=2} & 0 & 0 & 0 & 4 & 5 & 5 & 8 & 9 & 9 & 9 \\
+        {j=3} & 0 & 0 & 3 & 4 & 6 & 7 & 8 & 10 & 11 & 12 \\
         \hline
         \end{array}
         $$
@@ -1542,11 +1542,11 @@ title: "Exercises · DP for the bounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 0 & 1 & 1 & 1 & 2 & 2 & 2 & 2 \\
-        {i=2} & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 1 & 0 & 2 & 1 & 0 & 2 & 1 & 1 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 0 & 1 & 1 & 1 & 2 & 2 & 2 & 2 \\
+        {j=2} & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 1 & 0 & 2 & 1 & 0 & 2 & 1 & 1 \\
         \hline
         \end{array}
         $$
@@ -1555,23 +1555,23 @@ title: "Exercises · DP for the bounded knapsack problem"
 
         $$
         \begin{array}{l|rrrrrrrrrr}
-        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
-        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-        {i=1} & 0 & 0 & 0 & 1 & 1 & 1 & 2 & 2 & 2 & 2 \\
-        {i=2} & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 1 \\
-        {i=3} & 0 & 0 & 1 & 0 & 2 & 1 & 0 & 2 & 1 & 1 \\
+        \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {j=1} & 0 & 0 & 0 & 1 & 1 & 1 & 2 & 2 & 2 & 2 \\
+        {j=2} & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 1 \\
+        {j=3} & 0 & 0 & 1 & 0 & 2 & 1 & 0 & 2 & 1 & 1 \\
         \hline
         \end{array}
         $$
 
-        We can reconstruct an optimal solution by starting from $i=3$ and $k=9$ as follows:
+        We can reconstruct an optimal solution by starting from $j=3$ and $k=9$ as follows:
 
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>Iteration</th>
-        <th><span class="arithmatex">\(i\)</span></th>
+        <th><span class="arithmatex">\(j\)</span></th>
         <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(s[i][k]\)</span></th>
+        <th><span class="arithmatex">\(s[j][k]\)</span></th>
         <th><span class="arithmatex">\(x[1]\)</span></th>
         <th><span class="arithmatex">\(x[2]\)</span></th>
         <th><span class="arithmatex">\(x[3]\)</span></th>

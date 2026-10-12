@@ -6,13 +6,13 @@ title: "A first DP algorithm"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 18** · [:material-book-open-variant: Chapter 18: Unbounded knapsack (UKP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Unbounded knapsack (UKP)](../../exercises/dp-unbounded-knapsack.md)
+**Part 3 · Dynamic programming · Chapter 18** · [:material-book-open-variant: Chapter 18: Unbounded knapsack (UKP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Unbounded knapsack (UKP)](../../exercises/dp-unbounded-knapsack.md) · [:material-gesture-tap: App: DP tables for the knapsack problems](../../lab/dp-knapsack-table.md)
 
 </div>
 
 - <u>Step 1</u>: computation of the optimal value
 
-    !!! chiave ""
+    !!! formula ""
 
         For any $k \in \{0,1,\dots,c\}$, let $v(k)$ be the optimal value of the UKP subinstance given by:
 
@@ -40,7 +40,9 @@ title: "A first DP algorithm"
 
     - The base case is $v(0)=0$, since a knapsack of capacity $0$ cannot contain any item and has profit $0$. Moreover, if $w_j>k$ for every item type $j$, no item fits into the knapsack: the only feasible choice is to insert no item, and therefore $v(k)=0$.
 
-    - The optimal value $v(k)$ is obtained by trying every item type $j$ with $w_j\le k$ and selecting the one that maximizes the sum $p_j+v(k-w_j)$ of the profit of the chosen item type and the optimal value of the residual subproblem. Since item type $j$ is available in infinitely many copies, it may also be chosen again while solving the residual subproblem of capacity $k-w_j$.
+    - The optimal value $v(k)$ is obtained by trying every item type $j$ with $w_j\le k$ and selecting the one that maximizes the sum $p_j+v(k-w_j)$ of the profit of the chosen item type and the optimal value of the residual subproblem.
+
+    - Since item type $j$ is available in infinitely many copies, it may also be chosen again while solving the residual subproblem of capacity $k-w_j$.
 
     - Hence, an optimal solution for a knapsack of capacity $k$ is built by combining the chosen item type $j$ with an optimal solution of the residual subproblem of capacity $k-w_j$.
 
@@ -50,7 +52,9 @@ title: "A first DP algorithm"
 
         $\rightsquigarrow$ <strong>Overlapping Subproblems verified!</strong>
 
-    - A <strong>first method</strong> to compute the optimal value $v(c)$ of the UKP instance is the <strong>top-down approach</strong>. The method starts from the call with $k=c$ and evaluates formula $\eqref{eq:ukp1}$ recursively: each call for a knapsack of capacity $k$ triggers further calls for capacity $k-w_j$, for every item type $j$ with $w_j\le k$, until the base case $v(0)$ is reached or no item type fits into the residual capacity.
+    - A <strong>first method</strong> to compute the optimal value $v(c)$ of the UKP instance is the <strong>top-down approach</strong>.
+
+    - The method starts from the call with $k=c$ and evaluates formula $\eqref{eq:ukp1}$ recursively: each call for a knapsack of capacity $k$ triggers further calls for capacity $k-w_j$, for every item type $j$ with $w_j\le k$, until the base case $v(0)$ is reached or no item type fits into the residual capacity.
 
     - The <strong>recursion tree</strong> of the function $v$ has one node for each recursive call, labeled with the function call it represents. The root represents the initial call. The children of a node represent the recursive calls made by that call. The leaf nodes represent the base cases.
 
@@ -58,7 +62,7 @@ title: "A first DP algorithm"
 
         !!! esempio "Example 18.2: Recursion tree"
 
-            We consider the UKP instance of <span style="color:#1971c2">Example 1</span>, with capacity $c=7$ and item types with weights $w_1=2$, $w_2=3$, $w_3=5$, $w_4=6$. This is the recursion tree of the top-down approach to compute $v(7)$:
+            We consider the UKP instance of <span style="color:#1971c2">[Example 18.1](index.md#box-1-texukpex1)</span>, with capacity $c=7$ and item types with weights $w_1=2$, $w_2=3$, $w_3=5$, $w_4=6$. This is the recursion tree of the top-down approach to compute $v(7)$:
 
             ![Figure 1](../../img/dp-unbounded-knapsack/fig01.svg){ .fig loading=lazy  }
 
@@ -70,7 +74,7 @@ title: "A first DP algorithm"
 
         !!! esempio "Example 18.3: Computing the values of the $v$ function"
 
-            We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
+            We consider the UKP instance of <span style="color:#1971c2">[Example 18.1](index.md#box-1-texukpex1)</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrrr}
@@ -127,9 +131,13 @@ title: "A first DP algorithm"
 
     - We can avoid solving the same subproblems repeatedly by storing the value of each subproblem as soon as it is computed. The values are stored in a <strong>lookup table</strong>.
 
-    - Since solving a subproblem with value $v(k)$ depends only on subproblems with values $v(k')$, with $k'<k$, we can solve the subproblems for increasing values of $k$, starting from the base case $v(0)=0$ and building up to $v(c)$: this observation naturally leads to a <strong>much more efficient method</strong> to compute the optimal value $v(c)$ of the UKP instance.
+    - Since solving a subproblem with value $v(k)$ depends only on subproblems with values $v(k')$, with $k'<k$, we can solve the subproblems for increasing values of $k$, starting from the base case $v(0)=0$ and building up to $v(c)$.
 
-    - A <strong>second method</strong> to compute the optimal value $v(c)$ of the UKP instance is the <strong>bottom-up approach</strong>. The method starts from the base case $v(0)=0$ and evaluates formula $\eqref{eq:ukp1}$ for increasing capacities $k \in \{1,2,\dots,c\}$: each value $v(k)$ is computed using the already-computed values $v(0),v(1),\dots,v(k-1)$, until the value $v(c)$ of the UKP instance is obtained.
+    - This observation naturally leads to a <strong>much more efficient method</strong> to compute the optimal value $v(c)$ of the UKP instance.
+
+    - A <strong>second method</strong> to compute the optimal value $v(c)$ of the UKP instance is the <strong>bottom-up approach</strong>.
+
+    - The method starts from the base case $v(0)=0$ and evaluates formula $\eqref{eq:ukp1}$ for increasing capacities $k \in \{1,2,\dots,c\}$: each value $v(k)$ is computed using the already-computed values $v(0),v(1),\dots,v(k-1)$, until the value $v(c)$ of the UKP instance is obtained.
 
         This is the pseudo-code of the <strong>DP algorithm using the bottom-up approach</strong>:
 
@@ -151,7 +159,7 @@ title: "A first DP algorithm"
 
         !!! esempio "Example 18.4: Execution of the DP algorithm"
 
-            We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
+            We consider the UKP instance of <span style="color:#1971c2">[Example 18.1](index.md#box-1-texukpex1)</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrrr}
@@ -511,13 +519,15 @@ title: "A first DP algorithm"
 
             <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A UKP instance given by <span class="arithmatex">\(n\)</span>, arrays <span class="arithmatex">\(p[1..n]\)</span>, <span class="arithmatex">\(w[1..n]\)</span>, and capacity <span class="arithmatex">\(c\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value of the UKP instance and the information vector <span class="arithmatex">\(s[0..c]\)</span></div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> UKP_DP1_InfoSol(<span class="arithmatex">\(n,p,w,c\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(v := \textnormal{new array}[0..c]\)</span>; <span class="arithmatex">\(s := \textnormal{new array}[0..c]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><span class="arithmatex">\(v[0] \leftarrow 0\)</span>; <span class="arithmatex">\(s[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(k := 1\)</span> <strong>to</strong> <span class="arithmatex">\(c\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">5</span><span class="arithmatex">\(m := 0\)</span>; <span class="arithmatex">\(t := 0\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(w[j] \le k\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">8</span><strong>if</strong> <span class="arithmatex">\(p[j]+v[k-w[j]] > m\)</span> <strong>then</strong></div><div class="pc" style="--liv:5"><span class="pc-n">9</span><span class="arithmatex">\(m \leftarrow p[j]+v[k-w[j]]\)</span>; <span class="arithmatex">\(t \leftarrow j\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">11</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">13</span><span class="arithmatex">\(v[k] \leftarrow m\)</span>; <span class="arithmatex">\(s[k] \leftarrow t\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">14</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">15</span><strong>return</strong> <span class="arithmatex">\(v[c],s\)</span></div></div>
 
-        - The DP algorithm uses the additional temporary variable $t$ to keep track of the decision made when $m$ is updated. If item type $j$ is selected, $t\leftarrow j$ stores this decision; if no item type fits into capacity $k$, $t$ keeps its initial value $0$. At the end of the inner loop, $s[k]\leftarrow t$ stores the selected item type, together with the optimal value $v[k]\leftarrow m$.
+        - The DP algorithm uses the additional temporary variable $t$ to keep track of the decision made when $m$ is updated. If item type $j$ is selected, $t\leftarrow j$ stores this decision; if no item type fits into capacity $k$, $t$ keeps its initial value $0$.
+
+        - At the end of the inner loop, $s[k]\leftarrow t$ stores the selected item type, together with the optimal value $v[k]\leftarrow m$.
 
         <a id="box-15-texukpbuinfo"></a>
 
         !!! esempio "Example 18.5: Computation of the additional information"
 
-            We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
+            We consider the UKP instance of <span style="color:#1971c2">[Example 18.1](index.md#box-1-texukpex1)</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrrr}
@@ -926,7 +936,7 @@ title: "A first DP algorithm"
 
         !!! esempio "Example 18.6: Computing an optimal solution"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following vector $s$:
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 18.1](index.md#box-1-texukpex1)</span>, we have the following vector $s$:
 
             $$
             \begin{array}{c|cccccccc}

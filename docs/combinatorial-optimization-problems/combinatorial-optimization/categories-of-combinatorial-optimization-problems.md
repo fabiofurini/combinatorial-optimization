@@ -207,12 +207,22 @@ title: "Categories of combinatorial optimization problems"
 <td>IN/OUT</td>
 </tr>
 <tr>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/clique/the-maximum-clique-problem/">maximum stable set problem (MSSP)</a></td>
+<td>subset of vertices</td>
+<td>IN/OUT</td>
+</tr>
+<tr>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/the-travelling-salesman-problem/">travelling salesman problem (TSP)</a></td>
 <td>cyclic ordering of the cities</td>
 <td>ordering</td>
 </tr>
 <tr>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines/">scheduling on parallel machines (<span class="arithmatex">\(P\|C_{\max}\)</span>)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp/">asymmetric travelling salesman problem (ATSP)</a></td>
+<td>ordering of the cities on a round trip</td>
+<td>ordering</td>
+</tr>
+<tr>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines/">scheduling on identical parallel machines (<span class="arithmatex">\(P\|C_{\max}\)</span>)</a></td>
 <td>assignment of the jobs to the machines</td>
 <td>assignment</td>
 </tr>

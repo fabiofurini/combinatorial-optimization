@@ -1,5 +1,5 @@
 ---
-title: "Scheduling on parallel machines with different speeds (Q|Cmax)"
+title: "Scheduling on parallel machines with different speeds (Q||Cmax)"
 ---
 
 # Scheduling on parallel machines with different speeds ($Q\|C_{\max}$)

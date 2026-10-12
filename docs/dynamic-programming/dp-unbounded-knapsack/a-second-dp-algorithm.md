@@ -6,13 +6,13 @@ title: "A second DP algorithm"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 18** · [:material-book-open-variant: Chapter 18: Unbounded knapsack (UKP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Unbounded knapsack (UKP)](../../exercises/dp-unbounded-knapsack.md)
+**Part 3 · Dynamic programming · Chapter 18** · [:material-book-open-variant: Chapter 18: Unbounded knapsack (UKP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Unbounded knapsack (UKP)](../../exercises/dp-unbounded-knapsack.md) · [:material-gesture-tap: App: DP tables for the knapsack problems](../../lab/dp-knapsack-table.md)
 
 </div>
 
 - <u>Step 1</u>: computation of the optimal value
 
-    !!! chiave ""
+    !!! formula ""
 
         For any $j \in \{0,1,\dots,n\}$ and $k \in \{0,1,\dots,c\}$, let $v(j,k)$ be the optimal value of the UKP subinstance given by:
 
@@ -33,11 +33,15 @@ title: "A second DP algorithm"
         \end{array} \right. \tag{18.2}
         \end{equation*}
 
-    - The recursive decomposition process of formula $\eqref{eq:ukp2}$ generates at most $2$ <strong>independent subproblems</strong>, corresponding to whether or not to insert one copy of item type $j$ into a knapsack of capacity $k$, using only item types $1,2,\dots,j$. If $w_j>k$, item type $j$ cannot be inserted, and therefore the only feasible option is not to use it.
+    - The recursive decomposition process of formula $\eqref{eq:ukp2}$ generates at most $2$ <strong>independent subproblems</strong>, corresponding to whether or not to insert one copy of item type $j$ into a knapsack of capacity $k$, using only item types $1,2,\dots,j$.
+
+    - If $w_j>k$, item type $j$ cannot be inserted, and therefore the only feasible option is not to use it.
 
     - The base case is $v(0,k)=0$ for every $k$, since with no item type available the only feasible choice is to insert no item, which always has profit $0$.
 
-    - If $j\ge 1$ and $k\ge w_j$, the optimal value $v(j,k)$ is obtained by trying the two possible options, not inserting item type $j$ or inserting one further copy of it, and selecting the one that maximizes the profit. The corresponding values are $v(j-1,k)$ and $p_j+v(j,k-w_j)$, respectively. If $j\ge 1$ and $k<w_j$, item type $j$ cannot be used, and therefore $v(j,k)=v(j-1,k)$.
+    - If $j\ge 1$ and $k\ge w_j$, the optimal value $v(j,k)$ is obtained by trying the two possible options, not inserting item type $j$ or inserting one further copy of it, and selecting the one that maximizes the profit. The corresponding values are $v(j-1,k)$ and $p_j+v(j,k-w_j)$, respectively.
+
+    - If $j\ge 1$ and $k<w_j$, item type $j$ cannot be used, and therefore $v(j,k)=v(j-1,k)$.
 
     - The term $p_j+v(j,k-w_j)$ refers to the same row $j$, because after inserting one copy of item type $j$, additional copies of the same item type are still available.
 
@@ -49,7 +53,9 @@ title: "A second DP algorithm"
 
         $\rightsquigarrow$ <strong>Overlapping Subproblems verified!</strong>
 
-    - A <strong>first method</strong> to compute the optimal value $v(n,c)$ of the UKP instance is the <strong>top-down approach</strong>. The method starts from the call with $(j,k)=(n,c)$ and evaluates formula $\eqref{eq:ukp2}$ recursively: each call for capacity $k$ using only item types $1,2,\dots,j$ triggers further calls corresponding to the feasible decisions on item type $j$, until one of the base cases $v(0,k)$ is reached.
+    - A <strong>first method</strong> to compute the optimal value $v(n,c)$ of the UKP instance is the <strong>top-down approach</strong>.
+
+    - The method starts from the call with $(j,k)=(n,c)$ and evaluates formula $\eqref{eq:ukp2}$ recursively: each call for capacity $k$ using only item types $1,2,\dots,j$ triggers further calls corresponding to the feasible decisions on item type $j$, until one of the base cases $v(0,k)$ is reached.
 
     - The <strong>recursion tree</strong> of the function $v$ has one node for each recursive call, labeled with the function call it represents. The root represents the initial call. The children of a node represent the recursive calls made by that call. The leaf nodes represent the base cases.
 
@@ -57,19 +63,21 @@ title: "A second DP algorithm"
 
         !!! esempio "Example 18.7: Recursion tree"
 
-            We consider the UKP instance of <span style="color:#1971c2">Example 1</span>, with capacity $c=7$ and item types with weights $w_1=2$, $w_2=3$, $w_3=5$, $w_4=6$. This is the recursion tree of the top-down approach to compute $v(4,7)$:
+            We consider the UKP instance of <span style="color:#1971c2">[Example 18.1](index.md#box-1-texukpex1)</span>, with capacity $c=7$ and item types with weights $w_1=2$, $w_2=3$, $w_3=5$, $w_4=6$. This is the recursion tree of the top-down approach to compute $v(4,7)$:
 
             ![Figure 2](../../img/dp-unbounded-knapsack/fig02.svg){ .fig loading=lazy  }
 
             The function $v$ is called $32$ times, and the same subproblems are solved multiple times: $v(1,1)$ is called $3$ times, $v(0,1)$ is called $3$ times, $v(1,2)$ is called $2$ times, $v(0,2)$ is called $2$ times, $v(1,0)$ is called $2$ times, $v(0,0)$ is called $2$ times, and $v(2,1)$ is called $2$ times. All the other calls are made only once.
 
-    - The value $v(j,k)$ can be computed once $v(j-1,k)$ is known and, when $k\ge w_j$, $v(j,k-w_j)$ is also known. Therefore, for a fixed value of $j$, all values $v(j,k)$ can be computed by considering the values of $k$ in increasing order. Starting from the base case $v(0,k)=0$ for every $k$, the values of the function $v$ can be computed row by row, moving to the next value of $j$ only after all values $v(j,k)$ for the current value of $j$ have been computed.
+    - The value $v(j,k)$ can be computed once $v(j-1,k)$ is known and, when $k\ge w_j$, $v(j,k-w_j)$ is also known. Therefore, for a fixed value of $j$, all values $v(j,k)$ can be computed by considering the values of $k$ in increasing order.
+
+    - Starting from the base case $v(0,k)=0$ for every $k$, the values of the function $v$ can be computed row by row, moving to the next value of $j$ only after all values $v(j,k)$ for the current value of $j$ have been computed.
 
         <a id="box-18-texukpaltvalues"></a>
 
         !!! esempio "Example 18.8: Computing the values of the $v$ function"
 
-            We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
+            We consider the UKP instance of <span style="color:#1971c2">[Example 18.1](index.md#box-1-texukpex1)</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrrr}
@@ -180,9 +188,13 @@ title: "A second DP algorithm"
 
     - We can avoid solving the same subproblems repeatedly by storing the value of each subproblem as soon as it is computed. The values are stored in a <strong>lookup table</strong>.
 
-    - Since solving any particular subproblem depends only on subproblems with a smaller value of $j$, or with the same value of $j$ and a smaller capacity, we can solve the subproblems in increasing order of $j$ and, for each fixed value of $j$, in increasing order of capacity, starting from the base cases $v(0,k)=0$ for every $k \in \{0,1,\dots,c\}$ and building up to $v(n,c)$: this observation naturally leads to a <strong>much more efficient method</strong> to compute the optimal value $v(n,c)$ of the UKP instance.
+    - Since solving any particular subproblem depends only on subproblems with a smaller value of $j$, or with the same value of $j$ and a smaller capacity, we can solve the subproblems in increasing order of $j$ and, for each fixed value of $j$, in increasing order of capacity, starting from the base cases $v(0,k)=0$ for every $k \in \{0,1,\dots,c\}$ and building up to $v(n,c)$.
 
-    - A <strong>second method</strong> to compute the optimal value $v(n,c)$ of the UKP instance is the <strong>bottom-up approach</strong>. The method starts from the base cases $v(0,k)=0$ for every $k \in \{0,1,\dots,c\}$ and evaluates formula $\eqref{eq:ukp2}$ for increasing values of $j \in \{1,2,\dots,n\}$ and $k \in \{0,1,\dots,c\}$: each value $v(j,k)$ is computed using already-computed values, until the value $v(n,c)$ of the UKP instance is obtained.
+    - This observation naturally leads to a <strong>much more efficient method</strong> to compute the optimal value $v(n,c)$ of the UKP instance.
+
+    - A <strong>second method</strong> to compute the optimal value $v(n,c)$ of the UKP instance is the <strong>bottom-up approach</strong>.
+
+    - The method starts from the base cases $v(0,k)=0$ for every $k \in \{0,1,\dots,c\}$ and evaluates formula $\eqref{eq:ukp2}$ for increasing values of $j \in \{1,2,\dots,n\}$ and $k \in \{0,1,\dots,c\}$: each value $v(j,k)$ is computed using already-computed values, until the value $v(n,c)$ of the UKP instance is obtained.
 
         This is the pseudo-code of the <strong>DP algorithm using the bottom-up approach</strong>:
 
@@ -208,7 +220,7 @@ title: "A second DP algorithm"
 
         !!! esempio "Example 18.9: Execution of the DP algorithm"
 
-            We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
+            We consider the UKP instance of <span style="color:#1971c2">[Example 18.1](index.md#box-1-texukpex1)</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrrr}
@@ -515,7 +527,7 @@ title: "A second DP algorithm"
 
         !!! esempio "Example 18.10: Computation of the additional information"
 
-            We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
+            We consider the UKP instance of <span style="color:#1971c2">[Example 18.1](index.md#box-1-texukpex1)</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrrr}
@@ -821,7 +833,7 @@ title: "A second DP algorithm"
 
         !!! esempio "Example 18.11: Computing an optimal solution"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following matrix $s$:
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 18.1](index.md#box-1-texukpex1)</span>, we have the following matrix $s$:
 
             $$
             \begin{array}{l|rrrrrrrr}

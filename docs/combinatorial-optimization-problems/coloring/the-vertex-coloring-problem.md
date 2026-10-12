@@ -64,13 +64,13 @@ title: "Vertex coloring"
         \end{gathered}
         $$
 
-    - **(ii)** each color class in $\mathcal{Q}$ is an <em>stable set</em>, namely
+    - **(ii)** each color class in $\mathcal{Q}$ is a <em>stable set</em>, namely
 
         $$
         \{u,v\}\notin E, \quad \text{for all } Q\in\mathcal{Q},\ \text{for all } u,v\in Q\ \text{with } u\neq v.
         $$
 
-    Accordingly, the VCP can be equivalently stated as the problem of determining a partition of the vertex set into color classes such that each color class is an stable set (i.e., its vertices can receive the same color), and the number of color classes (colors) is minimized.
+    Accordingly, the VCP can be equivalently stated as the problem of determining a partition of the vertex set into color classes such that each color class is a stable set (i.e., its vertices can receive the same color), and the number of color classes (colors) is minimized.
 
 !!! chiave ""
 
@@ -191,7 +191,7 @@ title: "Vertex coloring"
 
 ## 4.2.3 Counting the solutions, a first solution and the bounds
 
-- <strong>Candidate solutions.</strong> The candidate solutions are the partitions of $V$, counted by the Bell numbers (Chapter «Combinatorial optimization problems»). For <span style="color:#1971c2">[Example 4.1](#box-4-ex-vcp1)</span> we have $B(3) = 5$ partitions and only one is feasible: three singletons, since every pair of vertices is adjacent. Hence $\chi(G) = 3$.
+- <strong>Candidate solutions.</strong> The candidate solutions are the partitions of $V$, counted by the Bell numbers (Chapter 1 [«Combinatorial optimization problems»](../combinatorial-optimization/index.md)). For <span style="color:#1971c2">[Example 4.1](#box-4-ex-vcp1)</span> we have $B(3) = 5$ partitions and only one is feasible: three singletons, since every pair of vertices is adjacent. Hence $\chi(G) = 3$.
 
 - For <span style="color:#1971c2">[Example 4.2](#box-5-ex-vcp2)</span> we have $B(10) = 115\,975$ partitions, and $7\,430$ of them are feasible, that is, have only stable sets as classes.
 

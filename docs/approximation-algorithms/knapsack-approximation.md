@@ -6,17 +6,17 @@ title: "Approximation algorithms for the knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 35** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../exercises/knapsack-approximation.md)
+**Part 5 · Approximation algorithms · Chapter 35** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../exercises/knapsack-approximation.md) · [:material-gesture-tap: App: Tight instances](../lab/tight-instances.md)
 
 </div>
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter «Principles of approximation algorithms»: performance ratio, relative and absolute performance guarantees, tightness, approximation schemes, PTAS and FPTAS.
+    - From this module, the chapter [«Principles of approximation algorithms»](approximation.md): performance ratio, relative and absolute performance guarantees, tightness, approximation schemes, PTAS and FPTAS.
 
-    - From this module, the chapters «Knapsack problems» and «Formulations of knapsack problems»: the KP, the LP relaxation $\mathrm{LP}_{\mathrm{KP}}$ and the bound of Dantzig, which uses the split item.
+    - From this module, the chapters [«Knapsack problems»](../combinatorial-optimization-problems/knapsack/index.md) and [«Formulations of knapsack problems»](../formulations/knapsack-formulations/index.md): the KP, the LP relaxation $\mathrm{LP}_{\mathrm{KP}}$ and the bound of Dantzig, which uses the split item.
 
-    - From this module, the chapters «Constructive heuristics» and «DP for the 0/1 knapsack problem»: the greedy algorithm and the dynamic programming by profits, used by the Basic-FPTAS algorithm.
+    - From this module, the chapters [«Constructive heuristics»](../heuristic-algorithms/constructive-heuristics/index.md) and [«DP for the 0/1 knapsack problem»](../dynamic-programming/dp-knapsack/index.md): the greedy algorithm and the dynamic programming by profits, used by the Basic-FPTAS algorithm.
 
 !!! chiave "Objectives"
 
@@ -32,13 +32,13 @@ title: "Approximation algorithms for the knapsack problem"
 
     - explain why an absolute performance guarantee for the KP forces an exact algorithm.
 
-The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/): its definition and its assumptions are on its page.
+The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-0-1-knapsack-problem/): its definition and its assumptions are on its page.
 
 ## 35.1 Notation
 
 - As on the problem page, $c$ is the knapsack capacity and $\mathscr{I}=\{1,2,\dots,n\}$ the set of items; in this chapter item $i\in\mathscr{I}$ has profit $p_i$ and weight $w_i$.
 
-- We denote by $z(I)$ the <strong>optimal value</strong> of the KP on the instance $I$, and by $\mathscr{A}(I)$ the profit of the feasible solution returned by a heuristic algorithm $\mathscr{A}$. Since every heuristic of this document returns a feasible solution,
+- We denote by $z(I)$ the <strong>optimal value</strong> of the KP on the instance $I$, and by $\mathscr{A}(I)$ the profit of the feasible solution returned by a heuristic algorithm $\mathscr{A}$. Since every heuristic algorithm of this chapter returns a feasible solution,
 
     $$
     \mathscr{A}(I) \le z(I) ~~~~~~~\text{and}~~~~~~~ \frac{z(I)}{\mathscr{A}(I)} \ge 1
@@ -101,7 +101,7 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
     \end{array}
     $$
 
-    We refer to this KP instance as <span style="color:#1971c2">Example 1</span>. The efficiencies of the items are:
+    The efficiencies of the items are:
 
     $$
     \frac{p_1}{w_1}=\frac{6}{2},\quad
@@ -162,7 +162,7 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
 
 !!! esempio "Example 35.2: Execution of $GR$"
 
-    For the KP instance of <span style="color:#1971c2">Example 1</span>, the items are sorted by non-increasing efficiency:
+    For the KP instance of [Example 35.1](#box-2-ex-split), the items are sorted by non-increasing efficiency:
 
     $$
     (1,\,2,\,3,\,4,\,5,\,6,\,7).
@@ -219,7 +219,7 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
     \end{array}
     $$
 
-    We refer to this KP instance as <span style="color:#1971c2">Example 2</span>. The efficiencies of the items are:
+    The efficiencies of the items are:
 
     $$
     \frac{p_1}{w_1}=\frac{6}{2},\quad
@@ -287,7 +287,7 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
     \end{array}
     $$
 
-    We refer to this KP instance as <span style="color:#1971c2">Example 3</span>. The efficiencies of the items are:
+    The efficiencies of the items are:
 
     $$
     \frac{p_1}{w_1}=\frac{4}{1}=4,\quad
@@ -358,7 +358,7 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
     \end{array}
     $$
 
-    We refer to this KP instance as <span style="color:#1971c2">Example 4</span>. The efficiencies of the items are:
+    The efficiencies of the items are:
 
     $$
     \frac{p_1}{w_1}=\frac{4}{1}=4,\quad
@@ -452,7 +452,7 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
 
 !!! esempio "Example 35.6: Execution of $GR^e$"
 
-    We start from the feasible solution computed by $GR$ on the KP instance of <span style="color:#1971c2">Example 1</span>:
+    We start from the feasible solution computed by $GR$ on the KP instance of [Example 35.1](#box-2-ex-split) ([Example 35.2](#box-3-ex-GR1)):
 
     $$
     S=\{1,2,7\},
@@ -478,7 +478,7 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
 
 !!! esempio "Example 35.7: Execution of $GR^e$"
 
-    We start from the feasible solution computed by $GR$ on the KP instance of <span style="color:#1971c2">Example 2</span>:
+    We start from the feasible solution computed by $GR$ on the KP instance of [Example 35.3](#box-4-ex-GR2):
 
     $$
     S=\{1,2,4\},
@@ -544,7 +544,7 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
     \begin{equation*}
     \mathscr{P}
     =
-    \Big\{~~ (j,k)\in \mathscr{I}\times\mathscr{I}:\ j<k,\ \ w_j+w_k\le c ~~\Big\}.
+    \Big\{~~ (i,k)\in \mathscr{I}\times\mathscr{I}:\ i<k,\ \ w_i+w_k\le c ~~\Big\}.
     \label{eq:feasible_pairs} \tag{35.3}
     \end{equation*}
 
@@ -584,7 +584,7 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
 
 !!! esempio "Example 35.8: $H^2$ algorithm"
 
-    We consider a set $N=\{1,2,3,4,5,6,7\}$ of $7$ items ($n=7$) with the following profits and weights:
+    We consider a set $\mathscr{I}=\{1,2,3,4,5,6,7\}$ of $7$ items ($n=7$) with the following profits and weights:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -649,17 +649,17 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
 
     <strong>Execution of $H^2$</strong> (initialization $lb=p_{\max}=9$):
 
-    - Pair $(1,2)$: the residual capacity is $\bar c=12-2-3=7$, $\mathscr{I}(1,2)=\{7\}$ and $GR^e\big(I(1,2)\big)=3$, hence $lb(1,2)=6+5+3=14>lb$ and $lb$ is updated to $14$.
+    - Pair $(1,2)$: the residual capacity is $\mathit{rc}=12-2-3=7$, $\mathscr{I}(1,2)=\{7\}$ and $GR^e\big(I(1,2)\big)=3$, hence $lb(1,2)=6+5+3=14>lb$ and $lb$ is updated to $14$.
 
-    - Pair $(1,3)$: the residual capacity is $\bar c=12-2-6=4$, $\mathscr{I}(1,3)=\{2,7\}$ and $GR^e\big(I(1,3)\big)=5$, hence $lb(1,3)=6+8+5=19>lb$ and $lb$ is updated to $19$.
+    - Pair $(1,3)$: the residual capacity is $\mathit{rc}=12-2-6=4$, $\mathscr{I}(1,3)=\{2,7\}$ and $GR^e\big(I(1,3)\big)=5$, hence $lb(1,3)=6+8+5=19>lb$ and $lb$ is updated to $19$.
 
-    - Pair $(1,4)$: the residual capacity is $\bar c=12-2-7=3$, $\mathscr{I}(1,4)=\{2\}$ and $GR^e\big(I(1,4)\big)=5$, hence $lb(1,4)=6+9+5=20>lb$ and $lb$ is updated to $20$.
+    - Pair $(1,4)$: the residual capacity is $\mathit{rc}=12-2-7=3$, $\mathscr{I}(1,4)=\{2\}$ and $GR^e\big(I(1,4)\big)=5$, hence $lb(1,4)=6+9+5=20>lb$ and $lb$ is updated to $20$.
 
-    - Pair $(1,5)$: the residual capacity is $\bar c=12-2-5=5$, $\mathscr{I}(1,5)=\{2,7\}$ and $GR^e\big(I(1,5)\big)=5$, hence $lb(1,5)=6+6+5=17<lb$.
+    - Pair $(1,5)$: the residual capacity is $\mathit{rc}=12-2-5=5$, $\mathscr{I}(1,5)=\{2,7\}$ and $GR^e\big(I(1,5)\big)=5$, hence $lb(1,5)=6+6+5=17<lb$.
 
-    - Pair $(1,6)$: the residual capacity is $\bar c=12-2-9=1$, $\mathscr{I}(1,6)=\varnothing$, hence $lb(1,6)=6+7=13<lb$.
+    - Pair $(1,6)$: the residual capacity is $\mathit{rc}=12-2-9=1$, $\mathscr{I}(1,6)=\varnothing$, hence $lb(1,6)=6+7=13<lb$.
 
-    - Pair $(1,7)$: the residual capacity is $\bar c=12-2-4=6$, $\mathscr{I}(1,7)=\varnothing$, hence $lb(1,7)=6+3=9<lb$.
+    - Pair $(1,7)$: the residual capacity is $\mathit{rc}=12-2-4=6$, $\mathscr{I}(1,7)=\varnothing$, hence $lb(1,7)=6+3=9<lb$.
 
     - The pairs $(i,k)$ with $i \ge 2$ are processed in the same way, and none of them gives a value larger than $20$. Hence $H^2(I)=20=z(I)$: on this instance $H^2$ finds the optimal solution, which $GR^e$ misses.
 
@@ -790,7 +790,9 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
 
 - <strong>The profits are scaled, not the weights.</strong> Rounding the weights down would make infeasible solutions look feasible, and rounding them up would discard solutions that are feasible: in both cases the scaled instance would answer a different question. Rounding the profits down, instead, keeps the set of feasible solutions untouched and only distorts the objective function.
 
-- <strong>The scaled instance is solved by dynamic programming by profits</strong>, the second DP algorithm of the dynamic programming notes: $u(i,q)$ is the minimum total weight of a subset of $\{1,2,\dots,i\}$ of total profit exactly $q$, and the optimal value is the largest $q$ with $u(n,q)\le c$. The table is truncated at $Q=\lfloor 2n/\varepsilon\rfloor$, which is not smaller than the optimal value of the scaled instance ([Observation 35.14](#box-24-obs-fptastime)), so its size is $n\times Q$ and the running time is $O(n\,Q)=O(n^2/\varepsilon)$.
+- <strong>The scaled instance is solved by dynamic programming by profits</strong>, the [second DP algorithm](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/a-second-dp-algorithm/) of the chapter [«DP for the 0/1 knapsack problem»](../dynamic-programming/dp-knapsack/index.md): $u(j,q)$ is the minimum total weight of a subset of $\{1,2,\dots,j\}$ of total profit exactly $q$, and the optimal value is the largest $q$ with $u(n,q)\le c$.
+
+- The table is truncated at $Q=\lfloor 2n/\varepsilon\rfloor$. This is not smaller than the optimal value of the scaled instance, which is at most $\frac{z(I)}{K}\le\frac{2\,GR^e(I)}{K}=\frac{2n}{\varepsilon}$ by the guarantee $z(I)\le 2\,GR^e(I)$ of $GR^e$. The table has size $n\times Q$, and the running time is $O(n\,Q)=O(n^2/\varepsilon)$.
 
 <a id="box-14-ex-fptas"></a>
 
@@ -1146,7 +1148,7 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
         &\le GR^e\big(I(\tilde{\imath},\tilde{k})\big) + \frac{1}{4} \: z(I)
         \end{align*}
 
-        where $s$ is the split item of $I(\tilde{\imath},\tilde{k})$ and $p_s < \frac{1}{4} z(I)$ since all items must have a profit smaller than or equal to  $\frac{1}{4} z(I)$ (by construction of the residual instance). If all the items of the residual instance fit into the residual capacity there is no split item: then $GR^e$ packs all of them, $z\big(I(\tilde{\imath},\tilde{k})\big)=GR^e\big(I(\tilde{\imath},\tilde{k})\big)$, and the inequalities hold with $p_s:=0$. 
+        where $s$ is the split item of $I(\tilde{\imath},\tilde{k})$ and $p_s < \frac{1}{4} z(I)$ since all its items have a profit at most $\min\{p_{\tilde{\imath}},p_{\tilde{k}}\}<\frac{1}{4} z(I)$ (by construction of the residual instance). If all the items of the residual instance fit into the residual capacity there is no split item: then $GR^e$ packs all of them, $z\big(I(\tilde{\imath},\tilde{k})\big)=GR^e\big(I(\tilde{\imath},\tilde{k})\big)$, and the inequalities hold with $p_s:=0$. 
 
         We have:
 
@@ -1338,7 +1340,7 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
 
 ### 35.8.5 Approximation schemes
 
-- We recall the definitions of the approximation algorithms notes. The <strong>relative error</strong> of an algorithm $\mathscr{A}$ on a KP instance $I$ is $\frac{z(I)-\mathscr{A}(I)}{z(I)}$. An <strong>approximation scheme</strong> is a family of algorithms $\{\mathscr{A}_{\varepsilon}\}_{\varepsilon\in(0,1)}$ such that, for every $\varepsilon$ and every instance $I$, the relative error of $\mathscr{A}_{\varepsilon}$ is at most $\varepsilon$; for a maximization problem this means that $\mathscr{A}_{\varepsilon}$ is a $\frac{1}{1-\varepsilon}$-approximation algorithm. The scheme is a <strong>PTAS</strong> if, for every fixed $\varepsilon$, the running time of $\mathscr{A}_{\varepsilon}$ is polynomial in the size of the instance, and an <strong>FPTAS</strong> if it is polynomial both in the size of the instance and in the accuracy $\frac{1}{\varepsilon}$.
+- We recall the definitions of the chapter [«Principles of approximation algorithms»](approximation.md). The <strong>relative error</strong> of an algorithm $\mathscr{A}$ on a KP instance $I$ is $\frac{z(I)-\mathscr{A}(I)}{z(I)}$. An <strong>approximation scheme</strong> is a family of algorithms $\{\mathscr{A}_{\varepsilon}\}_{\varepsilon\in(0,1)}$ such that, for every $\varepsilon$ and every instance $I$, the relative error of $\mathscr{A}_{\varepsilon}$ is at most $\varepsilon$; for a maximization problem this means that $\mathscr{A}_{\varepsilon}$ is a $\frac{1}{1-\varepsilon}$-approximation algorithm. The scheme is a <strong>PTAS</strong> if, for every fixed $\varepsilon$, the running time of $\mathscr{A}_{\varepsilon}$ is polynomial in the size of the instance, and an <strong>FPTAS</strong> if it is polynomial both in the size of the instance and in the accuracy $\frac{1}{\varepsilon}$.
 
 - By [Proposition 35.10](#box-20-prop-Hlapprox), $H^{\ell}(I)\ge\frac{\ell+1}{\ell+2}\,z(I)$, hence the relative error of $H^{\ell}$ is at most
 
@@ -1463,11 +1465,11 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
 
 !!! teorema "Theorem 35.15"
 
-    Let $A$ be an approximation algorithm for the KP with absolute performance guarantee $k$ and running time in $O\big(f( n, c)\big)$ for any instance with $n$ items and capacity $c$. Then $A$ also computes the optimal solution of any such instance in $O(f(n,c))$ time.
+    Let $\mathscr{A}$ be an approximation algorithm for the KP with absolute performance guarantee $k$ and running time in $O\big(f( n, c)\big)$ for any instance with $n$ items and capacity $c$. Then $\mathscr{A}$ also computes the optimal solution of any such instance in $O(f(n,c))$ time.
 
 ??? dimostrazione "Proof"
 
-    Consider an approximation algorithm $A$ for the KP with absolute performance guarantee $k$ and let $I$ be given by
+    Consider an approximation algorithm $\mathscr{A}$ for the KP with absolute performance guarantee $k$ and let $I$ be given by
 
     $$
     p_1,\dots,p_n,~~ w_1, \dots, w_n,~~c.
@@ -1489,30 +1491,30 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
 
     - Since the objective function value of a solution of $I'$ is exactly $k + 1$ times as large as the objective function value of the same solution for $I$, the two instances also have the same optimal solutions.
 
-    Applying algorithm $A$ to the instance $I'$ yields a solution of value $A(I')$ with
+    Applying algorithm $\mathscr{A}$ to the instance $I'$ yields a solution of value $\mathscr{A}(I')$ with
 
     $$
-    z(I')-A(I') \le k
+    z(I')-\mathscr{A}(I') \le k
     $$
 
-    using the absolute performance guarantee of $A$.
+    using the absolute performance guarantee of $\mathscr{A}$.
 
-    Interpreting the output of $A$ as a solution for $I$ yields a feasible solution of value $A(I)$, and
+    Interpreting the output of $\mathscr{A}$ as a solution for $I$ yields a feasible solution of value $\mathscr{A}(I)$, and
 
     $$
-    A(I') = (k+ 1) \: A(I) \qquad\text{and}\qquad z(I')=(k+1)\,z(I)
+    \mathscr{A}(I') = (k+ 1) \: \mathscr{A}(I) \qquad\text{and}\qquad z(I')=(k+1)\,z(I)
     $$
 
     Inserting in the above inequality yields
 
     $$
-    (k+ 1)\: z(I) - (k+ 1)\: A(I) \le k \Longleftrightarrow z(I) - A(I) \le \frac{k}{k+1}
+    (k+ 1)\: z(I) - (k+ 1)\: \mathscr{A}(I) \le k \Longleftrightarrow z(I) - \mathscr{A}(I) \le \frac{k}{k+1}
     $$
 
-    But since all profit values are integer, also $z(I) - A(I)$ must be integer and hence this inequality implies
+    But since all profit values are integer, also $z(I) - \mathscr{A}(I)$ must be integer and hence this inequality implies
 
     $$
-    z(I) - A(I) \le \left\lfloor \frac{k}{k+1} \right\rfloor \Longrightarrow z(I) - A(I) \le 0 \Longrightarrow z(I) = A(I)
+    z(I) - \mathscr{A}(I) \le \left\lfloor \frac{k}{k+1} \right\rfloor \Longrightarrow z(I) - \mathscr{A}(I) \le 0 \Longrightarrow z(I) = \mathscr{A}(I)
     $$
 
     Since the approximate solution of $I'$ was computed in $O(f(n,c))$ running time an optimal solution of $I$ could be constructed within the same time. <span class="qed">□</span>
@@ -1588,10 +1590,14 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
     <td>Best bounds</td>
     <td><span class="arithmatex">\(15\)</span></td>
     <td><span class="arithmatex">\(16\)</span></td>
-    <td>the gap is <span class="arithmatex">\(1\)</span>; the optimal value is <span class="arithmatex">\(15\)</span></td>
+    <td><span class="arithmatex">\(\UB-\LB=1\)</span>; the optimal value is <span class="arithmatex">\(15\)</span></td>
     </tr>
     </table></div>
 
 ---
 
 **Exercises on this chapter:** [:material-pencil: 0/1 knapsack (KP)](../exercises/knapsack-approximation.md)
+
+<!-- laboratorio-interattivo: sezione generata da interattivi.py -->
+
+:material-flask-outline: **In the interactive lab:** [Tight instances](../lab/tight-instances.md#voce=ge).

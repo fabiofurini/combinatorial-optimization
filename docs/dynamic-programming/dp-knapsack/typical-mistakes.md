@@ -6,7 +6,7 @@ title: "Typical mistakes · In summary"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 17** · [:material-book-open-variant: Chapter 17: 0/1 knapsack (KP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP table for the knapsack](../../lab/dp-knapsack-table.md)
+**Part 3 · Dynamic programming · Chapter 17** · [:material-book-open-variant: Chapter 17: 0/1 knapsack (KP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP tables for the knapsack problems](../../lab/dp-knapsack-table.md)
 
 </div>
 
@@ -38,7 +38,7 @@ title: "Typical mistakes · In summary"
 
     - Exchanging profits and weights gives $\Theta(nP)$ steps, which is better when the total profit $P$ is small.
 
-    <strong>Dashboard of the KP example.</strong> Example 1 ($c=5$, three items) with the bounds found so far:
+    <strong>Dashboard of the KP example.</strong> [Example 17.1](index.md#box-1-texexpbox1) ($c=5$, three items) with the bounds found so far:
 
     <div class="tabella" markdown="0"><table>
     <tr>

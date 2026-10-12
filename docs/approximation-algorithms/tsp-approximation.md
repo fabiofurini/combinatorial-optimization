@@ -6,7 +6,7 @@ title: "The TSP: the general case and the metric case"
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 39** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: General and metric TSP](../exercises/tsp-approximation.md)
+**Part 5 · Approximation algorithms · Chapter 39** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Travelling salesman (TSP)](../exercises/tsp-approximation.md)
 
 </div>
 
@@ -483,4 +483,4 @@ The problem of this chapter is the [travelling salesman problem (TSP)](https://f
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: General and metric TSP](../exercises/tsp-approximation.md)
+**Exercises on this chapter:** [:material-pencil: Travelling salesman (TSP)](../exercises/tsp-approximation.md)

@@ -100,7 +100,7 @@ title: "Travelling salesman"
     \end{array}
     $$
 
-    This is the TSP instance of the MIP modelling course. The instance can be drawn as a complete graph, with one node per city and one edge, labelled with the distance, per pair of cities. The bold edges form the tour $\sigma=(1,3,5,2,4)$, and the cities are drawn in the order of the tour:
+    The instance can be drawn as a complete graph, with one node per city and one edge, labelled with the distance, per pair of cities. The bold edges form the tour $\sigma=(1,3,5,2,4)$, and the cities are drawn in the order of the tour:
 
     ![Figure 1](../../img/tsp/fig01.svg){ .fig loading=lazy  }
 

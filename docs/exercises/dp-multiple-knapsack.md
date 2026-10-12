@@ -180,7 +180,7 @@ title: "Exercises · DP for the multiple knapsack problem"
         </tr>
         </table></div>
 
-        The vector $(2,1,0)$ is an optimal solution: knapsack $1$ contains the items $\{2\}$, of total weight $3=3\le c_1$, and knapsack $2$ the items $\{1\}$, of total weight $2=2\le c_2$. The optimal value is $v[3][(3,2)]=7+8=15$.
+        The vector $(2,1,0)$ is an optimal solution: knapsack $1$ contains the items $\{2\}$, of total weight $3\le c_1$, and knapsack $2$ the items $\{1\}$, of total weight $2\le c_2$. The optimal value is $v[3][(3,2)]=7+8=15$.
 
     3. The KP with capacity $5$ has optimal value $15$, equal to the optimal value of the MKP: here the upper bound given by the total capacity is tight.
 
@@ -346,7 +346,7 @@ title: "Exercises · DP for the multiple knapsack problem"
         </tr>
         </table></div>
 
-        The vector $(1,0,2)$ is an optimal solution: knapsack $1$ contains the items $\{1\}$, of total weight $4=4\le c_1$, and knapsack $2$ the items $\{3\}$, of total weight $3=3\le c_2$. The optimal value is $v[3][(4,3)]=7+8=15$.
+        The vector $(1,0,2)$ is an optimal solution: knapsack $1$ contains the items $\{1\}$, of total weight $4\le c_1$, and knapsack $2$ the items $\{3\}$, of total weight $3\le c_2$. The optimal value is $v[3][(4,3)]=7+8=15$.
 
     3. The KP with capacity $7$ has optimal value $15$, equal to the optimal value of the MKP: here the upper bound given by the total capacity is tight.
 
@@ -518,7 +518,7 @@ title: "Exercises · DP for the multiple knapsack problem"
         </tr>
         </table></div>
 
-        The vector $(2,0,1)$ is an optimal solution: knapsack $1$ contains the items $\{3\}$, of total weight $4=4\le c_1$, and knapsack $2$ the items $\{1\}$, of total weight $2=2\le c_2$. The optimal value is $v[3][(5,2)]=9+2=11$.
+        The vector $(2,0,1)$ is an optimal solution: knapsack $1$ contains the items $\{3\}$, of total weight $4\le c_1$, and knapsack $2$ the items $\{1\}$, of total weight $2\le c_2$. The optimal value is $v[3][(5,2)]=9+2=11$.
 
     3. The KP with capacity $7$ has optimal value $14>11$, with the items $\{2,3\}$ of total weight $7\le 7$. These items cannot be divided between the two knapsacks of capacities $5$ and $2$: the KP with the total capacity gives only an upper bound on the optimal value of the MKP.
 
@@ -726,7 +726,7 @@ title: "Exercises · DP for the multiple knapsack problem"
         </tr>
         </table></div>
 
-        The vector $(0,2,2,1)$ is an optimal solution: knapsack $1$ contains the items $\{4\}$, of total weight $4=4\le c_1$, and knapsack $2$ the items $\{2,3\}$, of total weight $1+2=3\le c_2$. The optimal value is $v[4][(4,3)]=6+2+6=14$.
+        The vector $(0,2,2,1)$ is an optimal solution: knapsack $1$ contains the items $\{4\}$, of total weight $4\le c_1$, and knapsack $2$ the items $\{2,3\}$, of total weight $1+2=3\le c_2$. The optimal value is $v[4][(4,3)]=6+2+6=14$.
 
     3. The KP with capacity $7$ has optimal value $14$, equal to the optimal value of the MKP: here the upper bound given by the total capacity is tight.
 
@@ -942,6 +942,6 @@ title: "Exercises · DP for the multiple knapsack problem"
         </tr>
         </table></div>
 
-        The vector $(1,0,2,0)$ is an optimal solution: knapsack $1$ contains the items $\{1\}$, of total weight $4=4\le c_1$, and knapsack $2$ the items $\{3\}$, of total weight $2=2\le c_2$. The optimal value is $v[4][(5,3)]=5+7=12$.
+        The vector $(1,0,2,0)$ is an optimal solution: knapsack $1$ contains the items $\{1\}$, of total weight $4\le c_1$, and knapsack $2$ the items $\{3\}$, of total weight $2\le c_2$. The optimal value is $v[4][(5,3)]=5+7=12$.
 
     3. The KP with capacity $8$ has optimal value $14>12$, with the items $\{1,3,4\}$ of total weight $8\le 8$. These items cannot be divided between the two knapsacks of capacities $5$ and $3$: the KP with the total capacity gives only an upper bound on the optimal value of the MKP.

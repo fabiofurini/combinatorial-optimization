@@ -10,7 +10,7 @@ title: "The problems, the assumptions and the starting solutions"
 
 </div>
 
-- The algorithms are illustrated on the four problems of the notes on heuristic algorithms, defined in the notes on combinatorial optimization problems, with the same notation and assumptions:
+- The algorithms are illustrated on the four problems of the chapter [«Heuristic algorithms: definitions»](../heuristics.md): the [0/1 knapsack problem (KP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-0-1-knapsack-problem/), the [bin packing problem (BPP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/the-bin-packing-problem/), the [travelling salesman problem (TSP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/the-travelling-salesman-problem/) and [$P\,||\,C_{\max}$](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines/). Their definitions and assumptions are on their pages; the table recalls the notation.
 
 <div class="tabella" markdown="0"><table>
 <tr>
@@ -21,13 +21,13 @@ title: "The problems, the assumptions and the starting solutions"
 </tr>
 <tr>
 <td>KP</td>
-<td><span class="arithmatex">\(p_i\)</span>, <span class="arithmatex">\(w_i\)</span> (<span class="arithmatex">\(i\in\mathscr{I}\)</span>), capacity <span class="arithmatex">\(c\)</span></td>
+<td><span class="arithmatex">\(p_j\)</span>, <span class="arithmatex">\(w_j\)</span> (<span class="arithmatex">\(j\in\mathscr{I}\)</span>), capacity <span class="arithmatex">\(c\)</span></td>
 <td>binary vector <span class="arithmatex">\(x\)</span></td>
 <td>max profit</td>
 </tr>
 <tr>
 <td>BPP</td>
-<td><span class="arithmatex">\(w_i\)</span> (<span class="arithmatex">\(i\in\mathscr{I}\)</span>), capacity <span class="arithmatex">\(c\)</span></td>
+<td><span class="arithmatex">\(w_j\)</span> (<span class="arithmatex">\(j\in\mathscr{I}\)</span>), capacity <span class="arithmatex">\(c\)</span></td>
 <td>vector <span class="arithmatex">\(bin\)</span>, packing patterns <span class="arithmatex">\(P_b\)</span></td>
 <td>min number of bins <span class="arithmatex">\(nb\)</span></td>
 </tr>
@@ -45,13 +45,13 @@ title: "The problems, the assumptions and the starting solutions"
 </tr>
 </table></div>
 
-- For $P\,||\,C_{\max}$, $L_h=\sum_{j\in J_h} t_j$ is the <strong>load</strong> of machine $h$ and $C_{\max}=\max_h L_h$. For the BPP, $L_b=\sum_{i\in P_b} w_i$ is the <strong>load</strong> of bin $b$. A machine (or a bin) whose load equals the objective value is called <strong>critical</strong>.
+- For $P\,||\,C_{\max}$, $L_h=\sum_{j\in J_h} t_j$ is the <strong>load</strong> of machine $h$ and $C_{\max}=\max_h L_h$. For the BPP, $L_b=\sum_{j\in P_b} w_j$ is the <strong>load</strong> of bin $b$. A machine (or a bin) whose load equals the objective value is called <strong>critical</strong>.
 
-- The <strong>reference instances</strong> are those of the notes on definitions: the KP with $p=(10,7,6,4)$, $w=(5,4,3,3)$, $c=9$; the BPP with $w=(4,4,5,3,2,3)$, $c=7$; the TSP with $5$ cities; $P\,||\,C_{\max}$ with $t=(5,5,4,4,3,3,3)$ and $m=3$. Their optimal values are $17$, $3$, $18$ and $9$.
+- The <strong>reference instances</strong> are those of the chapter [«Heuristic algorithms: definitions»](../heuristics.md): the KP with $p=(10,7,6,4)$, $w=(5,4,3,3)$, $c=9$; the BPP with $w=(4,4,5,3,2,3)$, $c=7$; the TSP with $5$ cities; $P\,||\,C_{\max}$ with $t=(5,5,4,4,3,3,3)$ and $m=3$. Their optimal values are $17$, $3$, $18$ and $9$.
 
 ## 31.2.1 Starting solutions
 
-- A local search needs a feasible <strong>starting solution</strong>. We use the solutions computed in the notes on constructive heuristics and in the notes on approximation algorithms, recalled below.
+- A local search needs a feasible <strong>starting solution</strong>. We use the solutions computed in the chapter [«Constructive heuristics»](../constructive-heuristics/index.md), recalled below.
 
 <div class="tabella" markdown="0"><table>
 <tr>

@@ -6,23 +6,23 @@ title: "DP for the 0/1 knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 17** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP table for the knapsack](../../lab/dp-knapsack-table.md)
+**Part 3 · Dynamic programming · Chapter 17** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP tables for the knapsack problems](../../lab/dp-knapsack-table.md)
 
 </div>
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter «Principles of dynamic programming»: optimal substructure, overlapping subproblems, recurrence relations, base cases, and the top-down and bottom-up approaches.
+    - From this module, the chapter [«Principles of dynamic programming»](../dp-principles.md): optimal substructure, overlapping subproblems, recurrence relations, base cases, and the top-down and bottom-up approaches.
 
-    - From this module, the chapter «Knapsack problems»: the KP, the binary encoding of a solution, and the $2^n$ subsets of items.
+    - From this module, the chapter [«Knapsack problems»](../../combinatorial-optimization-problems/knapsack/index.md): the 0/1 knapsack problem (KP), the binary encoding of a solution, and the $2^n$ subsets of items.
 
     - From the module <em>Algorithms</em>: how to read [pseudocode (Chapter 2)](https://fabiofurini.github.io/algorithms/basic-algorithms/02-pseudo-code/), and [the size of the input of an algorithm (Chapter 11)](https://fabiofurini.github.io/algorithms/analysis/11-input-size/) (needed to explain why $\Theta(nc)$ is pseudo-polynomial).
 
 !!! nota "Where we were"
 
-    - <strong>As a problem</strong>: the KP, its instances and the $2^n$ subsets (chapter «Knapsack problems»).
+    - <strong>As a problem</strong>: the KP, its instances and the $2^n$ subsets (chapter [«Knapsack problems»](../../combinatorial-optimization-problems/knapsack/index.md)).
 
-    - <strong>As a model</strong>: the ILP model, its LP relaxation and the dual bounds (chapter «Formulations of knapsack problems»).
+    - <strong>As a model</strong>: the ILP model, its LP relaxation and the dual bounds (chapter [«Formulations of knapsack problems»](../../formulations/knapsack-formulations/index.md)).
 
     - <strong>Now, as a table</strong>: the DP algorithm computes the optimal value exactly, with no model and no solver.
 
@@ -59,7 +59,7 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
     \end{array}
     $$
 
-    We refer to this KP instance as <span style="color:#1971c2">Example 1</span>.
+    We refer to this KP instance as <span style="color:#1971c2">[Example 17.1](#box-1-texexpbox1)</span>.
 
 !!! chiave ""
 
@@ -108,7 +108,7 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
 
 !!! esempio "Example 17.2: Enumeration of all possible KP solutions"
 
-    We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
+    We consider the KP instance of <span style="color:#1971c2">[Example 17.1](#box-1-texexpbox1)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
     $$
     \begin{array}{l|rrr}
@@ -237,4 +237,4 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
 
 <!-- laboratorio-interattivo: sezione generata da interattivi.py -->
 
-:material-flask-outline: **In the interactive lab:** [DP table for the knapsack](../../lab/dp-knapsack-table.md).
+:material-flask-outline: **In the interactive lab:** [DP tables for the knapsack problems](../../lab/dp-knapsack-table.md).

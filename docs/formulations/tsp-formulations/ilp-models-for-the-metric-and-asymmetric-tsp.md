@@ -10,7 +10,7 @@ title: "Metric and asymmetric TSP"
 
 </div>
 
-The problems of this section are the asymmetric travelling salesman problem (ATSP) and the metric TSP, defined in [Chapter 6 «Routing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp/).
+The problems of this section are the asymmetric travelling salesman problem (ATSP) and the metric TSP, defined in [Chapter 6 «Routing problems», Section 6.6](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp/).
 
 - Given the set $\mathscr{V}=\{1,2,\dots,n\}$ of cities and the set $A$ of directed arcs, each arc $(i,j)$ has its own distance $d_{ij}$, which may differ from $d_{ji}$. We introduce the following $n(n-1)$ <strong>binary variables</strong>:
 
@@ -140,6 +140,8 @@ The problems of this section are the asymmetric travelling salesman problem (ATS
     - Both models are correct: an integer solution is feasible if and only if its arcs form one tour.
 
     - Both models are written on arcs, so they are also models of the ATSP: the $\mathrm{ILP}_{\mathrm{ATSP}}$ model is the DFJ model with $d_{ij}\neq d_{ji}$ allowed. The metric TSP has the same models as the TSP.
+
+    - From the module <em>Integer linear programming</em>, [Chapter 8 «Branch-and-cut»](https://fabiofurini.github.io/integer-linear-programming/exact-methods/branch-and-cut/) shows how the subtour elimination constraints are added only when they are violated.
 
     <strong>Dashboard of the instance of the chapter.</strong> Lower bounds on the optimal value $18$ computed in this chapter:
 

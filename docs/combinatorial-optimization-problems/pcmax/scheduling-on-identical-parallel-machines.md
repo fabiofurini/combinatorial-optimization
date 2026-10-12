@@ -98,7 +98,7 @@ title: "Scheduling on identical parallel machines"
     \end{array}
     $$
 
-    This is the $P\,||\,C_{\max}$ instance of the MIP modelling course. The assignment $\mathrm{mach}=(1,2,3,3,1,2,1)$ gives $J_1=\{1,5,7\}$, $J_2=\{2,6\}$, $J_3=\{3,4\}$, with loads $L_1=11$, $L_2=8$, $L_3=8$ and makespan $11$:
+    We call this instance <span style="color:#1971c2">[Example 7.1](#box-2-ex-pcmax7)</span>: it is the reference instance of the chapter. The assignment $\mathrm{mach}=(1,2,3,3,1,2,1)$ gives $J_1=\{1,5,7\}$, $J_2=\{2,6\}$, $J_3=\{3,4\}$, with loads $L_1=11$, $L_2=8$, $L_3=8$ and makespan $11$:
 
     ![Figure 1](../../img/pcmax/fig01.svg){ .fig loading=lazy  }
 
@@ -134,7 +134,7 @@ title: "Scheduling on identical parallel machines"
 
 - The growth is exponential in $n$: with $3$ machines, $20$ jobs have $3^{20} \approx 3.5\cdot 10^9$ assignments, and $30$ jobs have $3^{30} \approx 2.1\cdot 10^{14}$.
 
-## 7.4 A first schedule by hand
+## 7.4 A first schedule by hand { #sez-sec-pm-list }
 
 - A simple way to build a schedule is to take the jobs one by one, in the order $1,2,\dots,n$, and to assign each job to the machine with the smallest load at that moment; in case of a tie we take the machine with the smallest index.
 
@@ -193,7 +193,7 @@ title: "Scheduling on identical parallel machines"
 
 - We do not know yet whether $11$ is far from the optimal makespan: we need a lower bound.
 
-## 7.5 A combinatorial lower bound
+## 7.5 A combinatorial lower bound { #sez-sec-pm-lb }
 
 <a id="box-5-obs-pcmaxlb"></a>
 
@@ -213,7 +213,7 @@ title: "Scheduling on identical parallel machines"
 
 !!! esempio "Example 7.4: the bound on the reference instance"
 
-    On the instance of <span style="color:#1971c2">[Example 7.1](#box-2-ex-pcmax7)</span> the bound is $\max\{5,\lceil 27/3\rceil\}=9$. Together with the schedule of the previous section,
+    On the instance of <span style="color:#1971c2">[Example 7.1](#box-2-ex-pcmax7)</span> the bound is $\max\{5,\lceil 27/3\rceil\}=9$. Together with the schedule of Section [7.4](#sez-sec-pm-list),
 
     $$
     9 \le z(I) \le 11.
@@ -269,7 +269,7 @@ title: "Scheduling on identical parallel machines"
 
     - <strong>Forgetting the ceiling.</strong> The processing times are integer, so is the makespan: the average load $27/3$ is rounded up when it is not an integer.
 
-    - <strong>Assuming that the bound is attained.</strong> The bound of the previous section is a dual bound: a schedule with that makespan may not exist, as the instance $(4,3,3)$ on two machines shows.
+    - <strong>Assuming that the bound is attained.</strong> The bound of Section [7.5](#sez-sec-pm-lb) is a dual bound: a schedule with that makespan may not exist, as the instance $(4,3,3)$ on two machines shows.
 
     - <strong>Believing that the optimal schedule is unique.</strong> The instance of <span style="color:#1971c2">[Example 7.1](#box-2-ex-pcmax7)</span> has two optimal schedules, and twelve optimal assignments.
 

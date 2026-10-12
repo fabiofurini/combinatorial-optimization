@@ -6,7 +6,7 @@ title: "Scheduling on parallel machines: longest jobs first"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
+**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Constructive heuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive heuristics](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md) · [:material-gesture-tap: App: Vertex coloring: greedy and DSATUR](../../lab/coloring-greedy-dsatur.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
 
 </div>
 
@@ -140,7 +140,7 @@ title: "Scheduling on parallel machines: longest jobs first"
 
     ![Figure 4](../../img/constructive-heuristics/fig04.svg){ .fig loading=lazy  }
 
-    The elementary lower bound of the notes on combinatorial optimization problems, already used in the notes on the definitions of heuristic algorithms, gives $z(I)\ge\max\left\{\max_j t_j,\left\lceil\frac{\sum_j t_j}{m}\right\rceil\right\}=\max\{5,9\}=9$, and $z(I)=9$. Sorting improves the makespan from $12$ to $11$, but $LPT$ is not optimal: after six jobs the loads are perfectly balanced, $(8,8,8)$, and the seventh job unbalances them by $3$.
+    The elementary lower bound of the chapter [«Heuristic algorithms: definitions»](../heuristics.md) gives $z(I)\ge\max\left\{\max_j t_j,\left\lceil\frac{\sum_j t_j}{m}\right\rceil\right\}=\max\{5,9\}=9$, and $z(I)=9$. Sorting improves the makespan from $12$ to $11$, but $LPT$ is not optimal: after six jobs the loads are perfectly balanced, $(8,8,8)$, and the seventh job unbalances them by $3$.
 
 <a id="box-10-prop-graham69"></a>
 

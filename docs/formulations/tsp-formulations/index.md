@@ -12,11 +12,9 @@ title: "Formulations of routing problems"
 
 !!! nota "Prerequisites"
 
-    - From the module <em>Integer linear programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/) and [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): ILP problems, LP relaxations and bounds.
+    - From the module <em>Integer linear programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/) and [Chapter 2 «Primal and dual bounds»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): ILP problems, LP relaxations and bounds.
 
-    - From this module, [Chapter 6 «Routing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/): the problem, its assumptions, tours, the distance matrix and the instance of Example 1.
-
-    - Later, the chapter «Branch-and-cut algorithms» of the module <em>Integer linear programming</em> shows how the constraints of Section [13.4](ilp-models-for-the-travelling-salesman-problem.md#sez-sec-tspf-DFJ) are added only when they are needed.
+    - From this module, [Chapter 6 «Routing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/): the problem, its assumptions, tours, the distance matrix and the instance of Example 6.1.
 
 !!! chiave "Objectives"
 

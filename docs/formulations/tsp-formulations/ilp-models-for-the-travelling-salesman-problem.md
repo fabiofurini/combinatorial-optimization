@@ -10,6 +10,8 @@ title: "Travelling salesman"
 
 </div>
 
+The Travelling Salesman Problem and its reference instance (Example 6.1) are defined in [Chapter 6 «Routing problems», Section 6.2](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/the-travelling-salesman-problem/).
+
 - The TSP has two classical ILP models on the arc variables $x_{ij}$: the model of Miller, Tucker and Zemlin (MTZ) of Section [13.3](#sez-sec-tspf-MTZ), with position variables, and the model of Dantzig, Fulkerson and Johnson (DFJ) of Section [13.4](#sez-sec-tspf-DFJ), with subtour elimination constraints.
 
 - Section [13.5](#sez-sec-tspf-LP) compares the Linear Programming relaxations of the two models.
@@ -132,7 +134,7 @@ title: "Travelling salesman"
     \end{array}
     $$
 
-    This is the instance of Example 1 of the chapter «Routing problems». We refer to this TSP instance as <span style="color:#1971c2">[Example 13.1](#box-2-ex-TSP-inst)</span>.
+    This is the instance of Example 6.1 of [Chapter 6 «Routing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/). We refer to this TSP instance as <span style="color:#1971c2">[Example 13.1](#box-2-ex-TSP-inst)</span>.
 
 <a id="box-3-ex-TSP-ILP"></a>
 
@@ -188,7 +190,7 @@ title: "Travelling salesman"
 
 !!! chiave ""
 
-    Using these variables, a second ILP model for the Travelling Salesman Problem (TSP) reads as follows:
+    Using these variables, a second Integer Linear Programming (ILP) model for the Travelling Salesman Problem (TSP) reads as follows:
 
     <a id="eq-ILP-TSP-DFJ"></a>
 

@@ -52,7 +52,9 @@ title: "MIP heuristics for the classical problems"
 
 ## 33.2 The problems and their MIP models { #sez-sec-models }
 
-- The heuristics are illustrated on the four problems of the previous notes, whose definitions and assumptions are given in the notes on combinatorial optimization problems, and on their reference instances, recalled in the following table with the values computed in the previous notes on heuristic algorithms.
+- The heuristics are illustrated on the four problems of the previous chapters: the [0/1 knapsack problem (KP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-0-1-knapsack-problem/), the [bin packing problem (BPP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/the-bin-packing-problem/), the [travelling salesman problem (TSP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/the-travelling-salesman-problem/) and [$P\,||\,C_{\max}$](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines/). Their definitions and assumptions are on their pages.
+
+- The reference instances are recalled in the following table, with the values computed in the previous chapters on heuristic algorithms.
 
 <div class="tabella" markdown="0"><table>
 <tr>
@@ -72,7 +74,7 @@ title: "MIP heuristics for the classical problems"
 </tr>
 <tr>
 <td>TSP</td>
-<td><span class="arithmatex">\(5\)</span> cities, as in the notes on definitions</td>
+<td><span class="arithmatex">\(5\)</span> cities, the reference distances</td>
 <td><span class="arithmatex">\(NN\)</span> from city <span class="arithmatex">\(1\)</span>: <span class="arithmatex">\(25\)</span>; <span class="arithmatex">\(z(I)=18\)</span></td>
 </tr>
 <tr>
@@ -90,7 +92,7 @@ title: "MIP heuristics for the classical problems"
 
 !!! chiave ""
 
-    Using these variables, an ILP model for the 0/1 Knapsack Problem (KP) reads as follows:
+    Using these variables, an ILP model for the 0/1 knapsack problem (KP) reads as follows:
 
     <a id="eq-eq-kp"></a>
 
@@ -108,7 +110,7 @@ title: "MIP heuristics for the classical problems"
 
 !!! chiave ""
 
-    Using these variables, an ILP model for the Bin Packing Problem (BPP) reads as follows:
+    Using these variables, an ILP model for the bin packing problem (BPP) reads as follows:
 
     <a id="eq-eq-bpp"></a>
 
@@ -201,7 +203,7 @@ title: "MIP heuristics for the classical problems"
 
 - This is the typical situation in which MIP-based heuristics are useful.
 
-- On the TSP reference instance the LP solution of the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$ model is itself the optimal tour $(1,3,5,2,4)$, with $\tilde x_{13}=\tilde x_{35}=\tilde x_{52}=\tilde x_{24}=\tilde x_{41}=1$: every method of these notes finds it at once. The LP relaxation of the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ model is weaker: its value is $17$. The TSP is therefore not used in the examples of the following sections.
+- On the TSP reference instance the LP solution of the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$ model is itself the optimal tour $(1,3,5,2,4)$, with $\tilde x_{13}=\tilde x_{35}=\tilde x_{52}=\tilde x_{24}=\tilde x_{41}=1$: every method of this chapter finds it at once. The LP relaxation of the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ model is weaker: its value is $17$. The TSP is therefore not used in the other examples of this chapter.
 
 <a id="box-2-ex-lpsol"></a>
 
@@ -233,13 +235,13 @@ title: "MIP heuristics for the classical problems"
 
 ## 33.3 Rounding { #sez-sec-rounding }
 
-- <em>Rounding</em> rounds the LP solution to the nearest integer point and completes the continuous variables; it fails if the rounded point violates a constraint. Rounding down is always feasible when all the coefficients of $A$ are non-negative and $b\ge0$ (the observation on rounding down of Chapter 10 of the module <em>Integer Linear Programming</em>); an equality constraint, such as the assignment constraints of the BPP and of $P\,||\,C_{\max}$, is almost always violated by independent roundings.
+- <em>Rounding</em> rounds the LP solution to the nearest integer point and completes the continuous variables; it fails if the rounded point violates a constraint. Rounding down is always feasible when all the coefficients of $A$ are non-negative and $b\ge0$ (the observation on rounding down of [Chapter 10 «MIP heuristics»](https://fabiofurini.github.io/integer-linear-programming/mip-heuristics/mip-heuristics/) of the module <em>Integer Linear Programming</em>); an equality constraint, such as the assignment constraints of the BPP and of $P\,||\,C_{\max}$, is almost always violated by independent roundings.
 
 <a id="box-3-ex-rounding"></a>
 
 !!! esempio "Example 33.2: Rounding on the reference instances"
 
-    <strong>KP.</strong> The LP solution $\tilde{\vet x}=\big(1,\frac14,1,0\big)$ is rounded to $\bar{\vet x}=(1,0,1,0)$: weight $8\le9$, profit $16$. It is the solution of $GR$ of the chapter on constructive heuristics. Rounding $\tilde x_2=\frac14$ up instead would give $(1,1,1,0)$, of weight $12>9$: infeasible.
+    <strong>KP.</strong> The LP solution $\tilde{\vet x}=\big(1,\frac14,1,0\big)$ is rounded to $\bar{\vet x}=(1,0,1,0)$: weight $8\le9$, profit $16$. It is the solution of $GR$ of the chapter «Constructive heuristics». Rounding $\tilde x_2=\frac14$ up instead would give $(1,1,1,0)$, of weight $12>9$: infeasible.
 
     <strong>$P\,||\,C_{\max}$.</strong> In the LP solution of [Example 33.1](#box-2-ex-lpsol), $\rnd{\frac35}=1$ and $\rnd{\frac25}=0$ send job $2$ to machine $1$, but $\rnd{\frac12}=1$ assigns job $3$ to <em>both</em> machines $2$ and $3$:
 
@@ -251,7 +253,7 @@ title: "MIP heuristics for the classical problems"
 
     <strong>BPP.</strong> Rounding the LP solution of [Example 33.1](#box-2-ex-lpsol) gives $\bar{\vet y}=(0,0,1,1,0,1)$ and puts item $3$ into bin $3$. Two capacity constraints $\eqref{eq:bpp-cap}$ are violated: bin $1$ contains item $5$ but $\bar y_1=0$ ($-2+7\cdot 0\ge 0$ is false), and bin $3$ contains items $3$ and $6$ ($-(5+3)+7\cdot 1\ge 0$ is false). <strong>Rounding fails</strong>.
 
-- The three outcomes summarize the method: on the KP, with a single packing constraint, rounding is safe (the observation on rounding down of Chapter 10 of the module <em>Integer Linear Programming</em>); on the problems with assignment constraints it fails, because the LP spreads a job or an item over several machines or bins, and rounding cannot decide where it goes.
+- The three outcomes summarize the method: on the KP, with a single packing constraint, rounding is safe (the observation on rounding down of [Chapter 10 «MIP heuristics»](https://fabiofurini.github.io/integer-linear-programming/mip-heuristics/mip-heuristics/) of the module <em>Integer Linear Programming</em>); on the problems with assignment constraints it fails, because the LP spreads a job or an item over several machines or bins, and rounding cannot decide where it goes.
 
 ## 33.4 Diving { #sez-sec-diving }
 
@@ -383,7 +385,7 @@ title: "MIP heuristics for the classical problems"
 
 ## 33.5 The feasibility pump { #sez-sec-fp }
 
-- The <em>feasibility pump</em> alternates the projection of an integer point onto the LP feasible region (one LP minimizing $\Delta$) and the rounding of the projection, with a flip when the rounding returns the same integer point and a random restart when the pump cycles, until the distance is $0$. The random numbers are those of the <em>minimal standard</em> generator of Park and Miller with the seeds $1,2,\dots$, as in the metaheuristics chapter.
+- The <em>feasibility pump</em> alternates the projection of an integer point onto the LP feasible region (one LP minimizing $\Delta$) and the rounding of the projection, with a flip when the rounding returns the same integer point and a random restart when the pump cycles, until the distance is $0$. The random numbers are those of the <em>minimal standard</em> generator of Park and Miller with the seeds $1,2,\dots$, as in the chapter [«Metaheuristics»](metaheuristics/index.md).
 
 <a id="box-7-ex-fppcm"></a>
 
@@ -492,7 +494,7 @@ title: "MIP heuristics for the classical problems"
 
     The pump finds a feasible solution with every seed, but always after some restarts: without them it would cycle. Only with seed $7$ the solution is optimal: $\{3,5\}$, $\{2,4\}$, $\{1,6\}$, of value $3$. With seed $4$ the pump opens $5$ bins, two of which stay empty: the packing $\{3,5\}$, $\{1,6\}$, $\{2,4\}$ is optimal, but the solution has value $5$, because nothing in the distance function asks to close the empty bins.
 
-- The pump is a method to find a <em>first</em> feasible solution, and it does that well. The quality of the solution is the job of the improvement methods of the next sections, which start from an incumbent.
+- The pump is a method to find a <em>first</em> feasible solution, and it does that well. The quality of the solution is the job of the improvement methods, which start from an incumbent.
 
 ## 33.6 RINS, local branching and proximity search { #sez-sec-submip }
 
@@ -578,7 +580,7 @@ title: "MIP heuristics for the classical problems"
 
 ### 33.6.2 Local branching
 
-- <strong>Local branching and local search.</strong> With $k=1$ the neighbourhood is the flip neighbourhood of the KP in the notes on definitions; with $k=2$ it contains the swap neighbourhood as well. For the assignment variables of the BPP and of $P\,||\,C_{\max}$ the distance has a simple meaning.
+- <strong>Local branching and local search.</strong> With $k=1$ the neighbourhood is the flip neighbourhood of the KP in the chapter [«Heuristic algorithms: definitions»](heuristics.md); with $k=2$ it contains the swap neighbourhood as well. For the assignment variables of the BPP and of $P\,||\,C_{\max}$ the distance has a simple meaning.
 
 <a id="box-11-obs-assign"></a>
 
@@ -590,7 +592,7 @@ title: "MIP heuristics for the classical problems"
 
     A job on the same machine in $\vet x$ and $\bar{\vet x}$ contributes $0$ to $\Delta$. A job on machine $h$ in $\bar{\vet x}$ and on machine $h'\neq h$ in $\vet x$ contributes $1-x_{jh}=1$ and $x_{jh'}=1$, and $0$ for the other machines. <span class="qed">□</span>
 
-- Hence, for $P\,||\,C_{\max}$, the neighbourhood $\Delta(\vet x,\bar{\vet x})\le 2$ is the <strong>move</strong> neighbourhood of the chapter on local search (one job changes machine), and $\Delta(\vet x,\bar{\vet x})\le 4$ contains the <strong>swap</strong> neighbourhood (two jobs change machine). The same holds for the variables $x_{jb}$ of the BPP.
+- Hence, for $P\,||\,C_{\max}$, the neighbourhood $\Delta(\vet x,\bar{\vet x})\le 2$ is the <strong>move</strong> neighbourhood of the chapter [«Local search»](local-search/index.md) (one job changes machine), and $\Delta(\vet x,\bar{\vet x})\le 4$ contains the <strong>swap</strong> neighbourhood (two jobs change machine). The same holds for the variables $x_{jb}$ of the BPP.
 
 <a id="box-12-ex-lbkp"></a>
 
@@ -610,7 +612,7 @@ title: "MIP heuristics for the classical problems"
 
     Start from the solution $\bar{\vet x}^1$ of $LPT$, of makespan $11$, with $k=2$, $k_{\max}=6$, $k_{step}=2$ and $\theta=1$, so that the cutoff is $C_{\max}\le 10$, then $9$, and so on.
 
-    <strong>$k=2$.</strong> By [Observation 33.2](#box-11-obs-assign) the neighbourhood is the move neighbourhood, and $LPT$ is a local optimum for it (chapter on local search): the sub-MIP is infeasible. Add $\Delta(\vet x,\bar{\vet x}^1)\ge 3$ and set $k=4$.
+    <strong>$k=2$.</strong> By [Observation 33.2](#box-11-obs-assign) the neighbourhood is the move neighbourhood, and $LPT$ is a local optimum for it (chapter «Local search»): the sub-MIP is infeasible. Add $\Delta(\vet x,\bar{\vet x}^1)\ge 3$ and set $k=4$.
 
     <strong>$k=4$.</strong> The best solution with two jobs reassigned has makespan $10$; the solver returns the swap of jobs $1$ and $4$, $\bar{\vet x}^2$ below. Add $\Delta(\vet x,\bar{\vet x}^1)\ge 5$.
 
@@ -622,17 +624,17 @@ title: "MIP heuristics for the classical problems"
 
     The dashed line is the lower bound $9$; the jobs swapped to obtain the next solution are coloured.
 
-- In the language of the chapter on local search, local branching performs a local search with a neighbourhood whose size is controlled by $k$, explored exactly by the solver, and it enlarges the neighbourhood when it gets stuck — exactly the idea of variable neighbourhood search, with the solver doing the exploration.
+- In the language of the chapter [«Local search»](local-search/index.md), local branching performs a local search with a neighbourhood whose size is controlled by $k$, explored exactly by the solver, and it enlarges the neighbourhood when it gets stuck — exactly the idea of variable neighbourhood search, with the solver doing the exploration.
 
 ### 33.6.3 Proximity search
 
-- A proximity sub-MIP that is infeasible with $\theta=1$ proves that the incumbent is optimal, when the objective takes integer values (the proposition of Chapter 10 of the module <em>Integer Linear Programming</em>).
+- A proximity sub-MIP that is infeasible with $\theta=1$ proves that the incumbent is optimal, when the objective takes integer values (the proposition of [Chapter 10 «MIP heuristics»](https://fabiofurini.github.io/integer-linear-programming/mip-heuristics/mip-heuristics/) of the module <em>Integer Linear Programming</em>).
 
 <a id="box-14-ex-pskp"></a>
 
 !!! esempio "Example 33.12: Proximity search on the KP"
 
-    From $\bar{\vet x}=(1,0,1,0)$, of profit $16$: the closest solution of profit at least $17$ is $(1,1,0,0)$, at distance $2$ (item $3$ out, item $2$ in), of profit $17$. Around it, no solution has profit at least $18$: by the optimality condition of proximity search (Chapter 10 of the module <em>Integer Linear Programming</em>), $\{1,2\}$ is <strong>optimal</strong>.
+    From $\bar{\vet x}=(1,0,1,0)$, of profit $16$: the closest solution of profit at least $17$ is $(1,1,0,0)$, at distance $2$ (item $3$ out, item $2$ in), of profit $17$. Around it, no solution has profit at least $18$: by the optimality condition of proximity search ([Chapter 10 «MIP heuristics»](https://fabiofurini.github.io/integer-linear-programming/mip-heuristics/mip-heuristics/) of the module <em>Integer Linear Programming</em>), $\{1,2\}$ is <strong>optimal</strong>.
 
 <a id="box-15-ex-pspcm"></a>
 
@@ -671,7 +673,7 @@ title: "MIP heuristics for the classical problems"
     </tr>
     </table></div>
 
-    By [Observation 33.2](#box-11-obs-assign), distance $4$ means two jobs reassigned: jobs $1$ and $6$ at the first iteration, jobs $2$ and $4$ at the second. No solution at distance $2$ improves the makespan, as for local branching with $k=2$. At the third iteration the sub-MIP is infeasible, and the optimality condition of proximity search (Chapter 10 of the module <em>Integer Linear Programming</em>) proves that makespan $9$ is optimal.
+    By [Observation 33.2](#box-11-obs-assign), distance $4$ means two jobs reassigned: jobs $1$ and $6$ at the first iteration, jobs $2$ and $4$ at the second. No solution at distance $2$ improves the makespan, as for local branching with $k=2$. At the third iteration the sub-MIP is infeasible, and the optimality condition of proximity search ([Chapter 10 «MIP heuristics»](https://fabiofurini.github.io/integer-linear-programming/mip-heuristics/mip-heuristics/) of the module <em>Integer Linear Programming</em>) proves that makespan $9$ is optimal.
 
 - The proof of optimality comes from the solver, which proves the infeasibility of the last sub-MIP with its own dual bounds: proximity search, used with $\theta=1$, is an exact method that improves the incumbent along the way.
 
@@ -683,7 +685,7 @@ title: "MIP heuristics for the classical problems"
 
 !!! chiave ""
 
-    Using these variables, an ILP model for the capacitated lot-sizing problem (CLS) reads as follows:
+    Using these variables, an ILP model for the [capacitated lot sizing problem (CLS)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem/) reads as follows:
 
     <a id="eq-eq-ls"></a>
 
@@ -706,9 +708,9 @@ title: "MIP heuristics for the classical problems"
 
 <a id="box-16-ex-rfcourse"></a>
 
-!!! esempio "Example 33.14: Relax-and-fix on the lot sizing instance of the MIP course"
+!!! esempio "Example 33.14: Relax-and-fix on an uncapacitated lot sizing instance"
 
-    The instance of the MIP course has $m=5$ periods, $d=(20,10,30,40,10)$, $sc_t=50$, $vc_t=0$ and $hc_t=1$ for every $t\in T$, and no capacity. Its LP relaxation has value $\frac{36985}{396}\approx 93.40$, the constructive heuristic least unit cost of the course gives $200$, and the optimal value is $170$. Relax-and-fix with one period per block, $B_t=\{y_t\}$, finds a solution of value $170$: <strong>optimal</strong>.
+    The instance of the module <em>MIP Modelling</em>, [Chapter 4 «Constructive heuristics»](https://fabiofurini.github.io/mip-modelling/modelling-4/), has $m=5$ periods, $d=(20,10,30,40,10)$, $sc_t=50$, $vc_t=0$ and $hc_t=1$ for every $t\in T$, and no capacity. Its LP relaxation has value $\frac{36985}{396}\approx 93.40$, the constructive heuristic least unit cost of that chapter gives $200$, and the optimal value is $170$. Relax-and-fix with one period per block, $B_t=\{y_t\}$, finds a solution of value $170$: <strong>optimal</strong>.
 
 <a id="box-17-ex-rfcap"></a>
 
@@ -801,7 +803,7 @@ title: "MIP heuristics for the classical problems"
 
 ## 33.8 Heuristics inside the solver { #sez-sec-gurobi }
 
-- The heuristics of Gurobi, their parameters and the MIP start are described in Chapter 10 of the module <em>Integer Linear Programming</em> and in the chapter «MIP solvers: what they do». A heuristic solution computed outside the solver — by $FFD$, $LPT$, a local search — can be passed to it as a MIP start (the attribute <code>Start</code> of the variables).
+- The heuristics of Gurobi, their parameters and the MIP start are described in [Chapter 10 «MIP heuristics»](https://fabiofurini.github.io/integer-linear-programming/mip-heuristics/mip-heuristics/) and in [Chapter 9 «MIP solvers: what they do»](https://fabiofurini.github.io/integer-linear-programming/solvers/mip-solvers/) of the module <em>Integer Linear Programming</em>. A heuristic solution computed outside the solver — by $FFD$, $LPT$, a local search — can be passed to it as a MIP start (the attribute <code>Start</code> of the variables).
 
 <a id="box-19-ex-gurobi"></a>
 
@@ -885,18 +887,18 @@ title: "MIP heuristics for the classical problems"
 
     With the default parameters, a solution of $24$ bins is found at once, and the optimal one only after $2533$ nodes. Spending more effort in the heuristics (<code>Heuristics=0.5</code> or <code>MIPFocus=1</code>) finds $23$ at the root, about $30$ times faster; without heuristics the first solution arrives after $1.61$ work units, and the optimum is not found within the limit. Since the bound is $23$ from the root, the whole difficulty of this instance is primal: finding the solution, not proving it optimal.
 
-- The numbers depend on the instance, on the version of the solver and on the machine; a single instance proves nothing (notes on definitions). The lesson is qualitative: on instances whose bound is strong, as the BPP with $LB=z(I)$, the time to solve is the time to find a good solution, and the heuristics of the solver — or a good MIP start — decide it.
+- The numbers depend on the instance, on the version of the solver and on the machine; a single instance proves nothing (chapter [«Heuristic algorithms: definitions»](heuristics.md)). The lesson is qualitative: on instances whose bound is strong, as the BPP with $LB=z(I)$, the time to solve is the time to find a good solution, and the heuristics of the solver — or a good MIP start — decide it.
 
 ## 33.9 What the MIP-based heuristics give { #sez-sec-give }
 
-- The notes on definitions ended with a warning: a heuristic gives only one side of the gap, and without a dual bound nothing can be said about the quality of its solution. The heuristics of the previous notes give <em>only</em> primal bounds.
+- The chapter [«Heuristic algorithms: definitions»](heuristics.md) ended with a warning: a heuristic gives only one side of the gap, and without a dual bound nothing can be said about the quality of its solution. The heuristics of the previous chapters give <em>only</em> primal bounds.
 
-- A MIP-based heuristic works with a MIP model, and the model comes with its LP relaxation; run inside a MIP solver, it comes with the dual bound of the branch-and-bound as well. For the first time, the heuristic <strong>knows how far it is from the optimum</strong> while it runs: the gap of the notes on definitions is computed at every moment, and when it is $0$ the solution is <em>proved</em> optimal.
+- A MIP-based heuristic works with a MIP model, and the model comes with its LP relaxation; run inside a MIP solver, it comes with the dual bound of the branch-and-bound as well. For the first time, the heuristic <strong>knows how far it is from the optimum</strong> while it runs: the gap of the chapter [«Heuristic algorithms: definitions»](heuristics.md) is computed at every moment, and when it is $0$ the solution is <em>proved</em> optimal.
 
 <div class="tabella" markdown="0"><table>
 <tr>
 <th></th>
-<th colspan="3">heuristics of the previous notes</th>
+<th colspan="3">heuristics of the previous chapters</th>
 <th colspan="3">MIP-based heuristics</th>
 </tr>
 <tr>
@@ -964,17 +966,13 @@ title: "MIP heuristics for the classical problems"
 </tr>
 </table></div>
 
-- On the KP the integer rounding of the LP value is $\lfloor 17.75\rfloor=17$, and proximity search proves the optimality of $17$ by itself (the optimality condition of proximity search (Chapter 10 of the module <em>Integer Linear Programming</em>)). On the capacitated lot sizing instance the LP bound is weak, and the gap is closed by the branch-and-bound of the solver, which proves that $160$ is optimal.
+- On the KP the integer rounding of the LP value is $\lfloor 17.75\rfloor=17$, and proximity search proves the optimality of $17$ by itself, by the optimality condition of proximity search ([Chapter 10 «MIP heuristics»](https://fabiofurini.github.io/integer-linear-programming/mip-heuristics/mip-heuristics/) of the module <em>Integer Linear Programming</em>). On the capacitated lot sizing instance the LP bound is weak, and the gap is closed by the branch-and-bound of the solver, which proves that $160$ is optimal.
 
 !!! chiave ""
 
     A MIP-based heuristic does not only find solutions: inside a MIP solver it works with a dual bound, so the gap of its solution is always known, and a gap equal to $0$ certifies optimality.
 
-The code of the chapter, in Python with <code>gurobipy</code> (the models of the four problems, the heuristics and the experiment with the parameters of Gurobi), runs every example of the chapter and every instance of the exercises in the Colab notebook of the chapter.
-
-<div class="colab-pulsanti" markdown="0"><span class="colab-etichetta">Run in Colab:</span><a class="colab-pulsante" href="https://colab.research.google.com/github/fabiofurini/combinatorial-optimization/blob/main/notebooks/mip-heuristics-classical_python.ipynb" target="_blank" rel="noopener" title="Open the Python notebook of the chapter in Google Colab">Python</a></div>
-
-## 33.11 Typical mistakes { #sez-sec-mistakes }
+## 33.10 Typical mistakes { #sez-sec-mistakes }
 
 !!! attenzione "Warning"
 
@@ -988,17 +986,17 @@ The code of the chapter, in Python with <code>gurobipy</code> (the models of the
 
     - <strong>Forgetting the cutoff constraint.</strong> Without $f(\vet x)\le f(\bar{\vet x})-\theta$ the sub-MIP returns the incumbent solution again; with it, an infeasible sub-MIP proves a local optimum.
 
-    - <strong>Claiming optimality without the conditions.</strong> the optimality condition of proximity search (Chapter 10 of the module <em>Integer Linear Programming</em>) needs $\theta=1$ and integer objective values on all the feasible solutions.
+    - <strong>Claiming optimality without the conditions.</strong> The optimality condition of proximity search ([Chapter 10 «MIP heuristics»](https://fabiofurini.github.io/integer-linear-programming/mip-heuristics/mip-heuristics/) of the module <em>Integer Linear Programming</em>) needs $\theta=1$ and integer objective values on all the feasible solutions.
 
     - <strong>Ignoring the myopia of relax-and-fix.</strong> The relaxed future is optimistic: a decision that looks cheap can force a setup later.
 
     - <strong>Generalizing from one instance or one solver run.</strong> Paths and times depend on the version of the solver and on the tie-breaking rules, so the lessons are qualitative.
 
-## 33.12 In summary { #sez-sec-summary }
+## 33.11 In summary { #sez-sec-summary }
 
 !!! chiave "In summary"
 
-    - The MIP-based heuristics of Chapter 10 of the module <em>Integer Linear Programming</em> apply to the classical problems through their MIP models.
+    - The MIP-based heuristics of [Chapter 10 «MIP heuristics»](https://fabiofurini.github.io/integer-linear-programming/mip-heuristics/mip-heuristics/) of the module <em>Integer Linear Programming</em> apply to the classical problems through their MIP models.
 
     - Rounding and diving build a solution from the LP; the feasibility pump looks only for feasibility; RINS, local branching and proximity search improve an incumbent solution with a sub-MIP.
 
@@ -1046,6 +1044,10 @@ The code of the chapter, in Python with <code>gurobipy</code> (the models of the
     <td><span class="arithmatex">\(0\%\)</span></td>
     </tr>
     </table></div>
+
+The code of the chapter, in Python with <code>gurobipy</code> (the models of the four problems, the heuristics and the experiment with the parameters of Gurobi), runs every example of the chapter and every instance of the exercises in the Colab notebook of the chapter.
+
+<div class="colab-pulsanti" markdown="0"><span class="colab-etichetta">Run in Colab:</span><a class="colab-pulsante" href="https://colab.research.google.com/github/fabiofurini/combinatorial-optimization/blob/main/notebooks/mip-heuristics-classical_python.ipynb" target="_blank" rel="noopener" title="Open the Python notebook of the chapter in Google Colab">Python</a></div>
 
 ---
 

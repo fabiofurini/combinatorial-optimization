@@ -134,7 +134,7 @@ title: "Bin packing"
 
 ## 3.2.2 Counting the solutions, a first solution and a simple bound
 
-- <strong>Candidate solutions.</strong> The candidate solutions are the partitions of $\mathscr{I}$: they are counted by the Bell numbers (Chapter «Combinatorial optimization problems»). For <span style="color:#1971c2">[Example 3.1](#box-2-ex-bpp)</span> we have $B(5) = 52$ partitions.
+- <strong>Candidate solutions.</strong> The candidate solutions are the partitions of $\mathscr{I}$: they are counted by the Bell numbers ([Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/counting-the-solutions/)). For <span style="color:#1971c2">[Example 3.1](#box-2-ex-bpp)</span> we have $B(5) = 52$ partitions.
 
 - <strong>Feasible solutions.</strong> A partition is feasible if every bin weighs at most $10$. Enumeration gives $11$ feasible partitions: $1$ with $5$ bins (one item per bin), $6$ with $4$ bins and $4$ with $3$ bins. Two bins are not enough, since the total weight $25$ exceeds $2 \cdot 10$.
 

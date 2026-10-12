@@ -26,7 +26,7 @@ title: "Multiple knapsack"
 
     the <strong>Multiple Knapsack Problem</strong> (MKP) asks to decide which items to insert into each knapsack, so that in every knapsack the total weight of the assigned items does not exceed its capacity, and the total profit of the selected items is maximized.
 
-- A <strong>MKP instance</strong> is specified by:
+- An <strong>MKP instance</strong> is specified by:
 
     1. two integer numbers:
 
@@ -46,7 +46,7 @@ title: "Multiple knapsack"
 
         - $\vet{c} \in \Z_{\ge 1}^m$, containing the capacities of the knapsacks.
 
-- A <strong>MKP feasible solution</strong> is a family of subsets of items
+- An <strong>MKP feasible solution</strong> is a family of subsets of items
 
     $$
     \mathcal{S}=\{S_k\}_{k\in \mathscr{K}},
@@ -71,7 +71,7 @@ title: "Multiple knapsack"
 
     !!! chiave ""
 
-        Given a MKP instance, the MKP can be formally stated as:
+        Given an MKP instance, the MKP can be formally stated as:
 
         \begin{equation*}
         \label{MKP}

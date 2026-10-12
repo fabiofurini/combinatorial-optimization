@@ -12,7 +12,7 @@ title: "Lot sizing problems"
 
 <a id="sec:cat-pagina-lot-sizing-problems"></a>
 
-- Given a horizon of $T$ periods with a demand $d_t$ in every period, a solution fixes the production periods (setups) and the quantity produced in each of them, so that every demand is satisfied.
+- Given a set $T=\{1,2,\dots,m\}$ of periods with a demand $d_t$ in every period $t\in T$, a solution fixes the periods with a setup and the quantity produced in each of them, so that every demand is satisfied.
 
 - The objective is to minimize the total cost of setups, production and inventory holding; the members differ in the capacities, in the number of products and in the treatment of initial stock, overtime and unsatisfied demand.
 

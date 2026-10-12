@@ -6,7 +6,7 @@ title: "Exercises · DP for the coin change problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 27** · each solution opens with a click · [:material-book-open-variant: Chapter 27: Coin change](../dynamic-programming/dp-coin-change.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
+**Exercises · Chapter 27** · each solution opens with a click · [:material-book-open-variant: Chapter 27: Coin change (CCP)](../dynamic-programming/dp-coin-change.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
 
 </div>
 

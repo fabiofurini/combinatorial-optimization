@@ -6,11 +6,11 @@ title: "What constructive heuristics give, and what they do not"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
+**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Constructive heuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive heuristics](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md) · [:material-gesture-tap: App: Vertex coloring: greedy and DSATUR](../../lab/coloring-greedy-dsatur.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
 
 </div>
 
-- The table collects the results on the four reference instances, with the dual bounds of the notes on the definitions of heuristic algorithms ($\UB$ for the KP, $\LB$ for the other problems) and the gap of the best heuristic solution.
+- The table collects the results on the four reference instances, with the dual bounds of the chapter [«Heuristic algorithms: definitions»](../heuristics.md) ($\UB$ for the KP, $\LB$ for the other problems) and the gap of the best heuristic solution.
 
 <div class="tabella" markdown="0"><table>
 <tr>
@@ -61,7 +61,7 @@ title: "What constructive heuristics give, and what they do not"
 
 - <strong>The order decides everything.</strong> The examples of these notes show the same lesson on four problems: sorting the elements in the right order (efficiency, decreasing weights, longest jobs first) is the main design choice; still, no order is the best on every instance ([Example 30.1](the-0-1-knapsack-problem-which-order.md#box-3-ex-kp3), [Example 30.4](the-bin-packing-problem-first-sort-then-pack.md#box-6-ex-ffdworse)), and running several orders, several starting points or several randomized constructions, and keeping the best solution, is a cheap and effective protection.
 
-- <strong>Cheap, and useful as a start.</strong> Constructive heuristics are fast, and they are rarely used alone: their solutions are the starting points of the methods that try to improve a complete solution. The next notes, on local search, start from the solutions computed here and modify them, a little at a time, as long as they improve.
+- <strong>Cheap, and useful as a start.</strong> Constructive heuristics are fast, and they are rarely used alone: their solutions are the starting points of the methods that try to improve a complete solution.
 
 !!! chiave ""
 

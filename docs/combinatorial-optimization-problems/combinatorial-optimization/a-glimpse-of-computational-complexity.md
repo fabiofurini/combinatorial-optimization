@@ -68,6 +68,41 @@ title: "A glimpse of computational complexity"
 
 ## 1.8 In summary
 
+!!! chiave "In summary"
+
+    - A combinatorial optimization problem has a finite ground set, a family of feasible subsets and an objective function; an optimal solution exists whenever a feasible solution exists.
+
+    - The category of the decisions gives the combinatorial object of a solution: a subset, a vector of integer quantities, an assignment, an ordering or a partition.
+
+    - The candidate solutions are $2^n$ subsets, $n!$ orderings, $(n-1)!/2$ cyclic orderings and $B(n)$ partitions: brute force works only on very small instances.
+
+    - A feasible solution gives a primal bound, a relaxation or a combinatorial argument gives a dual bound; a zero gap certifies that the feasible solution is optimal.
+
+    - The problems of the course are NP-hard: no polynomial exact algorithm is expected for them.
+
+    <strong>Dashboard of the small instance.</strong>
+
+    <div class="tabella" markdown="0"><table>
+    <tr>
+    <th><span style="color:#1971c2"><a href="../combinatorial-optimization-problems/#box-2-ex-oc1-small">Example 1.1</a></span> (max)</th>
+    <th>lower bound</th>
+    <th>upper bound</th>
+    <th>from</th>
+    </tr>
+    <tr>
+    <td>first bounds</td>
+    <td><span class="arithmatex">\(11\)</span></td>
+    <td><span class="arithmatex">\(14\)</span></td>
+    <td>greedy choice, one of the weights <span class="arithmatex">\(7\)</span> and <span class="arithmatex">\(6\)</span></td>
+    </tr>
+    <tr>
+    <td>final bounds</td>
+    <td><span class="arithmatex">\(13\)</span></td>
+    <td><span class="arithmatex">\(13\)</span></td>
+    <td>solution <span class="arithmatex">\(\{2,3,4\}\)</span>, argument by cardinality</td>
+    </tr>
+    </table></div>
+
 ---
 
 **Exercises on this chapter:** [:material-pencil: Combinatorial optimization](../../exercises/combinatorial-optimization.md)

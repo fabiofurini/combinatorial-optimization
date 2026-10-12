@@ -12,7 +12,7 @@ title: "Principles of approximation algorithms"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter «Heuristic algorithms»: heuristic algorithms, feasible solutions and the value of the solution returned by a heuristic algorithm.
+    - From this module, the chapter [«Heuristic algorithms: definitions»](../heuristic-algorithms/heuristics.md): heuristic algorithms, feasible solutions and the value of the solution returned by a heuristic algorithm.
 
     - From this module, the chapters on the combinatorial optimization problems: instances, optimal solutions and the optimal value $z(I)$ of an instance $I$.
 
@@ -214,7 +214,7 @@ title: "Principles of approximation algorithms"
 
     Under the feasibility assumption, this quantity is non-negative for every instance $I$, and it is equal to $0$ if and only if $\mathscr{A}(I)=z(I)$.
 
-- The relative error divides by the optimal value $z(I)$, and must not be confused with the gap of the chapter «Combinatorial optimization problems», which divides by the lower bound and is never smaller (chapter «Heuristic algorithms»).
+- The relative error divides by the optimal value $z(I)$, and must not be confused with the gap of the chapter [«Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization/index.md), which divides by the lower bound and is never smaller (chapter [«Heuristic algorithms: definitions»](../heuristic-algorithms/heuristics.md)).
 
 <a id="box-7-def-as"></a>
 
@@ -345,7 +345,7 @@ title: "Principles of approximation algorithms"
 
     - An approximation scheme has relative error at most $\varepsilon$ for every $\varepsilon \in (0,1)$; it is a PTAS if the running time is polynomial in the size of the instance for every fixed $\varepsilon$, and an FPTAS if it is polynomial in $\frac{1}{\varepsilon}$ too.
 
-    <strong>Dashboard.</strong> A guarantee bounds the gap between a heuristic solution (a lower bound on $z(I)$ for a maximization problem, an upper bound for a minimization problem) and the optimal value, on every instance. The next chapters fill the dashboard of the reference instances with the values of the heuristic algorithms and with their guarantees; for the VCP, the MCP and the general TSP they prove instead that no constant guarantee exists, unless $P=NP$.
+    <strong>Dashboard.</strong> A guarantee bounds the gap between a heuristic solution (a lower bound on $z(I)$ for a maximization problem, an upper bound for a minimization problem) and the optimal value, on every instance. The dashboards of the chapters of this volume collect, for the reference instances, the values of the heuristic algorithms and their guarantees; for the VCP, the MCP and the general TSP no constant guarantee exists, unless $P=NP$.
 
 ---
 

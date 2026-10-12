@@ -6,7 +6,7 @@ title: "Exercises · Vertex coloring: the DSATUR branch-and-bound"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 42** · each solution opens with a click · [:material-book-open-variant: Chapter 42: Vertex coloring (DSATUR)](../specialized-algorithms/dsatur-branch-and-bound.md) · [:material-file-pdf-box: Exercises, volume 6 (PDF)](../pdf/exercises-6-specialized-algorithms.pdf)
+**Exercises · Chapter 42** · each solution opens with a click · [:material-book-open-variant: Chapter 42: Vertex coloring (VCP)](../specialized-algorithms/dsatur-branch-and-bound.md) · [:material-file-pdf-box: Exercises, volume 6 (PDF)](../pdf/exercises-6-specialized-algorithms.pdf)
 
 </div>
 
@@ -560,7 +560,7 @@ title: "Exercises · Vertex coloring: the DSATUR branch-and-bound"
 
         ![Figure 9](../img/ex-dsatur-branch-and-bound/fig09.svg){ .fig loading=lazy  }
 
-        Every stable set of $G$ has at most $2$ vertices, so the stable set bound $\lceil 7/2\rceil=4$ of Chapter 4 confirms the result.
+        Every stable set of $G$ has at most $2$ vertices, so the stable set bound $\lceil 7/2\rceil=4$ of [Chapter 4](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/the-vertex-coloring-problem/) confirms the result.
 
 <a id="esercizio-42-4"></a>
 
@@ -940,7 +940,7 @@ title: "Exercises · Vertex coloring: the DSATUR branch-and-bound"
 
         The labelled colorings contain each partition many times, with the colors renamed; the tree contains each one once.
 
-    4. The pruning leaves $6$ nodes instead of $19$: every node with $q=3$ is pruned, and the search proves $\chi(C_5)=3$ along a single path (as in Exercise 1).
+    4. The pruning leaves $6$ nodes instead of $19$: every node with $q=3$ is pruned, and the search proves $\chi(C_5)=3$ along a single path, as in the first exercise of this chapter.
 
     !!! chiave ""
 

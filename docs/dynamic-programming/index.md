@@ -1,6 +1,8 @@
 # Dynamic programming
 
-*Part 3 of the course, volume 3 of the lecture notes.*
+*Part 3 of the course, volume 3 of the lecture notes: chapters 16–28.*
+
+The principles of dynamic programming and DP algorithms for knapsack problems, lot sizing, coin change and rod cutting: recurrences, pseudocode, complexity and worked tables.
 
 [:material-file-pdf-box: Lecture notes (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf){ .md-button } [:material-file-pdf-box: Exercises (PDF)](../pdf/exercises-3-dynamic-programming.pdf){ .md-button }
 
@@ -24,7 +26,7 @@
 
     ---
 
-    Instances and feasible solutions
+    Instances and feasible solutions · A first DP algorithm · A second DP algorithm
 
     [:octicons-arrow-right-24: Read the chapter](dp-knapsack/index.md) · [Exercises](../exercises/dp-knapsack.md)
 
@@ -32,7 +34,7 @@
 
     ---
 
-    Instances and feasible solutions
+    Instances and feasible solutions · A first DP algorithm · A second DP algorithm
 
     [:octicons-arrow-right-24: Read the chapter](dp-unbounded-knapsack/index.md) · [Exercises](../exercises/dp-unbounded-knapsack.md)
 
@@ -94,7 +96,7 @@
 
     ---
 
-    Notation, model and feasible solutions
+    Notation, model and feasible solutions · A DP algorithm for the ULS
 
     [:octicons-arrow-right-24: Read the chapter](dp-lot-sizing/index.md) · [Exercises](../exercises/dp-lot-sizing.md)
 
@@ -124,7 +126,7 @@
 
     ---
 
-    Instances and feasible solutions
+    Instances and feasible solutions · A first DP algorithm · A second DP algorithm
 
     [:octicons-arrow-right-24: Read the chapter](dp-rod-cutting/index.md) · [Exercises](../exercises/dp-rod-cutting.md)
 

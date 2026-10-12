@@ -89,5 +89,36 @@
   /** colori per i colori del grafo (6) */
   const PALETTE = (C) => [C.a, C.b, C.c, C.d, C.e, C.viola, C.verde];
 
-  window.GI_OC = { PASSO, parPasso, DESCR_PASSO, vaiA, clamp, somma, lista, pct, decrescente, nuovoId, osservaDimensioni, nuovaVoce, dim, pix, disegno, daIndirizzo, chiedi, interi, PALETTE };
+  /** Menu a tendina delle istanze, sopra i pulsanti dei comandi (va chiamato dopo M.comandi, in monta):
+   *  voci = [[nome, titolo], …] (le istanze dei capitoli, con il nome che hanno nelle dispense);
+   *  scelta() = indice della voce corrente (−1: nessuna, per esempio un'istanza casuale);
+   *  cambia(i) carica la voce i. Si crea una volta sola per grafico; a ogni chiamata si riallinea. */
+  function menuIstanze(st, voci, scelta, cambia) {
+    const D = st.dati;
+    let sel = D.menu && st.el.contains(D.menu) ? D.menu : null;
+    if (!sel || sel.dataset.voci !== voci.map((v) => v[0]).join("|")) {
+      if (sel) sel.remove();
+      sel = GI.h("select", { class: "gi-btn", title: T("istanza", "instance"), "aria-label": T("istanza", "instance"),
+        style: "margin:.1em 0 .45em;max-width:100%;display:block" },
+      `<option value="-1" disabled>${T("Istanza: altra", "Instance: other")}</option>` +
+        voci.map(([n, t], i) => `<option value="${i}" title="${String(t || "").replace(/"/g, "&quot;")}">${T("Istanza: ", "Instance: ")}${n}</option>`).join(""));
+      sel.dataset.voci = voci.map((v) => v[0]).join("|");
+      sel.onchange = () => { M.ferma(st); cambia(+sel.value); };
+      if (D.comandi && st.el.contains(D.comandi)) D.comandi.before(sel);
+      else M.pannello(st).prepend(sel);
+      D.menu = sel;
+    }
+    sel.value = String(scelta());
+    return sel;
+  }
+  /** mostra o nasconde il cursore `nome` (i cursori che servono solo a una voce di «funzioni») */
+  const mostraCursore = (st, nome, si) => { const c = M.ctrlDi(st, nome); if (c) c.style.display = si ? "" : "none"; };
+  /** generatore di Park e Miller (1988), quello delle note sulle metaeuristiche:
+   *  seed ← 16807·seed mod (2^31 − 1), u = seed / (2^31 − 1). r = parkMiller(1); r() → u */
+  const parkMiller = (seed) => { let s = seed; const r = () => { s = (16807 * s) % 2147483647; return s / 2147483647; }; r.seme = () => s; return r; };
+  /** frazione {n, d} in testo semplice (per le etichette del disegno): 7/3 */
+  const frTxt = (q) => (q.d === 1 ? String(q.n) : `${q.n}/${q.d}`);
+
+  window.GI_OC = { PASSO, parPasso, DESCR_PASSO, vaiA, clamp, somma, lista, pct, decrescente, nuovoId, osservaDimensioni, nuovaVoce, dim, pix, disegno, daIndirizzo, chiedi, interi, PALETTE,
+    menuIstanze, mostraCursore, parkMiller, frTxt };
 })();

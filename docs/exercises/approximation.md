@@ -122,7 +122,7 @@ title: "Exercises · Principles of approximation algorithms"
         <div class="tabella" markdown="0"><table>
         <tr>
         <th>instance</th>
-        <th><span class="arithmatex">\(\mathscr{A}(I)\)</span></th>
+        <th><span class="arithmatex">\(\mathscr{B}(I)\)</span></th>
         <th><span class="arithmatex">\(z(I)\)</span></th>
         <th>ratio</th>
         <th>additive error</th>
@@ -195,7 +195,7 @@ title: "Exercises · Principles of approximation algorithms"
         <th><span class="arithmatex">\(\mathrm{ONE}(I)\)</span></th>
         <th><span class="arithmatex">\(z(I)\)</span></th>
         <th>ratio</th>
-        <th><span class="arithmatex">\(m\)</span></th>
+        <th>guarantee <span class="arithmatex">\(m\)</span></th>
         </tr>
         <tr>
         <td><span class="arithmatex">\(I_1\)</span></td>
@@ -294,7 +294,7 @@ title: "Exercises · Principles of approximation algorithms"
 
     3. No: for every constant $\alpha$, the instance $I_k$ with $k>\alpha$ has ratio $k>\alpha$. Hence $r(\mathrm{SEP})=\infty$. The additive error on $I_k$ is $2k-2$, also unbounded: $e(\mathrm{SEP})=\infty$.
 
-    4. The assumption $\sum_j w_j>c$ gives $z(I)\ge 2$, so $\frac{\mathrm{SEP}(I)}{z(I)}=\frac{n}{z(I)}\le\frac{n}{2}$. The bound depends on the instance through $n$: a relative performance guarantee must be one constant $\alpha$ valid for all the instances.
+    4. If $z(I)\ge 2$, then $\frac{\mathrm{SEP}(I)}{z(I)}=\frac{n}{z(I)}\le\frac{n}{2}$. The bound depends on the instance through $n$: a relative performance guarantee must be one constant $\alpha$ valid for all the instances.
 
 <a id="esercizio-34-4"></a>
 
@@ -316,7 +316,7 @@ title: "Exercises · Principles of approximation algorithms"
 
     We use the definitions (A1)–(A4) of the box at the beginning of the chapter.
 
-    1. The efficiencies are $2$, $\frac{7}{4}$, $2$, $\frac{4}{3}$: the order is $(1,3,2,4)$. $\mathrm{GR}$ inserts items $1$, $3$ and gets $\mathrm{GR}(I_0)=16$. Enumeration gives $z(I_0)=17$ (items $\{1,2\}$). The ratio is $\frac{17}{16}=\frac{17}{16}$ and the relative error is $\frac{17-16}{17}=\frac{1}{17}$.
+    1. The efficiencies are $2$, $\frac{7}{4}$, $2$, $\frac{4}{3}$: the order is $(1,3,2,4)$. $\mathrm{GR}$ inserts items $1$, $3$ and gets $\mathrm{GR}(I_0)=16$. Enumeration gives $z(I_0)=17$ (items $\{1,2\}$). The ratio is $\frac{17}{16}$ and the relative error is $\frac{17-16}{17}=\frac{1}{17}$.
 
     2. Item $1$ has efficiency $2$ and item $2$ has efficiency $1$: $\mathrm{GR}$ inserts item $1$, and then item $2$ does not fit in the residual capacity $M-1$. Hence $\mathrm{GR}(I_M)=2$, while item $2$ alone gives $z(I_M)=M$:
 

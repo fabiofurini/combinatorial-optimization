@@ -6,13 +6,13 @@ title: "DP for the rod cutting problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 28** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting](../../exercises/dp-rod-cutting.md)
+**Part 3 · Dynamic programming · Chapter 28** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting (RCP)](../../exercises/dp-rod-cutting.md)
 
 </div>
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter «Principles of dynamic programming»: optimal substructure, overlapping subproblems, recurrence relations, base cases, and the top-down and bottom-up approaches.
+    - From this module, the chapter [«Principles of dynamic programming»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/): optimal substructure, overlapping subproblems, recurrence relations, base cases, and the top-down and bottom-up approaches.
 
     - From this module, the chapter [«DP for the 0/1 knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/): the pairs (item, capacity) and the reconstruction of a solution, which return here.
 
@@ -50,7 +50,7 @@ The problem of this chapter is the [rod cutting problem (RCP)](https://fabiofuri
     \end{array}
     $$
 
-    We refer to this RCP instance as <span style="color:#1971c2">Example 1</span>.
+    We refer to this RCP instance as <span style="color:#1971c2">[Example 28.1](#box-1-texexpbox1)</span>.
 
 !!! chiave ""
 
@@ -101,13 +101,15 @@ The problem of this chapter is the [rod cutting problem (RCP)](https://fabiofuri
     \sum_{\ell=1}^{n} p_\ell x_\ell.
     $$
 
-- Notice that two or more cutting patterns may have the same vector representation: the vector records how many pieces of each length are obtained, but it does not specify the order in which the pieces are cut. However, cutting patterns with the same vector representation have the same total profit, since the order in which the pieces are cut does not affect the obtained pieces and therefore does not affect the total profit.
+- Two or more cutting patterns may have the same vector representation: the vector records how many pieces of each length are obtained, but it does not specify the order in which the pieces are cut.
+
+- Cutting patterns with the same vector representation have the same total profit, since the order in which the pieces are cut does not affect the obtained pieces and therefore does not affect the total profit.
 
 <a id="box-2-texrcpenumeration"></a>
 
 !!! esempio "Example 28.2: Enumeration of all possible RCP solutions"
 
-    We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
+    We consider the RCP instance of  <span style="color:#1971c2">[Example 28.1](#box-1-texexpbox1)</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
     $$
     \begin{array}{l|rrrrrrr}
@@ -214,4 +216,4 @@ The problem of this chapter is the [rod cutting problem (RCP)](https://fabiofuri
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Rod cutting](../../exercises/dp-rod-cutting.md)
+**Exercises on this chapter:** [:material-pencil: Rod cutting (RCP)](../../exercises/dp-rod-cutting.md)

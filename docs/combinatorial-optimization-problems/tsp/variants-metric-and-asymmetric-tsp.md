@@ -10,7 +10,7 @@ title: "Metric and asymmetric TSP"
 
 </div>
 
-- Several heuristic algorithms for the TSP behave well, and some of them have a performance guarantee, only if the distances satisfy the triangle inequality: going directly from $i$ to $j$ is never longer than going through a third city.
+## 6.6.1 The metric travelling salesman problem
 
 <a id="box-8-defMetricTSP"></a>
 
@@ -23,13 +23,33 @@ title: "Metric and asymmetric TSP"
     \qquad \text{for all distinct } i,j,k \in \mathscr{V}.
     $$
 
+    The <strong>metric travelling salesman problem</strong> (metric TSP) is the TSP restricted to metric instances.
+
+- The triangle inequality says that going directly from $i$ to $j$ is never longer than going through a third city $k$.
+
 - The instance of <span style="color:#1971c2">[Example 6.1](the-travelling-salesman-problem.md#box-2-ex-tsp5)</span> is metric: all the $5\cdot4\cdot3=60$ triangle inequalities hold, some of them with equality, e.g., $d_{15}=9=d_{12}+d_{25}=5+4$. In the drawing, the direct edge $\{1,5\}$ (dashed) is as long as the path from $1$ to $5$ through city $2$.
 
 ![Figure 2](../../img/tsp/fig02.svg){ .fig loading=lazy  }
 
 - Instances obtained from points in the plane, with $d_{ij}$ equal to the Euclidean distance between the points, are metric (when the distances are not rounded).
 
-- In the <strong>asymmetric travelling salesman problem</strong> (ATSP) the distances are not required to be symmetric: $d_{ij}$ may differ from $d_{ji}$, as when travelling along one-way streets or uphill and downhill.
+- Several heuristic algorithms for the TSP behave well, and some of them have a performance guarantee, only on metric instances.
+
+## 6.6.2 The asymmetric travelling salesman problem
+
+<a id="box-9-defATSP"></a>
+
+!!! definizione "Definition 6.5: Asymmetric travelling salesman problem"
+
+    Given:
+
+    1. a set $\mathscr{V} = \{1,2,\dots,n\}$ of $n$ <em>cities</em>,
+
+    2. for each ordered pair of distinct cities $i,j \in \mathscr{V}$, a <em>distance</em> $d_{ij} \in \Z_{\ge 1}$ from city $i$ to city $j$, where $d_{ij}$ may differ from $d_{ji}$,
+
+    the <strong>asymmetric travelling salesman problem</strong> (ATSP) asks to find a closed route that starts from a city, visits every other city exactly once and returns to the starting city, so that the total distance travelled is minimized.
+
+- Asymmetric distances arise, for example, when travelling along one-way streets or uphill and downhill.
 
 - The definition of tour and of its length $L(\sigma)$ is unchanged, but the direction now matters: a tour and the same tour travelled backwards are different solutions.
 
@@ -45,7 +65,7 @@ title: "Metric and asymmetric TSP"
 
 - On the road maps of real countries, the record of 2025 is the instance korea81998, with $81\,998$ bars of South Korea.
 
-- The TSP is strongly NP-hard (chapter «Combinatorial optimization problems»). Christofides (1976) gave an approximation algorithm with ratio $\frac32$ for the metric TSP.
+- The TSP is strongly NP-hard ([Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/)). Christofides (1976) gave an approximation algorithm with ratio $\frac32$ for the metric TSP.
 
 ## 6.8 Typical mistakes
 

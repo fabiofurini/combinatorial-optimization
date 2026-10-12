@@ -76,13 +76,13 @@ title: "Formulations of clique problems"
 <td><a href="an-ilp-model-for-the-maximum-clique-problem-the-edge-formula/#sez-sec-mcpf-MSSP">12.7</a></td>
 </tr>
 <tr>
-<td>vertex-weighted MCP</td>
+<td>VWMCP</td>
 <td><span class="arithmatex">\(\mathrm{ILP}^{\mathrm{VW}}_{\mathrm{MCP}}\)</span></td>
 <td>on the non-edges of <span class="arithmatex">\(G\)</span></td>
 <td><a href="ilp-models-for-the-weighted-variants/#sez-sec-mcpf-weighted">12.8</a></td>
 </tr>
 <tr>
-<td>edge-weighted MCP</td>
+<td>EWMCP</td>
 <td><span class="arithmatex">\(\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}}\)</span></td>
 <td>on the non-edges of <span class="arithmatex">\(G\)</span></td>
 <td><a href="ilp-models-for-the-weighted-variants/#sez-sec-mcpf-weighted">12.8</a></td>

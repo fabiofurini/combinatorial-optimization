@@ -24,9 +24,9 @@ title: "Weighted variants"
 
 !!! definizione "Definition 5.10: weighted maximum clique problems"
 
-    1. Given a graph $G$ and a vertex-weight vector $\vet{w}$, the <strong>vertex-weighted maximum clique problem</strong> asks to find a clique $K$ of $G$ with maximum total vertex weight $w(K)$.
+    1. Given a graph $G$ and a vertex-weight vector $\vet{w}$, the <strong>vertex-weighted maximum clique problem</strong> (VWMCP) asks to find a clique $K$ of $G$ with maximum total vertex weight $w(K)$.
 
-    2. Given a graph $G$ and an edge-weight vector $\vet{r}$, the <strong>edge-weighted maximum clique problem</strong> asks to find a clique $K$ of $G$ with maximum total edge weight $r(K)$.
+    2. Given a graph $G$ and an edge-weight vector $\vet{r}$, the <strong>edge-weighted maximum clique problem</strong> (EWMCP) asks to find a clique $K$ of $G$ with maximum total edge weight $r(K)$.
 
 - With all the weights $w_v=1$ the first problem is the MCP. The edge-weighted problem rewards the cliques with many heavy edges, and with $r_{uv}=1$ it is again the MCP, since $r(K)=\binom{|K|}{2}$ grows with $|K|$.
 
@@ -44,13 +44,13 @@ title: "Weighted variants"
 
 !!! esempio "Example 5.4: edge-weighted maximum clique problem"
 
-    We add to the graph of <span style="color:#1971c2">[Example 5.2](the-maximum-clique-problem.md#box-7-mcpP-ex2)</span> the edge weights in red. The edge-weighted maximum clique is $\{2,5,7,8\}$, in violet: its six edges weigh $6+4+9+7+3+8=37$, and the enumeration of the $16$ maximum cliques shows that it is the unique optimal solution.
+    We add to the graph of <span style="color:#1971c2">[Example 5.2](the-maximum-clique-problem.md#box-7-mcpP-ex2)</span> the edge weights in red. The edge-weighted maximum clique is $\{2,5,7,8\}$, in orange: its six edges weigh $6+4+9+7+3+8=37$, and the enumeration of the $16$ maximum cliques shows that it is the unique optimal solution.
 
     ![Figure 4](../../img/clique/fig04.svg){ .fig loading=lazy  }
 
 ## 5.6 Remarks
 
-- In a coloring, every color class is a stable set: the MSSP is the problem of the largest color class, and the clique number is the dual bound of the chapter «Coloring problems».
+- In a coloring, every color class is a stable set: the MSSP is the problem of the largest color class, and the clique number is the dual bound of Chapter 4 [«Coloring problems»](../coloring/index.md).
 
 - Applications of cliques and stable sets:
 
