@@ -38,19 +38,19 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - Weakly NP-hard: dynamic programming solves it in $\Theta(nc)$ steps, a pseudo-polynomial time ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md#box-12-def-pseudo)).
 
-- Cardinality bound: if at most $\bar k$ items fit, $z(I)$ is at most the sum of the $\bar k$ largest profits ([Ch. 2](../combinatorial-optimization-problems/knapsack/index.md#box-3-obs-kp-card)).
+- Cardinality bound: if at most $\bar k$ items fit, $z(I)$ is at most the sum of the $\bar k$ largest profits ([Ch. 2](../combinatorial-optimization-problems/knapsack/the-0-1-knapsack-problem.md#box-3-obs-kp-card)).
 
-- Sorting by efficiency is not enough: on the instance of Ch. 2 it gives profit $11$, while the optimum is $15$ ([Ch. 2](../combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md#211-typical-mistakes)).
+- Sorting by efficiency is not enough: on the instance of Ch. 2 it gives profit $11$, while the optimum is $15$ ([Ch. 2](../combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md#212-typical-mistakes)).
 
 ## Formulations { #sez-sec-cat-kp-formulations }
 
-- The model $\ILP_{\KP}$ has one binary variable per item and one capacity constraint ([Ch. 9](../formulations/knapsack-formulations/index.md#eq-NAT_KP)).
+- The model $\ILP_{\KP}$ has one binary variable per item and one capacity constraint ([Ch. 9](../formulations/knapsack-formulations/an-ilp-model-for-the-0-1-knapsack-problem.md#eq-NAT_KP)).
 
-- The relaxation $\LP_{\KP}$ is solved by sorting the items by efficiency: the items before the split item $s$ are taken, $s$ only in part ([Ch. 9](../formulations/knapsack-formulations/index.md#box-12-propLPKP)).
+- The relaxation $\LP_{\KP}$ is solved by sorting the items by efficiency: the items before the split item $s$ are taken, $s$ only in part ([Ch. 9](../formulations/knapsack-formulations/an-ilp-model-for-the-0-1-knapsack-problem.md#box-12-propLPKP)).
 
-- $z(\LP_{\KP}) \le 2\, z(\ILP_{\KP})$, and the ratio $2$ is approached ([Ch. 9](../formulations/knapsack-formulations/index.md#box-16-propRatio2tight)).
+- $z(\LP_{\KP}) \le 2\, z(\ILP_{\KP})$, and the ratio $2$ is approached ([Ch. 9](../formulations/knapsack-formulations/an-ilp-model-for-the-0-1-knapsack-problem.md#box-16-propRatio2tight)).
 
-- Rounding down $z(\LP_{\KP})$ gives the Dantzig bound $\UB_{\mathrm{D}}$; the Martello–Toth bound $\UB_{\mathrm{MT}}$ treats the split item out and in ([Ch. 9](../formulations/knapsack-formulations/index.md#94-01-knapsack-problem-upper-bounds)).
+- Rounding down $z(\LP_{\KP})$ gives the Dantzig bound $\UB_{\mathrm{D}}$; the Martello–Toth bound $\UB_{\mathrm{MT}}$ treats the split item out and in ([Ch. 9](../formulations/knapsack-formulations/an-ilp-model-for-the-0-1-knapsack-problem.md#95-01-knapsack-problem-upper-bounds)).
 
 ## Dynamic programming { #sez-sec-cat-kp-dynamicprogramming }
 
@@ -66,19 +66,19 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Heuristics { #sez-sec-cat-kp-heuristics }
 
-- Greedy by profit, by weight and by efficiency: on the four-item instance of [Ch. 28](../heuristic-algorithms/heuristics.md) (optimum $17$) they give $17$, $10$ and $16$ ([Ch. 29](../heuristic-algorithms/constructive-heuristics/the-0-1-knapsack-problem-which-order.md#box-3-ex-kp3)).
+- Greedy by profit, by weight and by efficiency: on the four-item instance of [Ch. 29](../heuristic-algorithms/heuristics.md) (optimum $17$) they give $17$, $10$ and $16$ ([Ch. 30](../heuristic-algorithms/constructive-heuristics/the-0-1-knapsack-problem-which-order.md#box-3-ex-kp3)).
 
-- Flip and swap local search: first and best improvement reach $17$ along different paths ([Ch. 30](../heuristic-algorithms/local-search/first-improvement-and-best-improvement.md#box-3-ex-kpfirstbest)).
+- Flip and swap local search: first and best improvement reach $17$ along different paths ([Ch. 31](../heuristic-algorithms/local-search/first-improvement-and-best-improvement.md#box-3-ex-kpfirstbest)).
 
-- A penalty on the excess weight lets the search cross infeasible solutions; with $\alpha>\max_j p_j$ its local optima are feasible ([Ch. 30](../heuristic-algorithms/local-search/kp-feasibility-and-penalties.md#box-14-ex-kppen)).
+- A penalty on the excess weight lets the search cross infeasible solutions; with $\alpha>\max_j p_j$ its local optima are feasible ([Ch. 31](../heuristic-algorithms/local-search/kp-feasibility-and-penalties.md#box-14-ex-kppen)).
 
-- Simulated annealing, GRASP, genetic and memetic algorithms; on KP20 the memetic algorithm reaches the optimum $521$ in every run ([Ch. 31](../heuristic-algorithms/metaheuristics/population-based-methods-genetic-and-memetic-algorithms.md#box-12-ex-gaKP)).
+- Simulated annealing, GRASP, genetic and memetic algorithms; on KP20 the memetic algorithm reaches the optimum $521$ in every run ([Ch. 32](../heuristic-algorithms/metaheuristics/population-based-methods-genetic-and-memetic-algorithms.md#box-12-ex-gaKP)).
 
 ## MIP heuristics { #sez-sec-cat-kp-mipheuristics }
 
-- Rounding down the LP solution is always feasible, since the model has a single packing constraint ([Ch. 32](../heuristic-algorithms/mip-heuristics-classical.md#box-3-ex-rounding)).
+- Rounding down the LP solution is always feasible, since the model has a single packing constraint ([Ch. 33](../heuristic-algorithms/mip-heuristics-classical.md#box-3-ex-rounding)).
 
-- On the instance of [Ch. 28](../heuristic-algorithms/heuristics.md) fractional diving ends at $16$ and RINS fails, while local branching and proximity search reach and prove the optimum $17$ ([Ch. 32](../heuristic-algorithms/mip-heuristics-classical.md#box-4-ex-divekp)).
+- On the instance of [Ch. 29](../heuristic-algorithms/heuristics.md) fractional diving ends at $16$ and RINS fails, while local branching and proximity search reach and prove the optimum $17$ ([Ch. 33](../heuristic-algorithms/mip-heuristics-classical.md#box-4-ex-divekp)).
 
 ## Approximation { #sez-sec-cat-kp-approximation }
 
@@ -92,9 +92,9 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Branch-and-bound { #sez-sec-cat-kp-branchandbound }
 
-- The LP of a node is solved by the Dantzig formulas, without the simplex algorithm, and has one fractional variable: the split item, on which it branches ([Ch. 38](../specialized-algorithms/knapsack-branch-and-bound.md#381-the-algorithm-for-the-kp)).
+- The LP of a node is solved by the Dantzig formulas, without the simplex algorithm, and has one fractional variable: the split item, on which it branches ([Ch. 41](../specialized-algorithms/knapsack-branch-and-bound.md#411-the-algorithm-for-the-kp)).
 
-- On the instance of [Ch. 2](../combinatorial-optimization-problems/knapsack/index.md) it closes the gap between $\LB=15$ and $\UB=16$ with $5$ nodes ([Ch. 38](../specialized-algorithms/knapsack-branch-and-bound.md#box-3-texexpbox2)).
+- On the instance of [Ch. 2](../combinatorial-optimization-problems/knapsack/index.md) it closes the gap between $\LB=15$ and $\UB=16$ with $5$ nodes ([Ch. 41](../specialized-algorithms/knapsack-branch-and-bound.md#box-3-texexpbox2)).
 
 ## Exercises { #sez-sec-cat-kp-es }
 
@@ -108,21 +108,21 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - [Ch. 19 — DP for the bounded knapsack problem](../exercises/dp-bounded-knapsack.md) (5 exercises).
 
-- [Ch. 28 — Heuristic algorithms: definitions](../exercises/heuristics.md) (2 exercises).
+- [Ch. 29 — Heuristic algorithms: definitions](../exercises/heuristics.md) (2 exercises).
 
-- [Ch. 29 — Constructive heuristics](../exercises/constructive-heuristics.md) (3 exercises).
+- [Ch. 30 — Constructive heuristics](../exercises/constructive-heuristics.md) (3 exercises).
 
-- [Ch. 30 — Local search](../exercises/local-search.md) (3 exercises).
+- [Ch. 31 — Local search](../exercises/local-search.md) (3 exercises).
 
-- [Ch. 31 — Metaheuristics](../exercises/metaheuristics.md) (5 exercises).
+- [Ch. 32 — Metaheuristics](../exercises/metaheuristics.md) (5 exercises).
 
-- [Ch. 32 — MIP heuristics for the classical problems](../exercises/mip-heuristics-classical.md) (4 exercises).
+- [Ch. 33 — MIP heuristics for the classical problems](../exercises/mip-heuristics-classical.md) (4 exercises).
 
-- [Ch. 33 — Approximation algorithms: definitions](../exercises/approximation.md) (1 exercise).
+- [Ch. 34 — Principles of approximation algorithms](../exercises/approximation.md) (1 exercise).
 
 - [Ch. 35 — Approximation algorithms for the knapsack problem](../exercises/knapsack-approximation.md) (15 exercises).
 
-- [Ch. 38 — Knapsack: branch-and-bound on the critical item](../exercises/knapsack-branch-and-bound.md) (4 exercises).
+- [Ch. 41 — Knapsack: branch-and-bound on the critical item](../exercises/knapsack-branch-and-bound.md) (4 exercises).
 
 ## Variants { #sez-sec-cat-kp-var }
 

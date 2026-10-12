@@ -6,15 +6,15 @@ title: "Exercises · MIP heuristics for the classical problems"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 32** · each solution opens with a click · [:material-book-open-variant: Chapter 32: MIP heuristics](../heuristic-algorithms/mip-heuristics-classical.md) · [:material-file-pdf-box: Exercises, volume 4 (PDF)](../pdf/exercises-4-heuristic-algorithms.pdf)
+**Exercises · Chapter 33** · each solution opens with a click · [:material-book-open-variant: Chapter 33: MIP heuristics](../heuristic-algorithms/mip-heuristics-classical.md) · [:material-file-pdf-box: Exercises, volume 4 (PDF)](../pdf/exercises-4-heuristic-algorithms.pdf)
 
 </div>
 
 ## Rounding and diving
 
-<a id="esercizio-32-1"></a>
+<a id="esercizio-33-1"></a>
 
-!!! esercizio "Exercise 32.1: Rounding and diving on the KP (KP1)"
+!!! esercizio "Exercise 33.1: Rounding and diving on the KP (KP1)"
 
     We consider a knapsack of capacity $c=16$ and a set $\mathscr{I}=\{1,2,3,4,5\}$ of $5$ items, with the following profits and weights:
 
@@ -68,9 +68,9 @@ title: "Exercises · MIP heuristics for the classical problems"
 
         Both values are smaller than $44$: no solution in the abandoned branches is better than the solution of the dive, which is therefore <strong>optimal</strong>, $z(I)=44$. The dive, together with the bounds of the branches it leaves, is a complete branch-and-bound.
 
-<a id="esercizio-32-2"></a>
+<a id="esercizio-33-2"></a>
 
-!!! esercizio "Exercise 32.2: Rounding and diving on the KP (KP2)"
+!!! esercizio "Exercise 33.2: Rounding and diving on the KP (KP2)"
 
     We consider a knapsack of capacity $c=15$ and a set $\mathscr{I}=\{1,2,3,4,5\}$ of $5$ items, with the following profits and weights:
 
@@ -145,9 +145,9 @@ title: "Exercises · MIP heuristics for the classical problems"
 
 ## RINS, local branching and proximity search
 
-<a id="esercizio-32-3"></a>
+<a id="esercizio-33-3"></a>
 
-!!! esercizio "Exercise 32.3: RINS, local branching and proximity search on the KP (KP3)"
+!!! esercizio "Exercise 33.3: RINS, local branching and proximity search on the KP (KP3)"
 
     We consider a knapsack of capacity $c=22$ and a set $\mathscr{I}=\{1,2,\dots,6\}$ of $6$ items, sorted by non-increasing efficiency, with the following profits and weights:
 
@@ -229,9 +229,9 @@ title: "Exercises · MIP heuristics for the classical problems"
 
         RINS (hard fixing) succeeds because the variables on which $\tilde x$ and $\bar x$ agree keep their optimal values; local branching with $k=2$ fails because the optimum is three changes away; proximity search finds it, since the size of the move is decided by the sub-MIP.
 
-<a id="esercizio-32-4"></a>
+<a id="esercizio-33-4"></a>
 
-!!! esercizio "Exercise 32.4: RINS, local branching and proximity search on the KP (KP4)"
+!!! esercizio "Exercise 33.4: RINS, local branching and proximity search on the KP (KP4)"
 
     We consider a knapsack of capacity $c=13$ and a set $\mathscr{I}=\{1,2,\dots,6\}$ of $6$ items, sorted by non-increasing efficiency, with the following profits and weights:
 
@@ -307,9 +307,9 @@ title: "Exercises · MIP heuristics for the classical problems"
 
     4. The LP relaxation gives $z(I)\le\frac{413}{9}\approx45.89$, and since the profits are integer, $z(I)\le45$. The solution of local branching attains this bound: it is <strong>optimal</strong>. RINS fixed $x_3=1$, the variable that had to change; local branching (soft fixing) lets the solver choose which variables change.
 
-<a id="esercizio-32-5"></a>
+<a id="esercizio-33-5"></a>
 
-!!! esercizio "Exercise 32.5: Proximity search on $P\,||\,C_{\max}$ (PCmax1)"
+!!! esercizio "Exercise 33.5: Proximity search on $P\,||\,C_{\max}$ (PCmax1)"
 
     We consider an instance of $P\,||\,C_{\max}$ with $m=2$ machines and $6$ jobs with processing times
 

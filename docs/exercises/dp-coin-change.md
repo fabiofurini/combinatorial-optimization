@@ -6,13 +6,13 @@ title: "Exercises · DP for the coin change problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 26** · each solution opens with a click · [:material-book-open-variant: Chapter 26: Coin change](../dynamic-programming/dp-coin-change.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
+**Exercises · Chapter 27** · each solution opens with a click · [:material-book-open-variant: Chapter 27: Coin change](../dynamic-programming/dp-coin-change.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
 
 </div>
 
-<a id="esercizio-26-1"></a>
+<a id="esercizio-27-1"></a>
 
-!!! esercizio "Exercise 26.1: Exercise 1: Coin Change Problem"
+!!! esercizio "Exercise 27.1: Exercise 1: Coin Change Problem"
 
     Consider the following CCP instance, where the amount of change to return is $c=6$, and the denominations are
 
@@ -170,9 +170,9 @@ title: "Exercises · DP for the coin change problem"
         v[6]=3.
         $$
 
-<a id="esercizio-26-2"></a>
+<a id="esercizio-27-2"></a>
 
-!!! esercizio "Exercise 26.2: Exercise 2: Coin Change Problem"
+!!! esercizio "Exercise 27.2: Exercise 2: Coin Change Problem"
 
     Consider the following CCP instance, where the amount of change to return is $c=11$, and the denominations are
 
@@ -360,9 +360,9 @@ title: "Exercises · DP for the coin change problem"
         v[11]=3.
         $$
 
-<a id="esercizio-26-3"></a>
+<a id="esercizio-27-3"></a>
 
-!!! esercizio "Exercise 26.3: Exercise 3: Coin Change Problem"
+!!! esercizio "Exercise 27.3: Exercise 3: Coin Change Problem"
 
     Consider the following CCP instance, where the amount of change to return is $c=7$, and the denominations are
 
@@ -467,9 +467,9 @@ title: "Exercises · DP for the coin change problem"
         v[7]=+\infty.
         $$
 
-<a id="esercizio-26-4"></a>
+<a id="esercizio-27-4"></a>
 
-!!! esercizio "Exercise 26.4: Exercise 4: Coin Change Problem"
+!!! esercizio "Exercise 27.4: Exercise 4: Coin Change Problem"
 
     Consider the following CCP instance, where the amount of change to return is $c=12$, and the denominations are
 
@@ -671,9 +671,9 @@ title: "Exercises · DP for the coin change problem"
         v[12]=4.
         $$
 
-<a id="esercizio-26-5"></a>
+<a id="esercizio-27-5"></a>
 
-!!! esercizio "Exercise 26.5: Exercise 5: Coin Change Problem"
+!!! esercizio "Exercise 27.5: Exercise 5: Coin Change Problem"
 
     Consider the following CCP instance, where the amount of change to return is $c=9$, and the denominations are
 

@@ -38,15 +38,15 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - NP-hard with general capacities; without capacities (ULS) it is polynomial ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md#box-12-def-pseudo)).
 
-- Lower bound: the sum of the $k$ smallest setup costs, with $k$ the fewest periods whose capacities cover the total demand ([Ch. 8](../combinatorial-optimization-problems/lot-sizing/variants.md#box-5-obs-cls-lb)).
+- Lower bound: the sum of the $k$ smallest setup costs, with $k$ the fewest periods whose capacities cover the total demand ([Ch. 8](../combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem.md#box-5-obs-cls-lb)).
 
-- Lot-for-lot and merging by hand: $250\to210\to180$ on the instance of Ch. 8, where $180$ is optimal ([Ch. 8](../combinatorial-optimization-problems/lot-sizing/variants.md#box-4-ex-cls-hand)).
+- Lot-for-lot and merging by hand: $250\to210\to180$ on the instance of Ch. 8, where $180$ is optimal ([Ch. 8](../combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem.md#box-4-ex-cls-hand)).
 
 ## Formulations { #sez-sec-cat-cls-formulations }
 
-- Big-M formulation: the strong value $M_t=\min\{cap_t,D_{t,m}\}$ raises the LP bound on the instance of [Ch. 8](../combinatorial-optimization-problems/lot-sizing/index.md) from $99.65$ to $157.5$ ([Ch. 15](../formulations/lot-sizing-formulations/index.md#box-3-ex-CLS-bigM)).
+- Big-M formulation: the strong value $M_t=\min\{cap_t,D_{t,m}\}$ raises the LP bound on the instance of [Ch. 8](../combinatorial-optimization-problems/lot-sizing/index.md) from $99.65$ to $157.5$ ([Ch. 15](../formulations/lot-sizing-formulations/ilp-models-for-the-capacitated-lot-sizing-problem.md#box-3-ex-CLS-bigM)).
 
-- The shortest-path formulation gives the bound $170$, the strongest of the chapter ([Ch. 15](../formulations/lot-sizing-formulations/index.md#154-comparing-the-formulations)).
+- The shortest-path formulation gives the bound $170$, the strongest of the chapter ([Ch. 15](../formulations/lot-sizing-formulations/ilp-models-for-the-capacitated-lot-sizing-problem.md#sez-sec-lsf-compare)).
 
 ## Dynamic programming { #sez-sec-cat-cls-dynamicprogramming }
 
@@ -56,9 +56,9 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## MIP heuristics { #sez-sec-cat-cls-mipheuristics }
 
-- On the uncapacitated instance of the MIP course relax-and-fix finds the optimum $170$, while the least unit cost heuristic gives $200$ ([Ch. 32](../heuristic-algorithms/mip-heuristics-classical.md#box-16-ex-rfcourse)).
+- On the uncapacitated instance of the MIP course relax-and-fix finds the optimum $170$, while the least unit cost heuristic gives $200$ ([Ch. 33](../heuristic-algorithms/mip-heuristics-classical.md#box-16-ex-rfcourse)).
 
-- On a capacitated instance relax-and-fix stops at $170$, and fix-and-optimize reaches the optimum $160$ ([Ch. 32](../heuristic-algorithms/mip-heuristics-classical.md#box-18-ex-fo)).
+- On a capacitated instance relax-and-fix stops at $170$, and fix-and-optimize reaches the optimum $160$ ([Ch. 33](../heuristic-algorithms/mip-heuristics-classical.md#box-18-ex-fo)).
 
 ## Exercises { #sez-sec-cat-cls-es }
 
@@ -66,7 +66,7 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - [Ch. 15 — Formulations of lot sizing problems](../exercises/lot-sizing-formulations.md) (5 exercises).
 
-- [Ch. 25 — Dynamic programming for lot sizing](../exercises/dp-lot-sizing.md) (5 exercises).
+- [Ch. 25 — DP for the uncapacitated lot sizing problem](../exercises/dp-lot-sizing.md) (5 exercises).
 
 ## Variants { #sez-sec-cat-cls-var }
 

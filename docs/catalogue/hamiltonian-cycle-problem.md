@@ -18,4 +18,4 @@ title: "Hamiltonian cycle problem (HCP)"
 
     The <strong>Hamiltonian cycle problem</strong> asks whether a graph $G=(V,E)$ has a cycle through all its vertices.
 
-- Treated in [Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization/index.md), [Chapter 37 «Approximation for the metric TSP»](../approximation-algorithms/tsp-approximation.md).
+- Treated in [Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization/index.md), [Chapter 39 «Approximation for the metric TSP»](../approximation-algorithms/tsp-approximation.md).

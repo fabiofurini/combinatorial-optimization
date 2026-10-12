@@ -44,6 +44,6 @@ title: "The maximum clique problem (MCP)"
 
 - The assumption can be made without loss of generality: if the graph has no edge, every single vertex is a maximum clique and $\omega(G)=1$; if the graph is complete, $V$ itself is a clique and $\omega(G)=n$.
 
-- Defined in [Chapter 5 «Clique problems»](../combinatorial-optimization-problems/clique/index.md#box-2-mcpP-def-MCP).
+- Defined in [Chapter 5 «Clique problems»](../combinatorial-optimization-problems/clique/the-maximum-clique-problem.md#box-2-mcpP-def-MCP).
 
 - [The course on this problem $\rightarrow$](../selected-problems/maximum-clique.md).

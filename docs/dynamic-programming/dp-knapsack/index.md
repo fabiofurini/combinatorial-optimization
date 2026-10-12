@@ -40,7 +40,7 @@ title: "DP for the 0/1 knapsack problem"
 
     - exchange the roles of profits and weights, and compute the optimal value from the table $u(j,q)$.
 
-The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/): its definition and its assumptions are on its page.
+The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-0-1-knapsack-problem/): its definition and its assumptions are on its page.
 
 ## 17.1 Instances and feasible solutions
 

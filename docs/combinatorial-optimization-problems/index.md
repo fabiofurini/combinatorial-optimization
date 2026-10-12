@@ -18,7 +18,7 @@
 
     ---
 
-    The 0/1 knapsack problem
+    Overview of the family
 
     [:octicons-arrow-right-24: Read the chapter](knapsack/index.md) · [Exercises](../exercises/knapsack.md)
 
@@ -26,7 +26,7 @@
 
     ---
 
-    The bin packing problem
+    Overview of the family
 
     [:octicons-arrow-right-24: Read the chapter](bin-packing/index.md) · [Exercises](../exercises/bin-packing.md)
 
@@ -34,15 +34,15 @@
 
     ---
 
-    A short review of graphs · The vertex coloring problem
+    Overview of the family
 
-    [:octicons-arrow-right-24: Read the chapter](coloring.md) · [Exercises](../exercises/coloring.md)
+    [:octicons-arrow-right-24: Read the chapter](coloring/index.md) · [Exercises](../exercises/coloring.md)
 
 -   **5. Clique problems**
 
     ---
 
-    The maximum clique problem · Counting the solutions, a first solution and the bounds
+    Overview of the family
 
     [:octicons-arrow-right-24: Read the chapter](clique/index.md) · [Exercises](../exercises/clique.md)
 
@@ -50,7 +50,7 @@
 
     ---
 
-    The travelling salesman problem
+    Overview of the family
 
     [:octicons-arrow-right-24: Read the chapter](tsp/index.md) · [Exercises](../exercises/tsp.md)
 
@@ -58,15 +58,15 @@
 
     ---
 
-    Scheduling on identical parallel machines · The three-field notation · Counting the solutions · A first schedule by hand
+    Overview of the family
 
-    [:octicons-arrow-right-24: Read the chapter](pcmax.md) · [Exercises](../exercises/pcmax.md)
+    [:octicons-arrow-right-24: Read the chapter](pcmax/index.md) · [Exercises](../exercises/pcmax.md)
 
 -   **8. Lot sizing problems**
 
     ---
 
-    The capacitated lot sizing problem
+    Overview of the family
 
     [:octicons-arrow-right-24: Read the chapter](lot-sizing/index.md) · [Exercises](../exercises/lot-sizing.md)
 

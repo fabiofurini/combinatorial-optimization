@@ -1,12 +1,12 @@
 ---
-title: "Exercises · Dynamic programming for lot sizing"
+title: "Exercises · DP for the uncapacitated lot sizing problem"
 ---
 
-# Exercises · Dynamic programming for lot sizing
+# Exercises · DP for the uncapacitated lot sizing problem
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 25** · each solution opens with a click · [:material-book-open-variant: Chapter 25: Lot sizing](../dynamic-programming/dp-lot-sizing/index.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
+**Exercises · Chapter 25** · each solution opens with a click · [:material-book-open-variant: Chapter 25: Uncapacitated lot sizing (ULS)](../dynamic-programming/dp-lot-sizing/index.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
 
 </div>
 

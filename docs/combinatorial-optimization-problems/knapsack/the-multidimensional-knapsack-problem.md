@@ -2,7 +2,7 @@
 title: "Multidimensional knapsack"
 ---
 
-# 2.5 The multidimensional knapsack problem
+# 2.6 The multidimensional knapsack problem { #sez-sec-kp-MDKP }
 
 <div class="info-capitolo" markdown>
 
@@ -117,7 +117,7 @@ title: "Multidimensional knapsack"
 
     ![Figure 5](../../img/knapsack/fig05.svg){ .fig loading=lazy  }
 
-## 2.5.1 Assumptions
+## 2.6.1 Assumptions
 
 - We make the following assumptions:
 
@@ -135,4 +135,4 @@ title: "Multidimensional knapsack"
 
 ---
 
-**Next:** [2.6 The multiple knapsack problem](the-multiple-knapsack-problem.md)
+**Next:** [2.7 The multiple knapsack problem](the-multiple-knapsack-problem.md)

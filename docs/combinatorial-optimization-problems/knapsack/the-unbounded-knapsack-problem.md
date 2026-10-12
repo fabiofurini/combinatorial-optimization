@@ -2,7 +2,7 @@
 title: "Unbounded knapsack"
 ---
 
-# 2.4 The unbounded knapsack problem
+# 2.5 The unbounded knapsack problem { #sez-sec-kp-UKP }
 
 <div class="info-capitolo" markdown>
 
@@ -207,7 +207,7 @@ title: "Unbounded knapsack"
 
     ![Figure 4](../../img/knapsack/fig04.svg){ .fig loading=lazy  }
 
-## 2.4.1 Assumptions
+## 2.5.1 Assumptions
 
 - We make the following assumptions:
 
@@ -225,4 +225,4 @@ title: "Unbounded knapsack"
 
 ---
 
-**Next:** [2.5 The multidimensional knapsack problem](the-multidimensional-knapsack-problem.md)
+**Next:** [2.6 The multidimensional knapsack problem](the-multidimensional-knapsack-problem.md)

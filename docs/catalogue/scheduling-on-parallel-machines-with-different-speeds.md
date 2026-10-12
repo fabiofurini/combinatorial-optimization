@@ -18,4 +18,4 @@ title: "Scheduling on parallel machines with different speeds (Q|Cmax)"
 
     In the three-field notation $\alpha\,|\,\beta\,|\,\gamma$, the machine environment $\alpha=Q$ denotes parallel machines with different speeds; $Q\,||\,C_{\max}$ assigns jobs without additional characteristics to such machines, minimizing the makespan $C_{\max}$.
 
-- Defined in [Chapter 7 «Scheduling problems»](../combinatorial-optimization-problems/pcmax.md#sez-sec-threefield).
+- Defined in [Chapter 7 «Scheduling problems»](../combinatorial-optimization-problems/pcmax/index.md#sez-sec-threefield).

@@ -1,36 +1,14 @@
 ---
-title: "Formulations of scheduling problems"
+title: "Scheduling on identical parallel machines"
 ---
 
-# Formulations of scheduling problems
+# 14.2 An ILP model for the Scheduling on Identical Parallel Machines Problem { #sez-sec-pmf-PCmax }
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 14** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Scheduling problems](../exercises/pcmax-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 14** · [:material-book-open-variant: Chapter 14: Scheduling problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Scheduling problems](../../exercises/pcmax-formulations.md)
 
 </div>
-
-!!! nota "Prerequisites"
-
-    - From the module <em>Linear Programming</em>, [Chapter 9 «Duality theory»](https://fabiofurini.github.io/linear-programming/duality/09-duality/): the dual of an LP problem, weak and strong duality.
-
-    - From the module <em>Integer linear programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/) and [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): ILP problems, LP relaxations and bounds.
-
-    - From this module, [Chapter 7 «Scheduling problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/): the problem, its assumption, the makespan and the instance of Example 1.
-
-!!! chiave "Objectives"
-
-    At the end of this chapter you will be able to:
-
-    - write the ILP model of $P\|C_{\max}$ and explain how the makespan variable is linked to the machine loads;
-
-    - write the LP relaxations and their duals, and prove that their optimal value is $\sum_j t_j / m$;
-
-    - prove that the LP bound is at least $1/m$ of the optimal value, and that the factor is tight;
-
-    - use the valid inequalities and the symmetry-breaking constraints of the model.
-
-## 14.1 An ILP model for $P\|C_{\max}$
 
 - Given $m$ identical machines and a set $\mathscr{J}=\{1,2,\ldots,n\}$ of $n$ jobs, with processing times $t_j$, we denote by $\mathscr{H}=\{1,2,\ldots,m\}$ the set of machines.
 
@@ -149,7 +127,7 @@ title: "Formulations of scheduling problems"
     =\max\{5,\lceil27/3\rceil\}=9.
     $$
 
-## 14.2 A first Linear Programming relaxation
+## 14.3 A first Linear Programming relaxation
 
 !!! chiave ""
 
@@ -302,7 +280,7 @@ title: "Formulations of scheduling problems"
 
     By LP Weak Duality, the two solutions are optimal, and the optimal value is the common value of the objective functions. <span class="qed">□</span>
 
-## 14.3 A second Linear Programming relaxation
+## 14.4 A second Linear Programming relaxation
 
 !!! chiave ""
 
@@ -432,7 +410,7 @@ title: "Formulations of scheduling problems"
 
     The optimal value $z(D(\mathrm{LP}_{P\|C_{\max}}))$ is $9$.
 
-### 14.3.1 Some important theoretical properties
+### 14.4.1 Some important theoretical properties
 
 <a id="box-7-prop-PCMAX-ratio"></a>
 
@@ -496,7 +474,7 @@ title: "Formulations of scheduling problems"
 
     has load four on both machines, whereas the integer optimum has loads five and three.
 
-## 14.4 Additional considerations
+## 14.5 Additional considerations
 
 - For every job $j$, the inequality
 
@@ -529,7 +507,7 @@ title: "Formulations of scheduling problems"
 
 - The constraints $\eqref{symmetry:PCMAX}$ remove the equivalent relabellings of the machines only when the loads are distinct. With equal loads they remove none: in the instance of the chapter all the optimal schedules have loads $9$, $9$, $9$, and all the $12$ optimal solutions of the model satisfy them.
 
-## 14.5 Typical mistakes
+## 14.6 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -543,7 +521,7 @@ title: "Formulations of scheduling problems"
 
     - <strong>Mixing the indices.</strong> The variable $x_{jh}$ has the job $j$ first and the machine $h$ second.
 
-## 14.6 In summary
+## 14.7 In summary
 
 !!! chiave "In summary"
 
@@ -584,4 +562,5 @@ title: "Formulations of scheduling problems"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Scheduling problems](../exercises/pcmax-formulations.md)
+**Exercises on this chapter:** [:material-pencil: Scheduling problems](../../exercises/pcmax-formulations.md)
+

@@ -147,7 +147,7 @@ title: "Categories of combinatorial optimization problems"
 <th><strong>Category</strong></th>
 </tr>
 <tr>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/">0/1 knapsack problem (KP)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-0-1-knapsack-problem/">0/1 knapsack problem (KP)</a></td>
 <td>subset of items</td>
 <td>IN/OUT</td>
 </tr>
@@ -187,7 +187,7 @@ title: "Categories of combinatorial optimization problems"
 <td>IN/OUT</td>
 </tr>
 <tr>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/">bin packing problem (BPP)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/the-bin-packing-problem/">bin packing problem (BPP)</a></td>
 <td>partition of the items into bins</td>
 <td>partitioning</td>
 </tr>
@@ -197,27 +197,27 @@ title: "Categories of combinatorial optimization problems"
 <td>configuration, counting</td>
 </tr>
 <tr>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/">vertex coloring problem (VCP)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/the-vertex-coloring-problem/">vertex coloring problem (VCP)</a></td>
 <td>partition of the vertices into stable sets</td>
 <td>partitioning</td>
 </tr>
 <tr>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/clique/">maximum clique problem (MCP)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/clique/the-maximum-clique-problem/">maximum clique problem (MCP)</a></td>
 <td>subset of vertices</td>
 <td>IN/OUT</td>
 </tr>
 <tr>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/">travelling salesman problem (TSP)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/the-travelling-salesman-problem/">travelling salesman problem (TSP)</a></td>
 <td>cyclic ordering of the cities</td>
 <td>ordering</td>
 </tr>
 <tr>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/">scheduling on parallel machines (<span class="arithmatex">\(P\|C_{\max}\)</span>)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines/">scheduling on parallel machines (<span class="arithmatex">\(P\|C_{\max}\)</span>)</a></td>
 <td>assignment of the jobs to the machines</td>
 <td>assignment</td>
 </tr>
 <tr>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/">capacitated lot sizing problem (CLS)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem/">capacitated lot sizing problem (CLS)</a></td>
 <td>setup periods and quantities produced</td>
 <td>IN/OUT, counting</td>
 </tr>

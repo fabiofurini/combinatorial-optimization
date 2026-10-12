@@ -2,7 +2,7 @@
 title: "Cutting stock"
 ---
 
-# 3.2 The cutting stock problem
+# 3.3 The cutting stock problem { #sez-sec-bp-CSP }
 
 <div class="info-capitolo" markdown>
 
@@ -139,7 +139,7 @@ title: "Cutting stock"
 
     ![Figure 2](../../img/bin-packing/fig02.svg){ .fig loading=lazy  }
 
-## 3.2.1 Assumptions
+## 3.3.1 Assumptions
 
 - We make the following assumptions:
 
@@ -155,7 +155,7 @@ title: "Cutting stock"
         w_j \le c, \qquad \forall\, j\in \mathscr{I}.
         $$
 
-## 3.2.2 Counting the solutions, a first solution and a simple bound
+## 3.3.2 Counting the solutions, a first solution and a simple bound
 
 - <strong>Candidate solutions.</strong> The instance of <span style="color:#1971c2">[Example 3.2](#box-5-ex-csp)</span> has $2+1+3+1 = 7$ copies. The partitions of the extended set of items are counted by $B(7) = 877$, where identical copies are counted as different items; $262$ of them are feasible.
 
@@ -169,13 +169,13 @@ title: "Cutting stock"
 
 - <strong>The dual bound and the gap.</strong> The weight bound of the bin packing problem holds with the weights of all the copies: $\LB = \lceil \sum_j d_j w_j / c \rceil = \lceil 28/10 \rceil = 3$. The gap is zero, so the solution is optimal and $z(I) = 3$.
 
-## 3.3 Remarks
+## 3.4 Remarks
 
 - The worst-case behaviour of simple packing rules, such as First Fit, was analysed by Garey, Graham and Ullman (1972) and by Johnson, Demers, Ullman, Garey and Graham (1974).
 
 - Johnson et al. (1974) proved that First Fit uses at most $\tfrac{17}{10}$ of the optimal number of bins, plus $2$.
 
-## 3.4 Typical mistakes
+## 3.5 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -189,7 +189,7 @@ title: "Cutting stock"
 
     - <strong>Forgetting the assumptions.</strong> An item with $w_j > c$ fits in no bin, and if the total weight is at most $c$ one bin is enough.
 
-## 3.5 In summary
+## 3.6 In summary
 
 !!! chiave "In summary"
 
@@ -211,7 +211,7 @@ title: "Cutting stock"
     <th>from</th>
     </tr>
     <tr>
-    <td>BPP, <span style="color:#1971c2"><a href="../#box-2-ex-bpp">Example 3.1</a></span></td>
+    <td>BPP, <span style="color:#1971c2"><a href="../the-bin-packing-problem/#box-2-ex-bpp">Example 3.1</a></span></td>
     <td><span class="arithmatex">\(3\)</span> (weight bound)</td>
     <td><span class="arithmatex">\(3\)</span> (by eye)</td>
     <td>this chapter</td>

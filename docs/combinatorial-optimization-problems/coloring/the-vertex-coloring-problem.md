@@ -1,70 +1,14 @@
 ---
-title: "Coloring problems"
+title: "Vertex coloring"
 ---
 
-# Coloring problems
+# 4.2 The vertex coloring problem { #sez-sec-col-VCP }
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 4** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Coloring problems](../exercises/coloring.md) · [:material-gesture-tap: App: Vertex coloring: greedy and DSATUR](../lab/coloring-greedy-dsatur.md)
+**Part 1 · Combinatorial optimization problems · Chapter 4** · [:material-book-open-variant: Chapter 4: Coloring problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Coloring problems](../../exercises/coloring.md) · [:material-gesture-tap: App: Vertex coloring: greedy and DSATUR](../../lab/coloring-greedy-dsatur.md)
 
 </div>
-
-!!! nota "Prerequisites"
-
-    - From this module, the chapter «Combinatorial optimization problems»: instances, feasible solutions, primal and dual bounds, the gap, and the Bell numbers that count the partitions of a set.
-
-    - From the chapter «Packing problems»: the weight bound as an example of a dual bound.
-
-    - No knowledge of graph theory is needed: the definitions used here are recalled in a short section.
-
-!!! chiave "Objectives"
-
-    At the end of this chapter you will be able to:
-
-    - use the basic notions on graphs: neighbourhood, degree, induced graph, complement graph, clique and stable set;
-
-    - state the definition of the vertex coloring problem and the assumptions on the graph;
-
-    - count the candidate solutions of a small instance and recognize that they are partitions;
-
-    - find a coloring by hand and compute the clique bound and the stable set bound;
-
-    - explain why the clique bound is not always tight.
-
-## 4.1 A short review of graphs
-
-<a id="box-1-def-graph"></a>
-
-!!! definizione "Definition 4.1: graph, neighbourhood, induced graph and complement graph"
-
-    - A <strong>graph</strong> $G = (V,E)$ is given by a finite set $V$ of <strong>vertices</strong> and a set $E$ of <strong>edges</strong>, each edge being a $2$-element subset of $V$. We write $n = |V|$ and $m = |E|$; the vertices are labelled $1,2,\dots,n$. All the graphs of this chapter are simple and undirected.
-
-    - Two distinct vertices $u$ and $v$ are <strong>adjacent</strong> if $\{u,v\} \in E$. The <strong>neighbourhood</strong> of a vertex $v$ is the set $N(v) = \{\, u \in V : \{u,v\} \in E \,\}$, and its <strong>degree</strong> is $\deg(v) = |N(v)|$.
-
-    - For a subset $U \subseteq V$ the <strong>induced graph</strong> $G[U] = (U, E[U])$ has the vertices of $U$ and the edges of $E$ with both endpoints in $U$.
-
-    - The <strong>complement graph</strong> $\overline{G} = (V, \overline{E})$ has the same vertices as $G$, and two distinct vertices are adjacent in $\overline{G}$ if and only if they are not adjacent in $G$.
-
-<a id="box-2-def-clique-stable"></a>
-
-!!! definizione "Definition 4.2: clique and stable set"
-
-    Let $G = (V,E)$ be a graph.
-
-    1. A <strong>clique</strong> is a subset $K \subseteq V$ of pairwise adjacent vertices: $\{u,v\} \in E$ for all $u,v \in K$ with $u \neq v$.
-
-    2. A <strong>stable set</strong> (also called <strong>independent set</strong>) is a subset $Q \subseteq V$ of pairwise non-adjacent vertices: $\{u,v\} \notin E$ for all $u,v \in Q$ with $u \neq v$.
-
-    The <strong>clique number</strong> $\omega(G)$ is the largest number of vertices of a clique, and the <strong>stability number</strong> $\alpha(G)$ is the largest number of vertices of a stable set.
-
-- A stable set of $G$ is a clique of the complement graph $\overline{G}$, and vice versa. A vertex alone and the empty set are both a clique and a stable set.
-
-!!! chiave ""
-
-    A clique is a group of vertices that pairwise <em>conflict</em>; a stable set is a group of vertices with no conflict. In a coloring, the vertices of a clique need different colors, and the vertices of a stable set can share one.
-
-## 4.2 The vertex coloring problem
 
 <a id="box-3-defVCP"></a>
 
@@ -157,7 +101,7 @@ title: "Coloring problems"
 
     We consider the following graph $G = (V,E)$ with $3$ vertices ($n=3$) and $3$ edges ($m=3$):
 
-    ![Figure 1](../img/coloring/fig01.svg){ .fig .ovale loading=lazy style="width:24%" }
+    ![Figure 1](../../img/coloring/fig01.svg){ .fig .ovale loading=lazy style="width:24%" }
 
     The vertex set $V$ and the edge set $E$ are:
 
@@ -173,7 +117,7 @@ title: "Coloring problems"
 
     We consider now the following graph $G = (V,E)$ with $10$ vertices ($n=10$) and $15$ edges ($m=15$):
 
-    ![Figure 2](../img/coloring/fig02.svg){ .fig .ovale loading=lazy style="width:47%" }
+    ![Figure 2](../../img/coloring/fig02.svg){ .fig .ovale loading=lazy style="width:47%" }
 
     The vertex set $V$ and the edge set $E$ are:
 
@@ -191,7 +135,7 @@ title: "Coloring problems"
 
     We call this VCP instance <span style="color:#1971c2">[Example 4.2](#box-5-ex-vcp2)</span>: it is the reference instance of the chapter.
 
-### 4.2.1 Assumptions
+## 4.2.1 Assumptions
 
 - We make the following assumptions:
 
@@ -213,7 +157,7 @@ title: "Coloring problems"
 
     2. the vertices $u$ and $v$ are not adjacent: otherwise $v \in N(u) \subseteq N(v)$, which is impossible in a simple graph, so $u$ and $v$ can share a color.
 
-### 4.2.2 Two simple bounds
+## 4.2.2 Two simple bounds
 
 <a id="box-6-obs-clique-bound"></a>
 
@@ -245,7 +189,7 @@ title: "Coloring problems"
 
 - The clique bound is useful when the graph has a large clique, and the stable set bound when its stable sets are small. Both are dual bounds: a clique and a stable set are found without knowing $\chi(G)$.
 
-### 4.2.3 Counting the solutions, a first solution and the bounds
+## 4.2.3 Counting the solutions, a first solution and the bounds
 
 - <strong>Candidate solutions.</strong> The candidate solutions are the partitions of $V$, counted by the Bell numbers (Chapter «Combinatorial optimization problems»). For <span style="color:#1971c2">[Example 4.1](#box-4-ex-vcp1)</span> we have $B(3) = 5$ partitions and only one is feasible: three singletons, since every pair of vertices is adjacent. Hence $\chi(G) = 3$.
 
@@ -322,12 +266,9 @@ title: "Coloring problems"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Coloring problems](../exercises/coloring.md)
+**Exercises on this chapter:** [:material-pencil: Coloring problems](../../exercises/coloring.md)
 
 ---
 
-**In depth:** [:material-star-outline: the course on this problem](../selected-problems/vertex-coloring.md)
+**In depth:** [:material-star-outline: the course on this problem](../../selected-problems/vertex-coloring.md)
 
-<!-- laboratorio-interattivo: sezione generata da interattivi.py -->
-
-:material-flask-outline: **In the interactive lab:** [Vertex coloring: greedy and DSATUR](../lab/coloring-greedy-dsatur.md).

@@ -6,7 +6,7 @@ title: "Metaheuristics"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 31** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
+**Part 4 · Heuristic algorithms · Chapter 32** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
 
 </div>
 
@@ -30,15 +30,15 @@ title: "Metaheuristics"
 
     - say what metaheuristics do not give: a dual bound.
 
-## 31.1 Metaheuristics { #sez-sec-metaheuristic }
+## 32.1 Metaheuristics { #sez-sec-metaheuristic }
 
 <a id="box-1-def-metaheuristic"></a>
 
-!!! definizione "Definition 31.1: Metaheuristic"
+!!! definizione "Definition 32.1: Metaheuristic"
 
     A <strong>metaheuristic</strong> is a general strategy that guides a local search beyond the first local optimum, to explore other regions of the set of feasible solutions.
 
-- A metaheuristic is a <em>scheme</em>, not an algorithm: an algorithm is obtained by choosing the representation, the neighbourhoods, the local search and the parameters (Section [31.3](how-to-escape-from-a-local-optimum.md#sez-sec-escape)).
+- A metaheuristic is a <em>scheme</em>, not an algorithm: an algorithm is obtained by choosing the representation, the neighbourhoods, the local search and the parameters (Section [32.3](how-to-escape-from-a-local-optimum.md#sez-sec-escape)).
 
 - Every metaheuristic balances <strong>intensification</strong> and <strong>diversification</strong>, defined in the chapter «Heuristic algorithms: definitions».
 
@@ -54,7 +54,7 @@ title: "Metaheuristics"
 
     [:octicons-arrow-right-24: Open](#sez-sec-metaheuristic)
 
--   **31.2 The problems and the assumptions**
+-   **32.2 The problems and the assumptions**
 
     Random numbers · The instances
 
@@ -66,35 +66,35 @@ title: "Metaheuristics"
 
     [:octicons-arrow-right-24: Open](how-to-escape-from-a-local-optimum.md)
 
--   **31.5 Tabu search**
+-   **32.5 Tabu search**
 
     Tabu search for the TSP, and the effect of the tenure
 
     [:octicons-arrow-right-24: Open](tabu-search.md)
 
--   **31.6 Iterated local search**
+-   **32.6 Iterated local search**
 
     [:octicons-arrow-right-24: Open](iterated-local-search.md)
 
--   **31.7 Variable neighbourhood search**
+-   **32.7 Variable neighbourhood search**
 
     [:octicons-arrow-right-24: Open](variable-neighbourhood-search.md)
 
--   **31.8 GRASP**
+-   **32.8 GRASP**
 
     [:octicons-arrow-right-24: Open](grasp.md)
 
--   **31.9 Large neighbourhood search**
+-   **32.9 Large neighbourhood search**
 
     Adaptive large neighbourhood search
 
     [:octicons-arrow-right-24: Open](large-neighbourhood-search.md)
 
--   **31.10 Population-based methods: genetic and memetic algorithms**
+-   **32.10 Population-based methods: genetic and memetic algorithms**
 
     [:octicons-arrow-right-24: Open](population-based-methods-genetic-and-memetic-algorithms.md)
 
--   **31.11 Comparison and conclusions**
+-   **32.11 Comparison and conclusions**
 
     Intensification and diversification · Parameters and tuning · What these methods do not use
 
@@ -114,7 +114,7 @@ title: "Metaheuristics"
 
 ---
 
-**Next:** [31.2 The problems and the assumptions](the-problems-and-the-assumptions.md)
+**Next:** [32.2 The problems and the assumptions](the-problems-and-the-assumptions.md)
 
 ---
 

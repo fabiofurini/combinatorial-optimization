@@ -46,9 +46,9 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - NP-hard: deciding whether a clique with $k$ vertices exists is one of the $21$ NP-complete problems of Karp ([Ch. 5](../combinatorial-optimization-problems/clique/index.md)).
 
-- Upper bounds: degree $\Delta+1$, edges, degree count $k^{\max}$ and coloring $\chi(G)$ ([Ch. 5](../combinatorial-optimization-problems/clique/index.md#box-8-mcpP-obs-degree)).
+- Upper bounds: degree $\Delta+1$, edges, degree count $k^{\max}$ and coloring $\chi(G)$ ([Ch. 5](../combinatorial-optimization-problems/clique/the-maximum-clique-problem.md#box-8-mcpP-obs-degree)).
 
-- A first clique by hand: start from a vertex of maximum degree and add vertices adjacent to all those chosen ([Ch. 5](../combinatorial-optimization-problems/clique/index.md#box-6-mcpP-ex1)).
+- A first clique by hand: start from a vertex of maximum degree and add vertices adjacent to all those chosen ([Ch. 5](../combinatorial-optimization-problems/clique/the-maximum-clique-problem.md#box-6-mcpP-ex1)).
 
 ## Formulations { #sez-sec-cat-mcp-formulations }
 
@@ -60,7 +60,9 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Approximation { #sez-sec-cat-mcp-approximation }
 
-- Not approximable: for every $\varepsilon>0$ no polynomial algorithm guarantees a ratio within $n^{1-\varepsilon}$, unless $P=NP$ (Zuckerman).
+- Not approximable: for every $\varepsilon>0$ no polynomial algorithm guarantees a ratio within $n^{1-\varepsilon}$, unless $P=NP$ (Zuckerman) ([Ch. 38](../approximation-algorithms/clique-inapproximability.md#box-4-cli-thmHZ)).
+
+- Special cases: planar graphs and graphs of bounded degree, solved exactly by enumeration ([Ch. 38](../approximation-algorithms/clique-inapproximability.md#box-6-cli-propdeg)).
 
 ## Exercises { #sez-sec-cat-mcp-es }
 

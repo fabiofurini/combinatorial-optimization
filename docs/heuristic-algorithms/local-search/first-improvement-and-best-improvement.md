@@ -2,17 +2,17 @@
 title: "First improvement and best improvement"
 ---
 
-# 30.5 First improvement and best improvement { #sez-sec-firstbest }
+# 31.5 First improvement and best improvement { #sez-sec-firstbest }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
+**Part 4 · Heuristic algorithms · Chapter 31** · [:material-book-open-variant: Chapter 31: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
 
 </div>
 
 - The function $\textit{Improve}$ of $LS$ can stop at the <em>first</em> improving neighbour it finds, or examine the whole neighbourhood and return the <em>best</em> neighbour. The pseudo-codes are written for a minimization problem; for a maximization problem, “$<$” becomes “$>$”.
 
-## 30.5.1 First improvement
+## 31.5.1 First improvement
 
 !!! chiave ""
 
@@ -24,7 +24,7 @@ title: "First improvement and best improvement"
 
 <div class="colab-pulsanti" markdown="0"><span class="colab-etichetta">Run in Colab:</span><a class="colab-pulsante" href="https://colab.research.google.com/github/fabiofurini/combinatorial-optimization/blob/main/notebooks/local-search_python.ipynb" target="_blank" rel="noopener" title="Open the Python notebook of the chapter in Google Colab">Python</a><a class="colab-pulsante" href="https://colab.research.google.com/github/fabiofurini/combinatorial-optimization/blob/main/notebooks/local-search_cpp.ipynb" target="_blank" rel="noopener" title="Open the C++ notebook of the chapter in Google Colab">C++</a></div>
 
-## 30.5.2 Best improvement
+## 31.5.2 Best improvement
 
 !!! chiave ""
 
@@ -38,7 +38,7 @@ title: "First improvement and best improvement"
 
 <div class="colab-pulsanti" markdown="0"><span class="colab-etichetta">Run in Colab:</span><a class="colab-pulsante" href="https://colab.research.google.com/github/fabiofurini/combinatorial-optimization/blob/main/notebooks/local-search_python.ipynb" target="_blank" rel="noopener" title="Open the Python notebook of the chapter in Google Colab">Python</a><a class="colab-pulsante" href="https://colab.research.google.com/github/fabiofurini/combinatorial-optimization/blob/main/notebooks/local-search_cpp.ipynb" target="_blank" rel="noopener" title="Open the C++ notebook of the chapter in Google Colab">C++</a></div>
 
-## 30.5.3 Comparison
+## 31.5.3 Comparison
 
 - In a local optimum both rules examine the whole neighbourhood: the last iteration costs the same.
 
@@ -50,9 +50,9 @@ title: "First improvement and best improvement"
 
 <a id="box-3-ex-kpfirstbest"></a>
 
-!!! esempio "Example 30.1: First and best improvement on the KP"
+!!! esempio "Example 31.1: First and best improvement on the KP"
 
-    We start from the solution of the greedy by weight $GR_w$ on the KP reference instance ($c=9$), i.e., $x=(0,0,1,1)$, of weight $6$ and profit $10$, with the neighbourhood flip+swap. The neighbours are examined in the order of Section [30.4](local-search-the-scheme.md#sez-sec-neigh):
+    We start from the solution of the greedy by weight $GR_w$ on the KP reference instance ($c=9$), i.e., $x=(0,0,1,1)$, of weight $6$ and profit $10$, with the neighbourhood flip+swap. The neighbours are examined in the order of Section [31.4](local-search-the-scheme.md#sez-sec-neigh):
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -189,4 +189,4 @@ title: "First improvement and best improvement"
 
 ---
 
-**Next:** [30.6 Evaluating a move incrementally](evaluating-a-move-incrementally.md)
+**Next:** [31.6 Evaluating a move incrementally](evaluating-a-move-incrementally.md)

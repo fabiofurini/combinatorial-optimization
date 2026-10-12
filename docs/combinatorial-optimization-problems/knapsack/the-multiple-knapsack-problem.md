@@ -2,7 +2,7 @@
 title: "Multiple knapsack"
 ---
 
-# 2.6 The multiple knapsack problem
+# 2.7 The multiple knapsack problem { #sez-sec-kp-MKP }
 
 <div class="info-capitolo" markdown>
 
@@ -129,7 +129,7 @@ title: "Multiple knapsack"
 
     ![Figure 6](../../img/knapsack/fig06.svg){ .fig loading=lazy  }
 
-## 2.6.1 Assumptions
+## 2.7.1 Assumptions
 
 - We make the following assumptions:
 
@@ -147,4 +147,4 @@ title: "Multiple knapsack"
 
 ---
 
-**Next:** [2.7 The multiple-choice knapsack problem](the-multiple-choice-knapsack-problem.md)
+**Next:** [2.8 The multiple-choice knapsack problem](the-multiple-choice-knapsack-problem.md)

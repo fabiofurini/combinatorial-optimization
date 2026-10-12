@@ -2,7 +2,7 @@
 title: "Bounded knapsack"
 ---
 
-# 9.6 An ILP model for the Bounded Knapsack Problem
+# 9.7 An ILP model for the Bounded Knapsack Problem { #sez-sec-kpf-BKP }
 
 <div class="info-capitolo" markdown>
 
@@ -10,7 +10,7 @@ title: "Bounded knapsack"
 
 </div>
 
-The Bounded Knapsack Problem and its reference instance (Example 2.3) are defined in [Chapter 2 «Knapsack problems», Section 2.3](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-bounded-knapsack-problem/).
+The Bounded Knapsack Problem and its reference instance (Example 2.3) are defined in [Chapter 2 «Knapsack problems», Section 2.4](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-bounded-knapsack-problem/).
 
 - We introduce the following  $n$ <strong>integer variables</strong>:
 
@@ -78,4 +78,4 @@ The Bounded Knapsack Problem and its reference instance (Example 2.3) are defin
 
 ---
 
-**Next:** [9.7 An ILP model for the Unbounded Knapsack Problem](an-ilp-model-for-the-unbounded-knapsack-problem.md)
+**Next:** [9.8 An ILP model for the Unbounded Knapsack Problem](an-ilp-model-for-the-unbounded-knapsack-problem.md)

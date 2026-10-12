@@ -90,7 +90,7 @@
 
 <div class="grid cards" markdown>
 
--   **25. Dynamic programming for lot sizing**
+-   **25. DP for the uncapacitated lot sizing problem**
 
     ---
 
@@ -104,7 +104,7 @@
 
 <div class="grid cards" markdown>
 
--   **26. DP for the coin change problem**
+-   **27. DP for the coin change problem**
 
     ---
 
@@ -112,7 +112,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](dp-coin-change.md) · [Exercises](../exercises/dp-coin-change.md)
 
--   **27. DP for the rod cutting problem**
+-   **28. DP for the rod cutting problem**
 
     ---
 

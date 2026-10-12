@@ -6,7 +6,7 @@ title: "Exercises · Formulations of coloring problems"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 11** · each solution opens with a click · [:material-book-open-variant: Chapter 11: Coloring problems](../formulations/coloring-formulations.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
+**Exercises · Chapter 11** · each solution opens with a click · [:material-book-open-variant: Chapter 11: Coloring problems](../formulations/coloring-formulations/index.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
 

@@ -42,6 +42,6 @@ title: "The 0/1 knapsack problem (KP)"
         w_j \le c,~~~~ \forall j \in \mathscr{I}
         $$
 
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/index.md#box-1-defKP).
+- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-0-1-knapsack-problem.md#box-1-defKP).
 
 - [The course on this problem $\rightarrow$](../selected-problems/knapsack.md).

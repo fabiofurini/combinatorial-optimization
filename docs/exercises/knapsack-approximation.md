@@ -6,7 +6,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 35** · each solution opens with a click · [:material-book-open-variant: Chapter 35: Knapsack](../approximation-algorithms/knapsack-approximation.md) · [:material-file-pdf-box: Exercises, volume 5 (PDF)](../pdf/exercises-5-approximation-algorithms.pdf)
+**Exercises · Chapter 35** · each solution opens with a click · [:material-book-open-variant: Chapter 35: 0/1 knapsack (KP)](../approximation-algorithms/knapsack-approximation.md) · [:material-file-pdf-box: Exercises, volume 5 (PDF)](../pdf/exercises-5-approximation-algorithms.pdf)
 
 </div>
 

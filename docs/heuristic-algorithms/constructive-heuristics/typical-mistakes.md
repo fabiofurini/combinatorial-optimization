@@ -6,17 +6,17 @@ title: "Typical mistakes · In summary"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 29** · [:material-book-open-variant: Chapter 29: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
+**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
 
 </div>
 
-## 29.12 Typical mistakes
+## 30.12 Typical mistakes
 
 !!! attenzione "Warning"
 
     - <strong>Expecting the greedy by efficiency to be optimal.</strong> It can be arbitrarily bad, and so can each of the other two orders: the notes contain a family of instances for each of them.
 
-    - <strong>Believing that sorting always helps.</strong> FFD can be worse than FF ([Example 29.4](the-bin-packing-problem-first-sort-then-pack.md#box-6-ex-ffdworse)).
+    - <strong>Believing that sorting always helps.</strong> FFD can be worse than FF ([Example 30.4](the-bin-packing-problem-first-sort-then-pack.md#box-6-ex-ffdworse)).
 
     - <strong>Breaking ties in the wrong way.</strong> Every example uses one fixed rule (smallest index, first bin that fits, fullest bin for BF): changing it changes the solution.
 
@@ -24,7 +24,7 @@ title: "Typical mistakes · In summary"
 
     - <strong>Reading $\mathscr{A}(I)$ as a bound on $z(I)$.</strong> It is only a primal bound.
 
-## 29.13 In summary
+## 30.13 In summary
 
 !!! chiave "In summary"
 

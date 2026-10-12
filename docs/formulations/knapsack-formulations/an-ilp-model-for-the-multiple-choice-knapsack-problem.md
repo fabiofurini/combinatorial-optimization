@@ -2,7 +2,7 @@
 title: "Multiple-choice knapsack"
 ---
 
-# 9.10 An ILP model for the Multiple-Choice Knapsack Problem
+# 9.11 An ILP model for the Multiple-Choice Knapsack Problem { #sez-sec-kpf-MCKP }
 
 <div class="info-capitolo" markdown>
 
@@ -10,7 +10,7 @@ title: "Multiple-choice knapsack"
 
 </div>
 
-The Multiple-Choice Knapsack Problem and its reference instance (Example 2.7) are defined in [Chapter 2 «Knapsack problems», Section 2.7](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem/).
+The Multiple-Choice Knapsack Problem and its reference instance (Example 2.7) are defined in [Chapter 2 «Knapsack problems», Section 2.8](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem/).
 
 - We introduce the following  $n$ <strong>binary variables</strong>:
 
@@ -85,4 +85,4 @@ The Multiple-Choice Knapsack Problem and its reference instance (Example 2.7) a
 
 ---
 
-**Next:** [9.11 An ILP model for the Knapsack Problem with Setups](an-ilp-model-for-the-knapsack-problem-with-setups.md)
+**Next:** [9.12 An ILP model for the Knapsack Problem with Setups](an-ilp-model-for-the-knapsack-problem-with-setups.md)

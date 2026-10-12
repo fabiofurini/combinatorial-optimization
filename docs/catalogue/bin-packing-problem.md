@@ -42,6 +42,6 @@ title: "The bin packing problem (BPP)"
         w_j \le c,~~~~ \forall j \in \mathscr{I}
         $$
 
-- Defined in [Chapter 3 «Packing problems»](../combinatorial-optimization-problems/bin-packing/index.md#box-1-defBPP).
+- Defined in [Chapter 3 «Packing problems»](../combinatorial-optimization-problems/bin-packing/the-bin-packing-problem.md#box-1-defBPP).
 
 - [The course on this problem $\rightarrow$](../selected-problems/bin-packing.md).

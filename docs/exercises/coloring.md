@@ -6,7 +6,7 @@ title: "Exercises · Coloring problems"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 4** · each solution opens with a click · [:material-book-open-variant: Chapter 4: Coloring problems](../combinatorial-optimization-problems/coloring.md) · [:material-file-pdf-box: Exercises, volume 1 (PDF)](../pdf/exercises-1-combinatorial-optimization-problems.pdf)
+**Exercises · Chapter 4** · each solution opens with a click · [:material-book-open-variant: Chapter 4: Coloring problems](../combinatorial-optimization-problems/coloring/index.md) · [:material-file-pdf-box: Exercises, volume 1 (PDF)](../pdf/exercises-1-combinatorial-optimization-problems.pdf)
 
 </div>
 

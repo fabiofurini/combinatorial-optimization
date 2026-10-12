@@ -10,7 +10,7 @@
 
     ---
 
-    An ILP model for the 0/1 Knapsack Problem · A first Linear Programming relaxation · A second Linear Programming relaxation · 0/1 Knapsack Problem upper bounds
+    Overview of the family
 
     [:octicons-arrow-right-24: Read the chapter](knapsack-formulations/index.md) · [Exercises](../exercises/knapsack-formulations.md)
 
@@ -18,7 +18,7 @@
 
     ---
 
-    An ILP model for the Bin Packing Problem · A first Linear Programming relaxation · A second Linear Programming relaxation
+    Overview of the family
 
     [:octicons-arrow-right-24: Read the chapter](bin-packing-formulations/index.md) · [Exercises](../exercises/bin-packing-formulations.md)
 
@@ -26,15 +26,15 @@
 
     ---
 
-    An ILP model for the Vertex Coloring Problem · A first Linear Programming relaxation · A second Linear Programming relaxation
+    Overview of the family
 
-    [:octicons-arrow-right-24: Read the chapter](coloring-formulations.md) · [Exercises](../exercises/coloring-formulations.md)
+    [:octicons-arrow-right-24: Read the chapter](coloring-formulations/index.md) · [Exercises](../exercises/coloring-formulations.md)
 
 -   **12. Formulations of clique problems**
 
     ---
 
-    The edge formulation · A first Linear Programming relaxation · A second Linear Programming relaxation · Clique inequalities: a stronger formulation
+    Overview of the family
 
     [:octicons-arrow-right-24: Read the chapter](clique-formulations/index.md) · [Exercises](../exercises/clique-formulations.md)
 
@@ -42,7 +42,7 @@
 
     ---
 
-    A model with position variables (MTZ) · A model with subtour elimination constraints (DFJ) · Linear Programming relaxations
+    Overview of the family
 
     [:octicons-arrow-right-24: Read the chapter](tsp-formulations/index.md) · [Exercises](../exercises/tsp-formulations.md)
 
@@ -50,15 +50,15 @@
 
     ---
 
-    An ILP model for $P\|C_{\max}$ · A first Linear Programming relaxation · A second Linear Programming relaxation · Additional considerations
+    Overview of the family
 
-    [:octicons-arrow-right-24: Read the chapter](pcmax-formulations.md) · [Exercises](../exercises/pcmax-formulations.md)
+    [:octicons-arrow-right-24: Read the chapter](pcmax-formulations/index.md) · [Exercises](../exercises/pcmax-formulations.md)
 
 -   **15. Formulations of lot sizing problems**
 
     ---
 
-    A formulation with a big-M link · The Linear Programming relaxation of the big-M formulation · A shortest-path formulation · Comparing the formulations
+    Overview of the family
 
     [:octicons-arrow-right-24: Read the chapter](lot-sizing-formulations/index.md) · [Exercises](../exercises/lot-sizing-formulations.md)
 

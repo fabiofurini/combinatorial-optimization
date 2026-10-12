@@ -6,7 +6,7 @@ title: "Exercises · Formulations of scheduling problems"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 14** · each solution opens with a click · [:material-book-open-variant: Chapter 14: Scheduling problems](../formulations/pcmax-formulations.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
+**Exercises · Chapter 14** · each solution opens with a click · [:material-book-open-variant: Chapter 14: Scheduling problems](../formulations/pcmax-formulations/index.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
 

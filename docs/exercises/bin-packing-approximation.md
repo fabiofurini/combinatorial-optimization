@@ -6,7 +6,7 @@ title: "Exercises · Approximation algorithms for bin packing"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 34** · each solution opens with a click · [:material-book-open-variant: Chapter 34: Bin packing](../approximation-algorithms/bin-packing-approximation.md) · [:material-file-pdf-box: Exercises, volume 5 (PDF)](../pdf/exercises-5-approximation-algorithms.pdf)
+**Exercises · Chapter 36** · each solution opens with a click · [:material-book-open-variant: Chapter 36: Bin packing (BPP)](../approximation-algorithms/bin-packing-approximation.md) · [:material-file-pdf-box: Exercises, volume 5 (PDF)](../pdf/exercises-5-approximation-algorithms.pdf)
 
 </div>
 
@@ -20,9 +20,9 @@ title: "Exercises · Approximation algorithms for bin packing"
 
 ## Next Fit
 
-<a id="esercizio-34-1"></a>
+<a id="esercizio-36-1"></a>
 
-!!! esercizio "Exercise 34.1: Next Fit 1"
+!!! esercizio "Exercise 36.1: Next Fit 1"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following item weights:
 
@@ -108,9 +108,9 @@ title: "Exercises · Approximation algorithms for bin packing"
 
         As shown in Question 3, $NF(I)=3$ while the feasible solution $\tilde{P}_1=\{1,3\}$, $\tilde{P}_2=\{2,4\}$ uses only $2$ bins; since this is strictly smaller than $NF(I)$, the solution found by NF is <strong>not optimal</strong> (indeed $z(I)=2<NF(I)=3$).
 
-<a id="esercizio-34-2"></a>
+<a id="esercizio-36-2"></a>
 
-!!! esercizio "Exercise 34.2: Next Fit 2"
+!!! esercizio "Exercise 36.2: Next Fit 2"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following item weights:
 
@@ -196,9 +196,9 @@ title: "Exercises · Approximation algorithms for bin packing"
 
         As shown in Question 3, $NF(I)=3$ while the feasible solution $\tilde{P}_1=\{1,3\}$, $\tilde{P}_2=\{2,4\}$ uses only $2$ bins; since this is strictly smaller than $NF(I)$, the solution found by NF is <strong>not optimal</strong> (indeed $z(I)=2<NF(I)=3$).
 
-<a id="esercizio-34-3"></a>
+<a id="esercizio-36-3"></a>
 
-!!! esercizio "Exercise 34.3: Next Fit 3"
+!!! esercizio "Exercise 36.3: Next Fit 3"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following item weights:
 
@@ -289,9 +289,9 @@ title: "Exercises · Approximation algorithms for bin packing"
 
 ## First Fit
 
-<a id="esercizio-34-4"></a>
+<a id="esercizio-36-4"></a>
 
-!!! esercizio "Exercise 34.4: First Fit 1"
+!!! esercizio "Exercise 36.4: First Fit 1"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following item weights:
 
@@ -370,9 +370,9 @@ title: "Exercises · Approximation algorithms for bin packing"
 
         Since $FF(I)=2$ matches the lower bound $z(I)\ge 2$ found in Question 3, the solution found by FF is <strong>optimal</strong>.
 
-<a id="esercizio-34-5"></a>
+<a id="esercizio-36-5"></a>
 
-!!! esercizio "Exercise 34.5: First Fit 2"
+!!! esercizio "Exercise 36.5: First Fit 2"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following item weights:
 
@@ -451,9 +451,9 @@ title: "Exercises · Approximation algorithms for bin packing"
 
         Since $FF(I)=2$ matches the lower bound $z(I)\ge 2$ found in Question 3, the solution found by FF is <strong>optimal</strong>.
 
-<a id="esercizio-34-6"></a>
+<a id="esercizio-36-6"></a>
 
-!!! esercizio "Exercise 34.6: First Fit 3"
+!!! esercizio "Exercise 36.6: First Fit 3"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following item weights:
 
@@ -537,9 +537,9 @@ title: "Exercises · Approximation algorithms for bin packing"
 
 ## Best Fit
 
-<a id="esercizio-34-7"></a>
+<a id="esercizio-36-7"></a>
 
-!!! esercizio "Exercise 34.7: Best Fit 1"
+!!! esercizio "Exercise 36.7: Best Fit 1"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following item weights:
 
@@ -618,9 +618,9 @@ title: "Exercises · Approximation algorithms for bin packing"
 
         Since $BF(I)=2$ matches the lower bound $z(I)\ge 2$ found in Question 3, the solution found by BF is <strong>optimal</strong>.
 
-<a id="esercizio-34-8"></a>
+<a id="esercizio-36-8"></a>
 
-!!! esercizio "Exercise 34.8: Best Fit 2"
+!!! esercizio "Exercise 36.8: Best Fit 2"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following item weights:
 
@@ -699,9 +699,9 @@ title: "Exercises · Approximation algorithms for bin packing"
 
         Since $BF(I)=2$ matches the lower bound $z(I)\ge 2$ found in Question 3, the solution found by BF is <strong>optimal</strong>.
 
-<a id="esercizio-34-9"></a>
+<a id="esercizio-36-9"></a>
 
-!!! esercizio "Exercise 34.9: Best Fit 3"
+!!! esercizio "Exercise 36.9: Best Fit 3"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following item weights:
 
@@ -785,9 +785,9 @@ title: "Exercises · Approximation algorithms for bin packing"
 
 ## Worst Fit
 
-<a id="esercizio-34-10"></a>
+<a id="esercizio-36-10"></a>
 
-!!! esercizio "Exercise 34.10: Worst Fit 1"
+!!! esercizio "Exercise 36.10: Worst Fit 1"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following item weights:
 
@@ -866,9 +866,9 @@ title: "Exercises · Approximation algorithms for bin packing"
 
         Since $WF(I)=2$ matches the lower bound $z(I)\ge 2$ found in Question 3, the solution found by WF is <strong>optimal</strong>.
 
-<a id="esercizio-34-11"></a>
+<a id="esercizio-36-11"></a>
 
-!!! esercizio "Exercise 34.11: Worst Fit 2"
+!!! esercizio "Exercise 36.11: Worst Fit 2"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following item weights:
 
@@ -947,9 +947,9 @@ title: "Exercises · Approximation algorithms for bin packing"
 
         Since $WF(I)=2$ matches the lower bound $z(I)\ge 2$ found in Question 3, the solution found by WF is <strong>optimal</strong>.
 
-<a id="esercizio-34-12"></a>
+<a id="esercizio-36-12"></a>
 
-!!! esercizio "Exercise 34.12: Worst Fit 3"
+!!! esercizio "Exercise 36.12: Worst Fit 3"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following item weights:
 

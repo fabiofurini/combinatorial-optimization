@@ -2,7 +2,7 @@
 title: "Bounded knapsack"
 ---
 
-# 2.3 The bounded knapsack problem
+# 2.4 The bounded knapsack problem { #sez-sec-kp-BKP }
 
 <div class="info-capitolo" markdown>
 
@@ -189,7 +189,7 @@ title: "Bounded knapsack"
 
     ![Figure 3](../../img/knapsack/fig03.svg){ .fig loading=lazy  }
 
-## 2.3.1 Assumptions
+## 2.4.1 Assumptions
 
 - We make the following assumptions:
 
@@ -213,4 +213,4 @@ title: "Bounded knapsack"
 
 ---
 
-**Next:** [2.4 The unbounded knapsack problem](the-unbounded-knapsack-problem.md)
+**Next:** [2.5 The unbounded knapsack problem](the-unbounded-knapsack-problem.md)

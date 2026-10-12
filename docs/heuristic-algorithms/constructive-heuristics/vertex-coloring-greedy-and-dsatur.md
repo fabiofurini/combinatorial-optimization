@@ -2,17 +2,17 @@
 title: "Vertex coloring: greedy and DSATUR"
 ---
 
-# 29.8 Vertex coloring: greedy and DSATUR { #sez-sec-VCPgreedy }
+# 30.8 Vertex coloring: greedy and DSATUR { #sez-sec-VCPgreedy }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 29** · [:material-book-open-variant: Chapter 29: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
+**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
 
 </div>
 
 - The vertex coloring problem (VCP) is defined in [Chapter 4 «Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/): color the vertices of a graph $G=(V,E)$ so that adjacent vertices get different colors, with the minimum number $\chi(G)$ of colors.
 
-## 29.8.1 The greedy coloring { #sez-sec-GC }
+## 30.8.1 The greedy coloring { #sez-sec-GC }
 
 !!! chiave ""
 
@@ -29,7 +29,7 @@ title: "Vertex coloring: greedy and DSATUR"
 
 <a id="box-16-ex-gc"></a>
 
-!!! esempio "Example 29.12: $GC$ on the Petersen graph, two orders"
+!!! esempio "Example 30.12: $GC$ on the Petersen graph, two orders"
 
     ![Figure 10](../../img/constructive-heuristics/fig10.svg){ .fig loading=lazy  }
 
@@ -59,7 +59,7 @@ title: "Vertex coloring: greedy and DSATUR"
 
     and $GC$ uses $4$ colors: vertex $8$ takes color $2$, which the first order gave to vertex $6$, and vertices $9$ and $10$ then see all three colors among their neighbours.
 
-## 29.8.2 DSATUR { #sez-sec-DSATUR }
+## 30.8.2 DSATUR { #sez-sec-DSATUR }
 
 !!! chiave ""
 
@@ -76,7 +76,7 @@ title: "Vertex coloring: greedy and DSATUR"
 
 <a id="box-17-ex-dsatur"></a>
 
-!!! esempio "Example 29.13: $DSATUR$ on the Petersen graph"
+!!! esempio "Example 30.13: $DSATUR$ on the Petersen graph"
 
     All the vertices have degree $3$. The vertex chosen at each step, its saturation degree, its degree among the uncolored vertices and its color are:
 
@@ -150,11 +150,11 @@ title: "Vertex coloring: greedy and DSATUR"
 
     At step $1$ all the vertices tie and vertex $1$ is chosen. At step $2$ the vertices $2$, $5$, $6$ have saturation degree $1$ and two uncolored neighbours each: the smallest index, $2$, is chosen. At step $7$ vertex $8$ (neighbours $3$ and $6$, colors $1$ and $2$) has saturation degree $2$ and goes before vertex $7$. $DSATUR$ uses $3=\chi(G)$ colors, the same coloring as $GC$ with the list $(1,2,\dots,10)$.
 
-## 29.8.3 What the greedy coloring guarantees
+## 30.8.3 What the greedy coloring guarantees
 
 <a id="box-18-prop-GCDelta"></a>
 
-!!! teorema "Proposition 29.5"
+!!! teorema "Proposition 30.5"
 
     For every graph $G$ and every list $\lambda$,
 
@@ -174,7 +174,7 @@ title: "Vertex coloring: greedy and DSATUR"
 
 <a id="box-19-prop-crown"></a>
 
-!!! teorema "Proposition 29.6"
+!!! teorema "Proposition 30.6"
 
     For every $k\ge3$ there is a graph $G_k$ with $n=2k$ vertices, $\chi(G_k)=2$ and $\Delta(G_k)=k-1$, and a list $\lambda$, such that
 
@@ -194,7 +194,7 @@ title: "Vertex coloring: greedy and DSATUR"
 
 <a id="box-20-ex-crown"></a>
 
-!!! esempio "Example 29.14: $GC$ and $DSATUR$ on the crown graph $G_4$"
+!!! esempio "Example 30.14: $GC$ and $DSATUR$ on the crown graph $G_4$"
 
     Number the vertices $u_i=2i-1$ and $v_i=2i$, so that $u_1,v_1,\dots,u_4,v_4$ are $1,2,\dots,8$, and $E=\{\{2i-1,2j\}: i\neq j\}$, with $12$ edges.
 
@@ -204,7 +204,7 @@ title: "Vertex coloring: greedy and DSATUR"
 
     $DSATUR$ chooses vertex $1$ ($u_1$, color $1$), then the vertices $4$, $5$, $2$, $3$, $6$, $7$, $8$, with colors $2,1,2,1,2,1,2$: the vertices $u_i$ get color $1$ and the vertices $v_i$ color $2$, and $DSATUR$ uses $2=\chi(G_4)$ colors. After the first step, every vertex adjacent to a colored vertex has saturation degree $1$, and the vertex chosen is always on the side opposite to the last one colored.
 
-## 29.8.4 DSATUR as a heuristic
+## 30.8.4 DSATUR as a heuristic
 
 - On bipartite graphs $DSATUR$ always uses at most $2$ colors, as on the crown graphs; this is proved in the paper that introduced it (Brélaz, 1979).
 
@@ -212,4 +212,4 @@ title: "Vertex coloring: greedy and DSATUR"
 
 ---
 
-**Next:** [29.9 Randomized construction](randomized-construction.md)
+**Next:** [30.9 Randomized construction](randomized-construction.md)

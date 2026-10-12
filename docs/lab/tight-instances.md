@@ -5,7 +5,7 @@ hide:
 title: "Tight instances"
 ---
 
-[← Lab](index.md) · Chapter: [Approximation algorithms: definitions](../approximation-algorithms/approximation.md)
+[← Lab](index.md) · Chapter: [Principles of approximation algorithms](../approximation-algorithms/approximation.md)
 
 # Tight instances
 

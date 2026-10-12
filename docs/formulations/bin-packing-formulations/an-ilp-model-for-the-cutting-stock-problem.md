@@ -2,7 +2,7 @@
 title: "Cutting stock"
 ---
 
-# 10.4 An ILP model for the Cutting Stock Problem
+# 10.5 An ILP model for the Cutting Stock Problem { #sez-sec-bpf-CSP }
 
 <div class="info-capitolo" markdown>
 
@@ -54,7 +54,7 @@ The problem of this section is the Cutting Stock Problem (CSP), defined in [Chap
 
     - constraints $\eqref{cons1_CSP}$ ensure that exactly $d_j$ copies of each item $j$ are packed ($n$ linear constraints);
 
-    - constraints $\eqref{cons2_CSP}$ link the integer variables with the activation variables and impose the capacity restrictions, as constraints [(10.1c)](index.md#mjx-eqn:cons2_BPP) of the $\mathrm{ILP}_{\mathrm{BPP}}$ model ($m$ linear constraints);
+    - constraints $\eqref{cons2_CSP}$ link the integer variables with the activation variables and impose the capacity restrictions, as constraints [(10.1c)](an-ilp-model-for-the-bin-packing-problem.md#mjx-eqn:cons2_BPP) of the $\mathrm{ILP}_{\mathrm{BPP}}$ model ($m$ linear constraints);
 
     - finally, constraints $\eqref{cons3_CSP}$ and $\eqref{cons4_CSP}$ define the variables of the ILP model.
 
@@ -103,7 +103,7 @@ The problem of this section is the Cutting Stock Problem (CSP), defined in [Chap
 
     with all the other variables equal to $0$. The optimal value is $z(\mathrm{ILP}_{\mathrm{CSP}}) = 3$, as found in the chapter «Packing problems». The bins contain one copy of items $1$ and $4$ (weight $10$), three copies of item $3$ (weight $9$), and one copy of items $1$ and $2$ (weight $9$). The optimal solution is not unique: the solution of that chapter, with the bins $\{4,1\}$, $\{1,3,3\}$ and $\{2,3\}$, also uses $3$ bins.
 
-## 10.5 Typical mistakes
+## 10.6 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -119,7 +119,7 @@ The problem of this section is the Cutting Stock Problem (CSP), defined in [Chap
 
     - <strong>Declaring binary the variables of the cutting stock model.</strong> In the $\mathrm{ILP}_{\mathrm{CSP}}$ model $x_{jb}$ counts the copies of item $j$ in bin $b$: with $x_{jb}\in\{0,1\}$ the three copies of item $3$ of the example could not share a bin.
 
-## 10.6 In summary
+## 10.7 In summary
 
 !!! chiave "In summary"
 

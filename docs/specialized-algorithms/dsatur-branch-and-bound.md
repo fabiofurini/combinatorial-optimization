@@ -6,7 +6,7 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
 <div class="info-capitolo" markdown>
 
-**Part 6 · Ad hoc algorithms · Chapter 39** · [:material-file-pdf-box: Lecture notes, volume 6 (PDF)](../pdf/lecture-notes-6-specialized-algorithms.pdf) · [:material-pencil: Exercises: Vertex coloring (DSATUR)](../exercises/dsatur-branch-and-bound.md)
+**Part 6 · Ad hoc algorithms · Chapter 42** · [:material-file-pdf-box: Lecture notes, volume 6 (PDF)](../pdf/lecture-notes-6-specialized-algorithms.pdf) · [:material-pencil: Exercises: Vertex coloring (DSATUR)](../exercises/dsatur-branch-and-bound.md)
 
 </div>
 
@@ -30,13 +30,13 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
     - execute the DSATUR branch-and-bound algorithm by hand and prove that it is exact.
 
-## 39.1 The algorithm for the VCP { #sez-sec-DSATURBB }
+## 42.1 The algorithm for the VCP { #sez-sec-DSATURBB }
 
-- The vertex coloring problem (VCP) on a graph $G=(V,E)$ is defined in [Chapter 4 «Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/#box-3-defVCP); its optimal value is the chromatic number $\chi(G)$.
+- The vertex coloring problem (VCP) on a graph $G=(V,E)$ is defined in [Chapter 4 «Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/the-vertex-coloring-problem/#box-3-defVCP); its optimal value is the chromatic number $\chi(G)$.
 
 <a id="box-1-def-VCPnode"></a>
 
-!!! definizione "Definition 39.1: branching node and partial coloring"
+!!! definizione "Definition 42.1: branching node and partial coloring"
 
     In the DSATUR branch-and-bound algorithm, the colors are the integers $1,2,3,\dots$, and a branching node $k$ of the tree is a <strong>partial coloring</strong>:
 
@@ -62,7 +62,7 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
     A node of the tree is a partial coloring; each child colors one more vertex. No LP problem is solved: the bounds of a node come from counting colors.
 
-### 39.1.1 Branching { #sez-sec-DSATURBBbranch }
+### 42.1.1 Branching { #sez-sec-DSATURBBbranch }
 
 - <strong>Branching vertex.</strong> At node $k$ we branch on the uncolored vertex $v$ of <strong>maximum saturation degree</strong> $\mathit{sat}_k(v)$; ties are broken by the largest $\mathit{du}_k(v)$, and then by the smallest index. This is the rule of the $DSATUR$ heuristic (Brélaz, 1979).
 
@@ -80,7 +80,7 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
     The branching vertex is the most constrained one; its children are its feasible colors plus one new color, so two children never describe the same coloring with the colors renamed.
 
-### 39.1.2 Bounds and pruning { #sez-sec-DSATURBBbounds }
+### 42.1.2 Bounds and pruning { #sez-sec-DSATURBBbounds }
 
 - The VCP is a minimization problem: the incumbent solution gives the <strong>upper bound</strong> $\UB$, and a lower bound comes from a clique.
 
@@ -110,7 +110,7 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
     $DSATUR$ gives $\UB$, a greedy clique gives $\LB$; a node is pruned as soon as it uses $\UB$ colors, because its subtree cannot contain a coloring with fewer colors.
 
-### 39.1.3 Node selection and pseudocode { #sez-sec-DSATURBBalg }
+### 42.1.3 Node selection and pseudocode { #sez-sec-DSATURBBalg }
 
 - The tree is explored <strong>depth first</strong>: the list $L$ is a stack, the children of a node are evaluated in increasing order of color, and the child with the smallest color is extracted first.
 
@@ -160,11 +160,11 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
         The node survives: it is inserted into $L$ in Step 3. <code>STOP</code>.
 
-### 39.1.4 Correctness { #sez-sec-DSATURBBcorr }
+### 42.1.4 Correctness { #sez-sec-DSATURBBcorr }
 
 <a id="box-2-prop-nosym"></a>
 
-!!! teorema "Proposition 39.2: no-symmetry branching"
+!!! teorema "Proposition 42.2: no-symmetry branching"
 
     Consider the tree of the DSATUR branch-and-bound algorithm without pruning. Its leaves are complete colorings, and every partition of $V$ into stable sets, i.e., every feasible solution of the VCP, is the set of color classes of <strong>exactly one</strong> leaf.
 
@@ -190,13 +190,13 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
     Without pruning, the tree enumerates every feasible solution of the VCP exactly once, up to a renaming of the colors. The pruning by bound removes only subtrees with at least $\UB$ colors: the algorithm is exact.
 
-## 39.2 A worked example { #sez-sec-DSATURBBex }
+## 42.2 A worked example { #sez-sec-DSATURBBex }
 
 <a id="box-3-ex-petersenBB"></a>
 
-!!! esempio "Example 39.1: DSATUR branch-and-bound on the Petersen graph"
+!!! esempio "Example 42.1: DSATUR branch-and-bound on the Petersen graph"
 
-    We consider the Petersen graph, the reference instance of [Chapter 4 «Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/#box-5-ex-vcp2), with $n=10$ vertices, $m=15$ edges and all degrees equal to $3$:
+    We consider the Petersen graph, the reference instance of [Chapter 4 «Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/the-vertex-coloring-problem/#box-5-ex-vcp2), with $n=10$ vertices, $m=15$ edges and all degrees equal to $3$:
 
     $$
     \begin{aligned}
@@ -205,7 +205,7 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
     \end{aligned}
     $$
 
-    The DSATUR branch-and-bound algorithm uses the rules of Section [39.1](#sez-sec-DSATURBB): branching on the most saturated vertex, depth-first search, children in increasing order of color.
+    The DSATUR branch-and-bound algorithm uses the rules of Section [42.1](#sez-sec-DSATURBB): branching on the most saturated vertex, depth-first search, children in increasing order of color.
 
     - <span style="color:#e03131"><strong>Initialization</strong></span>
 
@@ -327,19 +327,19 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
 - The algorithm does not improve the incumbent solution: it proves that $\UB=3$ is optimal. The proof is the odd cycle $1,2,3,4,5$, found by the search in three levels.
 
-- Without the pruning, the tree of the Petersen graph has $9\,776$ nodes and $7\,430$ leaves, one for each feasible partition counted in [Chapter 4](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/), as [Proposition 39.2](#box-2-prop-nosym) predicts.
+- Without the pruning, the tree of the Petersen graph has $9\,776$ nodes and $7\,430$ leaves, one for each feasible partition counted in [Chapter 4](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/), as [Proposition 42.2](#box-2-prop-nosym) predicts.
 
-## 39.3 Remarks { #sez-sec-DSATURBBrem }
+## 42.3 Remarks { #sez-sec-DSATURBBrem }
 
 - <strong>Origin.</strong> The saturation degree and the exact algorithm that branches on it are due to Brélaz (1979). Pre-coloring a clique is the usual way to remove the symmetry of the first colors.
 
 - <strong>Sewell's tie-breaking (1996).</strong> Among the vertices of maximum saturation degree, Sewell chooses the vertex $v$ that maximizes the number of feasible colors it shares with its uncolored neighbours, $\sum_{u\in N(v)\cap U^k} |F_k(v)\cap F_k(u)|$. Coloring that vertex removes the most options from the rest of the graph.
 
-- <strong>PASS (San Segundo, 2012).</strong> PASS applies Sewell's rule only to selected vertices, computing the count over the vertices tied for the maximum saturation degree, which is cheaper. Both rules change only the tie-breaking: the children, the bounds and [Proposition 39.2](#box-2-prop-nosym) stay the same.
+- <strong>PASS (San Segundo, 2012).</strong> PASS applies Sewell's rule only to selected vertices, computing the count over the vertices tied for the maximum saturation degree, which is cheaper. Both rules change only the tie-breaking: the children, the bounds and [Proposition 42.2](#box-2-prop-nosym) stay the same.
 
 - References: D. Brélaz, «New methods to color the vertices of a graph», <em>Communications of the ACM</em> 22(4), 251–256, 1979; E. C. Sewell, «An improved algorithm for exact graph coloring», in D. S. Johnson, M. A. Trick (eds.), <em>Cliques, Coloring, and Satisfiability</em>, DIMACS Series in Discrete Mathematics and Theoretical Computer Science 26, 1996; P. San Segundo, «A new DSATUR-based algorithm for exact vertex coloring», <em>Computers &amp; Operations Research</em> 39(7), 1724–1733, 2012.
 
-## 39.4 Typical mistakes
+## 42.4 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -355,7 +355,7 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
     - <strong>Continuing after $\UB=|K|$.</strong> When a complete coloring reaches the clique bound, it is optimal: the nodes still in the list are not explored.
 
-## 39.5 In summary
+## 42.5 In summary
 
 !!! chiave "In summary"
 

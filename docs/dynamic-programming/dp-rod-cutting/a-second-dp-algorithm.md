@@ -2,11 +2,11 @@
 title: "A second DP algorithm"
 ---
 
-# 27.3 A second DP algorithm
+# 28.3 A second DP algorithm
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 27** · [:material-book-open-variant: Chapter 27: Rod cutting](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting](../../exercises/dp-rod-cutting.md)
+**Part 3 · Dynamic programming · Chapter 28** · [:material-book-open-variant: Chapter 28: Rod cutting](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting](../../exercises/dp-rod-cutting.md)
 
 </div>
 
@@ -31,7 +31,7 @@ title: "A second DP algorithm"
         v(j-1,\ell) & \textrm{if $1 \le \ell < j$,}\\[2ex]
         0 & \textrm{if $\ell=0$,}\\[2ex]
         -\infty & \textrm{if $j=0$ and $\ell>0$.}
-        \end{array} \right. \tag{27.2}
+        \end{array} \right. \tag{28.2}
         \end{equation*}
 
     - The recursive decomposition process of formula $\eqref{eq:rcpalt}$ generates at most $2$ <strong>independent subproblems</strong>, corresponding to whether or not to cut a piece of length $j$ from a rod of length $\ell$. If $j>\ell$, a piece of length $j$ cannot be cut from the rod, and therefore the only feasible option is not to cut it. Here, $v(j,0)=0$ since a rod of length $0$ cannot be cut and has profit $0$. Moreover, $v(0,\ell)=-\infty$ for $\ell>0$: in this case no positive piece length is available, so no feasible solution exists for a rod of positive length. The value $-\infty$ is used to rule out this infeasible case.
@@ -52,7 +52,7 @@ title: "A second DP algorithm"
 
         <a id="box-18-texrcpalttree"></a>
 
-        !!! esempio "Example 27.9: Recursion tree"
+        !!! esempio "Example 28.9: Recursion tree"
 
             We consider the RCP instance of <span style="color:#1971c2">Example 1</span>. This is the recursion tree of the top-down approach to compute $v(4,4)$:
 
@@ -64,7 +64,7 @@ title: "A second DP algorithm"
 
         <a id="box-19-texrcpaltvalues"></a>
 
-        !!! esempio "Example 27.10: Computing the values of the $v$ function"
+        !!! esempio "Example 28.10: Computing the values of the $v$ function"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
@@ -172,7 +172,7 @@ title: "A second DP algorithm"
 
         <a id="box-32-texrcpaltbu"></a>
 
-        !!! esempio "Example 27.11: Execution of the DP algorithm"
+        !!! esempio "Example 28.11: Execution of the DP algorithm"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
@@ -379,7 +379,7 @@ title: "A second DP algorithm"
 
         <a id="box-33-texrcpaltbuinfo"></a>
 
-        !!! esempio "Example 27.12: Computation of the additional information"
+        !!! esempio "Example 28.12: Computation of the additional information"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
@@ -585,7 +585,7 @@ title: "A second DP algorithm"
 
         <a id="box-34-texrcpaltsolvector"></a>
 
-        !!! esempio "Example 27.13: Computing an optimal solution"
+        !!! esempio "Example 28.13: Computing an optimal solution"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following matrix ${s}$:
 
@@ -671,7 +671,7 @@ title: "A second DP algorithm"
 
         <a id="box-35-texrcpaltsolvector32"></a>
 
-        !!! esempio "Example 27.14: Computing optimal solutions"
+        !!! esempio "Example 28.14: Computing optimal solutions"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following matrix ${s}$:
 
@@ -786,7 +786,7 @@ title: "A second DP algorithm"
             (0,1,0,0)
             $$
 
-## 27.3.1 Number of steps
+## 28.3.1 Number of steps
 
 - Let $S(n)$ denote the number of steps executed by <code>DP2</code> in the worst case, where $n$ is the rod length. We compute $S(n)$ by counting how many times the lines of the pseudo-code of <code>DP2</code> are executed.
 

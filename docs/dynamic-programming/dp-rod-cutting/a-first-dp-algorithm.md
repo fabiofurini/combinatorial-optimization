@@ -2,11 +2,11 @@
 title: "A first DP algorithm"
 ---
 
-# 27.2 A first DP algorithm
+# 28.2 A first DP algorithm
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 27** · [:material-book-open-variant: Chapter 27: Rod cutting](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting](../../exercises/dp-rod-cutting.md)
+**Part 3 · Dynamic programming · Chapter 28** · [:material-book-open-variant: Chapter 28: Rod cutting](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting](../../exercises/dp-rod-cutting.md)
 
 </div>
 
@@ -29,7 +29,7 @@ title: "A first DP algorithm"
         v(\ell)= \left\{ \begin{array}{ll}
         \displaystyle \max \bigg\{ p_j + v(\ell-j) : j \in \{1,2,\dots,\ell\}\bigg\} & \textrm{if $1\le \ell \le n$,}\\[2ex]
         0 & \textrm{if $\ell=0$.}
-        \end{array} \right. \tag{27.1}
+        \end{array} \right. \tag{28.1}
         \end{equation*}
 
     - The recursive decomposition process of formula $\eqref{eq:1}$ generates $\ell$ <strong>independent subproblems</strong>, each corresponding to a possible choice of cutting a first piece of length $j$ from a rod of length $\ell$.  Here, $v(0)=0$ since a rod of length $0$ cannot be cut and has profit $0$.
@@ -50,7 +50,7 @@ title: "A first DP algorithm"
 
         <a id="box-3-texrcptree"></a>
 
-        !!! esempio "Example 27.3: Recursion tree"
+        !!! esempio "Example 28.3: Recursion tree"
 
             We consider the RCP instance of <span style="color:#1971c2">Example 1</span>. This is the recursion tree of the top-down approach to compute $v(4)$:
 
@@ -62,7 +62,7 @@ title: "A first DP algorithm"
 
         <a id="box-4-texrcpsmallervalues"></a>
 
-        !!! esempio "Example 27.4: Computing the values of the $v$ function"
+        !!! esempio "Example 28.4: Computing the values of the $v$ function"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
@@ -124,7 +124,7 @@ title: "A first DP algorithm"
 
         <a id="box-14-texrcpbu"></a>
 
-        !!! esempio "Example 27.5: Execution of the DP algorithm"
+        !!! esempio "Example 28.5: Execution of the DP algorithm"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
@@ -311,7 +311,7 @@ title: "A first DP algorithm"
 
         <a id="box-15-texrcpbuinfo"></a>
 
-        !!! esempio "Example 27.6: Computation of the additional information"
+        !!! esempio "Example 28.6: Computation of the additional information"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
@@ -516,7 +516,7 @@ title: "A first DP algorithm"
 
         <a id="box-16-texrcpsolvector"></a>
 
-        !!! esempio "Example 27.7: Computing an optimal solution"
+        !!! esempio "Example 28.7: Computing an optimal solution"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following vector ${s}$:
 
@@ -583,7 +583,7 @@ title: "A first DP algorithm"
 
         <a id="box-17-texrcpsolvector32"></a>
 
-        !!! esempio "Example 27.8: Computing optimal solutions for rod lengths 3 and 2"
+        !!! esempio "Example 28.8: Computing optimal solutions for rod lengths 3 and 2"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following vector ${s}$:
 
@@ -677,7 +677,7 @@ title: "A first DP algorithm"
             (0,1,0,0)
             $$
 
-## 27.2.1 Number of steps
+## 28.2.1 Number of steps
 
 - Let $S(n)$ denote the number of steps executed by <code>DP1</code> in the worst case, where $n$ is the rod length. We compute $S(n)$ by counting how many times <span style="color:#e03131">Line</span> [2](#box-5-bu-a)–<span style="color:#e03131">Line</span> [13](#box-13-bu-i) are executed.
 
@@ -747,4 +747,4 @@ title: "A first DP algorithm"
 
 ---
 
-**Next:** [27.3 A second DP algorithm](a-second-dp-algorithm.md)
+**Next:** [28.3 A second DP algorithm](a-second-dp-algorithm.md)

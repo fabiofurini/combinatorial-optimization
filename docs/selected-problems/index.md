@@ -30,7 +30,7 @@ The problems on which the whole course focuses, introduced one by one: definitio
 
     Color the vertices of a graph so that adjacent vertices get different colors, using the minimum number of colors: vertex coloring.
 
-    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/coloring.md) · [Formulations](../formulations/coloring-formulations.md)
+    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/coloring/index.md) · [Formulations](../formulations/coloring-formulations/index.md)
 
 -   **Clique problems**
 
@@ -54,7 +54,7 @@ The problems on which the whole course focuses, introduced one by one: definitio
 
     Assign jobs to parallel machines so that the makespan is minimum: identical, uniform and unrelated machines.
 
-    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/pcmax.md) · [Formulations](../formulations/pcmax-formulations.md)
+    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/pcmax/index.md) · [Formulations](../formulations/pcmax-formulations/index.md)
 
 -   **Lot sizing problems**
 

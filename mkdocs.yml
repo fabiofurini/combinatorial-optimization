@@ -166,7 +166,8 @@ nav:
   - Selected problems:
       - selected-problems/index.md
       - "Knapsack problems":
-          - "0/1 knapsack (KP)": combinatorial-optimization-problems/knapsack/index.md
+          - combinatorial-optimization-problems/knapsack/index.md
+          - "0/1 knapsack (KP)": combinatorial-optimization-problems/knapsack/the-0-1-knapsack-problem.md
           - "Subset sum (SSP)": combinatorial-optimization-problems/knapsack/the-subset-sum-problem.md
           - "Bounded knapsack (BKP)": combinatorial-optimization-problems/knapsack/the-bounded-knapsack-problem.md
           - "Unbounded knapsack (UKP)": combinatorial-optimization-problems/knapsack/the-unbounded-knapsack-problem.md
@@ -175,25 +176,32 @@ nav:
           - "Multiple-choice knapsack (MCKP)": combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem.md
           - "Knapsack with setups (KPS)": combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md
       - "Packing problems":
-          - "Bin packing (BPP)": combinatorial-optimization-problems/bin-packing/index.md
+          - combinatorial-optimization-problems/bin-packing/index.md
+          - "Bin packing (BPP)": combinatorial-optimization-problems/bin-packing/the-bin-packing-problem.md
           - "Cutting stock (CSP)": combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md
       - "Coloring problems":
-          - "Vertex coloring (VCP)": combinatorial-optimization-problems/coloring.md
+          - combinatorial-optimization-problems/coloring/index.md
+          - "Vertex coloring (VCP)": combinatorial-optimization-problems/coloring/the-vertex-coloring-problem.md
       - "Clique problems":
-          - "Maximum clique (MCP)": combinatorial-optimization-problems/clique/index.md
+          - combinatorial-optimization-problems/clique/index.md
+          - "Maximum clique (MCP)": combinatorial-optimization-problems/clique/the-maximum-clique-problem.md
           - "Weighted maximum clique": combinatorial-optimization-problems/clique/weighted-variants.md
       - "Routing problems":
-          - "Travelling salesman (TSP)": combinatorial-optimization-problems/tsp/index.md
+          - combinatorial-optimization-problems/tsp/index.md
+          - "Travelling salesman (TSP)": combinatorial-optimization-problems/tsp/the-travelling-salesman-problem.md
           - "Metric and asymmetric TSP (ATSP)": combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md
       - "Scheduling problems":
-          - "Identical parallel machines (P||Cmax)": combinatorial-optimization-problems/pcmax.md
+          - combinatorial-optimization-problems/pcmax/index.md
+          - "Identical parallel machines (P||Cmax)": combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines.md
       - "Lot sizing problems":
-          - "Capacitated lot sizing (CLS)": combinatorial-optimization-problems/lot-sizing/index.md
+          - combinatorial-optimization-problems/lot-sizing/index.md
+          - "Capacitated lot sizing (CLS)": combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem.md
           - "Lot sizing variants": combinatorial-optimization-problems/lot-sizing/variants.md
   - Formulations:
       - formulations/index.md
       - "Knapsack problems":
-          - "0/1 knapsack (KP)": formulations/knapsack-formulations/index.md
+          - formulations/knapsack-formulations/index.md
+          - "0/1 knapsack (KP)": formulations/knapsack-formulations/an-ilp-model-for-the-0-1-knapsack-problem.md
           - "Subset sum (SSP)": formulations/knapsack-formulations/an-ilp-model-for-the-subset-sum-problem.md
           - "Bounded knapsack (BKP)": formulations/knapsack-formulations/an-ilp-model-for-the-bounded-knapsack-problem.md
           - "Unbounded knapsack (UKP)": formulations/knapsack-formulations/an-ilp-model-for-the-unbounded-knapsack-problem.md
@@ -202,20 +210,26 @@ nav:
           - "Multiple-choice knapsack (MCKP)": formulations/knapsack-formulations/an-ilp-model-for-the-multiple-choice-knapsack-problem.md
           - "Knapsack with setups (KPS)": formulations/knapsack-formulations/an-ilp-model-for-the-knapsack-problem-with-setups.md
       - "Packing problems":
-          - "Bin packing (BPP)": formulations/bin-packing-formulations/index.md
+          - formulations/bin-packing-formulations/index.md
+          - "Bin packing (BPP)": formulations/bin-packing-formulations/an-ilp-model-for-the-bin-packing-problem.md
           - "Cutting stock (CSP)": formulations/bin-packing-formulations/an-ilp-model-for-the-cutting-stock-problem.md
       - "Coloring problems":
-          - "Vertex coloring (VCP)": formulations/coloring-formulations.md
+          - formulations/coloring-formulations/index.md
+          - "Vertex coloring (VCP)": formulations/coloring-formulations/an-ilp-model-for-the-vertex-coloring-problem.md
       - "Clique problems":
-          - "Maximum clique (MCP)": formulations/clique-formulations/index.md
+          - formulations/clique-formulations/index.md
+          - "Maximum clique (MCP)": formulations/clique-formulations/an-ilp-model-for-the-maximum-clique-problem-the-edge-formula.md
           - "Weighted maximum clique": formulations/clique-formulations/ilp-models-for-the-weighted-variants.md
       - "Routing problems":
-          - "Travelling salesman (TSP)": formulations/tsp-formulations/index.md
+          - formulations/tsp-formulations/index.md
+          - "Travelling salesman (TSP)": formulations/tsp-formulations/ilp-models-for-the-travelling-salesman-problem.md
           - "Metric and asymmetric TSP (ATSP)": formulations/tsp-formulations/ilp-models-for-the-metric-and-asymmetric-tsp.md
       - "Scheduling problems":
-          - "Identical parallel machines (P||Cmax)": formulations/pcmax-formulations.md
+          - formulations/pcmax-formulations/index.md
+          - "Identical parallel machines (P||Cmax)": formulations/pcmax-formulations/an-ilp-model-for-the-scheduling-on-identical-parallel-machin.md
       - "Lot sizing problems":
-          - "Capacitated lot sizing (CLS)": formulations/lot-sizing-formulations/index.md
+          - formulations/lot-sizing-formulations/index.md
+          - "Capacitated lot sizing (CLS)": formulations/lot-sizing-formulations/ilp-models-for-the-capacitated-lot-sizing-problem.md
           - "Lot sizing variants": formulations/lot-sizing-formulations/ilp-models-for-the-variants.md
   - Dynamic programming:
       - dynamic-programming/index.md
@@ -240,23 +254,23 @@ nav:
           - "23. Knapsack with setups (KPS)": dynamic-programming/dp-knapsack-setups.md
           - "24. Multiple knapsack (MKP)": dynamic-programming/dp-multiple-knapsack.md
       - "Lot sizing problems":
-          - "25. Lot sizing":
+          - "25. Uncapacitated lot sizing (ULS)":
               - dynamic-programming/dp-lot-sizing/index.md
               - "A DP algorithm for the ULS": dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls.md
               - "A DP algorithm for the ULS: Step 1 and Step 2": dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls-step-1-and-step-2.md
               - "A DP algorithm for the capacitated case": dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md
               - "Typical mistakes · In summary": dynamic-programming/dp-lot-sizing/typical-mistakes.md
       - "Miscellaneous problems":
-          - "26. Coin change": dynamic-programming/dp-coin-change.md
-          - "27. Rod cutting":
+          - "27. Coin change": dynamic-programming/dp-coin-change.md
+          - "28. Rod cutting":
               - dynamic-programming/dp-rod-cutting/index.md
               - "A first DP algorithm": dynamic-programming/dp-rod-cutting/a-first-dp-algorithm.md
               - "A second DP algorithm": dynamic-programming/dp-rod-cutting/a-second-dp-algorithm.md
               - "Typical mistakes · In summary": dynamic-programming/dp-rod-cutting/typical-mistakes.md
   - Heuristics:
       - heuristic-algorithms/index.md
-      - "28. Definitions": heuristic-algorithms/heuristics.md
-      - "29. Constructive":
+      - "29. Definitions": heuristic-algorithms/heuristics.md
+      - "30. Constructive":
           - heuristic-algorithms/constructive-heuristics/index.md
           - "The problems and the assumptions · The greedy paradigm": heuristic-algorithms/constructive-heuristics/the-problems-and-the-assumptions.md
           - "The 0/1 knapsack problem: which order?": heuristic-algorithms/constructive-heuristics/the-0-1-knapsack-problem-which-order.md
@@ -268,7 +282,7 @@ nav:
           - "Look-ahead and regret": heuristic-algorithms/constructive-heuristics/look-ahead-and-regret.md
           - "What constructive heuristics give, and what they do not": heuristic-algorithms/constructive-heuristics/what-constructive-heuristics-give-and-what-they-do-not.md
           - "Typical mistakes · In summary": heuristic-algorithms/constructive-heuristics/typical-mistakes.md
-      - "30. Local search":
+      - "31. Local search":
           - heuristic-algorithms/local-search/index.md
           - "The problems, the assumptions and the starting solutions": heuristic-algorithms/local-search/the-problems-the-assumptions-and-the-starting-solutions.md
           - "Local search: the scheme · Neighbourhoods for the four problems": heuristic-algorithms/local-search/local-search-the-scheme.md
@@ -281,7 +295,7 @@ nav:
           - "Variable neighbourhood descent": heuristic-algorithms/local-search/variable-neighbourhood-descent.md
           - "Multi-start local search": heuristic-algorithms/local-search/multi-start-local-search.md
           - "Typical mistakes · In summary": heuristic-algorithms/local-search/typical-mistakes.md
-      - "31. Metaheuristics":
+      - "32. Metaheuristics":
           - heuristic-algorithms/metaheuristics/index.md
           - "The problems and the assumptions": heuristic-algorithms/metaheuristics/the-problems-and-the-assumptions.md
           - "How to escape from a local optimum · Simulated annealing": heuristic-algorithms/metaheuristics/how-to-escape-from-a-local-optimum.md
@@ -294,18 +308,26 @@ nav:
           - "Comparison and conclusions": heuristic-algorithms/metaheuristics/comparison-and-conclusions.md
           - "Typical mistakes · In summary": heuristic-algorithms/metaheuristics/typical-mistakes.md
           - "References": heuristic-algorithms/metaheuristics/references.md
-      - "32. MIP heuristics": heuristic-algorithms/mip-heuristics-classical.md
+      - "33. MIP heuristics": heuristic-algorithms/mip-heuristics-classical.md
   - Approximation:
       - approximation-algorithms/index.md
-      - "33. Definitions": approximation-algorithms/approximation.md
-      - "34. Bin packing": approximation-algorithms/bin-packing-approximation.md
-      - "35. Knapsack": approximation-algorithms/knapsack-approximation.md
-      - "36. P||Cmax": approximation-algorithms/pcmax-approximation.md
-      - "37. Metric TSP": approximation-algorithms/tsp-approximation.md
+      - "34. Principles": approximation-algorithms/approximation.md
+      - "Knapsack problems":
+          - "35. 0/1 knapsack (KP)": approximation-algorithms/knapsack-approximation.md
+      - "Packing problems":
+          - "36. Bin packing (BPP)": approximation-algorithms/bin-packing-approximation.md
+      - "Coloring problems":
+          - "37. Vertex coloring (VCP)": approximation-algorithms/coloring-inapproximability.md
+      - "Clique problems":
+          - "38. Maximum clique (MCP)": approximation-algorithms/clique-inapproximability.md
+      - "Routing problems":
+          - "39. General and metric TSP": approximation-algorithms/tsp-approximation.md
+      - "Scheduling problems":
+          - "40. Identical parallel machines (P||Cmax)": approximation-algorithms/pcmax-approximation.md
   - Ad hoc algorithms:
       - specialized-algorithms/index.md
-      - "38. Knapsack": specialized-algorithms/knapsack-branch-and-bound.md
-      - "39. Vertex coloring (DSATUR)": specialized-algorithms/dsatur-branch-and-bound.md
+      - "41. Knapsack": specialized-algorithms/knapsack-branch-and-bound.md
+      - "42. Vertex coloring (DSATUR)": specialized-algorithms/dsatur-branch-and-bound.md
   - Exercises:
       - exercises/index.md
       - "Combinatorial optimization":
@@ -336,24 +358,26 @@ nav:
           - "22. Multidimensional knapsack (MDKP)": exercises/dp-multidimensional-knapsack.md
           - "23. Knapsack with setups (KPS)": exercises/dp-knapsack-setups.md
           - "24. Multiple knapsack (MKP)": exercises/dp-multiple-knapsack.md
-          - "25. Lot sizing": exercises/dp-lot-sizing.md
-          - "26. Coin change": exercises/dp-coin-change.md
-          - "27. Rod cutting": exercises/dp-rod-cutting.md
+          - "25. Uncapacitated lot sizing (ULS)": exercises/dp-lot-sizing.md
+          - "27. Coin change": exercises/dp-coin-change.md
+          - "28. Rod cutting": exercises/dp-rod-cutting.md
       - "Heuristics":
-          - "28. Definitions": exercises/heuristics.md
-          - "29. Constructive": exercises/constructive-heuristics.md
-          - "30. Local search": exercises/local-search.md
-          - "31. Metaheuristics": exercises/metaheuristics.md
-          - "32. MIP heuristics": exercises/mip-heuristics-classical.md
+          - "29. Definitions": exercises/heuristics.md
+          - "30. Constructive": exercises/constructive-heuristics.md
+          - "31. Local search": exercises/local-search.md
+          - "32. Metaheuristics": exercises/metaheuristics.md
+          - "33. MIP heuristics": exercises/mip-heuristics-classical.md
       - "Approximation":
-          - "33. Definitions": exercises/approximation.md
-          - "34. Bin packing": exercises/bin-packing-approximation.md
-          - "35. Knapsack": exercises/knapsack-approximation.md
-          - "36. P||Cmax": exercises/pcmax-approximation.md
-          - "37. Metric TSP": exercises/tsp-approximation.md
+          - "34. Principles": exercises/approximation.md
+          - "35. 0/1 knapsack (KP)": exercises/knapsack-approximation.md
+          - "36. Bin packing (BPP)": exercises/bin-packing-approximation.md
+          - "37. Vertex coloring (VCP)": exercises/coloring-inapproximability.md
+          - "38. Maximum clique (MCP)": exercises/clique-inapproximability.md
+          - "39. General and metric TSP": exercises/tsp-approximation.md
+          - "40. Identical parallel machines (P||Cmax)": exercises/pcmax-approximation.md
       - "Ad hoc algorithms":
-          - "38. Knapsack": exercises/knapsack-branch-and-bound.md
-          - "39. Vertex coloring (DSATUR)": exercises/dsatur-branch-and-bound.md
+          - "41. Knapsack": exercises/knapsack-branch-and-bound.md
+          - "42. Vertex coloring (DSATUR)": exercises/dsatur-branch-and-bound.md
   - Catalogue:
       - catalogue/index.md
       - "The problems at a glance": combinatorial-optimization-problems/problems.md

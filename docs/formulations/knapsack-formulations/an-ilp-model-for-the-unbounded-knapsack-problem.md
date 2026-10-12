@@ -2,7 +2,7 @@
 title: "Unbounded knapsack"
 ---
 
-# 9.7 An ILP model for the Unbounded Knapsack Problem
+# 9.8 An ILP model for the Unbounded Knapsack Problem { #sez-sec-kpf-UKP }
 
 <div class="info-capitolo" markdown>
 
@@ -10,7 +10,7 @@ title: "Unbounded knapsack"
 
 </div>
 
-The Unbounded Knapsack Problem and its reference instance (Example 2.4) are defined in [Chapter 2 «Knapsack problems», Section 2.4](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-unbounded-knapsack-problem/).
+The Unbounded Knapsack Problem and its reference instance (Example 2.4) are defined in [Chapter 2 «Knapsack problems», Section 2.5](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-unbounded-knapsack-problem/).
 
 - We introduce the following  $n$ <strong>integer variables</strong>:
 
@@ -76,4 +76,4 @@ The Unbounded Knapsack Problem and its reference instance (Example 2.4) are def
 
 ---
 
-**Next:** [9.8 An ILP model for the Multidimensional Knapsack Problem](an-ilp-model-for-the-multidimensional-knapsack-problem.md)
+**Next:** [9.9 An ILP model for the Multidimensional Knapsack Problem](an-ilp-model-for-the-multidimensional-knapsack-problem.md)

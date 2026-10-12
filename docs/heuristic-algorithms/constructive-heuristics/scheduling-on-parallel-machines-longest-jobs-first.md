@@ -2,17 +2,17 @@
 title: "Scheduling on parallel machines: longest jobs first"
 ---
 
-# 29.6 Scheduling on parallel machines: longest jobs first { #sez-sec-PCM }
+# 30.6 Scheduling on parallel machines: longest jobs first { #sez-sec-PCM }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 29** · [:material-book-open-variant: Chapter 29: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
+**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
 
 </div>
 
 - For $P\,||\,C_{\max}$ the elements are the assignments of jobs to machines, and every assignment is feasible. A natural greedy rule assigns each job to the machine that is currently <strong>least loaded</strong>, so that the loads grow as evenly as possible. As for the BPP, the rule chooses the machine, and the order of the jobs is a second, independent, choice.
 
-## 29.6.1 List scheduling { #sez-sec-LIST }
+## 30.6.1 List scheduling { #sez-sec-LIST }
 
 !!! chiave ""
 
@@ -33,7 +33,7 @@ title: "Scheduling on parallel machines: longest jobs first"
 
 <a id="box-7-ex-list"></a>
 
-!!! esempio "Example 29.5: $LIST$ on the reference instance, shortest jobs first"
+!!! esempio "Example 30.5: $LIST$ on the reference instance, shortest jobs first"
 
     Consider the list $\rho=(7,6,5,4,3,2,1)$, i.e., the jobs by non-decreasing processing time. The loads before each assignment and the chosen machine are:
 
@@ -96,7 +96,7 @@ title: "Scheduling on parallel machines: longest jobs first"
 
 <a id="box-8-prop-graham66"></a>
 
-!!! teorema "Proposition 29.3"
+!!! teorema "Proposition 30.3"
 
     For every $P\,||\,C_{\max}$ instance $I$ and every list $\rho$,
 
@@ -116,7 +116,7 @@ title: "Scheduling on parallel machines: longest jobs first"
 
 - On the example, $LIST(I)=12\le \frac{5}{3}\cdot 9=15$.
 
-## 29.6.2 Longest processing time first { #sez-sec-LPT }
+## 30.6.2 Longest processing time first { #sez-sec-LPT }
 
 !!! chiave ""
 
@@ -134,7 +134,7 @@ title: "Scheduling on parallel machines: longest jobs first"
 
 <a id="box-9-ex-lpt"></a>
 
-!!! esempio "Example 29.6: $LPT$ on the reference instance"
+!!! esempio "Example 30.6: $LPT$ on the reference instance"
 
     The jobs are already sorted, $\rho=(1,2,3,4,5,6,7)$. Jobs $1$, $2$, $3$ go to the three empty machines, with loads $(5,5,4)$; job $4$ goes to machine $3$, the least loaded: $(5,5,8)$; job $5$ goes to machine $1$: $(8,5,8)$; job $6$ to machine $2$: $(8,8,8)$; job $7$ finds three machines with load $8$ and goes to machine $1$: $(11,8,8)$. Hence $J_1=\{1,5,7\}$, $J_2=\{2,6\}$, $J_3=\{3,4\}$, $mach=(1,2,3,3,1,2,1)$, and $LPT(I)=11$:
 
@@ -144,7 +144,7 @@ title: "Scheduling on parallel machines: longest jobs first"
 
 <a id="box-10-prop-graham69"></a>
 
-!!! teorema "Proposition 29.4"
+!!! teorema "Proposition 30.4"
 
     For every $P\,||\,C_{\max}$ instance $I$,
 
@@ -168,8 +168,8 @@ title: "Scheduling on parallel machines: longest jobs first"
     \frac{LPT(I)}{z(I)}=\frac{11}{9}.
     $$
 
-    The reference instance attains Graham's bound exactly: it belongs to the family of instances, given by Graham, with $2m+1$ jobs of processing times $2m-1,2m-1,2m-2,2m-2,\dots,m+1,m+1,m,m,m$, on which $LPT$ gives $4m-1$ and the optimum is $3m$. For $m=3$ these are the times $(5,5,4,4,3,3,3)$. The bound of [Proposition 29.4](#box-10-prop-graham69) therefore cannot be improved.
+    The reference instance attains Graham's bound exactly: it belongs to the family of instances, given by Graham, with $2m+1$ jobs of processing times $2m-1,2m-1,2m-2,2m-2,\dots,m+1,m+1,m,m,m$, on which $LPT$ gives $4m-1$ and the optimum is $3m$. For $m=3$ these are the times $(5,5,4,4,3,3,3)$. The bound of [Proposition 30.4](#box-10-prop-graham69) therefore cannot be improved.
 
 ---
 
-**Next:** [29.7 The travelling salesman problem: append or insert?](the-travelling-salesman-problem-append-or-insert.md)
+**Next:** [30.7 The travelling salesman problem: append or insert?](the-travelling-salesman-problem-append-or-insert.md)

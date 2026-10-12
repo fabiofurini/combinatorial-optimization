@@ -6,13 +6,13 @@ title: "Approximation algorithms for the knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 35** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Knapsack](../exercises/knapsack-approximation.md)
+**Part 5 · Approximation algorithms · Chapter 35** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../exercises/knapsack-approximation.md)
 
 </div>
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter «Approximation algorithms»: performance ratio, relative and absolute performance guarantees, tightness, approximation schemes, PTAS and FPTAS.
+    - From this module, the chapter «Principles of approximation algorithms»: performance ratio, relative and absolute performance guarantees, tightness, approximation schemes, PTAS and FPTAS.
 
     - From this module, the chapters «Knapsack problems» and «Formulations of knapsack problems»: the KP, the LP relaxation $\mathrm{LP}_{\mathrm{KP}}$ and the bound of Dantzig, which uses the split item.
 
@@ -1594,4 +1594,4 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Knapsack](../exercises/knapsack-approximation.md)
+**Exercises on this chapter:** [:material-pencil: 0/1 knapsack (KP)](../exercises/knapsack-approximation.md)

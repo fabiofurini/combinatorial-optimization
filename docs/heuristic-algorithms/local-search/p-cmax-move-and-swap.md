@@ -2,17 +2,17 @@
 title: "P||Cmax: move and swap"
 ---
 
-# 30.8 $P\,||\,C_{\max}$: move and swap { #sez-sec-pcmax }
+# 31.8 $P\,||\,C_{\max}$: move and swap { #sez-sec-pcmax }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
+**Part 4 · Heuristic algorithms · Chapter 31** · [:material-book-open-variant: Chapter 31: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
 
 </div>
 
 - The moves of $P\,||\,C_{\max}$ transfer processing time between two machines: a move of job $j$ from machine $a$ to machine $b$ transfers $\delta=t_j$ from $a$ to $b$; a swap of jobs $j$ (on $a$) and $k$ (on $b$) transfers $\delta=t_j-t_k$, which can be negative. In both cases the new loads are $L_a-\delta$ and $L_b+\delta$, and $F(L,a,b,\delta)$ denotes the resulting change of the objective.
 
-## 30.8.1 The move local search
+## 31.8.1 The move local search
 
 !!! chiave ""
 
@@ -25,7 +25,7 @@ title: "P||Cmax: move and swap"
 
 <div class="colab-pulsanti" markdown="0"><span class="colab-etichetta">Run in Colab:</span><a class="colab-pulsante" href="https://colab.research.google.com/github/fabiofurini/combinatorial-optimization/blob/main/notebooks/local-search_python.ipynb" target="_blank" rel="noopener" title="Open the Python notebook of the chapter in Google Colab">Python</a><a class="colab-pulsante" href="https://colab.research.google.com/github/fabiofurini/combinatorial-optimization/blob/main/notebooks/local-search_cpp.ipynb" target="_blank" rel="noopener" title="Open the C++ notebook of the chapter in Google Colab">C++</a></div>
 
-## 30.8.2 The swap local search
+## 31.8.2 The swap local search
 
 !!! chiave ""
 
@@ -56,7 +56,7 @@ title: "P||Cmax: move and swap"
 
 <a id="box-8-ex-lpt"></a>
 
-!!! esempio "Example 30.5: The solution of $LPT$ is a local optimum for move, but not for swap"
+!!! esempio "Example 31.5: The solution of $LPT$ is a local optimum for move, but not for swap"
 
     The solution of $LPT$ on the $P\,||\,C_{\max}$ reference instance has $J_1=\{1,5,7\}$, $J_2=\{2,6\}$, $J_3=\{3,4\}$, loads $(11,8,8)$ and $C_{\max}=11$. Machine $1$ is the unique critical machine.
 
@@ -143,4 +143,4 @@ title: "P||Cmax: move and swap"
 
 ---
 
-**Next:** [30.9 Flat landscapes and auxiliary objectives](flat-landscapes-and-auxiliary-objectives.md)
+**Next:** [31.9 Flat landscapes and auxiliary objectives](flat-landscapes-and-auxiliary-objectives.md)

@@ -6,13 +6,13 @@ title: "Exercises · Approximation for P|Cmax"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 36** · each solution opens with a click · [:material-book-open-variant: Chapter 36: P||Cmax](../approximation-algorithms/pcmax-approximation.md) · [:material-file-pdf-box: Exercises, volume 5 (PDF)](../pdf/exercises-5-approximation-algorithms.pdf)
+**Exercises · Chapter 40** · each solution opens with a click · [:material-book-open-variant: Chapter 40: Identical parallel machines (P||Cmax)](../approximation-algorithms/pcmax-approximation.md) · [:material-file-pdf-box: Exercises, volume 5 (PDF)](../pdf/exercises-5-approximation-algorithms.pdf)
 
 </div>
 
-<a id="esercizio-36-1"></a>
+<a id="esercizio-40-1"></a>
 
-!!! esercizio "Exercise 36.1: $P\,||\,C_{\max}$ approximation 1"
+!!! esercizio "Exercise 40.1: $P\,||\,C_{\max}$ approximation 1"
 
     We consider $m=3$ identical machines and a set $\mathscr{J}=\{1,\dots,7\}$ of $7$ jobs ($n=7$), with the following processing times:
 
@@ -178,9 +178,9 @@ title: "Exercises · Approximation for P|Cmax"
 
         Both guarantees hold. With the list in the input order, the two longest jobs arrive when the machines are already loaded, and $LIST$ is $4$ units above the optimum; sorting the list puts them first and closes the gap.
 
-<a id="esercizio-36-2"></a>
+<a id="esercizio-40-2"></a>
 
-!!! esercizio "Exercise 36.2: $P\,||\,C_{\max}$ approximation 2"
+!!! esercizio "Exercise 40.2: $P\,||\,C_{\max}$ approximation 2"
 
     We consider $m=3$ identical machines and a set $\mathscr{J}=\{1,\dots,7\}$ of $7$ jobs ($n=7$), with the following processing times:
 
@@ -287,9 +287,9 @@ title: "Exercises · Approximation for P|Cmax"
 
         The long job is the one that hurts when it comes last; $LPT$ schedules it first, and the short jobs level the loads around it.
 
-<a id="esercizio-36-3"></a>
+<a id="esercizio-40-3"></a>
 
-!!! esercizio "Exercise 36.3: $P\,||\,C_{\max}$ approximation 3"
+!!! esercizio "Exercise 40.3: $P\,||\,C_{\max}$ approximation 3"
 
     We consider $m=4$ identical machines and a set $\mathscr{J}=\{1,\dots,9\}$ of $9$ jobs ($n=9$), with the following processing times:
 

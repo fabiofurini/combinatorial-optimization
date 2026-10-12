@@ -30,113 +30,60 @@ title: "Routing problems"
 
     - compute a lower bound on the optimal length from the two shortest edges of every city, and measure the gap with a tour.
 
-## 6.1 The travelling salesman problem
+## 6.1 Overview of the family
 
-<a id="box-1-defTSP"></a>
+- The <strong>routing problems</strong> of this chapter share the same data: a set $\mathscr{V} = \{1,2,\dots,n\}$ of $n$ cities and, for each pair of distinct cities $i,j \in \mathscr{V}$, a <em>distance</em> $d_{ij} \in \Z_{\ge 1}$.
 
-!!! definizione "Definition 6.1: Travelling salesman problem"
+- A solution is a <strong>tour</strong>, a permutation $\sigma$ of the cities read as a closed route that visits every city exactly once; its <strong>length</strong> $L(\sigma)$ is the sum of the distances travelled.
 
-    Given:
+- The objective is to minimize the length of the tour.
 
-    1. a set $\mathscr{V} = \{1,2,\dots,n\}$ of $n$ <em>cities</em>,
+!!! chiave ""
 
-    2. for each pair of distinct cities $i,j \in \mathscr{V}$, a <em>distance</em> $d_{ij} \in \Z_{\ge 1}$, with $d_{ij}=d_{ji}$,
+    A routing problem finds a shortest tour through all the cities. The members of the family differ in the properties of the distances: symmetric, metric or asymmetric.
 
-    the <strong>travelling salesman problem</strong> (TSP) asks to find a closed route that starts from a city, visits every other city exactly once and returns to the starting city, so that the total distance travelled is minimized.
+- The table lists the members of the family, with the section that defines each of them.
 
-- A <strong>TSP instance</strong> is specified by:
-
-    1. one integer number:
-
-        - the number of cities $n \in \Z_{\ge 3}$,
-
-    2. one symmetric matrix of integer numbers of size $n \times n$:
-
-        - $D=(d_{ij})$, containing the distances; the diagonal entries are not used.
-
-- A <strong>TSP feasible solution</strong>, called a <strong>tour</strong>, is a permutation of the cities
-
-    $$
-    \sigma = (\sigma_1,\sigma_2,\dots,\sigma_n),
-    $$
-
-    read as the closed route $\sigma_1 \to \sigma_2 \to \dots \to \sigma_n \to \sigma_1$. Its <strong>length</strong> is
-
-    $$
-    L(\sigma) = \sum_{k=1}^{n-1} d_{\sigma_k \sigma_{k+1}} + d_{\sigma_n \sigma_1},
-    $$
-
-    where the last term is the distance travelled to return to the starting city.
-
-- Different permutations may describe the same tour: the starting city can be any of the $n$ cities, and, since the distances are symmetric, the tour can be travelled in either direction.
-
-    !!! chiave ""
-
-        Given a TSP instance, the TSP can be formally stated as:
-
-        \begin{equation*}
-        \label{TSP}
-        \tilde{\sigma}
-        \in
-        \argmin_{\sigma}
-        \left\{
-        L(\sigma) = \sum_{k=1}^{n-1} d_{\sigma_k \sigma_{k+1}} + d_{\sigma_n \sigma_1}
-        \;:\;
-        \sigma \text{ is a permutation of } \mathscr{V}
-        \right\}. \tag{6.1}
-        \end{equation*}
-
-- We denote by $z(I)$ the length of an optimal tour $\tilde{\sigma}$ of the instance $I$.
-
-### 6.1.1 Assumptions
-
-- We make the following assumptions:
-
-    1. There are at least three cities (with one or two cities there is only one route). Formally:
-
-        $$
-        n \ge 3
-        $$
-
-    2. The distances are symmetric (travelling from $i$ to $j$ costs as much as travelling from $j$ to $i$). Formally:
-
-        $$
-        d_{ij}=d_{ji},~~~~ \forall i,j \in \mathscr{V},~ i\neq j
-        $$
-
-<a id="box-2-ex-tsp5"></a>
-
-!!! esempio "Example 6.1: TSP instance"
-
-    We consider a set $\mathscr{V}=\{1,2,3,4,5\}$ of $5$ cities ($n=5$), with the following distances:
-
-    $$
-    \begin{array}{c|ccccc}
-    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} \\
-    \hline {1} & --- & {5} & {2} & {2} & {9} \\
-    {2} & {5} & --- & {4} & {3} & {4} \\
-    {3} & {2} & {4} & --- & {4} & {7} \\
-    {4} & {2} & {3} & {4} & --- & {7} \\
-    {5} & {9} & {4} & {7} & {7} & --- \\
-    \hline
-    \end{array}
-    $$
-
-    This is the TSP instance of the MIP modelling course. The instance can be drawn as a complete graph, with one node per city and one edge, labelled with the distance, per pair of cities. The bold edges form the tour $\sigma=(1,3,5,2,4)$, and the cities are drawn in the order of the tour:
-
-    ![Figure 1](../../img/tsp/fig01.svg){ .fig loading=lazy  }
-
-    Its length is $L(\sigma)=d_{13}+d_{35}+d_{52}+d_{24}+d_{41}=2+7+4+3+2=18$.
+<div class="tabella" markdown="0"><table>
+<tr>
+<th><strong>Problem</strong></th>
+<th><strong>Acronym</strong></th>
+<th><strong>Distances</strong></th>
+<th><strong>Section</strong></th>
+</tr>
+<tr>
+<td>travelling salesman problem</td>
+<td>TSP</td>
+<td>symmetric, <span class="arithmatex">\(d_{ij} = d_{ji}\)</span></td>
+<td><a href="the-travelling-salesman-problem/#sez-sec-tsp-TSP">6.2</a></td>
+</tr>
+<tr>
+<td>metric travelling salesman problem</td>
+<td>metric TSP</td>
+<td>symmetric, with the triangle inequality</td>
+<td><a href="variants-metric-and-asymmetric-tsp/#sez-sec-tsp-variants">6.3</a></td>
+</tr>
+<tr>
+<td>asymmetric travelling salesman problem</td>
+<td>ATSP</td>
+<td><span class="arithmatex">\(d_{ij}\)</span> may differ from <span class="arithmatex">\(d_{ji}\)</span></td>
+<td><a href="variants-metric-and-asymmetric-tsp/#sez-sec-tsp-variants">6.3</a></td>
+</tr>
+</table></div>
 
 <div class="grid cards sottopagine" markdown>
 
 -   **Definition**
 
-    The travelling salesman problem · Assumptions
+    Overview of the family
 
-    [:octicons-arrow-right-24: Open](#61-the-travelling-salesman-problem)
+    [:octicons-arrow-right-24: Open](#61-overview-of-the-family)
 
--   **6.2 Variants: metric and asymmetric TSP**
+-   **6.2 The travelling salesman problem**
+
+    [:octicons-arrow-right-24: Open](the-travelling-salesman-problem.md)
+
+-   **6.3 Variants: metric and asymmetric TSP**
 
     A first tour by hand · A combinatorial lower bound · Remarks · Typical mistakes · In summary
 
@@ -146,7 +93,7 @@ title: "Routing problems"
 
 ---
 
-**Next:** [6.2 Variants: metric and asymmetric TSP](variants-metric-and-asymmetric-tsp.md)
+**Next:** [6.2 The travelling salesman problem](the-travelling-salesman-problem.md)
 
 ---
 

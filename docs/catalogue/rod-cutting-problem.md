@@ -26,4 +26,4 @@ title: "Rod cutting problem (RCP)"
 
     the <strong>Rod-Cutting Problem</strong> (RCP) asks to decide how many copies of each piece length to cut, so that the total length of the obtained pieces is equal to the rod length, and the total profit of the obtained pieces is maximized.
 
-- Treated in [Chapter 16 «Principles of dynamic programming»](../dynamic-programming/dp-principles.md), [Chapter 27 «DP for the rod cutting problem»](../dynamic-programming/dp-rod-cutting/index.md).
+- Treated in [Chapter 16 «Principles of dynamic programming»](../dynamic-programming/dp-principles.md), [Chapter 28 «DP for the rod cutting problem»](../dynamic-programming/dp-rod-cutting/index.md).

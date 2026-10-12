@@ -1,18 +1,18 @@
 ---
-title: "Exercises · Approximation algorithms: definitions"
+title: "Exercises · Principles of approximation algorithms"
 ---
 
-# Exercises · Approximation algorithms: definitions
+# Exercises · Principles of approximation algorithms
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 33** · each solution opens with a click · [:material-book-open-variant: Chapter 33: Definitions](../approximation-algorithms/approximation.md) · [:material-file-pdf-box: Exercises, volume 5 (PDF)](../pdf/exercises-5-approximation-algorithms.pdf)
+**Exercises · Chapter 34** · each solution opens with a click · [:material-book-open-variant: Chapter 34: Principles](../approximation-algorithms/approximation.md) · [:material-file-pdf-box: Exercises, volume 5 (PDF)](../pdf/exercises-5-approximation-algorithms.pdf)
 
 </div>
 
 !!! formula "Definitions used in these exercises"
 
-    The measures of the chapter [Approximation algorithms](https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/approximation/), for an algorithm $\mathscr{A}$ with value $\mathscr{A}(I)$ on an instance $I$ of optimal value $z(I)$:
+    The measures of the chapter [Principles of approximation algorithms](https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/approximation/), for an algorithm $\mathscr{A}$ with value $\mathscr{A}(I)$ on an instance $I$ of optimal value $z(I)$:
 
     \begin{align*}
     &\text{performance ratio:} && \frac{\mathscr{A}(I)}{z(I)}~\text{(minimization)}, && \frac{z(I)}{\mathscr{A}(I)}~\text{(maximization)}; \tag{A1}\\
@@ -26,9 +26,9 @@ title: "Exercises · Approximation algorithms: definitions"
     r(\mathscr{A})=\sup_{I}~\frac{\mathscr{A}(I)}{z(I)}~\text{(minimization)}, \qquad r(\mathscr{A})=\sup_{I}~\frac{z(I)}{\mathscr{A}(I)}~\text{(maximization)}. \tag{A4}
     \end{equation*}
 
-<a id="esercizio-33-1"></a>
+<a id="esercizio-34-1"></a>
 
-!!! esercizio "Exercise 33.1: Performance ratios and errors (1)"
+!!! esercizio "Exercise 34.1: Performance ratios and errors (1)"
 
     A heuristic algorithm $\mathscr{A}$ for a <strong>minimization</strong> problem and a heuristic algorithm $\mathscr{B}$ for a <strong>maximization</strong> problem give the following values on some instances:
 
@@ -160,9 +160,9 @@ title: "Exercises · Approximation algorithms: definitions"
 
     4. Yes: the instance $I_3$ attains the ratio $\frac{3}{2}$, so no smaller constant is a guarantee, and $r(\mathscr{A})=\frac{3}{2}$. Without a proof, the data give only lower bounds: $r(\mathscr{A})\ge\frac{3}{2}$ and $r(\mathscr{B})\ge\frac{3}{2}$ (instance $I_3$ of $\mathscr{B}$).
 
-<a id="esercizio-33-2"></a>
+<a id="esercizio-34-2"></a>
 
-!!! esercizio "Exercise 33.2: A tight guarantee for a simple algorithm (1)"
+!!! esercizio "Exercise 34.2: A tight guarantee for a simple algorithm (1)"
 
     For $P\|C_{\max}$ consider the algorithm $\mathrm{ONE}$, which assigns all the jobs to machine $1$, so that $\mathrm{ONE}(I)=\sum_{j\in\mathscr{J}}t_j$. Every instance satisfies $z(I)\ge\frac{\sum_j t_j}{m}$, since the $m$ loads sum to $\sum_j t_j$. Consider the instances
 
@@ -235,9 +235,9 @@ title: "Exercises · Approximation algorithms: definitions"
 
     4. Multiplying the times of $I_1$ by $10$ gives $t=(70,50,40,30,30)$, with $\mathrm{ONE}(I)=220$ and $z(I)=110$: the additive error goes from $11$ to $110$. Multiplying by any $K$ multiplies the error by $K$, so no constant $\beta$ bounds it: $e(\mathrm{ONE})=\infty$, while the ratio stays $2$.
 
-<a id="esercizio-33-3"></a>
+<a id="esercizio-34-3"></a>
 
-!!! esercizio "Exercise 33.3: An algorithm without a guarantee (1)"
+!!! esercizio "Exercise 34.3: An algorithm without a guarantee (1)"
 
     For the BPP consider the algorithm $\mathrm{SEP}$, which packs every item in a separate bin, so that $\mathrm{SEP}(I)=n$. Consider the instance $I_0$ with $c=10$ and weights $(6,5,4,3,2)$, and, for $k\in\Z_{\ge 2}$, the instances $I_k$ with $c=k$ and $2k$ items of weight $1$.
 
@@ -296,9 +296,9 @@ title: "Exercises · Approximation algorithms: definitions"
 
     4. The assumption $\sum_j w_j>c$ gives $z(I)\ge 2$, so $\frac{\mathrm{SEP}(I)}{z(I)}=\frac{n}{z(I)}\le\frac{n}{2}$. The bound depends on the instance through $n$: a relative performance guarantee must be one constant $\alpha$ valid for all the instances.
 
-<a id="esercizio-33-4"></a>
+<a id="esercizio-34-4"></a>
 
-!!! esercizio "Exercise 33.4: Unbounded ratio of a greedy algorithm (1)"
+!!! esercizio "Exercise 34.4: Unbounded ratio of a greedy algorithm (1)"
 
     For the KP consider the algorithm $\mathrm{GR}$: sort the items by non-increasing efficiency $\frac{p_j}{w_j}$ (ties: smallest index) and insert each item, in this order, if it fits in the residual capacity. Consider the instance $I_0$ with $c=9$, $p=(10,7,6,4)$, $w=(5,4,3,3)$, and, for $M\in\Z_{\ge 3}$, the instances $I_M$ with $c=M$ and two items: $p_1=2$, $w_1=1$ and $p_2=M$, $w_2=M$.
 
@@ -355,9 +355,9 @@ title: "Exercises · Approximation algorithms: definitions"
 
     4. The efficient item is small and blocks the large item, whose profit is almost all the optimal value: the order by efficiency ignores how much profit an item brings in absolute terms.
 
-<a id="esercizio-33-5"></a>
+<a id="esercizio-34-5"></a>
 
-!!! esercizio "Exercise 33.5: Approximation schemes (1)"
+!!! esercizio "Exercise 34.5: Approximation schemes (1)"
 
     An approximation scheme $\{\mathscr{A}_\varepsilon\}_{\varepsilon\in(0,1)}$ is run on some instances. The table gives the type of problem, the accuracy parameter $\varepsilon$, the optimal value and the value returned:
 

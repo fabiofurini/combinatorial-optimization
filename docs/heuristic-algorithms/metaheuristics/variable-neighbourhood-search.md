@@ -2,11 +2,11 @@
 title: "Variable neighbourhood search"
 ---
 
-# 31.7 Variable neighbourhood search { #sez-sec-vns }
+# 32.7 Variable neighbourhood search { #sez-sec-vns }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 31** · [:material-book-open-variant: Chapter 31: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
+**Part 4 · Heuristic algorithms · Chapter 32** · [:material-book-open-variant: Chapter 32: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
 
 </div>
 
@@ -31,13 +31,13 @@ title: "Variable neighbourhood search"
 
 - Here $N_k$ contains the assignments obtained by moving $k$ jobs (or fewer, if the same job is drawn twice). Since a swap of two jobs is the combination of two moves, $N_2$ contains the swap neighbourhood: shaking with $k=2$ can reproduce the swaps that the move neighbourhood cannot see.
 
-## 31.7.1 Example
+## 32.7.1 Example
 
 <a id="box-8-ex-vnsPCM"></a>
 
-!!! esempio "Example 31.7: $VNS$ on the $P\,||\,C_{\max}$ reference instance"
+!!! esempio "Example 32.7: $VNS$ on the $P\,||\,C_{\max}$ reference instance"
 
-    We start from the LPT solution, with loads $(11,8,8)$, and use $k_{\max}=3$ and $seed=1$ (random numbers $0.0000$, $0.1315$, $0.7556$, $0.4587$, $0.5328$, $0.2190$, $0.0470$, $0.6789$). MOVEDESCENT does not change the LPT solution, which is a local optimum for the move neighbourhood ([Example 31.5](tabu-search.md#box-6-ex-tsPCM)). Each random move uses two numbers: $j=1+\lfloor 7u\rfloor$ and $g=1+\lfloor 2u\rfloor$.
+    We start from the LPT solution, with loads $(11,8,8)$, and use $k_{\max}=3$ and $seed=1$ (random numbers $0.0000$, $0.1315$, $0.7556$, $0.4587$, $0.5328$, $0.2190$, $0.0470$, $0.6789$). MOVEDESCENT does not change the LPT solution, which is a local optimum for the move neighbourhood ([Example 32.5](tabu-search.md#box-6-ex-tsPCM)). Each random move uses two numbers: $j=1+\lfloor 7u\rfloor$ and $g=1+\lfloor 2u\rfloor$.
 
     - <strong>Iteration 1</strong>, $k=1$: job $j=1+\lfloor 7\cdot 0.0000\rfloor=1$ moves from $M_1$ to the first other machine ($g=1+\lfloor 2\cdot 0.1315\rfloor=1$), $M_2$: loads $(6,13,8)$. MOVEDESCENT moves job $6$ from $M_2$ to $M_1$: loads $(9,10,8)$, $C_{\max}=10$, better than $11$. The new solution $J_1=\{5,6,7\}$, $J_2=\{1,2\}$, $J_3=\{3,4\}$ is accepted, and $k=1$.
 
@@ -147,8 +147,8 @@ title: "Variable neighbourhood search"
 </tr>
 </table></div>
 
-- With $k_{\max}=3$, $VNS$ reaches the optimum $69$ in $7$ runs out of $10$, usually in a few tens of iterations; the best tabu search of Section [31.5.2](tabu-search.md#sez-sec-ts-tsp) needed a carefully tuned tenure. When $VNS$ fails, the search is stuck at $70$: the shaking explores at most three moves away, and the optimum is farther. Larger $k_{\max}$, or restarts, can be added at the price of more iterations.
+- With $k_{\max}=3$, $VNS$ reaches the optimum $69$ in $7$ runs out of $10$, usually in a few tens of iterations; the best tabu search of Section [32.5.2](tabu-search.md#sez-sec-ts-tsp) needed a carefully tuned tenure. When $VNS$ fails, the search is stuck at $70$: the shaking explores at most three moves away, and the optimum is farther. Larger $k_{\max}$, or restarts, can be added at the price of more iterations.
 
 ---
 
-**Next:** [31.8 GRASP](grasp.md)
+**Next:** [32.8 GRASP](grasp.md)

@@ -2,15 +2,15 @@
 title: "TSP: 2-opt and Or-opt"
 ---
 
-# 30.7 TSP: 2-opt and Or-opt { #sez-sec-tsp }
+# 31.7 TSP: 2-opt and Or-opt { #sez-sec-tsp }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
+**Part 4 · Heuristic algorithms · Chapter 31** · [:material-book-open-variant: Chapter 31: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
 
 </div>
 
-## 30.7.1 The 2-opt local search
+## 31.7.1 The 2-opt local search
 
 !!! chiave ""
 
@@ -35,7 +35,7 @@ title: "TSP: 2-opt and Or-opt"
 
 <a id="box-5-ex-twooptref"></a>
 
-!!! esempio "Example 30.2: $2OPT$ on the TSP reference instance"
+!!! esempio "Example 31.2: $2OPT$ on the TSP reference instance"
 
     We start from the tour of $NN$ from city $1$, $\sigma=(1,3,2,4,5)$, of length $25$. Its $5$ moves are
 
@@ -92,7 +92,7 @@ title: "TSP: 2-opt and Or-opt"
 
     ![Figure 3](../../img/local-search/fig03.svg){ .fig loading=lazy  }
 
-## 30.7.2 The Or-opt local search
+## 31.7.2 The Or-opt local search
 
 !!! chiave ""
 
@@ -110,13 +110,13 @@ title: "TSP: 2-opt and Or-opt"
 
 - A 2-opt local optimum need not be an Or-opt local optimum, and vice versa: the two neighbourhoods contain different moves.
 
-## 30.7.3 First and best improvement on a medium instance
+## 31.7.3 First and best improvement on a medium instance
 
 - On $5$ cities the 2-opt neighbourhood is small and both rules reach the optimum. To see the difference between the two rules, and the role of Or-opt, we use a medium instance with $10$ cities. This instance is not metric: $d_{68}=8>d_{67}+d_{78}=4+3$ and $d_{6,10}=11>d_{67}+d_{7,10}=4+6$.
 
 <a id="box-6-ex-tsp10"></a>
 
-!!! esempio "Example 30.3: A TSP instance with $10$ cities"
+!!! esempio "Example 31.3: A TSP instance with $10$ cities"
 
     The cities have integer coordinates, and $d_{ij}$ is the Euclidean distance rounded to the nearest integer:
 
@@ -247,9 +247,9 @@ title: "TSP: 2-opt and Or-opt"
 
 <a id="box-7-ex-oropt"></a>
 
-!!! esempio "Example 30.4: $OROPT$ from a 2-opt local optimum"
+!!! esempio "Example 31.4: $OROPT$ from a 2-opt local optimum"
 
-    On the instance of [Example 30.3](#box-6-ex-tsp10), first improvement stopped in the 2-opt local optimum $\sigma=(1,10,2,3,4,5,6,7,9,8)$, of length $41$. The Or-opt move that takes the segment $(9)$, with $\ell=1$, between $p=7$ and $q=8$, and inserts it between $a=3$ and $b=4$ has
+    On the instance of [Example 31.3](#box-6-ex-tsp10), first improvement stopped in the 2-opt local optimum $\sigma=(1,10,2,3,4,5,6,7,9,8)$, of length $41$. The Or-opt move that takes the segment $(9)$, with $\ell=1$, between $p=7$ and $q=8$, and inserts it between $a=3$ and $b=4$ has
 
     $$
     \Delta = d_{78}+d_{39}+d_{94}-d_{79}-d_{98}-d_{34} = 3+4+3-4-4-4 = -2 .
@@ -257,7 +257,7 @@ title: "TSP: 2-opt and Or-opt"
 
     It is the first improving move found, after $60$ evaluations, and also the best of the $170$ moves. The new tour $(1,10,2,3,9,4,5,6,7,8)$, of length $39$, is optimal. Among all the $181\,440$ tours, only $3$ are Or-opt local optima, of length $39$, $43$ and $44$, and only the optimal tour is a local optimum for both 2-opt and Or-opt.
 
-## 30.7.4 3-opt and Lin–Kernighan
+## 31.7.4 3-opt and Lin–Kernighan
 
 - The <strong>3-opt</strong> neighbourhood removes three edges and reconnects the three paths in all the possible ways (Lin, 1965). Its local optima are better than those of 2-opt, but an iteration costs $O(n^3)$ time, and the neighbourhood is explored only partially in practice.
 
@@ -267,4 +267,4 @@ title: "TSP: 2-opt and Or-opt"
 
 ---
 
-**Next:** [30.8 $P\,||\,C_{\max}$: move and swap](p-cmax-move-and-swap.md)
+**Next:** [31.8 $P\,||\,C_{\max}$: move and swap](p-cmax-move-and-swap.md)

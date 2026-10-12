@@ -2,7 +2,7 @@
 title: "Subset sum"
 ---
 
-# 2.2 The subset sum problem
+# 2.3 The subset sum problem { #sez-sec-kp-SSP }
 
 <div class="info-capitolo" markdown>
 
@@ -111,7 +111,7 @@ title: "Subset sum"
 
     If $\sum_{j\in \tilde{S}} w_j = c$, then the answer to the SSP is <strong>yes</strong>; otherwise, if $\sum_{j\in \tilde{S}} w_j < c$, the answer is <strong>no</strong>.
 
-## 2.2.1 Assumptions
+## 2.3.1 Assumptions
 
 - We make the following assumptions:
 
@@ -129,4 +129,4 @@ title: "Subset sum"
 
 ---
 
-**Next:** [2.3 The bounded knapsack problem](the-bounded-knapsack-problem.md)
+**Next:** [2.4 The bounded knapsack problem](the-bounded-knapsack-problem.md)

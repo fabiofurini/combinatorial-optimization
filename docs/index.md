@@ -67,7 +67,7 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 
     ---
 
-    28\. Definitions · 29\. Constructive · 30\. Local search · 31\. Metaheuristics · 32\. MIP heuristics
+    29\. Definitions · 30\. Constructive · 31\. Local search · 32\. Metaheuristics · 33\. MIP heuristics
 
     [:octicons-arrow-right-24: The chapters](heuristic-algorithms/index.md)
 
@@ -75,7 +75,7 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 
     ---
 
-    33\. Definitions · 34\. Bin packing · 35\. Knapsack · 36\. P||Cmax · 37\. Metric TSP
+    Principles · Knapsack problems · Packing problems · Coloring problems · Clique problems · Routing problems · Scheduling problems
 
     [:octicons-arrow-right-24: The chapters](approximation-algorithms/index.md)
 
@@ -83,7 +83,7 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 
     ---
 
-    38\. Knapsack · 39\. Vertex coloring (DSATUR)
+    41\. Knapsack · 42\. Vertex coloring (DSATUR)
 
     [:octicons-arrow-right-24: The chapters](specialized-algorithms/index.md)
 

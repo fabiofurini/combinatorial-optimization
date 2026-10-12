@@ -2,11 +2,11 @@
 title: "KP: feasibility and penalties"
 ---
 
-# 30.10 KP: feasibility and penalties { #sez-sec-kp }
+# 31.10 KP: feasibility and penalties { #sez-sec-kp }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
+**Part 4 · Heuristic algorithms · Chapter 31** · [:material-book-open-variant: Chapter 31: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
 
 </div>
 
@@ -28,7 +28,7 @@ title: "KP: feasibility and penalties"
 
     where $\alpha>0$ is the <strong>penalty</strong> for each unit of excess weight. For a feasible $x$, $g_\alpha(x)$ is the profit of $x$.
 
-## 30.10.1 Staying feasible
+## 31.10.1 Staying feasible
 
 !!! chiave ""
 
@@ -43,7 +43,7 @@ title: "KP: feasibility and penalties"
 
 - With the first-improvement rule, if an improving flip is found the swaps are not examined. Only flips that <em>add</em> an item can improve the profit; flips that remove an item are kept in the neighbourhood for uniformity. An iteration costs $O(n^2)$ time, because of the swaps.
 
-## 30.10.2 Penalizing the excess weight
+## 31.10.2 Penalizing the excess weight
 
 !!! chiave ""
 
@@ -62,7 +62,7 @@ title: "KP: feasibility and penalties"
 
 <a id="box-14-ex-kppen"></a>
 
-!!! esempio "Example 30.8: Penalties on the KP reference instance"
+!!! esempio "Example 31.8: Penalties on the KP reference instance"
 
     We start from the solution of $GR$, $x=(1,0,1,0)$, of weight $8$ and profit $16$, which is a local optimum for the flip neighbourhood restricted to feasible solutions. The values $g_\alpha$ of its four flips are
 
@@ -133,7 +133,7 @@ title: "KP: feasibility and penalties"
 
 <a id="box-15-prop-penalty"></a>
 
-!!! teorema "Proposition 30.7"
+!!! teorema "Proposition 31.7"
 
     Let the data be integer and let $\alpha>\max_{i\in\mathscr{I}} p_i$. Then:
 
@@ -149,4 +149,4 @@ title: "KP: feasibility and penalties"
 
 ---
 
-**Next:** [30.11 Variable neighbourhood descent](variable-neighbourhood-descent.md)
+**Next:** [31.11 Variable neighbourhood descent](variable-neighbourhood-descent.md)

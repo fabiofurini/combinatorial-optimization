@@ -1,36 +1,14 @@
 ---
-title: "Scheduling problems"
+title: "Scheduling on identical parallel machines"
 ---
 
-# Scheduling problems
+# 7.2 Scheduling on identical parallel machines { #sez-sec-pm-PCmax }
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 7** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Scheduling problems](../exercises/pcmax.md)
+**Part 1 · Combinatorial optimization problems · Chapter 7** · [:material-book-open-variant: Chapter 7: Scheduling problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Scheduling problems](../../exercises/pcmax.md)
 
 </div>
-
-!!! nota "Prerequisites"
-
-    - From this module, the chapter «Combinatorial optimization problems»: what a combinatorial optimization problem is, the number of candidate solutions, and primal and dual bounds.
-
-    - From the same chapter, the reference $P\,||\,C_{\max}$ instance with $7$ jobs and $3$ machines, and the partitions of a set (Bell and Stirling numbers).
-
-!!! chiave "Objectives"
-
-    At the end of this chapter you will be able to:
-
-    - classify a scheduling problem with the three-field notation, and state the problem $P\,||\,C_{\max}$;
-
-    - describe a schedule by the sets of jobs of the machines, and compute loads and makespan;
-
-    - count the assignments and the distinct schedules of an instance;
-
-    - build a first schedule by hand, assigning every job to the least loaded machine;
-
-    - compute a lower bound on the optimal makespan and use it to prove that a schedule is optimal.
-
-## 7.1 Scheduling on identical parallel machines
 
 <a id="box-1-defPCmax"></a>
 
@@ -46,7 +24,7 @@ title: "Scheduling problems"
 
     the problem $P\,||\,C_{\max}$ asks to assign each job to a machine, so that the time needed to complete all the jobs, i.e., the largest total processing time assigned to a machine, is minimized.
 
-- The name $P\,||\,C_{\max}$ comes from the three-field notation of scheduling problems (Section [7.2](#sez-sec-threefield)).
+- The name $P\,||\,C_{\max}$ comes from the three-field notation of scheduling problems (Section [7.1.1](index.md#sez-sec-threefield)).
 
 - A <strong>$P\,||\,C_{\max}$ instance</strong> is specified by:
 
@@ -96,7 +74,7 @@ title: "Scheduling problems"
 
 - We denote by $z(I)$ the optimal makespan of the instance $I$.
 
-### 7.1.1 Assumptions
+## 7.2.1 Assumptions
 
 - We make the following assumption:
 
@@ -122,19 +100,7 @@ title: "Scheduling problems"
 
     This is the $P\,||\,C_{\max}$ instance of the MIP modelling course. The assignment $\mathrm{mach}=(1,2,3,3,1,2,1)$ gives $J_1=\{1,5,7\}$, $J_2=\{2,6\}$, $J_3=\{3,4\}$, with loads $L_1=11$, $L_2=8$, $L_3=8$ and makespan $11$:
 
-    ![Figure 1](../img/pcmax/fig01.svg){ .fig loading=lazy  }
-
-## 7.2 The three-field notation { #sez-sec-threefield }
-
-- Scheduling problems are classified with the <strong>three-field notation</strong> $\alpha\,|\,\beta\,|\,\gamma$ of Graham, Lawler, Lenstra and Rinnooy Kan, where:
-
-    1. $\alpha$ describes the <strong>machine environment</strong>: $1$ for a single machine, $P$ for identical parallel machines, $Q$ for parallel machines with different speeds, $R$ for unrelated parallel machines;
-
-    2. $\beta$ describes the <strong>job characteristics</strong>, such as release dates $r_j$ or precedence constraints <em>prec</em>; an empty field means that there are none;
-
-    3. $\gamma$ describes the <strong>objective function</strong>, such as the makespan $C_{\max}$ or the total completion time $\sum_j C_j$.
-
-- In this notation, $P\,||\,C_{\max}$ is the problem of scheduling jobs without additional characteristics on identical parallel machines, minimizing the makespan.
+    ![Figure 1](../../img/pcmax/fig01.svg){ .fig loading=lazy  }
 
 ## 7.3 Counting the solutions
 
@@ -255,7 +221,7 @@ title: "Scheduling problems"
 
     The assignment $\mathrm{mach}=(1,2,1,2,3,3,3)$ gives $J_1=\{1,3\}$, $J_2=\{2,4\}$, $J_3=\{5,6,7\}$, all with load $9$, and makespan $9$:
 
-    ![Figure 2](../img/pcmax/fig02.svg){ .fig loading=lazy  }
+    ![Figure 2](../../img/pcmax/fig02.svg){ .fig loading=lazy  }
 
     It attains the lower bound, so it is optimal: $z(I)=9$. The three machines finish together, and no idle time is left before the makespan.
 
@@ -346,8 +312,9 @@ title: "Scheduling problems"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Scheduling problems](../exercises/pcmax.md)
+**Exercises on this chapter:** [:material-pencil: Scheduling problems](../../exercises/pcmax.md)
 
 ---
 
-**In depth:** [:material-star-outline: the course on this problem](../selected-problems/pcmax.md)
+**In depth:** [:material-star-outline: the course on this problem](../../selected-problems/pcmax.md)
+

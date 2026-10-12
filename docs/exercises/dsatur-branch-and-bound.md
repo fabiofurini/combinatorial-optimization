@@ -6,7 +6,7 @@ title: "Exercises · Vertex coloring: the DSATUR branch-and-bound"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 39** · each solution opens with a click · [:material-book-open-variant: Chapter 39: Vertex coloring (DSATUR)](../specialized-algorithms/dsatur-branch-and-bound.md) · [:material-file-pdf-box: Exercises, volume 6 (PDF)](../pdf/exercises-6-specialized-algorithms.pdf)
+**Exercises · Chapter 42** · each solution opens with a click · [:material-book-open-variant: Chapter 42: Vertex coloring (DSATUR)](../specialized-algorithms/dsatur-branch-and-bound.md) · [:material-file-pdf-box: Exercises, volume 6 (PDF)](../pdf/exercises-6-specialized-algorithms.pdf)
 
 </div>
 
@@ -29,9 +29,9 @@ title: "Exercises · Vertex coloring: the DSATUR branch-and-bound"
 
     - **(D5)** <strong>Search.</strong> Depth first: the list is a stack and the child with the smallest color is extracted first; the nodes are numbered in the order of evaluation.
 
-<a id="esercizio-39-1"></a>
+<a id="esercizio-42-1"></a>
 
-!!! esercizio "Exercise 39.1: The root node of the DSATUR branch-and-bound (P1)"
+!!! esercizio "Exercise 42.1: The root node of the DSATUR branch-and-bound (P1)"
 
     We consider two graphs. The graph $G_a$ of an exam calendar, with $V=\{1,\dots,6\}$ and the edges
 
@@ -174,9 +174,9 @@ title: "Exercises · Vertex coloring: the DSATUR branch-and-bound"
 
         On $G_a$ the clique $\{2,3,1\}$ meets the $DSATUR$ bound: no branching. On $G_b$ the clique bound is $2$ and the tree is needed to prove $\chi(C_5)=3$.
 
-<a id="esercizio-39-2"></a>
+<a id="esercizio-42-2"></a>
 
-!!! esercizio "Exercise 39.2: Proving a lower bound: the wheel $W_5$ (P2)"
+!!! esercizio "Exercise 42.2: Proving a lower bound: the wheel $W_5$ (P2)"
 
     We consider the wheel $W_5$ (a cycle on $1,\dots,5$ and the hub $6$), the graph $G=(V,E)$ with $V=\{1,\dots,6\}$ and the edges
 
@@ -352,9 +352,9 @@ title: "Exercises · Vertex coloring: the DSATUR branch-and-bound"
 
         The clique bound gives only $3$: the tree proves that the odd cycle and the hub need a fourth color.
 
-<a id="esercizio-39-3"></a>
+<a id="esercizio-42-3"></a>
 
-!!! esercizio "Exercise 39.3: The complement of the cycle $C_7$ (P3)"
+!!! esercizio "Exercise 42.3: The complement of the cycle $C_7$ (P3)"
 
     We consider the complement of the cycle $C_7$ (two vertices are adjacent if they are not consecutive on the cycle $1,2,\dots,7$), the graph $G=(V,E)$ with $V=\{1,\dots,7\}$ and the edges
 
@@ -562,9 +562,9 @@ title: "Exercises · Vertex coloring: the DSATUR branch-and-bound"
 
         Every stable set of $G$ has at most $2$ vertices, so the stable set bound $\lceil 7/2\rceil=4$ of Chapter 4 confirms the result.
 
-<a id="esercizio-39-4"></a>
+<a id="esercizio-42-4"></a>
 
-!!! esercizio "Exercise 39.4: Improving the incumbent solution (P4)"
+!!! esercizio "Exercise 42.4: Improving the incumbent solution (P4)"
 
     We consider a graph with $7$ vertices and $11$ edges, the graph $G=(V,E)$ with $V=\{1,\dots,7\}$ and the edges
 
@@ -831,9 +831,9 @@ title: "Exercises · Vertex coloring: the DSATUR branch-and-bound"
 
         Here $DSATUR$ is not optimal: the branch-and-bound algorithm improves the incumbent solution from $4$ to $3$ colors and stops as soon as $\UB$ meets the clique bound.
 
-<a id="esercizio-39-5"></a>
+<a id="esercizio-42-5"></a>
 
-!!! esercizio "Exercise 39.5: The no-symmetry branching (P5)"
+!!! esercizio "Exercise 42.5: The no-symmetry branching (P5)"
 
     We consider the cycle $C_5$, with $V=\{1,\dots,5\}$ and the edges
 

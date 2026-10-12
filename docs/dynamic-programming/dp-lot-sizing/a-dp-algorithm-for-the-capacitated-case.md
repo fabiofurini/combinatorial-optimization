@@ -6,11 +6,11 @@ title: "A DP algorithm for the capacitated case"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 25** · [:material-book-open-variant: Chapter 25: Lot sizing](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/dp-lot-sizing.md)
+**Part 3 · Dynamic programming · Chapter 25** · [:material-book-open-variant: Chapter 25: Uncapacitated lot sizing (ULS)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Uncapacitated lot sizing (ULS)](../../exercises/dp-lot-sizing.md)
 
 </div>
 
-- In most production systems the quantity that can be produced in a period is limited by the capacity of the resource. The problem of this section is the [capacitated lot sizing problem (CLS)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/): its definition and its assumptions are on its page.
+- In most production systems the quantity that can be produced in a period is limited by the capacity of the resource. The problem of this section is the [capacitated lot sizing problem (CLS)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem/): its definition and its assumptions are on its page.
 
 - The MIP model is the model of the ULS with the additional constraints $x_t\le cap_t$, for all $t\in T$ (the big-M value of period $t$ becomes $\min\{cap_t, D_{t,m}\}$). A feasible solution is encoded by the same vector $(x_1,x_2,\dots,x_m)$ as in the ULS, with the additional requirement $x_t \le cap_t$ for all $t\in T$.
 

@@ -6,15 +6,15 @@ title: "Exercises · Constructive heuristics"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 29** · each solution opens with a click · [:material-book-open-variant: Chapter 29: Constructive](../heuristic-algorithms/constructive-heuristics/index.md) · [:material-file-pdf-box: Exercises, volume 4 (PDF)](../pdf/exercises-4-heuristic-algorithms.pdf)
+**Exercises · Chapter 30** · each solution opens with a click · [:material-book-open-variant: Chapter 30: Constructive](../heuristic-algorithms/constructive-heuristics/index.md) · [:material-file-pdf-box: Exercises, volume 4 (PDF)](../pdf/exercises-4-heuristic-algorithms.pdf)
 
 </div>
 
 ## Knapsack: orderings of the items
 
-<a id="esercizio-29-1"></a>
+<a id="esercizio-30-1"></a>
 
-!!! esercizio "Exercise 29.1: Greedy orders for the KP 1"
+!!! esercizio "Exercise 30.1: Greedy orders for the KP 1"
 
     We consider a knapsack of capacity $c=9$ and a set $\mathscr{I}=\{1,\dots,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
@@ -123,9 +123,9 @@ title: "Exercises · Constructive heuristics"
 
     4. The optimal solution is $\{3,4\}$, with $z(I)=19$ (the bound $\lfloor U\rfloor=21$ is not attained: here the gap overestimates the error). Only $GR$ finds it. $GR_p$ takes item $2$, the most valuable but also the heaviest, which leaves room for nothing else of value: $GR_p(I)=15$, relative error 21.1%. $GR_w$ fills the knapsack with the two lightest items, $4$ and $1$, which have little value: $GR_w(I)=12$, relative error 36.8%. On this instance efficiency is the right criterion.
 
-<a id="esercizio-29-2"></a>
+<a id="esercizio-30-2"></a>
 
-!!! esercizio "Exercise 29.2: Greedy orders for the KP 2"
+!!! esercizio "Exercise 30.2: Greedy orders for the KP 2"
 
     We consider a knapsack of capacity $c=13$ and a set $\mathscr{I}=\{1,\dots,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
@@ -234,9 +234,9 @@ title: "Exercises · Constructive heuristics"
 
     4. $GR_w(I)=17=\lfloor U\rfloor$, so the solution $\{2,4,5\}$ of $GR_w$ is optimal and $z(I)=17$. $GR$ fails: after the two most efficient items $2$ and $1$ the residual capacity is $13-9=4$, too small for any other item, and $GR(I)=13$, relative error 23.5%. $GR_p(I)=16$ is also worse than $GR_w$, with relative error $\frac{17-16}{17}\approx 5.9\%$. Three light items fill the knapsack exactly ($2+5+6=13$): here what matters is how well the items fill the capacity, which the efficiency ignores.
 
-<a id="esercizio-29-3"></a>
+<a id="esercizio-30-3"></a>
 
-!!! esercizio "Exercise 29.3: Greedy orders for the KP 3"
+!!! esercizio "Exercise 30.3: Greedy orders for the KP 3"
 
     We consider a knapsack of capacity $c=10$ and a set $\mathscr{I}=\{1,\dots,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
@@ -347,9 +347,9 @@ title: "Exercises · Constructive heuristics"
 
 ## Bin packing: decreasing heuristics
 
-<a id="esercizio-29-4"></a>
+<a id="esercizio-30-4"></a>
 
-!!! esercizio "Exercise 29.4: Decreasing bin packing 1"
+!!! esercizio "Exercise 30.4: Decreasing bin packing 1"
 
     We consider bins of capacity $c=10$ and a set $\mathscr{I}=\{1,\dots,7\}$ of $7$ items ($n=7$), with the following weights:
 
@@ -445,9 +445,9 @@ title: "Exercises · Constructive heuristics"
 
     4. The total weight is $27$, so $LB=\left\lceil\frac{27}{10}\right\rceil=3$. FFD and BFD use $3$ bins and are therefore optimal, $z(I)=3$, while FF uses $4$. In the input order the four small items ($1$, $2$, $4$, $6$, of weights $3,3,2,2$) all end up together in bin $1$, and the large items $3$, $5$, $7$ get a bin each, with gaps $5$, $4$, $4$ that no item is left to fill. Sorting packs the large items first, and the small items fill their gaps: the right order wins.
 
-<a id="esercizio-29-5"></a>
+<a id="esercizio-30-5"></a>
 
-!!! esercizio "Exercise 29.5: Decreasing bin packing 2"
+!!! esercizio "Exercise 30.5: Decreasing bin packing 2"
 
     We consider bins of capacity $c=10$ and a set $\mathscr{I}=\{1,\dots,8\}$ of $8$ items ($n=8$), with the following weights:
 
@@ -549,9 +549,9 @@ title: "Exercises · Constructive heuristics"
 
     4. The total weight is $30$, so $LB=\left\lceil\frac{30}{10}\right\rceil=3$: FF, with $3$ bins, is optimal, $z(I)=3$, while FFD and BFD use $4$ bins. In the sorted order the two items of weight $6$ are paired with the items of weight $4$ and $3$, which leaves a gap of $1$ in bin $2$; bin $3$ also ends with a gap of $1$, and the last item of weight $2$ fits nowhere. The input order happens to produce three full bins ($2+6+2$, $3+5+2$, $4+6$). A good guarantee in the worst case ($\frac{11}{9}$ for FFD) does not mean a better solution on every instance: here sorting hurts.
 
-<a id="esercizio-29-6"></a>
+<a id="esercizio-30-6"></a>
 
-!!! esercizio "Exercise 29.6: Decreasing bin packing 3"
+!!! esercizio "Exercise 30.6: Decreasing bin packing 3"
 
     We consider bins of capacity $c=10$ and a set $\mathscr{I}=\{1,\dots,7\}$ of $7$ items ($n=7$), with the following weights:
 
@@ -649,9 +649,9 @@ title: "Exercises · Constructive heuristics"
 
 ## $P\|C_{\max}$: LIST and LPT
 
-<a id="esercizio-29-7"></a>
+<a id="esercizio-30-7"></a>
 
-!!! esercizio "Exercise 29.7: List scheduling and LPT 1"
+!!! esercizio "Exercise 30.7: List scheduling and LPT 1"
 
     We consider $m=3$ identical machines and a set $\mathscr{J}=\{1,\dots,8\}$ of $8$ jobs ($n=8$), with the following processing times:
 
@@ -807,9 +807,9 @@ title: "Exercises · Constructive heuristics"
 
     4. $LPT(I)=16=LB$, so the $LPT$ solution is optimal and $z(I)=16$; $LIST$ in the input order is 25.0% above the optimum. In the input order the longest job, job $8$ of length $9$, is the last one: it arrives when the least loaded machine already has load $11$, and the makespan jumps to $20$. With the longest jobs first, the last jobs are short and level the loads.
 
-<a id="esercizio-29-8"></a>
+<a id="esercizio-30-8"></a>
 
-!!! esercizio "Exercise 29.8: List scheduling and LPT 2"
+!!! esercizio "Exercise 30.8: List scheduling and LPT 2"
 
     We consider $m=3$ identical machines and a set $\mathscr{J}=\{1,\dots,7\}$ of $7$ jobs ($n=7$), with the following processing times:
 
@@ -953,9 +953,9 @@ title: "Exercises · Constructive heuristics"
 
     4. The assignment $J_{1}=\{1,2,4\},\quad J_{2}=\{3,7\},\quad J_{3}=\{5,6\}$ has loads $(13,12,13)$ and makespan $13=LB$: it is optimal, $z(I)=13$, and $LPT$ is not. Graham's bound gives $LPT(I)\le\left(\frac{4}{3}-\frac{1}{9}\right)z(I)=\frac{11}{9}\cdot 13\approx 15.89$, and indeed $14\le 15.89$; for $LIST$, $\left(2-\frac{1}{3}\right)z(I)=\frac{5}{3}\cdot13\approx 21.67\ge 15$. Sorting improves the makespan from $15$ to $14$, but does not reach the optimum.
 
-<a id="esercizio-29-9"></a>
+<a id="esercizio-30-9"></a>
 
-!!! esercizio "Exercise 29.9: List scheduling and LPT 3"
+!!! esercizio "Exercise 30.9: List scheduling and LPT 3"
 
     We consider $m=3$ identical machines and a set $\mathscr{J}=\{1,\dots,7\}$ of $7$ jobs ($n=7$), with the following processing times:
 
@@ -1101,9 +1101,9 @@ title: "Exercises · Constructive heuristics"
 
 ## TSP: constructive heuristics
 
-<a id="esercizio-29-10"></a>
+<a id="esercizio-30-10"></a>
 
-!!! esercizio "Exercise 29.10: TSP construction 1"
+!!! esercizio "Exercise 30.10: TSP construction 1"
 
     We consider a set $\mathscr{V}=\{1,\dots,6\}$ of $6$ cities with coordinates $1{:}\,(8,0)$, $2{:}\,(1,0)$, $3{:}\,(1,2)$, $4{:}\,(1,5)$, $5{:}\,(6,3)$, $6{:}\,(0,4)$ and distances equal to the Euclidean distances rounded to the nearest integer (the instance is metric):
 
@@ -1198,9 +1198,9 @@ title: "Exercises · Constructive heuristics"
 
     4. The relative error of $NN$ from city $1$ is $\frac{25-21}{21}\approx 19.0\%$, while the multi-start finds the optimal value $21$ (from cities $2$ and $5$). From city $1$ the nearest city is $5$, and the path then moves to the cluster of cities $2,3,4,6$; city $1$ is far from all of them (its distances to $2,3,4,6$ are $7,7,9,9$), and the path must come back from the last city of the cluster: the closing edge $(4,1)$ has length $9$. Changing the starting city changes which long edge is forced at the end.
 
-<a id="esercizio-29-11"></a>
+<a id="esercizio-30-11"></a>
 
-!!! esercizio "Exercise 29.11: TSP construction 2"
+!!! esercizio "Exercise 30.11: TSP construction 2"
 
     We consider a set $\mathscr{V}=\{1,\dots,6\}$ of $6$ cities with coordinates $1{:}\,(4,3)$, $2{:}\,(6,1)$, $3{:}\,(0,5)$, $4{:}\,(0,1)$, $5{:}\,(4,5)$, $6{:}\,(4,0)$ and distances equal to the Euclidean distances rounded to the nearest integer (the instance is metric):
 
@@ -1360,9 +1360,9 @@ title: "Exercises · Constructive heuristics"
 
     4. The lengths are $NI(I)=21$, $FI(I)=19$, $CI(I)=20$ and $NN(I)=20$ from city $1$. $FI$ finds an optimal tour, $z(I)=19$; the relative errors are 10.5% for $NI$, 5.3% for $CI$ and 5.3% for $NN$. $FI$ first builds the outline of the tour through cities $3$ and $4$, the farthest from city $1$, and then inserts cities $2$, $5$ and $6$ where they cost little (city $6$ at cost $0$); $NI$ and $CI$ start from cities $5$, $2$ and $6$, close to city $1$, and must insert the far cities $3$ and $4$ at the end, when the subtour no longer has a cheap place for them.
 
-<a id="esercizio-29-12"></a>
+<a id="esercizio-30-12"></a>
 
-!!! esercizio "Exercise 29.12: TSP construction 3"
+!!! esercizio "Exercise 30.12: TSP construction 3"
 
     We consider a set $\mathscr{V}=\{1,\dots,5\}$ of $5$ cities with coordinates $1{:}\,(8,1)$, $2{:}\,(5,0)$, $3{:}\,(6,4)$, $4{:}\,(6,3)$, $5{:}\,(3,5)$ and distances equal to the Euclidean distances rounded to the nearest integer (the instance is metric):
 
@@ -1426,9 +1426,9 @@ title: "Exercises · Constructive heuristics"
 
 ## Vertex coloring: greedy and DSATUR
 
-<a id="esercizio-29-13"></a>
+<a id="esercizio-30-13"></a>
 
-!!! esercizio "Exercise 29.13: Greedy coloring and DSATUR 1"
+!!! esercizio "Exercise 30.13: Greedy coloring and DSATUR 1"
 
     We consider the graph $G=(V,E)$ with $V=\{1,\dots,7\}$ ($n=7$) and $|E|=11$ edges:
 
@@ -1528,9 +1528,9 @@ title: "Exercises · Constructive heuristics"
         \frac{GC(I)}{\chi(G)}=\frac43,\qquad\frac{DSATUR(I)}{\chi(G)}=1 .
         $$
 
-<a id="esercizio-29-14"></a>
+<a id="esercizio-30-14"></a>
 
-!!! esercizio "Exercise 29.14: Greedy coloring and DSATUR 2"
+!!! esercizio "Exercise 30.14: Greedy coloring and DSATUR 2"
 
     We consider the crown graph $G_5$ with $n=10$ vertices: the vertices $1,\dots,5$ on one side, the vertices $6,\dots,10$ on the other, and vertex $i\in\{1,\dots,5\}$ adjacent to vertex $j+5$, $j\in\{1,\dots,5\}$, if and only if $i\neq j$:
 
@@ -1643,9 +1643,9 @@ title: "Exercises · Constructive heuristics"
 
         At step $2$ the neighbours $7,8,9,10$ of vertex $1$ have saturation degree $1$ and $3$ uncolored neighbours each: vertex $7$ is chosen and gets color $2$. From then on, every vertex adjacent to a colored vertex has saturation degree $1$ (its colored neighbours are all on the other side, with the same color); the vertices of the side $\{1,\dots,5\}$ get color $1$ and those of the side $\{6,\dots,10\}$ color $2$. Hence $DSATUR(I)=2=\chi(G_5)$, as guaranteed on bipartite graphs.
 
-<a id="esercizio-29-15"></a>
+<a id="esercizio-30-15"></a>
 
-!!! esercizio "Exercise 29.15: Greedy coloring and DSATUR 3"
+!!! esercizio "Exercise 30.15: Greedy coloring and DSATUR 3"
 
     We consider the graph $G=(V,E)$ with $V=\{1,\dots,7\}$ ($n=7$) and $|E|=10$ edges:
 

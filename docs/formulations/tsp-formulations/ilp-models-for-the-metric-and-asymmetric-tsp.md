@@ -2,7 +2,7 @@
 title: "Metric and asymmetric TSP"
 ---
 
-# 13.4 ILP models for the metric and asymmetric TSP
+# 13.6 ILP models for the metric and asymmetric TSP { #sez-sec-tspf-variants }
 
 <div class="info-capitolo" markdown>
 
@@ -54,11 +54,11 @@ The problems of this section are the asymmetric travelling salesman problem (ATS
 
     - finally, constraints $\eqref{bin:ATSP}$ define the variables of the ILP model.
 
-- The $\mathrm{ILP}_{\mathrm{ATSP}}$ model is the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$ model with the distances of the arcs: its proof of correctness, [Proposition 13.2](index.md#box-4-prop-DFJ-subtours), never uses $d_{ij}=d_{ji}$. For the same reason the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ model is also an ILP model of the ATSP.
+- The $\mathrm{ILP}_{\mathrm{ATSP}}$ model is the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$ model with the distances of the arcs: its proof of correctness, [Proposition 13.2](ilp-models-for-the-travelling-salesman-problem.md#box-4-prop-DFJ-subtours), never uses $d_{ij}=d_{ji}$. For the same reason the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ model is also an ILP model of the ATSP.
 
 - A tour and the same tour travelled backwards use opposite arcs: in the ATSP they are different solutions, with different lengths in general.
 
-- The metric TSP, defined in [Chapter 6 «Routing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp/), has the same ILP models as the TSP: the triangle inequality is a property of the distances, not a constraint of the model. The instance of <span style="color:#1971c2">[Example 13.1](index.md#box-2-ex-TSP-inst)</span> is metric, so the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ and $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$ models written for it are already models of a metric TSP instance.
+- The metric TSP, defined in [Chapter 6 «Routing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp/), has the same ILP models as the TSP: the triangle inequality is a property of the distances, not a constraint of the model. The instance of <span style="color:#1971c2">[Example 13.1](ilp-models-for-the-travelling-salesman-problem.md#box-2-ex-TSP-inst)</span> is metric, so the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ and $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$ models written for it are already models of a metric TSP instance.
 
 <a id="box-11-ex-ATSP"></a>
 
@@ -109,17 +109,17 @@ The problems of this section are the asymmetric travelling salesman problem (ATS
 
     The optimal value $z(\mathrm{ILP}_{\mathrm{ATSP}})$ is $2+4+1+2=9$, and the optimal tour is unique. The same tour travelled backwards, $(1,4,3,2)$, has length $7+1+7+2=17$.
 
-## 13.5 Typical mistakes
+## 13.7 Typical mistakes
 
 !!! attenzione "Warning"
 
-    - <strong>Writing the MTZ constraints for the city $1$.</strong> The constraints [(13.1d)](index.md#mjx-eqn:MTZ:TSP) are written only for the pairs of cities different from city $1$: the city $1$ has no position variable.
+    - <strong>Writing the MTZ constraints for the city $1$.</strong> The constraints [(13.1d)](ilp-models-for-the-travelling-salesman-problem.md#mjx-eqn:MTZ:TSP) are written only for the pairs of cities different from city $1$: the city $1$ has no position variable.
 
     - <strong>Using a smaller coefficient than $n-1$.</strong> With a coefficient smaller than $n-1$ the constraint cuts off feasible tours; $n-1$ is the smallest valid value.
 
     - <strong>Taking $S=\mathscr{V}$ in the subtour elimination constraints.</strong> A tour uses $|\mathscr{V}|$ arcs inside $\mathscr{V}$: the constraint would cut off every tour. The sets $S$ are proper subsets of the cities, with at least two cities.
 
-    - <strong>Trusting the MTZ bound.</strong> By [Proposition 13.3](index.md#box-7-prop-MTZ-weak), many fractional solutions of the assignment relaxation are feasible for the MTZ relaxation: the compact formulation is not a strong one.
+    - <strong>Trusting the MTZ bound.</strong> By [Proposition 13.3](ilp-models-for-the-travelling-salesman-problem.md#box-7-prop-MTZ-weak), many fractional solutions of the assignment relaxation are feasible for the MTZ relaxation: the compact formulation is not a strong one.
 
     - <strong>Listing all the subtour elimination constraints.</strong> Their number is $2^{n-1}-n$: they are not written all at once, but added when violated.
 
@@ -127,7 +127,7 @@ The problems of this section are the asymmetric travelling salesman problem (ATS
 
     - <strong>Adding the triangle inequality as a constraint.</strong> In the metric TSP the triangle inequality holds for the data $d_{ij}$; the variables of the model are the same as in the TSP.
 
-## 13.6 In summary
+## 13.8 In summary
 
 !!! chiave "In summary"
 

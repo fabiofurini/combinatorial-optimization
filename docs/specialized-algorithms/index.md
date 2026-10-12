@@ -6,7 +6,7 @@
 
 <div class="grid cards" markdown>
 
--   **38. Knapsack: branch-and-bound on the critical item**
+-   **41. Knapsack: branch-and-bound on the critical item**
 
     ---
 
@@ -14,7 +14,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](knapsack-branch-and-bound.md) · [Exercises](../exercises/knapsack-branch-and-bound.md)
 
--   **39. Vertex coloring: the DSATUR branch-and-bound**
+-   **42. Vertex coloring: the DSATUR branch-and-bound**
 
     ---
 

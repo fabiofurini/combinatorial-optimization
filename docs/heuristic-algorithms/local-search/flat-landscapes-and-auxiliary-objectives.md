@@ -2,15 +2,15 @@
 title: "Flat landscapes and auxiliary objectives"
 ---
 
-# 30.9 Flat landscapes and auxiliary objectives { #sez-sec-flat }
+# 31.9 Flat landscapes and auxiliary objectives { #sez-sec-flat }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
+**Part 4 · Heuristic algorithms · Chapter 31** · [:material-book-open-variant: Chapter 31: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
 
 </div>
 
-## 30.9.1 Plateaus
+## 31.9.1 Plateaus
 
 - The objectives of the BPP and of $P\,||\,C_{\max}$ are very “coarse”: the number of bins takes few values, and the makespan depends only on the critical machines. Many solutions have the same value, and most moves do not change it: the landscape is made of large <strong>plateaus</strong>.
 
@@ -20,7 +20,7 @@ title: "Flat landscapes and auxiliary objectives"
 
 - How flat? On the $P\,||\,C_{\max}$ instance with $m=4$ and $12$ jobs of the previous section, we generate $100$ random assignments (seed $1$) and examine their $100\cdot 12\cdot 3=3600$ move neighbours: $1290$ of them ($35.8\%$) have the <em>same</em> makespan as the current solution. For the BPP the situation is extreme: on the instance with $c=10$ and weights $w=(7,6,6,5,5,4,4,4,3,3,2,1)$, for which $z(I)=5=\lceil 50/10\rceil$, the $100$ solutions computed by $FF$ on random orders of the items (seed $1$) have $2374$ move and swap neighbours, and <strong>all</strong> of them have the same number of bins as the current solution.
 
-## 30.9.2 The auxiliary objective
+## 31.9.2 The auxiliary objective
 
 - The remedy is to guide the search with an <strong>auxiliary objective</strong>, which distinguishes the solutions with the same value and rewards those that are “closer” to an improvement. For both problems it is a function of the loads:
 
@@ -36,7 +36,7 @@ title: "Flat landscapes and auxiliary objectives"
 
 <a id="box-9-prop-transfer"></a>
 
-!!! teorema "Proposition 30.4"
+!!! teorema "Proposition 31.4"
 
     If the amount $\delta$ is transferred from the load $L_a$ to the load $L_b$ ($a\ne b$), the sum of the squared loads changes by
 
@@ -50,7 +50,7 @@ title: "Flat landscapes and auxiliary objectives"
 
 - The change is computed in $O(1)$ time: the auxiliary objective is also cheaper to evaluate than the makespan. For a move, $\delta>0$ is the weight (or time) of the moved element, and the sum of the squares <strong>increases</strong> if and only if $L_b+\delta>L_a$: the element goes to a load that, after the move, is larger than the load it left.
 
-## 30.9.3 The move local search for the BPP
+## 31.9.3 The move local search for the BPP
 
 !!! chiave ""
 
@@ -58,12 +58,12 @@ title: "Flat landscapes and auxiliary objectives"
 
 !!! algoritmo "Algorithm: Move step for the BPP"
 
-    <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> <span class="arithmatex">\(n\)</span> items, weights <span class="arithmatex">\(w[1..n]\)</span>, capacity <span class="arithmatex">\(c\)</span>, bins <span class="arithmatex">\(bin[1..n]\)</span>, loads <span class="arithmatex">\(L\)</span>, <span class="arithmatex">\(f\in\{nb, SQ\}\)</span>, rule</div><div class="pc" style="--liv:0"><strong>Output:</strong> <em>true</em> if an improving move was applied, <em>false</em> otherwise</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> BPPMoveStep(<span class="arithmatex">\(n, w, c, bin, L, f, \textit{rule}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(G^* := 0\)</span>; <span class="arithmatex">\((i^*,b^*) := (0,0)\)</span> <span class="pc-com">▹ best move found so far</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(i := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(a := bin[i]\)</span> <span class="pc-com">▹ bin of item <span class="arithmatex">\(i\)</span></span></div><div class="pc" style="--liv:2"><span class="pc-n">5</span><strong>for</strong> every bin <span class="arithmatex">\(b\)</span>, in increasing order <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">6</span><strong>if</strong> <span class="arithmatex">\(b = a\)</span> <strong>or</strong> <span class="arithmatex">\(L[b]=0\)</span> <strong>or</strong> <span class="arithmatex">\(L[b]+w[i] > c\)</span> <strong>then</strong> <strong>continue</strong> <span class="pc-com">▹ same, empty or too full</span></div><div class="pc" style="--liv:3"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(f = SQ\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">8</span><span class="arithmatex">\(G := 2\,w[i]\,(L[b]-L[a]+w[i])\)</span> <span class="pc-com">▹ [Proposition 30.4](#box-9-prop-transfer)</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>else</strong></div><div class="pc" style="--liv:4"><span class="pc-n">10</span><span class="arithmatex">\(G := 1\)</span> <strong>if</strong> <span class="arithmatex">\(L[a]=w[i]\)</span> <strong>else</strong> <span class="arithmatex">\(0\)</span> <span class="pc-com">▹ bin <span class="arithmatex">\(a\)</span> is emptied</span></div><div class="pc" style="--liv:3"><span class="pc-n">11</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">12</span><strong>if</strong> <span class="arithmatex">\(G > G^*\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">13</span><span class="arithmatex">\(G^* \leftarrow G\)</span>; <span class="arithmatex">\((i^*,b^*) \leftarrow (i,b)\)</span> <span class="pc-com">▹ improving move</span></div><div class="pc" style="--liv:4"><span class="pc-n">14</span><strong>if</strong> <span class="arithmatex">\(\textit{rule}=\textit{first}\)</span> <strong>then</strong></div><div class="pc" style="--liv:5"><span class="pc-n">15</span><strong>leave</strong> both loops</div><div class="pc" style="--liv:4"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">17</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">18</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">19</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">20</span><strong>if</strong> <span class="arithmatex">\(i^* = 0\)</span> <strong>then</strong> <strong>return</strong> <em>false</em> <span class="pc-com">▹ no improving move: local optimum</span></div><div class="pc" style="--liv:1"><span class="pc-n">21</span><span class="arithmatex">\(L[bin[i^*]] \leftarrow L[bin[i^*]]-w[i^*]\)</span>; <span class="arithmatex">\(L[b^*] \leftarrow L[b^*]+w[i^*]\)</span>
+    <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> <span class="arithmatex">\(n\)</span> items, weights <span class="arithmatex">\(w[1..n]\)</span>, capacity <span class="arithmatex">\(c\)</span>, bins <span class="arithmatex">\(bin[1..n]\)</span>, loads <span class="arithmatex">\(L\)</span>, <span class="arithmatex">\(f\in\{nb, SQ\}\)</span>, rule</div><div class="pc" style="--liv:0"><strong>Output:</strong> <em>true</em> if an improving move was applied, <em>false</em> otherwise</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> BPPMoveStep(<span class="arithmatex">\(n, w, c, bin, L, f, \textit{rule}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(G^* := 0\)</span>; <span class="arithmatex">\((i^*,b^*) := (0,0)\)</span> <span class="pc-com">▹ best move found so far</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(i := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(a := bin[i]\)</span> <span class="pc-com">▹ bin of item <span class="arithmatex">\(i\)</span></span></div><div class="pc" style="--liv:2"><span class="pc-n">5</span><strong>for</strong> every bin <span class="arithmatex">\(b\)</span>, in increasing order <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">6</span><strong>if</strong> <span class="arithmatex">\(b = a\)</span> <strong>or</strong> <span class="arithmatex">\(L[b]=0\)</span> <strong>or</strong> <span class="arithmatex">\(L[b]+w[i] > c\)</span> <strong>then</strong> <strong>continue</strong> <span class="pc-com">▹ same, empty or too full</span></div><div class="pc" style="--liv:3"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(f = SQ\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">8</span><span class="arithmatex">\(G := 2\,w[i]\,(L[b]-L[a]+w[i])\)</span> <span class="pc-com">▹ [Proposition 31.4](#box-9-prop-transfer)</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>else</strong></div><div class="pc" style="--liv:4"><span class="pc-n">10</span><span class="arithmatex">\(G := 1\)</span> <strong>if</strong> <span class="arithmatex">\(L[a]=w[i]\)</span> <strong>else</strong> <span class="arithmatex">\(0\)</span> <span class="pc-com">▹ bin <span class="arithmatex">\(a\)</span> is emptied</span></div><div class="pc" style="--liv:3"><span class="pc-n">11</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">12</span><strong>if</strong> <span class="arithmatex">\(G > G^*\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">13</span><span class="arithmatex">\(G^* \leftarrow G\)</span>; <span class="arithmatex">\((i^*,b^*) \leftarrow (i,b)\)</span> <span class="pc-com">▹ improving move</span></div><div class="pc" style="--liv:4"><span class="pc-n">14</span><strong>if</strong> <span class="arithmatex">\(\textit{rule}=\textit{first}\)</span> <strong>then</strong></div><div class="pc" style="--liv:5"><span class="pc-n">15</span><strong>leave</strong> both loops</div><div class="pc" style="--liv:4"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">17</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">18</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">19</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">20</span><strong>if</strong> <span class="arithmatex">\(i^* = 0\)</span> <strong>then</strong> <strong>return</strong> <em>false</em> <span class="pc-com">▹ no improving move: local optimum</span></div><div class="pc" style="--liv:1"><span class="pc-n">21</span><span class="arithmatex">\(L[bin[i^*]] \leftarrow L[bin[i^*]]-w[i^*]\)</span>; <span class="arithmatex">\(L[b^*] \leftarrow L[b^*]+w[i^*]\)</span>
     <span class="arithmatex">\(bin[i^*] \leftarrow b^*\)</span> <span class="pc-com">▹ update the loads apply the move</span></div><div class="pc" style="--liv:1"><span class="pc-n">22</span><strong>return</strong> <em>true</em></div></div>
 
 <div class="colab-pulsanti" markdown="0"><span class="colab-etichetta">Run in Colab:</span><a class="colab-pulsante" href="https://colab.research.google.com/github/fabiofurini/combinatorial-optimization/blob/main/notebooks/local-search_python.ipynb" target="_blank" rel="noopener" title="Open the Python notebook of the chapter in Google Colab">Python</a><a class="colab-pulsante" href="https://colab.research.google.com/github/fabiofurini/combinatorial-optimization/blob/main/notebooks/local-search_cpp.ipynb" target="_blank" rel="noopener" title="Open the C++ notebook of the chapter in Google Colab">C++</a></div>
 
-## 30.9.4 The swap local search for the BPP
+## 31.9.4 The swap local search for the BPP
 
 !!! chiave ""
 
@@ -71,16 +71,16 @@ title: "Flat landscapes and auxiliary objectives"
 
 !!! algoritmo "Algorithm: Swap step for the BPP"
 
-    <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> <span class="arithmatex">\(n\)</span> items, weights <span class="arithmatex">\(w[1..n]\)</span>, capacity <span class="arithmatex">\(c\)</span>, bins <span class="arithmatex">\(bin[1..n]\)</span>, loads <span class="arithmatex">\(L\)</span>, rule</div><div class="pc" style="--liv:0"><strong>Output:</strong> <em>true</em> if an improving swap was applied, <em>false</em> otherwise</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> BPPSwapStep(<span class="arithmatex">\(n, w, c, bin, L, \textit{rule}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(G^* := 0\)</span>; <span class="arithmatex">\((i^*,k^*) := (0,0)\)</span> <span class="pc-com">▹ best swap found so far</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(i := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(k := i+1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">5</span><span class="arithmatex">\(a := bin[i]\)</span>; <span class="arithmatex">\(b := bin[k]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">6</span><strong>if</strong> <span class="arithmatex">\(a = b\)</span> <strong>or</strong> <span class="arithmatex">\(w[i]=w[k]\)</span> <strong>then</strong> <strong>continue</strong> <span class="pc-com">▹ the loads would not change</span></div><div class="pc" style="--liv:3"><span class="pc-n">7</span><span class="arithmatex">\(\delta := w[i]-w[k]\)</span> <span class="pc-com">▹ weight transferred from <span class="arithmatex">\(a\)</span> to <span class="arithmatex">\(b\)</span></span></div><div class="pc" style="--liv:3"><span class="pc-n">8</span><strong>if</strong> <span class="arithmatex">\(L[b]+\delta > c\)</span> <strong>or</strong> <span class="arithmatex">\(L[a]-\delta > c\)</span> <strong>then</strong> <strong>continue</strong> <span class="pc-com">▹ a bin would be overfull</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><span class="arithmatex">\(G := 2\,\delta\,(L[b]-L[a]+\delta)\)</span> <span class="pc-com">▹ [Proposition 30.4](#box-9-prop-transfer)</span></div><div class="pc" style="--liv:3"><span class="pc-n">10</span><strong>if</strong> <span class="arithmatex">\(G > G^*\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">11</span><span class="arithmatex">\(G^* \leftarrow G\)</span>; <span class="arithmatex">\((i^*,k^*) \leftarrow (i,k)\)</span> <span class="pc-com">▹ improving swap</span></div><div class="pc" style="--liv:4"><span class="pc-n">12</span><strong>if</strong> <span class="arithmatex">\(\textit{rule}=\textit{first}\)</span> <strong>then</strong></div><div class="pc" style="--liv:5"><span class="pc-n">13</span><strong>leave</strong> both loops</div><div class="pc" style="--liv:4"><span class="pc-n">14</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">15</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">17</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">18</span><strong>if</strong> <span class="arithmatex">\(i^* = 0\)</span> <strong>then</strong> <strong>return</strong> <em>false</em> <span class="pc-com">▹ no improving swap: local optimum</span></div><div class="pc" style="--liv:1"><span class="pc-n">19</span><span class="arithmatex">\(a := bin[i^*]\)</span>; <span class="arithmatex">\(b := bin[k^*]\)</span>; <span class="arithmatex">\(\delta := w[i^*]-w[k^*]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">20</span><span class="arithmatex">\(L[a] \leftarrow L[a]-\delta\)</span>; <span class="arithmatex">\(L[b] \leftarrow L[b]+\delta\)</span>
+    <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> <span class="arithmatex">\(n\)</span> items, weights <span class="arithmatex">\(w[1..n]\)</span>, capacity <span class="arithmatex">\(c\)</span>, bins <span class="arithmatex">\(bin[1..n]\)</span>, loads <span class="arithmatex">\(L\)</span>, rule</div><div class="pc" style="--liv:0"><strong>Output:</strong> <em>true</em> if an improving swap was applied, <em>false</em> otherwise</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> BPPSwapStep(<span class="arithmatex">\(n, w, c, bin, L, \textit{rule}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(G^* := 0\)</span>; <span class="arithmatex">\((i^*,k^*) := (0,0)\)</span> <span class="pc-com">▹ best swap found so far</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(i := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(k := i+1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">5</span><span class="arithmatex">\(a := bin[i]\)</span>; <span class="arithmatex">\(b := bin[k]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">6</span><strong>if</strong> <span class="arithmatex">\(a = b\)</span> <strong>or</strong> <span class="arithmatex">\(w[i]=w[k]\)</span> <strong>then</strong> <strong>continue</strong> <span class="pc-com">▹ the loads would not change</span></div><div class="pc" style="--liv:3"><span class="pc-n">7</span><span class="arithmatex">\(\delta := w[i]-w[k]\)</span> <span class="pc-com">▹ weight transferred from <span class="arithmatex">\(a\)</span> to <span class="arithmatex">\(b\)</span></span></div><div class="pc" style="--liv:3"><span class="pc-n">8</span><strong>if</strong> <span class="arithmatex">\(L[b]+\delta > c\)</span> <strong>or</strong> <span class="arithmatex">\(L[a]-\delta > c\)</span> <strong>then</strong> <strong>continue</strong> <span class="pc-com">▹ a bin would be overfull</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><span class="arithmatex">\(G := 2\,\delta\,(L[b]-L[a]+\delta)\)</span> <span class="pc-com">▹ [Proposition 31.4](#box-9-prop-transfer)</span></div><div class="pc" style="--liv:3"><span class="pc-n">10</span><strong>if</strong> <span class="arithmatex">\(G > G^*\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">11</span><span class="arithmatex">\(G^* \leftarrow G\)</span>; <span class="arithmatex">\((i^*,k^*) \leftarrow (i,k)\)</span> <span class="pc-com">▹ improving swap</span></div><div class="pc" style="--liv:4"><span class="pc-n">12</span><strong>if</strong> <span class="arithmatex">\(\textit{rule}=\textit{first}\)</span> <strong>then</strong></div><div class="pc" style="--liv:5"><span class="pc-n">13</span><strong>leave</strong> both loops</div><div class="pc" style="--liv:4"><span class="pc-n">14</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">15</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">17</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">18</span><strong>if</strong> <span class="arithmatex">\(i^* = 0\)</span> <strong>then</strong> <strong>return</strong> <em>false</em> <span class="pc-com">▹ no improving swap: local optimum</span></div><div class="pc" style="--liv:1"><span class="pc-n">19</span><span class="arithmatex">\(a := bin[i^*]\)</span>; <span class="arithmatex">\(b := bin[k^*]\)</span>; <span class="arithmatex">\(\delta := w[i^*]-w[k^*]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">20</span><span class="arithmatex">\(L[a] \leftarrow L[a]-\delta\)</span>; <span class="arithmatex">\(L[b] \leftarrow L[b]+\delta\)</span>
     <span class="arithmatex">\(bin[i^*] \leftarrow b\)</span>; <span class="arithmatex">\(bin[k^*] \leftarrow a\)</span> <span class="pc-com">▹ update the loads apply the swap</span></div><div class="pc" style="--liv:1"><span class="pc-n">21</span><strong>return</strong> <em>true</em></div></div>
 
 <div class="colab-pulsanti" markdown="0"><span class="colab-etichetta">Run in Colab:</span><a class="colab-pulsante" href="https://colab.research.google.com/github/fabiofurini/combinatorial-optimization/blob/main/notebooks/local-search_python.ipynb" target="_blank" rel="noopener" title="Open the Python notebook of the chapter in Google Colab">Python</a><a class="colab-pulsante" href="https://colab.research.google.com/github/fabiofurini/combinatorial-optimization/blob/main/notebooks/local-search_cpp.ipynb" target="_blank" rel="noopener" title="Open the C++ notebook of the chapter in Google Colab">C++</a></div>
 
-## 30.9.5 Properties of the auxiliary objective
+## 31.9.5 Properties of the auxiliary objective
 
 <a id="box-10-prop-bppsq"></a>
 
-!!! teorema "Proposition 30.5"
+!!! teorema "Proposition 31.5"
 
     For the BPP, with the neighbourhoods move and swap:
 
@@ -92,11 +92,11 @@ title: "Flat landscapes and auxiliary objectives"
 
 ??? dimostrazione "Proof"
 
-    If the move of item $i$ from bin $a$ to bin $b$ empties bin $a$, then $L_a=w_i$, and bin $b$ is not empty, so $L_b>0$. By [Proposition 30.4](#box-9-prop-transfer) with $\delta=w_i$ the change is $2w_i(L_b-w_i+w_i)=2w_iL_b>0$. A swap exchanges one item of bin $a$ with one item of bin $b$, so both bins remain non-empty and no bin is created. <span class="qed">□</span>
+    If the move of item $i$ from bin $a$ to bin $b$ empties bin $a$, then $L_a=w_i$, and bin $b$ is not empty, so $L_b>0$. By [Proposition 31.4](#box-9-prop-transfer) with $\delta=w_i$ the change is $2w_i(L_b-w_i+w_i)=2w_iL_b>0$. A swap exchanges one item of bin $a$ with one item of bin $b$, so both bins remain non-empty and no bin is created. <span class="qed">□</span>
 
 <a id="box-11-prop-pcmsq"></a>
 
-!!! teorema "Proposition 30.6"
+!!! teorema "Proposition 31.6"
 
     For $P\,||\,C_{\max}$, with the neighbourhoods move and swap:
 
@@ -106,17 +106,17 @@ title: "Flat landscapes and auxiliary objectives"
 
 ??? dimostrazione "Proof"
 
-    Let $\delta$ be transferred from machine $a$ to machine $b$; exchanging the names of $a$ and $b$ if necessary, $\delta>0$. Only $L_a$ and $L_b$ change. (1) By [Proposition 30.4](#box-9-prop-transfer), $\sum_hL_h^2$ decreases if and only if $L_b+\delta<L_a$; then both new loads $L_a-\delta$ and $L_b+\delta$ are smaller than $L_a\le C_{\max}$, and the makespan does not increase. (2) If the makespan decreases, machine $b$, whose load increases, is not critical after the move, so $L_b+\delta<C_{\max}$; machine $a$ must have been the unique critical machine, $L_a=C_{\max}$. Hence $L_b+\delta<L_a$, and $\sum_hL_h^2$ decreases. <span class="qed">□</span>
+    Let $\delta$ be transferred from machine $a$ to machine $b$; exchanging the names of $a$ and $b$ if necessary, $\delta>0$. Only $L_a$ and $L_b$ change. (1) By [Proposition 31.4](#box-9-prop-transfer), $\sum_hL_h^2$ decreases if and only if $L_b+\delta<L_a$; then both new loads $L_a-\delta$ and $L_b+\delta$ are smaller than $L_a\le C_{\max}$, and the makespan does not increase. (2) If the makespan decreases, machine $b$, whose load increases, is not critical after the move, so $L_b+\delta<C_{\max}$; machine $a$ must have been the unique critical machine, $L_a=C_{\max}$. Hence $L_b+\delta<L_a$, and $\sum_hL_h^2$ decreases. <span class="qed">□</span>
 
 - The two propositions say that, for the auxiliary objective, every move that improves the original objective is improving, and so are some moves that the original objective sees as neutral; for $P\,||\,C_{\max}$, no move that worsens the makespan is improving. For the BPP a move that increases $\sum_bL_b^2$ never increases the number of bins, since no bin is created.
 
 - The auxiliary objective is a guide, not the objective: a solution with more bins can have a larger $\sum_bL_b^2$. With $c=7$, the loads $(5,5)$ use $2$ bins and give $25+25=50$, while the loads $(7,2,1)$ use $3$ bins and give $49+4+1=54$. The quality of the solution returned is always measured with the original objective.
 
-## 30.9.6 Examples
+## 31.9.6 Examples
 
 <a id="box-12-ex-bppff"></a>
 
-!!! esempio "Example 30.6: The number of bins is blind, the auxiliary objective is not"
+!!! esempio "Example 31.6: The number of bins is blind, the auxiliary objective is not"
 
     The solution of $FF$ on the BPP reference instance ($c=7$) has the packing patterns $P_1=\{1,4\}$, $P_2=\{2,5\}$, $P_3=\{3\}$, $P_4=\{6\}$, with loads $(7,6,5,3)$, $nb=4$ and $SQ=49+36+25+9=119$. Its feasible moves are
 
@@ -165,7 +165,7 @@ title: "Flat landscapes and auxiliary objectives"
     </tr>
     </table></div>
 
-    <strong>With $f=nb$</strong>, no move empties a bin: items $3$ and $6$, alone in their bins, fit nowhere else. The solution of $FF$ is a local optimum with $4$ bins, and so it is for the swap neighbourhood, by [Proposition 30.5](#box-10-prop-bppsq).
+    <strong>With $f=nb$</strong>, no move empties a bin: items $3$ and $6$, alone in their bins, fit nowhere else. The solution of $FF$ is a local optimum with $4$ bins, and so it is for the swap neighbourhood, by [Proposition 31.5](#box-10-prop-bppsq).
 
     <strong>With $f=SQ$</strong>, both rules accept the move of item $2$ into bin $4$ (gain $8$, $SQ=127$), which leaves item $5$ alone in bin $2$. In the next iteration, two moves have the largest gain, $20$: item $3$ into bin $2$, with gain $2\cdot5\cdot(2-5+5)=20$, and item $5$ into bin $3$, with gain $2\cdot2\cdot(5-2+2)=20$. Item $3$ is examined first, so both rules choose it. It empties bin $3$: the loads become $(7,7,7)$, $SQ=147$, and the packing patterns $\{1,4\}$, $\{3,5\}$, $\{2,6\}$ use $3$ bins, which is <strong>optimal</strong>. The first move did not change the number of bins: it prepared the second one.
 
@@ -173,7 +173,7 @@ title: "Flat landscapes and auxiliary objectives"
 
 <a id="box-13-ex-bppnf"></a>
 
-!!! esempio "Example 30.7: Starting from $NF$"
+!!! esempio "Example 31.7: Starting from $NF$"
 
     The solution of $NF$ on the BPP reference instance has the packing patterns $\{1\}$, $\{2\}$, $\{3\}$, $\{4,5\}$, $\{6\}$ (bins $1,\dots,5$), loads $(4,4,5,5,3)$, $nb=5$ and $SQ=91$.
 
@@ -210,7 +210,7 @@ title: "Flat landscapes and auxiliary objectives"
 
     and reaches an optimal solution with $3$ bins, through a move (the second) that does not change the number of bins. First improvement makes the same three moves.
 
-## 30.9.7 Experiments on two medium instances
+## 31.9.7 Experiments on two medium instances
 
 - On a single small instance anything can happen; the following experiments repeat the local searches from $100$ random starting solutions (seed $1$), with best improvement.
 
@@ -276,4 +276,4 @@ title: "Flat landscapes and auxiliary objectives"
 
 ---
 
-**Next:** [30.10 KP: feasibility and penalties](kp-feasibility-and-penalties.md)
+**Next:** [31.10 KP: feasibility and penalties](kp-feasibility-and-penalties.md)

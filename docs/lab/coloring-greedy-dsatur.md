@@ -5,7 +5,7 @@ hide:
 title: "Vertex coloring: greedy and DSATUR"
 ---
 
-[← Lab](index.md) · Chapter: [Coloring problems](../combinatorial-optimization-problems/coloring.md)
+[← Lab](index.md) · Chapter: [Coloring problems](../combinatorial-optimization-problems/coloring/index.md)
 
 # Vertex coloring: greedy and DSATUR
 

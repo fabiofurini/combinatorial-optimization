@@ -2,11 +2,11 @@
 title: "Look-ahead and regret"
 ---
 
-# 29.10 Look-ahead and regret { #sez-sec-LOOK }
+# 30.10 Look-ahead and regret { #sez-sec-LOOK }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 29** · [:material-book-open-variant: Chapter 29: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
+**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
 
 </div>
 
@@ -18,7 +18,7 @@ title: "Look-ahead and regret"
 
     Both ideas cost more time per step than the plain greedy criterion, and both keep the essential feature of a constructive heuristic: the choice made is final.
 
-## 29.10.1 Regret insertion { #sez-sec-REG }
+## 30.10.1 Regret insertion { #sez-sec-REG }
 
 - For an insertion heuristic, let $\Delta^{1}_q\le\Delta^{2}_q$ be the two smallest insertion costs of city $q$ over the edges of the current subtour (with $\Delta^2_q=\Delta^1_q$ if the subtour has a single edge). The <strong>regret</strong> of $q$ is
 
@@ -46,9 +46,9 @@ title: "Look-ahead and regret"
 
 <a id="box-22-ex-reg"></a>
 
-!!! esempio "Example 29.16: $REG_2$ against $CI$ on the $6$-city instance"
+!!! esempio "Example 30.16: $REG_2$ against $CI$ on the $6$-city instance"
 
-    On the instance of [Example 29.11](the-travelling-salesman-problem-append-or-insert.md#box-15-ex-tsp6), from city $1$. In the first two steps all the regrets are $0$ (the subtours $(1)$ and $(1,6)$ have one edge, or two copies of the same edge), and both $REG_2$ and $CI$ insert city $6$ (cost $4$) and then city $3$ (cost $5$), obtaining $(1,3,6)$ of length $9$. At the third step the insertion costs on the edges $(1,3)$, $(3,6)$, $(6,1)$ are
+    On the instance of [Example 30.11](the-travelling-salesman-problem-append-or-insert.md#box-15-ex-tsp6), from city $1$. In the first two steps all the regrets are $0$ (the subtours $(1)$ and $(1,6)$ have one edge, or two copies of the same edge), and both $REG_2$ and $CI$ insert city $6$ (cost $4$) and then city $3$ (cost $5$), obtaining $(1,3,6)$ of length $9$. At the third step the insertion costs on the edges $(1,3)$, $(3,6)$, $(6,1)$ are
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -113,7 +113,7 @@ title: "Look-ahead and regret"
 
     At step $4$ of $REG_2$ the costs of city $2$ on the edges of $(1,4,3,6)$ are $(6,2,2,7)$, regret $0$, and those of city $5$ are $(10,10,5,6)$, regret $1$: city $5$ goes first. City $2$, postponed twice, is finally inserted for $1$ instead of $2$, between cities $3$ and $5$. $REG_2(I)=19=z(I)$, while $CI(I)=20$.
 
-## 29.10.2 Look-ahead: the pilot method { #sez-sec-PILOT }
+## 30.10.2 Look-ahead: the pilot method { #sez-sec-PILOT }
 
 !!! chiave ""
 
@@ -131,7 +131,7 @@ title: "Look-ahead and regret"
 
 <a id="box-23-ex-pilot"></a>
 
-!!! esempio "Example 29.17: $PILOT$-$NN$ on the TSP reference instance"
+!!! esempio "Example 30.17: $PILOT$-$NN$ on the TSP reference instance"
 
     From city $1$, the candidates and their $NN$ completions are:
 
@@ -163,8 +163,8 @@ title: "Look-ahead and regret"
     </tr>
     </table></div>
 
-    $PILOT$-$NN$ goes first to city $5$, the <em>farthest</em> from city $1$, something $NN$ would never do, and returns $(1,5,2,4,3)$ with $L=9+4+3+4+2=22$, against $NN(I)=25$ from the same city. The optimum $18$ is not reached: the look-ahead is only as good as the pilot that performs it. On the $6$-city instance of [Example 29.11](the-travelling-salesman-problem-append-or-insert.md#box-15-ex-tsp6), $PILOT$-$NN$ from city $1$ gives $20$, against $25$ for $NN$.
+    $PILOT$-$NN$ goes first to city $5$, the <em>farthest</em> from city $1$, something $NN$ would never do, and returns $(1,5,2,4,3)$ with $L=9+4+3+4+2=22$, against $NN(I)=25$ from the same city. The optimum $18$ is not reached: the look-ahead is only as good as the pilot that performs it. On the $6$-city instance of [Example 30.11](the-travelling-salesman-problem-append-or-insert.md#box-15-ex-tsp6), $PILOT$-$NN$ from city $1$ gives $20$, against $25$ for $NN$.
 
 ---
 
-**Next:** [29.11 What constructive heuristics give, and what they do not](what-constructive-heuristics-give-and-what-they-do-not.md)
+**Next:** [30.11 What constructive heuristics give, and what they do not](what-constructive-heuristics-give-and-what-they-do-not.md)

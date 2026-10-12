@@ -1,36 +1,14 @@
 ---
-title: "Formulations of coloring problems"
+title: "Vertex coloring"
 ---
 
-# Formulations of coloring problems
+# 11.2 An ILP model for the Vertex Coloring Problem { #sez-sec-colf-VCP }
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 11** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Coloring problems](../exercises/coloring-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 11** · [:material-book-open-variant: Chapter 11: Coloring problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Coloring problems](../../exercises/coloring-formulations.md)
 
 </div>
-
-!!! nota "Prerequisites"
-
-    - From the module <em>Linear Programming</em>, [Chapter 9 «Duality theory»](https://fabiofurini.github.io/linear-programming/duality/09-duality/): the dual of an LP problem, weak and strong duality.
-
-    - From the module <em>Integer linear programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/) and [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): ILP problems, LP relaxations and bounds.
-
-    - From this module, [Chapter 4 «Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/): the problem, its assumptions and the notation on graphs.
-
-!!! chiave "Objectives"
-
-    At the end of this chapter you will be able to:
-
-    - write the ILP model of the Vertex Coloring Problem and explain the role of the activation variables $y_c$;
-
-    - write the two LP relaxations and their duals, and compute their optimal solutions;
-
-    - prove that the optimal value of the LP relaxations is $2$ for every graph with an edge;
-
-    - explain why this bound is very weak, and why the model is not enough to color a graph.
-
-## 11.1 An ILP model for the Vertex Coloring Problem
 
 - Given a graph $G=(V,E)$, for a vertex $v \in V$ we denote by $\delta(v)$ the set of the edges incident to $v$.
 
@@ -104,7 +82,7 @@ title: "Formulations of coloring problems"
 
     We consider the following graph $G = (V,E)$ with $3$ vertices ($n=3$) and $3$ edges ($m=3$):
 
-    ![Figure 1](../img/coloring-formulations/fig01.svg){ .fig .ovale loading=lazy style="width:24%" }
+    ![Figure 1](../../img/coloring-formulations/fig01.svg){ .fig .ovale loading=lazy style="width:24%" }
 
     The vertex set $V$ and the edge set $E$ are:
 
@@ -145,7 +123,7 @@ title: "Formulations of coloring problems"
 
     The associated optimal solution of the VCP is given by the color classes $\tilde{Q}_1 =\{1\}$, $\tilde{Q}_2 =\{2\}$ and $\tilde{Q}_3 =\{3\}$. The optimal partition is unique, but the $3!$ permutations of the colors give $6$ different optimal solutions.
 
-## 11.2 A first Linear Programming relaxation
+## 11.3 A first Linear Programming relaxation
 
 !!! chiave ""
 
@@ -450,7 +428,7 @@ title: "Formulations of coloring problems"
 
     which matches the lower bound $\eqref{eq:vcp-lb}$. Therefore the point [(11.9)](#eq-PP_alternative) is an optimal solution with objective value $\eqref{VAL_alternative}$. <span class="qed">□</span>
 
-## 11.3 A second Linear Programming relaxation
+## 11.4 A second Linear Programming relaxation
 
 !!! chiave ""
 
@@ -639,7 +617,7 @@ title: "Formulations of coloring problems"
     z(D(\mathrm{LP}_{\mathrm{VCP}})) \tag{11.16}
     \end{equation*}
 
-## 11.4 Typical mistakes
+## 11.5 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -653,7 +631,7 @@ title: "Formulations of coloring problems"
 
     - <strong>Writing the dual solution with a wrong edge.</strong> The dual values $\tilde{\pi}_{ce}$ are non-zero only for one edge $e=\{u,v\}$, and for every color $c$: all the other edges have value zero.
 
-## 11.5 In summary
+## 11.6 In summary
 
 !!! chiave "In summary"
 
@@ -694,4 +672,5 @@ title: "Formulations of coloring problems"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Coloring problems](../exercises/coloring-formulations.md)
+**Exercises on this chapter:** [:material-pencil: Coloring problems](../../exercises/coloring-formulations.md)
+

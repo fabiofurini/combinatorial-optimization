@@ -2,7 +2,7 @@
 title: "Multidimensional knapsack"
 ---
 
-# 9.8 An ILP model for the Multidimensional Knapsack Problem
+# 9.9 An ILP model for the Multidimensional Knapsack Problem { #sez-sec-kpf-MDKP }
 
 <div class="info-capitolo" markdown>
 
@@ -10,7 +10,7 @@ title: "Multidimensional knapsack"
 
 </div>
 
-The Multidimensional Knapsack Problem and its reference instance (Example 2.5) are defined in [Chapter 2 «Knapsack problems», Section 2.5](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-multidimensional-knapsack-problem/).
+The Multidimensional Knapsack Problem and its reference instance (Example 2.5) are defined in [Chapter 2 «Knapsack problems», Section 2.6](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-multidimensional-knapsack-problem/).
 
 - We introduce the following  $n$ <strong>binary variables</strong>:
 
@@ -81,4 +81,4 @@ The Multidimensional Knapsack Problem and its reference instance (Example 2.5) 
 
 ---
 
-**Next:** [9.9 An ILP model for the Multiple Knapsack Problem](an-ilp-model-for-the-multiple-knapsack-problem.md)
+**Next:** [9.10 An ILP model for the Multiple Knapsack Problem](an-ilp-model-for-the-multiple-knapsack-problem.md)

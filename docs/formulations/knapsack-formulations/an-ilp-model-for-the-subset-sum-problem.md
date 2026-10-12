@@ -2,7 +2,7 @@
 title: "Subset sum"
 ---
 
-# 9.5 An ILP model for the Subset Sum Problem
+# 9.6 An ILP model for the Subset Sum Problem { #sez-sec-kpf-SSP }
 
 <div class="info-capitolo" markdown>
 
@@ -10,7 +10,7 @@ title: "Subset sum"
 
 </div>
 
-The Subset Sum Problem and its reference instance (Example 2.2) are defined in [Chapter 2 «Knapsack problems», Section 2.2](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-subset-sum-problem/).
+The Subset Sum Problem and its reference instance (Example 2.2) are defined in [Chapter 2 «Knapsack problems», Section 2.3](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-subset-sum-problem/).
 
 - We introduce the following  $n$ <strong>binary variables</strong>:
 
@@ -80,4 +80,4 @@ The Subset Sum Problem and its reference instance (Example 2.2) are defined in 
 
 ---
 
-**Next:** [9.6 An ILP model for the Bounded Knapsack Problem](an-ilp-model-for-the-bounded-knapsack-problem.md)
+**Next:** [9.7 An ILP model for the Bounded Knapsack Problem](an-ilp-model-for-the-bounded-knapsack-problem.md)

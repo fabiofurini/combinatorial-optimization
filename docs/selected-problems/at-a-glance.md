@@ -45,21 +45,21 @@ title: "The problems at a glance"
 <td>min number of colors <span class="arithmatex">\(\chi(G)\)</span></td>
 <td>strongly NP-hard</td>
 <td><span class="arithmatex">\(\omega(G) \le \chi(G) \le \Delta(G)+1\)</span></td>
-<td>not approximable: no ratio <span class="arithmatex">\(<\frac43\)</span> unless <span class="arithmatex">\(P=NP\)</span>; no <span class="arithmatex">\(n^{1-\varepsilon}\)</span> (Zuckerman)</td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/coloring-inapproximability/">not approximable</a>: no ratio <span class="arithmatex">\(<\frac43\)</span> unless <span class="arithmatex">\(P=NP\)</span>; no <span class="arithmatex">\(n^{1-\varepsilon}\)</span> (Zuckerman)</td>
 </tr>
 <tr>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/selected-problems/maximum-clique/">MCP</a></td>
 <td>max clique size <span class="arithmatex">\(\omega(G)\)</span></td>
 <td>NP-hard</td>
 <td><span class="arithmatex">\(\omega(G) \le \chi(G)\)</span>, <span class="arithmatex">\(\omega(G) \le \Delta+1\)</span></td>
-<td>not approximable: no <span class="arithmatex">\(n^{1-\varepsilon}\)</span> (Håstad, Zuckerman)</td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/clique-inapproximability/">not approximable</a>: no <span class="arithmatex">\(n^{1-\varepsilon}\)</span> (Håstad, Zuckerman)</td>
 </tr>
 <tr>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/selected-problems/tsp/">TSP</a></td>
 <td>min tour length <span class="arithmatex">\(L(\sigma)\)</span></td>
 <td>strongly NP-hard</td>
 <td><span class="arithmatex">\(\lceil \frac12 \sum_i (a_i+b_i) \rceil\)</span>; MST <span class="arithmatex">\(d(T) \le z(I)\)</span></td>
-<td>metric: double tree <span class="arithmatex">\(2\)</span>, Christofides <span class="arithmatex">\(\frac32\)</span>; general: no constant ratio</td>
+<td>metric: double tree <span class="arithmatex">\(2\)</span>, Christofides <span class="arithmatex">\(\frac32\)</span>; general: <a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/tsp-approximation/">no constant ratio</a></td>
 </tr>
 <tr>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/selected-problems/pcmax/"><span class="arithmatex">\(P\|C_{\max}\)</span></a></td>

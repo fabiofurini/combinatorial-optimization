@@ -18,4 +18,4 @@ title: "Lot sizing with overtime (LS-OT)"
 
     The capacity is not fixed: working time in normal hours costs $cw_t$ per unit up to $cap^{N}_t$, and overtime costs $co_t$ per unit up to $cap^{O}_t$.
 
-- Defined in [Chapter 8 «Lot sizing problems»](../combinatorial-optimization-problems/lot-sizing/variants.md#82-variants).
+- Defined in [Chapter 8 «Lot sizing problems»](../combinatorial-optimization-problems/lot-sizing/variants.md#sez-sec-ls-variants).

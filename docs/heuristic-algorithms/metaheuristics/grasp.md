@@ -2,11 +2,11 @@
 title: "GRASP"
 ---
 
-# 31.8 GRASP { #sez-sec-grasp }
+# 32.8 GRASP { #sez-sec-grasp }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 31** · [:material-book-open-variant: Chapter 31: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
+**Part 4 · Heuristic algorithms · Chapter 32** · [:material-book-open-variant: Chapter 32: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
 
 </div>
 
@@ -47,7 +47,7 @@ title: "GRASP"
 
 <a id="box-9-ex-graspKP"></a>
 
-!!! esempio "Example 31.8: $GRASP$ on the KP reference instance"
+!!! esempio "Example 32.8: $GRASP$ on the KP reference instance"
 
     With $\alpha=\frac12$ and $seed=2$ (random numbers $0.0000$, $0.2631$, $0.5112$, $0.9173$) we perform two iterations. The efficiencies are $\frac{10}{5}=2$, $\frac74=1.75$, $\frac63=2$, $\frac43\approx 1.33$.
 
@@ -57,7 +57,7 @@ title: "GRASP"
 
     $GRASP(I)=17=z(I)$. On this small instance every start leads to the optimum; on larger instances different starts lead to different local optima, as the experiment below shows.
 
-## 31.8.1 GRASP for the TSP, and the effect of $\alpha$ { #sez-sec-grasp-exp }
+## 32.8.1 GRASP for the TSP, and the effect of $\alpha$ { #sez-sec-grasp-exp }
 
 - For the TSP the randomized construction is the nearest neighbour heuristic with an RCL: from the last city $\ell$ of the partial tour, the next city is chosen at random among the unvisited cities whose distance from $\ell$ is at most $d_{\min}+\alpha(d_{\max}-d_{\min})$, and the local search is TWOOPTLS.
 
@@ -141,4 +141,4 @@ title: "GRASP"
 
 ---
 
-**Next:** [31.9 Large neighbourhood search](large-neighbourhood-search.md)
+**Next:** [32.9 Large neighbourhood search](large-neighbourhood-search.md)

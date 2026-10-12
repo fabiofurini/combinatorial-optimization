@@ -2,7 +2,7 @@
 title: "Variants"
 ---
 
-# 15.5 ILP models for the variants
+# 15.7 ILP models for the variants { #sez-sec-lsf-variants }
 
 <div class="info-capitolo" markdown>
 
@@ -12,7 +12,7 @@ title: "Variants"
 
 The problems of this section are the variants of the capacitated lot sizing problem defined in [Chapter 8 «Lot sizing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/variants/). Each subsection writes the ILP model of one variant, in the order of that chapter.
 
-## 15.5.1 The uncapacitated lot sizing problem
+## 15.7.1 The uncapacitated lot sizing problem
 
 - Given a set $T=\{1,2,\dots,m\}$ of periods with demands $d_t$ and no binding capacity, we introduce, for every period $t \in T$, the following <strong>integer variables</strong> and <strong>binary variables</strong>:
 
@@ -59,13 +59,13 @@ The problems of this section are the variants of the capacitated lot sizing prob
 
     - finally, constraints $\eqref{ULS:domx}$–$\eqref{ULS:domy}$ define the variables of the ILP model.
 
-- The $\mathrm{ILP}_{\mathrm{ULS}}$ model is the $\mathrm{ILP}_{\mathrm{CLSP}}$ model without the capacity constraints [(15.1d)](index.md#mjx-eqn:CL1:cap) and with the big-M values $M_t=D_{t,m}$. The DP algorithm of Wagner and Whitin of [Chapter 27 «Dynamic programming for lot sizing»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/) solves the ULS in polynomial time.
+- The $\mathrm{ILP}_{\mathrm{ULS}}$ model is the $\mathrm{ILP}_{\mathrm{CLSP}}$ model without the capacity constraints [(15.1d)](ilp-models-for-the-capacitated-lot-sizing-problem.md#mjx-eqn:CL1:cap) and with the big-M values $M_t=D_{t,m}$. The DP algorithm of Wagner and Whitin of [Chapter 27 «Dynamic programming for lot sizing»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/) solves the ULS in polynomial time.
 
 <a id="box-6-ex-ULS-ILP"></a>
 
 !!! esempio "Example 15.6: $\mathrm{ILP}_{\mathrm{ULS}}$ model"
 
-    We consider the CLS instance of <span style="color:#1971c2">[Example 15.1](index.md#box-1-ex-CLS-ref)</span> without the capacities: the demands are $\vet d=(2,1,3,4,1)$, the setup costs $sc_t=50$, the holding costs $hc_t=10$, and $vc_t=0$. The big-M values are $D_{t,5}=(11,9,8,5,1)$, and the $\mathrm{ILP}_{\mathrm{ULS}}$ model for this ULS instance is:
+    We consider the CLS instance of <span style="color:#1971c2">[Example 15.1](ilp-models-for-the-capacitated-lot-sizing-problem.md#box-1-ex-CLS-ref)</span> without the capacities: the demands are $\vet d=(2,1,3,4,1)$, the setup costs $sc_t=50$, the holding costs $hc_t=10$, and $vc_t=0$. The big-M values are $D_{t,5}=(11,9,8,5,1)$, and the $\mathrm{ILP}_{\mathrm{ULS}}$ model for this ULS instance is:
 
     $$
     \begin{array}{rlcl}
@@ -96,7 +96,7 @@ The problems of this section are the variants of the capacitated lot sizing prob
 
     The optimal value $z(\mathrm{ILP}_{\mathrm{ULS}})$ is $2\cdot 50+(1+5+1)\cdot 10=170$, the bound of the shortest-path formulation of the CLS. The optimal solution is not unique: the plan $(3,0,3,5,0)$, with three setups and the stocks $(1,0,0,1,0)$, also costs $3\cdot 50+2\cdot 10=170$.
 
-## 15.5.2 Several products and setup times
+## 15.7.2 Several products and setup times
 
 - A set $P$ of products shares the resource of each period. We write $d_{pt}$, $sc_{pt}$, $vc_{pt}$ and $hc_{pt}$ for the data of product $p \in P$ in period $t \in T$. Producing a unit of $p$ takes the time $vt_{pt} \in \Z_{\ge 1}$, a setup takes the time $st_{pt} \in \Z_{\ge 0}$, and the capacity $cap_t$ is a time. For $j\le k$ we write $sd_{pjk}=\sum_{u=j}^{k} d_{pu}$ for the demand of product $p$ in the periods $j,\dots,k$.
 
@@ -245,7 +245,7 @@ The problems of this section are the variants of the capacitated lot sizing prob
 
     The optimal value $z(\mathrm{ILP}_{\mathrm{CLSP}}^{P})$ is $2\cdot 30+2\cdot 40+(2+1)\cdot 5=155$, and the optimal solution is unique (Gurobi). Period $1$ uses its whole capacity, $5+2+1+1=9$. Without the capacity constraints product $2$ would be produced only in period $1$, with value $140$: this plan needs the time $5+7+1+1=14>9$.
 
-## 15.5.3 Initial stock
+## 15.7.3 Initial stock
 
 - The data are those of the lot sizing problem with several products and setup times. In addition, the initial inventory of product $p$ is a decision, bought at the cost $fc_p$ per unit.
 
@@ -537,7 +537,7 @@ The problems of this section are the variants of the capacitated lot sizing prob
 
     Without constraints $\eqref{CLSPSP-intx}$ and $\eqref{CLSPSP-intsi}$ the shortest-path model reaches $676\,450$ with the same setups and the fractional quantities $x_{11}=59.5$ and $si_1=40.5$: period $1$ then uses its whole capacity, $100+20\cdot 59.5+110+10\cdot 110=2500$.
 
-## 15.5.4 Overtime
+## 15.7.4 Overtime
 
 - The data are those of the lot sizing problem with several products and setup times, but the time of each period is not a fixed capacity: in period $t$ the working time in normal hours costs $cw_t$ per unit, up to $cap^{N}_t$, and the overtime costs $co_t$ per unit, up to $cap^{O}_t$.
 
@@ -601,7 +601,7 @@ The problems of this section are the variants of the capacitated lot sizing prob
 
 !!! esempio "Example 15.10: $\mathrm{ILP}_{\mathrm{CLSP}}^{\mathrm{OT}}$ model"
 
-    We consider the CLS instance of <span style="color:#1971c2">[Example 15.1](index.md#box-1-ex-CLS-ref)</span>, with one product ($|P|=1$, and we drop the index $p$), production times $vt_t=1$ and setup times $st_t=0$. The capacity $cap_t=4$ becomes the normal hours $cap^{N}_t=4$, at the cost $cw_t=1$, and one unit of overtime is available in every period: $cap^{O}_t=1$, at the cost $co_t=6$. The big-M values are $M_t=\min\{5,D_{t,5}\}$, that is $(5,5,5,5,1)$. The $\mathrm{ILP}_{\mathrm{CLSP}}^{\mathrm{OT}}$ model for this instance is:
+    We consider the CLS instance of <span style="color:#1971c2">[Example 15.1](ilp-models-for-the-capacitated-lot-sizing-problem.md#box-1-ex-CLS-ref)</span>, with one product ($|P|=1$, and we drop the index $p$), production times $vt_t=1$ and setup times $st_t=0$. The capacity $cap_t=4$ becomes the normal hours $cap^{N}_t=4$, at the cost $cw_t=1$, and one unit of overtime is available in every period: $cap^{O}_t=1$, at the cost $co_t=6$. The big-M values are $M_t=\min\{5,D_{t,5}\}$, that is $(5,5,5,5,1)$. The $\mathrm{ILP}_{\mathrm{CLSP}}^{\mathrm{OT}}$ model for this instance is:
 
     $$
     \begin{array}{rlcl}
@@ -651,7 +651,7 @@ The problems of this section are the variants of the capacitated lot sizing prob
 
     The optimal value $z(\mathrm{ILP}_{\mathrm{CLSP}}^{\mathrm{OT}})$ is $3\cdot 50+2\cdot 10+10\cdot 1+1\cdot 6=186$, and the optimal solution is unique (Gurobi). One unit of overtime in period $4$, at the cost $6$, replaces one unit stored from period $3$ to period $4$, at the cost $10$: the optimal plan $(3,0,4,4,0)$ of the CLS costs $191$ here.
 
-## 15.5.5 Unsatisfied demand
+## 15.7.5 Unsatisfied demand
 
 - The data are those of the lot sizing problem with several products and setup times. In addition, a part of the demand $d_{pt}$ may be left unsatisfied, at the penalty $cu_{pt}$ per unit.
 
@@ -702,7 +702,7 @@ The problems of this section are the variants of the capacitated lot sizing prob
 
 !!! esempio "Example 15.11: $\mathrm{ILP}_{\mathrm{CLSP}}^{\mathrm{UD}}$ model"
 
-    We consider the CLS instance of <span style="color:#1971c2">[Example 15.1](index.md#box-1-ex-CLS-ref)</span>, with one product ($|P|=1$, and we drop the index $p$), production times $vt_t=1$, setup times $st_t=0$ and the strong big-M values $M_t=(4,4,4,4,1)$. Each unit of unsatisfied demand costs $cu_t=18$. The $\mathrm{ILP}_{\mathrm{CLSP}}^{\mathrm{UD}}$ model for this instance is:
+    We consider the CLS instance of <span style="color:#1971c2">[Example 15.1](ilp-models-for-the-capacitated-lot-sizing-problem.md#box-1-ex-CLS-ref)</span>, with one product ($|P|=1$, and we drop the index $p$), production times $vt_t=1$, setup times $st_t=0$ and the strong big-M values $M_t=(4,4,4,4,1)$. Each unit of unsatisfied demand costs $cu_t=18$. The $\mathrm{ILP}_{\mathrm{CLSP}}^{\mathrm{UD}}$ model for this instance is:
 
     $$
     \begin{array}{rlcl}
@@ -746,7 +746,7 @@ The problems of this section are the variants of the capacitated lot sizing prob
 
     The optimal value $z(\mathrm{ILP}_{\mathrm{CLSP}}^{\mathrm{UD}})$ is $2\cdot 50+4\cdot 18=172$, and the optimal solution is unique (Gurobi). The demands of the periods $1$, $2$ and $5$ are not satisfied: their $4$ units cost $72$, and the plan saves one setup and all the holding costs of the optimal plan $(3,0,4,4,0)$ of the CLS, of cost $180$.
 
-## 15.6 Typical mistakes
+## 15.8 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -766,7 +766,7 @@ The problems of this section are the variants of the capacitated lot sizing prob
 
     - <strong>Leaving the unsatisfied demand unbounded.</strong> Without $\varepsilon_{pt}\le d_{pt}$ the balance constraints would allow a negative net demand, that is, inventory created from nothing at the price of the penalty.
 
-## 15.7 In summary
+## 15.9 In summary
 
 !!! chiave "In summary"
 

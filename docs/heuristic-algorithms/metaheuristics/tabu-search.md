@@ -2,11 +2,11 @@
 title: "Tabu search"
 ---
 
-# 31.5 Tabu search { #sez-sec-ts }
+# 32.5 Tabu search { #sez-sec-ts }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 31** · [:material-book-open-variant: Chapter 31: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
+**Part 4 · Heuristic algorithms · Chapter 32** · [:material-book-open-variant: Chapter 32: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
 
 </div>
 
@@ -14,7 +14,7 @@ title: "Tabu search"
 
     <em>Tabu search</em> (denoted by $TS$) explores the neighbourhood of the current solution completely and moves to the <em>best</em> neighbour, even if it is worse than the current solution. To avoid going back to the solutions just visited, it keeps a short-term memory, the <em>tabu list</em>: the moves that would undo the recent moves are forbidden (<em>tabu</em>) for a number of iterations, the <em>tenure</em>, unless they lead to a solution better than the best one found (<em>aspiration criterion</em>).
 
-- The pseudo-code of $TS$ for $P\,||\,C_{\max}$, with the move neighbourhood and the lexicographic comparison of Section [31.2.1](the-problems-and-the-assumptions.md#sez-sec-neigh), reads as follows; the attribute $(j,h)$ forbids moving job $j$ back to machine $h$.
+- The pseudo-code of $TS$ for $P\,||\,C_{\max}$, with the move neighbourhood and the lexicographic comparison of Section [32.2.1](the-problems-and-the-assumptions.md#sez-sec-neigh), reads as follows; the attribute $(j,h)$ forbids moving job $j$ back to machine $h$.
 
 !!! algoritmo "Algorithm: Tabu search for $P\,||\,C_{\max}$"
 
@@ -38,11 +38,11 @@ title: "Tabu search"
 
 - <strong>Long-term memory.</strong> Besides the tabu list (short-term memory), $TS$ can record how often each attribute appears in the visited solutions. <em>Diversification</em> penalizes the frequent attributes, to push the search toward unexplored regions; <em>intensification</em> restarts from the best solutions found, and fixes the attributes they share.
 
-## 31.5.1 Example
+## 32.5.1 Example
 
 <a id="box-6-ex-tsPCM"></a>
 
-!!! esempio "Example 31.5: $TS$ on the $P\,||\,C_{\max}$ reference instance"
+!!! esempio "Example 32.5: $TS$ on the $P\,||\,C_{\max}$ reference instance"
 
     We start from the solution computed by LPT in the notes on constructive heuristics, $J_1=\{1,5,7\}$, $J_2=\{2,6\}$, $J_3=\{3,4\}$, with loads $(11,8,8)$, $C_{\max}=11$ and $\sum_h L_h^2=249$. It is a local optimum for the move neighbourhood: at the first iteration the $14$ neighbours are
 
@@ -191,9 +191,9 @@ title: "Tabu search"
 
 - With $tenure\le 5$, $TS$ does not reach the optimum on this instance within $50$ iterations: the tabu list is too short to prevent the search from going back to the plateau of makespan $11$.
 
-## 31.5.2 Tabu search for the TSP, and the effect of the tenure { #sez-sec-ts-tsp }
+## 32.5.2 Tabu search for the TSP, and the effect of the tenure { #sez-sec-ts-tsp }
 
-- For the TSP with the 2-opt neighbourhood, the natural attributes are the <strong>edges</strong>: when a move removes the edges $(\sigma_i,\sigma_{i+1})$ and $(\sigma_j,\sigma_{j+1})$, these two edges may not be added back to the tour for $tenure$ iterations, unless the move gives a tour shorter than the best one. Everything else is as in the pseudo-code of Section [31.5](#sez-sec-ts): at every iteration all the $\frac{n(n-3)}{2}$ moves are evaluated in $O(1)$ each, and the best non-tabu one is performed.
+- For the TSP with the 2-opt neighbourhood, the natural attributes are the <strong>edges</strong>: when a move removes the edges $(\sigma_i,\sigma_{i+1})$ and $(\sigma_j,\sigma_{j+1})$, these two edges may not be added back to the tour for $tenure$ iterations, unless the move gives a tour shorter than the best one. Everything else is as in the pseudo-code of Section [32.5](#sez-sec-ts): at every iteration all the $\frac{n(n-3)}{2}$ moves are evaluated in $O(1)$ each, and the best non-tabu one is performed.
 
 - The tables report the result of $TS$ on the medium instances, from the nearest neighbour tour ($326$) for TSP20 with $200$ iterations, and from the LPT solution ($73$) for PCM15 with $300$ iterations, for several values of the tenure; for PCM15 the table also gives the number of iterations performed ($300$ unless the lower bound is reached).
 
@@ -270,4 +270,4 @@ title: "Tabu search"
 
 ---
 
-**Next:** [31.6 Iterated local search](iterated-local-search.md)
+**Next:** [32.6 Iterated local search](iterated-local-search.md)

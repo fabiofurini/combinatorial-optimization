@@ -2,7 +2,7 @@
 title: "Weighted variants"
 ---
 
-# 12.7 ILP models for the weighted variants
+# 12.8 ILP models for the weighted variants { #sez-sec-mcpf-weighted }
 
 <div class="info-capitolo" markdown>
 
@@ -12,7 +12,7 @@ title: "Weighted variants"
 
 The problems of this section are the vertex-weighted and the edge-weighted maximum clique problems, defined in [Chapter 5 «Clique problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/clique/weighted-variants/), with their reference instances.
 
-## 12.7.1 The vertex-weighted maximum clique problem
+## 12.8.1 The vertex-weighted maximum clique problem
 
 - Given a simple graph $G=(V,E)$ and a vertex-weight vector $\vet w\in\Z_{\ge 1}^n$, we use the $n$ <strong>binary variables</strong> $\eqref{mcpF:var}$ of the edge formulation:
 
@@ -80,7 +80,7 @@ The problems of this section are the vertex-weighted and the edge-weighted maxim
 
     The optimal value $z(\mathrm{ILP}^{\mathrm{VW}}_{\mathrm{MCP}})$ is $8+9+6+9=32$, as stated in the chapter «Clique problems». The associated optimal solution is the clique $\tilde K=\{2,3,5,8\}$, and it is the unique optimal solution: each constraint keeps the heavier vertex of its pair.
 
-## 12.7.2 The edge-weighted maximum clique problem
+## 12.8.2 The edge-weighted maximum clique problem
 
 - Given a simple graph $G=(V,E)$ and an edge-weight vector $\vet r\in\Z_{\ge 1}^m$, the weight of an edge is collected only if both its endpoints are selected: the product $x_u\,x_v$ is not linear. We introduce the $n$ <strong>binary variables</strong> $\eqref{mcpF:var}$ and the following $m$ <strong>binary variables</strong>:
 
@@ -158,7 +158,7 @@ The problems of this section are the vertex-weighted and the edge-weighted maxim
 
     The optimal value $z(\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}})$ is $6+9+4+7+3+8=37$, as stated in the chapter «Clique problems». The associated optimal solution is the clique $\tilde K=\{2,5,7,8\}$, and it is the unique optimal solution.
 
-## 12.8 Typical mistakes
+## 12.9 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -176,7 +176,7 @@ The problems of this section are the vertex-weighted and the edge-weighted maxim
 
     - <strong>Writing $y_{uv}=x_u\,x_v$ in the edge-weighted model.</strong> The product is not linear: the constraints $y_{uv}\le x_u$ and $y_{uv}\le x_v$ replace it, and the positive weights make $y_{uv}=1$ whenever both endpoints are selected.
 
-## 12.9 In summary
+## 12.10 In summary
 
 !!! chiave "In summary"
 
@@ -188,7 +188,7 @@ The problems of this section are the vertex-weighted and the edge-weighted maxim
 
     - The dual of $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ is the LP relaxation of a coloring formulation, hence $\omega(G)\le z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})\le\chi(G)$.
 
-    - The $\mathrm{ILP}_{\mathrm{MSSP}}$ model has one constraint $x_u+x_v\le 1$ per edge of $G$; with the maximal cliques of $G$ it becomes the clique formulation. On <span style="color:#1971c2">[Example 12.1](index.md#box-1-mcpF-ex1)</span> the optimal value is $\alpha(G)=3$.
+    - The $\mathrm{ILP}_{\mathrm{MSSP}}$ model has one constraint $x_u+x_v\le 1$ per edge of $G$; with the maximal cliques of $G$ it becomes the clique formulation. On <span style="color:#1971c2">[Example 12.1](an-ilp-model-for-the-maximum-clique-problem-the-edge-formula.md#box-1-mcpF-ex1)</span> the optimal value is $\alpha(G)=3$.
 
     - The vertex-weighted model changes only the objective function; the edge-weighted model adds a variable $y_{uv}$ per edge, with $y_{uv}\le x_u$ and $y_{uv}\le x_v$. On the instances of the chapter «Clique problems» their optimal values are $32$ and $37$.
 
@@ -202,7 +202,7 @@ The problems of this section are the vertex-weighted and the edge-weighted maxim
     <th><span class="arithmatex">\(\omega(G)\)</span></th>
     </tr>
     <tr>
-    <td><span style="color:#1971c2"><a href="../#box-1-mcpF-ex1">Example 12.1</a></span> (cycle with a chord)</td>
+    <td><span style="color:#1971c2"><a href="../an-ilp-model-for-the-maximum-clique-problem-the-edge-formula/#box-1-mcpF-ex1">Example 12.1</a></span> (cycle with a chord)</td>
     <td><span class="arithmatex">\(\frac{7}{2}\)</span></td>
     <td><span class="arithmatex">\(3\)</span></td>
     <td><span class="arithmatex">\(3\)</span></td>

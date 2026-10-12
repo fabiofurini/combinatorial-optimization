@@ -6,7 +6,7 @@ title: "DP for the coin change problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 26** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Coin change](../exercises/dp-coin-change.md)
+**Part 3 · Dynamic programming · Chapter 27** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Coin change](../exercises/dp-coin-change.md)
 
 </div>
 
@@ -34,11 +34,11 @@ title: "DP for the coin change problem"
 
 The problem of this chapter is the [coin change problem (CCP)](https://fabiofurini.github.io/combinatorial-optimization/catalogue/coin-change-problem/): its definition is on its page.
 
-## 26.1 Instances and feasible solutions
+## 27.1 Instances and feasible solutions
 
 <a id="box-1-texccpex1"></a>
 
-!!! esempio "Example 26.1: CCP instance"
+!!! esempio "Example 27.1: CCP instance"
 
     We consider an amount of change $c=10$ to return, and $n=3$ denominations:
 
@@ -52,7 +52,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
     Unlike the 0/1 Knapsack Problem, where the total weight of the selected items must not exceed the capacity, the CCP requires the total value of the selected coins to be <em>exactly equal</em> to $c$. Moreover, since every denomination is available in unlimited supply, the number of coins of a given denomination used in a solution is not bounded a priori.
 
-### 26.1.1 Encoding of feasible solutions
+### 27.1.1 Encoding of feasible solutions
 
 !!! chiave ""
 
@@ -84,7 +84,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
 - Since $\sum_{j=1}^{n} w_j x_j = c$, every component $x_j$ of a feasible solution satisfies $x_j \le \lfloor c/w_j \rfloor$. Therefore, the number of feasible solutions is finite, but it grows quickly with $c$ and $n$, and enumerating all of them to find the one using the fewest coins quickly becomes impractical.
 
-## 26.2 A DP algorithm
+## 27.2 A DP algorithm
 
 - <u>Step 1</u>: computation of the optimal value
 
@@ -104,7 +104,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
         0                                                                 & \textrm{if $k=0$,}                                              \\[2ex]
         +\infty                                                          & \textrm{if $k\ge 1$ and $w_j>k$ for every $j\in\{1,2,\dots,n\}$,} \\[2ex]
         \displaystyle \min_{j \,:\, w_j \,\le\, k} \big\{ 1 + v(k-w_j) \big\} & \textrm{if $k\ge 1$ and $w_j\le k$ for some $j\in\{1,2,\dots,n\}$.}
-        \end{array} \right. \tag{26.1}
+        \end{array} \right. \tag{27.1}
         \end{equation*}
 
     - The recursive decomposition process of formula $\eqref{eq:ccp}$ generates at most $n$ <strong>independent subproblems</strong>, corresponding to the possible choices of a denomination $j$, with $w_j\le k$, used as one of the coins returning the amount of change $k$.
@@ -127,7 +127,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
         <a id="box-2-texccptree"></a>
 
-        !!! esempio "Example 26.2: Recursion tree"
+        !!! esempio "Example 27.2: Recursion tree"
 
             We consider the CCP instance of <span style="color:#1971c2">Example 1</span>. This is the recursion tree of the top-down approach to compute $v(10)$:
 
@@ -139,7 +139,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
         <a id="box-3-texccpvalues"></a>
 
-        !!! esempio "Example 26.3: Computing the values of the $v$ function"
+        !!! esempio "Example 27.3: Computing the values of the $v$ function"
 
             We consider the CCP instance of <span style="color:#1971c2">Example 1</span>, with amount of change $c=10$ to return and denominations $w=(2,3,5)$.
 
@@ -229,7 +229,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
         <a id="box-13-texccpbu"></a>
 
-        !!! esempio "Example 26.4: Execution of the DP algorithm"
+        !!! esempio "Example 27.4: Execution of the DP algorithm"
 
             We consider the CCP instance of <span style="color:#1971c2">Example 1</span>, with amount of change $c=10$ to return and denominations $w=(2,3,5)$.
 
@@ -632,7 +632,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
         <a id="box-14-texccpinfo"></a>
 
-        !!! esempio "Example 26.5: Computation of the additional information"
+        !!! esempio "Example 27.5: Computation of the additional information"
 
             We consider the CCP instance of <span style="color:#1971c2">Example 1</span>, with amount of change $c=10$ to return and denominations $w=(2,3,5)$.
 
@@ -664,7 +664,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
         <a id="box-15-texccpsolvector"></a>
 
-        !!! esempio "Example 26.6: Computing an optimal solution"
+        !!! esempio "Example 27.6: Computing an optimal solution"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following array $s$:
 
@@ -725,7 +725,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
             is an optimal solution: it uses two coins of denomination $w_3=5$. The corresponding total value is $2\cdot5=10=c$. The corresponding optimal value is $v(10)=2$.
 
-### 26.2.1 Number of steps
+### 27.2.1 Number of steps
 
 - Let $S(n,c)$ denote the number of steps executed by <code>CCP\_DP</code> in the worst case, where $n$ is the number of denominations and $c$ is the amount of change. We compute $S(n,c)$ by counting how many times the lines of the pseudo-code of <code>CCP\_DP</code> are executed.
 
@@ -791,7 +791,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
 - The version <code>CCP\_DP\_InfoSol</code> stores the additional array $s$ and performs only a constant number of extra operations inside the same loops. Therefore, its number of steps remains $\Theta(nc)$.
 
-## 26.3 Typical mistakes
+## 27.3 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -803,7 +803,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
     - <strong>Confusing the CCP with the UKP.</strong> The CCP asks for exactly $c$ and minimizes the number of coins; the UKP asks for at most $c$ and maximizes the profit.
 
-## 26.4 In summary
+## 27.4 In summary
 
 !!! chiave "In summary"
 

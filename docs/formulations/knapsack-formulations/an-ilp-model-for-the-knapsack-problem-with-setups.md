@@ -2,7 +2,7 @@
 title: "Knapsack with setups"
 ---
 
-# 9.11 An ILP model for the Knapsack Problem with Setups
+# 9.12 An ILP model for the Knapsack Problem with Setups { #sez-sec-kpf-KPS }
 
 <div class="info-capitolo" markdown>
 
@@ -10,7 +10,7 @@ title: "Knapsack with setups"
 
 </div>
 
-The Knapsack Problem with Setups and its reference instance (Example 2.8) are defined in [Chapter 2 «Knapsack problems», Section 2.8](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups/).
+The Knapsack Problem with Setups and its reference instance (Example 2.8) are defined in [Chapter 2 «Knapsack problems», Section 2.9](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups/).
 
 - We introduce the following  $n$ <strong>binary variables</strong>:
 
@@ -98,11 +98,11 @@ The Knapsack Problem with Setups and its reference instance (Example 2.8) are d
 
     The optimal value $z(\mathrm{ILP}_{\mathrm{KPS}})$  is $16$. The associated optimal solution of the KPS is $\tilde{S} =\{1,2,3,6\}$. The optimal solution is not unique: the subsets $\{1,2,3\}$ and $\{4,5,6\}$ have the same value.
 
-## 9.12 Typical mistakes
+## 9.13 Typical mistakes
 
 !!! attenzione "Warning"
 
-    - <strong>Forgetting to sort the items.</strong> The formulas [(9.13)](index.md#mjx-eqn:PP), [(9.14)](index.md#mjx-eqn:DD) and the bounds hold only if the items are sorted by non-increasing efficiency: with another order the vector [(9.13)](index.md#mjx-eqn:PP) is feasible but not optimal.
+    - <strong>Forgetting to sort the items.</strong> The formulas [(9.13)](an-ilp-model-for-the-0-1-knapsack-problem.md#mjx-eqn:PP), [(9.14)](an-ilp-model-for-the-0-1-knapsack-problem.md#mjx-eqn:DD) and the bounds hold only if the items are sorted by non-increasing efficiency: with another order the vector [(9.13)](an-ilp-model-for-the-0-1-knapsack-problem.md#mjx-eqn:PP) is feasible but not optimal.
 
     - <strong>Using $z(\mathrm{LP}\text{-}0_{\mathrm{KP}})$ as the bound.</strong> The first relaxation has no upper bounds on the variables, and it is much weaker: in Example 1 it gives $27$, against $\tfrac{49}{3}$ for the second relaxation.
 
@@ -110,11 +110,11 @@ The Knapsack Problem with Setups and its reference instance (Example 2.8) are d
 
     - <strong>Confusing the split item with the last selected item.</strong> The split item $s$ is the first item that does <u>not</u> fit: in Example 1 it is $s=3$, while the items $1$ and $2$ are selected entirely.
 
-    - <strong>Assuming that the LP optimum is unique.</strong> With items of equal efficiency the $\mathrm{LP}_{\mathrm{KP}}$ problem has other optimal solutions; the formulas [(9.13)](index.md#mjx-eqn:PP) give one of them.
+    - <strong>Assuming that the LP optimum is unique.</strong> With items of equal efficiency the $\mathrm{LP}_{\mathrm{KP}}$ problem has other optimal solutions; the formulas [(9.13)](an-ilp-model-for-the-0-1-knapsack-problem.md#mjx-eqn:PP) give one of them.
 
     - <strong>Copying the $\mathrm{ILP}_{\mathrm{KP}}$ model to the variants.</strong> In the BKP and in the UKP the variables are integer, not binary; in the MCKP the class constraints [(9.31c)](an-ilp-model-for-the-multiple-choice-knapsack-problem.md#mjx-eqn:cons2_MCKP) are equalities; in the KPS, without the constraints $\eqref{cons2_KPS}$ the model selects items with $y_h = 0$ and never pays a setup.
 
-## 9.13 In summary
+## 9.14 In summary
 
 !!! chiave "In summary"
 

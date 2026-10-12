@@ -6,11 +6,11 @@ title: "The problems and the assumptions · The greedy paradigm"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 29** · [:material-book-open-variant: Chapter 29: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
+**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
 
 </div>
 
-## 29.2 The problems and the assumptions { #sez-sec-problems }
+## 30.2 The problems and the assumptions { #sez-sec-problems }
 
 - The heuristics are illustrated on the four problems of the notes on heuristic algorithms: the 0/1 knapsack problem (KP), the bin packing problem (BPP), the travelling salesman problem (TSP) and the scheduling problem $P\,||\,C_{\max}$; the greedy coloring and $DSATUR$ are applied to the vertex coloring problem (VCP). Their definitions are given in the notes on combinatorial optimization problems, and the assumptions and the notation in the notes on the definitions of heuristic algorithms; we recall the essentials.
 
@@ -62,7 +62,7 @@ $$
 
 ![Figure 1](../../img/constructive-heuristics/fig01.svg){ .fig loading=lazy  }
 
-## 29.3 The greedy paradigm { #sez-sec-greedy }
+## 30.3 The greedy paradigm { #sez-sec-greedy }
 
 - A solution of each of the four problems is made of <strong>elements</strong>: the items selected for the knapsack, the assignments of items to bins and of jobs to machines, the edges of a tour. A constructive heuristic starts from the empty <strong>partial solution</strong> and adds one element at a time.
 
@@ -70,7 +70,7 @@ $$
 
 <a id="box-2-def-greedy"></a>
 
-!!! definizione "Definition 29.2: Greedy algorithm"
+!!! definizione "Definition 30.2: Greedy algorithm"
 
     A <strong>greedy algorithm</strong> is a constructive heuristic that builds a solution by repeatedly selecting, among the candidate elements, the one that is best according to a <em>selection criterion</em>; the element is added to the partial solution if the feasibility test allows it, and is discarded otherwise.
 
@@ -131,4 +131,4 @@ $$
 
 ---
 
-**Next:** [29.4 The 0/1 knapsack problem: which order?](the-0-1-knapsack-problem-which-order.md)
+**Next:** [30.4 The 0/1 knapsack problem: which order?](the-0-1-knapsack-problem-which-order.md)

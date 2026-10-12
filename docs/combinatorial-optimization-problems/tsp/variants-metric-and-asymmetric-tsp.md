@@ -2,7 +2,7 @@
 title: "Metric and asymmetric TSP"
 ---
 
-# 6.2 Variants: metric and asymmetric TSP
+# 6.3 Variants: metric and asymmetric TSP { #sez-sec-tsp-variants }
 
 <div class="info-capitolo" markdown>
 
@@ -23,7 +23,7 @@ title: "Metric and asymmetric TSP"
     \qquad \text{for all distinct } i,j,k \in \mathscr{V}.
     $$
 
-- The instance of <span style="color:#1971c2">[Example 6.1](index.md#box-2-ex-tsp5)</span> is metric: all the $5\cdot4\cdot3=60$ triangle inequalities hold, some of them with equality, e.g., $d_{15}=9=d_{12}+d_{25}=5+4$. In the drawing, the direct edge $\{1,5\}$ (dashed) is as long as the path from $1$ to $5$ through city $2$.
+- The instance of <span style="color:#1971c2">[Example 6.1](the-travelling-salesman-problem.md#box-2-ex-tsp5)</span> is metric: all the $5\cdot4\cdot3=60$ triangle inequalities hold, some of them with equality, e.g., $d_{15}=9=d_{12}+d_{25}=5+4$. In the drawing, the direct edge $\{1,5\}$ (dashed) is as long as the path from $1$ to $5$ through city $2$.
 
 ![Figure 2](../../img/tsp/fig02.svg){ .fig loading=lazy  }
 
@@ -35,7 +35,7 @@ title: "Metric and asymmetric TSP"
 
 - The TSP is the special case of the ATSP in which $d_{ij}=d_{ji}$ for all $i,j$.
 
-## 6.3 Counting the tours
+## 6.4 Counting the tours
 
 <a id="box-4-prop-tsp-count"></a>
 
@@ -57,7 +57,7 @@ title: "Metric and asymmetric TSP"
 
 !!! esempio "Example 6.2: enumeration of the tours"
 
-    The instance of <span style="color:#1971c2">[Example 6.1](index.md#box-2-ex-tsp5)</span> has $\frac{(5-1)!}{2}=12$ distinct tours, which can be enumerated:
+    The instance of <span style="color:#1971c2">[Example 6.1](the-travelling-salesman-problem.md#box-2-ex-tsp5)</span> has $\frac{(5-1)!}{2}=12$ distinct tours, which can be enumerated:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -124,7 +124,7 @@ title: "Metric and asymmetric TSP"
 
 - A computer that evaluates $10^9$ tours per second needs about $6.1\cdot 10^{7}$ seconds, that is about two years, to list the tours of $20$ cities. Enumeration is therefore useful only as a check on tiny instances, and the algorithms of this course must do better.
 
-## 6.4 A first tour by hand
+## 6.5 A first tour by hand
 
 - The simplest way to build a tour is the <strong>nearest neighbour rule</strong>: start from a city and, as long as there are unvisited cities, move to the closest unvisited one; at the end, return to the starting city. In case of a tie we take the city with the smallest index.
 
@@ -132,7 +132,7 @@ title: "Metric and asymmetric TSP"
 
 !!! esempio "Example 6.3: nearest neighbour from city $1$"
 
-    On the instance of <span style="color:#1971c2">[Example 6.1](index.md#box-2-ex-tsp5)</span>, starting from city $1$:
+    On the instance of <span style="color:#1971c2">[Example 6.1](the-travelling-salesman-problem.md#box-2-ex-tsp5)</span>, starting from city $1$:
 
     1. from $1$ the closest cities are $3$ and $4$, both at distance $2$: we go to $3$;
 
@@ -148,7 +148,7 @@ title: "Metric and asymmetric TSP"
 
 - From the nearest neighbour tour alone we cannot tell how far we are from the optimum: we need a lower bound.
 
-## 6.5 A combinatorial lower bound
+## 6.6 A combinatorial lower bound
 
 - For a city $i$, let $a_i \le b_i$ be the two smallest distances from $i$ to the other cities.
 
@@ -172,7 +172,7 @@ title: "Metric and asymmetric TSP"
 
 !!! esempio "Example 6.4: the bound on the reference instance"
 
-    For the instance of <span style="color:#1971c2">[Example 6.1](index.md#box-2-ex-tsp5)</span> the two smallest distances of each city are:
+    For the instance of <span style="color:#1971c2">[Example 6.1](the-travelling-salesman-problem.md#box-2-ex-tsp5)</span> the two smallest distances of each city are:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -221,7 +221,7 @@ title: "Metric and asymmetric TSP"
 
     an absolute gap of $8$, that is a relative gap of $\frac{8}{17} \approx 47.1\%$. The tour $(1,3,5,2,4)$ of length $18$ closes most of it, and only the enumeration of the $12$ tours proves that $18$ is optimal.
 
-## 6.6 Remarks
+## 6.7 Remarks
 
 - The largest instance solved to optimality, pla85900, has $85\,900$ points from a chip design problem. It was solved in 2005–2006 with the Concorde code; the optimal tour, of length $142\,382\,641$, was certified in 2009 by Applegate, Bixby, Chvátal, Cook, Espinoza, Goycoolea and Helsgaun.
 
@@ -229,7 +229,7 @@ title: "Metric and asymmetric TSP"
 
 - The TSP is strongly NP-hard (chapter «Combinatorial optimization problems»). Christofides (1976) gave an approximation algorithm with ratio $\frac32$ for the metric TSP.
 
-## 6.7 Typical mistakes
+## 6.8 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -243,7 +243,7 @@ title: "Metric and asymmetric TSP"
 
     - <strong>Using the triangle inequality without checking it.</strong> The guarantees of the heuristic algorithms hold only for metric instances.
 
-## 6.8 In summary
+## 6.9 In summary
 
 !!! chiave "In summary"
 

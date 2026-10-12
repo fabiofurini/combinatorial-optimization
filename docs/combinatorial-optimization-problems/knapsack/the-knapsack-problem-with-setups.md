@@ -2,7 +2,7 @@
 title: "Knapsack with setups"
 ---
 
-# 2.8 The knapsack problem with setups
+# 2.9 The knapsack problem with setups { #sez-sec-kp-KPS }
 
 <div class="info-capitolo" markdown>
 
@@ -135,7 +135,7 @@ title: "Knapsack with setups"
 
     ![Figure 8](../../img/knapsack/fig08.svg){ .fig loading=lazy  }
 
-## 2.8.1 Assumptions
+## 2.9.1 Assumptions
 
 - We make the following assumptions:
 
@@ -151,7 +151,7 @@ title: "Knapsack with setups"
         w_j + s_h \le c \qquad \forall\, h\in\{1,2,\dots,q\},\ \forall\, j\in \mathscr{J}_h.
         $$
 
-## 2.9 The variants at a glance
+## 2.10 The variants at a glance
 
 - The table lists, for the instance of each section, the number of candidate solutions, the number of feasible solutions and the optimal value, computed by enumeration. In the BKP and in the UKP a candidate solution is the vector of the numbers of copies of every item, so that identical copies are not counted twice.
 
@@ -234,7 +234,7 @@ title: "Knapsack with setups"
 
 - In the MCKP only $3$ of the $8$ choices of one item per class fit in the knapsack: the feasibility condition of the assumptions is not a formality.
 
-## 2.10 Remarks
+## 2.11 Remarks
 
 - Dantzig (1957) sorted the items by non-increasing efficiency $p_j/w_j$ and used this order to solve the continuous version of the KP; the same order returns in the bounds of the following chapters.
 
@@ -242,13 +242,13 @@ title: "Knapsack with setups"
 
 - Ibarra and Kim (1975) gave the first fully polynomial-time approximation scheme for the KP.
 
-## 2.11 Typical mistakes
+## 2.12 Typical mistakes
 
 !!! attenzione "Warning"
 
     - <strong>Confusing the KP with the SSP.</strong> The SSP asks for a total weight <em>exactly</em> equal to $c$ and has a yes/no answer; it is the KP with $p_j = w_j$, where the answer is yes if the optimal value is $c$.
 
-    - <strong>Stopping at the order of efficiency.</strong> Taking the items in the order $1, 2, 3, \dots$ of non-increasing $p_j/w_j$ gives $\{1,2\}$ with profit $11$, while the optimal solution of <span style="color:#1971c2">[Example 2.1](index.md#box-2-ex-kp)</span> is $\{1,4\}$ with profit $15$.
+    - <strong>Stopping at the order of efficiency.</strong> Taking the items in the order $1, 2, 3, \dots$ of non-increasing $p_j/w_j$ gives $\{1,2\}$ with profit $11$, while the optimal solution of <span style="color:#1971c2">[Example 2.1](the-0-1-knapsack-problem.md#box-2-ex-kp)</span> is $\{1,4\}$ with profit $15$.
 
     - <strong>Counting identical copies as different solutions.</strong> In the BKP and in the UKP the copies $(j,k)$ of the same item are interchangeable: different subsets of the extended set of items can give the same packing.
 
@@ -256,7 +256,7 @@ title: "Knapsack with setups"
 
     - <strong>Forgetting the assumptions.</strong> An item with $w_j > c$ can never be selected, and if all the items fit the problem is trivial: both cases are removed before solving.
 
-## 2.12 In summary
+## 2.13 In summary
 
 !!! chiave "In summary"
 
@@ -272,7 +272,7 @@ title: "Knapsack with setups"
 
     <div class="tabella" markdown="0"><table>
     <tr>
-    <th>KP, <span style="color:#1971c2"><a href="../#box-2-ex-kp">Example 2.1</a></span> (max)</th>
+    <th>KP, <span style="color:#1971c2"><a href="../the-0-1-knapsack-problem/#box-2-ex-kp">Example 2.1</a></span> (max)</th>
     <th>lower bound</th>
     <th>upper bound</th>
     <th>from</th>
