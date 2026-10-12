@@ -50,11 +50,11 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
 
     - The <strong>recursion tree</strong> of the function $v$ has one node for each recursive call, labeled with the function call it represents. The root represents the initial call. The children of a node represent the recursive calls made by that call. The leaf nodes represent the base cases.
 
-        <a id="box-17-texulstree"></a>
+        <a id="box-16-texulstree"></a>
 
         !!! esempio "Example 27.5: Recursion tree"
 
-            We consider the first four periods of the ULS instance of <span style="color:#1971c2">[Example 27.1](index.md#box-2-texuls1)</span> (with five periods the tree has $32$ nodes). This is the recursion tree of the top-down approach to compute $v(4)$:
+            We consider the first four periods of the ULS instance of <span style="color:#1971c2">[Example 27.1](index.md#box-1-texuls1)</span> (with five periods the tree has $32$ nodes). This is the recursion tree of the top-down approach to compute $v(4)$:
 
             ![Figure 2](../../img/dp-lot-sizing/fig02.svg){ .fig loading=lazy  }
 
@@ -62,11 +62,11 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
 
     - The value $v(t)$, for a generic period $t$, can be computed once the values $v(j)$ are known for all smaller periods $j<t$.
 
-        <a id="box-18-texulsvalues"></a>
+        <a id="box-17-texulsvalues"></a>
 
         !!! esempio "Example 27.6: Computing the values of the $v$ function"
 
-            We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](index.md#box-2-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
+            We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](index.md#box-1-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
 
             $$
             \begin{array}{l|rrrrr}
@@ -126,7 +126,7 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
 
         !!! algoritmo "Algorithm: DP\_WW"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A ULS instance given by the number <span class="arithmatex">\(m\)</span> of periods and the arrays <span class="arithmatex">\(d[1..m]\)</span>, <span class="arithmatex">\(sc[1..m]\)</span>, <span class="arithmatex">\(vc[1..m]\)</span>, <span class="arithmatex">\(hc[1..m]\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP_WW(<span class="arithmatex">\(m,d,sc,vc,hc\)</span>)</div><div class="pc" style="--liv:1" id="box-19-ww-a"><span class="pc-n">2</span><span class="arithmatex">\({c} := \textnormal{CostMatrix}(m,d,sc,vc,hc)\)</span></div><div class="pc" style="--liv:1" id="box-20-ww-b"><span class="pc-n">3</span><span class="arithmatex">\({v} := \textnormal{new array}[0..m]\)</span></div><div class="pc" style="--liv:1" id="box-21-ww-c"><span class="pc-n">4</span><span class="arithmatex">\({v}[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-22-ww-d"><span class="pc-n">5</span><strong>for</strong> <span class="arithmatex">\(t := 1\)</span> <strong>to</strong> <span class="arithmatex">\(m\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-23-ww-e"><span class="pc-n">6</span><span class="arithmatex">\(\mathit{b} := +\infty\)</span></div><div class="pc" style="--liv:2" id="box-24-ww-f"><span class="pc-n">7</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(t\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-25-ww-g"><span class="pc-n">8</span><strong>if</strong> <span class="arithmatex">\({v}[j-1] + {c}[j][t] < \mathit{b}\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-26-ww-h"><span class="pc-n">9</span><span class="arithmatex">\(\mathit{b} \leftarrow {v}[j-1] + {c}[j][t]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">11</span><strong>end</strong></div><div class="pc" style="--liv:2" id="box-27-ww-i"><span class="pc-n">12</span><span class="arithmatex">\({v}[t] \leftarrow \mathit{b}\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">13</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-28-ww-j"><span class="pc-n">14</span><strong>return</strong> <span class="arithmatex">\({v}[m]\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A ULS instance given by the number <span class="arithmatex">\(m\)</span> of periods and the arrays <span class="arithmatex">\(d[1..m]\)</span>, <span class="arithmatex">\(sc[1..m]\)</span>, <span class="arithmatex">\(vc[1..m]\)</span>, <span class="arithmatex">\(hc[1..m]\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP_WW(<span class="arithmatex">\(m,d,sc,vc,hc\)</span>)</div><div class="pc" style="--liv:1" id="box-18-ww-a"><span class="pc-n">2</span><span class="arithmatex">\({c} := \textnormal{CostMatrix}(m,d,sc,vc,hc)\)</span></div><div class="pc" style="--liv:1" id="box-19-ww-b"><span class="pc-n">3</span><span class="arithmatex">\({v} := \textnormal{new array}[0..m]\)</span></div><div class="pc" style="--liv:1" id="box-20-ww-c"><span class="pc-n">4</span><span class="arithmatex">\({v}[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-21-ww-d"><span class="pc-n">5</span><strong>for</strong> <span class="arithmatex">\(t := 1\)</span> <strong>to</strong> <span class="arithmatex">\(m\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-22-ww-e"><span class="pc-n">6</span><span class="arithmatex">\(\mathit{b} := +\infty\)</span></div><div class="pc" style="--liv:2" id="box-23-ww-f"><span class="pc-n">7</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(t\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-24-ww-g"><span class="pc-n">8</span><strong>if</strong> <span class="arithmatex">\({v}[j-1] + {c}[j][t] < \mathit{b}\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-25-ww-h"><span class="pc-n">9</span><span class="arithmatex">\(\mathit{b} \leftarrow {v}[j-1] + {c}[j][t]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">11</span><strong>end</strong></div><div class="pc" style="--liv:2" id="box-26-ww-i"><span class="pc-n">12</span><span class="arithmatex">\({v}[t] \leftarrow \mathit{b}\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">13</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-27-ww-j"><span class="pc-n">14</span><strong>return</strong> <span class="arithmatex">\({v}[m]\)</span></div></div>
 
         - The matrix ${c}$ contains the production-run costs, computed by the algorithm CostMatrix.
 
@@ -140,11 +140,11 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
 
         - Finally, the optimal value ${v}[m]$ of the ULS instance is returned.
 
-        <a id="box-29-texulsbu"></a>
+        <a id="box-28-texulsbu"></a>
 
         !!! esempio "Example 27.7: Execution of the DP algorithm"
 
-            We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](index.md#box-2-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
+            We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](index.md#box-1-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
 
             $$
             \begin{array}{l|rrrrr}
@@ -384,11 +384,11 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
 
         - Because of the strict comparison, in case of ties the smallest period $j$ is stored.
 
-        <a id="box-30-texulsbuinfo"></a>
+        <a id="box-29-texulsbuinfo"></a>
 
         !!! esempio "Example 27.8: Computation of the additional information"
 
-            We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](index.md#box-2-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
+            We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](index.md#box-1-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
 
             $$
             \begin{array}{l|rrrrr}
@@ -649,11 +649,11 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
 
             <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> The number <span class="arithmatex">\(m\)</span> of periods and the demands <span class="arithmatex">\(d[1..m]\)</span> of the ULS instance, and the vector <span class="arithmatex">\({r}[1..m]\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> An optimal solution of the ULS instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP_WW_SolComputation(<span class="arithmatex">\(m,d,{r}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(x := \textnormal{new array}[1..m]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(m\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(x[j] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><span class="arithmatex">\(t := m\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><strong>while</strong> <span class="arithmatex">\(t > 0\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><span class="arithmatex">\(x[{r}[t]] \leftarrow \sum_{k={r}[t]}^{t} d[k]\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">9</span><span class="arithmatex">\(t \leftarrow {r}[t] - 1\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">11</span><strong>return</strong> <span class="arithmatex">\(x\)</span></div></div>
 
-        <a id="box-31-texulssolvector"></a>
+        <a id="box-30-texulssolvector"></a>
 
         !!! esempio "Example 27.9: Computing an optimal solution"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 27.1](index.md#box-2-texuls1)</span>, we have the following vector ${r}$:
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 27.1](index.md#box-1-texuls1)</span>, we have the following vector ${r}$:
 
             $$
             \begin{array}{c|ccccc}
@@ -722,21 +722,21 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
             (30,\allowbreak 0,\allowbreak 80,\allowbreak 0,\allowbreak 0)
             $$
 
-            The corresponding optimal value is ${v}[5]=170$, the same value obtained by the enumeration of <span style="color:#1971c2">[Example 27.3](index.md#box-5-texulsenum)</span> and by Gurobi on the MIP model.
+            The corresponding optimal value is ${v}[5]=170$, the same value obtained by the enumeration of <span style="color:#1971c2">[Example 27.3](index.md#box-4-texulsenum)</span> and by Gurobi on the MIP model.
 
-    - <em>Remark (ties).</em> In the computation of ${v}[5]$, the run in period $4$ gives the same value as the run in period $3$, but the strict comparison keeps $j=3$. Choosing $j=4$ instead leads to the other optimal solution $(30,\allowbreak 0,\allowbreak 30,\allowbreak 50,\allowbreak 0)$ of <span style="color:#1971c2">[Example 27.3](index.md#box-5-texulsenum)</span>. The DP algorithm returns one optimal solution, not all of them.
+    - <em>Remark (ties).</em> In the computation of ${v}[5]$, the run in period $4$ gives the same value as the run in period $3$, but the strict comparison keeps $j=3$. Choosing $j=4$ instead leads to the other optimal solution $(30,\allowbreak 0,\allowbreak 30,\allowbreak 50,\allowbreak 0)$ of <span style="color:#1971c2">[Example 27.3](index.md#box-4-texulsenum)</span>. The DP algorithm returns one optimal solution, not all of them.
 
 ## 27.2.3 Number of steps
 
 - Let $S_c(m)$ denote the number of steps executed by CostMatrix in the worst case, where $m$ is the number of periods. The number of executions of its lines is:
 
-    - <span style="color:#e03131">Line</span> [2](a-dp-algorithm-for-the-uls.md#box-6-cm-a) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [2](a-dp-algorithm-for-the-uls.md#box-5-cm-a) is executed $1$ time.
 
-    - <span style="color:#e03131">Line</span> [3](a-dp-algorithm-for-the-uls.md#box-7-cm-b), <span style="color:#e03131">Line</span> [4](a-dp-algorithm-for-the-uls.md#box-8-cm-c), <span style="color:#e03131">Line</span> [5](a-dp-algorithm-for-the-uls.md#box-9-cm-d), and <span style="color:#e03131">Line</span> [6](a-dp-algorithm-for-the-uls.md#box-10-cm-e) are executed $m$ times each.
+    - <span style="color:#e03131">Line</span> [3](a-dp-algorithm-for-the-uls.md#box-6-cm-b), <span style="color:#e03131">Line</span> [4](a-dp-algorithm-for-the-uls.md#box-7-cm-c), <span style="color:#e03131">Line</span> [5](a-dp-algorithm-for-the-uls.md#box-8-cm-d), and <span style="color:#e03131">Line</span> [6](a-dp-algorithm-for-the-uls.md#box-9-cm-e) are executed $m$ times each.
 
-    - <span style="color:#e03131">Line</span> [7](a-dp-algorithm-for-the-uls.md#box-11-cm-f), <span style="color:#e03131">Line</span> [8](a-dp-algorithm-for-the-uls.md#box-12-cm-g), <span style="color:#e03131">Line</span> [9](a-dp-algorithm-for-the-uls.md#box-13-cm-h), and <span style="color:#e03131">Line</span> [10](a-dp-algorithm-for-the-uls.md#box-14-cm-i) are executed $\displaystyle\sum_{j=1}^{m}(m-j)=\frac{m(m-1)}{2}$ times each.
+    - <span style="color:#e03131">Line</span> [7](a-dp-algorithm-for-the-uls.md#box-10-cm-f), <span style="color:#e03131">Line</span> [8](a-dp-algorithm-for-the-uls.md#box-11-cm-g), <span style="color:#e03131">Line</span> [9](a-dp-algorithm-for-the-uls.md#box-12-cm-h), and <span style="color:#e03131">Line</span> [10](a-dp-algorithm-for-the-uls.md#box-13-cm-i) are executed $\displaystyle\sum_{j=1}^{m}(m-j)=\frac{m(m-1)}{2}$ times each.
 
-    - <span style="color:#e03131">Line</span> [13](a-dp-algorithm-for-the-uls.md#box-15-cm-j) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [13](a-dp-algorithm-for-the-uls.md#box-14-cm-j) is executed $1$ time.
 
     Therefore,
 
@@ -744,25 +744,25 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
     S_c(m)=2+4m+4\cdot\frac{m(m-1)}{2}=2m^2+2m+2.
     $$
 
-- Let $S(m)$ denote the number of steps executed by DP\_WW in the worst case. <span style="color:#e03131">Line</span> [2](#box-19-ww-a) executes CostMatrix, that is, $S_c(m)$ steps. In the worst case, the condition at line [8](#box-25-ww-g) is true at every iteration of the inner loop, and therefore line [9](#box-26-ww-h) is executed as often as line [8](#box-25-ww-g). The number of executions of the other lines is:
+- Let $S(m)$ denote the number of steps executed by DP\_WW in the worst case. <span style="color:#e03131">Line</span> [2](#box-18-ww-a) executes CostMatrix, that is, $S_c(m)$ steps. In the worst case, the condition at line [8](#box-24-ww-g) is true at every iteration of the inner loop, and therefore line [9](#box-25-ww-h) is executed as often as line [8](#box-24-ww-g). The number of executions of the other lines is:
 
-    - <span style="color:#e03131">Line</span> [3](#box-20-ww-b) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [3](#box-19-ww-b) is executed $1$ time.
 
-    - <span style="color:#e03131">Line</span> [4](#box-21-ww-c) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [4](#box-20-ww-c) is executed $1$ time.
 
-    - <span style="color:#e03131">Line</span> [5](#box-22-ww-d) is executed $m$ times.
+    - <span style="color:#e03131">Line</span> [5](#box-21-ww-d) is executed $m$ times.
 
-    - <span style="color:#e03131">Line</span> [6](#box-23-ww-e) is executed $m$ times.
+    - <span style="color:#e03131">Line</span> [6](#box-22-ww-e) is executed $m$ times.
 
-    - <span style="color:#e03131">Line</span> [7](#box-24-ww-f) is executed $\displaystyle\sum_{t=1}^{m}t$ times.
+    - <span style="color:#e03131">Line</span> [7](#box-23-ww-f) is executed $\displaystyle\sum_{t=1}^{m}t$ times.
 
-    - <span style="color:#e03131">Line</span> [8](#box-25-ww-g) is executed $\displaystyle\sum_{t=1}^{m}t$ times.
+    - <span style="color:#e03131">Line</span> [8](#box-24-ww-g) is executed $\displaystyle\sum_{t=1}^{m}t$ times.
 
-    - <span style="color:#e03131">Line</span> [9](#box-26-ww-h) is executed $\displaystyle\sum_{t=1}^{m}t$ times.
+    - <span style="color:#e03131">Line</span> [9](#box-25-ww-h) is executed $\displaystyle\sum_{t=1}^{m}t$ times.
 
-    - <span style="color:#e03131">Line</span> [12](#box-27-ww-i) is executed $m$ times.
+    - <span style="color:#e03131">Line</span> [12](#box-26-ww-i) is executed $m$ times.
 
-    - <span style="color:#e03131">Line</span> [14](#box-28-ww-j) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [14](#box-27-ww-j) is executed $1$ time.
 
     Therefore, the total number of steps in the worst case is
 

@@ -134,19 +134,19 @@
     - 16.5 Typical mistakes
     - 16.6 In summary
 17. [DP for the knapsack problem](dynamic-programming/dp-knapsack/index.md)
-    - 17.1 Problem definition
+    - 17.1 Instances and feasible solutions
     - [17.2 A first DP algorithm](dynamic-programming/dp-knapsack/a-first-dp-algorithm.md)
     - [17.3 A second DP algorithm](dynamic-programming/dp-knapsack/a-second-dp-algorithm.md)
     - [17.4 Typical mistakes](dynamic-programming/dp-knapsack/typical-mistakes.md)
     - [17.5 In summary](dynamic-programming/dp-knapsack/typical-mistakes.md)
 18. [DP for the unbounded knapsack problem](dynamic-programming/dp-unbounded-knapsack/index.md)
-    - 18.1 Problem definition
+    - 18.1 Instances and feasible solutions
     - [18.2 A first DP algorithm](dynamic-programming/dp-unbounded-knapsack/a-first-dp-algorithm.md)
     - [18.3 A second DP algorithm](dynamic-programming/dp-unbounded-knapsack/a-second-dp-algorithm.md)
     - [18.4 Typical mistakes](dynamic-programming/dp-unbounded-knapsack/typical-mistakes.md)
     - [18.5 In summary](dynamic-programming/dp-unbounded-knapsack/typical-mistakes.md)
 19. [DP for the bounded knapsack problem](dynamic-programming/dp-bounded-knapsack.md)
-    - 19.1 Problem definition
+    - 19.1 Instances and feasible solutions
     - 19.2 A DP algorithm
     - 19.3 Typical mistakes
     - 19.4 In summary
@@ -171,18 +171,18 @@
     - 24.2 Typical mistakes
     - 24.3 In summary
 25. [DP for the rod cutting problem](dynamic-programming/dp-rod-cutting/index.md)
-    - 25.1 Problem definition
+    - 25.1 Instances and feasible solutions
     - [25.2 A first DP algorithm](dynamic-programming/dp-rod-cutting/a-first-dp-algorithm.md)
     - [25.3 A second DP algorithm](dynamic-programming/dp-rod-cutting/a-second-dp-algorithm.md)
     - [25.4 Typical mistakes](dynamic-programming/dp-rod-cutting/typical-mistakes.md)
     - [25.5 In summary](dynamic-programming/dp-rod-cutting/typical-mistakes.md)
 26. [DP for the coin change problem](dynamic-programming/dp-coin-change.md)
-    - 26.1 Problem definition
+    - 26.1 Instances and feasible solutions
     - 26.2 A DP algorithm
     - 26.3 Typical mistakes
     - 26.4 In summary
 27. [Dynamic programming for lot sizing](dynamic-programming/dp-lot-sizing/index.md)
-    - 27.1 Problem definition
+    - 27.1 Notation, model and feasible solutions
     - [27.2 A DP algorithm for the ULS](dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls.md)
     - [27.3 A DP algorithm for the capacitated case](dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md)
     - [27.4 Typical mistakes](dynamic-programming/dp-lot-sizing/typical-mistakes.md)
@@ -269,7 +269,7 @@
     - 33.3 Typical mistakes
     - 33.4 In summary
 34. [Approximation algorithms for bin packing](approximation-algorithms/bin-packing-approximation.md)
-    - 34.1 The problem and the assumptions
+    - 34.1 Notation
     - 34.2 The Next Fit
     - 34.3 The Any Fit class
     - 34.4 Half-full property
@@ -278,7 +278,7 @@
     - 34.7 In summary
     - 34.8 <code>C++</code> implementation
 35. [Approximation algorithms for the knapsack problem](approximation-algorithms/knapsack-approximation.md)
-    - 35.1 The problem and the assumptions
+    - 35.1 Notation
     - 35.2 Split item and residual capacity
     - 35.3 The greedy algorithm
     - 35.4 The Ext-Greedy algorithm
@@ -291,7 +291,7 @@
     - 35.11 In summary
     - 35.12 <code>C++</code> implementation
 36. [Approximation for P|Cmax](approximation-algorithms/pcmax-approximation.md)
-    - 36.1 The problem and the assumptions
+    - 36.1 Notation
     - 36.2 The algorithms $LIST$ and $LPT$
     - 36.3 A property of list scheduling
     - 36.4 Performance guarantees

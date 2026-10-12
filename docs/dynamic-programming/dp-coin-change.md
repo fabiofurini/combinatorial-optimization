@@ -32,21 +32,11 @@ title: "DP for the coin change problem"
 
     - count the steps of the DP algorithm.
 
-## 26.1 Problem definition
+The problem of this chapter is the [coin change problem (CCP)](https://fabiofurini.github.io/combinatorial-optimization/catalogue/coin-change-problem/): its definition is on its page.
 
-<a id="box-1-defCCP"></a>
+## 26.1 Instances and feasible solutions
 
-!!! definizione "Definition 26.1: Coin Change Problem"
-
-    Given:
-
-    1. a vector $w \in \Z_{\ge 1}^n$ of $n$ <em>denominations</em>, each available in unlimited supply,
-
-    2. an integer <em>amount of change</em> $c \in \Z_{\ge 0}$ to return,
-
-    the <strong>Coin Change Problem</strong> (CCP) asks to decide how many coins of each denomination to use so that their total value is exactly equal to $c$, and the total number of coins used is minimized. If no combination of coins returns exactly $c$, the instance is <em>infeasible</em>.
-
-<a id="box-2-texccpex1"></a>
+<a id="box-1-texccpex1"></a>
 
 !!! esempio "Example 26.1: CCP instance"
 
@@ -135,7 +125,7 @@ title: "DP for the coin change problem"
 
     - The <strong>recursion tree</strong> of the function $v$ has one node for each recursive call, labeled with the function call it represents. The root represents the initial call. The children of a node represent the recursive calls made by that call. The leaf nodes represent the base cases.
 
-        <a id="box-3-texccptree"></a>
+        <a id="box-2-texccptree"></a>
 
         !!! esempio "Example 26.2: Recursion tree"
 
@@ -147,7 +137,7 @@ title: "DP for the coin change problem"
 
     - The value $v(k)$ can be computed once the values $v(k')$, for every smaller amount of change $k'<k$, are known. Therefore, all values $v(k)$ can be computed by considering the amount of change $k$ in increasing order.
 
-        <a id="box-4-texccpvalues"></a>
+        <a id="box-3-texccpvalues"></a>
 
         !!! esempio "Example 26.3: Computing the values of the $v$ function"
 
@@ -223,7 +213,7 @@ title: "DP for the coin change problem"
 
         !!! algoritmo "Algorithm: CCP\_DP"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A CCP instance given by <span class="arithmatex">\(n\)</span>, the array <span class="arithmatex">\(w[1..n]\)</span> of denominations, and the amount of change <span class="arithmatex">\(c\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> CCP_DP(<span class="arithmatex">\(n,w,c\)</span>)</div><div class="pc" style="--liv:1" id="box-5-ccpbu-a"><span class="pc-n">2</span><span class="arithmatex">\(v := \textnormal{new array}[0..c]\)</span></div><div class="pc" style="--liv:1" id="box-6-ccpbu-b"><span class="pc-n">3</span><span class="arithmatex">\(v[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-7-ccpbu-c"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(k := 1\)</span> <strong>to</strong> <span class="arithmatex">\(c\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-8-ccpbu-d"><span class="pc-n">5</span><span class="arithmatex">\(m := +\infty\)</span></div><div class="pc" style="--liv:2" id="box-9-ccpbu-e"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-10-ccpbu-f"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(w[j]\le k\)</span>  and <span class="arithmatex">\(1+v[k-w[j]] < m\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-11-ccpbu-g"><span class="pc-n">8</span><span class="arithmatex">\(m \leftarrow 1+v[k-w[j]]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:2" id="box-12-ccpbu-h"><span class="pc-n">11</span><span class="arithmatex">\(v[k] \leftarrow m\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-13-ccpbu-i"><span class="pc-n">13</span><strong>return</strong> <span class="arithmatex">\(v[c]\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A CCP instance given by <span class="arithmatex">\(n\)</span>, the array <span class="arithmatex">\(w[1..n]\)</span> of denominations, and the amount of change <span class="arithmatex">\(c\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> CCP_DP(<span class="arithmatex">\(n,w,c\)</span>)</div><div class="pc" style="--liv:1" id="box-4-ccpbu-a"><span class="pc-n">2</span><span class="arithmatex">\(v := \textnormal{new array}[0..c]\)</span></div><div class="pc" style="--liv:1" id="box-5-ccpbu-b"><span class="pc-n">3</span><span class="arithmatex">\(v[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-6-ccpbu-c"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(k := 1\)</span> <strong>to</strong> <span class="arithmatex">\(c\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-7-ccpbu-d"><span class="pc-n">5</span><span class="arithmatex">\(m := +\infty\)</span></div><div class="pc" style="--liv:2" id="box-8-ccpbu-e"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-9-ccpbu-f"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(w[j]\le k\)</span>  and <span class="arithmatex">\(1+v[k-w[j]] < m\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-10-ccpbu-g"><span class="pc-n">8</span><span class="arithmatex">\(m \leftarrow 1+v[k-w[j]]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:2" id="box-11-ccpbu-h"><span class="pc-n">11</span><span class="arithmatex">\(v[k] \leftarrow m\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-12-ccpbu-i"><span class="pc-n">13</span><strong>return</strong> <span class="arithmatex">\(v[c]\)</span></div></div>
 
         - The array $v[0..c]$ is the <strong>lookup table</strong>: it stores the optimal values of all subproblems.
 
@@ -237,7 +227,7 @@ title: "DP for the coin change problem"
 
         - Finally, the optimal value of the CCP instance is returned as $v[c]$.
 
-        <a id="box-14-texccpbu"></a>
+        <a id="box-13-texccpbu"></a>
 
         !!! esempio "Example 26.4: Execution of the DP algorithm"
 
@@ -640,7 +630,7 @@ title: "DP for the coin change problem"
 
         - The DP algorithm uses the additional temporary variable $t$ to keep track of the decision made when $m$ is updated. If the denomination $w[j]$ is used, $t \leftarrow j$ stores its index. At the end of the inner loop, $s[k]\leftarrow t$ stores the index of the denomination of the coin used, together with the optimal value $v[k]\leftarrow m$.
 
-        <a id="box-15-texccpinfo"></a>
+        <a id="box-14-texccpinfo"></a>
 
         !!! esempio "Example 26.5: Computation of the additional information"
 
@@ -672,7 +662,7 @@ title: "DP for the coin change problem"
 
             <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> The number <span class="arithmatex">\(n\)</span> of denominations, the array <span class="arithmatex">\(w[1..n]\)</span>, the amount of change <span class="arithmatex">\(c\)</span> with <span class="arithmatex">\(v[c]<+\infty\)</span>, and the array <span class="arithmatex">\(s[0..c]\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> An optimal solution</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> CCP_Reconstruct(<span class="arithmatex">\(n,w,c,s\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(x := \textnormal{new array}[1..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(x[j] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><span class="arithmatex">\(k := c\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><strong>while</strong> <span class="arithmatex">\(k>0\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><span class="arithmatex">\(x[s[k]] \leftarrow x[s[k]]+1\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">9</span><span class="arithmatex">\(k \leftarrow k-w[s[k]]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">11</span><strong>return</strong> <span class="arithmatex">\(x\)</span></div></div>
 
-        <a id="box-16-texccpsolvector"></a>
+        <a id="box-15-texccpsolvector"></a>
 
         !!! esempio "Example 26.6: Computing an optimal solution"
 
@@ -739,25 +729,25 @@ title: "DP for the coin change problem"
 
 - Let $S(n,c)$ denote the number of steps executed by <code>CCP\_DP</code> in the worst case, where $n$ is the number of denominations and $c$ is the amount of change. We compute $S(n,c)$ by counting how many times the lines of the pseudo-code of <code>CCP\_DP</code> are executed.
 
-- In the worst case, the condition at line [7](#box-10-ccpbu-f) is true at every iteration of the inner loop, and therefore line [8](#box-11-ccpbu-g) is executed as often as line [7](#box-10-ccpbu-f). The number of executions of the relevant lines is:
+- In the worst case, the condition at line [7](#box-9-ccpbu-f) is true at every iteration of the inner loop, and therefore line [8](#box-10-ccpbu-g) is executed as often as line [7](#box-9-ccpbu-f). The number of executions of the relevant lines is:
 
-    - <span style="color:#e03131">Line</span> [2](#box-5-ccpbu-a) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [2](#box-4-ccpbu-a) is executed $1$ time.
 
-    - <span style="color:#e03131">Line</span> [3](#box-6-ccpbu-b) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [3](#box-5-ccpbu-b) is executed $1$ time.
 
-    - <span style="color:#e03131">Line</span> [4](#box-7-ccpbu-c) is executed $c$ times.
+    - <span style="color:#e03131">Line</span> [4](#box-6-ccpbu-c) is executed $c$ times.
 
-    - <span style="color:#e03131">Line</span> [5](#box-8-ccpbu-d) is executed $c$ times.
+    - <span style="color:#e03131">Line</span> [5](#box-7-ccpbu-d) is executed $c$ times.
 
-    - <span style="color:#e03131">Line</span> [6](#box-9-ccpbu-e) is executed $cn$ times.
+    - <span style="color:#e03131">Line</span> [6](#box-8-ccpbu-e) is executed $cn$ times.
 
-    - <span style="color:#e03131">Line</span> [7](#box-10-ccpbu-f) is executed $cn$ times.
+    - <span style="color:#e03131">Line</span> [7](#box-9-ccpbu-f) is executed $cn$ times.
 
-    - <span style="color:#e03131">Line</span> [8](#box-11-ccpbu-g) is executed $cn$ times.
+    - <span style="color:#e03131">Line</span> [8](#box-10-ccpbu-g) is executed $cn$ times.
 
-    - <span style="color:#e03131">Line</span> [11](#box-12-ccpbu-h) is executed $c$ times.
+    - <span style="color:#e03131">Line</span> [11](#box-11-ccpbu-h) is executed $c$ times.
 
-    - <span style="color:#e03131">Line</span> [13](#box-13-ccpbu-i) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [13](#box-12-ccpbu-i) is executed $1$ time.
 
     Therefore, the total number of steps in the worst case is
 

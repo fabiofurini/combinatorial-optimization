@@ -60,7 +60,7 @@ The problem of this chapter is the [multidimensional knapsack problem (MDKP)](ht
 
 - <u>Step 1</u>: computation of the optimal value
 
-    !!! formula ""
+    !!! chiave ""
 
         For any $j \in \{0,1,\dots,n\}$ and any vector $\vet{k}=(k_1,k_2,\dots,k_m)$ with $k_d \in \{0,1,\dots,c_d\}$ for every $d\in\mathscr{D}$, let $v(j,\vet{k})=v(j,k_1,\dots,k_m)$ be the optimal value of the MDKP subinstance given by:
 

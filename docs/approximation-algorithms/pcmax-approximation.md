@@ -30,15 +30,11 @@ title: "Approximation for P|Cmax"
 
     - explain why sorting the jobs by non-increasing processing time improves the guarantee.
 
-## 36.1 The problem and the assumptions
+The problem of this chapter is the [scheduling problem on identical parallel machines ($P\,||\,C_{\max}$)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/): its definition and its assumptions are on its page.
 
-<a id="box-1-def-pcmax"></a>
+## 36.1 Notation
 
-!!! definizione "Definition 36.1: Scheduling on identical parallel machines"
-
-    An instance of $P\,||\,C_{\max}$ has $m$ identical machines and a set $\mathscr{J}=\{1,2,\dots,n\}$ of jobs with processing times $t_j\in\Z_{\ge 1}$. A solution assigns each job to a machine, $mach_j=h$, the set of jobs of machine $h$ is $J_h$, its load is $L_h=\sum_{j\in J_h}t_j$, and the makespan $C_{\max}=\max_h L_h$ is minimized.
-
-- We assume $n>m$.
+- As on the problem page, there are $m$ identical machines and a set $\mathscr{J}=\{1,2,\dots,n\}$ of jobs with processing times $t_j$. A solution assigns each job $j\in\mathscr{J}$ to a machine $mach_j=h$; the set of jobs of machine $h$ is $J_h$, its load is $L_h=\sum_{j\in J_h}t_j$, and the makespan is $C_{\max}=\max_h L_h$.
 
 - <strong>Recall.</strong> As in the chapter [«Approximation algorithms: definitions»](https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/approximation/#box-2-def-pratio), $z(I)$ is the optimal value of the instance $I$ and $\mathscr{A}(I)$ the value of the solution returned by the algorithm $\mathscr{A}$. $P\,||\,C_{\max}$ is a minimization problem, hence
 
@@ -76,7 +72,7 @@ title: "Approximation for P|Cmax"
 
 - Each machine processes its jobs without idle times, so the job $j$ assigned at iteration $k$ <strong>starts</strong> at time $S_j$, equal to the load of its machine just before the assignment, and ends at $S_j+t_j$.
 
-<a id="box-2-ex-list"></a>
+<a id="box-1-ex-list"></a>
 
 !!! esempio "Example 36.1: $LIST$ on the reference instance, shortest jobs first"
 
@@ -151,7 +147,7 @@ title: "Approximation for P|Cmax"
 
 - In the proofs it is convenient to renumber the jobs in the order of $\lambda$, so that $t_1\ge t_2\ge\dots\ge t_n$ and $LPT$ assigns the jobs in the order $1,2,\dots,n$.
 
-<a id="box-3-ex-lpt"></a>
+<a id="box-2-ex-lpt"></a>
 
 !!! esempio "Example 36.2: $LPT$ on the reference instance"
 
@@ -165,9 +161,9 @@ title: "Approximation for P|Cmax"
 
 - The guarantees of the next section compare the value of a heuristic solution with the lower bound $\eqref{eq:pcmaxlb}$ on $z(I)$. Besides the bound, they use one property of the schedules built by $LIST$: the job that ends last cannot start too late.
 
-<a id="box-4-obs-start"></a>
+<a id="box-3-obs-start"></a>
 
-!!! teorema "Observation 36.2"
+!!! teorema "Observation 36.1"
 
     Let $\ell$ be a job that ends last in a schedule built by $LIST$ (with any list). Then its starting time satisfies
 
@@ -183,9 +179,9 @@ title: "Approximation for P|Cmax"
 
 ### 36.4.1 The worst case performance ratio of LIST
 
-<a id="box-5-prop-LIST"></a>
+<a id="box-4-prop-LIST"></a>
 
-!!! teorema "Proposition 36.3"
+!!! teorema "Proposition 36.2"
 
     For every $P\,||\,C_{\max}$ instance $I$ and every list $\lambda$,
 
@@ -195,7 +191,7 @@ title: "Approximation for P|Cmax"
 
 ??? dimostrazione "Proof"
 
-    Let $\ell$ be a job that ends last, so that $LIST(I)=S_\ell+t_\ell$. By [Observation 36.2](#box-4-obs-start),
+    Let $\ell$ be a job that ends last, so that $LIST(I)=S_\ell+t_\ell$. By [Observation 36.1](#box-3-obs-start),
 
     $$
     LIST(I) \;\le\; \frac{1}{m}\sum_{j\neq\ell} t_j + t_\ell
@@ -205,9 +201,9 @@ title: "Approximation for P|Cmax"
 
     where both bounds come from $\eqref{eq:pcmaxlb}$. Dividing by $z(I)$ gives the claim. <span class="qed">□</span>
 
-<a id="box-6-prop-LISTtight"></a>
+<a id="box-5-prop-LISTtight"></a>
 
-!!! teorema "Proposition 36.4"
+!!! teorema "Proposition 36.3"
 
     For every $m\ge 2$ there is a $P\,||\,C_{\max}$ instance $I_m$ with $m$ machines and a list $\lambda$ such that
 
@@ -235,7 +231,7 @@ title: "Approximation for P|Cmax"
 
 !!! chiave ""
 
-    From [Proposition 36.3](#box-5-prop-LIST) and [Proposition 36.4](#box-6-prop-LISTtight) it follows that $LIST$ is a $\left(2-\frac1m\right)$-approximation algorithm, whatever the list, and that the worst case performance ratio of $LIST$ on $m$ machines is
+    From [Proposition 36.2](#box-4-prop-LIST) and [Proposition 36.3](#box-5-prop-LISTtight) it follows that $LIST$ is a $\left(2-\frac1m\right)$-approximation algorithm, whatever the list, and that the worst case performance ratio of $LIST$ on $m$ machines is
 
     $$
     r(LIST)=2-\frac{1}{m}
@@ -243,15 +239,15 @@ title: "Approximation for P|Cmax"
 
 - For $m=3$ the family has $t=(1,1,1,1,1,1,3)$, $LIST(I_3)=5$ and $z(I_3)=3$. The bad job is the long one, put last: $LPT$ would put it first and find the optimum.
 
-- On [Example 36.1](#box-2-ex-list), $LIST(I)=12\le\frac53\cdot9=15$.
+- On [Example 36.1](#box-1-ex-list), $LIST(I)=12\le\frac53\cdot9=15$.
 
 - The bound and the family are due to Graham (1966).
 
 ### 36.4.2 The worst case performance ratio of LPT
 
-<a id="box-7-prop-LPT"></a>
+<a id="box-6-prop-LPT"></a>
 
-!!! teorema "Proposition 36.5"
+!!! teorema "Proposition 36.4"
 
     For every $P\,||\,C_{\max}$ instance $I$,
 
@@ -263,7 +259,7 @@ title: "Approximation for P|Cmax"
 
     Number the jobs so that $t_1\ge t_2\ge\dots\ge t_n$, the order in which $LPT$ assigns them, and let $\ell$ be a job that ends last, so that $LPT(I)=S_\ell+t_\ell$. The jobs after $\ell$ play no role: let $I'$ be the instance with the jobs $1,\dots,\ell$ only. $LPT$ assigns them on $I'$ exactly as on $I$, so $LPT(I')=LPT(I)$, and $z(I')\le z(I)$ since a schedule of $I$ restricted to the jobs of $I'$ is a schedule of $I'$. It is therefore enough to prove $LPT(I')\le\left(\frac43-\frac1{3m}\right)z(I')$. In $I'$ the job $\ell$ is the shortest one. We distinguish two cases.
 
-    <strong>Case 1: $t_\ell\le\frac{z(I')}{3}$.</strong> As in the proof of [Proposition 36.3](#box-5-prop-LIST), with [Observation 36.2](#box-4-obs-start) applied to $I'$,
+    <strong>Case 1: $t_\ell\le\frac{z(I')}{3}$.</strong> As in the proof of [Proposition 36.2](#box-4-prop-LIST), with [Observation 36.1](#box-3-obs-start) applied to $I'$,
 
     $$
     LPT(I') \;\le\; \frac1m\sum_{j=1}^{\ell} t_j + \Big(1-\frac1m\Big)t_\ell
@@ -279,9 +275,9 @@ title: "Approximation for P|Cmax"
 
     Therefore $LPT(I')\le z(I')$ in Case 2, which is even better than the claim. <span class="qed">□</span>
 
-<a id="box-8-prop-LPTtight"></a>
+<a id="box-7-prop-LPTtight"></a>
 
-!!! teorema "Proposition 36.6"
+!!! teorema "Proposition 36.5"
 
     For every $m\ge 2$ there is a $P\,||\,C_{\max}$ instance $I_m$ with $m$ machines such that
 
@@ -321,7 +317,7 @@ title: "Approximation for P|Cmax"
 
 !!! chiave ""
 
-    From [Proposition 36.5](#box-7-prop-LPT) and [Proposition 36.6](#box-8-prop-LPTtight) it follows that $LPT$ is a $\left(\frac43-\frac1{3m}\right)$-approximation algorithm, and that its worst case performance ratio on $m$ machines is
+    From [Proposition 36.4](#box-6-prop-LPT) and [Proposition 36.5](#box-7-prop-LPTtight) it follows that $LPT$ is a $\left(\frac43-\frac1{3m}\right)$-approximation algorithm, and that its worst case performance ratio on $m$ machines is
 
     $$
     r(LPT)=\frac{4}{3}-\frac{1}{3m}
@@ -329,7 +325,7 @@ title: "Approximation for P|Cmax"
 
     Sorting the list lowers the guarantee of $LIST$ from $2-\frac1m$ to $\frac43-\frac1{3m}$.
 
-- For $m=3$ the family is $t=(5,5,4,4,3,3,3)$, the reference instance: the loads after six jobs are $(8,8,8)=3m-1$, the seventh job gives $LPT(I)=11=4m-1$, and $z(I)=9=3m$ ([Example 36.2](#box-3-ex-lpt)). The reference instance is a worst case for $LPT$: $\frac{11}{9}=\frac43-\frac19$.
+- For $m=3$ the family is $t=(5,5,4,4,3,3,3)$, the reference instance: the loads after six jobs are $(8,8,8)=3m-1$, the seventh job gives $LPT(I)=11=4m-1$, and $z(I)=9=3m$ ([Example 36.2](#box-2-ex-lpt)). The reference instance is a worst case for $LPT$: $\frac{11}{9}=\frac43-\frac19$.
 
 - On the tight instances the last job has $t_\ell=m=\frac{z(I_m)}{3}$: they lie exactly on the border between the two cases of the proof, and every inequality of Case 1 holds with equality.
 
@@ -355,7 +351,7 @@ title: "Approximation for P|Cmax"
 
 !!! chiave "In summary"
 
-    - The guarantees of $LIST$ and $LPT$ are proved with the load bound $\eqref{eq:pcmaxlb}$ on $z(I)$ and with [Observation 36.2](#box-4-obs-start): the job that ends last starts no later than the average load of the other jobs.
+    - The guarantees of $LIST$ and $LPT$ are proved with the load bound $\eqref{eq:pcmaxlb}$ on $z(I)$ and with [Observation 36.1](#box-3-obs-start): the job that ends last starts no later than the average load of the other jobs.
 
     - Both ratios are tight, with Graham's families of instances; for $m=3$ the reference instance is the tight instance of $LPT$.
 

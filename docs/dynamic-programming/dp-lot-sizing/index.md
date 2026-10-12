@@ -38,23 +38,9 @@ title: "Dynamic programming for lot sizing"
 
     - count the steps of the two DP algorithms, and say why the second one is pseudo-polynomial.
 
-## 27.1 Problem definition
+The problem of this chapter is the [uncapacitated lot-sizing problem (ULS)](https://fabiofurini.github.io/combinatorial-optimization/catalogue/uncapacitated-lot-sizing-problem/): its definition and its assumptions are on its page.
 
-<a id="box-1-defULS"></a>
-
-!!! definizione "Definition 27.1: Uncapacitated Lot-Sizing Problem"
-
-    Given:
-
-    1. a set $T=\{1,2,\dots,m\}$ of $m \in \Z_{\ge 1}$ <em>time periods</em>,
-
-    2. for each period $t \in T$, a <em>demand</em> $d_t \in \Z_{\ge 1}$,
-
-    3. for each period $t \in T$, a <em>setup cost</em> $sc_t \in \Z_{\ge 0}$, a <em>variable production cost</em> $vc_t \in \Z_{\ge 0}$ per unit, and a <em>holding cost</em> $hc_t \in \Z_{\ge 0}$ per unit in stock at the end of period $t$,
-
-    the <strong>Uncapacitated Lot-Sizing Problem</strong> (ULS) asks to decide how many units to produce in each period, so that, starting with an empty inventory and ending with an empty inventory, the demand of every period is satisfied, and the total cost of setups, production, and holding is minimized.
-
-- This is the lot-sizing problem of the chapter on lot sizing, restricted to a <strong>single product</strong>: we drop the product index $p$, we measure the capacity in units of product (variable production time $vt_t=1$, no setup time), and we assume that there is no initial inventory.
+## 27.1 Notation, model and feasible solutions
 
 - For any $j,t \in T$, we denote by
 
@@ -96,7 +82,7 @@ title: "Dynamic programming for lot sizing"
 
     - finally, constraints $\eqref{uls:domx}$–$\eqref{uls:domy}$ define the variables of the ILP model.
 
-<a id="box-2-texuls1"></a>
+<a id="box-1-texuls1"></a>
 
 !!! esempio "Example 27.1: Uncapacitated lot sizing"
 
@@ -113,7 +99,7 @@ title: "Dynamic programming for lot sizing"
     \end{array}
     $$
 
-    We refer to this ULS instance as <span style="color:#1971c2">[Example 27.1](#box-2-texuls1)</span>. It is the uncapacitated instance used in the MIP course (setup cost $50$, holding cost $1$, no variable production cost).
+    We refer to this ULS instance as <span style="color:#1971c2">[Example 27.1](#box-1-texuls1)</span>. It is the uncapacitated instance used in the MIP course (setup cost $50$, holding cost $1$, no variable production cost).
 
 ### 27.1.1 Encoding of feasible solutions
 
@@ -153,11 +139,11 @@ title: "Dynamic programming for lot sizing"
     \sum_{t=1,\ x_t>0}^{m} sc_t+\sum_{t=1}^{m} vc_t\, x_t+\sum_{t=1}^{m} hc_t\, s_t.
     $$
 
-<a id="box-3-texulsnetwork"></a>
+<a id="box-2-texulsnetwork"></a>
 
 !!! esempio "Example 27.2: A feasible solution"
 
-    We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](#box-2-texuls1)</span>. The following network represents the feasible solution $(30,\allowbreak 0,\allowbreak 80,\allowbreak 0,\allowbreak 0)$: each period is a node, the production $x_t$ enters node $t$, the demand $d_t$ leaves it, and the inventory $s_t$ flows from node $t$ to node $t+1$. Thick arcs carry a positive flow.
+    We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](#box-1-texuls1)</span>. The following network represents the feasible solution $(30,\allowbreak 0,\allowbreak 80,\allowbreak 0,\allowbreak 0)$: each period is a node, the production $x_t$ enters node $t$, the demand $d_t$ leaves it, and the inventory $s_t$ flows from node $t$ to node $t+1$. Thick arcs carry a positive flow.
 
     ![Figure 1](../../img/dp-lot-sizing/fig01.svg){ .fig loading=lazy  }
 
@@ -171,9 +157,9 @@ title: "Dynamic programming for lot sizing"
 
 ### 27.1.2 The zero-inventory ordering property
 
-<a id="box-4-thmZIO"></a>
+<a id="box-3-thmZIO"></a>
 
-!!! teorema "Theorem 27.2: Zero-inventory ordering (Wagner and Whitin, 1958)"
+!!! teorema "Theorem 27.1: Zero-inventory ordering (Wagner and Whitin, 1958)"
 
     Every ULS instance has an optimal solution in which no period with positive production starts with a positive inventory, that is,
 
@@ -235,11 +221,11 @@ title: "Dynamic programming for lot sizing"
 
     Therefore, enumerating them quickly becomes impractical as $m$ increases.
 
-<a id="box-5-texulsenum"></a>
+<a id="box-4-texulsenum"></a>
 
 !!! esempio "Example 27.3: Enumeration of the solutions with the zero-inventory ordering property"
 
-    We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](#box-2-texuls1)</span>:
+    We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](#box-1-texuls1)</span>:
 
     $$
     \begin{array}{l|rrrrr}
@@ -382,9 +368,9 @@ title: "Dynamic programming for lot sizing"
 
 -   **Overview**
 
-    Problem definition · Encoding of feasible solutions · The zero-inventory ordering property
+    Notation, model and feasible solutions · Encoding of feasible solutions · The zero-inventory ordering property
 
-    [:octicons-arrow-right-24: Open](#271-problem-definition)
+    [:octicons-arrow-right-24: Open](#271-notation-model-and-feasible-solutions)
 
 -   **27.2 A DP algorithm for the ULS**
 

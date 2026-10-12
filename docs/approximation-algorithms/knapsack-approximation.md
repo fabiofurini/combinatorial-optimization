@@ -32,29 +32,11 @@ title: "Approximation algorithms for the knapsack problem"
 
     - explain why an absolute performance guarantee for the KP forces an exact algorithm.
 
-## 35.1 The problem and the assumptions
+The problem of this chapter is the [knapsack problem (KP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/): its definition and its assumptions are on its page.
 
-<a id="box-1-def-KP"></a>
+## 35.1 Notation
 
-!!! definizione "Definition 35.1: Knapsack Problem"
-
-    Given:
-
-    1. a knapsack of <em>capacity</em> $c \in \Z_{\ge 1}$,
-
-    2. a set $\mathscr{I} = \{1,2,\dots,n\}$ of $n$ items,
-
-    3. for each item $i \in \mathscr{I}$, a <em>profit</em> $p_i \in \Z_{\ge 1}$ and a <em>weight</em> $w_i \in \Z_{\ge 1}$,
-
-    the <strong>Knapsack Problem</strong> (KP) asks to decide which items to insert into the knapsack, so that the total weight of the selected items does not exceed the knapsack capacity, and the total profit of the selected items is maximized.
-
-- We assume that any KP instance $I$ satisfies the problem assumptions, i.e.,
-
-    $$
-    0 < w_i \le c ~~~~\text{for all}~~~~ i \in \underbrace{\{1,2,\dots,n\}}_{=\mathscr{I}} ~~~~~~~\text{and}~~~~~~~ \sum_{i \in \mathscr{I}} w_i>c
-    $$
-
-    The first assumption guarantees that every item can be selected, the second one that not all the items fit together into the knapsack.
+- As on the problem page, $c$ is the knapsack capacity and $\mathscr{I}=\{1,2,\dots,n\}$ the set of items; in this chapter item $i\in\mathscr{I}$ has profit $p_i$ and weight $w_i$.
 
 - We denote by $z(I)$ the <strong>optimal value</strong> of the KP on the instance $I$, and by $\mathscr{A}(I)$ the profit of the feasible solution returned by a heuristic algorithm $\mathscr{A}$. Since every heuristic of this document returns a feasible solution,
 
@@ -76,15 +58,9 @@ title: "Approximation algorithms for the knapsack problem"
 
 ## 35.2 Split item and residual capacity
 
-- We assume that any KP instance $I$ satisfies the problem assumptions, i.e.,
+<a id="box-1-def-split"></a>
 
-    $$
-    0 < w_i \le c ~~~~\text{for all}~~~~ i \in \underbrace{\{1,2,\dots,n\}}_{=\mathscr{I}} ~~~~~~~\text{and}~~~~~~~ \sum_{i \in \mathscr{I}} w_i>c
-    $$
-
-<a id="box-2-def-split"></a>
-
-!!! definizione "Definition 35.2: split item and residual capacity"
+!!! definizione "Definition 35.1: split item and residual capacity"
 
     Given a set $\mathscr{I}=\{1,2,\dots,n\}$ of $n$ items  ordered by non-increasing efficiency, the <strong>split item</strong> is the item
 
@@ -110,7 +86,7 @@ title: "Approximation algorithms for the knapsack problem"
 
 - Sorting the items by non-increasing efficiency takes $O(n \log n)$ time, and the split item is then found by scanning them. It is worth knowing that the split item can also be found in $O(n)$ time, without sorting, by a weighted median search: the sorting is convenient, not necessary.
 
-<a id="box-3-ex-split"></a>
+<a id="box-2-ex-split"></a>
 
 !!! esempio "Example 35.1: split item and residual capacity"
 
@@ -180,7 +156,7 @@ title: "Approximation algorithms for the knapsack problem"
 
     Moreover, item $s$ is not selected by $GR$, while $GR$ may also select some items that follow the split item.
 
-<a id="box-4-ex-GR1"></a>
+<a id="box-3-ex-GR1"></a>
 
 !!! esempio "Example 35.2: Execution of $GR$"
 
@@ -226,7 +202,7 @@ title: "Approximation algorithms for the knapsack problem"
 
     In this instance the split item is $s=3$. Accordingly, $GR$ selects all items preceding the split item, i.e., items $1$ and $2$, does not select item $3$ (the split item), and then also selects item $7$, which follows the split item.
 
-<a id="box-5-ex-GR2"></a>
+<a id="box-4-ex-GR2"></a>
 
 !!! esempio "Example 35.3: Execution of $GR$"
 
@@ -294,7 +270,7 @@ title: "Approximation algorithms for the knapsack problem"
 
     In this instance the split item is $s=3$. Accordingly, $GR$ selects all items preceding the split item, i.e., items $1$ and $2$, does not select item $3$ (the split item), and then selects item $4$, which follows the split item. Item $3$ has the maximum profit ($p_3=19$) and it is optimal to select it alone, but it is not selected by $GR$.
 
-<a id="box-6-ex-GR3"></a>
+<a id="box-5-ex-GR3"></a>
 
 !!! esempio "Example 35.4: Execution of $GR$"
 
@@ -365,7 +341,7 @@ title: "Approximation algorithms for the knapsack problem"
 
     In this instance the split item is $s=4$. Accordingly, $GR$ selects items $1$, $2$, and $3$ (which precede the split item), skips item $4$ (the split item), and then selects item $5$. The optimal solution is $\tilde{S}=\{2,3,4\}$ with value $z(I)=6+5+12=23$, which is better than the solution found by $GR$.
 
-<a id="box-7-ex-GR4"></a>
+<a id="box-6-ex-GR4"></a>
 
 !!! esempio "Example 35.5: Execution of $GR$"
 
@@ -468,7 +444,7 @@ title: "Approximation algorithms for the knapsack problem"
     i_m\in \arg\max\big\{~p_i:\ i\in\mathscr{I}~\big\}
     $$
 
-<a id="box-8-ex-GRe1"></a>
+<a id="box-7-ex-GRe1"></a>
 
 !!! esempio "Example 35.6: Execution of $GR^e$"
 
@@ -494,7 +470,7 @@ title: "Approximation algorithms for the knapsack problem"
     S=\{1,2,7\}.
     $$
 
-<a id="box-9-ex-GRe2"></a>
+<a id="box-8-ex-GRe2"></a>
 
 !!! esempio "Example 35.7: Execution of $GR^e$"
 
@@ -553,9 +529,9 @@ title: "Approximation algorithms for the knapsack problem"
     <span class="arithmatex">\(\mathscr{I}(i,k) := \big\{j\in \mathscr{I}\setminus\{i,k\}: p[j]\le \min\{p[i],p[k]\},\ w[j]\le \mathit{rc}\big\}\)</span> <span class="pc-com">▹ residual capacity</span></div><div class="pc" style="--liv:2"><span class="pc-n">6</span><span class="arithmatex">\(I_{ik} := \text{KP instance restricted to } \mathscr{I}(i,k) \text{ with capacity } \mathit{rc}\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">7</span><span class="arithmatex">\(z_{res} := GR^e\big(I_{ik}\big)\)</span>
     <span class="arithmatex">\(lb_{ik} := p[i]+p[k]+z_{res}\)</span> <span class="pc-com">▹ value of <span class="arithmatex">\(GR^e\)</span> on the residual instance</span></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><strong>if</strong> <span class="arithmatex">\(lb_{ik} > lb\)</span> <strong>then</strong></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><span class="arithmatex">\(lb \leftarrow lb_{ik}\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">11</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">12</span><strong>return</strong> <span class="arithmatex">\(lb\)</span></div></div>
 
-<a id="box-10-def-pairs"></a>
+<a id="box-9-def-pairs"></a>
 
-!!! definizione "Definition 35.3: feasible ordered pairs of items"
+!!! definizione "Definition 35.2: feasible ordered pairs of items"
 
     Given a KP instance with item set $\mathscr{I}=\{1,2,\dots,n\}$ and knapsack capacity $c$, the <strong>set of all feasible ordered pairs of items</strong> is
 
@@ -598,7 +574,7 @@ title: "Approximation algorithms for the knapsack problem"
 
     This heuristic algorithm can be seen as “guessing” the two items with largest profit in an optimal solution (or the item with the largest profit).
 
-<a id="box-11-ex-G34"></a>
+<a id="box-10-ex-G34"></a>
 
 !!! esempio "Example 35.8: $H^2$ algorithm"
 
@@ -681,9 +657,9 @@ title: "Approximation algorithms for the knapsack problem"
 
     - The pairs $(i,k)$ with $i \ge 2$ are processed in the same way, and none of them gives a value larger than $20$. Hence $H^2(I)=20=z(I)$: on this instance $H^2$ finds the optimal solution, which $GR^e$ misses.
 
-<a id="box-12-prop-G34time"></a>
+<a id="box-11-prop-G34time"></a>
 
-!!! teorema "Proposition 35.4"
+!!! teorema "Proposition 35.3"
 
     The $H^2$ algorithm can be computed in $O(n^3)$ time, and in $O(n^2)$ time with a more careful implementation.
 
@@ -740,7 +716,7 @@ title: "Approximation algorithms for the knapsack problem"
     H^{\ell}(I) = \max \left\{ \max_{L \in T(\ell)} lb(L),~~ \max_{S \in {\widehat T}(\ell)} \sum_{j \in S} p_j \right\}.
     $$
 
-<a id="box-13-ex-Hl"></a>
+<a id="box-12-ex-Hl"></a>
 
 !!! esempio "Example 35.9: Execution of $H^{\ell}$"
 
@@ -763,9 +739,9 @@ title: "Approximation algorithms for the knapsack problem"
 
     Guessing one item more is enough to find the optimal solution on this instance, on which $H^2$ does not.
 
-<a id="box-14-obs-Hltime"></a>
+<a id="box-13-obs-Hltime"></a>
 
-!!! teorema "Observation 35.5"
+!!! teorema "Observation 35.4"
 
     The $H^{\ell}$ algorithm can be computed in $O(n^{\ell+1})$ time.
 
@@ -804,9 +780,9 @@ title: "Approximation algorithms for the knapsack problem"
 
 - <strong>The profits are scaled, not the weights.</strong> Rounding the weights down would make infeasible solutions look feasible, and rounding them up would discard solutions that are feasible: in both cases the scaled instance would answer a different question. Rounding the profits down, instead, keeps the set of feasible solutions untouched and only distorts the objective function.
 
-- <strong>The scaled instance is solved by dynamic programming by profits</strong>, the second DP algorithm of the dynamic programming notes: $u(i,q)$ is the minimum total weight of a subset of $\{1,2,\dots,i\}$ of total profit exactly $q$, and the optimal value is the largest $q$ with $u(n,q)\le c$. The table is truncated at $Q=\lfloor 2n/\varepsilon\rfloor$, which is not smaller than the optimal value of the scaled instance ([Observation 35.15](#box-25-obs-fptastime)), so its size is $n\times Q$ and the running time is $O(n\,Q)=O(n^2/\varepsilon)$.
+- <strong>The scaled instance is solved by dynamic programming by profits</strong>, the second DP algorithm of the dynamic programming notes: $u(i,q)$ is the minimum total weight of a subset of $\{1,2,\dots,i\}$ of total profit exactly $q$, and the optimal value is the largest $q$ with $u(n,q)\le c$. The table is truncated at $Q=\lfloor 2n/\varepsilon\rfloor$, which is not smaller than the optimal value of the scaled instance ([Observation 35.14](#box-24-obs-fptastime)), so its size is $n\times Q$ and the running time is $O(n\,Q)=O(n^2/\varepsilon)$.
 
-<a id="box-15-ex-fptas"></a>
+<a id="box-14-ex-fptas"></a>
 
 !!! esempio "Example 35.10: Execution of $FP^{\varepsilon}$"
 
@@ -871,9 +847,9 @@ title: "Approximation algorithms for the knapsack problem"
 
 ### 35.8.1 The worst case performance ratio of $GR$
 
-<a id="box-16-prop-GRunbounded"></a>
+<a id="box-15-prop-GRunbounded"></a>
 
-!!! teorema "Proposition 35.6"
+!!! teorema "Proposition 35.5"
 
     There are KP instances $I$ such that:
 
@@ -939,9 +915,9 @@ title: "Approximation algorithms for the knapsack problem"
 
 ### 35.8.2 The worst case performance ratio of $GR^e$
 
-<a id="box-17-prop-GRe2approx"></a>
+<a id="box-16-prop-GRe2approx"></a>
 
-!!! teorema "Proposition 35.7"
+!!! teorema "Proposition 35.6"
 
     For every KP instance $I$, we have:
 
@@ -996,9 +972,9 @@ title: "Approximation algorithms for the knapsack problem"
 
     <p class="qed-riga"><span class="qed">□</span></p>
 
-<a id="box-18-prop-GRetight"></a>
+<a id="box-17-prop-GRetight"></a>
 
-!!! teorema "Proposition 35.8"
+!!! teorema "Proposition 35.7"
 
     There are KP instances $I$ such that:
 
@@ -1052,7 +1028,7 @@ title: "Approximation algorithms for the knapsack problem"
 
 !!! chiave ""
 
-    From [Proposition 35.7](#box-17-prop-GRe2approx) and [Proposition 35.8](#box-18-prop-GRetight) it follows that the worst case performance ratio of $GR^e$ is two, i.e., we have
+    From [Proposition 35.6](#box-16-prop-GRe2approx) and [Proposition 35.7](#box-17-prop-GRetight) it follows that the worst case performance ratio of $GR^e$ is two, i.e., we have
 
     $$
     r(GR^e)=2
@@ -1074,9 +1050,9 @@ title: "Approximation algorithms for the knapsack problem"
 
 ### 35.8.3 The worst case performance ratio of $H^2$
 
-<a id="box-19-prop-G34approx"></a>
+<a id="box-18-prop-G34approx"></a>
 
-!!! teorema "Proposition 35.9"
+!!! teorema "Proposition 35.8"
 
     For every KP instance $I$, we have:
 
@@ -1184,9 +1160,9 @@ title: "Approximation algorithms for the knapsack problem"
 
     <p class="qed-riga"><span class="qed">□</span></p>
 
-<a id="box-20-prop-G34tight"></a>
+<a id="box-19-prop-G34tight"></a>
 
-!!! teorema "Proposition 35.10"
+!!! teorema "Proposition 35.9"
 
     There are KP instances $I_M$ such that:
 
@@ -1241,7 +1217,7 @@ title: "Approximation algorithms for the knapsack problem"
 
 !!! chiave ""
 
-    From [Proposition 35.9](#box-19-prop-G34approx) and [Proposition 35.10](#box-20-prop-G34tight) it follows that the worst case performance ratio of $H^2$ is four thirds, i.e., we have
+    From [Proposition 35.8](#box-18-prop-G34approx) and [Proposition 35.9](#box-19-prop-G34tight) it follows that the worst case performance ratio of $H^2$ is four thirds, i.e., we have
 
     $$
     r(H^2)=\frac{4}{3}
@@ -1251,9 +1227,9 @@ title: "Approximation algorithms for the knapsack problem"
 
 ### 35.8.4 The worst case performance ratio of $H^{\ell}$
 
-<a id="box-21-prop-Hlapprox"></a>
+<a id="box-20-prop-Hlapprox"></a>
 
-!!! teorema "Proposition 35.11"
+!!! teorema "Proposition 35.10"
 
     For every KP instance $I$, we have:
 
@@ -1305,9 +1281,9 @@ title: "Approximation algorithms for the knapsack problem"
 
     In both cases $H^{\ell}(I) \ge \frac{\ell+1}{\ell+2}\, z(I)$, and dividing by $H^{\ell}(I)>0$ gives the statement. <span class="qed">□</span>
 
-<a id="box-22-prop-Hltight"></a>
+<a id="box-21-prop-Hltight"></a>
 
-!!! teorema "Proposition 35.12"
+!!! teorema "Proposition 35.11"
 
     There are KP instances $I_M$ such that:
 
@@ -1342,7 +1318,7 @@ title: "Approximation algorithms for the knapsack problem"
 
 !!! chiave ""
 
-    From [Proposition 35.11](#box-21-prop-Hlapprox) and [Proposition 35.12](#box-22-prop-Hltight) it follows that the worst case performance ratio of $H^{\ell}$ is
+    From [Proposition 35.10](#box-20-prop-Hlapprox) and [Proposition 35.11](#box-21-prop-Hltight) it follows that the worst case performance ratio of $H^{\ell}$ is
 
     $$
     r(H^{\ell})=\frac{\ell+2}{\ell+1}
@@ -1354,7 +1330,7 @@ title: "Approximation algorithms for the knapsack problem"
 
 - We recall the definitions of the approximation algorithms notes. The <strong>relative error</strong> of an algorithm $\mathscr{A}$ on a KP instance $I$ is $\frac{z(I)-\mathscr{A}(I)}{z(I)}$. An <strong>approximation scheme</strong> is a family of algorithms $\{\mathscr{A}_{\varepsilon}\}_{\varepsilon\in(0,1)}$ such that, for every $\varepsilon$ and every instance $I$, the relative error of $\mathscr{A}_{\varepsilon}$ is at most $\varepsilon$; for a maximization problem this means that $\mathscr{A}_{\varepsilon}$ is a $\frac{1}{1-\varepsilon}$-approximation algorithm. The scheme is a <strong>PTAS</strong> if, for every fixed $\varepsilon$, the running time of $\mathscr{A}_{\varepsilon}$ is polynomial in the size of the instance, and an <strong>FPTAS</strong> if it is polynomial both in the size of the instance and in the accuracy $\frac{1}{\varepsilon}$.
 
-- By [Proposition 35.11](#box-21-prop-Hlapprox), $H^{\ell}(I)\ge\frac{\ell+1}{\ell+2}\,z(I)$, hence the relative error of $H^{\ell}$ is at most
+- By [Proposition 35.10](#box-20-prop-Hlapprox), $H^{\ell}(I)\ge\frac{\ell+1}{\ell+2}\,z(I)$, hence the relative error of $H^{\ell}$ is at most
 
     $$
     1-\frac{\ell+1}{\ell+2}=\frac{1}{\ell+2},
@@ -1378,13 +1354,13 @@ title: "Approximation algorithms for the knapsack problem"
 
 - For $\varepsilon \ge \frac{1}{4}$ we have $\ell(\varepsilon)=2$, and $H^{\varepsilon}$ is the $H^2$ algorithm. The size $\ell$ of the guessed sets cannot exceed $n$, and with $\ell=n$ the algorithm enumerates all the feasible solutions and is exact.
 
-<a id="box-23-obs-Hepsptas"></a>
+<a id="box-22-obs-Hepsptas"></a>
 
-!!! teorema "Observation 35.13"
+!!! teorema "Observation 35.12"
 
     The family $\{H^{\varepsilon}\}_{\varepsilon\in(0,1)}$ is a PTAS for the knapsack problem.
 
-- For every fixed $\varepsilon$, $\ell(\varepsilon)$ is a constant, and by [Observation 35.5](#box-14-obs-Hltime) the running time $O\big(n^{\ell(\varepsilon)+1}\big)$ is polynomial in the size $n$ of the instance.
+- For every fixed $\varepsilon$, $\ell(\varepsilon)$ is a constant, and by [Observation 35.4](#box-13-obs-Hltime) the running time $O\big(n^{\ell(\varepsilon)+1}\big)$ is polynomial in the size $n$ of the instance.
 
 - However, $H^{\varepsilon}$ is <strong>not</strong> an FPTAS: the exponent $\ell(\varepsilon)=\left\lceil \frac{1}{\varepsilon}\right\rceil-2$ grows with the accuracy $\frac{1}{\varepsilon}$, so the running time is not polynomial in $\frac{1}{\varepsilon}$. The plot shows, for $n=10$ items and $4\le\frac{1}{\varepsilon}\le 8$, the number $n^{\frac{1}{\varepsilon}-2}$, a lower bound on $n^{\ell(\varepsilon)}$ (the cap $\ell(\varepsilon)\le n$ is not active, since $\frac{1}{\varepsilon}\le 12$):
 
@@ -1394,9 +1370,9 @@ title: "Approximation algorithms for the knapsack problem"
 
 ### 35.8.6 The worst case performance ratio of the Basic-FPTAS
 
-<a id="box-24-prop-fptas"></a>
+<a id="box-23-prop-fptas"></a>
 
-!!! teorema "Proposition 35.14"
+!!! teorema "Proposition 35.13"
 
     For every KP instance $I$ and every $\varepsilon \in (0,1)$, we have:
 
@@ -1434,11 +1410,11 @@ title: "Approximation algorithms for the knapsack problem"
     FP^{\varepsilon}(I) \;\ge\; z(I) - \varepsilon\,z(I) \;=\; (1-\varepsilon)\,z(I),
     $$
 
-    and dividing by $FP^{\varepsilon}(I)>0$ gives the statement. On the instance of [Example 35.10](#box-15-ex-fptas), with $\varepsilon=\frac{1}{2}$, the ratio is $\frac{47}{38}\approx 1.24$, well below the bound $\frac{1}{1-\varepsilon}=2$. <span class="qed">□</span>
+    and dividing by $FP^{\varepsilon}(I)>0$ gives the statement. On the instance of [Example 35.10](#box-14-ex-fptas), with $\varepsilon=\frac{1}{2}$, the ratio is $\frac{47}{38}\approx 1.24$, well below the bound $\frac{1}{1-\varepsilon}=2$. <span class="qed">□</span>
 
-<a id="box-25-obs-fptastime"></a>
+<a id="box-24-obs-fptastime"></a>
 
-!!! teorema "Observation 35.15"
+!!! teorema "Observation 35.14"
 
     The $FP^{\varepsilon}$ algorithm can be computed in $O\big(n^2/\varepsilon\big)$ time.
 
@@ -1459,7 +1435,7 @@ title: "Approximation algorithms for the knapsack problem"
 
 !!! chiave ""
 
-    From [Proposition 35.14](#box-24-prop-fptas) and [Observation 35.15](#box-25-obs-fptastime) it follows that the family $\{FP^{\varepsilon}\}_{\varepsilon\in(0,1)}$ is an <strong>approximation scheme</strong> whose running time is polynomial both in the size $n$ of the instance and in the accuracy $\frac{1}{\varepsilon}$, i.e., an <strong>FPTAS</strong> for the knapsack problem.
+    From [Proposition 35.13](#box-23-prop-fptas) and [Observation 35.14](#box-24-obs-fptastime) it follows that the family $\{FP^{\varepsilon}\}_{\varepsilon\in(0,1)}$ is an <strong>approximation scheme</strong> whose running time is polynomial both in the size $n$ of the instance and in the accuracy $\frac{1}{\varepsilon}$, i.e., an <strong>FPTAS</strong> for the knapsack problem.
 
 - The guarantee of $GR^e$ is used twice, and in two different roles: $GR^e(I)\le z(I)$ fixes the scaling factor, and $z(I)\le 2\,GR^e(I)$ bounds the size of the dynamic programming table. A better heuristic in place of $GR^e$ would shorten the table, not improve the guarantee.
 
@@ -1473,9 +1449,9 @@ title: "Approximation algorithms for the knapsack problem"
 
         Let $f(n,c)$ be a function describing the running time of an algorithm for the KP  with $n$ items and capacity $c$.
 
-<a id="box-26-thm-absolute"></a>
+<a id="box-25-thm-absolute"></a>
 
-!!! teorema "Theorem 35.16"
+!!! teorema "Theorem 35.15"
 
     Let $A$ be an approximation algorithm for the KP with absolute performance guarantee $k$ and running time in $O\big(f( n, c)\big)$ for any instance with $n$ items and capacity $c$. Then $A$ also computes the optimal solution of any such instance in $O(f(n,c))$ time.
 
@@ -1543,7 +1519,7 @@ title: "Approximation algorithms for the knapsack problem"
 
 !!! attenzione "Warning"
 
-    - <strong>Stopping the greedy algorithm at the split item.</strong> $GR$ skips the split item $s$ but keeps scanning, and it may select items that follow $s$ ([Example 35.2](#box-4-ex-GR1)).
+    - <strong>Stopping the greedy algorithm at the split item.</strong> $GR$ skips the split item $s$ but keeps scanning, and it may select items that follow $s$ ([Example 35.2](#box-3-ex-GR1)).
 
     - <strong>Confusing $i_m$ and $s$.</strong> In $GR^e$ the item $i_m$ is the item of maximum profit $p_{\max}$, not the split item $s$: the two coincide only by chance.
 
@@ -1565,7 +1541,7 @@ title: "Approximation algorithms for the knapsack problem"
 
     - No algorithm with a fixed absolute performance guarantee exists, unless it solves the KP exactly.
 
-    <strong>Dashboard of the KP instance</strong> of [Example 35.1](#box-3-ex-split) ($c=9$, $p=(6,5,8,9,6,7,3)$, $w=(2,3,6,7,5,9,4)$). The bounds on $z(I)$ found so far:
+    <strong>Dashboard of the KP instance</strong> of [Example 35.1](#box-2-ex-split) ($c=9$, $p=(6,5,8,9,6,7,3)$, $w=(2,3,6,7,5,9,4)$). The bounds on $z(I)$ found so far:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -2003,9 +1979,9 @@ $$
     }
     ```
 
-- On the KP instance of [Example 35.8](#box-11-ex-G34), with $n=7$ items and capacity $c=12$, the function returns $lb=20$ with $x=(1,1,0,1,0,0,0)$, i.e., the solution $S=\{1,2,4\}$ already found in that example, which is optimal for that instance.
+- On the KP instance of [Example 35.8](#box-10-ex-G34), with $n=7$ items and capacity $c=12$, the function returns $lb=20$ with $x=(1,1,0,1,0,0,0)$, i.e., the solution $S=\{1,2,4\}$ already found in that example, which is optimal for that instance.
 
-- The two nested loops over $i$ and $k$ perform $O(n^2)$ iterations, and each iteration builds the residual instance and runs <code>ExtendedGreedyKP</code> in $O(n)$ time: this is the $O(n^3)$ running time of [Proposition 35.4](#box-12-prop-G34time).
+- The two nested loops over $i$ and $k$ perform $O(n^2)$ iterations, and each iteration builds the residual instance and runs <code>ExtendedGreedyKP</code> in $O(n)$ time: this is the $O(n^3)$ running time of [Proposition 35.3](#box-11-prop-G34time).
 
 - The following is a <code>C++</code> implementation of the <strong>$H^{\ell}$ algorithm</strong>. The function <code>NextSubset</code> enumerates the subsets of exactly $r$ items in lexicographic order; the preprocessing examines the subsets of at most $\ell-1$ items, and each subset of exactly $\ell$ items is completed by <code>ExtendedGreedyKP</code> on its residual instance, as in the pseudo-code.
 

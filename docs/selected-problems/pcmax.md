@@ -66,9 +66,9 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Approximation { #sez-sec-cat-pcmax-approximation }
 
-- LIST is a $\left(2-\frac1m\right)$-approximation for every list, tight ([Ch. 36](../approximation-algorithms/pcmax-approximation.md#box-5-prop-LIST)).
+- LIST is a $\left(2-\frac1m\right)$-approximation for every list, tight ([Ch. 36](../approximation-algorithms/pcmax-approximation.md#box-4-prop-LIST)).
 
-- LPT is a $\left(\frac43-\frac1{3m}\right)$-approximation, tight on Graham's family; for $m=3$ it is the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax.md) ([Ch. 36](../approximation-algorithms/pcmax-approximation.md#box-7-prop-LPT)).
+- LPT is a $\left(\frac43-\frac1{3m}\right)$-approximation, tight on Graham's family; for $m=3$ it is the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax.md) ([Ch. 36](../approximation-algorithms/pcmax-approximation.md#box-6-prop-LPT)).
 
 ## Exercises { #sez-sec-cat-pcmax-es }
 

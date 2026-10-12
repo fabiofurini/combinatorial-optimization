@@ -61,7 +61,7 @@ The problem of this chapter is the [knapsack problem with setups (KPS)](https://
 
     - Inside an open class, the choice of the items is a KP: the DP algorithm of the KP runs over the items of the class, starting from the value left after paying the setup.
 
-    !!! formula ""
+    !!! chiave ""
 
         For any $h \in \{0,1,\dots,q\}$ and $k \in \{0,1,\dots,c\}$, let $v(h,k)$ be the optimal value of the KPS subinstance with capacity $k$ and the classes $\mathscr{J}_1,\dots,\mathscr{J}_h$. For any $h \in \{1,\dots,q\}$ and $i \in \{0,1,\dots,t_h\}$, let $u(h,i,k)$ be the optimal value of the same subinstance when class $h$ is open (its setup is paid) and only its first $i$ items are available, with $u(h,i,k)=-\infty$ if the setup weight does not fit.
 

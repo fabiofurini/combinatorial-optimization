@@ -24,7 +24,7 @@ title: "A second DP algorithm"
 
     - The number of subproblems of this DP algorithm grows with the total profit $P$. To keep the number of subproblems small, the DP algorithm is illustrated on the following KP instance, which has the same item weights and the same knapsack capacity as the KP instance of <span style="color:#1971c2">Example 1</span>, and smaller item profits.
 
-    <a id="box-55-texkp2instance"></a>
+    <a id="box-54-texkp2instance"></a>
 
     !!! esempio "Example 17.13: KP instance"
 
@@ -39,7 +39,7 @@ title: "A second DP algorithm"
         \end{array}
         $$
 
-        We refer to this KP instance as <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span>.
+        We refer to this KP instance as <span style="color:#1971c2">[Example 17.13](#box-54-texkp2instance)</span>.
 
     !!! chiave ""
 
@@ -94,11 +94,11 @@ title: "A second DP algorithm"
 
     - The <strong>recursion tree</strong> of the function $u$ has one node for each recursive call, labeled with the function call it represents. The root represents the initial call. The children of a node represent the recursive calls made by that call. The leaf nodes represent the base cases.
 
-        <a id="box-56-texkp2tree"></a>
+        <a id="box-55-texkp2tree"></a>
 
         !!! esempio "Example 17.14: Recursion tree"
 
-            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span>. This is the recursion tree of the top-down approach to compute $u(3,7)$:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-54-texkp2instance)</span>. This is the recursion tree of the top-down approach to compute $u(3,7)$:
 
             ![Figure 5](../../img/dp-knapsack/fig05.svg){ .fig loading=lazy  }
 
@@ -106,11 +106,11 @@ title: "A second DP algorithm"
 
     - The value $u(j,q)$ can be computed once the values required by the right-hand side of formula $\eqref{eq:2}$ are known. In particular, $u(j-1,q)$ is needed when item $j$ is not selected and, if $p_j\le q$, $u(j-1,q-p_j)$ is needed when item $j$ is selected. Therefore, for a fixed value of $j$, all values $u(j,q)$ can be computed by considering the profit values $q$ in increasing order.
 
-        <a id="box-57-texkp2smallervalues"></a>
+        <a id="box-56-texkp2smallervalues"></a>
 
         !!! esempio "Example 17.15: Computing the values of the $u$ function"
 
-            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-54-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrr}
@@ -177,7 +177,7 @@ title: "A second DP algorithm"
 
         !!! algoritmo "Algorithm: DP2"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A KP instance given by the number <span class="arithmatex">\(n\)</span> of items, arrays <span class="arithmatex">\(p[1..n]\)</span> and <span class="arithmatex">\(w[1..n]\)</span> of item profits and weights, and the knapsack capacity <span class="arithmatex">\(c\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value of the KP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP2(<span class="arithmatex">\(n,p,w,c\)</span>)</div><div class="pc" style="--liv:1" id="box-58-kpbu2-a"><span class="pc-n">2</span><span class="arithmatex">\(P := 0\)</span></div><div class="pc" style="--liv:1" id="box-59-kpbu2-b"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-60-kpbu2-c"><span class="pc-n">4</span><span class="arithmatex">\(P \leftarrow P + p[j]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-61-kpbu2-d"><span class="pc-n">6</span><span class="arithmatex">\({u} := \textnormal{new array}[0..n][0..P]\)</span></div><div class="pc" style="--liv:1" id="box-62-kpbu2-e"><span class="pc-n">7</span><span class="arithmatex">\({u}[0][0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-63-kpbu2-f"><span class="pc-n">8</span><strong>for</strong> <span class="arithmatex">\(q := 1\)</span> <strong>to</strong> <span class="arithmatex">\(P\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-64-kpbu2-g"><span class="pc-n">9</span><span class="arithmatex">\({u}[0][q] \leftarrow +\infty\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-65-kpbu2-h"><span class="pc-n">11</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-66-kpbu2-i"><span class="pc-n">12</span><strong>for</strong> <span class="arithmatex">\(q := 0\)</span> <strong>to</strong> <span class="arithmatex">\(P\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-67-kpbu2-j"><span class="pc-n">13</span><strong>if</strong> <span class="arithmatex">\(q < p[j]\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-68-kpbu2-k"><span class="pc-n">14</span><span class="arithmatex">\({u}[j][q] \leftarrow {u}[j-1][q]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">15</span><strong>else</strong></div><div class="pc" style="--liv:4" id="box-69-kpbu2-l"><span class="pc-n">16</span><strong>if</strong> <span class="arithmatex">\(w[j] + {u}[j-1][q-p[j]] < {u}[j-1][q]\)</span>  <strong>then</strong></div><div class="pc" style="--liv:5" id="box-70-kpbu2-m"><span class="pc-n">17</span><span class="arithmatex">\({u}[j][q] \leftarrow w[j] + {u}[j-1][q-p[j]]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">18</span><strong>else</strong></div><div class="pc" style="--liv:5" id="box-71-kpbu2-n"><span class="pc-n">19</span><span class="arithmatex">\({u}[j][q] \leftarrow {u}[j-1][q]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">20</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">21</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">22</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">23</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-72-kpbu2-o"><span class="pc-n">24</span><span class="arithmatex">\(z := 0\)</span></div><div class="pc" style="--liv:1" id="box-73-kpbu2-p"><span class="pc-n">25</span><strong>for</strong> <span class="arithmatex">\(q := 0\)</span> <strong>to</strong> <span class="arithmatex">\(P\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-74-kpbu2-q"><span class="pc-n">26</span><strong>if</strong> <span class="arithmatex">\({u}[n][q] \le c\)</span>  <strong>then</strong></div><div class="pc" style="--liv:3" id="box-75-kpbu2-r"><span class="pc-n">27</span><span class="arithmatex">\(z \leftarrow q\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">28</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">29</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-76-kpbu2-s"><span class="pc-n">30</span><strong>return</strong> <span class="arithmatex">\(z\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A KP instance given by the number <span class="arithmatex">\(n\)</span> of items, arrays <span class="arithmatex">\(p[1..n]\)</span> and <span class="arithmatex">\(w[1..n]\)</span> of item profits and weights, and the knapsack capacity <span class="arithmatex">\(c\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value of the KP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP2(<span class="arithmatex">\(n,p,w,c\)</span>)</div><div class="pc" style="--liv:1" id="box-57-kpbu2-a"><span class="pc-n">2</span><span class="arithmatex">\(P := 0\)</span></div><div class="pc" style="--liv:1" id="box-58-kpbu2-b"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-59-kpbu2-c"><span class="pc-n">4</span><span class="arithmatex">\(P \leftarrow P + p[j]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-60-kpbu2-d"><span class="pc-n">6</span><span class="arithmatex">\({u} := \textnormal{new array}[0..n][0..P]\)</span></div><div class="pc" style="--liv:1" id="box-61-kpbu2-e"><span class="pc-n">7</span><span class="arithmatex">\({u}[0][0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-62-kpbu2-f"><span class="pc-n">8</span><strong>for</strong> <span class="arithmatex">\(q := 1\)</span> <strong>to</strong> <span class="arithmatex">\(P\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-63-kpbu2-g"><span class="pc-n">9</span><span class="arithmatex">\({u}[0][q] \leftarrow +\infty\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-64-kpbu2-h"><span class="pc-n">11</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-65-kpbu2-i"><span class="pc-n">12</span><strong>for</strong> <span class="arithmatex">\(q := 0\)</span> <strong>to</strong> <span class="arithmatex">\(P\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-66-kpbu2-j"><span class="pc-n">13</span><strong>if</strong> <span class="arithmatex">\(q < p[j]\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-67-kpbu2-k"><span class="pc-n">14</span><span class="arithmatex">\({u}[j][q] \leftarrow {u}[j-1][q]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">15</span><strong>else</strong></div><div class="pc" style="--liv:4" id="box-68-kpbu2-l"><span class="pc-n">16</span><strong>if</strong> <span class="arithmatex">\(w[j] + {u}[j-1][q-p[j]] < {u}[j-1][q]\)</span>  <strong>then</strong></div><div class="pc" style="--liv:5" id="box-69-kpbu2-m"><span class="pc-n">17</span><span class="arithmatex">\({u}[j][q] \leftarrow w[j] + {u}[j-1][q-p[j]]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">18</span><strong>else</strong></div><div class="pc" style="--liv:5" id="box-70-kpbu2-n"><span class="pc-n">19</span><span class="arithmatex">\({u}[j][q] \leftarrow {u}[j-1][q]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">20</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">21</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">22</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">23</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-71-kpbu2-o"><span class="pc-n">24</span><span class="arithmatex">\(z := 0\)</span></div><div class="pc" style="--liv:1" id="box-72-kpbu2-p"><span class="pc-n">25</span><strong>for</strong> <span class="arithmatex">\(q := 0\)</span> <strong>to</strong> <span class="arithmatex">\(P\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-73-kpbu2-q"><span class="pc-n">26</span><strong>if</strong> <span class="arithmatex">\({u}[n][q] \le c\)</span>  <strong>then</strong></div><div class="pc" style="--liv:3" id="box-74-kpbu2-r"><span class="pc-n">27</span><span class="arithmatex">\(z \leftarrow q\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">28</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">29</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-75-kpbu2-s"><span class="pc-n">30</span><strong>return</strong> <span class="arithmatex">\(z\)</span></div></div>
 
         - The first loop computes the total profit $P$ of all the items, which is the largest target profit that has to be considered.
 
@@ -197,11 +197,11 @@ title: "A second DP algorithm"
 
         - Finally, the optimal value of the KP instance is returned as $z$.
 
-        <a id="box-77-texkp2bu"></a>
+        <a id="box-76-texkp2bu"></a>
 
         !!! esempio "Example 17.16: Execution of the DP algorithm"
 
-            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-54-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrr}
@@ -583,7 +583,7 @@ title: "A second DP algorithm"
 
         !!! algoritmo "Algorithm: DP2\_Vector"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A KP instance given by the number <span class="arithmatex">\(n\)</span> of items, arrays <span class="arithmatex">\(p[1..n]\)</span> and <span class="arithmatex">\(w[1..n]\)</span> of item profits and weights, and the knapsack capacity <span class="arithmatex">\(c\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value of the KP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP2_Vector(<span class="arithmatex">\(n,p,w,c\)</span>)</div><div class="pc" style="--liv:1" id="box-78-kpvec2-a"><span class="pc-n">2</span><span class="arithmatex">\(P := 0\)</span></div><div class="pc" style="--liv:1" id="box-79-kpvec2-b"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-80-kpvec2-c"><span class="pc-n">4</span><span class="arithmatex">\(P \leftarrow P + p[j]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-81-kpvec2-d"><span class="pc-n">6</span><span class="arithmatex">\({u} := \textnormal{new array}[0..P]\)</span></div><div class="pc" style="--liv:1" id="box-82-kpvec2-e"><span class="pc-n">7</span><span class="arithmatex">\({u}[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-83-kpvec2-f"><span class="pc-n">8</span><strong>for</strong> <span class="arithmatex">\(q := 1\)</span> <strong>to</strong> <span class="arithmatex">\(P\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-84-kpvec2-g"><span class="pc-n">9</span><span class="arithmatex">\({u}[q] \leftarrow +\infty\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-85-kpvec2-h"><span class="pc-n">11</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-86-kpvec2-i"><span class="pc-n">12</span><strong>for</strong> <span class="arithmatex">\(q := P\)</span> <strong>to</strong> <span class="arithmatex">\(p[j]\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-87-kpvec2-j"><span class="pc-n">13</span><strong>if</strong> <span class="arithmatex">\(w[j] + {u}[q-p[j]] < {u}[q]\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-88-kpvec2-k"><span class="pc-n">14</span><span class="arithmatex">\({u}[q] \leftarrow w[j] + {u}[q-p[j]]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">15</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">17</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-89-kpvec2-l"><span class="pc-n">18</span><span class="arithmatex">\(z := 0\)</span></div><div class="pc" style="--liv:1" id="box-90-kpvec2-m"><span class="pc-n">19</span><strong>for</strong> <span class="arithmatex">\(q := 0\)</span> <strong>to</strong> <span class="arithmatex">\(P\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-91-kpvec2-n"><span class="pc-n">20</span><strong>if</strong> <span class="arithmatex">\({u}[q] \le c\)</span>  <strong>then</strong></div><div class="pc" style="--liv:3" id="box-92-kpvec2-o"><span class="pc-n">21</span><span class="arithmatex">\(z \leftarrow q\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">22</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">23</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-93-kpvec2-p"><span class="pc-n">24</span><strong>return</strong> <span class="arithmatex">\(z\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A KP instance given by the number <span class="arithmatex">\(n\)</span> of items, arrays <span class="arithmatex">\(p[1..n]\)</span> and <span class="arithmatex">\(w[1..n]\)</span> of item profits and weights, and the knapsack capacity <span class="arithmatex">\(c\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value of the KP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP2_Vector(<span class="arithmatex">\(n,p,w,c\)</span>)</div><div class="pc" style="--liv:1" id="box-77-kpvec2-a"><span class="pc-n">2</span><span class="arithmatex">\(P := 0\)</span></div><div class="pc" style="--liv:1" id="box-78-kpvec2-b"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-79-kpvec2-c"><span class="pc-n">4</span><span class="arithmatex">\(P \leftarrow P + p[j]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-80-kpvec2-d"><span class="pc-n">6</span><span class="arithmatex">\({u} := \textnormal{new array}[0..P]\)</span></div><div class="pc" style="--liv:1" id="box-81-kpvec2-e"><span class="pc-n">7</span><span class="arithmatex">\({u}[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-82-kpvec2-f"><span class="pc-n">8</span><strong>for</strong> <span class="arithmatex">\(q := 1\)</span> <strong>to</strong> <span class="arithmatex">\(P\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-83-kpvec2-g"><span class="pc-n">9</span><span class="arithmatex">\({u}[q] \leftarrow +\infty\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-84-kpvec2-h"><span class="pc-n">11</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-85-kpvec2-i"><span class="pc-n">12</span><strong>for</strong> <span class="arithmatex">\(q := P\)</span> <strong>to</strong> <span class="arithmatex">\(p[j]\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-86-kpvec2-j"><span class="pc-n">13</span><strong>if</strong> <span class="arithmatex">\(w[j] + {u}[q-p[j]] < {u}[q]\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-87-kpvec2-k"><span class="pc-n">14</span><span class="arithmatex">\({u}[q] \leftarrow w[j] + {u}[q-p[j]]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">15</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">17</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-88-kpvec2-l"><span class="pc-n">18</span><span class="arithmatex">\(z := 0\)</span></div><div class="pc" style="--liv:1" id="box-89-kpvec2-m"><span class="pc-n">19</span><strong>for</strong> <span class="arithmatex">\(q := 0\)</span> <strong>to</strong> <span class="arithmatex">\(P\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-90-kpvec2-n"><span class="pc-n">20</span><strong>if</strong> <span class="arithmatex">\({u}[q] \le c\)</span>  <strong>then</strong></div><div class="pc" style="--liv:3" id="box-91-kpvec2-o"><span class="pc-n">21</span><span class="arithmatex">\(z \leftarrow q\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">22</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">23</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-92-kpvec2-p"><span class="pc-n">24</span><strong>return</strong> <span class="arithmatex">\(z\)</span></div></div>
 
         - The vector ${u}[0..P]$ is the <strong>lookup table</strong>: at the end of the pass for item $j$, it stores the row $j$ of the matrix ${u}$ of the DP algorithm.
 
@@ -597,11 +597,11 @@ title: "A second DP algorithm"
 
         - The last loop scans the vector and returns the largest target profit whose minimum total weight does not exceed the knapsack capacity, as in formula $\eqref{eq:3}$.
 
-        <a id="box-94-texkp2vec"></a>
+        <a id="box-93-texkp2vec"></a>
 
         !!! esempio "Example 17.17: Execution of the DP algorithm using a single vector"
 
-            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-54-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrr}
@@ -836,7 +836,7 @@ title: "A second DP algorithm"
             </tr>
             </table></div>
 
-            Each pass transforms the vector ${u}$ from the row $j-1$ into the row $j$ of the matrix ${u}$ reported in <span style="color:#1971c2">[Example 17.16](#box-77-texkp2bu)</span>. The last loop then scans the vector and gives the optimal value $z=7$ of the KP instance, as in <span style="color:#1971c2">[Example 17.16](#box-77-texkp2bu)</span>.
+            Each pass transforms the vector ${u}$ from the row $j-1$ into the row $j$ of the matrix ${u}$ reported in <span style="color:#1971c2">[Example 17.16](#box-76-texkp2bu)</span>. The last loop then scans the vector and gives the optimal value $z=7$ of the KP instance, as in <span style="color:#1971c2">[Example 17.16](#box-76-texkp2bu)</span>.
 
     - The vector version computes only the optimal value of the KP instance. The information needed to construct an optimal solution, which is described in Step 2, records the decision taken for every item $j$ and every target profit $q$, and therefore cannot be stored in a single vector.
 
@@ -856,11 +856,11 @@ title: "A second DP algorithm"
 
         - The DP algorithm uses the additional matrix ${s}$, which keeps track of the decision made when ${u}[j][q]$ is computed. If item $j$ is selected, ${s}[j][q]\leftarrow 1$ stores this decision; otherwise, ${s}[j][q]\leftarrow 0$ stores that item $j$ is not selected.
 
-        <a id="box-95-texkp2smatrix"></a>
+        <a id="box-94-texkp2smatrix"></a>
 
         !!! esempio "Example 17.18: Computation of the additional information"
 
-            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-54-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrr}
@@ -1174,11 +1174,11 @@ title: "A second DP algorithm"
 
             <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> The number <span class="arithmatex">\(n\)</span> of items, the optimal value <span class="arithmatex">\(z\)</span> of the KP instance, the array <span class="arithmatex">\(p[1..n]\)</span> of item profits, and the matrix <span class="arithmatex">\({s}[0..n][0..P]\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> An optimal solution of the KP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP2_Reconstruct(<span class="arithmatex">\(n,z,p,s\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(x := \textnormal{new array}[1..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(x[j] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><span class="arithmatex">\(q := z\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><strong>for</strong> <span class="arithmatex">\(j := n\)</span> <strong>to</strong> <span class="arithmatex">\(1\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><strong>if</strong> <span class="arithmatex">\({s}[j][q] = 1\)</span> <strong>then</strong></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><span class="arithmatex">\(x[j] \leftarrow 1\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">10</span><span class="arithmatex">\(q \leftarrow q-p[j]\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">11</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">13</span><strong>return</strong> <span class="arithmatex">\(x\)</span></div></div>
 
-        <a id="box-96-texkp2solvector"></a>
+        <a id="box-95-texkp2solvector"></a>
 
         !!! esempio "Example 17.19: Computing an optimal solution"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span>, the optimal value is $z=7$ and we have the following matrix ${s}$:
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 17.13](#box-54-texkp2instance)</span>, the optimal value is $z=7$ and we have the following matrix ${s}$:
 
             $$
             \begin{array}{l|rrrrrrrrrrr}
@@ -1258,41 +1258,41 @@ title: "A second DP algorithm"
 
 - Let $S(n,P)$ denote the number of steps executed by <code>DP2</code> in the worst case, where $n$ is the number of items and $P=\sum_{j=1}^{n}p_j$ is the total profit of all the items. We compute $S(n,P)$ by counting how many times the lines of the pseudo-code of <code>DP2</code> are executed.
 
-- The condition at line [16](#box-69-kpbu2-l) is checked only when $q\ge p[j]$, that is for $P+1-p_j$ target profits for each item $j$, and therefore $n(P+1)-P$ times in total. The number of executions of the relevant lines is:
+- The condition at line [16](#box-68-kpbu2-l) is checked only when $q\ge p[j]$, that is for $P+1-p_j$ target profits for each item $j$, and therefore $n(P+1)-P$ times in total. The number of executions of the relevant lines is:
 
-    - <span style="color:#e03131">Line</span> [2](#box-58-kpbu2-a) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [2](#box-57-kpbu2-a) is executed $1$ time.
 
-    - <span style="color:#e03131">Line</span> [3](#box-59-kpbu2-b) is executed $n$ times.
+    - <span style="color:#e03131">Line</span> [3](#box-58-kpbu2-b) is executed $n$ times.
 
-    - <span style="color:#e03131">Line</span> [4](#box-60-kpbu2-c) is executed $n$ times.
+    - <span style="color:#e03131">Line</span> [4](#box-59-kpbu2-c) is executed $n$ times.
 
-    - <span style="color:#e03131">Line</span> [6](#box-61-kpbu2-d) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [6](#box-60-kpbu2-d) is executed $1$ time.
 
-    - <span style="color:#e03131">Line</span> [7](#box-62-kpbu2-e) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [7](#box-61-kpbu2-e) is executed $1$ time.
 
-    - <span style="color:#e03131">Line</span> [8](#box-63-kpbu2-f) is executed $P$ times.
+    - <span style="color:#e03131">Line</span> [8](#box-62-kpbu2-f) is executed $P$ times.
 
-    - <span style="color:#e03131">Line</span> [9](#box-64-kpbu2-g) is executed $P$ times.
+    - <span style="color:#e03131">Line</span> [9](#box-63-kpbu2-g) is executed $P$ times.
 
-    - <span style="color:#e03131">Line</span> [11](#box-65-kpbu2-h) is executed $n$ times.
+    - <span style="color:#e03131">Line</span> [11](#box-64-kpbu2-h) is executed $n$ times.
 
-    - <span style="color:#e03131">Line</span> [12](#box-66-kpbu2-i) is executed $n(P+1)$ times.
+    - <span style="color:#e03131">Line</span> [12](#box-65-kpbu2-i) is executed $n(P+1)$ times.
 
-    - <span style="color:#e03131">Line</span> [13](#box-67-kpbu2-j) is executed $n(P+1)$ times.
+    - <span style="color:#e03131">Line</span> [13](#box-66-kpbu2-j) is executed $n(P+1)$ times.
 
-    - <span style="color:#e03131">Line</span> [16](#box-69-kpbu2-l) is executed $n(P+1)-P$ times.
+    - <span style="color:#e03131">Line</span> [16](#box-68-kpbu2-l) is executed $n(P+1)-P$ times.
 
-    - one among <span style="color:#e03131">Line</span> [14](#box-68-kpbu2-k), <span style="color:#e03131">Line</span> [17](#box-70-kpbu2-m), and <span style="color:#e03131">Line</span> [19](#box-71-kpbu2-n) is executed for each pair $(j,q)$, and therefore these assignment lines are executed $n(P+1)$ times in total.
+    - one among <span style="color:#e03131">Line</span> [14](#box-67-kpbu2-k), <span style="color:#e03131">Line</span> [17](#box-69-kpbu2-m), and <span style="color:#e03131">Line</span> [19](#box-70-kpbu2-n) is executed for each pair $(j,q)$, and therefore these assignment lines are executed $n(P+1)$ times in total.
 
-    - <span style="color:#e03131">Line</span> [24](#box-72-kpbu2-o) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [24](#box-71-kpbu2-o) is executed $1$ time.
 
-    - <span style="color:#e03131">Line</span> [25](#box-73-kpbu2-p) is executed $P+1$ times.
+    - <span style="color:#e03131">Line</span> [25](#box-72-kpbu2-p) is executed $P+1$ times.
 
-    - <span style="color:#e03131">Line</span> [26](#box-74-kpbu2-q) is executed $P+1$ times.
+    - <span style="color:#e03131">Line</span> [26](#box-73-kpbu2-q) is executed $P+1$ times.
 
-    - <span style="color:#e03131">Line</span> [27](#box-75-kpbu2-r) is executed at most $P+1$ times.
+    - <span style="color:#e03131">Line</span> [27](#box-74-kpbu2-r) is executed at most $P+1$ times.
 
-    - <span style="color:#e03131">Line</span> [30](#box-76-kpbu2-s) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [30](#box-75-kpbu2-s) is executed $1$ time.
 
     Therefore, the total number of steps in the worst case is
 

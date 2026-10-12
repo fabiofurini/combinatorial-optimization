@@ -29,9 +29,9 @@ title: "Exercises · MIP heuristics for the classical problems"
 
     **Questions**
 
-    1. Verify that the items are sorted by non-increasing efficiency, and compute the optimal solution $x^*$ of the LP relaxation of the KP model and its value $z_{LP}(I)$.
+    1. Verify that the items are sorted by non-increasing efficiency, and compute the optimal solution $\tilde x$ of the LP relaxation of the KP model and its value $z(\LP_{\KP})$.
 
-    2. Apply rounding: round $x^*$ to the nearest integer point $\tilde x$, check whether $\tilde x$ is feasible, and give its profit.
+    2. Apply rounding: round $\tilde x$ to the nearest integer point $\bar x$, check whether $\bar x$ is feasible, and give its profit.
 
     3. Apply fractional diving: at each step solve the LP relaxation with the variables fixed so far, fix the least fractional variable to its nearest integer, and repeat until the LP solution is integer.
 
@@ -49,14 +49,14 @@ title: "Exercises · MIP heuristics for the classical problems"
         non-increasing. The LP takes items $1,2,3$ (weight $3+5+7=15$), and the residual capacity $1$ is filled by the fraction $\frac{1}{10}$ of item $4$:
 
         $$
-        x^*=\Big(1,1,1,\frac{1}{10},0\Big),\qquad z_{LP}(I)=11+15+18+\frac{14}{10}=\frac{227}{5}=45.4 .
+        \tilde x=\Big(1,1,1,\frac{1}{10},0\Big),\qquad z(\LP_{\KP})=11+15+18+\frac{14}{10}=\frac{227}{5}=45.4 .
         $$
 
-    2. $\rnd{\frac1{10}}=0$, so $\tilde x=(1,1,1,0,0)$: weight $15\le16$, feasible, profit $44$.
+    2. $\rnd{\frac1{10}}=0$, so $\bar x=(1,1,1,0,0)$: weight $15\le16$, feasible, profit $44$.
 
     3. <strong>Step 1.</strong> The only fractional variable is $x_4=\frac1{10}$: fix $x_4:=0$.
 
-        <strong>Step 2.</strong> Without item $4$, the LP takes items $1,2,3$ and the fraction $\frac19$ of item $5$: $x^*=\big(1,1,1,0,\frac19\big)$, of value $44+\frac{10}{9}=\frac{406}{9}\approx45.11$. Fix $x_5:=\rnd{\frac19}=0$.
+        <strong>Step 2.</strong> Without item $4$, the LP takes items $1,2,3$ and the fraction $\frac19$ of item $5$: $\tilde x=\big(1,1,1,0,\frac19\big)$, of value $44+\frac{10}{9}=\frac{406}{9}\approx45.11$. Fix $x_5:=\rnd{\frac19}=0$.
 
         <strong>Step 3.</strong> The LP solution $(1,1,1,0,0)$, of value $44$, is integer: the dive returns $S=\{1,2,3\}$, of profit $44$.
 
@@ -85,9 +85,9 @@ title: "Exercises · MIP heuristics for the classical problems"
 
     **Questions**
 
-    1. Compute the optimal solution $x^*$ of the LP relaxation and its value $z_{LP}(I)$ (the items are sorted by non-increasing efficiency).
+    1. Compute the optimal solution $\tilde x$ of the LP relaxation and its value $z(\LP_{\KP})$ (the items are sorted by non-increasing efficiency).
 
-    2. Round $x^*$ to the nearest integer point: is it feasible? Round it down instead, and give the profit.
+    2. Round $\tilde x$ to the nearest integer point: is it feasible? Round it down instead, and give the profit.
 
     3. Apply fractional diving, step by step, and give the profit of the solution it returns.
 
@@ -98,12 +98,12 @@ title: "Exercises · MIP heuristics for the classical problems"
     1. The efficiencies are $6.5$, $2.4$, $1.4$, $1$, $\frac57\approx0.71$. The LP takes items $1,2$ (weight $7$) and the fraction $\frac{8}{10}=\frac45$ of item $3$:
 
         $$
-        x^*=\Big(1,1,\frac45,0,0\Big),\qquad z_{LP}(I)=13+12+14\cdot\frac45=\frac{181}{5}=36.2 .
+        \tilde x=\Big(1,1,\frac45,0,0\Big),\qquad z(\LP_{\KP})=13+12+14\cdot\frac45=\frac{181}{5}=36.2 .
         $$
 
     2. $\rnd{\frac45}=1$ gives $(1,1,1,0,0)$, of weight $17>15$: <strong>infeasible</strong>. Rounding down gives $(1,1,0,0,0)$, feasible (Observation on rounding down), of profit $25$.
 
-    3. <strong>Step 1.</strong> Fix $x_3:=\rnd{\frac45}=1$. Item $3$ uses $10$; the LP takes item $1$ (residual $3$) and the fraction $\frac35$ of item $2$: $x^*=\big(1,\frac35,1,0,0\big)$, of value $14+13+\frac{36}{5}=\frac{171}{5}=34.2$.
+    3. <strong>Step 1.</strong> Fix $x_3:=\rnd{\frac45}=1$. Item $3$ uses $10$; the LP takes item $1$ (residual $3$) and the fraction $\frac35$ of item $2$: $\tilde x=\big(1,\frac35,1,0,0\big)$, of value $14+13+\frac{36}{5}=\frac{171}{5}=34.2$.
 
         <strong>Step 2.</strong> Fix $x_2:=\rnd{\frac35}=1$. Items $2,3$ fill the knapsack ($5+10=15$): the LP solution is $(0,1,1,0,0)$, integer, of value $26$. The dive returns $S=\{2,3\}$, of profit $26$.
 
@@ -164,32 +164,32 @@ title: "Exercises · MIP heuristics for the classical problems"
 
     **Questions**
 
-    1. Compute the incumbent $\tilde x$ and its profit, and the optimal solution $x^*$ of the LP relaxation.
+    1. Compute the incumbent $\bar x$ and its profit, and the optimal solution $\tilde x$ of the LP relaxation $\LP_{\KP}$ with its value.
 
-    2. Apply RINS: list the variables fixed by RINS, write the sub-MIP with the cutoff constraint $\sum_i p_ix_i\ge f(\tilde x)+1$, and solve it by enumeration.
+    2. Apply RINS: list the variables fixed by RINS, write the sub-MIP with the cutoff constraint $\sum_i p_ix_i\ge f(\bar x)+1$, and solve it by enumeration.
 
-    3. Show that local branching with radius $k=2$ around $\tilde x$ finds no better solution.
+    3. Show that local branching with radius $k=2$ around $\bar x$ finds no better solution.
 
-    4. Apply proximity search with $\theta=1$ from $\tilde x$ (the optimal solution of this instance has profit $43$, as can be checked by enumerating the $2^6$ subsets). Compare the three methods.
+    4. Apply proximity search with $\theta=1$ from $\bar x$ (the optimal solution of this instance has profit $43$, as can be checked by enumerating the $2^6$ subsets). Compare the three methods.
 
 ??? soluzione "Solution"
 
-    1. By non-increasing profit the order is $2$ ($21$), $4$ ($19$), $1$ ($18$), $5$, $6$, $3$. Item $2$ is taken ($rc=12$), item $4$ is taken ($rc=0$), nothing else fits: $\tilde x=(0,1,0,1,0,0)$, profit $40$. The LP takes items $1,2,3$ (weight $20$) and the fraction $\frac2{12}=\frac16$ of item $4$:
+    1. By non-increasing profit the order is $2$ ($21$), $4$ ($19$), $1$ ($18$), $5$, $6$, $3$. Item $2$ is taken ($rc=12$), item $4$ is taken ($rc=0$), nothing else fits: $\bar x=(0,1,0,1,0,0)$, profit $40$. The LP takes items $1,2,3$ (weight $20$) and the fraction $\frac2{12}=\frac16$ of item $4$:
 
         $$
-        x^*=\Big(1,1,1,\frac16,0,0\Big),\qquad z_{LP}(I)=43+\frac{19}{6}=\frac{277}{6}\approx46.17 .
+        \tilde x=\Big(1,1,1,\frac16,0,0\Big),\qquad z(\LP_{\KP})=43+\frac{19}{6}=\frac{277}{6}\approx46.17 .
         $$
 
-    2. $x^*$ and $\tilde x$ agree on $x_2=1$, $x_5=0$, $x_6=0$, which are fixed; $x_1,x_3,x_4$ are free. The sub-MIP is
+    2. $\tilde x$ and $\bar x$ agree on $x_2=1$, $x_5=0$, $x_6=0$, which are fixed; $x_1,x_3,x_4$ are free. The sub-MIP is
 
-        \begin{align*}
-        && \max ~~ 21+18\,x_1+4\,x_3+19\,x_4 & & \\[0.5ex]
-        && \text{subject to} \quad 8\,x_1+2\,x_3+12\,x_4 &\le 12 & \\[0.5ex]
-        && 21+18\,x_1+4\,x_3+19\,x_4 &\ge 41 & \\[0.5ex]
-        && x_1 &\in\{0,1\} & \\[0.5ex]
-        && x_3 &\in\{0,1\} & \\[0.5ex]
-        && x_4 &\in\{0,1\} &
-        \end{align*}
+        $$
+        \begin{array}{rrrrrrr}
+        {\max} & {21} & {+~18\,x_1} & {+~4\,x_3} & {+~19\,x_4} &  &  \\[0.5ex]
+        \text{subject to} &  & {8\,x_1} & {+~2\,x_3} & {+~12\,x_4} & {\le} & {12} \\[0.5ex]
+        & {21} & {+~18\,x_1} & {+~4\,x_3} & {+~19\,x_4} & {\ge} & {41} \\[0.5ex]
+        &  &  &  & {x_1,~x_3,~x_4} & {\in} & {\{0,1\}}
+        \end{array}
+        $$
 
         If $x_4=1$ the capacity forces $x_1=x_3=0$ and the profit is $40<41$. If $x_4=0$, the best choice is $x_1=x_3=1$ (weight $10\le12$), of profit $43$. RINS returns $\{1,2,3\}$, of profit $43$: the <strong>optimum</strong>.
 
@@ -219,7 +219,7 @@ title: "Exercises · MIP heuristics for the classical problems"
         </tr>
         </table></div>
 
-        all with profit smaller than $41$: the sub-MIP with $\Delta(x,\tilde x)\le 2$ and the cutoff is infeasible. The optimum $(1,1,1,0,0,0)$ differs from $\tilde x$ in $x_1$, $x_3$, $x_4$: it is at distance $3$.
+        all with profit smaller than $41$: the sub-MIP with $\Delta(x,\bar x)\le 2$ and the cutoff is infeasible. The optimum $(1,1,1,0,0,0)$ differs from $\bar x$ in $x_1$, $x_3$, $x_4$: it is at distance $3$.
 
     4. <strong>Iteration 1.</strong> No solution of profit at least $41$ is at distance $\le2$ (question 3). At distance $3$ there are two: $(1,0,1,1,0,0)$, of weight $22$ and profit $41$, and $(1,1,1,0,0,0)$, of profit $43$. The proximity sub-MIP may return either.
 
@@ -227,7 +227,7 @@ title: "Exercises · MIP heuristics for the classical problems"
 
         - If it returns $(1,0,1,1,0,0)$, the next sub-MIP asks for profit at least $42$: the closest solution is $(1,1,1,0,0,0)$, at distance $2$ (item $4$ out, item $2$ in); then profit $44$ is infeasible.
 
-        RINS (hard fixing) succeeds because the variables on which $x^*$ and $\tilde x$ agree keep their optimal values; local branching with $k=2$ fails because the optimum is three changes away; proximity search finds it, since the size of the move is decided by the sub-MIP.
+        RINS (hard fixing) succeeds because the variables on which $\tilde x$ and $\bar x$ agree keep their optimal values; local branching with $k=2$ fails because the optimum is three changes away; proximity search finds it, since the size of the move is decided by the sub-MIP.
 
 <a id="esercizio-32-4"></a>
 
@@ -248,23 +248,23 @@ title: "Exercises · MIP heuristics for the classical problems"
 
     **Questions**
 
-    1. Compute the incumbent $\tilde x$ and the optimal solution $x^*$ of the LP relaxation.
+    1. Compute the incumbent $\bar x$ and the optimal solution $\tilde x$ of the LP relaxation.
 
-    2. Apply RINS from $\tilde x$: which variables are fixed, and what does the sub-MIP return?
+    2. Apply RINS from $\bar x$: which variables are fixed, and what does the sub-MIP return?
 
-    3. Apply local branching from $\tilde x$ with $k=1$ and then, after adding the reverse constraint, with $k=2$. Write the local branching constraints explicitly.
+    3. Apply local branching from $\bar x$ with $k=1$ and then, after adding the reverse constraint, with $k=2$. Write the local branching constraints explicitly.
 
     4. Prove that the solution found in question 3 is optimal, using the LP relaxation.
 
 ??? soluzione "Solution"
 
-    1. $GR$ takes items $1,2,3$ (weight $8$, $rc=5$); items $4,5,6$ do not fit: $\tilde x=(1,1,1,0,0,0)$, profit $37$. The LP takes items $1,2,3$ and the fraction $\frac59$ of item $4$:
+    1. $GR$ takes items $1,2,3$ (weight $8$, $rc=5$); items $4,5,6$ do not fit: $\bar x=(1,1,1,0,0,0)$, profit $37$. The LP takes items $1,2,3$ and the fraction $\frac59$ of item $4$:
 
         $$
-        x^*=\Big(1,1,1,\frac59,0,0\Big),\qquad z_{LP}(I)=37+\frac{80}{9}=\frac{413}{9}\approx45.89 .
+        \tilde x=\Big(1,1,1,\frac59,0,0\Big),\qquad z(\LP_{\KP})=37+\frac{80}{9}=\frac{413}{9}\approx45.89 .
         $$
 
-    2. They agree on $x_1=x_2=x_3=1$ and $x_5=x_6=0$: only $x_4$ is free. The sub-MIP asks $8+9x_4\le13$ and $37+16x_4\ge38$: the first forces $x_4=0$, the second $x_4=1$. It is infeasible: <strong>RINS fails</strong> and returns $\tilde x$.
+    2. They agree on $x_1=x_2=x_3=1$ and $x_5=x_6=0$: only $x_4$ is free. The sub-MIP asks $8+9x_4\le13$ and $37+16x_4\ge38$: the first forces $x_4=0$, the second $x_4=1$. It is infeasible: <strong>RINS fails</strong> and returns $\bar x$.
 
     3. <strong>$k=1$.</strong> The constraint is
 
@@ -274,7 +274,7 @@ title: "Exercises · MIP heuristics for the classical problems"
 
         The neighbours are the flips: adding item $4$, $5$ or $6$ gives weight $17$, $14$, $16>13$; removing an item decreases the profit. No solution of profit at least $38$: add the reverse constraint $(1-x_1)+(1-x_2)+(1-x_3)+x_4+x_5+x_6\ge 2$ and set $k=2$.
 
-        <strong>$k=2$.</strong> Now $2\le\Delta(x,\tilde x)\le 2$. Two removals lose profit, two additions exceed the capacity; the swaps (one of $1,2,3$ out, one of $4,5,6$ in) that fit are
+        <strong>$k=2$.</strong> Now $2\le\Delta(x,\bar x)\le 2$. Two removals lose profit, two additions exceed the capacity; the swaps (one of $1,2,3$ out, one of $4,5,6$ in) that fit are
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -327,7 +327,7 @@ title: "Exercises · MIP heuristics for the classical problems"
 
     1. Compute the incumbent and its makespan, and the lower bound $\max\{\max_j t_j,\lceil\sum_j t_j/m\rceil\}$.
 
-    2. Apply the first iteration of proximity search with $\theta=1$: find the solution with $C_{\max}\le f(\tilde x)-1$ at minimum distance $\Delta(x,\tilde x)$ from the incumbent. (Recall that $\Delta=2r$, where $r$ is the number of jobs that change machine.)
+    2. Apply the first iteration of proximity search with $\theta=1$: find the solution with $C_{\max}\le f(\bar x)-1$ at minimum distance $\Delta(x,\bar x)$ from the incumbent. (Recall that $\Delta=2r$, where $r$ is the number of jobs that change machine.)
 
     3. Apply the second iteration.
 

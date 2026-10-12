@@ -45,3 +45,5 @@ title: "Multiple knapsack problem (MKP)"
         $$
 
 - Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-multiple-knapsack-problem.md#box-12-defMKP).
+
+- Treated in [Chapter 24 «DP for the multiple knapsack problem»](../dynamic-programming/dp-multiple-knapsack.md).

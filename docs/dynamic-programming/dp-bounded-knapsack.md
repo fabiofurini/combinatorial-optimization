@@ -30,23 +30,11 @@ title: "DP for the bounded knapsack problem"
 
     - count the steps of the DP algorithm and say when $\Theta(nc\,b_{\max})$ is tight.
 
-## 19.1 Problem definition
+The problem of this chapter is the [bounded knapsack problem (BKP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-bounded-knapsack-problem/): its definition and its assumptions are on its page.
 
-<a id="box-1-defBKP"></a>
+## 19.1 Instances and feasible solutions
 
-!!! definizione "Definition 19.1: Bounded Knapsack Problem"
-
-    Given:
-
-    1. a knapsack of <em>capacity</em> $c \in \Z_{\ge 1}$,
-
-    2. a set $\mathscr{I} = \{1,2,\dots,n\}$ of $n$ item types,
-
-    3. for each item type $j \in \mathscr{I}$, a <em>profit</em> $p_j \in \Z_{\ge 1}$, a <em>weight</em> $w_j \in \Z_{\ge 1}$, and a <em>bound</em> $b_j \in \Z_{\ge 1}$,
-
-    the <strong>Bounded Knapsack Problem</strong> (BKP) asks to decide how many copies of each item type to insert into the knapsack, so that the total weight does not exceed the capacity and the total profit is maximized. Item type $j$ is available in at most $b_j$ copies.
-
-<a id="box-2-texbkpex1"></a>
+<a id="box-1-texbkpex1"></a>
 
 !!! esempio "Example 19.1: BKP instance"
 
@@ -148,7 +136,7 @@ title: "DP for the bounded knapsack problem"
 
     - The <strong>recursion tree</strong> of the function $v$ has one node for each recursive call, labeled with the function call it represents. The root represents the initial call. The children of a node represent the recursive calls made by that call. The leaf nodes represent the base cases.
 
-        <a id="box-3-texbkptree"></a>
+        <a id="box-2-texbkptree"></a>
 
         !!! esempio "Example 19.2: Recursion tree"
 
@@ -160,7 +148,7 @@ title: "DP for the bounded knapsack problem"
 
     - The value $v(j,k)$ can be computed once the values $v(j-1,k')$, for every residual capacity $k'\le k$, are known. Therefore, for a fixed value of $j$, all values $v(j,k)$ can be computed by considering the capacity values $k$ in increasing order.
 
-        <a id="box-4-texbkpvalues"></a>
+        <a id="box-3-texbkpvalues"></a>
 
         !!! esempio "Example 19.3: Computing the values of the $v$ function"
 
@@ -234,7 +222,7 @@ title: "DP for the bounded knapsack problem"
 
         !!! algoritmo "Algorithm: BKP\_DP"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A BKP instance given by <span class="arithmatex">\(n\)</span>, arrays <span class="arithmatex">\(p[1..n]\)</span>, <span class="arithmatex">\(w[1..n]\)</span>, <span class="arithmatex">\(b[1..n]\)</span>, and capacity <span class="arithmatex">\(c\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value of the BKP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> BKP_DP(<span class="arithmatex">\(n,p,w,b,c\)</span>)</div><div class="pc" style="--liv:1" id="box-5-bkpbu-a"><span class="pc-n">2</span><span class="arithmatex">\(v := \textnormal{new array}[0..n][0..c]\)</span></div><div class="pc" style="--liv:1" id="box-6-bkpbu-b"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(k := 0\)</span> <strong>to</strong> <span class="arithmatex">\(c\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-7-bkpbu-c"><span class="pc-n">4</span><span class="arithmatex">\(v[0][k] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-8-bkpbu-d"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-9-bkpbu-e"><span class="pc-n">7</span><strong>for</strong> <span class="arithmatex">\(k := 0\)</span> <strong>to</strong> <span class="arithmatex">\(c\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-10-bkpbu-f"><span class="pc-n">8</span><span class="arithmatex">\(m := 0\)</span></div><div class="pc" style="--liv:3" id="box-11-bkpbu-g"><span class="pc-n">9</span><strong>for</strong> <span class="arithmatex">\(d := 0\)</span> <strong>to</strong> <span class="arithmatex">\(\min\{b[j],\lfloor k/w[j]\rfloor\}\)</span>  <strong>do</strong></div><div class="pc" style="--liv:4" id="box-12-bkpbu-h"><span class="pc-n">10</span><strong>if</strong> <span class="arithmatex">\(d\,p[j]+v[j-1][k-d\,w[j]] > m\)</span>  <strong>then</strong></div><div class="pc" style="--liv:5" id="box-13-bkpbu-i"><span class="pc-n">11</span><span class="arithmatex">\(m \leftarrow d\,p[j]+v[j-1][k-d\,w[j]]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">13</span><strong>end</strong></div><div class="pc" style="--liv:3" id="box-14-bkpbu-j"><span class="pc-n">14</span><span class="arithmatex">\(v[j][k] \leftarrow m\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">15</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-15-bkpbu-k"><span class="pc-n">17</span><strong>return</strong> <span class="arithmatex">\(v[n][c]\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A BKP instance given by <span class="arithmatex">\(n\)</span>, arrays <span class="arithmatex">\(p[1..n]\)</span>, <span class="arithmatex">\(w[1..n]\)</span>, <span class="arithmatex">\(b[1..n]\)</span>, and capacity <span class="arithmatex">\(c\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value of the BKP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> BKP_DP(<span class="arithmatex">\(n,p,w,b,c\)</span>)</div><div class="pc" style="--liv:1" id="box-4-bkpbu-a"><span class="pc-n">2</span><span class="arithmatex">\(v := \textnormal{new array}[0..n][0..c]\)</span></div><div class="pc" style="--liv:1" id="box-5-bkpbu-b"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(k := 0\)</span> <strong>to</strong> <span class="arithmatex">\(c\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-6-bkpbu-c"><span class="pc-n">4</span><span class="arithmatex">\(v[0][k] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-7-bkpbu-d"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-8-bkpbu-e"><span class="pc-n">7</span><strong>for</strong> <span class="arithmatex">\(k := 0\)</span> <strong>to</strong> <span class="arithmatex">\(c\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-9-bkpbu-f"><span class="pc-n">8</span><span class="arithmatex">\(m := 0\)</span></div><div class="pc" style="--liv:3" id="box-10-bkpbu-g"><span class="pc-n">9</span><strong>for</strong> <span class="arithmatex">\(d := 0\)</span> <strong>to</strong> <span class="arithmatex">\(\min\{b[j],\lfloor k/w[j]\rfloor\}\)</span>  <strong>do</strong></div><div class="pc" style="--liv:4" id="box-11-bkpbu-h"><span class="pc-n">10</span><strong>if</strong> <span class="arithmatex">\(d\,p[j]+v[j-1][k-d\,w[j]] > m\)</span>  <strong>then</strong></div><div class="pc" style="--liv:5" id="box-12-bkpbu-i"><span class="pc-n">11</span><span class="arithmatex">\(m \leftarrow d\,p[j]+v[j-1][k-d\,w[j]]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">13</span><strong>end</strong></div><div class="pc" style="--liv:3" id="box-13-bkpbu-j"><span class="pc-n">14</span><span class="arithmatex">\(v[j][k] \leftarrow m\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">15</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-14-bkpbu-k"><span class="pc-n">17</span><strong>return</strong> <span class="arithmatex">\(v[n][c]\)</span></div></div>
 
         - The matrix $v[0..n][0..c]$ is the <strong>lookup table</strong>: it stores the optimal values of all subproblems.
 
@@ -250,7 +238,7 @@ title: "DP for the bounded knapsack problem"
 
         - Finally, the optimal value of the BKP instance is returned as $v[n][c]$.
 
-        <a id="box-16-texbkpbu"></a>
+        <a id="box-15-texbkpbu"></a>
 
         !!! esempio "Example 19.4: Execution of the DP algorithm"
 
@@ -581,7 +569,7 @@ title: "DP for the bounded knapsack problem"
 
         - The DP algorithm uses the additional temporary variable $t$ to keep track of the decision made when $m$ is updated. If $d$ copies of item type $j$ are selected, $t \leftarrow d$ stores this decision. At the end of the innermost loop, $s[j][k]\leftarrow t$ stores the number of copies of item type $j$ used, together with the optimal value $v[j][k]\leftarrow m$.
 
-        <a id="box-17-texbkpinfo"></a>
+        <a id="box-16-texbkpinfo"></a>
 
         !!! esempio "Example 19.5: Computation of the additional information"
 
@@ -833,7 +821,7 @@ title: "DP for the bounded knapsack problem"
 
             <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> The number <span class="arithmatex">\(n\)</span> of item types, the knapsack capacity <span class="arithmatex">\(c\)</span>, the array <span class="arithmatex">\(w[1..n]\)</span> of weights, and the matrix <span class="arithmatex">\(s[0..n][0..c]\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> An optimal solution of the BKP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> BKP_Reconstruct(<span class="arithmatex">\(n,c,w,s\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(x := \textnormal{new array}[1..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><span class="arithmatex">\(k := c\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(j := n\)</span> <strong>to</strong> <span class="arithmatex">\(1\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">5</span><span class="arithmatex">\(x[j] \leftarrow s[j][k]\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">6</span><span class="arithmatex">\(k \leftarrow k-x[j]\,w[j]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">8</span><strong>return</strong> <span class="arithmatex">\(x\)</span></div></div>
 
-        <a id="box-18-texbkpsolvector"></a>
+        <a id="box-17-texbkpsolvector"></a>
 
         !!! esempio "Example 19.6: Computing an optimal solution"
 
@@ -917,29 +905,29 @@ title: "DP for the bounded knapsack problem"
 
 - Let $b_{\max}=\max\{b[j]: j \in \{1,\dots,n\}\}$, and let $S(n,c,b_{\max})$ denote the number of steps executed by <code>BKP\_DP</code> in the worst case, where $n$ is the number of item types and $c$ is the knapsack capacity. We compute $S(n,c,b_{\max})$ by counting how many times the lines of the pseudo-code of <code>BKP\_DP</code> are executed.
 
-- For each pair $(j,k)$ the innermost loop over $d$ executes $\min\{b_j,\lfloor k/w_j\rfloor\}+1$ iterations, which is at most $b_{\max}+1$. We count $b_{\max}+1$ iterations for every pair $(j,k)$ and we assume that the condition at line [10](#box-12-bkpbu-h) is true at every iteration, so that $S(n,c,b_{\max})$ is an upper bound on the number of steps. The number of executions of the relevant lines is, at most:
+- For each pair $(j,k)$ the innermost loop over $d$ executes $\min\{b_j,\lfloor k/w_j\rfloor\}+1$ iterations, which is at most $b_{\max}+1$. We count $b_{\max}+1$ iterations for every pair $(j,k)$ and we assume that the condition at line [10](#box-11-bkpbu-h) is true at every iteration, so that $S(n,c,b_{\max})$ is an upper bound on the number of steps. The number of executions of the relevant lines is, at most:
 
-    - <span style="color:#e03131">Line</span> [2](#box-5-bkpbu-a) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [2](#box-4-bkpbu-a) is executed $1$ time.
 
-    - <span style="color:#e03131">Line</span> [3](#box-6-bkpbu-b) is executed $c+1$ times.
+    - <span style="color:#e03131">Line</span> [3](#box-5-bkpbu-b) is executed $c+1$ times.
 
-    - <span style="color:#e03131">Line</span> [4](#box-7-bkpbu-c) is executed $c+1$ times.
+    - <span style="color:#e03131">Line</span> [4](#box-6-bkpbu-c) is executed $c+1$ times.
 
-    - <span style="color:#e03131">Line</span> [6](#box-8-bkpbu-d) is executed $n$ times.
+    - <span style="color:#e03131">Line</span> [6](#box-7-bkpbu-d) is executed $n$ times.
 
-    - <span style="color:#e03131">Line</span> [7](#box-9-bkpbu-e) is executed $n(c+1)$ times.
+    - <span style="color:#e03131">Line</span> [7](#box-8-bkpbu-e) is executed $n(c+1)$ times.
 
-    - <span style="color:#e03131">Line</span> [8](#box-10-bkpbu-f) is executed $n(c+1)$ times.
+    - <span style="color:#e03131">Line</span> [8](#box-9-bkpbu-f) is executed $n(c+1)$ times.
 
-    - <span style="color:#e03131">Line</span> [9](#box-11-bkpbu-g) is executed at most $n(c+1)(b_{\max}+1)$ times.
+    - <span style="color:#e03131">Line</span> [9](#box-10-bkpbu-g) is executed at most $n(c+1)(b_{\max}+1)$ times.
 
-    - <span style="color:#e03131">Line</span> [10](#box-12-bkpbu-h) is executed at most $n(c+1)(b_{\max}+1)$ times.
+    - <span style="color:#e03131">Line</span> [10](#box-11-bkpbu-h) is executed at most $n(c+1)(b_{\max}+1)$ times.
 
-    - <span style="color:#e03131">Line</span> [11](#box-13-bkpbu-i) is executed at most $n(c+1)(b_{\max}+1)$ times.
+    - <span style="color:#e03131">Line</span> [11](#box-12-bkpbu-i) is executed at most $n(c+1)(b_{\max}+1)$ times.
 
-    - <span style="color:#e03131">Line</span> [14](#box-14-bkpbu-j) is executed $n(c+1)$ times.
+    - <span style="color:#e03131">Line</span> [14](#box-13-bkpbu-j) is executed $n(c+1)$ times.
 
-    - <span style="color:#e03131">Line</span> [17](#box-15-bkpbu-k) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [17](#box-14-bkpbu-k) is executed $1$ time.
 
     Therefore, the total number of steps in the worst case is
 

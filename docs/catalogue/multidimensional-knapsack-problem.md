@@ -47,3 +47,5 @@ title: "Multidimensional knapsack problem (MDKP)"
         $$
 
 - Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-multidimensional-knapsack-problem.md#box-10-defMDKP).
+
+- Treated in [Chapter 22 «DP for the multidimensional knapsack problem»](../dynamic-programming/dp-multidimensional-knapsack.md).

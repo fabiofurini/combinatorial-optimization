@@ -40,23 +40,11 @@ title: "DP for the knapsack problem"
 
     - exchange the roles of profits and weights, and compute the optimal value from the table $u(j,q)$.
 
-## 17.1 Problem definition
+The problem of this chapter is the [knapsack problem (KP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/): its definition and its assumptions are on its page.
 
-<a id="box-1-defKP"></a>
+## 17.1 Instances and feasible solutions
 
-!!! definizione "Definition 17.1: Knapsack Problem"
-
-    Given:
-
-    1. a knapsack of <em>capacity</em> $c \in \Z_{\ge 1}$,
-
-    2. a set $\mathscr{I} = \{1,2,\ldots,n\}$ of $n$ items,
-
-    3. for each item $j \in \mathscr{I}$, a <em>profit</em> $p_j \in \Z_{\ge 1}$ and a <em>weight</em> $w_j \in \Z_{\ge 1}$,
-
-    the <strong>Knapsack Problem</strong> (KP) asks to decide which items to insert into the knapsack, so that the total weight of the selected items does not exceed the knapsack capacity, and the total profit of the selected items is maximized.
-
-<a id="box-2-texexpbox1"></a>
+<a id="box-1-texexpbox1"></a>
 
 !!! esempio "Example 17.1: KP instance"
 
@@ -116,7 +104,7 @@ title: "DP for the knapsack problem"
     \sum_{j=1}^{n} p_j x_j.
     $$
 
-<a id="box-3-texexpbox2"></a>
+<a id="box-2-texexpbox2"></a>
 
 !!! esempio "Example 17.2: Enumeration of all possible KP solutions"
 
@@ -211,9 +199,9 @@ title: "DP for the knapsack problem"
 
 -   **Overview**
 
-    Problem definition · Encoding of feasible solutions
+    Instances and feasible solutions · Encoding of feasible solutions
 
-    [:octicons-arrow-right-24: Open](#171-problem-definition)
+    [:octicons-arrow-right-24: Open](#171-instances-and-feasible-solutions)
 
 -   **17.2 A first DP algorithm**
 

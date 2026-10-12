@@ -43,3 +43,5 @@ title: "Subset sum problem (SSP)"
         $$
 
 - Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-subset-sum-problem.md#box-4-defSSP).
+
+- Treated in [Chapter 20 «DP for the subset sum problem»](../dynamic-programming/dp-subset-sum.md).

@@ -43,3 +43,5 @@ title: "Unbounded knapsack problem (UKP)"
         $$
 
 - Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-unbounded-knapsack-problem.md#box-8-defUKP).
+
+- Treated in [Chapter 16 «Principles of dynamic programming»](../dynamic-programming/dp-principles.md), [Chapter 18 «DP for the unbounded knapsack problem»](../dynamic-programming/dp-unbounded-knapsack/index.md), [Chapter 25 «DP for the rod cutting problem»](../dynamic-programming/dp-rod-cutting/index.md), [Chapter 26 «DP for the coin change problem»](../dynamic-programming/dp-coin-change.md).

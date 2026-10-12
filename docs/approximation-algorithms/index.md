@@ -18,7 +18,7 @@
 
     ---
 
-    The problem and the assumptions · The Next Fit · The Any Fit class · Half-full property
+    Notation · The Next Fit · The Any Fit class · Half-full property
 
     [:octicons-arrow-right-24: Read the chapter](bin-packing-approximation.md) · [Exercises](../exercises/bin-packing-approximation.md)
 
@@ -26,7 +26,7 @@
 
     ---
 
-    The problem and the assumptions · Split item and residual capacity · The greedy algorithm · The Ext-Greedy algorithm
+    Notation · Split item and residual capacity · The greedy algorithm · The Ext-Greedy algorithm
 
     [:octicons-arrow-right-24: Read the chapter](knapsack-approximation.md) · [Exercises](../exercises/knapsack-approximation.md)
 
@@ -34,7 +34,7 @@
 
     ---
 
-    The problem and the assumptions · The algorithms $LIST$ and $LPT$ · A property of list scheduling · Performance guarantees
+    Notation · The algorithms $LIST$ and $LPT$ · A property of list scheduling · Performance guarantees
 
     [:octicons-arrow-right-24: Read the chapter](pcmax-approximation.md) · [Exercises](../exercises/pcmax-approximation.md)
 

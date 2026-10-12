@@ -47,3 +47,5 @@ title: "Knapsack problem with setups (KPS)"
         $$
 
 - Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md#box-16-defKPS).
+
+- Treated in [Chapter 23 «DP for the knapsack problem with setups»](../dynamic-programming/dp-knapsack-setups.md).

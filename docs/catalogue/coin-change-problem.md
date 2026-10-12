@@ -24,4 +24,4 @@ title: "Coin change problem (CCP)"
 
     the <strong>Coin Change Problem</strong> (CCP) asks to decide how many coins of each denomination to use so that their total value is exactly equal to $c$, and the total number of coins used is minimized. If no combination of coins returns exactly $c$, the instance is <em>infeasible</em>.
 
-- Defined in [Chapter 26 «DP for the coin change problem»](../dynamic-programming/dp-coin-change.md#box-1-defCCP).
+- Treated in [Chapter 16 «Principles of dynamic programming»](../dynamic-programming/dp-principles.md), [Chapter 26 «DP for the coin change problem»](../dynamic-programming/dp-coin-change.md).

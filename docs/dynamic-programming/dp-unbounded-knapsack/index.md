@@ -30,23 +30,11 @@ title: "DP for the unbounded knapsack problem"
 
     - count the steps of the two DP algorithms and compare them.
 
-## 18.1 Problem definition
+The problem of this chapter is the [unbounded knapsack problem (UKP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-unbounded-knapsack-problem/): its definition and its assumptions are on its page.
 
-<a id="box-1-defUKP"></a>
+## 18.1 Instances and feasible solutions
 
-!!! definizione "Definition 18.1: Unbounded Knapsack Problem"
-
-    Given:
-
-    1. a knapsack of <em>capacity</em> $c \in \Z_{\ge 1}$,
-
-    2. a set $\mathscr{I} = \{1,2,\dots,n\}$ of $n$ item types,
-
-    3. for each item type $j \in \mathscr{I}$, a <em>profit</em> $p_j \in \Z_{\ge 1}$ and a <em>weight</em> $w_j \in \Z_{\ge 1}$,
-
-    the <strong>Unbounded Knapsack Problem</strong> (UKP) asks to decide how many copies of each item type to insert into the knapsack, so that the total weight does not exceed the capacity and the total profit is maximized. Each item type is available in infinitely many copies.
-
-<a id="box-2-texukpex1"></a>
+<a id="box-1-texukpex1"></a>
 
 !!! esempio "Example 18.1: UKP instance"
 
@@ -97,9 +85,9 @@ $$
 
 -   **Overview**
 
-    Problem definition · Encoding of feasible solutions
+    Instances and feasible solutions · Encoding of feasible solutions
 
-    [:octicons-arrow-right-24: Open](#181-problem-definition)
+    [:octicons-arrow-right-24: Open](#181-instances-and-feasible-solutions)
 
 -   **18.2 A first DP algorithm**
 

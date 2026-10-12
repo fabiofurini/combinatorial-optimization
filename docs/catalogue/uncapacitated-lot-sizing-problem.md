@@ -26,4 +26,12 @@ title: "Uncapacitated lot sizing problem (ULS)"
 
     the <strong>Uncapacitated Lot-Sizing Problem</strong> (ULS) asks to decide how many units to produce in each period, so that, starting with an empty inventory and ending with an empty inventory, the demand of every period is satisfied, and the total cost of setups, production, and holding is minimized.
 
-- Defined in [Chapter 27 «Dynamic programming for lot sizing»](../dynamic-programming/dp-lot-sizing/index.md#box-1-defULS).
+<strong>Assumptions</strong>
+
+- We make the following assumptions:
+
+    1. There is a single product, and the stock is empty at the beginning and at the end of the horizon: the ULS is the CLS of a single product without capacities and with no initial stock.
+
+    2. The quantities are integer. With integer data, once the periods with a setup are fixed, what remains is a minimum cost flow problem, which has an integer optimal solution: restricting the quantities to integers does not change the optimal cost.
+
+- Treated in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing/index.md), [Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations.md), [Chapter 27 «Dynamic programming for lot sizing»](../dynamic-programming/dp-lot-sizing/index.md), [Chapter 32 «MIP heuristics for the classical problems»](../heuristic-algorithms/mip-heuristics-classical.md).

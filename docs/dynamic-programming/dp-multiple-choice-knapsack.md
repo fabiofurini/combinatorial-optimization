@@ -57,7 +57,7 @@ The problem of this chapter is the [multiple-choice knapsack problem (MCKP)](htt
 
 - <u>Step 1</u>: computation of the optimal value
 
-    !!! formula ""
+    !!! chiave ""
 
         For any $h \in \{0,1,\dots,q\}$ and $k \in \{0,1,\dots,c\}$, let $v(h,k)$ be the optimal value of the MCKP subinstance given by:
 

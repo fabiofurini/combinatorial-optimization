@@ -56,7 +56,7 @@ The problem of this chapter is the [subset sum problem (SSP)](https://fabiofurin
 
 - <u>Step 1</u>: computation of the answer
 
-    !!! formula ""
+    !!! chiave ""
 
         For any $j \in \{0,1,\dots,n\}$ and $k \in \{0,1,\dots,c\}$, let $r(j,k)\in\{\textit{true},\textit{false}\}$ be the answer of the SSP subinstance given by:
 

@@ -18,4 +18,4 @@ title: "Lot sizing with several products and setup times (MLS)"
 
     A set $P$ of products shares the resource of each period: $d_{pt}$, $sc_{pt}$, $vc_{pt}$ and $hc_{pt}$ are the data of product $p \in P$ in period $t \in T$; producing a unit of $p$ takes the time $vt_{pt} \in \Z_{\ge 1}$, a setup takes the time $st_{pt} \in \Z_{\ge 0}$, and the capacity $cap_t$ is a time.
 
-- Defined in [Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations.md#155-several-products-setup-times-and-initial-inventory).
+- Treated in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing/index.md), [Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations.md).

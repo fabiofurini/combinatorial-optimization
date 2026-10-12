@@ -49,3 +49,5 @@ title: "Bounded knapsack problem (BKP)"
         $$
 
 - Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-bounded-knapsack-problem.md#box-6-defBKP).
+
+- Treated in [Chapter 19 «DP for the bounded knapsack problem»](../dynamic-programming/dp-bounded-knapsack.md).

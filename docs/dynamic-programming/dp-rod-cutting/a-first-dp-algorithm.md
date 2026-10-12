@@ -48,7 +48,7 @@ title: "A first DP algorithm"
 
     - The <strong>recursion tree</strong> of the function $v$ has one node for each recursive call, labeled with the function call it represents. The root represents the initial call. The children of a node represent the recursive calls made by that call. The leaf nodes represent the base cases.
 
-        <a id="box-4-texrcptree"></a>
+        <a id="box-3-texrcptree"></a>
 
         !!! esempio "Example 25.3: Recursion tree"
 
@@ -60,7 +60,7 @@ title: "A first DP algorithm"
 
     - The value $v(\ell)$, for a generic rod length $\ell$, can be computed once the values $v(j)$ are known for all smaller lengths $j<\ell$.
 
-        <a id="box-5-texrcpsmallervalues"></a>
+        <a id="box-4-texrcpsmallervalues"></a>
 
         !!! esempio "Example 25.4: Computing the values of the $v$ function"
 
@@ -110,7 +110,7 @@ title: "A first DP algorithm"
 
         !!! algoritmo "Algorithm: DP1"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> An RCP instance given by the length <span class="arithmatex">\(n\)</span> of the rod and an array <span class="arithmatex">\(p[1..n]\)</span> of piece profits</div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value of the RCP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP1(<span class="arithmatex">\(n,p\)</span>)</div><div class="pc" style="--liv:1" id="box-6-bu-a"><span class="pc-n">2</span><span class="arithmatex">\({v} := \textnormal{new array}[0..n]\)</span></div><div class="pc" style="--liv:1" id="box-7-bu-b"><span class="pc-n">3</span><span class="arithmatex">\({v}[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-8-bu-c"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(\ell := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-9-bu-d"><span class="pc-n">5</span><span class="arithmatex">\(\mathit{m} := 0\)</span></div><div class="pc" style="--liv:2" id="box-10-bu-e"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(\ell\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-11-bu-f"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(\mathit{m} < p[j] + {v}[\ell-j]\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-12-bu-g"><span class="pc-n">8</span><span class="arithmatex">\(\mathit{m} \leftarrow p[j] + {v}[\ell-j]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:2" id="box-13-bu-h"><span class="pc-n">11</span><span class="arithmatex">\({v}[\ell] \leftarrow \mathit{m}\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-14-bu-i"><span class="pc-n">13</span><strong>return</strong> <span class="arithmatex">\({v}[n]\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> An RCP instance given by the length <span class="arithmatex">\(n\)</span> of the rod and an array <span class="arithmatex">\(p[1..n]\)</span> of piece profits</div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value of the RCP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP1(<span class="arithmatex">\(n,p\)</span>)</div><div class="pc" style="--liv:1" id="box-5-bu-a"><span class="pc-n">2</span><span class="arithmatex">\({v} := \textnormal{new array}[0..n]\)</span></div><div class="pc" style="--liv:1" id="box-6-bu-b"><span class="pc-n">3</span><span class="arithmatex">\({v}[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-7-bu-c"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(\ell := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-8-bu-d"><span class="pc-n">5</span><span class="arithmatex">\(\mathit{m} := 0\)</span></div><div class="pc" style="--liv:2" id="box-9-bu-e"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(\ell\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-10-bu-f"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(\mathit{m} < p[j] + {v}[\ell-j]\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-11-bu-g"><span class="pc-n">8</span><span class="arithmatex">\(\mathit{m} \leftarrow p[j] + {v}[\ell-j]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:2" id="box-12-bu-h"><span class="pc-n">11</span><span class="arithmatex">\({v}[\ell] \leftarrow \mathit{m}\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-13-bu-i"><span class="pc-n">13</span><strong>return</strong> <span class="arithmatex">\({v}[n]\)</span></div></div>
 
         - The vector ${v}[0..n]$ is the <strong>lookup table</strong>: it stores the optimal values of all subproblems, with the base case ${v}[0]=0$.
 
@@ -122,7 +122,7 @@ title: "A first DP algorithm"
 
         - Finally, the optimal value ${v}[n]$ of the RCP instance is returned.
 
-        <a id="box-15-texrcpbu"></a>
+        <a id="box-14-texrcpbu"></a>
 
         !!! esempio "Example 25.5: Execution of the DP algorithm"
 
@@ -309,7 +309,7 @@ title: "A first DP algorithm"
 
         - The DP algorithm uses the additional temporary variable $\mathit{t}$ to keep track of the decision made when $\mathit{m}$ is updated. If a first piece of length $j$ is selected, $\mathit{t}\leftarrow j$ stores this decision. At the end of the inner loop, ${s}[\ell]\leftarrow \mathit{t}$ stores the length of the selected first piece, together with the optimal value ${v}[\ell]\leftarrow \mathit{m}$.
 
-        <a id="box-16-texrcpbuinfo"></a>
+        <a id="box-15-texrcpbuinfo"></a>
 
         !!! esempio "Example 25.6: Computation of the additional information"
 
@@ -514,7 +514,7 @@ title: "A first DP algorithm"
 
             <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> The rod length <span class="arithmatex">\(n\)</span> of the RCP instance and the vector <span class="arithmatex">\({s}[1..n]\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> An optimal solution of the RCP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP1_SolComputation(<span class="arithmatex">\(n,{s}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(x := \textnormal{new array}[1..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(\ell := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(x[\ell] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><span class="arithmatex">\(j := n\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><strong>while</strong> <span class="arithmatex">\(j > 0\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><span class="arithmatex">\(x[{s}[j]] \leftarrow x[{s}[j]]+1\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">9</span><span class="arithmatex">\(j \leftarrow j - {s}[j]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">11</span><strong>return</strong> <span class="arithmatex">\(x\)</span></div></div>
 
-        <a id="box-17-texrcpsolvector"></a>
+        <a id="box-16-texrcpsolvector"></a>
 
         !!! esempio "Example 25.7: Computing an optimal solution"
 
@@ -581,7 +581,7 @@ title: "A first DP algorithm"
 
     - The same computation procedure, based on the vector $s$, can be applied starting from any rod length $\ell$.
 
-        <a id="box-18-texrcpsolvector32"></a>
+        <a id="box-17-texrcpsolvector32"></a>
 
         !!! esempio "Example 25.8: Computing optimal solutions for rod lengths 3 and 2"
 
@@ -679,27 +679,27 @@ title: "A first DP algorithm"
 
 ## 25.2.1 Number of steps
 
-- Let $S(n)$ denote the number of steps executed by <code>DP1</code> in the worst case, where $n$ is the rod length. We compute $S(n)$ by counting how many times <span style="color:#e03131">Line</span> [2](#box-6-bu-a)–<span style="color:#e03131">Line</span> [13](#box-14-bu-i) are executed.
+- Let $S(n)$ denote the number of steps executed by <code>DP1</code> in the worst case, where $n$ is the rod length. We compute $S(n)$ by counting how many times <span style="color:#e03131">Line</span> [2](#box-5-bu-a)–<span style="color:#e03131">Line</span> [13](#box-13-bu-i) are executed.
 
-- In the worst case, the condition at line [7](#box-11-bu-f) is true at every iteration of the inner loop, and therefore line [8](#box-12-bu-g) is executed as often as line [7](#box-11-bu-f). The number of executions of the relevant lines is:
+- In the worst case, the condition at line [7](#box-10-bu-f) is true at every iteration of the inner loop, and therefore line [8](#box-11-bu-g) is executed as often as line [7](#box-10-bu-f). The number of executions of the relevant lines is:
 
-    - <span style="color:#e03131">Line</span> [2](#box-6-bu-a) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [2](#box-5-bu-a) is executed $1$ time.
 
-    - <span style="color:#e03131">Line</span> [3](#box-7-bu-b) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [3](#box-6-bu-b) is executed $1$ time.
 
-    - <span style="color:#e03131">Line</span> [4](#box-8-bu-c) is executed $n$ times.
+    - <span style="color:#e03131">Line</span> [4](#box-7-bu-c) is executed $n$ times.
 
-    - <span style="color:#e03131">Line</span> [5](#box-9-bu-d) is executed $n$ times.
+    - <span style="color:#e03131">Line</span> [5](#box-8-bu-d) is executed $n$ times.
 
-    - <span style="color:#e03131">Line</span> [6](#box-10-bu-e) is executed $\displaystyle\sum_{\ell=1}^{n}\ell$ times.
+    - <span style="color:#e03131">Line</span> [6](#box-9-bu-e) is executed $\displaystyle\sum_{\ell=1}^{n}\ell$ times.
 
-    - <span style="color:#e03131">Line</span> [7](#box-11-bu-f) is executed $\displaystyle\sum_{\ell=1}^{n}\ell$ times.
+    - <span style="color:#e03131">Line</span> [7](#box-10-bu-f) is executed $\displaystyle\sum_{\ell=1}^{n}\ell$ times.
 
-    - <span style="color:#e03131">Line</span> [8](#box-12-bu-g) is executed $\displaystyle\sum_{\ell=1}^{n}\ell$ times.
+    - <span style="color:#e03131">Line</span> [8](#box-11-bu-g) is executed $\displaystyle\sum_{\ell=1}^{n}\ell$ times.
 
-    - <span style="color:#e03131">Line</span> [11](#box-13-bu-h) is executed $n$ times.
+    - <span style="color:#e03131">Line</span> [11](#box-12-bu-h) is executed $n$ times.
 
-    - <span style="color:#e03131">Line</span> [13](#box-14-bu-i) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [13](#box-13-bu-i) is executed $1$ time.
 
     Therefore, the total number of steps in the worst case is
 

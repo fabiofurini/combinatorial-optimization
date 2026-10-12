@@ -642,12 +642,20 @@ title: "Formulations of capacitated lot sizing"
     && w_{p,t-1}+\sum_{u=1}^{t-1}zv_{p,u,t-1} - \sum_{k=t}^{m}zv_{ptk} &= 0, & \forall p \in P,~\forall t\in T\setminus\{1\}, \label{CLSPSP2} \tag{15.7c}\\[1ex]
     && \sum_{k=t}^{m}zv_{ptk} &\leq y_{pt}, & \forall p \in P,~\forall t\in T, \label{CLSPSP3} \tag{15.7d}\\[1ex]
     && \sum_{p\in P}st_{pt}\,y_{pt}+\sum_{p\in P}\sum_{k=t}^{m} vt_{pt}\,sd_{ptk}\,zv_{ptk} &\leq cap_t, & \forall t\in T, \label{CLSPSP4} \tag{15.7e}\\[1ex]
-    && zv_{ptk} & \geq 0, & \forall p \in P,~\forall t,k\in T,~ k\geq t, \label{CLSPSP5} \tag{15.7f}\\[1ex]
-    && w_{pt} & \geq 0, & \forall p \in P,~\forall t\in T, \label{CLSPSP6} \tag{15.7g}\\[1ex]
-    && y_{pt} & \in \{0, 1\}, & \forall p \in P,~\forall t \in T. \label{CLSPSP7} \tag{15.7h}
+    && \sum_{k=t}^{m} sd_{ptk}\,zv_{ptk} &\in \Z_{\ge 0}, & \forall p \in P,~\forall t\in T, \label{CLSPSP-intx} \tag{15.7f}\\[1ex]
+    && \sum_{t\in T} sd_{p1t}\,w_{pt} &\in \Z_{\ge 0}, & \forall p \in P, \label{CLSPSP-intsi} \tag{15.7g}\\[1ex]
+    && zv_{ptk} & \geq 0, & \forall p \in P,~\forall t,k\in T,~ k\geq t, \label{CLSPSP5} \tag{15.7h}\\[1ex]
+    && w_{pt} & \geq 0, & \forall p \in P,~\forall t\in T, \label{CLSPSP6} \tag{15.7i}\\[1ex]
+    && y_{pt} & \in \{0, 1\}, & \forall p \in P,~\forall t \in T. \label{CLSPSP7} \tag{15.7j}
     \end{align*}
 
-    This MIP model is referred to as the $\mathrm{MIP}^{\mathrm{SP},P}_{\mathrm{CLSP}}$ model. Relaxing constraints $\eqref{CLSPSP7}$ into $0\le y_{pt}\le 1$ gives the LP model referred to as the $\mathrm{LP}^{\mathrm{SP},P}_{\mathrm{CLSP}}$ model.
+    This MIP model is referred to as the $\mathrm{MIP}^{\mathrm{SP},P}_{\mathrm{CLSP}}$ model. Relaxing constraints $\eqref{CLSPSP7}$ into $0\le y_{pt}\le 1$ and removing constraints $\eqref{CLSPSP-intx}$ and $\eqref{CLSPSP-intsi}$ gives the LP model referred to as the $\mathrm{LP}^{\mathrm{SP},P}_{\mathrm{CLSP}}$ model.
+
+- The quantity produced is $x_{pt}=\sum_{k=t}^{m} sd_{ptk}\,zv_{ptk}$, and the initial inventory is $si_p=\sum_{t\in T} sd_{p1t}\,w_{pt}$: constraints $\eqref{CLSPSP-intx}$ and $\eqref{CLSPSP-intsi}$ keep them integer, as in the $\mathrm{ILP}_{\mathrm{CLSP}}^{P}$ model.
+
+- With one product and $vt_t=1$ these constraints are not needed: once the setups are fixed, what remains is a minimum cost flow problem, which has an integer optimal solution.
+
+- With several products and production times $vt_{pt}>1$, a fractional quantity can use the capacity better. Without constraints $\eqref{CLSPSP-intx}$ and $\eqref{CLSPSP-intsi}$ the model is only a relaxation of the problem, and its optimal value can be smaller than $z(\mathrm{ILP}_{\mathrm{CLSP}}^{P})$ (<span style="color:#1971c2">[Example 15.6](#box-6-ex-CLSP-inst)</span>).
 
 <a id="box-6-ex-CLSP-inst"></a>
 
@@ -782,12 +790,16 @@ title: "Formulations of capacitated lot sizing"
     <td><span class="arithmatex">\(668\,928.57\)</span></td>
     </tr>
     <tr>
-    <td><span class="arithmatex">\(\mathrm{ILP}_{\mathrm{CLSP}}^{P}\)</span> (integer optimum)</td>
+    <td><span class="arithmatex">\(\mathrm{MIP}^{\mathrm{SP},P}_{\mathrm{CLSP}}\)</span> without <span class="arithmatex">\(\eqref{CLSPSP-intx}\)</span> and <span class="arithmatex">\(\eqref{CLSPSP-intsi}\)</span></td>
+    <td><span class="arithmatex">\(676\,450.00\)</span></td>
+    </tr>
+    <tr>
+    <td><span class="arithmatex">\(\mathrm{ILP}_{\mathrm{CLSP}}^{P}\)</span> and <span class="arithmatex">\(\mathrm{MIP}^{\mathrm{SP},P}_{\mathrm{CLSP}}\)</span> (integer optimum)</td>
     <td><span class="arithmatex">\(677\,400\)</span></td>
     </tr>
     </table></div>
 
-    The optimal solution of the $\mathrm{ILP}_{\mathrm{CLSP}}^{P}$ model is unique: $x_{11}=59$, $x_{12}=200$, $x_{13}=10$, $x_{21}=110$, $x_{22}=0$, $x_{23}=150$, $si_1=41$, with a setup in every period except for product $2$ in period $2$.
+    The optimal solution of the $\mathrm{ILP}_{\mathrm{CLSP}}^{P}$ model is unique: $x_{11}=59$, $x_{12}=200$, $x_{13}=10$, $x_{21}=110$, $x_{22}=0$, $x_{23}=150$, $si_1=41$, with a setup in every period except for product $2$ in period $2$. Without constraints $\eqref{CLSPSP-intx}$ and $\eqref{CLSPSP-intsi}$ the shortest-path model reaches $676\,450$ with the same setups and the fractional quantities $x_{11}=59.5$ and $si_1=40.5$: period $1$ then uses its whole capacity, $100+20\cdot 59.5+110+10\cdot 110=2500$.
 
 ## 15.6 Typical mistakes
 
@@ -802,6 +814,8 @@ title: "Formulations of capacitated lot sizing"
     - <strong>Counting the holding cost of the demand of the production period.</strong> In $cv_{tk}$ the units for period $t$ are not stored: the holding sum starts from the demand of period $t+1$.
 
     - <strong>Believing that the shortest-path formulation needs binary paths.</strong> The variables $zv_{tk}$ are continuous: a feasible plan that is not a path is a combination of paths.
+
+    - <strong>Forgetting the integrality of the quantities with several products.</strong> With production times $vt_{pt}>1$ the continuous variables $zv_{ptk}$ can give fractional quantities: the shortest-path model needs the integrality constraints $\eqref{CLSPSP-intx}$ and $\eqref{CLSPSP-intsi}$, otherwise it is only a relaxation ($676\,450<677\,400$).
 
 ## 15.7 In summary
 

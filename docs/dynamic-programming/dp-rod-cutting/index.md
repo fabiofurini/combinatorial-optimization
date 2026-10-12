@@ -32,23 +32,11 @@ title: "DP for the rod cutting problem"
 
     - write the second recurrence $v(j,\ell)$ on pairs (largest piece length, rod length) and count the steps of the DP algorithm.
 
-## 25.1 Problem definition
+The problem of this chapter is the [rod cutting problem (RCP)](https://fabiofurini.github.io/combinatorial-optimization/catalogue/rod-cutting-problem/): its definition is on its page.
 
-<a id="box-1-defRCP"></a>
+## 25.1 Instances and feasible solutions
 
-!!! definizione "Definition 25.1: Rod-Cutting Problem"
-
-    Given:
-
-    1. a rod of <em>length</em> $n \in \Z_{\ge 1}$,
-
-    2. a set $\{1,2,\dots,n\}$ of $n$ possible piece lengths,
-
-    3. for each piece length $\ell \in \{1,2,\dots,n\}$, a <em>profit</em> $p_\ell \in \Z_{\ge 1}$,
-
-    the <strong>Rod-Cutting Problem</strong> (RCP) asks to decide how many copies of each piece length to cut, so that the total length of the obtained pieces is equal to the rod length, and the total profit of the obtained pieces is maximized.
-
-<a id="box-2-texexpbox1"></a>
+<a id="box-1-texexpbox1"></a>
 
 !!! esempio "Example 25.1: Rod cutting problem"
 
@@ -115,7 +103,7 @@ title: "DP for the rod cutting problem"
 
 - Notice that two or more cutting patterns may have the same vector representation: the vector records how many pieces of each length are obtained, but it does not specify the order in which the pieces are cut. However, cutting patterns with the same vector representation have the same total profit, since the order in which the pieces are cut does not affect the obtained pieces and therefore does not affect the total profit.
 
-<a id="box-3-texrcpenumeration"></a>
+<a id="box-2-texrcpenumeration"></a>
 
 !!! esempio "Example 25.2: Enumeration of all possible RCP solutions"
 
@@ -200,9 +188,9 @@ title: "DP for the rod cutting problem"
 
 -   **Overview**
 
-    Problem definition · Encoding of feasible solutions
+    Instances and feasible solutions · Encoding of feasible solutions
 
-    [:octicons-arrow-right-24: Open](#251-problem-definition)
+    [:octicons-arrow-right-24: Open](#251-instances-and-feasible-solutions)
 
 -   **25.2 A first DP algorithm**
 

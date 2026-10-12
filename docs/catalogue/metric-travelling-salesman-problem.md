@@ -24,3 +24,5 @@ title: "Metric travelling salesman problem (metric TSP)"
     $$
 
 - Defined in [Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md#box-3-defMetricTSP).
+
+- Treated in [Chapter 37 «Approximation for the metric TSP»](../approximation-algorithms/tsp-approximation.md).

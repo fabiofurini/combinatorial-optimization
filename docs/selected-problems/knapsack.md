@@ -56,7 +56,7 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - The recurrence $v(j,k)$ over items and capacities takes $\Theta(nc)$ steps ([Ch. 17](../dynamic-programming/dp-knapsack/index.md)).
 
-- The lists of non-dominated states keep only the reachable states, at most $\min\{2^j, c+1\}$ per stage ([Ch. 17](../dynamic-programming/dp-knapsack/a-first-dp-algorithm-an-implementation-with-lists.md#box-29-texkp3graph)).
+- The lists of non-dominated states keep only the reachable states, at most $\min\{2^j, c+1\}$ per stage ([Ch. 17](../dynamic-programming/dp-knapsack/a-first-dp-algorithm-an-implementation-with-lists.md#box-28-texkp3graph)).
 
 - The DP by profits takes $\Theta(nP)$ steps; it is the core of the FPTAS ([Ch. 17](../dynamic-programming/dp-knapsack/a-second-dp-algorithm.md#173-a-second-dp-algorithm)).
 
@@ -82,13 +82,13 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Approximation { #sez-sec-cat-kp-approximation }
 
-- The greedy algorithm has no constant guarantee; Ext-Greedy is a $2$-approximation, and the bound is tight ([Ch. 35](../approximation-algorithms/knapsack-approximation.md#box-17-prop-GRe2approx)).
+- The greedy algorithm has no constant guarantee; Ext-Greedy is a $2$-approximation, and the bound is tight ([Ch. 35](../approximation-algorithms/knapsack-approximation.md#box-16-prop-GRe2approx)).
 
-- $H^{\ell}$ guarantees $\frac{\ell+2}{\ell+1}$ in $O(n^{\ell+1})$ time, which gives a PTAS ([Ch. 35](../approximation-algorithms/knapsack-approximation.md#box-21-prop-Hlapprox)).
+- $H^{\ell}$ guarantees $\frac{\ell+2}{\ell+1}$ in $O(n^{\ell+1})$ time, which gives a PTAS ([Ch. 35](../approximation-algorithms/knapsack-approximation.md#box-20-prop-Hlapprox)).
 
-- The Basic-FPTAS scales the profits and guarantees $\frac{1}{1-\varepsilon}$ in $O(n^2/\varepsilon)$ time ([Ch. 35](../approximation-algorithms/knapsack-approximation.md#box-24-prop-fptas)).
+- The Basic-FPTAS scales the profits and guarantees $\frac{1}{1-\varepsilon}$ in $O(n^2/\varepsilon)$ time ([Ch. 35](../approximation-algorithms/knapsack-approximation.md#box-23-prop-fptas)).
 
-- No polynomial algorithm has a fixed absolute guarantee, unless it solves the KP exactly ([Ch. 35](../approximation-algorithms/knapsack-approximation.md#box-26-thm-absolute)).
+- No polynomial algorithm has a fixed absolute guarantee, unless it solves the KP exactly ([Ch. 35](../approximation-algorithms/knapsack-approximation.md#box-25-thm-absolute)).
 
 ## Branch-and-bound { #sez-sec-cat-kp-branchandbound }
 

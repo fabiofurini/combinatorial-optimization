@@ -54,7 +54,7 @@ title: "A first DP algorithm"
 
     - The <strong>recursion tree</strong> of the function $v$ has one node for each recursive call, labeled with the function call it represents. The root represents the initial call. The children of a node represent the recursive calls made by that call. The leaf nodes represent the base cases.
 
-        <a id="box-3-texukptree"></a>
+        <a id="box-2-texukptree"></a>
 
         !!! esempio "Example 18.2: Recursion tree"
 
@@ -66,7 +66,7 @@ title: "A first DP algorithm"
 
     - The value $v(k)$, for a generic capacity $k$, can be computed once the values $v(k')$ are known for all smaller capacities $k'<k$.
 
-        <a id="box-4-texukpsmallervalues"></a>
+        <a id="box-3-texukpsmallervalues"></a>
 
         !!! esempio "Example 18.3: Computing the values of the $v$ function"
 
@@ -135,7 +135,7 @@ title: "A first DP algorithm"
 
         !!! algoritmo "Algorithm: UKP\_DP1"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A UKP instance given by <span class="arithmatex">\(n\)</span>, arrays <span class="arithmatex">\(p[1..n]\)</span>, <span class="arithmatex">\(w[1..n]\)</span>, and capacity <span class="arithmatex">\(c\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value of the UKP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> UKP_DP1(<span class="arithmatex">\(n,p,w,c\)</span>)</div><div class="pc" style="--liv:1" id="box-5-ukpbu1-a"><span class="pc-n">2</span><span class="arithmatex">\(v := \textnormal{new array}[0..c]\)</span></div><div class="pc" style="--liv:1" id="box-6-ukpbu1-b"><span class="pc-n">3</span><span class="arithmatex">\(v[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-7-ukpbu1-c"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(k := 1\)</span> <strong>to</strong> <span class="arithmatex">\(c\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-8-ukpbu1-d"><span class="pc-n">5</span><span class="arithmatex">\(m := 0\)</span></div><div class="pc" style="--liv:2" id="box-9-ukpbu1-e"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-10-ukpbu1-f"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(w[j] \le k\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-11-ukpbu1-g"><span class="pc-n">8</span><strong>if</strong> <span class="arithmatex">\(p[j]+v[k-w[j]] > m\)</span>  <strong>then</strong></div><div class="pc" style="--liv:5" id="box-12-ukpbu1-h"><span class="pc-n">9</span><span class="arithmatex">\(m \leftarrow p[j]+v[k-w[j]]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">11</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:2" id="box-13-ukpbu1-i"><span class="pc-n">13</span><span class="arithmatex">\(v[k] \leftarrow m\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">14</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-14-ukpbu1-j"><span class="pc-n">15</span><strong>return</strong> <span class="arithmatex">\(v[c]\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A UKP instance given by <span class="arithmatex">\(n\)</span>, arrays <span class="arithmatex">\(p[1..n]\)</span>, <span class="arithmatex">\(w[1..n]\)</span>, and capacity <span class="arithmatex">\(c\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value of the UKP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> UKP_DP1(<span class="arithmatex">\(n,p,w,c\)</span>)</div><div class="pc" style="--liv:1" id="box-4-ukpbu1-a"><span class="pc-n">2</span><span class="arithmatex">\(v := \textnormal{new array}[0..c]\)</span></div><div class="pc" style="--liv:1" id="box-5-ukpbu1-b"><span class="pc-n">3</span><span class="arithmatex">\(v[0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-6-ukpbu1-c"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(k := 1\)</span> <strong>to</strong> <span class="arithmatex">\(c\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-7-ukpbu1-d"><span class="pc-n">5</span><span class="arithmatex">\(m := 0\)</span></div><div class="pc" style="--liv:2" id="box-8-ukpbu1-e"><span class="pc-n">6</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-9-ukpbu1-f"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(w[j] \le k\)</span>  <strong>then</strong></div><div class="pc" style="--liv:4" id="box-10-ukpbu1-g"><span class="pc-n">8</span><strong>if</strong> <span class="arithmatex">\(p[j]+v[k-w[j]] > m\)</span>  <strong>then</strong></div><div class="pc" style="--liv:5" id="box-11-ukpbu1-h"><span class="pc-n">9</span><span class="arithmatex">\(m \leftarrow p[j]+v[k-w[j]]\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">11</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:2" id="box-12-ukpbu1-i"><span class="pc-n">13</span><span class="arithmatex">\(v[k] \leftarrow m\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">14</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-13-ukpbu1-j"><span class="pc-n">15</span><strong>return</strong> <span class="arithmatex">\(v[c]\)</span></div></div>
 
         - The vector $v[0..c]$ is the <strong>lookup table</strong>: it stores the optimal values of all subproblems, with the base case $v[0]=0$.
 
@@ -147,7 +147,7 @@ title: "A first DP algorithm"
 
         - Finally, the optimal value $v[c]$ of the UKP instance is returned.
 
-        <a id="box-15-texukpbu"></a>
+        <a id="box-14-texukpbu"></a>
 
         !!! esempio "Example 18.4: Execution of the DP algorithm"
 
@@ -513,7 +513,7 @@ title: "A first DP algorithm"
 
         - The DP algorithm uses the additional temporary variable $t$ to keep track of the decision made when $m$ is updated. If item type $j$ is selected, $t\leftarrow j$ stores this decision; if no item type fits into capacity $k$, $t$ keeps its initial value $0$. At the end of the inner loop, $s[k]\leftarrow t$ stores the selected item type, together with the optimal value $v[k]\leftarrow m$.
 
-        <a id="box-16-texukpbuinfo"></a>
+        <a id="box-15-texukpbuinfo"></a>
 
         !!! esempio "Example 18.5: Computation of the additional information"
 
@@ -922,7 +922,7 @@ title: "A first DP algorithm"
 
             <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> The number <span class="arithmatex">\(n\)</span> of item types, the capacity <span class="arithmatex">\(c\)</span>, the array <span class="arithmatex">\(w[1..n]\)</span>, and the vector <span class="arithmatex">\(s[0..c]\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> An optimal solution of the UKP instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> UKP_DP1_SolComputation(<span class="arithmatex">\(n,w,c,s\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(x := \textnormal{new array}[1..n]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(x[j] \leftarrow 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><span class="arithmatex">\(k := c\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><strong>while</strong> <span class="arithmatex">\(k > 0\)</span> <strong>and</strong> <span class="arithmatex">\(s[k] > 0\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><span class="arithmatex">\(x[s[k]] \leftarrow x[s[k]]+1\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">9</span><span class="arithmatex">\(k \leftarrow k - w[s[k]]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">11</span><strong>return</strong> <span class="arithmatex">\(x\)</span></div></div>
 
-        <a id="box-17-texukpsolvector"></a>
+        <a id="box-16-texukpsolvector"></a>
 
         !!! esempio "Example 18.6: Computing an optimal solution"
 
@@ -993,27 +993,27 @@ title: "A first DP algorithm"
 
 - Let $S(n,c)$ denote the number of steps executed by <code>UKP\_DP1</code> in the worst case, where $n$ is the number of item types and $c$ is the knapsack capacity. We compute $S(n,c)$ by counting how many times the lines of the pseudo-code of <code>UKP\_DP1</code> are executed.
 
-- In the worst case, the conditions at lines [7](#box-10-ukpbu1-f) and [8](#box-11-ukpbu1-g) are true at every iteration of the inner loop, and therefore line [9](#box-12-ukpbu1-h) is executed as often as line [8](#box-11-ukpbu1-g). The number of executions of the relevant lines is:
+- In the worst case, the conditions at lines [7](#box-9-ukpbu1-f) and [8](#box-10-ukpbu1-g) are true at every iteration of the inner loop, and therefore line [9](#box-11-ukpbu1-h) is executed as often as line [8](#box-10-ukpbu1-g). The number of executions of the relevant lines is:
 
-    - <span style="color:#e03131">Line</span> [2](#box-5-ukpbu1-a) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [2](#box-4-ukpbu1-a) is executed $1$ time.
 
-    - <span style="color:#e03131">Line</span> [3](#box-6-ukpbu1-b) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [3](#box-5-ukpbu1-b) is executed $1$ time.
 
-    - <span style="color:#e03131">Line</span> [4](#box-7-ukpbu1-c) is executed $c$ times.
+    - <span style="color:#e03131">Line</span> [4](#box-6-ukpbu1-c) is executed $c$ times.
 
-    - <span style="color:#e03131">Line</span> [5](#box-8-ukpbu1-d) is executed $c$ times.
+    - <span style="color:#e03131">Line</span> [5](#box-7-ukpbu1-d) is executed $c$ times.
 
-    - <span style="color:#e03131">Line</span> [6](#box-9-ukpbu1-e) is executed $cn$ times.
+    - <span style="color:#e03131">Line</span> [6](#box-8-ukpbu1-e) is executed $cn$ times.
 
-    - <span style="color:#e03131">Line</span> [7](#box-10-ukpbu1-f) is executed $cn$ times.
+    - <span style="color:#e03131">Line</span> [7](#box-9-ukpbu1-f) is executed $cn$ times.
 
-    - <span style="color:#e03131">Line</span> [8](#box-11-ukpbu1-g) is executed $cn$ times.
+    - <span style="color:#e03131">Line</span> [8](#box-10-ukpbu1-g) is executed $cn$ times.
 
-    - <span style="color:#e03131">Line</span> [9](#box-12-ukpbu1-h) is executed $cn$ times.
+    - <span style="color:#e03131">Line</span> [9](#box-11-ukpbu1-h) is executed $cn$ times.
 
-    - <span style="color:#e03131">Line</span> [13](#box-13-ukpbu1-i) is executed $c$ times.
+    - <span style="color:#e03131">Line</span> [13](#box-12-ukpbu1-i) is executed $c$ times.
 
-    - <span style="color:#e03131">Line</span> [15](#box-14-ukpbu1-j) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [15](#box-13-ukpbu1-j) is executed $1$ time.
 
     Therefore, the total number of steps in the worst case is
 

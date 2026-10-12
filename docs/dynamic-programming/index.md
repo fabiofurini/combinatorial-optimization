@@ -18,7 +18,7 @@
 
     ---
 
-    Problem definition
+    Instances and feasible solutions
 
     [:octicons-arrow-right-24: Read the chapter](dp-knapsack/index.md) · [Exercises](../exercises/dp-knapsack.md)
 
@@ -26,7 +26,7 @@
 
     ---
 
-    Problem definition
+    Instances and feasible solutions
 
     [:octicons-arrow-right-24: Read the chapter](dp-unbounded-knapsack/index.md) · [Exercises](../exercises/dp-unbounded-knapsack.md)
 
@@ -34,7 +34,7 @@
 
     ---
 
-    Problem definition · A DP algorithm
+    Instances and feasible solutions · A DP algorithm
 
     [:octicons-arrow-right-24: Read the chapter](dp-bounded-knapsack.md) · [Exercises](../exercises/dp-bounded-knapsack.md)
 
@@ -82,7 +82,7 @@
 
     ---
 
-    Problem definition
+    Instances and feasible solutions
 
     [:octicons-arrow-right-24: Read the chapter](dp-rod-cutting/index.md) · [Exercises](../exercises/dp-rod-cutting.md)
 
@@ -90,7 +90,7 @@
 
     ---
 
-    Problem definition · A DP algorithm
+    Instances and feasible solutions · A DP algorithm
 
     [:octicons-arrow-right-24: Read the chapter](dp-coin-change.md) · [Exercises](../exercises/dp-coin-change.md)
 
@@ -98,7 +98,7 @@
 
     ---
 
-    Problem definition
+    Notation, model and feasible solutions
 
     [:octicons-arrow-right-24: Read the chapter](dp-lot-sizing/index.md) · [Exercises](../exercises/dp-lot-sizing.md)
 

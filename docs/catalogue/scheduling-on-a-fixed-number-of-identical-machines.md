@@ -19,3 +19,5 @@ title: "Scheduling on a fixed number of identical machines (Pm|Cmax)"
     The problem $P\,||\,C_{\max}$ in which the number $m$ of machines is a constant, for example $m=2$, and only the jobs $\Jlavori$ and the processing times $t_j \in \Z_{\ge 1}$ form the input.
 
 - Defined in [Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md#sez-sec-complexity).
+
+- Treated in [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax.md).

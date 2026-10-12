@@ -70,7 +70,7 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - Every Any Fit algorithm is half-full, hence a $2$-approximation ([Ch. 34](../approximation-algorithms/bin-packing-approximation.md#344-half-full-property)).
 
-- $r(NF) = r(WF) = 2$ and $r(FF) = r(BF) = \frac{17}{10}$ ([Ch. 34](../approximation-algorithms/bin-packing-approximation.md#box-21-propFF)).
+- $r(NF) = r(WF) = 2$ and $r(FF) = r(BF) = \frac{17}{10}$ ([Ch. 34](../approximation-algorithms/bin-packing-approximation.md#box-20-propFF)).
 
 - No polynomial algorithm has a ratio below $\frac32$ unless $P=NP$: deciding whether $2$ bins suffice is PARTITION ([Ch. 34](../approximation-algorithms/bin-packing-approximation.md)).
 

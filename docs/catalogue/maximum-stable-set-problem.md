@@ -33,3 +33,5 @@ title: "Maximum stable set problem (MSSP)"
 - The assumption can be made without loss of generality: if the graph has no edge, every single vertex is a maximum clique and $\omega(G)=1$; if the graph is complete, $V$ itself is a clique and $\omega(G)=n$.
 
 - Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md#box-3-mcpP-def-MSSP).
+
+- Treated in [Chapter 4 «Vertex coloring»](../combinatorial-optimization-problems/coloring.md).

@@ -19,3 +19,5 @@ title: "Lot sizing with initial stock (LS-SI)"
     The quantity $si_p$ of product $p$ available at the beginning of the horizon is a decision, bought at the cost $fc_p$ per unit; the balance of the first period becomes $si_{p} + x_{p1} = d_{p1} + s_{p1}$.
 
 - Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing/variants.md#82-variants).
+
+- Treated in [Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations.md).

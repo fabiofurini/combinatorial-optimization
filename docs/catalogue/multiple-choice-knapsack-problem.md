@@ -47,3 +47,5 @@ title: "Multiple-choice knapsack problem (MCKP)"
         $$
 
 - Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem.md#box-14-defMCKP).
+
+- Treated in [Chapter 21 «DP for the multiple-choice knapsack problem»](../dynamic-programming/dp-multiple-choice-knapsack.md).
