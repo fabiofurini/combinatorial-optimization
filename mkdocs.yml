@@ -37,7 +37,6 @@ theme:
     - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
     - navigation.indexes
     - navigation.top
     - navigation.footer
@@ -163,7 +162,7 @@ nav:
       - "A glimpse of computational complexity": combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md
   - Selected problems:
       - selected-problems/index.md
-      - "Knapsack":
+      - "Knapsack problem (KP)":
           - combinatorial-optimization-problems/knapsack/index.md
           - "Subset sum": combinatorial-optimization-problems/knapsack/the-subset-sum-problem.md
           - "Bounded knapsack": combinatorial-optimization-problems/knapsack/the-bounded-knapsack-problem.md
@@ -172,20 +171,20 @@ nav:
           - "Multiple knapsack": combinatorial-optimization-problems/knapsack/the-multiple-knapsack-problem.md
           - "Multiple-choice knapsack": combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem.md
           - "Knapsack with setups": combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md
-      - "Bin packing":
+      - "Bin packing problem (BPP)":
           - combinatorial-optimization-problems/bin-packing/index.md
           - "Cutting stock": combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md
-      - "Vertex coloring":
+      - "Vertex coloring problem (VCP)":
           - combinatorial-optimization-problems/coloring.md
-      - "Maximum clique":
+      - "Maximum clique problem (MCP)":
           - combinatorial-optimization-problems/clique/index.md
           - "Weighted variants": combinatorial-optimization-problems/clique/weighted-variants.md
-      - "TSP":
+      - "Travelling salesman problem (TSP)":
           - combinatorial-optimization-problems/tsp/index.md
           - "Metric and asymmetric TSP": combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md
-      - "Machine scheduling":
+      - "Scheduling on identical parallel machines (P||Cmax)":
           - combinatorial-optimization-problems/pcmax.md
-      - "Lot sizing":
+      - "Capacitated lot sizing (CLS)":
           - combinatorial-optimization-problems/lot-sizing/index.md
           - "Variants": combinatorial-optimization-problems/lot-sizing/variants.md
   - Formulations:
@@ -281,39 +280,46 @@ nav:
       - "33. Knapsack: B&B": specialized-algorithms/knapsack-branch-and-bound.md
   - Exercises:
       - exercises/index.md
-      - "1. Combinatorial optimization": exercises/combinatorial-optimization.md
-      - "2. Knapsack": exercises/knapsack.md
-      - "3. Bin packing": exercises/bin-packing.md
-      - "4. Vertex coloring": exercises/coloring.md
-      - "5. Maximum clique": exercises/clique.md
-      - "6. TSP": exercises/tsp.md
-      - "7. Machine scheduling": exercises/pcmax.md
-      - "8. Lot sizing": exercises/lot-sizing.md
-      - "9. Knapsack": exercises/knapsack-formulations.md
-      - "10. Bin packing": exercises/bin-packing-formulations.md
-      - "11. Vertex coloring": exercises/coloring-formulations.md
-      - "12. Maximum clique": exercises/clique-formulations.md
-      - "13. TSP": exercises/tsp-formulations.md
-      - "14. Machine scheduling": exercises/pcmax-formulations.md
-      - "15. Lot sizing": exercises/lot-sizing-formulations.md
-      - "16. Principles": exercises/dp-principles.md
-      - "17. KP": exercises/dp-knapsack.md
-      - "18. UKP": exercises/dp-unbounded-knapsack.md
-      - "19. BKP": exercises/dp-bounded-knapsack.md
-      - "20. Rod cutting": exercises/dp-rod-cutting.md
-      - "21. Coin change": exercises/dp-coin-change.md
-      - "22. Lot sizing": exercises/dp-lot-sizing.md
-      - "23. Definitions": exercises/heuristics.md
-      - "24. Constructive": exercises/constructive-heuristics.md
-      - "25. Local search": exercises/local-search.md
-      - "26. Metaheuristics": exercises/metaheuristics.md
-      - "27. MIP heuristics": exercises/mip-heuristics-classical.md
-      - "28. Definitions": exercises/approximation.md
-      - "29. Bin packing": exercises/bin-packing-approximation.md
-      - "30. Knapsack": exercises/knapsack-approximation.md
-      - "31. P||Cmax": exercises/pcmax-approximation.md
-      - "32. Metric TSP": exercises/tsp-approximation.md
-      - "33. Knapsack: B&B": exercises/knapsack-branch-and-bound.md
+      - "Combinatorial optimization":
+          - "1. Combinatorial optimization": exercises/combinatorial-optimization.md
+      - "Selected problems":
+          - "2. Knapsack": exercises/knapsack.md
+          - "3. Bin packing": exercises/bin-packing.md
+          - "4. Vertex coloring": exercises/coloring.md
+          - "5. Maximum clique": exercises/clique.md
+          - "6. TSP": exercises/tsp.md
+          - "7. Machine scheduling": exercises/pcmax.md
+          - "8. Lot sizing": exercises/lot-sizing.md
+      - "Formulations":
+          - "9. Knapsack": exercises/knapsack-formulations.md
+          - "10. Bin packing": exercises/bin-packing-formulations.md
+          - "11. Vertex coloring": exercises/coloring-formulations.md
+          - "12. Maximum clique": exercises/clique-formulations.md
+          - "13. TSP": exercises/tsp-formulations.md
+          - "14. Machine scheduling": exercises/pcmax-formulations.md
+          - "15. Lot sizing": exercises/lot-sizing-formulations.md
+      - "Dynamic programming":
+          - "16. Principles": exercises/dp-principles.md
+          - "17. KP": exercises/dp-knapsack.md
+          - "18. UKP": exercises/dp-unbounded-knapsack.md
+          - "19. BKP": exercises/dp-bounded-knapsack.md
+          - "20. Rod cutting": exercises/dp-rod-cutting.md
+          - "21. Coin change": exercises/dp-coin-change.md
+          - "22. Lot sizing": exercises/dp-lot-sizing.md
+      - "Heuristics":
+          - "23. Definitions": exercises/heuristics.md
+          - "24. Constructive": exercises/constructive-heuristics.md
+          - "25. Local search": exercises/local-search.md
+          - "26. Metaheuristics": exercises/metaheuristics.md
+          - "27. MIP heuristics": exercises/mip-heuristics-classical.md
+      - "Approximation":
+          - "28. Definitions": exercises/approximation.md
+          - "29. Bin packing": exercises/bin-packing-approximation.md
+          - "30. Knapsack": exercises/knapsack-approximation.md
+          - "31. P||Cmax": exercises/pcmax-approximation.md
+          - "32. Metric TSP": exercises/tsp-approximation.md
+      - "Branch-and-bound":
+          - "33. Knapsack: B&B": exercises/knapsack-branch-and-bound.md
   - Catalogue:
       - catalogue/index.md
       - "The problems at a glance": combinatorial-optimization-problems/problems.md
