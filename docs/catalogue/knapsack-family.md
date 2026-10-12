@@ -270,11 +270,11 @@ title: "Knapsack family"
 
 - Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md#box-16-defKPS).
 
-## Rod-Cutting Problem (RCP) { #sez-sec-cat-def-rcp }
+## Rod cutting problem (RCP) { #sez-sec-cat-def-rcp }
 
 <a id="box-8-def-catdef-rcp"></a>
 
-!!! definizione "Definition 8: Rod-Cutting Problem"
+!!! definizione "Definition 8: Rod cutting problem"
 
     Given:
 
@@ -288,11 +288,11 @@ title: "Knapsack family"
 
 - Defined in [Chapter 20 «DP for the rod cutting problem»](../dynamic-programming/dp-rod-cutting/index.md#box-1-defRCP).
 
-## Coin Change Problem (CCP) { #sez-sec-cat-def-ccp }
+## Coin change problem (CCP) { #sez-sec-cat-def-ccp }
 
 <a id="box-9-def-catdef-ccp"></a>
 
-!!! definizione "Definition 9: Coin Change Problem"
+!!! definizione "Definition 9: Coin change problem"
 
     Given:
 

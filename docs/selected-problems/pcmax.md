@@ -94,8 +94,8 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Variants { #sez-sec-cat-pcmax-var }
 
-- [Scheduling on a fixed number of identical machines ($m$ not part of the input) ($Pm\|C_{\max}$)](../catalogue/scheduling.md#sez-sec-cat-def-pmcmax): Special case of $P\,||\,C_{\max}$ with $m$ fixed; with $m=2$ it asks for a split of the jobs into two sets of loads as equal as possible.
+- [Scheduling on a fixed number of identical machines ($Pm\|C_{\max}$)](../catalogue/scheduling.md#sez-sec-cat-def-pmcmax): Special case of $P\,||\,C_{\max}$ with $m$ fixed; with $m=2$ it asks for a split of the jobs into two sets of loads as equal as possible.
 
-- [Scheduling on parallel machines with different speeds, $Q\,||\,C_{\max}$](../catalogue/scheduling.md#sez-sec-cat-def-qcmax): Generalizes $P\,||\,C_{\max}$, which is the case of machines with equal speeds.
+- [Scheduling on parallel machines with different speeds ($Q\|C_{\max}$)](../catalogue/scheduling.md#sez-sec-cat-def-qcmax): Generalizes $P\,||\,C_{\max}$, which is the case of machines with equal speeds.
 
-- [Scheduling on unrelated parallel machines, $R\,||\,C_{\max}$](../catalogue/scheduling.md#sez-sec-cat-def-rcmax): Generalizes $Q\,||\,C_{\max}$ and $P\,||\,C_{\max}$.
+- [Scheduling on unrelated parallel machines ($R\|C_{\max}$)](../catalogue/scheduling.md#sez-sec-cat-def-rcmax): Generalizes $Q\,||\,C_{\max}$ and $P\,||\,C_{\max}$.

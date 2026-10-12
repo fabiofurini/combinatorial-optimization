@@ -27,8 +27,8 @@ All the problems defined in the course, grouped by family: for each one its defi
 - [Multiple knapsack problem (MKP)](knapsack-family.md#sez-sec-cat-def-mkp)
 - [Multiple-choice knapsack problem (MCKP)](knapsack-family.md#sez-sec-cat-def-mckp)
 - [Knapsack problem with setups (KPS)](knapsack-family.md#sez-sec-cat-def-kps)
-- [Rod-Cutting Problem (RCP)](knapsack-family.md#sez-sec-cat-def-rcp)
-- [Coin Change Problem (CCP)](knapsack-family.md#sez-sec-cat-def-ccp)
+- [Rod cutting problem (RCP)](knapsack-family.md#sez-sec-cat-def-rcp)
+- [Coin change problem (CCP)](knapsack-family.md#sez-sec-cat-def-ccp)
 
 ## [Packing](packing.md)
 
@@ -48,9 +48,9 @@ All the problems defined in the course, grouped by family: for each one its defi
 
 ## [Scheduling](scheduling.md)
 
-- [Scheduling on a fixed number of identical machines ($m$ not part of the input) (PmCMAX)](scheduling.md#sez-sec-cat-def-pmcmax)
-- [Scheduling on parallel machines with different speeds, $Q\,||\,C_{\max}$ (QCMAX)](scheduling.md#sez-sec-cat-def-qcmax)
-- [Scheduling on unrelated parallel machines, $R\,||\,C_{\max}$ (RCMAX)](scheduling.md#sez-sec-cat-def-rcmax)
+- [Scheduling on a fixed number of identical machines (Pm||Cmax)](scheduling.md#sez-sec-cat-def-pmcmax)
+- [Scheduling on parallel machines with different speeds (Q||Cmax)](scheduling.md#sez-sec-cat-def-qcmax)
+- [Scheduling on unrelated parallel machines (R||Cmax)](scheduling.md#sez-sec-cat-def-rcmax)
 
 ## [Lot sizing](lot-sizing.md)
 

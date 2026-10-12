@@ -146,6 +146,16 @@ extra_javascript:
 
 nav:
   - Home: index.md
+  - Selected problems:
+      - selected-problems/index.md
+      - "Comparison": selected-problems/at-a-glance.md
+      - "KP": selected-problems/knapsack.md
+      - "BPP": selected-problems/bin-packing.md
+      - "VCP": selected-problems/vertex-coloring.md
+      - "MCP": selected-problems/maximum-clique.md
+      - "TSP": selected-problems/tsp.md
+      - "P||Cmax": selected-problems/pcmax.md
+      - "CLS": selected-problems/lot-sizing.md
   - Problems:
       - combinatorial-optimization-problems/index.md
       - "The problems at a glance": combinatorial-optimization-problems/problems.md
@@ -305,16 +315,6 @@ nav:
       - "31. P||Cmax": exercises/pcmax-approximation.md
       - "32. Metric TSP": exercises/tsp-approximation.md
       - "33. Knapsack: B&B": exercises/knapsack-branch-and-bound.md
-  - Selected problems:
-      - selected-problems/index.md
-      - "Comparison": selected-problems/at-a-glance.md
-      - "KP": selected-problems/knapsack.md
-      - "BPP": selected-problems/bin-packing.md
-      - "VCP": selected-problems/vertex-coloring.md
-      - "MCP": selected-problems/maximum-clique.md
-      - "TSP": selected-problems/tsp.md
-      - "P||Cmax": selected-problems/pcmax.md
-      - "CLS": selected-problems/lot-sizing.md
   - Catalogue:
       - catalogue/index.md
       - "Central problems": catalogue/central-problems.md

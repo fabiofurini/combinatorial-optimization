@@ -12,7 +12,7 @@ title: "Scheduling"
 
 <a id="sec:cat-pagina-scheduling"></a>
 
-## Scheduling on a fixed number of identical machines ($m$ not part of the input) ($Pm\|C_{\max}$) { #sez-sec-cat-def-pmcmax }
+## Scheduling on a fixed number of identical machines ($Pm\|C_{\max}$) { #sez-sec-cat-def-pmcmax }
 
 <a id="box-1-def-catdef-pmcmax"></a>
 
@@ -22,21 +22,21 @@ title: "Scheduling"
 
 - Defined in [Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#sez-sec-complexity).
 
-## Scheduling on parallel machines with different speeds, $Q\,||\,C_{\max}$ { #sez-sec-cat-def-qcmax }
+## Scheduling on parallel machines with different speeds ($Q\|C_{\max}$) { #sez-sec-cat-def-qcmax }
 
 <a id="box-2-def-catdef-qcmax"></a>
 
-!!! definizione "Definition 2: Scheduling on parallel machines with different speeds, $Q\,||\,C_{\max}$"
+!!! definizione "Definition 2: Scheduling on parallel machines with different speeds"
 
     In the three-field notation $\alpha\,|\,\beta\,|\,\gamma$, the machine environment $\alpha=Q$ denotes parallel machines with different speeds; $Q\,||\,C_{\max}$ assigns jobs without additional characteristics to such machines, minimizing the makespan $C_{\max}$.
 
 - Defined in [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax/index.md#sez-sec-threefield).
 
-## Scheduling on unrelated parallel machines, $R\,||\,C_{\max}$ { #sez-sec-cat-def-rcmax }
+## Scheduling on unrelated parallel machines ($R\|C_{\max}$) { #sez-sec-cat-def-rcmax }
 
 <a id="box-3-def-catdef-rcmax"></a>
 
-!!! definizione "Definition 3: Scheduling on unrelated parallel machines, $R\,||\,C_{\max}$"
+!!! definizione "Definition 3: Scheduling on unrelated parallel machines"
 
     In the three-field notation $\alpha\,|\,\beta\,|\,\gamma$, the machine environment $\alpha=R$ denotes unrelated parallel machines; $R\,||\,C_{\max}$ assigns jobs without additional characteristics to such machines, minimizing the makespan $C_{\max}$.
 
