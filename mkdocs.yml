@@ -171,29 +171,31 @@ nav:
           - "Multiple knapsack": combinatorial-optimization-problems/knapsack/the-multiple-knapsack-problem.md
           - "Multiple-choice knapsack": combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem.md
           - "Knapsack with setups": combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md
-          - "Formulations (Ch. 9)": formulations/knapsack-formulations.md
       - "Bin packing problem (BPP)":
           - combinatorial-optimization-problems/bin-packing/index.md
           - "Cutting stock": combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md
-          - "Formulations (Ch. 10)": formulations/bin-packing-formulations.md
       - "Vertex coloring problem (VCP)":
           - combinatorial-optimization-problems/coloring.md
-          - "Formulations (Ch. 11)": formulations/coloring-formulations.md
       - "Maximum clique problem (MCP)":
           - combinatorial-optimization-problems/clique/index.md
           - "Weighted variants": combinatorial-optimization-problems/clique/weighted-variants.md
-          - "Formulations (Ch. 12)": formulations/clique-formulations.md
       - "Travelling salesman problem (TSP)":
           - combinatorial-optimization-problems/tsp/index.md
           - "Metric and asymmetric TSP": combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md
-          - "Formulations (Ch. 13)": formulations/tsp-formulations.md
       - "Scheduling on identical parallel machines (P||Cmax)":
           - combinatorial-optimization-problems/pcmax.md
-          - "Formulations (Ch. 14)": formulations/pcmax-formulations.md
       - "Capacitated lot sizing (CLS)":
           - combinatorial-optimization-problems/lot-sizing/index.md
           - "Variants": combinatorial-optimization-problems/lot-sizing/variants.md
-          - "Formulations (Ch. 15)": formulations/lot-sizing-formulations.md
+  - Formulations:
+      - formulations/index.md
+      - "9. Knapsack": formulations/knapsack-formulations.md
+      - "10. Bin packing": formulations/bin-packing-formulations.md
+      - "11. Vertex coloring": formulations/coloring-formulations.md
+      - "12. Maximum clique": formulations/clique-formulations.md
+      - "13. TSP": formulations/tsp-formulations.md
+      - "14. Machine scheduling": formulations/pcmax-formulations.md
+      - "15. Lot sizing": formulations/lot-sizing-formulations.md
   - Dynamic programming:
       - dynamic-programming/index.md
       - "16. Principles": dynamic-programming/dp-principles.md

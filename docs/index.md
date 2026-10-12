@@ -43,9 +43,17 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 
     ---
 
-    2\. Knapsack · 3\. Bin packing · 4\. Vertex coloring · 5\. Maximum clique · 6\. TSP · 7\. Machine scheduling · 8\. Lot sizing — with their formulations
+    2\. Knapsack · 3\. Bin packing · 4\. Vertex coloring · 5\. Maximum clique · 6\. TSP · 7\. Machine scheduling · 8\. Lot sizing
 
     [:octicons-arrow-right-24: The problems](selected-problems/index.md)
+
+-   :material-function-variant: **Formulations and their properties**
+
+    ---
+
+    9\. Knapsack · 10\. Bin packing · 11\. Vertex coloring · 12\. Maximum clique · 13\. TSP · 14\. Machine scheduling · 15\. Lot sizing
+
+    [:octicons-arrow-right-24: The chapters](formulations/index.md)
 
 -   :material-table-arrow-right: **Dynamic programming**
 
