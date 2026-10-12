@@ -4,7 +4,7 @@ title: Selected problems
 
 # Selected problems
 
-The problems on which the whole course focuses: for each one, everything the course does on it — where it is treated, the techniques, the instances and the exercises.
+The problems on which the whole course focuses: for each one, everything the course does on it — where it is treated, the techniques and the exercises.
 
 [:material-table: Comparison](at-a-glance.md){ .md-button } [:material-view-list: Catalogue of combinatorial problems](../catalogue/index.md){ .md-button }
 

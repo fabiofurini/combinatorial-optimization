@@ -24,16 +24,6 @@ title: "Graphs"
 
     2. The <strong>Maximum Stable Set Problem</strong> (MSSP) asks to find a stable set of $G$ whose number of vertices is maximum. Its optimal value is the <strong>stability number</strong> $\alpha(G)$.
 
-<strong>Assumptions</strong>
-
-- We consider nontrivial instances: the graph has at least one edge and at least one non-edge. Formally:
-
-    $$
-    1 \le m < \binom{n}{2}.
-    $$
-
-- The assumption can be made without loss of generality: if the graph has no edge, every single vertex is a maximum clique and $\omega(G)=1$; if the graph is complete, $V$ itself is a clique and $\omega(G)=n$.
-
 - Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md#box-3-mcpP-def-MSSP).
 
 ## Vertex-weighted maximum clique problem (VWMCP) { #sez-sec-cat-def-vwmcp }
@@ -42,9 +32,7 @@ title: "Graphs"
 
 !!! definizione "Definition 2: Vertex-weighted maximum clique problem"
 
-    1. Given a graph $G$ and a vertex-weight vector $\vet{w}$, the <strong>vertex-weighted maximum clique problem</strong> asks to find a clique $K$ of $G$ with maximum total vertex weight $w(K)$.
-
-    2. Given a graph $G$ and an edge-weight vector $\vet{r}$, the <strong>edge-weighted maximum clique problem</strong> asks to find a clique $K$ of $G$ with maximum total edge weight $r(K)$.
+    Given a graph $G$ and a vertex-weight vector $\vet{w} \in \Z_{\ge 1}^n$, the <strong>vertex-weighted maximum clique problem</strong> asks to find a clique $K$ of $G$ with maximum total vertex weight $w(K) = \sum_{v \in K} w_v$.
 
 - Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/weighted-variants.md#box-12-mcpP-def-weighted).
 
@@ -54,8 +42,6 @@ title: "Graphs"
 
 !!! definizione "Definition 3: Edge-weighted maximum clique problem"
 
-    1. Given a graph $G$ and a vertex-weight vector $\vet{w}$, the <strong>vertex-weighted maximum clique problem</strong> asks to find a clique $K$ of $G$ with maximum total vertex weight $w(K)$.
-
-    2. Given a graph $G$ and an edge-weight vector $\vet{r}$, the <strong>edge-weighted maximum clique problem</strong> asks to find a clique $K$ of $G$ with maximum total edge weight $r(K)$.
+    Given a graph $G$ and an edge-weight vector $\vet{r} \in \Z_{\ge 1}^m$, the <strong>edge-weighted maximum clique problem</strong> asks to find a clique $K$ of $G$ with maximum total edge weight $r(K) = \sum_{\{u,v\} \in E[K]} r_{uv}$, where $E[K]$ is the set of the edges with both endpoints in $K$.
 
 - Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/weighted-variants.md#box-12-mcpP-def-weighted).

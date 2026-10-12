@@ -22,7 +22,7 @@ title: "Routing"
 
     $$
     d_{ij} \le d_{ik} + d_{kj}
-    \qquad \text{for all distinct } i,j,k \in \mathscr{V}.
+    \qquad \text{for all distinct } i,j,k \in \Vcitta.
     $$
 
 - Defined in [Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md#box-3-defMetricTSP).

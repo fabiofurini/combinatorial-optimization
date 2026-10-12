@@ -46,7 +46,7 @@ title: "Central problems"
 
 - Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/index.md#box-1-defKP).
 
-- Studied in depth in [Selected problems: The knapsack problem](../selected-problems/knapsack.md).
+- Studied in depth in [Selected problems: The knapsack problem](../problemi-scelti/knapsack.md).
 
 ## The bin packing problem (BPP) { #sez-sec-cat-def-bpp }
 
@@ -82,7 +82,7 @@ title: "Central problems"
 
 - Defined in [Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing/index.md#box-1-defBPP).
 
-- Studied in depth in [Selected problems: The bin packing problem](../selected-problems/bin-packing.md).
+- Studied in depth in [Selected problems: The bin packing problem](../problemi-scelti/bin-packing.md).
 
 ## The vertex coloring problem (VCP) { #sez-sec-cat-def-vcp }
 
@@ -132,7 +132,7 @@ title: "Central problems"
 
 - Defined in [Chapter 4 «Vertex coloring»](../combinatorial-optimization-problems/coloring.md#box-3-defVCP).
 
-- Studied in depth in [Selected problems: The vertex coloring problem](../selected-problems/vertex-coloring.md).
+- Studied in depth in [Selected problems: The vertex coloring problem](../problemi-scelti/vertex-coloring.md).
 
 ## The maximum clique problem (MCP) { #sez-sec-cat-def-mcp }
 
@@ -158,19 +158,9 @@ title: "Central problems"
 
     the <strong>Maximum Clique Problem</strong> (MCP) asks to find a clique $K \subseteq V$ of $G$ whose number of vertices is maximum. Its optimal value is the clique number $\omega(G)$.
 
-<strong>Assumptions</strong>
-
-- We consider nontrivial instances: the graph has at least one edge and at least one non-edge. Formally:
-
-    $$
-    1 \le m < \binom{n}{2}.
-    $$
-
-- The assumption can be made without loss of generality: if the graph has no edge, every single vertex is a maximum clique and $\omega(G)=1$; if the graph is complete, $V$ itself is a clique and $\omega(G)=n$.
-
 - Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md#box-2-mcpP-def-MCP).
 
-- Studied in depth in [Selected problems: The maximum clique problem](../selected-problems/maximum-clique.md).
+- Studied in depth in [Selected problems: The maximum clique problem](../problemi-scelti/maximum-clique.md).
 
 ## The travelling salesman problem (TSP) { #sez-sec-cat-def-tsp }
 
@@ -180,31 +170,15 @@ title: "Central problems"
 
     Given:
 
-    1. a set $\mathscr{V} = \{1,2,\dots,n\}$ of $n$ <em>cities</em>,
+    1. a set $\Vcitta = \{1,2,\dots,n\}$ of $n$ <em>cities</em>,
 
-    2. for each pair of distinct cities $i,j \in \mathscr{V}$, a <em>distance</em> $d_{ij} \in \Z_{\ge 1}$, with $d_{ij}=d_{ji}$,
+    2. for each pair of distinct cities $i,j \in \Vcitta$, a <em>distance</em> $d_{ij} \in \Z_{\ge 1}$, with $d_{ij}=d_{ji}$,
 
     the <strong>travelling salesman problem</strong> (TSP) asks to find a closed route that starts from a city, visits every other city exactly once and returns to the starting city, so that the total distance travelled is minimized.
 
-<strong>Assumptions</strong>
-
-- We make the following assumptions:
-
-    1. There are at least three cities (with one or two cities there is only one route). Formally:
-
-        $$
-        n \ge 3
-        $$
-
-    2. The distances are symmetric (travelling from $i$ to $j$ costs as much as travelling from $j$ to $i$). Formally:
-
-        $$
-        d_{ij}=d_{ji},~~~~ \forall i,j \in \mathscr{V},~ i\neq j
-        $$
-
 - Defined in [Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp/index.md#box-1-defTSP).
 
-- Studied in depth in [Selected problems: The travelling salesman problem](../selected-problems/tsp.md).
+- Studied in depth in [Selected problems: The travelling salesman problem](../problemi-scelti/tsp.md).
 
 ## Scheduling on identical parallel machines ($P\|C_{\max}$) { #sez-sec-cat-def-pcmax }
 
@@ -216,25 +190,19 @@ title: "Central problems"
 
     1. a set of $m$ identical <em>machines</em>,
 
-    2. a set $\mathscr{J} = \{1,2,\dots,n\}$ of $n$ <em>jobs</em>,
+    2. a set $\Jlavori = \{1,2,\dots,n\}$ of $n$ <em>jobs</em>,
 
-    3. for each job $j \in \mathscr{J}$, a <em>processing time</em> $t_j \in \Z_{\ge 1}$,
+    3. for each job $j \in \Jlavori$, a <em>processing time</em> $t_j \in \Z_{\ge 1}$,
 
-    the problem $P\,||\,C_{\max}$ asks to assign each job to a machine, so that the time needed to complete all the jobs, i.e., the largest total processing time assigned to a machine, is minimized.
+    the problem $P\,||\,C_{\max}$ asks to assign each job to a machine, so that the time needed to complete all the jobs, i.e., the largest total processing time assigned to a machine, is minimized. With $J_h$ the set of jobs of machine $h$ and $L_h=\sum_{j\in J_h} t_j$ its load, the problem reads
 
-<strong>Assumptions</strong>
-
-- We make the following assumption:
-
-    1. There are more jobs than machines (otherwise each job gets a machine of its own, and the optimal makespan is $\max_j t_j$). Formally:
-
-        $$
-        n > m
-        $$
+    $$
+    \min\left\{\max_{h \in \{1,\dots,m\}} \sum_{j \in J_h} t_j \;:\; J_1,J_2,\dots,J_m \text{ is a partition of } \Jlavori\right\}.
+    $$
 
 - Defined in [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax/index.md#box-1-defPCmax).
 
-- Studied in depth in [Selected problems: Scheduling on identical parallel machines](../selected-problems/pcmax.md).
+- Studied in depth in [Selected problems: Scheduling on identical parallel machines](../problemi-scelti/pcmax.md).
 
 ## Capacitated lot sizing (CLS) { #sez-sec-cat-def-cls }
 
@@ -250,22 +218,12 @@ title: "Central problems"
 
     3. for each period $t \in T$, three non-negative integer costs: the <em>setup cost</em> $sc_t$, the <em>variable production cost</em> $vc_t$ per unit produced and the <em>holding cost</em> $hc_t$ per unit kept in stock at the end of the period,
 
-    the <strong>capacitated lot sizing problem</strong> (CLS) asks to decide how much to produce in every period, so that every demand is satisfied with what is produced and what is in stock, the capacities are respected, and the total cost of setups, production and holding is minimized.
+    the <strong>capacitated lot sizing problem</strong> (CLS) asks to decide how much to produce in every period, so that every demand is satisfied with what is produced and what is in stock, the capacities are respected, and the total cost of setups, production and holding is minimized. With the stock $s_t(\vet{x})=\sum_{u=1}^{t}(x_u-d_u)$ and $y_t=1$ when $x_t>0$, the cost of a plan is $c(\vet{x})=\sum_{t\in T}\bigl(sc_t\,y_t+vc_t\,x_t+hc_t\,s_t(\vet{x})\bigr)$, and the problem reads
 
-<strong>Assumptions</strong>
-
-- We make the following assumptions:
-
-    1. The stock is empty at the beginning and at the end of the horizon. Leaving stock at the end only adds cost, so no optimal plan needs it; an initial stock is a variant of the problem (next section).
-
-    2. The capacities allow to satisfy the demands, period after period (otherwise there is no feasible plan). Formally:
-
-        $$
-        \sum_{u=1}^{t} cap_u \ge \sum_{u=1}^{t} d_u, ~~~~ \forall t \in T
-        $$
-
-    3. The quantities are integer. With integer data, once the periods with a setup are fixed, what remains is a minimum cost flow problem, which has an integer optimal solution: restricting the quantities to integers does not change the optimal cost.
+    $$
+    \min_{\vet{x}}\left\{ c(\vet{x}) \;:\; x_t \le cap_t,~ s_t(\vet{x}) \ge 0,~ \forall t \in T,~ s_m(\vet{x}) = 0,~ \vet{x} \in \Z_{\ge 0}^m \right\}.
+    $$
 
 - Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing/index.md#box-1-defCLS).
 
-- Studied in depth in [Selected problems: Capacitated lot sizing](../selected-problems/lot-sizing.md).
+- Studied in depth in [Selected problems: Capacitated lot sizing](../problemi-scelti/lot-sizing.md).
