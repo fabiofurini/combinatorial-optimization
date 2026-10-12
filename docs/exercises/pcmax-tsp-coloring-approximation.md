@@ -18,28 +18,13 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
 
     We consider $m=3$ identical machines and a set $\mathscr{J}=\{1,\dots,7\}$ of $7$ jobs ($n=7$), with the following processing times:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    <th><span class="arithmatex">\(j=6\)</span></th>
-    <th><span class="arithmatex">\(j=7\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(t_j\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} & {j=7} \\[1ex]
+    \hline {t_j} & {2} & {2} & {4} & {8} & {8} & {6} & {6} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -201,28 +186,13 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
 
     We consider $m=3$ identical machines and a set $\mathscr{J}=\{1,\dots,7\}$ of $7$ jobs ($n=7$), with the following processing times:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    <th><span class="arithmatex">\(j=6\)</span></th>
-    <th><span class="arithmatex">\(j=7\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(t_j\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} & {j=7} \\[1ex]
+    \hline {t_j} & {1} & {1} & {1} & {1} & {1} & {1} & {3} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -325,32 +295,13 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
 
     We consider $m=4$ identical machines and a set $\mathscr{J}=\{1,\dots,9\}$ of $9$ jobs ($n=9$), with the following processing times:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    <th><span class="arithmatex">\(j=6\)</span></th>
-    <th><span class="arithmatex">\(j=7\)</span></th>
-    <th><span class="arithmatex">\(j=8\)</span></th>
-    <th><span class="arithmatex">\(j=9\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(t_j\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} & {j=7} & {j=8} & {j=9} \\[1ex]
+    \hline {t_j} & {7} & {7} & {6} & {6} & {5} & {5} & {4} & {4} & {4} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -464,71 +415,18 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
 
     We consider a set $\mathscr{V}=\{1,\dots,6\}$ of $6$ cities with coordinates $1{:}\,(3,4)$, $2{:}\,(6,1)$, $3{:}\,(3,8)$, $4{:}\,(8,8)$, $5{:}\,(0,4)$, $6{:}\,(8,0)$ and distances equal to the Euclidean distances rounded to the nearest integer (the instance is metric):
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|cccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} & {6} \\
+    \hline {1} & --- & {4} & {4} & {6} & {3} & {6} \\
+    {2} & {4} & --- & {8} & {7} & {7} & {2} \\
+    {3} & {4} & {8} & --- & {5} & {5} & {9} \\
+    {4} & {6} & {7} & {5} & --- & {9} & {8} \\
+    {5} & {3} & {7} & {5} & {9} & --- & {9} \\
+    {6} & {6} & {2} & {9} & {8} & {9} & --- \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -603,71 +501,18 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
 
     We consider a set $\mathscr{V}=\{1,\dots,6\}$ of $6$ cities with coordinates $1{:}\,(2,4)$, $2{:}\,(6,0)$, $3{:}\,(7,3)$, $4{:}\,(0,7)$, $5{:}\,(0,1)$, $6{:}\,(2,1)$ and distances equal to the Euclidean distances rounded to the nearest integer (the instance is metric):
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|cccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} & {6} \\
+    \hline {1} & --- & {6} & {5} & {4} & {4} & {3} \\
+    {2} & {6} & --- & {3} & {9} & {6} & {4} \\
+    {3} & {5} & {3} & --- & {8} & {7} & {5} \\
+    {4} & {4} & {9} & {8} & --- & {6} & {6} \\
+    {5} & {4} & {6} & {7} & {6} & --- & {2} \\
+    {6} & {3} & {4} & {5} & {6} & {2} & --- \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -763,107 +608,29 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
 
     1. With $n=5$ and $\alpha=2$, the non-edges get distance $\lceil 2\cdot5\rceil+1=11$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(I_{G_1}\)</span></th>
-        <th><span class="arithmatex">\(1\)</span></th>
-        <th><span class="arithmatex">\(2\)</span></th>
-        <th><span class="arithmatex">\(3\)</span></th>
-        <th><span class="arithmatex">\(4\)</span></th>
-        <th><span class="arithmatex">\(5\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td>—</td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td>—</td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td>—</td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td>—</td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(5\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td>—</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|ccccc}
+        \hline {I_{G_1}} & {1} & {2} & {3} & {4} & {5} \\
+        \hline {1} & --- & {1} & {1} & {11} & {1} \\
+        {2} & {1} & --- & {1} & {11} & {11} \\
+        {3} & {1} & {1} & --- & {1} & {11} \\
+        {4} & {11} & {11} & {1} & --- & {1} \\
+        {5} & {1} & {11} & {11} & {1} & --- \\
+        \hline
+        \end{array}
+        $$
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(I_{G_2}\)</span></th>
-        <th><span class="arithmatex">\(1\)</span></th>
-        <th><span class="arithmatex">\(2\)</span></th>
-        <th><span class="arithmatex">\(3\)</span></th>
-        <th><span class="arithmatex">\(4\)</span></th>
-        <th><span class="arithmatex">\(5\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td>—</td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td>—</td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td>—</td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td>—</td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(5\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td>—</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|ccccc}
+        \hline {I_{G_2}} & {1} & {2} & {3} & {4} & {5} \\
+        \hline {1} & --- & {11} & {1} & {1} & {1} \\
+        {2} & {11} & --- & {1} & {1} & {1} \\
+        {3} & {1} & {1} & --- & {11} & {11} \\
+        {4} & {1} & {1} & {11} & --- & {11} \\
+        {5} & {1} & {1} & {11} & {11} & --- \\
+        \hline
+        \end{array}
+        $$
 
     2. $G_1$ contains the cycle $(1,2,3,4,5)$, which is Hamiltonian, so the tour $(1,2,3,4,5)$ has length $5$ and $z(I_{G_1})=5$.
 
@@ -913,38 +680,14 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
 
     2. &#8203;
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(v\)</span></th>
-        <th><span class="arithmatex">\(1\)</span></th>
-        <th><span class="arithmatex">\(2\)</span></th>
-        <th><span class="arithmatex">\(3\)</span></th>
-        <th><span class="arithmatex">\(4\)</span></th>
-        <th><span class="arithmatex">\(5\)</span></th>
-        <th><span class="arithmatex">\(6\)</span></th>
-        <th><span class="arithmatex">\(7\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(U\)</span></td>
-        <td><span class="arithmatex">\(\emptyset\)</span></td>
-        <td><span class="arithmatex">\(\{1\}\)</span></td>
-        <td><span class="arithmatex">\(\{1\}\)</span></td>
-        <td><span class="arithmatex">\(\{1,2\}\)</span></td>
-        <td><span class="arithmatex">\(\{3\}\)</span></td>
-        <td><span class="arithmatex">\(\{1,2,3\}\)</span></td>
-        <td><span class="arithmatex">\(\{1,2,4\}\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(col[v]\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|ccccccc}
+        \hline {v} & {1} & {2} & {3} & {4} & {5} & {6} & {7} \\
+        \hline {U} & {\emptyset} & {\{1\}} & {\{1\}} & {\{1,2\}} & {\{3\}} & {\{1,2,3\}} & {\{1,2,4\}} \\
+        {col[v]} & {1} & {2} & {2} & {3} & {1} & {4} & {3} \\
+        \hline
+        \end{array}
+        $$
 
         $GC$ uses $4$ colors: $Q_1=\{1,5\}$, $Q_2=\{2,3\}$, $Q_3=\{4,7\}$, $Q_4=\{6\}$. The trouble starts at vertex $5$: it takes color $1$, and vertex $6$, adjacent to $2$, $4$ and $5$, then sees the colors $1,2,3$.
 
@@ -1037,47 +780,14 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
 
     2. With $u_i=i$ and $v_i=i+5$ the list is $(u_1,v_1,u_2,v_2,\dots,u_5,v_5)$, the bad list of the notes:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(v\)</span></th>
-        <th><span class="arithmatex">\(1\)</span></th>
-        <th><span class="arithmatex">\(6\)</span></th>
-        <th><span class="arithmatex">\(2\)</span></th>
-        <th><span class="arithmatex">\(7\)</span></th>
-        <th><span class="arithmatex">\(3\)</span></th>
-        <th><span class="arithmatex">\(8\)</span></th>
-        <th><span class="arithmatex">\(4\)</span></th>
-        <th><span class="arithmatex">\(9\)</span></th>
-        <th><span class="arithmatex">\(5\)</span></th>
-        <th><span class="arithmatex">\(10\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(U\)</span></td>
-        <td><span class="arithmatex">\(\emptyset\)</span></td>
-        <td><span class="arithmatex">\(\emptyset\)</span></td>
-        <td><span class="arithmatex">\(\{1\}\)</span></td>
-        <td><span class="arithmatex">\(\{1\}\)</span></td>
-        <td><span class="arithmatex">\(\{1,2\}\)</span></td>
-        <td><span class="arithmatex">\(\{1,2\}\)</span></td>
-        <td><span class="arithmatex">\(\{1,2,3\}\)</span></td>
-        <td><span class="arithmatex">\(\{1,2,3\}\)</span></td>
-        <td><span class="arithmatex">\(\{1,2,3,4\}\)</span></td>
-        <td><span class="arithmatex">\(\{1,2,3,4\}\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(col[v]\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(5\)</span></td>
-        <td><span class="arithmatex">\(5\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|cccccccccc}
+        \hline {v} & {1} & {6} & {2} & {7} & {3} & {8} & {4} & {9} & {5} & {10} \\
+        \hline {U} & {\emptyset} & {\emptyset} & {\{1\}} & {\{1\}} & {\{1,2\}} & {\{1,2\}} & {\{1,2,3\}} & {\{1,2,3\}} & {\{1,2,3,4\}} & {\{1,2,3,4\}} \\
+        {col[v]} & {1} & {1} & {2} & {2} & {3} & {3} & {4} & {4} & {5} & {5} \\
+        \hline
+        \end{array}
+        $$
 
         Vertices $i$ and $i+5$ are not adjacent and both get color $i$, so $GC(I)=5=\frac n2$. This is exactly the bound $\Delta(G_5)+1=5$, and
 

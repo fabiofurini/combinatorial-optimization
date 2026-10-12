@@ -16,26 +16,13 @@ title: "Exercises · Principles of dynamic programming"
 
     A staircase has $n=6$ steps. Stepping on step $k$ costs $c_k$, and from a step we can climb to the next one or skip one step. We start from the ground, step $0$, at no cost, and we want to reach step $6$ at minimum total cost:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(k=1\)</span></th>
-    <th><span class="arithmatex">\(k=2\)</span></th>
-    <th><span class="arithmatex">\(k=3\)</span></th>
-    <th><span class="arithmatex">\(k=4\)</span></th>
-    <th><span class="arithmatex">\(k=5\)</span></th>
-    <th><span class="arithmatex">\(k=6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(c_k\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccccc}
+    \hline  & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\[1ex]
+    \hline {c_k} & {3} & {1} & {4} & {1} & {5} & {2} \\
+    \hline
+    \end{array}
+    $$
 
     For $k\in\{0,1,\dots,n\}$, let $v(k)$ be the minimum cost to reach step $k$.
 
@@ -144,28 +131,13 @@ title: "Exercises · Principles of dynamic programming"
 
     Along a road there are $n=7$ positions for billboards, numbered in order. A billboard in position $k$ brings a profit $p_k$, and two billboards cannot be in consecutive positions:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(k=1\)</span></th>
-    <th><span class="arithmatex">\(k=2\)</span></th>
-    <th><span class="arithmatex">\(k=3\)</span></th>
-    <th><span class="arithmatex">\(k=4\)</span></th>
-    <th><span class="arithmatex">\(k=5\)</span></th>
-    <th><span class="arithmatex">\(k=6\)</span></th>
-    <th><span class="arithmatex">\(k=7\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_k\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccccc}
+    \hline  & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\[1ex]
+    \hline {p_k} & {5} & {8} & {6} & {3} & {7} & {9} & {4} \\
+    \hline
+    \end{array}
+    $$
 
     We want a set of positions, no two consecutive, of maximum total profit.
 
@@ -195,71 +167,20 @@ title: "Exercises · Principles of dynamic programming"
 
     2. The values are computed for increasing $k$ (a tie is broken in favour of not using position $k$):
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(v(k-1)\)</span></th>
-        <th><span class="arithmatex">\(p_k+v(k-2)\)</span></th>
-        <th><span class="arithmatex">\({v}[k]\)</span></th>
-        <th><span class="arithmatex">\({s}[k]\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td>—</td>
-        <td>—</td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td>—</td>
-        <td>—</td>
-        <td><span class="arithmatex">\(5\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(5\)</span></td>
-        <td><span class="arithmatex">\(8+0=8\)</span></td>
-        <td><span class="arithmatex">\(8\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(8\)</span></td>
-        <td><span class="arithmatex">\(6+5=11\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(3+8=11\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(5\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(7+11=18\)</span></td>
-        <td><span class="arithmatex">\(18\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(6\)</span></td>
-        <td><span class="arithmatex">\(18\)</span></td>
-        <td><span class="arithmatex">\(9+11=20\)</span></td>
-        <td><span class="arithmatex">\(20\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(7\)</span></td>
-        <td><span class="arithmatex">\(20\)</span></td>
-        <td><span class="arithmatex">\(4+18=22\)</span></td>
-        <td><span class="arithmatex">\(22\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|c|c|c|c}
+        \hline {k} & {v(k-1)} & {p_k+v(k-2)} & {{v}[k]} & {{s}[k]} \\
+        \hline {0} & --- & --- & {0} & {0} \\
+        {1} & --- & --- & {5} & {1} \\
+        {2} & {5} & {8+0=8} & {8} & {1} \\
+        {3} & {8} & {6+5=11} & {11} & {1} \\
+        {4} & {11} & {3+8=11} & {11} & {0} \\
+        {5} & {11} & {7+11=18} & {18} & {1} \\
+        {6} & {18} & {9+11=20} & {20} & {1} \\
+        {7} & {20} & {4+18=22} & {22} & {1} \\
+        \hline
+        \end{array}
+        $$
 
     3. Starting from $k=7$:
 
@@ -285,36 +206,15 @@ title: "Exercises · Principles of dynamic programming"
 
     A robot moves on a grid of $3$ rows and $4$ columns, from the cell $(1,1)$ to the cell $(3,4)$, one cell down or one cell right at each move. Every cell $(i,j)$ it visits gives a profit $a_{ij}$:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(i=1\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(i=2\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(i=3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|cccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\
+    \hline {i=1} & {3} & {1} & {4} & {2} \\
+    {i=2} & {2} & {6} & {1} & {5} \\
+    {i=3} & {4} & {2} & {3} & {1} \\
+    \hline
+    \end{array}
+    $$
 
     We want a path of maximum total profit.
 
@@ -347,102 +247,39 @@ title: "Exercises · Principles of dynamic programming"
 
     3. The tables $v$ and $s$ are:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(v(i,j)\)</span></th>
-        <th><span class="arithmatex">\(j=1\)</span></th>
-        <th><span class="arithmatex">\(j=2\)</span></th>
-        <th><span class="arithmatex">\(j=3\)</span></th>
-        <th><span class="arithmatex">\(j=4\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(8\)</span></td>
-        <td><span class="arithmatex">\(10\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td><span class="arithmatex">\(5\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(12\)</span></td>
-        <td><span class="arithmatex">\(17\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td><span class="arithmatex">\(9\)</span></td>
-        <td><span class="arithmatex">\(13\)</span></td>
-        <td><span class="arithmatex">\(16\)</span></td>
-        <td><span class="arithmatex">\(18\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|cccc}
+        \hline {v(i,j)} & {j=1} & {j=2} & {j=3} & {j=4} \\
+        \hline {i=1} & {3} & {4} & {8} & {10} \\
+        {i=2} & {5} & {11} & {12} & {17} \\
+        {i=3} & {9} & {13} & {16} & {18} \\
+        \hline
+        \end{array}
+        $$
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(j=1\)</span></th>
-        <th><span class="arithmatex">\(j=2\)</span></th>
-        <th><span class="arithmatex">\(j=3\)</span></th>
-        <th><span class="arithmatex">\(j=4\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>—</td>
-        <td><span class="arithmatex">\(\leftarrow\)</span></td>
-        <td><span class="arithmatex">\(\leftarrow\)</span></td>
-        <td><span class="arithmatex">\(\leftarrow\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td><span class="arithmatex">\(\uparrow\)</span></td>
-        <td><span class="arithmatex">\(\leftarrow\)</span></td>
-        <td><span class="arithmatex">\(\leftarrow\)</span></td>
-        <td><span class="arithmatex">\(\leftarrow\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td><span class="arithmatex">\(\uparrow\)</span></td>
-        <td><span class="arithmatex">\(\uparrow\)</span></td>
-        <td><span class="arithmatex">\(\leftarrow\)</span></td>
-        <td><span class="arithmatex">\(\uparrow\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|cccc}
+        \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\
+        \hline {i=1} & --- & {\leftarrow} & {\leftarrow} & {\leftarrow} \\
+        {i=2} & {\uparrow} & {\leftarrow} & {\leftarrow} & {\leftarrow} \\
+        {i=3} & {\uparrow} & {\uparrow} & {\leftarrow} & {\uparrow} \\
+        \hline
+        \end{array}
+        $$
 
         For example $v(2,2)=a_{22}+\max\{v(1,2),v(2,1)\}=6+\max\{4,5\}=11$.
 
     4. From $(3,4)$ we follow the arrows backwards: the path is $(1,1)\to (2,1)\to (2,2)\to (2,3)\to (2,4)\to (3,4)$, with profit $3+2+6+1+5+1=18=v(3,4)$. Its cells are highlighted:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(v(i,j)\)</span></th>
-        <th><span class="arithmatex">\(j=1\)</span></th>
-        <th><span class="arithmatex">\(j=2\)</span></th>
-        <th><span class="arithmatex">\(j=3\)</span></th>
-        <th><span class="arithmatex">\(j=4\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td class="cella-blu"><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(8\)</span></td>
-        <td><span class="arithmatex">\(10\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td class="cella-blu"><span class="arithmatex">\(5\)</span></td>
-        <td class="cella-blu"><span class="arithmatex">\(11\)</span></td>
-        <td class="cella-blu"><span class="arithmatex">\(12\)</span></td>
-        <td class="cella-blu"><span class="arithmatex">\(17\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td><span class="arithmatex">\(9\)</span></td>
-        <td><span class="arithmatex">\(13\)</span></td>
-        <td><span class="arithmatex">\(16\)</span></td>
-        <td class="cella-blu"><span class="arithmatex">\(18\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|cccc}
+        \hline {v(i,j)} & {j=1} & {j=2} & {j=3} & {j=4} \\
+        \hline {i=1} & \bbox[#9999ff]{{3}} & {4} & {8} & {10} \\
+        {i=2} & \bbox[#9999ff]{{5}} & \bbox[#9999ff]{{11}} & \bbox[#9999ff]{{12}} & \bbox[#9999ff]{{17}} \\
+        {i=3} & {9} & {13} & {16} & \bbox[#9999ff]{{18}} \\
+        \hline
+        \end{array}
+        $$
 
     !!! chiave ""
 
@@ -558,44 +395,15 @@ title: "Exercises · Principles of dynamic programming"
 
     A room can host one event at a time. There are $n=6$ requests: request $j$ occupies the room from time $a_j$ to time $b_j$ and pays $w_j$; two requests are compatible if one ends before (or when) the other starts. The requests are numbered by non-decreasing end time:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    <th><span class="arithmatex">\(j=6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(a_j\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(b_j\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\[1ex]
+    \hline {a_j} & {0} & {1} & {4} & {2} & {5} & {7} \\[1ex]
+    {b_j} & {3} & {5} & {6} & {8} & {9} & {10} \\[1ex]
+    {w_j} & {4} & {6} & {3} & {8} & {5} & {5} \\
+    \hline
+    \end{array}
+    $$
 
     ![Figure 4](../img/ex-dp-principles/fig04.svg){ .fig loading=lazy  }
 
@@ -615,26 +423,13 @@ title: "Exercises · Principles of dynamic programming"
 
     1. Request $j$ starts at $a_j$, and the compatible requests with smaller index are those with $b_i\le a_j$; since the end times are sorted, they are the requests $1,\dots,q(j)$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(j=1\)</span></th>
-        <th><span class="arithmatex">\(j=2\)</span></th>
-        <th><span class="arithmatex">\(j=3\)</span></th>
-        <th><span class="arithmatex">\(j=4\)</span></th>
-        <th><span class="arithmatex">\(j=5\)</span></th>
-        <th><span class="arithmatex">\(j=6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(q(j)\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|cccccc}
+        \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\
+        \hline {q(j)} & {0} & {0} & {1} & {0} & {2} & {3} \\
+        \hline
+        \end{array}
+        $$
 
     2. If request $j$ is not taken, the best choice is among $1,\dots,j-1$. If it is taken, the requests $q(j)+1,\dots,j-1$ overlap with it, and the rest is an optimal choice among $1,\dots,q(j)$:
 
@@ -649,72 +444,19 @@ title: "Exercises · Principles of dynamic programming"
 
     3. The values are computed for increasing $j$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(j\)</span></th>
-        <th><span class="arithmatex">\(q(j)\)</span></th>
-        <th><span class="arithmatex">\(v(j-1)\)</span></th>
-        <th><span class="arithmatex">\(w_j+v(q(j))\)</span></th>
-        <th><span class="arithmatex">\({v}[j]\)</span></th>
-        <th><span class="arithmatex">\({s}[j]\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td>—</td>
-        <td>—</td>
-        <td>—</td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td>—</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(4+0=4\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(6+0=6\)</span></td>
-        <td><span class="arithmatex">\(6\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(6\)</span></td>
-        <td><span class="arithmatex">\(3+4=7\)</span></td>
-        <td><span class="arithmatex">\(7\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(7\)</span></td>
-        <td><span class="arithmatex">\(8+0=8\)</span></td>
-        <td><span class="arithmatex">\(8\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(5\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(8\)</span></td>
-        <td><span class="arithmatex">\(5+6=11\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(6\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(5+7=12\)</span></td>
-        <td><span class="arithmatex">\(12\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|c|c|c|c|c}
+        \hline {j} & {q(j)} & {v(j-1)} & {w_j+v(q(j))} & {{v}[j]} & {{s}[j]} \\
+        \hline {0} & --- & --- & --- & {0} & --- \\
+        {1} & {0} & {0} & {4+0=4} & {4} & {1} \\
+        {2} & {0} & {4} & {6+0=6} & {6} & {1} \\
+        {3} & {1} & {6} & {3+4=7} & {7} & {1} \\
+        {4} & {0} & {7} & {8+0=8} & {8} & {1} \\
+        {5} & {2} & {8} & {5+6=11} & {11} & {1} \\
+        {6} & {3} & {11} & {5+7=12} & {12} & {1} \\
+        \hline
+        \end{array}
+        $$
 
     4. Starting from $j=6$:
 

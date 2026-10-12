@@ -86,35 +86,14 @@ title: "Exercises · Vertex coloring"
 
         ![Figure 3](../img/ex-coloring/fig03.svg){ .fig loading=lazy  }
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(v\)</span></th>
-        <th><span class="arithmatex">\(1\)</span></th>
-        <th><span class="arithmatex">\(2\)</span></th>
-        <th><span class="arithmatex">\(3\)</span></th>
-        <th><span class="arithmatex">\(4\)</span></th>
-        <th><span class="arithmatex">\(5\)</span></th>
-        <th><span class="arithmatex">\(6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(N(v)\)</span></td>
-        <td><span class="arithmatex">\(\{2,4,5\}\)</span></td>
-        <td><span class="arithmatex">\(\{1,3,4\}\)</span></td>
-        <td><span class="arithmatex">\(\{2,6\}\)</span></td>
-        <td><span class="arithmatex">\(\{1,2\}\)</span></td>
-        <td><span class="arithmatex">\(\{1,6\}\)</span></td>
-        <td><span class="arithmatex">\(\{3,5\}\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(\deg(v)\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|cccccc}
+        \hline {v} & {1} & {2} & {3} & {4} & {5} & {6} \\
+        \hline {N(v)} & {\{2,4,5\}} & {\{1,3,4\}} & {\{2,6\}} & {\{1,2\}} & {\{1,6\}} & {\{3,5\}} \\
+        {\deg(v)} & {3} & {3} & {2} & {2} & {2} & {2} \\
+        \hline
+        \end{array}
+        $$
 
         The degrees sum up to $14=2|E|$, since every edge is counted at both its endpoints.
 

@@ -16,24 +16,13 @@ title: "Exercises · Formulations of the bin packing problem"
 
     We consider a bin capacity $c=10$ and a set $\mathscr{I}=\{1,2,\dots,5\}$ of $5$ items ($n=5$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\[1ex]
+    \hline {w_j} & {6} & {5} & {4} & {3} & {2} \\
+    \hline
+    \end{array}
+    $$
 
     The packing patterns $\{1,4\}$, $\{2,3\}$ and $\{5\}$ are a feasible solution.
 
@@ -85,24 +74,13 @@ title: "Exercises · Formulations of the bin packing problem"
 
     We consider a bin capacity $c=12$ and a set $\mathscr{I}=\{1,2,\dots,5\}$ of $5$ items ($n=5$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\[1ex]
+    \hline {w_j} & {7} & {6} & {5} & {4} & {3} \\
+    \hline
+    \end{array}
+    $$
 
     We use $m=3$ bins: the packing patterns $\{1,3\}$, $\{2,4\}$ and $\{5\}$ are feasible.
 
@@ -160,26 +138,13 @@ title: "Exercises · Formulations of the bin packing problem"
 
     We consider a bin capacity $c=10$ and a set $\mathscr{I}=\{1,2,\dots,6\}$ of $6$ items ($n=6$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    <th><span class="arithmatex">\(j=6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\[1ex]
+    \hline {w_j} & {5} & {4} & {4} & {3} & {2} & {2} \\
+    \hline
+    \end{array}
+    $$
 
     We use the $\ILP_{\BPP}$ model with $m=3$ bins. The following candidate solutions give the items in each bin (all the variables not listed are equal to $0$):
 
@@ -231,20 +196,13 @@ title: "Exercises · Formulations of the bin packing problem"
 
     We consider a bin capacity $c=10$ and a set $\mathscr{I}=\{1,2,\dots,3\}$ of $3$ items ($n=3$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccc}
+    \hline  & {j=1} & {j=2} & {j=3} \\[1ex]
+    \hline {w_j} & {6} & {6} & {6} \\
+    \hline
+    \end{array}
+    $$
 
     The two relaxations differ only in the upper bounds $y_b\le 1$.
 
@@ -280,22 +238,13 @@ title: "Exercises · Formulations of the bin packing problem"
 
     Given $\vartheta\in\Z_{\ge 1}$, the chapter considers the BPP instances with capacity $c=2\vartheta$ and $n$ items of weight $w_j=\vartheta+1$. We take $\vartheta=4$ and $n=4$, that is $c=8$ and the weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\[1ex]
+    \hline {w_j} & {5} & {5} & {5} & {5} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 

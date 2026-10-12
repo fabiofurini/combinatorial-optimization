@@ -96,24 +96,13 @@ title: "Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n = 5$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {w_i} & {6} & {5} & {4} & {7} & {3} \\[1ex]
+    \hline
+    \end{array}
+    $$
 
     Initially $nb:=1$, $rc:=c$. The NF algorithm produces the following feasible solution:
 
@@ -209,22 +198,13 @@ title: "Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n = 4$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\[1ex]
+    \hline {w_i} & {3} & {8} & {3} & {8} \\
+    \hline
+    \end{array}
+    $$
 
     Initially $nb:=1$, $rc:=c$. The NF algorithm produces the following feasible solution:
 
@@ -273,24 +253,13 @@ title: "Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n = 5$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {w_i} & {6} & {5} & {4} & {7} & {3} \\[1ex]
+    \hline
+    \end{array}
+    $$
 
     The FF algorithm produces the following feasible solution:
 
@@ -372,24 +341,13 @@ title: "Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n = 5$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {w_i} & {6} & {5} & {4} & {7} & {3} \\[1ex]
+    \hline
+    \end{array}
+    $$
 
     The BF algorithm produces the following feasible solution:
 
@@ -471,24 +429,13 @@ title: "Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n = 5$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {w_i} & {6} & {5} & {4} & {7} & {3} \\[1ex]
+    \hline
+    \end{array}
+    $$
 
     The WF algorithm produces the following feasible solution:
 
@@ -576,22 +523,13 @@ title: "Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n = 4$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\[1ex]
+    \hline {w_i} & {5} & {5} & {5} & {5} \\
+    \hline
+    \end{array}
+    $$
 
     Initially $nb:=1$, $rc:=c$. The NF algorithm produces the following feasible solution:
 
@@ -655,22 +593,13 @@ title: "Approximation algorithms for bin packing"
 
     As an illustration of [Proposition 24.4](#box-14-prop-halffullAF), we consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n = 4$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\[1ex]
+    \hline {w_i} & {7} & {7} & {3} & {4} \\
+    \hline
+    \end{array}
+    $$
 
     Initially $nb:=1$, $rc[1]:=c=10$. The FF algorithm produces the following feasible solution:
 
@@ -1189,24 +1118,13 @@ title: "Approximation algorithms for bin packing"
 
 - The step-by-step executions reported in this section all refer to the same BPP instance, namely a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n = 5$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {w_i} & {6} & {5} & {4} & {7} & {3} \\[1ex]
+    \hline
+    \end{array}
+    $$
 
     With the 0-based indexing of this section the items are numbered $0,1,2,3,4$ and their weights are $w[0]=6$, $w[1]=5$, $w[2]=4$, $w[3]=7$ and $w[4]=3$. This is the instance used in the examples of the previous sections, so the solutions found here are the ones already computed there.
 

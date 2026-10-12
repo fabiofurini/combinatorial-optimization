@@ -56,22 +56,13 @@ title: "Rod cutting and coin change"
 
     We consider a rod of length $n = 4$ and a set $\{1,2,3,4\}$ of $4$ possible piece lengths with the following profits:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(\ell = 1\)</span></th>
-    <th><span class="arithmatex">\(\ell = 2\)</span></th>
-    <th><span class="arithmatex">\(\ell = 3\)</span></th>
-    <th><span class="arithmatex">\(\ell = 4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_\ell\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrrrr}
+    \hline  & {\ell = 1} & {\ell = 2} & {\ell = 3} & {\ell = 4} \\
+    \hline {p_\ell} & {1} & {5} & {8} & {9} \\
+    \hline
+    \end{array}
+    $$
 
     We refer to this RCP instance as <span style="color:#1971c2">Example 1</span>.
 
@@ -132,22 +123,13 @@ title: "Rod cutting and coin change"
 
     We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(\ell = 1\)</span></th>
-    <th><span class="arithmatex">\(\ell = 2\)</span></th>
-    <th><span class="arithmatex">\(\ell = 3\)</span></th>
-    <th><span class="arithmatex">\(\ell = 4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_\ell\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrrrr}
+    \hline  & {\ell = 1} & {\ell = 2} & {\ell = 3} & {\ell = 4} \\
+    \hline {p_\ell} & {1} & {5} & {8} & {9} \\
+    \hline
+    \end{array}
+    $$
 
     There are $2^{4-1} = 8$ feasible solutions, corresponding to the different ways of cutting the rod.
 
@@ -274,22 +256,13 @@ title: "Rod cutting and coin change"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(\ell = 1\)</span></th>
-            <th><span class="arithmatex">\(\ell = 2\)</span></th>
-            <th><span class="arithmatex">\(\ell = 3\)</span></th>
-            <th><span class="arithmatex">\(\ell = 4\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_\ell\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(5\)</span></td>
-            <td><span class="arithmatex">\(8\)</span></td>
-            <td><span class="arithmatex">\(9\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrr}
+            \hline  & {\ell = 1} & {\ell = 2} & {\ell = 3} & {\ell = 4} \\
+            \hline {p_\ell} & {1} & {5} & {8} & {9} \\
+            \hline
+            \end{array}
+            $$
 
             The value of the function $v$ can be computed by starting from the base case $v(0)=0$ and then computing the values of $v(1)$, $v(2)$, $v(3)$, and $v(4)$ in order, as follows:
 
@@ -345,22 +318,13 @@ title: "Rod cutting and coin change"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(\ell = 1\)</span></th>
-            <th><span class="arithmatex">\(\ell = 2\)</span></th>
-            <th><span class="arithmatex">\(\ell = 3\)</span></th>
-            <th><span class="arithmatex">\(\ell = 4\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_\ell\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(5\)</span></td>
-            <td><span class="arithmatex">\(8\)</span></td>
-            <td><span class="arithmatex">\(9\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrr}
+            \hline  & {\ell = 1} & {\ell = 2} & {\ell = 3} & {\ell = 4} \\
+            \hline {p_\ell} & {1} & {5} & {8} & {9} \\
+            \hline
+            \end{array}
+            $$
 
             For each step of the DP algorithm, the table shows the values of $\ell$ and $j$, the current value of $\mathit{m}$, and the cell ${v}[\ell]$. The cell of $\mathit{m}$ is highlighted in <mark>red</mark> when updated; the cell of ${v}[\ell]$ is highlighted in <mark>blue</mark> when assigned.
 
@@ -509,24 +473,13 @@ title: "Rod cutting and coin change"
 
             This is the vector ${v}$ after the execution of the DP algorithm:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(\ell = 0\)</span></th>
-            <th><span class="arithmatex">\(\ell=1\)</span></th>
-            <th><span class="arithmatex">\(\ell=2\)</span></th>
-            <th><span class="arithmatex">\(\ell=3\)</span></th>
-            <th><span class="arithmatex">\(\ell=4\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\({v}[\ell]\)</span></td>
-            <td>0</td>
-            <td>1</td>
-            <td>5</td>
-            <td>8</td>
-            <td>10</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{c|ccccc}
+            \hline  & {\ell = 0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} \\
+            \hline {{v}[\ell]} & 0 & 1 & 5 & 8 & 10 \\
+            \hline
+            \end{array}
+            $$
 
     - After the execution of the DP algorithm, the vector ${v}$ contains the optimal value ${v}[\ell]$ for every rod length.
 
@@ -552,22 +505,13 @@ title: "Rod cutting and coin change"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(\ell = 1\)</span></th>
-            <th><span class="arithmatex">\(\ell = 2\)</span></th>
-            <th><span class="arithmatex">\(\ell = 3\)</span></th>
-            <th><span class="arithmatex">\(\ell = 4\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_\ell\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(5\)</span></td>
-            <td><span class="arithmatex">\(8\)</span></td>
-            <td><span class="arithmatex">\(9\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrr}
+            \hline  & {\ell = 1} & {\ell = 2} & {\ell = 3} & {\ell = 4} \\
+            \hline {p_\ell} & {1} & {5} & {8} & {9} \\
+            \hline
+            \end{array}
+            $$
 
             For each step of the DP algorithm, the table shows the values of $\ell$ and $j$, the cell ${s}[\ell]$, the current value of $\mathit{m}$, and the current value of $\mathit{t}$. The cell of $\mathit{m}$ is highlighted in <mark>red</mark> when updated; the cell of $\mathit{t}$ and the cell of ${s}[\ell]$ are highlighted in <mark>blue</mark> when updated.
 
@@ -736,22 +680,13 @@ title: "Rod cutting and coin change"
 
             This is the vector ${s}$ after the execution of the DP algorithm:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(\ell=1\)</span></th>
-            <th><span class="arithmatex">\(\ell=2\)</span></th>
-            <th><span class="arithmatex">\(\ell=3\)</span></th>
-            <th><span class="arithmatex">\(\ell=4\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\({s}[\ell]\)</span></td>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>2</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{c|cccc}
+            \hline  & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} \\
+            \hline {{s}[\ell]} & 1 & 2 & 3 & 2 \\
+            \hline
+            \end{array}
+            $$
 
     - Once the vector ${s}$ has been computed, an optimal solution of the RCP instance can be computed by repeatedly applying the following rule, starting from $j=n$ and $x_{\ell}=0$ for all $\ell \in \{1,2,\dots,n\}$:
 
@@ -775,22 +710,13 @@ title: "Rod cutting and coin change"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following vector ${s}$:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(\ell=1\)</span></th>
-            <th><span class="arithmatex">\(\ell=2\)</span></th>
-            <th><span class="arithmatex">\(\ell=3\)</span></th>
-            <th><span class="arithmatex">\(\ell=4\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\({s}[\ell]\)</span></td>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>2</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrr}
+            \hline  & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} \\
+            \hline {{s}[\ell]} & 1 & 2 & 3 & 2 \\
+            \hline
+            \end{array}
+            $$
 
             We can compute an optimal solution for a rod of length $n=4$ as follows:
 
@@ -851,22 +777,13 @@ title: "Rod cutting and coin change"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following vector ${s}$:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(\ell=1\)</span></th>
-            <th><span class="arithmatex">\(\ell=2\)</span></th>
-            <th><span class="arithmatex">\(\ell=3\)</span></th>
-            <th><span class="arithmatex">\(\ell=4\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\({s}[\ell]\)</span></td>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>2</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrr}
+            \hline  & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} \\
+            \hline {{s}[\ell]} & 1 & 2 & 3 & 2 \\
+            \hline
+            \end{array}
+            $$
 
             We can compute an optimal solution for a rod of length $n=3$ as follows:
 
@@ -1078,22 +995,13 @@ title: "Rod cutting and coin change"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(\ell = 1\)</span></th>
-            <th><span class="arithmatex">\(\ell = 2\)</span></th>
-            <th><span class="arithmatex">\(\ell = 3\)</span></th>
-            <th><span class="arithmatex">\(\ell = 4\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_\ell\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(5\)</span></td>
-            <td><span class="arithmatex">\(8\)</span></td>
-            <td><span class="arithmatex">\(9\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrr}
+            \hline  & {\ell = 1} & {\ell = 2} & {\ell = 3} & {\ell = 4} \\
+            \hline {p_\ell} & {1} & {5} & {8} & {9} \\
+            \hline
+            \end{array}
+            $$
 
             The values of the function $v$ are computed as follows:
 
@@ -1195,22 +1103,13 @@ title: "Rod cutting and coin change"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(\ell = 1\)</span></th>
-            <th><span class="arithmatex">\(\ell = 2\)</span></th>
-            <th><span class="arithmatex">\(\ell = 3\)</span></th>
-            <th><span class="arithmatex">\(\ell = 4\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_\ell\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(5\)</span></td>
-            <td><span class="arithmatex">\(8\)</span></td>
-            <td><span class="arithmatex">\(9\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrr}
+            \hline  & {\ell = 1} & {\ell = 2} & {\ell = 3} & {\ell = 4} \\
+            \hline {p_\ell} & {1} & {5} & {8} & {9} \\
+            \hline
+            \end{array}
+            $$
 
             For each step of the DP algorithm, the table shows the values of $j$ and $\ell$, the cell ${v}[j][\ell]$, and the operation performed.
 
@@ -1375,56 +1274,17 @@ title: "Rod cutting and coin change"
 
             This is the matrix ${v}$ after the execution of the DP algorithm:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <td><span class="arithmatex">\({v}[j][\ell]\)</span></td>
-            <td><span class="arithmatex">\(\ell=0\)</span></td>
-            <td><span class="arithmatex">\(\ell=1\)</span></td>
-            <td><span class="arithmatex">\(\ell=2\)</span></td>
-            <td><span class="arithmatex">\(\ell=3\)</span></td>
-            <td><span class="arithmatex">\(\ell=4\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=0\)</span></td>
-            <td>0</td>
-            <td><span class="arithmatex">\(-\infty\)</span></td>
-            <td><span class="arithmatex">\(-\infty\)</span></td>
-            <td><span class="arithmatex">\(-\infty\)</span></td>
-            <td><span class="arithmatex">\(-\infty\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td>0</td>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td>0</td>
-            <td>1</td>
-            <td>5</td>
-            <td>6</td>
-            <td>10</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td>0</td>
-            <td>1</td>
-            <td>5</td>
-            <td>8</td>
-            <td>10</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=4\)</span></td>
-            <td>0</td>
-            <td>1</td>
-            <td>5</td>
-            <td>8</td>
-            <td>10</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrr}
+            \hline {{v}[j][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} \\
+            \hline {j=0} & 0 & {-\infty} & {-\infty} & {-\infty} & {-\infty} \\
+            {j=1} & 0 & 1 & 2 & 3 & 4 \\
+            {j=2} & 0 & 1 & 5 & 6 & 10 \\
+            {j=3} & 0 & 1 & 5 & 8 & 10 \\
+            {j=4} & 0 & 1 & 5 & 8 & 10 \\
+            \hline
+            \end{array}
+            $$
 
     - After the execution of the DP algorithm, the matrix ${v}$ contains the optimal value ${v}[j][\ell]$ for every subproblem $(j,\ell)$.
 
@@ -1450,22 +1310,13 @@ title: "Rod cutting and coin change"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(\ell = 1\)</span></th>
-            <th><span class="arithmatex">\(\ell = 2\)</span></th>
-            <th><span class="arithmatex">\(\ell = 3\)</span></th>
-            <th><span class="arithmatex">\(\ell = 4\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_\ell\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(5\)</span></td>
-            <td><span class="arithmatex">\(8\)</span></td>
-            <td><span class="arithmatex">\(9\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrr}
+            \hline  & {\ell = 1} & {\ell = 2} & {\ell = 3} & {\ell = 4} \\
+            \hline {p_\ell} & {1} & {5} & {8} & {9} \\
+            \hline
+            \end{array}
+            $$
 
             For each step of the DP algorithm, the table shows the values of $j$ and $\ell$, the cell ${s}[j][\ell]$, and the operation performed.
 
@@ -1630,56 +1481,17 @@ title: "Rod cutting and coin change"
 
             This is the matrix ${s}$ after the execution of the DP algorithm:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <td><span class="arithmatex">\({s}[j][\ell]\)</span></td>
-            <td><span class="arithmatex">\(\ell=0\)</span></td>
-            <td><span class="arithmatex">\(\ell=1\)</span></td>
-            <td><span class="arithmatex">\(\ell=2\)</span></td>
-            <td><span class="arithmatex">\(\ell=3\)</span></td>
-            <td><span class="arithmatex">\(\ell=4\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=0\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=4\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrr}
+            \hline {{s}[j][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} \\
+            \hline {j=0} & 0 & 0 & 0 & 0 & 0 \\
+            {j=1} & 0 & 1 & 1 & 1 & 1 \\
+            {j=2} & 0 & 0 & 1 & 1 & 1 \\
+            {j=3} & 0 & 0 & 0 & 1 & 0 \\
+            {j=4} & 0 & 0 & 0 & 0 & 0 \\
+            \hline
+            \end{array}
+            $$
 
     - Once the matrix ${s}$ has been computed, an optimal solution for a rod of length $n$ can be computed by repeatedly applying the following rule, starting from $(j,\ell)=(n,n)$ and $x_h=0$ for all $h \in \{1,2,\dots,n\}$:
 
@@ -1704,56 +1516,17 @@ title: "Rod cutting and coin change"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following matrix ${s}$:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <td><span class="arithmatex">\({s}[j][\ell]\)</span></td>
-            <td><span class="arithmatex">\(\ell=0\)</span></td>
-            <td><span class="arithmatex">\(\ell=1\)</span></td>
-            <td><span class="arithmatex">\(\ell=2\)</span></td>
-            <td><span class="arithmatex">\(\ell=3\)</span></td>
-            <td><span class="arithmatex">\(\ell=4\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=0\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=4\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrr}
+            \hline {{s}[j][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} \\
+            \hline {j=0} & 0 & 0 & 0 & 0 & 0 \\
+            {j=1} & 0 & 1 & 1 & 1 & 1 \\
+            {j=2} & 0 & 0 & 1 & 1 & 1 \\
+            {j=3} & 0 & 0 & 0 & 1 & 0 \\
+            {j=4} & 0 & 0 & 0 & 0 & 0 \\
+            \hline
+            \end{array}
+            $$
 
             We can compute an optimal solution for a rod of length $n=4$ as follows:
 
@@ -1829,56 +1602,17 @@ title: "Rod cutting and coin change"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following matrix ${s}$:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <td><span class="arithmatex">\({s}[j][\ell]\)</span></td>
-            <td><span class="arithmatex">\(\ell=0\)</span></td>
-            <td><span class="arithmatex">\(\ell=1\)</span></td>
-            <td><span class="arithmatex">\(\ell=2\)</span></td>
-            <td><span class="arithmatex">\(\ell=3\)</span></td>
-            <td><span class="arithmatex">\(\ell=4\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=0\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=4\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrr}
+            \hline {{s}[j][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} \\
+            \hline {j=0} & 0 & 0 & 0 & 0 & 0 \\
+            {j=1} & 0 & 1 & 1 & 1 & 1 \\
+            {j=2} & 0 & 0 & 1 & 1 & 1 \\
+            {j=3} & 0 & 0 & 0 & 1 & 0 \\
+            {j=4} & 0 & 0 & 0 & 0 & 0 \\
+            \hline
+            \end{array}
+            $$
 
             We can compute an optimal solution for a rod of length $\ell=3$ as follows:
 
@@ -2700,36 +2434,13 @@ title: "Rod cutting and coin change"
 
             This is the array $v$ after the execution of the DP algorithm:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th><span class="arithmatex">\(k\)</span></th>
-            <th>0</th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-            <th>5</th>
-            <th>6</th>
-            <th>7</th>
-            <th>8</th>
-            <th>9</th>
-            <th>10</th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(v[k]\)</span></td>
-            <td>0</td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td>1</td>
-            <td>1</td>
-            <td>2</td>
-            <td>1</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>3</td>
-            <td>2</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrrrrrr}
+            \hline {k} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+            \hline {v[k]} & 0 & {+\infty} & 1 & 1 & 2 & 1 & 2 & 2 & 2 & 3 & 2 \\
+            \hline
+            \end{array}
+            $$
 
     - After the execution of the DP algorithm, the array $v$ contains the optimal value $v[k]$ for every amount of change $k \in \{0,1,\dots,c\}$, where $v[c]$ is the minimum number of coins needed to return the amount of change $c$.
 
@@ -2757,36 +2468,13 @@ title: "Rod cutting and coin change"
 
             This is the array $s$ after the execution of the DP algorithm:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th><span class="arithmatex">\(k\)</span></th>
-            <th>0</th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-            <th>5</th>
-            <th>6</th>
-            <th>7</th>
-            <th>8</th>
-            <th>9</th>
-            <th>10</th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(s[k]\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>2</td>
-            <td>1</td>
-            <td>3</td>
-            <td>2</td>
-            <td>1</td>
-            <td>2</td>
-            <td>1</td>
-            <td>3</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrrrrrr}
+            \hline {k} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+            \hline {s[k]} & 0 & 0 & 1 & 2 & 1 & 3 & 2 & 1 & 2 & 1 & 3 \\
+            \hline
+            \end{array}
+            $$
 
             For example, $s[5]=3$ since formula $\eqref{eq:ccp}$ selects the denomination $w_3=5$ when computing $v[5]=1$, and $s[10]=3$ since the denomination $w_3=5$ is also selected when computing $v[10]=2$. The entry $s[1]$ is left undefined ($0$, by convention), since $v[1]=+\infty$ is infeasible.
 
@@ -2810,36 +2498,13 @@ title: "Rod cutting and coin change"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following array $s$:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th><span class="arithmatex">\(k\)</span></th>
-            <th>0</th>
-            <th>1</th>
-            <th>2</th>
-            <th>3</th>
-            <th>4</th>
-            <th>5</th>
-            <th>6</th>
-            <th>7</th>
-            <th>8</th>
-            <th>9</th>
-            <th>10</th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(s[k]\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>2</td>
-            <td>1</td>
-            <td>3</td>
-            <td>2</td>
-            <td>1</td>
-            <td>2</td>
-            <td>1</td>
-            <td>3</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrrrrrr}
+            \hline {k} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+            \hline {s[k]} & 0 & 0 & 1 & 2 & 1 & 3 & 2 & 1 & 2 & 1 & 3 \\
+            \hline
+            \end{array}
+            $$
 
             We can reconstruct an optimal solution by starting from $k=10$ as follows:
 

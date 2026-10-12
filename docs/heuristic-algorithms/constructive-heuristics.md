@@ -80,56 +80,17 @@ title: "Constructive heuristics"
 
 - In the figures, the five cities of the TSP reference instance are always drawn in the same positions, on a pentagon, in the order $(1,3,5,2,4)$ of the optimal tour: the optimal tour is then the boundary of the pentagon, and every tour that uses a diagonal is visibly different from it. The figure shows the distances of the instance and, in bold, its optimal tour.
 
-<div class="tabella" markdown="0"><table>
-<tr>
-<th><span class="arithmatex">\(d_{ij}\)</span></th>
-<th><span class="arithmatex">\(1\)</span></th>
-<th><span class="arithmatex">\(2\)</span></th>
-<th><span class="arithmatex">\(3\)</span></th>
-<th><span class="arithmatex">\(4\)</span></th>
-<th><span class="arithmatex">\(5\)</span></th>
-</tr>
-<tr>
-<td><span class="arithmatex">\(1\)</span></td>
-<td>—</td>
-<td><span class="arithmatex">\(5\)</span></td>
-<td><span class="arithmatex">\(2\)</span></td>
-<td><span class="arithmatex">\(2\)</span></td>
-<td><span class="arithmatex">\(9\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(2\)</span></td>
-<td><span class="arithmatex">\(5\)</span></td>
-<td>—</td>
-<td><span class="arithmatex">\(4\)</span></td>
-<td><span class="arithmatex">\(3\)</span></td>
-<td><span class="arithmatex">\(4\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(3\)</span></td>
-<td><span class="arithmatex">\(2\)</span></td>
-<td><span class="arithmatex">\(4\)</span></td>
-<td>—</td>
-<td><span class="arithmatex">\(4\)</span></td>
-<td><span class="arithmatex">\(7\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(4\)</span></td>
-<td><span class="arithmatex">\(2\)</span></td>
-<td><span class="arithmatex">\(3\)</span></td>
-<td><span class="arithmatex">\(4\)</span></td>
-<td>—</td>
-<td><span class="arithmatex">\(7\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(5\)</span></td>
-<td><span class="arithmatex">\(9\)</span></td>
-<td><span class="arithmatex">\(4\)</span></td>
-<td><span class="arithmatex">\(7\)</span></td>
-<td><span class="arithmatex">\(7\)</span></td>
-<td>—</td>
-</tr>
-</table></div>
+$$
+\begin{array}{c|ccccc}
+\hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} \\
+\hline {1} & --- & {5} & {2} & {2} & {9} \\
+{2} & {5} & --- & {4} & {3} & {4} \\
+{3} & {2} & {4} & --- & {4} & {7} \\
+{4} & {2} & {3} & {4} & --- & {7} \\
+{5} & {9} & {4} & {7} & {7} & --- \\
+\hline
+\end{array}
+$$
 
 ![Figure 1](../img/constructive-heuristics/fig01.svg){ .fig loading=lazy  }
 
@@ -850,71 +811,18 @@ title: "Constructive heuristics"
 
     and distances
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|cccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} & {6} \\
+    \hline {1} & --- & {5} & {4} & {4} & {5} & {2} \\
+    {2} & {5} & --- & {1} & {5} & {5} & {4} \\
+    {3} & {4} & {1} & --- & {4} & {5} & {3} \\
+    {4} & {4} & {5} & {4} & --- & {9} & {6} \\
+    {5} & {5} & {5} & {5} & {9} & --- & {3} \\
+    {6} & {2} & {4} & {3} & {6} & {3} & --- \\
+    \hline
+    \end{array}
+    $$
 
     The instance has $\frac{5!}{2}=60$ distinct tours; enumerating them, the unique optimal tour is $(1,4,3,2,5,6)$, with $z(I)=19$, and only $7$ tours have length smaller than $24$. The heuristics of this section give:
 
@@ -1011,30 +919,13 @@ title: "Constructive heuristics"
 
     We run $RNN_\alpha$ four times from city $1$, with $\alpha=0.3$ and initial seed $1$. The generator gives
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(u_1\)</span></th>
-    <th><span class="arithmatex">\(u_2\)</span></th>
-    <th><span class="arithmatex">\(u_3\)</span></th>
-    <th><span class="arithmatex">\(u_4\)</span></th>
-    <th><span class="arithmatex">\(u_5\)</span></th>
-    <th><span class="arithmatex">\(u_6\)</span></th>
-    <th><span class="arithmatex">\(u_7\)</span></th>
-    <th><span class="arithmatex">\(u_8\)</span></th>
-    <th><span class="arithmatex">\(u_9\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(0.0000\)</span></td>
-    <td><span class="arithmatex">\(0.1315\)</span></td>
-    <td><span class="arithmatex">\(0.7556\)</span></td>
-    <td><span class="arithmatex">\(0.4587\)</span></td>
-    <td><span class="arithmatex">\(0.5328\)</span></td>
-    <td><span class="arithmatex">\(0.2190\)</span></td>
-    <td><span class="arithmatex">\(0.0470\)</span></td>
-    <td><span class="arithmatex">\(0.6789\)</span></td>
-    <td><span class="arithmatex">\(0.6793\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{ccccccccc}
+    \hline {u_1} & {u_2} & {u_3} & {u_4} & {u_5} & {u_6} & {u_7} & {u_8} & {u_9} \\
+    \hline {0.0000} & {0.1315} & {0.7556} & {0.4587} & {0.5328} & {0.2190} & {0.0470} & {0.6789} & {0.6793} \\
+    \hline
+    \end{array}
+    $$
 
     ($u_1=\frac{16807}{2147483647}\approx 0.0000078$). From city $1$ the distances to $2,3,4,5$ are $5,2,2,9$, so the threshold is $2+0.3\cdot(9-2)=4.1$ and $RCL=\{3,4\}$.
 

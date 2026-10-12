@@ -18,22 +18,13 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\[1ex]
+    \hline {w_i} & {6} & {6} & {4} & {4} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -115,22 +106,13 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\[1ex]
+    \hline {w_i} & {7} & {7} & {3} & {3} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -212,24 +194,13 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {w_i} & {4} & {7} & {6} & {3} & {5} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -316,22 +287,13 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\[1ex]
+    \hline {w_i} & {6} & {6} & {4} & {4} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -406,22 +368,13 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\[1ex]
+    \hline {w_i} & {7} & {7} & {3} & {3} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -496,24 +449,13 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {w_i} & {4} & {7} & {6} & {3} & {5} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -593,22 +535,13 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\[1ex]
+    \hline {w_i} & {6} & {6} & {4} & {4} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -683,22 +616,13 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\[1ex]
+    \hline {w_i} & {7} & {7} & {3} & {3} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -773,24 +697,13 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {w_i} & {4} & {7} & {6} & {3} & {5} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -870,22 +783,13 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\[1ex]
+    \hline {w_i} & {6} & {6} & {4} & {4} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -960,22 +864,13 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\[1ex]
+    \hline {w_i} & {7} & {7} & {3} & {3} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -1050,24 +945,13 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {w_i} & {4} & {7} & {6} & {3} & {5} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 

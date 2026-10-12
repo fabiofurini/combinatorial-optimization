@@ -85,48 +85,16 @@ title: "Dynamic programming for lot sizing"
 
     We consider $m=5$ periods with the following data:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(t\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(d_t\)</span></td>
-    <td><span class="arithmatex">\(20\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(30\)</span></td>
-    <td><span class="arithmatex">\(40\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(sc_t\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(vc_t\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(hc_t\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrr}
+    \hline {t} & {1} & {2} & {3} & {4} & {5} \\
+    \hline {d_t} & {20} & {10} & {30} & {40} & {10} \\
+    {sc_t} & {50} & {50} & {50} & {50} & {50} \\
+    {vc_t} & {0} & {0} & {0} & {0} & {0} \\
+    {hc_t} & {1} & {1} & {1} & {1} & {1} \\
+    \hline
+    \end{array}
+    $$
 
     We refer to this ULS instance as <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>. It is the uncapacitated instance used in the MIP course (setup cost $50$, holding cost $1$, no variable production cost).
 
@@ -256,48 +224,16 @@ title: "Dynamic programming for lot sizing"
 
     We consider the ULS instance of <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(t\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(d_t\)</span></td>
-    <td><span class="arithmatex">\(20\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(30\)</span></td>
-    <td><span class="arithmatex">\(40\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(sc_t\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(vc_t\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(hc_t\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrr}
+    \hline {t} & {1} & {2} & {3} & {4} & {5} \\
+    \hline {d_t} & {20} & {10} & {30} & {40} & {10} \\
+    {sc_t} & {50} & {50} & {50} & {50} & {50} \\
+    {vc_t} & {0} & {0} & {0} & {0} & {0} \\
+    {hc_t} & {1} & {1} & {1} & {1} & {1} \\
+    \hline
+    \end{array}
+    $$
 
     There are $2^{5-1}=16$ solutions with the zero-inventory ordering property. For each of them, the table reports the production periods, the solution vector, the inventories, and the total cost, written as setup cost plus holding cost. The optimal costs are highlighted.
 
@@ -468,48 +404,16 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
     We consider the ULS instance of <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(t\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(d_t\)</span></td>
-    <td><span class="arithmatex">\(20\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(30\)</span></td>
-    <td><span class="arithmatex">\(40\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(sc_t\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(vc_t\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(hc_t\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrr}
+    \hline {t} & {1} & {2} & {3} & {4} & {5} \\
+    \hline {d_t} & {20} & {10} & {30} & {40} & {10} \\
+    {sc_t} & {50} & {50} & {50} & {50} & {50} \\
+    {vc_t} & {0} & {0} & {0} & {0} & {0} \\
+    {hc_t} & {1} & {1} & {1} & {1} & {1} \\
+    \hline
+    \end{array}
+    $$
 
     For each step, the table shows the values of $j$ and $t$, the current value of $\mathit{u}$, the cell ${c}[j][t]$, and the operation performed; the cell ${c}[j][t]$ is highlighted in <mark>blue</mark> when assigned.
 
@@ -630,56 +534,17 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
     This is the matrix ${c}$ after the execution of the algorithm (for instance, $\exOneCOneThree$ by formula $\eqref{eq:cjt}$):
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\({c}[j][t]\)</span></th>
-    <th><span class="arithmatex">\(t=1\)</span></th>
-    <th><span class="arithmatex">\(t=2\)</span></th>
-    <th><span class="arithmatex">\(t=3\)</span></th>
-    <th><span class="arithmatex">\(t=4\)</span></th>
-    <th><span class="arithmatex">\(t=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(j=1\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(60\)</span></td>
-    <td><span class="arithmatex">\(120\)</span></td>
-    <td><span class="arithmatex">\(240\)</span></td>
-    <td><span class="arithmatex">\(280\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(j=2\)</span></td>
-    <td><span class="arithmatex">\(-\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(80\)</span></td>
-    <td><span class="arithmatex">\(160\)</span></td>
-    <td><span class="arithmatex">\(190\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(j=3\)</span></td>
-    <td><span class="arithmatex">\(-\)</span></td>
-    <td><span class="arithmatex">\(-\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(90\)</span></td>
-    <td><span class="arithmatex">\(110\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(j=4\)</span></td>
-    <td><span class="arithmatex">\(-\)</span></td>
-    <td><span class="arithmatex">\(-\)</span></td>
-    <td><span class="arithmatex">\(-\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(60\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(j=5\)</span></td>
-    <td><span class="arithmatex">\(-\)</span></td>
-    <td><span class="arithmatex">\(-\)</span></td>
-    <td><span class="arithmatex">\(-\)</span></td>
-    <td><span class="arithmatex">\(-\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrr}
+    \hline {{c}[j][t]} & {t=1} & {t=2} & {t=3} & {t=4} & {t=5} \\
+    \hline {j=1} & {50} & {60} & {120} & {240} & {280} \\
+    {j=2} & {-} & {50} & {80} & {160} & {190} \\
+    {j=3} & {-} & {-} & {50} & {90} & {110} \\
+    {j=4} & {-} & {-} & {-} & {50} & {60} \\
+    {j=5} & {-} & {-} & {-} & {-} & {50} \\
+    \hline
+    \end{array}
+    $$
 
 ### 17.2.2 Step 1 and Step 2
 
@@ -741,56 +606,17 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
             We consider the ULS instance of <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th><span class="arithmatex">\({c}[j][t]\)</span></th>
-            <th><span class="arithmatex">\(t=1\)</span></th>
-            <th><span class="arithmatex">\(t=2\)</span></th>
-            <th><span class="arithmatex">\(t=3\)</span></th>
-            <th><span class="arithmatex">\(t=4\)</span></th>
-            <th><span class="arithmatex">\(t=5\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(60\)</span></td>
-            <td><span class="arithmatex">\(120\)</span></td>
-            <td><span class="arithmatex">\(240\)</span></td>
-            <td><span class="arithmatex">\(280\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(80\)</span></td>
-            <td><span class="arithmatex">\(160\)</span></td>
-            <td><span class="arithmatex">\(190\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(90\)</span></td>
-            <td><span class="arithmatex">\(110\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=4\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(60\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=5\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrr}
+            \hline {{c}[j][t]} & {t=1} & {t=2} & {t=3} & {t=4} & {t=5} \\
+            \hline {j=1} & {50} & {60} & {120} & {240} & {280} \\
+            {j=2} & {-} & {50} & {80} & {160} & {190} \\
+            {j=3} & {-} & {-} & {50} & {90} & {110} \\
+            {j=4} & {-} & {-} & {-} & {50} & {60} \\
+            {j=5} & {-} & {-} & {-} & {-} & {50} \\
+            \hline
+            \end{array}
+            $$
 
             The value of the function $v$ can be computed by starting from the base case $v(0)=0$ and then computing the values of $v(1)$, $v(2)$, $v(3)$, $v(4)$, and $v(5)$ in order, as follows:
 
@@ -858,56 +684,17 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
             We consider the ULS instance of <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th><span class="arithmatex">\({c}[j][t]\)</span></th>
-            <th><span class="arithmatex">\(t=1\)</span></th>
-            <th><span class="arithmatex">\(t=2\)</span></th>
-            <th><span class="arithmatex">\(t=3\)</span></th>
-            <th><span class="arithmatex">\(t=4\)</span></th>
-            <th><span class="arithmatex">\(t=5\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(60\)</span></td>
-            <td><span class="arithmatex">\(120\)</span></td>
-            <td><span class="arithmatex">\(240\)</span></td>
-            <td><span class="arithmatex">\(280\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(80\)</span></td>
-            <td><span class="arithmatex">\(160\)</span></td>
-            <td><span class="arithmatex">\(190\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(90\)</span></td>
-            <td><span class="arithmatex">\(110\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=4\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(60\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=5\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrr}
+            \hline {{c}[j][t]} & {t=1} & {t=2} & {t=3} & {t=4} & {t=5} \\
+            \hline {j=1} & {50} & {60} & {120} & {240} & {280} \\
+            {j=2} & {-} & {50} & {80} & {160} & {190} \\
+            {j=3} & {-} & {-} & {50} & {90} & {110} \\
+            {j=4} & {-} & {-} & {-} & {50} & {60} \\
+            {j=5} & {-} & {-} & {-} & {-} & {50} \\
+            \hline
+            \end{array}
+            $$
 
             For each step of the DP algorithm, the table shows the values of $t$ and $j$, the current value of $\mathit{b}$, and the cell ${v}[t]$. The cell of $\mathit{b}$ is highlighted in <mark>red</mark> when updated; the cell of ${v}[t]$ is highlighted in <mark>blue</mark> when assigned.
 
@@ -1105,26 +892,13 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
             This is the vector ${v}$ after the execution of the DP algorithm:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(t=0\)</span></th>
-            <th><span class="arithmatex">\(t=1\)</span></th>
-            <th><span class="arithmatex">\(t=2\)</span></th>
-            <th><span class="arithmatex">\(t=3\)</span></th>
-            <th><span class="arithmatex">\(t=4\)</span></th>
-            <th><span class="arithmatex">\(t=5\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\({v}[t]\)</span></td>
-            <td>0</td>
-            <td>50</td>
-            <td>60</td>
-            <td>110</td>
-            <td>150</td>
-            <td>170</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{c|cccccc}
+            \hline  & {t=0} & {t=1} & {t=2} & {t=3} & {t=4} & {t=5} \\
+            \hline {{v}[t]} & 0 & 50 & 60 & 110 & 150 & 170 \\
+            \hline
+            \end{array}
+            $$
 
     - After the execution of the DP algorithm, the vector ${v}$ contains the optimal value ${v}[t]$ for every set of periods $\{1,\dots,t\}$.
 
@@ -1154,56 +928,17 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
             We consider the ULS instance of <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th><span class="arithmatex">\({c}[j][t]\)</span></th>
-            <th><span class="arithmatex">\(t=1\)</span></th>
-            <th><span class="arithmatex">\(t=2\)</span></th>
-            <th><span class="arithmatex">\(t=3\)</span></th>
-            <th><span class="arithmatex">\(t=4\)</span></th>
-            <th><span class="arithmatex">\(t=5\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(60\)</span></td>
-            <td><span class="arithmatex">\(120\)</span></td>
-            <td><span class="arithmatex">\(240\)</span></td>
-            <td><span class="arithmatex">\(280\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(80\)</span></td>
-            <td><span class="arithmatex">\(160\)</span></td>
-            <td><span class="arithmatex">\(190\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(90\)</span></td>
-            <td><span class="arithmatex">\(110\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=4\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(60\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=5\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrr}
+            \hline {{c}[j][t]} & {t=1} & {t=2} & {t=3} & {t=4} & {t=5} \\
+            \hline {j=1} & {50} & {60} & {120} & {240} & {280} \\
+            {j=2} & {-} & {50} & {80} & {160} & {190} \\
+            {j=3} & {-} & {-} & {50} & {90} & {110} \\
+            {j=4} & {-} & {-} & {-} & {50} & {60} \\
+            {j=5} & {-} & {-} & {-} & {-} & {50} \\
+            \hline
+            \end{array}
+            $$
 
             For each step of the DP algorithm, the table shows the values of $t$ and $j$, the cell ${r}[t]$, the current value of $\mathit{b}$, and the current value of $\mathit{a}$. The cell of $\mathit{b}$ is highlighted in <mark>red</mark> when updated; the cell of $\mathit{a}$ and the cell of ${r}[t]$ are highlighted in <mark>blue</mark> when updated.
 
@@ -1428,24 +1163,13 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
             This is the vector ${r}$ after the execution of the DP algorithm:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(t=1\)</span></th>
-            <th><span class="arithmatex">\(t=2\)</span></th>
-            <th><span class="arithmatex">\(t=3\)</span></th>
-            <th><span class="arithmatex">\(t=4\)</span></th>
-            <th><span class="arithmatex">\(t=5\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\({r}[t]\)</span></td>
-            <td>1</td>
-            <td>1</td>
-            <td>3</td>
-            <td>3</td>
-            <td>3</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{c|ccccc}
+            \hline  & {t=1} & {t=2} & {t=3} & {t=4} & {t=5} \\
+            \hline {{r}[t]} & 1 & 1 & 3 & 3 & 3 \\
+            \hline
+            \end{array}
+            $$
 
     - Once the vector ${r}$ has been computed, an optimal solution of the ULS instance can be computed by repeatedly applying the following rule, starting from $t=m$ and $x_j=0$ for all $j \in \{1,2,\dots,m\}$:
 
@@ -1469,24 +1193,13 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>, we have the following vector ${r}$:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(t=1\)</span></th>
-            <th><span class="arithmatex">\(t=2\)</span></th>
-            <th><span class="arithmatex">\(t=3\)</span></th>
-            <th><span class="arithmatex">\(t=4\)</span></th>
-            <th><span class="arithmatex">\(t=5\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\({r}[t]\)</span></td>
-            <td>1</td>
-            <td>1</td>
-            <td>3</td>
-            <td>3</td>
-            <td>3</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{c|ccccc}
+            \hline  & {t=1} & {t=2} & {t=3} & {t=4} & {t=5} \\
+            \hline {{r}[t]} & 1 & 1 & 3 & 3 & 3 \\
+            \hline
+            \end{array}
+            $$
 
             We can compute an optimal solution for $m=5$ periods as follows:
 
@@ -1661,56 +1374,17 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
     We consider <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span> measured in units of $10$ products (hence the holding cost is $10$ per unit), with a constant capacity of $4$ units per period:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(t\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(d_t\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(sc_t\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(vc_t\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(hc_t\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(cap_t\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrr}
+    \hline {t} & {1} & {2} & {3} & {4} & {5} \\
+    \hline {d_t} & {2} & {1} & {3} & {4} & {1} \\
+    {sc_t} & {50} & {50} & {50} & {50} & {50} \\
+    {vc_t} & {0} & {0} & {0} & {0} & {0} \\
+    {hc_t} & {10} & {10} & {10} & {10} & {10} \\
+    {cap_t} & {4} & {4} & {4} & {4} & {4} \\
+    \hline
+    \end{array}
+    $$
 
     We refer to this CLS instance as <span style="color:#1971c2">[Example 17.10](#box-33-texcls1)</span>. The optimal solution of <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>, in units of $10$, is the vector $\exTwoWWSol$, of cost $\exTwoWWOpt$: it is not feasible for <span style="color:#1971c2">[Example 17.10](#box-33-texcls1)</span>, since period $3$ produces more than $4$ units.
 
@@ -1808,56 +1482,17 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
             We consider the CLS instance of <span style="color:#1971c2">[Example 17.10](#box-33-texcls1)</span>:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th><span class="arithmatex">\(t\)</span></th>
-            <th><span class="arithmatex">\(1\)</span></th>
-            <th><span class="arithmatex">\(2\)</span></th>
-            <th><span class="arithmatex">\(3\)</span></th>
-            <th><span class="arithmatex">\(4\)</span></th>
-            <th><span class="arithmatex">\(5\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(d_t\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(sc_t\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(vc_t\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(hc_t\)</span></td>
-            <td><span class="arithmatex">\(10\)</span></td>
-            <td><span class="arithmatex">\(10\)</span></td>
-            <td><span class="arithmatex">\(10\)</span></td>
-            <td><span class="arithmatex">\(10\)</span></td>
-            <td><span class="arithmatex">\(10\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(cap_t\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrr}
+            \hline {t} & {1} & {2} & {3} & {4} & {5} \\
+            \hline {d_t} & {2} & {1} & {3} & {4} & {1} \\
+            {sc_t} & {50} & {50} & {50} & {50} & {50} \\
+            {vc_t} & {0} & {0} & {0} & {0} & {0} \\
+            {hc_t} & {10} & {10} & {10} & {10} & {10} \\
+            {cap_t} & {4} & {4} & {4} & {4} & {4} \\
+            \hline
+            \end{array}
+            $$
 
             The remaining demands are $({R}[0],\dots,{R}[5])=\exTwoR$.
 
@@ -2114,113 +1749,18 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
             This is the matrix ${v}$ after the execution of the DP algorithm (a dot marks a pair $(t,k)$ with $k>D_{t+1,m}$, which is not a state):
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th><span class="arithmatex">\({v}[t][k]\)</span></th>
-            <th><span class="arithmatex">\(0\)</span></th>
-            <th><span class="arithmatex">\(1\)</span></th>
-            <th><span class="arithmatex">\(2\)</span></th>
-            <th><span class="arithmatex">\(3\)</span></th>
-            <th><span class="arithmatex">\(4\)</span></th>
-            <th><span class="arithmatex">\(5\)</span></th>
-            <th><span class="arithmatex">\(6\)</span></th>
-            <th><span class="arithmatex">\(7\)</span></th>
-            <th><span class="arithmatex">\(8\)</span></th>
-            <th><span class="arithmatex">\(9\)</span></th>
-            <th><span class="arithmatex">\(10\)</span></th>
-            <th><span class="arithmatex">\(11\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(t=0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(t=1\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(60\)</span></td>
-            <td><span class="arithmatex">\(70\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(t=2\)</span></td>
-            <td><span class="arithmatex">\(60\)</span></td>
-            <td><span class="arithmatex">\(80\)</span></td>
-            <td><span class="arithmatex">\(120\)</span></td>
-            <td><span class="arithmatex">\(130\)</span></td>
-            <td><span class="arithmatex">\(150\)</span></td>
-            <td><span class="arithmatex">\(170\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(t=3\)</span></td>
-            <td><span class="arithmatex">\(110\)</span></td>
-            <td><span class="arithmatex">\(120\)</span></td>
-            <td><span class="arithmatex">\(150\)</span></td>
-            <td><span class="arithmatex">\(200\)</span></td>
-            <td><span class="arithmatex">\(220\)</span></td>
-            <td><span class="arithmatex">\(250\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(t=4\)</span></td>
-            <td><span class="arithmatex">\(160\)</span></td>
-            <td><span class="arithmatex">\(180\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(t=5\)</span></td>
-            <td><span class="arithmatex">\(180\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrrrrrrr}
+            \hline {{v}[t][k]} & {0} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} & {9} & {10} & {11} \\
+            \hline {t=0} & {0} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} \\
+            {t=1} & {50} & {60} & {70} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {\cdot} & {\cdot} \\
+            {t=2} & {60} & {80} & {120} & {130} & {150} & {170} & {+\infty} & {+\infty} & {+\infty} & {\cdot} & {\cdot} & {\cdot} \\
+            {t=3} & {110} & {120} & {150} & {200} & {220} & {250} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} \\
+            {t=4} & {160} & {180} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} \\
+            {t=5} & {180} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} \\
+            \hline
+            \end{array}
+            $$
 
             The optimal value of the CLS instance is ${v}[5][0]=\exTwoOpt$.
 
@@ -2248,56 +1788,17 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
             We consider the CLS instance of <span style="color:#1971c2">[Example 17.10](#box-33-texcls1)</span>:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th><span class="arithmatex">\(t\)</span></th>
-            <th><span class="arithmatex">\(1\)</span></th>
-            <th><span class="arithmatex">\(2\)</span></th>
-            <th><span class="arithmatex">\(3\)</span></th>
-            <th><span class="arithmatex">\(4\)</span></th>
-            <th><span class="arithmatex">\(5\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(d_t\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(sc_t\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            <td><span class="arithmatex">\(50\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(vc_t\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(hc_t\)</span></td>
-            <td><span class="arithmatex">\(10\)</span></td>
-            <td><span class="arithmatex">\(10\)</span></td>
-            <td><span class="arithmatex">\(10\)</span></td>
-            <td><span class="arithmatex">\(10\)</span></td>
-            <td><span class="arithmatex">\(10\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(cap_t\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrr}
+            \hline {t} & {1} & {2} & {3} & {4} & {5} \\
+            \hline {d_t} & {2} & {1} & {3} & {4} & {1} \\
+            {sc_t} & {50} & {50} & {50} & {50} & {50} \\
+            {vc_t} & {0} & {0} & {0} & {0} & {0} \\
+            {hc_t} & {10} & {10} & {10} & {10} & {10} \\
+            {cap_t} & {4} & {4} & {4} & {4} & {4} \\
+            \hline
+            \end{array}
+            $$
 
             For each step of the DP algorithm, the table shows the values of $t$ and $k$, the cell ${r}[t][k]$, and the production $x$ for which the minimum of the corresponding row of <span style="color:#1971c2">[Example 17.11](#box-50-texclsbu)</span> is attained first.
 
@@ -2552,113 +2053,18 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
             This is the matrix ${r}$ after the execution of the DP algorithm:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th><span class="arithmatex">\({r}[t][k]\)</span></th>
-            <th><span class="arithmatex">\(0\)</span></th>
-            <th><span class="arithmatex">\(1\)</span></th>
-            <th><span class="arithmatex">\(2\)</span></th>
-            <th><span class="arithmatex">\(3\)</span></th>
-            <th><span class="arithmatex">\(4\)</span></th>
-            <th><span class="arithmatex">\(5\)</span></th>
-            <th><span class="arithmatex">\(6\)</span></th>
-            <th><span class="arithmatex">\(7\)</span></th>
-            <th><span class="arithmatex">\(8\)</span></th>
-            <th><span class="arithmatex">\(9\)</span></th>
-            <th><span class="arithmatex">\(10\)</span></th>
-            <th><span class="arithmatex">\(11\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(t=0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(t=1\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(t=2\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(t=3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(t=4\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(t=5\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            <td><span class="arithmatex">\(\cdot\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrrrrrrr}
+            \hline {{r}[t][k]} & {0} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} & {9} & {10} & {11} \\
+            \hline {t=0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} \\
+            {t=1} & {2} & {3} & {4} & {0} & {0} & {0} & {0} & {0} & {0} & {0} & {\cdot} & {\cdot} \\
+            {t=2} & {0} & {0} & {3} & {4} & {4} & {4} & {0} & {0} & {0} & {\cdot} & {\cdot} & {\cdot} \\
+            {t=3} & {3} & {4} & {4} & {4} & {4} & {4} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} \\
+            {t=4} & {4} & {4} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} \\
+            {t=5} & {0} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} \\
+            \hline
+            \end{array}
+            $$
 
     - Once the matrix ${r}$ has been computed, an optimal solution of the CLS instance can be computed by applying the following rule for $t=m,m-1,\dots,1$, starting from $k=0$:
 

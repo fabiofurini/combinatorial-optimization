@@ -16,43 +16,16 @@ title: "Exercises · Dynamic programming for lot sizing"
 
     Consider the following ULS instance with $m=4$ periods, where the demands, the setup costs, the variable production costs, and the holding costs are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(t\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(d_t\)</span></td>
-    <td><span class="arithmatex">\(30\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(40\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(sc_t\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(80\)</span></td>
-    <td><span class="arithmatex">\(70\)</span></td>
-    <td><span class="arithmatex">\(60\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(vc_t\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(hc_t\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrr}
+    \hline {t} & {1} & {2} & {3} & {4} \\
+    \hline {d_t} & {30} & {10} & {40} & {10} \\
+    {sc_t} & {50} & {80} & {70} & {60} \\
+    {vc_t} & {2} & {3} & {1} & {2} \\
+    {hc_t} & {1} & {2} & {2} & {1} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -148,43 +121,16 @@ title: "Exercises · Dynamic programming for lot sizing"
 
         This is the matrix ${c}$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\({c}[j][t]\)</span></th>
-        <th><span class="arithmatex">\(t=1\)</span></th>
-        <th><span class="arithmatex">\(t=2\)</span></th>
-        <th><span class="arithmatex">\(t=3\)</span></th>
-        <th><span class="arithmatex">\(t=4\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(j=1\)</span></td>
-        <td><span class="arithmatex">\(110\)</span></td>
-        <td><span class="arithmatex">\(140\)</span></td>
-        <td><span class="arithmatex">\(340\)</span></td>
-        <td><span class="arithmatex">\(410\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(j=2\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(110\)</span></td>
-        <td><span class="arithmatex">\(310\)</span></td>
-        <td><span class="arithmatex">\(380\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(j=3\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(110\)</span></td>
-        <td><span class="arithmatex">\(140\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(j=4\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(80\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrr}
+        \hline {{c}[j][t]} & {t=1} & {t=2} & {t=3} & {t=4} \\
+        \hline {j=1} & {110} & {140} & {340} & {410} \\
+        {j=2} & {-} & {110} & {310} & {380} \\
+        {j=3} & {-} & {-} & {110} & {140} \\
+        {j=4} & {-} & {-} & {-} & {80} \\
+        \hline
+        \end{array}
+        $$
 
         For each step of the DP algorithm, the table shows the values of $t$ and $j$, the cells ${v}[t]$ and ${r}[t]$, the current value of $\mathit{b}$, and the current value of $\mathit{a}$. The cell of $\mathit{b}$ is highlighted in <mark>red</mark> when updated; the cell of $\mathit{a}$ is highlighted in <mark>blue</mark> when updated; the cells of ${v}[t]$ and ${r}[t]$ are highlighted in <mark>blue</mark> when assigned.
 
@@ -373,62 +319,33 @@ title: "Exercises · Dynamic programming for lot sizing"
 
         This is the vector ${v}$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(t=0\)</span></th>
-        <th><span class="arithmatex">\(t=1\)</span></th>
-        <th><span class="arithmatex">\(t=2\)</span></th>
-        <th><span class="arithmatex">\(t=3\)</span></th>
-        <th><span class="arithmatex">\(t=4\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\({v}[t]\)</span></td>
-        <td>0</td>
-        <td>110</td>
-        <td>140</td>
-        <td>250</td>
-        <td>280</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|ccccc}
+        \hline  & {t=0} & {t=1} & {t=2} & {t=3} & {t=4} \\
+        \hline {{v}[t]} & 0 & 110 & 140 & 250 & 280 \\
+        \hline
+        \end{array}
+        $$
 
         This is the vector ${r}$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(t=1\)</span></th>
-        <th><span class="arithmatex">\(t=2\)</span></th>
-        <th><span class="arithmatex">\(t=3\)</span></th>
-        <th><span class="arithmatex">\(t=4\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\({r}[t]\)</span></td>
-        <td>1</td>
-        <td>1</td>
-        <td>3</td>
-        <td>3</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|cccc}
+        \hline  & {t=1} & {t=2} & {t=3} & {t=4} \\
+        \hline {{r}[t]} & 1 & 1 & 3 & 3 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following vector ${r}$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(t=1\)</span></th>
-        <th><span class="arithmatex">\(t=2\)</span></th>
-        <th><span class="arithmatex">\(t=3\)</span></th>
-        <th><span class="arithmatex">\(t=4\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\({r}[t]\)</span></td>
-        <td>1</td>
-        <td>1</td>
-        <td>3</td>
-        <td>3</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|cccc}
+        \hline  & {t=1} & {t=2} & {t=3} & {t=4} \\
+        \hline {{r}[t]} & 1 & 1 & 3 & 3 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution as follows:
 
@@ -504,43 +421,16 @@ title: "Exercises · Dynamic programming for lot sizing"
 
     Consider the following ULS instance with $m=4$ periods, where the demands, the setup costs, the variable production costs, and the holding costs are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(t\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(d_t\)</span></td>
-    <td><span class="arithmatex">\(30\)</span></td>
-    <td><span class="arithmatex">\(40\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(20\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(sc_t\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(80\)</span></td>
-    <td><span class="arithmatex">\(80\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(vc_t\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(hc_t\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrr}
+    \hline {t} & {1} & {2} & {3} & {4} \\
+    \hline {d_t} & {30} & {40} & {10} & {20} \\
+    {sc_t} & {50} & {80} & {80} & {50} \\
+    {vc_t} & {1} & {3} & {2} & {1} \\
+    {hc_t} & {1} & {1} & {1} & {2} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -636,43 +526,16 @@ title: "Exercises · Dynamic programming for lot sizing"
 
         This is the matrix ${c}$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\({c}[j][t]\)</span></th>
-        <th><span class="arithmatex">\(t=1\)</span></th>
-        <th><span class="arithmatex">\(t=2\)</span></th>
-        <th><span class="arithmatex">\(t=3\)</span></th>
-        <th><span class="arithmatex">\(t=4\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(j=1\)</span></td>
-        <td><span class="arithmatex">\(80\)</span></td>
-        <td><span class="arithmatex">\(160\)</span></td>
-        <td><span class="arithmatex">\(190\)</span></td>
-        <td><span class="arithmatex">\(270\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(j=2\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(200\)</span></td>
-        <td><span class="arithmatex">\(240\)</span></td>
-        <td><span class="arithmatex">\(340\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(j=3\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(100\)</span></td>
-        <td><span class="arithmatex">\(160\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(j=4\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(70\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrr}
+        \hline {{c}[j][t]} & {t=1} & {t=2} & {t=3} & {t=4} \\
+        \hline {j=1} & {80} & {160} & {190} & {270} \\
+        {j=2} & {-} & {200} & {240} & {340} \\
+        {j=3} & {-} & {-} & {100} & {160} \\
+        {j=4} & {-} & {-} & {-} & {70} \\
+        \hline
+        \end{array}
+        $$
 
         For each step of the DP algorithm, the table shows the values of $t$ and $j$, the cells ${v}[t]$ and ${r}[t]$, the current value of $\mathit{b}$, and the current value of $\mathit{a}$. The cell of $\mathit{b}$ is highlighted in <mark>red</mark> when updated; the cell of $\mathit{a}$ is highlighted in <mark>blue</mark> when updated; the cells of ${v}[t]$ and ${r}[t]$ are highlighted in <mark>blue</mark> when assigned.
 
@@ -861,62 +724,33 @@ title: "Exercises · Dynamic programming for lot sizing"
 
         This is the vector ${v}$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(t=0\)</span></th>
-        <th><span class="arithmatex">\(t=1\)</span></th>
-        <th><span class="arithmatex">\(t=2\)</span></th>
-        <th><span class="arithmatex">\(t=3\)</span></th>
-        <th><span class="arithmatex">\(t=4\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\({v}[t]\)</span></td>
-        <td>0</td>
-        <td>80</td>
-        <td>160</td>
-        <td>190</td>
-        <td>260</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|ccccc}
+        \hline  & {t=0} & {t=1} & {t=2} & {t=3} & {t=4} \\
+        \hline {{v}[t]} & 0 & 80 & 160 & 190 & 260 \\
+        \hline
+        \end{array}
+        $$
 
         This is the vector ${r}$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(t=1\)</span></th>
-        <th><span class="arithmatex">\(t=2\)</span></th>
-        <th><span class="arithmatex">\(t=3\)</span></th>
-        <th><span class="arithmatex">\(t=4\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\({r}[t]\)</span></td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>4</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|cccc}
+        \hline  & {t=1} & {t=2} & {t=3} & {t=4} \\
+        \hline {{r}[t]} & 1 & 1 & 1 & 4 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following vector ${r}$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(t=1\)</span></th>
-        <th><span class="arithmatex">\(t=2\)</span></th>
-        <th><span class="arithmatex">\(t=3\)</span></th>
-        <th><span class="arithmatex">\(t=4\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\({r}[t]\)</span></td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>4</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|cccc}
+        \hline  & {t=1} & {t=2} & {t=3} & {t=4} \\
+        \hline {{r}[t]} & 1 & 1 & 1 & 4 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution as follows:
 
@@ -992,48 +826,16 @@ title: "Exercises · Dynamic programming for lot sizing"
 
     Consider the following ULS instance with $m=5$ periods, where the demands, the setup costs, the variable production costs, and the holding costs are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(t\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(d_t\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(30\)</span></td>
-    <td><span class="arithmatex">\(40\)</span></td>
-    <td><span class="arithmatex">\(30\)</span></td>
-    <td><span class="arithmatex">\(40\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(sc_t\)</span></td>
-    <td><span class="arithmatex">\(70\)</span></td>
-    <td><span class="arithmatex">\(80\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(80\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(vc_t\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(hc_t\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrr}
+    \hline {t} & {1} & {2} & {3} & {4} & {5} \\
+    \hline {d_t} & {10} & {30} & {40} & {30} & {40} \\
+    {sc_t} & {70} & {80} & {50} & {80} & {50} \\
+    {vc_t} & {1} & {1} & {1} & {1} & {2} \\
+    {hc_t} & {1} & {1} & {2} & {1} & {2} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -1164,56 +966,17 @@ title: "Exercises · Dynamic programming for lot sizing"
 
         This is the matrix ${c}$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\({c}[j][t]\)</span></th>
-        <th><span class="arithmatex">\(t=1\)</span></th>
-        <th><span class="arithmatex">\(t=2\)</span></th>
-        <th><span class="arithmatex">\(t=3\)</span></th>
-        <th><span class="arithmatex">\(t=4\)</span></th>
-        <th><span class="arithmatex">\(t=5\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(j=1\)</span></td>
-        <td><span class="arithmatex">\(80\)</span></td>
-        <td><span class="arithmatex">\(140\)</span></td>
-        <td><span class="arithmatex">\(260\)</span></td>
-        <td><span class="arithmatex">\(410\)</span></td>
-        <td><span class="arithmatex">\(650\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(j=2\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(110\)</span></td>
-        <td><span class="arithmatex">\(190\)</span></td>
-        <td><span class="arithmatex">\(310\)</span></td>
-        <td><span class="arithmatex">\(510\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(j=3\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(90\)</span></td>
-        <td><span class="arithmatex">\(180\)</span></td>
-        <td><span class="arithmatex">\(340\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(j=4\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(110\)</span></td>
-        <td><span class="arithmatex">\(190\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(j=5\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(-\)</span></td>
-        <td><span class="arithmatex">\(130\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrr}
+        \hline {{c}[j][t]} & {t=1} & {t=2} & {t=3} & {t=4} & {t=5} \\
+        \hline {j=1} & {80} & {140} & {260} & {410} & {650} \\
+        {j=2} & {-} & {110} & {190} & {310} & {510} \\
+        {j=3} & {-} & {-} & {90} & {180} & {340} \\
+        {j=4} & {-} & {-} & {-} & {110} & {190} \\
+        {j=5} & {-} & {-} & {-} & {-} & {130} \\
+        \hline
+        \end{array}
+        $$
 
         For each step of the DP algorithm, the table shows the values of $t$ and $j$, the cells ${v}[t]$ and ${r}[t]$, the current value of $\mathit{b}$, and the current value of $\mathit{a}$. The cell of $\mathit{b}$ is highlighted in <mark>red</mark> when updated; the cell of $\mathit{a}$ is highlighted in <mark>blue</mark> when updated; the cells of ${v}[t]$ and ${r}[t]$ are highlighted in <mark>blue</mark> when assigned.
 
@@ -1465,68 +1228,33 @@ title: "Exercises · Dynamic programming for lot sizing"
 
         This is the vector ${v}$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(t=0\)</span></th>
-        <th><span class="arithmatex">\(t=1\)</span></th>
-        <th><span class="arithmatex">\(t=2\)</span></th>
-        <th><span class="arithmatex">\(t=3\)</span></th>
-        <th><span class="arithmatex">\(t=4\)</span></th>
-        <th><span class="arithmatex">\(t=5\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\({v}[t]\)</span></td>
-        <td>0</td>
-        <td>80</td>
-        <td>140</td>
-        <td>230</td>
-        <td>320</td>
-        <td>420</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|cccccc}
+        \hline  & {t=0} & {t=1} & {t=2} & {t=3} & {t=4} & {t=5} \\
+        \hline {{v}[t]} & 0 & 80 & 140 & 230 & 320 & 420 \\
+        \hline
+        \end{array}
+        $$
 
         This is the vector ${r}$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(t=1\)</span></th>
-        <th><span class="arithmatex">\(t=2\)</span></th>
-        <th><span class="arithmatex">\(t=3\)</span></th>
-        <th><span class="arithmatex">\(t=4\)</span></th>
-        <th><span class="arithmatex">\(t=5\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\({r}[t]\)</span></td>
-        <td>1</td>
-        <td>1</td>
-        <td>3</td>
-        <td>3</td>
-        <td>4</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|ccccc}
+        \hline  & {t=1} & {t=2} & {t=3} & {t=4} & {t=5} \\
+        \hline {{r}[t]} & 1 & 1 & 3 & 3 & 4 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following vector ${r}$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(t=1\)</span></th>
-        <th><span class="arithmatex">\(t=2\)</span></th>
-        <th><span class="arithmatex">\(t=3\)</span></th>
-        <th><span class="arithmatex">\(t=4\)</span></th>
-        <th><span class="arithmatex">\(t=5\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\({r}[t]\)</span></td>
-        <td>1</td>
-        <td>1</td>
-        <td>3</td>
-        <td>3</td>
-        <td>4</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|ccccc}
+        \hline  & {t=1} & {t=2} & {t=3} & {t=4} & {t=5} \\
+        \hline {{r}[t]} & 1 & 1 & 3 & 3 & 4 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution as follows:
 
@@ -1619,44 +1347,17 @@ title: "Exercises · Dynamic programming for lot sizing"
 
     Consider the following CLS instance with $m=3$ periods, where the demands, the setup costs, the variable production costs, the holding costs, and the capacities are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(t\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(d_t\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(sc_t\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(vc_t\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(hc_t\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(cap_t\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrr}
+    \hline {t} & {1} & {2} & {3} \\
+    \hline {d_t} & {1} & {2} & {3} \\
+    {sc_t} & {10} & {5} & {8} \\
+    {vc_t} & {1} & {1} & {2} \\
+    {hc_t} & {1} & {1} & {2} \\
+    {cap_t} & {2} & {4} & {4} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -1808,111 +1509,27 @@ title: "Exercises · Dynamic programming for lot sizing"
 
         These are the matrices ${v}$ and ${r}$ obtained during the execution of the DP algorithm (a dot marks a pair $(t,k)$ with $k>D_{t+1,m}$, which is not a state):
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\({v}[t][k]\)</span></th>
-        <th><span class="arithmatex">\(0\)</span></th>
-        <th><span class="arithmatex">\(1\)</span></th>
-        <th><span class="arithmatex">\(2\)</span></th>
-        <th><span class="arithmatex">\(3\)</span></th>
-        <th><span class="arithmatex">\(4\)</span></th>
-        <th><span class="arithmatex">\(5\)</span></th>
-        <th><span class="arithmatex">\(6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=1\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(13\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=2\)</span></td>
-        <td><span class="arithmatex">\(18\)</span></td>
-        <td><span class="arithmatex">\(20\)</span></td>
-        <td><span class="arithmatex">\(22\)</span></td>
-        <td><span class="arithmatex">\(25\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=3\)</span></td>
-        <td><span class="arithmatex">\(25\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrr}
+        \hline {{v}[t][k]} & {0} & {1} & {2} & {3} & {4} & {5} & {6} \\
+        \hline {t=0} & {0} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} \\
+        {t=1} & {11} & {13} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {\cdot} \\
+        {t=2} & {18} & {20} & {22} & {25} & {\cdot} & {\cdot} & {\cdot} \\
+        {t=3} & {25} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} \\
+        \hline
+        \end{array}
+        $$
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\({r}[t][k]\)</span></th>
-        <th><span class="arithmatex">\(0\)</span></th>
-        <th><span class="arithmatex">\(1\)</span></th>
-        <th><span class="arithmatex">\(2\)</span></th>
-        <th><span class="arithmatex">\(3\)</span></th>
-        <th><span class="arithmatex">\(4\)</span></th>
-        <th><span class="arithmatex">\(5\)</span></th>
-        <th><span class="arithmatex">\(6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=1\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=2\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=3\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrr}
+        \hline {{r}[t][k]} & {0} & {1} & {2} & {3} & {4} & {5} & {6} \\
+        \hline {t=0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} \\
+        {t=1} & {1} & {2} & {0} & {0} & {0} & {0} & {\cdot} \\
+        {t=2} & {2} & {3} & {4} & {4} & {\cdot} & {\cdot} & {\cdot} \\
+        {t=3} & {0} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} \\
+        \hline
+        \end{array}
+        $$
 
         The optimal value of the CLS instance is ${v}[3][0]=25$.
 
@@ -1996,50 +1613,17 @@ title: "Exercises · Dynamic programming for lot sizing"
 
     Consider the following CLS instance with $m=4$ periods, where the demands, the setup costs, the variable production costs, the holding costs, and the capacities are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(t\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(d_t\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(sc_t\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(vc_t\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(hc_t\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(cap_t\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrr}
+    \hline {t} & {1} & {2} & {3} & {4} \\
+    \hline {d_t} & {3} & {1} & {1} & {2} \\
+    {sc_t} & {5} & {6} & {10} & {10} \\
+    {vc_t} & {2} & {1} & {1} & {1} \\
+    {hc_t} & {1} & {1} & {2} & {2} \\
+    {cap_t} & {4} & {3} & {3} & {2} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -2212,143 +1796,29 @@ title: "Exercises · Dynamic programming for lot sizing"
 
         These are the matrices ${v}$ and ${r}$ obtained during the execution of the DP algorithm (a dot marks a pair $(t,k)$ with $k>D_{t+1,m}$, which is not a state):
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\({v}[t][k]\)</span></th>
-        <th><span class="arithmatex">\(0\)</span></th>
-        <th><span class="arithmatex">\(1\)</span></th>
-        <th><span class="arithmatex">\(2\)</span></th>
-        <th><span class="arithmatex">\(3\)</span></th>
-        <th><span class="arithmatex">\(4\)</span></th>
-        <th><span class="arithmatex">\(5\)</span></th>
-        <th><span class="arithmatex">\(6\)</span></th>
-        <th><span class="arithmatex">\(7\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=1\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(14\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=2\)</span></td>
-        <td><span class="arithmatex">\(14\)</span></td>
-        <td><span class="arithmatex">\(20\)</span></td>
-        <td><span class="arithmatex">\(22\)</span></td>
-        <td><span class="arithmatex">\(26\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=3\)</span></td>
-        <td><span class="arithmatex">\(20\)</span></td>
-        <td><span class="arithmatex">\(24\)</span></td>
-        <td><span class="arithmatex">\(30\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=4\)</span></td>
-        <td><span class="arithmatex">\(30\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrr}
+        \hline {{v}[t][k]} & {0} & {1} & {2} & {3} & {4} & {5} & {6} & {7} \\
+        \hline {t=0} & {0} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} \\
+        {t=1} & {11} & {14} & {+\infty} & {+\infty} & {+\infty} & {\cdot} & {\cdot} & {\cdot} \\
+        {t=2} & {14} & {20} & {22} & {26} & {\cdot} & {\cdot} & {\cdot} & {\cdot} \\
+        {t=3} & {20} & {24} & {30} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} \\
+        {t=4} & {30} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} \\
+        \hline
+        \end{array}
+        $$
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\({r}[t][k]\)</span></th>
-        <th><span class="arithmatex">\(0\)</span></th>
-        <th><span class="arithmatex">\(1\)</span></th>
-        <th><span class="arithmatex">\(2\)</span></th>
-        <th><span class="arithmatex">\(3\)</span></th>
-        <th><span class="arithmatex">\(4\)</span></th>
-        <th><span class="arithmatex">\(5\)</span></th>
-        <th><span class="arithmatex">\(6\)</span></th>
-        <th><span class="arithmatex">\(7\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=1\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=2\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=3\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t=4\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        <td><span class="arithmatex">\(\cdot\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrr}
+        \hline {{r}[t][k]} & {0} & {1} & {2} & {3} & {4} & {5} & {6} & {7} \\
+        \hline {t=0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} \\
+        {t=1} & {3} & {4} & {0} & {0} & {0} & {\cdot} & {\cdot} & {\cdot} \\
+        {t=2} & {0} & {2} & {3} & {3} & {\cdot} & {\cdot} & {\cdot} & {\cdot} \\
+        {t=3} & {0} & {0} & {0} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} \\
+        {t=4} & {0} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} & {\cdot} \\
+        \hline
+        \end{array}
+        $$
 
         The optimal value of the CLS instance is ${v}[4][0]=30$.
 

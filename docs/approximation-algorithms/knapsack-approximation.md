@@ -116,38 +116,14 @@ title: "Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 9$ and a set $\mathscr{I} = \{1,2,3,4,5,6,7\}$ of $7$ items ($n = 7$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    <th><span class="arithmatex">\(i=6\)</span></th>
-    <th><span class="arithmatex">\(i=7\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} & {i=7} \\
+    \hline {p_i} & {6} & {5} & {8} & {9} & {6} & {7} & {3} \\
+    {w_i} & {2} & {3} & {6} & {7} & {5} & {9} & {4} \\
+    \hline
+    \end{array}
+    $$
 
     We refer to this KP instance as <span style="color:#1971c2">Example 1</span>. The efficiencies of the items are:
 
@@ -256,29 +232,14 @@ title: "Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n = 4$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(19\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\
+    \hline {p_i} & {6} & {8} & {19} & {4} \\
+    {w_i} & {2} & {3} & {9} & {5} \\
+    \hline
+    \end{array}
+    $$
 
     We refer to this KP instance as <span style="color:#1971c2">Example 2</span>. The efficiencies of the items are:
 
@@ -339,32 +300,14 @@ title: "Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n = 5$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
+    \hline {p_i} & {4} & {6} & {5} & {12} & {3} \\
+    {w_i} & {1} & {2} & {2} & {6} & {2} \\
+    \hline
+    \end{array}
+    $$
 
     We refer to this KP instance as <span style="color:#1971c2">Example 3</span>. The efficiencies of the items are:
 
@@ -428,35 +371,14 @@ title: "Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 21$ and a set $\mathscr{I} = \{1,2,3,4,5,6\}$ of $6$ items ($n = 6$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    <th><span class="arithmatex">\(i=6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(20\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(21\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} \\
+    \hline {p_i} & {4} & {6} & {4} & {3} & {2} & {20} \\
+    {w_i} & {1} & {2} & {2} & {2} & {2} & {21} \\
+    \hline
+    \end{array}
+    $$
 
     We refer to this KP instance as <span style="color:#1971c2">Example 4</span>. The efficiencies of the items are:
 
@@ -824,32 +746,14 @@ title: "Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 12$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {p_i} & {2} & {3} & {3} & {3} & {3} \\[1ex]
+    {w_i} & {1} & {3} & {3} & {3} & {3} \\[1ex]
+    \hline
+    \end{array}
+    $$
 
     The items are sorted by non-increasing efficiency, since $\frac{2}{1}=2>\frac{3}{3}=1$. The optimal solution packs the four items of weight $3$, with $z(I)=12$.
 
@@ -908,29 +812,14 @@ title: "Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 8$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n = 4$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(19\)</span></td>
-    <td><span class="arithmatex">\(19\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\[1ex]
+    \hline {p_i} & {19} & {19} & {14} & {14} \\[1ex]
+    {w_i} & {2} & {4} & {3} & {3} \\[1ex]
+    \hline
+    \end{array}
+    $$
 
     The items are sorted by non-increasing efficiency, since $\frac{19}{2}=9.5 > \frac{19}{4}=4.75 > \frac{14}{3}\approx 4.67$. We run $FP^{\varepsilon}$ with $\varepsilon=\frac{1}{2}$.
 
@@ -954,28 +843,13 @@ title: "Approximation algorithms for the knapsack problem"
 
     <strong>Dynamic programming by profits.</strong> On the scaled instance, the minimum weights $u(4,q)$ are
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(q\)</span></th>
-    <th><span class="arithmatex">\(0\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    <th><span class="arithmatex">\(8\)</span></th>
-    <th><span class="arithmatex">\(10\)</span></th>
-    <th><span class="arithmatex">\(12\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(u(4,q)\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccccc}
+    \hline {q} & {0} & {2} & {4} & {6} & {8} & {10} & {12} \\[1ex]
+    \hline {u(4,q)} & {0} & {3} & {2} & {5} & {6} & {9} & {12} \\[1ex]
+    \hline
+    \end{array}
+    $$
 
     The largest $q$ with $u(4,q)\le c=8$ is $q=8$, attained by the items $\{1,2\}$ of total weight $6$.
 

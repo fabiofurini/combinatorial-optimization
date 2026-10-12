@@ -766,151 +766,22 @@ title: "Local search"
     </tr>
     </table></div>
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    <th><span class="arithmatex">\(7\)</span></th>
-    <th><span class="arithmatex">\(8\)</span></th>
-    <th><span class="arithmatex">\(9\)</span></th>
-    <th><span class="arithmatex">\(10\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|cccccccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} & {9} & {10} \\
+    \hline {1} & --- & {7} & {10} & {12} & {13} & {11} & {7} & {5} & {9} & {4} \\
+    {2} & {7} & --- & {4} & {7} & {10} & {11} & {7} & {4} & {5} & {3} \\
+    {3} & {10} & {4} & --- & {4} & {8} & {11} & {7} & {6} & {4} & {6} \\
+    {4} & {12} & {7} & {4} & --- & {4} & {8} & {6} & {7} & {3} & {9} \\
+    {5} & {13} & {10} & {8} & {4} & --- & {5} & {6} & {8} & {5} & {11} \\
+    {6} & {11} & {11} & {11} & {8} & {5} & --- & {4} & {8} & {7} & {11} \\
+    {7} & {7} & {7} & {7} & {6} & {6} & {4} & --- & {3} & {4} & {6} \\
+    {8} & {5} & {4} & {6} & {7} & {8} & {8} & {3} & --- & {4} & {3} \\
+    {9} & {9} & {5} & {4} & {3} & {5} & {7} & {4} & {4} & --- & {6} \\
+    {10} & {4} & {3} & {6} & {9} & {11} & {11} & {6} & {3} & {6} & --- \\
+    \hline
+    \end{array}
+    $$
 
     Among its $181\,440$ distinct tours, the unique optimal one is $(1,10,2,3,9,4,5,6,7,8)$, of length $z(I)=39$. The tour of $NN$ from city $1$ is $(1,10,2,3,4,9,7,8,5,6)$, of length $49$, and the 2-opt neighbourhood has $\frac{10\cdot 7}{2}=35$ moves.
 

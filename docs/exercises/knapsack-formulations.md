@@ -16,32 +16,14 @@ title: "Exercises · Formulations of the knapsack problem"
 
     We consider a knapsack capacity $c=11$ and a set $\mathscr N=\{1,2,3,4,5\}$ of $5$ items ($n=5$) with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_j\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrrrrrrr}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\[0.7ex]
+    \hline {p_j} & {8} & {6} & {14} & {6} & {2} \\[0.7ex]
+    {w_j} & {3} & {3} & {9} & {5} & {2} \\[0.7ex]
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -133,29 +115,14 @@ title: "Exercises · Formulations of the knapsack problem"
 
     We consider a knapsack capacity $c=8$ and a set $\mathscr N=\{1,2,3,4\}$ of $4$ items ($n=4$) with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_j\)</span></td>
-    <td><span class="arithmatex">\(40\)</span></td>
-    <td><span class="arithmatex">\(42\)</span></td>
-    <td><span class="arithmatex">\(25\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrrrrrrrrr}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\[0.7ex]
+    \hline {p_j} & {40} & {42} & {25} & {12} \\[0.7ex]
+    {w_j} & {4} & {7} & {5} & {3} \\[0.7ex]
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -247,29 +214,14 @@ title: "Exercises · Formulations of the knapsack problem"
 
     We consider a knapsack capacity $c=15$ and a set $\mathscr N=\{1,2,3,4\}$ of $4$ items ($n=4$) with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_j\)</span></td>
-    <td><span class="arithmatex">\(24\)</span></td>
-    <td><span class="arithmatex">\(17\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrrrrrrrrr}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\[0.7ex]
+    \hline {p_j} & {24} & {17} & {12} & {6} \\[0.7ex]
+    {w_j} & {10} & {8} & {6} & {5} \\[0.7ex]
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -361,35 +313,14 @@ title: "Exercises · Formulations of the knapsack problem"
 
     We consider a knapsack capacity $c=9$ and a set $\mathscr{N}=\{1,2,3,4,5,6\}$ of $6$ items ($n=6$) with the following profits, weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    <th><span class="arithmatex">\(j=6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_j\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrrrrrrrrrr}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\[0.7ex]
+    \hline {p_j} & {6} & {5} & {8} & {9} & {6} & {7} \\[0.7ex]
+    {w_j} & {2} & {3} & {6} & {7} & {5} & {9} \\[0.7ex]
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -481,35 +412,14 @@ title: "Exercises · Formulations of the knapsack problem"
 
     We consider a knapsack capacity $c=21$ and a set $\mathscr{N}=\{1,2,3,4,5,6\}$ of $6$ items ($n=6$) with the following profits, weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    <th><span class="arithmatex">\(j=6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_j\)</span></td>
-    <td><span class="arithmatex">\(24\)</span></td>
-    <td><span class="arithmatex">\(25\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrrrrrrrrrr}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\[0.7ex]
+    \hline {p_j} & {24} & {25} & {13} & {10} & {9} & {2} \\[0.7ex]
+    {w_j} & {2} & {6} & {8} & {7} & {10} & {3} \\[0.7ex]
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 

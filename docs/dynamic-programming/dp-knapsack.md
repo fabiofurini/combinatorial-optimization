@@ -64,26 +64,14 @@ title: "Dynamic programming for knapsack problems"
 
     We consider a knapsack of capacity $c = 5$ and a set $\{1,2,3\}$ of $3$ items ($n = 3$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j = 1\)</span></th>
-    <th><span class="arithmatex">\(j = 2\)</span></th>
-    <th><span class="arithmatex">\(j = 3\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_j\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrr}
+    \hline  & {j = 1} & {j = 2} & {j = 3} \\
+    \hline {p_j} & {6} & {7} & {8} \\
+    {w_j} & {2} & {3} & {3} \\
+    \hline
+    \end{array}
+    $$
 
     We refer to this KP instance as <span style="color:#1971c2">Example 1</span>.
 
@@ -136,26 +124,14 @@ title: "Dynamic programming for knapsack problems"
 
     We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j = 1\)</span></th>
-    <th><span class="arithmatex">\(j = 2\)</span></th>
-    <th><span class="arithmatex">\(j = 3\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_j\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrr}
+    \hline  & {j = 1} & {j = 2} & {j = 3} \\
+    \hline {p_j} & {6} & {7} & {8} \\
+    {w_j} & {2} & {3} & {3} \\
+    \hline
+    \end{array}
+    $$
 
     There are $2^3 = 8$ possible subsets of items, corresponding to the different ways of selecting or not selecting the items.
 
@@ -292,26 +268,14 @@ title: "Dynamic programming for knapsack problems"
 
             We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j = 1\)</span></th>
-            <th><span class="arithmatex">\(j = 2\)</span></th>
-            <th><span class="arithmatex">\(j = 3\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td><span class="arithmatex">\(6\)</span></td>
-            <td><span class="arithmatex">\(7\)</span></td>
-            <td><span class="arithmatex">\(8\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrr}
+            \hline  & {j = 1} & {j = 2} & {j = 3} \\
+            \hline {p_j} & {6} & {7} & {8} \\
+            {w_j} & {2} & {3} & {3} \\
+            \hline
+            \end{array}
+            $$
 
             The values of the function $v$ are computed as follows:
 
@@ -379,26 +343,14 @@ title: "Dynamic programming for knapsack problems"
 
             We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j = 1\)</span></th>
-            <th><span class="arithmatex">\(j = 2\)</span></th>
-            <th><span class="arithmatex">\(j = 3\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td><span class="arithmatex">\(6\)</span></td>
-            <td><span class="arithmatex">\(7\)</span></td>
-            <td><span class="arithmatex">\(8\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrr}
+            \hline  & {j = 1} & {j = 2} & {j = 3} \\
+            \hline {p_j} & {6} & {7} & {8} \\
+            {w_j} & {2} & {3} & {3} \\
+            \hline
+            \end{array}
+            $$
 
             For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cell ${v}[j][k]$, and the operation performed.
 
@@ -557,53 +509,16 @@ title: "Dynamic programming for knapsack problems"
 
             After the execution of the DP algorithm, this is the matrix ${v}$:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <td><span class="arithmatex">\({v}[j][k]\)</span></td>
-            <td><span class="arithmatex">\(k=0\)</span></td>
-            <td><span class="arithmatex">\(k=1\)</span></td>
-            <td><span class="arithmatex">\(k=2\)</span></td>
-            <td><span class="arithmatex">\(k=3\)</span></td>
-            <td><span class="arithmatex">\(k=4\)</span></td>
-            <td><span class="arithmatex">\(k=5\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=0\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>6</td>
-            <td>6</td>
-            <td>6</td>
-            <td>6</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>6</td>
-            <td>7</td>
-            <td>7</td>
-            <td>13</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>6</td>
-            <td>8</td>
-            <td>8</td>
-            <td>14</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrr}
+            \hline {{v}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} \\
+            \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
+            {j=1} & 0 & 0 & 6 & 6 & 6 & 6 \\
+            {j=2} & 0 & 0 & 6 & 7 & 7 & 13 \\
+            {j=3} & 0 & 0 & 6 & 8 & 8 & 14 \\
+            \hline
+            \end{array}
+            $$
 
     - After the execution of the DP algorithm, the matrix ${v}$ contains the optimal value ${v}[j][k]=v(j,k)$ for every item $j \in \{0,1,\dots,n\}$ and every capacity value $k \in \{0,1,\dots,c\}$.
 
@@ -641,26 +556,14 @@ title: "Dynamic programming for knapsack problems"
 
             We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j = 1\)</span></th>
-            <th><span class="arithmatex">\(j = 2\)</span></th>
-            <th><span class="arithmatex">\(j = 3\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td><span class="arithmatex">\(6\)</span></td>
-            <td><span class="arithmatex">\(7\)</span></td>
-            <td><span class="arithmatex">\(8\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrr}
+            \hline  & {j = 1} & {j = 2} & {j = 3} \\
+            \hline {p_j} & {6} & {7} & {8} \\
+            {w_j} & {2} & {3} & {3} \\
+            \hline
+            \end{array}
+            $$
 
             The first loop initializes ${v}[k]=0$ for all $k \in \{0,1,\dots,5\}$. For each step of the two nested loops, the table shows the values of $j$ and $k$, the cell ${v}[k]$ after the step, and the operation performed.
 
@@ -809,26 +712,14 @@ title: "Dynamic programming for knapsack problems"
 
             We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j = 1\)</span></th>
-            <th><span class="arithmatex">\(j = 2\)</span></th>
-            <th><span class="arithmatex">\(j = 3\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td><span class="arithmatex">\(6\)</span></td>
-            <td><span class="arithmatex">\(7\)</span></td>
-            <td><span class="arithmatex">\(8\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrr}
+            \hline  & {j = 1} & {j = 2} & {j = 3} \\
+            \hline {p_j} & {6} & {7} & {8} \\
+            {w_j} & {2} & {3} & {3} \\
+            \hline
+            \end{array}
+            $$
 
             For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cell ${s}[j][k]$, and the operation performed.
 
@@ -987,53 +878,16 @@ title: "Dynamic programming for knapsack problems"
 
             This is the matrix ${s}$ after the execution of the DP algorithm:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <td><span class="arithmatex">\({s}[j][k]\)</span></td>
-            <td><span class="arithmatex">\(k=0\)</span></td>
-            <td><span class="arithmatex">\(k=1\)</span></td>
-            <td><span class="arithmatex">\(k=2\)</span></td>
-            <td><span class="arithmatex">\(k=3\)</span></td>
-            <td><span class="arithmatex">\(k=4\)</span></td>
-            <td><span class="arithmatex">\(k=5\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=0\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrr}
+            \hline {{s}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} \\
+            \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
+            {j=1} & 0 & 0 & 1 & 1 & 1 & 1 \\
+            {j=2} & 0 & 0 & 0 & 1 & 1 & 1 \\
+            {j=3} & 0 & 0 & 0 & 1 & 1 & 1 \\
+            \hline
+            \end{array}
+            $$
 
     - Once the matrix ${s}$ has been computed, an optimal solution can be reconstructed by scanning the items from $j=n$ down to $j=1$, starting from capacity $k=c$ and $x_j=0$ for all $j \in \{1,2,\dots,n\}$:
 
@@ -1056,53 +910,16 @@ title: "Dynamic programming for knapsack problems"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following matrix ${s}$:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <td><span class="arithmatex">\({s}[j][k]\)</span></td>
-            <td><span class="arithmatex">\(k=0\)</span></td>
-            <td><span class="arithmatex">\(k=1\)</span></td>
-            <td><span class="arithmatex">\(k=2\)</span></td>
-            <td><span class="arithmatex">\(k=3\)</span></td>
-            <td><span class="arithmatex">\(k=4\)</span></td>
-            <td><span class="arithmatex">\(k=5\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=0\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrr}
+            \hline {{s}[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} \\
+            \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
+            {j=1} & 0 & 0 & 1 & 1 & 1 & 1 \\
+            {j=2} & 0 & 0 & 0 & 1 & 1 & 1 \\
+            {j=3} & 0 & 0 & 0 & 1 & 1 & 1 \\
+            \hline
+            \end{array}
+            $$
 
             We can reconstruct an optimal solution by starting from $j=3$ and $k=5$ as follows:
 
@@ -1330,26 +1147,14 @@ title: "Dynamic programming for knapsack problems"
 
             We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j = 1\)</span></th>
-            <th><span class="arithmatex">\(j = 2\)</span></th>
-            <th><span class="arithmatex">\(j = 3\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td><span class="arithmatex">\(6\)</span></td>
-            <td><span class="arithmatex">\(7\)</span></td>
-            <td><span class="arithmatex">\(8\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrr}
+            \hline  & {j = 1} & {j = 2} & {j = 3} \\
+            \hline {p_j} & {6} & {7} & {8} \\
+            {w_j} & {2} & {3} & {3} \\
+            \hline
+            \end{array}
+            $$
 
             Each shaded band collects the states of one list. An arc entering the band of $L_j$ corresponds to the decision taken on item $j$: a horizontal arc means that item $j$ is not selected, while a slanted arc means that item $j$ is selected. The thick arcs give the states of an optimal solution.
 
@@ -1403,56 +1208,27 @@ title: "Dynamic programming for knapsack problems"
 
             We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j = 1\)</span></th>
-            <th><span class="arithmatex">\(j = 2\)</span></th>
-            <th><span class="arithmatex">\(j = 3\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td><span class="arithmatex">\(6\)</span></td>
-            <td><span class="arithmatex">\(7\)</span></td>
-            <td><span class="arithmatex">\(8\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrr}
+            \hline  & {j = 1} & {j = 2} & {j = 3} \\
+            \hline {p_j} & {6} & {7} & {8} \\
+            {w_j} & {2} & {3} & {3} \\
+            \hline
+            \end{array}
+            $$
 
             For each item $j$, the table shows the list $M_j$ of the states obtained by selecting item $j$ and the resulting list $L_j$.
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th><span class="arithmatex">\(j\)</span></th>
-            <th><span class="arithmatex">\(M_j\)</span></th>
-            <th><span class="arithmatex">\(L_j\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(\{(0,0)\}\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(\{(2,6)\}\)</span></td>
-            <td><span class="arithmatex">\(\{(0,0),(2,6)\}\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(\{(3,7),(5,13)\}\)</span></td>
-            <td><span class="arithmatex">\(\{(0,0),(2,6),(3,7),(5,13)\}\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(\{(3,8),(5,14)\}\)</span></td>
-            <td><span class="arithmatex">\(\{(0,0),(2,6),(3,8),(5,14)\}\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{c|l|l}
+            \hline {j} & {M_j} & {L_j} \\
+            \hline {0} & {-} & {\{(0,0)\}} \\
+            {1} & {\{(2,6)\}} & {\{(0,0),(2,6)\}} \\
+            {2} & {\{(3,7),(5,13)\}} & {\{(0,0),(2,6),(3,7),(5,13)\}} \\
+            {3} & {\{(3,8),(5,14)\}} & {\{(0,0),(2,6),(3,8),(5,14)\}} \\
+            \hline
+            \end{array}
+            $$
 
             For each state scanned by <code>Merge</code>, the table shows the value of $j$, the state, the list it is taken from, and the operation performed.
 
@@ -1561,85 +1337,22 @@ title: "Dynamic programming for knapsack problems"
 
             We consider the KP instance of <span style="color:#1971c2">Example 1</span>. For each item $j$ and each position $h$, the table shows the state $L_j[h]$ and the stored values ${\sigma}_j[h]$ and ${\rho}_j[h]$.
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th><span class="arithmatex">\(j\)</span></th>
-            <th><span class="arithmatex">\(h\)</span></th>
-            <th><span class="arithmatex">\(L_j[h]\)</span></th>
-            <th><span class="arithmatex">\(\sigma_j[h]\)</span></th>
-            <th><span class="arithmatex">\(\rho_j[h]\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\((0,0)\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\((2,6)\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\((0,0)\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\((2,6)\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\((3,7)\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\((5,13)\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\((0,0)\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\((2,6)\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\((3,8)\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\((5,14)\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{c|c|c|c|c}
+            \hline {j} & {h} & {L_j[h]} & {\sigma_j[h]} & {\rho_j[h]} \\
+            \hline {1} & {1} & {(0,0)} & {0} & {1} \\
+            {1} & {2} & {(2,6)} & {1} & {1} \\
+            \hline {2} & {1} & {(0,0)} & {0} & {1} \\
+            {2} & {2} & {(2,6)} & {0} & {2} \\
+            {2} & {3} & {(3,7)} & {1} & {1} \\
+            {2} & {4} & {(5,13)} & {1} & {2} \\
+            \hline {3} & {1} & {(0,0)} & {0} & {1} \\
+            {3} & {2} & {(2,6)} & {0} & {2} \\
+            {3} & {3} & {(3,8)} & {1} & {1} \\
+            {3} & {4} & {(5,14)} & {1} & {2} \\
+            \hline
+            \end{array}
+            $$
 
             For instance, the state $L_3[4]=(5,14)$ has ${\sigma}_3[4]=1$ and ${\rho}_3[4]=2$: it is obtained by selecting item $3$ from the state $L_2[2]=(2,6)$, since $2+w_3=2+3=5$ and $6+p_3=6+8=14$.
 
@@ -1786,26 +1499,14 @@ title: "Dynamic programming for knapsack problems"
 
         We consider a knapsack of capacity $c = 5$ and a set $\{1,2,3\}$ of $3$ items ($n = 3$), with the following profits and weights:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(j = 1\)</span></th>
-        <th><span class="arithmatex">\(j = 2\)</span></th>
-        <th><span class="arithmatex">\(j = 3\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(p_j\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(w_j\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrr}
+        \hline  & {j = 1} & {j = 2} & {j = 3} \\
+        \hline {p_j} & {3} & {3} & {4} \\
+        {w_j} & {2} & {3} & {3} \\
+        \hline
+        \end{array}
+        $$
 
         We refer to this KP instance as <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span>.
 
@@ -1880,26 +1581,14 @@ title: "Dynamic programming for knapsack problems"
 
             We consider the KP instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j = 1\)</span></th>
-            <th><span class="arithmatex">\(j = 2\)</span></th>
-            <th><span class="arithmatex">\(j = 3\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrr}
+            \hline  & {j = 1} & {j = 2} & {j = 3} \\
+            \hline {p_j} & {3} & {3} & {4} \\
+            {w_j} & {2} & {3} & {3} \\
+            \hline
+            \end{array}
+            $$
 
             The total profit of all the items is $P=3+3+4=10$. The values of the function $u$ are computed as follows:
 
@@ -1983,26 +1672,14 @@ title: "Dynamic programming for knapsack problems"
 
             We consider the KP instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j = 1\)</span></th>
-            <th><span class="arithmatex">\(j = 2\)</span></th>
-            <th><span class="arithmatex">\(j = 3\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrr}
+            \hline  & {j = 1} & {j = 2} & {j = 3} \\
+            \hline {p_j} & {3} & {3} & {4} \\
+            {w_j} & {2} & {3} & {3} \\
+            \hline
+            \end{array}
+            $$
 
             The total profit of all the items is $P=3+3+4=10$. For each step of the DP algorithm, the table shows the values of $j$ and $q$, the cell ${u}[j][q]$, and the operation performed.
 
@@ -2281,78 +1958,16 @@ title: "Dynamic programming for knapsack problems"
 
             After the execution of the two nested loops of the DP algorithm, this is the matrix ${u}$:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <td><span class="arithmatex">\({u}[j][q]\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(5\)</span></td>
-            <td><span class="arithmatex">\(6\)</span></td>
-            <td><span class="arithmatex">\(7\)</span></td>
-            <td><span class="arithmatex">\(8\)</span></td>
-            <td><span class="arithmatex">\(9\)</span></td>
-            <td><span class="arithmatex">\(10\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=0\)</span></td>
-            <td>0</td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td>0</td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td>2</td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td>0</td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td>2</td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td>5</td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td>0</td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td>2</td>
-            <td>3</td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td>5</td>
-            <td>5</td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td><span class="arithmatex">\(+\infty\)</span></td>
-            <td>8</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrrrrrr}
+            \hline {{u}[j][q]} & {0} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} & {9} & {10} \\
+            \hline {j=0} & 0 & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} \\
+            {j=1} & 0 & {+\infty} & {+\infty} & 2 & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} & {+\infty} \\
+            {j=2} & 0 & {+\infty} & {+\infty} & 2 & {+\infty} & {+\infty} & 5 & {+\infty} & {+\infty} & {+\infty} & {+\infty} \\
+            {j=3} & 0 & {+\infty} & {+\infty} & 2 & 3 & {+\infty} & 5 & 5 & {+\infty} & {+\infty} & 8 \\
+            \hline
+            \end{array}
+            $$
 
             The last loop of the DP algorithm scans the last row of the matrix ${u}$ and keeps the largest target profit whose minimum total weight does not exceed the knapsack capacity $c=5$:
 
@@ -2457,26 +2072,14 @@ title: "Dynamic programming for knapsack problems"
 
             We consider the KP instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j = 1\)</span></th>
-            <th><span class="arithmatex">\(j = 2\)</span></th>
-            <th><span class="arithmatex">\(j = 3\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrr}
+            \hline  & {j = 1} & {j = 2} & {j = 3} \\
+            \hline {p_j} & {3} & {3} & {4} \\
+            {w_j} & {2} & {3} & {3} \\
+            \hline
+            \end{array}
+            $$
 
             The total profit of all the items is $P=3+3+4=10$ and the second loop initializes ${u}[0]=0$ and ${u}[q]=+\infty$ for all $q \in \{1,2,\dots,10\}$. For each step of the two nested loops, the table shows the values of $j$ and $q$, the cell ${u}[q]$ after the step, and the operation performed.
 
@@ -2728,26 +2331,14 @@ title: "Dynamic programming for knapsack problems"
 
             We consider the KP instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j = 1\)</span></th>
-            <th><span class="arithmatex">\(j = 2\)</span></th>
-            <th><span class="arithmatex">\(j = 3\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrr}
+            \hline  & {j = 1} & {j = 2} & {j = 3} \\
+            \hline {p_j} & {3} & {3} & {4} \\
+            {w_j} & {2} & {3} & {3} \\
+            \hline
+            \end{array}
+            $$
 
             For each step of the DP algorithm, the table shows the values of $j$ and $q$, the cell ${s}[j][q]$, and the operation performed.
 
@@ -3026,78 +2617,16 @@ title: "Dynamic programming for knapsack problems"
 
             This is the matrix ${s}$ after the execution of the DP algorithm:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <td><span class="arithmatex">\({s}[j][q]\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(5\)</span></td>
-            <td><span class="arithmatex">\(6\)</span></td>
-            <td><span class="arithmatex">\(7\)</span></td>
-            <td><span class="arithmatex">\(8\)</span></td>
-            <td><span class="arithmatex">\(9\)</span></td>
-            <td><span class="arithmatex">\(10\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=0\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrrrrrr}
+            \hline {{s}[j][q]} & {0} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} & {9} & {10} \\
+            \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            {j=1} & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            {j=2} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+            {j=3} & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 \\
+            \hline
+            \end{array}
+            $$
 
     - Once the matrix ${s}$ has been computed, an optimal solution can be reconstructed by scanning the items from $j=n$ down to $j=1$, starting from the target profit $q=z$ returned by the DP algorithm and $x_j=0$ for all $j \in \{1,2,\dots,n\}$:
 
@@ -3120,78 +2649,16 @@ title: "Dynamic programming for knapsack problems"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span>, the optimal value is $z=7$ and we have the following matrix ${s}$:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <td><span class="arithmatex">\({s}[j][q]\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\(5\)</span></td>
-            <td><span class="arithmatex">\(6\)</span></td>
-            <td><span class="arithmatex">\(7\)</span></td>
-            <td><span class="arithmatex">\(8\)</span></td>
-            <td><span class="arithmatex">\(9\)</span></td>
-            <td><span class="arithmatex">\(10\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=0\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrrrrrr}
+            \hline {{s}[j][q]} & {0} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} & {9} & {10} \\
+            \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            {j=1} & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            {j=2} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+            {j=3} & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 \\
+            \hline
+            \end{array}
+            $$
 
             We can reconstruct an optimal solution by starting from $j=3$ and $q=z=7$ as follows:
 
@@ -3427,26 +2894,14 @@ title: "Dynamic programming for knapsack problems"
 
             We consider the KP instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j = 1\)</span></th>
-            <th><span class="arithmatex">\(j = 2\)</span></th>
-            <th><span class="arithmatex">\(j = 3\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrr}
+            \hline  & {j = 1} & {j = 2} & {j = 3} \\
+            \hline {p_j} & {3} & {3} & {4} \\
+            {w_j} & {2} & {3} & {3} \\
+            \hline
+            \end{array}
+            $$
 
             Each shaded band collects the states of one list. An arc entering the band of $L_j$ corresponds to the decision taken on item $j$: a horizontal arc means that item $j$ is not selected, while a slanted arc means that item $j$ is selected. The thick arcs give the states of an optimal solution.
 
@@ -3500,56 +2955,27 @@ title: "Dynamic programming for knapsack problems"
 
             We consider the KP instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j = 1\)</span></th>
-            <th><span class="arithmatex">\(j = 2\)</span></th>
-            <th><span class="arithmatex">\(j = 3\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrr}
+            \hline  & {j = 1} & {j = 2} & {j = 3} \\
+            \hline {p_j} & {3} & {3} & {4} \\
+            {w_j} & {2} & {3} & {3} \\
+            \hline
+            \end{array}
+            $$
 
             For each item $j$, the table shows the list $M_j$ of the states obtained by selecting item $j$ and the resulting list $L_j$.
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th><span class="arithmatex">\(j\)</span></th>
-            <th><span class="arithmatex">\(M_j\)</span></th>
-            <th><span class="arithmatex">\(L_j\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(-\)</span></td>
-            <td><span class="arithmatex">\(\{(0,0)\}\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(\{(2,3)\}\)</span></td>
-            <td><span class="arithmatex">\(\{(0,0),(2,3)\}\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(\{(3,3),(5,6)\}\)</span></td>
-            <td><span class="arithmatex">\(\{(0,0),(2,3),(5,6)\}\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(\{(3,4),(5,7),(8,10)\}\)</span></td>
-            <td><span class="arithmatex">\(\{(0,0),(2,3),(3,4),(5,7),(8,10)\}\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{c|l|l}
+            \hline {j} & {M_j} & {L_j} \\
+            \hline {0} & {-} & {\{(0,0)\}} \\
+            {1} & {\{(2,3)\}} & {\{(0,0),(2,3)\}} \\
+            {2} & {\{(3,3),(5,6)\}} & {\{(0,0),(2,3),(5,6)\}} \\
+            {3} & {\{(3,4),(5,7),(8,10)\}} & {\{(0,0),(2,3),(3,4),(5,7),(8,10)\}} \\
+            \hline
+            \end{array}
+            $$
 
             For each state scanned by <code>Merge</code>, the table shows the value of $j$, the state, the list it is taken from, and the operation performed.
 
@@ -3658,85 +3084,22 @@ title: "Dynamic programming for knapsack problems"
 
             We consider the KP instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span>. For each item $j$ and each position $h$, the table shows the state $L_j[h]$ and the stored values ${\sigma}_j[h]$ and ${\rho}_j[h]$.
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th><span class="arithmatex">\(j\)</span></th>
-            <th><span class="arithmatex">\(h\)</span></th>
-            <th><span class="arithmatex">\(L_j[h]\)</span></th>
-            <th><span class="arithmatex">\(\sigma_j[h]\)</span></th>
-            <th><span class="arithmatex">\(\rho_j[h]\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\((0,0)\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\((2,3)\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\((0,0)\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\((2,3)\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\((5,6)\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\((0,0)\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            <td><span class="arithmatex">\((2,3)\)</span></td>
-            <td><span class="arithmatex">\(0\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\((3,4)\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(4\)</span></td>
-            <td><span class="arithmatex">\((5,7)\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(2\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(3\)</span></td>
-            <td><span class="arithmatex">\(5\)</span></td>
-            <td><span class="arithmatex">\((8,10)\)</span></td>
-            <td><span class="arithmatex">\(1\)</span></td>
-            <td><span class="arithmatex">\(3\)</span></td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{c|c|c|c|c}
+            \hline {j} & {h} & {L_j[h]} & {\sigma_j[h]} & {\rho_j[h]} \\
+            \hline {1} & {1} & {(0,0)} & {0} & {1} \\
+            {1} & {2} & {(2,3)} & {1} & {1} \\
+            \hline {2} & {1} & {(0,0)} & {0} & {1} \\
+            {2} & {2} & {(2,3)} & {0} & {2} \\
+            {2} & {3} & {(5,6)} & {1} & {2} \\
+            \hline {3} & {1} & {(0,0)} & {0} & {1} \\
+            {3} & {2} & {(2,3)} & {0} & {2} \\
+            {3} & {3} & {(3,4)} & {1} & {1} \\
+            {3} & {4} & {(5,7)} & {1} & {2} \\
+            {3} & {5} & {(8,10)} & {1} & {3} \\
+            \hline
+            \end{array}
+            $$
 
             For instance, the state $L_3[4]=(5,7)$ has ${\sigma}_3[4]=1$ and ${\rho}_3[4]=2$: it is obtained by selecting item $3$ from the state $L_2[2]=(2,3)$, since $2+w_3=2+3=5$ and $3+p_3=3+4=7$.
 
@@ -3950,29 +3313,14 @@ title: "Dynamic programming for knapsack problems"
 
     We consider a knapsack of capacity $c=7$ and $4$ item types, with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_j\)</span></td>
-    <td>4</td>
-    <td>5</td>
-    <td>10</td>
-    <td>11</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td>2</td>
-    <td>3</td>
-    <td>5</td>
-    <td>6</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrr}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\
+    \hline {p_j} & 4 & 5 & 10 & 11 \\
+    {w_j} & 2 & 3 & 5 & 6 \\
+    \hline
+    \end{array}
+    $$
 
     We refer to this UKP instance as <span style="color:#1971c2">Example 1</span>.
 
@@ -4070,29 +3418,14 @@ $$
 
             We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j=1\)</span></th>
-            <th><span class="arithmatex">\(j=2\)</span></th>
-            <th><span class="arithmatex">\(j=3\)</span></th>
-            <th><span class="arithmatex">\(j=4\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td>4</td>
-            <td>5</td>
-            <td>10</td>
-            <td>11</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td>2</td>
-            <td>3</td>
-            <td>5</td>
-            <td>6</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrr}
+            \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\
+            \hline {p_j} & 4 & 5 & 10 & 11 \\
+            {w_j} & 2 & 3 & 5 & 6 \\
+            \hline
+            \end{array}
+            $$
 
             The value of the function $v$ can be computed by starting from the base case $v(0)=0$ and then computing the values of $v(1),v(2),\dots,v(7)$ in order, as follows:
 
@@ -4166,29 +3499,14 @@ $$
 
             We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j=1\)</span></th>
-            <th><span class="arithmatex">\(j=2\)</span></th>
-            <th><span class="arithmatex">\(j=3\)</span></th>
-            <th><span class="arithmatex">\(j=4\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td>4</td>
-            <td>5</td>
-            <td>10</td>
-            <td>11</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td>2</td>
-            <td>3</td>
-            <td>5</td>
-            <td>6</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrr}
+            \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\
+            \hline {p_j} & 4 & 5 & 10 & 11 \\
+            {w_j} & 2 & 3 & 5 & 6 \\
+            \hline
+            \end{array}
+            $$
 
             For each step of the DP algorithm, the table shows the values of $k$ and $j$, the current value of $m$, and the cell $v[k]$. The cell of $m$ is highlighted in <mark>red</mark> when updated; the cell of $v[k]$ is highlighted in <mark>blue</mark> when assigned.
 
@@ -4515,30 +3833,13 @@ $$
 
             This is the vector $v$ after the execution of the DP algorithm:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(k=0\)</span></th>
-            <th><span class="arithmatex">\(k=1\)</span></th>
-            <th><span class="arithmatex">\(k=2\)</span></th>
-            <th><span class="arithmatex">\(k=3\)</span></th>
-            <th><span class="arithmatex">\(k=4\)</span></th>
-            <th><span class="arithmatex">\(k=5\)</span></th>
-            <th><span class="arithmatex">\(k=6\)</span></th>
-            <th><span class="arithmatex">\(k=7\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(v[k]\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>4</td>
-            <td>5</td>
-            <td>8</td>
-            <td>10</td>
-            <td>12</td>
-            <td>14</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{c|cccccccc}
+            \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+            \hline {v[k]} & 0 & 0 & 4 & 5 & 8 & 10 & 12 & 14 \\
+            \hline
+            \end{array}
+            $$
 
     - After the execution of the DP algorithm, the vector $v$ contains the optimal value $v[k]$ for every capacity.
 
@@ -4564,29 +3865,14 @@ $$
 
             We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j=1\)</span></th>
-            <th><span class="arithmatex">\(j=2\)</span></th>
-            <th><span class="arithmatex">\(j=3\)</span></th>
-            <th><span class="arithmatex">\(j=4\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td>4</td>
-            <td>5</td>
-            <td>10</td>
-            <td>11</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td>2</td>
-            <td>3</td>
-            <td>5</td>
-            <td>6</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrr}
+            \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\
+            \hline {p_j} & 4 & 5 & 10 & 11 \\
+            {w_j} & 2 & 3 & 5 & 6 \\
+            \hline
+            \end{array}
+            $$
 
             For each step of the DP algorithm, the table shows the values of $k$ and $j$, the cell $s[k]$, the current value of $m$, and the current value of $t$. The cell of $m$ is highlighted in <mark>red</mark> when updated; the cell of $t$ and the cell of $s[k]$ are highlighted in <mark>blue</mark> when updated.
 
@@ -4958,30 +4244,13 @@ $$
 
             This is the vector $s$ after the execution of the DP algorithm:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(k=0\)</span></th>
-            <th><span class="arithmatex">\(k=1\)</span></th>
-            <th><span class="arithmatex">\(k=2\)</span></th>
-            <th><span class="arithmatex">\(k=3\)</span></th>
-            <th><span class="arithmatex">\(k=4\)</span></th>
-            <th><span class="arithmatex">\(k=5\)</span></th>
-            <th><span class="arithmatex">\(k=6\)</span></th>
-            <th><span class="arithmatex">\(k=7\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(s[k]\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>2</td>
-            <td>1</td>
-            <td>3</td>
-            <td>1</td>
-            <td>1</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{c|cccccccc}
+            \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+            \hline {s[k]} & 0 & 0 & 1 & 2 & 1 & 3 & 1 & 1 \\
+            \hline
+            \end{array}
+            $$
 
     - Once the vector $s$ has been computed, an optimal solution of the UKP instance can be computed by repeatedly applying the following rule, starting from $k=c$ and $x_j=0$ for all $j \in \{1,2,\dots,n\}$:
 
@@ -5005,30 +4274,13 @@ $$
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following vector $s$:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(k=0\)</span></th>
-            <th><span class="arithmatex">\(k=1\)</span></th>
-            <th><span class="arithmatex">\(k=2\)</span></th>
-            <th><span class="arithmatex">\(k=3\)</span></th>
-            <th><span class="arithmatex">\(k=4\)</span></th>
-            <th><span class="arithmatex">\(k=5\)</span></th>
-            <th><span class="arithmatex">\(k=6\)</span></th>
-            <th><span class="arithmatex">\(k=7\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(s[k]\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>2</td>
-            <td>1</td>
-            <td>3</td>
-            <td>1</td>
-            <td>1</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{c|cccccccc}
+            \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+            \hline {s[k]} & 0 & 0 & 1 & 2 & 1 & 3 & 1 & 1 \\
+            \hline
+            \end{array}
+            $$
 
             We can compute an optimal solution for a knapsack of capacity $c=7$ as follows:
 
@@ -5214,29 +4466,14 @@ $$
 
             We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j=1\)</span></th>
-            <th><span class="arithmatex">\(j=2\)</span></th>
-            <th><span class="arithmatex">\(j=3\)</span></th>
-            <th><span class="arithmatex">\(j=4\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td>4</td>
-            <td>5</td>
-            <td>10</td>
-            <td>11</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td>2</td>
-            <td>3</td>
-            <td>5</td>
-            <td>6</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrr}
+            \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\
+            \hline {p_j} & 4 & 5 & 10 & 11 \\
+            {w_j} & 2 & 3 & 5 & 6 \\
+            \hline
+            \end{array}
+            $$
 
             The values of the function $v$ are computed as follows:
 
@@ -5368,29 +4605,14 @@ $$
 
             We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j=1\)</span></th>
-            <th><span class="arithmatex">\(j=2\)</span></th>
-            <th><span class="arithmatex">\(j=3\)</span></th>
-            <th><span class="arithmatex">\(j=4\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td>4</td>
-            <td>5</td>
-            <td>10</td>
-            <td>11</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td>2</td>
-            <td>3</td>
-            <td>5</td>
-            <td>6</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrr}
+            \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\
+            \hline {p_j} & 4 & 5 & 10 & 11 \\
+            {w_j} & 2 & 3 & 5 & 6 \\
+            \hline
+            \end{array}
+            $$
 
             For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cell $v[j][k]$, and the operation performed.
 
@@ -5654,74 +4876,17 @@ $$
 
             This is the matrix $v$ after the execution of the DP algorithm:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <td><span class="arithmatex">\(v[j][k]\)</span></td>
-            <td><span class="arithmatex">\(k=0\)</span></td>
-            <td><span class="arithmatex">\(k=1\)</span></td>
-            <td><span class="arithmatex">\(k=2\)</span></td>
-            <td><span class="arithmatex">\(k=3\)</span></td>
-            <td><span class="arithmatex">\(k=4\)</span></td>
-            <td><span class="arithmatex">\(k=5\)</span></td>
-            <td><span class="arithmatex">\(k=6\)</span></td>
-            <td><span class="arithmatex">\(k=7\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=0\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>4</td>
-            <td>4</td>
-            <td>8</td>
-            <td>8</td>
-            <td>12</td>
-            <td>12</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>4</td>
-            <td>5</td>
-            <td>8</td>
-            <td>9</td>
-            <td>12</td>
-            <td>13</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>4</td>
-            <td>5</td>
-            <td>8</td>
-            <td>10</td>
-            <td>12</td>
-            <td>14</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=4\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>4</td>
-            <td>5</td>
-            <td>8</td>
-            <td>10</td>
-            <td>12</td>
-            <td>14</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrrr}
+            \hline {v[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+            \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            {j=1} & 0 & 0 & 4 & 4 & 8 & 8 & 12 & 12 \\
+            {j=2} & 0 & 0 & 4 & 5 & 8 & 9 & 12 & 13 \\
+            {j=3} & 0 & 0 & 4 & 5 & 8 & 10 & 12 & 14 \\
+            {j=4} & 0 & 0 & 4 & 5 & 8 & 10 & 12 & 14 \\
+            \hline
+            \end{array}
+            $$
 
     - After the execution of the DP algorithm, the matrix $v$ contains the optimal value $v[j][k]$ for every subproblem $(j,k)$.
 
@@ -5747,29 +4912,14 @@ $$
 
             We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j=1\)</span></th>
-            <th><span class="arithmatex">\(j=2\)</span></th>
-            <th><span class="arithmatex">\(j=3\)</span></th>
-            <th><span class="arithmatex">\(j=4\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td>4</td>
-            <td>5</td>
-            <td>10</td>
-            <td>11</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td>2</td>
-            <td>3</td>
-            <td>5</td>
-            <td>6</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrr}
+            \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\
+            \hline {p_j} & 4 & 5 & 10 & 11 \\
+            {w_j} & 2 & 3 & 5 & 6 \\
+            \hline
+            \end{array}
+            $$
 
             For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cell $s[j][k]$, and the operation performed.
 
@@ -6033,74 +5183,17 @@ $$
 
             This is the matrix $s$ after the execution of the DP algorithm:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <td><span class="arithmatex">\(s[j][k]\)</span></td>
-            <td><span class="arithmatex">\(k=0\)</span></td>
-            <td><span class="arithmatex">\(k=1\)</span></td>
-            <td><span class="arithmatex">\(k=2\)</span></td>
-            <td><span class="arithmatex">\(k=3\)</span></td>
-            <td><span class="arithmatex">\(k=4\)</span></td>
-            <td><span class="arithmatex">\(k=5\)</span></td>
-            <td><span class="arithmatex">\(k=6\)</span></td>
-            <td><span class="arithmatex">\(k=7\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=0\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            <td>1</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            <td>1</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=4\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrrr}
+            \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+            \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            {j=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+            {j=2} & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 \\
+            {j=3} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+            {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            \hline
+            \end{array}
+            $$
 
     - Once the matrix $s$ has been computed, an optimal solution for a knapsack of capacity $c$ can be computed by repeatedly applying the following rule, starting from $(j,k)=(n,c)$ and $x_h=0$ for all $h \in \{1,2,\dots,n\}$:
 
@@ -6125,74 +5218,17 @@ $$
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following matrix $s$:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <td><span class="arithmatex">\(s[j][k]\)</span></td>
-            <td><span class="arithmatex">\(k=0\)</span></td>
-            <td><span class="arithmatex">\(k=1\)</span></td>
-            <td><span class="arithmatex">\(k=2\)</span></td>
-            <td><span class="arithmatex">\(k=3\)</span></td>
-            <td><span class="arithmatex">\(k=4\)</span></td>
-            <td><span class="arithmatex">\(k=5\)</span></td>
-            <td><span class="arithmatex">\(k=6\)</span></td>
-            <td><span class="arithmatex">\(k=7\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=0\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            <td>1</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            <td>1</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=4\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrrr}
+            \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+            \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            {j=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+            {j=2} & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 \\
+            {j=3} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+            {j=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            \hline
+            \end{array}
+            $$
 
             We can compute an optimal solution for a knapsack of capacity $c=7$ as follows:
 
@@ -6424,32 +5460,15 @@ $$
 
     We consider a knapsack of capacity $c=10$ and $3$ item types, with the following profits, weights, and bounds:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_j\)</span></td>
-    <td>6</td>
-    <td>10</td>
-    <td>12</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td>2</td>
-    <td>3</td>
-    <td>5</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(b_j\)</span></td>
-    <td>2</td>
-    <td>2</td>
-    <td>1</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrr}
+    \hline  & {j=1} & {j=2} & {j=3} \\
+    \hline {p_j} & 6 & 10 & 12 \\
+    {w_j} & 2 & 3 & 5 \\
+    {b_j} & 2 & 2 & 1 \\
+    \hline
+    \end{array}
+    $$
 
     We refer to this BKP instance as <span style="color:#1971c2">Example 1</span>.
 
@@ -6555,32 +5574,15 @@ $$
 
             We consider the BKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=10$ and the following profits, weights, and bounds:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j=1\)</span></th>
-            <th><span class="arithmatex">\(j=2\)</span></th>
-            <th><span class="arithmatex">\(j=3\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td>6</td>
-            <td>10</td>
-            <td>12</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td>2</td>
-            <td>3</td>
-            <td>5</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(b_j\)</span></td>
-            <td>2</td>
-            <td>2</td>
-            <td>1</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrr}
+            \hline  & {j=1} & {j=2} & {j=3} \\
+            \hline {p_j} & 6 & 10 & 12 \\
+            {w_j} & 2 & 3 & 5 \\
+            {b_j} & 2 & 2 & 1 \\
+            \hline
+            \end{array}
+            $$
 
             The values of the function $v$ are computed as follows:
 
@@ -6662,32 +5664,15 @@ $$
 
             We consider the BKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=10$ and the following profits, weights, and bounds:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j=1\)</span></th>
-            <th><span class="arithmatex">\(j=2\)</span></th>
-            <th><span class="arithmatex">\(j=3\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td>6</td>
-            <td>10</td>
-            <td>12</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td>2</td>
-            <td>3</td>
-            <td>5</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(b_j\)</span></td>
-            <td>2</td>
-            <td>2</td>
-            <td>1</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrr}
+            \hline  & {j=1} & {j=2} & {j=3} \\
+            \hline {p_j} & 6 & 10 & 12 \\
+            {w_j} & 2 & 3 & 5 \\
+            {b_j} & 2 & 2 & 1 \\
+            \hline
+            \end{array}
+            $$
 
             For each step of the DP algorithm, the table shows the values of $j$ and $k$, the cell $v[j][k]$, and the operation performed.
 
@@ -6975,78 +5960,16 @@ $$
 
             This is the matrix $v$ after the execution of the DP algorithm:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <td><span class="arithmatex">\(v[j][k]\)</span></td>
-            <td><span class="arithmatex">\(k=0\)</span></td>
-            <td><span class="arithmatex">\(k=1\)</span></td>
-            <td><span class="arithmatex">\(k=2\)</span></td>
-            <td><span class="arithmatex">\(k=3\)</span></td>
-            <td><span class="arithmatex">\(k=4\)</span></td>
-            <td><span class="arithmatex">\(k=5\)</span></td>
-            <td><span class="arithmatex">\(k=6\)</span></td>
-            <td><span class="arithmatex">\(k=7\)</span></td>
-            <td><span class="arithmatex">\(k=8\)</span></td>
-            <td><span class="arithmatex">\(k=9\)</span></td>
-            <td><span class="arithmatex">\(k=10\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=0\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>6</td>
-            <td>6</td>
-            <td>12</td>
-            <td>12</td>
-            <td>12</td>
-            <td>12</td>
-            <td>12</td>
-            <td>12</td>
-            <td>12</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>6</td>
-            <td>10</td>
-            <td>12</td>
-            <td>16</td>
-            <td>20</td>
-            <td>22</td>
-            <td>26</td>
-            <td>26</td>
-            <td>32</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>6</td>
-            <td>10</td>
-            <td>12</td>
-            <td>16</td>
-            <td>20</td>
-            <td>22</td>
-            <td>26</td>
-            <td>26</td>
-            <td>32</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrrrrrr}
+            \hline {v[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+            \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            {j=1} & 0 & 0 & 6 & 6 & 12 & 12 & 12 & 12 & 12 & 12 & 12 \\
+            {j=2} & 0 & 0 & 6 & 10 & 12 & 16 & 20 & 22 & 26 & 26 & 32 \\
+            {j=3} & 0 & 0 & 6 & 10 & 12 & 16 & 20 & 22 & 26 & 26 & 32 \\
+            \hline
+            \end{array}
+            $$
 
     - After the execution of the DP algorithm, the matrix $v$ contains the optimal value $v[j][k]$ for every item type $j \in \{0,1,\dots,n\}$ and every capacity value $k \in \{0,1,\dots,c\}$.
 
@@ -7072,32 +5995,15 @@ $$
 
             We consider the BKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=10$ and the following profits, weights, and bounds:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <th></th>
-            <th><span class="arithmatex">\(j=1\)</span></th>
-            <th><span class="arithmatex">\(j=2\)</span></th>
-            <th><span class="arithmatex">\(j=3\)</span></th>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(p_j\)</span></td>
-            <td>6</td>
-            <td>10</td>
-            <td>12</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(w_j\)</span></td>
-            <td>2</td>
-            <td>3</td>
-            <td>5</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(b_j\)</span></td>
-            <td>2</td>
-            <td>2</td>
-            <td>1</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrr}
+            \hline  & {j=1} & {j=2} & {j=3} \\
+            \hline {p_j} & 6 & 10 & 12 \\
+            {w_j} & 2 & 3 & 5 \\
+            {b_j} & 2 & 2 & 1 \\
+            \hline
+            \end{array}
+            $$
 
             For each cell with $j\ge 1$ the table shows the values $d\,p[j]+v[j-1][k-d\,w[j]]$ for $d=0,1,\dots,\min\{b[j],\lfloor k/w[j]\rfloor\}$, in this order, and the number $t$ of copies stored in $s[j][k]$. In case of ties the smallest $d$ is kept, because $m$ is updated only when the value is strictly larger. The row $j=0$ is $s[0][k]=0$ for every $k$.
 
@@ -7310,78 +6216,16 @@ $$
 
             This is the matrix $s$ after the execution of the DP algorithm:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <td><span class="arithmatex">\(s[j][k]\)</span></td>
-            <td><span class="arithmatex">\(k=0\)</span></td>
-            <td><span class="arithmatex">\(k=1\)</span></td>
-            <td><span class="arithmatex">\(k=2\)</span></td>
-            <td><span class="arithmatex">\(k=3\)</span></td>
-            <td><span class="arithmatex">\(k=4\)</span></td>
-            <td><span class="arithmatex">\(k=5\)</span></td>
-            <td><span class="arithmatex">\(k=6\)</span></td>
-            <td><span class="arithmatex">\(k=7\)</span></td>
-            <td><span class="arithmatex">\(k=8\)</span></td>
-            <td><span class="arithmatex">\(k=9\)</span></td>
-            <td><span class="arithmatex">\(k=10\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=0\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            <td>1</td>
-            <td>2</td>
-            <td>1</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrrrrrr}
+            \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+            \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            {j=1} & 0 & 0 & 1 & 1 & 2 & 2 & 2 & 2 & 2 & 2 & 2 \\
+            {j=2} & 0 & 0 & 0 & 1 & 0 & 1 & 2 & 1 & 2 & 2 & 2 \\
+            {j=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            \hline
+            \end{array}
+            $$
 
             For example, $s[1][4]=2$ since formula $\eqref{eq:bkp}$ selects $d=2$ copies of item type $1$ when computing $v[1][4]=12$, and $s[2][10]=2$ since $d=2$ copies of item type $2$ are selected when computing $v[2][10]=32$. Since $s[3][10]=0$, no copy of item type $3$ is used in the optimal solution for the original instance.
 
@@ -7403,78 +6247,16 @@ $$
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following matrix $s$:
 
-            <div class="tabella" markdown="0"><table>
-            <tr>
-            <td><span class="arithmatex">\(s[j][k]\)</span></td>
-            <td><span class="arithmatex">\(k=0\)</span></td>
-            <td><span class="arithmatex">\(k=1\)</span></td>
-            <td><span class="arithmatex">\(k=2\)</span></td>
-            <td><span class="arithmatex">\(k=3\)</span></td>
-            <td><span class="arithmatex">\(k=4\)</span></td>
-            <td><span class="arithmatex">\(k=5\)</span></td>
-            <td><span class="arithmatex">\(k=6\)</span></td>
-            <td><span class="arithmatex">\(k=7\)</span></td>
-            <td><span class="arithmatex">\(k=8\)</span></td>
-            <td><span class="arithmatex">\(k=9\)</span></td>
-            <td><span class="arithmatex">\(k=10\)</span></td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=0\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=1\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>1</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=2\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>1</td>
-            <td>0</td>
-            <td>1</td>
-            <td>2</td>
-            <td>1</td>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-            </tr>
-            <tr>
-            <td><span class="arithmatex">\(j=3\)</span></td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            </tr>
-            </table></div>
+            $$
+            \begin{array}{l|rrrrrrrrrrr}
+            \hline {s[j][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+            \hline {j=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            {j=1} & 0 & 0 & 1 & 1 & 2 & 2 & 2 & 2 & 2 & 2 & 2 \\
+            {j=2} & 0 & 0 & 0 & 1 & 0 & 1 & 2 & 1 & 2 & 2 & 2 \\
+            {j=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+            \hline
+            \end{array}
+            $$
 
             We can reconstruct an optimal solution by starting from $j=3$ and $k=10$ as follows:
 

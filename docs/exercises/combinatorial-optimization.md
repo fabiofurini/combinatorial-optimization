@@ -101,32 +101,14 @@ title: "Exercises · Combinatorial optimization problems"
 
     A fund has a budget of $c=14$ and $n=5$ candidate projects, the items $\Ioggetti=\{1,\dots,5\}$ of a knapsack instance, with the following profits and costs (weights):
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_j\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(15\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\[1ex]
+    \hline {p_j} & {14} & {9} & {15} & {13} & {11} \\[1ex]
+    {w_j} & {7} & {2} & {9} & {6} & {8} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -320,26 +302,13 @@ title: "Exercises · Combinatorial optimization problems"
 
     We consider the bin packing instance with capacity $c=10$ and $n=6$ items, with weights
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    <th><span class="arithmatex">\(j=6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\[1ex]
+    \hline {w_j} & {5} & {4} & {5} & {6} & {8} & {2} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -424,56 +393,17 @@ title: "Exercises · Combinatorial optimization problems"
 
     We consider the TSP instance with $5$ cities and the symmetric distances
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|ccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} \\
+    \hline {1} & --- & {2} & {2} & {9} & {9} \\
+    {2} & {2} & --- & {4} & {5} & {9} \\
+    {3} & {2} & {4} & --- & {5} & {4} \\
+    {4} & {9} & {5} & {5} & --- & {8} \\
+    {5} & {9} & {9} & {4} & {8} & --- \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 

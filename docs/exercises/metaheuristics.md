@@ -18,71 +18,18 @@ title: "Exercises · Metaheuristics"
 
     A TSP instance with $6$ cities and the symmetric distances
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|cccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} & {6} \\
+    \hline {1} & --- & {5} & {1} & {7} & {7} & {4} \\
+    {2} & {5} & --- & {4} & {5} & {2} & {1} \\
+    {3} & {1} & {4} & --- & {6} & {6} & {4} \\
+    {4} & {7} & {5} & {6} & --- & {7} & {6} \\
+    {5} & {7} & {2} & {6} & {7} & --- & {2} \\
+    {6} & {4} & {1} & {4} & {6} & {2} & --- \\
+    \hline
+    \end{array}
+    $$
 
     The 2-opt moves of a tour of $6$ cities are numbered
 
@@ -128,32 +75,14 @@ title: "Exercises · Metaheuristics"
 
     A knapsack of capacity $c=16$ and $5$ items:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(18\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
+    \hline {p_i} & {11} & {5} & {18} & {8} & {8} \\
+    {w_i} & {5} & {3} & {11} & {6} & {7} \\
+    \hline
+    \end{array}
+    $$
 
     Simulated annealing with the flip neighbourhood maximizes
 
@@ -225,71 +154,18 @@ title: "Exercises · Metaheuristics"
 
     A TSP instance with $6$ cities and the symmetric distances
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|cccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} & {6} \\
+    \hline {1} & --- & {5} & {1} & {7} & {7} & {4} \\
+    {2} & {5} & --- & {4} & {5} & {2} & {1} \\
+    {3} & {1} & {4} & --- & {6} & {6} & {4} \\
+    {4} & {7} & {5} & {6} & --- & {7} & {6} \\
+    {5} & {7} & {2} & {6} & {7} & --- & {2} \\
+    {6} & {4} & {1} & {4} & {6} & {2} & --- \\
+    \hline
+    \end{array}
+    $$
 
     The starting tour is the nearest neighbour tour $(1,3,2,6,5,4)$, of length $22$, a 2-opt local optimum. The 2-opt moves are numbered
 
@@ -417,71 +293,18 @@ title: "Exercises · Metaheuristics"
 
     A TSP instance with $6$ cities and the symmetric distances
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|cccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} & {6} \\
+    \hline {1} & --- & {5} & {1} & {7} & {7} & {4} \\
+    {2} & {5} & --- & {4} & {5} & {2} & {1} \\
+    {3} & {1} & {4} & --- & {6} & {6} & {4} \\
+    {4} & {7} & {5} & {6} & --- & {7} & {6} \\
+    {5} & {7} & {2} & {6} & {7} & --- & {2} \\
+    {6} & {4} & {1} & {4} & {6} & {2} & --- \\
+    \hline
+    \end{array}
+    $$
 
     Tabu search with the 2-opt neighbourhood: at every iteration all the moves $(i,j)$ are evaluated, and the best non-tabu move is performed even if it is not improving (ties: first move in lexicographic order). The two edges removed by a move may not be added back for $tenure=2$ iterations, unless the new tour is shorter than the best one.
 
@@ -515,71 +338,18 @@ title: "Exercises · Metaheuristics"
 
     A TSP instance with $6$ cities and the symmetric distances
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|cccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} & {6} \\
+    \hline {1} & --- & {5} & {1} & {7} & {7} & {4} \\
+    {2} & {5} & --- & {4} & {5} & {2} & {1} \\
+    {3} & {1} & {4} & --- & {6} & {6} & {4} \\
+    {4} & {7} & {5} & {6} & --- & {7} & {6} \\
+    {5} & {7} & {2} & {6} & {7} & --- & {2} \\
+    {6} & {4} & {1} & {4} & {6} & {2} & --- \\
+    \hline
+    \end{array}
+    $$
 
     The 2-opt local optimum is the nearest neighbour tour $(1,3,2,6,5,4)$ of length $22$. Iterated local search uses the double-bridge kick with cut positions $p_1=1+\lfloor u_1(n-3)\rfloor$, $p_2=p_1+1+\lfloor u_2(n-2-p_1)\rfloor$, $p_3=p_2+1+\lfloor u_3(n-1-p_2)\rfloor$ ($A=\pi_1..\pi_{p_1}$, $B=\pi_{p_1+1}..\pi_{p_2}$, $C=\pi_{p_2+1}..\pi_{p_3}$, $D=\pi_{p_3+1}..\pi_n$, new tour $A\,C\,B\,D$), the 2-opt local search with best improvement, and accepts a new local optimum if it is shorter. The random numbers are $0.13$, $0.76$, $0.46$.
 
@@ -609,71 +379,18 @@ title: "Exercises · Metaheuristics"
 
     A TSP instance with $6$ cities and the symmetric distances
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|cccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} & {6} \\
+    \hline {1} & --- & {5} & {1} & {7} & {7} & {4} \\
+    {2} & {5} & --- & {4} & {5} & {2} & {1} \\
+    {3} & {1} & {4} & --- & {6} & {6} & {4} \\
+    {4} & {7} & {5} & {6} & --- & {7} & {6} \\
+    {5} & {7} & {2} & {6} & {7} & --- & {2} \\
+    {6} & {4} & {1} & {4} & {6} & {2} & --- \\
+    \hline
+    \end{array}
+    $$
 
     The 2-opt local optimum is the nearest neighbour tour $(1,3,2,6,5,4)$ of length $22$. Iterated local search uses the double-bridge kick with cut positions $p_1=1+\lfloor u_1(n-3)\rfloor$, $p_2=p_1+1+\lfloor u_2(n-2-p_1)\rfloor$, $p_3=p_2+1+\lfloor u_3(n-1-p_2)\rfloor$ ($A=\pi_1..\pi_{p_1}$, $B=\pi_{p_1+1}..\pi_{p_2}$, $C=\pi_{p_2+1}..\pi_{p_3}$, $D=\pi_{p_3+1}..\pi_n$, new tour $A\,C\,B\,D$), the 2-opt local search with best improvement, and accepts a new local optimum if it is shorter. The random numbers are $0.16$, $0.13$, $0.01$.
 
@@ -735,32 +452,14 @@ title: "Exercises · Metaheuristics"
 
     A knapsack of capacity $c=16$ and $5$ items:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(18\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
+    \hline {p_i} & {11} & {5} & {18} & {8} & {8} \\
+    {w_i} & {5} & {3} & {11} & {6} & {7} \\
+    \hline
+    \end{array}
+    $$
 
     GRASP with $\alpha=0.5$: the RCL contains the items that fit with efficiency at least $e_{\max}-\alpha(e_{\max}-e_{\min})$, sorted by non-increasing efficiency, and the item in position $1+\lfloor u|RCL|\rfloor$ is chosen; the local search uses feasible flips and swaps with best improvement. The random numbers are $0.39$, $0.27$, $0.38$, $0.60$, $0.66$.
 
@@ -790,71 +489,18 @@ title: "Exercises · Metaheuristics"
 
     A TSP instance with $6$ cities and the symmetric distances
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|cccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} & {6} \\
+    \hline {1} & --- & {5} & {1} & {7} & {7} & {4} \\
+    {2} & {5} & --- & {4} & {5} & {2} & {1} \\
+    {3} & {1} & {4} & --- & {6} & {6} & {4} \\
+    {4} & {7} & {5} & {6} & --- & {7} & {6} \\
+    {5} & {7} & {2} & {6} & {7} & --- & {2} \\
+    {6} & {4} & {1} & {4} & {6} & {2} & --- \\
+    \hline
+    \end{array}
+    $$
 
     GRASP for the TSP: randomized nearest neighbour from city $1$ with $\alpha=0.5$ (the RCL contains the unvisited cities $j$ with $d_{\ell j}\le d_{\min}+\alpha(d_{\max}-d_{\min})$, sorted by distance, ties by index; position $1+\lfloor u|RCL|\rfloor$), followed by the 2-opt local search with best improvement. The random numbers are $0.45$, $0.31$, $0.05$, $0.86$, $0.41$, $0.52$, $0.47$, $0.47$, $0.28$, $0.22$.
 
@@ -884,32 +530,14 @@ title: "Exercises · Metaheuristics"
 
     A knapsack of capacity $c=16$ and $5$ items:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(18\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
+    \hline {p_i} & {11} & {5} & {18} & {8} & {8} \\
+    {w_i} & {5} & {3} & {11} & {6} & {7} \\
+    \hline
+    \end{array}
+    $$
 
     GRASP with $2$ iterations, RCL by efficiency threshold $e_{\max}-\alpha(e_{\max}-e_{\min})$ (position $1+\lfloor u|RCL|\rfloor$), local search with feasible flips and swaps (best improvement). The random numbers are $0.92$, $0.29$, $0.21$, $0.73$, $0.53$, $0.33$, $0.75$, $0.76$, $0.54$, $0.68$, $0.64$, $0.82$.
 
@@ -1005,71 +633,18 @@ title: "Exercises · Metaheuristics"
 
     A TSP instance with $6$ cities and the symmetric distances
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|cccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} & {6} \\
+    \hline {1} & --- & {5} & {1} & {7} & {7} & {4} \\
+    {2} & {5} & --- & {4} & {5} & {2} & {1} \\
+    {3} & {1} & {4} & --- & {6} & {6} & {4} \\
+    {4} & {7} & {5} & {6} & --- & {7} & {6} \\
+    {5} & {7} & {2} & {6} & {7} & --- & {2} \\
+    {6} & {4} & {1} & {4} & {6} & {2} & --- \\
+    \hline
+    \end{array}
+    $$
 
     LNS starts from the nearest neighbour tour $(1,3,2,6,5,4)$ (length $22$), removes $q=2$ cities at random (the city in position $2+\lfloor u(|\pi|-1)\rfloor$ of the current partial tour, so that city $1$ is never removed), reinserts them in the order of removal by cheapest insertion (ties: first position), and accepts the new tour if it is shorter. The random numbers are $0.68$, $0.16$, $0.84$, $0.92$.
 
@@ -1101,32 +676,14 @@ title: "Exercises · Metaheuristics"
 
     A knapsack of capacity $c=16$ and $5$ items:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(18\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
+    \hline {p_i} & {11} & {5} & {18} & {8} & {8} \\
+    {w_i} & {5} & {3} & {11} & {6} & {7} \\
+    \hline
+    \end{array}
+    $$
 
     Steady-state genetic algorithm with population $pop[1]=(0,0,0,1,1)$, $pop[2]=(0,1,0,0,1)$, $pop[3]=(0,1,0,1,1)$, $pop[4]=(1,1,0,1,0)$; binary tournament (individuals $1+\lfloor 4u\rfloor$, the fitter wins, ties: the first), one-point crossover with cut $1+\lfloor 4u\rfloor$ (genes $1..cut$ from $a$, the others from $b$), mutation of each gene if $u<p_m=0.2$, repair by removing the selected item of minimum efficiency until feasible; the child replaces the worst individual (ties: last index) if it is better and not already present. Each iteration uses $10$ random numbers; they are $0.58$, $0.07$, $0.50$, $0.39$, $0.63$, $0.56$, $0.15$, $0.15$, $0.22$, $0.60$, $0.23$, $0.97$, $0.41$, $0.64$, $0.36$, $0.05$, $0.09$, $0.60$, $0.80$, $0.01$.
 
@@ -1156,32 +713,14 @@ title: "Exercises · Metaheuristics"
 
     A knapsack of capacity $c=16$ and $5$ items:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(18\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
+    \hline {p_i} & {11} & {5} & {18} & {8} & {8} \\
+    {w_i} & {5} & {3} & {11} & {6} & {7} \\
+    \hline
+    \end{array}
+    $$
 
     Steady-state genetic algorithm with population $pop[1]=(0,0,0,1,1)$, $pop[2]=(0,1,0,0,1)$, $pop[3]=(0,1,0,1,1)$, $pop[4]=(1,1,0,1,0)$; binary tournament (individuals $1+\lfloor 4u\rfloor$, the fitter wins, ties: the first), one-point crossover with cut $1+\lfloor 4u\rfloor$ (genes $1..cut$ from $a$, the others from $b$), mutation of each gene if $u<p_m=0.2$, repair by removing the selected item of minimum efficiency until feasible; the child replaces the worst individual (ties: last index) if it is better and not already present. Each iteration uses $10$ random numbers; they are $0.58$, $0.07$, $0.50$, $0.39$, $0.63$, $0.56$, $0.15$, $0.15$, $0.22$, $0.60$, $0.23$, $0.97$, $0.41$, $0.64$, $0.36$, $0.05$, $0.09$, $0.60$, $0.80$, $0.01$.
 

@@ -110,56 +110,17 @@ title: "The travelling salesman problem"
 
     We consider a set $\mathscr{V}=\{1,2,3,4,5\}$ of $5$ cities ($n=5$), with the following distances:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|ccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} \\
+    \hline {1} & --- & {5} & {2} & {2} & {9} \\
+    {2} & {5} & --- & {4} & {3} & {4} \\
+    {3} & {2} & {4} & --- & {4} & {7} \\
+    {4} & {2} & {3} & {4} & --- & {7} \\
+    {5} & {9} & {4} & {7} & {7} & --- \\
+    \hline
+    \end{array}
+    $$
 
     This is the TSP instance of the MIP modelling course. The instance can be drawn as a complete graph, with one node per city and one edge, labelled with the distance, per pair of cities. The bold edges form the tour $\sigma=(1,3,5,2,4)$, and the cities are drawn in the order of the tour:
 
@@ -271,22 +232,13 @@ title: "The travelling salesman problem"
 
 - The number of tours grows faster than any exponential function:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(n\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(10\)</span></th>
-    <th><span class="arithmatex">\(15\)</span></th>
-    <th><span class="arithmatex">\(20\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(\frac{(n-1)!}{2}\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    <td><span class="arithmatex">\(181\,440\)</span></td>
-    <td><span class="arithmatex">\(\approx 4.4\cdot 10^{10}\)</span></td>
-    <td><span class="arithmatex">\(\approx 6.1\cdot 10^{16}\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{rrrrr}
+    \hline {n} & {5} & {10} & {15} & {20} \\
+    \hline {\frac{(n-1)!}{2}} & {12} & {181\,440} & {\approx 4.4\cdot 10^{10}} & {\approx 6.1\cdot 10^{16}} \\
+    \hline
+    \end{array}
+    $$
 
 - A computer that evaluates $10^9$ tours per second needs about $6.1\cdot 10^{7}$ seconds, that is about two years, to list the tours of $20$ cities. Enumeration is therefore useful only as a check on tiny instances, and the algorithms of this course must do better.
 

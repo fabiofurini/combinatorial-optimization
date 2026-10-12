@@ -16,32 +16,14 @@ title: "Exercises · Knapsack problems"
 
     We consider the knapsack instance with capacity $c=12$ and $n=5$ items, $\Ioggetti=\{1,\dots,5\}$, with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_j\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\[1ex]
+    \hline {p_j} & {6} & {12} & {5} & {13} & {8} \\[1ex]
+    {w_j} & {3} & {4} & {5} & {6} & {8} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -172,26 +154,13 @@ title: "Exercises · Knapsack problems"
 
     We consider the subset sum instance with $n=6$ items and the weights
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    <th><span class="arithmatex">\(j=6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(15\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\[1ex]
+    \hline {w_j} & {5} & {14} & {3} & {6} & {15} & {4} \\
+    \hline
+    \end{array}
+    $$
 
     with the target value $c=15$.
 
@@ -239,32 +208,15 @@ title: "Exercises · Knapsack problems"
 
     We consider $n=3$ items with the following profits, weights and available copies, and a knapsack of capacity $c=10$:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_j\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(b_j\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccc}
+    \hline  & {j=1} & {j=2} & {j=3} \\[1ex]
+    \hline {p_j} & {4} & {13} & {13} \\[1ex]
+    {w_j} & {3} & {5} & {2} \\[1ex]
+    {b_j} & {1} & {2} & {2} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -300,32 +252,14 @@ title: "Exercises · Knapsack problems"
 
     We consider the multiple knapsack instance with $m=2$ knapsacks of capacities $c_1=10$ and $c_2=6$, and $n=5$ items with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_j\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\[1ex]
+    \hline {p_j} & {4} & {8} & {9} & {10} & {13} \\[1ex]
+    {w_j} & {2} & {5} & {2} & {6} & {3} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -359,38 +293,14 @@ title: "Exercises · Knapsack problems"
 
     We consider the multiple-choice knapsack instance with capacity $c=16$ and $n=7$ items, partitioned into the classes $\Jlavori_1=\{1,2\}$, $\Jlavori_2=\{3,4,5\}$, $\Jlavori_3=\{6,7\}$, with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    <th><span class="arithmatex">\(j=6\)</span></th>
-    <th><span class="arithmatex">\(j=7\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_j\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} & {j=7} \\[1ex]
+    \hline {p_j} & {5} & {8} & {14} & {13} & {11} & {12} & {6} \\[1ex]
+    {w_j} & {6} & {9} & {4} & {6} & {7} & {8} & {2} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 

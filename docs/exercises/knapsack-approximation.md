@@ -18,32 +18,14 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 15$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {p_i} & {12} & {6} & {6} & {8} & {6} \\[1ex]
+    {w_i} & {3} & {2} & {3} & {9} & {7} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -116,35 +98,14 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 13$ and a set $\mathscr{I} = \{1,2,3,4,5,6\}$ of $6$ items ($n=6$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    <th><span class="arithmatex">\(i=6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} \\[1ex]
+    \hline {p_i} & {10} & {6} & {3} & {7} & {11} & {2} \\[1ex]
+    {w_i} & {1} & {1} & {1} & {4} & {8} & {3} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -225,32 +186,14 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 12$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(18\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {p_i} & {8} & {7} & {18} & {14} & {10} \\[1ex]
+    {w_i} & {3} & {3} & {9} & {8} & {7} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -331,32 +274,14 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 22$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {p_i} & {11} & {5} & {3} & {4} & {3} \\[1ex]
+    {w_i} & {8} & {4} & {3} & {9} & {8} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -427,32 +352,14 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 8$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(16\)</span></td>
-    <td><span class="arithmatex">\(19\)</span></td>
-    <td><span class="arithmatex">\(18\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {p_i} & {16} & {19} & {18} & {14} & {8} \\[1ex]
+    {w_i} & {5} & {8} & {8} & {7} & {6} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -517,26 +424,14 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 16$ and a set $\mathscr{I} = \{1,2,3\}$ of $3$ items ($n=3$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccc}
+    \hline  & {i=1} & {i=2} & {i=3} \\[1ex]
+    \hline {p_i} & {2} & {8} & {8} \\[1ex]
+    {w_i} & {1} & {8} & {8} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -604,32 +499,14 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 11$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {p_i} & {8} & {9} & {2} & {3} & {2} \\[1ex]
+    {w_i} & {5} & {8} & {3} & {7} & {9} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -744,32 +621,14 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 15$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(15\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {p_i} & {14} & {9} & {5} & {10} & {15} \\[1ex]
+    {w_i} & {1} & {1} & {2} & {5} & {8} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -911,32 +770,14 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {p_i} & {13} & {5} & {8} & {5} & {7} \\[1ex]
+    {w_i} & {1} & {1} & {3} & {2} & {5} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -1080,32 +921,14 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 16$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {p_i} & {14} & {13} & {13} & {10} & {11} \\[1ex]
+    {w_i} & {1} & {2} & {3} & {3} & {9} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -1228,35 +1051,14 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 20$ and a set $\mathscr{I} = \{1,2,3,4,5,6\}$ of $6$ items ($n=6$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    <th><span class="arithmatex">\(i=6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} \\[1ex]
+    \hline {p_i} & {2} & {4} & {4} & {4} & {4} & {4} \\[1ex]
+    {w_i} & {1} & {4} & {4} & {4} & {4} & {4} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -1467,35 +1269,14 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 18$ and a set $\mathscr{I} = \{1,2,3,4,5,6\}$ of $6$ items ($n=6$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    <th><span class="arithmatex">\(i=6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(15\)</span></td>
-    <td><span class="arithmatex">\(15\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} \\[1ex]
+    \hline {p_i} & {15} & {15} & {14} & {8} & {12} & {13} \\[1ex]
+    {w_i} & {1} & {2} & {3} & {2} & {6} & {9} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -1706,29 +1487,14 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 13$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(24\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(23\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\[1ex]
+    \hline {p_i} & {24} & {11} & {23} & {5} \\[1ex]
+    {w_i} & {2} & {3} & {9} & {3} \\
+    \hline
+    \end{array}
+    $$
 
     We apply the Basic-FPTAS algorithm with accuracy $\varepsilon=\frac{1}{2}$.
 
@@ -1772,119 +1538,29 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     3. The minimum weights $u(i,q)$ of a subset of $\{1,\dots,i\}$ with scaled profit exactly $q$ are (only the values of $q$ that can be attained are reported; $\infty$ means that $q$ cannot be attained with the first $i$ items):
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(q\)</span></th>
-        <th><span class="arithmatex">\(0\)</span></th>
-        <th><span class="arithmatex">\(1\)</span></th>
-        <th><span class="arithmatex">\(2\)</span></th>
-        <th><span class="arithmatex">\(3\)</span></th>
-        <th><span class="arithmatex">\(4\)</span></th>
-        <th><span class="arithmatex">\(5\)</span></th>
-        <th><span class="arithmatex">\(6\)</span></th>
-        <th><span class="arithmatex">\(7\)</span></th>
-        <th><span class="arithmatex">\(8\)</span></th>
-        <th><span class="arithmatex">\(9\)</span></th>
-        <th><span class="arithmatex">\(10\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(0,q)\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(1,q)\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(2,q)\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(5\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(3,q)\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(5\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(14\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(4,q)\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(6\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(5\)</span></td>
-        <td><span class="arithmatex">\(5\)</span></td>
-        <td><span class="arithmatex">\(8\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(14\)</span></td>
-        <td><span class="arithmatex">\(14\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|ccccccccccc}
+        \hline {q} & {0} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} & {9} & {10} \\
+        \hline {u(0,q)} & {0} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} \\
+        {u(1,q)} & {0} & {\infty} & {\infty} & {\infty} & {2} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} \\
+        {u(2,q)} & {0} & {\infty} & {3} & {\infty} & {2} & {\infty} & {5} & {\infty} & {\infty} & {\infty} & {\infty} \\
+        {u(3,q)} & {0} & {\infty} & {3} & {\infty} & {2} & {\infty} & {5} & {\infty} & {11} & {\infty} & {14} \\
+        {u(4,q)} & {0} & {3} & {3} & {6} & {2} & {5} & {5} & {8} & {11} & {14} & {14} \\
+        \hline
+        \end{array}
+        $$
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(q\)</span></th>
-        <th><span class="arithmatex">\(11\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(0,q)\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(1,q)\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(2,q)\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(3,q)\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(4,q)\)</span></td>
-        <td><span class="arithmatex">\(17\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|c}
+        \hline {q} & {11} \\
+        \hline {u(0,q)} & {\infty} \\
+        {u(1,q)} & {\infty} \\
+        {u(2,q)} & {\infty} \\
+        {u(3,q)} & {\infty} \\
+        {u(4,q)} & {17} \\
+        \hline
+        \end{array}
+        $$
 
         The largest $q$ with $u(4,q)\le c=13$ is $q=8$, of weight $u(4,8)=11$, attained by the items $\{1,3\}$.
 
@@ -1902,29 +1578,14 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 16$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(18\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\[1ex]
+    \hline {p_i} & {14} & {12} & {14} & {18} \\[1ex]
+    {w_i} & {3} & {4} & {5} & {7} \\
+    \hline
+    \end{array}
+    $$
 
     We apply the Basic-FPTAS algorithm with accuracy $\varepsilon=\frac{1}{2}$.
 
@@ -1968,74 +1629,17 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     3. The minimum weights $u(i,q)$ of a subset of $\{1,\dots,i\}$ with scaled profit exactly $q$ are (only the values of $q$ that can be attained are reported; $\infty$ means that $q$ cannot be attained with the first $i$ items):
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(q\)</span></th>
-        <th><span class="arithmatex">\(0\)</span></th>
-        <th><span class="arithmatex">\(2\)</span></th>
-        <th><span class="arithmatex">\(3\)</span></th>
-        <th><span class="arithmatex">\(4\)</span></th>
-        <th><span class="arithmatex">\(5\)</span></th>
-        <th><span class="arithmatex">\(6\)</span></th>
-        <th><span class="arithmatex">\(7\)</span></th>
-        <th><span class="arithmatex">\(9\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(0,q)\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(1,q)\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(2,q)\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(7\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(3,q)\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(7\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(12\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(4,q)\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(7\)</span></td>
-        <td><span class="arithmatex">\(7\)</span></td>
-        <td><span class="arithmatex">\(10\)</span></td>
-        <td><span class="arithmatex">\(12\)</span></td>
-        <td><span class="arithmatex">\(14\)</span></td>
-        <td><span class="arithmatex">\(19\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|cccccccc}
+        \hline {q} & {0} & {2} & {3} & {4} & {5} & {6} & {7} & {9} \\
+        \hline {u(0,q)} & {0} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} \\
+        {u(1,q)} & {0} & {3} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} \\
+        {u(2,q)} & {0} & {3} & {\infty} & {7} & {\infty} & {\infty} & {\infty} & {\infty} \\
+        {u(3,q)} & {0} & {3} & {\infty} & {7} & {\infty} & {12} & {\infty} & {\infty} \\
+        {u(4,q)} & {0} & {3} & {7} & {7} & {10} & {12} & {14} & {19} \\
+        \hline
+        \end{array}
+        $$
 
         The largest $q$ with $u(4,q)\le c=16$ is $q=7$, of weight $u(4,7)=14$, attained by the items $\{1,2,4\}$.
 
@@ -2059,29 +1663,14 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     We consider a knapsack of capacity $c = 16$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(18\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\[1ex]
+    \hline {p_i} & {14} & {12} & {14} & {18} \\[1ex]
+    {w_i} & {3} & {4} & {5} & {7} \\
+    \hline
+    \end{array}
+    $$
 
     We apply the Basic-FPTAS algorithm with accuracy $\varepsilon=\frac{1}{4}$.
 
@@ -2125,119 +1714,29 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     3. The minimum weights $u(i,q)$ of a subset of $\{1,\dots,i\}$ with scaled profit exactly $q$ are (only the values of $q$ that can be attained are reported; $\infty$ means that $q$ cannot be attained with the first $i$ items):
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(q\)</span></th>
-        <th><span class="arithmatex">\(0\)</span></th>
-        <th><span class="arithmatex">\(4\)</span></th>
-        <th><span class="arithmatex">\(5\)</span></th>
-        <th><span class="arithmatex">\(7\)</span></th>
-        <th><span class="arithmatex">\(9\)</span></th>
-        <th><span class="arithmatex">\(10\)</span></th>
-        <th><span class="arithmatex">\(11\)</span></th>
-        <th><span class="arithmatex">\(12\)</span></th>
-        <th><span class="arithmatex">\(14\)</span></th>
-        <th><span class="arithmatex">\(16\)</span></th>
-        <th><span class="arithmatex">\(17\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(0,q)\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(1,q)\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(2,q)\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(7\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(3,q)\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(7\)</span></td>
-        <td><span class="arithmatex">\(8\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(12\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(4,q)\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(7\)</span></td>
-        <td><span class="arithmatex">\(7\)</span></td>
-        <td><span class="arithmatex">\(8\)</span></td>
-        <td><span class="arithmatex">\(11\)</span></td>
-        <td><span class="arithmatex">\(10\)</span></td>
-        <td><span class="arithmatex">\(12\)</span></td>
-        <td><span class="arithmatex">\(14\)</span></td>
-        <td><span class="arithmatex">\(15\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|ccccccccccc}
+        \hline {q} & {0} & {4} & {5} & {7} & {9} & {10} & {11} & {12} & {14} & {16} & {17} \\
+        \hline {u(0,q)} & {0} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} \\
+        {u(1,q)} & {0} & {\infty} & {3} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} \\
+        {u(2,q)} & {0} & {4} & {3} & {\infty} & {7} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} & {\infty} \\
+        {u(3,q)} & {0} & {4} & {3} & {\infty} & {7} & {8} & {\infty} & {\infty} & {12} & {\infty} & {\infty} \\
+        {u(4,q)} & {0} & {4} & {3} & {7} & {7} & {8} & {11} & {10} & {12} & {14} & {15} \\
+        \hline
+        \end{array}
+        $$
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(q\)</span></th>
-        <th><span class="arithmatex">\(21\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(0,q)\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(1,q)\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(2,q)\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(3,q)\)</span></td>
-        <td><span class="arithmatex">\(\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(u(4,q)\)</span></td>
-        <td><span class="arithmatex">\(19\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{c|c}
+        \hline {q} & {21} \\
+        \hline {u(0,q)} & {\infty} \\
+        {u(1,q)} & {\infty} \\
+        {u(2,q)} & {\infty} \\
+        {u(3,q)} & {\infty} \\
+        {u(4,q)} & {19} \\
+        \hline
+        \end{array}
+        $$
 
         The largest $q$ with $u(4,q)\le c=16$ is $q=17$, of weight $u(4,17)=15$, attained by the items $\{1,3,4\}$.
 

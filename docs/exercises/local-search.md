@@ -18,32 +18,14 @@ title: "Exercises · Local search"
 
     We consider a knapsack of capacity $c = 18$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {p_i} & {10} & {7} & {13} & {14} & {8} \\[1ex]
+    {w_i} & {2} & {3} & {8} & {9} & {7} \\
+    \hline
+    \end{array}
+    $$
 
     The items are sorted by non-increasing efficiency. The neighbourhood flip+swap contains the feasible vectors obtained by a flip (add or remove one item) or by a swap (remove a selected item $i$, add an unselected item $k$); the flips are examined first, for $i=1,\dots,n$, then the swaps, for increasing $i$ and, for each $i$, increasing $k$. Ties in best improvement are broken in favour of the move examined first.
 
@@ -461,32 +443,14 @@ title: "Exercises · Local search"
 
     We consider a knapsack of capacity $c = 13$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {p_i} & {8} & {9} & {14} & {11} & {9} \\[1ex]
+    {w_i} & {3} & {5} & {9} & {9} & {8} \\
+    \hline
+    \end{array}
+    $$
 
     The items are sorted by non-increasing efficiency. The neighbourhood flip+swap contains the feasible vectors obtained by a flip (add or remove one item) or by a swap (remove a selected item $i$, add an unselected item $k$); the flips are examined first, for $i=1,\dots,n$, then the swaps, for increasing $i$ and, for each $i$, increasing $k$. Ties in best improvement are broken in favour of the move examined first.
 
@@ -892,32 +856,14 @@ title: "Exercises · Local search"
 
     We consider a knapsack of capacity $c = 11$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\[1ex]
+    \hline {p_i} & {14} & {7} & {10} & {8} & {6} \\[1ex]
+    {w_i} & {4} & {4} & {7} & {7} & {9} \\
+    \hline
+    \end{array}
+    $$
 
     The items are sorted by non-increasing efficiency. With penalties, the local search maximizes $g_\alpha(x)=\sum_i p_ix_i-\alpha\max\{0,\sum_i w_ix_i-c\}$ over all the binary vectors, with the flip neighbourhood (flips examined for $i=1,\dots,n$) and the best-improvement rule.
 
@@ -1385,28 +1331,13 @@ title: "Exercises · Local search"
 
     Bins of capacity $c=10$ and a set $\mathscr{I}=\{1,2,3,4,5,6,7\}$ of $7$ items with weights
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    <th><span class="arithmatex">\(i=6\)</span></th>
-    <th><span class="arithmatex">\(i=7\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} & {i=7} \\[1ex]
+    \hline {w_i} & {2} & {3} & {2} & {7} & {4} & {7} & {4} \\
+    \hline
+    \end{array}
+    $$
 
     The bins are labelled $1,2,\dots$ in the order in which $FF$ opens them, and keep their label. A <em>move</em> puts one item into another non-empty bin where it fits (examined for $i=1,\dots,n$ and, for each $i$, for increasing bin label); a <em>swap</em> exchanges two items $i<k$ of different weight in different bins, if both bins stay feasible. The auxiliary objective $SQ=\sum_b L_b^2$ is maximized; the gain of a transfer of $\delta$ from bin $a$ to bin $b$ is $2\delta(L_b-L_a+\delta)$ (a move of item $i$ transfers $\delta=w_i$, a swap of item $i$ in bin $a$ and item $k$ in bin $b$ transfers $\delta=w_i-w_k$). Best improvement breaks ties in favour of the move examined first.
 
@@ -1702,26 +1633,13 @@ title: "Exercises · Local search"
 
     Bins of capacity $c=10$ and a set $\mathscr{I}=\{1,2,3,4,5,6\}$ of $6$ items with weights
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    <th><span class="arithmatex">\(i=6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} \\[1ex]
+    \hline {w_i} & {2} & {3} & {4} & {5} & {4} & {2} \\
+    \hline
+    \end{array}
+    $$
 
     The bins are labelled $1,2,\dots$ in the order in which $FF$ opens them, and keep their label. A <em>move</em> puts one item into another non-empty bin where it fits (examined for $i=1,\dots,n$ and, for each $i$, for increasing bin label); a <em>swap</em> exchanges two items $i<k$ of different weight in different bins, if both bins stay feasible. The auxiliary objective $SQ=\sum_b L_b^2$ is maximized; the gain of a transfer of $\delta$ from bin $a$ to bin $b$ is $2\delta(L_b-L_a+\delta)$ (a move of item $i$ transfers $\delta=w_i$, a swap of item $i$ in bin $a$ and item $k$ in bin $b$ transfers $\delta=w_i-w_k$). Best improvement breaks ties in favour of the move examined first.
 
@@ -2057,28 +1975,13 @@ title: "Exercises · Local search"
 
     Bins of capacity $c=10$ and a set $\mathscr{I}=\{1,2,3,4,5,6,7\}$ of $7$ items with weights
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    <th><span class="arithmatex">\(i=6\)</span></th>
-    <th><span class="arithmatex">\(i=7\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccccc}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} & {i=7} \\[1ex]
+    \hline {w_i} & {5} & {3} & {3} & {2} & {8} & {4} & {4} \\
+    \hline
+    \end{array}
+    $$
 
     The bins are labelled $1,2,\dots$ in the order in which $FF$ opens them, and keep their label. A <em>move</em> puts one item into another non-empty bin where it fits (examined for $i=1,\dots,n$ and, for each $i$, for increasing bin label); a <em>swap</em> exchanges two items $i<k$ of different weight in different bins, if both bins stay feasible. The auxiliary objective $SQ=\sum_b L_b^2$ is maximized; the gain of a transfer of $\delta$ from bin $a$ to bin $b$ is $2\delta(L_b-L_a+\delta)$ (a move of item $i$ transfers $\delta=w_i$, a swap of item $i$ in bin $a$ and item $k$ in bin $b$ transfers $\delta=w_i-w_k$). Best improvement breaks ties in favour of the move examined first.
 
@@ -2289,71 +2192,18 @@ title: "Exercises · Local search"
 
     $6$ cities with the symmetric distances
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|cccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} & {6} \\
+    \hline {1} & --- & {7} & {6} & {3} & {4} & {6} \\
+    {2} & {7} & --- & {6} & {5} & {7} & {4} \\
+    {3} & {6} & {6} & --- & {5} & {5} & {2} \\
+    {4} & {3} & {5} & {5} & --- & {5} & {3} \\
+    {5} & {4} & {7} & {5} & {5} & --- & {4} \\
+    {6} & {6} & {4} & {2} & {3} & {4} & --- \\
+    \hline
+    \end{array}
+    $$
 
     A tour $\pi=(\pi_1,\dots,\pi_n)$ keeps city $1$ in the first position. The 2-opt move $(i,j)$, for $i=1,\dots,n-2$ and $j=i+2,\dots,n$ (except $(1,n)$), examined in this order, removes the edges $\{\pi_i,\pi_{i+1}\}$, $\{\pi_j,\pi_{j+1}\}$ (with $\pi_{n+1}=\pi_1$), reverses $\pi_{i+1},\dots,\pi_j$, and changes the length by $\Delta=d_{\pi_i\pi_j}+d_{\pi_{i+1}\pi_{j+1}}-d_{\pi_i\pi_{i+1}}-d_{\pi_j\pi_{j+1}}$. Best improvement breaks ties in favour of the move examined first. The nearest neighbour heuristic $NN$ breaks ties in favour of the city of smallest index.
 
@@ -2828,71 +2678,18 @@ title: "Exercises · Local search"
 
     $6$ cities with the symmetric distances
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|cccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} & {6} \\
+    \hline {1} & --- & {8} & {5} & {6} & {5} & {6} \\
+    {2} & {8} & --- & {6} & {7} & {7} & {6} \\
+    {3} & {5} & {6} & --- & {4} & {8} & {2} \\
+    {4} & {6} & {7} & {4} & --- & {6} & {5} \\
+    {5} & {5} & {7} & {8} & {6} & --- & {7} \\
+    {6} & {6} & {6} & {2} & {5} & {7} & --- \\
+    \hline
+    \end{array}
+    $$
 
     A tour $\pi=(\pi_1,\dots,\pi_n)$ keeps city $1$ in the first position. The 2-opt move $(i,j)$, for $i=1,\dots,n-2$ and $j=i+2,\dots,n$ (except $(1,n)$), examined in this order, removes the edges $\{\pi_i,\pi_{i+1}\}$, $\{\pi_j,\pi_{j+1}\}$ (with $\pi_{n+1}=\pi_1$), reverses $\pi_{i+1},\dots,\pi_j$, and changes the length by $\Delta=d_{\pi_i\pi_j}+d_{\pi_{i+1}\pi_{j+1}}-d_{\pi_i\pi_{i+1}}-d_{\pi_j\pi_{j+1}}$. Best improvement breaks ties in favour of the move examined first. The nearest neighbour heuristic $NN$ breaks ties in favour of the city of smallest index.
 
@@ -3456,71 +3253,18 @@ title: "Exercises · Local search"
 
     $6$ cities with the symmetric distances
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|cccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} & {6} \\
+    \hline {1} & --- & {7} & {8} & {8} & {9} & {9} \\
+    {2} & {7} & --- & {7} & {4} & {9} & {8} \\
+    {3} & {8} & {7} & --- & {7} & {3} & {9} \\
+    {4} & {8} & {4} & {7} & --- & {5} & {6} \\
+    {5} & {9} & {9} & {3} & {5} & --- & {7} \\
+    {6} & {9} & {8} & {9} & {6} & {7} & --- \\
+    \hline
+    \end{array}
+    $$
 
     A tour $\pi=(\pi_1,\dots,\pi_n)$ keeps city $1$ in the first position. The 2-opt move $(i,j)$, for $i=1,\dots,n-2$ and $j=i+2,\dots,n$ (except $(1,n)$), examined in this order, removes the edges $\{\pi_i,\pi_{i+1}\}$, $\{\pi_j,\pi_{j+1}\}$ (with $\pi_{n+1}=\pi_1$), reverses $\pi_{i+1},\dots,\pi_j$, and changes the length by $\Delta=d_{\pi_i\pi_j}+d_{\pi_{i+1}\pi_{j+1}}-d_{\pi_i\pi_{i+1}}-d_{\pi_j\pi_{j+1}}$. Best improvement breaks ties in favour of the move examined first. The nearest neighbour heuristic $NN$ breaks ties in favour of the city of smallest index. An Or-opt move with $\ell=1$ takes one city $\pi_i$ ($i\ge 2$) and inserts it between two consecutive cities $\pi_k,\pi_{k+1}$ not adjacent to it ($k\ne i-1,i$); with $p=\pi_{i-1}$, $q=\pi_{i+1}$, $s=\pi_i$, $a=\pi_k$, $b=\pi_{k+1}$ it changes the length by $\Delta=d_{pq}+d_{as}+d_{sb}-d_{ps}-d_{sq}-d_{ab}$. The moves are examined for $i=2,\dots,n$ and $k=1,\dots,n$.
 
@@ -3801,26 +3545,13 @@ title: "Exercises · Local search"
 
     $m=3$ identical machines and $6$ jobs with processing times
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    <th><span class="arithmatex">\(j=6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(t_j\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\[1ex]
+    \hline {t_j} & {5} & {7} & {3} & {4} & {4} & {9} \\
+    \hline
+    \end{array}
+    $$
 
     A <em>move</em> reassigns one job $j$ to another machine $h$ (examined for $j=1,\dots,n$ and $h=1,\dots,m$); a <em>swap</em> exchanges the machines of two jobs $j<k$ on different machines with $t_j\ne t_k$. The local searches use the best-improvement rule, with ties broken in favour of the move examined first.
 
@@ -4117,28 +3848,13 @@ title: "Exercises · Local search"
 
     $m=3$ identical machines and $7$ jobs with processing times
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    <th><span class="arithmatex">\(j=6\)</span></th>
-    <th><span class="arithmatex">\(j=7\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(t_j\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} & {j=7} \\[1ex]
+    \hline {t_j} & {8} & {4} & {6} & {7} & {5} & {9} & {8} \\
+    \hline
+    \end{array}
+    $$
 
     A <em>move</em> reassigns one job $j$ to another machine $h$ (examined for $j=1,\dots,n$ and $h=1,\dots,m$); a <em>swap</em> exchanges the machines of two jobs $j<k$ on different machines with $t_j\ne t_k$. The local searches use the best-improvement rule, with ties broken in favour of the move examined first.
 
@@ -4596,26 +4312,13 @@ title: "Exercises · Local search"
 
     $m=3$ identical machines and $6$ jobs with processing times
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    <th><span class="arithmatex">\(j=6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(t_j\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\[1ex]
+    \hline {t_j} & {5} & {5} & {7} & {9} & {2} & {7} \\
+    \hline
+    \end{array}
+    $$
 
     A <em>move</em> reassigns one job $j$ to another machine $h$ (examined for $j=1,\dots,n$ and $h=1,\dots,m$); a <em>swap</em> exchanges the machines of two jobs $j<k$ on different machines with $t_j\ne t_k$. The local searches use the best-improvement rule, with ties broken in favour of the move examined first.
 

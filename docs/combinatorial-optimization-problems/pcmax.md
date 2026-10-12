@@ -112,28 +112,13 @@ title: "Parallel machine scheduling"
 
     We consider $m=3$ machines and a set $\mathscr{J}=\{1,2,\dots,7\}$ of $7$ jobs ($n=7$), with the following processing times:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    <th><span class="arithmatex">\(j=6\)</span></th>
-    <th><span class="arithmatex">\(j=7\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(t_j\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} & {j=7} \\[1ex]
+    \hline {t_j} & {5} & {5} & {4} & {4} & {3} & {3} & {3} \\
+    \hline
+    \end{array}
+    $$
 
     This is the $P\,||\,C_{\max}$ instance of the MIP modelling course. The assignment $\mathrm{mach}=(1,2,3,3,1,2,1)$ gives $J_1=\{1,5,7\}$, $J_2=\{2,6\}$, $J_3=\{3,4\}$, with loads $L_1=11$, $L_2=8$, $L_3=8$ and makespan $11$:
 

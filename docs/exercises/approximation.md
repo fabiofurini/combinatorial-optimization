@@ -16,53 +16,23 @@ title: "Exercises · Approximation algorithms: definitions"
 
     A heuristic algorithm $\mathscr{A}$ for a <strong>minimization</strong> problem and a heuristic algorithm $\mathscr{B}$ for a <strong>maximization</strong> problem give the following values on some instances:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(\mathscr{A}\)</span> (min)</th>
-    <th><span class="arithmatex">\(I_1\)</span></th>
-    <th><span class="arithmatex">\(I_2\)</span></th>
-    <th><span class="arithmatex">\(I_3\)</span></th>
-    <th><span class="arithmatex">\(I_4\)</span></th>
-    <th><span class="arithmatex">\(I_5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(\mathscr{A}(I)\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(15\)</span></td>
-    <td><span class="arithmatex">\(20\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(z(I)\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(16\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{lccccc}
+    \hline {\mathscr{A}}\text{ (min)} & {I_1} & {I_2} & {I_3} & {I_4} & {I_5} \\
+    \hline {\mathscr{A}(I)} & {12} & {9} & {15} & {20} & {7} \\
+    {z(I)} & {10} & {9} & {10} & {16} & {6} \\
+    \hline
+    \end{array}
+    $$
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(\mathscr{B}\)</span> (max)</th>
-    <th><span class="arithmatex">\(I_1\)</span></th>
-    <th><span class="arithmatex">\(I_2\)</span></th>
-    <th><span class="arithmatex">\(I_3\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(\mathscr{B}(I)\)</span></td>
-    <td><span class="arithmatex">\(30\)</span></td>
-    <td><span class="arithmatex">\(25\)</span></td>
-    <td><span class="arithmatex">\(16\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(z(I)\)</span></td>
-    <td><span class="arithmatex">\(36\)</span></td>
-    <td><span class="arithmatex">\(25\)</span></td>
-    <td><span class="arithmatex">\(24\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{lccc}
+    \hline {\mathscr{B}}\text{ (max)} & {I_1} & {I_2} & {I_3} \\
+    \hline {\mathscr{B}(I)} & {30} & {25} & {16} \\
+    {z(I)} & {36} & {25} & {24} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 

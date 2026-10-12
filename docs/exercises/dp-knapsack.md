@@ -18,29 +18,14 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     Consider the following KP instance, where the knapsack has capacity $c=6$, and the profits and weights associated with the items are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrr}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\
+    \hline {p_i} & {6} & {7} & {8} & {9} \\
+    {w_i} & {2} & {3} & {4} & {5} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -311,198 +296,45 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the matrix ${v}$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\({v}[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>6</td>
-        <td>6</td>
-        <td>6</td>
-        <td>6</td>
-        <td>6</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>6</td>
-        <td>7</td>
-        <td>7</td>
-        <td>13</td>
-        <td>13</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-        <td>13</td>
-        <td>14</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-        <td>13</td>
-        <td>14</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrr}
+        \hline {{v}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 6 & 6 & 6 & 6 & 6 \\
+        {i=2} & 0 & 0 & 6 & 7 & 7 & 13 & 13 \\
+        {i=3} & 0 & 0 & 6 & 7 & 8 & 13 & 14 \\
+        {i=4} & 0 & 0 & 6 & 7 & 8 & 13 & 14 \\
+        \hline
+        \end{array}
+        $$
 
         This is the matrix ${s}$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\({s}[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrr}
+        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following matrix ${s}$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\({s}[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrr}
+        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $i=4$ and $k=6$ as follows:
 
@@ -593,29 +425,14 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     Consider the following KP instance, where the knapsack has capacity $c=7$, and the profits and weights associated with the items are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrr}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\
+    \hline {p_i} & {4} & {5} & {10} & {11} \\
+    {w_i} & {2} & {3} & {5} & {6} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -921,216 +738,45 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the matrix ${v}$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\({v}[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>4</td>
-        <td>4</td>
-        <td>4</td>
-        <td>4</td>
-        <td>4</td>
-        <td>4</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>4</td>
-        <td>5</td>
-        <td>5</td>
-        <td>9</td>
-        <td>9</td>
-        <td>9</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>4</td>
-        <td>5</td>
-        <td>5</td>
-        <td>10</td>
-        <td>10</td>
-        <td>14</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>4</td>
-        <td>5</td>
-        <td>5</td>
-        <td>10</td>
-        <td>11</td>
-        <td>14</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrr}
+        \hline {{v}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 4 & 4 & 4 & 4 & 4 & 4 \\
+        {i=2} & 0 & 0 & 4 & 5 & 5 & 9 & 9 & 9 \\
+        {i=3} & 0 & 0 & 4 & 5 & 5 & 10 & 10 & 14 \\
+        {i=4} & 0 & 0 & 4 & 5 & 5 & 10 & 11 & 14 \\
+        \hline
+        \end{array}
+        $$
 
         This is the matrix ${s}$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\({s}[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrr}
+        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following matrix ${s}$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\({s}[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrr}
+        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $i=4$ and $k=7$ as follows:
 
@@ -1221,32 +867,14 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     Consider the following KP instance, where the knapsack has capacity $c=8$, and the profits and weights associated with the items are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrr}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
+    \hline {p_i} & {3} & {4} & {8} & {8} & {10} \\
+    {w_i} & {1} & {3} & {4} & {5} & {6} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -1650,270 +1278,48 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the matrix ${v}$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\({v}[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>3</td>
-        <td>3</td>
-        <td>4</td>
-        <td>7</td>
-        <td>7</td>
-        <td>7</td>
-        <td>7</td>
-        <td>7</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>3</td>
-        <td>3</td>
-        <td>4</td>
-        <td>8</td>
-        <td>11</td>
-        <td>11</td>
-        <td>12</td>
-        <td>15</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>3</td>
-        <td>3</td>
-        <td>4</td>
-        <td>8</td>
-        <td>11</td>
-        <td>11</td>
-        <td>12</td>
-        <td>15</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>3</td>
-        <td>3</td>
-        <td>4</td>
-        <td>8</td>
-        <td>11</td>
-        <td>11</td>
-        <td>13</td>
-        <td>15</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrr}
+        \hline {{v}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3 \\
+        {i=2} & 0 & 3 & 3 & 4 & 7 & 7 & 7 & 7 & 7 \\
+        {i=3} & 0 & 3 & 3 & 4 & 8 & 11 & 11 & 12 & 15 \\
+        {i=4} & 0 & 3 & 3 & 4 & 8 & 11 & 11 & 12 & 15 \\
+        {i=5} & 0 & 3 & 3 & 4 & 8 & 11 & 11 & 13 & 15 \\
+        \hline
+        \end{array}
+        $$
 
         This is the matrix ${s}$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\({s}[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrr}
+        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following matrix ${s}$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\({s}[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrr}
+        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $i=5$ and $k=8$ as follows:
 
@@ -2022,32 +1428,14 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     Consider the following KP instance, where the knapsack has capacity $c=9$, and the profits and weights associated with the items are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrr}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
+    \hline {p_i} & {5} & {6} & {9} & {10} & {13} \\
+    {w_i} & {2} & {4} & {5} & {6} & {7} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -2493,291 +1881,48 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the matrix ${v}$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\({v}[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>5</td>
-        <td>5</td>
-        <td>5</td>
-        <td>5</td>
-        <td>5</td>
-        <td>5</td>
-        <td>5</td>
-        <td>5</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>5</td>
-        <td>5</td>
-        <td>6</td>
-        <td>6</td>
-        <td>11</td>
-        <td>11</td>
-        <td>11</td>
-        <td>11</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>5</td>
-        <td>5</td>
-        <td>6</td>
-        <td>9</td>
-        <td>11</td>
-        <td>14</td>
-        <td>14</td>
-        <td>15</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>5</td>
-        <td>5</td>
-        <td>6</td>
-        <td>9</td>
-        <td>11</td>
-        <td>14</td>
-        <td>15</td>
-        <td>15</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>5</td>
-        <td>5</td>
-        <td>6</td>
-        <td>9</td>
-        <td>11</td>
-        <td>14</td>
-        <td>15</td>
-        <td>18</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrr}
+        \hline {{v}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 \\
+        {i=2} & 0 & 0 & 5 & 5 & 6 & 6 & 11 & 11 & 11 & 11 \\
+        {i=3} & 0 & 0 & 5 & 5 & 6 & 9 & 11 & 14 & 14 & 15 \\
+        {i=4} & 0 & 0 & 5 & 5 & 6 & 9 & 11 & 14 & 15 & 15 \\
+        {i=5} & 0 & 0 & 5 & 5 & 6 & 9 & 11 & 14 & 15 & 18 \\
+        \hline
+        \end{array}
+        $$
 
         This is the matrix ${s}$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\({s}[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrr}
+        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 1 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following matrix ${s}$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\({s}[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrr}
+        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 1 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $i=5$ and $k=9$ as follows:
 
@@ -2886,32 +2031,14 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     Consider the following KP instance, where the knapsack has capacity $c=10$, and the profits and weights associated with the items are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrr}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
+    \hline {p_i} & {2} & {7} & {9} & {12} & {14} \\
+    {w_i} & {1} & {4} & {5} & {7} & {8} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -3399,312 +2526,48 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the matrix ${v}$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\({v}[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        <td><span class="arithmatex">\(k=10\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        <td>7</td>
-        <td>9</td>
-        <td>9</td>
-        <td>9</td>
-        <td>9</td>
-        <td>9</td>
-        <td>9</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        <td>7</td>
-        <td>9</td>
-        <td>11</td>
-        <td>11</td>
-        <td>11</td>
-        <td>16</td>
-        <td>18</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        <td>7</td>
-        <td>9</td>
-        <td>11</td>
-        <td>12</td>
-        <td>14</td>
-        <td>16</td>
-        <td>18</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        <td>7</td>
-        <td>9</td>
-        <td>11</td>
-        <td>12</td>
-        <td>14</td>
-        <td>16</td>
-        <td>18</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrr}
+        \hline {{v}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 & 2 \\
+        {i=2} & 0 & 2 & 2 & 2 & 7 & 9 & 9 & 9 & 9 & 9 & 9 \\
+        {i=3} & 0 & 2 & 2 & 2 & 7 & 9 & 11 & 11 & 11 & 16 & 18 \\
+        {i=4} & 0 & 2 & 2 & 2 & 7 & 9 & 11 & 12 & 14 & 16 & 18 \\
+        {i=5} & 0 & 2 & 2 & 2 & 7 & 9 & 11 & 12 & 14 & 16 & 18 \\
+        \hline
+        \end{array}
+        $$
 
         This is the matrix ${s}$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\({s}[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        <td><span class="arithmatex">\(k=10\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrr}
+        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following matrix ${s}$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\({s}[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        <td><span class="arithmatex">\(k=10\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrr}
+        \hline {{s}[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $i=5$ and $k=10$ as follows:
 
@@ -3815,29 +2678,14 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     Consider the following UKP instance, where the knapsack has capacity $c=7$, each item type is available in infinitely many copies, and the profits and weights associated with the item types are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td>4</td>
-    <td>5</td>
-    <td>10</td>
-    <td>11</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td>2</td>
-    <td>3</td>
-    <td>5</td>
-    <td>6</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrr}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\
+    \hline {p_i} & 4 & 5 & 10 & 11 \\
+    {w_i} & 2 & 3 & 5 & 6 \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -4256,84 +3104,33 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the vector $v$ after the execution of the first DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
-        <th><span class="arithmatex">\(k=7\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(v[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>4</td>
-        <td>5</td>
-        <td>8</td>
-        <td>10</td>
-        <td>12</td>
-        <td>14</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrr}
+        \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {v[k]} & 0 & 0 & 4 & 5 & 8 & 10 & 12 & 14 \\
+        \hline
+        \end{array}
+        $$
 
         This is the vector $s$ after the execution of the first DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
-        <th><span class="arithmatex">\(k=7\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>3</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrr}
+        \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {s[k]} & 0 & 0 & 1 & 2 & 1 & 3 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following vector $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
-        <th><span class="arithmatex">\(k=7\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>3</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrr}
+        \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {s[k]} & 0 & 0 & 1 & 2 & 1 & 3 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $k=7$ as follows:
 
@@ -4688,216 +3485,45 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the matrix $v$ after the execution of the second DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(v[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>4</td>
-        <td>4</td>
-        <td>8</td>
-        <td>8</td>
-        <td>12</td>
-        <td>12</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>4</td>
-        <td>5</td>
-        <td>8</td>
-        <td>9</td>
-        <td>12</td>
-        <td>13</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>4</td>
-        <td>5</td>
-        <td>8</td>
-        <td>10</td>
-        <td>12</td>
-        <td>14</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>4</td>
-        <td>5</td>
-        <td>8</td>
-        <td>10</td>
-        <td>12</td>
-        <td>14</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrr}
+        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 4 & 4 & 8 & 8 & 12 & 12 \\
+        {i=2} & 0 & 0 & 4 & 5 & 8 & 9 & 12 & 13 \\
+        {i=3} & 0 & 0 & 4 & 5 & 8 & 10 & 12 & 14 \\
+        {i=4} & 0 & 0 & 4 & 5 & 8 & 10 & 12 & 14 \\
+        \hline
+        \end{array}
+        $$
 
         This is the matrix $s$ after the execution of the second DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
     4. We have the following matrix $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $i=4$ and $k=7$ as follows:
 
@@ -4999,32 +3625,14 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     Consider the following UKP instance, where the knapsack has capacity $c=8$, each item type is available in infinitely many copies, and the profits and weights associated with the item types are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td>2</td>
-    <td>5</td>
-    <td>7</td>
-    <td>8</td>
-    <td>10</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td>1</td>
-    <td>2</td>
-    <td>3</td>
-    <td>4</td>
-    <td>5</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrr}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
+    \hline {p_i} & 2 & 5 & 7 & 8 & 10 \\
+    {w_i} & 1 & 2 & 3 & 4 & 5 \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -5569,90 +4177,33 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the vector $v$ after the execution of the first DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
-        <th><span class="arithmatex">\(k=7\)</span></th>
-        <th><span class="arithmatex">\(k=8\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(v[k]\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>5</td>
-        <td>7</td>
-        <td>10</td>
-        <td>12</td>
-        <td>15</td>
-        <td>17</td>
-        <td>20</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrr}
+        \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {v[k]} & 0 & 2 & 5 & 7 & 10 & 12 & 15 & 17 & 20 \\
+        \hline
+        \end{array}
+        $$
 
         This is the vector $s$ after the execution of the first DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
-        <th><span class="arithmatex">\(k=7\)</span></th>
-        <th><span class="arithmatex">\(k=8\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrr}
+        \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {s[k]} & 0 & 1 & 2 & 1 & 2 & 1 & 2 & 1 & 2 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following vector $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
-        <th><span class="arithmatex">\(k=7\)</span></th>
-        <th><span class="arithmatex">\(k=8\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrr}
+        \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {s[k]} & 0 & 1 & 2 & 1 & 2 & 1 & 2 & 1 & 2 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $k=8$ as follows:
 
@@ -6131,270 +4682,48 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the matrix $v$ after the execution of the second DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(v[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>4</td>
-        <td>6</td>
-        <td>8</td>
-        <td>10</td>
-        <td>12</td>
-        <td>14</td>
-        <td>16</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>5</td>
-        <td>7</td>
-        <td>10</td>
-        <td>12</td>
-        <td>15</td>
-        <td>17</td>
-        <td>20</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>5</td>
-        <td>7</td>
-        <td>10</td>
-        <td>12</td>
-        <td>15</td>
-        <td>17</td>
-        <td>20</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>5</td>
-        <td>7</td>
-        <td>10</td>
-        <td>12</td>
-        <td>15</td>
-        <td>17</td>
-        <td>20</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>5</td>
-        <td>7</td>
-        <td>10</td>
-        <td>12</td>
-        <td>15</td>
-        <td>17</td>
-        <td>20</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrr}
+        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 2 & 4 & 6 & 8 & 10 & 12 & 14 & 16 \\
+        {i=2} & 0 & 2 & 5 & 7 & 10 & 12 & 15 & 17 & 20 \\
+        {i=3} & 0 & 2 & 5 & 7 & 10 & 12 & 15 & 17 & 20 \\
+        {i=4} & 0 & 2 & 5 & 7 & 10 & 12 & 15 & 17 & 20 \\
+        {i=5} & 0 & 2 & 5 & 7 & 10 & 12 & 15 & 17 & 20 \\
+        \hline
+        \end{array}
+        $$
 
         This is the matrix $s$ after the execution of the second DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
     4. We have the following matrix $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $i=5$ and $k=8$ as follows:
 
@@ -6527,29 +4856,14 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     Consider the following UKP instance, where the knapsack has capacity $c=10$, each item type is available in infinitely many copies, and the profits and weights associated with the item types are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td>6</td>
-    <td>10</td>
-    <td>12</td>
-    <td>13</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td>3</td>
-    <td>4</td>
-    <td>6</td>
-    <td>7</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrr}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\
+    \hline {p_i} & 6 & 10 & 12 & 13 \\
+    {w_i} & 3 & 4 & 6 & 7 \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -7130,102 +5444,33 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the vector $v$ after the execution of the first DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
-        <th><span class="arithmatex">\(k=7\)</span></th>
-        <th><span class="arithmatex">\(k=8\)</span></th>
-        <th><span class="arithmatex">\(k=9\)</span></th>
-        <th><span class="arithmatex">\(k=10\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(v[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>6</td>
-        <td>10</td>
-        <td>10</td>
-        <td>12</td>
-        <td>16</td>
-        <td>20</td>
-        <td>20</td>
-        <td>22</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrr}
+        \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+        \hline {v[k]} & 0 & 0 & 0 & 6 & 10 & 10 & 12 & 16 & 20 & 20 & 22 \\
+        \hline
+        \end{array}
+        $$
 
         This is the vector $s$ after the execution of the first DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
-        <th><span class="arithmatex">\(k=7\)</span></th>
-        <th><span class="arithmatex">\(k=8\)</span></th>
-        <th><span class="arithmatex">\(k=9\)</span></th>
-        <th><span class="arithmatex">\(k=10\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>2</td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
-        <td>2</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrr}
+        \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+        \hline {s[k]} & 0 & 0 & 0 & 1 & 2 & 2 & 1 & 1 & 2 & 2 & 1 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following vector $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
-        <th><span class="arithmatex">\(k=7\)</span></th>
-        <th><span class="arithmatex">\(k=8\)</span></th>
-        <th><span class="arithmatex">\(k=9\)</span></th>
-        <th><span class="arithmatex">\(k=10\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>2</td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
-        <td>2</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrr}
+        \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+        \hline {s[k]} & 0 & 0 & 0 & 1 & 2 & 2 & 1 & 1 & 2 & 2 & 1 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $k=10$ as follows:
 
@@ -7695,270 +5940,45 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the matrix $v$ after the execution of the second DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(v[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        <td><span class="arithmatex">\(k=10\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>6</td>
-        <td>6</td>
-        <td>6</td>
-        <td>12</td>
-        <td>12</td>
-        <td>12</td>
-        <td>18</td>
-        <td>18</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>6</td>
-        <td>10</td>
-        <td>10</td>
-        <td>12</td>
-        <td>16</td>
-        <td>20</td>
-        <td>20</td>
-        <td>22</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>6</td>
-        <td>10</td>
-        <td>10</td>
-        <td>12</td>
-        <td>16</td>
-        <td>20</td>
-        <td>20</td>
-        <td>22</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>6</td>
-        <td>10</td>
-        <td>10</td>
-        <td>12</td>
-        <td>16</td>
-        <td>20</td>
-        <td>20</td>
-        <td>22</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrr}
+        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 0 & 6 & 6 & 6 & 12 & 12 & 12 & 18 & 18 \\
+        {i=2} & 0 & 0 & 0 & 6 & 10 & 10 & 12 & 16 & 20 & 20 & 22 \\
+        {i=3} & 0 & 0 & 0 & 6 & 10 & 10 & 12 & 16 & 20 & 20 & 22 \\
+        {i=4} & 0 & 0 & 0 & 6 & 10 & 10 & 12 & 16 & 20 & 20 & 22 \\
+        \hline
+        \end{array}
+        $$
 
         This is the matrix $s$ after the execution of the second DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        <td><span class="arithmatex">\(k=10\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
     4. We have the following matrix $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        <td><span class="arithmatex">\(k=10\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $i=4$ and $k=10$ as follows:
 
@@ -8073,29 +6093,14 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     Consider the following UKP instance, where the knapsack has capacity $c=9$, each item type is available in infinitely many copies, and the profits and weights associated with the item types are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td>5</td>
-    <td>6</td>
-    <td>14</td>
-    <td>18</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td>2</td>
-    <td>3</td>
-    <td>6</td>
-    <td>7</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrr}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} \\
+    \hline {p_i} & 5 & 6 & 14 & 18 \\
+    {w_i} & 2 & 3 & 6 & 7 \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -8622,96 +6627,33 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the vector $v$ after the execution of the first DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
-        <th><span class="arithmatex">\(k=7\)</span></th>
-        <th><span class="arithmatex">\(k=8\)</span></th>
-        <th><span class="arithmatex">\(k=9\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(v[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>5</td>
-        <td>6</td>
-        <td>10</td>
-        <td>11</td>
-        <td>15</td>
-        <td>18</td>
-        <td>20</td>
-        <td>23</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrr}
+        \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {v[k]} & 0 & 0 & 5 & 6 & 10 & 11 & 15 & 18 & 20 & 23 \\
+        \hline
+        \end{array}
+        $$
 
         This is the vector $s$ after the execution of the first DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
-        <th><span class="arithmatex">\(k=7\)</span></th>
-        <th><span class="arithmatex">\(k=8\)</span></th>
-        <th><span class="arithmatex">\(k=9\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>4</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrr}
+        \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {s[k]} & 0 & 0 & 1 & 2 & 1 & 1 & 1 & 4 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following vector $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
-        <th><span class="arithmatex">\(k=7\)</span></th>
-        <th><span class="arithmatex">\(k=8\)</span></th>
-        <th><span class="arithmatex">\(k=9\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>4</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrr}
+        \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {s[k]} & 0 & 0 & 1 & 2 & 1 & 1 & 1 & 4 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $k=9$ as follows:
 
@@ -9136,252 +7078,45 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the matrix $v$ after the execution of the second DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(v[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>5</td>
-        <td>5</td>
-        <td>10</td>
-        <td>10</td>
-        <td>15</td>
-        <td>15</td>
-        <td>20</td>
-        <td>20</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>5</td>
-        <td>6</td>
-        <td>10</td>
-        <td>11</td>
-        <td>15</td>
-        <td>16</td>
-        <td>20</td>
-        <td>21</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>5</td>
-        <td>6</td>
-        <td>10</td>
-        <td>11</td>
-        <td>15</td>
-        <td>16</td>
-        <td>20</td>
-        <td>21</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>5</td>
-        <td>6</td>
-        <td>10</td>
-        <td>11</td>
-        <td>15</td>
-        <td>18</td>
-        <td>20</td>
-        <td>23</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrr}
+        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 5 & 5 & 10 & 10 & 15 & 15 & 20 & 20 \\
+        {i=2} & 0 & 0 & 5 & 6 & 10 & 11 & 15 & 16 & 20 & 21 \\
+        {i=3} & 0 & 0 & 5 & 6 & 10 & 11 & 15 & 16 & 20 & 21 \\
+        {i=4} & 0 & 0 & 5 & 6 & 10 & 11 & 15 & 18 & 20 & 23 \\
+        \hline
+        \end{array}
+        $$
 
         This is the matrix $s$ after the execution of the second DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+        \hline
+        \end{array}
+        $$
 
     4. We have the following matrix $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $i=4$ and $k=9$ as follows:
 
@@ -9483,32 +7218,14 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     Consider the following UKP instance, where the knapsack has capacity $c=11$, each item type is available in infinitely many copies, and the profits and weights associated with the item types are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td>3</td>
-    <td>9</td>
-    <td>10</td>
-    <td>16</td>
-    <td>17</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td>2</td>
-    <td>5</td>
-    <td>6</td>
-    <td>9</td>
-    <td>10</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrr}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
+    \hline {p_i} & 3 & 9 & 10 & 16 & 17 \\
+    {w_i} & 2 & 5 & 6 & 9 & 10 \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -10242,108 +7959,33 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the vector $v$ after the execution of the first DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
-        <th><span class="arithmatex">\(k=7\)</span></th>
-        <th><span class="arithmatex">\(k=8\)</span></th>
-        <th><span class="arithmatex">\(k=9\)</span></th>
-        <th><span class="arithmatex">\(k=10\)</span></th>
-        <th><span class="arithmatex">\(k=11\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(v[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>3</td>
-        <td>3</td>
-        <td>6</td>
-        <td>9</td>
-        <td>10</td>
-        <td>12</td>
-        <td>13</td>
-        <td>16</td>
-        <td>18</td>
-        <td>19</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrrr}
+        \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} & {k=11} \\
+        \hline {v[k]} & 0 & 0 & 3 & 3 & 6 & 9 & 10 & 12 & 13 & 16 & 18 & 19 \\
+        \hline
+        \end{array}
+        $$
 
         This is the vector $s$ after the execution of the first DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
-        <th><span class="arithmatex">\(k=7\)</span></th>
-        <th><span class="arithmatex">\(k=8\)</span></th>
-        <th><span class="arithmatex">\(k=9\)</span></th>
-        <th><span class="arithmatex">\(k=10\)</span></th>
-        <th><span class="arithmatex">\(k=11\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>1</td>
-        <td>1</td>
-        <td>4</td>
-        <td>2</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrrr}
+        \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} & {k=11} \\
+        \hline {s[k]} & 0 & 0 & 1 & 1 & 1 & 2 & 3 & 1 & 1 & 4 & 2 & 1 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following vector $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(k=0\)</span></th>
-        <th><span class="arithmatex">\(k=1\)</span></th>
-        <th><span class="arithmatex">\(k=2\)</span></th>
-        <th><span class="arithmatex">\(k=3\)</span></th>
-        <th><span class="arithmatex">\(k=4\)</span></th>
-        <th><span class="arithmatex">\(k=5\)</span></th>
-        <th><span class="arithmatex">\(k=6\)</span></th>
-        <th><span class="arithmatex">\(k=7\)</span></th>
-        <th><span class="arithmatex">\(k=8\)</span></th>
-        <th><span class="arithmatex">\(k=9\)</span></th>
-        <th><span class="arithmatex">\(k=10\)</span></th>
-        <th><span class="arithmatex">\(k=11\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>1</td>
-        <td>1</td>
-        <td>4</td>
-        <td>2</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrrr}
+        \hline  & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} & {k=11} \\
+        \hline {s[k]} & 0 & 0 & 1 & 1 & 1 & 2 & 3 & 1 & 1 & 4 & 2 & 1 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $k=11$ as follows:
 
@@ -10926,333 +8568,48 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the matrix $v$ after the execution of the second DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(v[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        <td><span class="arithmatex">\(k=10\)</span></td>
-        <td><span class="arithmatex">\(k=11\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>3</td>
-        <td>3</td>
-        <td>6</td>
-        <td>6</td>
-        <td>9</td>
-        <td>9</td>
-        <td>12</td>
-        <td>12</td>
-        <td>15</td>
-        <td>15</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>3</td>
-        <td>3</td>
-        <td>6</td>
-        <td>9</td>
-        <td>9</td>
-        <td>12</td>
-        <td>12</td>
-        <td>15</td>
-        <td>18</td>
-        <td>18</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>3</td>
-        <td>3</td>
-        <td>6</td>
-        <td>9</td>
-        <td>10</td>
-        <td>12</td>
-        <td>13</td>
-        <td>15</td>
-        <td>18</td>
-        <td>19</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>3</td>
-        <td>3</td>
-        <td>6</td>
-        <td>9</td>
-        <td>10</td>
-        <td>12</td>
-        <td>13</td>
-        <td>16</td>
-        <td>18</td>
-        <td>19</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>3</td>
-        <td>3</td>
-        <td>6</td>
-        <td>9</td>
-        <td>10</td>
-        <td>12</td>
-        <td>13</td>
-        <td>16</td>
-        <td>18</td>
-        <td>19</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrrr}
+        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} & {k=11} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 3 & 3 & 6 & 6 & 9 & 9 & 12 & 12 & 15 & 15 \\
+        {i=2} & 0 & 0 & 3 & 3 & 6 & 9 & 9 & 12 & 12 & 15 & 18 & 18 \\
+        {i=3} & 0 & 0 & 3 & 3 & 6 & 9 & 10 & 12 & 13 & 15 & 18 & 19 \\
+        {i=4} & 0 & 0 & 3 & 3 & 6 & 9 & 10 & 12 & 13 & 16 & 18 & 19 \\
+        {i=5} & 0 & 0 & 3 & 3 & 6 & 9 & 10 & 12 & 13 & 16 & 18 & 19 \\
+        \hline
+        \end{array}
+        $$
 
         This is the matrix $s$ after the execution of the second DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        <td><span class="arithmatex">\(k=10\)</span></td>
-        <td><span class="arithmatex">\(k=11\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} & {k=11} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 1 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
     4. We have the following matrix $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        <td><span class="arithmatex">\(k=10\)</span></td>
-        <td><span class="arithmatex">\(k=11\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} & {k=10} & {k=11} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 1 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $i=5$ and $k=11$ as follows:
 
@@ -11365,28 +8722,15 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     Consider the following BKP instance, where the knapsack has capacity $c=6$, and the profits, weights, and bounds associated with the item types are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td>4</td>
-    <td>5</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td>2</td>
-    <td>3</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(b_i\)</span></td>
-    <td>2</td>
-    <td>1</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rr}
+    \hline  & {i=1} & {i=2} \\
+    \hline {p_i} & 4 & 5 \\
+    {w_i} & 2 & 3 \\
+    {b_i} & 2 & 1 \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -11559,138 +8903,39 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the matrix $v$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(v[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>4</td>
-        <td>4</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>4</td>
-        <td>5</td>
-        <td>8</td>
-        <td>9</td>
-        <td>9</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrr}
+        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 4 & 4 & 8 & 8 & 8 \\
+        {i=2} & 0 & 0 & 4 & 5 & 8 & 9 & 9 \\
+        \hline
+        \end{array}
+        $$
 
         This is the matrix $s$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 1 & 1 & 2 & 2 & 2 \\
+        {i=2} & 0 & 0 & 0 & 1 & 0 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following matrix $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 1 & 1 & 2 & 2 & 2 \\
+        {i=2} & 0 & 0 & 0 & 1 & 0 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $i=2$ and $k=6$ as follows:
 
@@ -11751,28 +8996,15 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     Consider the following BKP instance, where the knapsack has capacity $c=7$, and the profits, weights, and bounds associated with the item types are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td>3</td>
-    <td>8</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td>1</td>
-    <td>4</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(b_i\)</span></td>
-    <td>3</td>
-    <td>1</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rr}
+    \hline  & {i=1} & {i=2} \\
+    \hline {p_i} & 3 & 8 \\
+    {w_i} & 1 & 4 \\
+    {b_i} & 3 & 1 \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -11966,150 +9198,39 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the matrix $v$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(v[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>3</td>
-        <td>6</td>
-        <td>9</td>
-        <td>9</td>
-        <td>9</td>
-        <td>9</td>
-        <td>9</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>3</td>
-        <td>6</td>
-        <td>9</td>
-        <td>9</td>
-        <td>11</td>
-        <td>14</td>
-        <td>17</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrr}
+        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 3 & 6 & 9 & 9 & 9 & 9 & 9 \\
+        {i=2} & 0 & 3 & 6 & 9 & 9 & 11 & 14 & 17 \\
+        \hline
+        \end{array}
+        $$
 
         This is the matrix $s$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 1 & 2 & 3 & 3 & 3 & 3 & 3 \\
+        {i=2} & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following matrix $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 1 & 2 & 3 & 3 & 3 & 3 & 3 \\
+        {i=2} & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $i=2$ and $k=7$ as follows:
 
@@ -12170,32 +9291,15 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     Consider the following BKP instance, where the knapsack has capacity $c=5$, and the profits, weights, and bounds associated with the item types are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td>2</td>
-    <td>3</td>
-    <td>4</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td>1</td>
-    <td>2</td>
-    <td>3</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(b_i\)</span></td>
-    <td>1</td>
-    <td>1</td>
-    <td>1</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrr}
+    \hline  & {i=1} & {i=2} & {i=3} \\
+    \hline {p_i} & 2 & 3 & 4 \\
+    {w_i} & 1 & 2 & 3 \\
+    {b_i} & 1 & 1 & 1 \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -12389,153 +9493,42 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the matrix $v$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(v[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>3</td>
-        <td>5</td>
-        <td>5</td>
-        <td>5</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>3</td>
-        <td>5</td>
-        <td>6</td>
-        <td>7</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrr}
+        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 2 & 2 & 2 & 2 & 2 \\
+        {i=2} & 0 & 2 & 3 & 5 & 5 & 5 \\
+        {i=3} & 0 & 2 & 3 & 5 & 6 & 7 \\
+        \hline
+        \end{array}
+        $$
 
         This is the matrix $s$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following matrix $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $i=3$ and $k=5$ as follows:
 
@@ -12610,28 +9603,15 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     Consider the following BKP instance, where the knapsack has capacity $c=8$, and the profits, weights, and bounds associated with the item types are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td>5</td>
-    <td>9</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td>2</td>
-    <td>5</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(b_i\)</span></td>
-    <td>3</td>
-    <td>1</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rr}
+    \hline  & {i=1} & {i=2} \\
+    \hline {p_i} & 5 & 9 \\
+    {w_i} & 2 & 5 \\
+    {b_i} & 3 & 1 \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -12846,162 +9826,39 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the matrix $v$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(v[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>5</td>
-        <td>5</td>
-        <td>10</td>
-        <td>10</td>
-        <td>15</td>
-        <td>15</td>
-        <td>15</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>5</td>
-        <td>5</td>
-        <td>10</td>
-        <td>10</td>
-        <td>15</td>
-        <td>15</td>
-        <td>15</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrr}
+        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 5 & 5 & 10 & 10 & 15 & 15 & 15 \\
+        {i=2} & 0 & 0 & 5 & 5 & 10 & 10 & 15 & 15 & 15 \\
+        \hline
+        \end{array}
+        $$
 
         This is the matrix $s$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
-        <td>2</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 1 & 1 & 2 & 2 & 3 & 3 & 3 \\
+        {i=2} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following matrix $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
-        <td>2</td>
-        <td>3</td>
-        <td>3</td>
-        <td>3</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 1 & 1 & 2 & 2 & 3 & 3 & 3 \\
+        {i=2} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $i=2$ and $k=8$ as follows:
 
@@ -13062,32 +9919,15 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
     Consider the following BKP instance, where the knapsack has capacity $c=9$, and the profits, weights, and bounds associated with the item types are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td>4</td>
-    <td>5</td>
-    <td>3</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td>3</td>
-    <td>4</td>
-    <td>2</td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(b_i\)</span></td>
-    <td>2</td>
-    <td>1</td>
-    <td>2</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrr}
+    \hline  & {i=1} & {i=2} & {i=3} \\
+    \hline {p_i} & 4 & 5 & 3 \\
+    {w_i} & 3 & 4 & 2 \\
+    {b_i} & 2 & 1 & 2 \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -13393,213 +10233,42 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         This is the matrix $v$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(v[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>4</td>
-        <td>4</td>
-        <td>4</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        <td>8</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>4</td>
-        <td>5</td>
-        <td>5</td>
-        <td>8</td>
-        <td>9</td>
-        <td>9</td>
-        <td>9</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>3</td>
-        <td>4</td>
-        <td>6</td>
-        <td>7</td>
-        <td>8</td>
-        <td>10</td>
-        <td>11</td>
-        <td>12</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrr}
+        \hline {v[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 0 & 4 & 4 & 4 & 8 & 8 & 8 & 8 \\
+        {i=2} & 0 & 0 & 0 & 4 & 5 & 5 & 8 & 9 & 9 & 9 \\
+        {i=3} & 0 & 0 & 3 & 4 & 6 & 7 & 8 & 10 & 11 & 12 \\
+        \hline
+        \end{array}
+        $$
 
         This is the matrix $s$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>2</td>
-        <td>1</td>
-        <td>0</td>
-        <td>2</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 0 & 1 & 1 & 1 & 2 & 2 & 2 & 2 \\
+        {i=2} & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 1 & 0 & 2 & 1 & 0 & 2 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following matrix $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <td><span class="arithmatex">\(s[i][k]\)</span></td>
-        <td><span class="arithmatex">\(k=0\)</span></td>
-        <td><span class="arithmatex">\(k=1\)</span></td>
-        <td><span class="arithmatex">\(k=2\)</span></td>
-        <td><span class="arithmatex">\(k=3\)</span></td>
-        <td><span class="arithmatex">\(k=4\)</span></td>
-        <td><span class="arithmatex">\(k=5\)</span></td>
-        <td><span class="arithmatex">\(k=6\)</span></td>
-        <td><span class="arithmatex">\(k=7\)</span></td>
-        <td><span class="arithmatex">\(k=8\)</span></td>
-        <td><span class="arithmatex">\(k=9\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>2</td>
-        <td>1</td>
-        <td>0</td>
-        <td>2</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrr}
+        \hline {s[i][k]} & {k=0} & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} & {k=8} & {k=9} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 0 & 0 & 1 & 1 & 1 & 2 & 2 & 2 & 2 \\
+        {i=2} & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 1 & 0 & 2 & 1 & 0 & 2 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $i=3$ and $k=9$ as follows:
 

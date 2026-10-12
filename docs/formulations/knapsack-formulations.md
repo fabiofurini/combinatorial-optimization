@@ -100,71 +100,24 @@ title: "Formulations of the knapsack problem"
 
     We consider a knapsack of capacity $c = 9$ and a set $\mathscr{I} = \{1,2,3,4,5,6\}$ of $6$ items ($n = 6$), with the following profits and weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j = 1\)</span></th>
-    <th><span class="arithmatex">\(j = 2\)</span></th>
-    <th><span class="arithmatex">\(j = 3\)</span></th>
-    <th><span class="arithmatex">\(j = 4\)</span></th>
-    <th><span class="arithmatex">\(j = 5\)</span></th>
-    <th><span class="arithmatex">\(j = 6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_j\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrrrr}
+    \hline  & {j = 1} & {j = 2} & {j = 3} & {j = 4} & {j = 5} & {j = 6} \\
+    \hline {p_j} & {6} & {5} & {8} & {9} & {6} & {7} \\
+    {w_j} & {2} & {3} & {6} & {7} & {5} & {9} \\
+    \hline
+    \end{array}
+    $$
 
     We refer to this KP instance as <span style="color:#1971c2">Example 1</span>. The  $\ILP_{\KP}$ model for this KP instance is:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <td><span class="arithmatex">\(\max\)</span></td>
-    <td>6	 	<span class="arithmatex">\(x_1\)</span></td>
-    <td>\+	5	 	<span class="arithmatex">\(x_2\)</span></td>
-    <td>\+	8	 	<span class="arithmatex">\(x_3\)</span></td>
-    <td>\+	9	 	<span class="arithmatex">\(x_4\)</span></td>
-    <td>\+	6	 	<span class="arithmatex">\(x_5\)</span></td>
-    <td>\+	7	 	<span class="arithmatex">\(x_6\)</span></td>
-    </tr>
-    <tr>
-    <td>subject to</td>
-    <td>2	 	<span class="arithmatex">\(x_1\)</span></td>
-    <td>\+	3	 	<span class="arithmatex">\(x_2\)</span></td>
-    <td>\+	6	 	<span class="arithmatex">\(x_3\)</span></td>
-    <td>\+	7	 	<span class="arithmatex">\(x_4\)</span></td>
-    <td>\+	5	 	<span class="arithmatex">\(x_5\)</span></td>
-    <td>\+	9	 	<span class="arithmatex">\(x_6\)</span></td>
-    <td><span class="arithmatex">\(\le\)</span></td>
-    <td>9</td>
-    </tr>
-    <tr>
-    <td></td>
-    <td><span class="arithmatex">\(x_1\)</span>,</td>
-    <td><span class="arithmatex">\(x_2\)</span>,</td>
-    <td><span class="arithmatex">\(x_3\)</span>,</td>
-    <td><span class="arithmatex">\(x_4\)</span>,</td>
-    <td><span class="arithmatex">\(x_5\)</span>,</td>
-    <td><span class="arithmatex">\(x_6\)</span></td>
-    <td><span class="arithmatex">\(\in\)</span></td>
-    <td><span class="arithmatex">\(\{0,1\}\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{rrrrrrrrrrrrr}
+    {\max} & 6 \, {x_1} & + 5 \, {x_2} & + 8 \, {x_3} & + 9 \, {x_4} & + 6 \, {x_5} & + 7 \, {x_6} \\[0.5ex]
+    \text{subject to} & 2 \, {x_1} & + 3 \, {x_2} & + 6 \, {x_3} & + 7 \, {x_4} & + 5 \, {x_5} & + 9 \, {x_6} & {\le} & 9 \\[0.5ex]
+    & {x_1}, & {x_2}, & {x_3}, & {x_4}, & {x_5}, & {x_6} & { \in} & { \{0,1\}}
+    \end{array}
+    $$
 
     An optimal solution $~{\tilde{\vet x}}(\ILP_{\KP})$  is:
 
@@ -193,39 +146,13 @@ title: "Formulations of the knapsack problem"
 
     The  $\LP\text{-}0_{\KP}$ model for the KP instance of <span style="color:#1971c2">Example 1</span> is:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <td><span class="arithmatex">\(\max\)</span></td>
-    <td>6	 	<span class="arithmatex">\(x_1\)</span></td>
-    <td>\+	5	 	<span class="arithmatex">\(x_2\)</span></td>
-    <td>\+	8	 	<span class="arithmatex">\(x_3\)</span></td>
-    <td>\+	9	 	<span class="arithmatex">\(x_4\)</span></td>
-    <td>\+	6	 	<span class="arithmatex">\(x_5\)</span></td>
-    <td>\+	7	 	<span class="arithmatex">\(x_6\)</span></td>
-    </tr>
-    <tr>
-    <td>subject to</td>
-    <td>2	 	<span class="arithmatex">\(x_1\)</span></td>
-    <td>\+	3	 	<span class="arithmatex">\(x_2\)</span></td>
-    <td>\+	6	 	<span class="arithmatex">\(x_3\)</span></td>
-    <td>\+	7	 	<span class="arithmatex">\(x_4\)</span></td>
-    <td>\+	5	 	<span class="arithmatex">\(x_5\)</span></td>
-    <td>\+	9	 	<span class="arithmatex">\(x_6\)</span></td>
-    <td><span class="arithmatex">\(\le\)</span></td>
-    <td>9</td>
-    </tr>
-    <tr>
-    <td></td>
-    <td><span class="arithmatex">\(x_1\)</span>,</td>
-    <td><span class="arithmatex">\(x_2\)</span>,</td>
-    <td><span class="arithmatex">\(x_3\)</span>,</td>
-    <td><span class="arithmatex">\(x_4\)</span>,</td>
-    <td><span class="arithmatex">\(x_5\)</span>,</td>
-    <td><span class="arithmatex">\(x_6\)</span></td>
-    <td><span class="arithmatex">\(\ge\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{rrrrrrrrrrrrr}
+    {\max} & 6 \, {x_1} & + 5 \, {x_2} & + 8 \, {x_3} & + 9 \, {x_4} & + 6 \, {x_5} & + 7 \, {x_6} \\[1ex]
+    \text{subject to} & 2 \, {x_1} & + 3 \, {x_2} & + 6 \, {x_3} & + 7 \, {x_4} & + 5 \, {x_5} & + 9 \, {x_6} & {\le} & 9 \\[1ex]
+    & {x_1}, & {x_2}, & {x_3}, & {x_4}, & {x_5}, & {x_6} & { \ge} & { 0}
+    \end{array}
+    $$
 
     An optimal solution $~{\tilde{\vet x}}(\LP\text{-}0_{\KP})$  is:
 
@@ -259,54 +186,18 @@ title: "Formulations of the knapsack problem"
 
     The dual $D(\LP\text{-}0_{\KP})$ model for the KP instance of <span style="color:#1971c2">Example 1</span> is:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <td><span class="arithmatex">\(\min\)</span></td>
-    <td>9	 	<span class="arithmatex">\(\pi\)</span></td>
-    </tr>
-    <tr>
-    <td>subject to</td>
-    <td>2	 	<span class="arithmatex">\(\pi\)</span></td>
-    <td><span class="arithmatex">\(\ge\)</span></td>
-    <td>6</td>
-    </tr>
-    <tr>
-    <td></td>
-    <td>3	 	<span class="arithmatex">\(\pi\)</span></td>
-    <td><span class="arithmatex">\(\ge\)</span></td>
-    <td>5</td>
-    </tr>
-    <tr>
-    <td></td>
-    <td>6	 	<span class="arithmatex">\(\pi\)</span></td>
-    <td><span class="arithmatex">\(\ge\)</span></td>
-    <td>8</td>
-    </tr>
-    <tr>
-    <td></td>
-    <td>7	 	<span class="arithmatex">\(\pi\)</span></td>
-    <td><span class="arithmatex">\(\ge\)</span></td>
-    <td>9</td>
-    </tr>
-    <tr>
-    <td></td>
-    <td>5	 	<span class="arithmatex">\(\pi\)</span></td>
-    <td><span class="arithmatex">\(\ge\)</span></td>
-    <td>6</td>
-    </tr>
-    <tr>
-    <td></td>
-    <td>9	 	<span class="arithmatex">\(\pi\)</span></td>
-    <td><span class="arithmatex">\(\ge\)</span></td>
-    <td>7</td>
-    </tr>
-    <tr>
-    <td></td>
-    <td><span class="arithmatex">\(\pi\)</span></td>
-    <td><span class="arithmatex">\(\ge\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{rrrrrrrrrrrrrrrr}
+    {\min} & 9 \, {\pi} \\[1ex]
+    \text{subject to} & 2 \, {\pi} & {\ge} & 6 \\[1ex]
+    & 3 \, {\pi} & {\ge} & 5 \\[1ex]
+    & 6 \, {\pi} & {\ge} & 8 \\[1ex]
+    & 7 \, {\pi} & {\ge} & 9 \\[1ex]
+    & 5 \, {\pi} & {\ge} & 6 \\[1ex]
+    & 9 \, {\pi} & {\ge} & 7 \\[1ex]
+    & {\pi} & { \ge} & { 0}
+    \end{array}
+    $$
 
     An optimal solution $~{\tilde{\pi}}(D(\LP\text{-}0_{\KP}))$  is:
 
@@ -418,105 +309,19 @@ title: "Formulations of the knapsack problem"
 
     The  $\LP_{\KP}$ model for the KP instance of <span style="color:#1971c2">Example 1</span> is:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <td><span class="arithmatex">\(\max\)</span></td>
-    <td>6	 	<span class="arithmatex">\(x_1\)</span></td>
-    <td>\+	5	 	<span class="arithmatex">\(x_2\)</span></td>
-    <td>\+	8	 	<span class="arithmatex">\(x_3\)</span></td>
-    <td>\+	9	 	<span class="arithmatex">\(x_4\)</span></td>
-    <td>\+	6	 	<span class="arithmatex">\(x_5\)</span></td>
-    <td>\+	7	 	<span class="arithmatex">\(x_6\)</span></td>
-    </tr>
-    <tr>
-    <td>subject to</td>
-    <td>2	 	<span class="arithmatex">\(x_1\)</span></td>
-    <td>\+	3	 	<span class="arithmatex">\(x_2\)</span></td>
-    <td>\+	6	 	<span class="arithmatex">\(x_3\)</span></td>
-    <td>\+	7	 	<span class="arithmatex">\(x_4\)</span></td>
-    <td>\+	5	 	<span class="arithmatex">\(x_5\)</span></td>
-    <td>\+	9	 	<span class="arithmatex">\(x_6\)</span></td>
-    <td><span class="arithmatex">\(\le\)</span></td>
-    <td>9</td>
-    </tr>
-    <tr>
-    <td></td>
-    <td><span class="arithmatex">\(x_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le\)</span></td>
-    <td>1</td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(x_2\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le\)</span></td>
-    <td>1</td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(x_3\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le\)</span></td>
-    <td>1</td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(x_4\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le\)</span></td>
-    <td>1</td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(x_5\)</span></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le\)</span></td>
-    <td>1</td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(x_6\)</span></td>
-    <td><span class="arithmatex">\(\le\)</span></td>
-    <td>1</td>
-    </tr>
-    <tr>
-    <td></td>
-    <td><span class="arithmatex">\(x_1\)</span>,</td>
-    <td><span class="arithmatex">\(x_2\)</span>,</td>
-    <td><span class="arithmatex">\(x_3\)</span>,</td>
-    <td><span class="arithmatex">\(x_4\)</span>,</td>
-    <td><span class="arithmatex">\(x_5\)</span>,</td>
-    <td><span class="arithmatex">\(x_6\)</span></td>
-    <td><span class="arithmatex">\(\ge\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{rrrrrrrrrrrrr}
+    {\max} & 6 \, {x_1} & + 5 \, {x_2} & + 8 \, {x_3} & + 9 \, {x_4} & + 6 \, {x_5} & + 7 \, {x_6} \\[1ex]
+    \text{subject to} & 2 \, {x_1} & + 3 \, {x_2} & + 6 \, {x_3} & + 7 \, {x_4} & + 5 \, {x_5} & + 9 \, {x_6} & {\le} & 9 \\[1ex]
+    & {x_1} &  &  &  &  &  & {\le} & 1 \\
+    &  & {x_2} &  &  &  &  & {\le} & 1 \\
+    &  &  & {x_3} &  &  &  & {\le} & 1 \\
+    &  &  &  & {x_4} &  &  & {\le} & 1 \\
+    &  &  &  &  & {x_5} &  & {\le} & 1 \\
+    &  &  &  &  &  & {x_6} & {\le} & 1 \\[1ex]
+    & {x_1}, & {x_2}, & {x_3}, & {x_4}, & {x_5}, & {x_6} & { \ge} & { 0}
+    \end{array}
+    $$
 
     An optimal solution $~{\tilde{\vet x}}(\LP_{\KP})$  is:
 

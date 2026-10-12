@@ -18,26 +18,13 @@ title: "Exercises · Rod cutting and coin change"
 
     Consider the following RCP instance, where the rod has length $n=6$, and the profits associated with the possible piece lengths are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    <th><span class="arithmatex">\(i=6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrrr}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} \\
+    \hline {p_i} & {2} & {5} & {7} & {8} & {10} & {13} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -375,74 +362,33 @@ title: "Exercises · Rod cutting and coin change"
 
         This is the vector $v$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(\ell=0\)</span></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        <th><span class="arithmatex">\(\ell=6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(v[\ell]\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>5</td>
-        <td>7</td>
-        <td>10</td>
-        <td>12</td>
-        <td>15</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{cccccccc}
+        \hline  & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {v[\ell]} & 0 & 2 & 5 & 7 & 10 & 12 & 15 \\
+        \hline
+        \end{array}
+        $$
 
         This is the vector $s$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        <th><span class="arithmatex">\(\ell=6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[\ell]\)</span></td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{ccccccc}
+        \hline  & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {s[\ell]} & 1 & 2 & 1 & 2 & 1 & 2 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following vector $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        <th><span class="arithmatex">\(\ell=6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[\ell]\)</span></td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrr}
+        \hline  & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {s[\ell]} & 1 & 2 & 1 & 2 & 1 & 2 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution for a rod of length $n=6$ as follows:
 
@@ -880,171 +826,33 @@ title: "Exercises · Rod cutting and coin change"
 
         These are the matrices ${v}$ and ${s}$ obtained during the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\({v}[i][\ell]\)</span></th>
-        <th><span class="arithmatex">\(\ell=0\)</span></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        <th><span class="arithmatex">\(\ell=6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>4</td>
-        <td>6</td>
-        <td>8</td>
-        <td>10</td>
-        <td>12</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>5</td>
-        <td>7</td>
-        <td>10</td>
-        <td>12</td>
-        <td>15</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>5</td>
-        <td>7</td>
-        <td>10</td>
-        <td>12</td>
-        <td>15</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>5</td>
-        <td>7</td>
-        <td>10</td>
-        <td>12</td>
-        <td>15</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>5</td>
-        <td>7</td>
-        <td>10</td>
-        <td>12</td>
-        <td>15</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=6\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>5</td>
-        <td>7</td>
-        <td>10</td>
-        <td>12</td>
-        <td>15</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrr}
+        \hline {{v}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {i=0} & 0 & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} \\
+        {i=1} & 0 & 2 & 4 & 6 & 8 & 10 & 12 \\
+        {i=2} & 0 & 2 & 5 & 7 & 10 & 12 & 15 \\
+        {i=3} & 0 & 2 & 5 & 7 & 10 & 12 & 15 \\
+        {i=4} & 0 & 2 & 5 & 7 & 10 & 12 & 15 \\
+        {i=5} & 0 & 2 & 5 & 7 & 10 & 12 & 15 \\
+        {i=6} & 0 & 2 & 5 & 7 & 10 & 12 & 15 \\
+        \hline
+        \end{array}
+        $$
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\({s}[i][\ell]\)</span></th>
-        <th><span class="arithmatex">\(\ell=0\)</span></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        <th><span class="arithmatex">\(\ell=6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=6\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrr}
+        \hline {{s}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=6} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
         The optimal value of the RCP instance is ${v}[6][6]=15$.
 
@@ -1175,24 +983,13 @@ title: "Exercises · Rod cutting and coin change"
 
     Consider the following RCP instance, where the rod has length $n=5$, and the profits associated with the possible piece lengths are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrr}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
+    \hline {p_i} & {1} & {4} & {6} & {8} & {9} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -1458,68 +1255,33 @@ title: "Exercises · Rod cutting and coin change"
 
         This is the vector $v$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(\ell=0\)</span></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(v[\ell]\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>4</td>
-        <td>6</td>
-        <td>8</td>
-        <td>10</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{ccccccc}
+        \hline  & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
+        \hline {v[\ell]} & 0 & 1 & 4 & 6 & 8 & 10 \\
+        \hline
+        \end{array}
+        $$
 
         This is the vector $s$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[\ell]\)</span></td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>2</td>
-        <td>2</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{cccccc}
+        \hline  & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
+        \hline {s[\ell]} & 1 & 2 & 3 & 2 & 2 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following vector $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[\ell]\)</span></td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>2</td>
-        <td>2</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrr}
+        \hline  & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
+        \hline {s[\ell]} & 1 & 2 & 3 & 2 & 2 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution for a rod of length $n=5$ as follows:
 
@@ -1850,137 +1612,31 @@ title: "Exercises · Rod cutting and coin change"
 
         These are the matrices ${v}$ and ${s}$ obtained during the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\({v}[i][\ell]\)</span></th>
-        <th><span class="arithmatex">\(\ell=0\)</span></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>4</td>
-        <td>5</td>
-        <td>8</td>
-        <td>9</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>4</td>
-        <td>6</td>
-        <td>8</td>
-        <td>10</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>4</td>
-        <td>6</td>
-        <td>8</td>
-        <td>10</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>4</td>
-        <td>6</td>
-        <td>8</td>
-        <td>10</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrr}
+        \hline {{v}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
+        \hline {i=0} & 0 & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} \\
+        {i=1} & 0 & 1 & 2 & 3 & 4 & 5 \\
+        {i=2} & 0 & 1 & 4 & 5 & 8 & 9 \\
+        {i=3} & 0 & 1 & 4 & 6 & 8 & 10 \\
+        {i=4} & 0 & 1 & 4 & 6 & 8 & 10 \\
+        {i=5} & 0 & 1 & 4 & 6 & 8 & 10 \\
+        \hline
+        \end{array}
+        $$
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\({s}[i][\ell]\)</span></th>
-        <th><span class="arithmatex">\(\ell=0\)</span></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrr}
+        \hline {{s}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 1 & 0 & 1 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
         The optimal value of the RCP instance is ${v}[5][5]=10$.
 
@@ -2079,24 +1735,13 @@ title: "Exercises · Rod cutting and coin change"
 
     Consider the following RCP instance, where the rod has length $n=5$, and the profits associated with the possible piece lengths are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrr}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} \\
+    \hline {p_i} & {3} & {5} & {8} & {9} & {10} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -2362,68 +2007,33 @@ title: "Exercises · Rod cutting and coin change"
 
         This is the vector $v$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(\ell=0\)</span></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(v[\ell]\)</span></td>
-        <td>0</td>
-        <td>3</td>
-        <td>6</td>
-        <td>9</td>
-        <td>12</td>
-        <td>15</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{ccccccc}
+        \hline  & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
+        \hline {v[\ell]} & 0 & 3 & 6 & 9 & 12 & 15 \\
+        \hline
+        \end{array}
+        $$
 
         This is the vector $s$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[\ell]\)</span></td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{cccccc}
+        \hline  & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
+        \hline {s[\ell]} & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following vector $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[\ell]\)</span></td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrr}
+        \hline  & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
+        \hline {s[\ell]} & 1 & 1 & 1 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution for a rod of length $n=5$ as follows:
 
@@ -2787,137 +2397,31 @@ title: "Exercises · Rod cutting and coin change"
 
         These are the matrices ${v}$ and ${s}$ obtained during the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\({v}[i][\ell]\)</span></th>
-        <th><span class="arithmatex">\(\ell=0\)</span></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>3</td>
-        <td>6</td>
-        <td>9</td>
-        <td>12</td>
-        <td>15</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>3</td>
-        <td>6</td>
-        <td>9</td>
-        <td>12</td>
-        <td>15</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>3</td>
-        <td>6</td>
-        <td>9</td>
-        <td>12</td>
-        <td>15</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>3</td>
-        <td>6</td>
-        <td>9</td>
-        <td>12</td>
-        <td>15</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>3</td>
-        <td>6</td>
-        <td>9</td>
-        <td>12</td>
-        <td>15</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrr}
+        \hline {{v}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
+        \hline {i=0} & 0 & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} \\
+        {i=1} & 0 & 3 & 6 & 9 & 12 & 15 \\
+        {i=2} & 0 & 3 & 6 & 9 & 12 & 15 \\
+        {i=3} & 0 & 3 & 6 & 9 & 12 & 15 \\
+        {i=4} & 0 & 3 & 6 & 9 & 12 & 15 \\
+        {i=5} & 0 & 3 & 6 & 9 & 12 & 15 \\
+        \hline
+        \end{array}
+        $$
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\({s}[i][\ell]\)</span></th>
-        <th><span class="arithmatex">\(\ell=0\)</span></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrr}
+        \hline {{s}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
         The optimal value of the RCP instance is ${v}[5][5]=15$.
 
@@ -3064,26 +2568,13 @@ title: "Exercises · Rod cutting and coin change"
 
     Consider the following RCP instance, where the rod has length $n=6$, and the profits associated with the possible piece lengths are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    <th><span class="arithmatex">\(i=6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    <td><span class="arithmatex">\(17\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrrr}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} \\
+    \hline {p_i} & {2} & {6} & {7} & {11} & {13} & {17} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -3421,74 +2912,33 @@ title: "Exercises · Rod cutting and coin change"
 
         This is the vector $v$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(\ell=0\)</span></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        <th><span class="arithmatex">\(\ell=6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(v[\ell]\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>6</td>
-        <td>8</td>
-        <td>12</td>
-        <td>14</td>
-        <td>18</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{cccccccc}
+        \hline  & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {v[\ell]} & 0 & 2 & 6 & 8 & 12 & 14 & 18 \\
+        \hline
+        \end{array}
+        $$
 
         This is the vector $s$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        <th><span class="arithmatex">\(\ell=6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[\ell]\)</span></td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{ccccccc}
+        \hline  & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {s[\ell]} & 1 & 2 & 1 & 2 & 1 & 2 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following vector $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        <th><span class="arithmatex">\(\ell=6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[\ell]\)</span></td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>2</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrr}
+        \hline  & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {s[\ell]} & 1 & 2 & 1 & 2 & 1 & 2 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution for a rod of length $n=6$ as follows:
 
@@ -3926,171 +3376,33 @@ title: "Exercises · Rod cutting and coin change"
 
         These are the matrices ${v}$ and ${s}$ obtained during the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\({v}[i][\ell]\)</span></th>
-        <th><span class="arithmatex">\(\ell=0\)</span></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        <th><span class="arithmatex">\(\ell=6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>4</td>
-        <td>6</td>
-        <td>8</td>
-        <td>10</td>
-        <td>12</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>6</td>
-        <td>8</td>
-        <td>12</td>
-        <td>14</td>
-        <td>18</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>6</td>
-        <td>8</td>
-        <td>12</td>
-        <td>14</td>
-        <td>18</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>6</td>
-        <td>8</td>
-        <td>12</td>
-        <td>14</td>
-        <td>18</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>6</td>
-        <td>8</td>
-        <td>12</td>
-        <td>14</td>
-        <td>18</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=6\)</span></td>
-        <td>0</td>
-        <td>2</td>
-        <td>6</td>
-        <td>8</td>
-        <td>12</td>
-        <td>14</td>
-        <td>18</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrr}
+        \hline {{v}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {i=0} & 0 & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} \\
+        {i=1} & 0 & 2 & 4 & 6 & 8 & 10 & 12 \\
+        {i=2} & 0 & 2 & 6 & 8 & 12 & 14 & 18 \\
+        {i=3} & 0 & 2 & 6 & 8 & 12 & 14 & 18 \\
+        {i=4} & 0 & 2 & 6 & 8 & 12 & 14 & 18 \\
+        {i=5} & 0 & 2 & 6 & 8 & 12 & 14 & 18 \\
+        {i=6} & 0 & 2 & 6 & 8 & 12 & 14 & 18 \\
+        \hline
+        \end{array}
+        $$
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\({s}[i][\ell]\)</span></th>
-        <th><span class="arithmatex">\(\ell=0\)</span></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        <th><span class="arithmatex">\(\ell=6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=6\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrr}
+        \hline {{s}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=6} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
         The optimal value of the RCP instance is ${v}[6][6]=18$.
 
@@ -4221,26 +3533,13 @@ title: "Exercises · Rod cutting and coin change"
 
     Consider the following RCP instance, where the rod has length $n=6$, and the profits associated with the possible piece lengths are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(i=1\)</span></th>
-    <th><span class="arithmatex">\(i=2\)</span></th>
-    <th><span class="arithmatex">\(i=3\)</span></th>
-    <th><span class="arithmatex">\(i=4\)</span></th>
-    <th><span class="arithmatex">\(i=5\)</span></th>
-    <th><span class="arithmatex">\(i=6\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|rrrrrr}
+    \hline  & {i=1} & {i=2} & {i=3} & {i=4} & {i=5} & {i=6} \\
+    \hline {p_i} & {1} & {5} & {8} & {9} & {12} & {14} \\
+    \hline
+    \end{array}
+    $$
 
     **Questions**
 
@@ -4578,74 +3877,33 @@ title: "Exercises · Rod cutting and coin change"
 
         This is the vector $v$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(\ell=0\)</span></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        <th><span class="arithmatex">\(\ell=6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(v[\ell]\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>5</td>
-        <td>8</td>
-        <td>10</td>
-        <td>13</td>
-        <td>16</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{cccccccc}
+        \hline  & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {v[\ell]} & 0 & 1 & 5 & 8 & 10 & 13 & 16 \\
+        \hline
+        \end{array}
+        $$
 
         This is the vector $s$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        <th><span class="arithmatex">\(\ell=6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[\ell]\)</span></td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>2</td>
-        <td>2</td>
-        <td>3</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{ccccccc}
+        \hline  & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {s[\ell]} & 1 & 2 & 3 & 2 & 2 & 3 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following vector $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        <th><span class="arithmatex">\(\ell=6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[\ell]\)</span></td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>2</td>
-        <td>2</td>
-        <td>3</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrr}
+        \hline  & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {s[\ell]} & 1 & 2 & 3 & 2 & 2 & 3 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution for a rod of length $n=6$ as follows:
 
@@ -5071,171 +4329,33 @@ title: "Exercises · Rod cutting and coin change"
 
         These are the matrices ${v}$ and ${s}$ obtained during the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\({v}[i][\ell]\)</span></th>
-        <th><span class="arithmatex">\(\ell=0\)</span></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        <th><span class="arithmatex">\(\ell=6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        <td><span class="arithmatex">\(-\infty\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
-        <td>6</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>5</td>
-        <td>6</td>
-        <td>10</td>
-        <td>11</td>
-        <td>15</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>5</td>
-        <td>8</td>
-        <td>10</td>
-        <td>13</td>
-        <td>16</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>5</td>
-        <td>8</td>
-        <td>10</td>
-        <td>13</td>
-        <td>16</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>5</td>
-        <td>8</td>
-        <td>10</td>
-        <td>13</td>
-        <td>16</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=6\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>5</td>
-        <td>8</td>
-        <td>10</td>
-        <td>13</td>
-        <td>16</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrr}
+        \hline {{v}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {i=0} & 0 & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} \\
+        {i=1} & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
+        {i=2} & 0 & 1 & 5 & 6 & 10 & 11 & 15 \\
+        {i=3} & 0 & 1 & 5 & 8 & 10 & 13 & 16 \\
+        {i=4} & 0 & 1 & 5 & 8 & 10 & 13 & 16 \\
+        {i=5} & 0 & 1 & 5 & 8 & 10 & 13 & 16 \\
+        {i=6} & 0 & 1 & 5 & 8 & 10 & 13 & 16 \\
+        \hline
+        \end{array}
+        $$
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\({s}[i][\ell]\)</span></th>
-        <th><span class="arithmatex">\(\ell=0\)</span></th>
-        <th><span class="arithmatex">\(\ell=1\)</span></th>
-        <th><span class="arithmatex">\(\ell=2\)</span></th>
-        <th><span class="arithmatex">\(\ell=3\)</span></th>
-        <th><span class="arithmatex">\(\ell=4\)</span></th>
-        <th><span class="arithmatex">\(\ell=5\)</span></th>
-        <th><span class="arithmatex">\(\ell=6\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=0\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=1\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=2\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=3\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=4\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=5\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(i=6\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrr}
+        \hline {{s}[i][\ell]} & {\ell=0} & {\ell=1} & {\ell=2} & {\ell=3} & {\ell=4} & {\ell=5} & {\ell=6} \\
+        \hline {i=0} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=1} & 0 & 1 & 1 & 1 & 1 & 1 & 1 \\
+        {i=2} & 0 & 0 & 1 & 1 & 1 & 1 & 1 \\
+        {i=3} & 0 & 0 & 0 & 1 & 0 & 1 & 1 \\
+        {i=4} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=5} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        {i=6} & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+        \hline
+        \end{array}
+        $$
 
         The optimal value of the RCP instance is ${v}[6][6]=16$.
 
@@ -5411,78 +4531,33 @@ title: "Exercises · Rod cutting and coin change"
 
         This is the array $v$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(k\)</span></th>
-        <th>0</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(v[k]\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrr}
+        \hline {k} & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
+        \hline {v[k]} & 0 & 1 & 2 & 3 & 1 & 2 & 3 \\
+        \hline
+        \end{array}
+        $$
 
         This is the array $s$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(k\)</span></th>
-        <th>0</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrr}
+        \hline {k} & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
+        \hline {s[k]} & 0 & 1 & 1 & 1 & 2 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following array $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(k\)</span></th>
-        <th>0</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrr}
+        \hline {k} & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
+        \hline {s[k]} & 0 & 1 & 1 & 1 & 2 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $k=6$ as follows:
 
@@ -5646,108 +4721,33 @@ title: "Exercises · Rod cutting and coin change"
 
         This is the array $v$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(k\)</span></th>
-        <th>0</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        <th>7</th>
-        <th>8</th>
-        <th>9</th>
-        <th>10</th>
-        <th>11</th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(v[k]\)</span></td>
-        <td>0</td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td>1</td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td>1</td>
-        <td>2</td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td>2</td>
-        <td>3</td>
-        <td>2</td>
-        <td>3</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrrr}
+        \hline {k} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\
+        \hline {v[k]} & 0 & {+\infty} & {+\infty} & 1 & {+\infty} & 1 & 2 & {+\infty} & 2 & 3 & 2 & 3 \\
+        \hline
+        \end{array}
+        $$
 
         This is the array $s$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(k\)</span></th>
-        <th>0</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        <th>7</th>
-        <th>8</th>
-        <th>9</th>
-        <th>10</th>
-        <th>11</th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>2</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrrr}
+        \hline {k} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\
+        \hline {s[k]} & 0 & 0 & 0 & 1 & 0 & 2 & 1 & 0 & 1 & 1 & 2 & 1 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following array $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(k\)</span></th>
-        <th>0</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        <th>7</th>
-        <th>8</th>
-        <th>9</th>
-        <th>10</th>
-        <th>11</th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>2</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrrr}
+        \hline {k} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\
+        \hline {s[k]} & 0 & 0 & 0 & 1 & 0 & 2 & 1 & 0 & 1 & 1 & 2 & 1 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $k=11$ as follows:
 
@@ -5887,57 +4887,23 @@ title: "Exercises · Rod cutting and coin change"
 
         This is the array $v$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(k\)</span></th>
-        <th>0</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        <th>7</th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(v[k]\)</span></td>
-        <td>0</td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td>1</td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td>1</td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td>2</td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrr}
+        \hline {k} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+        \hline {v[k]} & 0 & {+\infty} & 1 & {+\infty} & 1 & {+\infty} & 2 & {+\infty} \\
+        \hline
+        \end{array}
+        $$
 
         This is the array $s$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(k\)</span></th>
-        <th>0</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        <th>7</th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>2</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrr}
+        \hline {k} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
+        \hline {s[k]} & 0 & 0 & 1 & 0 & 2 & 0 & 1 & 0 \\
+        \hline
+        \end{array}
+        $$
 
     2. Since $v[7]=+\infty$, the instance is <strong>infeasible</strong>: no combination of coins of denominations $w=(2,4)$ returns an amount of change exactly equal to $c=7$. Indeed, every denomination is even, so every amount of change that can be returned is even, while $c=7$ is odd.
 
@@ -6058,114 +5024,33 @@ title: "Exercises · Rod cutting and coin change"
 
         This is the array $v$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(k\)</span></th>
-        <th>0</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        <th>7</th>
-        <th>8</th>
-        <th>9</th>
-        <th>10</th>
-        <th>11</th>
-        <th>12</th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(v[k]\)</span></td>
-        <td>0</td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td>1</td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td>2</td>
-        <td>1</td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td>3</td>
-        <td>2</td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td>4</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrrrr}
+        \hline {k} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+        \hline {v[k]} & 0 & {+\infty} & {+\infty} & 1 & {+\infty} & {+\infty} & 2 & 1 & {+\infty} & 3 & 2 & {+\infty} & 4 \\
+        \hline
+        \end{array}
+        $$
 
         This is the array $s$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(k\)</span></th>
-        <th>0</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        <th>7</th>
-        <th>8</th>
-        <th>9</th>
-        <th>10</th>
-        <th>11</th>
-        <th>12</th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrrrr}
+        \hline {k} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+        \hline {s[k]} & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 2 & 0 & 1 & 1 & 0 & 1 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following array $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(k\)</span></th>
-        <th>0</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        <th>7</th>
-        <th>8</th>
-        <th>9</th>
-        <th>10</th>
-        <th>11</th>
-        <th>12</th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>0</td>
-        <td>1</td>
-        <td>1</td>
-        <td>0</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrrrrr}
+        \hline {k} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+        \hline {s[k]} & 0 & 0 & 0 & 1 & 0 & 0 & 1 & 2 & 0 & 1 & 1 & 0 & 1 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $k=12$ as follows:
 
@@ -6325,96 +5210,33 @@ title: "Exercises · Rod cutting and coin change"
 
         This is the array $v$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(k\)</span></th>
-        <th>0</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        <th>7</th>
-        <th>8</th>
-        <th>9</th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(v[k]\)</span></td>
-        <td>0</td>
-        <td><span class="arithmatex">\(+\infty\)</span></td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        <td>1</td>
-        <td>3</td>
-        <td>2</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrr}
+        \hline {k} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+        \hline {v[k]} & 0 & {+\infty} & 1 & 1 & 2 & 2 & 2 & 1 & 3 & 2 \\
+        \hline
+        \end{array}
+        $$
 
         This is the array $s$ after the execution of the DP algorithm:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(k\)</span></th>
-        <th>0</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        <th>7</th>
-        <th>8</th>
-        <th>9</th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrr}
+        \hline {k} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+        \hline {s[k]} & 0 & 0 & 1 & 2 & 1 & 1 & 2 & 3 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
     2. We have the following array $s$:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(k\)</span></th>
-        <th>0</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        <th>7</th>
-        <th>8</th>
-        <th>9</th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(s[k]\)</span></td>
-        <td>0</td>
-        <td>0</td>
-        <td>1</td>
-        <td>2</td>
-        <td>1</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>1</td>
-        <td>1</td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|rrrrrrrrrr}
+        \hline {k} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 \\
+        \hline {s[k]} & 0 & 0 & 1 & 2 & 1 & 1 & 2 & 3 & 1 & 1 \\
+        \hline
+        \end{array}
+        $$
 
         We can reconstruct an optimal solution by starting from $k=9$ as follows:
 

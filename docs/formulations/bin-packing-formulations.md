@@ -130,155 +130,30 @@ title: "Formulations of the bin packing problem"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3\}$ of $3$ items ($n=3$), with the following item weights:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_j\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccc}
+    \hline  & {j=1} & {j=2} & {j=3} \\[1ex]
+    \hline {w_j} & {7} & {6} & {3} \\[1ex]
+    \hline
+    \end{array}
+    $$
 
     We refer to this BPP instance as <span style="color:#1971c2">Example 1</span>.
 
     The $\ILP_{\BPP}$ model with $m=3$ for this BPP instance is:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <td><span class="arithmatex">\(\min\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(y_{1}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(y_{2}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(y_{3}\)</span></td>
-    <td></td>
-    </tr>
-    <tr>
-    <td>subject to</td>
-    <td><span class="arithmatex">\(x_{11}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{12}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{13}\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(=1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(x_{21}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{22}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{23}\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(=1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(x_{31}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{32}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{33}\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(=1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{11}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{21}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{31}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\ge 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{12}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{22}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{32}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_2\)</span></td>
-    <td></td>
-    <td><span class="arithmatex">\(\ge 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{13}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{23}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{33}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_3\)</span></td>
-    <td><span class="arithmatex">\(\ge 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td><span class="arithmatex">\(x_{11}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{12}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{13}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{21}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{22}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{23}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{31}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{32}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{33}\)</span>,</td>
-    <td><span class="arithmatex">\(y_{1}\)</span>,</td>
-    <td><span class="arithmatex">\(y_{2}\)</span>,</td>
-    <td><span class="arithmatex">\(y_{3}\)</span></td>
-    <td><span class="arithmatex">\(\in \{0,1\}\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{rccccccccccccr}
+    {\min} &  &  &  &  &  &  &  &  &  & {y_{1}} & {+} {y_{2}} & {+} {y_{3}} &  \\[1ex]
+    \text{subject to} & {x_{11}} & {+} {x_{12}} & {+} {x_{13}} &  &  &  &  &  &  &  &  &  & {=1} \\[1ex]
+    &  &  &  & {x_{21}} & {+} {x_{22}} & {+} {x_{23}} &  &  &  &  &  &  & {=1} \\[1ex]
+    &  &  &  &  &  &  & {x_{31}} & {+} {x_{32}} & {+} {x_{33}} &  &  &  & {=1} \\[1ex]
+    & {-} {7x_{11}} &  &  & {-} {6x_{21}} &  &  & {-} {3x_{31}} &  &  & {+} {10y_1} &  &  & {\ge 0} \\[1ex]
+    &  & {-} {7x_{12}} &  &  & {-} {6x_{22}} &  &  & {-} {3x_{32}} &  &  & {+} {10y_2} &  & {\ge 0} \\[1ex]
+    &  &  & {-} {7x_{13}} &  &  & {-} {6x_{23}} &  &  & {-} {3x_{33}} &  &  & {+} {10y_3} & {\ge 0} \\[1ex]
+    & {x_{11}}, & {x_{12}}, & {x_{13}}, & {x_{21}}, & {x_{22}}, & {x_{23}}, & {x_{31}}, & {x_{32}}, & {x_{33}}, & {y_{1}}, & {y_{2}}, & {y_{3}} & {\in \{0,1\}}
+    \end{array}
+    $$
 
     An optimal solution ${\tilde{\vet{x}}}(\ILP_{\BPP})$ is:
 
@@ -325,136 +200,18 @@ title: "Formulations of the bin packing problem"
 
     The $\LP\text{-}0_{\BPP}$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <td><span class="arithmatex">\(\min\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(y_{1}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(y_{2}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(y_{3}\)</span></td>
-    <td></td>
-    </tr>
-    <tr>
-    <td>subject to</td>
-    <td><span class="arithmatex">\(x_{11}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{12}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{13}\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(=1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(x_{21}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{22}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{23}\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(=1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(x_{31}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{32}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{33}\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(=1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{11}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{21}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{31}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\ge 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{12}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{22}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{32}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_2\)</span></td>
-    <td></td>
-    <td><span class="arithmatex">\(\ge 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{13}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{23}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{33}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_3\)</span></td>
-    <td><span class="arithmatex">\(\ge 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td><span class="arithmatex">\(x_{11}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{12}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{13}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{21}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{22}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{23}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{31}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{32}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{33}\)</span>,</td>
-    <td><span class="arithmatex">\(y_{1}\)</span>,</td>
-    <td><span class="arithmatex">\(y_{2}\)</span>,</td>
-    <td><span class="arithmatex">\(y_{3}\)</span></td>
-    <td><span class="arithmatex">\(\ge 0\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{rccccccccccccr}
+    {\min} &  &  &  &  &  &  &  &  &  & {y_{1}} & {+} {y_{2}} & {+} {y_{3}} &  \\[1ex]
+    \text{subject to} & {x_{11}} & {+} {x_{12}} & {+} {x_{13}} &  &  &  &  &  &  &  &  &  & {=1} \\[1ex]
+    &  &  &  & {x_{21}} & {+} {x_{22}} & {+} {x_{23}} &  &  &  &  &  &  & {=1} \\[1ex]
+    &  &  &  &  &  &  & {x_{31}} & {+} {x_{32}} & {+} {x_{33}} &  &  &  & {=1} \\[1ex]
+    & {-} {7x_{11}} &  &  & {-} {6x_{21}} &  &  & {-} {3x_{31}} &  &  & {+} {10y_1} &  &  & {\ge 0} \\[1ex]
+    &  & {-} {7x_{12}} &  &  & {-} {6x_{22}} &  &  & {-} {3x_{32}} &  &  & {+} {10y_2} &  & {\ge 0} \\[1ex]
+    &  &  & {-} {7x_{13}} &  &  & {-} {6x_{23}} &  &  & {-} {3x_{33}} &  &  & {+} {10y_3} & {\ge 0} \\[1ex]
+    & {x_{11}}, & {x_{12}}, & {x_{13}}, & {x_{21}}, & {x_{22}}, & {x_{23}}, & {x_{31}}, & {x_{32}}, & {x_{33}}, & {y_{1}}, & {y_{2}}, & {y_{3}} & {\ge 0}
+    \end{array}
+    $$
 
     An optimal solution ${\tilde{\vet{x}}}(\LP\text{-}0_{\BPP})$ is:
 
@@ -502,158 +259,25 @@ title: "Formulations of the bin packing problem"
 
     The  dual $D(\LP\text{-}0_{\BPP})$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <td><span class="arithmatex">\(\max\)</span></td>
-    <td><span class="arithmatex">\(\mu_{1}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(\mu_{2}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(\mu_{3}\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-    <tr>
-    <td>subject to</td>
-    <td><span class="arithmatex">\(\mu_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7\pi_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7\pi_2\)</span></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7\pi_3\)</span></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_2\)</span></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6\pi_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_2\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6\pi_2\)</span></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_2\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6\pi_3\)</span></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_3\)</span></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3\pi_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_3\)</span></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3\pi_2\)</span></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_3\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3\pi_3\)</span></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(10\pi_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(10\pi_2\)</span></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(10\pi_3\)</span></td>
-    <td><span class="arithmatex">\(\le 1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_1\)</span>,</td>
-    <td><span class="arithmatex">\(\mu_2\)</span>,</td>
-    <td><span class="arithmatex">\(\mu_3\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\gtreqless 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\pi_1\)</span>,</td>
-    <td><span class="arithmatex">\(\pi_2\)</span>,</td>
-    <td><span class="arithmatex">\(\pi_3\)</span></td>
-    <td><span class="arithmatex">\(\ge 0\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{rccccccr}
+    {\max} & {\mu_{1}} & {+} {\mu_{2}} & {+} {\mu_{3}} &  &  &  &  \\[1ex]
+    \text{subject to} & {\mu_1} &  &  & {-} {7\pi_1} &  &  & {\le 0} \\[1ex]
+    & {\mu_1} &  &  &  & {-} {7\pi_2} &  & {\le 0} \\[1ex]
+    & {\mu_1} &  &  &  &  & {-} {7\pi_3} & {\le 0} \\[1ex]
+    &  & {\mu_2} &  & {-} {6\pi_1} &  &  & {\le 0} \\[1ex]
+    &  & {\mu_2} &  &  & {-} {6\pi_2} &  & {\le 0} \\[1ex]
+    &  & {\mu_2} &  &  &  & {-} {6\pi_3} & {\le 0} \\[1ex]
+    &  &  & {\mu_3} & {-} {3\pi_1} &  &  & {\le 0} \\[1ex]
+    &  &  & {\mu_3} &  & {-} {3\pi_2} &  & {\le 0} \\[1ex]
+    &  &  & {\mu_3} &  &  & {-} {3\pi_3} & {\le 0} \\[1ex]
+    &  &  &  & {10\pi_1} &  &  & {\le 1} \\[1ex]
+    &  &  &  &  & {10\pi_2} &  & {\le 1} \\[1ex]
+    &  &  &  &  &  & {10\pi_3} & {\le 1} \\[1ex]
+    & {\mu_1}, & {\mu_2}, & {\mu_3} &  &  &  & {\gtreqless 0} \\[1ex]
+    &  &  &  & {\pi_1}, & {\pi_2}, & {\pi_3} & {\ge 0}
+    \end{array}
+    $$
 
     An optimal solution $(\tilde{\vet{\mu}},\tilde{\vet{\pi}})$ of $D(\LP\text{-}0_{\BPP})$ is:
 
@@ -858,184 +482,21 @@ title: "Formulations of the bin packing problem"
 
     The  $\LP_{\BPP}$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <td><span class="arithmatex">\(\min\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(y_{1}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(y_{2}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(y_{3}\)</span></td>
-    <td></td>
-    </tr>
-    <tr>
-    <td>subject to</td>
-    <td><span class="arithmatex">\(x_{11}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{12}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{13}\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(=1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(x_{21}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{22}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{23}\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(=1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(x_{31}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{32}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(x_{33}\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(=1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{11}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{21}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{31}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\ge 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{12}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{22}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{32}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_2\)</span></td>
-    <td></td>
-    <td><span class="arithmatex">\(\ge 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7x_{13}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6x_{23}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3x_{33}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(10y_3\)</span></td>
-    <td><span class="arithmatex">\(\ge 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(y_{1}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(y_{2}\)</span></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(y_{3}\)</span></td>
-    <td><span class="arithmatex">\(\le 1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td><span class="arithmatex">\(x_{11}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{12}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{13}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{21}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{22}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{23}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{31}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{32}\)</span>,</td>
-    <td><span class="arithmatex">\(x_{33}\)</span>,</td>
-    <td><span class="arithmatex">\(y_{1}\)</span>,</td>
-    <td><span class="arithmatex">\(y_{2}\)</span>,</td>
-    <td><span class="arithmatex">\(y_{3}\)</span></td>
-    <td><span class="arithmatex">\(\ge 0\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{rccccccccccccr}
+    {\min} &  &  &  &  &  &  &  &  &  & {y_{1}} & {+} {y_{2}} & {+} {y_{3}} &  \\[1ex]
+    \text{subject to} & {x_{11}} & {+} {x_{12}} & {+} {x_{13}} &  &  &  &  &  &  &  &  &  & {=1} \\[1ex]
+    &  &  &  & {x_{21}} & {+} {x_{22}} & {+} {x_{23}} &  &  &  &  &  &  & {=1} \\[1ex]
+    &  &  &  &  &  &  & {x_{31}} & {+} {x_{32}} & {+} {x_{33}} &  &  &  & {=1} \\[1ex]
+    & {-} {7x_{11}} &  &  & {-} {6x_{21}} &  &  & {-} {3x_{31}} &  &  & {+} {10y_1} &  &  & {\ge 0} \\[1ex]
+    &  & {-} {7x_{12}} &  &  & {-} {6x_{22}} &  &  & {-} {3x_{32}} &  &  & {+} {10y_2} &  & {\ge 0} \\[1ex]
+    &  &  & {-} {7x_{13}} &  &  & {-} {6x_{23}} &  &  & {-} {3x_{33}} &  &  & {+} {10y_3} & {\ge 0} \\[1ex]
+    &  &  &  &  &  &  &  &  &  & {y_{1}} &  &  & {\le 1} \\[1ex]
+    &  &  &  &  &  &  &  &  &  &  & {y_{2}} &  & {\le 1} \\[1ex]
+    &  &  &  &  &  &  &  &  &  &  &  & {y_{3}} & {\le 1} \\[1ex]
+    & {x_{11}}, & {x_{12}}, & {x_{13}}, & {x_{21}}, & {x_{22}}, & {x_{23}}, & {x_{31}}, & {x_{32}}, & {x_{33}}, & {y_{1}}, & {y_{2}}, & {y_{3}} & {\ge 0}
+    \end{array}
+    $$
 
     An optimal solution ${\tilde{\vet{x}}}(\LP_{\BPP})$ is:
 
@@ -1076,216 +537,26 @@ title: "Formulations of the bin packing problem"
 
     The  $D(\LP_{\BPP})$ model of <span style="color:#1971c2">Example 1</span> is:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <td><span class="arithmatex">\(\max\)</span></td>
-    <td><span class="arithmatex">\(\mu_{1}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(\mu_{2}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(\mu_{3}\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\lambda_{1}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(\lambda_{2}\)</span></td>
-    <td><span class="arithmatex">\(+\)</span> <span class="arithmatex">\(\lambda_{3}\)</span></td>
-    <td></td>
-    </tr>
-    <tr>
-    <td>subject to</td>
-    <td><span class="arithmatex">\(\mu_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7\pi_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7\pi_2\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(7\pi_3\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_2\)</span></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6\pi_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_2\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6\pi_2\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_2\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(6\pi_3\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_3\)</span></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3\pi_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_3\)</span></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3\pi_2\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_3\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(-\)</span> <span class="arithmatex">\(3\pi_3\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(10\pi_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(+\lambda_1\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(10\pi_2\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(+\lambda_2\)</span></td>
-    <td></td>
-    <td><span class="arithmatex">\(\le 1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(10\pi_3\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(+\lambda_3\)</span></td>
-    <td><span class="arithmatex">\(\le 1\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td><span class="arithmatex">\(\mu_1\)</span>,</td>
-    <td><span class="arithmatex">\(\mu_2\)</span>,</td>
-    <td><span class="arithmatex">\(\mu_3\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\gtreqless 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\pi_1\)</span>,</td>
-    <td><span class="arithmatex">\(\pi_2\)</span>,</td>
-    <td><span class="arithmatex">\(\pi_3\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\ge 0\)</span></td>
-    </tr>
-    <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\lambda_1\)</span>,</td>
-    <td><span class="arithmatex">\(\lambda_2\)</span>,</td>
-    <td><span class="arithmatex">\(\lambda_3\)</span></td>
-    <td><span class="arithmatex">\(\le 0\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{rcccccccccc}
+    {\max} & {\mu_{1}} & {+} {\mu_{2}} & {+} {\mu_{3}} &  &  &  & {\lambda_{1}} & {+} {\lambda_{2}} & {+} {\lambda_{3}} &  \\[1ex]
+    \text{subject to} & {\mu_1} &  &  & {-} {7\pi_1} &  &  &  &  &  & {\le 0} \\[1ex]
+    & {\mu_1} &  &  &  & {-} {7\pi_2} &  &  &  &  & {\le 0} \\[1ex]
+    & {\mu_1} &  &  &  &  & {-} {7\pi_3} &  &  &  & {\le 0} \\[1ex]
+    &  & {\mu_2} &  & {-} {6\pi_1} &  &  &  &  &  & {\le 0} \\[1ex]
+    &  & {\mu_2} &  &  & {-} {6\pi_2} &  &  &  &  & {\le 0} \\[1ex]
+    &  & {\mu_2} &  &  &  & {-} {6\pi_3} &  &  &  & {\le 0} \\[1ex]
+    &  &  & {\mu_3} & {-} {3\pi_1} &  &  &  &  &  & {\le 0} \\[1ex]
+    &  &  & {\mu_3} &  & {-} {3\pi_2} &  &  &  &  & {\le 0} \\[1ex]
+    &  &  & {\mu_3} &  &  & {-} {3\pi_3} &  &  &  & {\le 0} \\[1ex]
+    &  &  &  & {10\pi_1} &  &  & {+\lambda_1} &  &  & {\le 1} \\[1ex]
+    &  &  &  &  & {10\pi_2} &  &  & {+\lambda_2} &  & {\le 1} \\[1ex]
+    &  &  &  &  &  & {10\pi_3} &  &  & {+\lambda_3} & {\le 1} \\[1ex]
+    & {\mu_1}, & {\mu_2}, & {\mu_3} &  &  &  &  &  &  & {\gtreqless 0} \\[1ex]
+    &  &  &  & {\pi_1}, & {\pi_2}, & {\pi_3} &  &  &  & {\ge 0} \\[1ex]
+    &  &  &  &  &  &  & {\lambda_1}, & {\lambda_2}, & {\lambda_3} & {\le 0}
+    \end{array}
+    $$
 
     The optimal value $z(D(\LP_{\BPP}))$  is $\frac{8}{5}$.  An optimal solution $(\tilde{\vet{\mu}},\tilde{\vet{\pi}},\tilde{\vet{\lambda}})$ of $D(\LP_{\BPP})$ is:
 

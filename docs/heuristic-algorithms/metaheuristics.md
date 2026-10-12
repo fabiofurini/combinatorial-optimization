@@ -220,56 +220,17 @@ title: "Metaheuristics"
 </tr>
 </table></div>
 
-<div class="tabella" markdown="0"><table>
-<tr>
-<th><span class="arithmatex">\(d_{ij}\)</span></th>
-<th><span class="arithmatex">\(1\)</span></th>
-<th><span class="arithmatex">\(2\)</span></th>
-<th><span class="arithmatex">\(3\)</span></th>
-<th><span class="arithmatex">\(4\)</span></th>
-<th><span class="arithmatex">\(5\)</span></th>
-</tr>
-<tr>
-<td><span class="arithmatex">\(1\)</span></td>
-<td>—</td>
-<td><span class="arithmatex">\(5\)</span></td>
-<td><span class="arithmatex">\(2\)</span></td>
-<td><span class="arithmatex">\(2\)</span></td>
-<td><span class="arithmatex">\(9\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(2\)</span></td>
-<td><span class="arithmatex">\(5\)</span></td>
-<td>—</td>
-<td><span class="arithmatex">\(4\)</span></td>
-<td><span class="arithmatex">\(3\)</span></td>
-<td><span class="arithmatex">\(4\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(3\)</span></td>
-<td><span class="arithmatex">\(2\)</span></td>
-<td><span class="arithmatex">\(4\)</span></td>
-<td>—</td>
-<td><span class="arithmatex">\(4\)</span></td>
-<td><span class="arithmatex">\(7\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(4\)</span></td>
-<td><span class="arithmatex">\(2\)</span></td>
-<td><span class="arithmatex">\(3\)</span></td>
-<td><span class="arithmatex">\(4\)</span></td>
-<td>—</td>
-<td><span class="arithmatex">\(7\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(5\)</span></td>
-<td><span class="arithmatex">\(9\)</span></td>
-<td><span class="arithmatex">\(4\)</span></td>
-<td><span class="arithmatex">\(7\)</span></td>
-<td><span class="arithmatex">\(7\)</span></td>
-<td>—</td>
-</tr>
-</table></div>
+$$
+\begin{array}{c|ccccc}
+\hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} \\
+\hline {1} & --- & {5} & {2} & {2} & {9} \\
+{2} & {5} & --- & {4} & {3} & {4} \\
+{3} & {2} & {4} & --- & {4} & {7} \\
+{4} & {2} & {3} & {4} & --- & {7} \\
+{5} & {9} & {4} & {7} & {7} & --- \\
+\hline
+\end{array}
+$$
 
 - The reference instances are small enough to follow every iteration by hand, but too small to show the behaviour of a metaheuristic over thousands of iterations. For the experiments we use one <strong>medium instance</strong> per problem, generated once with the random number generator of Section [21.2.2](#sez-sec-random) and fixed below. Their optimal values have been computed with an exact algorithm, and are used only to measure the quality of the heuristic solutions.
 
@@ -279,86 +240,17 @@ title: "Metaheuristics"
 
     $20$ cities in the plane, with integer coordinates $(x_i,y_i)$, and distances $d_{ij}=\big\lfloor \sqrt{(x_i-x_j)^2+(y_i-y_j)^2} + \frac{1}{2}\big\rfloor$ (the Euclidean distance rounded to the nearest integer):
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(i\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    <th><span class="arithmatex">\(7\)</span></th>
-    <th><span class="arithmatex">\(8\)</span></th>
-    <th><span class="arithmatex">\(9\)</span></th>
-    <th><span class="arithmatex">\(10\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(x_i\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(55\)</span></td>
-    <td><span class="arithmatex">\(32\)</span></td>
-    <td><span class="arithmatex">\(47\)</span></td>
-    <td><span class="arithmatex">\(79\)</span></td>
-    <td><span class="arithmatex">\(83\)</span></td>
-    <td><span class="arithmatex">\(30\)</span></td>
-    <td><span class="arithmatex">\(53\)</span></td>
-    <td><span class="arithmatex">\(71\)</span></td>
-    <td><span class="arithmatex">\(83\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(y_i\)</span></td>
-    <td><span class="arithmatex">\(18\)</span></td>
-    <td><span class="arithmatex">\(35\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(47\)</span></td>
-    <td><span class="arithmatex">\(20\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(20\)</span></td>
-    <td><span class="arithmatex">\(17\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(40\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(i\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(15\)</span></td>
-    <td><span class="arithmatex">\(16\)</span></td>
-    <td><span class="arithmatex">\(17\)</span></td>
-    <td><span class="arithmatex">\(18\)</span></td>
-    <td><span class="arithmatex">\(19\)</span></td>
-    <td><span class="arithmatex">\(20\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(x_i\)</span></td>
-    <td><span class="arithmatex">\(17\)</span></td>
-    <td><span class="arithmatex">\(88\)</span></td>
-    <td><span class="arithmatex">\(46\)</span></td>
-    <td><span class="arithmatex">\(91\)</span></td>
-    <td><span class="arithmatex">\(15\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(62\)</span></td>
-    <td><span class="arithmatex">\(36\)</span></td>
-    <td><span class="arithmatex">\(32\)</span></td>
-    <td><span class="arithmatex">\(91\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(y_i\)</span></td>
-    <td><span class="arithmatex">\(52\)</span></td>
-    <td><span class="arithmatex">\(18\)</span></td>
-    <td><span class="arithmatex">\(16\)</span></td>
-    <td><span class="arithmatex">\(32\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(37\)</span></td>
-    <td><span class="arithmatex">\(28\)</span></td>
-    <td><span class="arithmatex">\(16\)</span></td>
-    <td><span class="arithmatex">\(33\)</span></td>
-    <td><span class="arithmatex">\(39\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|cccccccccc}
+    \hline {i} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} & {9} & {10} \\
+    \hline {x_i} & {0} & {55} & {32} & {47} & {79} & {83} & {30} & {53} & {71} & {83} \\
+    {y_i} & {18} & {35} & {11} & {47} & {20} & {11} & {20} & {17} & {4} & {40} \\
+    \hline \hline {i} & {11} & {12} & {13} & {14} & {15} & {16} & {17} & {18} & {19} & {20} \\
+    \hline {x_i} & {17} & {88} & {46} & {91} & {15} & {10} & {62} & {36} & {32} & {91} \\
+    {y_i} & {52} & {18} & {16} & {32} & {0} & {37} & {28} & {16} & {33} & {39} \\
+    \hline
+    \end{array}
+    $$
 
     ![Figure 1](../img/metaheuristics/fig01.svg){ .fig loading=lazy  }
 
@@ -372,86 +264,17 @@ title: "Metaheuristics"
 
     <strong>KP20</strong>: $n=20$ items, capacity $c=389$ (half of the total weight, rounded down),
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(i\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    <th><span class="arithmatex">\(7\)</span></th>
-    <th><span class="arithmatex">\(8\)</span></th>
-    <th><span class="arithmatex">\(9\)</span></th>
-    <th><span class="arithmatex">\(10\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(54\)</span></td>
-    <td><span class="arithmatex">\(55\)</span></td>
-    <td><span class="arithmatex">\(55\)</span></td>
-    <td><span class="arithmatex">\(52\)</span></td>
-    <td><span class="arithmatex">\(58\)</span></td>
-    <td><span class="arithmatex">\(42\)</span></td>
-    <td><span class="arithmatex">\(53\)</span></td>
-    <td><span class="arithmatex">\(53\)</span></td>
-    <td><span class="arithmatex">\(22\)</span></td>
-    <td><span class="arithmatex">\(64\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(39\)</span></td>
-    <td><span class="arithmatex">\(43\)</span></td>
-    <td><span class="arithmatex">\(49\)</span></td>
-    <td><span class="arithmatex">\(47\)</span></td>
-    <td><span class="arithmatex">\(44\)</span></td>
-    <td><span class="arithmatex">\(35\)</span></td>
-    <td><span class="arithmatex">\(43\)</span></td>
-    <td><span class="arithmatex">\(44\)</span></td>
-    <td><span class="arithmatex">\(16\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(i\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(12\)</span></td>
-    <td><span class="arithmatex">\(13\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(15\)</span></td>
-    <td><span class="arithmatex">\(16\)</span></td>
-    <td><span class="arithmatex">\(17\)</span></td>
-    <td><span class="arithmatex">\(18\)</span></td>
-    <td><span class="arithmatex">\(19\)</span></td>
-    <td><span class="arithmatex">\(20\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(p_i\)</span></td>
-    <td><span class="arithmatex">\(54\)</span></td>
-    <td><span class="arithmatex">\(51\)</span></td>
-    <td><span class="arithmatex">\(39\)</span></td>
-    <td><span class="arithmatex">\(49\)</span></td>
-    <td><span class="arithmatex">\(53\)</span></td>
-    <td><span class="arithmatex">\(46\)</span></td>
-    <td><span class="arithmatex">\(28\)</span></td>
-    <td><span class="arithmatex">\(64\)</span></td>
-    <td><span class="arithmatex">\(58\)</span></td>
-    <td><span class="arithmatex">\(34\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(w_i\)</span></td>
-    <td><span class="arithmatex">\(40\)</span></td>
-    <td><span class="arithmatex">\(42\)</span></td>
-    <td><span class="arithmatex">\(28\)</span></td>
-    <td><span class="arithmatex">\(38\)</span></td>
-    <td><span class="arithmatex">\(46\)</span></td>
-    <td><span class="arithmatex">\(39\)</span></td>
-    <td><span class="arithmatex">\(14\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(45\)</span></td>
-    <td><span class="arithmatex">\(27\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|cccccccccc}
+    \hline {i} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} & {9} & {10} \\
+    \hline {p_i} & {54} & {55} & {55} & {52} & {58} & {42} & {53} & {53} & {22} & {64} \\
+    {w_i} & {39} & {43} & {49} & {47} & {44} & {35} & {43} & {44} & {16} & {50} \\
+    \hline \hline {i} & {11} & {12} & {13} & {14} & {15} & {16} & {17} & {18} & {19} & {20} \\
+    \hline {p_i} & {54} & {51} & {39} & {49} & {53} & {46} & {28} & {64} & {58} & {34} \\
+    {w_i} & {40} & {42} & {28} & {38} & {46} & {39} & {14} & {50} & {45} & {27} \\
+    \hline
+    \end{array}
+    $$
 
     The greedy algorithm by efficiency finds profit $490$, and the local search with flips and swaps started from it reaches $514$; the optimal value is $z(I)=521$.
 

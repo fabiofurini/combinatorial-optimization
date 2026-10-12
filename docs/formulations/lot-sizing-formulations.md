@@ -283,91 +283,18 @@ title: "Formulations of capacitated lot sizing"
 
     For the reference instance the demands $D_{t,k}$ and the costs $cv_{tk}$ are (the production cost is zero, so $cv_{tk}$ is only holding cost):
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th colspan="5"><span class="arithmatex">\(D_{t,k}\)</span></th>
-    <th colspan="5"><span class="arithmatex">\(cv_{tk}\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(t \backslash k\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(6\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(11\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(70\)</span></td>
-    <td><span class="arithmatex">\(190\)</span></td>
-    <td><span class="arithmatex">\(230\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(30\)</span></td>
-    <td><span class="arithmatex">\(110\)</span></td>
-    <td><span class="arithmatex">\(140\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(8\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(40\)</span></td>
-    <td><span class="arithmatex">\(60\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccc|ccccc}
+    \hline  & {D_{t,k}} & & & & & {cv_{tk}} & & & & \\
+    {t \backslash k} & {1} & {2} & {3} & {4} & {5} & {1} & {2} & {3} & {4} & {5} \\
+    \hline {1} & {2} & {3} & {6} & {10} & {11} & {0} & {10} & {70} & {190} & {230} \\
+    {2} &  & {1} & {4} & {8} & {9} &  & {0} & {30} & {110} & {140} \\
+    {3} &  &  & {3} & {7} & {8} &  &  & {0} & {40} & {60} \\
+    {4} &  &  &  & {4} & {5} &  &  &  & {0} & {10} \\
+    {5} &  &  &  &  & {1} &  &  &  &  & {0} \\
+    \hline
+    \end{array}
+    $$
 
     The optimal plan $\tilde{\vet x}=(3,0,4,4,0)$ is not a path: in period $3$ it produces $4$ units, more than the demand $3$ of period $3$, and less than the demand $7$ of the periods $3$ and $4$. It is the following combination of paths:
 

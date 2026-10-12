@@ -436,68 +436,17 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
     1. The production cost is zero, so $cv_{tk}$ is only holding cost:
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th></th>
-        <th colspan="4"><span class="arithmatex">\(D_{t,k}\)</span></th>
-        <th colspan="4"><span class="arithmatex">\(cv_{tk}\)</span></th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(t\backslash k\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(5\)</span></td>
-        <td><span class="arithmatex">\(6\)</span></td>
-        <td><span class="arithmatex">\(9\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(20\)</span></td>
-        <td><span class="arithmatex">\(30\)</span></td>
-        <td><span class="arithmatex">\(75\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(5\)</span></td>
-        <td><span class="arithmatex">\(8\)</span></td>
-        <td></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(5\)</span></td>
-        <td><span class="arithmatex">\(35\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td></td>
-        <td></td>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td></td>
-        <td></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td><span class="arithmatex">\(15\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        </tr>
-        </table></div>
+        $$
+        \begin{array}{l|cccc|cccc}
+        \hline  & {D_{t,k}} & & & & {cv_{tk}} & & & \\
+        {t\backslash k} & {1} & {2} & {3} & {4} & {1} & {2} & {3} & {4} \\
+        \hline {1} & {1} & {5} & {6} & {9} & {0} & {20} & {30} & {75} \\
+        {2} &  & {4} & {5} & {8} &  & {0} & {5} & {35} \\
+        {3} &  &  & {1} & {4} &  &  & {0} & {15} \\
+        {4} &  &  &  & {3} &  &  &  & {0} \\
+        \hline
+        \end{array}
+        $$
 
     2. The variable $zv_{tk}$ is the arc from node $t-1$ to node $k$, with cost $cv_{tk}$. The formulation is:
 

@@ -214,56 +214,17 @@ title: "Combinatorial optimization problems"
 
     We consider $n=5$ cities with the symmetric distances
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|ccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} \\
+    \hline {1} & --- & {5} & {2} & {2} & {9} \\
+    {2} & {5} & --- & {4} & {3} & {4} \\
+    {3} & {2} & {4} & --- & {4} & {7} \\
+    {4} & {2} & {3} & {4} & --- & {7} \\
+    {5} & {9} & {4} & {7} & {7} & --- \\
+    \hline
+    \end{array}
+    $$
 
     The tour $(1,3,5,2,4)$, in bold, has length $2+7+4+3+2=18$.
 
@@ -633,64 +594,18 @@ title: "Combinatorial optimization problems"
 
 - Brute force works for the small instances above, but the number of candidates grows very quickly with the size $n$ of the instance. The following table compares polynomial and exponential growth.
 
-<div class="tabella" markdown="0"><table>
-<tr>
-<th><span class="arithmatex">\(n\)</span></th>
-<th><span class="arithmatex">\(n^2\)</span></th>
-<th><span class="arithmatex">\(n^3\)</span></th>
-<th><span class="arithmatex">\(2^n\)</span></th>
-<th><span class="arithmatex">\((n-1)!/2\)</span></th>
-<th><span class="arithmatex">\(B(n)\)</span></th>
-</tr>
-<tr>
-<td><span class="arithmatex">\(5\)</span></td>
-<td><span class="arithmatex">\(25\)</span></td>
-<td><span class="arithmatex">\(125\)</span></td>
-<td><span class="arithmatex">\(32\)</span></td>
-<td><span class="arithmatex">\(12\)</span></td>
-<td><span class="arithmatex">\(52\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(10\)</span></td>
-<td><span class="arithmatex">\(100\)</span></td>
-<td><span class="arithmatex">\(1\,000\)</span></td>
-<td><span class="arithmatex">\(1\,024\)</span></td>
-<td><span class="arithmatex">\(181\,440\)</span></td>
-<td><span class="arithmatex">\(115\,975\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(15\)</span></td>
-<td><span class="arithmatex">\(225\)</span></td>
-<td><span class="arithmatex">\(3\,375\)</span></td>
-<td><span class="arithmatex">\(32\,768\)</span></td>
-<td><span class="arithmatex">\(\approx 4.36 \cdot 10^{10}\)</span></td>
-<td><span class="arithmatex">\(\approx 1.38 \cdot 10^{9}\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(20\)</span></td>
-<td><span class="arithmatex">\(400\)</span></td>
-<td><span class="arithmatex">\(8\,000\)</span></td>
-<td><span class="arithmatex">\(1\,048\,576\)</span></td>
-<td><span class="arithmatex">\(\approx 6.08 \cdot 10^{16}\)</span></td>
-<td><span class="arithmatex">\(\approx 5.17 \cdot 10^{13}\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(25\)</span></td>
-<td><span class="arithmatex">\(625\)</span></td>
-<td><span class="arithmatex">\(15\,625\)</span></td>
-<td><span class="arithmatex">\(\approx 3.36 \cdot 10^{7}\)</span></td>
-<td><span class="arithmatex">\(\approx 3.10 \cdot 10^{23}\)</span></td>
-<td><span class="arithmatex">\(\approx 4.64 \cdot 10^{18}\)</span></td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(30\)</span></td>
-<td><span class="arithmatex">\(900\)</span></td>
-<td><span class="arithmatex">\(27\,000\)</span></td>
-<td><span class="arithmatex">\(\approx 1.07 \cdot 10^{9}\)</span></td>
-<td><span class="arithmatex">\(\approx 4.42 \cdot 10^{30}\)</span></td>
-<td><span class="arithmatex">\(\approx 8.47 \cdot 10^{23}\)</span></td>
-</tr>
-</table></div>
+$$
+\begin{array}{rrrrrr}
+\hline {n} & {n^2} & {n^3} & {2^n} & {(n-1)!/2} & {B(n)} \\
+\hline {5} & {25} & {125} & {32} & {12} & {52} \\
+{10} & {100} & {1\,000} & {1\,024} & {181\,440} & {115\,975} \\
+{15} & {225} & {3\,375} & {32\,768} & {\approx 4.36 \cdot 10^{10}} & {\approx 1.38 \cdot 10^{9}} \\
+{20} & {400} & {8\,000} & {1\,048\,576} & {\approx 6.08 \cdot 10^{16}} & {\approx 5.17 \cdot 10^{13}} \\
+{25} & {625} & {15\,625} & {\approx 3.36 \cdot 10^{7}} & {\approx 3.10 \cdot 10^{23}} & {\approx 4.64 \cdot 10^{18}} \\
+{30} & {900} & {27\,000} & {\approx 1.07 \cdot 10^{9}} & {\approx 4.42 \cdot 10^{30}} & {\approx 8.47 \cdot 10^{23}} \\
+\hline
+\end{array}
+$$
 
 ![Figure 5](../img/combinatorial-optimization/fig05.svg){ .fig .cornice loading=lazy style="width:65%" }
 

@@ -82,56 +82,17 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 - The reference instance has $5$ cities, it is metric, and its unique optimal tour is $(1,3,5,2,4)$, with $z(I)=18$. Its distances are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(d_{ij}\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td>—</td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(9\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td><span class="arithmatex">\(7\)</span></td>
-    <td>—</td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|ccccc}
+    \hline {d_{ij}} & {1} & {2} & {3} & {4} & {5} \\
+    \hline {1} & --- & {5} & {2} & {2} & {9} \\
+    {2} & {5} & --- & {4} & {3} & {4} \\
+    {3} & {2} & {4} & --- & {4} & {7} \\
+    {4} & {2} & {3} & {4} & --- & {7} \\
+    {5} & {9} & {4} & {7} & {7} & --- \\
+    \hline
+    \end{array}
+    $$
 
 ### 26.1.3 The Vertex Coloring Problem
 
@@ -353,78 +314,27 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
     <strong>List $\lambda=(1,2,\dots,10)$.</strong> The colors of the colored neighbours $U$ and the color assigned are:
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(v\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    <th><span class="arithmatex">\(7\)</span></th>
-    <th><span class="arithmatex">\(8\)</span></th>
-    <th><span class="arithmatex">\(9\)</span></th>
-    <th><span class="arithmatex">\(10\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(U\)</span></td>
-    <td><span class="arithmatex">\(\emptyset\)</span></td>
-    <td><span class="arithmatex">\(\{1\}\)</span></td>
-    <td><span class="arithmatex">\(\{2\}\)</span></td>
-    <td><span class="arithmatex">\(\{1\}\)</span></td>
-    <td><span class="arithmatex">\(\{1,2\}\)</span></td>
-    <td><span class="arithmatex">\(\{1\}\)</span></td>
-    <td><span class="arithmatex">\(\{2\}\)</span></td>
-    <td><span class="arithmatex">\(\{1,2\}\)</span></td>
-    <td><span class="arithmatex">\(\{1,2\}\)</span></td>
-    <td><span class="arithmatex">\(\{1,3\}\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(col[v]\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|cccccccccc}
+    \hline {v} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} & {9} & {10} \\
+    \hline {U} & {\emptyset} & {\{1\}} & {\{2\}} & {\{1\}} & {\{1,2\}} & {\{1\}} & {\{2\}} & {\{1,2\}} & {\{1,2\}} & {\{1,3\}} \\
+    {col[v]} & {1} & {2} & {1} & {2} & {3} & {2} & {1} & {3} & {3} & {2} \\
+    \hline
+    \end{array}
+    $$
 
     $GC$ uses $3$ colors (red $=1$, blue $=2$, yellow $=3$ in the figure). The outer $5$-cycle $1,2,3,4,5$ is an odd cycle and needs $3$ colors, so $\chi(G)=3$ and this coloring is optimal.
 
     <strong>List $\lambda=(1,2,3,4,5,7,8,6,9,10)$.</strong> The first five vertices get the same colors as before; then
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th><span class="arithmatex">\(v\)</span></th>
-    <th><span class="arithmatex">\(7\)</span></th>
-    <th><span class="arithmatex">\(8\)</span></th>
-    <th><span class="arithmatex">\(6\)</span></th>
-    <th><span class="arithmatex">\(9\)</span></th>
-    <th><span class="arithmatex">\(10\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(U\)</span></td>
-    <td><span class="arithmatex">\(\{2\}\)</span></td>
-    <td><span class="arithmatex">\(\{1\}\)</span></td>
-    <td><span class="arithmatex">\(\{1,2\}\)</span></td>
-    <td><span class="arithmatex">\(\{1,2,3\}\)</span></td>
-    <td><span class="arithmatex">\(\{1,2,3\}\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(col[v]\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{c|ccccc}
+    \hline {v} & {7} & {8} & {6} & {9} & {10} \\
+    \hline {U} & {\{2\}} & {\{1\}} & {\{1,2\}} & {\{1,2,3\}} & {\{1,2,3\}} \\
+    {col[v]} & {1} & {2} & {3} & {4} & {4} \\
+    \hline
+    \end{array}
+    $$
 
     and $GC$ uses $4$ colors: vertex $8$ takes color $2$, which the first order gave to vertex $6$, and vertices $9$ and $10$ then see all three colors among their neighbours.
 

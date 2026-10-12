@@ -212,48 +212,15 @@ title: "MIP heuristics for the classical problems"
 
     <strong>$P\,||\,C_{\max}$.</strong> The LP solution returned by the solver is (zeros omitted)
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th><span class="arithmatex">\(j=1\)</span></th>
-    <th><span class="arithmatex">\(j=2\)</span></th>
-    <th><span class="arithmatex">\(j=3\)</span></th>
-    <th><span class="arithmatex">\(j=4\)</span></th>
-    <th><span class="arithmatex">\(j=5\)</span></th>
-    <th><span class="arithmatex">\(j=6\)</span></th>
-    <th><span class="arithmatex">\(j=7\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(\tilde x_{j1}\)</span></td>
-    <td></td>
-    <td><span class="arithmatex">\(\frac35\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(\tilde x_{j2}\)</span></td>
-    <td></td>
-    <td></td>
-    <td><span class="arithmatex">\(\frac12\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td></td>
-    <td></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(\tilde x_{j3}\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(\frac25\)</span></td>
-    <td><span class="arithmatex">\(\frac12\)</span></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    </tr>
-    </table></div>
+    $$
+    \begin{array}{l|ccccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} & {j=7} \\
+    \hline {\tilde x_{j1}} &  & {\frac35} &  &  &  & {1} & {1} \\[0.5ex]
+    {\tilde x_{j2}} &  &  & {\frac12} & {1} & {1} &  &  \\[0.5ex]
+    {\tilde x_{j3}} & {1} & {\frac25} & {\frac12} &  &  &  &  \\
+    \hline
+    \end{array}
+    $$
 
     with loads $L_1=3+5\cdot\frac35+3=9$, $L_2=4\cdot\frac12+4+3=9$, $L_3=5+5\cdot\frac25+4\cdot\frac12=9$ and $\tilde C_{\max}=9=\frac{27}{3}$. The LP has infinitely many optimal solutions: every fractional assignment with three loads equal to $9$ is optimal.
 
