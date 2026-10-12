@@ -10,6 +10,22 @@ title: "Exercises · Approximation algorithms: definitions"
 
 </div>
 
+!!! formula "Definitions used in these exercises"
+
+    The measures of the chapter [Approximation algorithms](https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/approximation/), for an algorithm $\mathscr{A}$ with value $\mathscr{A}(I)$ on an instance $I$ of optimal value $z(I)$:
+
+    \begin{align*}
+    &\text{performance ratio:} && \frac{\mathscr{A}(I)}{z(I)}~\text{(minimization)}, && \frac{z(I)}{\mathscr{A}(I)}~\text{(maximization)}; \tag{A1}\\
+    &\text{additive error:} && \mathscr{A}(I)-z(I)~\text{(minimization)}, && z(I)-\mathscr{A}(I)~\text{(maximization)}; \tag{A2}\\
+    &\text{relative error:} && \frac{\mathscr{A}(I)-z(I)}{z(I)}~\text{(minimization)}, && \frac{z(I)-\mathscr{A}(I)}{z(I)}~\text{(maximization)}. \tag{A3}
+    \end{align*}
+
+    The worst-case performance ratio is the supremum of the performance ratio (A1) over all the instances:
+
+    \begin{equation*}
+    r(\mathscr{A})=\sup_{I}~\frac{\mathscr{A}(I)}{z(I)}~\text{(minimization)}, \qquad r(\mathscr{A})=\sup_{I}~\frac{z(I)}{\mathscr{A}(I)}~\text{(maximization)}. \tag{A4}
+    \end{equation*}
+
 <a id="esercizio-28-1"></a>
 
 !!! esercizio "Exercise 28.1: Performance ratios and errors (1)"
@@ -46,9 +62,7 @@ title: "Exercises · Approximation algorithms: definitions"
 
 ??? soluzione "Solution"
 
-    !!! nota ""
-
-        Performance ratio: $\frac{\mathscr{A}(I)}{z(I)}$ (minimization), $\frac{z(I)}{\mathscr{A}(I)}$ (maximization). Additive error: $\mathscr{A}(I)-z(I)$ (minimization), $z(I)-\mathscr{A}(I)$ (maximization). Relative error: $\frac{\mathscr{A}(I)-z(I)}{z(I)}$ (minimization), $\frac{z(I)-\mathscr{A}(I)}{z(I)}$ (maximization). The worst-case performance ratio $r(\mathscr{A})$ is the supremum of the performance ratio over all the instances.
+    We use the definitions (A1)–(A4) of the box at the beginning of the chapter.
 
     1. For a minimization problem the ratio is $\frac{\mathscr{A}(I)}{z(I)}$:
 
@@ -170,9 +184,7 @@ title: "Exercises · Approximation algorithms: definitions"
 
 ??? soluzione "Solution"
 
-    !!! nota ""
-
-        Performance ratio: $\frac{\mathscr{A}(I)}{z(I)}$ (minimization), $\frac{z(I)}{\mathscr{A}(I)}$ (maximization). Additive error: $\mathscr{A}(I)-z(I)$ (minimization), $z(I)-\mathscr{A}(I)$ (maximization). Relative error: $\frac{\mathscr{A}(I)-z(I)}{z(I)}$ (minimization), $\frac{z(I)-\mathscr{A}(I)}{z(I)}$ (maximization). The worst-case performance ratio $r(\mathscr{A})$ is the supremum of the performance ratio over all the instances.
+    We use the definitions (A1)–(A4) of the box at the beginning of the chapter.
 
     1. &#8203;
 
@@ -241,9 +253,7 @@ title: "Exercises · Approximation algorithms: definitions"
 
 ??? soluzione "Solution"
 
-    !!! nota ""
-
-        Performance ratio: $\frac{\mathscr{A}(I)}{z(I)}$ (minimization), $\frac{z(I)}{\mathscr{A}(I)}$ (maximization). Additive error: $\mathscr{A}(I)-z(I)$ (minimization), $z(I)-\mathscr{A}(I)$ (maximization). Relative error: $\frac{\mathscr{A}(I)-z(I)}{z(I)}$ (minimization), $\frac{z(I)-\mathscr{A}(I)}{z(I)}$ (maximization). The worst-case performance ratio $r(\mathscr{A})$ is the supremum of the performance ratio over all the instances.
+    We use the definitions (A1)–(A4) of the box at the beginning of the chapter.
 
     1. $\mathrm{SEP}(I_0)=5$ and $z(I_0)=2$ (patterns $\{1,3\}$ and $\{2,4,5\}$). The ratio is $\frac{5}{2}$ and the additive error is $5-2=3$.
 
@@ -304,9 +314,7 @@ title: "Exercises · Approximation algorithms: definitions"
 
 ??? soluzione "Solution"
 
-    !!! nota ""
-
-        Performance ratio: $\frac{\mathscr{A}(I)}{z(I)}$ (minimization), $\frac{z(I)}{\mathscr{A}(I)}$ (maximization). Additive error: $\mathscr{A}(I)-z(I)$ (minimization), $z(I)-\mathscr{A}(I)$ (maximization). Relative error: $\frac{\mathscr{A}(I)-z(I)}{z(I)}$ (minimization), $\frac{z(I)-\mathscr{A}(I)}{z(I)}$ (maximization). The worst-case performance ratio $r(\mathscr{A})$ is the supremum of the performance ratio over all the instances.
+    We use the definitions (A1)–(A4) of the box at the beginning of the chapter.
 
     1. The efficiencies are $2$, $\frac{7}{4}$, $2$, $\frac{4}{3}$: the order is $(1,3,2,4)$. $\mathrm{GR}$ inserts items $1$, $3$ and gets $\mathrm{GR}(I_0)=16$. Enumeration gives $z(I_0)=17$ (items $\{1,2\}$). The ratio is $\frac{17}{16}=\frac{17}{16}$ and the relative error is $\frac{17-16}{17}=\frac{1}{17}$.
 

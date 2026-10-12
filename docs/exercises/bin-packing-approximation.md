@@ -10,6 +10,14 @@ title: "Exercises · Approximation algorithms for bin packing"
 
 </div>
 
+!!! formula "Property used in these exercises"
+
+    The <strong>half-full property</strong> of the chapter [Bin packing approximation](https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/bin-packing-approximation/): a feasible solution with packing patterns $P_1,\dots,P_k$ satisfies it when at most one packing pattern has total weight at most $c/2$, that is
+
+    \begin{equation*}
+    \Big|\Big\{\, b\in\{1,\dots,k\} ~:~ \sum_{i\in P_b} w_i \le \frac{c}{2} \,\Big\}\Big| \;\le\; 1 . \tag{H}
+    \end{equation*}
+
 ## Next Fit
 
 <a id="esercizio-29-1"></a>
@@ -34,7 +42,7 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     3. Compute a lower bound on $z(I)$ and determine whether NF finds an optimal solution on this instance.
 
-    4. Verify whether the packing patterns found by NF satisfy the half-full property (i.e., at most one packing pattern has total weight at most $c/2$), and determine whether the solution found is optimal for this BPP instance, either by comparing $NF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
+    4. Verify whether the packing patterns found by NF satisfy the half-full property (H), and determine whether the solution found is optimal for this BPP instance, either by comparing $NF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
 
 ??? soluzione "Solution"
 
@@ -122,7 +130,7 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     3. Compute a lower bound on $z(I)$ and determine whether NF finds an optimal solution on this instance.
 
-    4. Verify whether the packing patterns found by NF satisfy the half-full property (i.e., at most one packing pattern has total weight at most $c/2$), and determine whether the solution found is optimal for this BPP instance, either by comparing $NF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
+    4. Verify whether the packing patterns found by NF satisfy the half-full property (H), and determine whether the solution found is optimal for this BPP instance, either by comparing $NF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
 
 ??? soluzione "Solution"
 
@@ -210,7 +218,7 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     3. Compute a lower bound on $z(I)$ and determine whether NF finds an optimal solution on this instance.
 
-    4. Verify whether the packing patterns found by NF satisfy the half-full property (i.e., at most one packing pattern has total weight at most $c/2$), and determine whether the solution found is optimal for this BPP instance, either by comparing $NF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
+    4. Verify whether the packing patterns found by NF satisfy the half-full property (H), and determine whether the solution found is optimal for this BPP instance, either by comparing $NF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
 
 ??? soluzione "Solution"
 
@@ -303,7 +311,7 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     3. Compute a lower bound on $z(I)$ and determine whether FF finds an optimal solution on this instance.
 
-    4. Verify whether the packing patterns found by FF satisfy the half-full property (i.e., at most one packing pattern has total weight at most $c/2$), and determine whether the solution found is optimal for this BPP instance, either by comparing $FF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
+    4. Verify whether the packing patterns found by FF satisfy the half-full property (H), and determine whether the solution found is optimal for this BPP instance, either by comparing $FF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
 
 ??? soluzione "Solution"
 
@@ -384,7 +392,7 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     3. Compute a lower bound on $z(I)$ and determine whether FF finds an optimal solution on this instance.
 
-    4. Verify whether the packing patterns found by FF satisfy the half-full property (i.e., at most one packing pattern has total weight at most $c/2$), and determine whether the solution found is optimal for this BPP instance, either by comparing $FF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
+    4. Verify whether the packing patterns found by FF satisfy the half-full property (H), and determine whether the solution found is optimal for this BPP instance, either by comparing $FF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
 
 ??? soluzione "Solution"
 
@@ -465,7 +473,7 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     3. Compute a lower bound on $z(I)$ and determine whether FF finds an optimal solution on this instance.
 
-    4. Verify whether the packing patterns found by FF satisfy the half-full property (i.e., at most one packing pattern has total weight at most $c/2$), and determine whether the solution found is optimal for this BPP instance, either by comparing $FF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
+    4. Verify whether the packing patterns found by FF satisfy the half-full property (H), and determine whether the solution found is optimal for this BPP instance, either by comparing $FF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
 
 ??? soluzione "Solution"
 
@@ -551,7 +559,7 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     3. Compute a lower bound on $z(I)$ and determine whether BF finds an optimal solution on this instance.
 
-    4. Verify whether the packing patterns found by BF satisfy the half-full property (i.e., at most one packing pattern has total weight at most $c/2$), and determine whether the solution found is optimal for this BPP instance, either by comparing $BF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
+    4. Verify whether the packing patterns found by BF satisfy the half-full property (H), and determine whether the solution found is optimal for this BPP instance, either by comparing $BF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
 
 ??? soluzione "Solution"
 
@@ -632,7 +640,7 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     3. Compute a lower bound on $z(I)$ and determine whether BF finds an optimal solution on this instance.
 
-    4. Verify whether the packing patterns found by BF satisfy the half-full property (i.e., at most one packing pattern has total weight at most $c/2$), and determine whether the solution found is optimal for this BPP instance, either by comparing $BF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
+    4. Verify whether the packing patterns found by BF satisfy the half-full property (H), and determine whether the solution found is optimal for this BPP instance, either by comparing $BF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
 
 ??? soluzione "Solution"
 
@@ -713,7 +721,7 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     3. Compute a lower bound on $z(I)$ and determine whether BF finds an optimal solution on this instance.
 
-    4. Verify whether the packing patterns found by BF satisfy the half-full property (i.e., at most one packing pattern has total weight at most $c/2$), and determine whether the solution found is optimal for this BPP instance, either by comparing $BF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
+    4. Verify whether the packing patterns found by BF satisfy the half-full property (H), and determine whether the solution found is optimal for this BPP instance, either by comparing $BF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
 
 ??? soluzione "Solution"
 
@@ -799,7 +807,7 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     3. Compute a lower bound on $z(I)$ and determine whether WF finds an optimal solution on this instance.
 
-    4. Verify whether the packing patterns found by WF satisfy the half-full property (i.e., at most one packing pattern has total weight at most $c/2$), and determine whether the solution found is optimal for this BPP instance, either by comparing $WF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
+    4. Verify whether the packing patterns found by WF satisfy the half-full property (H), and determine whether the solution found is optimal for this BPP instance, either by comparing $WF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
 
 ??? soluzione "Solution"
 
@@ -880,7 +888,7 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     3. Compute a lower bound on $z(I)$ and determine whether WF finds an optimal solution on this instance.
 
-    4. Verify whether the packing patterns found by WF satisfy the half-full property (i.e., at most one packing pattern has total weight at most $c/2$), and determine whether the solution found is optimal for this BPP instance, either by comparing $WF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
+    4. Verify whether the packing patterns found by WF satisfy the half-full property (H), and determine whether the solution found is optimal for this BPP instance, either by comparing $WF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
 
 ??? soluzione "Solution"
 
@@ -961,7 +969,7 @@ title: "Exercises · Approximation algorithms for bin packing"
 
     3. Compute a lower bound on $z(I)$ and determine whether WF finds an optimal solution on this instance.
 
-    4. Verify whether the packing patterns found by WF satisfy the half-full property (i.e., at most one packing pattern has total weight at most $c/2$), and determine whether the solution found is optimal for this BPP instance, either by comparing $WF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
+    4. Verify whether the packing patterns found by WF satisfy the half-full property (H), and determine whether the solution found is optimal for this BPP instance, either by comparing $WF(I)$ with a lower bound on $z(I)$, or by exhibiting a feasible solution of strictly smaller value.
 
 ??? soluzione "Solution"
 
