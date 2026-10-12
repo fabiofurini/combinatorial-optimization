@@ -396,3 +396,127 @@ title: "Exercises · Knapsack problems"
     !!! chiave ""
 
         The optimal solution takes items $2, 3, 7$, one per class, with $z(I)=28$: the most profitable item of every class is not a feasible choice.
+
+<a id="esercizio-2-6"></a>
+
+!!! esercizio "Exercise 2.6: A greedy choice that is not optimal (KP)"
+
+    A fund has a budget of $c=14$ and $n=5$ candidate projects, the items $\mathscr{I}=\{1,\dots,5\}$ of a knapsack instance, with the following profits and costs (weights):
+
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\[1ex]
+    \hline {p_j} & {14} & {9} & {15} & {13} & {11} \\[1ex]
+    {w_j} & {7} & {2} & {9} & {6} & {8} \\
+    \hline
+    \end{array}
+    $$
+
+    **Questions**
+
+    1. Write the instance as a combinatorial optimization problem: ground set, feasible solutions and objective function. How many candidate solutions are there?
+
+    2. List the feasible subsets, with weight and profit, and find the optimal solution by brute force.
+
+    3. Apply the greedy algorithm by efficiency: sort the items by non-increasing efficiency $p_j/w_j$ (ties by the smallest index) and insert each item that fits. Is the greedy solution optimal?
+
+    4. Compute the dual bound of the continuous relaxation, in which the items can be taken fractionally, and round it. What are the relative gaps of the greedy solution with respect to this bound and with respect to $z(I)$?
+
+??? soluzione "Solution"
+
+    1. The ground set is $\mathscr{U}=\mathscr{I}=\{1,2,3,4,5\}$. A subset $S\subseteq\mathscr{U}$ is feasible if $\sum_{j\in S} w_j\le 14$, and the objective is $f(S)=\sum_{j\in S} p_j$, to be maximized. The candidate solutions are the $2^5=32$ subsets.
+
+    2. The three lightest items weigh $2+6+7=15>14$, so a feasible subset has at most $2$ items. The $12$ feasible subsets are:
+
+        <div class="tabella" markdown="0"><table>
+        <tr>
+        <th><span class="arithmatex">\(S\)</span></th>
+        <th>weight</th>
+        <th>profit</th>
+        <th><span class="arithmatex">\(S\)</span></th>
+        <th>weight</th>
+        <th>profit</th>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(\emptyset\)</span></td>
+        <td><span class="arithmatex">\(0\)</span></td>
+        <td><span class="arithmatex">\(0\)</span></td>
+        <td><span class="arithmatex">\(\{1,2\}\)</span></td>
+        <td><span class="arithmatex">\(9\)</span></td>
+        <td><span class="arithmatex">\(23\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(\{1\}\)</span></td>
+        <td><span class="arithmatex">\(7\)</span></td>
+        <td><span class="arithmatex">\(14\)</span></td>
+        <td><span class="arithmatex">\(\{1,4\}\)</span></td>
+        <td><span class="arithmatex">\(13\)</span></td>
+        <td><span class="arithmatex">\(\mathbf{27}\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(\{2\}\)</span></td>
+        <td><span class="arithmatex">\(2\)</span></td>
+        <td><span class="arithmatex">\(9\)</span></td>
+        <td><span class="arithmatex">\(\{2,3\}\)</span></td>
+        <td><span class="arithmatex">\(11\)</span></td>
+        <td><span class="arithmatex">\(24\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(\{3\}\)</span></td>
+        <td><span class="arithmatex">\(9\)</span></td>
+        <td><span class="arithmatex">\(15\)</span></td>
+        <td><span class="arithmatex">\(\{2,4\}\)</span></td>
+        <td><span class="arithmatex">\(8\)</span></td>
+        <td><span class="arithmatex">\(22\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(\{4\}\)</span></td>
+        <td><span class="arithmatex">\(6\)</span></td>
+        <td><span class="arithmatex">\(13\)</span></td>
+        <td><span class="arithmatex">\(\{2,5\}\)</span></td>
+        <td><span class="arithmatex">\(10\)</span></td>
+        <td><span class="arithmatex">\(20\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(\{5\}\)</span></td>
+        <td><span class="arithmatex">\(8\)</span></td>
+        <td><span class="arithmatex">\(11\)</span></td>
+        <td><span class="arithmatex">\(\{4,5\}\)</span></td>
+        <td><span class="arithmatex">\(14\)</span></td>
+        <td><span class="arithmatex">\(24\)</span></td>
+        </tr>
+        </table></div>
+
+        The optimal solution is $\tilde S=\{1,4\}$, of weight $13$, with $z(I)=27$; it is the only subset with this profit.
+
+    3. The efficiencies are
+
+        $$
+        \frac{p_1}{w_1}=\frac{14}{7}=2,\quad \frac{p_2}{w_2}=\frac{9}{2},\quad \frac{p_3}{w_3}=\frac{15}{9}=\frac{5}{3},\quad \frac{p_4}{w_4}=\frac{13}{6},\quad \frac{p_5}{w_5}=\frac{11}{8},
+        $$
+
+        so the order is $2,4,1,3,5$. The greedy algorithm examines the items in this order:
+
+        - item $2$ fits (weight $2$): residual capacity $12$;
+
+        - item $4$ fits (weight $6$): residual capacity $6$;
+
+        - item $1$ does not fit (weight $7 > 6$);
+
+        - item $3$ does not fit (weight $9 > 6$);
+
+        - item $5$ does not fit (weight $8 > 6$);
+
+        It returns $\bar S=\{2,4\}$, of profit $22$: a primal bound $\mathrm{LB}=22$. It is not optimal, since $z(I)=27$. The two efficient items fill $8$ units of the budget, and the residual capacity $6$ is too small for any other item; the optimal solution gives up item $2$, the most efficient one, and uses $13$ of the $14$ units of the budget with items $1$ and $4$.
+
+    4. In the continuous relaxation the items are taken in the same order: items $2, 4$ fill $8$ units, and the fraction $\frac{6}{7}$ of item $1$ fills the residual capacity $6$:
+
+        $$
+        \mathrm{UB}=9+13+\frac{6}{7}\cdot 14=34.
+        $$
+
+        The bound is an integer, no rounding is needed. With respect to the bound, the relative gap of the greedy solution is $\frac{34-22}{22}=\frac{6}{11}\approx 54.5\%$; with respect to the optimum it is $\frac{27-22}{22}=\frac{5}{22}\approx 22.7\%$. Without the enumeration, the bound alone cannot certify the optimum.
+
+    !!! chiave ""
+
+        The greedy choice by efficiency gives profit $22$, while the optimum, found by brute force over the $12$ feasible subsets, is $z(I)=27$ with $\tilde S=\{1,4\}$: $22\le z(I)=27\le 34$.

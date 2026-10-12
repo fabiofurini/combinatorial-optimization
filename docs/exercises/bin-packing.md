@@ -271,3 +271,94 @@ title: "Exercises · Bin packing and cutting stock"
     !!! chiave ""
 
         When $\sum_j w_j=\mathrm{LB}\cdot c$, a solution with $\mathrm{LB}$ bins fills every bin exactly; here the bins $\{5,5\}$, $\{4,4,2\}$, $\{4,3,3\}$ give $z(I)=3$.
+
+<a id="esercizio-3-6"></a>
+
+!!! esercizio "Exercise 3.6: A greedy choice that is not optimal (BPP)"
+
+    We consider the bin packing instance with capacity $c=10$ and $n=6$ items, with weights
+
+    $$
+    \begin{array}{l|cccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\[1ex]
+    \hline {w_j} & {5} & {4} & {5} & {6} & {8} & {2} \\
+    \hline
+    \end{array}
+    $$
+
+    **Questions**
+
+    1. Apply First Fit: take the items in the order $1,2,\dots,n$ and put each one into the first open bin where it fits, opening a new bin when it fits nowhere. How many bins does it use?
+
+    2. Compute the weight bound $\left\lceil \sum_j w_j / c \right\rceil$.
+
+    3. Find a solution that attains the bound. What can you conclude on the solution of First Fit?
+
+    4. Compute the absolute and the relative gap between the First Fit solution and the dual bound.
+
+??? soluzione "Solution"
+
+    1. The loads of the open bins after each item are:
+
+        <div class="tabella" markdown="0"><table>
+        <tr>
+        <th>item <span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(w_j\)</span></th>
+        <th>placed in</th>
+        <th>loads</th>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(1\)</span></td>
+        <td><span class="arithmatex">\(5\)</span></td>
+        <td>new bin 1</td>
+        <td><span class="arithmatex">\((5)\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(2\)</span></td>
+        <td><span class="arithmatex">\(4\)</span></td>
+        <td>bin 1</td>
+        <td><span class="arithmatex">\((9)\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(3\)</span></td>
+        <td><span class="arithmatex">\(5\)</span></td>
+        <td>new bin 2</td>
+        <td><span class="arithmatex">\((9,5)\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(4\)</span></td>
+        <td><span class="arithmatex">\(6\)</span></td>
+        <td>new bin 3</td>
+        <td><span class="arithmatex">\((9,5,6)\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(5\)</span></td>
+        <td><span class="arithmatex">\(8\)</span></td>
+        <td>new bin 4</td>
+        <td><span class="arithmatex">\((9,5,6,8)\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(6\)</span></td>
+        <td><span class="arithmatex">\(2\)</span></td>
+        <td>bin 2</td>
+        <td><span class="arithmatex">\((9,7,6,8)\)</span></td>
+        </tr>
+        </table></div>
+
+        First Fit returns $\{\{1,2\},\{3,6\},\{4\},\{5\}\}$, with $4$ bins: a primal bound $\mathrm{UB}=4$.
+
+        ![Figure 6](../img/ex-bin-packing/fig06.svg){ .fig loading=lazy  }
+
+    2. $\sum_j w_j=5+4+5+6+8+2=30$, hence $\mathrm{LB}=\lceil 30/10\rceil=3$.
+
+    3. The partition $\{\{1,3\},\{2,4\},\{5,6\}\}$ has bins of weight $10, 10, 10$, all at most $10$: it is feasible and uses $3$ bins.
+
+        ![Figure 7](../img/ex-bin-packing/fig07.svg){ .fig loading=lazy  }
+
+        It attains the dual bound, so it is optimal and $z(I)=3$; the solution of First Fit is not optimal. First Fit puts item $2$ (weight $4$) with item $1$ (load $9$) and wastes the residual capacity $1$; the optimal packing puts item $1$ with item $3$ and item $2$ with item $4$, two bins filled exactly.
+
+    4. The absolute gap is $4-3=1$ and the relative gap is $\frac{1}{3}\approx 33.3\%$.
+
+    !!! chiave ""
+
+        First Fit, a greedy choice, uses $4$ bins, while the weight bound gives $3$ and the partition $\{\{1,3\},\{2,4\},\{5,6\}\}$ attains it: $z(I)=3$.

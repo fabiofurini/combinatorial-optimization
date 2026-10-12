@@ -36,7 +36,7 @@ title: "Scheduling on identical parallel machines"
 
 Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/scheduling-on-identical-parallel-machines.md).
 
-- Strongly NP-hard when $m$ is part of the input; weakly NP-hard for a fixed number of machines ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization.md#box-23-def-pseudo)).
+- Strongly NP-hard when $m$ is part of the input; weakly NP-hard for a fixed number of machines ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization.md#box-12-def-pseudo)).
 
 - Lower bound $\max\{\max_j t_j, \lceil \sum_j t_j/m \rceil\}$; it is not always attained: $(4,3,3)$ on two machines gives $5$, the optimum is $6$ ([Ch. 7](../combinatorial-optimization-problems/pcmax/index.md#box-5-obs-pcmaxlb)).
 
@@ -71,8 +71,6 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 - LPT is a $\left(\frac43-\frac1{3m}\right)$-approximation, tight on Graham's family; for $m=3$ it is the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax/index.md) ([Ch. 31](../approximation-algorithms/pcmax-approximation.md#box-7-prop-LPT)).
 
 ## Exercises { #sez-sec-cat-pcmax-es }
-
-- [Ch. 1 — Combinatorial optimization problems](../exercises/combinatorial-optimization.md) (1 exercise).
 
 - [Ch. 7 — Parallel machine scheduling](../exercises/pcmax.md) (5 exercises).
 

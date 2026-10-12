@@ -44,7 +44,7 @@ title: "The vertex coloring problem"
 
 Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/vertex-coloring-problem.md).
 
-- Strongly NP-hard: deciding whether $\chi(G)\le 3$ is NP-complete ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization.md#box-23-def-pseudo)).
+- Strongly NP-hard: deciding whether $\chi(G)\le 3$ is NP-complete ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization.md#box-12-def-pseudo)).
 
 - Clique bound $\omega(G) \le \chi(G)$ and stable set bound $\lceil n/\alpha(G) \rceil \le \chi(G)$ ([Ch. 4](../combinatorial-optimization-problems/coloring.md#box-6-obs-clique-bound)).
 

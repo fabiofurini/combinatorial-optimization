@@ -4,15 +4,14 @@
 
 1. [Combinatorial optimization problems](combinatorial-optimization-problems/combinatorial-optimization.md)
     - 1.1 Combinatorial optimization problems
-    - 1.2 The six problems of the course
-    - 1.3 Counting the solutions
-    - 1.4 Combinatorial explosion and brute force
-    - 1.5 Primal bounds, dual bounds and gap
-    - 1.6 A glimpse of computational complexity
-    - 1.7 Roadmap of the course
-    - 1.8 Typical mistakes
-    - 1.9 In summary
-    - 1.10 Exercises
+    - 1.2 Counting the solutions
+    - 1.3 Combinatorial explosion and brute force
+    - 1.4 Primal bounds, dual bounds and gap
+    - 1.5 A glimpse of computational complexity
+    - 1.6 Typical mistakes
+    - 1.7 In summary
+    - 1.8 Exercises
+    - 1.9 Roadmap of the course
 2. [Knapsack problems](combinatorial-optimization-problems/knapsack/index.md)
     - 2.1 The knapsack problem
     - [2.2 The subset sum problem](combinatorial-optimization-problems/knapsack/the-subset-sum-problem.md)

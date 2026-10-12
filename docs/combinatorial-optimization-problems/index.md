@@ -10,7 +10,7 @@
 
     ---
 
-    Combinatorial optimization problems · The six problems of the course · Counting the solutions · Combinatorial explosion and brute force
+    Combinatorial optimization problems · Counting the solutions · Combinatorial explosion and brute force · Primal bounds, dual bounds and gap
 
     [:octicons-arrow-right-24: Read the chapter](combinatorial-optimization.md) · [Exercises](../exercises/combinatorial-optimization.md)
 

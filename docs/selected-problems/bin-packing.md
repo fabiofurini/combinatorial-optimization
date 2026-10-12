@@ -36,7 +36,7 @@ title: "The bin packing problem"
 
 Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/bin-packing-problem.md).
 
-- Strongly NP-hard: no pseudo-polynomial algorithm exists, unless $P=NP$ ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization.md#box-23-def-pseudo)).
+- Strongly NP-hard: no pseudo-polynomial algorithm exists, unless $P=NP$ ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization.md#box-12-def-pseudo)).
 
 - Weight bound $\LB = \lceil \sum_j w_j / c \rceil$; it is not always tight: three items of weight $6$ with $c=10$ need $3$ bins, not $2$ ([Ch. 3](../combinatorial-optimization-problems/bin-packing/index.md#box-3-obs-bpp-l1)).
 
@@ -75,8 +75,6 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 - No polynomial algorithm has a ratio below $\frac32$ unless $P=NP$: deciding whether $2$ bins suffice is PARTITION ([Ch. 29](../approximation-algorithms/bin-packing-approximation.md)).
 
 ## Exercises { #sez-sec-cat-bpp-es }
-
-- [Ch. 1 — Combinatorial optimization problems](../exercises/combinatorial-optimization.md) (2 exercises).
 
 - [Ch. 3 — Bin packing and cutting stock](../exercises/bin-packing.md) (5 exercises).
 

@@ -4,12 +4,12 @@ Exercises with **worked solutions**, chapter by chapter. Try each exercise on yo
 
 ## Combinatorial optimization problems
 
-- [1. Combinatorial optimization problems](combinatorial-optimization.md) · 5 exercises
-- [2. Knapsack problems](knapsack.md) · 5 exercises
-- [3. Bin packing and cutting stock](bin-packing.md) · 5 exercises
+- [1. Combinatorial optimization problems](combinatorial-optimization.md) · 4 exercises
+- [2. Knapsack problems](knapsack.md) · 6 exercises
+- [3. Bin packing and cutting stock](bin-packing.md) · 6 exercises
 - [4. Vertex coloring](coloring.md) · 5 exercises
 - [5. The maximum clique problem](clique.md) · 5 exercises
-- [6. The travelling salesman problem](tsp.md) · 5 exercises
+- [6. The travelling salesman problem](tsp.md) · 7 exercises
 - [7. Parallel machine scheduling](pcmax.md) · 5 exercises
 - [8. Capacitated lot sizing](lot-sizing.md) · 5 exercises
 
