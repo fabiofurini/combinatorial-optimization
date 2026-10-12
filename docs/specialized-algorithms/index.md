@@ -6,7 +6,7 @@
 
 <div class="grid cards" markdown>
 
--   **27. Knapsack: branch-and-bound on the critical item**
+-   **29. Knapsack: branch-and-bound on the critical item**
 
     ---
 

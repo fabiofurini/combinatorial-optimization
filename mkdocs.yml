@@ -97,7 +97,7 @@ extra:
       lang: it
 
 extra_css:
-  - stylesheets/extra.css?v=1967ecebc7
+  - stylesheets/extra.css?v=b636566d1b
   - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraph.css
   - stylesheets/interattivi.css?v=c51ac2286b
 
@@ -120,7 +120,7 @@ markdown_extensions:
 
 extra_javascript:
   - javascripts/cloudflare-analytics.js?v=bff73345a1
-  - javascripts/mathjax.js?v=1c478de83f
+  - javascripts/mathjax.js?v=bbee911dbf
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
   # grafici interattivi: JSXGraph, il motore, poi le ricette (gi-*.js, le aggiunge genera_sito.py)
   - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraphcore.js
@@ -136,73 +136,89 @@ nav:
   - Home: index.md
   - Problems:
       - combinatorial-optimization-problems/index.md
-      - "The six problems": combinatorial-optimization-problems/problems.md
+      - "The problems at a glance": combinatorial-optimization-problems/problems.md
       - "1. Combinatorial optimization": combinatorial-optimization-problems/combinatorial-optimization.md
       - "2. Knapsack": combinatorial-optimization-problems/knapsack.md
       - "3. Bin packing": combinatorial-optimization-problems/bin-packing.md
       - "4. Vertex coloring": combinatorial-optimization-problems/coloring.md
-      - "5. TSP": combinatorial-optimization-problems/tsp.md
-      - "6. Machine scheduling": combinatorial-optimization-problems/pcmax.md
-      - "7. Lot sizing": combinatorial-optimization-problems/lot-sizing.md
+      - "5. Maximum clique": combinatorial-optimization-problems/clique.md
+      - "6. TSP": combinatorial-optimization-problems/tsp.md
+      - "7. Machine scheduling": combinatorial-optimization-problems/pcmax.md
+      - "8. Lot sizing": combinatorial-optimization-problems/lot-sizing.md
   - Formulations:
       - formulations/index.md
-      - "8. Knapsack": formulations/knapsack-formulations.md
-      - "9. Bin packing": formulations/bin-packing-formulations.md
-      - "10. Vertex coloring": formulations/coloring-formulations.md
-      - "11. TSP": formulations/tsp-formulations.md
-      - "12. Machine scheduling": formulations/pcmax-formulations.md
-      - "13. Lot sizing": formulations/lot-sizing-formulations.md
+      - "9. Knapsack": formulations/knapsack-formulations.md
+      - "10. Bin packing": formulations/bin-packing-formulations.md
+      - "11. Vertex coloring": formulations/coloring-formulations.md
+      - "12. Maximum clique": formulations/clique-formulations.md
+      - "13. TSP": formulations/tsp-formulations.md
+      - "14. Machine scheduling": formulations/pcmax-formulations.md
+      - "15. Lot sizing": formulations/lot-sizing-formulations.md
   - Dynamic programming:
       - dynamic-programming/index.md
-      - "14. Principles": dynamic-programming/dp-principles.md
-      - "15. Knapsack": dynamic-programming/dp-knapsack.md
-      - "16. Rod cutting, coin change": dynamic-programming/dp-rod-cutting-coin-change.md
-      - "17. Lot sizing": dynamic-programming/dp-lot-sizing.md
+      - "16. Principles": dynamic-programming/dp-principles.md
+      - "17. Knapsack": dynamic-programming/dp-knapsack.md
+      - "18. Rod cutting, coin change": dynamic-programming/dp-rod-cutting-coin-change.md
+      - "19. Lot sizing": dynamic-programming/dp-lot-sizing.md
   - Heuristics:
       - heuristic-algorithms/index.md
-      - "18. Definitions": heuristic-algorithms/heuristics.md
-      - "19. Constructive": heuristic-algorithms/constructive-heuristics.md
-      - "20. Local search": heuristic-algorithms/local-search.md
-      - "21. Metaheuristics": heuristic-algorithms/metaheuristics.md
-      - "22. MIP heuristics": heuristic-algorithms/mip-heuristics-classical.md
+      - "20. Definitions": heuristic-algorithms/heuristics.md
+      - "21. Constructive": heuristic-algorithms/constructive-heuristics.md
+      - "22. Local search": heuristic-algorithms/local-search.md
+      - "23. Metaheuristics": heuristic-algorithms/metaheuristics.md
+      - "24. MIP heuristics": heuristic-algorithms/mip-heuristics-classical.md
   - Approximation:
       - approximation-algorithms/index.md
-      - "23. Definitions": approximation-algorithms/approximation.md
-      - "24. Bin packing": approximation-algorithms/bin-packing-approximation.md
-      - "25. Knapsack": approximation-algorithms/knapsack-approximation.md
-      - "26. P||Cmax, TSP, coloring": approximation-algorithms/pcmax-tsp-coloring-approximation.md
+      - "25. Definitions": approximation-algorithms/approximation.md
+      - "26. Bin packing": approximation-algorithms/bin-packing-approximation.md
+      - "27. Knapsack": approximation-algorithms/knapsack-approximation.md
+      - "28. P||Cmax, TSP, coloring": approximation-algorithms/pcmax-tsp-coloring-approximation.md
   - Specialized:
       - specialized-algorithms/index.md
-      - "27. Knapsack: B&B": specialized-algorithms/knapsack-branch-and-bound.md
+      - "29. Knapsack: B&B": specialized-algorithms/knapsack-branch-and-bound.md
+  - Catalogue:
+      - catalogue/index.md
+      - "At a glance": catalogue/at-a-glance.md
+      - "KP": catalogue/knapsack.md
+      - "BPP": catalogue/bin-packing.md
+      - "VCP": catalogue/vertex-coloring.md
+      - "MCP": catalogue/maximum-clique.md
+      - "TSP": catalogue/tsp.md
+      - "P||Cmax": catalogue/pcmax.md
+      - "CLS": catalogue/lot-sizing.md
+      - "Knapsack family": catalogue/knapsack-family.md
+      - "DP examples": catalogue/dp-examples.md
   - Exercises:
       - exercises/index.md
       - "1. Combinatorial optimization": exercises/combinatorial-optimization.md
       - "2. Knapsack": exercises/knapsack.md
       - "3. Bin packing": exercises/bin-packing.md
       - "4. Vertex coloring": exercises/coloring.md
-      - "5. TSP": exercises/tsp.md
-      - "6. Machine scheduling": exercises/pcmax.md
-      - "7. Lot sizing": exercises/lot-sizing.md
-      - "8. Knapsack": exercises/knapsack-formulations.md
-      - "9. Bin packing": exercises/bin-packing-formulations.md
-      - "10. Vertex coloring": exercises/coloring-formulations.md
-      - "11. TSP": exercises/tsp-formulations.md
-      - "12. Machine scheduling": exercises/pcmax-formulations.md
-      - "13. Lot sizing": exercises/lot-sizing-formulations.md
-      - "14. Principles": exercises/dp-principles.md
-      - "15. Knapsack": exercises/dp-knapsack.md
-      - "16. Rod cutting, coin change": exercises/dp-rod-cutting-coin-change.md
-      - "17. Lot sizing": exercises/dp-lot-sizing.md
-      - "18. Definitions": exercises/heuristics.md
-      - "19. Constructive": exercises/constructive-heuristics.md
-      - "20. Local search": exercises/local-search.md
-      - "21. Metaheuristics": exercises/metaheuristics.md
-      - "22. MIP heuristics": exercises/mip-heuristics-classical.md
-      - "23. Definitions": exercises/approximation.md
-      - "24. Bin packing": exercises/bin-packing-approximation.md
-      - "25. Knapsack": exercises/knapsack-approximation.md
-      - "26. P||Cmax, TSP, coloring": exercises/pcmax-tsp-coloring-approximation.md
-      - "27. Knapsack: B&B": exercises/knapsack-branch-and-bound.md
+      - "5. Maximum clique": exercises/clique.md
+      - "6. TSP": exercises/tsp.md
+      - "7. Machine scheduling": exercises/pcmax.md
+      - "8. Lot sizing": exercises/lot-sizing.md
+      - "9. Knapsack": exercises/knapsack-formulations.md
+      - "10. Bin packing": exercises/bin-packing-formulations.md
+      - "11. Vertex coloring": exercises/coloring-formulations.md
+      - "12. Maximum clique": exercises/clique-formulations.md
+      - "13. TSP": exercises/tsp-formulations.md
+      - "14. Machine scheduling": exercises/pcmax-formulations.md
+      - "15. Lot sizing": exercises/lot-sizing-formulations.md
+      - "16. Principles": exercises/dp-principles.md
+      - "17. Knapsack": exercises/dp-knapsack.md
+      - "18. Rod cutting, coin change": exercises/dp-rod-cutting-coin-change.md
+      - "19. Lot sizing": exercises/dp-lot-sizing.md
+      - "20. Definitions": exercises/heuristics.md
+      - "21. Constructive": exercises/constructive-heuristics.md
+      - "22. Local search": exercises/local-search.md
+      - "23. Metaheuristics": exercises/metaheuristics.md
+      - "24. MIP heuristics": exercises/mip-heuristics-classical.md
+      - "25. Definitions": exercises/approximation.md
+      - "26. Bin packing": exercises/bin-packing-approximation.md
+      - "27. Knapsack": exercises/knapsack-approximation.md
+      - "28. P||Cmax, TSP, coloring": exercises/pcmax-tsp-coloring-approximation.md
+      - "29. Knapsack: B&B": exercises/knapsack-branch-and-bound.md
   - Lab: lab/index.md
   - Downloads: downloads.md
   - Index: full-index.md

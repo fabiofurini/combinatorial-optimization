@@ -6,7 +6,7 @@ title: "Principles of dynamic programming"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 14** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Principles](../exercises/dp-principles.md)
+**Part 3 · Dynamic programming · Chapter 16** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Principles](../exercises/dp-principles.md)
 
 </div>
 
@@ -30,13 +30,13 @@ title: "Principles of dynamic programming"
 
     - list the steps of a DP algorithm: recurrence, base cases, lookup table, and reconstruction of an optimal solution.
 
-## 14.1 Divide, conquer and combine
+## 16.1 Divide, conquer and combine
 
 <a id="box-1-def-DP"></a>
 
-!!! definizione "Definition 14.1: DP algorithm"
+!!! definizione "Definition 16.1: DP algorithm"
 
-    A <strong><em>Dynamic Programming (DP) algorithm</em></strong> is an exact algorithm to find an optimal solution of a class of optimization problems with specific properties (Section [14.2](#sez-sec-dp-properties)). It decomposes the original problem into smaller subproblems of the same type, and it reuses the information computed when solving them.
+    A <strong><em>Dynamic Programming (DP) algorithm</em></strong> is an exact algorithm to find an optimal solution of a class of optimization problems with specific properties (Section [16.2](#sez-sec-dp-properties)). It decomposes the original problem into smaller subproblems of the same type, and it reuses the information computed when solving them.
 
 - A brute-force algorithm lists all the feasible solutions, and their number grows exponentially ($2^n$ subsets of items for the KP). A DP algorithm avoids this enumeration by reusing the optimal values of the subproblems.
 
@@ -52,7 +52,7 @@ title: "Principles of dynamic programming"
 
 - In a DP algorithm, the same subproblem may be generated several times during the recursive solution process. In order to avoid redundant computations, the optimal value of each subproblem is stored in a <strong><em>lookup table</em></strong>. Whenever the same subproblem is generated again, its optimal value is retrieved from the lookup table instead of being recomputed.
 
-## 14.2 Problem properties required by DP algorithms { #sez-sec-dp-properties }
+## 16.2 Problem properties required by DP algorithms { #sez-sec-dp-properties }
 
 - DP algorithms work only for combinatorial optimization problems that allow a recursive decomposition process respecting the following properties:
 
@@ -80,7 +80,7 @@ title: "Principles of dynamic programming"
 
     DP algorithms can be used when a problem has both the <u>Optimal Substructure</u> and <u>Overlapping Subproblems</u>.
 
-## 14.3 Steps for designing a DP algorithm
+## 16.3 Steps for designing a DP algorithm
 
 - Identify the <strong><em>recursive decomposition process</em></strong> that, starting from a given problem, generates its subproblems, which are smaller problems of the same type, and verify the following two properties:
 
@@ -104,7 +104,7 @@ title: "Principles of dynamic programming"
 
         - identify the way to construct an optimal solution from the information stored.
 
-## 14.4 The DP algorithms of this module
+## 16.4 The DP algorithms of this module
 
 - Every DP algorithm of the following chapters follows the two steps above: a recurrence with its base cases gives the optimal value, an additional table gives an optimal solution.
 
@@ -161,7 +161,7 @@ title: "Principles of dynamic programming"
 
 - In all the numerical examples the data are integers: the number of states is finite, and each state is a table cell. The running times $\Theta(nc)$, $\Theta(nc\,b_{\max})$ and $O(mDC)$ contain numbers of the input (a capacity, a bound, a demand), not only its size: they are <strong>pseudo-polynomial</strong>.
 
-## 14.5 Typical mistakes
+## 16.5 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -173,7 +173,7 @@ title: "Principles of dynamic programming"
 
     - <strong>Confusing the optimal value with an optimal solution.</strong> The table of the optimal values does not give the solution: an additional table of the decisions is needed.
 
-## 14.6 In summary
+## 16.6 In summary
 
 !!! chiave "In summary"
 

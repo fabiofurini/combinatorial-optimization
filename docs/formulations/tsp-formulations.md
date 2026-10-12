@@ -6,7 +6,7 @@ title: "Formulations of the travelling salesman problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 11** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: TSP](../exercises/tsp-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 13** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: TSP](../exercises/tsp-formulations.md)
 
 </div>
 
@@ -30,7 +30,7 @@ title: "Formulations of the travelling salesman problem"
 
     - compare the LP relaxations of the two models on the same instance.
 
-## 11.1 The problem in brief
+## 13.1 The problem in brief
 
 !!! nota "Where we were"
 
@@ -38,7 +38,7 @@ title: "Formulations of the travelling salesman problem"
 
 <a id="box-1-def-TSP"></a>
 
-!!! definizione "Definition 11.1: Travelling Salesman Problem"
+!!! definizione "Definition 13.1: Travelling Salesman Problem"
 
     Given:
 
@@ -61,7 +61,7 @@ title: "Formulations of the travelling salesman problem"
 
 <a id="box-2-ex-TSP-inst"></a>
 
-!!! esempio "Example 11.1: the instance of the chapter"
+!!! esempio "Example 13.1: the instance of the chapter"
 
     Consider the instance with $\mathscr{V}=\{1,2,3,4,5\}$ and distance matrix
 
@@ -81,7 +81,7 @@ title: "Formulations of the travelling salesman problem"
 
     The tour $\sigma=(1,3,5,2,4)$ has length $L(\sigma)=d_{13}+d_{35}+d_{52}+d_{24}+d_{41}=2+7+4+3+2=18$, and no shorter tour exists: the optimal value is $18$ and $\sigma$ is the unique optimal tour, up to the direction.
 
-## 11.2 A model with position variables (MTZ)
+## 13.2 A model with position variables (MTZ)
 
 - Let
 
@@ -117,17 +117,17 @@ title: "Formulations of the travelling salesman problem"
 
     \begin{align*}
     && \min \quad \sum_{i\in\mathscr{V}}\sum_{\substack{j\in\mathscr{V}\\j\neq i}}
-    d_{ij}x_{ij} && \label{obj:TSP} \tag{11.1a}\\[1ex]
+    d_{ij}x_{ij} && \label{obj:TSP} \tag{13.1a}\\[1ex]
     && \text{subject to}\quad \sum_{\substack{j\in\mathscr{V}\\j\neq i}}x_{ij}&=1,
-    && \forall i\in\mathscr{V}, \label{out:TSP} \tag{11.1b}\\[1ex]
+    && \forall i\in\mathscr{V}, \label{out:TSP} \tag{13.1b}\\[1ex]
     && \sum_{\substack{i\in\mathscr{V}\\i\neq j}}x_{ij}&=1,
-    && \forall j\in\mathscr{V}, \label{in:TSP} \tag{11.1c}\\[1ex]
+    && \forall j\in\mathscr{V}, \label{in:TSP} \tag{13.1c}\\[1ex]
     && u_i-u_j+(n-1)x_{ij}&\le n-2,
-    && \forall i,j\in\mathscr{V}\setminus\{1\},~i\neq j, \label{MTZ:TSP} \tag{11.1d}\\[1ex]
+    && \forall i,j\in\mathscr{V}\setminus\{1\},~i\neq j, \label{MTZ:TSP} \tag{13.1d}\\[1ex]
     && x_{ij}&\in\{0,1\},
-    && \forall(i,j)\in A, \label{bin:TSP} \tag{11.1e}\\[1ex]
+    && \forall(i,j)\in A, \label{bin:TSP} \tag{13.1e}\\[1ex]
     && 1\le u_i&\le n-1,
-    && \forall i\in\mathscr{V}\setminus\{1\}. \label{pos:TSP} \tag{11.1f}
+    && \forall i\in\mathscr{V}\setminus\{1\}. \label{pos:TSP} \tag{13.1f}
     \end{align*}
 
     This model is referred to as the $\ILP_{\TSP}^{\mathrm{MTZ}}$ model.
@@ -168,7 +168,7 @@ title: "Formulations of the travelling salesman problem"
 
 <a id="box-3-prop-MTZ-subtours"></a>
 
-!!! teorema "Proposition 11.2: MTZ constraints eliminate subtours"
+!!! teorema "Proposition 13.2: MTZ constraints eliminate subtours"
 
     The constraints $\eqref{out:TSP}$–$\eqref{pos:TSP}$ are satisfied by an integer solution if and only if its selected arcs form one tour through all the cities.
 
@@ -187,7 +187,7 @@ title: "Formulations of the travelling salesman problem"
 
 <a id="box-4-ex-TSP-ILP"></a>
 
-!!! esempio "Example 11.2: $\ILP_{\TSP}^{\mathrm{MTZ}}$ model"
+!!! esempio "Example 13.2: $\ILP_{\TSP}^{\mathrm{MTZ}}$ model"
 
     For the instance of the chapter, the tour $\sigma=(1,3,5,2,4)$ is represented by
 
@@ -203,7 +203,7 @@ title: "Formulations of the travelling salesman problem"
 
     The value of the objective function is $L(\sigma)=18$, hence $z(\ILP_{\TSP}^{\mathrm{MTZ}})=18$.
 
-## 11.3 A model with subtour elimination constraints (DFJ)
+## 13.3 A model with subtour elimination constraints (DFJ)
 
 - The second model uses only the $n(n-1)$ arc variables $x_{ij}$ of the MTZ model: there are no position variables. The subtours are forbidden directly, with one constraint for every subset of cities.
 
@@ -215,15 +215,15 @@ title: "Formulations of the travelling salesman problem"
 
     \begin{align*}
     && \min \quad \sum_{i\in\mathscr{V}}\sum_{\substack{j\in\mathscr{V}\\j\neq i}}
-    d_{ij}x_{ij} && \label{obj:TSP-DFJ} \tag{11.2a}\\[1ex]
+    d_{ij}x_{ij} && \label{obj:TSP-DFJ} \tag{13.2a}\\[1ex]
     && \text{subject to}\quad \sum_{\substack{j\in\mathscr{V}\\j\neq i}}x_{ij}&=1,
-    && \forall i\in\mathscr{V}, \label{out:TSP-DFJ} \tag{11.2b}\\[1ex]
+    && \forall i\in\mathscr{V}, \label{out:TSP-DFJ} \tag{13.2b}\\[1ex]
     && \sum_{\substack{i\in\mathscr{V}\\i\neq j}}x_{ij}&=1,
-    && \forall j\in\mathscr{V}, \label{in:TSP-DFJ} \tag{11.2c}\\[1ex]
+    && \forall j\in\mathscr{V}, \label{in:TSP-DFJ} \tag{13.2c}\\[1ex]
     && \sum_{i\in S}\sum_{\substack{j\in S\\j\neq i}}x_{ij}&\le |S|-1,
-    && \forall S\subseteq\mathscr{V}\setminus\{1\},~|S|\ge2, \label{SEC:TSP} \tag{11.2d}\\[1ex]
+    && \forall S\subseteq\mathscr{V}\setminus\{1\},~|S|\ge2, \label{SEC:TSP} \tag{13.2d}\\[1ex]
     && x_{ij}&\in\{0,1\},
-    && \forall(i,j)\in A. \label{bin:TSP-DFJ} \tag{11.2e}
+    && \forall(i,j)\in A. \label{bin:TSP-DFJ} \tag{13.2e}
     \end{align*}
 
     This model is referred to as the $\ILP_{\TSP}^{\mathrm{DFJ}}$ model.
@@ -234,7 +234,7 @@ title: "Formulations of the travelling salesman problem"
 
 <a id="box-5-prop-DFJ-subtours"></a>
 
-!!! teorema "Proposition 11.3: Subtour elimination constraints"
+!!! teorema "Proposition 13.3: Subtour elimination constraints"
 
     The constraints $\eqref{out:TSP-DFJ}$–$\eqref{bin:TSP-DFJ}$ are satisfied by an integer solution if and only if its selected arcs form one tour through all the cities.
 
@@ -246,7 +246,7 @@ title: "Formulations of the travelling salesman problem"
 
 <a id="box-6-ex-TSP-DFJ"></a>
 
-!!! esempio "Example 11.3: $\ILP_{\TSP}^{\mathrm{DFJ}}$ model"
+!!! esempio "Example 13.3: $\ILP_{\TSP}^{\mathrm{DFJ}}$ model"
 
     For the instance of the chapter, the constraints $\eqref{SEC:TSP}$ are $11$, one for every subset $S\subseteq\{2,3,4,5\}$ with at least two cities. The subset $S=\{2,5\}$ gives $x_{25}+x_{52}\le1$, and $S=\{2,4,5\}$ gives
 
@@ -256,7 +256,7 @@ title: "Formulations of the travelling salesman problem"
 
     The subtour $2\to5\to2$ together with the subtour $1\to3\to4\to1$ satisfies the degree constraints but violates the first one. The tour $\sigma$ satisfies all of them, and $z(\ILP_{\TSP}^{\mathrm{DFJ}})=18$.
 
-## 11.4 Linear Programming relaxations
+## 13.4 Linear Programming relaxations
 
 - We obtain the LP relaxation of each model by replacing the binary requirements with non-negativity constraints. In the MTZ model the position variables remain continuous and keep their bounds. The relaxations are called $\LP_{\TSP}^{\mathrm{MTZ}}$ and $\LP_{\TSP}^{\mathrm{DFJ}}$.
 
@@ -268,11 +268,11 @@ title: "Formulations of the travelling salesman problem"
 
 - The dual of the relaxations has one variable for every ordering constraint, or for every subset $S$, and it does not provide a useful closed-form solution. The relevant theoretical point is the strength of the relaxation.
 
-### 11.4.1 A weak region of the MTZ relaxation
+### 13.4.1 A weak region of the MTZ relaxation
 
 <a id="box-7-prop-MTZ-weak"></a>
 
-!!! teorema "Proposition 11.4: A weak region of the MTZ relaxation"
+!!! teorema "Proposition 13.4: A weak region of the MTZ relaxation"
 
     Let $(x,u)$ satisfy the degree equations $\eqref{out:TSP}$–$\eqref{in:TSP}$, with $x_{ij}\ge0$. If
 
@@ -299,7 +299,7 @@ title: "Formulations of the travelling salesman problem"
 
 <a id="box-8-ex-TSP-LP"></a>
 
-!!! esempio "Example 11.4: comparing the relaxations"
+!!! esempio "Example 13.4: comparing the relaxations"
 
     For the instance of the chapter, with Gurobi we obtain three lower bounds on the optimal value $18$:
 
@@ -324,7 +324,7 @@ title: "Formulations of the travelling salesman problem"
 
     The ordering constraints raise the bound from $16$ to $17$; the subtour elimination constraints close the gap on this instance.
 
-## 11.5 Typical mistakes
+## 13.5 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -334,11 +334,11 @@ title: "Formulations of the travelling salesman problem"
 
     - <strong>Taking $S=\mathscr{V}$ in the subtour elimination constraints.</strong> A tour uses $|\mathscr{V}|$ arcs inside $\mathscr{V}$: the constraint would cut off every tour. The sets $S$ are proper subsets of the cities, with at least two cities.
 
-    - <strong>Trusting the MTZ bound.</strong> By [Proposition 11.4](#box-7-prop-MTZ-weak), many fractional solutions of the assignment relaxation are feasible for the MTZ relaxation: the compact formulation is not a strong one.
+    - <strong>Trusting the MTZ bound.</strong> By [Proposition 13.4](#box-7-prop-MTZ-weak), many fractional solutions of the assignment relaxation are feasible for the MTZ relaxation: the compact formulation is not a strong one.
 
     - <strong>Listing all the subtour elimination constraints.</strong> Their number is $2^{n-1}-n$: they are not written all at once, but added when violated.
 
-## 11.6 In summary
+## 13.6 In summary
 
 !!! chiave "In summary"
 

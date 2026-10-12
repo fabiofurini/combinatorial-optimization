@@ -6,7 +6,7 @@
 
 <div class="grid cards" markdown>
 
--   **18. Heuristic algorithms: definitions**
+-   **20. Heuristic algorithms: definitions**
 
     ---
 
@@ -14,7 +14,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](heuristics.md) · [Exercises](../exercises/heuristics.md)
 
--   **19. Constructive heuristics**
+-   **21. Constructive heuristics**
 
     ---
 
@@ -22,7 +22,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](constructive-heuristics.md) · [Exercises](../exercises/constructive-heuristics.md)
 
--   **20. Local search**
+-   **22. Local search**
 
     ---
 
@@ -30,7 +30,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](local-search.md) · [Exercises](../exercises/local-search.md)
 
--   **21. Metaheuristics**
+-   **23. Metaheuristics**
 
     ---
 
@@ -38,7 +38,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](metaheuristics.md) · [Exercises](../exercises/metaheuristics.md)
 
--   **22. MIP heuristics for the classical problems**
+-   **24. MIP heuristics for the classical problems**
 
     ---
 

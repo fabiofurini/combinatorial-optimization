@@ -6,13 +6,13 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 10** · each solution opens with a click · [:material-book-open-variant: Chapter 10: Vertex coloring](../formulations/coloring-formulations.md)
+**Exercises · Chapter 11** · each solution opens with a click · [:material-book-open-variant: Chapter 11: Vertex coloring](../formulations/coloring-formulations.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
 
-<a id="esercizio-10-1"></a>
+<a id="esercizio-11-1"></a>
 
-!!! esercizio "Exercise 10.1: ILP model of the Vertex Coloring Problem (1)"
+!!! esercizio "Exercise 11.1: ILP model of the Vertex Coloring Problem (1)"
 
     We consider the following graph $G=(V,E)$ with $5$ vertices ($n=5$) and $5$ edges ($m=5$):
 
@@ -70,9 +70,9 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
         By enumeration there are $5$ optimal partitions: one class is a single vertex, and the other four vertices form two pairs of non-adjacent vertices in a unique way. With the $3!=6$ permutations of the colors, the model has $30$ optimal solutions.
 
-<a id="esercizio-10-2"></a>
+<a id="esercizio-11-2"></a>
 
-!!! esercizio "Exercise 10.2: LP relaxations of the VCP model (1)"
+!!! esercizio "Exercise 11.2: LP relaxations of the VCP model (1)"
 
     We consider the following graph $G=(V,E)$ with $4$ vertices ($n=4$) and $6$ edges ($m=6$):
 
@@ -134,9 +134,9 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
     4. The absolute gap is $4-2=2$ and the ratio is $\frac{z(\LP_{\VCP})}{z(\ILP_{\VCP})}=\frac{1}{2}$. On the complete graph with $n$ vertices the optimal value is $n$ and the LP bound is still $2$: the gap $n-2$ grows without limit and the ratio $\frac{2}{n}$ tends to $0$.
 
-<a id="esercizio-10-3"></a>
+<a id="esercizio-11-3"></a>
 
-!!! esercizio "Exercise 10.3: Feasible solutions of the VCP model (1)"
+!!! esercizio "Exercise 11.3: Feasible solutions of the VCP model (1)"
 
     We consider the following graph $G=(V,E)$ with $5$ vertices ($n=5$) and $5$ edges ($m=5$):
 
@@ -194,9 +194,9 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
     3. The value of every feasible solution of $\LP_{\VCP}$ is at least $2$, and Gurobi gives $z(\LP_{\VCP})=2$: candidates (d) and (e) are both optimal for the relaxation. Candidate (d) is the solution of the chapter; (e) shows that the optimal solution of the relaxation is not unique. Candidate (a) is optimal for $\ILP_{\VCP}$, whose value is $3$.
 
-<a id="esercizio-10-4"></a>
+<a id="esercizio-11-4"></a>
 
-!!! esercizio "Exercise 10.4: Dual solutions of the VCP relaxations (1)"
+!!! esercizio "Exercise 11.4: Dual solutions of the VCP relaxations (1)"
 
     We consider the following graph $G=(V,E)$ with $6$ vertices ($n=6$) and $9$ edges ($m=9$):
 
@@ -255,9 +255,9 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
     4. The previous dual solutions with $\tilde\lambda_c=0$ for every color satisfy $\sum_e\tilde\pi_{ce}+\tilde\lambda_c\le 1$ and have value $2$. Gurobi gives $z(\LP\text{-}0_{\VCP})=z(\LP_{\VCP})=2$ and $z(\ILP_{\VCP})=3$: the bounds $y_c\le 1$ do not strengthen the relaxation, which stays at $2$ while the graph needs $3$ colors (it contains the triangle $\{1,2,3\}$).
 
-<a id="esercizio-10-5"></a>
+<a id="esercizio-11-5"></a>
 
-!!! esercizio "Exercise 10.5: Integrality gap of the VCP model (1)"
+!!! esercizio "Exercise 11.5: Integrality gap of the VCP model (1)"
 
     We consider the following graph $G=(V,E)$ with $6$ vertices ($n=6$) and $10$ edges ($m=10$):
 

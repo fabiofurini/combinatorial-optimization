@@ -6,13 +6,13 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 11** · each solution opens with a click · [:material-book-open-variant: Chapter 11: TSP](../formulations/tsp-formulations.md)
+**Exercises · Chapter 13** · each solution opens with a click · [:material-book-open-variant: Chapter 13: TSP](../formulations/tsp-formulations.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
 
-<a id="esercizio-11-1"></a>
+<a id="esercizio-13-1"></a>
 
-!!! esercizio "Exercise 11.1: The MTZ model of the TSP (1)"
+!!! esercizio "Exercise 13.1: The MTZ model of the TSP (1)"
 
     We consider a TSP instance with $\mathscr{V}=\{1,\dots,4\}$ ($n=4$ cities) and the symmetric distance matrix
 
@@ -115,9 +115,9 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
     5. Gurobi gives $z(\LP_{\TSP}^{\mathrm{MTZ}})=12$, against the optimal value $13$: the relaxation leaves a gap of $1$.
 
-<a id="esercizio-11-2"></a>
+<a id="esercizio-13-2"></a>
 
-!!! esercizio "Exercise 11.2: The DFJ model of the TSP (1)"
+!!! esercizio "Exercise 13.2: The DFJ model of the TSP (1)"
 
     We consider a TSP instance with $\mathscr{V}=\{1,\dots,4\}$ ($n=4$ cities) and the symmetric distance matrix
 
@@ -161,9 +161,9 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
     4. Gurobi gives the assignment relaxation $10$, $z(\LP_{\TSP}^{\mathrm{DFJ}})=13$ and $z(\ILP_{\TSP}^{\mathrm{DFJ}})=13$, attained by the tour $(1,2,3,4)$. The subtour elimination constraints raise the bound from $10$ to $13$, which is the optimal value.
 
-<a id="esercizio-11-3"></a>
+<a id="esercizio-13-3"></a>
 
-!!! esercizio "Exercise 11.3: Feasible solutions of the TSP models (1)"
+!!! esercizio "Exercise 13.3: Feasible solutions of the TSP models (1)"
 
     We consider a TSP instance with $\mathscr{V}=\{1,\dots,5\}$ ($n=5$ cities) and the symmetric distance matrix
 
@@ -219,9 +219,9 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
     4. The value of (d) is one quarter of the sum of $d_{ij}$ over all the arcs, that is $\frac{2\cdot 59}{4}=\frac{59}{2}$. It is larger than the optimal value $L((1,3,2,5,4))=21$, so it does not improve the bound $z(\LP_{\TSP}^{\mathrm{MTZ}})=20$ given by Gurobi; it shows only that the relaxations contain fractional points far from every tour.
 
-<a id="esercizio-11-4"></a>
+<a id="esercizio-13-4"></a>
 
-!!! esercizio "Exercise 11.4: Comparing the TSP relaxations (1)"
+!!! esercizio "Exercise 13.4: Comparing the TSP relaxations (1)"
 
     We consider a TSP instance with $\mathscr{V}=\{1,\dots,5\}$ ($n=5$ cities) and the symmetric distance matrix
 
@@ -311,9 +311,9 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
     4. Every arc $(i,j)$ with $i,j\neq 1$ has $x_{ij}\le\frac{3}{4}=\frac{n-2}{n-1}$, and all the positions are $1$: this is the weak region of the chapter, where every constraint (MTZ) reads $4x_{ij}\le 3$. For $S=\{2,3\}$ the arcs inside $S$ have total value $\frac{3}{2}>1$: the subtour elimination constraint of $S$ is violated, and the DFJ relaxation cuts this point off.
 
-<a id="esercizio-11-5"></a>
+<a id="esercizio-13-5"></a>
 
-!!! esercizio "Exercise 11.5: Adding subtour elimination constraints (1)"
+!!! esercizio "Exercise 13.5: Adding subtour elimination constraints (1)"
 
     We consider a TSP instance with $\mathscr{V}=\{1,\dots,5\}$ ($n=5$ cities) and the symmetric distance matrix
 

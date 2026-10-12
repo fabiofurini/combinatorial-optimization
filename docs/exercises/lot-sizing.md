@@ -6,13 +6,13 @@ title: "Exercises · Capacitated lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 7** · each solution opens with a click · [:material-book-open-variant: Chapter 7: Lot sizing](../combinatorial-optimization-problems/lot-sizing.md)
+**Exercises · Chapter 8** · each solution opens with a click · [:material-book-open-variant: Chapter 8: Lot sizing](../combinatorial-optimization-problems/lot-sizing.md) · [:material-file-pdf-box: Exercises, volume 1 (PDF)](../pdf/exercises-1-combinatorial-optimization-problems.pdf)
 
 </div>
 
-<a id="esercizio-7-1"></a>
+<a id="esercizio-8-1"></a>
 
-!!! esercizio "Exercise 7.1: Feasibility and cost of a plan (CLS)"
+!!! esercizio "Exercise 8.1: Feasibility and cost of a plan (CLS)"
 
     We consider the capacitated lot sizing instance with $m=4$ periods and the following data:
 
@@ -102,9 +102,9 @@ title: "Exercises · Capacitated lot sizing"
 
         Only $\vet{x}^1$ and $\vet{x}^4$ are feasible, with costs $132$ and $136$; $\vet{x}^2$ exceeds a capacity and $\vet{x}^3$ produces too late.
 
-<a id="esercizio-7-2"></a>
+<a id="esercizio-8-2"></a>
 
-!!! esercizio "Exercise 7.2: Counting the setup choices (CLS)"
+!!! esercizio "Exercise 8.2: Counting the setup choices (CLS)"
 
     We consider again the capacitated lot sizing instance
 
@@ -224,9 +224,9 @@ title: "Exercises · Capacitated lot sizing"
 
         Of the $16$ setup choices, $4$ are feasible: they all contain period $1$ and at least $3$ periods in total. They carry $50$ feasible plans.
 
-<a id="esercizio-7-3"></a>
+<a id="esercizio-8-3"></a>
 
-!!! esercizio "Exercise 7.3: The best plan by enumeration of the setups (CLS)"
+!!! esercizio "Exercise 8.3: The best plan by enumeration of the setups (CLS)"
 
     We consider again the capacitated lot sizing instance
 
@@ -344,9 +344,9 @@ title: "Exercises · Capacitated lot sizing"
 
         Enumerating the feasible setup choices, and producing as late as possible for each of them, gives the optimal plan $(5,0,4,3)$ with $z(I)=132$.
 
-<a id="esercizio-7-4"></a>
+<a id="esercizio-8-4"></a>
 
-!!! esercizio "Exercise 7.4: The effect of the capacity (CLS)"
+!!! esercizio "Exercise 8.4: The effect of the capacity (CLS)"
 
     We consider the lot sizing instance of the previous exercises, with $4$ periods, $\vet{d}=(3,2,4,3)$, $\vet{sc}=(30,40,30,40)$, $\vet{vc}=(2,2,2,2)$, $\vet{hc}=(4,4,4,4)$, and three values of the capacity, the same in every period: $cap_t=5$, $cap_t=6$, and no capacity limit.
 
@@ -382,9 +382,9 @@ title: "Exercises · Capacitated lot sizing"
 
         The optimal cost is $132$ with $cap_t=5$, $112$ with $cap_t=6$ and $104$ without capacities: the capacity forces a third setup and changes the structure of the optimal plan.
 
-<a id="esercizio-7-5"></a>
+<a id="esercizio-8-5"></a>
 
-!!! esercizio "Exercise 7.5: Lot-for-lot, a lower bound and the optimum (CLS)"
+!!! esercizio "Exercise 8.5: Lot-for-lot, a lower bound and the optimum (CLS)"
 
     We consider the capacitated lot sizing instance with $m=3$ periods and the following data:
 

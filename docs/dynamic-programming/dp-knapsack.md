@@ -6,11 +6,11 @@ title: "Dynamic programming for knapsack problems"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 15** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Knapsack](../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP table for the knapsack](../lab/dp-knapsack-table.md)
+**Part 3 · Dynamic programming · Chapter 17** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Knapsack](../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP table for the knapsack](../lab/dp-knapsack-table.md)
 
 </div>
 
-## 15.1 A DP algorithm for the Knapsack Problem
+## 17.1 A DP algorithm for the Knapsack Problem
 
 !!! nota "Prerequisites"
 
@@ -42,11 +42,11 @@ title: "Dynamic programming for knapsack problems"
 
     - exchange the roles of profits and weights, and compute the optimal value from the table $u(j,q)$.
 
-### 15.1.1 Problem definition
+### 17.1.1 Problem definition
 
 <a id="box-1-defKP"></a>
 
-!!! definizione "Definition 15.1: Knapsack Problem"
+!!! definizione "Definition 17.1: Knapsack Problem"
 
     Given:
 
@@ -60,7 +60,7 @@ title: "Dynamic programming for knapsack problems"
 
 <a id="box-2-texexpbox1"></a>
 
-!!! esempio "Example 15.1: KP instance"
+!!! esempio "Example 17.1: KP instance"
 
     We consider a knapsack of capacity $c = 5$ and a set $\{1,2,3\}$ of $3$ items ($n = 3$), with the following profits and weights:
 
@@ -120,7 +120,7 @@ title: "Dynamic programming for knapsack problems"
 
 <a id="box-3-texexpbox2"></a>
 
-!!! esempio "Example 15.2: Enumeration of all possible KP solutions"
+!!! esempio "Example 17.2: Enumeration of all possible KP solutions"
 
     We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
@@ -209,7 +209,7 @@ title: "Dynamic programming for knapsack problems"
     </tr>
     </table></div>
 
-### 15.1.2 A first DP algorithm
+### 17.1.2 A first DP algorithm
 
 - <u>Step 1</u>: computation of the optimal value
 
@@ -231,7 +231,7 @@ title: "Dynamic programming for knapsack problems"
         0 & \textrm{if $j=0$ or $k=0$,}\\[2ex]
         v(j-1,k) & \textrm{if $1\le j \le n$, $1\le k \le c$, and $w_j>k$,}\\[2ex]
         \begin{array}[t]{@{}l@{}}\displaystyle \max \bigg\{ v(j-1,k),\\ \qquad p_j+v(j-1,k-w_j) \bigg\}\end{array} & \begin{array}[t]{@{}l@{}}\textrm{if $1\le j \le n$,}\\ \textrm{$1\le k \le c$, $w_j\le k$.}\end{array}
-        \end{array} \right. \tag{15.1}
+        \end{array} \right. \tag{17.1}
         \end{equation*}
 
     - The recursive decomposition process of formula $\eqref{eq:1}$ generates at most $2$ <strong>independent subproblems</strong>, corresponding to whether or not to select item $j$ for a knapsack of capacity $k$. If $w_j>k$, item $j$ cannot be selected, and therefore the only feasible option is not to select it. Here, $v(0,k)=0$ since no item is available, and $v(j,0)=0$ since no capacity is available.
@@ -252,7 +252,7 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-4-texkptree"></a>
 
-        !!! esempio "Example 15.3: Recursion tree"
+        !!! esempio "Example 17.3: Recursion tree"
 
             We consider the KP instance of <span style="color:#1971c2">Example 1</span>. This is the recursion tree of the top-down approach to compute $v(3,5)$:
 
@@ -264,7 +264,7 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-5-texkpsmallervalues"></a>
 
-        !!! esempio "Example 15.4: Computing the values of the $v$ function"
+        !!! esempio "Example 17.4: Computing the values of the $v$ function"
 
             We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
@@ -339,7 +339,7 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-17-texkpbu"></a>
 
-        !!! esempio "Example 15.5: Execution of the DP algorithm"
+        !!! esempio "Example 17.5: Execution of the DP algorithm"
 
             We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
@@ -552,7 +552,7 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-26-texkpvec"></a>
 
-        !!! esempio "Example 15.6: Execution of the DP algorithm using a single vector"
+        !!! esempio "Example 17.6: Execution of the DP algorithm using a single vector"
 
             We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
@@ -686,7 +686,7 @@ title: "Dynamic programming for knapsack problems"
             </tr>
             </table></div>
 
-            Each pass transforms the vector ${v}$ from the row $j-1$ into the row $j$ of the matrix ${v}$ reported in <span style="color:#1971c2">[Example 15.5](#box-17-texkpbu)</span>. The optimal value of the KP instance is ${v}[5]=14$.
+            Each pass transforms the vector ${v}$ from the row $j-1$ into the row $j$ of the matrix ${v}$ reported in <span style="color:#1971c2">[Example 17.5](#box-17-texkpbu)</span>. The optimal value of the KP instance is ${v}[5]=14$.
 
     - The vector version computes only the optimal value of the KP instance. The information needed to construct an optimal solution, which is described in Step 2, records the decision taken for every item $j$ and every capacity value $k$, and therefore cannot be stored in a single vector.
 
@@ -708,7 +708,7 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-27-texkpsmatrix"></a>
 
-        !!! esempio "Example 15.7: Computation of the additional information"
+        !!! esempio "Example 17.7: Computation of the additional information"
 
             We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
@@ -906,7 +906,7 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-28-texkpsolvector"></a>
 
-        !!! esempio "Example 15.8: Computing an optimal solution"
+        !!! esempio "Example 17.8: Computing an optimal solution"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following matrix ${s}$:
 
@@ -1101,7 +1101,7 @@ title: "Dynamic programming for knapsack problems"
             L_j= \left\{ \begin{array}{ll}
             \big\{(0,0)\big\} & \textrm{if $j=0$,}\\[2ex]
             \textrm{nd}\big(L_{j-1}\cup M_j\big) & \textrm{if $1\le j \le n$,}
-            \end{array} \right. \tag{15.2}
+            \end{array} \right. \tag{17.2}
             \end{equation*}
 
             where $\textrm{nd}(S)$ denotes the list of the non-dominated states of a set $S$ of states, and
@@ -1128,7 +1128,7 @@ title: "Dynamic programming for knapsack problems"
 
             \begin{equation*}
             \label{eq:5}
-            \max \big\{\, p \;:\; (w,p)\in L_n \,\big\}. \tag{15.3}
+            \max \big\{\, p \;:\; (w,p)\in L_n \,\big\}. \tag{17.3}
             \end{equation*}
 
     - In a list of non-dominated states sorted by strictly increasing weight, the profits are also strictly increasing: if a state had a weight larger than another one and a profit not larger, it would be dominated. Therefore the maximum of formula $\eqref{eq:5}$ is the profit of the last state of $L_n$.
@@ -1143,7 +1143,7 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-29-texkp3graph"></a>
 
-        !!! esempio "Example 15.9: The lists of states"
+        !!! esempio "Example 17.9: The lists of states"
 
             We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
@@ -1204,7 +1204,7 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-52-texkp3bu"></a>
 
-        !!! esempio "Example 15.10: Execution of the DP algorithm"
+        !!! esempio "Example 17.10: Execution of the DP algorithm"
 
             We consider the KP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
@@ -1333,7 +1333,7 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-53-texkp3info"></a>
 
-        !!! esempio "Example 15.11: Computation of the additional information"
+        !!! esempio "Example 17.11: Computation of the additional information"
 
             We consider the KP instance of <span style="color:#1971c2">Example 1</span>. For each item $j$ and each position $h$, the table shows the state $L_j[h]$ and the stored values ${\sigma}_j[h]$ and ${\rho}_j[h]$.
 
@@ -1372,7 +1372,7 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-54-texkp3sol"></a>
 
-        !!! esempio "Example 15.12: Computing an optimal solution"
+        !!! esempio "Example 17.12: Computing an optimal solution"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, the last list is
 
@@ -1477,7 +1477,7 @@ title: "Dynamic programming for knapsack problems"
 
     and the number of states stays small while $j$ is small, whatever the knapsack capacity.
 
-### 15.1.3 A second DP algorithm
+### 17.1.3 A second DP algorithm
 
 - <u>Step 1</u>: computation of the optimal value
 
@@ -1495,7 +1495,7 @@ title: "Dynamic programming for knapsack problems"
 
     <a id="box-55-texkp2instance"></a>
 
-    !!! esempio "Example 15.13: KP instance"
+    !!! esempio "Example 17.13: KP instance"
 
         We consider a knapsack of capacity $c = 5$ and a set $\{1,2,3\}$ of $3$ items ($n = 3$), with the following profits and weights:
 
@@ -1508,7 +1508,7 @@ title: "Dynamic programming for knapsack problems"
         \end{array}
         $$
 
-        We refer to this KP instance as <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span>.
+        We refer to this KP instance as <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span>.
 
     !!! chiave ""
 
@@ -1531,7 +1531,7 @@ title: "Dynamic programming for knapsack problems"
         +\infty & \textrm{if $j=0$ and $1\le q \le P$,}\\[2ex]
         u(j-1,q) & \textrm{if $1\le j \le n$, $1\le q \le P$, and $p_j>q$,}\\[2ex]
         \begin{array}[t]{@{}l@{}}\displaystyle \min \bigg\{ u(j-1,q),\\ \qquad w_j+u(j-1,q-p_j) \bigg\}\end{array} & \begin{array}[t]{@{}l@{}}\textrm{if $1\le j \le n$,}\\ \textrm{$1\le q \le P$, $p_j\le q$.}\end{array}
-        \end{array} \right. \tag{15.4}
+        \end{array} \right. \tag{17.4}
         \end{equation*}
 
     - The recursive decomposition process of formula $\eqref{eq:2}$ generates at most $2$ <strong>independent subproblems</strong>, corresponding to whether or not to select item $j$ to reach the target profit $q$. If $p_j>q$, selecting item $j$ would exceed the target profit, and therefore the only feasible option is not to select it. Here, $u(j,0)=0$ since the empty subset has total profit $0$ and total weight $0$. Moreover, $u(0,q)=+\infty$ for $q\ge 1$: in this case no item is available, so no subset has total profit equal to $q$. The value $+\infty$ is used to rule out this infeasible case.
@@ -1554,7 +1554,7 @@ title: "Dynamic programming for knapsack problems"
 
             \begin{equation*}
             \label{eq:3}
-            \max \bigg\{ q \in \{0,1,\dots,P\} \;:\; u(n,q)\le c \bigg\}. \tag{15.5}
+            \max \bigg\{ q \in \{0,1,\dots,P\} \;:\; u(n,q)\le c \bigg\}. \tag{17.5}
             \end{equation*}
 
         - The set in formula $\eqref{eq:3}$ is never empty, since $u(n,0)=0\le c$, and therefore the maximum is always well defined.
@@ -1565,9 +1565,9 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-56-texkp2tree"></a>
 
-        !!! esempio "Example 15.14: Recursion tree"
+        !!! esempio "Example 17.14: Recursion tree"
 
-            We consider the KP instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span>. This is the recursion tree of the top-down approach to compute $u(3,7)$:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span>. This is the recursion tree of the top-down approach to compute $u(3,7)$:
 
             ![Figure 5](../img/dp-knapsack/fig05.svg){ .fig loading=lazy  }
 
@@ -1577,9 +1577,9 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-57-texkp2smallervalues"></a>
 
-        !!! esempio "Example 15.15: Computing the values of the $u$ function"
+        !!! esempio "Example 17.15: Computing the values of the $u$ function"
 
-            We consider the KP instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrr}
@@ -1668,9 +1668,9 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-77-texkp2bu"></a>
 
-        !!! esempio "Example 15.16: Execution of the DP algorithm"
+        !!! esempio "Example 17.16: Execution of the DP algorithm"
 
-            We consider the KP instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrr}
@@ -2068,9 +2068,9 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-94-texkp2vec"></a>
 
-        !!! esempio "Example 15.17: Execution of the DP algorithm using a single vector"
+        !!! esempio "Example 17.17: Execution of the DP algorithm using a single vector"
 
-            We consider the KP instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrr}
@@ -2305,7 +2305,7 @@ title: "Dynamic programming for knapsack problems"
             </tr>
             </table></div>
 
-            Each pass transforms the vector ${u}$ from the row $j-1$ into the row $j$ of the matrix ${u}$ reported in <span style="color:#1971c2">[Example 15.16](#box-77-texkp2bu)</span>. The last loop then scans the vector and gives the optimal value $z=7$ of the KP instance, as in <span style="color:#1971c2">[Example 15.16](#box-77-texkp2bu)</span>.
+            Each pass transforms the vector ${u}$ from the row $j-1$ into the row $j$ of the matrix ${u}$ reported in <span style="color:#1971c2">[Example 17.16](#box-77-texkp2bu)</span>. The last loop then scans the vector and gives the optimal value $z=7$ of the KP instance, as in <span style="color:#1971c2">[Example 17.16](#box-77-texkp2bu)</span>.
 
     - The vector version computes only the optimal value of the KP instance. The information needed to construct an optimal solution, which is described in Step 2, records the decision taken for every item $j$ and every target profit $q$, and therefore cannot be stored in a single vector.
 
@@ -2327,9 +2327,9 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-95-texkp2smatrix"></a>
 
-        !!! esempio "Example 15.18: Computation of the additional information"
+        !!! esempio "Example 17.18: Computation of the additional information"
 
-            We consider the KP instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrr}
@@ -2645,9 +2645,9 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-96-texkp2solvector"></a>
 
-        !!! esempio "Example 15.19: Computing an optimal solution"
+        !!! esempio "Example 17.19: Computing an optimal solution"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span>, the optimal value is $z=7$ and we have the following matrix ${s}$:
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span>, the optimal value is $z=7$ and we have the following matrix ${s}$:
 
             $$
             \begin{array}{l|rrrrrrrrrrr}
@@ -2846,7 +2846,7 @@ title: "Dynamic programming for knapsack problems"
             L_j= \left\{ \begin{array}{ll}
             \big\{(0,0)\big\} & \textrm{if $j=0$,}\\[2ex]
             \textrm{nd}\big(L_{j-1}\cup M_j\big) & \textrm{if $1\le j \le n$,}
-            \end{array} \right. \tag{15.6}
+            \end{array} \right. \tag{17.6}
             \end{equation*}
 
             where $\textrm{nd}(S)$ denotes the list of the non-dominated states of a set $S$ of states, and
@@ -2875,7 +2875,7 @@ title: "Dynamic programming for knapsack problems"
 
             \begin{equation*}
             \label{eq:7}
-            \max \big\{\, p \;:\; (w,p)\in L_n,\ w\le c \,\big\}. \tag{15.7}
+            \max \big\{\, p \;:\; (w,p)\in L_n,\ w\le c \,\big\}. \tag{17.7}
             \end{equation*}
 
     - The set in formula $\eqref{eq:7}$ is never empty, since $(0,0)\in L_n$ and $0\le c$, and therefore the maximum is always well defined.
@@ -2890,9 +2890,9 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-97-texkp4graph"></a>
 
-        !!! esempio "Example 15.20: The lists of states"
+        !!! esempio "Example 17.20: The lists of states"
 
-            We consider the KP instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrr}
@@ -2951,9 +2951,9 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-123-texkp4bu"></a>
 
-        !!! esempio "Example 15.21: Execution of the DP algorithm"
+        !!! esempio "Example 17.21: Execution of the DP algorithm"
 
-            We consider the KP instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span> with a knapsack of capacity $c=5$ and the following profits and weights:
 
             $$
             \begin{array}{l|rrr}
@@ -3080,9 +3080,9 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-124-texkp4info"></a>
 
-        !!! esempio "Example 15.22: Computation of the additional information"
+        !!! esempio "Example 17.22: Computation of the additional information"
 
-            We consider the KP instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span>. For each item $j$ and each position $h$, the table shows the state $L_j[h]$ and the stored values ${\sigma}_j[h]$ and ${\rho}_j[h]$.
+            We consider the KP instance of <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span>. For each item $j$ and each position $h$, the table shows the state $L_j[h]$ and the stored values ${\sigma}_j[h]$ and ${\rho}_j[h]$.
 
             $$
             \begin{array}{c|c|c|c|c}
@@ -3121,9 +3121,9 @@ title: "Dynamic programming for knapsack problems"
 
         <a id="box-125-texkp4sol"></a>
 
-        !!! esempio "Example 15.23: Computing an optimal solution"
+        !!! esempio "Example 17.23: Computing an optimal solution"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span>, the last list is
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span>, the last list is
 
             $$
             L_3=\big\{(0,0),(2,3),(3,4),(5,7),(8,10)\big\}
@@ -3216,7 +3216,7 @@ title: "Dynamic programming for knapsack problems"
     S(n,P)=\Theta(nP).
     $$
 
-- The matrix ${u}$ always has $(n+1)(P+1)$ cells, most of which are equal to $+\infty$, while the lists contain only the states that are actually reachable. On the KP instance of <span style="color:#1971c2">[Example 15.13](#box-55-texkp2instance)</span> the lists contain $1$, $2$, $3$, and $5$ states, against the $44$ cells of the matrix ${u}$.
+- The matrix ${u}$ always has $(n+1)(P+1)$ cells, most of which are equal to $+\infty$, while the lists contain only the states that are actually reachable. On the KP instance of <span style="color:#1971c2">[Example 17.13](#box-55-texkp2instance)</span> the lists contain $1$, $2$, $3$, and $5$ states, against the $44$ cells of the matrix ${u}$.
 
 - The list $L_j$ also satisfies $|L_j|\le 2^j$, since the items $\{1,2,\dots,j\}$ have $2^j$ subsets. Therefore
 
@@ -3224,7 +3224,7 @@ title: "Dynamic programming for knapsack problems"
     |L_j|\le \min\big\{2^j,\,P+1\big\}.
     $$
 
-### 15.1.4 Typical mistakes
+### 17.1.4 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -3238,7 +3238,7 @@ title: "Dynamic programming for knapsack problems"
 
     - <strong>Reading $u(n,q)$ as the optimal value.</strong> In the second DP algorithm $u(n,q)$ is a minimum weight; the optimal value is the largest $q$ with $u(n,q)\le c$.
 
-### 15.1.5 In summary
+### 17.1.5 In summary
 
 !!! chiave "In summary"
 
@@ -3269,7 +3269,7 @@ title: "Dynamic programming for knapsack problems"
     </tr>
     </table></div>
 
-## 15.2 A DP algorithm for the Unbounded Knapsack Problem
+## 17.2 A DP algorithm for the Unbounded Knapsack Problem
 
 !!! nota "Prerequisites"
 
@@ -3291,11 +3291,11 @@ title: "Dynamic programming for knapsack problems"
 
     - count the steps of the two DP algorithms and compare them.
 
-### 15.2.1 Problem definition
+### 17.2.1 Problem definition
 
 <a id="box-126-defUKP"></a>
 
-!!! definizione "Definition 15.2: Unbounded Knapsack Problem"
+!!! definizione "Definition 17.2: Unbounded Knapsack Problem"
 
     Given:
 
@@ -3309,7 +3309,7 @@ title: "Dynamic programming for knapsack problems"
 
 <a id="box-127-texukpex1"></a>
 
-!!! esempio "Example 15.24: UKP instance"
+!!! esempio "Example 17.24: UKP instance"
 
     We consider a knapsack of capacity $c=7$ and $4$ item types, with the following profits and weights:
 
@@ -3354,7 +3354,7 @@ $$
 
     The main difference with the $0$–$1$ Knapsack Problem is that the variables are no longer binary. In UKP, each variable $x_j$ can take any non-negative integer value, provided that the capacity constraint is respected.
 
-### 15.2.2 A first DP algorithm
+### 17.2.2 A first DP algorithm
 
 - <u>Step 1</u>: computation of the optimal value
 
@@ -3379,7 +3379,7 @@ $$
         \displaystyle \max_{j \,:\, w_j\le k}\{p_j+v(k-w_j)\}, & \textrm{if $k\ge 1$ and $w_j\le k$ for some $j$,}\\[2ex]
         0, & \textrm{if $k\ge 1$ and $w_j> k$ for every $j$.}
         \end{array}
-        \right. \tag{15.8}
+        \right. \tag{17.8}
         \end{equation*}
 
     - The recursive decomposition process of formula $\eqref{eq:ukp1}$ generates at most $n$ <strong>independent subproblems</strong>, each corresponding to a possible choice of an item type $j$, among those with $w_j\le k$, to be inserted as one of the items of the knapsack of capacity $k$.
@@ -3402,7 +3402,7 @@ $$
 
         <a id="box-128-texukptree"></a>
 
-        !!! esempio "Example 15.25: Recursion tree"
+        !!! esempio "Example 17.25: Recursion tree"
 
             We consider the UKP instance of <span style="color:#1971c2">Example 1</span>, with capacity $c=7$ and item types with weights $w_1=2$, $w_2=3$, $w_3=5$, $w_4=6$. This is the recursion tree of the top-down approach to compute $v(7)$:
 
@@ -3414,7 +3414,7 @@ $$
 
         <a id="box-129-texukpsmallervalues"></a>
 
-        !!! esempio "Example 15.26: Computing the values of the $v$ function"
+        !!! esempio "Example 17.26: Computing the values of the $v$ function"
 
             We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
@@ -3495,7 +3495,7 @@ $$
 
         <a id="box-140-texukpbu"></a>
 
-        !!! esempio "Example 15.27: Execution of the DP algorithm"
+        !!! esempio "Example 17.27: Execution of the DP algorithm"
 
             We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
@@ -3861,7 +3861,7 @@ $$
 
         <a id="box-141-texukpbuinfo"></a>
 
-        !!! esempio "Example 15.28: Computation of the additional information"
+        !!! esempio "Example 17.28: Computation of the additional information"
 
             We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
@@ -4270,7 +4270,7 @@ $$
 
         <a id="box-142-texukpsolvector"></a>
 
-        !!! esempio "Example 15.29: Computing an optimal solution"
+        !!! esempio "Example 17.29: Computing an optimal solution"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following vector $s$:
 
@@ -4403,7 +4403,7 @@ $$
 
 - The version <code>UKP\_DP1\_InfoSol</code> stores the additional vector $s$ and performs only a constant number of extra operations inside the same loops. Therefore, its number of steps remains $\Theta(nc)$.
 
-### 15.2.3 A second DP algorithm
+### 17.2.3 A second DP algorithm
 
 - <u>Step 1</u>: computation of the optimal value
 
@@ -4425,7 +4425,7 @@ $$
         0, & \textrm{if $j=0$,}\\[1ex]
         v(j-1,k), & \textrm{if $j\ge 1$ and $k<w_j$,}\\[1ex]
         \max\{v(j-1,k),\ p_j+v(j,k-w_j)\}, & \textrm{if $j\ge 1$ and $k\ge w_j$.}
-        \end{array} \right. \tag{15.9}
+        \end{array} \right. \tag{17.9}
         \end{equation*}
 
     - The recursive decomposition process of formula $\eqref{eq:ukp2}$ generates at most $2$ <strong>independent subproblems</strong>, corresponding to whether or not to insert one copy of item type $j$ into a knapsack of capacity $k$, using only item types $1,2,\dots,j$. If $w_j>k$, item type $j$ cannot be inserted, and therefore the only feasible option is not to use it.
@@ -4450,7 +4450,7 @@ $$
 
         <a id="box-143-texukpalttree"></a>
 
-        !!! esempio "Example 15.30: Recursion tree"
+        !!! esempio "Example 17.30: Recursion tree"
 
             We consider the UKP instance of <span style="color:#1971c2">Example 1</span>, with capacity $c=7$ and item types with weights $w_1=2$, $w_2=3$, $w_3=5$, $w_4=6$. This is the recursion tree of the top-down approach to compute $v(4,7)$:
 
@@ -4462,7 +4462,7 @@ $$
 
         <a id="box-144-texukpaltvalues"></a>
 
-        !!! esempio "Example 15.31: Computing the values of the $v$ function"
+        !!! esempio "Example 17.31: Computing the values of the $v$ function"
 
             We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
@@ -4601,7 +4601,7 @@ $$
 
         <a id="box-156-texukpaltbu"></a>
 
-        !!! esempio "Example 15.32: Execution of the DP algorithm"
+        !!! esempio "Example 17.32: Execution of the DP algorithm"
 
             We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
@@ -4908,7 +4908,7 @@ $$
 
         <a id="box-157-texukpaltbuinfo"></a>
 
-        !!! esempio "Example 15.33: Computation of the additional information"
+        !!! esempio "Example 17.33: Computation of the additional information"
 
             We consider the UKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=7$ and the following profits and weights:
 
@@ -5214,7 +5214,7 @@ $$
 
         <a id="box-158-texukpaltsolvector"></a>
 
-        !!! esempio "Example 15.34: Computing an optimal solution"
+        !!! esempio "Example 17.34: Computing an optimal solution"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following matrix $s$:
 
@@ -5375,7 +5375,7 @@ $$
 
 - The version <code>UKP\_DP2\_InfoSol</code> stores the additional matrix $s$ and performs only a constant number of extra operations inside the same loops. Therefore, its number of steps remains $\Theta(nc)$.
 
-### 15.2.4 Typical mistakes
+### 17.2.4 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -5387,7 +5387,7 @@ $$
 
     - <strong>Forgetting the base case.</strong> $v(0)=0$, and $v[0..c]$ has $c+1$ cells, not $c$.
 
-### 15.2.5 In summary
+### 17.2.5 In summary
 
 !!! chiave "In summary"
 
@@ -5416,7 +5416,7 @@ $$
     </tr>
     </table></div>
 
-## 15.3 A DP algorithm for the Bounded Knapsack Problem
+## 17.3 A DP algorithm for the Bounded Knapsack Problem
 
 !!! nota "Prerequisites"
 
@@ -5438,11 +5438,11 @@ $$
 
     - count the steps of the DP algorithm and say when $\Theta(nc\,b_{\max})$ is tight.
 
-### 15.3.1 Problem definition
+### 17.3.1 Problem definition
 
 <a id="box-159-defBKP"></a>
 
-!!! definizione "Definition 15.3: Bounded Knapsack Problem"
+!!! definizione "Definition 17.3: Bounded Knapsack Problem"
 
     Given:
 
@@ -5456,7 +5456,7 @@ $$
 
 <a id="box-160-texbkpex1"></a>
 
-!!! esempio "Example 15.35: BKP instance"
+!!! esempio "Example 17.35: BKP instance"
 
     We consider a knapsack of capacity $c=10$ and $3$ item types, with the following profits, weights, and bounds:
 
@@ -5514,7 +5514,7 @@ $$
     \sum_{j=1}^{n} p_j x_j.
     $$
 
-### 15.3.2 A DP algorithm
+### 17.3.2 A DP algorithm
 
 - <u>Step 1</u>: computation of the optimal value
 
@@ -5535,7 +5535,7 @@ $$
         v(j,k)= \left\{ \begin{array}{ll}
         0 & \textrm{if $j=0$ or $k=0$,}                                                                                            \\[2ex]
         \displaystyle \max_{d \,\in\, \{0,1,\dots,\min\{b_j,\lfloor k/w_j\rfloor\}\}} \bigg\{ d\,p_j + v(j-1,k-d\,w_j) \bigg\} & \begin{array}[t]{@{}l@{}}\textrm{if $1\le j \le n$}\\ \textrm{and $1 \le k \le c$.}\end{array}
-        \end{array} \right. \tag{15.10}
+        \end{array} \right. \tag{17.10}
         \end{equation*}
 
     - The recursive decomposition process of formula $\eqref{eq:bkp}$ generates at most $b_j+1$ <strong>independent subproblems</strong>, corresponding to the possible numbers $d \in \{0,1,\dots,\min\{b_j,\lfloor k/w_j\rfloor\}\}$ of copies of item type $j$ inserted into a knapsack of capacity $k$, using only item types $1,2,\dots,j$.
@@ -5558,7 +5558,7 @@ $$
 
         <a id="box-161-texbkptree"></a>
 
-        !!! esempio "Example 15.36: Recursion tree"
+        !!! esempio "Example 17.36: Recursion tree"
 
             We consider the BKP instance of <span style="color:#1971c2">Example 1</span>. This is the recursion tree of the top-down approach to compute $v(3,10)$:
 
@@ -5570,7 +5570,7 @@ $$
 
         <a id="box-162-texbkpvalues"></a>
 
-        !!! esempio "Example 15.37: Computing the values of the $v$ function"
+        !!! esempio "Example 17.37: Computing the values of the $v$ function"
 
             We consider the BKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=10$ and the following profits, weights, and bounds:
 
@@ -5660,7 +5660,7 @@ $$
 
         <a id="box-174-texbkpbu"></a>
 
-        !!! esempio "Example 15.38: Execution of the DP algorithm"
+        !!! esempio "Example 17.38: Execution of the DP algorithm"
 
             We consider the BKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=10$ and the following profits, weights, and bounds:
 
@@ -5991,7 +5991,7 @@ $$
 
         <a id="box-175-texbkpinfo"></a>
 
-        !!! esempio "Example 15.39: Computation of the additional information"
+        !!! esempio "Example 17.39: Computation of the additional information"
 
             We consider the BKP instance of <span style="color:#1971c2">Example 1</span> with a knapsack of capacity $c=10$ and the following profits, weights, and bounds:
 
@@ -6243,7 +6243,7 @@ $$
 
         <a id="box-176-texbkpsolvector"></a>
 
-        !!! esempio "Example 15.40: Computing an optimal solution"
+        !!! esempio "Example 17.40: Computing an optimal solution"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following matrix $s$:
 
@@ -6399,7 +6399,7 @@ $$
 
 - Replacing every bound $b_j$ by $\min\{b_j,\lfloor c/w_j\rfloor\}$ does not change the problem, so we can assume $b_{\max}\le c$. Under this assumption the bound $\Theta(nc\,b_{\max})$ is tight: it is attained by the instances in which all the weights are equal to $1$ and all the bounds are equal to $b_{\max}$. Indeed, the innermost loop then performs $\sum_{k=0}^{c}(\min\{b_{\max},k\}+1)\ge (c+1)\,b_{\max}/2$ iterations for each item type.
 
-### 15.3.3 Typical mistakes
+### 17.3.3 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -6411,7 +6411,7 @@ $$
 
     - <strong>Breaking ties inconsistently.</strong> The DP algorithm updates $m$ only on a strictly larger value, so $s[j][k]$ keeps the smallest number of copies that attains the maximum.
 
-### 15.3.4 In summary
+### 17.3.4 In summary
 
 !!! chiave "In summary"
 

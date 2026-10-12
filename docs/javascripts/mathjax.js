@@ -41,7 +41,7 @@ window.MathJax = {
       mathscr: ["\\mathcal{#1}", 1],
       // macro del modulo Ottimizzazione combinatoria (GUIDA_DI_STILE §3, preambolo delle dispense)
       MIP: "\\mathrm{MIP}", LP: "\\mathrm{LP}", ILP: "\\mathrm{ILP}", BIP: "\\mathrm{BIP}",
-      KP: "\\mathrm{KP}", BPP: "\\mathrm{BPP}", VCP: "\\mathrm{VCP}", TSP: "\\mathrm{TSP}",
+      KP: "\\mathrm{KP}", BPP: "\\mathrm{BPP}", VCP: "\\mathrm{VCP}", MCP: "\\mathrm{MCP}", MSSP: "\\mathrm{MSSP}", TSP: "\\mathrm{TSP}",
       ATSP: "\\mathrm{ATSP}", CLSP: "\\mathrm{CLSP}", PCmax: "P\\|C_{\\max}",
       // \\LB[x] delle dispense = LB(x): MathJax non ha argomenti facoltativi condizionali, sul sito si scrive LB(x) per esteso
       LB: "\\mathrm{LB}", UB: "\\mathrm{UB}",

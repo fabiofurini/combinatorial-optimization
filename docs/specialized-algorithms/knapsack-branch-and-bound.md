@@ -6,7 +6,7 @@ title: "Knapsack: branch-and-bound on the critical item"
 
 <div class="info-capitolo" markdown>
 
-**Part 6 · Specialized algorithms · Chapter 27** · [:material-file-pdf-box: Lecture notes, volume 6 (PDF)](../pdf/lecture-notes-6-specialized-algorithms.pdf) · [:material-pencil: Exercises: Knapsack: B&B](../exercises/knapsack-branch-and-bound.md) · [:material-gesture-tap: App: Branch-and-bound for the knapsack](../lab/knapsack-branch-and-bound.md)
+**Part 6 · Specialized algorithms · Chapter 29** · [:material-file-pdf-box: Lecture notes, volume 6 (PDF)](../pdf/lecture-notes-6-specialized-algorithms.pdf) · [:material-pencil: Exercises: Knapsack: B&B](../exercises/knapsack-branch-and-bound.md) · [:material-gesture-tap: App: Branch-and-bound for the knapsack](../lab/knapsack-branch-and-bound.md)
 
 </div>
 
@@ -28,11 +28,11 @@ title: "Knapsack: branch-and-bound on the critical item"
 
     - explain why the algorithm is simpler than the general one, and what stays the same.
 
-## 27.1 The algorithm for the KP
+## 29.1 The algorithm for the KP
 
 <a id="box-1-def-LPKPk"></a>
 
-!!! definizione "Definition 27.1: branching node and $\LP_{\KP}^k$ problem"
+!!! definizione "Definition 29.1: branching node and $\LP_{\KP}^k$ problem"
 
     In the branch-and-bound algorithm for the $\ILP_{\KP}$ model, the branching constraints on a variable $x_j$, $j \in \mathscr{I}$, are $x_j \le 0$ and $x_j \ge 1$. In a branching node $k$ of the branch-and-bound tree, we have:
 
@@ -60,10 +60,10 @@ title: "Knapsack: branch-and-bound on the critical item"
     A $\LP_{\KP}^k$ problem of a branching node $k$ can be equivalently re-written as:
 
     \begin{align*}
-    &&   \underbrace{ \sum_{j \in \mathscr{I}^k_\text{in} } p_j}_{=p(k)}  +  \max \;\;{\sum_{j \in  \mathscr{I}^k } p_j \, x_j}                              \label{eq:KP-obj_LP}  \tag{27.1a}\\[2ex]
-    && \text{subject to} \quad  {\sum_{j \in  \mathscr{I}^k} w_j \, x_j}  &\leq \underbrace{c - \sum_{j \in \mathscr{I}^k_\text{in} } w_j}_{=c(k)},                       \label{eq:KP-cap_LP}  \tag{27.1b}\\[2ex]
-    &&  x_j                        &\le  1, & \forall j \in  \mathscr{I}^k, \tag{27.1c}\\[2ex]
-    && x_j                        &\ge  0, & \forall j \in  \mathscr{I}^k. \label{eq:KP-bin_LP} \tag{27.1d}
+    &&   \underbrace{ \sum_{j \in \mathscr{I}^k_\text{in} } p_j}_{=p(k)}  +  \max \;\;{\sum_{j \in  \mathscr{I}^k } p_j \, x_j}                              \label{eq:KP-obj_LP}  \tag{29.1a}\\[2ex]
+    && \text{subject to} \quad  {\sum_{j \in  \mathscr{I}^k} w_j \, x_j}  &\leq \underbrace{c - \sum_{j \in \mathscr{I}^k_\text{in} } w_j}_{=c(k)},                       \label{eq:KP-cap_LP}  \tag{29.1b}\\[2ex]
+    &&  x_j                        &\le  1, & \forall j \in  \mathscr{I}^k, \tag{29.1c}\\[2ex]
+    && x_j                        &\ge  0, & \forall j \in  \mathscr{I}^k. \label{eq:KP-bin_LP} \tag{29.1d}
     \end{align*}
 
 - A $\LP^k_{\KP}$  problem of a branching node $k$ is <strong>structurally equivalent</strong> to  the  $\LP_{\KP}$ problem but:
@@ -74,7 +74,7 @@ title: "Knapsack: branch-and-bound on the critical item"
 
     3. there is an objective-function constant  $p(k):=\sum_{j \in \mathscr{I}^k_\text{in} } p_j$
 
-### 27.1.1 Solving the $\LP_{\KP}^k$ problem of a node
+### 29.1.1 Solving the $\LP_{\KP}^k$ problem of a node
 
 - The problem $\LP_{\KP}^k$ is a knapsack LP problem on the items of $\mathscr{I}^k$, with capacity $c(k)$: it is solved by the formulas of Dantzig, without any simplex iteration. The items of $\mathscr{I}^k$ are kept in the order of non-increasing efficiency.
 
@@ -98,13 +98,13 @@ title: "Knapsack: branch-and-bound on the critical item"
 
     In every node at most one variable is fractional, the one of the split item, and the value of the node is the Dantzig bound of a smaller knapsack: the node is solved by a scan of the items.
 
-### 27.1.2 Branching-variable selection strategy
+### 29.1.2 Branching-variable selection strategy
 
 - The optimal solution of an $\LP_{\KP}^k$ problem given by the formulas of the previous subsection has at most one fractional variable, the one associated to the split item. <strong>Branching can be performed on the variable associated to the split item</strong>: this branching-variable selection strategy is called split-item strategy.
 
 - The optimal solution of an $\LP_{\KP}$ problem is not unique when some items have equal efficiency: the other optimal solutions can have more fractional variables, for instance $x=(\frac12,\frac12)$ for $p=(2,2)$, $w=(2,2)$, $c=2$. Here, as in the general algorithm, we always use the solution given by the formulas.
 
-### 27.1.3 What changes with respect to the general algorithm
+### 29.1.3 What changes with respect to the general algorithm
 
 - The algorithm is the LP-based branch-and-bound algorithm of the module <em>Integer linear programming</em> ([Chapter 7 «Branch-and-bound»](https://fabiofurini.github.io/integer-linear-programming/exact-methods/bb/)), with its problem list, its pruning criteria and its optimality gap.
 
@@ -114,11 +114,11 @@ title: "Knapsack: branch-and-bound on the critical item"
 
 - <strong>Node selection.</strong> The node of the problem list is extracted with the FIFO or the LIFO rule, and the down-branching node is solved before the up-branching node; the nodes are numbered in the order of resolution. The lower bound written in a node is the value at the moment of its resolution.
 
-## 27.2 A worked example
+## 29.2 A worked example
 
 <a id="box-2-texexpbox1"></a>
 
-!!! esempio "Example 27.1: The $\ILP_{\KP}$ model"
+!!! esempio "Example 29.1: The $\ILP_{\KP}$ model"
 
     We consider a knapsack of capacity $c = 9$ and a set $\mathscr{I} = \{1,2,3,4,5,6\}$ of $6$ items ($n = 6$), with the following profits and weights:
 
@@ -157,7 +157,7 @@ title: "Knapsack: branch-and-bound on the critical item"
 
 <a id="box-3-texexpbox2"></a>
 
-!!! esempio "Example 27.2: Branch-and-bound algorithm for the $\ILP_{\KP}$ model"
+!!! esempio "Example 29.2: Branch-and-bound algorithm for the $\ILP_{\KP}$ model"
 
     A branch-and-bound algorithm for $\ILP_{\KP}$ model and the KP instance of <span style="color:#1971c2">Example 1</span> using:
 
@@ -335,7 +335,7 @@ title: "Knapsack: branch-and-bound on the critical item"
 
     ![Figure 3](../img/knapsack-branch-and-bound/fig03.svg){ .fig loading=lazy  }
 
-## 27.3 Typical mistakes
+## 29.3 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -349,7 +349,7 @@ title: "Knapsack: branch-and-bound on the critical item"
 
     - <strong>Numbering the skipped children.</strong> A child that is not solved does not receive a node index, exactly as in the general algorithm.
 
-## 27.4 In summary
+## 29.4 In summary
 
 !!! chiave "In summary"
 

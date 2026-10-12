@@ -6,13 +6,13 @@ title: "Exercises · Principles of dynamic programming"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 14** · each solution opens with a click · [:material-book-open-variant: Chapter 14: Principles](../dynamic-programming/dp-principles.md)
+**Exercises · Chapter 16** · each solution opens with a click · [:material-book-open-variant: Chapter 16: Principles](../dynamic-programming/dp-principles.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
 
 </div>
 
-<a id="esercizio-14-1"></a>
+<a id="esercizio-16-1"></a>
 
-!!! esercizio "Exercise 14.1: Optimal substructure and overlapping subproblems"
+!!! esercizio "Exercise 16.1: Optimal substructure and overlapping subproblems"
 
     A staircase has $n=6$ steps. Stepping on step $k$ costs $c_k$, and from a step we can climb to the next one or skip one step. We start from the ground, step $0$, at no cost, and we want to reach step $6$ at minimum total cost:
 
@@ -125,9 +125,9 @@ title: "Exercises · Principles of dynamic programming"
 
         $v(6)=4$, reached by the steps $0\to 2\to 4\to 6$; the recursion tree evaluates $v(2)$ $5$ times, the lookup table once.
 
-<a id="esercizio-14-2"></a>
+<a id="esercizio-16-2"></a>
 
-!!! esercizio "Exercise 14.2: Writing a recurrence: no two consecutive positions"
+!!! esercizio "Exercise 16.2: Writing a recurrence: no two consecutive positions"
 
     Along a road there are $n=7$ positions for billboards, numbered in order. A billboard in position $k$ brings a profit $p_k$, and two billboards cannot be in consecutive positions:
 
@@ -200,9 +200,9 @@ title: "Exercises · Principles of dynamic programming"
 
         $v(7)=22$ with the positions $\{1,3,5,7\}$; the greedy choice by profit gives only $20$.
 
-<a id="esercizio-14-3"></a>
+<a id="esercizio-16-3"></a>
 
-!!! esercizio "Exercise 14.3: Filling a DP table: paths on a grid"
+!!! esercizio "Exercise 16.3: Filling a DP table: paths on a grid"
 
     A robot moves on a grid of $3$ rows and $4$ columns, from the cell $(1,1)$ to the cell $(3,4)$, one cell down or one cell right at each move. Every cell $(i,j)$ it visits gives a profit $a_{ij}$:
 
@@ -285,9 +285,9 @@ title: "Exercises · Principles of dynamic programming"
 
         The optimal path collects $v(3,4)=18$. The DP algorithm fills one cell per subproblem, $12$ here, while the number of paths grows exponentially with the size of the grid.
 
-<a id="esercizio-14-4"></a>
+<a id="esercizio-16-4"></a>
 
-!!! esercizio "Exercise 14.4: Shortest path in a layered network"
+!!! esercizio "Exercise 16.4: Shortest path in a layered network"
 
     We look for a shortest path from $s$ to $t$ in the directed network $G=(N,A)$ below, where every arc $(i,j)\in A$ has a cost $c_{ij}$:
 
@@ -389,9 +389,9 @@ title: "Exercises · Principles of dynamic programming"
 
         $v(s)=9$, with the shortest path $s\to a_2\to b_2\to t$; the values of the nodes $b_k$ are computed once and used several times.
 
-<a id="esercizio-14-5"></a>
+<a id="esercizio-16-5"></a>
 
-!!! esercizio "Exercise 14.5: A recurrence for a new problem: compatible requests"
+!!! esercizio "Exercise 16.5: A recurrence for a new problem: compatible requests"
 
     A room can host one event at a time. There are $n=6$ requests: request $j$ occupies the room from time $a_j$ to time $b_j$ and pays $w_j$; two requests are compatible if one ends before (or when) the other starts. The requests are numbered by non-decreasing end time:
 

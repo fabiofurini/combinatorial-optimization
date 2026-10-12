@@ -6,15 +6,15 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 15** · each solution opens with a click · [:material-book-open-variant: Chapter 15: Knapsack](../dynamic-programming/dp-knapsack.md)
+**Exercises · Chapter 17** · each solution opens with a click · [:material-book-open-variant: Chapter 17: Knapsack](../dynamic-programming/dp-knapsack.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
 
 </div>
 
 ## A DP algorithm for the Knapsack Problem
 
-<a id="esercizio-15-1"></a>
+<a id="esercizio-17-1"></a>
 
-!!! esercizio "Exercise 15.1: Exercise 1: Knapsack Problem"
+!!! esercizio "Exercise 17.1: Exercise 1: Knapsack Problem"
 
     Consider the following KP instance, where the knapsack has capacity $c=6$, and the profits and weights associated with the items are:
 
@@ -419,9 +419,9 @@ title: "Exercises · Dynamic programming for knapsack problems"
         {v}[4][6]=14.
         $$
 
-<a id="esercizio-15-2"></a>
+<a id="esercizio-17-2"></a>
 
-!!! esercizio "Exercise 15.2: Exercise 2: Knapsack Problem"
+!!! esercizio "Exercise 17.2: Exercise 2: Knapsack Problem"
 
     Consider the following KP instance, where the knapsack has capacity $c=7$, and the profits and weights associated with the items are:
 
@@ -861,9 +861,9 @@ title: "Exercises · Dynamic programming for knapsack problems"
         {v}[4][7]=14.
         $$
 
-<a id="esercizio-15-3"></a>
+<a id="esercizio-17-3"></a>
 
-!!! esercizio "Exercise 15.3: Exercise 3: Knapsack Problem"
+!!! esercizio "Exercise 17.3: Exercise 3: Knapsack Problem"
 
     Consider the following KP instance, where the knapsack has capacity $c=8$, and the profits and weights associated with the items are:
 
@@ -1422,9 +1422,9 @@ title: "Exercises · Dynamic programming for knapsack problems"
         {v}[5][8]=15.
         $$
 
-<a id="esercizio-15-4"></a>
+<a id="esercizio-17-4"></a>
 
-!!! esercizio "Exercise 15.4: Exercise 4: Knapsack Problem"
+!!! esercizio "Exercise 17.4: Exercise 4: Knapsack Problem"
 
     Consider the following KP instance, where the knapsack has capacity $c=9$, and the profits and weights associated with the items are:
 
@@ -2025,9 +2025,9 @@ title: "Exercises · Dynamic programming for knapsack problems"
         {v}[5][9]=18.
         $$
 
-<a id="esercizio-15-5"></a>
+<a id="esercizio-17-5"></a>
 
-!!! esercizio "Exercise 15.5: Exercise 5: Knapsack Problem"
+!!! esercizio "Exercise 17.5: Exercise 5: Knapsack Problem"
 
     Consider the following KP instance, where the knapsack has capacity $c=10$, and the profits and weights associated with the items are:
 
@@ -2672,9 +2672,9 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
 ## A DP algorithm for the Unbounded Knapsack Problem
 
-<a id="esercizio-15-6"></a>
+<a id="esercizio-17-6"></a>
 
-!!! esercizio "Exercise 15.6: Exercise 1: Unbounded Knapsack Problem"
+!!! esercizio "Exercise 17.6: Exercise 1: Unbounded Knapsack Problem"
 
     Consider the following UKP instance, where the knapsack has capacity $c=7$, each item type is available in infinitely many copies, and the profits and weights associated with the item types are:
 
@@ -3619,9 +3619,9 @@ title: "Exercises · Dynamic programming for knapsack problems"
         v[4][7]=14.
         $$
 
-<a id="esercizio-15-7"></a>
+<a id="esercizio-17-7"></a>
 
-!!! esercizio "Exercise 15.7: Exercise 2: Unbounded Knapsack Problem"
+!!! esercizio "Exercise 17.7: Exercise 2: Unbounded Knapsack Problem"
 
     Consider the following UKP instance, where the knapsack has capacity $c=8$, each item type is available in infinitely many copies, and the profits and weights associated with the item types are:
 
@@ -4850,9 +4850,9 @@ title: "Exercises · Dynamic programming for knapsack problems"
         v[5][8]=20.
         $$
 
-<a id="esercizio-15-8"></a>
+<a id="esercizio-17-8"></a>
 
-!!! esercizio "Exercise 15.8: Exercise 3: Unbounded Knapsack Problem"
+!!! esercizio "Exercise 17.8: Exercise 3: Unbounded Knapsack Problem"
 
     Consider the following UKP instance, where the knapsack has capacity $c=10$, each item type is available in infinitely many copies, and the profits and weights associated with the item types are:
 
@@ -6087,9 +6087,9 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
         The optimal solution is not unique: $(0,1,1,0)$, with total weight $4+6=10$ and total profit $10+12=22$, is also optimal. Both DP algorithms find $(2,1,0,0)$, because they update the stored value only when it strictly improves.
 
-<a id="esercizio-15-9"></a>
+<a id="esercizio-17-9"></a>
 
-!!! esercizio "Exercise 15.9: Exercise 4: Unbounded Knapsack Problem"
+!!! esercizio "Exercise 17.9: Exercise 4: Unbounded Knapsack Problem"
 
     Consider the following UKP instance, where the knapsack has capacity $c=9$, each item type is available in infinitely many copies, and the profits and weights associated with the item types are:
 
@@ -7212,9 +7212,9 @@ title: "Exercises · Dynamic programming for knapsack problems"
         v[4][9]=23.
         $$
 
-<a id="esercizio-15-10"></a>
+<a id="esercizio-17-10"></a>
 
-!!! esercizio "Exercise 15.10: Exercise 5: Unbounded Knapsack Problem"
+!!! esercizio "Exercise 17.10: Exercise 5: Unbounded Knapsack Problem"
 
     Consider the following UKP instance, where the knapsack has capacity $c=11$, each item type is available in infinitely many copies, and the profits and weights associated with the item types are:
 
@@ -8716,9 +8716,9 @@ title: "Exercises · Dynamic programming for knapsack problems"
 
 ## A DP algorithm for the Bounded Knapsack Problem
 
-<a id="esercizio-15-11"></a>
+<a id="esercizio-17-11"></a>
 
-!!! esercizio "Exercise 15.11: Exercise 1: Bounded Knapsack Problem"
+!!! esercizio "Exercise 17.11: Exercise 1: Bounded Knapsack Problem"
 
     Consider the following BKP instance, where the knapsack has capacity $c=6$, and the profits, weights, and bounds associated with the item types are:
 
@@ -8990,9 +8990,9 @@ title: "Exercises · Dynamic programming for knapsack problems"
         v[2][6]=9.
         $$
 
-<a id="esercizio-15-12"></a>
+<a id="esercizio-17-12"></a>
 
-!!! esercizio "Exercise 15.12: Exercise 2: Bounded Knapsack Problem"
+!!! esercizio "Exercise 17.12: Exercise 2: Bounded Knapsack Problem"
 
     Consider the following BKP instance, where the knapsack has capacity $c=7$, and the profits, weights, and bounds associated with the item types are:
 
@@ -9285,9 +9285,9 @@ title: "Exercises · Dynamic programming for knapsack problems"
         v[2][7]=17.
         $$
 
-<a id="esercizio-15-13"></a>
+<a id="esercizio-17-13"></a>
 
-!!! esercizio "Exercise 15.13: Exercise 3: Bounded Knapsack Problem"
+!!! esercizio "Exercise 17.13: Exercise 3: Bounded Knapsack Problem"
 
     Consider the following BKP instance, where the knapsack has capacity $c=5$, and the profits, weights, and bounds associated with the item types are:
 
@@ -9597,9 +9597,9 @@ title: "Exercises · Dynamic programming for knapsack problems"
         v[3][5]=7.
         $$
 
-<a id="esercizio-15-14"></a>
+<a id="esercizio-17-14"></a>
 
-!!! esercizio "Exercise 15.14: Exercise 4: Bounded Knapsack Problem"
+!!! esercizio "Exercise 17.14: Exercise 4: Bounded Knapsack Problem"
 
     Consider the following BKP instance, where the knapsack has capacity $c=8$, and the profits, weights, and bounds associated with the item types are:
 
@@ -9913,9 +9913,9 @@ title: "Exercises · Dynamic programming for knapsack problems"
         v[2][8]=15.
         $$
 
-<a id="esercizio-15-15"></a>
+<a id="esercizio-17-15"></a>
 
-!!! esercizio "Exercise 15.15: Exercise 5: Bounded Knapsack Problem"
+!!! esercizio "Exercise 17.15: Exercise 5: Bounded Knapsack Problem"
 
     Consider the following BKP instance, where the knapsack has capacity $c=9$, and the profits, weights, and bounds associated with the item types are:
 

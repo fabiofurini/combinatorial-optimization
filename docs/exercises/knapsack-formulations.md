@@ -6,13 +6,13 @@ title: "Exercises · Formulations of the knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 8** · each solution opens with a click · [:material-book-open-variant: Chapter 8: Knapsack](../formulations/knapsack-formulations.md)
+**Exercises · Chapter 9** · each solution opens with a click · [:material-book-open-variant: Chapter 9: Knapsack](../formulations/knapsack-formulations.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
 
-<a id="esercizio-8-1"></a>
+<a id="esercizio-9-1"></a>
 
-!!! esercizio "Exercise 8.1: Upper bounds for the Knapsack Problem (1)"
+!!! esercizio "Exercise 9.1: Upper bounds for the Knapsack Problem (1)"
 
     We consider a knapsack capacity $c=11$ and a set $\mathscr N=\{1,2,3,4,5\}$ of $5$ items ($n=5$) with the following profits and weights:
 
@@ -109,9 +109,9 @@ title: "Exercises · Formulations of the knapsack problem"
         UB_{MT} < UB_{D}
         $$
 
-<a id="esercizio-8-2"></a>
+<a id="esercizio-9-2"></a>
 
-!!! esercizio "Exercise 8.2: Upper bounds for the Knapsack Problem (2)"
+!!! esercizio "Exercise 9.2: Upper bounds for the Knapsack Problem (2)"
 
     We consider a knapsack capacity $c=8$ and a set $\mathscr N=\{1,2,3,4\}$ of $4$ items ($n=4$) with the following profits and weights:
 
@@ -208,9 +208,9 @@ title: "Exercises · Formulations of the knapsack problem"
         UB_{MT} < UB_{D}
         $$
 
-<a id="esercizio-8-3"></a>
+<a id="esercizio-9-3"></a>
 
-!!! esercizio "Exercise 8.3: Upper bounds for the Knapsack Problem (3)"
+!!! esercizio "Exercise 9.3: Upper bounds for the Knapsack Problem (3)"
 
     We consider a knapsack capacity $c=15$ and a set $\mathscr N=\{1,2,3,4\}$ of $4$ items ($n=4$) with the following profits and weights:
 
@@ -307,9 +307,9 @@ title: "Exercises · Formulations of the knapsack problem"
         UB_{MT}  = UB_{D}
         $$
 
-<a id="esercizio-8-4"></a>
+<a id="esercizio-9-4"></a>
 
-!!! esercizio "Exercise 8.4: Upper bounds for the Knapsack Problem (4)"
+!!! esercizio "Exercise 9.4: Upper bounds for the Knapsack Problem (4)"
 
     We consider a knapsack capacity $c=9$ and a set $\mathscr{N}=\{1,2,3,4,5,6\}$ of $6$ items ($n=6$) with the following profits, weights:
 
@@ -406,9 +406,9 @@ title: "Exercises · Formulations of the knapsack problem"
         UB_{MT}  = UB_{D}
         $$
 
-<a id="esercizio-8-5"></a>
+<a id="esercizio-9-5"></a>
 
-!!! esercizio "Exercise 8.5: Upper bounds for the Knapsack Problem (5)"
+!!! esercizio "Exercise 9.5: Upper bounds for the Knapsack Problem (5)"
 
     We consider a knapsack capacity $c=21$ and a set $\mathscr{N}=\{1,2,3,4,5,6\}$ of $6$ items ($n=6$) with the following profits, weights:
 

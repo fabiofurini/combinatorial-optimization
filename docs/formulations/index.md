@@ -6,7 +6,7 @@
 
 <div class="grid cards" markdown>
 
--   **8. Formulations of the knapsack problem**
+-   **9. Formulations of the knapsack problem**
 
     ---
 
@@ -14,7 +14,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](knapsack-formulations.md) · [Exercises](../exercises/knapsack-formulations.md)
 
--   **9. Formulations of the bin packing problem**
+-   **10. Formulations of the bin packing problem**
 
     ---
 
@@ -22,7 +22,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](bin-packing-formulations.md) · [Exercises](../exercises/bin-packing-formulations.md)
 
--   **10. Formulations of the vertex coloring problem**
+-   **11. Formulations of the vertex coloring problem**
 
     ---
 
@@ -30,7 +30,15 @@
 
     [:octicons-arrow-right-24: Read the chapter](coloring-formulations.md) · [Exercises](../exercises/coloring-formulations.md)
 
--   **11. Formulations of the travelling salesman problem**
+-   **12. Formulations of the maximum clique problem**
+
+    ---
+
+    The problem in brief · The edge formulation · The Linear Programming relaxations · Clique inequalities: a stronger formulation · …
+
+    [:octicons-arrow-right-24: Read the chapter](clique-formulations.md) · [Exercises](../exercises/clique-formulations.md)
+
+-   **13. Formulations of the travelling salesman problem**
 
     ---
 
@@ -38,7 +46,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](tsp-formulations.md) · [Exercises](../exercises/tsp-formulations.md)
 
--   **12. Formulations of parallel machine scheduling**
+-   **14. Formulations of parallel machine scheduling**
 
     ---
 
@@ -46,7 +54,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](pcmax-formulations.md) · [Exercises](../exercises/pcmax-formulations.md)
 
--   **13. Formulations of capacitated lot sizing**
+-   **15. Formulations of capacitated lot sizing**
 
     ---
 

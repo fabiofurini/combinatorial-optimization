@@ -50,7 +50,11 @@ title: "Combinatorial optimization problems"
     f(\tilde S) \ge f(S), \qquad \forall S \in \mathcal{F} \qquad \text{(maximization form)},
     $$
 
-    or such that $f(\tilde S) \le f(S)$ for all $S \in \mathcal{F}$ (minimization form).
+    or such that
+
+    $$
+    f(\tilde S) \le f(S), \qquad \forall S \in \mathcal{F} \qquad \text{(minimization form)}.
+    $$
 
 - The feasible region $\mathcal{F}$ is a <strong>finite</strong> set, since $|2^{\mathscr{U}}| = 2^n$. Accordingly, an optimal solution always exists whenever $\mathcal{F} \neq \emptyset$.
 
@@ -736,7 +740,17 @@ $$
 
     1. A <strong>primal bound</strong> is the value $f(\bar S)$ of a feasible solution $\bar S \in \mathcal F$.
 
-    2. A <strong>dual bound</strong> is a number $\beta$ such that $f(S) \le \beta$ for all $S \in \mathcal F$ (maximization form), or $f(S) \ge \beta$ for all $S \in \mathcal F$ (minimization form).
+    2. A <strong>dual bound</strong> is a number $\beta$ such that
+
+        $$
+        f(S) \le \beta, \qquad \forall S \in \mathcal F \qquad \text{(maximization form)},
+        $$
+
+        or such that
+
+        $$
+        f(S) \ge \beta, \qquad \forall S \in \mathcal F \qquad \text{(minimization form)}.
+        $$
 
 - In the <strong>maximization form</strong> a primal bound is a <strong>lower bound</strong> and a dual bound is an <strong>upper bound</strong>:
 

@@ -6,7 +6,7 @@ title: "The travelling salesman problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 5** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: TSP](../exercises/tsp.md)
+**Part 1 · Combinatorial optimization problems · Chapter 6** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: TSP](../exercises/tsp.md)
 
 </div>
 
@@ -30,11 +30,11 @@ title: "The travelling salesman problem"
 
     - compute a lower bound on the optimal length from the two shortest edges of every city, and measure the gap with a tour.
 
-## 5.1 The travelling salesman problem
+## 6.1 The travelling salesman problem
 
 <a id="box-1-defTSP"></a>
 
-!!! definizione "Definition 5.1: Travelling salesman problem"
+!!! definizione "Definition 6.1: Travelling salesman problem"
 
     Given:
 
@@ -83,12 +83,12 @@ title: "The travelling salesman problem"
         L(\sigma) = \sum_{k=1}^{n-1} d_{\sigma_k \sigma_{k+1}} + d_{\sigma_n \sigma_1}
         \;:\;
         \sigma \text{ is a permutation of } \mathscr{V}
-        \right\}. \tag{5.1}
+        \right\}. \tag{6.1}
         \end{equation*}
 
 - We denote by $z(I)$ the length of an optimal tour $\tilde{\sigma}$ of the instance $I$.
 
-### 5.1.1 Assumptions
+### 6.1.1 Assumptions
 
 - We make the following assumptions:
 
@@ -106,7 +106,7 @@ title: "The travelling salesman problem"
 
 <a id="box-2-ex-tsp5"></a>
 
-!!! esempio "Example 5.1: TSP instance"
+!!! esempio "Example 6.1: TSP instance"
 
     We consider a set $\mathscr{V}=\{1,2,3,4,5\}$ of $5$ cities ($n=5$), with the following distances:
 
@@ -128,13 +128,13 @@ title: "The travelling salesman problem"
 
     Its length is $L(\sigma)=d_{13}+d_{35}+d_{52}+d_{24}+d_{41}=2+7+4+3+2=18$.
 
-## 5.2 Variants: metric and asymmetric TSP
+## 6.2 Variants: metric and asymmetric TSP
 
 - Several heuristic algorithms for the TSP behave well, and some of them have a performance guarantee, only if the distances satisfy the triangle inequality: going directly from $i$ to $j$ is never longer than going through a third city.
 
 <a id="box-3-defMetricTSP"></a>
 
-!!! definizione "Definition 5.2: Metric TSP"
+!!! definizione "Definition 6.2: Metric TSP"
 
     A TSP instance is <strong>metric</strong> if its distances satisfy the <strong>triangle inequality</strong>
 
@@ -143,7 +143,7 @@ title: "The travelling salesman problem"
     \qquad \text{for all distinct } i,j,k \in \mathscr{V}.
     $$
 
-- The instance of <span style="color:#1971c2">[Example 5.1](#box-2-ex-tsp5)</span> is metric: all the $5\cdot4\cdot3=60$ triangle inequalities hold, some of them with equality, e.g., $d_{15}=9=d_{12}+d_{25}=5+4$.
+- The instance of <span style="color:#1971c2">[Example 6.1](#box-2-ex-tsp5)</span> is metric: all the $5\cdot4\cdot3=60$ triangle inequalities hold, some of them with equality, e.g., $d_{15}=9=d_{12}+d_{25}=5+4$.
 
 - Instances obtained from points in the plane, with $d_{ij}$ equal to the Euclidean distance between the points, are metric (when the distances are not rounded).
 
@@ -153,11 +153,11 @@ title: "The travelling salesman problem"
 
 - The TSP is the special case of the ATSP in which $d_{ij}=d_{ji}$ for all $i,j$.
 
-## 5.3 Counting the tours
+## 6.3 Counting the tours
 
 <a id="box-4-prop-tsp-count"></a>
 
-!!! teorema "Proposition 5.3"
+!!! teorema "Proposition 6.3"
 
     A symmetric TSP instance with $n \ge 3$ cities has
 
@@ -173,9 +173,9 @@ title: "The travelling salesman problem"
 
 <a id="box-5-ex-tsp-enum"></a>
 
-!!! esempio "Example 5.2: enumeration of the tours"
+!!! esempio "Example 6.2: enumeration of the tours"
 
-    The instance of <span style="color:#1971c2">[Example 5.1](#box-2-ex-tsp5)</span> has $\frac{(5-1)!}{2}=12$ distinct tours, which can be enumerated:
+    The instance of <span style="color:#1971c2">[Example 6.1](#box-2-ex-tsp5)</span> has $\frac{(5-1)!}{2}=12$ distinct tours, which can be enumerated:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -242,15 +242,15 @@ title: "The travelling salesman problem"
 
 - A computer that evaluates $10^9$ tours per second needs about $6.1\cdot 10^{7}$ seconds, that is about two years, to list the tours of $20$ cities. Enumeration is therefore useful only as a check on tiny instances, and the algorithms of this course must do better.
 
-## 5.4 A first tour by hand
+## 6.4 A first tour by hand
 
 - The simplest way to build a tour is the <strong>nearest neighbour rule</strong>: start from a city and, as long as there are unvisited cities, move to the closest unvisited one; at the end, return to the starting city. In case of a tie we take the city with the smallest index.
 
 <a id="box-6-ex-tsp-nn"></a>
 
-!!! esempio "Example 5.3: nearest neighbour from city $1$"
+!!! esempio "Example 6.3: nearest neighbour from city $1$"
 
-    On the instance of <span style="color:#1971c2">[Example 5.1](#box-2-ex-tsp5)</span>, starting from city $1$:
+    On the instance of <span style="color:#1971c2">[Example 6.1](#box-2-ex-tsp5)</span>, starting from city $1$:
 
     1. from $1$ the closest cities are $3$ and $4$, both at distance $2$: we go to $3$;
 
@@ -266,13 +266,13 @@ title: "The travelling salesman problem"
 
 - From the nearest neighbour tour alone we cannot tell how far we are from the optimum: we need a lower bound.
 
-## 5.5 A combinatorial lower bound
+## 6.5 A combinatorial lower bound
 
 - For a city $i$, let $a_i \le b_i$ be the two smallest distances from $i$ to the other cities.
 
 <a id="box-7-obs-tsp-lb"></a>
 
-!!! teorema "Observation 5.4"
+!!! teorema "Observation 6.4"
 
     For every symmetric TSP instance, the optimal length satisfies
 
@@ -288,9 +288,9 @@ title: "The travelling salesman problem"
 
 <a id="box-8-ex-tsp-lb"></a>
 
-!!! esempio "Example 5.4: the bound on the reference instance"
+!!! esempio "Example 6.4: the bound on the reference instance"
 
-    For the instance of <span style="color:#1971c2">[Example 5.1](#box-2-ex-tsp5)</span> the two smallest distances of each city are:
+    For the instance of <span style="color:#1971c2">[Example 6.1](#box-2-ex-tsp5)</span> the two smallest distances of each city are:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -339,7 +339,7 @@ title: "The travelling salesman problem"
 
     an absolute gap of $8$, that is a relative gap of $\frac{8}{17} \approx 47.1\%$. The tour $(1,3,5,2,4)$ of length $18$ closes most of it, and only the enumeration of the $12$ tours proves that $18$ is optimal.
 
-## 5.6 Remarks
+## 6.6 Remarks
 
 - The largest instance solved to optimality, pla85900, has $85\,900$ points from a chip design problem. It was solved in 2005–2006 with the Concorde code; the optimal tour, of length $142\,382\,641$, was certified in 2009 by Applegate, Bixby, Chvátal, Cook, Espinoza, Goycoolea and Helsgaun.
 
@@ -347,7 +347,7 @@ title: "The travelling salesman problem"
 
 - The TSP is strongly NP-hard (chapter «Combinatorial optimization problems»). The approximation algorithm of Christofides (1976) is in the chapter «$P\|C_{\max}$, metric TSP and the limits of approximation».
 
-## 5.7 Typical mistakes
+## 6.7 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -361,7 +361,7 @@ title: "The travelling salesman problem"
 
     - <strong>Using the triangle inequality without checking it.</strong> The guarantees of the heuristic algorithms hold only for metric instances.
 
-## 5.8 In summary
+## 6.8 In summary
 
 !!! chiave "In summary"
 

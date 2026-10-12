@@ -6,15 +6,15 @@ title: "Exercises · Rod cutting and coin change"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 16** · each solution opens with a click · [:material-book-open-variant: Chapter 16: Rod cutting, coin change](../dynamic-programming/dp-rod-cutting-coin-change.md)
+**Exercises · Chapter 18** · each solution opens with a click · [:material-book-open-variant: Chapter 18: Rod cutting, coin change](../dynamic-programming/dp-rod-cutting-coin-change.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
 
 </div>
 
 ## A DP algorithm for the Rod Cutting Problem
 
-<a id="esercizio-16-1"></a>
+<a id="esercizio-18-1"></a>
 
-!!! esercizio "Exercise 16.1: Exercise 1: Rod Cutting Problem"
+!!! esercizio "Exercise 18.1: Exercise 1: Rod Cutting Problem"
 
     Consider the following RCP instance, where the rod has length $n=6$, and the profits associated with the possible piece lengths are:
 
@@ -977,9 +977,9 @@ title: "Exercises · Rod cutting and coin change"
         {v}[6][6]=15.
         $$
 
-<a id="esercizio-16-2"></a>
+<a id="esercizio-18-2"></a>
 
-!!! esercizio "Exercise 16.2: Exercise 2: Rod Cutting Problem"
+!!! esercizio "Exercise 18.2: Exercise 2: Rod Cutting Problem"
 
     Consider the following RCP instance, where the rod has length $n=5$, and the profits associated with the possible piece lengths are:
 
@@ -1729,9 +1729,9 @@ title: "Exercises · Rod cutting and coin change"
         {v}[5][5]=10.
         $$
 
-<a id="esercizio-16-3"></a>
+<a id="esercizio-18-3"></a>
 
-!!! esercizio "Exercise 16.3: Exercise 3: Rod Cutting Problem"
+!!! esercizio "Exercise 18.3: Exercise 3: Rod Cutting Problem"
 
     Consider the following RCP instance, where the rod has length $n=5$, and the profits associated with the possible piece lengths are:
 
@@ -2562,9 +2562,9 @@ title: "Exercises · Rod cutting and coin change"
         {v}[5][5]=15.
         $$
 
-<a id="esercizio-16-4"></a>
+<a id="esercizio-18-4"></a>
 
-!!! esercizio "Exercise 16.4: Exercise 4: Rod Cutting Problem"
+!!! esercizio "Exercise 18.4: Exercise 4: Rod Cutting Problem"
 
     Consider the following RCP instance, where the rod has length $n=6$, and the profits associated with the possible piece lengths are:
 
@@ -3527,9 +3527,9 @@ title: "Exercises · Rod cutting and coin change"
         {v}[6][6]=18.
         $$
 
-<a id="esercizio-16-5"></a>
+<a id="esercizio-18-5"></a>
 
-!!! esercizio "Exercise 16.5: Exercise 5: Rod Cutting Problem"
+!!! esercizio "Exercise 18.5: Exercise 5: Rod Cutting Problem"
 
     Consider the following RCP instance, where the rod has length $n=6$, and the profits associated with the possible piece lengths are:
 
@@ -4456,9 +4456,9 @@ title: "Exercises · Rod cutting and coin change"
 
 ## A DP algorithm for the Coin Change Problem
 
-<a id="esercizio-16-6"></a>
+<a id="esercizio-18-6"></a>
 
-!!! esercizio "Exercise 16.6: Exercise 1: Coin Change Problem"
+!!! esercizio "Exercise 18.6: Exercise 1: Coin Change Problem"
 
     Consider the following CCP instance, where the amount of change to return is $c=6$, and the denominations are
 
@@ -4616,9 +4616,9 @@ title: "Exercises · Rod cutting and coin change"
         v[6]=3.
         $$
 
-<a id="esercizio-16-7"></a>
+<a id="esercizio-18-7"></a>
 
-!!! esercizio "Exercise 16.7: Exercise 2: Coin Change Problem"
+!!! esercizio "Exercise 18.7: Exercise 2: Coin Change Problem"
 
     Consider the following CCP instance, where the amount of change to return is $c=11$, and the denominations are
 
@@ -4806,9 +4806,9 @@ title: "Exercises · Rod cutting and coin change"
         v[11]=3.
         $$
 
-<a id="esercizio-16-8"></a>
+<a id="esercizio-18-8"></a>
 
-!!! esercizio "Exercise 16.8: Exercise 3: Coin Change Problem"
+!!! esercizio "Exercise 18.8: Exercise 3: Coin Change Problem"
 
     Consider the following CCP instance, where the amount of change to return is $c=7$, and the denominations are
 
@@ -4913,9 +4913,9 @@ title: "Exercises · Rod cutting and coin change"
         v[7]=+\infty.
         $$
 
-<a id="esercizio-16-9"></a>
+<a id="esercizio-18-9"></a>
 
-!!! esercizio "Exercise 16.9: Exercise 4: Coin Change Problem"
+!!! esercizio "Exercise 18.9: Exercise 4: Coin Change Problem"
 
     Consider the following CCP instance, where the amount of change to return is $c=12$, and the denominations are
 
@@ -5117,9 +5117,9 @@ title: "Exercises · Rod cutting and coin change"
         v[12]=4.
         $$
 
-<a id="esercizio-16-10"></a>
+<a id="esercizio-18-10"></a>
 
-!!! esercizio "Exercise 16.10: Exercise 5: Coin Change Problem"
+!!! esercizio "Exercise 18.10: Exercise 5: Coin Change Problem"
 
     Consider the following CCP instance, where the amount of change to return is $c=9$, and the denominations are
 

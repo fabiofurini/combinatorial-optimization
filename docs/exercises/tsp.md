@@ -6,13 +6,13 @@ title: "Exercises · The travelling salesman problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 5** · each solution opens with a click · [:material-book-open-variant: Chapter 5: TSP](../combinatorial-optimization-problems/tsp.md)
+**Exercises · Chapter 6** · each solution opens with a click · [:material-book-open-variant: Chapter 6: TSP](../combinatorial-optimization-problems/tsp.md) · [:material-file-pdf-box: Exercises, volume 1 (PDF)](../pdf/exercises-1-combinatorial-optimization-problems.pdf)
 
 </div>
 
-<a id="esercizio-5-1"></a>
+<a id="esercizio-6-1"></a>
 
-!!! esercizio "Exercise 5.1: Tours and their length (TSP)"
+!!! esercizio "Exercise 6.1: Tours and their length (TSP)"
 
     We consider the TSP instance with $6$ cities, $\Vcitta=\{1,\dots,6\}$, and the symmetric distances
 
@@ -68,9 +68,9 @@ title: "Exercises · The travelling salesman problem"
 
         $\sigma^1,\sigma^2,\sigma^3$ are the same tour, of length $24$; $\sigma^4$ is a different tour, of length $26$. Two disjoint cycles are not a tour.
 
-<a id="esercizio-5-2"></a>
+<a id="esercizio-6-2"></a>
 
-!!! esercizio "Exercise 5.2: Enumeration of the tours (TSP)"
+!!! esercizio "Exercise 6.2: Enumeration of the tours (TSP)"
 
     We consider the TSP instance with $5$ cities and the symmetric distances
 
@@ -165,9 +165,9 @@ title: "Exercises · The travelling salesman problem"
 
         Nearest neighbour from city $1$ gives $33$; the enumeration of the $12$ tours gives the unique optimal tour $(1,3,2,4,5)$, with $z(I)=26$.
 
-<a id="esercizio-5-3"></a>
+<a id="esercizio-6-3"></a>
 
-!!! esercizio "Exercise 5.3: Nearest neighbour from every city and a lower bound (TSP)"
+!!! esercizio "Exercise 6.3: Nearest neighbour from every city and a lower bound (TSP)"
 
     We consider again the TSP instance with $5$ cities and the symmetric distances
 
@@ -281,9 +281,9 @@ title: "Exercises · The travelling salesman problem"
 
         Starting from city $3$ the nearest neighbour rule finds the optimal tour, of length $26$; the two shortest edges give $\LB=22$, and the gap $4$ stays open without enumeration.
 
-<a id="esercizio-5-4"></a>
+<a id="esercizio-6-4"></a>
 
-!!! esercizio "Exercise 5.4: The triangle inequality (metric TSP)"
+!!! esercizio "Exercise 6.4: The triangle inequality (metric TSP)"
 
     We consider the TSP instance with $4$ cities and the symmetric distances
 
@@ -349,9 +349,9 @@ title: "Exercises · The travelling salesman problem"
 
         The instance is not metric because of $d_{13}=10$; with $d_{13}\le 9$ it becomes metric. The optimal tour $(1,2,3,4)$, of length $18$, does not change.
 
-<a id="esercizio-5-5"></a>
+<a id="esercizio-6-5"></a>
 
-!!! esercizio "Exercise 5.5: Asymmetric distances (ATSP)"
+!!! esercizio "Exercise 6.5: Asymmetric distances (ATSP)"
 
     We consider the ATSP instance with $4$ cities and the asymmetric distances ($d_{ij}$ is the distance from city $i$ to city $j$)
 

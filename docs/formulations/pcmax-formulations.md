@@ -6,7 +6,7 @@ title: "Formulations of parallel machine scheduling"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 12** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Machine scheduling](../exercises/pcmax-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 14** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Machine scheduling](../exercises/pcmax-formulations.md)
 
 </div>
 
@@ -30,7 +30,7 @@ title: "Formulations of parallel machine scheduling"
 
     - use the valid inequalities and the symmetry-breaking constraints of the model.
 
-## 12.1 The problem in brief
+## 14.1 The problem in brief
 
 !!! nota "Where we were"
 
@@ -38,7 +38,7 @@ title: "Formulations of parallel machine scheduling"
 
 <a id="box-1-def-PCMAX"></a>
 
-!!! definizione "Definition 12.1: Scheduling on identical parallel machines"
+!!! definizione "Definition 14.1: Scheduling on identical parallel machines"
 
     Given:
 
@@ -52,7 +52,7 @@ title: "Formulations of parallel machine scheduling"
 
 - We assume that an instance has more jobs than machines, i.e., $n>m$. Otherwise each job can be assigned to a different machine and the optimal makespan is simply $\max_{j\in\mathscr{J}}t_j$.
 
-## 12.2 An ILP model for $\PCmax$
+## 14.2 An ILP model for $\PCmax$
 
 - Let $\mathscr{H}=\{1,2,\ldots,m\}$ be the set of machines. We introduce the following $nm$ <strong>binary variables</strong>:
 
@@ -78,14 +78,14 @@ title: "Formulations of parallel machine scheduling"
     <a id="eq-ILP-PCMAX"></a>
 
     \begin{align*}
-    && \min \quad C_{\max} && \label{obj:PCMAX} \tag{12.1a}\\[1ex]
+    && \min \quad C_{\max} && \label{obj:PCMAX} \tag{14.1a}\\[1ex]
     && \text{subject to}\quad \sum_{h\in\mathscr{H}}x_{jh}&=1,
-    && \forall j\in\mathscr{J}, \label{assign:PCMAX} \tag{12.1b}\\[1ex]
+    && \forall j\in\mathscr{J}, \label{assign:PCMAX} \tag{14.1b}\\[1ex]
     && -\sum_{j\in\mathscr{J}}t_jx_{jh}+C_{\max}&\ge0,
-    && \forall h\in\mathscr{H}, \label{load:PCMAX} \tag{12.1c}\\[1ex]
+    && \forall h\in\mathscr{H}, \label{load:PCMAX} \tag{14.1c}\\[1ex]
     && x_{jh}&\in\{0,1\},
-    && \forall j\in\mathscr{J},~\forall h\in\mathscr{H}, \label{bin:PCMAX} \tag{12.1d}\\[1ex]
-    && C_{\max}&\ge0. && \label{nonneg:PCMAX} \tag{12.1e}
+    && \forall j\in\mathscr{J},~\forall h\in\mathscr{H}, \label{bin:PCMAX} \tag{14.1d}\\[1ex]
+    && C_{\max}&\ge0. && \label{nonneg:PCMAX} \tag{14.1e}
     \end{align*}
 
     This ILP model is referred to as the $\ILP_{\PCmax}$ model.
@@ -122,7 +122,7 @@ title: "Formulations of parallel machine scheduling"
 
 <a id="box-2-ex-PCMAX-ILP"></a>
 
-!!! esempio "Example 12.1: $\ILP_{\PCmax}$ model"
+!!! esempio "Example 14.1: $\ILP_{\PCmax}$ model"
 
     Consider $m=3$ machines and the seven jobs with processing times
 
@@ -153,7 +153,7 @@ title: "Formulations of parallel machine scheduling"
 
     is attained, $z(\ILP_{\PCmax})=9$.
 
-## 12.3 A first Linear Programming relaxation
+## 14.3 A first Linear Programming relaxation
 
 - We obtain $\LP\text{-}0_{\PCmax}$ by replacing the binary requirements $\eqref{bin:PCMAX}$ with non-negativity constraints:
 
@@ -162,14 +162,14 @@ title: "Formulations of parallel machine scheduling"
     <a id="eq-LP0-PCMAX"></a>
 
     \begin{align*}
-    && \min \quad C_{\max} && \label{obj:LP0-PCMAX} \tag{12.2a}\\[1ex]
+    && \min \quad C_{\max} && \label{obj:LP0-PCMAX} \tag{14.2a}\\[1ex]
     && \text{subject to}\quad \sum_{h\in\mathscr{H}}x_{jh}&=1,
-    && \forall j\in\mathscr{J}, \label{assign:LP0-PCMAX} \tag{12.2b}\\[1ex]
+    && \forall j\in\mathscr{J}, \label{assign:LP0-PCMAX} \tag{14.2b}\\[1ex]
     && -\sum_{j\in\mathscr{J}}t_jx_{jh}+C_{\max}&\ge0,
-    && \forall h\in\mathscr{H}, \label{load:LP0-PCMAX} \tag{12.2c}\\[1ex]
+    && \forall h\in\mathscr{H}, \label{load:LP0-PCMAX} \tag{14.2c}\\[1ex]
     && x_{jh}&\ge0,
-    && \forall j\in\mathscr{J},~\forall h\in\mathscr{H}, \label{nonnegx:LP0-PCMAX} \tag{12.2d}\\[1ex]
-    && C_{\max}&\ge0. && \label{nonnegC:LP0-PCMAX} \tag{12.2e}
+    && \forall j\in\mathscr{J},~\forall h\in\mathscr{H}, \label{nonnegx:LP0-PCMAX} \tag{14.2d}\\[1ex]
+    && C_{\max}&\ge0. && \label{nonnegC:LP0-PCMAX} \tag{14.2e}
     \end{align*}
 
     This LP relaxation is referred to as the $\LP\text{-}0_{\PCmax}$ model.
@@ -181,19 +181,19 @@ title: "Formulations of parallel machine scheduling"
     <a id="eq-DLP0-PCMAX"></a>
 
     \begin{align*}
-    && \max \quad \sum_{j\in\mathscr{J}}\mu_j && \label{obj:DLP0-PCMAX} \tag{12.3a}\\[1ex]
+    && \max \quad \sum_{j\in\mathscr{J}}\mu_j && \label{obj:DLP0-PCMAX} \tag{14.3a}\\[1ex]
     && \text{subject to}\quad \mu_j-t_j\pi_h&\le0,
-    && \forall j\in\mathscr{J},~\forall h\in\mathscr{H}, \label{x:DLP0-PCMAX} \tag{12.3b}\\[1ex]
-    && \sum_{h\in\mathscr{H}}\pi_h&\le1, && \label{C:DLP0-PCMAX} \tag{12.3c}\\[1ex]
-    && \mu_j&\gtreqless0, && \forall j\in\mathscr{J}, \label{free:DLP0-PCMAX} \tag{12.3d}\\[1ex]
-    && \pi_h&\ge0, && \forall h\in\mathscr{H}. \label{nonneg:DLP0-PCMAX} \tag{12.3e}
+    && \forall j\in\mathscr{J},~\forall h\in\mathscr{H}, \label{x:DLP0-PCMAX} \tag{14.3b}\\[1ex]
+    && \sum_{h\in\mathscr{H}}\pi_h&\le1, && \label{C:DLP0-PCMAX} \tag{14.3c}\\[1ex]
+    && \mu_j&\gtreqless0, && \forall j\in\mathscr{J}, \label{free:DLP0-PCMAX} \tag{14.3d}\\[1ex]
+    && \pi_h&\ge0, && \forall h\in\mathscr{H}. \label{nonneg:DLP0-PCMAX} \tag{14.3e}
     \end{align*}
 
     This dual LP model is referred to as $D(\LP\text{-}0_{\PCmax})$.
 
 <a id="box-3-prop-LP0-PCMAX"></a>
 
-!!! teorema "Proposition 12.2: Optimal value of $\LP\text{-}0_{\PCmax}$"
+!!! teorema "Proposition 14.2: Optimal value of $\LP\text{-}0_{\PCmax}$"
 
     For every $\PCmax$ instance,
 
@@ -225,7 +225,7 @@ title: "Formulations of parallel machine scheduling"
 
     By LP Weak Duality, the two solutions are optimal, and the optimal value is the common value of the objective functions. <span class="qed">□</span>
 
-### 12.3.1 A second Linear Programming relaxation
+### 14.3.1 A second Linear Programming relaxation
 
 - Adding the upper bounds $x_{jh}\le1$ gives $\LP_{\PCmax}$. They do not change the relaxation: by $\eqref{assign:LP0-PCMAX}$ and non-negativity, each $x_{jh}$ is at most one. Thus
 
@@ -235,11 +235,11 @@ title: "Formulations of parallel machine scheduling"
 
     The dual is consequently the same as $D(\LP\text{-}0_{\PCmax})$, with zero dual multipliers for the redundant upper bounds.
 
-### 12.3.2 Some important theoretical properties
+### 14.3.2 Some important theoretical properties
 
 <a id="box-4-prop-PCMAX-ratio"></a>
 
-!!! teorema "Proposition 12.3: Worst-case ratio of the LP bound"
+!!! teorema "Proposition 14.3: Worst-case ratio of the LP bound"
 
     For every $\PCmax$ instance,
 
@@ -249,7 +249,7 @@ title: "Formulations of parallel machine scheduling"
 
 ??? dimostrazione "Proof"
 
-    Assigning every job to one machine gives a feasible schedule of makespan $\sum_jt_j$. Hence $z(\ILP_{\PCmax})\le\sum_jt_j$. By [Proposition 12.2](#box-3-prop-LP0-PCMAX),
+    Assigning every job to one machine gives a feasible schedule of makespan $\sum_jt_j$. Hence $z(\ILP_{\PCmax})\le\sum_jt_j$. By [Proposition 14.2](#box-3-prop-LP0-PCMAX),
 
     $$
     \frac{z(\LP_{\PCmax})}{z(\ILP_{\PCmax})}
@@ -262,7 +262,7 @@ title: "Formulations of parallel machine scheduling"
 
 <a id="box-5-prop-PCMAX-tight"></a>
 
-!!! teorema "Proposition 12.4: The ratio $1/m$ is asymptotically attained"
+!!! teorema "Proposition 14.4: The ratio $1/m$ is asymptotically attained"
 
     For a fixed number $m \ge 2$ of machines, there are instances for which
 
@@ -272,7 +272,7 @@ title: "Formulations of parallel machine scheduling"
 
 ??? dimostrazione "Proof"
 
-    For $M\in\Z_{\ge2}$, consider one job of processing time $M$ and $m$ jobs of processing time one. The long job alone forces $z(\ILP_{\PCmax})\ge M$. The schedule that assigns the long job alone to machine $1$ and the $m$ unit jobs to the other $m-1$ machines has loads at most $2 \le M$, hence the makespan $M$ is feasible. Thus $z(\ILP_{\PCmax})=M$. [Proposition 12.2](#box-3-prop-LP0-PCMAX) gives
+    For $M\in\Z_{\ge2}$, consider one job of processing time $M$ and $m$ jobs of processing time one. The long job alone forces $z(\ILP_{\PCmax})\ge M$. The schedule that assigns the long job alone to machine $1$ and the $m$ unit jobs to the other $m-1$ machines has loads at most $2 \le M$, hence the makespan $M$ is feasible. Thus $z(\ILP_{\PCmax})=M$. [Proposition 14.2](#box-3-prop-LP0-PCMAX) gives
 
     $$
     z(\LP_{\PCmax})=\frac{M+m}{m}.
@@ -289,9 +289,9 @@ title: "Formulations of parallel machine scheduling"
 
 <a id="box-6-ex-PCMAX-gap"></a>
 
-!!! esempio "Example 12.2: an integrality gap"
+!!! esempio "Example 14.2: an integrality gap"
 
-    Consider two machines and three jobs with processing times $(3,3,2)$. [Proposition 12.2](#box-3-prop-LP0-PCMAX) gives $z(\LP_{\PCmax})=8/2=4$. In every integer schedule, the job of length two must share a machine with one job of length three, so $z(\ILP_{\PCmax})=5$. The fractional assignment
+    Consider two machines and three jobs with processing times $(3,3,2)$. [Proposition 14.2](#box-3-prop-LP0-PCMAX) gives $z(\LP_{\PCmax})=8/2=4$. In every integer schedule, the job of length two must share a machine with one job of length three, so $z(\ILP_{\PCmax})=5$. The fractional assignment
 
     $$
     x_{j1}=x_{j2}=\frac12\qquad\forall j\in\{1,2,3\}
@@ -299,25 +299,25 @@ title: "Formulations of parallel machine scheduling"
 
     has load four on both machines, whereas the integer optimum has loads five and three.
 
-## 12.4 Additional considerations
+## 14.4 Additional considerations
 
 - For every job $j$, the inequality
 
     \begin{equation*}
     C_{\max}\ge t_j
-    \label{valid:job-PCMAX} \tag{12.4}
+    \label{valid:job-PCMAX} \tag{14.4}
     \end{equation*}
 
-    is a <strong>valid inequality</strong> for model [(12.1)](#eq-ILP-PCMAX). In every integer schedule, job $j$ is assigned to one machine, whose load and therefore makespan are at least $t_j$ ($n$ linear constraints);
+    is a <strong>valid inequality</strong> for model [(14.1)](#eq-ILP-PCMAX). In every integer schedule, job $j$ is assigned to one machine, whose load and therefore makespan are at least $t_j$ ($n$ linear constraints);
 
 - The inequality
 
     \begin{equation*}
     C_{\max}\ge\left\lceil\frac{\sum_{j\in\mathscr{J}}t_j}{m}\right\rceil
-    \label{valid:average-PCMAX} \tag{12.5}
+    \label{valid:average-PCMAX} \tag{14.5}
     \end{equation*}
 
-    is also a <strong>valid inequality</strong> for model [(12.1)](#eq-ILP-PCMAX): the $m$ machine loads sum to $\sum_jt_j$, so their maximum is at least their average and is an integer in every integer schedule (one linear constraint);
+    is also a <strong>valid inequality</strong> for model [(14.1)](#eq-ILP-PCMAX): the $m$ machine loads sum to $\sum_jt_j$, so their maximum is at least their average and is an integer in every integer schedule (one linear constraint);
 
 - The machines are identical. The constraints
 
@@ -325,14 +325,14 @@ title: "Formulations of parallel machine scheduling"
     \sum_{j\in\mathscr{J}}t_jx_{jh}\ge
     \sum_{j\in\mathscr{J}}t_jx_{j,h+1}
     \qquad \forall h\in\{1,\ldots,m-1\}
-    \label{symmetry:PCMAX} \tag{12.6}
+    \label{symmetry:PCMAX} \tag{14.6}
     \end{equation*}
 
     are <strong>optimality-preserving constraints</strong>: they are not valid for every feasible assignment, but every schedule can be relabelled so that its machine loads are non-increasing, without changing the makespan.
 
 - The constraints $\eqref{symmetry:PCMAX}$ remove the equivalent relabellings of the machines only when the loads are distinct. With equal loads they remove none: in the instance of the chapter all the optimal schedules have loads $9$, $9$, $9$, and all the $12$ optimal solutions of the model satisfy them.
 
-## 12.5 Typical mistakes
+## 14.5 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -346,7 +346,7 @@ title: "Formulations of parallel machine scheduling"
 
     - <strong>Mixing the indices.</strong> The variable $x_{jh}$ has the job $j$ first and the machine $h$ second.
 
-## 12.6 In summary
+## 14.6 In summary
 
 !!! chiave "In summary"
 

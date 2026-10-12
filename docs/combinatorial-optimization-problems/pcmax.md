@@ -6,7 +6,7 @@ title: "Parallel machine scheduling"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 6** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Machine scheduling](../exercises/pcmax.md)
+**Part 1 · Combinatorial optimization problems · Chapter 7** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Machine scheduling](../exercises/pcmax.md)
 
 </div>
 
@@ -30,11 +30,11 @@ title: "Parallel machine scheduling"
 
     - compute a lower bound on the optimal makespan and use it to prove that a schedule is optimal.
 
-## 6.1 Scheduling on identical parallel machines
+## 7.1 Scheduling on identical parallel machines
 
 <a id="box-1-defPCmax"></a>
 
-!!! definizione "Definition 6.1: Scheduling on identical parallel machines"
+!!! definizione "Definition 7.1: Scheduling on identical parallel machines"
 
     Given:
 
@@ -46,7 +46,7 @@ title: "Parallel machine scheduling"
 
     the problem $P\,||\,C_{\max}$ asks to assign each job to a machine, so that the time needed to complete all the jobs, i.e., the largest total processing time assigned to a machine, is minimized.
 
-- The name $P\,||\,C_{\max}$ comes from the three-field notation of scheduling problems (Section [6.2](#sez-sec-threefield)).
+- The name $P\,||\,C_{\max}$ comes from the three-field notation of scheduling problems (Section [7.2](#sez-sec-threefield)).
 
 - A <strong>$P\,||\,C_{\max}$ instance</strong> is specified by:
 
@@ -91,12 +91,12 @@ title: "Parallel machine scheduling"
         \max_{h \in \{1,\dots,m\}} \sum_{j \in J_h} t_j
         \;:\;
         J_1,J_2,\dots,J_m \text{ is a partition of } \mathscr{J}
-        \right\}. \tag{6.1}
+        \right\}. \tag{7.1}
         \end{equation*}
 
 - We denote by $z(I)$ the optimal makespan of the instance $I$.
 
-### 6.1.1 Assumptions
+### 7.1.1 Assumptions
 
 - We make the following assumption:
 
@@ -108,7 +108,7 @@ title: "Parallel machine scheduling"
 
 <a id="box-2-ex-pcmax7"></a>
 
-!!! esempio "Example 6.1: $P\,||\,C_{\max}$ instance"
+!!! esempio "Example 7.1: $P\,||\,C_{\max}$ instance"
 
     We consider $m=3$ machines and a set $\mathscr{J}=\{1,2,\dots,7\}$ of $7$ jobs ($n=7$), with the following processing times:
 
@@ -124,7 +124,7 @@ title: "Parallel machine scheduling"
 
     ![Figure 1](../img/pcmax/fig01.svg){ .fig loading=lazy  }
 
-## 6.2 The three-field notation { #sez-sec-threefield }
+## 7.2 The three-field notation { #sez-sec-threefield }
 
 - Scheduling problems are classified with the <strong>three-field notation</strong> $\alpha\,|\,\beta\,|\,\gamma$ of Graham, Lawler, Lenstra and Rinnooy Kan, where:
 
@@ -136,7 +136,7 @@ title: "Parallel machine scheduling"
 
 - In this notation, $P\,||\,C_{\max}$ is the problem of scheduling jobs without additional characteristics on identical parallel machines, minimizing the makespan.
 
-## 6.3 Counting the solutions
+## 7.3 Counting the solutions
 
 - Every job can be assigned to any of the $m$ machines, independently of the others: there are $m^n$ assignments $\mathrm{mach}$.
 
@@ -150,9 +150,9 @@ title: "Parallel machine scheduling"
 
 <a id="box-3-ex-pcmax-count"></a>
 
-!!! esempio "Example 6.2: counting the schedules"
+!!! esempio "Example 7.2: counting the schedules"
 
-    For the instance of <span style="color:#1971c2">[Example 6.1](#box-2-ex-pcmax7)</span> there are $3^7=2187$ assignments. The Stirling numbers are $S(7,1)=1$, $S(7,2)=63$ and $S(7,3)=301$, so the distinct schedules are
+    For the instance of <span style="color:#1971c2">[Example 7.1](#box-2-ex-pcmax7)</span> there are $3^7=2187$ assignments. The Stirling numbers are $S(7,1)=1$, $S(7,2)=63$ and $S(7,3)=301$, so the distinct schedules are
 
     $$
     1+63+301=365.
@@ -168,15 +168,15 @@ title: "Parallel machine scheduling"
 
 - The growth is exponential in $n$: with $3$ machines, $20$ jobs have $3^{20} \approx 3.5\cdot 10^9$ assignments, and $30$ jobs have $3^{30} \approx 2.1\cdot 10^{14}$.
 
-## 6.4 A first schedule by hand
+## 7.4 A first schedule by hand
 
 - A simple way to build a schedule is to take the jobs one by one, in the order $1,2,\dots,n$, and to assign each job to the machine with the smallest load at that moment; in case of a tie we take the machine with the smallest index.
 
 <a id="box-4-ex-pcmax-list"></a>
 
-!!! esempio "Example 6.3: assigning every job to the least loaded machine"
+!!! esempio "Example 7.3: assigning every job to the least loaded machine"
 
-    On the instance of <span style="color:#1971c2">[Example 6.1](#box-2-ex-pcmax7)</span> the loads of the three machines evolve as follows:
+    On the instance of <span style="color:#1971c2">[Example 7.1](#box-2-ex-pcmax7)</span> the loads of the three machines evolve as follows:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -227,11 +227,11 @@ title: "Parallel machine scheduling"
 
 - We do not know yet whether $11$ is far from the optimal makespan: we need a lower bound.
 
-## 6.5 A combinatorial lower bound
+## 7.5 A combinatorial lower bound
 
 <a id="box-5-obs-pcmaxlb"></a>
 
-!!! teorema "Observation 6.2"
+!!! teorema "Observation 7.2"
 
     For every $P\,||\,C_{\max}$ instance, the optimal makespan $z(I)$ satisfies
 
@@ -245,9 +245,9 @@ title: "Parallel machine scheduling"
 
 <a id="box-6-ex-pcmax-lb"></a>
 
-!!! esempio "Example 6.4: the bound on the reference instance"
+!!! esempio "Example 7.4: the bound on the reference instance"
 
-    On the instance of <span style="color:#1971c2">[Example 6.1](#box-2-ex-pcmax7)</span> the bound is $\max\{5,\lceil 27/3\rceil\}=9$. Together with the schedule of the previous section,
+    On the instance of <span style="color:#1971c2">[Example 7.1](#box-2-ex-pcmax7)</span> the bound is $\max\{5,\lceil 27/3\rceil\}=9$. Together with the schedule of the previous section,
 
     $$
     9 \le z(I) \le 11.
@@ -261,7 +261,7 @@ title: "Parallel machine scheduling"
 
 - The bound is not always attained. With $m=2$ machines and three jobs of processing times $(4,3,3)$ it gives $\max\{4,\lceil 10/2\rceil\}=5$, but the best schedule is $\{1\},\{2,3\}$, with makespan $6$.
 
-## 6.6 Relation with the bin packing problem
+## 7.6 Relation with the bin packing problem
 
 - Given a value $T$, a schedule with makespan at most $T$ exists if and only if the jobs, seen as items of weight $t_j$, can be packed into $m$ bins of capacity $T$: the machines are the bins and the loads are the total weights of the packing patterns.
 
@@ -287,13 +287,13 @@ title: "Parallel machine scheduling"
 
 - For this reason the two problems share many ideas: several heuristic algorithms for one of them have a counterpart for the other.
 
-## 6.7 Remarks
+## 7.7 Remarks
 
 - In 1966 R. L. Graham proved that any list of jobs, processed greedily, gives a makespan at most $2-1/m$ times the optimal one.
 
 - In 1969 he proved the better ratio $4/3-1/(3m)$ for the list sorted by non-increasing processing time (the rule called LPT). Both guarantees are proved in the chapter «$P\|C_{\max}$, metric TSP and the limits of approximation».
 
-## 6.8 Typical mistakes
+## 7.8 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -305,9 +305,9 @@ title: "Parallel machine scheduling"
 
     - <strong>Assuming that the bound is attained.</strong> The bound of the previous section is a dual bound: a schedule with that makespan may not exist, as the instance $(4,3,3)$ on two machines shows.
 
-    - <strong>Believing that the optimal schedule is unique.</strong> The instance of <span style="color:#1971c2">[Example 6.1](#box-2-ex-pcmax7)</span> has two optimal schedules, and twelve optimal assignments.
+    - <strong>Believing that the optimal schedule is unique.</strong> The instance of <span style="color:#1971c2">[Example 7.1](#box-2-ex-pcmax7)</span> has two optimal schedules, and twelve optimal assignments.
 
-## 6.9 In summary
+## 7.9 In summary
 
 !!! chiave "In summary"
 

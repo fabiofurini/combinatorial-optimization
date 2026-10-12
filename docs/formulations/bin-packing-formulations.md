@@ -6,7 +6,7 @@ title: "Formulations of the bin packing problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 9** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Bin packing](../exercises/bin-packing-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 10** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Bin packing](../exercises/bin-packing-formulations.md)
 
 </div>
 
@@ -30,7 +30,7 @@ title: "Formulations of the bin packing problem"
 
     - prove that the LP bound is at least one half of the optimal value, and that the factor is tight.
 
-## 9.1 The problem in brief
+## 10.1 The problem in brief
 
 !!! nota "Where we were"
 
@@ -38,7 +38,7 @@ title: "Formulations of the bin packing problem"
 
 <a id="box-1-def-BPP"></a>
 
-!!! definizione "Definition 9.1: Bin Packing Problem"
+!!! definizione "Definition 10.1: Bin Packing Problem"
 
     Given:
 
@@ -58,7 +58,7 @@ title: "Formulations of the bin packing problem"
 
     The first assumption guarantees that every item can be packed into a bin, the second one that more than one bin is needed.
 
-## 9.2 An ILP model for the Bin Packing Problem
+## 10.2 An ILP model for the Bin Packing Problem
 
 - Given an upper bound $m \in \Z_{\ge 2}$ on the number of bins used in any optimal BPP solution, we introduce the following $mn$ <strong>binary variables</strong>:
 
@@ -91,11 +91,11 @@ title: "Formulations of the bin packing problem"
     <a id="eq-NAT_BPP"></a>
 
     \begin{align*}
-    && \min ~~ \sum_{b \in \mathscr{B}} y_b \label{obj_BPP}  \tag{9.1a}\\[2ex]
-    && \text{subject to} \quad \sum_{b \in \mathscr{B}} x_{jb} &= 1, & \forall j \in \mathscr{I}, \label{cons1_BPP}  \tag{9.1b}\\[2ex]
-    && - \sum_{j \in \mathscr{I}}  w_j \; x_{jb} + c \; y_b &\geq 0, & \forall b \in \mathscr{B}, \label{cons2_BPP}  \tag{9.1c}\\[2ex]
-    && x_{jb} &\in \{0,1\}, & \forall j \in \mathscr{I},~ \forall b \in \mathscr{B}, \label{cons4_BPP}  \tag{9.1d}\\[2ex]
-    && y_b &\in \{0,1\}, & \forall b \in \mathscr{B}. \label{cons3_BPP} \tag{9.1e}
+    && \min ~~ \sum_{b \in \mathscr{B}} y_b \label{obj_BPP}  \tag{10.1a}\\[2ex]
+    && \text{subject to} \quad \sum_{b \in \mathscr{B}} x_{jb} &= 1, & \forall j \in \mathscr{I}, \label{cons1_BPP}  \tag{10.1b}\\[2ex]
+    && - \sum_{j \in \mathscr{I}}  w_j \; x_{jb} + c \; y_b &\geq 0, & \forall b \in \mathscr{B}, \label{cons2_BPP}  \tag{10.1c}\\[2ex]
+    && x_{jb} &\in \{0,1\}, & \forall j \in \mathscr{I},~ \forall b \in \mathscr{B}, \label{cons4_BPP}  \tag{10.1d}\\[2ex]
+    && y_b &\in \{0,1\}, & \forall b \in \mathscr{B}. \label{cons3_BPP} \tag{10.1e}
     \end{align*}
 
     This ILP model is referred to as the $\ILP_{\BPP}$ model.
@@ -126,7 +126,7 @@ title: "Formulations of the bin packing problem"
 
 <a id="box-2-texexpbox_ilp_bpp"></a>
 
-!!! esempio "Example 9.1: $\ILP_{\BPP}$ model"
+!!! esempio "Example 10.1: $\ILP_{\BPP}$ model"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3\}$ of $3$ items ($n=3$), with the following item weights:
 
@@ -181,22 +181,22 @@ title: "Formulations of the bin packing problem"
 
     The optimal solution is not unique: also the packing patterns $\{1\}$ and $\{2,3\}$ use two bins.
 
-## 9.3 A first Linear Programming relaxation
+## 10.3 A first Linear Programming relaxation
 
 !!! chiave ""
 
     To obtain a Linear Programming (LP) relaxation of the $\ILP_{\BPP}$ model, we relax constraints $\eqref{cons4_BPP}$ and $\eqref{cons3_BPP}$ with the following ones:
 
     \begin{align*}
-    && x_{jb} &\ge 0, & \forall j \in \mathscr{I},~ \forall b \in \mathscr{B}, \label{cons4_BPP_LP}  \tag{9.2a}\\[2ex]
-    && y_b &\ge 0, & \forall b \in \mathscr{B}. \label{cons3_BPP_LP} \tag{9.2b}
+    && x_{jb} &\ge 0, & \forall j \in \mathscr{I},~ \forall b \in \mathscr{B}, \label{cons4_BPP_LP}  \tag{10.2a}\\[2ex]
+    && y_b &\ge 0, & \forall b \in \mathscr{B}. \label{cons3_BPP_LP} \tag{10.2b}
     \end{align*}
 
     The obtained LP model is referred to as the $\LP\text{-}0_{\BPP}$ model.
 
 <a id="box-3-texexpbox_lp0_bpp"></a>
 
-!!! esempio "Example 9.2: $\LP\text{-}0_{\BPP}$ model"
+!!! esempio "Example 10.2: $\LP\text{-}0_{\BPP}$ model"
 
     The $\LP\text{-}0_{\BPP}$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
 
@@ -244,18 +244,18 @@ title: "Formulations of the bin packing problem"
     <a id="eq-DUAL_0"></a>
 
     \begin{align*}
-    && \max ~~ \sum_{j \in \mathscr{I}}  \mu_j \label{obj_D}  \tag{9.3a}\\[2ex]
-    && \text{subject to} \quad \mu_j - w_j \; \pi_b &\le 0, & \forall j \in \mathscr{I},~\forall b \in \mathscr{B}, \label{cons2_D}  \tag{9.3b}\\[2ex]
-    && c \; \pi_b &\le 1, & \forall b \in \mathscr{B}, \label{cons1_D}  \tag{9.3c}\\[2ex]
-    && \mu_j &\gtreqless 0, & \forall j \in \mathscr{I}, \label{cons3_D}  \tag{9.3d}\\[2ex]
-    && \pi_b &\ge 0, & \forall b \in \mathscr{B}. \label{cons4_D} \tag{9.3e}
+    && \max ~~ \sum_{j \in \mathscr{I}}  \mu_j \label{obj_D}  \tag{10.3a}\\[2ex]
+    && \text{subject to} \quad \mu_j - w_j \; \pi_b &\le 0, & \forall j \in \mathscr{I},~\forall b \in \mathscr{B}, \label{cons2_D}  \tag{10.3b}\\[2ex]
+    && c \; \pi_b &\le 1, & \forall b \in \mathscr{B}, \label{cons1_D}  \tag{10.3c}\\[2ex]
+    && \mu_j &\gtreqless 0, & \forall j \in \mathscr{I}, \label{cons3_D}  \tag{10.3d}\\[2ex]
+    && \pi_b &\ge 0, & \forall b \in \mathscr{B}. \label{cons4_D} \tag{10.3e}
     \end{align*}
 
     The obtained model is referred to as the dual $D(\LP\text{-}0_{\BPP})$ model.
 
 <a id="box-4-texexpbox_dlp0_bpp"></a>
 
-!!! esempio "Example 9.3: $D(\LP\text{-}0_{\BPP})$ model"
+!!! esempio "Example 10.3: $D(\LP\text{-}0_{\BPP})$ model"
 
     The  dual $D(\LP\text{-}0_{\BPP})$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
 
@@ -289,7 +289,7 @@ title: "Formulations of the bin packing problem"
 
 <a id="box-5-prop_lp0_bpp_opt"></a>
 
-!!! teorema "Proposition 9.2"
+!!! teorema "Proposition 10.2"
 
     An optimal solution of the primal $\LP\text{-}0_{\BPP}$ model is:
 
@@ -300,7 +300,7 @@ title: "Formulations of the bin packing problem"
     & \forall j \in \mathscr{I},\; \forall b \in \mathscr{B},\\[2ex]
     \tilde{y}_b &= \frac{\sum_{j \in \mathscr{I}}  w_j}{m \; c},
     & \forall b \in \mathscr{B},
-    \end{aligned} \tag{9.4}
+    \end{aligned} \tag{10.4}
     \end{equation*}
 
     and an optimal solution of the dual $D(\LP\text{-}0_{\BPP})$ model is:
@@ -312,12 +312,12 @@ title: "Formulations of the bin packing problem"
     & \forall j \in \mathscr{I},\\[2ex]
     \tilde{\pi}_b &= \frac{1}{c},
     & \forall b \in \mathscr{B}.
-    \end{aligned} \tag{9.5}
+    \end{aligned} \tag{10.5}
     \end{equation*}
 
 <a id="box-6-cor_lp0_bpp_value"></a>
 
-!!! teorema "Corollary 9.3"
+!!! teorema "Corollary 10.3"
 
     The optimal value of the primal $\LP\text{-}0_{\BPP}$ and dual $D(\LP\text{-}0_{\BPP})$ models is:
 
@@ -327,7 +327,7 @@ title: "Formulations of the bin packing problem"
     =
     \frac{\sum_{j \in \mathscr{I}} w_j}{c}
     =
-    z(D(\LP\text{-}0_{\BPP})) \tag{9.6}
+    z(D(\LP\text{-}0_{\BPP})) \tag{10.6}
     \end{equation*}
 
 - The proof proceeds in three steps:
@@ -396,7 +396,7 @@ title: "Formulations of the bin packing problem"
 
 <a id="box-7-prop_lp0_bpp_alternative"></a>
 
-!!! teorema "Proposition 9.4"
+!!! teorema "Proposition 10.4"
 
     An optimal solution of the primal $\LP\text{-}0_{\BPP}$ model is:
 
@@ -407,14 +407,14 @@ title: "Formulations of the bin packing problem"
     & \forall j \in \mathscr{I},\; \forall b \in \mathscr{B},\\[2ex]
     \tilde{y}_b &= \frac{\sum_{j \in \mathscr{I}}  w_j}{m \; c},
     & \forall b \in \mathscr{B},
-    \end{aligned} \tag{9.7}
+    \end{aligned} \tag{10.7}
     \end{equation*}
 
     and the optimal value is
 
     \begin{equation*}
     \label{VAL_alternative}
-    z(\LP\text{-}0_{\BPP}) = \frac{\sum_{j \in \mathscr{I}} w_j}{c}. \tag{9.8}
+    z(\LP\text{-}0_{\BPP}) = \frac{\sum_{j \in \mathscr{I}} w_j}{c}. \tag{10.8}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -431,7 +431,7 @@ title: "Formulations of the bin packing problem"
 
     \begin{equation*}
     \label{eq:bpp-lb}
-    \sum_{b\in\mathscr{B}} y_b \;\ge\; \frac{1}{c}\sum_{j\in\mathscr{I}} w_j . \tag{9.9}
+    \sum_{b\in\mathscr{B}} y_b \;\ge\; \frac{1}{c}\sum_{j\in\mathscr{I}} w_j . \tag{10.9}
     \end{equation*}
 
     Therefore every feasible solution of $\LP\text{-}0_{\BPP}$ satisfies $\eqref{eq:bpp-lb}$.
@@ -464,21 +464,21 @@ title: "Formulations of the bin packing problem"
 
     which matches the lower bound $\eqref{eq:bpp-lb}$. Therefore the point $\eqref{PP_alternative}$ is an optimal solution with objective value $\eqref{VAL_alternative}$. <span class="qed">□</span>
 
-## 9.4 A second Linear Programming relaxation
+## 10.4 A second Linear Programming relaxation
 
 !!! chiave ""
 
     To obtain a Linear Programming (LP) relaxation of the $\ILP_{\BPP}$ model, we relax constraints $\eqref{cons4_BPP}$ and $\eqref{cons3_BPP}$ with the following ones:
 
     \begin{align*}
-    && x_{jb} &\ge 0, & \forall j \in \mathscr{I},\; \forall b \in \mathscr{B}, \label{cons5_BPP_LP_LL}  \tag{9.10a}\\[2ex]
-    && y_{b} &\le 1, & \forall b \in \mathscr{B}, \label{cons3_BPP_LP_LL}  \tag{9.10b}\\[2ex]
-    && y_{b} &\ge 0, & \forall b \in \mathscr{B}. \label{cons4_BPP_LP_LL} \tag{9.10c}
+    && x_{jb} &\ge 0, & \forall j \in \mathscr{I},\; \forall b \in \mathscr{B}, \label{cons5_BPP_LP_LL}  \tag{10.10a}\\[2ex]
+    && y_{b} &\le 1, & \forall b \in \mathscr{B}, \label{cons3_BPP_LP_LL}  \tag{10.10b}\\[2ex]
+    && y_{b} &\ge 0, & \forall b \in \mathscr{B}. \label{cons4_BPP_LP_LL} \tag{10.10c}
     \end{align*}
 
 <a id="box-8-texexpbox_lp_bpp"></a>
 
-!!! esempio "Example 9.4: $\LP_{\BPP}$ model"
+!!! esempio "Example 10.4: $\LP_{\BPP}$ model"
 
     The  $\LP_{\BPP}$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
 
@@ -523,17 +523,17 @@ title: "Formulations of the bin packing problem"
     <a id="eq-DUAL_2"></a>
 
     \begin{align*}
-    &&   \max  ~~ \sum_{j \in \mathscr{I}}   \mu_{j} + \sum_{b \in \mathscr{B}}  \lambda_{b} \label{obj_D_2}  \tag{9.11a}\\[2ex]
-    && \text{subject to} \quad \mu_j - w_j \; \pi_{b} &\leq 0, & \forall j \in \mathscr{I},\; \forall b \in \mathscr{B}, \label{cons2_D_2}  \tag{9.11b}\\[2ex]
-    && c \; \pi_{b} + \lambda_b &\leq 1, & \forall b \in \mathscr{B}, \label{cons1_D_2}  \tag{9.11c}\\[2ex]
-    && \mu_{j} &\gtreqless 0, & \forall j \in \mathscr{I}, \label{cons3_D_2}  \tag{9.11d}\\[2ex]
-    && \pi_{b} &\ge 0, & \forall b \in \mathscr{B}, \label{cons4_D_2}  \tag{9.11e}\\[2ex]
-    && \lambda_{b} &\le 0, & \forall b \in \mathscr{B}. \label{cons5_D_2} \tag{9.11f}
+    &&   \max  ~~ \sum_{j \in \mathscr{I}}   \mu_{j} + \sum_{b \in \mathscr{B}}  \lambda_{b} \label{obj_D_2}  \tag{10.11a}\\[2ex]
+    && \text{subject to} \quad \mu_j - w_j \; \pi_{b} &\leq 0, & \forall j \in \mathscr{I},\; \forall b \in \mathscr{B}, \label{cons2_D_2}  \tag{10.11b}\\[2ex]
+    && c \; \pi_{b} + \lambda_b &\leq 1, & \forall b \in \mathscr{B}, \label{cons1_D_2}  \tag{10.11c}\\[2ex]
+    && \mu_{j} &\gtreqless 0, & \forall j \in \mathscr{I}, \label{cons3_D_2}  \tag{10.11d}\\[2ex]
+    && \pi_{b} &\ge 0, & \forall b \in \mathscr{B}, \label{cons4_D_2}  \tag{10.11e}\\[2ex]
+    && \lambda_{b} &\le 0, & \forall b \in \mathscr{B}. \label{cons5_D_2} \tag{10.11f}
     \end{align*}
 
 <a id="box-9-texexpbox_dlp_bpp"></a>
 
-!!! esempio "Example 9.5: $D(\LP_{\BPP})$ model"
+!!! esempio "Example 10.5: $D(\LP_{\BPP})$ model"
 
     The  $D(\LP_{\BPP})$ model of <span style="color:#1971c2">Example 1</span> is:
 
@@ -580,7 +580,7 @@ title: "Formulations of the bin packing problem"
 
 <a id="box-10-prop_lp_bpp_opt"></a>
 
-!!! teorema "Proposition 9.5"
+!!! teorema "Proposition 10.5"
 
     An optimal solution of the primal $\LP_{\BPP}$ model is:
 
@@ -591,7 +591,7 @@ title: "Formulations of the bin packing problem"
     & \forall j \in \mathscr{I},~ \forall b \in \mathscr{B},\\[2ex]
     \tilde{y}_b &= \frac{\sum_{j \in \mathscr{I}}  w_j}{m \; c},
     & \forall b \in \mathscr{B},
-    \end{aligned} \tag{9.12}
+    \end{aligned} \tag{10.12}
     \end{equation*}
 
     and an optimal solution of the dual $D(\LP_{\BPP})$ model is:
@@ -605,12 +605,12 @@ title: "Formulations of the bin packing problem"
     & \forall b \in \mathscr{B},\\[2ex]
     \tilde{\lambda}_b &= 0,
     & \forall b \in \mathscr{B}.
-    \end{aligned} \tag{9.13}
+    \end{aligned} \tag{10.13}
     \end{equation*}
 
 <a id="box-11-cor_lp_bpp_value"></a>
 
-!!! teorema "Corollary 9.6"
+!!! teorema "Corollary 10.6"
 
     The optimal value of the primal $\LP_{\BPP}$ and dual $D(\LP_{\BPP})$ models is:
 
@@ -620,7 +620,7 @@ title: "Formulations of the bin packing problem"
     =
     \frac{\sum_{j \in \mathscr{I}} w_j}{c}
     =
-    z(D(\LP_{\BPP})) \tag{9.14}
+    z(D(\LP_{\BPP})) \tag{10.14}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -633,18 +633,18 @@ title: "Formulations of the bin packing problem"
 
     since $\sum_{j} w_j / c \le z(\ILP_{\BPP}) \le m$, where the last inequality holds because $m$ is an upper bound on the number of bins in any optimal BPP solution. Accordingly, constraints $\eqref{cons3_BPP_LP_LL}$ are also satisfied. <span class="qed">□</span>
 
-### 9.4.1 Some important theoretical properties
+### 10.4.1 Some important theoretical properties
 
 - The following two propositions show that the ratio between $z(\LP_{\BPP})$ and $z(\ILP_{\BPP})$ is at least one half for every BPP instance (<strong>by hypothesis</strong>  $z(\ILP_{\BPP}) >1$ since all items do not fit in a single bin). Furthermore, there exist instances for which the value one half can be asymptotically achieved as the capacity $c \to +\infty$.
 
 <a id="box-12-prop_lp_bpp_ratio_half"></a>
 
-!!! teorema "Proposition 9.7"
+!!! teorema "Proposition 10.7"
 
     For every BPP instance, we have:
 
     \begin{equation*}
-    \frac{ z(\LP_{\BPP}) }{z(\ILP_{\BPP})} \ge \frac{1}{2} \tag{9.15}
+    \frac{ z(\LP_{\BPP}) }{z(\ILP_{\BPP})} \ge \frac{1}{2} \tag{10.15}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -701,12 +701,12 @@ title: "Formulations of the bin packing problem"
 
 <a id="box-13-prop_lp_bpp_ratio_tight"></a>
 
-!!! teorema "Proposition 9.8"
+!!! teorema "Proposition 10.8"
 
     There are BPP instances such that:
 
     \begin{equation*}
-    \frac{ z(\LP_{\BPP}) }{z(\ILP_{\BPP})} \to \frac{1}{2} \text{    as    } c \to +\infty \tag{9.16}
+    \frac{ z(\LP_{\BPP}) }{z(\ILP_{\BPP})} \to \frac{1}{2} \text{    as    } c \to +\infty \tag{10.16}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -749,12 +749,12 @@ title: "Formulations of the bin packing problem"
 
 <a id="box-14-prop_ceil_lp_bpp_ratio_half"></a>
 
-!!! teorema "Proposition 9.9"
+!!! teorema "Proposition 10.9"
 
     For every BPP instance, we have:
 
     \begin{equation*}
-    \frac{\lceil z(\LP_{\BPP}) \rceil}{z(\ILP_{\BPP})} \ge \frac{1}{2} \tag{9.17}
+    \frac{\lceil z(\LP_{\BPP}) \rceil}{z(\ILP_{\BPP})} \ge \frac{1}{2} \tag{10.17}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -812,12 +812,12 @@ title: "Formulations of the bin packing problem"
 
 <a id="box-15-prop_ceil_lp_bpp_ratio_tight"></a>
 
-!!! teorema "Proposition 9.10"
+!!! teorema "Proposition 10.10"
 
     There are BPP instances such that:
 
     \begin{equation*}
-    \frac{\lceil z(\LP_{\BPP}) \rceil}{z(\ILP_{\BPP})}  \to \frac{1}{2} \text{    as    } n \to +\infty \tag{9.18}
+    \frac{\lceil z(\LP_{\BPP}) \rceil}{z(\ILP_{\BPP})}  \to \frac{1}{2} \text{    as    } n \to +\infty \tag{10.18}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -862,7 +862,7 @@ title: "Formulations of the bin packing problem"
 
     <p class="qed-riga"><span class="qed">□</span></p>
 
-## 9.5 Typical mistakes
+## 10.5 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -876,7 +876,7 @@ title: "Formulations of the bin packing problem"
 
     - <strong>Expecting a better relaxation from $y_b \le 1$.</strong> The second relaxation has the same optimal value as the first one: the upper bounds $y_b \le 1$ do not cut off the optimal solution of the first relaxation.
 
-## 9.6 In summary
+## 10.6 In summary
 
 !!! chiave "In summary"
 

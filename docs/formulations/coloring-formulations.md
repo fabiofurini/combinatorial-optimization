@@ -6,7 +6,7 @@ title: "Formulations of the vertex coloring problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 10** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Vertex coloring](../exercises/coloring-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 11** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Vertex coloring](../exercises/coloring-formulations.md)
 
 </div>
 
@@ -30,7 +30,7 @@ title: "Formulations of the vertex coloring problem"
 
     - explain why this bound is very weak, and why the model is not enough to color a graph.
 
-## 10.1 The problem in brief
+## 11.1 The problem in brief
 
 !!! nota "Where we were"
 
@@ -38,7 +38,7 @@ title: "Formulations of the vertex coloring problem"
 
 <a id="box-1-def-VCP"></a>
 
-!!! definizione "Definition 10.1: Vertex Coloring Problem"
+!!! definizione "Definition 11.1: Vertex Coloring Problem"
 
     Given:
 
@@ -70,7 +70,7 @@ title: "Formulations of the vertex coloring problem"
 
 - The second assumption guarantees that no vertex can be removed without affecting the optimal value: if $N(u) \subseteq N(v)$, any coloring of $G \setminus \{u\}$ can be extended to $u$ by assigning it the color of $v$.
 
-## 10.2 An ILP model for the Vertex Coloring Problem
+## 11.2 An ILP model for the Vertex Coloring Problem
 
 - Given an upper bound $k \in \Z_{\ge 2}$ on the number of colors used in any optimal VCP solution, we introduce the following $k\;\underbrace{|V|}_{=n}$ binary variables:
 
@@ -80,7 +80,7 @@ title: "Formulations of the vertex coloring problem"
     1 & \text{if vertex } v \text{ takes color } c, \\
     0 & \text{otherwise}
     \end{cases}
-    \qquad \forall v \in \underbrace{\{1,2,\dots,n\}}_{=V},~\forall c \in \underbrace{\{1,2,\dots,k\}}_{=\mathscr{C}}, \tag{10.1}
+    \qquad \forall v \in \underbrace{\{1,2,\dots,n\}}_{=V},~\forall c \in \underbrace{\{1,2,\dots,k\}}_{=\mathscr{C}}, \tag{11.1}
     \end{equation*}
 
     and the following $k$ binary variables:
@@ -91,7 +91,7 @@ title: "Formulations of the vertex coloring problem"
     1 & \text{if color } c \text{ is used}, \\
     0 & \text{otherwise}
     \end{cases}
-    \qquad \forall c \in \underbrace{\{1,2,\dots,k\}}_{=\mathscr{C}}. \tag{10.2}
+    \qquad \forall c \in \underbrace{\{1,2,\dots,k\}}_{=\mathscr{C}}. \tag{11.2}
     \end{equation*}
 
     The number $n$ of vertices is a valid upper bound on the minimum number of colors needed to color all the vertices since, in the worst possible case, each vertex takes a different color. Also the number of colors used in any feasible VCP solution is a valid upper bound.
@@ -103,11 +103,11 @@ title: "Formulations of the vertex coloring problem"
     <a id="eq-NAT_VCP"></a>
 
     \begin{align*}
-    && \min \quad \sum_{c \in \mathscr{C}} y_{c} \label{obj_VCP}  \tag{10.3a}\\[2ex]
-    && \text{subject to} \quad \sum_{c \in \mathscr{C}} x_{vc} &= 1, & \forall v \in V, \label{cons1_VCP}  \tag{10.3b}\\[2ex]
-    && - x_{uc} - x_{vc} + y_c &\geq 0, & \forall c \in \mathscr{C},~\forall \{u,v\} \in E, \label{cons2_VCP}  \tag{10.3c}\\[2ex]
-    && x_{vc} &\in \{0,1\}, & \forall v \in V,~ \forall c \in \mathscr{C}, \label{cons4_VCP}  \tag{10.3d}\\[2ex]
-    && y_{c} &\in \{0,1\}, & \forall c \in \mathscr{C}. \label{cons3_VCP} \tag{10.3e}
+    && \min \quad \sum_{c \in \mathscr{C}} y_{c} \label{obj_VCP}  \tag{11.3a}\\[2ex]
+    && \text{subject to} \quad \sum_{c \in \mathscr{C}} x_{vc} &= 1, & \forall v \in V, \label{cons1_VCP}  \tag{11.3b}\\[2ex]
+    && - x_{uc} - x_{vc} + y_c &\geq 0, & \forall c \in \mathscr{C},~\forall \{u,v\} \in E, \label{cons2_VCP}  \tag{11.3c}\\[2ex]
+    && x_{vc} &\in \{0,1\}, & \forall v \in V,~ \forall c \in \mathscr{C}, \label{cons4_VCP}  \tag{11.3d}\\[2ex]
+    && y_{c} &\in \{0,1\}, & \forall c \in \mathscr{C}. \label{cons3_VCP} \tag{11.3e}
     \end{align*}
 
     This ILP model is referred to as the $\ILP_{\VCP}$ model.
@@ -138,7 +138,7 @@ title: "Formulations of the vertex coloring problem"
 
 <a id="box-2-texexpbox_ilp_vcp"></a>
 
-!!! esempio "Example 10.1: $\ILP_{\VCP}$ model"
+!!! esempio "Example 11.1: $\ILP_{\VCP}$ model"
 
     We consider the following graph $G = (V,E)$ with $3$ vertices ($n=3$) and $3$ edges ($m=3$):
 
@@ -183,20 +183,20 @@ title: "Formulations of the vertex coloring problem"
 
     The associated optimal solution of the VCP is given by the color classes $\tilde{Q}_1 =\{1\}$, $\tilde{Q}_2 =\{2\}$ and $\tilde{Q}_3 =\{3\}$. The optimal partition is unique, but the $3!$ permutations of the colors give $6$ different optimal solutions.
 
-## 10.3 A first Linear Programming relaxation
+## 11.3 A first Linear Programming relaxation
 
 !!! chiave ""
 
     To obtain a Linear Programming (LP) relaxation of the $\ILP_{\VCP}$ model,  we relax  constraints $\eqref{cons4_VCP}$ and $\eqref{cons3_VCP}$  with the following ones:
 
     \begin{align*}
-    &&x_{vc}                        &\ge 0, & \forall v \in V,~ \forall c \in \mathscr{C}, \label{cons4_VCP_LP} \tag{10.4a}\\[2ex]
-    &&y_{c}                        &\ge  0, &  \forall c \in \mathscr{C}. \label{cons3_VCP_LP} \tag{10.4b}
+    &&x_{vc}                        &\ge 0, & \forall v \in V,~ \forall c \in \mathscr{C}, \label{cons4_VCP_LP} \tag{11.4a}\\[2ex]
+    &&y_{c}                        &\ge  0, &  \forall c \in \mathscr{C}. \label{cons3_VCP_LP} \tag{11.4b}
     \end{align*}
 
 <a id="box-3-texexpbox_lp0_vcp"></a>
 
-!!! esempio "Example 10.2: $\LP\text{-}0_{\VCP}$ model"
+!!! esempio "Example 11.2: $\LP\text{-}0_{\VCP}$ model"
 
     The  $\LP\text{-}0_{\VCP}$ model for the VCP instance of <span style="color:#1971c2">Example 1</span> is:
 
@@ -246,16 +246,16 @@ title: "Formulations of the vertex coloring problem"
     <a id="eq-DUAL_0_VCP"></a>
 
     \begin{align*}
-    &&   \max  ~~ \sum_{v \in V}  \mu_{v} \label{obj_D}  \tag{10.5a}\\[2ex]
-    && \text{subject to}  \quad \mu_{v} - \sum_{e \in \delta(v)} \pi_{ce}  &\leq 0,       &  \forall v \in V,~\forall c \in \mathscr{C}, \label{cons2_D}  \tag{10.5b}\\[2ex]
-    && \sum_{e \in E} \pi_{ce}   &\leq 1,       &  \forall c \in \mathscr{C},              \label{cons1_D}  \tag{10.5c}\\[2ex]
-    &&\mu_{v}                        &\gtreqless  0, &  \forall v \in V,\label{cons3_D}  \tag{10.5d}\\[2ex]
-    &&\pi_{ce}                        &\ge  0, &  \forall c \in \mathscr{C},~\forall e \in E.\label{cons4_D} \tag{10.5e}
+    &&   \max  ~~ \sum_{v \in V}  \mu_{v} \label{obj_D}  \tag{11.5a}\\[2ex]
+    && \text{subject to}  \quad \mu_{v} - \sum_{e \in \delta(v)} \pi_{ce}  &\leq 0,       &  \forall v \in V,~\forall c \in \mathscr{C}, \label{cons2_D}  \tag{11.5b}\\[2ex]
+    && \sum_{e \in E} \pi_{ce}   &\leq 1,       &  \forall c \in \mathscr{C},              \label{cons1_D}  \tag{11.5c}\\[2ex]
+    &&\mu_{v}                        &\gtreqless  0, &  \forall v \in V,\label{cons3_D}  \tag{11.5d}\\[2ex]
+    &&\pi_{ce}                        &\ge  0, &  \forall c \in \mathscr{C},~\forall e \in E.\label{cons4_D} \tag{11.5e}
     \end{align*}
 
 <a id="box-4-texexpbox_dlp0_vcp"></a>
 
-!!! esempio "Example 10.3: $D(\LP\text{-}0_{\VCP})$ model"
+!!! esempio "Example 11.3: $D(\LP\text{-}0_{\VCP})$ model"
 
     The  dual $D(\LP\text{-}0_{\VCP})$ model for the VCP instance of <span style="color:#1971c2">Example 1</span> is:
 
@@ -287,7 +287,7 @@ title: "Formulations of the vertex coloring problem"
 
 <a id="box-5-prop_lp0_vcp_opt"></a>
 
-!!! teorema "Proposition 10.2"
+!!! teorema "Proposition 11.2"
 
     An optimal solution of  the primal $\LP\text{-}0_{\VCP}$ model is:
 
@@ -297,14 +297,14 @@ title: "Formulations of the vertex coloring problem"
     \label{PPX}
     \tilde{x}_{v1}=\tilde{x}_{v2}=\frac{1}{2},  \quad \forall v \in V
     \text{    and    }
-    \tilde{x}_{vc}= 0,  \quad \forall v \in V, \forall c \in\{3,4,\dots, k\}, \tag{10.6a}
+    \tilde{x}_{vc}= 0,  \quad \forall v \in V, \forall c \in\{3,4,\dots, k\}, \tag{11.6a}
     \end{equation*}
 
     \begin{equation*}
     \label{PPY}
     \tilde{y}_1=\tilde{y}_2=1
     \text{    and    }
-    \tilde{y}_c= 0,  \quad \forall c \in\{3,4,\dots, k\}, \tag{10.6b}
+    \tilde{y}_c= 0,  \quad \forall c \in\{3,4,\dots, k\}, \tag{11.6b}
     \end{equation*}
 
     and an optimal solution of the dual $D(\LP\text{-}0_{\VCP})$ model is:
@@ -315,19 +315,19 @@ title: "Formulations of the vertex coloring problem"
     \label{DDL}
     \tilde{\mu}_u=\tilde{\mu}_v=1
     \text{    and    }
-    \tilde{\mu}_w= 0,  \quad \forall w \in V \setminus \{u,v\}, \tag{10.7a}
+    \tilde{\mu}_w= 0,  \quad \forall w \in V \setminus \{u,v\}, \tag{11.7a}
     \end{equation*}
 
     \begin{equation*}
     \label{DDPI}
     \tilde{\pi}_{c\{u,v\}}=1,  \quad \forall c \in \mathscr{C}
     \text{    and    }
-    \tilde{\pi}_{ce}= 0,  \quad \forall e \in E \setminus \{\{u,v\}\}, \tag{10.7b}
+    \tilde{\pi}_{ce}= 0,  \quad \forall e \in E \setminus \{\{u,v\}\}, \tag{11.7b}
     \end{equation*}
 
 <a id="box-6-cor_lp0_vcp_value"></a>
 
-!!! teorema "Corollary 10.3"
+!!! teorema "Corollary 11.3"
 
     The optimal value of the primal $\LP\text{-}0_{\VCP}$ and dual $D(\LP\text{-}0_{\VCP})$ models is:
 
@@ -337,18 +337,18 @@ title: "Formulations of the vertex coloring problem"
     =
     2
     =
-    z(D(\LP\text{-}0_{\VCP})) \tag{10.8}
+    z(D(\LP\text{-}0_{\VCP})) \tag{11.8}
     \end{equation*}
 
 - The proof proceeds in three steps:
 
-    1. We show that [(10.6)](#eq-PP) is a feasible solution for the primal $\LP\text{-}0_{\VCP}$ model;
+    1. We show that [(11.6)](#eq-PP) is a feasible solution for the primal $\LP\text{-}0_{\VCP}$ model;
 
-    2. We show that [(10.7)](#eq-DD) is a feasible solution for the dual $D(\LP\text{-}0_{\VCP})$ model;
+    2. We show that [(11.7)](#eq-DD) is a feasible solution for the dual $D(\LP\text{-}0_{\VCP})$ model;
 
     3. We show that both feasible solutions have the same objective function value.
 
-    Therefore, by LP Weak Duality, [(10.6)](#eq-PP) and [(10.7)](#eq-DD) are a pair of optimal primal and dual solutions.
+    Therefore, by LP Weak Duality, [(11.6)](#eq-PP) and [(11.7)](#eq-DD) are a pair of optimal primal and dual solutions.
 
 ??? dimostrazione "Proof"
 
@@ -370,7 +370,7 @@ title: "Formulations of the vertex coloring problem"
 
         We have $\tilde{x}_{vc} \geq 0$ and $\tilde{y}_c \geq 0$, for every $v \in V$ and every $c \in \mathscr{C}$, thus constraints $\eqref{cons4_VCP_LP}$ and $\eqref{cons3_VCP_LP}$ are satisfied.
 
-        Therefore, [(10.6)](#eq-PP) provides a feasible solution for the primal $\LP\text{-}0_{\VCP}$ model.
+        Therefore, [(11.6)](#eq-PP) provides a feasible solution for the primal $\LP\text{-}0_{\VCP}$ model.
 
     - **2.** For every $c\in\mathscr{C}$, we have:
 
@@ -396,7 +396,7 @@ title: "Formulations of the vertex coloring problem"
 
         We have $\tilde{\mu}_{v} \ge 0,~ \forall v \in V$ and $\tilde{\pi}_{ce} \ge 0$ for every $c \in \mathscr{C}$ and every $e \in E$.  Thus constraints $\eqref{cons3_D}$  and $\eqref{cons4_D}$  are satisfied.
 
-        Therefore, [(10.7)](#eq-DD) provides a feasible solution for the dual $D(\LP\text{-}0_{\VCP})$ model.
+        Therefore, [(11.7)](#eq-DD) provides a feasible solution for the dual $D(\LP\text{-}0_{\VCP})$ model.
 
     - **3.** For the objective functions we have:
 
@@ -406,13 +406,13 @@ title: "Formulations of the vertex coloring problem"
 
         thus the primal and dual objective function values are equal.
 
-    Therefore, by LP Weak Duality, [(10.6)](#eq-PP) and [(10.7)](#eq-DD) are a pair of optimal primal and dual solutions. <span class="qed">□</span>
+    Therefore, by LP Weak Duality, [(11.6)](#eq-PP) and [(11.7)](#eq-DD) are a pair of optimal primal and dual solutions. <span class="qed">□</span>
 
 - This is an alternative proof that does not rely on the dual formulation but instead reasons directly on the minimum objective function value imposed by the constraints.
 
 <a id="box-7-prop_lp0_vcp_alternative"></a>
 
-!!! teorema "Proposition 10.4"
+!!! teorema "Proposition 11.4"
 
     An optimal solution of the primal $\LP\text{-}0_{\VCP}$ model is:
 
@@ -422,21 +422,21 @@ title: "Formulations of the vertex coloring problem"
     \label{PPX_alternative}
     \tilde{x}_{v1}=\tilde{x}_{v2}=\frac{1}{2},  \quad \forall v \in V
     \text{    and    }
-    \tilde{x}_{vc}= 0,  \quad \forall v \in V, \forall c \in\{3,4,\dots, k\}, \tag{10.9a}
+    \tilde{x}_{vc}= 0,  \quad \forall v \in V, \forall c \in\{3,4,\dots, k\}, \tag{11.9a}
     \end{equation*}
 
     \begin{equation*}
     \label{PPY_alternative}
     \tilde{y}_1=\tilde{y}_2=1
     \text{    and    }
-    \tilde{y}_c= 0,  \quad \forall c \in\{3,4,\dots, k\}, \tag{10.9b}
+    \tilde{y}_c= 0,  \quad \forall c \in\{3,4,\dots, k\}, \tag{11.9b}
     \end{equation*}
 
     and the optimal value is
 
     \begin{equation*}
     \label{VAL_alternative}
-    z(\LP\text{-}0_{\VCP}) = 2. \tag{10.10}
+    z(\LP\text{-}0_{\VCP}) = 2. \tag{11.10}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -458,12 +458,12 @@ title: "Formulations of the vertex coloring problem"
 
     \begin{equation*}
     \label{eq:vcp-lb}
-    \sum_{c\in\mathscr{C}} y_c \;\ge\; 2 . \tag{10.11}
+    \sum_{c\in\mathscr{C}} y_c \;\ge\; 2 . \tag{11.11}
     \end{equation*}
 
     Therefore every feasible solution of $\LP\text{-}0_{\VCP}$ satisfies $\eqref{eq:vcp-lb}$. 
 
-    Now consider the point defined in [(10.9)](#eq-PP_alternative). For every $v\in V$, we have
+    Now consider the point defined in [(11.9)](#eq-PP_alternative). For every $v\in V$, we have
 
     $$
     \sum_{c\in\mathscr{C}} \tilde x_{vc}
@@ -477,32 +477,32 @@ title: "Formulations of the vertex coloring problem"
     = 1 - \tfrac{1}{2} - \tfrac{1}{2} = 0,
     $$
 
-    so constraints $\eqref{cons2_VCP}$ hold with equality, while for all $c\ge 3$ both sides are zero. Finally, constraints $\eqref{cons4_VCP_LP}$ and $\eqref{cons3_VCP_LP}$ are satisfied by construction. Hence the point defined in [(10.9)](#eq-PP_alternative) is a feasible solution for $\LP\text{-}0_{\VCP}$. 
+    so constraints $\eqref{cons2_VCP}$ hold with equality, while for all $c\ge 3$ both sides are zero. Finally, constraints $\eqref{cons4_VCP_LP}$ and $\eqref{cons3_VCP_LP}$ are satisfied by construction. Hence the point defined in [(11.9)](#eq-PP_alternative) is a feasible solution for $\LP\text{-}0_{\VCP}$. 
 
-    The objective value of [(10.9)](#eq-PP_alternative) is
+    The objective value of [(11.9)](#eq-PP_alternative) is
 
     $$
     \sum_{c\in\mathscr{C}} \tilde y_c
     = 1+1 = 2 ,
     $$
 
-    which matches the lower bound $\eqref{eq:vcp-lb}$. Therefore the point [(10.9)](#eq-PP_alternative) is an optimal solution with objective value $\eqref{VAL_alternative}$. <span class="qed">□</span>
+    which matches the lower bound $\eqref{eq:vcp-lb}$. Therefore the point [(11.9)](#eq-PP_alternative) is an optimal solution with objective value $\eqref{VAL_alternative}$. <span class="qed">□</span>
 
-## 10.4 A second Linear Programming relaxation
+## 11.4 A second Linear Programming relaxation
 
 !!! chiave ""
 
     To obtain a Linear Programming (LP) relaxation of the $\ILP_{\VCP}$ model,  we relax  constraints $\eqref{cons4_VCP}$ and $\eqref{cons3_VCP}$  with the following ones:
 
     \begin{align*}
-    &&x_{vc}                        &\ge 0, & \forall v \in V,\forall c \in \mathscr{C}, \label{cons5_VCP_LP_LL} \tag{10.12a}\\[2ex]
-    &&y_{c}                        &\le  1, &  \forall c \in \mathscr{C}, \label{cons3_VCP_LP_LL} \tag{10.12b}\\[2ex]
-    &&y_{c}                        &\ge  0, &  \forall c \in \mathscr{C}. \label{cons4_VCP_LP_LL} \tag{10.12c}
+    &&x_{vc}                        &\ge 0, & \forall v \in V,\forall c \in \mathscr{C}, \label{cons5_VCP_LP_LL} \tag{11.12a}\\[2ex]
+    &&y_{c}                        &\le  1, &  \forall c \in \mathscr{C}, \label{cons3_VCP_LP_LL} \tag{11.12b}\\[2ex]
+    &&y_{c}                        &\ge  0, &  \forall c \in \mathscr{C}. \label{cons4_VCP_LP_LL} \tag{11.12c}
     \end{align*}
 
 <a id="box-8-texexpbox_lp_vcp"></a>
 
-!!! esempio "Example 10.4: $\LP_{\VCP}$ model"
+!!! esempio "Example 11.4: $\LP_{\VCP}$ model"
 
     The  $\LP_{\VCP}$ model for the VCP instance of <span style="color:#1971c2">Example 1</span> is:
 
@@ -551,17 +551,17 @@ title: "Formulations of the vertex coloring problem"
     <a id="eq-DUAL_VCP"></a>
 
     \begin{align*}
-    &&   \max  ~~ \sum_{v \in V}  \mu_{v} + \sum_{c \in \mathscr{C}}  \lambda_{c} \label{obj_D_VCP}  \tag{10.13a}\\[2ex]
-    && \text{subject to}  \quad \mu_{v} - \sum_{e \in \delta(v)} \pi_{ce}  &\leq 0,       &  \forall v \in V,~\forall c \in \mathscr{C}, \label{cons2_D_VCP}  \tag{10.13b}\\[1ex]
-    && \sum_{e \in E} \pi_{ce} + \lambda_c   &\leq 1,       &  \forall c \in \mathscr{C},              \label{cons1_D_VCP}  \tag{10.13c}\\[1ex]
-    &&\mu_{v}                        &\gtreqless  0, &  \forall v \in V,\label{cons3_D_VCP}  \tag{10.13d}\\[2ex]
-    &&\pi_{ce}                        &\ge  0, &  \forall c \in \mathscr{C},~\forall e \in E,\label{cons4_D_VCP}  \tag{10.13e}\\[1ex]
-    &&\lambda_{c}                        &\le  0, &  \forall c \in \mathscr{C}.\label{cons5_D_VCP} \tag{10.13f}
+    &&   \max  ~~ \sum_{v \in V}  \mu_{v} + \sum_{c \in \mathscr{C}}  \lambda_{c} \label{obj_D_VCP}  \tag{11.13a}\\[2ex]
+    && \text{subject to}  \quad \mu_{v} - \sum_{e \in \delta(v)} \pi_{ce}  &\leq 0,       &  \forall v \in V,~\forall c \in \mathscr{C}, \label{cons2_D_VCP}  \tag{11.13b}\\[1ex]
+    && \sum_{e \in E} \pi_{ce} + \lambda_c   &\leq 1,       &  \forall c \in \mathscr{C},              \label{cons1_D_VCP}  \tag{11.13c}\\[1ex]
+    &&\mu_{v}                        &\gtreqless  0, &  \forall v \in V,\label{cons3_D_VCP}  \tag{11.13d}\\[2ex]
+    &&\pi_{ce}                        &\ge  0, &  \forall c \in \mathscr{C},~\forall e \in E,\label{cons4_D_VCP}  \tag{11.13e}\\[1ex]
+    &&\lambda_{c}                        &\le  0, &  \forall c \in \mathscr{C}.\label{cons5_D_VCP} \tag{11.13f}
     \end{align*}
 
 <a id="box-9-texexpbox_dlp_vcp"></a>
 
-!!! esempio "Example 10.5: $D(\LP_{\VCP})$ model"
+!!! esempio "Example 11.5: $D(\LP_{\VCP})$ model"
 
     The  dual $D(\LP_{\VCP})$ model for the VCP instance of <span style="color:#1971c2">Example 1</span> is:
 
@@ -612,7 +612,7 @@ title: "Formulations of the vertex coloring problem"
 
 <a id="box-10-prop_lp_vcp_opt"></a>
 
-!!! teorema "Proposition 10.5"
+!!! teorema "Proposition 11.5"
 
     An optimal solution of  the primal $\LP_{\VCP}$ model is:
 
@@ -622,14 +622,14 @@ title: "Formulations of the vertex coloring problem"
     \label{PPX_BIS}
     \tilde{x}_{v1}=\tilde{x}_{v2}=\frac{1}{2},  \quad \forall v \in V
     \text{    and    }
-    \tilde{x}_{vc}= 0,  \quad \forall v \in V, \forall c \in\{3,4,\dots, k\}, \tag{10.14a}
+    \tilde{x}_{vc}= 0,  \quad \forall v \in V, \forall c \in\{3,4,\dots, k\}, \tag{11.14a}
     \end{equation*}
 
     \begin{equation*}
     \label{PPY_BIS}
     \tilde{y}_1=\tilde{y}_2=1
     \text{    and    }
-    \tilde{y}_c= 0,  \quad \forall c \in\{3,4,\dots, k\}, \tag{10.14b}
+    \tilde{y}_c= 0,  \quad \forall c \in\{3,4,\dots, k\}, \tag{11.14b}
     \end{equation*}
 
     and an optimal solution of the dual $D(\LP_{\VCP})$ model is:
@@ -640,7 +640,7 @@ title: "Formulations of the vertex coloring problem"
     \label{DDL_BIS}
     \tilde{\mu}_u=\tilde{\mu}_v=1
     \text{    and    }
-    \tilde{\mu}_w= 0,  \quad \forall w \in V \setminus \{u,v\}, \tag{10.15a}
+    \tilde{\mu}_w= 0,  \quad \forall w \in V \setminus \{u,v\}, \tag{11.15a}
     \end{equation*}
 
     \begin{equation*}
@@ -649,7 +649,7 @@ title: "Formulations of the vertex coloring problem"
     {\rm ~~~~~}
     \tilde{\pi}_{ce}= 0,  ~ \forall e \in E \setminus \{\{u,v\}\},
     \text{    and    }
-    \tilde{\lambda}_{c}= 0,  ~ \forall c \in \mathscr{C}, \tag{10.15b}
+    \tilde{\lambda}_{c}= 0,  ~ \forall c \in \mathscr{C}, \tag{11.15b}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -664,7 +664,7 @@ title: "Formulations of the vertex coloring problem"
 
 <a id="box-11-cor_lp_vcp_value"></a>
 
-!!! teorema "Corollary 10.6"
+!!! teorema "Corollary 11.6"
 
     The optimal value of the primal $\LP_{\VCP}$ and dual $D(\LP_{\VCP})$ models is:
 
@@ -674,10 +674,10 @@ title: "Formulations of the vertex coloring problem"
     =
     2
     =
-    z(D(\LP_{\VCP})) \tag{10.16}
+    z(D(\LP_{\VCP})) \tag{11.16}
     \end{equation*}
 
-## 10.5 Typical mistakes
+## 11.5 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -691,7 +691,7 @@ title: "Formulations of the vertex coloring problem"
 
     - <strong>Writing the dual solution with a wrong edge.</strong> The dual values $\tilde{\pi}_{ce}$ are non-zero only for one edge $e=\{u,v\}$, and for every color $c$: all the other edges have value zero.
 
-## 10.6 In summary
+## 11.6 In summary
 
 !!! chiave "In summary"
 

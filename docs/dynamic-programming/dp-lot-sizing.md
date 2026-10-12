@@ -6,7 +6,7 @@ title: "Dynamic programming for lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 17** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Lot sizing](../exercises/dp-lot-sizing.md)
+**Part 3 · Dynamic programming · Chapter 19** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Lot sizing](../exercises/dp-lot-sizing.md)
 
 </div>
 
@@ -38,11 +38,11 @@ title: "Dynamic programming for lot sizing"
 
     - count the steps of the two DP algorithms, and say why the second one is pseudo-polynomial.
 
-## 17.1 Problem definition
+## 19.1 Problem definition
 
 <a id="box-1-defULS"></a>
 
-!!! definizione "Definition 17.1: Uncapacitated Lot-Sizing Problem"
+!!! definizione "Definition 19.1: Uncapacitated Lot-Sizing Problem"
 
     Given:
 
@@ -69,19 +69,19 @@ title: "Dynamic programming for lot sizing"
 !!! chiave ""
 
     \begin{align*}
-    &&\min \sum_{t \in T} \left(sc_t\, y_t + vc_t\, x_t + hc_t\, s_t\right) \label{uls:obj} \tag{17.1}\\
-    && s_{t-1} + x_t & = d_t + s_t & t \in T \label{uls:bal} \tag{17.2}\\
-    && x_t & \le D_{t,m}\, y_t & t \in T \label{uls:big} \tag{17.3}\\
-    && s_m & = 0 \label{uls:end} \tag{17.4}\\
-    && x_t,\ s_t & \ge 0 & t \in T \tag{17.5}\\
-    && y_t & \in \{0,1\} & t \in T \tag{17.6}
+    &&\min \sum_{t \in T} \left(sc_t\, y_t + vc_t\, x_t + hc_t\, s_t\right) \label{uls:obj} \tag{19.1}\\
+    && s_{t-1} + x_t & = d_t + s_t & t \in T \label{uls:bal} \tag{19.2}\\
+    && x_t & \le D_{t,m}\, y_t & t \in T \label{uls:big} \tag{19.3}\\
+    && s_m & = 0 \label{uls:end} \tag{19.4}\\
+    && x_t,\ s_t & \ge 0 & t \in T \tag{19.5}\\
+    && y_t & \in \{0,1\} & t \in T \tag{19.6}
     \end{align*}
 
 - Constraints $\eqref{uls:bal}$ are the flow balancing constraints, constraints $\eqref{uls:big}$ force a setup in every period with positive production, and constraint $\eqref{uls:end}$ imposes an empty inventory at the end of the horizon (with nonnegative costs, a final inventory is never useful).
 
 <a id="box-2-texuls1"></a>
 
-!!! esempio "Example 17.1: Uncapacitated lot sizing"
+!!! esempio "Example 19.1: Uncapacitated lot sizing"
 
     We consider $m=5$ periods with the following data:
 
@@ -96,9 +96,9 @@ title: "Dynamic programming for lot sizing"
     \end{array}
     $$
 
-    We refer to this ULS instance as <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>. It is the uncapacitated instance used in the MIP course (setup cost $50$, holding cost $1$, no variable production cost).
+    We refer to this ULS instance as <span style="color:#1971c2">[Example 19.1](#box-2-texuls1)</span>. It is the uncapacitated instance used in the MIP course (setup cost $50$, holding cost $1$, no variable production cost).
 
-### 17.1.1 Encoding of feasible solutions
+### 19.1.1 Encoding of feasible solutions
 
 !!! chiave ""
 
@@ -138,9 +138,9 @@ title: "Dynamic programming for lot sizing"
 
 <a id="box-3-texulsnetwork"></a>
 
-!!! esempio "Example 17.2: A feasible solution"
+!!! esempio "Example 19.2: A feasible solution"
 
-    We consider the ULS instance of <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>. The following network represents the feasible solution $\exOneSol$: each period is a node, the production $x_t$ enters node $t$, the demand $d_t$ leaves it, and the inventory $s_t$ flows from node $t$ to node $t+1$. Thick arcs carry a positive flow.
+    We consider the ULS instance of <span style="color:#1971c2">[Example 19.1](#box-2-texuls1)</span>. The following network represents the feasible solution $\exOneSol$: each period is a node, the production $x_t$ enters node $t$, the demand $d_t$ leaves it, and the inventory $s_t$ flows from node $t$ to node $t+1$. Thick arcs carry a positive flow.
 
     ![Figure 1](../img/dp-lot-sizing/fig01.svg){ .fig loading=lazy  }
 
@@ -152,11 +152,11 @@ title: "Dynamic programming for lot sizing"
 
 - A production quantity can take many values, and a ULS instance has a huge number of feasible solutions (infinitely many, if the quantities are not required to be integer). The next property shows that only very few of them need to be considered.
 
-### 17.1.2 The zero-inventory ordering property
+### 19.1.2 The zero-inventory ordering property
 
 <a id="box-4-thmZIO"></a>
 
-!!! teorema "Theorem 17.2: Zero-inventory ordering (Wagner and Whitin, 1958)"
+!!! teorema "Theorem 19.2: Zero-inventory ordering (Wagner and Whitin, 1958)"
 
     Every ULS instance has an optimal solution in which no period with positive production starts with a positive inventory, that is,
 
@@ -220,9 +220,9 @@ title: "Dynamic programming for lot sizing"
 
 <a id="box-5-texulsenum"></a>
 
-!!! esempio "Example 17.3: Enumeration of the solutions with the zero-inventory ordering property"
+!!! esempio "Example 19.3: Enumeration of the solutions with the zero-inventory ordering property"
 
-    We consider the ULS instance of <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>:
+    We consider the ULS instance of <span style="color:#1971c2">[Example 19.1](#box-2-texuls1)</span>:
 
     $$
     \begin{array}{l|rrrrr}
@@ -361,9 +361,9 @@ title: "Dynamic programming for lot sizing"
 
     The optimal value of the ULS instance is $\exOneOpt$, attained by $\exOneNopt$ solutions: <span style="color:#1971c2">$(\exOneSolLabel)$</span> and <span style="color:#1971c2">$(\exOneOtherLabel)$</span>.
 
-## 17.2 A DP algorithm for the ULS
+## 19.2 A DP algorithm for the ULS
 
-### 17.2.1 The cost of a production run
+### 19.2.1 The cost of a production run
 
 - By the zero-inventory ordering property, an optimal solution is a sequence of <strong>production runs</strong>: a run produces in a period $j$ the demands of periods $j,\dots,t$, and the next run starts in period $t+1$ with an empty inventory.
 
@@ -373,7 +373,7 @@ title: "Dynamic programming for lot sizing"
 
     \begin{equation*}
     \label{eq:cjt}
-    c_{j,t}= sc_j + vc_j\, D_{j,t} + \sum_{k=j}^{t-1} hc_k\, D_{k+1,t}. \tag{17.7}
+    c_{j,t}= sc_j + vc_j\, D_{j,t} + \sum_{k=j}^{t-1} hc_k\, D_{k+1,t}. \tag{19.7}
     \end{equation*}
 
 - The first term is the setup cost of period $j$, the second term is the variable cost of the $D_{j,t}$ produced units, and the last term is the holding cost: at the end of each period $k\in\{j,\dots,t-1\}$ the inventory contains the demands $D_{k+1,t}$ of the following periods of the run.
@@ -400,9 +400,9 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
 <a id="box-16-texulscost"></a>
 
-!!! esempio "Example 17.4: Computation of the production-run costs"
+!!! esempio "Example 19.4: Computation of the production-run costs"
 
-    We consider the ULS instance of <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>:
+    We consider the ULS instance of <span style="color:#1971c2">[Example 19.1](#box-2-texuls1)</span>:
 
     $$
     \begin{array}{l|rrrrr}
@@ -546,7 +546,7 @@ This is the pseudo-code that computes the matrix of the production-run costs:
     \end{array}
     $$
 
-### 17.2.2 Step 1 and Step 2
+### 19.2.2 Step 1 and Step 2
 
 - <u>Step 1</u>: computation of the optimal value
 
@@ -567,7 +567,7 @@ This is the pseudo-code that computes the matrix of the production-run costs:
         v(t)= \left\{ \begin{array}{ll}
         \displaystyle \min \bigg\{ v(j-1) + c_{j,t} : j \in \{1,2,\dots,t\}\bigg\} & \textrm{if $1\le t \le m$,}\\[2ex]
         0 & \textrm{if $t=0$.}
-        \end{array} \right. \tag{17.8}
+        \end{array} \right. \tag{19.8}
         \end{equation*}
 
     - The subinstance with periods $\{1,\dots,t\}$ is a ULS instance of the same type: its inventory must be empty at the end of period $t$. Here, $v(0)=0$, since an empty set of periods has no demand and no cost.
@@ -590,9 +590,9 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
         <a id="box-17-texulstree"></a>
 
-        !!! esempio "Example 17.5: Recursion tree"
+        !!! esempio "Example 19.5: Recursion tree"
 
-            We consider the first four periods of the ULS instance of <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span> (with five periods the tree has $32$ nodes). This is the recursion tree of the top-down approach to compute $v(4)$:
+            We consider the first four periods of the ULS instance of <span style="color:#1971c2">[Example 19.1](#box-2-texuls1)</span> (with five periods the tree has $32$ nodes). This is the recursion tree of the top-down approach to compute $v(4)$:
 
             ![Figure 2](../img/dp-lot-sizing/fig02.svg){ .fig loading=lazy  }
 
@@ -602,9 +602,9 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
         <a id="box-18-texulsvalues"></a>
 
-        !!! esempio "Example 17.6: Computing the values of the $v$ function"
+        !!! esempio "Example 19.6: Computing the values of the $v$ function"
 
-            We consider the ULS instance of <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
+            We consider the ULS instance of <span style="color:#1971c2">[Example 19.1](#box-2-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
 
             $$
             \begin{array}{l|rrrrr}
@@ -680,9 +680,9 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
         <a id="box-29-texulsbu"></a>
 
-        !!! esempio "Example 17.7: Execution of the DP algorithm"
+        !!! esempio "Example 19.7: Execution of the DP algorithm"
 
-            We consider the ULS instance of <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
+            We consider the ULS instance of <span style="color:#1971c2">[Example 19.1](#box-2-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
 
             $$
             \begin{array}{l|rrrrr}
@@ -924,9 +924,9 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
         <a id="box-30-texulsbuinfo"></a>
 
-        !!! esempio "Example 17.8: Computation of the additional information"
+        !!! esempio "Example 19.8: Computation of the additional information"
 
-            We consider the ULS instance of <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
+            We consider the ULS instance of <span style="color:#1971c2">[Example 19.1](#box-2-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
 
             $$
             \begin{array}{l|rrrrr}
@@ -1189,9 +1189,9 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
         <a id="box-31-texulssolvector"></a>
 
-        !!! esempio "Example 17.9: Computing an optimal solution"
+        !!! esempio "Example 19.9: Computing an optimal solution"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>, we have the following vector ${r}$:
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 19.1](#box-2-texuls1)</span>, we have the following vector ${r}$:
 
             $$
             \begin{array}{c|ccccc}
@@ -1260,11 +1260,11 @@ This is the pseudo-code that computes the matrix of the production-run costs:
             (30,\allowbreak 0,\allowbreak 80,\allowbreak 0,\allowbreak 0)
             $$
 
-            The corresponding optimal value is ${v}[5]=\exOneOpt$, the same value obtained by the enumeration of <span style="color:#1971c2">[Example 17.3](#box-5-texulsenum)</span> and by Gurobi on the MIP model.
+            The corresponding optimal value is ${v}[5]=\exOneOpt$, the same value obtained by the enumeration of <span style="color:#1971c2">[Example 19.3](#box-5-texulsenum)</span> and by Gurobi on the MIP model.
 
-    - <em>Remark (ties).</em> In the computation of ${v}[5]$, the run in period $4$ gives the same value as the run in period $3$, but the strict comparison keeps $j=3$. Choosing $j=4$ instead leads to the other optimal solution $\exOneOtherSol$ of <span style="color:#1971c2">[Example 17.3](#box-5-texulsenum)</span>. The DP algorithm returns one optimal solution, not all of them.
+    - <em>Remark (ties).</em> In the computation of ${v}[5]$, the run in period $4$ gives the same value as the run in period $3$, but the strict comparison keeps $j=3$. Choosing $j=4$ instead leads to the other optimal solution $\exOneOtherSol$ of <span style="color:#1971c2">[Example 19.3](#box-5-texulsenum)</span>. The DP algorithm returns one optimal solution, not all of them.
 
-### 17.2.3 Number of steps
+### 19.2.3 Number of steps
 
 - Let $S_c(m)$ denote the number of steps executed by CostMatrix in the worst case, where $m$ is the number of periods. The number of executions of its lines is:
 
@@ -1340,13 +1340,13 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
 - DP\_WW\_InfoSol only adds a constant number of operations inside the same loops, and therefore its number of steps has the same order of growth.
 
-## 17.3 A DP algorithm for the capacitated case
+## 19.3 A DP algorithm for the capacitated case
 
 - In most production systems the quantity that can be produced in a period is limited by the capacity of the resource.
 
 <a id="box-32-defCLS"></a>
 
-!!! definizione "Definition 17.3: Capacitated Lot-Sizing Problem"
+!!! definizione "Definition 19.3: Capacitated Lot-Sizing Problem"
 
     Given:
 
@@ -1370,9 +1370,9 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
 <a id="box-33-texcls1"></a>
 
-!!! esempio "Example 17.10: Capacitated lot sizing"
+!!! esempio "Example 19.10: Capacitated lot sizing"
 
-    We consider <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span> measured in units of $10$ products (hence the holding cost is $10$ per unit), with a constant capacity of $4$ units per period:
+    We consider <span style="color:#1971c2">[Example 19.1](#box-2-texuls1)</span> measured in units of $10$ products (hence the holding cost is $10$ per unit), with a constant capacity of $4$ units per period:
 
     $$
     \begin{array}{l|rrrrr}
@@ -1386,7 +1386,7 @@ This is the pseudo-code that computes the matrix of the production-run costs:
     \end{array}
     $$
 
-    We refer to this CLS instance as <span style="color:#1971c2">[Example 17.10](#box-33-texcls1)</span>. The optimal solution of <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>, in units of $10$, is the vector $\exTwoWWSol$, of cost $\exTwoWWOpt$: it is not feasible for <span style="color:#1971c2">[Example 17.10](#box-33-texcls1)</span>, since period $3$ produces more than $4$ units.
+    We refer to this CLS instance as <span style="color:#1971c2">[Example 19.10](#box-33-texcls1)</span>. The optimal solution of <span style="color:#1971c2">[Example 19.1](#box-2-texuls1)</span>, in units of $10$, is the vector $\exTwoWWSol$, of cost $\exTwoWWOpt$: it is not feasible for <span style="color:#1971c2">[Example 19.10](#box-33-texcls1)</span>, since period $3$ produces more than $4$ units.
 
 - <u>Step 1</u>: computation of the optimal value
 
@@ -1423,7 +1423,7 @@ This is the pseudo-code that computes the matrix of the production-run costs:
         \begin{array}[t]{@{}l@{}}\displaystyle \min \bigg\{ v(t-1,k+d_t-x) + f_t(x) : x \in X_t(k)\bigg\}\\ {}+ hc_t\,k\end{array} & \textrm{if $1\le t \le m$,}\\[2ex]
         0 & \textrm{if $t=0$ and $k=0$,}\\[2ex]
         +\infty & \textrm{if $t=0$ and $k>0$,}
-        \end{array} \right. \tag{17.9}
+        \end{array} \right. \tag{19.9}
         \end{equation*}
 
         where $X_t(k)=\{0,1,\dots,\min\{cap_t,\,k+d_t\}\}$ is the set of the possible productions of period $t$.
@@ -1446,7 +1446,7 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
         $\rightsquigarrow$ <strong>Optimal Substructure verified!</strong>
 
-    - Different sequences of production decisions can lead to the same state. For instance, in <span style="color:#1971c2">[Example 17.10](#box-33-texcls1)</span>, starting from the state $(5,0)$, the decisions $x_5=0$ and $x_4=4$ lead to the state $(3,1)$, and the decisions $x_5=1$ and $x_4=3$ lead to the same state $(3,1)$.
+    - Different sequences of production decisions can lead to the same state. For instance, in <span style="color:#1971c2">[Example 19.10](#box-33-texcls1)</span>, starting from the state $(5,0)$, the decisions $x_5=0$ and $x_4=4$ lead to the state $(3,1)$, and the decisions $x_5=1$ and $x_4=3$ lead to the same state $(3,1)$.
 
     - Therefore the same value $v(t,k)$ may need to be computed several times during the recursive evaluation of formula $\eqref{eq:cls}$.
 
@@ -1478,9 +1478,9 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
         <a id="box-50-texclsbu"></a>
 
-        !!! esempio "Example 17.11: Execution of the DP algorithm"
+        !!! esempio "Example 19.11: Execution of the DP algorithm"
 
-            We consider the CLS instance of <span style="color:#1971c2">[Example 17.10](#box-33-texcls1)</span>:
+            We consider the CLS instance of <span style="color:#1971c2">[Example 19.10](#box-33-texcls1)</span>:
 
             $$
             \begin{array}{l|rrrrr}
@@ -1784,9 +1784,9 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
         <a id="box-51-texclsbuinfo"></a>
 
-        !!! esempio "Example 17.12: Computation of the additional information"
+        !!! esempio "Example 19.12: Computation of the additional information"
 
-            We consider the CLS instance of <span style="color:#1971c2">[Example 17.10](#box-33-texcls1)</span>:
+            We consider the CLS instance of <span style="color:#1971c2">[Example 19.10](#box-33-texcls1)</span>:
 
             $$
             \begin{array}{l|rrrrr}
@@ -1800,7 +1800,7 @@ This is the pseudo-code that computes the matrix of the production-run costs:
             \end{array}
             $$
 
-            For each step of the DP algorithm, the table shows the values of $t$ and $k$, the cell ${r}[t][k]$, and the production $x$ for which the minimum of the corresponding row of <span style="color:#1971c2">[Example 17.11](#box-50-texclsbu)</span> is attained first.
+            For each step of the DP algorithm, the table shows the values of $t$ and $k$, the cell ${r}[t][k]$, and the production $x$ for which the minimum of the corresponding row of <span style="color:#1971c2">[Example 19.11](#box-50-texclsbu)</span> is attained first.
 
             <div class="tabella" markdown="0"><table>
             <tr>
@@ -2084,9 +2084,9 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
         <a id="box-52-texclssolvector"></a>
 
-        !!! esempio "Example 17.13: Computing an optimal solution"
+        !!! esempio "Example 19.13: Computing an optimal solution"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 17.10](#box-33-texcls1)</span>, we have the matrix ${r}$ of <span style="color:#1971c2">[Example 17.12](#box-51-texclsbuinfo)</span>. We can compute an optimal solution as follows:
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 19.10](#box-33-texcls1)</span>, we have the matrix ${r}$ of <span style="color:#1971c2">[Example 19.12](#box-51-texclsbuinfo)</span>. We can compute an optimal solution as follows:
 
             <div class="tabella" markdown="0"><table>
             <tr>
@@ -2187,13 +2187,13 @@ This is the pseudo-code that computes the matrix of the production-run costs:
             \underbrace{50+50+50}_{\text{setup}}+\underbrace{10\cdot 1+10\cdot 0+10\cdot 1+10\cdot 1+10\cdot 0}_{\text{holding}}=150+30=180.
             $$
 
-            The corresponding optimal value is ${v}[5][0]=\exTwoOpt$, the same value given by Gurobi on the MIP model; the capacity costs $\exTwoOpt-\exTwoWWOpt$ with respect to <span style="color:#1971c2">[Example 17.1](#box-2-texuls1)</span>. The network of the solution is:
+            The corresponding optimal value is ${v}[5][0]=\exTwoOpt$, the same value given by Gurobi on the MIP model; the capacity costs $\exTwoOpt-\exTwoWWOpt$ with respect to <span style="color:#1971c2">[Example 19.1](#box-2-texuls1)</span>. The network of the solution is:
 
             ![Figure 3](../img/dp-lot-sizing/fig03.svg){ .fig loading=lazy  }
 
             Period $\exTwoNonZIO$ produces although one unit is in stock at the end of period $3$: the solution does not have the zero-inventory ordering property (and it is the unique optimal solution with integer quantities).
 
-### 17.3.1 Number of steps
+### 19.3.1 Number of steps
 
 - Let $S(m,D,C)$ denote the number of steps executed by DP\_CLS in the worst case, where $m$ is the number of periods, $D=D_{1,m}$ is the total demand, and $C=\max_{t\in T} cap_t$ is the largest capacity. For every $t\ge 1$ we have ${R}[t]+1\le D$ (since $d_1\ge 1$), and the inner loop has at most $C+1$ iterations. In the worst case, the condition at line [16](#box-46-cl-m) is always true. The number of executions of the lines is:
 
@@ -2239,7 +2239,7 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
 - The DP algorithm gives the optimal value $\heurOpt$, with the production plan $\heurSol$ (in the original units): the same value proved optimal by the MIP solver.
 
-### 17.3.2 The case of constant capacity
+### 19.3.2 The case of constant capacity
 
 - With general capacities $cap_t$ the CLS is NP-hard, so a polynomial algorithm is not expected and the pseudo-polynomial DP algorithm is a natural exact method for small values of $D$ and $C$.
 
@@ -2251,11 +2251,11 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
 - We do not develop the polynomial algorithms based on this property here.
 
-- <span style="color:#1971c2">[Example 17.10](#box-33-texcls1)</span> has constant capacity $C=4$. Its optimal solution $\exTwoSol$ has inventories $\exTwoInv$, empty at the end of periods $0$, $2$, and $5$.
+- <span style="color:#1971c2">[Example 19.10](#box-33-texcls1)</span> has constant capacity $C=4$. Its optimal solution $\exTwoSol$ has inventories $\exTwoInv$, empty at the end of periods $0$, $2$, and $5$.
 
 - In periods $1$–$2$ only period $1$ produces a quantity strictly between $0$ and $4$, and in periods $3$–$5$ every period produces $0$ or $4$, as stated by the property.
 
-## 17.4 Typical mistakes
+## 19.4 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -2269,7 +2269,7 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
     - <strong>Calling $O(mDC)$ polynomial.</strong> The running time contains the total demand $D$ and the largest capacity $C$, which are numbers of the input: the DP algorithm is pseudo-polynomial.
 
-## 17.5 In summary
+## 19.5 In summary
 
 !!! chiave "In summary"
 

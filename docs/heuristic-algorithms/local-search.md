@@ -6,7 +6,7 @@ title: "Local search"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 20** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../lab/tsp-nn-2opt.md)
+**Part 4 · Heuristic algorithms · Chapter 22** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../lab/tsp-nn-2opt.md)
 
 </div>
 
@@ -30,11 +30,11 @@ title: "Local search"
 
     - combine neighbourhoods (variable neighbourhood descent) and restarts (multi-start).
 
-## 20.1 Local search { #sez-sec-ls }
+## 22.1 Local search { #sez-sec-ls }
 
 <a id="box-1-def-ls"></a>
 
-!!! definizione "Definition 20.1: Local search"
+!!! definizione "Definition 22.1: Local search"
 
     Given a neighbourhood $N$, a <strong>local search</strong> (denoted by $LS$) is an improvement heuristic. It starts from a feasible solution and, at every iteration, looks in the neighbourhood of the current solution for a <em>better</em> solution. If it finds one, it moves to it and repeats; if no neighbour is better, the current solution is a local optimum with respect to $N$, and the search stops.
 
@@ -44,7 +44,7 @@ title: "Local search"
 
     A local search improves a feasible solution by moving from a solution to a better neighbour, and it stops in a local optimum with respect to $N$.
 
-## 20.2 The problems, the assumptions and the starting solutions { #sez-sec-problems }
+## 22.2 The problems, the assumptions and the starting solutions { #sez-sec-problems }
 
 - The algorithms are illustrated on the four problems of the notes on heuristic algorithms, defined in the notes on combinatorial optimization problems, with the same notation and assumptions:
 
@@ -85,7 +85,7 @@ title: "Local search"
 
 - The <strong>reference instances</strong> are those of the notes on definitions: the KP with $p=(10,7,6,4)$, $w=(5,4,3,3)$, $c=9$; the BPP with $w=(4,4,5,3,2,3)$, $c=7$; the TSP with $5$ cities; $P\,||\,C_{\max}$ with $t=(5,5,4,4,3,3,3)$ and $m=3$. Their optimal values are $17$, $3$, $18$ and $9$.
 
-### 20.2.1 Starting solutions
+### 22.2.1 Starting solutions
 
 - A local search needs a feasible <strong>starting solution</strong>. We use the solutions computed in the notes on constructive heuristics and in the notes on approximation algorithms, recalled below.
 
@@ -164,7 +164,7 @@ title: "Local search"
 
 - The sequence is completely determined by the seed: the same seed gives the same starting solutions, in the notes, in the exercises and in the code. A <strong>random tour</strong> keeps city $1$ in the first position and shuffles the other cities (Fisher–Yates: for $k=n,n-1,\dots,3$, the city in position $k$ is exchanged with the city in a random position among $2,\dots,k$); a <strong>random assignment</strong> of the jobs draws the machine of the jobs $1,2,\dots,n$ in this order; a <strong>random BPP solution</strong> is computed by $FF$ on a random order of the items (Fisher–Yates on all the positions: for $k=n,n-1,\dots,2$, the item in position $k$ is exchanged with the item in a random position among $1,\dots,k$).
 
-## 20.3 Local search: the scheme { #sez-sec-scheme }
+## 22.3 Local search: the scheme { #sez-sec-scheme }
 
 - The pseudo-code of $LS$ reads as follows. The function $\textit{Improve}$ explores the neighbourhood and returns an improving neighbour of $x$, or $\textit{NULL}$ if there is none.
 
@@ -186,7 +186,7 @@ title: "Local search"
 
 <a id="box-2-prop-termination"></a>
 
-!!! teorema "Proposition 20.2"
+!!! teorema "Proposition 22.2"
 
     For every starting solution, $LS$ stops after a finite number of moves, in a local optimum with respect to $N$. If the objective function takes integer values and the problem is a minimization problem, the number of moves is at most $f(x^0)-z(I)$; for a maximization problem, at most $z(I)-f(x^0)$.
 
@@ -198,11 +198,11 @@ title: "Local search"
 
 - Local search <strong>intensifies</strong>: it moves downhill until it reaches the bottom of the valley in which it started. Which valley, and therefore which local optimum, depends on the starting solution, on the neighbourhood and on the rule used to choose the move.
 
-## 20.4 Neighbourhoods for the four problems { #sez-sec-neigh }
+## 22.4 Neighbourhoods for the four problems { #sez-sec-neigh }
 
 - The neighbourhoods are defined by small modifications of the representation of the solutions. Only <strong>feasible</strong> neighbours belong to the neighbourhood: a modification that produces an infeasible object is not a move. For every neighbourhood we fix the <strong>order</strong> in which the moves are examined, which matters when the search accepts the first improving neighbour it finds.
 
-### 20.4.1 KP: flip and swap
+### 22.4.1 KP: flip and swap
 
 - The <strong>flip</strong> neighbourhood, defined in the notes on definitions, changes one component of $x$, i.e., adds or removes one item; it has $n$ elements before the feasibility test. The flips are examined for $i=1,2,\dots,n$.
 
@@ -210,7 +210,7 @@ title: "Local search"
 
 - The two neighbourhoods are complementary: a flip changes the number of selected items, a swap keeps it. The neighbourhood <strong>flip+swap</strong> is their union, with the flips examined first.
 
-### 20.4.2 BPP: move and swap
+### 22.4.2 BPP: move and swap
 
 - The <strong>move</strong> neighbourhood moves one item $i$ from its bin $a=bin_i$ to another non-empty bin $b$ with $L_b+w_i\le c$. It has at most $n\,(nb-1)$ elements; the moves are examined for $i=1,2,\dots,n$ and, for each $i$, for the bins in increasing order of their label.
 
@@ -218,7 +218,7 @@ title: "Local search"
 
 - The <strong>swap</strong> neighbourhood exchanges two items $i<k$ in different bins, provided that both bins remain feasible: $L_{bin_i}-w_i+w_k\le c$ and $L_{bin_k}-w_k+w_i\le c$. Exchanging two items of equal weight does not change any load, and is not considered. It has at most $\frac{n(n-1)}{2}$ elements, examined for $i=1,\dots,n$ and $k=i+1,\dots,n$.
 
-### 20.4.3 TSP: 2-opt and Or-opt
+### 22.4.3 TSP: 2-opt and Or-opt
 
 - A tour is a permutation $\sigma=(\sigma_1,\sigma_2,\dots,\sigma_n)$ of the cities, with $\sigma_{n+1}=\sigma_1$. We keep city $1$ in the first position, $\sigma_1=1$.
 
@@ -244,13 +244,13 @@ title: "Local search"
 
 - An Or-opt move removes <em>three</em> edges, $\{p,s_1\}$, $\{s_\ell,q\}$ and $\{a,b\}$. The <strong>3-opt</strong> neighbourhood (Lin, <em>Bell System Technical Journal</em> 44, 1965) contains all the ways of removing three edges and reconnecting the three paths: it has $O(n^3)$ elements, and Or-opt is the part of it that can be explored in $O(n^2)$ time.
 
-### 20.4.4 $P\,||\,C_{\max}$: move and swap
+### 22.4.4 $P\,||\,C_{\max}$: move and swap
 
 - The <strong>move</strong> neighbourhood moves one job $j$ from its machine $a=mach_j$ to another machine $h\ne a$. Every move is feasible, and the neighbourhood has $n\,(m-1)$ elements, examined for $j=1,\dots,n$ and, for each $j$, for $h=1,\dots,m$.
 
 - The <strong>swap</strong> neighbourhood exchanges the machines of two jobs $j<k$ on different machines with $t_j\ne t_k$ (otherwise no load changes). It has at most $\frac{n(n-1)}{2}$ elements, examined for $j=1,\dots,n$ and $k=j+1,\dots,n$. A swap never changes the number of jobs on a machine.
 
-### 20.4.5 Summary
+### 22.4.5 Summary
 
 <div class="tabella" markdown="0"><table>
 <tr>
@@ -317,11 +317,11 @@ title: "Local search"
 
 - The sizes are those <em>before</em> the feasibility test (KP, BPP) and include moves that do not change the objective. The size of a neighbourhood is the number of neighbours to evaluate at every iteration, so it determines the cost of an iteration.
 
-## 20.5 First improvement and best improvement { #sez-sec-firstbest }
+## 22.5 First improvement and best improvement { #sez-sec-firstbest }
 
 - The function $\textit{Improve}$ of $LS$ can stop at the <em>first</em> improving neighbour it finds, or examine the whole neighbourhood and return the <em>best</em> neighbour. The pseudo-codes are written for a minimization problem; for a maximization problem, “$<$” becomes “$>$”.
 
-### 20.5.1 First improvement
+### 22.5.1 First improvement
 
 !!! chiave ""
 
@@ -331,7 +331,7 @@ title: "Local search"
 
     <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> a feasible solution <span class="arithmatex">\(x\)</span>, a neighbourhood <span class="arithmatex">\(N\)</span>, an objective function <span class="arithmatex">\(f\)</span> (to be minimized)</div><div class="pc" style="--liv:0"><strong>Output:</strong> the first neighbour <span class="arithmatex">\(y\in N(x)\)</span> with <span class="arithmatex">\(f(y)<f(x)\)</span>, or <span class="arithmatex">\(\textit{NULL}\)</span></div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> FirstImprovement(<span class="arithmatex">\(x, N, f\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><strong>for</strong> <span class="arithmatex">\(y \in N(x)\)</span>, in the order of the neighbourhood <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">3</span><strong>if</strong> <span class="arithmatex">\(f(y) < f(x)\)</span> <strong>then</strong></div><div class="pc" style="--liv:3"><span class="pc-n">4</span><strong>return</strong> <span class="arithmatex">\(y\)</span> <span class="pc-com">▹ improving neighbour: accept it at once</span></div><div class="pc" style="--liv:2"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><strong>return</strong> <span class="arithmatex">\(\textit{NULL}\)</span> <span class="pc-com">▹ <span class="arithmatex">\(x\)</span> is a local optimum</span></div></div>
 
-### 20.5.2 Best improvement
+### 22.5.2 Best improvement
 
 !!! chiave ""
 
@@ -343,7 +343,7 @@ title: "Local search"
     <span class="arithmatex">\(f^* := f(x)\)</span> <span class="pc-com">▹ best improving neighbour found so far its value</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(y \in N(x)\)</span>, in the order of the neighbourhood <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><strong>if</strong> <span class="arithmatex">\(f(y) < f^*\)</span> <strong>then</strong></div><div class="pc" style="--liv:3"><span class="pc-n">5</span><span class="arithmatex">\(y^* \leftarrow y\)</span>
     <span class="arithmatex">\(f^* \leftarrow f(y)\)</span> <span class="pc-com">▹ better than all the neighbours seen so far</span></div><div class="pc" style="--liv:2"><span class="pc-n">6</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">8</span><strong>return</strong> <span class="arithmatex">\(y^*\)</span> <span class="pc-com">▹ NULL if <span class="arithmatex">\(x\)</span> is a local optimum</span></div></div>
 
-### 20.5.3 Comparison
+### 22.5.3 Comparison
 
 - In a local optimum both rules examine the whole neighbourhood: the last iteration costs the same.
 
@@ -355,9 +355,9 @@ title: "Local search"
 
 <a id="box-3-ex-kpfirstbest"></a>
 
-!!! esempio "Example 20.1: First and best improvement on the KP"
+!!! esempio "Example 22.1: First and best improvement on the KP"
 
-    We start from the solution of the greedy by weight $GR_w$ on the KP reference instance ($c=9$), i.e., $x=(0,0,1,1)$, of weight $6$ and profit $10$, with the neighbourhood flip+swap. The neighbours are examined in the order of Section [20.4](#sez-sec-neigh):
+    We start from the solution of the greedy by weight $GR_w$ on the KP reference instance ($c=9$), i.e., $x=(0,0,1,1)$, of weight $6$ and profit $10$, with the neighbourhood flip+swap. The neighbours are examined in the order of Section [22.4](#sez-sec-neigh):
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -492,7 +492,7 @@ title: "Local search"
 
     The two rules reach the optimum along different paths, $10\to14\to17$ and $10\to16\to17$, and first improvement examines fewer neighbours. Note that the flip neighbourhood alone would not have moved at all: from $(0,0,1,1)$ every feasible flip removes an item, so $(0,0,1,1)$, of profit $10$, is a local optimum for flip.
 
-## 20.6 Evaluating a move incrementally { #sez-sec-incremental }
+## 22.6 Evaluating a move incrementally { #sez-sec-incremental }
 
 - Every iteration of $LS$ evaluates many neighbours, and most of the running time is spent there. Computing $f(y)$ <strong>from scratch</strong> costs $O(n)$ for each of the four problems: the profit of a KP solution, the loads of the bins or of the machines, the length of a tour are sums of $n$ terms.
 
@@ -500,7 +500,7 @@ title: "Local search"
 
 <a id="box-4-prop-twoopt"></a>
 
-!!! teorema "Proposition 20.3"
+!!! teorema "Proposition 22.3"
 
     Let $\sigma'$ be the tour obtained from $\sigma$ by the 2-opt move with positions $i<j$, and let $u_1=\sigma_i$, $v_1=\sigma_{i+1}$, $u_2=\sigma_j$, $v_2=\sigma_{j+1}$. Then $L(\sigma')=L(\sigma)+\Delta$, with
 
@@ -629,9 +629,9 @@ title: "Local search"
 
 - The incremental evaluation does not change the local optima, nor the path followed by the search: it changes only the time needed to follow it. This is why the design of a local search always starts with two questions: <em>which moves?</em> and <em>how fast can a move be evaluated?</em>
 
-## 20.7 TSP: 2-opt and Or-opt { #sez-sec-tsp }
+## 22.7 TSP: 2-opt and Or-opt { #sez-sec-tsp }
 
-### 20.7.1 The 2-opt local search
+### 22.7.1 The 2-opt local search
 
 !!! chiave ""
 
@@ -654,7 +654,7 @@ title: "Local search"
 
 <a id="box-5-ex-twooptref"></a>
 
-!!! esempio "Example 20.2: $2OPT$ on the TSP reference instance"
+!!! esempio "Example 22.2: $2OPT$ on the TSP reference instance"
 
     We start from the tour of $NN$ from city $1$, $\sigma=(1,3,2,4,5)$, of length $25$. Its $5$ moves are
 
@@ -711,7 +711,7 @@ title: "Local search"
 
     ![Figure 3](../img/local-search/fig03.svg){ .fig loading=lazy  }
 
-### 20.7.2 The Or-opt local search
+### 22.7.2 The Or-opt local search
 
 !!! chiave ""
 
@@ -727,13 +727,13 @@ title: "Local search"
 
 - A 2-opt local optimum need not be an Or-opt local optimum, and vice versa: the two neighbourhoods contain different moves.
 
-### 20.7.3 First and best improvement on a medium instance
+### 22.7.3 First and best improvement on a medium instance
 
 - On $5$ cities the 2-opt neighbourhood is small and both rules reach the optimum. To see the difference between the two rules, and the role of Or-opt, we use a medium instance with $10$ cities. This instance is not metric: $d_{68}=8>d_{67}+d_{78}=4+3$ and $d_{6,10}=11>d_{67}+d_{7,10}=4+6$.
 
 <a id="box-6-ex-tsp10"></a>
 
-!!! esempio "Example 20.3: A TSP instance with $10$ cities"
+!!! esempio "Example 22.3: A TSP instance with $10$ cities"
 
     The cities have integer coordinates, and $d_{ij}$ is the Euclidean distance rounded to the nearest integer:
 
@@ -864,9 +864,9 @@ title: "Local search"
 
 <a id="box-7-ex-oropt"></a>
 
-!!! esempio "Example 20.4: $OROPT$ from a 2-opt local optimum"
+!!! esempio "Example 22.4: $OROPT$ from a 2-opt local optimum"
 
-    On the instance of [Example 20.3](#box-6-ex-tsp10), first improvement stopped in the 2-opt local optimum $\sigma=(1,10,2,3,4,5,6,7,9,8)$, of length $41$. The Or-opt move that takes the segment $(9)$, with $\ell=1$, between $p=7$ and $q=8$, and inserts it between $a=3$ and $b=4$ has
+    On the instance of [Example 22.3](#box-6-ex-tsp10), first improvement stopped in the 2-opt local optimum $\sigma=(1,10,2,3,4,5,6,7,9,8)$, of length $41$. The Or-opt move that takes the segment $(9)$, with $\ell=1$, between $p=7$ and $q=8$, and inserts it between $a=3$ and $b=4$ has
 
     $$
     \Delta = d_{78}+d_{39}+d_{94}-d_{79}-d_{98}-d_{34} = 3+4+3-4-4-4 = -2 .
@@ -874,7 +874,7 @@ title: "Local search"
 
     It is the first improving move found, after $60$ evaluations, and also the best of the $170$ moves. The new tour $(1,10,2,3,9,4,5,6,7,8)$, of length $39$, is optimal. Among all the $181\,440$ tours, only $3$ are Or-opt local optima, of length $39$, $43$ and $44$, and only the optimal tour is a local optimum for both 2-opt and Or-opt.
 
-### 20.7.4 3-opt and Lin–Kernighan
+### 22.7.4 3-opt and Lin–Kernighan
 
 - The <strong>3-opt</strong> neighbourhood removes three edges and reconnects the three paths in all the possible ways (Lin, 1965). Its local optima are better than those of 2-opt, but an iteration costs $O(n^3)$ time, and the neighbourhood is explored only partially in practice.
 
@@ -882,11 +882,11 @@ title: "Local search"
 
 - The sequence 2-opt, 3-opt, $k$-opt shows the compromise of the notes on definitions: a larger neighbourhood has better local optima, and costs more to explore.
 
-## 20.8 $P\,||\,C_{\max}$: move and swap { #sez-sec-pcmax }
+## 22.8 $P\,||\,C_{\max}$: move and swap { #sez-sec-pcmax }
 
 - The moves of $P\,||\,C_{\max}$ transfer processing time between two machines: a move of job $j$ from machine $a$ to machine $b$ transfers $\delta=t_j$ from $a$ to $b$; a swap of jobs $j$ (on $a$) and $k$ (on $b$) transfers $\delta=t_j-t_k$, which can be negative. In both cases the new loads are $L_a-\delta$ and $L_b+\delta$, and $F(L,a,b,\delta)$ denotes the resulting change of the objective.
 
-### 20.8.1 The move local search
+### 22.8.1 The move local search
 
 !!! chiave ""
 
@@ -897,7 +897,7 @@ title: "Local search"
     <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> <span class="arithmatex">\(n\)</span> jobs, <span class="arithmatex">\(m\)</span> machines, times <span class="arithmatex">\(t[1..n]\)</span>, assignment <span class="arithmatex">\(mach[1..n]\)</span>, loads <span class="arithmatex">\(L[1..m]\)</span>, rule</div><div class="pc" style="--liv:0"><strong>Output:</strong> <em>true</em> if an improving move was applied, <em>false</em> otherwise</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> PCmaxMoveStep(<span class="arithmatex">\(n, m, t, mach, L, \textit{rule}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(\Delta^* := 0\)</span>; <span class="arithmatex">\((j^<em>,h^</em>) := (0,0)\)</span> <span class="pc-com">▹ best move found so far</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(j := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(a := mach[j]\)</span> <span class="pc-com">▹ machine of job <span class="arithmatex">\(j\)</span></span></div><div class="pc" style="--liv:2"><span class="pc-n">5</span><strong>for</strong> <span class="arithmatex">\(h := 1\)</span> <strong>to</strong> <span class="arithmatex">\(m\)</span> <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">6</span><strong>if</strong> <span class="arithmatex">\(h = a\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">7</span><strong>continue</strong></div><div class="pc" style="--liv:3"><span class="pc-n">8</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><span class="arithmatex">\(\Delta := F(L, a, h, t[j])\)</span> <span class="pc-com">▹ change of the objective</span></div><div class="pc" style="--liv:3"><span class="pc-n">10</span><strong>if</strong> <span class="arithmatex">\(\Delta < \Delta^*\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">11</span><span class="arithmatex">\(\Delta^* \leftarrow \Delta\)</span>; <span class="arithmatex">\((j^<em>,h^</em>) \leftarrow (j,h)\)</span> <span class="pc-com">▹ improving move</span></div><div class="pc" style="--liv:4"><span class="pc-n">12</span><strong>if</strong> <span class="arithmatex">\(\textit{rule}=\textit{first}\)</span> <strong>then</strong></div><div class="pc" style="--liv:5"><span class="pc-n">13</span><strong>leave</strong> both loops</div><div class="pc" style="--liv:4"><span class="pc-n">14</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">15</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">17</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">18</span><strong>if</strong> <span class="arithmatex">\(j^* = 0\)</span> <strong>then</strong> <strong>return</strong> <em>false</em> <span class="pc-com">▹ no improving move: local optimum</span></div><div class="pc" style="--liv:1"><span class="pc-n">19</span><span class="arithmatex">\(L[mach[j^<em>]] \leftarrow L[mach[j^</em>]]-t[j^<em>]\)</span>; <span class="arithmatex">\(L[h^</em>] \leftarrow L[h^<em>]+t[j^</em>]\)</span>
     <span class="arithmatex">\(mach[j^<em>] \leftarrow h^</em>\)</span> <span class="pc-com">▹ update the loads apply the move</span></div><div class="pc" style="--liv:1"><span class="pc-n">20</span><strong>return</strong> <em>true</em></div></div>
 
-### 20.8.2 The swap local search
+### 22.8.2 The swap local search
 
 !!! chiave ""
 
@@ -926,7 +926,7 @@ title: "Local search"
 
 <a id="box-8-ex-lpt"></a>
 
-!!! esempio "Example 20.5: The solution of $LPT$ is a local optimum for move, but not for swap"
+!!! esempio "Example 22.5: The solution of $LPT$ is a local optimum for move, but not for swap"
 
     The solution of $LPT$ on the $P\,||\,C_{\max}$ reference instance has $J_1=\{1,5,7\}$, $J_2=\{2,6\}$, $J_3=\{3,4\}$, loads $(11,8,8)$ and $C_{\max}=11$. Machine $1$ is the unique critical machine.
 
@@ -1011,9 +1011,9 @@ title: "Local search"
 
 - A larger neighbourhood does not always help. On the instance with $m=4$ machines and $12$ jobs with times $t=(11,10,9,8,7,7,6,5,4,4,3,2)$, whose optimal makespan is $z(I)=19=\lceil 76/4\rceil$, $LPT$ gives $J_1=\{1,8,10\}$, $J_2=\{2,7,11\}$, $J_3=\{3,6,12\}$, $J_4=\{4,5,9\}$, with loads $(20,19,18,19)$: this solution is a local optimum for both move and swap.
 
-## 20.9 Flat landscapes and auxiliary objectives { #sez-sec-flat }
+## 22.9 Flat landscapes and auxiliary objectives { #sez-sec-flat }
 
-### 20.9.1 Plateaus
+### 22.9.1 Plateaus
 
 - The objectives of the BPP and of $P\,||\,C_{\max}$ are very “coarse”: the number of bins takes few values, and the makespan depends only on the critical machines. Many solutions have the same value, and most moves do not change it: the landscape is made of large <strong>plateaus</strong>.
 
@@ -1023,7 +1023,7 @@ title: "Local search"
 
 - How flat? On the $P\,||\,C_{\max}$ instance with $m=4$ and $12$ jobs of the previous section, we generate $100$ random assignments (seed $1$) and examine their $100\cdot 12\cdot 3=3600$ move neighbours: $1290$ of them ($35.8\%$) have the <em>same</em> makespan as the current solution. For the BPP the situation is extreme: on the instance with $c=10$ and weights $w=(7,6,6,5,5,4,4,4,3,3,2,1)$, for which $z(I)=5=\lceil 50/10\rceil$, the $100$ solutions computed by $FF$ on random orders of the items (seed $1$) have $2374$ move and swap neighbours, and <strong>all</strong> of them have the same number of bins as the current solution.
 
-### 20.9.2 The auxiliary objective
+### 22.9.2 The auxiliary objective
 
 - The remedy is to guide the search with an <strong>auxiliary objective</strong>, which distinguishes the solutions with the same value and rewards those that are “closer” to an improvement. For both problems it is a function of the loads:
 
@@ -1039,7 +1039,7 @@ title: "Local search"
 
 <a id="box-9-prop-transfer"></a>
 
-!!! teorema "Proposition 20.4"
+!!! teorema "Proposition 22.4"
 
     If the amount $\delta$ is transferred from the load $L_a$ to the load $L_b$ ($a\ne b$), the sum of the squared loads changes by
 
@@ -1053,7 +1053,7 @@ title: "Local search"
 
 - The change is computed in $O(1)$ time: the auxiliary objective is also cheaper to evaluate than the makespan. For a move, $\delta>0$ is the weight (or time) of the moved element, and the sum of the squares <strong>increases</strong> if and only if $L_b+\delta>L_a$: the element goes to a load that, after the move, is larger than the load it left.
 
-### 20.9.3 The move local search for the BPP
+### 22.9.3 The move local search for the BPP
 
 !!! chiave ""
 
@@ -1061,10 +1061,10 @@ title: "Local search"
 
 !!! algoritmo "Algorithm: Move step for the BPP"
 
-    <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> <span class="arithmatex">\(n\)</span> items, weights <span class="arithmatex">\(w[1..n]\)</span>, capacity <span class="arithmatex">\(c\)</span>, bins <span class="arithmatex">\(bin[1..n]\)</span>, loads <span class="arithmatex">\(L\)</span>, <span class="arithmatex">\(f\in\{nb, SQ\}\)</span>, rule</div><div class="pc" style="--liv:0"><strong>Output:</strong> <em>true</em> if an improving move was applied, <em>false</em> otherwise</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> BPPMoveStep(<span class="arithmatex">\(n, w, c, bin, L, f, \textit{rule}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(G^* := 0\)</span>; <span class="arithmatex">\((i^<em>,b^</em>) := (0,0)\)</span> <span class="pc-com">▹ best move found so far</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(i := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(a := bin[i]\)</span> <span class="pc-com">▹ bin of item <span class="arithmatex">\(i\)</span></span></div><div class="pc" style="--liv:2"><span class="pc-n">5</span><strong>for</strong> every bin <span class="arithmatex">\(b\)</span>, in increasing order <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">6</span><strong>if</strong> <span class="arithmatex">\(b = a\)</span> <strong>or</strong> <span class="arithmatex">\(L[b]=0\)</span> <strong>or</strong> <span class="arithmatex">\(L[b]+w[i] > c\)</span> <strong>then</strong> <strong>continue</strong> <span class="pc-com">▹ same, empty or too full</span></div><div class="pc" style="--liv:3"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(f = SQ\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">8</span><span class="arithmatex">\(G := 2\,w[i]\,(L[b]-L[a]+w[i])\)</span> <span class="pc-com">▹ [Proposition 20.4](#box-9-prop-transfer)</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>else</strong></div><div class="pc" style="--liv:4"><span class="pc-n">10</span><span class="arithmatex">\(G := 1\)</span> <strong>if</strong> <span class="arithmatex">\(L[a]=w[i]\)</span> <strong>else</strong> <span class="arithmatex">\(0\)</span> <span class="pc-com">▹ bin <span class="arithmatex">\(a\)</span> is emptied</span></div><div class="pc" style="--liv:3"><span class="pc-n">11</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">12</span><strong>if</strong> <span class="arithmatex">\(G > G^*\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">13</span><span class="arithmatex">\(G^* \leftarrow G\)</span>; <span class="arithmatex">\((i^<em>,b^</em>) \leftarrow (i,b)\)</span> <span class="pc-com">▹ improving move</span></div><div class="pc" style="--liv:4"><span class="pc-n">14</span><strong>if</strong> <span class="arithmatex">\(\textit{rule}=\textit{first}\)</span> <strong>then</strong></div><div class="pc" style="--liv:5"><span class="pc-n">15</span><strong>leave</strong> both loops</div><div class="pc" style="--liv:4"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">17</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">18</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">19</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">20</span><strong>if</strong> <span class="arithmatex">\(i^* = 0\)</span> <strong>then</strong> <strong>return</strong> <em>false</em> <span class="pc-com">▹ no improving move: local optimum</span></div><div class="pc" style="--liv:1"><span class="pc-n">21</span><span class="arithmatex">\(L[bin[i^<em>]] \leftarrow L[bin[i^</em>]]-w[i^<em>]\)</span>; <span class="arithmatex">\(L[b^</em>] \leftarrow L[b^<em>]+w[i^</em>]\)</span>
+    <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> <span class="arithmatex">\(n\)</span> items, weights <span class="arithmatex">\(w[1..n]\)</span>, capacity <span class="arithmatex">\(c\)</span>, bins <span class="arithmatex">\(bin[1..n]\)</span>, loads <span class="arithmatex">\(L\)</span>, <span class="arithmatex">\(f\in\{nb, SQ\}\)</span>, rule</div><div class="pc" style="--liv:0"><strong>Output:</strong> <em>true</em> if an improving move was applied, <em>false</em> otherwise</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> BPPMoveStep(<span class="arithmatex">\(n, w, c, bin, L, f, \textit{rule}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(G^* := 0\)</span>; <span class="arithmatex">\((i^<em>,b^</em>) := (0,0)\)</span> <span class="pc-com">▹ best move found so far</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(i := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><span class="arithmatex">\(a := bin[i]\)</span> <span class="pc-com">▹ bin of item <span class="arithmatex">\(i\)</span></span></div><div class="pc" style="--liv:2"><span class="pc-n">5</span><strong>for</strong> every bin <span class="arithmatex">\(b\)</span>, in increasing order <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">6</span><strong>if</strong> <span class="arithmatex">\(b = a\)</span> <strong>or</strong> <span class="arithmatex">\(L[b]=0\)</span> <strong>or</strong> <span class="arithmatex">\(L[b]+w[i] > c\)</span> <strong>then</strong> <strong>continue</strong> <span class="pc-com">▹ same, empty or too full</span></div><div class="pc" style="--liv:3"><span class="pc-n">7</span><strong>if</strong> <span class="arithmatex">\(f = SQ\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">8</span><span class="arithmatex">\(G := 2\,w[i]\,(L[b]-L[a]+w[i])\)</span> <span class="pc-com">▹ [Proposition 22.4](#box-9-prop-transfer)</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><strong>else</strong></div><div class="pc" style="--liv:4"><span class="pc-n">10</span><span class="arithmatex">\(G := 1\)</span> <strong>if</strong> <span class="arithmatex">\(L[a]=w[i]\)</span> <strong>else</strong> <span class="arithmatex">\(0\)</span> <span class="pc-com">▹ bin <span class="arithmatex">\(a\)</span> is emptied</span></div><div class="pc" style="--liv:3"><span class="pc-n">11</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">12</span><strong>if</strong> <span class="arithmatex">\(G > G^*\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">13</span><span class="arithmatex">\(G^* \leftarrow G\)</span>; <span class="arithmatex">\((i^<em>,b^</em>) \leftarrow (i,b)\)</span> <span class="pc-com">▹ improving move</span></div><div class="pc" style="--liv:4"><span class="pc-n">14</span><strong>if</strong> <span class="arithmatex">\(\textit{rule}=\textit{first}\)</span> <strong>then</strong></div><div class="pc" style="--liv:5"><span class="pc-n">15</span><strong>leave</strong> both loops</div><div class="pc" style="--liv:4"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">17</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">18</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">19</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">20</span><strong>if</strong> <span class="arithmatex">\(i^* = 0\)</span> <strong>then</strong> <strong>return</strong> <em>false</em> <span class="pc-com">▹ no improving move: local optimum</span></div><div class="pc" style="--liv:1"><span class="pc-n">21</span><span class="arithmatex">\(L[bin[i^<em>]] \leftarrow L[bin[i^</em>]]-w[i^<em>]\)</span>; <span class="arithmatex">\(L[b^</em>] \leftarrow L[b^<em>]+w[i^</em>]\)</span>
     <span class="arithmatex">\(bin[i^<em>] \leftarrow b^</em>\)</span> <span class="pc-com">▹ update the loads apply the move</span></div><div class="pc" style="--liv:1"><span class="pc-n">22</span><strong>return</strong> <em>true</em></div></div>
 
-### 20.9.4 The swap local search for the BPP
+### 22.9.4 The swap local search for the BPP
 
 !!! chiave ""
 
@@ -1072,14 +1072,14 @@ title: "Local search"
 
 !!! algoritmo "Algorithm: Swap step for the BPP"
 
-    <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> <span class="arithmatex">\(n\)</span> items, weights <span class="arithmatex">\(w[1..n]\)</span>, capacity <span class="arithmatex">\(c\)</span>, bins <span class="arithmatex">\(bin[1..n]\)</span>, loads <span class="arithmatex">\(L\)</span>, rule</div><div class="pc" style="--liv:0"><strong>Output:</strong> <em>true</em> if an improving swap was applied, <em>false</em> otherwise</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> BPPSwapStep(<span class="arithmatex">\(n, w, c, bin, L, \textit{rule}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(G^* := 0\)</span>; <span class="arithmatex">\((i^<em>,k^</em>) := (0,0)\)</span> <span class="pc-com">▹ best swap found so far</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(i := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(k := i+1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">5</span><span class="arithmatex">\(a := bin[i]\)</span>; <span class="arithmatex">\(b := bin[k]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">6</span><strong>if</strong> <span class="arithmatex">\(a = b\)</span> <strong>or</strong> <span class="arithmatex">\(w[i]=w[k]\)</span> <strong>then</strong> <strong>continue</strong> <span class="pc-com">▹ the loads would not change</span></div><div class="pc" style="--liv:3"><span class="pc-n">7</span><span class="arithmatex">\(\delta := w[i]-w[k]\)</span> <span class="pc-com">▹ weight transferred from <span class="arithmatex">\(a\)</span> to <span class="arithmatex">\(b\)</span></span></div><div class="pc" style="--liv:3"><span class="pc-n">8</span><strong>if</strong> <span class="arithmatex">\(L[b]+\delta > c\)</span> <strong>or</strong> <span class="arithmatex">\(L[a]-\delta > c\)</span> <strong>then</strong> <strong>continue</strong> <span class="pc-com">▹ a bin would be overfull</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><span class="arithmatex">\(G := 2\,\delta\,(L[b]-L[a]+\delta)\)</span> <span class="pc-com">▹ [Proposition 20.4](#box-9-prop-transfer)</span></div><div class="pc" style="--liv:3"><span class="pc-n">10</span><strong>if</strong> <span class="arithmatex">\(G > G^*\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">11</span><span class="arithmatex">\(G^* \leftarrow G\)</span>; <span class="arithmatex">\((i^<em>,k^</em>) \leftarrow (i,k)\)</span> <span class="pc-com">▹ improving swap</span></div><div class="pc" style="--liv:4"><span class="pc-n">12</span><strong>if</strong> <span class="arithmatex">\(\textit{rule}=\textit{first}\)</span> <strong>then</strong></div><div class="pc" style="--liv:5"><span class="pc-n">13</span><strong>leave</strong> both loops</div><div class="pc" style="--liv:4"><span class="pc-n">14</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">15</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">17</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">18</span><strong>if</strong> <span class="arithmatex">\(i^* = 0\)</span> <strong>then</strong> <strong>return</strong> <em>false</em> <span class="pc-com">▹ no improving swap: local optimum</span></div><div class="pc" style="--liv:1"><span class="pc-n">19</span><span class="arithmatex">\(a := bin[i^<em>]\)</span>; <span class="arithmatex">\(b := bin[k^</em>]\)</span>; <span class="arithmatex">\(\delta := w[i^<em>]-w[k^</em>]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">20</span><span class="arithmatex">\(L[a] \leftarrow L[a]-\delta\)</span>; <span class="arithmatex">\(L[b] \leftarrow L[b]+\delta\)</span>
+    <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> <span class="arithmatex">\(n\)</span> items, weights <span class="arithmatex">\(w[1..n]\)</span>, capacity <span class="arithmatex">\(c\)</span>, bins <span class="arithmatex">\(bin[1..n]\)</span>, loads <span class="arithmatex">\(L\)</span>, rule</div><div class="pc" style="--liv:0"><strong>Output:</strong> <em>true</em> if an improving swap was applied, <em>false</em> otherwise</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> BPPSwapStep(<span class="arithmatex">\(n, w, c, bin, L, \textit{rule}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(G^* := 0\)</span>; <span class="arithmatex">\((i^<em>,k^</em>) := (0,0)\)</span> <span class="pc-com">▹ best swap found so far</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(i := 1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(k := i+1\)</span> <strong>to</strong> <span class="arithmatex">\(n\)</span> <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">5</span><span class="arithmatex">\(a := bin[i]\)</span>; <span class="arithmatex">\(b := bin[k]\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">6</span><strong>if</strong> <span class="arithmatex">\(a = b\)</span> <strong>or</strong> <span class="arithmatex">\(w[i]=w[k]\)</span> <strong>then</strong> <strong>continue</strong> <span class="pc-com">▹ the loads would not change</span></div><div class="pc" style="--liv:3"><span class="pc-n">7</span><span class="arithmatex">\(\delta := w[i]-w[k]\)</span> <span class="pc-com">▹ weight transferred from <span class="arithmatex">\(a\)</span> to <span class="arithmatex">\(b\)</span></span></div><div class="pc" style="--liv:3"><span class="pc-n">8</span><strong>if</strong> <span class="arithmatex">\(L[b]+\delta > c\)</span> <strong>or</strong> <span class="arithmatex">\(L[a]-\delta > c\)</span> <strong>then</strong> <strong>continue</strong> <span class="pc-com">▹ a bin would be overfull</span></div><div class="pc" style="--liv:3"><span class="pc-n">9</span><span class="arithmatex">\(G := 2\,\delta\,(L[b]-L[a]+\delta)\)</span> <span class="pc-com">▹ [Proposition 22.4](#box-9-prop-transfer)</span></div><div class="pc" style="--liv:3"><span class="pc-n">10</span><strong>if</strong> <span class="arithmatex">\(G > G^*\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">11</span><span class="arithmatex">\(G^* \leftarrow G\)</span>; <span class="arithmatex">\((i^<em>,k^</em>) \leftarrow (i,k)\)</span> <span class="pc-com">▹ improving swap</span></div><div class="pc" style="--liv:4"><span class="pc-n">12</span><strong>if</strong> <span class="arithmatex">\(\textit{rule}=\textit{first}\)</span> <strong>then</strong></div><div class="pc" style="--liv:5"><span class="pc-n">13</span><strong>leave</strong> both loops</div><div class="pc" style="--liv:4"><span class="pc-n">14</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">15</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">17</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">18</span><strong>if</strong> <span class="arithmatex">\(i^* = 0\)</span> <strong>then</strong> <strong>return</strong> <em>false</em> <span class="pc-com">▹ no improving swap: local optimum</span></div><div class="pc" style="--liv:1"><span class="pc-n">19</span><span class="arithmatex">\(a := bin[i^<em>]\)</span>; <span class="arithmatex">\(b := bin[k^</em>]\)</span>; <span class="arithmatex">\(\delta := w[i^<em>]-w[k^</em>]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">20</span><span class="arithmatex">\(L[a] \leftarrow L[a]-\delta\)</span>; <span class="arithmatex">\(L[b] \leftarrow L[b]+\delta\)</span>
     <span class="arithmatex">\(bin[i^<em>] \leftarrow b\)</span>; <span class="arithmatex">\(bin[k^</em>] \leftarrow a\)</span> <span class="pc-com">▹ update the loads apply the swap</span></div><div class="pc" style="--liv:1"><span class="pc-n">21</span><strong>return</strong> <em>true</em></div></div>
 
-### 20.9.5 Properties of the auxiliary objective
+### 22.9.5 Properties of the auxiliary objective
 
 <a id="box-10-prop-bppsq"></a>
 
-!!! teorema "Proposition 20.5"
+!!! teorema "Proposition 22.5"
 
     For the BPP, with the neighbourhoods move and swap:
 
@@ -1091,11 +1091,11 @@ title: "Local search"
 
 ??? dimostrazione "Proof"
 
-    If the move of item $i$ from bin $a$ to bin $b$ empties bin $a$, then $L_a=w_i$, and bin $b$ is not empty, so $L_b>0$. By [Proposition 20.4](#box-9-prop-transfer) with $\delta=w_i$ the change is $2w_i(L_b-w_i+w_i)=2w_iL_b>0$. A swap exchanges one item of bin $a$ with one item of bin $b$, so both bins remain non-empty and no bin is created. <span class="qed">□</span>
+    If the move of item $i$ from bin $a$ to bin $b$ empties bin $a$, then $L_a=w_i$, and bin $b$ is not empty, so $L_b>0$. By [Proposition 22.4](#box-9-prop-transfer) with $\delta=w_i$ the change is $2w_i(L_b-w_i+w_i)=2w_iL_b>0$. A swap exchanges one item of bin $a$ with one item of bin $b$, so both bins remain non-empty and no bin is created. <span class="qed">□</span>
 
 <a id="box-11-prop-pcmsq"></a>
 
-!!! teorema "Proposition 20.6"
+!!! teorema "Proposition 22.6"
 
     For $P\,||\,C_{\max}$, with the neighbourhoods move and swap:
 
@@ -1105,17 +1105,17 @@ title: "Local search"
 
 ??? dimostrazione "Proof"
 
-    Let $\delta$ be transferred from machine $a$ to machine $b$; exchanging the names of $a$ and $b$ if necessary, $\delta>0$. Only $L_a$ and $L_b$ change. (1) By [Proposition 20.4](#box-9-prop-transfer), $\sum_hL_h^2$ decreases if and only if $L_b+\delta<L_a$; then both new loads $L_a-\delta$ and $L_b+\delta$ are smaller than $L_a\le C_{\max}$, and the makespan does not increase. (2) If the makespan decreases, machine $b$, whose load increases, is not critical after the move, so $L_b+\delta<C_{\max}$; machine $a$ must have been the unique critical machine, $L_a=C_{\max}$. Hence $L_b+\delta<L_a$, and $\sum_hL_h^2$ decreases. <span class="qed">□</span>
+    Let $\delta$ be transferred from machine $a$ to machine $b$; exchanging the names of $a$ and $b$ if necessary, $\delta>0$. Only $L_a$ and $L_b$ change. (1) By [Proposition 22.4](#box-9-prop-transfer), $\sum_hL_h^2$ decreases if and only if $L_b+\delta<L_a$; then both new loads $L_a-\delta$ and $L_b+\delta$ are smaller than $L_a\le C_{\max}$, and the makespan does not increase. (2) If the makespan decreases, machine $b$, whose load increases, is not critical after the move, so $L_b+\delta<C_{\max}$; machine $a$ must have been the unique critical machine, $L_a=C_{\max}$. Hence $L_b+\delta<L_a$, and $\sum_hL_h^2$ decreases. <span class="qed">□</span>
 
 - The two propositions say that, for the auxiliary objective, every move that improves the original objective is improving, and so are some moves that the original objective sees as neutral; for $P\,||\,C_{\max}$, no move that worsens the makespan is improving. For the BPP a move that increases $\sum_bL_b^2$ never increases the number of bins, since no bin is created.
 
 - The auxiliary objective is a guide, not the objective: a solution with more bins can have a larger $\sum_bL_b^2$. With $c=7$, the loads $(5,5)$ use $2$ bins and give $25+25=50$, while the loads $(7,2,1)$ use $3$ bins and give $49+4+1=54$. The quality of the solution returned is always measured with the original objective.
 
-### 20.9.6 Examples
+### 22.9.6 Examples
 
 <a id="box-12-ex-bppff"></a>
 
-!!! esempio "Example 20.6: The number of bins is blind, the auxiliary objective is not"
+!!! esempio "Example 22.6: The number of bins is blind, the auxiliary objective is not"
 
     The solution of $FF$ on the BPP reference instance ($c=7$) has the packing patterns $P_1=\{1,4\}$, $P_2=\{2,5\}$, $P_3=\{3\}$, $P_4=\{6\}$, with loads $(7,6,5,3)$, $nb=4$ and $SQ=49+36+25+9=119$. Its feasible moves are
 
@@ -1164,7 +1164,7 @@ title: "Local search"
     </tr>
     </table></div>
 
-    <strong>With $f=nb$</strong>, no move empties a bin: items $3$ and $6$, alone in their bins, fit nowhere else. The solution of $FF$ is a local optimum with $4$ bins, and so it is for the swap neighbourhood, by [Proposition 20.5](#box-10-prop-bppsq).
+    <strong>With $f=nb$</strong>, no move empties a bin: items $3$ and $6$, alone in their bins, fit nowhere else. The solution of $FF$ is a local optimum with $4$ bins, and so it is for the swap neighbourhood, by [Proposition 22.5](#box-10-prop-bppsq).
 
     <strong>With $f=SQ$</strong>, both rules accept the move of item $2$ into bin $4$ (gain $8$, $SQ=127$), which leaves item $5$ alone in bin $2$. In the next iteration, two moves have the largest gain, $20$: item $3$ into bin $2$, with gain $2\cdot5\cdot(2-5+5)=20$, and item $5$ into bin $3$, with gain $2\cdot2\cdot(5-2+2)=20$. Item $3$ is examined first, so both rules choose it. It empties bin $3$: the loads become $(7,7,7)$, $SQ=147$, and the packing patterns $\{1,4\}$, $\{3,5\}$, $\{2,6\}$ use $3$ bins, which is <strong>optimal</strong>. The first move did not change the number of bins: it prepared the second one.
 
@@ -1172,7 +1172,7 @@ title: "Local search"
 
 <a id="box-13-ex-bppnf"></a>
 
-!!! esempio "Example 20.7: Starting from $NF$"
+!!! esempio "Example 22.7: Starting from $NF$"
 
     The solution of $NF$ on the BPP reference instance has the packing patterns $\{1\}$, $\{2\}$, $\{3\}$, $\{4,5\}$, $\{6\}$ (bins $1,\dots,5$), loads $(4,4,5,5,3)$, $nb=5$ and $SQ=91$.
 
@@ -1209,7 +1209,7 @@ title: "Local search"
 
     and reaches an optimal solution with $3$ bins, through a move (the second) that does not change the number of bins. First improvement makes the same three moves.
 
-### 20.9.7 Experiments on two medium instances
+### 22.9.7 Experiments on two medium instances
 
 - On a single small instance anything can happen; the following experiments repeat the local searches from $100$ random starting solutions (seed $1$), with best improvement.
 
@@ -1273,7 +1273,7 @@ title: "Local search"
 
 - With $f=nb$ the move local search does not improve any of the $100$ solutions: they are all on a plateau. With the auxiliary objective, $62$ more runs reach the optimum. Swap alone cannot change the number of bins, but it can prepare moves that do.
 
-## 20.10 KP: feasibility and penalties { #sez-sec-kp }
+## 22.10 KP: feasibility and penalties { #sez-sec-kp }
 
 - The representation of the KP by a binary vector $x$ describes also infeasible objects, whose weight exceeds the capacity. There are two ways of dealing with them:
 
@@ -1293,7 +1293,7 @@ title: "Local search"
 
     where $\alpha>0$ is the <strong>penalty</strong> for each unit of excess weight. For a feasible $x$, $g_\alpha(x)$ is the profit of $x$.
 
-### 20.10.1 Staying feasible
+### 22.10.1 Staying feasible
 
 !!! chiave ""
 
@@ -1306,7 +1306,7 @@ title: "Local search"
 
 - With the first-improvement rule, if an improving flip is found the swaps are not examined. Only flips that <em>add</em> an item can improve the profit; flips that remove an item are kept in the neighbourhood for uniformity. An iteration costs $O(n^2)$ time, because of the swaps.
 
-### 20.10.2 Penalizing the excess weight
+### 22.10.2 Penalizing the excess weight
 
 !!! chiave ""
 
@@ -1323,7 +1323,7 @@ title: "Local search"
 
 <a id="box-14-ex-kppen"></a>
 
-!!! esempio "Example 20.8: Penalties on the KP reference instance"
+!!! esempio "Example 22.8: Penalties on the KP reference instance"
 
     We start from the solution of $GR$, $x=(1,0,1,0)$, of weight $8$ and profit $16$, which is a local optimum for the flip neighbourhood restricted to feasible solutions. The values $g_\alpha$ of its four flips are
 
@@ -1394,7 +1394,7 @@ title: "Local search"
 
 <a id="box-15-prop-penalty"></a>
 
-!!! teorema "Proposition 20.7"
+!!! teorema "Proposition 22.7"
 
     Let the data be integer and let $\alpha>\max_{i\in\mathscr{I}} p_i$. Then:
 
@@ -1408,7 +1408,7 @@ title: "Local search"
 
 - With a <strong>large</strong> penalty the local optima are feasible, but the search never leaves the feasible region; with a <strong>small</strong> penalty it crosses the infeasible region, but may stop there. The useful values depend on the instance (here $\frac94$ works, $1$, $2$ and $3$ do not), so in practice $\alpha$ is adjusted during the search: increased while the search stays among infeasible vectors, decreased while it stays among feasible ones.
 
-## 20.11 Variable neighbourhood descent { #sez-sec-vnd }
+## 22.11 Variable neighbourhood descent { #sez-sec-vnd }
 
 - The examples of the previous sections show that a local optimum for one neighbourhood is often not a local optimum for another: the solution of $LPT$ for move and swap, the 2-opt local optimum of length $41$ for 2-opt and Or-opt. The natural idea is to use <strong>several neighbourhoods</strong> $N_1,\dots,N_K$, and to stop only when none of them contains an improving neighbour.
 
@@ -1420,13 +1420,13 @@ title: "Local search"
 
     <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> a feasible solution <span class="arithmatex">\(x\)</span>, the steps <span class="arithmatex">\(\textit{Step}_1,\dots,\textit{Step}_K\)</span> of <span class="arithmatex">\(K\)</span> neighbourhoods, a rule</div><div class="pc" style="--liv:0"><strong>Output:</strong> a local optimum <span class="arithmatex">\(x\)</span> for all the <span class="arithmatex">\(K\)</span> neighbourhoods</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> VND(<span class="arithmatex">\(x, \textit{Step}_1,\dots,\textit{Step}_K, \textit{rule}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(k := 1\)</span> <span class="pc-com">▹ current neighbourhood</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>while</strong> <span class="arithmatex">\(k \le K\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><strong>if</strong> <span class="arithmatex">\(\textit{Step}_k(x, \textit{rule})\)</span> <strong>then</strong></div><div class="pc" style="--liv:3"><span class="pc-n">5</span><span class="arithmatex">\(k \leftarrow 1\)</span> <span class="pc-com">▹ improving move applied: back to the first neighbourhood</span></div><div class="pc" style="--liv:2"><span class="pc-n">6</span><strong>else</strong></div><div class="pc" style="--liv:3"><span class="pc-n">7</span><span class="arithmatex">\(k \leftarrow k+1\)</span> <span class="pc-com">▹ local optimum for <span class="arithmatex">\(N_k\)</span>: next neighbourhood</span></div><div class="pc" style="--liv:2"><span class="pc-n">8</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">9</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">10</span><strong>return</strong> <span class="arithmatex">\(x\)</span></div></div>
 
-- $VND$ stops after a finite number of moves, by the argument of [Proposition 20.2](#box-2-prop-termination). When it stops, $\textit{Step}_K$ has failed and, since the last improving move, all of $\textit{Step}_1,\dots,\textit{Step}_{K-1}$ have failed on the same solution: the solution returned is a local optimum for every $N_k$, i.e., for the union $N_1\cup\dots\cup N_K$.
+- $VND$ stops after a finite number of moves, by the argument of [Proposition 22.2](#box-2-prop-termination). When it stops, $\textit{Step}_K$ has failed and, since the last improving move, all of $\textit{Step}_1,\dots,\textit{Step}_{K-1}$ have failed on the same solution: the solution returned is a local optimum for every $N_k$, i.e., for the union $N_1\cup\dots\cup N_K$.
 
 - The neighbourhoods are ordered from the <strong>smallest and cheapest</strong> to the largest: the expensive neighbourhoods are explored only when the cheap ones are exhausted. $VND$ is the deterministic part of the variable neighbourhood search of Mladenovic and Hansen (<em>Computers &amp; Operations Research</em> 24, 1997).
 
 <a id="box-16-ex-vndpcm"></a>
 
-!!! esempio "Example 20.9: $VND$ on $P\,||\,C_{\max}$ with move and swap"
+!!! esempio "Example 22.9: $VND$ on $P\,||\,C_{\max}$ with move and swap"
 
     On the reference instance, from the solution of $LPT$, with $N_1=$ move and $N_2=$ swap, and the makespan as objective:
 
@@ -1479,11 +1479,11 @@ title: "Local search"
 
 <a id="box-17-ex-vndtsp"></a>
 
-!!! esempio "Example 20.10: $VND$ on the TSP with 2-opt and Or-opt"
+!!! esempio "Example 22.10: $VND$ on the TSP with 2-opt and Or-opt"
 
-    On the instance with $10$ cities of [Example 20.3](#box-6-ex-tsp10), from the tour of $NN$ (length $49$), with $N_1=$ 2-opt, $N_2=$ Or-opt and the first-improvement rule, $VND$ makes the four 2-opt moves of the 2-opt local search ($49\to47\to46\to43\to41$), then the Or-opt move of [Example 20.4](#box-7-ex-oropt), which inserts city $9$ between cities $3$ and $4$ ($41\to39$), and stops: the optimal tour is a local optimum for both neighbourhoods. With the best-improvement rule, 2-opt alone already reaches the optimum.
+    On the instance with $10$ cities of [Example 22.3](#box-6-ex-tsp10), from the tour of $NN$ (length $49$), with $N_1=$ 2-opt, $N_2=$ Or-opt and the first-improvement rule, $VND$ makes the four 2-opt moves of the 2-opt local search ($49\to47\to46\to43\to41$), then the Or-opt move of [Example 22.4](#box-7-ex-oropt), which inserts city $9$ between cities $3$ and $4$ ($41\to39$), and stops: the optimal tour is a local optimum for both neighbourhoods. With the best-improvement rule, 2-opt alone already reaches the optimum.
 
-- On the two medium instances of Section [20.9](#sez-sec-flat), with $100$ random starting solutions (seed $1$) and best improvement, $VND$ with $N_1=$ move and $N_2=$ swap gives:
+- On the two medium instances of Section [22.9](#sez-sec-flat), with $100$ random starting solutions (seed $1$) and best improvement, $VND$ with $N_1=$ move and $N_2=$ swap gives:
 
 <div class="tabella" markdown="0"><table>
 <tr>
@@ -1512,9 +1512,9 @@ title: "Local search"
 </tr>
 </table></div>
 
-- Compared with the single neighbourhoods of Section [20.9](#sez-sec-flat), $VND$ with the auxiliary objective reaches the optimum in $68$ runs out of $100$ for $P\,||\,C_{\max}$ (move alone: $4$) and in $89$ for the BPP (move alone: $76$). Combining neighbourhoods and using the auxiliary objective are independent improvements, and they add up.
+- Compared with the single neighbourhoods of Section [22.9](#sez-sec-flat), $VND$ with the auxiliary objective reaches the optimum in $68$ runs out of $100$ for $P\,||\,C_{\max}$ (move alone: $4$) and in $89$ for the BPP (move alone: $76$). Combining neighbourhoods and using the auxiliary objective are independent improvements, and they add up.
 
-## 20.12 Multi-start local search { #sez-sec-multistart }
+## 22.12 Multi-start local search { #sez-sec-multistart }
 
 - Local search stops in the local optimum of the valley where it starts. The simplest way to explore other valleys is to <strong>start again</strong> from a different solution, and keep the best local optimum.
 
@@ -1530,9 +1530,9 @@ title: "Local search"
 
 <a id="box-18-ex-ms10"></a>
 
-!!! esempio "Example 20.11: $MSLS$ on the TSP with $10$ cities"
+!!! esempio "Example 22.11: $MSLS$ on the TSP with $10$ cities"
 
-    On the instance of [Example 20.3](#box-6-ex-tsp10), $100$ random tours (seed $1$), each improved by a local search, end in the following local optima:
+    On the instance of [Example 22.3](#box-6-ex-tsp10), $100$ random tours (seed $1$), each improved by a local search, end in the following local optima:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -1583,7 +1583,7 @@ title: "Local search"
 
 <a id="box-19-ex-ms30"></a>
 
-!!! esempio "Example 20.12: $MSLS$ on the TSP with $30$ cities"
+!!! esempio "Example 22.12: $MSLS$ on the TSP with $30$ cities"
 
     The $30$ cities have coordinates $(\lfloor 101u_{2k-1}\rfloor,\lfloor 101u_{2k}\rfloor)$, $k=1,\dots,30$, where $u_1,u_2,\dots$ are generated with seed $12345$, and $d_{ij}$ is the Euclidean distance rounded to the nearest integer. The optimal tour, computed with a MIP solver, has length $z(I)=478$. The best of the $30$ tours of $NN$ (one for each starting city) has length $537$.
 
@@ -1628,7 +1628,7 @@ title: "Local search"
 
     Local search turns tours of length about $1769$ into tours within $2\%$ of the optimum on average; but every run ends in its own valley, and only about one run in eight reaches the optimum.
 
-### 20.12.1 The limits of multi-start
+### 22.12.1 The limits of multi-start
 
 - <strong>No memory.</strong> Each run starts from scratch and ignores what the previous runs found. If a run reaches the optimum with probability $q$, independently of the others, $M$ runs all miss it with probability $(1-q)^M$. With $q=0.12$, as in the last example with best improvement, $10$ runs miss the optimum with probability $0.88^{10}\approx 0.28$, and $37$ runs are needed to bring this probability below $1\%$.
 
@@ -1638,7 +1638,7 @@ title: "Local search"
 
 - A better strategy would <strong>use the local optima already found</strong>: restart <em>near</em> a good local optimum rather than anywhere, or continue the search from it by accepting some worse moves. These are the ideas of the metaheuristics, studied in the next notes.
 
-### 20.12.2 What local search gives, and what it does not
+### 22.12.2 What local search gives, and what it does not
 
 - Local search improves a feasible solution until it reaches a local optimum: a better <strong>primal bound</strong>, often much better than the starting one.
 
@@ -1648,7 +1648,7 @@ title: "Local search"
 
     A local optimum is not a better bound: it is a feasible solution, i.e., one side of the gap. Its quality can be assessed only against a dual bound computed in another way.
 
-## 20.13 Typical mistakes
+## 22.13 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -1656,13 +1656,13 @@ title: "Local search"
 
     - <strong>Using the number of bins as the only objective.</strong> It is blind: most neighbours have the same value, and the search stops on a plateau; the auxiliary objective $SQ$ tells them apart.
 
-    - <strong>Ignoring the order of examination.</strong> The moves are examined in a fixed order and ties go to the first one examined (in [Example 20.6](#box-12-ex-bppff) item $3$ comes before item $5$).
+    - <strong>Ignoring the order of examination.</strong> The moves are examined in a fixed order and ties go to the first one examined (in [Example 22.6](#box-12-ex-bppff) item $3$ comes before item $5$).
 
     - <strong>Computing the wrong $\Delta$ for a 2-opt move.</strong> Only the two removed and the two added edges count; the two edges cannot share a city.
 
     - <strong>Concluding that a local optimum is optimal.</strong> Only a dual bound can say so.
 
-## 20.14 In summary
+## 22.14 In summary
 
 !!! chiave "In summary"
 
@@ -1705,7 +1705,7 @@ title: "Local search"
 
     The dual bounds come from the notes on heuristic algorithms: the local search alone does not certify its result.
 
-## 20.15 <code>C++</code> implementation { #sez-sec-code }
+## 22.15 <code>C++</code> implementation { #sez-sec-code }
 
 - The code is in the folder <code>LOCAL\_SEARCH\_CODE</code>: one function per file in <code>src/</code>, the declarations in <code>src/LocalSearch.h</code>. The command <code>make</code> builds the program, and <code>make test</code> runs all the examples of these notes and all the instances of the exercises, and compares the results (the values along every trajectory, and the statistics of the experiments) with those computed by an independent engine.
 

@@ -6,13 +6,13 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 13** · each solution opens with a click · [:material-book-open-variant: Chapter 13: Lot sizing](../formulations/lot-sizing-formulations.md)
+**Exercises · Chapter 15** · each solution opens with a click · [:material-book-open-variant: Chapter 15: Lot sizing](../formulations/lot-sizing-formulations.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
 
-<a id="esercizio-13-1"></a>
+<a id="esercizio-15-1"></a>
 
-!!! esercizio "Exercise 13.1: The big-M formulation of lot sizing (1)"
+!!! esercizio "Exercise 15.1: The big-M formulation of lot sizing (1)"
 
     We consider a capacitated lot-sizing instance with $m=4$ periods, $s_0=s_4=0$ and the following data:
 
@@ -132,9 +132,9 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
     4. Gurobi gives $z(\ILP_{\CLSP})=130$, with the plan $\tilde{\vet x}=(2,4,0,3)$, the inventories $(s_1,\dots,s_4)=(1,1,0,0)$ and the setups $\tilde{\vet y}=(1,1,0,1)$. The cost is $3\cdot 40$ for the setups plus $5\cdot(1+1)=10$ for the holding, that is $130$. By enumeration of the plans, the optimal plan is unique.
 
-<a id="esercizio-13-2"></a>
+<a id="esercizio-15-2"></a>
 
-!!! esercizio "Exercise 13.2: Big-M values and LP bounds for lot sizing (1)"
+!!! esercizio "Exercise 15.2: Big-M values and LP bounds for lot sizing (1)"
 
     We consider a capacitated lot-sizing instance with $m=4$ periods, $s_0=s_4=0$ and the following data:
 
@@ -262,9 +262,9 @@ title: "Exercises · Formulations of capacitated lot sizing"
         </tr>
         </table></div>
 
-<a id="esercizio-13-3"></a>
+<a id="esercizio-15-3"></a>
 
-!!! esercizio "Exercise 13.3: Feasible solutions of the lot-sizing formulation (1)"
+!!! esercizio "Exercise 15.3: Feasible solutions of the lot-sizing formulation (1)"
 
     We consider a capacitated lot-sizing instance with $m=4$ periods, $s_0=s_4=0$ and the following data:
 
@@ -363,9 +363,9 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
     3. Candidate (a) costs $3\cdot 40+5\cdot(1+1)=130$ and (b), the lot-for-lot plan with four setups, costs $4\cdot 40=160$. Candidate (f) costs $40\cdot\left(\frac{1}{4}+1+\frac{1}{4}+1\right)=100$. Gurobi gives $z(\LP_{\CLSP}^{\mathrm{strong}})=100$: candidate (f) is an optimal solution of the relaxation, and (a) is the optimal plan of the instance.
 
-<a id="esercizio-13-4"></a>
+<a id="esercizio-15-4"></a>
 
-!!! esercizio "Exercise 13.4: The shortest-path formulation of lot sizing (1)"
+!!! esercizio "Exercise 15.4: The shortest-path formulation of lot sizing (1)"
 
     We consider a capacitated lot-sizing instance with $m=4$ periods, $s_0=s_4=0$ and the following data:
 
@@ -478,9 +478,9 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
         The combination gives $x_1=\frac{4}{5}\cdot 1+\frac{1}{5}\cdot 6=2$, $x_2=\frac{4}{5}\cdot 5=4$, $x_4=\frac{4}{5}\cdot 3+\frac{1}{5}\cdot 3=3$. The single paths may exceed the capacity: only the combined quantities must respect it. The cost is $3\cdot 40+0\cdot\frac{4}{5}+30\cdot\frac{1}{5}+5\cdot\frac{4}{5}+0\cdot1=130$.
 
-<a id="esercizio-13-5"></a>
+<a id="esercizio-15-5"></a>
 
-!!! esercizio "Exercise 13.5: Comparing the lot-sizing formulations (1)"
+!!! esercizio "Exercise 15.5: Comparing the lot-sizing formulations (1)"
 
     We consider a capacitated lot-sizing instance with $m=5$ periods, $s_0=s_5=0$ and the following data:
 

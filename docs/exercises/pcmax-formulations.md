@@ -6,13 +6,13 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 12** · each solution opens with a click · [:material-book-open-variant: Chapter 12: Machine scheduling](../formulations/pcmax-formulations.md)
+**Exercises · Chapter 14** · each solution opens with a click · [:material-book-open-variant: Chapter 14: Machine scheduling](../formulations/pcmax-formulations.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
 
-<a id="esercizio-12-1"></a>
+<a id="esercizio-14-1"></a>
 
-!!! esercizio "Exercise 12.1: ILP model of $P\|C_{\max}$ (1)"
+!!! esercizio "Exercise 14.1: ILP model of $P\|C_{\max}$ (1)"
 
     We consider $m=2$ identical machines and a set $\mathscr{J}=\{1,\dots,5\}$ of $5$ jobs ($n=5$) with the following processing times:
 
@@ -63,9 +63,9 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
         By enumeration of the $2^5=32$ assignments, the partition of the jobs is unique: job $1$ can share a machine only with job $3$. Exchanging the two machines gives the second optimal solution of the model, so there are $2$ optimal solutions.
 
-<a id="esercizio-12-2"></a>
+<a id="esercizio-14-2"></a>
 
-!!! esercizio "Exercise 12.2: LP relaxation of the $P\|C_{\max}$ model (1)"
+!!! esercizio "Exercise 14.2: LP relaxation of the $P\|C_{\max}$ model (1)"
 
     We consider $m=3$ identical machines and a set $\mathscr{J}=\{1,\dots,6\}$ of $6$ jobs ($n=6$) with the following processing times:
 
@@ -105,9 +105,9 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
     3. Gurobi gives $z(\ILP_{\PCmax})=10$ (for instance $J_1=\{1,6\}$, $J_2=\{2,4\}$, $J_3=\{3,5\}$, with loads $10$, $10$, $9$). The ratio is $\frac{\frac{29}{3}}{10}=\frac{29}{30}$, much larger than $\frac{1}{3}$: the worst case of the chapter needs one very long job.
 
-<a id="esercizio-12-3"></a>
+<a id="esercizio-14-3"></a>
 
-!!! esercizio "Exercise 12.3: Feasible solutions of the $P\|C_{\max}$ model (1)"
+!!! esercizio "Exercise 14.3: Feasible solutions of the $P\|C_{\max}$ model (1)"
 
     We consider $m=2$ identical machines and a set $\mathscr{J}=\{1,\dots,5\}$ of $5$ jobs ($n=5$) with the following processing times:
 
@@ -163,9 +163,9 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
     3. The lower bound is $\left\lceil20/2\right\rceil=10$ and candidate (a) attains it: $z(\ILP_{\PCmax})=10$, and (a) is optimal. Gurobi gives $z(\LP_{\PCmax})=10$, so (a) and (d) are both optimal for the relaxation: on this instance there is no integrality gap.
 
-<a id="esercizio-12-4"></a>
+<a id="esercizio-14-4"></a>
 
-!!! esercizio "Exercise 12.4: Valid inequalities and symmetry for $P\|C_{\max}$ (1)"
+!!! esercizio "Exercise 14.4: Valid inequalities and symmetry for $P\|C_{\max}$ (1)"
 
     We consider $m=3$ identical machines and a set $\mathscr{J}=\{1,\dots,6\}$ of $6$ jobs ($n=6$) with the following processing times:
 
@@ -203,9 +203,9 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
         With the constraints the loads must be non-increasing. The enumeration gives $18$ optimal solutions: job $1$ on machine $1$ with the other jobs split so that machine $2$ has load at least machine $3$, plus the solution with all the short jobs on machine $1$ and job $1$ on machine $2$ (loads $12$, $12$, $0$). The constraints remove most, but not all, of the equivalent solutions.
 
-<a id="esercizio-12-5"></a>
+<a id="esercizio-14-5"></a>
 
-!!! esercizio "Exercise 12.5: Integrality gap of the $P\|C_{\max}$ model (1)"
+!!! esercizio "Exercise 14.5: Integrality gap of the $P\|C_{\max}$ model (1)"
 
     We consider $m=2$ identical machines and a set $\mathscr{J}=\{1,\dots,3\}$ of $3$ jobs ($n=3$) with the following processing times:
 

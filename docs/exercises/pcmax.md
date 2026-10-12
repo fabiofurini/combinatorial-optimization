@@ -6,13 +6,13 @@ title: "Exercises · Parallel machine scheduling"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 6** · each solution opens with a click · [:material-book-open-variant: Chapter 6: Machine scheduling](../combinatorial-optimization-problems/pcmax.md)
+**Exercises · Chapter 7** · each solution opens with a click · [:material-book-open-variant: Chapter 7: Machine scheduling](../combinatorial-optimization-problems/pcmax.md) · [:material-file-pdf-box: Exercises, volume 1 (PDF)](../pdf/exercises-1-combinatorial-optimization-problems.pdf)
 
 </div>
 
-<a id="esercizio-6-1"></a>
+<a id="esercizio-7-1"></a>
 
-!!! esercizio "Exercise 6.1: Loads, makespan and Gantt chart ($\PCmax$)"
+!!! esercizio "Exercise 7.1: Loads, makespan and Gantt chart ($\PCmax$)"
 
     We consider the $\PCmax$ instance with $m=3$ machines and $n=7$ jobs, with processing times
 
@@ -60,9 +60,9 @@ title: "Exercises · Parallel machine scheduling"
 
         $\mathrm{mach}^1$ and $\mathrm{mach}^2$ are the same schedule; the schedule of $\mathrm{mach}^3$ has makespan $9$, equal to the lower bound, and is optimal.
 
-<a id="esercizio-6-2"></a>
+<a id="esercizio-7-2"></a>
 
-!!! esercizio "Exercise 6.2: Counting the schedules ($\PCmax$)"
+!!! esercizio "Exercise 7.2: Counting the schedules ($\PCmax$)"
 
     We consider a $\PCmax$ instance with $n=5$ jobs. We count the assignments and the distinct schedules for $m=2$ and for $m=3$ machines.
 
@@ -96,9 +96,9 @@ title: "Exercises · Parallel machine scheduling"
 
         With $5$ jobs there are $32$ and $243$ assignments on $2$ and $3$ machines, but only $16$ and $41$ schedules.
 
-<a id="esercizio-6-3"></a>
+<a id="esercizio-7-3"></a>
 
-!!! esercizio "Exercise 6.3: A first schedule, a lower bound and the optimum ($\PCmax$)"
+!!! esercizio "Exercise 7.3: A first schedule, a lower bound and the optimum ($\PCmax$)"
 
     We consider the $\PCmax$ instance with $m=3$ machines and $n=7$ jobs, with processing times
 
@@ -181,9 +181,9 @@ title: "Exercises · Parallel machine scheduling"
 
         Assigning the jobs in the input order gives makespan $10$; the schedule $J_1=\{4,7\},\ J_2=\{2,6\},\ J_3=\{1,3,5\}$ attains the lower bound, and $z(I)=9$.
 
-<a id="esercizio-6-4"></a>
+<a id="esercizio-7-4"></a>
 
-!!! esercizio "Exercise 6.4: When the lower bound is not attained ($\PCmax$)"
+!!! esercizio "Exercise 7.4: When the lower bound is not attained ($\PCmax$)"
 
     We consider the $\PCmax$ instance with $m=2$ machines and $n=4$ jobs, with processing times
 
@@ -276,9 +276,9 @@ title: "Exercises · Parallel machine scheduling"
 
         The lower bound gives $10$, but no set of jobs has total length $10$: the optimal makespan is $z(I)=11$, and the bound is not attained.
 
-<a id="esercizio-6-5"></a>
+<a id="esercizio-7-5"></a>
 
-!!! esercizio "Exercise 6.5: Makespan and bin packing ($\PCmax$)"
+!!! esercizio "Exercise 7.5: Makespan and bin packing ($\PCmax$)"
 
     We consider the $\PCmax$ instance with $m=3$ machines and $n=5$ jobs, with processing times
 

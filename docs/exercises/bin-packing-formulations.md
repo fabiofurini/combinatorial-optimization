@@ -6,13 +6,13 @@ title: "Exercises · Formulations of the bin packing problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 9** · each solution opens with a click · [:material-book-open-variant: Chapter 9: Bin packing](../formulations/bin-packing-formulations.md)
+**Exercises · Chapter 10** · each solution opens with a click · [:material-book-open-variant: Chapter 10: Bin packing](../formulations/bin-packing-formulations.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
 
-<a id="esercizio-9-1"></a>
+<a id="esercizio-10-1"></a>
 
-!!! esercizio "Exercise 9.1: ILP model of the Bin Packing Problem (1)"
+!!! esercizio "Exercise 10.1: ILP model of the Bin Packing Problem (1)"
 
     We consider a bin capacity $c=10$ and a set $\mathscr{I}=\{1,2,\dots,5\}$ of $5$ items ($n=5$), with the following item weights:
 
@@ -68,9 +68,9 @@ title: "Exercises · Formulations of the bin packing problem"
 
         The partition of the items is unique: item $1$ can share a bin only with weight at most $4$, and only $\{1,3\}$ leaves a second bin of weight at most $10$. The optimal solution of the model is not unique: the two patterns can go into any two of the $3$ bins, which gives $3\cdot 2=6$ optimal solutions.
 
-<a id="esercizio-9-2"></a>
+<a id="esercizio-10-2"></a>
 
-!!! esercizio "Exercise 9.2: LP relaxations of the BPP model (1)"
+!!! esercizio "Exercise 10.2: LP relaxations of the BPP model (1)"
 
     We consider a bin capacity $c=12$ and a set $\mathscr{I}=\{1,2,\dots,5\}$ of $5$ items ($n=5$), with the following item weights:
 
@@ -132,9 +132,9 @@ title: "Exercises · Formulations of the bin packing problem"
 
     3. Since $z(\ILP_{\BPP})$ is an integer, $z(\ILP_{\BPP})\ge\left\lceil \frac{25}{12}\right\rceil=3$. The feasible solution of the statement uses $3$ bins, so $z(\ILP_{\BPP})=3$ (Gurobi gives the same value): the rounded bound is equal to the optimal value.
 
-<a id="esercizio-9-3"></a>
+<a id="esercizio-10-3"></a>
 
-!!! esercizio "Exercise 9.3: Feasible solutions of the BPP model (1)"
+!!! esercizio "Exercise 10.3: Feasible solutions of the BPP model (1)"
 
     We consider a bin capacity $c=10$ and a set $\mathscr{I}=\{1,2,\dots,6\}$ of $6$ items ($n=6$), with the following item weights:
 
@@ -190,9 +190,9 @@ title: "Exercises · Formulations of the bin packing problem"
 
     3. Candidate (c) with $y_3=0$ uses $2$ bins, with patterns $\{1,4,5\}$ and $\{2,3,6\}$, both of weight $10$. The lower bound $\left\lceil\frac{5+4+4+3+2+2}{10}\right\rceil=2$ shows that no solution uses fewer bins: $z(\ILP_{\BPP})=2$. The value $2$ of candidate (e) is the value $\frac{\sum_j w_j}{c}=2$ of the LP relaxations.
 
-<a id="esercizio-9-4"></a>
+<a id="esercizio-10-4"></a>
 
-!!! esercizio "Exercise 9.4: The bounds $y_b\le 1$ and the choice of m (1)"
+!!! esercizio "Exercise 10.4: The bounds $y_b\le 1$ and the choice of m (1)"
 
     We consider a bin capacity $c=10$ and a set $\mathscr{I}=\{1,2,\dots,3\}$ of $3$ items ($n=3$), with the following item weights:
 
@@ -232,9 +232,9 @@ title: "Exercises · Formulations of the bin packing problem"
 
     4. With $m=1$, $\LP\text{-}0_{\BPP}$ is still feasible, with $\tilde y_1=\frac{9}{5}$ and value $\frac{9}{5}$. Instead $\LP_{\BPP}$ is infeasible (Gurobi): the capacity constraint and the assignment constraints give $10\,y_1\ge 18$, that is $y_1\ge \frac{9}{5}>1$, against $y_1\le 1$. Here the bounds $y_b\le 1$ do make a difference: they detect that one bin cannot hold all the items.
 
-<a id="esercizio-9-5"></a>
+<a id="esercizio-10-5"></a>
 
-!!! esercizio "Exercise 9.5: Integrality gap of the BPP model (1)"
+!!! esercizio "Exercise 10.5: Integrality gap of the BPP model (1)"
 
     Given $\vartheta\in\Z_{\ge 1}$, the chapter considers the BPP instances with capacity $c=2\vartheta$ and $n$ items of weight $w_j=\vartheta+1$. We take $\vartheta=4$ and $n=4$, that is $c=8$ and the weights:
 

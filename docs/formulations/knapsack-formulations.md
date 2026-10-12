@@ -6,7 +6,7 @@ title: "Formulations of the knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 8** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Knapsack](../exercises/knapsack-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 9** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Knapsack](../exercises/knapsack-formulations.md)
 
 </div>
 
@@ -32,7 +32,7 @@ title: "Formulations of the knapsack problem"
 
     - explain why $z(\LP_{\KP})$ is never larger than twice $z(\ILP_{\KP})$.
 
-## 8.1 The problem in brief
+## 9.1 The problem in brief
 
 !!! nota "Where we were"
 
@@ -40,7 +40,7 @@ title: "Formulations of the knapsack problem"
 
 <a id="box-1-def-KP"></a>
 
-!!! definizione "Definition 8.1: Knapsack Problem"
+!!! definizione "Definition 9.1: Knapsack Problem"
 
     Given:
 
@@ -60,7 +60,7 @@ title: "Formulations of the knapsack problem"
 
     The first assumption guarantees that every item can be selected, the second one that not all the items fit together into the knapsack.
 
-## 8.2 An ILP model for the Knapsack Problem
+## 9.2 An ILP model for the Knapsack Problem
 
 - We introduce the following  $n$ <strong>binary variables</strong>:
 
@@ -69,7 +69,7 @@ title: "Formulations of the knapsack problem"
     x_j = \left\{ \begin{array}{ll}
     1 & \textrm{if item $j$ is selected in the knapsack}\\[1.5ex]
     0 & \textrm{otherwise}
-    \end{array} \qquad \forall j \in \underbrace{\{1,2,\dots,n\}}_{=\mathscr{I}}. \right. \tag{8.1}
+    \end{array} \qquad \forall j \in \underbrace{\{1,2,\dots,n\}}_{=\mathscr{I}}. \right. \tag{9.1}
     \end{equation*}
 
 !!! chiave ""
@@ -79,9 +79,9 @@ title: "Formulations of the knapsack problem"
     <a id="eq-NAT_KP"></a>
 
     \begin{align*}
-    &&   \max \;\;{\sum_{j \in \mathscr{I}} p_j \, x_j}                               \label{obj_KP}  \tag{8.2a}\\[1ex]
-    && \text{subject to} \quad  {\sum_{j \in \mathscr{I}} w_j \, x_j}  &\leq c,                       \label{cons1_KP}  \tag{8.2b}\\[1ex]
-    &&x_j                        &\in  \{0,1\}, & \forall j \in \mathscr{I}. \label{cons2_KP} \tag{8.2c}
+    &&   \max \;\;{\sum_{j \in \mathscr{I}} p_j \, x_j}                               \label{obj_KP}  \tag{9.2a}\\[1ex]
+    && \text{subject to} \quad  {\sum_{j \in \mathscr{I}} w_j \, x_j}  &\leq c,                       \label{cons1_KP}  \tag{9.2b}\\[1ex]
+    &&x_j                        &\in  \{0,1\}, & \forall j \in \mathscr{I}. \label{cons2_KP} \tag{9.2c}
     \end{align*}
 
     This ILP model is referred to as the $\ILP_{\KP}$ model.
@@ -96,7 +96,7 @@ title: "Formulations of the knapsack problem"
 
 <a id="box-2-texexp_ilp_kp"></a>
 
-!!! esempio "Example 8.1: $\ILP_{\KP}$ model"
+!!! esempio "Example 9.1: $\ILP_{\KP}$ model"
 
     We consider a knapsack of capacity $c = 9$ and a set $\mathscr{I} = \{1,2,3,4,5,6\}$ of $6$ items ($n = 6$), with the following profits and weights:
 
@@ -127,7 +127,7 @@ title: "Formulations of the knapsack problem"
 
     The optimal value $z(\ILP_{\KP})$  is $15$. The associated optimal solution of the KP is $\tilde{S} =\{1,4\}$, and it is the unique optimal solution.
 
-## 8.3 A first Linear Programming relaxation
+## 9.3 A first Linear Programming relaxation
 
 !!! chiave ""
 
@@ -135,14 +135,14 @@ title: "Formulations of the knapsack problem"
 
     \begin{equation*}
     \label{cons2_KP_LP}
-    x_j \ge 0,~~~~~~ \forall j \in \mathscr{I}, \tag{8.3}
+    x_j \ge 0,~~~~~~ \forall j \in \mathscr{I}, \tag{9.3}
     \end{equation*}
 
     This LP model is referred to as the $\LP\text{-}0_{\KP}$ model.
 
 <a id="box-3-texexp_lp0_kp"></a>
 
-!!! esempio "Example 8.2: $\LP\text{-}0_{\KP}$ model"
+!!! esempio "Example 9.2: $\LP\text{-}0_{\KP}$ model"
 
     The  $\LP\text{-}0_{\KP}$ model for the KP instance of <span style="color:#1971c2">Example 1</span> is:
 
@@ -175,14 +175,14 @@ title: "Formulations of the knapsack problem"
     <a id="eq-DUAL_0"></a>
 
     \begin{align*}
-    &&   \min \;\; c \, \pi                                \label{eq:KP-obj_LP_D_0}  \tag{8.4a}\\[2ex]
-    && \text{subject to} \quad  w_j \, \pi  &\geq p_j, & \forall j \in \mathscr{I},                       \label{eq:KP-cap_LP_D_0}  \tag{8.4b}\\[2ex]
-    &&\pi                        &\ge  0\label{eq:KP-cont1_LP_D_0}. \tag{8.4c}
+    &&   \min \;\; c \, \pi                                \label{eq:KP-obj_LP_D_0}  \tag{9.4a}\\[2ex]
+    && \text{subject to} \quad  w_j \, \pi  &\geq p_j, & \forall j \in \mathscr{I},                       \label{eq:KP-cap_LP_D_0}  \tag{9.4b}\\[2ex]
+    &&\pi                        &\ge  0\label{eq:KP-cont1_LP_D_0}. \tag{9.4c}
     \end{align*}
 
 <a id="box-4-texexp_dlp0_kp"></a>
 
-!!! esempio "Example 8.3: $D(\LP\text{-}0_{\KP})$ model"
+!!! esempio "Example 9.3: $D(\LP\text{-}0_{\KP})$ model"
 
     The dual $D(\LP\text{-}0_{\KP})$ model for the KP instance of <span style="color:#1971c2">Example 1</span> is:
 
@@ -211,7 +211,7 @@ title: "Formulations of the knapsack problem"
 
 <a id="box-5-propXX"></a>
 
-!!! teorema "Proposition 8.2"
+!!! teorema "Proposition 9.2"
 
     If the first item $j=1$ has the largest efficiency, an optimal solution of  the primal $\LP\text{-}0_{\KP}$ model is:
 
@@ -219,19 +219,19 @@ title: "Formulations of the knapsack problem"
     \label{PP_0}
     \tilde{x}_1=\frac{c}{w_1}
     \text{    and     }
-    \tilde{x}_j=0,  \quad \forall j \in\{2,3,\dots, n\}, \tag{8.5}
+    \tilde{x}_j=0,  \quad \forall j \in\{2,3,\dots, n\}, \tag{9.5}
     \end{equation*}
 
     and  an optimal  solution of the dual  $D(\LP\text{-}0_{\KP})$ model is:
 
     \begin{equation*}
     \label{DD_0}
-    \tilde{\pi}= \frac{p_1}{w_1}. \tag{8.6}
+    \tilde{\pi}= \frac{p_1}{w_1}. \tag{9.6}
     \end{equation*}
 
 <a id="box-6-propXX"></a>
 
-!!! teorema "Corollary 8.3"
+!!! teorema "Corollary 9.3"
 
     The optimal value of the primal $\LP\text{-}0_{\KP}$ and dual $D(\LP\text{-}0_{\KP})$ models is:
 
@@ -241,7 +241,7 @@ title: "Formulations of the knapsack problem"
     =
     p_1 \frac{c}{w_1}
     =
-    z(D(\LP\text{-}0_{\KP})) \tag{8.7}
+    z(D(\LP\text{-}0_{\KP})) \tag{9.7}
     \end{equation*}
 
 - The proof proceeds in three steps:
@@ -290,22 +290,22 @@ title: "Formulations of the knapsack problem"
 
     Therefore, by LP Strong Duality, $\eqref{PP_0}$ and $\eqref{DD_0}$ are a pair of optimal primal and dual solutions. <span class="qed">□</span>
 
-## 8.4 A second Linear Programming relaxation
+## 9.4 A second Linear Programming relaxation
 
 !!! chiave ""
 
     To obtain a LP relaxation of the ILP model,  we relax  constraints $\eqref{cons2_KP}$  with the following ones:
 
     \begin{align*}
-    && x_j &\le 1,& \forall j \in \mathscr{I}, \label{cons2_KP_LP_bis} \tag{8.8a}\\[2ex]
-    &&  x_j &\ge 0,& \forall j \in \mathscr{I}. \label{cons2_KP_LP_tris} \tag{8.8b}
+    && x_j &\le 1,& \forall j \in \mathscr{I}, \label{cons2_KP_LP_bis} \tag{9.8a}\\[2ex]
+    &&  x_j &\ge 0,& \forall j \in \mathscr{I}. \label{cons2_KP_LP_tris} \tag{9.8b}
     \end{align*}
 
     The obtained LP model is referred to as the $\LP_{\KP}$ model.
 
 <a id="box-7-texexp_lp_kp"></a>
 
-!!! esempio "Example 8.4: $\LP_{\KP}$ model"
+!!! esempio "Example 9.4: $\LP_{\KP}$ model"
 
     The  $\LP_{\KP}$ model for the KP instance of <span style="color:#1971c2">Example 1</span> is:
 
@@ -344,15 +344,15 @@ title: "Formulations of the knapsack problem"
     <a id="eq-DUAL"></a>
 
     \begin{align*}
-    &&   \min \;\; c \, \pi + \;\;{\sum_{j \in \mathscr{I}}  \mu_j}                               \label{eq:KP-obj_LP_D}  \tag{8.9a}\\[2ex]
-    && \text{subject to} \quad  w_j \, \pi + \mu_j  &\geq p_j, & \forall j \in \mathscr{I},                       \label{eq:KP-cap_LP_D}  \tag{8.9b}\\[2ex]
-    &&\pi                        &\ge  0,\label{eq:KP-cont1_LP_D} \tag{8.9c}\\[2ex]
-    &&\mu_j                        &\ge  0, & \forall j \in \mathscr{I}. \label{eq:KP-cont2_LP_D} \tag{8.9d}
+    &&   \min \;\; c \, \pi + \;\;{\sum_{j \in \mathscr{I}}  \mu_j}                               \label{eq:KP-obj_LP_D}  \tag{9.9a}\\[2ex]
+    && \text{subject to} \quad  w_j \, \pi + \mu_j  &\geq p_j, & \forall j \in \mathscr{I},                       \label{eq:KP-cap_LP_D}  \tag{9.9b}\\[2ex]
+    &&\pi                        &\ge  0,\label{eq:KP-cont1_LP_D} \tag{9.9c}\\[2ex]
+    &&\mu_j                        &\ge  0, & \forall j \in \mathscr{I}. \label{eq:KP-cont2_LP_D} \tag{9.9d}
     \end{align*}
 
 <a id="box-8-texexp_dlp_kp"></a>
 
-!!! esempio "Example 8.5: $D(\LP_{\KP})$ model"
+!!! esempio "Example 9.5: $D(\LP_{\KP})$ model"
 
     The  dual $D(\LP_{\KP})$ model for the KP instance of <span style="color:#1971c2">Example 1</span> is:
 
@@ -377,24 +377,24 @@ title: "Formulations of the knapsack problem"
 
     The optimal value $z(D(\LP_{\KP}))$  is $\frac{49}{3}$.
 
-### 8.4.1 Item efficiency
+### 9.4.1 Item efficiency
 
 <a id="box-9-defEff"></a>
 
-!!! definizione "Definition 8.4: efficiency"
+!!! definizione "Definition 9.4: efficiency"
 
     The <strong>efficiency</strong> of an item $j \in \mathscr{I}$ is defined as the ratio between its profit and its weight:
 
     \begin{equation*}
     \label{eq:efficiency}
-    \frac{p_j}{w_j} \tag{8.10}
+    \frac{p_j}{w_j} \tag{9.10}
     \end{equation*}
 
 - The efficiency of an item is a measure of its profitability per unit of weight: it indicates how much profit is gained for each unit of weight.
 
 <a id="box-10-texexp_eff_kp"></a>
 
-!!! esempio "Example 8.6: item efficiencies"
+!!! esempio "Example 9.6: item efficiencies"
 
     Let us consider the KP instance of <span style="color:#1971c2">Example 1</span>. We have:
 
@@ -451,11 +451,11 @@ title: "Formulations of the knapsack problem"
 
     Sorting the items by non-increasing efficiency requires a sorting algorithm with running time $O(n \log n)$, which is a polynomial function of the number $n$ of items.
 
-### 8.4.2 Split item and residual capacity
+### 9.4.2 Split item and residual capacity
 
 <a id="box-11-defSplit"></a>
 
-!!! definizione "Definition 8.5: split item and residual capacity"
+!!! definizione "Definition 9.5: split item and residual capacity"
 
     Given a set $\mathscr{I}=\{1,2,\dots,n\}$ of $n$ items  ordered by non-increasing efficiency, the <strong>split item</strong> is the item
 
@@ -465,14 +465,14 @@ title: "Formulations of the knapsack problem"
     \sum_{j=1}^{s-1} w_j \leq c
     ~~~~\text{and }~~~~
     \sum_{j=1}^{s} w_j > c
-    \label{split_item} \tag{8.11}
+    \label{split_item} \tag{9.11}
     \end{equation*}
 
     and the <strong>residual capacity</strong>  is
 
     \begin{equation*}
     \mathit{rc} = c - \sum_{j=1}^{s-1} w_j
-    \label{res_cap} \tag{8.12}
+    \label{res_cap} \tag{9.12}
     \end{equation*}
 
 - The split item is the first one that does not fit entirely in the knapsack if all the previous ones are selected. It is also called <strong>break item</strong> or <strong>critical item</strong>, and it can be written as
@@ -485,7 +485,7 @@ title: "Formulations of the knapsack problem"
 
 <a id="box-12-texexp_split_kp"></a>
 
-!!! esempio "Example 8.7: split item and residual capacity"
+!!! esempio "Example 9.7: split item and residual capacity"
 
     For the KP instance of <span style="color:#1971c2">Example 1</span>, the split item is $s=3$ since:
 
@@ -503,7 +503,7 @@ title: "Formulations of the knapsack problem"
 
 <a id="box-13-propLPKP"></a>
 
-!!! teorema "Proposition 8.6"
+!!! teorema "Proposition 9.6"
 
     If the items are sorted  by non-increasing efficiency, an optimal solution of the primal $\LP_{\KP}$ model is:
 
@@ -512,7 +512,7 @@ title: "Formulations of the knapsack problem"
     \tilde{x}_j=1, \quad \forall j \in \{1,2,\dots, s-1\}  , ~~~~
     \tilde{x}_s= \frac{\mathit{rc}}{w_s}
     \text{   and   }
-    \tilde{x}_j=0,  \quad \forall j\in\{s+1,s+2,\dots, n\}, \tag{8.13}
+    \tilde{x}_j=0,  \quad \forall j\in\{s+1,s+2,\dots, n\}, \tag{9.13}
     \end{equation*}
 
     and an optimal  solution of the dual  $D(\LP_{\KP})$ model is:
@@ -522,12 +522,12 @@ title: "Formulations of the knapsack problem"
     \tilde{\pi}= \frac{p_s}{w_s}, \qquad
     \tilde{\mu}_j = p_j  - w_j \; \frac{p_s}{w_s},~~ \forall j \in \{1,2,\dots, s - 1\}
     \text{   and   }
-    \tilde{\mu}_j = 0,~~ \forall j \in \{s,s+1,\dots, n\}. \tag{8.14}
+    \tilde{\mu}_j = 0,~~ \forall j \in \{s,s+1,\dots, n\}. \tag{9.14}
     \end{equation*}
 
 <a id="box-14-corLPKP"></a>
 
-!!! teorema "Corollary 8.7"
+!!! teorema "Corollary 9.7"
 
     The optimal value of the primal $\LP_{\KP}$ and dual $D(\LP_{\KP})$ models is:
 
@@ -539,7 +539,7 @@ title: "Formulations of the knapsack problem"
     +
     p_s \frac{\mathit{rc}}{w_s}
     =
-    z(D(\LP_{\KP})) \tag{8.15}
+    z(D(\LP_{\KP})) \tag{9.15}
     \end{equation*}
 
 - The proof proceeds in three steps:
@@ -651,7 +651,7 @@ title: "Formulations of the knapsack problem"
 
 <a id="box-15-texexp_pd_kp"></a>
 
-!!! esempio "Example 8.8: Primal and dual LP solutions"
+!!! esempio "Example 9.8: Primal and dual LP solutions"
 
     For the KP instance of <span style="color:#1971c2">Example 1</span>,  we have $s=3$ and $\mathit{rc} = 4$.
 
@@ -673,18 +673,18 @@ title: "Formulations of the knapsack problem"
     \sum_{j=1}^{2} p_j + p_s \frac{\mathit{rc}}{w_s} = 6+5 + 8 \; \frac{2}{3} = \frac{49}{3}
     $$
 
-### 8.4.3 Some important theoretical properties
+### 9.4.3 Some important theoretical properties
 
 - The following two propositions show that the ratio between $z(\LP_{\KP})$ and $z(\ILP_{\KP})$ is at most two for all KP instances. Furthermore, there exist instances for which the value two can be asymptotically achieved as the capacity $c \to +\infty$.
 
 <a id="box-16-propRatio2"></a>
 
-!!! teorema "Proposition 8.8"
+!!! teorema "Proposition 9.8"
 
     For every KP instance, we have:
 
     \begin{equation*}
-    \frac{z(\LP_{\KP})}{z(\ILP_{\KP})} \le 2 \tag{8.16}
+    \frac{z(\LP_{\KP})}{z(\ILP_{\KP})} \le 2 \tag{9.16}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -740,12 +740,12 @@ title: "Formulations of the knapsack problem"
 
 <a id="box-17-propRatio2tight"></a>
 
-!!! teorema "Proposition 8.9"
+!!! teorema "Proposition 9.9"
 
     There are KP instances such that:
 
     \begin{equation*}
-    \frac{z(\LP_{\KP})}{z(\ILP_{\KP})} \to 2 \text{    as    } c \to +\infty \tag{8.17}
+    \frac{z(\LP_{\KP})}{z(\ILP_{\KP})} \to 2 \text{    as    } c \to +\infty \tag{9.17}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -790,19 +790,19 @@ title: "Formulations of the knapsack problem"
 
     <p class="qed-riga"><span class="qed">□</span></p>
 
-## 8.5 Knapsack Problem upper bounds
+## 9.5 Knapsack Problem upper bounds
 
 - <strong>The following two propositions require that the items are sorted by non-increasing efficiency</strong>.
 
 <a id="box-18-propDantzig"></a>
 
-!!! teorema "Proposition 8.10: Dantzig upper bound"
+!!! teorema "Proposition 9.10: Dantzig upper bound"
 
     For every KP instance,  we have:
 
     \begin{equation*}
     \label{DANTZIG}
-    z(\ILP_{\KP}) \le     \underbrace{\sum_{j=1}^{s-1} p_j  +  \left\lfloor p_s \;   \frac{\mathit{rc}}{w_s} \right\rfloor}_{\UB_{\mathrm{D}}} \tag{8.18}
+    z(\ILP_{\KP}) \le     \underbrace{\sum_{j=1}^{s-1} p_j  +  \left\lfloor p_s \;   \frac{\mathit{rc}}{w_s} \right\rfloor}_{\UB_{\mathrm{D}}} \tag{9.18}
     \end{equation*}
 
     and $\UB_{\mathrm{D}}$ is called the <strong>Dantzig upper bound</strong> for the KP.
@@ -821,13 +821,13 @@ title: "Formulations of the knapsack problem"
 
 <a id="box-19-propMT"></a>
 
-!!! teorema "Proposition 8.11: Martello-Toth upper bound"
+!!! teorema "Proposition 9.11: Martello-Toth upper bound"
 
     For every KP instance,  we have:
 
     \begin{equation*}
     \label{boundMT}
-    z(\ILP_{\KP}) \le  \UB_{\mathrm{MT}} = \max \bigg\{~~\UB_0,~~ \UB_1 ~~\bigg\} \tag{8.19}
+    z(\ILP_{\KP}) \le  \UB_{\mathrm{MT}} = \max \bigg\{~~\UB_0,~~ \UB_1 ~~\bigg\} \tag{9.19}
     \end{equation*}
 
     where
@@ -849,7 +849,7 @@ title: "Formulations of the knapsack problem"
 
 <a id="box-20-texexp_ub_kp"></a>
 
-!!! esempio "Example 8.9: Dantzig and Martello-Toth upper bound"
+!!! esempio "Example 9.9: Dantzig and Martello-Toth upper bound"
 
     For the KP instance of <span style="color:#1971c2">Example 1</span>,  using formula $\eqref{DANTZIG}$,  we can compute the Dantzig upper bound:
 
@@ -867,7 +867,7 @@ title: "Formulations of the knapsack problem"
 
     For this KP instance, the Martello-Toth upper bound is as strong as the Dantzig upper bound.
 
-## 8.6 Typical mistakes
+## 9.6 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -881,7 +881,7 @@ title: "Formulations of the knapsack problem"
 
     - <strong>Assuming that the LP optimum is unique.</strong> With items of equal efficiency the $\LP_{\KP}$ problem has other optimal solutions; the formulas $\eqref{PP}$ give one of them.
 
-## 8.7 In summary
+## 9.7 In summary
 
 !!! chiave "In summary"
 

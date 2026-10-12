@@ -6,7 +6,7 @@
 
 <div class="grid cards" markdown>
 
--   **14. Principles of dynamic programming**
+-   **16. Principles of dynamic programming**
 
     ---
 
@@ -14,7 +14,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](dp-principles.md) · [Exercises](../exercises/dp-principles.md)
 
--   **15. Dynamic programming for knapsack problems**
+-   **17. Dynamic programming for knapsack problems**
 
     ---
 
@@ -22,7 +22,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](dp-knapsack.md) · [Exercises](../exercises/dp-knapsack.md)
 
--   **16. Rod cutting and coin change**
+-   **18. Rod cutting and coin change**
 
     ---
 
@@ -30,7 +30,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](dp-rod-cutting-coin-change.md) · [Exercises](../exercises/dp-rod-cutting-coin-change.md)
 
--   **17. Dynamic programming for lot sizing**
+-   **19. Dynamic programming for lot sizing**
 
     ---
 

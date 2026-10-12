@@ -20,6 +20,7 @@ professor at [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
 
 [Start with the problems :material-arrow-right:](combinatorial-optimization-problems/index.md){ .md-button .md-button--primary }
 [The exercises](exercises/index.md){ .md-button }
+[:material-view-list: The catalogue of problems](catalogue/index.md){ .md-button }
 [:material-download: Download the lecture notes (PDF)](downloads.md){ .md-button }
 
 </div>
@@ -61,7 +62,7 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
     ---
 
-    1\. Combinatorial optimization · 2\. Knapsack · 3\. Bin packing · 4\. Vertex coloring · 5\. TSP · 6\. Machine scheduling · 7\. Lot sizing
+    1\. Combinatorial optimization · 2\. Knapsack · 3\. Bin packing · 4\. Vertex coloring · 5\. Maximum clique · 6\. TSP · 7\. Machine scheduling · 8\. Lot sizing
 
     [:octicons-arrow-right-24: The chapters](combinatorial-optimization-problems/index.md)
 
@@ -69,7 +70,7 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
     ---
 
-    8\. Knapsack · 9\. Bin packing · 10\. Vertex coloring · 11\. TSP · 12\. Machine scheduling · 13\. Lot sizing
+    9\. Knapsack · 10\. Bin packing · 11\. Vertex coloring · 12\. Maximum clique · 13\. TSP · 14\. Machine scheduling · 15\. Lot sizing
 
     [:octicons-arrow-right-24: The chapters](formulations/index.md)
 
@@ -77,7 +78,7 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
     ---
 
-    14\. Principles · 15\. Knapsack · 16\. Rod cutting, coin change · 17\. Lot sizing
+    16\. Principles · 17\. Knapsack · 18\. Rod cutting, coin change · 19\. Lot sizing
 
     [:octicons-arrow-right-24: The chapters](dynamic-programming/index.md)
 
@@ -85,7 +86,7 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
     ---
 
-    18\. Definitions · 19\. Constructive · 20\. Local search · 21\. Metaheuristics · 22\. MIP heuristics
+    20\. Definitions · 21\. Constructive · 22\. Local search · 23\. Metaheuristics · 24\. MIP heuristics
 
     [:octicons-arrow-right-24: The chapters](heuristic-algorithms/index.md)
 
@@ -93,7 +94,7 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
     ---
 
-    23\. Definitions · 24\. Bin packing · 25\. Knapsack · 26\. P||Cmax, TSP, coloring
+    25\. Definitions · 26\. Bin packing · 27\. Knapsack · 28\. P||Cmax, TSP, coloring
 
     [:octicons-arrow-right-24: The chapters](approximation-algorithms/index.md)
 
@@ -101,9 +102,17 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
     ---
 
-    27\. Knapsack: B&B
+    29\. Knapsack: B&B
 
     [:octicons-arrow-right-24: The chapters](specialized-algorithms/index.md)
+
+-   :material-view-list: **Catalogue of problems**
+
+    ---
+
+    The course seen problem by problem: definitions, models, bounds, techniques and instances of every problem.
+
+    [:octicons-arrow-right-24: The catalogue](catalogue/index.md) · [:material-file-pdf-box: PDF](pdf/combinatorial-problem-catalogue.pdf)
 
 </div>
 

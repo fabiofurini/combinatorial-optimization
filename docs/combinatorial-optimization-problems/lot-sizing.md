@@ -6,7 +6,7 @@ title: "Capacitated lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 7** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Lot sizing](../exercises/lot-sizing.md)
+**Part 1 · Combinatorial optimization problems · Chapter 8** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Lot sizing](../exercises/lot-sizing.md)
 
 </div>
 
@@ -28,11 +28,11 @@ title: "Capacitated lot sizing"
 
     - compute a lower bound on the cost from the number of setups that the total demand requires.
 
-## 7.1 The capacitated lot sizing problem
+## 8.1 The capacitated lot sizing problem
 
 <a id="box-1-defCLS"></a>
 
-!!! definizione "Definition 7.1: Capacitated lot sizing problem"
+!!! definizione "Definition 8.1: Capacitated lot sizing problem"
 
     Given:
 
@@ -93,12 +93,12 @@ title: "Capacitated lot sizing"
         c(\vet{x})
         \;:\;
         x_t \le cap_t,~ s_t(\vet{x}) \ge 0,~ \forall t \in T,~ s_m(\vet{x}) = 0,~ \vet{x} \in \Z_{\ge 0}^m
-        \right\}. \tag{7.1}
+        \right\}. \tag{8.1}
         \end{equation*}
 
 - We denote by $z(I)$ the cost of an optimal plan $\tilde{\vet{x}}$ of the instance $I$.
 
-### 7.1.1 Assumptions
+### 8.1.1 Assumptions
 
 - We make the following assumptions:
 
@@ -112,7 +112,7 @@ title: "Capacitated lot sizing"
 
     3. The quantities are integer. With integer data, once the periods with a setup are fixed, what remains is a minimum cost flow problem, which has an integer optimal solution: restricting the quantities to integers does not change the optimal cost.
 
-## 7.2 Variants
+## 8.2 Variants
 
 - In the <strong>uncapacitated lot sizing problem</strong> the capacities are not binding, for example $cap_t \ge \sum_u d_u$. It is solved in polynomial time by dynamic programming.
 
@@ -126,11 +126,11 @@ title: "Capacitated lot sizing"
 
 - The models of all these variants, with their big-$M$ constraints, are the subject of the chapter «Formulations of capacitated lot sizing». This chapter studies the problem of the definition above.
 
-## 7.3 The reference instance
+## 8.3 The reference instance
 
 <a id="box-2-ex-cls5"></a>
 
-!!! esempio "Example 7.1: CLS instance"
+!!! esempio "Example 8.1: CLS instance"
 
     We consider $m=5$ periods, with the following data, all integer:
 
@@ -197,7 +197,7 @@ title: "Capacitated lot sizing"
 
     ![Figure 1](../img/lot-sizing/fig01.svg){ .fig loading=lazy  }
 
-## 7.4 Counting the solutions
+## 8.4 Counting the solutions
 
 - The combinatorial part of the decision is the choice of the periods with a setup: there are $2^m$ subsets of periods. Not all of them are feasible, because the periods with a setup must have enough capacity to produce everything.
 
@@ -205,9 +205,9 @@ title: "Capacitated lot sizing"
 
 <a id="box-3-ex-cls-count"></a>
 
-!!! esempio "Example 7.2: counting the plans"
+!!! esempio "Example 8.2: counting the plans"
 
-    For the instance of <span style="color:#1971c2">[Example 7.1](#box-2-ex-cls5)</span> there are $2^5=32$ subsets of periods. Let $k_t$ be the number of setups in the periods $1,\dots,t$: the cumulative demands $2,3,6,10,11$ require, with capacity $4$, at least one setup in the periods $1$–$2$, two in the periods $1$–$3$ and three in the periods $1$–$4$. Since $d_1>0$ there is a setup in period $1$, and in the periods $2,3,4$ we need at least two setups, one of which in the periods $2$ or $3$:
+    For the instance of <span style="color:#1971c2">[Example 8.1](#box-2-ex-cls5)</span> there are $2^5=32$ subsets of periods. Let $k_t$ be the number of setups in the periods $1,\dots,t$: the cumulative demands $2,3,6,10,11$ require, with capacity $4$, at least one setup in the periods $1$–$2$, two in the periods $1$–$3$ and three in the periods $1$–$4$. Since $d_1>0$ there is a setup in period $1$, and in the periods $2,3,4$ we need at least two setups, one of which in the periods $2$ or $3$:
 
     $$
     (y_2,y_3,y_4) \in \{(1,1,0),(1,0,1),(0,1,1),(1,1,1)\}.
@@ -252,7 +252,7 @@ title: "Capacitated lot sizing"
 
 - The number of setup choices grows as $2^m$: with $m=52$ weeks it is more than $4\cdot 10^{15}$.
 
-## 7.5 A first plan by hand
+## 8.5 A first plan by hand
 
 - The simplest feasible plan is <strong>lot-for-lot</strong>: in every period we produce exactly the demand of that period. There is no stock, and there are $m$ setups; it is feasible when every demand fits in the capacity of its period.
 
@@ -260,9 +260,9 @@ title: "Capacitated lot sizing"
 
 <a id="box-4-ex-cls-hand"></a>
 
-!!! esempio "Example 7.3: from lot-for-lot to a better plan"
+!!! esempio "Example 8.3: from lot-for-lot to a better plan"
 
-    On the instance of <span style="color:#1971c2">[Example 7.1](#box-2-ex-cls5)</span>:
+    On the instance of <span style="color:#1971c2">[Example 8.1](#box-2-ex-cls5)</span>:
 
     1. the lot-for-lot plan $(2,1,3,4,1)$ has $5$ setups and no stock: cost $5\cdot 50=250$;
 
@@ -274,13 +274,13 @@ title: "Capacitated lot sizing"
 
 - We have found the plan of cost $180$ by hand, but we cannot yet tell whether a cheaper plan exists: we need a lower bound.
 
-## 7.6 A combinatorial lower bound
+## 8.6 A combinatorial lower bound
 
 - Let $D=\sum_{t \in T} d_t$ be the total demand. Let $k$ be the smallest number of periods whose capacities sum up to at least $D$, which is found by taking the periods with the largest capacities.
 
 <a id="box-5-obs-cls-lb"></a>
 
-!!! teorema "Observation 7.2"
+!!! teorema "Observation 8.2"
 
     For every CLS instance, every feasible plan has at least $k$ setups, and
 
@@ -294,9 +294,9 @@ title: "Capacitated lot sizing"
 
 <a id="box-6-ex-cls-lb"></a>
 
-!!! esempio "Example 7.4: the bound on the reference instance"
+!!! esempio "Example 8.4: the bound on the reference instance"
 
-    For the instance of <span style="color:#1971c2">[Example 7.1](#box-2-ex-cls5)</span> we have $D=11$ and all capacities equal to $4$, so $k=\lceil 11/4 \rceil = 3$. All the setup costs are $50$, hence
+    For the instance of <span style="color:#1971c2">[Example 8.1](#box-2-ex-cls5)</span> we have $D=11$ and all capacities equal to $4$, so $k=\lceil 11/4 \rceil = 3$. All the setup costs are $50$, hence
 
     $$
     z(I) \ge 3 \cdot 50 = 150.
@@ -310,13 +310,13 @@ title: "Capacitated lot sizing"
 
     an absolute gap of $30$, that is a relative gap of $\frac{30}{150}=20\%$. The enumeration of the $94$ plans proves that $180$ is optimal.
 
-## 7.7 Remarks
+## 8.7 Remarks
 
 - In 1958 Wagner and Whitin gave a dynamic programming algorithm for the case without capacity and with demand that varies over time. It rests on a property of the optimal plans: one produces only when the stock is empty (chapter «Dynamic programming for lot sizing»).
 
 - With capacities the property fails, and the problem is NP-hard (chapter «Combinatorial optimization problems»).
 
-## 7.8 Typical mistakes
+## 8.8 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -326,11 +326,11 @@ title: "Capacitated lot sizing"
 
     - <strong>Forgetting the stock of the last periods.</strong> The holding cost is paid on the stock at the end of every period, including the periods in which the plan produces nothing.
 
-    - <strong>Believing that one produces only with empty stock.</strong> The property of Wagner and Whitin holds without capacities; with capacities the optimal plan of <span style="color:#1971c2">[Example 7.1](#box-2-ex-cls5)</span> violates it.
+    - <strong>Believing that one produces only with empty stock.</strong> The property of Wagner and Whitin holds without capacities; with capacities the optimal plan of <span style="color:#1971c2">[Example 8.1](#box-2-ex-cls5)</span> violates it.
 
     - <strong>Counting $2^m$ feasible plans.</strong> The $2^m$ subsets of periods are the setup choices: some are infeasible, and each feasible one carries one or more plans.
 
-## 7.9 In summary
+## 8.9 In summary
 
 !!! chiave "In summary"
 

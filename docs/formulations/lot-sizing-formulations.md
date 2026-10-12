@@ -6,7 +6,7 @@ title: "Formulations of capacitated lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 13** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Lot sizing](../exercises/lot-sizing-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 15** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Lot sizing](../exercises/lot-sizing-formulations.md)
 
 </div>
 
@@ -32,7 +32,7 @@ title: "Formulations of capacitated lot sizing"
 
     - extend the formulations to several products, with setup times and initial inventory.
 
-## 13.1 The problem in brief
+## 15.1 The problem in brief
 
 !!! nota "Where we were"
 
@@ -40,7 +40,7 @@ title: "Formulations of capacitated lot sizing"
 
 <a id="box-1-def-CLS"></a>
 
-!!! definizione "Definition 13.1: Capacitated lot-sizing problem"
+!!! definizione "Definition 15.1: Capacitated lot-sizing problem"
 
     Given:
 
@@ -58,7 +58,7 @@ title: "Formulations of capacitated lot sizing"
 
 <a id="box-2-ex-CLS-ref"></a>
 
-!!! esempio "Example 13.1: the reference instance"
+!!! esempio "Example 15.1: the reference instance"
 
     We consider $m=5$ periods, with the following data:
 
@@ -115,7 +115,7 @@ title: "Formulations of capacitated lot sizing"
 
     This is the reference instance of the chapter «Capacitated lot sizing», with optimal plan $\vet{x}=(3,0,4,4,0)$ of cost $180$.
 
-## 13.2 A formulation with a big-M link
+## 15.2 A formulation with a big-M link
 
 - We introduce the following <strong>integer variables</strong> and <strong>binary variables</strong>, for every period $t \in T$:
 
@@ -147,13 +147,13 @@ title: "Formulations of capacitated lot sizing"
     <a id="eq-CLS-bigM"></a>
 
     \begin{align*}
-    &&\min ~~ \sum_{t \in T} \left(sc_{t}\,y_{t} + vc_{t}\,x_{t} + hc_{t}\,s_{t} \right) && \label{obj:CLS-1} \tag{13.1a}\\[1ex]
-    && s_{t-1} + x_{t} & = d_{t} + s_{t}, & \forall t\in T, \label{CL1:bal} \tag{13.1b}\\[1ex]
-    && x_{t} & \le M_{t}\, y_{t}, & \forall t\in T, \label{CL1:M} \tag{13.1c}\\[1ex]
-    && x_{t} & \le cap_{t}, & \forall t\in T, \label{CL1:cap} \tag{13.1d}\\[1ex]
-    && s_0 = s_m &= 0, && \label{CL1:end} \tag{13.1e}\\[1ex]
-    && x_{t},~ s_{t} &\in \Z_{\ge 0}, & \forall t\in T, \label{CL1:int} \tag{13.1f}\\[1ex]
-    && y_{t} & \in \{0, 1\}, & \forall t\in T. \label{CL1:bin} \tag{13.1g}
+    &&\min ~~ \sum_{t \in T} \left(sc_{t}\,y_{t} + vc_{t}\,x_{t} + hc_{t}\,s_{t} \right) && \label{obj:CLS-1} \tag{15.1a}\\[1ex]
+    && s_{t-1} + x_{t} & = d_{t} + s_{t}, & \forall t\in T, \label{CL1:bal} \tag{15.1b}\\[1ex]
+    && x_{t} & \le M_{t}\, y_{t}, & \forall t\in T, \label{CL1:M} \tag{15.1c}\\[1ex]
+    && x_{t} & \le cap_{t}, & \forall t\in T, \label{CL1:cap} \tag{15.1d}\\[1ex]
+    && s_0 = s_m &= 0, && \label{CL1:end} \tag{15.1e}\\[1ex]
+    && x_{t},~ s_{t} &\in \Z_{\ge 0}, & \forall t\in T, \label{CL1:int} \tag{15.1f}\\[1ex]
+    && y_{t} & \in \{0, 1\}, & \forall t\in T. \label{CL1:bin} \tag{15.1g}
     \end{align*}
 
     This model is referred to as the $\ILP_{\CLSP}$ model.
@@ -168,7 +168,7 @@ title: "Formulations of capacitated lot sizing"
 
     - constraints $\eqref{CL1:end}$ impose an empty inventory at the beginning and at the end of the horizon.
 
-### 13.2.1 Weak and strong big-M values
+### 15.2.1 Weak and strong big-M values
 
 - <strong>A weak value.</strong> Since $s_m=0$ and the inventories are non-negative, the production of period $t$ cannot exceed the demand of the periods $t,\dots,m$: $M^{\mathrm{dem}}_{t}=D_{t,m}$ is a valid value.
 
@@ -186,7 +186,7 @@ title: "Formulations of capacitated lot sizing"
 
 <a id="box-3-ex-CLS-bigM"></a>
 
-!!! esempio "Example 13.2: big-M values and LP bounds"
+!!! esempio "Example 15.2: big-M values and LP bounds"
 
     For the reference instance we obtain the following values:
 
@@ -235,7 +235,7 @@ title: "Formulations of capacitated lot sizing"
 
     The integer optimal solution is the same for all the choices: $\tilde{\vet x}=(3,0,4,4,0)$ with $\tilde{\vet y}=(1,0,1,1,0)$, and $z(\ILP_{\CLSP})=180$.
 
-## 13.3 A shortest-path formulation
+## 15.3 A shortest-path formulation
 
 - The second formulation does not decide the quantities directly. For every $t,k \in T$, with $k \ge t$, we introduce the following <strong>continuous variable</strong>: $zv_{tk} \ge 0$, the fraction of the demand $D_{t,k}$ of the periods $t,\dots,k$ that is produced in period $t$.
 
@@ -252,13 +252,13 @@ title: "Formulations of capacitated lot sizing"
     <a id="eq-CLS-SP"></a>
 
     \begin{align*}
-    &&\min ~~ \sum_{t \in T} sc_{t}\,y_{t} + \sum_{t \in T}\sum_{k=t}^{m} cv_{tk}\,zv_{tk} && \label{obj:CLS-2} \tag{13.2a}\\[1ex]
-    && \sum_{k=1}^{m} zv_{1k} &= 1, & \label{SP1} \tag{13.2b}\\[1ex]
-    && \sum_{u=1}^{t-1}zv_{u,t-1} &=\sum_{k=t}^{m}zv_{tk}, & \forall t\in T\setminus\{1\}, \label{SP2} \tag{13.2c}\\[1ex]
-    && \sum_{k=t}^{m}zv_{tk} &\leq y_{t}, & \forall t\in T, \label{SP3} \tag{13.2d}\\[1ex]
-    && \sum_{k=t}^{m} D_{t,k}\,zv_{tk} &\leq cap_t, & \forall t\in T, \label{SP4} \tag{13.2e}\\[1ex]
-    && zv_{tk} & \geq 0, & \forall t,k\in T,~ k\geq t,  \tag{13.2f}\\[1ex]
-    && y_{t} & \in \{0, 1\}, & \forall t \in T. \tag{13.2g}
+    &&\min ~~ \sum_{t \in T} sc_{t}\,y_{t} + \sum_{t \in T}\sum_{k=t}^{m} cv_{tk}\,zv_{tk} && \label{obj:CLS-2} \tag{15.2a}\\[1ex]
+    && \sum_{k=1}^{m} zv_{1k} &= 1, & \label{SP1} \tag{15.2b}\\[1ex]
+    && \sum_{u=1}^{t-1}zv_{u,t-1} &=\sum_{k=t}^{m}zv_{tk}, & \forall t\in T\setminus\{1\}, \label{SP2} \tag{15.2c}\\[1ex]
+    && \sum_{k=t}^{m}zv_{tk} &\leq y_{t}, & \forall t\in T, \label{SP3} \tag{15.2d}\\[1ex]
+    && \sum_{k=t}^{m} D_{t,k}\,zv_{tk} &\leq cap_t, & \forall t\in T, \label{SP4} \tag{15.2e}\\[1ex]
+    && zv_{tk} & \geq 0, & \forall t,k\in T,~ k\geq t,  \tag{15.2f}\\[1ex]
+    && y_{t} & \in \{0, 1\}, & \forall t \in T. \tag{15.2g}
     \end{align*}
 
     This model is referred to as the shortest-path formulation; its LP relaxation is the $\LP_{\CLSP}^{\mathrm{SP}}$ model.
@@ -279,7 +279,7 @@ title: "Formulations of capacitated lot sizing"
 
 <a id="box-4-ex-CLS-SP"></a>
 
-!!! esempio "Example 13.3: costs and combinations of paths"
+!!! esempio "Example 15.3: costs and combinations of paths"
 
     For the reference instance the demands $D_{t,k}$ and the costs $cv_{tk}$ are (the production cost is zero, so $cv_{tk}$ is only holding cost):
 
@@ -308,7 +308,7 @@ title: "Formulations of capacitated lot sizing"
     \underbrace{3 \cdot 50}_{\text{setups}} + \underbrace{10 \cdot 1 + 0 \cdot \tfrac{4}{5} + 60 \cdot \tfrac{1}{5} + 10 \cdot \tfrac{4}{5}}_{=\,30} = 180.
     $$
 
-## 13.4 Comparing the formulations
+## 15.4 Comparing the formulations
 
 - The formulations have the same optimal value $z(\ILP_{\CLSP})=180$, but their LP relaxations have different optimal values. On the reference instance the lower bounds, computed with the exact simplex algorithm and checked with Gurobi, are the following; the shortest-path formulation, solved with integer quantities, gives again the optimal value $180$.
 
@@ -351,7 +351,7 @@ title: "Formulations of capacitated lot sizing"
 
 - The price of the shortest-path formulation is its size: there are $O(m^2)$ variables $zv_{tk}$, against the $O(m)$ variables of the big-M formulation.
 
-## 13.5 Several products, setup times and initial inventory
+## 15.5 Several products, setup times and initial inventory
 
 - In the general problem a set $P$ of products shares the resource of each period. We write $d_{pt}$, $sc_{pt}$, $vc_{pt}$ and $hc_{pt}$ for the data of product $p \in P$ in period $t \in T$. Producing a unit of $p$ takes the time $vt_{pt} \in \Z_{\ge 1}$, a setup takes the time $st_{pt} \in \Z_{\ge 0}$, and the capacity $cap_t$ is a time. The initial inventory $si_p \in \Z_{\ge 0}$ of product $p$ is a decision, bought at the cost $fc_p$ per unit.
 
@@ -372,7 +372,7 @@ title: "Formulations of capacitated lot sizing"
 
 <a id="box-5-ex-CLSP-inst"></a>
 
-!!! esempio "Example 13.4: two products"
+!!! esempio "Example 15.4: two products"
 
     We consider $n=2$ products and $m=3$ periods, with capacities $cap_1=2500$, $cap_2=2100$, $cap_3=2500$, the initial inventory costs $fc_1=fc_2=3000$ and the setup costs $sc_{pt}=10000$. The other data are:
 
@@ -510,7 +510,7 @@ title: "Formulations of capacitated lot sizing"
 
     The optimal solution is unique: $x_{11}=59$, $x_{12}=200$, $x_{13}=10$, $x_{21}=110$, $x_{22}=0$, $x_{23}=150$, $si_1=41$, with a setup in every period except for product $2$ in period $2$.
 
-## 13.6 Typical mistakes
+## 15.6 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -524,7 +524,7 @@ title: "Formulations of capacitated lot sizing"
 
     - <strong>Believing that the shortest-path formulation needs binary paths.</strong> The variables $zv_{tk}$ are continuous: a feasible plan that is not a path is a combination of paths.
 
-## 13.7 In summary
+## 15.7 In summary
 
 !!! chiave "In summary"
 

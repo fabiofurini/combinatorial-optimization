@@ -19,6 +19,10 @@
   font-weight: 700;
 }
 [data-md-color-scheme="slate"] .md-typeset h1 { color: #7fd4e4; }
+/* il simbolo ¶ del titolo non deve andare a capo da solo: con un titolo lungo quasi quanto la colonna
+   lasciava una riga vuota sotto il titolo (Exercises · Formulations of the knapsack problem) */
+.md-typeset h1 { position: relative; }
+.md-typeset h1 .headerlink { position: absolute; margin-left: .2em; }
 .md-typeset h2 {
   border-bottom: 2px solid #0E749033;
   padding-bottom: .15em;

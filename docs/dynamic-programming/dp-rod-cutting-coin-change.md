@@ -6,11 +6,11 @@ title: "Rod cutting and coin change"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 16** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting, coin change](../exercises/dp-rod-cutting-coin-change.md)
+**Part 3 · Dynamic programming · Chapter 18** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting, coin change](../exercises/dp-rod-cutting-coin-change.md)
 
 </div>
 
-## 16.1 A DP algorithm for the Rod Cutting Problem
+## 18.1 A DP algorithm for the Rod Cutting Problem
 
 !!! nota "Prerequisites"
 
@@ -34,11 +34,11 @@ title: "Rod cutting and coin change"
 
     - write the second recurrence $v(j,\ell)$ on pairs (largest piece length, rod length) and count the steps of the DP algorithm.
 
-### 16.1.1 Problem definition
+### 18.1.1 Problem definition
 
 <a id="box-1-defRCP"></a>
 
-!!! definizione "Definition 16.1: Rod-Cutting Problem"
+!!! definizione "Definition 18.1: Rod-Cutting Problem"
 
     Given:
 
@@ -52,7 +52,7 @@ title: "Rod cutting and coin change"
 
 <a id="box-2-texexpbox1"></a>
 
-!!! esempio "Example 16.1: Rod cutting problem"
+!!! esempio "Example 18.1: Rod cutting problem"
 
     We consider a rod of length $n = 4$ and a set $\{1,2,3,4\}$ of $4$ possible piece lengths with the following profits:
 
@@ -119,7 +119,7 @@ title: "Rod cutting and coin change"
 
 <a id="box-3-texrcpenumeration"></a>
 
-!!! esempio "Example 16.2: Enumeration of all possible RCP solutions"
+!!! esempio "Example 18.2: Enumeration of all possible RCP solutions"
 
     We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
@@ -198,7 +198,7 @@ title: "Rod cutting and coin change"
     </tr>
     </table></div>
 
-### 16.1.2 A first DP algorithm
+### 18.1.2 A first DP algorithm
 
 - <u>Step 1</u>: computation of the optimal value
 
@@ -219,7 +219,7 @@ title: "Rod cutting and coin change"
         v(\ell)= \left\{ \begin{array}{ll}
         \displaystyle \max \bigg\{ p_j + v(\ell-j) : j \in \{1,2,\dots,\ell\}\bigg\} & \textrm{if $1\le \ell \le n$,}\\[2ex]
         0 & \textrm{if $\ell=0$.}
-        \end{array} \right. \tag{16.1}
+        \end{array} \right. \tag{18.1}
         \end{equation*}
 
     - The recursive decomposition process of formula $\eqref{eq:1}$ generates $\ell$ <strong>independent subproblems</strong>, each corresponding to a possible choice of cutting a first piece of length $j$ from a rod of length $\ell$.  Here, $v(0)=0$ since a rod of length $0$ cannot be cut and has profit $0$.
@@ -240,7 +240,7 @@ title: "Rod cutting and coin change"
 
         <a id="box-4-texrcptree"></a>
 
-        !!! esempio "Example 16.3: Recursion tree"
+        !!! esempio "Example 18.3: Recursion tree"
 
             We consider the RCP instance of <span style="color:#1971c2">Example 1</span>. This is the recursion tree of the top-down approach to compute $v(4)$:
 
@@ -252,7 +252,7 @@ title: "Rod cutting and coin change"
 
         <a id="box-5-texrcpsmallervalues"></a>
 
-        !!! esempio "Example 16.4: Computing the values of the $v$ function"
+        !!! esempio "Example 18.4: Computing the values of the $v$ function"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
@@ -314,7 +314,7 @@ title: "Rod cutting and coin change"
 
         <a id="box-15-texrcpbu"></a>
 
-        !!! esempio "Example 16.5: Execution of the DP algorithm"
+        !!! esempio "Example 18.5: Execution of the DP algorithm"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
@@ -501,7 +501,7 @@ title: "Rod cutting and coin change"
 
         <a id="box-16-texrcpbuinfo"></a>
 
-        !!! esempio "Example 16.6: Computation of the additional information"
+        !!! esempio "Example 18.6: Computation of the additional information"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
@@ -706,7 +706,7 @@ title: "Rod cutting and coin change"
 
         <a id="box-17-texrcpsolvector"></a>
 
-        !!! esempio "Example 16.7: Computing an optimal solution"
+        !!! esempio "Example 18.7: Computing an optimal solution"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following vector ${s}$:
 
@@ -773,7 +773,7 @@ title: "Rod cutting and coin change"
 
         <a id="box-18-texrcpsolvector32"></a>
 
-        !!! esempio "Example 16.8: Computing optimal solutions for rod lengths 3 and 2"
+        !!! esempio "Example 18.8: Computing optimal solutions for rod lengths 3 and 2"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following vector ${s}$:
 
@@ -935,7 +935,7 @@ title: "Rod cutting and coin change"
 
         steps in the worst case.
 
-### 16.1.3 A second DP algorithm
+### 18.1.3 A second DP algorithm
 
 - <u>Step 1</u>: computation of the optimal value
 
@@ -958,7 +958,7 @@ title: "Rod cutting and coin change"
         v(j-1,\ell) & \textrm{if $1 \le \ell < j$,}\\[2ex]
         0 & \textrm{if $\ell=0$,}\\[2ex]
         -\infty & \textrm{if $j=0$ and $\ell>0$.}
-        \end{array} \right. \tag{16.2}
+        \end{array} \right. \tag{18.2}
         \end{equation*}
 
     - The recursive decomposition process of formula $\eqref{eq:rcpalt}$ generates at most $2$ <strong>independent subproblems</strong>, corresponding to whether or not to cut a piece of length $j$ from a rod of length $\ell$. If $j>\ell$, a piece of length $j$ cannot be cut from the rod, and therefore the only feasible option is not to cut it. Here, $v(j,0)=0$ since a rod of length $0$ cannot be cut and has profit $0$. Moreover, $v(0,\ell)=-\infty$ for $\ell>0$: in this case no positive piece length is available, so no feasible solution exists for a rod of positive length. The value $-\infty$ is used to rule out this infeasible case.
@@ -979,7 +979,7 @@ title: "Rod cutting and coin change"
 
         <a id="box-19-texrcpalttree"></a>
 
-        !!! esempio "Example 16.9: Recursion tree"
+        !!! esempio "Example 18.9: Recursion tree"
 
             We consider the RCP instance of <span style="color:#1971c2">Example 1</span>. This is the recursion tree of the top-down approach to compute $v(4,4)$:
 
@@ -991,7 +991,7 @@ title: "Rod cutting and coin change"
 
         <a id="box-20-texrcpaltvalues"></a>
 
-        !!! esempio "Example 16.10: Computing the values of the $v$ function"
+        !!! esempio "Example 18.10: Computing the values of the $v$ function"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
@@ -1099,7 +1099,7 @@ title: "Rod cutting and coin change"
 
         <a id="box-33-texrcpaltbu"></a>
 
-        !!! esempio "Example 16.11: Execution of the DP algorithm"
+        !!! esempio "Example 18.11: Execution of the DP algorithm"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
@@ -1306,7 +1306,7 @@ title: "Rod cutting and coin change"
 
         <a id="box-34-texrcpaltbuinfo"></a>
 
-        !!! esempio "Example 16.12: Computation of the additional information"
+        !!! esempio "Example 18.12: Computation of the additional information"
 
             We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
@@ -1512,7 +1512,7 @@ title: "Rod cutting and coin change"
 
         <a id="box-35-texrcpaltsolvector"></a>
 
-        !!! esempio "Example 16.13: Computing an optimal solution"
+        !!! esempio "Example 18.13: Computing an optimal solution"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following matrix ${s}$:
 
@@ -1598,7 +1598,7 @@ title: "Rod cutting and coin change"
 
         <a id="box-36-texrcpaltsolvector32"></a>
 
-        !!! esempio "Example 16.14: Computing optimal solutions"
+        !!! esempio "Example 18.14: Computing optimal solutions"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following matrix ${s}$:
 
@@ -1787,7 +1787,7 @@ title: "Rod cutting and coin change"
 
         steps in the worst case.
 
-### 16.1.4 Typical mistakes
+### 18.1.4 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -1799,7 +1799,7 @@ title: "Rod cutting and coin change"
 
     - <strong>Stopping the reconstruction early.</strong> The rule $x_{{s}[\ell]}\leftarrow x_{{s}[\ell]}+1$, $\ell\leftarrow\ell-{s}[\ell]$ is repeated until $\ell=0$; the last piece completes the rod.
 
-### 16.1.5 In summary
+### 18.1.5 In summary
 
 !!! chiave "In summary"
 
@@ -1828,7 +1828,7 @@ title: "Rod cutting and coin change"
     </tr>
     </table></div>
 
-## 16.2 A DP algorithm for the Coin Change Problem
+## 18.2 A DP algorithm for the Coin Change Problem
 
 !!! nota "Prerequisites"
 
@@ -1852,11 +1852,11 @@ title: "Rod cutting and coin change"
 
     - count the steps of the DP algorithm.
 
-### 16.2.1 Problem definition
+### 18.2.1 Problem definition
 
 <a id="box-37-defCCP"></a>
 
-!!! definizione "Definition 16.2: Coin Change Problem"
+!!! definizione "Definition 18.2: Coin Change Problem"
 
     Given:
 
@@ -1868,7 +1868,7 @@ title: "Rod cutting and coin change"
 
 <a id="box-38-texccpex1"></a>
 
-!!! esempio "Example 16.15: CCP instance"
+!!! esempio "Example 18.15: CCP instance"
 
     We consider an amount of change $c=10$ to return, and $n=3$ denominations:
 
@@ -1914,7 +1914,7 @@ title: "Rod cutting and coin change"
 
 - Since $\sum_{j=1}^{n} w_j x_j = c$, every component $x_j$ of a feasible solution satisfies $x_j \le \lfloor c/w_j \rfloor$. Therefore, the number of feasible solutions is finite, but it grows quickly with $c$ and $n$, and enumerating all of them to find the one using the fewest coins quickly becomes impractical.
 
-### 16.2.2 A DP algorithm
+### 18.2.2 A DP algorithm
 
 - <u>Step 1</u>: computation of the optimal value
 
@@ -1934,7 +1934,7 @@ title: "Rod cutting and coin change"
         0                                                                 & \textrm{if $k=0$,}                                              \\[2ex]
         +\infty                                                          & \textrm{if $k\ge 1$ and $w_j>k$ for every $j\in\{1,2,\dots,n\}$,} \\[2ex]
         \displaystyle \min_{j \,:\, w_j \,\le\, k} \big\{ 1 + v(k-w_j) \big\} & \textrm{if $k\ge 1$ and $w_j\le k$ for some $j\in\{1,2,\dots,n\}$.}
-        \end{array} \right. \tag{16.3}
+        \end{array} \right. \tag{18.3}
         \end{equation*}
 
     - The recursive decomposition process of formula $\eqref{eq:ccp}$ generates at most $n$ <strong>independent subproblems</strong>, corresponding to the possible choices of a denomination $j$, with $w_j\le k$, used as one of the coins returning the amount of change $k$.
@@ -1957,7 +1957,7 @@ title: "Rod cutting and coin change"
 
         <a id="box-39-texccptree"></a>
 
-        !!! esempio "Example 16.16: Recursion tree"
+        !!! esempio "Example 18.16: Recursion tree"
 
             We consider the CCP instance of <span style="color:#1971c2">Example 1</span>. This is the recursion tree of the top-down approach to compute $v(10)$:
 
@@ -1969,7 +1969,7 @@ title: "Rod cutting and coin change"
 
         <a id="box-40-texccpvalues"></a>
 
-        !!! esempio "Example 16.17: Computing the values of the $v$ function"
+        !!! esempio "Example 18.17: Computing the values of the $v$ function"
 
             We consider the CCP instance of <span style="color:#1971c2">Example 1</span>, with amount of change $c=10$ to return and denominations $w=(2,3,5)$.
 
@@ -2059,7 +2059,7 @@ title: "Rod cutting and coin change"
 
         <a id="box-50-texccpbu"></a>
 
-        !!! esempio "Example 16.18: Execution of the DP algorithm"
+        !!! esempio "Example 18.18: Execution of the DP algorithm"
 
             We consider the CCP instance of <span style="color:#1971c2">Example 1</span>, with amount of change $c=10$ to return and denominations $w=(2,3,5)$.
 
@@ -2462,7 +2462,7 @@ title: "Rod cutting and coin change"
 
         <a id="box-51-texccpinfo"></a>
 
-        !!! esempio "Example 16.19: Computation of the additional information"
+        !!! esempio "Example 18.19: Computation of the additional information"
 
             We consider the CCP instance of <span style="color:#1971c2">Example 1</span>, with amount of change $c=10$ to return and denominations $w=(2,3,5)$.
 
@@ -2494,7 +2494,7 @@ title: "Rod cutting and coin change"
 
         <a id="box-52-texccpsolvector"></a>
 
-        !!! esempio "Example 16.20: Computing an optimal solution"
+        !!! esempio "Example 18.20: Computing an optimal solution"
 
             After the execution of the DP algorithm on the instance of <span style="color:#1971c2">Example 1</span>, we have the following array $s$:
 
@@ -2621,7 +2621,7 @@ title: "Rod cutting and coin change"
 
 - The version <code>CCP\_DP\_InfoSol</code> stores the additional array $s$ and performs only a constant number of extra operations inside the same loops. Therefore, its number of steps remains $\Theta(nc)$.
 
-### 16.2.3 Typical mistakes
+### 18.2.3 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -2633,7 +2633,7 @@ title: "Rod cutting and coin change"
 
     - <strong>Confusing the CCP with the UKP.</strong> The CCP asks for exactly $c$ and minimizes the number of coins; the UKP asks for at most $c$ and maximizes the profit.
 
-### 16.2.4 In summary
+### 18.2.4 In summary
 
 !!! chiave "In summary"
 

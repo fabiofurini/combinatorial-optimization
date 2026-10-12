@@ -4,7 +4,7 @@
 
 [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf){ .md-button }
 
-[:material-table: The six problems at a glance](problems.md){ .md-button }
+[:material-table: The problems at a glance](problems.md){ .md-button } [:material-view-list: Catalogue of problems](../catalogue/index.md){ .md-button } [:material-file-pdf-box: Catalogue of problems (PDF)](../pdf/combinatorial-problem-catalogue.pdf){ .md-button }
 
 <div class="grid cards" markdown>
 
@@ -40,7 +40,15 @@
 
     [:octicons-arrow-right-24: Read the chapter](coloring.md) · [Exercises](../exercises/coloring.md)
 
--   **5. The travelling salesman problem**
+-   **5. The maximum clique problem**
+
+    ---
+
+    The maximum clique problem · Counting the solutions, a first solution and the bounds · Weighted variants · Complexity · …
+
+    [:octicons-arrow-right-24: Read the chapter](clique.md) · [Exercises](../exercises/clique.md)
+
+-   **6. The travelling salesman problem**
 
     ---
 
@@ -48,7 +56,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](tsp.md) · [Exercises](../exercises/tsp.md)
 
--   **6. Parallel machine scheduling**
+-   **7. Parallel machine scheduling**
 
     ---
 
@@ -56,7 +64,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](pcmax.md) · [Exercises](../exercises/pcmax.md)
 
--   **7. Capacitated lot sizing**
+-   **8. Capacitated lot sizing**
 
     ---
 

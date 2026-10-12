@@ -6,15 +6,15 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 26** · each solution opens with a click · [:material-book-open-variant: Chapter 26: P||Cmax, TSP, coloring](../approximation-algorithms/pcmax-tsp-coloring-approximation.md)
+**Exercises · Chapter 28** · each solution opens with a click · [:material-book-open-variant: Chapter 28: P||Cmax, TSP, coloring](../approximation-algorithms/pcmax-tsp-coloring-approximation.md) · [:material-file-pdf-box: Exercises, volume 5 (PDF)](../pdf/exercises-5-approximation-algorithms.pdf)
 
 </div>
 
 ## $P\|C_{\max}$
 
-<a id="esercizio-26-1"></a>
+<a id="esercizio-28-1"></a>
 
-!!! esercizio "Exercise 26.1: $P\,||\,C_{\max}$ approximation 1"
+!!! esercizio "Exercise 28.1: $P\,||\,C_{\max}$ approximation 1"
 
     We consider $m=3$ identical machines and a set $\mathscr{J}=\{1,\dots,7\}$ of $7$ jobs ($n=7$), with the following processing times:
 
@@ -180,9 +180,9 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
 
         Both guarantees hold. With the list in the input order, the two longest jobs arrive when the machines are already loaded, and $LIST$ is $4$ units above the optimum; sorting the list puts them first and closes the gap.
 
-<a id="esercizio-26-2"></a>
+<a id="esercizio-28-2"></a>
 
-!!! esercizio "Exercise 26.2: $P\,||\,C_{\max}$ approximation 2"
+!!! esercizio "Exercise 28.2: $P\,||\,C_{\max}$ approximation 2"
 
     We consider $m=3$ identical machines and a set $\mathscr{J}=\{1,\dots,7\}$ of $7$ jobs ($n=7$), with the following processing times:
 
@@ -289,9 +289,9 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
 
         The long job is the one that hurts when it comes last; $LPT$ schedules it first, and the short jobs level the loads around it.
 
-<a id="esercizio-26-3"></a>
+<a id="esercizio-28-3"></a>
 
-!!! esercizio "Exercise 26.3: $P\,||\,C_{\max}$ approximation 3"
+!!! esercizio "Exercise 28.3: $P\,||\,C_{\max}$ approximation 3"
 
     We consider $m=4$ identical machines and a set $\mathscr{J}=\{1,\dots,9\}$ of $9$ jobs ($n=9$), with the following processing times:
 
@@ -409,9 +409,9 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
 
 ## Metric TSP
 
-<a id="esercizio-26-4"></a>
+<a id="esercizio-28-4"></a>
 
-!!! esercizio "Exercise 26.4: Metric TSP approximation 1"
+!!! esercizio "Exercise 28.4: Metric TSP approximation 1"
 
     We consider a set $\mathscr{V}=\{1,\dots,6\}$ of $6$ cities with coordinates $1{:}\,(3,4)$, $2{:}\,(6,1)$, $3{:}\,(3,8)$, $4{:}\,(8,8)$, $5{:}\,(0,4)$, $6{:}\,(8,0)$ and distances equal to the Euclidean distances rounded to the nearest integer (the instance is metric):
 
@@ -495,9 +495,9 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
         CH(I)=27\le d(T)+d(M)=29\le\frac32\,z(I)=\frac{81}{2}.
         \end{gather*}
 
-<a id="esercizio-26-5"></a>
+<a id="esercizio-28-5"></a>
 
-!!! esercizio "Exercise 26.5: Metric TSP approximation 2"
+!!! esercizio "Exercise 28.5: Metric TSP approximation 2"
 
     We consider a set $\mathscr{V}=\{1,\dots,6\}$ of $6$ cities with coordinates $1{:}\,(2,4)$, $2{:}\,(6,0)$, $3{:}\,(7,3)$, $4{:}\,(0,7)$, $5{:}\,(0,1)$, $6{:}\,(2,1)$ and distances equal to the Euclidean distances rounded to the nearest integer (the instance is metric):
 
@@ -578,9 +578,9 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
         d(M)=10\le\min\{11,10\}\le\frac{21}{2}\le\frac{z(I)}{2}=12 .
         $$
 
-<a id="esercizio-26-6"></a>
+<a id="esercizio-28-6"></a>
 
-!!! esercizio "Exercise 26.6: Metric TSP approximation 3"
+!!! esercizio "Exercise 28.6: Metric TSP approximation 3"
 
     We consider two graphs with $5$ vertices, $V=\{1,2,3,4,5\}$:
 
@@ -652,9 +652,9 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
 
 ## Vertex coloring
 
-<a id="esercizio-26-7"></a>
+<a id="esercizio-28-7"></a>
 
-!!! esercizio "Exercise 26.7: Vertex coloring approximation 1"
+!!! esercizio "Exercise 28.7: Vertex coloring approximation 1"
 
     We consider the graph $G=(V,E)$ with $V=\{1,\dots,7\}$ ($n=7$) and $|E|=11$ edges:
 
@@ -754,9 +754,9 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
         \frac{GC(I)}{\chi(G)}=\frac43,\qquad\frac{DSATUR(I)}{\chi(G)}=1 .
         $$
 
-<a id="esercizio-26-8"></a>
+<a id="esercizio-28-8"></a>
 
-!!! esercizio "Exercise 26.8: Vertex coloring approximation 2"
+!!! esercizio "Exercise 28.8: Vertex coloring approximation 2"
 
     We consider the crown graph $G_5$ with $n=10$ vertices: the vertices $1,\dots,5$ on one side, the vertices $6,\dots,10$ on the other, and vertex $i\in\{1,\dots,5\}$ adjacent to vertex $j+5$, $j\in\{1,\dots,5\}$, if and only if $i\neq j$:
 
@@ -869,9 +869,9 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
 
         At step $2$ the neighbours $7,8,9,10$ of vertex $1$ have saturation degree $1$ and $3$ uncolored neighbours each: vertex $7$ is chosen and gets color $2$. From then on, every vertex adjacent to a colored vertex has saturation degree $1$ (its colored neighbours are all on the other side, with the same color); the vertices of the side $\{1,\dots,5\}$ get color $1$ and those of the side $\{6,\dots,10\}$ color $2$. Hence $DSATUR(I)=2=\chi(G_5)$, as guaranteed on bipartite graphs.
 
-<a id="esercizio-26-9"></a>
+<a id="esercizio-28-9"></a>
 
-!!! esercizio "Exercise 26.9: Vertex coloring approximation 3"
+!!! esercizio "Exercise 28.9: Vertex coloring approximation 3"
 
     We consider the graph $G=(V,E)$ with $V=\{1,\dots,7\}$ ($n=7$) and $|E|=10$ edges:
 

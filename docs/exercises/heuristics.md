@@ -6,13 +6,13 @@ title: "Exercises · Heuristic algorithms: definitions"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 18** · each solution opens with a click · [:material-book-open-variant: Chapter 18: Definitions](../heuristic-algorithms/heuristics.md)
+**Exercises · Chapter 20** · each solution opens with a click · [:material-book-open-variant: Chapter 20: Definitions](../heuristic-algorithms/heuristics.md) · [:material-file-pdf-box: Exercises, volume 4 (PDF)](../pdf/exercises-4-heuristic-algorithms.pdf)
 
 </div>
 
-<a id="esercizio-18-1"></a>
+<a id="esercizio-20-1"></a>
 
-!!! esercizio "Exercise 18.1: Gap and relative error (1)"
+!!! esercizio "Exercise 20.1: Gap and relative error (1)"
 
     We consider a knapsack of capacity $c=12$ and $n=5$ items with the following profits and weights:
 
@@ -74,9 +74,9 @@ title: "Exercises · Heuristic algorithms: definitions"
 
         The gap overestimates the error because $\mathrm{UB}(I)>z(I)$, and because it divides by $\mathscr{A}(I)<z(I)$.
 
-<a id="esercizio-18-2"></a>
+<a id="esercizio-20-2"></a>
 
-!!! esercizio "Exercise 18.2: Gaps for minimization problems (1)"
+!!! esercizio "Exercise 20.2: Gaps for minimization problems (1)"
 
     Consider the following three instances and heuristic solutions.
 
@@ -129,9 +129,9 @@ title: "Exercises · Heuristic algorithms: definitions"
 
         The gap equals the relative error exactly when the dual bound equals $z(I)$, as in (a) and (c). In (b) the bound is weak, and the gap overestimates the error.
 
-<a id="esercizio-18-3"></a>
+<a id="esercizio-20-3"></a>
 
-!!! esercizio "Exercise 18.3: A dual bound for the TSP (1)"
+!!! esercizio "Exercise 20.3: A dual bound for the TSP (1)"
 
     We consider a TSP instance with $n=5$ cities and the symmetric distances
 
@@ -186,9 +186,9 @@ title: "Exercises · Heuristic algorithms: definitions"
 
     4. There are $\frac{(n-1)!}{2}=12$ distinct tours, and the shortest is $(1,2,5,3,4)$, of length $z(I)=17$. The relative errors are $\frac{29-17}{17}\approx 70.6\%$ and $\frac{21-17}{17}\approx 23.5\%$, smaller than the gaps, since $\mathrm{LB}(I)=13<z(I)=17$. Both measures rank $\sigma_2$ better than $\sigma_1$.
 
-<a id="esercizio-18-4"></a>
+<a id="esercizio-20-4"></a>
 
-!!! esercizio "Exercise 18.4: Neighbourhoods and local optima (1)"
+!!! esercizio "Exercise 20.4: Neighbourhoods and local optima (1)"
 
     We consider a knapsack of capacity $c=11$ and $n=5$ items:
 
@@ -405,9 +405,9 @@ title: "Exercises · Heuristic algorithms: definitions"
 
     4. The global optimum is $\{1,4,5\}$, of weight $11$ and profit $z(I)=23$. The solution $\{1,2\}$ is a local optimum for both neighbourhoods with profit $22<23$, so neither neighbourhood is exact: reaching the optimum from $\{1,2\}$ needs to remove one item and add two.
 
-<a id="esercizio-18-5"></a>
+<a id="esercizio-20-5"></a>
 
-!!! esercizio "Exercise 18.5: Constructive heuristics, local search and metaheuristics (1)"
+!!! esercizio "Exercise 20.5: Constructive heuristics, local search and metaheuristics (1)"
 
     We consider $\PCmax$ with $m=2$ machines and $n=6$ jobs:
 
