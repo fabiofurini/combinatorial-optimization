@@ -10,7 +10,7 @@
 
     ---
 
-    The problem in brief · An ILP model for the Knapsack Problem · A first Linear Programming relaxation · A second Linear Programming relaxation
+    An ILP model for the Knapsack Problem · A first Linear Programming relaxation · A second Linear Programming relaxation · Knapsack Problem upper bounds
 
     [:octicons-arrow-right-24: Read the chapter](knapsack-formulations.md) · [Exercises](../exercises/knapsack-formulations.md)
 
@@ -18,7 +18,7 @@
 
     ---
 
-    The problem in brief · An ILP model for the Bin Packing Problem · A first Linear Programming relaxation · A second Linear Programming relaxation
+    An ILP model for the Bin Packing Problem · A first Linear Programming relaxation · A second Linear Programming relaxation
 
     [:octicons-arrow-right-24: Read the chapter](bin-packing-formulations.md) · [Exercises](../exercises/bin-packing-formulations.md)
 
@@ -26,7 +26,7 @@
 
     ---
 
-    The problem in brief · An ILP model for the Vertex Coloring Problem · A first Linear Programming relaxation · A second Linear Programming relaxation
+    An ILP model for the Vertex Coloring Problem · A first Linear Programming relaxation · A second Linear Programming relaxation
 
     [:octicons-arrow-right-24: Read the chapter](coloring-formulations.md) · [Exercises](../exercises/coloring-formulations.md)
 
@@ -34,7 +34,7 @@
 
     ---
 
-    The problem in brief · The edge formulation · The Linear Programming relaxations · Clique inequalities: a stronger formulation
+    The edge formulation · A first Linear Programming relaxation · A second Linear Programming relaxation · Clique inequalities: a stronger formulation
 
     [:octicons-arrow-right-24: Read the chapter](clique-formulations.md) · [Exercises](../exercises/clique-formulations.md)
 
@@ -42,7 +42,7 @@
 
     ---
 
-    The problem in brief · A model with position variables (MTZ) · A model with subtour elimination constraints (DFJ) · Linear Programming relaxations
+    A model with position variables (MTZ) · A model with subtour elimination constraints (DFJ) · Linear Programming relaxations
 
     [:octicons-arrow-right-24: Read the chapter](tsp-formulations.md) · [Exercises](../exercises/tsp-formulations.md)
 
@@ -50,7 +50,7 @@
 
     ---
 
-    The problem in brief · An ILP model for $P\|C_{\max}$ · A first Linear Programming relaxation · Additional considerations
+    An ILP model for $P\|C_{\max}$ · A first Linear Programming relaxation · A second Linear Programming relaxation · Additional considerations
 
     [:octicons-arrow-right-24: Read the chapter](pcmax-formulations.md) · [Exercises](../exercises/pcmax-formulations.md)
 
@@ -58,7 +58,7 @@
 
     ---
 
-    The problem in brief · A formulation with a big-M link · A shortest-path formulation · Comparing the formulations
+    A formulation with a big-M link · The Linear Programming relaxation of the big-M formulation · A shortest-path formulation · Comparing the formulations
 
     [:octicons-arrow-right-24: Read the chapter](lot-sizing-formulations.md) · [Exercises](../exercises/lot-sizing-formulations.md)
 

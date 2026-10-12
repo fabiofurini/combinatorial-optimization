@@ -6,11 +6,11 @@ title: "Typical mistakes · In summary"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 26** · [:material-book-open-variant: Chapter 26: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
+**Part 4 · Heuristic algorithms · Chapter 31** · [:material-book-open-variant: Chapter 31: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
 
 </div>
 
-## 26.12 Typical mistakes
+## 31.12 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -24,7 +24,7 @@ title: "Typical mistakes · In summary"
 
     - <strong>Miscounting the random numbers.</strong> Every iteration consumes a fixed number of them (ten in the genetic algorithm of the exercises, with $n=5$); a wrong count changes every later step.
 
-## 26.13 In summary
+## 31.13 In summary
 
 !!! chiave "In summary"
 

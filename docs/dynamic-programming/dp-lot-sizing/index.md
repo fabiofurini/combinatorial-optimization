@@ -6,7 +6,7 @@ title: "Dynamic programming for lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 22** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/dp-lot-sizing.md)
+**Part 3 · Dynamic programming · Chapter 27** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/dp-lot-sizing.md)
 
 </div>
 
@@ -38,11 +38,11 @@ title: "Dynamic programming for lot sizing"
 
     - count the steps of the two DP algorithms, and say why the second one is pseudo-polynomial.
 
-## 22.1 Problem definition
+## 27.1 Problem definition
 
 <a id="box-1-defULS"></a>
 
-!!! definizione "Definition 22.1: Uncapacitated Lot-Sizing Problem"
+!!! definizione "Definition 27.1: Uncapacitated Lot-Sizing Problem"
 
     Given:
 
@@ -64,24 +64,41 @@ title: "Dynamic programming for lot sizing"
 
     the total demand of periods $j,j+1,\dots,t$, with $D_{j,t}=0$ if $j>t$.
 
-- With the variables of the chapter on lot sizing ($x_t$ production, $s_t$ inventory at the end of period $t$, $y_t$ setup), the ULS reads as follows, where $s_0=0$ and the big-M value of period $t$ is the total demand $D_{t,m}$ of the remaining periods:
+- The ILP model is the $\mathrm{ILP}_{\mathrm{CLSP}}$ model of the chapter [«Formulations of capacitated lot sizing»](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/), without the capacity constraints and with the big-M value $D_{t,m}$ of period $t$, the total demand of the remaining periods. Its variables are those of that chapter: the production $x_t$, the inventory $s_t$ at the end of period $t$, and the setup $y_t\in\{0,1\}$, for every period $t \in T$.
 
 !!! chiave ""
 
+    Using these variables, an ILP model for the Uncapacitated Lot-Sizing Problem (ULS) reads as follows:
+
+    <a id="eq-uls-model"></a>
+
     \begin{align*}
-    &&\min \sum_{t \in T} \left(sc_t\, y_t + vc_t\, x_t + hc_t\, s_t\right) \label{uls:obj} \tag{22.1}\\
-    && s_{t-1} + x_t & = d_t + s_t & t \in T \label{uls:bal} \tag{22.2}\\
-    && x_t & \le D_{t,m}\, y_t & t \in T \label{uls:big} \tag{22.3}\\
-    && s_m & = 0 \label{uls:end} \tag{22.4}\\
-    && x_t,\ s_t & \ge 0 & t \in T \tag{22.5}\\
-    && y_t & \in \{0,1\} & t \in T \tag{22.6}
+    && \min ~~ \sum_{t \in T} \left(sc_t\, y_t + vc_t\, x_t + hc_t\, s_t\right) \label{uls:obj} \tag{27.1a}\\[1ex]
+    && \text{subject to} \quad s_{t-1} + x_t & = d_t + s_t, & \forall t \in T, \label{uls:bal} \tag{27.1b}\\[1ex]
+    && x_t & \le D_{t,m}\, y_t, & \forall t \in T, \label{uls:big} \tag{27.1c}\\[1ex]
+    && s_0 = s_m & = 0, \label{uls:end} \tag{27.1d}\\[1ex]
+    && x_t & \in \Z_{\ge 0}, & \forall t \in T, \label{uls:domx} \tag{27.1e}\\[1ex]
+    && s_t & \in \Z_{\ge 0}, & \forall t \in T, \label{uls:doms} \tag{27.1f}\\[1ex]
+    && y_t & \in \{0,1\}, & \forall t \in T. \label{uls:domy} \tag{27.1g}
     \end{align*}
 
-- Constraints $\eqref{uls:bal}$ are the flow balancing constraints, constraints $\eqref{uls:big}$ force a setup in every period with positive production, and constraint $\eqref{uls:end}$ imposes an empty inventory at the end of the horizon (with nonnegative costs, a final inventory is never useful).
+    This ILP model is referred to as the $\mathrm{ILP}_{\mathrm{ULS}}$ model.
+
+- Description of the objective function and constraints of the $\mathrm{ILP}_{\mathrm{ULS}}$ model:
+
+    - the objective function $\eqref{uls:obj}$ minimizes the total cost of setups, production and holding;
+
+    - constraints $\eqref{uls:bal}$ are the flow balancing constraints;
+
+    - constraints $\eqref{uls:big}$ force a setup in every period with positive production;
+
+    - constraint $\eqref{uls:end}$ imposes an empty inventory at the beginning and at the end of the horizon;
+
+    - finally, constraints $\eqref{uls:domx}$–$\eqref{uls:domy}$ define the variables of the ILP model.
 
 <a id="box-2-texuls1"></a>
 
-!!! esempio "Example 22.1: Uncapacitated lot sizing"
+!!! esempio "Example 27.1: Uncapacitated lot sizing"
 
     We consider $m=5$ periods with the following data:
 
@@ -96,9 +113,9 @@ title: "Dynamic programming for lot sizing"
     \end{array}
     $$
 
-    We refer to this ULS instance as <span style="color:#1971c2">[Example 22.1](#box-2-texuls1)</span>. It is the uncapacitated instance used in the MIP course (setup cost $50$, holding cost $1$, no variable production cost).
+    We refer to this ULS instance as <span style="color:#1971c2">[Example 27.1](#box-2-texuls1)</span>. It is the uncapacitated instance used in the MIP course (setup cost $50$, holding cost $1$, no variable production cost).
 
-### 22.1.1 Encoding of feasible solutions
+### 27.1.1 Encoding of feasible solutions
 
 !!! chiave ""
 
@@ -138,9 +155,9 @@ title: "Dynamic programming for lot sizing"
 
 <a id="box-3-texulsnetwork"></a>
 
-!!! esempio "Example 22.2: A feasible solution"
+!!! esempio "Example 27.2: A feasible solution"
 
-    We consider the ULS instance of <span style="color:#1971c2">[Example 22.1](#box-2-texuls1)</span>. The following network represents the feasible solution $(30,\allowbreak 0,\allowbreak 80,\allowbreak 0,\allowbreak 0)$: each period is a node, the production $x_t$ enters node $t$, the demand $d_t$ leaves it, and the inventory $s_t$ flows from node $t$ to node $t+1$. Thick arcs carry a positive flow.
+    We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](#box-2-texuls1)</span>. The following network represents the feasible solution $(30,\allowbreak 0,\allowbreak 80,\allowbreak 0,\allowbreak 0)$: each period is a node, the production $x_t$ enters node $t$, the demand $d_t$ leaves it, and the inventory $s_t$ flows from node $t$ to node $t+1$. Thick arcs carry a positive flow.
 
     ![Figure 1](../../img/dp-lot-sizing/fig01.svg){ .fig loading=lazy  }
 
@@ -152,11 +169,11 @@ title: "Dynamic programming for lot sizing"
 
 - A production quantity can take many values, and a ULS instance has a huge number of feasible solutions (infinitely many, if the quantities are not required to be integer). The next property shows that only very few of them need to be considered.
 
-### 22.1.2 The zero-inventory ordering property
+### 27.1.2 The zero-inventory ordering property
 
 <a id="box-4-thmZIO"></a>
 
-!!! teorema "Theorem 22.2: Zero-inventory ordering (Wagner and Whitin, 1958)"
+!!! teorema "Theorem 27.2: Zero-inventory ordering (Wagner and Whitin, 1958)"
 
     Every ULS instance has an optimal solution in which no period with positive production starts with a positive inventory, that is,
 
@@ -220,9 +237,9 @@ title: "Dynamic programming for lot sizing"
 
 <a id="box-5-texulsenum"></a>
 
-!!! esempio "Example 22.3: Enumeration of the solutions with the zero-inventory ordering property"
+!!! esempio "Example 27.3: Enumeration of the solutions with the zero-inventory ordering property"
 
-    We consider the ULS instance of <span style="color:#1971c2">[Example 22.1](#box-2-texuls1)</span>:
+    We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](#box-2-texuls1)</span>:
 
     $$
     \begin{array}{l|rrrrr}
@@ -367,17 +384,17 @@ title: "Dynamic programming for lot sizing"
 
     Problem definition · Encoding of feasible solutions · The zero-inventory ordering property
 
-    [:octicons-arrow-right-24: Open](#221-problem-definition)
+    [:octicons-arrow-right-24: Open](#271-problem-definition)
 
--   **22.2 A DP algorithm for the ULS**
+-   **27.2 A DP algorithm for the ULS**
 
     [:octicons-arrow-right-24: Open](a-dp-algorithm-for-the-uls.md)
 
--   **22.2.2 A DP algorithm for the ULS: Step 1 and Step 2**
+-   **27.2.2 A DP algorithm for the ULS: Step 1 and Step 2**
 
     [:octicons-arrow-right-24: Open](a-dp-algorithm-for-the-uls-step-1-and-step-2.md)
 
--   **22.3 A DP algorithm for the capacitated case**
+-   **27.3 A DP algorithm for the capacitated case**
 
     The case of constant capacity
 
@@ -393,7 +410,7 @@ title: "Dynamic programming for lot sizing"
 
 ---
 
-**Next:** [22.2 A DP algorithm for the ULS](a-dp-algorithm-for-the-uls.md)
+**Next:** [27.2 A DP algorithm for the ULS](a-dp-algorithm-for-the-uls.md)
 
 ---
 

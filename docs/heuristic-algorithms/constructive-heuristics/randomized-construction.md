@@ -2,11 +2,11 @@
 title: "Randomized construction"
 ---
 
-# 24.9 Randomized construction { #sez-sec-RCL }
+# 29.9 Randomized construction { #sez-sec-RCL }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 24** · [:material-book-open-variant: Chapter 24: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
+**Part 4 · Heuristic algorithms · Chapter 29** · [:material-book-open-variant: Chapter 29: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
 
 </div>
 
@@ -47,7 +47,7 @@ title: "Randomized construction"
 
 <a id="box-21-ex-rnn"></a>
 
-!!! esempio "Example 24.15: $RNN_{0.3}$ on the TSP reference instance"
+!!! esempio "Example 29.15: $RNN_{0.3}$ on the TSP reference instance"
 
     We run $RNN_\alpha$ four times from city $1$, with $\alpha=0.3$ and initial seed $1$. The generator gives
 
@@ -73,4 +73,4 @@ title: "Randomized construction"
 
 ---
 
-**Next:** [24.10 Look-ahead and regret](look-ahead-and-regret.md)
+**Next:** [29.10 Look-ahead and regret](look-ahead-and-regret.md)

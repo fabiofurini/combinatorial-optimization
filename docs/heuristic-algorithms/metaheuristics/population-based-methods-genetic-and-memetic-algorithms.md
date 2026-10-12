@@ -2,11 +2,11 @@
 title: "Population-based methods: genetic and memetic algorithms"
 ---
 
-# 26.10 Population-based methods: genetic and memetic algorithms { #sez-sec-ga }
+# 31.10 Population-based methods: genetic and memetic algorithms { #sez-sec-ga }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 26** · [:material-book-open-variant: Chapter 26: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
+**Part 4 · Heuristic algorithms · Chapter 31** · [:material-book-open-variant: Chapter 31: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
 
 </div>
 
@@ -33,7 +33,7 @@ title: "Population-based methods: genetic and memetic algorithms"
 
 - <strong>Mutation.</strong> Each gene is flipped with a small probability $p_m$, typically $\frac1n$: it brings back into the population genes that selection may have lost.
 
-- <strong>Repair.</strong> The child can be infeasible. REPAIRKP removes the selected item of minimum efficiency until the capacity is respected (ties: the item of largest index). Alternatives are penalties, as in Section [26.4.3](how-to-escape-from-a-local-optimum.md#sez-sec-sa-kp), or encodings in which every chromosome is feasible.
+- <strong>Repair.</strong> The child can be infeasible. REPAIRKP removes the selected item of minimum efficiency until the capacity is respected (ties: the item of largest index). Alternatives are penalties, as in Section [31.4.3](how-to-escape-from-a-local-optimum.md#sez-sec-sa-kp), or encodings in which every chromosome is feasible.
 
 - <strong>Replacement.</strong> In the steady-state version of the pseudo-code, the child replaces the worst individual if it is better and not already in the population; duplicates would make the population lose its diversity.
 
@@ -41,7 +41,7 @@ title: "Population-based methods: genetic and memetic algorithms"
 
 <a id="box-12-ex-gaKP"></a>
 
-!!! esempio "Example 26.11: $GA$ on the KP reference instance"
+!!! esempio "Example 31.11: $GA$ on the KP reference instance"
 
     With $P=4$, $p_m=\frac14$ and $seed=36$. The first $16$ random numbers build the initial population (gene $1$ if the number is smaller than $0.5$):
 
@@ -92,4 +92,4 @@ title: "Population-based methods: genetic and memetic algorithms"
 
 ---
 
-**Next:** [26.11 Comparison and conclusions](comparison-and-conclusions.md)
+**Next:** [31.11 Comparison and conclusions](comparison-and-conclusions.md)

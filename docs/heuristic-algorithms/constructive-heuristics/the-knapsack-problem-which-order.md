@@ -2,11 +2,11 @@
 title: "The knapsack problem: which order?"
 ---
 
-# 24.4 The knapsack problem: which order? { #sez-sec-KP }
+# 29.4 The knapsack problem: which order? { #sez-sec-KP }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 24** · [:material-book-open-variant: Chapter 24: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
+**Part 4 · Heuristic algorithms · Chapter 29** · [:material-book-open-variant: Chapter 29: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
 
 </div>
 
@@ -49,7 +49,7 @@ title: "The knapsack problem: which order?"
 
 <a id="box-3-ex-kp3"></a>
 
-!!! esempio "Example 24.1: Three orders on the KP reference instance"
+!!! esempio "Example 29.1: Three orders on the KP reference instance"
 
     On the KP reference instance ($c=9$) the three orders are
 
@@ -131,4 +131,4 @@ title: "The knapsack problem: which order?"
 
 ---
 
-**Next:** [24.5 The bin packing problem: first sort, then pack](the-bin-packing-problem-first-sort-then-pack.md)
+**Next:** [29.5 The bin packing problem: first sort, then pack](the-bin-packing-problem-first-sort-then-pack.md)

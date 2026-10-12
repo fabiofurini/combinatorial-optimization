@@ -6,13 +6,13 @@ title: "Exercises · Approximation for the metric TSP"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 32** · each solution opens with a click · [:material-book-open-variant: Chapter 32: Metric TSP](../approximation-algorithms/tsp-approximation.md) · [:material-file-pdf-box: Exercises, volume 5 (PDF)](../pdf/exercises-5-approximation-algorithms.pdf)
+**Exercises · Chapter 37** · each solution opens with a click · [:material-book-open-variant: Chapter 37: Metric TSP](../approximation-algorithms/tsp-approximation.md) · [:material-file-pdf-box: Exercises, volume 5 (PDF)](../pdf/exercises-5-approximation-algorithms.pdf)
 
 </div>
 
-<a id="esercizio-32-1"></a>
+<a id="esercizio-37-1"></a>
 
-!!! esercizio "Exercise 32.1: Metric TSP approximation 1"
+!!! esercizio "Exercise 37.1: Metric TSP approximation 1"
 
     We consider a set $\mathscr{V}=\{1,\dots,6\}$ of $6$ cities with coordinates $1{:}\,(3,4)$, $2{:}\,(6,1)$, $3{:}\,(3,8)$, $4{:}\,(8,8)$, $5{:}\,(0,4)$, $6{:}\,(8,0)$ and distances equal to the Euclidean distances rounded to the nearest integer (the instance is metric):
 
@@ -96,9 +96,9 @@ title: "Exercises · Approximation for the metric TSP"
         CH(I)=27\le d(T)+d(M)=29\le\frac32\,z(I)=\frac{81}{2}.
         \end{gather*}
 
-<a id="esercizio-32-2"></a>
+<a id="esercizio-37-2"></a>
 
-!!! esercizio "Exercise 32.2: Metric TSP approximation 2"
+!!! esercizio "Exercise 37.2: Metric TSP approximation 2"
 
     We consider a set $\mathscr{V}=\{1,\dots,6\}$ of $6$ cities with coordinates $1{:}\,(2,4)$, $2{:}\,(6,0)$, $3{:}\,(7,3)$, $4{:}\,(0,7)$, $5{:}\,(0,1)$, $6{:}\,(2,1)$ and distances equal to the Euclidean distances rounded to the nearest integer (the instance is metric):
 
@@ -179,9 +179,9 @@ title: "Exercises · Approximation for the metric TSP"
         d(M)=10\le\min\{11,10\}\le\frac{21}{2}\le\frac{z(I)}{2}=12 .
         $$
 
-<a id="esercizio-32-3"></a>
+<a id="esercizio-37-3"></a>
 
-!!! esercizio "Exercise 32.3: Metric TSP approximation 3"
+!!! esercizio "Exercise 37.3: Metric TSP approximation 3"
 
     We consider two graphs with $5$ vertices, $V=\{1,2,3,4,5\}$:
 

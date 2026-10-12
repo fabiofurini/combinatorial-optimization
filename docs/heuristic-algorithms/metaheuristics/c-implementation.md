@@ -6,17 +6,17 @@ title: "C++ implementation · References"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 26** · [:material-book-open-variant: Chapter 26: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
+**Part 4 · Heuristic algorithms · Chapter 31** · [:material-book-open-variant: Chapter 31: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
 
 </div>
 
-## 26.14 <code>C++</code> implementation { #sez-sec-code }
+## 31.14 <code>C++</code> implementation { #sez-sec-code }
 
 - All the functions of this section are in the folder <code>METAHEUR\_CODE/src</code>, one function per file, and are declared in the header <code>Metaheuristics.h</code>. The items, cities and jobs are indexed $0,1,\dots,n-1$, the machines $0,\dots,m-1$ and the bins $0,\dots,nb-1$: the algorithmic logic is the one of the pseudo-codes, with $0$-based indices. Vectors are <code>Vec</code> (<code>vector&lt;int&gt;</code>) and matrices <code>Matrix</code> (<code>vector&lt;Vec&gt;</code>).
 
-- The command <code>make test</code> compiles the code and runs every example of these notes and every instance of the exercises, checking the value found against the expected one; <code>make data</code> writes the data of the figure of Section [26.4.4](how-to-escape-from-a-local-optimum.md#sez-sec-sa-exp).
+- The command <code>make test</code> compiles the code and runs every example of these notes and every instance of the exercises, checking the value found against the expected one; <code>make data</code> writes the data of the figure of Section [31.4.4](how-to-escape-from-a-local-optimum.md#sez-sec-sa-exp).
 
-- The random numbers are produced by <code>Rand</code>, the generator of Section [26.2.2](the-problems-and-the-assumptions.md#sez-sec-random). The structure <code>Random</code> contains the seed and, optionally, a list of given numbers, which are returned instead: the exercises give their random numbers explicitly.
+- The random numbers are produced by <code>Rand</code>, the generator of Section [31.2.2](the-problems-and-the-assumptions.md#sez-sec-random). The structure <code>Random</code> contains the seed and, optionally, a list of given numbers, which are returned instead: the exercises give their random numbers explicitly.
 
 ??? codice "Rand.cpp"
 
@@ -42,7 +42,7 @@ title: "C++ implementation · References"
     }
     ```
 
-### 26.14.1 Local searches and auxiliary functions
+### 31.14.1 Local searches and auxiliary functions
 
 - The 2-opt local search for the TSP, with the $O(1)$ evaluation of a move:
 
@@ -300,9 +300,9 @@ title: "C++ implementation · References"
     }
     ```
 
-### 26.14.2 Simulated annealing
+### 31.14.2 Simulated annealing
 
-- Simulated annealing for the TSP (Section [26.4](how-to-escape-from-a-local-optimum.md#sez-sec-sa), with the 2-opt neighbourhood), and for the KP with the penalized objective of Section [26.4.3](how-to-escape-from-a-local-optimum.md#sez-sec-sa-kp):
+- Simulated annealing for the TSP (Section [31.4](how-to-escape-from-a-local-optimum.md#sez-sec-sa), with the 2-opt neighbourhood), and for the KP with the penalized objective of Section [31.4.3](how-to-escape-from-a-local-optimum.md#sez-sec-sa-kp):
 
 ??? codice "SimulatedAnnealingTSP.cpp"
 
@@ -392,9 +392,9 @@ title: "C++ implementation · References"
     }
     ```
 
-### 26.14.3 Tabu search
+### 31.14.3 Tabu search
 
-- Tabu search for $P\,||\,C_{\max}$ (Section [26.5](tabu-search.md#sez-sec-ts)) and for the TSP (Section [26.5.2](tabu-search.md#sez-sec-ts-tsp)):
+- Tabu search for $P\,||\,C_{\max}$ (Section [31.5](tabu-search.md#sez-sec-ts)) and for the TSP (Section [31.5.2](tabu-search.md#sez-sec-ts-tsp)):
 
 ??? codice "TabuSearchPCmax.cpp"
 
@@ -499,9 +499,9 @@ title: "C++ implementation · References"
     }
     ```
 
-### 26.14.4 Iterated local search and variable neighbourhood search
+### 31.14.4 Iterated local search and variable neighbourhood search
 
-- Iterated local search for the TSP with the double-bridge kick (Section [26.6](iterated-local-search.md#sez-sec-ils)):
+- Iterated local search for the TSP with the double-bridge kick (Section [31.6](iterated-local-search.md#sez-sec-ils)):
 
 ??? codice "DoubleBridge.cpp"
 
@@ -547,7 +547,7 @@ title: "C++ implementation · References"
     }
     ```
 
-- Variable neighbourhood search for $P\,||\,C_{\max}$ (Section [26.7](variable-neighbourhood-search.md#sez-sec-vns)):
+- Variable neighbourhood search for $P\,||\,C_{\max}$ (Section [31.7](variable-neighbourhood-search.md#sez-sec-vns)):
 
 ??? codice "Shake.cpp"
 
@@ -608,9 +608,9 @@ title: "C++ implementation · References"
     }
     ```
 
-### 26.14.5 GRASP
+### 31.14.5 GRASP
 
-- GRASP for the KP (Section [26.8](grasp.md#sez-sec-grasp)) and for the TSP (Section [26.8.1](grasp.md#sez-sec-grasp-exp)):
+- GRASP for the KP (Section [31.8](grasp.md#sez-sec-grasp)) and for the TSP (Section [31.8.1](grasp.md#sez-sec-grasp-exp)):
 
 ??? codice "RandomizedGreedyKP.cpp"
 
@@ -735,9 +735,9 @@ title: "C++ implementation · References"
     }
     ```
 
-### 26.14.6 Large neighbourhood search
+### 31.14.6 Large neighbourhood search
 
-- LNS and ALNS for the TSP (Sections [26.9](large-neighbourhood-search.md#sez-sec-lns) and [26.9.2](large-neighbourhood-search.md#sez-sec-alns)):
+- LNS and ALNS for the TSP (Sections [31.9](large-neighbourhood-search.md#sez-sec-lns) and [31.9.2](large-neighbourhood-search.md#sez-sec-alns)):
 
 ??? codice "RandomRemoval.cpp"
 
@@ -867,7 +867,7 @@ title: "C++ implementation · References"
     }
     ```
 
-- LNS for the BPP (Section [26.9.1](large-neighbourhood-search.md#sez-sec-lns-bpp)), with the First Fit starting packing, the destroy method and the two repair methods:
+- LNS for the BPP (Section [31.9.1](large-neighbourhood-search.md#sez-sec-lns-bpp)), with the First Fit starting packing, the destroy method and the two repair methods:
 
 ??? codice "FirstFit.cpp"
 
@@ -1045,9 +1045,9 @@ title: "C++ implementation · References"
     }
     ```
 
-### 26.14.7 Genetic and memetic algorithm
+### 31.14.7 Genetic and memetic algorithm
 
-- The genetic and memetic algorithm for the KP (Section [26.10](population-based-methods-genetic-and-memetic-algorithms.md#sez-sec-ga)):
+- The genetic and memetic algorithm for the KP (Section [31.10](population-based-methods-genetic-and-memetic-algorithms.md#sez-sec-ga)):
 
 ??? codice "RepairKP.cpp"
 

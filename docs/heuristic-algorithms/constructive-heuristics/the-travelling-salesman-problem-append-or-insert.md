@@ -2,11 +2,11 @@
 title: "The travelling salesman problem: append or insert?"
 ---
 
-# 24.7 The travelling salesman problem: append or insert? { #sez-sec-TSP }
+# 29.7 The travelling salesman problem: append or insert? { #sez-sec-TSP }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 24** · [:material-book-open-variant: Chapter 24: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
+**Part 4 · Heuristic algorithms · Chapter 29** · [:material-book-open-variant: Chapter 29: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
 
 </div>
 
@@ -16,7 +16,7 @@ title: "The travelling salesman problem: append or insert?"
 
     - <strong>insert</strong>: the partial solution is a closed subtour, and the new city is inserted between two consecutive cities, wherever it costs least.
 
-## 24.7.1 Nearest neighbour { #sez-sec-NN }
+## 29.7.1 Nearest neighbour { #sez-sec-NN }
 
 !!! chiave ""
 
@@ -35,7 +35,7 @@ title: "The travelling salesman problem: append or insert?"
 
 <a id="box-11-ex-nn"></a>
 
-!!! esempio "Example 24.7: $NN$ on the TSP reference instance"
+!!! esempio "Example 29.7: $NN$ on the TSP reference instance"
 
     Starting from city $1$:
 
@@ -59,7 +59,7 @@ title: "The travelling salesman problem: append or insert?"
 
     ![Figure 5](../../img/constructive-heuristics/fig05.svg){ .fig loading=lazy  }
 
-## 24.7.2 Multi-start nearest neighbour { #sez-sec-MSNN }
+## 29.7.2 Multi-start nearest neighbour { #sez-sec-MSNN }
 
 - The result of $NN$ depends on the starting city, which is an arbitrary choice: the tour is a cycle and has no natural first city. Since $NN$ is fast, it can simply be run from every city.
 
@@ -75,7 +75,7 @@ title: "The travelling salesman problem: append or insert?"
 
 <a id="box-12-ex-msnn"></a>
 
-!!! esempio "Example 24.8: Multi-start $NN$ on the TSP reference instance"
+!!! esempio "Example 29.8: Multi-start $NN$ on the TSP reference instance"
 
     The five runs of $NN$ give
 
@@ -110,7 +110,7 @@ title: "The travelling salesman problem: append or insert?"
 
     ![Figure 6](../../img/constructive-heuristics/fig06.svg){ .fig loading=lazy  }
 
-## 24.7.3 Insertion heuristics { #sez-sec-INS }
+## 29.7.3 Insertion heuristics { #sez-sec-INS }
 
 - $NN$ can only add a city at the end of a path. An <strong>insertion heuristic</strong> keeps a closed <em>subtour</em> $T$ through some of the cities, and inserts the new city wherever it is cheapest. Inserting city $k$ between two consecutive cities $i$ and $j$ of $T$ replaces the edge $(i,j)$ with the edges $(i,k)$ and $(k,j)$, and increases the length by the <strong>insertion cost</strong>
 
@@ -161,7 +161,7 @@ title: "The travelling salesman problem: append or insert?"
 
 <a id="box-13-ex-ni"></a>
 
-!!! esempio "Example 24.9: $NI$ and $CI$ on the TSP reference instance"
+!!! esempio "Example 29.9: $NI$ and $CI$ on the TSP reference instance"
 
     Starting from $T=(1)$. At each step we list, for every city $q\notin T$, its distance $d(q,T)$ and its insertion costs on the edges of $T$, in the order of $T$.
 
@@ -210,7 +210,7 @@ title: "The travelling salesman problem: append or insert?"
 
 <a id="box-14-ex-fi"></a>
 
-!!! esempio "Example 24.10: $FI$ on the TSP reference instance"
+!!! esempio "Example 29.10: $FI$ on the TSP reference instance"
 
     Starting from $T=(1)$:
 
@@ -253,13 +253,13 @@ title: "The travelling salesman problem: append or insert?"
 
 - <strong>What is known in the worst case.</strong> On metric instances, $NI$ and $CI$ never return a tour longer than twice the optimal one, while the ratio of $NN$ can grow like $\log n$ and only a logarithmic bound is known for $FI$ (D.J. Rosenkrantz, R.E. Stearns, P.M. Lewis, <em>An analysis of several heuristics for the traveling salesman problem</em>, SIAM Journal on Computing 6 (1977) 563–581). In practice, on Euclidean instances, $FI$ is usually the best of the insertion heuristics, and $NN$ tours are typically about $25\%$ longer than the optimum.
 
-## 24.7.4 A comparison on a larger instance { #sez-sec-TSP6 }
+## 29.7.4 A comparison on a larger instance { #sez-sec-TSP6 }
 
 - On the reference instance the three insertion heuristics, from every starting city, all find the optimal tour, and the differences between the rules do not show. To compare them we use a second TSP instance, with $6$ cities in the plane and distances equal to the Euclidean distances rounded to the nearest integer. The instance is metric (checked on all the triples of cities).
 
 <a id="box-15-ex-tsp6"></a>
 
-!!! esempio "Example 24.11: A TSP instance with $6$ cities"
+!!! esempio "Example 29.11: A TSP instance with $6$ cities"
 
     The cities have coordinates
 
@@ -336,4 +336,4 @@ title: "The travelling salesman problem: append or insert?"
 
 ---
 
-**Next:** [24.8 Vertex coloring: greedy and DSATUR](vertex-coloring-greedy-and-dsatur.md)
+**Next:** [29.8 Vertex coloring: greedy and DSATUR](vertex-coloring-greedy-and-dsatur.md)

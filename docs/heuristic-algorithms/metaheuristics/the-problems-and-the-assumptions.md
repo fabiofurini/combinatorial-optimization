@@ -2,11 +2,11 @@
 title: "The problems and the assumptions"
 ---
 
-# 26.2 The problems and the assumptions { #sez-sec-problems }
+# 31.2 The problems and the assumptions { #sez-sec-problems }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 26** · [:material-book-open-variant: Chapter 26: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
+**Part 4 · Heuristic algorithms · Chapter 31** · [:material-book-open-variant: Chapter 31: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
 
 </div>
 
@@ -49,7 +49,7 @@ title: "The problems and the assumptions"
 
 - As in the notes on heuristic algorithms, $\mathscr{A}(I)$ is the value of the solution computed by the algorithm $\mathscr{A}$ on the instance $I$, and $z(I)$ is the optimal value. We write $f(S)$ for the value of a solution $S$, and we describe the algorithms for a <strong>minimization</strong> problem; for the KP, a maximization problem, the inequalities are reversed.
 
-## 26.2.1 The neighbourhoods { #sez-sec-neigh }
+## 31.2.1 The neighbourhoods { #sez-sec-neigh }
 
 - All the metaheuristics of these notes are built on the neighbourhoods of the notes on local search. We recall them by name, with the moves that define them; $n$ is the number of items, cities or jobs.
 
@@ -128,7 +128,7 @@ title: "The problems and the assumptions"
 
 - The <strong>local searches</strong> used inside the metaheuristics are the descents of the notes on local search: TWOOPTLS (2-opt, best improvement) for the TSP, MOVEDESCENT (move, best improvement, lexicographic comparison) for $P\,||\,C_{\max}$, and KPLOCALSEARCH (feasible flips and swaps, best improvement) for the KP. In every best-improvement descent, ties between equally good moves are broken in favour of the first move found, scanning the indices in increasing order.
 
-## 26.2.2 Random numbers { #sez-sec-random }
+## 31.2.2 Random numbers { #sez-sec-random }
 
 - Most metaheuristics make <strong>random choices</strong>. To make every example and every exercise reproducible, all the random numbers of these notes, and of their <code>C++</code> code, are produced by the <strong>minimal standard generator</strong> of Park and Miller (1988):
 
@@ -150,7 +150,7 @@ title: "The problems and the assumptions"
 
 - In the worked examples the random numbers are written in the text, rounded to four decimals, so that every step can be checked by hand; the rounding never changes a decision.
 
-## 26.2.3 The instances { #sez-sec-instances }
+## 31.2.3 The instances { #sez-sec-instances }
 
 - The worked examples use the four <strong>reference instances</strong> of the notes on heuristic algorithms, whose optimal values are known:
 
@@ -194,11 +194,11 @@ $$
 \end{array}
 $$
 
-- The reference instances are small enough to follow every iteration by hand, but too small to show the behaviour of a metaheuristic over thousands of iterations. For the experiments we use one <strong>medium instance</strong> per problem, generated once with the random number generator of Section [26.2.2](#sez-sec-random) and fixed below. Their optimal values have been computed with an exact algorithm, and are used only to measure the quality of the heuristic solutions.
+- The reference instances are small enough to follow every iteration by hand, but too small to show the behaviour of a metaheuristic over thousands of iterations. For the experiments we use one <strong>medium instance</strong> per problem, generated once with the random number generator of Section [31.2.2](#sez-sec-random) and fixed below. Their optimal values have been computed with an exact algorithm, and are used only to measure the quality of the heuristic solutions.
 
 <a id="box-2-ex-tsp20"></a>
 
-!!! esempio "Example 26.1: The medium TSP instance (TSP20)"
+!!! esempio "Example 31.1: The medium TSP instance (TSP20)"
 
     $20$ cities in the plane, with integer coordinates $(x_i,y_i)$, and distances $d_{ij}=\big\lfloor \sqrt{(x_i-x_j)^2+(y_i-y_j)^2} + \frac{1}{2}\big\rfloor$ (the Euclidean distance rounded to the nearest integer):
 
@@ -222,7 +222,7 @@ $$
 
 <a id="box-3-ex-medium"></a>
 
-!!! esempio "Example 26.2: The medium instances of the KP, the BPP and $P\,||\,C_{\max}$"
+!!! esempio "Example 31.2: The medium instances of the KP, the BPP and $P\,||\,C_{\max}$"
 
     <strong>KP20</strong>: $n=20$ items, capacity $c=389$ (half of the total weight, rounded down),
 

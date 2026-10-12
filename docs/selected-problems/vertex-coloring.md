@@ -54,17 +54,17 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Formulations { #sez-sec-cat-vcp-formulations }
 
-- The model $\ILP_{\VCP}$ has $kn$ variables $x_{vc}$ and $k$ variables $y_c$, and $k!$ equivalent copies of every coloring ([Ch. 11](../formulations/coloring-formulations.md#112-an-ilp-model-for-the-vertex-coloring-problem)).
+- The model $\ILP_{\VCP}$ has $kn$ variables $x_{vc}$ and $k$ variables $y_c$, and $k!$ equivalent copies of every coloring ([Ch. 11](../formulations/coloring-formulations.md#111-an-ilp-model-for-the-vertex-coloring-problem)).
 
-- Both LP relaxations have value $2$ for every graph with an edge ([Ch. 11](../formulations/coloring-formulations.md#box-11-cor_lp_vcp_value)).
+- Both LP relaxations have value $2$ for every graph with an edge ([Ch. 11](../formulations/coloring-formulations.md#box-10-cor_lp_vcp_value)).
 
-- On the complete graph with $n$ vertices the gap is $n-2$ and the ratio $\frac{2}{n}$ tends to $0$ ([Ch. 11](../formulations/coloring-formulations.md#115-typical-mistakes)).
+- On the complete graph with $n$ vertices the gap is $n-2$ and the ratio $\frac{2}{n}$ tends to $0$ ([Ch. 11](../formulations/coloring-formulations.md#114-typical-mistakes)).
 
 ## Heuristics { #sez-sec-cat-vcp-heuristics }
 
-- The greedy coloring uses at most $\Delta(G)+1$ colors, and the order of the vertices matters ([Ch. 24](../heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur.md#sez-sec-VCPgreedy)).
+- The greedy coloring uses at most $\Delta(G)+1$ colors, and the order of the vertices matters ([Ch. 29](../heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur.md#sez-sec-VCPgreedy)).
 
-- $DSATUR$ colors first the vertex that sees the most colors; it is exact on bipartite graphs ([Ch. 24](../heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur.md#sez-sec-VCPgreedy)).
+- $DSATUR$ colors first the vertex that sees the most colors; it is exact on bipartite graphs ([Ch. 29](../heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur.md#sez-sec-VCPgreedy)).
 
 ## Approximation { #sez-sec-cat-vcp-approximation }
 

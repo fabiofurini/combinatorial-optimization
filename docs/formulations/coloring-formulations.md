@@ -16,7 +16,7 @@ title: "Formulations of the vertex coloring problem"
 
     - From the module <em>Integer linear programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/) and [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): ILP problems, LP relaxations and bounds.
 
-    - From this module, the chapter «Vertex coloring»: the problem and the notation on graphs.
+    - From this module, [Chapter 4 «Vertex coloring»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/): the problem, its assumptions and the notation on graphs.
 
 !!! chiave "Objectives"
 
@@ -30,47 +30,9 @@ title: "Formulations of the vertex coloring problem"
 
     - explain why this bound is very weak, and why the model is not enough to color a graph.
 
-## 11.1 The problem in brief
+## 11.1 An ILP model for the Vertex Coloring Problem
 
-!!! nota "Where we were"
-
-    In the chapter «Vertex coloring» we met the Vertex Coloring Problem as a <em>problem</em>: definition, notation on graphs and first bounds. Here we look at it as a <em>model</em> and we study its LP relaxations. The problem returns with heuristic algorithms and approximation algorithms for the VCP.
-
-<a id="box-1-def-VCP"></a>
-
-!!! definizione "Definition 11.1: Vertex Coloring Problem"
-
-    Given:
-
-    1. a simple <em>graph</em> $G = (V,E)$, where
-
-        $$
-        V = \{1,2,\dots,n\}
-        $$
-
-        is the set of $n$ <em>vertices</em>, and
-
-        $$
-        E \subseteq \big\{\, \{u,v\} : u,v \in V,~ u \neq v \,\big\}
-        $$
-
-        is the set of $m$ <em>edges</em>,
-
-    the <strong>Vertex Coloring Problem</strong> (VCP) asks to decide how to assign a color to each vertex, so that no two adjacent vertices share the same color, and the total number of colors used is minimized.
-
-- For a vertex $v \in V$ we denote by $\delta(v)$ the set of the edges incident to $v$, by $\deg(v) = |\delta(v)|$ its degree and by $N(v)$ the set of the vertices adjacent to $v$.
-
-- We assume that any VCP instance satisfies the problem assumptions, i.e.,
-
-    $$
-    \deg(v) \geq 1 ~~~~\text{for all}~~~~ v \in V ~~~~~~~\text{and}~~~~~~~ N(u) \not\subseteq N(v) ~~~~\text{for all}~~~~ u, v \in V,~ u \neq v
-    $$
-
-- The first assumption guarantees that the graph has no isolated vertices: they can always take any color used by the rest of the graph.
-
-- The second assumption guarantees that no vertex can be removed without affecting the optimal value: if $N(u) \subseteq N(v)$, any coloring of $G \setminus \{u\}$ can be extended to $u$ by assigning it the color of $v$.
-
-## 11.2 An ILP model for the Vertex Coloring Problem
+- Given a graph $G=(V,E)$, for a vertex $v \in V$ we denote by $\delta(v)$ the set of the edges incident to $v$.
 
 - Given an upper bound $k \in \Z_{\ge 2}$ on the number of colors used in any optimal VCP solution, we introduce the following $k\;\underbrace{|V|}_{=n}$ binary variables:
 
@@ -136,7 +98,7 @@ title: "Formulations of the vertex coloring problem"
 
 - <strong>If color $c$ is used, then some vertex takes it, but only in an optimal solution.</strong> The constraints do not impose it. However, if $x_{vc}=0$ for all $v$ and $y_c=1$, setting $y_c=0$ keeps all the constraints satisfied and decreases the objective value by one. Hence, in every optimal solution, unused colors are not counted.
 
-<a id="box-2-texexpbox_ilp_vcp"></a>
+<a id="box-1-texexpbox_ilp_vcp"></a>
 
 !!! esempio "Example 11.1: $\mathrm{ILP}_{\mathrm{VCP}}$ model"
 
@@ -183,7 +145,7 @@ title: "Formulations of the vertex coloring problem"
 
     The associated optimal solution of the VCP is given by the color classes $\tilde{Q}_1 =\{1\}$, $\tilde{Q}_2 =\{2\}$ and $\tilde{Q}_3 =\{3\}$. The optimal partition is unique, but the $3!$ permutations of the colors give $6$ different optimal solutions.
 
-## 11.3 A first Linear Programming relaxation
+## 11.2 A first Linear Programming relaxation
 
 !!! chiave ""
 
@@ -194,7 +156,7 @@ title: "Formulations of the vertex coloring problem"
     &&y_{c}                        &\ge  0, &  \forall c \in \mathscr{C}. \label{cons3_VCP_LP} \tag{11.4b}
     \end{align*}
 
-<a id="box-3-texexpbox_lp0_vcp"></a>
+<a id="box-2-texexpbox_lp0_vcp"></a>
 
 !!! esempio "Example 11.2: $\mathrm{LP}\text{-}0_{\mathrm{VCP}}$ model"
 
@@ -253,7 +215,7 @@ title: "Formulations of the vertex coloring problem"
     &&\pi_{ce}                        &\ge  0, &  \forall c \in \mathscr{C},~\forall e \in E.\label{cons4_D} \tag{11.5e}
     \end{align*}
 
-<a id="box-4-texexpbox_dlp0_vcp"></a>
+<a id="box-3-texexpbox_dlp0_vcp"></a>
 
 !!! esempio "Example 11.3: $D(\mathrm{LP}\text{-}0_{\mathrm{VCP}})$ model"
 
@@ -285,9 +247,9 @@ title: "Formulations of the vertex coloring problem"
     \tilde\mu_1=\tilde\mu_2=1,~~\tilde\mu_3=0,\qquad \tilde\pi_{112}=\tilde\pi_{212}=\tilde\pi_{312}=1,\qquad \text{all the other } \tilde\pi_{ce}=0
     $$
 
-<a id="box-5-prop_lp0_vcp_opt"></a>
+<a id="box-4-prop_lp0_vcp_opt"></a>
 
-!!! teorema "Proposition 11.2"
+!!! teorema "Proposition 11.1"
 
     An optimal solution of  the primal $\mathrm{LP}\text{-}0_{\mathrm{VCP}}$ model is:
 
@@ -325,9 +287,9 @@ title: "Formulations of the vertex coloring problem"
     \tilde{\pi}_{ce}= 0,  \quad \forall e \in E \setminus \{\{u,v\}\}, \tag{11.7b}
     \end{equation*}
 
-<a id="box-6-cor_lp0_vcp_value"></a>
+<a id="box-5-cor_lp0_vcp_value"></a>
 
-!!! teorema "Corollary 11.3"
+!!! teorema "Corollary 11.2"
 
     The optimal value of the primal $\mathrm{LP}\text{-}0_{\mathrm{VCP}}$ and dual $D(\mathrm{LP}\text{-}0_{\mathrm{VCP}})$ models is:
 
@@ -410,9 +372,9 @@ title: "Formulations of the vertex coloring problem"
 
 - This is an alternative proof that does not rely on the dual formulation but instead reasons directly on the minimum objective function value imposed by the constraints.
 
-<a id="box-7-prop_lp0_vcp_alternative"></a>
+<a id="box-6-prop_lp0_vcp_alternative"></a>
 
-!!! teorema "Proposition 11.4"
+!!! teorema "Proposition 11.3"
 
     An optimal solution of the primal $\mathrm{LP}\text{-}0_{\mathrm{VCP}}$ model is:
 
@@ -488,7 +450,7 @@ title: "Formulations of the vertex coloring problem"
 
     which matches the lower bound $\eqref{eq:vcp-lb}$. Therefore the point [(11.9)](#eq-PP_alternative) is an optimal solution with objective value $\eqref{VAL_alternative}$. <span class="qed">□</span>
 
-## 11.4 A second Linear Programming relaxation
+## 11.3 A second Linear Programming relaxation
 
 !!! chiave ""
 
@@ -500,7 +462,7 @@ title: "Formulations of the vertex coloring problem"
     &&y_{c}                        &\ge  0, &  \forall c \in \mathscr{C}. \label{cons4_VCP_LP_LL} \tag{11.12c}
     \end{align*}
 
-<a id="box-8-texexpbox_lp_vcp"></a>
+<a id="box-7-texexpbox_lp_vcp"></a>
 
 !!! esempio "Example 11.4: $\mathrm{LP}_{\mathrm{VCP}}$ model"
 
@@ -559,7 +521,7 @@ title: "Formulations of the vertex coloring problem"
     &&\lambda_{c}                        &\le  0, &  \forall c \in \mathscr{C}.\label{cons5_D_VCP} \tag{11.13f}
     \end{align*}
 
-<a id="box-9-texexpbox_dlp_vcp"></a>
+<a id="box-8-texexpbox_dlp_vcp"></a>
 
 !!! esempio "Example 11.5: $D(\mathrm{LP}_{\mathrm{VCP}})$ model"
 
@@ -610,9 +572,9 @@ title: "Formulations of the vertex coloring problem"
 
     but they are implied by constraints $\eqref{cons1_VCP}$.
 
-<a id="box-10-prop_lp_vcp_opt"></a>
+<a id="box-9-prop_lp_vcp_opt"></a>
 
-!!! teorema "Proposition 11.5"
+!!! teorema "Proposition 11.4"
 
     An optimal solution of  the primal $\mathrm{LP}_{\mathrm{VCP}}$ model is:
 
@@ -662,9 +624,9 @@ title: "Formulations of the vertex coloring problem"
 
     Accordingly, also constraints $\eqref{cons3_VCP_LP_LL}$ are satisfied. <span class="qed">□</span>
 
-<a id="box-11-cor_lp_vcp_value"></a>
+<a id="box-10-cor_lp_vcp_value"></a>
 
-!!! teorema "Corollary 11.6"
+!!! teorema "Corollary 11.5"
 
     The optimal value of the primal $\mathrm{LP}_{\mathrm{VCP}}$ and dual $D(\mathrm{LP}_{\mathrm{VCP}})$ models is:
 
@@ -677,7 +639,7 @@ title: "Formulations of the vertex coloring problem"
     z(D(\mathrm{LP}_{\mathrm{VCP}})) \tag{11.16}
     \end{equation*}
 
-## 11.5 Typical mistakes
+## 11.4 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -691,7 +653,7 @@ title: "Formulations of the vertex coloring problem"
 
     - <strong>Writing the dual solution with a wrong edge.</strong> The dual values $\tilde{\pi}_{ce}$ are non-zero only for one edge $e=\{u,v\}$, and for every color $c$: all the other edges have value zero.
 
-## 11.6 In summary
+## 11.5 In summary
 
 !!! chiave "In summary"
 

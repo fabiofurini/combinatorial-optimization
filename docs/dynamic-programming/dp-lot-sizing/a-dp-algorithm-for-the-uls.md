@@ -2,15 +2,15 @@
 title: "A DP algorithm for the ULS"
 ---
 
-# 22.2 A DP algorithm for the ULS
+# 27.2 A DP algorithm for the ULS
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 22** · [:material-book-open-variant: Chapter 22: Lot sizing](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/dp-lot-sizing.md)
+**Part 3 · Dynamic programming · Chapter 27** · [:material-book-open-variant: Chapter 27: Lot sizing](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/dp-lot-sizing.md)
 
 </div>
 
-## 22.2.1 The cost of a production run
+## 27.2.1 The cost of a production run
 
 - By the zero-inventory ordering property, an optimal solution is a sequence of <strong>production runs</strong>: a run produces in a period $j$ the demands of periods $j,\dots,t$, and the next run starts in period $t+1$ with an empty inventory.
 
@@ -20,7 +20,7 @@ title: "A DP algorithm for the ULS"
 
     \begin{equation*}
     \label{eq:cjt}
-    c_{j,t}= sc_j + vc_j\, D_{j,t} + \sum_{k=j}^{t-1} hc_k\, D_{k+1,t}. \tag{22.7}
+    c_{j,t}= sc_j + vc_j\, D_{j,t} + \sum_{k=j}^{t-1} hc_k\, D_{k+1,t}. \tag{27.2}
     \end{equation*}
 
 - The first term is the setup cost of period $j$, the second term is the variable cost of the $D_{j,t}$ produced units, and the last term is the holding cost: at the end of each period $k\in\{j,\dots,t-1\}$ the inventory contains the demands $D_{k+1,t}$ of the following periods of the run.
@@ -47,9 +47,9 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
 <a id="box-16-texulscost"></a>
 
-!!! esempio "Example 22.4: Computation of the production-run costs"
+!!! esempio "Example 27.4: Computation of the production-run costs"
 
-    We consider the ULS instance of <span style="color:#1971c2">[Example 22.1](index.md#box-2-texuls1)</span>:
+    We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](index.md#box-2-texuls1)</span>:
 
     $$
     \begin{array}{l|rrrrr}
@@ -195,4 +195,4 @@ This is the pseudo-code that computes the matrix of the production-run costs:
 
 ---
 
-**Next:** [22.2.2 A DP algorithm for the ULS: Step 1 and Step 2](a-dp-algorithm-for-the-uls-step-1-and-step-2.md)
+**Next:** [27.2.2 A DP algorithm for the ULS: Step 1 and Step 2](a-dp-algorithm-for-the-uls-step-1-and-step-2.md)

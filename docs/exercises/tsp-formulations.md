@@ -10,29 +10,30 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
 </div>
 
-!!! formula "Formulations used in these exercises"
+!!! chiave ""
 
-    The two models of the chapter [Formulations of the travelling salesman problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/tsp-formulations/), on the arcs $A=\{(i,j): i,j\in\mathscr{V},~i\neq j\}$. Both have the objective and the degree constraints
+    <strong>Formulations used in these exercises.</strong> The two models of the chapter [Formulations of the travelling salesman problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/tsp-formulations/), on the arcs $A=\{(i,j): i,j\in\mathscr{V},~i\neq j\}$. The model $\mathrm{ILP}^{\mathrm{MTZ}}_{\mathrm{TSP}}$:
 
     \begin{align*}
-    \min~~ & \sum_{(i,j)\in A} d_{ij}\,x_{ij} \tag{T0}\\
-    \text{subject to}~~ & \sum_{j\neq i} x_{ij}=1,~~ i\in\mathscr{V}, \qquad \sum_{i\neq j} x_{ij}=1,~~ j\in\mathscr{V}, \tag{T1}\\
-    & x_{ij}\in\{0,1\},~~ (i,j)\in A. \tag{T2}
+    && \min ~~ \sum_{(i,j)\in A} d_{ij}\,x_{ij} \tag{T0}\\
+    && \text{subject to} \quad \sum_{j\in\mathscr{V},\,j\neq i} x_{ij} &= 1, & \forall i\in\mathscr{V}, \tag{T1}\\
+    && \sum_{i\in\mathscr{V},\,i\neq j} x_{ij} &= 1, & \forall j\in\mathscr{V}, \tag{T2}\\
+    && u_i-u_j+(n-1)\,x_{ij} &\le n-2, & \forall i,j\in\mathscr{V}\setminus\{1\},~i\neq j, \tag{MTZ}\\
+    && x_{ij} &\in\{0,1\}, & \forall (i,j)\in A, \tag{T3}\\
+    && 1\le u_i &\le n-1, & \forall i\in\mathscr{V}\setminus\{1\}. \tag{T4}
     \end{align*}
 
-    The model $\mathrm{ILP}^{\mathrm{MTZ}}_{\mathrm{TSP}}$ adds the positions $1\le u_i\le n-1$ ($i\in\mathscr{V}\setminus\{1\}$) and the constraints
+    The model $\mathrm{ILP}^{\mathrm{DFJ}}_{\mathrm{TSP}}$:
 
-    \begin{equation*}
-    u_i-u_j+(n-1)\,x_{ij}\le n-2, \qquad i,j\in\mathscr{V}\setminus\{1\},~i\neq j. \tag{MTZ}
-    \end{equation*}
+    \begin{align*}
+    && \min ~~ \sum_{(i,j)\in A} d_{ij}\,x_{ij} \tag{T0}\\
+    && \text{subject to} \quad \sum_{j\in\mathscr{V},\,j\neq i} x_{ij} &= 1, & \forall i\in\mathscr{V}, \tag{T1}\\
+    && \sum_{i\in\mathscr{V},\,i\neq j} x_{ij} &= 1, & \forall j\in\mathscr{V}, \tag{T2}\\
+    && \sum_{i\in S}\sum_{j\in S,\,j\neq i} x_{ij} &\le |S|-1, & \forall S\subseteq\mathscr{V}\setminus\{1\},~|S|\ge 2, \tag{SEC}\\
+    && x_{ij} &\in\{0,1\}, & \forall (i,j)\in A. \tag{T3}
+    \end{align*}
 
-    The model $\mathrm{ILP}^{\mathrm{DFJ}}_{\mathrm{TSP}}$ adds instead the subtour elimination constraints
-
-    \begin{equation*}
-    \sum_{i\in S}\sum_{j\in S,\,j\neq i} x_{ij}\le |S|-1, \qquad S\subseteq\mathscr{V}\setminus\{1\},~|S|\ge 2. \tag{SEC}
-    \end{equation*}
-
-    The relaxations $\mathrm{LP}^{\mathrm{MTZ}}_{\mathrm{TSP}}$ and $\mathrm{LP}^{\mathrm{DFJ}}_{\mathrm{TSP}}$ replace (T2) with $0\le x_{ij}\le 1$.
+    The relaxations $\mathrm{LP}^{\mathrm{MTZ}}_{\mathrm{TSP}}$ and $\mathrm{LP}^{\mathrm{DFJ}}_{\mathrm{TSP}}$ relax (T3) into $x_{ij}\ge 0$ (the bounds $x_{ij}\le 1$ are implied by (T1)).
 
 <a id="esercizio-13-1"></a>
 
@@ -71,26 +72,29 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
     2. With $A=\{(i,j): i,j\in\mathscr{V},~i\neq j\}$ the model is:
 
-        \begin{align*}
-        \min~~ & 3x_{12} + 5x_{13} + 4x_{14} + 3x_{21} + 4x_{23} + 6x_{24} \\[0.4ex]
-        & \qquad + 5x_{31} + 4x_{32} + 2x_{34} + 4x_{41} + 6x_{42} + 2x_{43} \\[0.4ex]
-        \text{subject to}~~ & x_{12} + x_{13} + x_{14} = 1 \\[0.4ex]
-        & x_{21} + x_{23} + x_{24} = 1 \\[0.4ex]
-        & x_{31} + x_{32} + x_{34} = 1 \\[0.4ex]
-        & x_{41} + x_{42} + x_{43} = 1 \\[0.4ex]
-        & x_{21} + x_{31} + x_{41} = 1 \\[0.4ex]
-        & x_{12} + x_{32} + x_{42} = 1 \\[0.4ex]
-        & x_{13} + x_{23} + x_{43} = 1 \\[0.4ex]
-        & x_{14} + x_{24} + x_{34} = 1 \\[0.4ex]
-        & u_2 - u_3 + 3x_{23} \le 2 \\[0.4ex]
-        & u_2 - u_4 + 3x_{24} \le 2 \\[0.4ex]
-        & u_3 - u_2 + 3x_{32} \le 2 \\[0.4ex]
-        & u_3 - u_4 + 3x_{34} \le 2 \\[0.4ex]
-        & u_4 - u_2 + 3x_{42} \le 2 \\[0.4ex]
-        & u_4 - u_3 + 3x_{43} \le 2 \\[0.4ex]
-        & x_{ij} \in \{0,1\}, ~~ (i,j) \in A \\[0.4ex]
-        & 1 \le u_i \le 3, ~~ i \in \{2,\dots,4\}
-        \end{align*}
+        $$
+        \begin{array}{rlcl}
+        {\min} & {3\,x_{12}+5\,x_{13}+4\,x_{14}+3\,x_{21}+4\,x_{23}+6\,x_{24}+5\,x_{31}} &  &  \\
+        & {+4\,x_{32}+2\,x_{34}+4\,x_{41}+6\,x_{42}+2\,x_{43}} &  &  \\[1ex]
+        \text{subject to} & {x_{12}+x_{13}+x_{14}} & {=} & {1} \\
+        & {x_{21}+x_{23}+x_{24}} & {=} & {1} \\
+        & {x_{31}+x_{32}+x_{34}} & {=} & {1} \\
+        & {x_{41}+x_{42}+x_{43}} & {=} & {1} \\
+        & {x_{21}+x_{31}+x_{41}} & {=} & {1} \\
+        & {x_{12}+x_{32}+x_{42}} & {=} & {1} \\
+        & {x_{13}+x_{23}+x_{43}} & {=} & {1} \\
+        & {x_{14}+x_{24}+x_{34}} & {=} & {1} \\
+        & {u_2-u_3+3\,x_{23}} & {\le} & {2} \\
+        & {u_2-u_4+3\,x_{24}} & {\le} & {2} \\
+        & {u_3-u_2+3\,x_{32}} & {\le} & {2} \\
+        & {u_3-u_4+3\,x_{34}} & {\le} & {2} \\
+        & {u_4-u_2+3\,x_{42}} & {\le} & {2} \\
+        & {u_4-u_3+3\,x_{43}} & {\le} & {2} \\[1ex]
+        & {x_{12},~x_{13},~x_{14},~\dots,~x_{43}} & {\in} & {\{0,1\}} \\
+        & {u_2,~u_3,~u_4} & {\ge} & {1} \\
+        & {u_2,~u_3,~u_4} & {\le} & {3}
+        \end{array}
+        $$
 
     3. Starting from city $1$, and counting each tour once (one direction), the distinct tours are $\frac{(n-1)!}{2}=3$:
 

@@ -6,7 +6,7 @@ title: "DP for the rod cutting problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 20** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting](../../exercises/dp-rod-cutting.md)
+**Part 3 · Dynamic programming · Chapter 25** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting](../../exercises/dp-rod-cutting.md)
 
 </div>
 
@@ -32,11 +32,11 @@ title: "DP for the rod cutting problem"
 
     - write the second recurrence $v(j,\ell)$ on pairs (largest piece length, rod length) and count the steps of the DP algorithm.
 
-## 20.1 Problem definition
+## 25.1 Problem definition
 
 <a id="box-1-defRCP"></a>
 
-!!! definizione "Definition 20.1: Rod-Cutting Problem"
+!!! definizione "Definition 25.1: Rod-Cutting Problem"
 
     Given:
 
@@ -50,7 +50,7 @@ title: "DP for the rod cutting problem"
 
 <a id="box-2-texexpbox1"></a>
 
-!!! esempio "Example 20.1: Rod cutting problem"
+!!! esempio "Example 25.1: Rod cutting problem"
 
     We consider a rod of length $n = 4$ and a set $\{1,2,3,4\}$ of $4$ possible piece lengths with the following profits:
 
@@ -76,7 +76,7 @@ title: "DP for the rod cutting problem"
 
     Therefore, enumerating all possible solutions quickly becomes impractical as $n$ increases.
 
-### 20.1.1 Encoding of feasible solutions
+### 25.1.1 Encoding of feasible solutions
 
 !!! chiave ""
 
@@ -117,7 +117,7 @@ title: "DP for the rod cutting problem"
 
 <a id="box-3-texrcpenumeration"></a>
 
-!!! esempio "Example 20.2: Enumeration of all possible RCP solutions"
+!!! esempio "Example 25.2: Enumeration of all possible RCP solutions"
 
     We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
@@ -202,13 +202,13 @@ title: "DP for the rod cutting problem"
 
     Problem definition · Encoding of feasible solutions
 
-    [:octicons-arrow-right-24: Open](#201-problem-definition)
+    [:octicons-arrow-right-24: Open](#251-problem-definition)
 
--   **20.2 A first DP algorithm**
+-   **25.2 A first DP algorithm**
 
     [:octicons-arrow-right-24: Open](a-first-dp-algorithm.md)
 
--   **20.3 A second DP algorithm**
+-   **25.3 A second DP algorithm**
 
     [:octicons-arrow-right-24: Open](a-second-dp-algorithm.md)
 
@@ -222,7 +222,7 @@ title: "DP for the rod cutting problem"
 
 ---
 
-**Next:** [20.2 A first DP algorithm](a-first-dp-algorithm.md)
+**Next:** [25.2 A first DP algorithm](a-first-dp-algorithm.md)
 
 ---
 

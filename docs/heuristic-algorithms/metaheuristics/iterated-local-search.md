@@ -2,11 +2,11 @@
 title: "Iterated local search"
 ---
 
-# 26.6 Iterated local search { #sez-sec-ils }
+# 31.6 Iterated local search { #sez-sec-ils }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 26** · [:material-book-open-variant: Chapter 26: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
+**Part 4 · Heuristic algorithms · Chapter 31** · [:material-book-open-variant: Chapter 31: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
 
 </div>
 
@@ -37,11 +37,11 @@ title: "Iterated local search"
 
 - The <strong>double bridge</strong> cuts the tour into four segments $A$, $B$, $C$, $D$ and reconnects them as $A\,C\,B\,D$: it removes three edges (dashed) and adds three new ones (red), while the edge between the end of $D$ and the beginning of $A$ is kept. No segment is reversed, whereas every 2-opt move reverses a segment: when $B$ and $C$ have at least two cities each, a single 2-opt move cannot undo the kick, and the 2-opt local search, which accepts only improving moves, rarely goes back to the same local optimum. (If $B$ and $C$ are single cities, the kick changes only two edges and is itself a 2-opt move: exercise EX\_IV\_2 uses this case.)
 
-## 26.6.1 Example
+## 31.6.1 Example
 
 <a id="box-7-ex-ilsTSP"></a>
 
-!!! esempio "Example 26.6: $ILS$ on the medium TSP instance"
+!!! esempio "Example 31.6: $ILS$ on the medium TSP instance"
 
     On TSP20, the 2-opt local search from the nearest neighbour tour (length $326$) stops at the local optimum
 
@@ -79,4 +79,4 @@ title: "Iterated local search"
 
 ---
 
-**Next:** [26.7 Variable neighbourhood search](variable-neighbourhood-search.md)
+**Next:** [31.7 Variable neighbourhood search](variable-neighbourhood-search.md)

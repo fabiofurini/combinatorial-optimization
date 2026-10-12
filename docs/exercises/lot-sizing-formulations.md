@@ -10,33 +10,40 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
 </div>
 
-!!! formula "Formulations used in these exercises"
+!!! chiave ""
 
-    The two formulations of the chapter [Formulations of capacitated lot sizing](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/), on the periods $T=\{1,\dots,m\}$, with $D_{t,k}=\sum_{s=t}^{k}d_s$. The big-M formulation:
+    <strong>Formulations used in these exercises.</strong> The two formulations of the chapter [Formulations of capacitated lot sizing](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/), on the periods $T=\{1,\dots,m\}$, with $D_{t,k}=\sum_{s=t}^{k}d_s$. The big-M formulation $\mathrm{ILP}_{\mathrm{CLSP}}$:
 
     \begin{align*}
-    \min~~ & \sum_{t\in T}\left(sc_t\,y_t+vc_t\,x_t+hc_t\,s_t\right) \tag{L0}\\
-    \text{subject to}~~ & s_{t-1}+x_t=d_t+s_t, && t\in T, \tag{L1}\\
-    & x_t\le M_t\,y_t, \quad x_t\le cap_t, && t\in T, \tag{L2}\\
-    & s_0=s_m=0,~~ x_t,s_t\in\Z_{\ge 0},~~ y_t\in\{0,1\}, && t\in T. \tag{L3}
+    && \min ~~ \sum_{t\in T}\left(sc_t\,y_t+vc_t\,x_t+hc_t\,s_t\right) \tag{L0}\\
+    && \text{subject to} \quad s_{t-1}+x_t &= d_t+s_t, & \forall t\in T, \tag{L1}\\
+    && x_t &\le M_t\,y_t, & \forall t\in T, \tag{L2}\\
+    && x_t &\le cap_t, & \forall t\in T, \tag{L3}\\
+    && s_0=s_m &= 0, \tag{L4}\\
+    && x_t &\in\Z_{\ge 0}, & \forall t\in T, \tag{L5}\\
+    && s_t &\in\Z_{\ge 0}, & \forall t\in T, \tag{L6}\\
+    && y_t &\in\{0,1\}, & \forall t\in T. \tag{L7}
     \end{align*}
 
-    Big-M values in (L2): $M^{\mathrm{dem}}_t=D_{t,m}$, $M^{\mathrm{cap}}_t=cap_t$, and the strong value $M_t=\min\{cap_t,D_{t,m}\}$. The shortest-path formulation, where $zv_{tk}=1$ when the production of period $t$ covers the demands of the periods $t,\dots,k$:
+    Big-M values in (L2): $M^{\mathrm{dem}}_t=D_{t,m}$, $M^{\mathrm{cap}}_t=cap_t$, and the strong value $M_t=\min\{cap_t,D_{t,m}\}$. The shortest-path formulation $\mathrm{MIP}^{\mathrm{SP}}_{\mathrm{CLSP}}$, where $zv_{tk}$ is the fraction of the demands of the periods $t,\dots,k$ produced in period $t$:
 
     \begin{align*}
-    \min~~ & \sum_{t\in T} sc_t\,y_t+\sum_{t\in T}\sum_{k=t}^{m} cv_{tk}\,zv_{tk} \tag{S0}\\
-    \text{subject to}~~ & \sum_{k=1}^{m} zv_{1k}=1, \qquad \sum_{u=1}^{t-1} zv_{u,t-1}=\sum_{k=t}^{m} zv_{tk}, && t\in T\setminus\{1\}, \tag{S1}\\
-    & \sum_{k=t}^{m} zv_{tk}\le y_t, \qquad \sum_{k=t}^{m} D_{t,k}\,zv_{tk}\le cap_t, && t\in T, \tag{S2}\\
-    & zv_{tk}\ge 0,~~ y_t\in\{0,1\}, && t,k\in T,~k\ge t, \tag{S3}
+    && \min ~~ \sum_{t\in T} sc_t\,y_t+\sum_{t\in T}\sum_{k=t}^{m} cv_{tk}\,zv_{tk} \tag{S0}\\
+    && \text{subject to} \quad \sum_{k=1}^{m} zv_{1k} &= 1, \tag{S1}\\
+    && \sum_{u=1}^{t-1} zv_{u,t-1}-\sum_{k=t}^{m} zv_{tk} &= 0, & \forall t\in T\setminus\{1\}, \tag{S2}\\
+    && \sum_{k=t}^{m} zv_{tk} &\le y_t, & \forall t\in T, \tag{S3}\\
+    && \sum_{k=t}^{m} D_{t,k}\,zv_{tk} &\le cap_t, & \forall t\in T, \tag{S4}\\
+    && zv_{tk} &\ge 0, & \forall t,k\in T,~k\ge t, \tag{S5}\\
+    && y_t &\in\{0,1\}, & \forall t\in T, \tag{S6}
     \end{align*}
 
     with the costs
 
     \begin{equation*}
-    cv_{tk}=vc_t\,D_{t,k}+\sum_{s=t+1}^{k}\sum_{u=t}^{s-1}hc_u\,d_s . \tag{S4}
+    cv_{tk}=vc_t\,D_{t,k}+\sum_{s=t+1}^{k}\sum_{u=t}^{s-1}hc_u\,d_s . \tag{S7}
     \end{equation*}
 
-    The LP relaxations replace the domains with $x_t,s_t\ge 0$ and $0\le y_t\le 1$.
+    The LP relaxations relax the domains into $x_t,s_t\ge 0$ and $0\le y_t\le 1$.
 
 <a id="esercizio-15-1"></a>
 
@@ -101,7 +108,7 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
 ??? soluzione "Solution"
 
-    We use the big-M values and the costs (S4) of the box at the beginning of the chapter.
+    We use the big-M values and the costs (S7) of the box at the beginning of the chapter.
 
     1. The demands of the periods $t,\dots,m$ give $D_{t,m}$, and the strong value is the smaller of the two:
 
@@ -138,17 +145,28 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
     2. With the strong values the formulation is:
 
-        \begin{align*}
-        \min~~ & 40y_1 + 40y_2 + 40y_3 + 40y_4 + 5s_1 + 5s_2 + 5s_3 + 5s_4 \\[0.5ex]
-        \text{subject to}~~ & s_0 + x_1 = 1 + s_1 \\[0.5ex]
-        & s_1 + x_2 = 4 + s_2 \\[0.5ex]
-        & s_2 + x_3 = 1 + s_3 \\[0.5ex]
-        & s_3 + x_4 = 3 + s_4 \\[0.5ex]
-        & x_1 \le 4\,y_1,~~x_2 \le 4\,y_2,~~x_3 \le 4\,y_3,~~x_4 \le 3\,y_4 \\[0.5ex]
-        & x_1 \le 4,~~x_2 \le 4,~~x_3 \le 4,~~x_4 \le 4 \\[0.5ex]
-        & s_0 = s_4 = 0 \\[0.5ex]
-        & x_t,~ s_t \in \Z_{\ge 0},~~ y_t \in \{0,1\}, ~~ t \in T
-        \end{align*}
+        $$
+        \begin{array}{rlcl}
+        {\min} & {40\,y_1+40\,y_2+40\,y_3+40\,y_4+5\,s_1+5\,s_2+5\,s_3} &  &  \\
+        & {+5\,s_4} &  &  \\[1ex]
+        \text{subject to} & {x_1-s_1} & {=} & {1} \\
+        & {s_1+x_2-s_2} & {=} & {4} \\
+        & {s_2+x_3-s_3} & {=} & {1} \\
+        & {s_3+x_4-s_4} & {=} & {3} \\
+        & {x_1-4\,y_1} & {\le} & {0} \\
+        & {x_2-4\,y_2} & {\le} & {0} \\
+        & {x_3-4\,y_3} & {\le} & {0} \\
+        & {x_4-3\,y_4} & {\le} & {0} \\
+        & {x_1} & {\le} & {4} \\
+        & {x_2} & {\le} & {4} \\
+        & {x_3} & {\le} & {4} \\
+        & {x_4} & {\le} & {4} \\
+        & {s_4} & {=} & {0} \\[1ex]
+        & {x_1,~x_2,~x_3,~x_4} & {\in} & {\Z_{\ge 0}} \\
+        & {s_1,~s_2,~s_3,~s_4} & {\in} & {\Z_{\ge 0}} \\
+        & {y_1,~y_2,~y_3,~y_4} & {\in} & {\{0,1\}}
+        \end{array}
+        $$
 
     3. There are $m=4$ variables $x_t$, $5$ variables $s_0,\dots,s_4$ and $4$ variables $y_t$, so $13$ variables. There are $4$ balance constraints, $4$ big-M constraints, $4$ capacity constraints and the $2$ constraints on the inventories at the ends, so $14$ linear constraints.
 
@@ -217,7 +235,7 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
 ??? soluzione "Solution"
 
-    We use the big-M values and the costs (S4) of the box at the beginning of the chapter.
+    We use the big-M values and the costs (S7) of the box at the beginning of the chapter.
 
     1. Without the setups the best plan produces in every period its demand, $\vet x=(1,4,1,3)$: there is no inventory and the production cost is zero, so the bound is $0$.
 
@@ -442,7 +460,7 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
 ??? soluzione "Solution"
 
-    We use the big-M values and the costs (S4) of the box at the beginning of the chapter.
+    We use the big-M values and the costs (S7) of the box at the beginning of the chapter.
 
     1. The production cost is zero, so $cv_{tk}$ is only holding cost:
 
@@ -460,23 +478,26 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
     2. The variable $zv_{tk}$ is the arc from node $t-1$ to node $k$, with cost $cv_{tk}$. The formulation is:
 
-        \begin{align*}
-        \min~~ & 40y_1 + 40y_2 + 40y_3 + 40y_4 + 20zv_{12} \\[0.4ex]
-        & \qquad + 30zv_{13} + 75zv_{14} + 5zv_{23} + 35zv_{24} + 15zv_{34} \\[0.4ex]
-        \text{subject to}~~ & zv_{11} + zv_{12} + zv_{13} + zv_{14} = 1 \\[0.4ex]
-        & zv_{11} = zv_{22} + zv_{23} + zv_{24} \\[0.4ex]
-        & zv_{12} + zv_{22} = zv_{33} + zv_{34} \\[0.4ex]
-        & zv_{13} + zv_{23} + zv_{33} = zv_{44} \\[0.4ex]
-        & zv_{11} + zv_{12} + zv_{13} + zv_{14} \le y_1 \\[0.4ex]
-        & zv_{22} + zv_{23} + zv_{24} \le y_2 \\[0.4ex]
-        & zv_{33} + zv_{34} \le y_3 \\[0.4ex]
-        & zv_{44} \le y_4 \\[0.4ex]
-        & zv_{11} + 5zv_{12} + 6zv_{13} + 9zv_{14} \le 4 \\[0.4ex]
-        & 4zv_{22} + 5zv_{23} + 8zv_{24} \le 4 \\[0.4ex]
-        & zv_{33} + 4zv_{34} \le 4 \\[0.4ex]
-        & 3zv_{44} \le 4 \\[0.4ex]
-        & zv_{tk} \ge 0,~~ y_t \in \{0,1\}
-        \end{align*}
+        $$
+        \begin{array}{rlcl}
+        {\min} & {40\,y_1+40\,y_2+40\,y_3+40\,y_4+20\,zv_{12}+30\,zv_{13}+75\,zv_{14}} &  &  \\
+        & {+5\,zv_{23}+35\,zv_{24}+15\,zv_{34}} &  &  \\[1ex]
+        \text{subject to} & {zv_{11}+zv_{12}+zv_{13}+zv_{14}} & {=} & {1} \\
+        & {zv_{11}-zv_{22}-zv_{23}-zv_{24}} & {=} & {0} \\
+        & {zv_{12}+zv_{22}-zv_{33}-zv_{34}} & {=} & {0} \\
+        & {zv_{13}+zv_{23}+zv_{33}-zv_{44}} & {=} & {0} \\
+        & {zv_{11}+zv_{12}+zv_{13}+zv_{14}-y_1} & {\le} & {0} \\
+        & {zv_{22}+zv_{23}+zv_{24}-y_2} & {\le} & {0} \\
+        & {zv_{33}+zv_{34}-y_3} & {\le} & {0} \\
+        & {zv_{44}-y_4} & {\le} & {0} \\
+        & {zv_{11}+5\,zv_{12}+6\,zv_{13}+9\,zv_{14}} & {\le} & {4} \\
+        & {4\,zv_{22}+5\,zv_{23}+8\,zv_{24}} & {\le} & {4} \\
+        & {zv_{33}+4\,zv_{34}} & {\le} & {4} \\
+        & {3\,zv_{44}} & {\le} & {4} \\[1ex]
+        & {zv_{11},~zv_{12},~zv_{13},~\dots,~zv_{44}} & {\ge} & {0} \\
+        & {y_1,~y_2,~y_3,~y_4} & {\in} & {\{0,1\}}
+        \end{array}
+        $$
 
     3. Gurobi gives $z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{SP}})=112$, with $zv_{11}=\frac{2}{5}$, $zv_{13}=\frac{3}{5}$, $zv_{24}=\frac{2}{5}$, $zv_{44}=\frac{3}{5}$. The bound is better than $z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{strong}})=100$, and the optimal value is $130$.
 
@@ -557,7 +578,7 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
 ??? soluzione "Solution"
 
-    We use the big-M values and the costs (S4) of the box at the beginning of the chapter.
+    We use the big-M values and the costs (S7) of the box at the beginning of the chapter.
 
     1. &#8203;
 

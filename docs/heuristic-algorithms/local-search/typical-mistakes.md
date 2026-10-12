@@ -6,11 +6,11 @@ title: "Typical mistakes · In summary"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 25** · [:material-book-open-variant: Chapter 25: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
+**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
 
 </div>
 
-## 25.13 Typical mistakes
+## 30.13 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -18,13 +18,13 @@ title: "Typical mistakes · In summary"
 
     - <strong>Using the number of bins as the only objective.</strong> It is blind: most neighbours have the same value, and the search stops on a plateau; the auxiliary objective $SQ$ tells them apart.
 
-    - <strong>Ignoring the order of examination.</strong> The moves are examined in a fixed order and ties go to the first one examined (in [Example 25.6](flat-landscapes-and-auxiliary-objectives.md#box-12-ex-bppff) item $3$ comes before item $5$).
+    - <strong>Ignoring the order of examination.</strong> The moves are examined in a fixed order and ties go to the first one examined (in [Example 30.6](flat-landscapes-and-auxiliary-objectives.md#box-12-ex-bppff) item $3$ comes before item $5$).
 
     - <strong>Computing the wrong $\Delta$ for a 2-opt move.</strong> Only the two removed and the two added edges count; the two edges cannot share a city.
 
     - <strong>Concluding that a local optimum is optimal.</strong> Only a dual bound can say so.
 
-## 25.14 In summary
+## 30.14 In summary
 
 !!! chiave "In summary"
 
@@ -69,4 +69,4 @@ title: "Typical mistakes · In summary"
 
 ---
 
-**Next:** [25.15 <code>C++</code> implementation](c-implementation.md)
+**Next:** [30.15 <code>C++</code> implementation](c-implementation.md)

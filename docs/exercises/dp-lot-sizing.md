@@ -6,13 +6,13 @@ title: "Exercises · Dynamic programming for lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 22** · each solution opens with a click · [:material-book-open-variant: Chapter 22: Lot sizing](../dynamic-programming/dp-lot-sizing/index.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
+**Exercises · Chapter 27** · each solution opens with a click · [:material-book-open-variant: Chapter 27: Lot sizing](../dynamic-programming/dp-lot-sizing/index.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
 
 </div>
 
-<a id="esercizio-22-1"></a>
+<a id="esercizio-27-1"></a>
 
-!!! esercizio "Exercise 22.1: Exercise 1: Uncapacitated Lot-Sizing Problem"
+!!! esercizio "Exercise 27.1: Exercise 1: Uncapacitated Lot-Sizing Problem"
 
     Consider the following ULS instance with $m=4$ periods, where the demands, the setup costs, the variable production costs, and the holding costs are:
 
@@ -415,9 +415,9 @@ title: "Exercises · Dynamic programming for lot sizing"
         {v}[4]=280.
         $$
 
-<a id="esercizio-22-2"></a>
+<a id="esercizio-27-2"></a>
 
-!!! esercizio "Exercise 22.2: Exercise 2: Uncapacitated Lot-Sizing Problem"
+!!! esercizio "Exercise 27.2: Exercise 2: Uncapacitated Lot-Sizing Problem"
 
     Consider the following ULS instance with $m=4$ periods, where the demands, the setup costs, the variable production costs, and the holding costs are:
 
@@ -820,9 +820,9 @@ title: "Exercises · Dynamic programming for lot sizing"
         {v}[4]=260.
         $$
 
-<a id="esercizio-22-3"></a>
+<a id="esercizio-27-3"></a>
 
-!!! esercizio "Exercise 22.3: Exercise 3: Uncapacitated Lot-Sizing Problem"
+!!! esercizio "Exercise 27.3: Exercise 3: Uncapacitated Lot-Sizing Problem"
 
     Consider the following ULS instance with $m=5$ periods, where the demands, the setup costs, the variable production costs, and the holding costs are:
 
@@ -1341,9 +1341,9 @@ title: "Exercises · Dynamic programming for lot sizing"
         {v}[5]=420.
         $$
 
-<a id="esercizio-22-4"></a>
+<a id="esercizio-27-4"></a>
 
-!!! esercizio "Exercise 22.4: Exercise 4: Capacitated Lot-Sizing Problem"
+!!! esercizio "Exercise 27.4: Exercise 4: Capacitated Lot-Sizing Problem"
 
     Consider the following CLS instance with $m=3$ periods, where the demands, the setup costs, the variable production costs, the holding costs, and the capacities are:
 
@@ -1607,9 +1607,9 @@ title: "Exercises · Dynamic programming for lot sizing"
         {v}[3][0]=25.
         $$
 
-<a id="esercizio-22-5"></a>
+<a id="esercizio-27-5"></a>
 
-!!! esercizio "Exercise 22.5: Exercise 5: Capacitated Lot-Sizing Problem"
+!!! esercizio "Exercise 27.5: Exercise 5: Capacitated Lot-Sizing Problem"
 
     Consider the following CLS instance with $m=4$ periods, where the demands, the setup costs, the variable production costs, the holding costs, and the capacities are:
 

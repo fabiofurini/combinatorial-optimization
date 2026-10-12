@@ -6,11 +6,11 @@ title: "Typical mistakes · In summary"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 22** · [:material-book-open-variant: Chapter 22: Lot sizing](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/dp-lot-sizing.md)
+**Part 3 · Dynamic programming · Chapter 27** · [:material-book-open-variant: Chapter 27: Lot sizing](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/dp-lot-sizing.md)
 
 </div>
 
-## 22.4 Typical mistakes
+## 27.4 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -24,7 +24,7 @@ title: "Typical mistakes · In summary"
 
     - <strong>Calling $O(mDC)$ polynomial.</strong> The running time contains the total demand $D$ and the largest capacity $C$, which are numbers of the input: the DP algorithm is pseudo-polynomial.
 
-## 22.5 In summary
+## 27.5 In summary
 
 !!! chiave "In summary"
 

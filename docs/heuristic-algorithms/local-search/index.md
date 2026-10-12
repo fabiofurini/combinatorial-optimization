@@ -6,7 +6,7 @@ title: "Local search"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 25** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
+**Part 4 · Heuristic algorithms · Chapter 30** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
 
 </div>
 
@@ -30,11 +30,11 @@ title: "Local search"
 
     - combine neighbourhoods (variable neighbourhood descent) and restarts (multi-start).
 
-## 25.1 Local search { #sez-sec-ls }
+## 30.1 Local search { #sez-sec-ls }
 
 <a id="box-1-def-ls"></a>
 
-!!! definizione "Definition 25.1: Local search"
+!!! definizione "Definition 30.1: Local search"
 
     Given a neighbourhood $N$, a <strong>local search</strong> (denoted by $LS$) is an improvement heuristic. It starts from a feasible solution and, at every iteration, looks in the neighbourhood of the current solution for a <em>better</em> solution. If it finds one, it moves to it and repeats; if no neighbour is better, the current solution is a local optimum with respect to $N$, and the search stops.
 
@@ -52,7 +52,7 @@ title: "Local search"
 
     [:octicons-arrow-right-24: Open](#sez-sec-ls)
 
--   **25.2 The problems, the assumptions and the starting solutions**
+-   **30.2 The problems, the assumptions and the starting solutions**
 
     [:octicons-arrow-right-24: Open](the-problems-the-assumptions-and-the-starting-solutions.md)
 
@@ -62,45 +62,45 @@ title: "Local search"
 
     [:octicons-arrow-right-24: Open](local-search-the-scheme.md)
 
--   **25.5 First improvement and best improvement**
+-   **30.5 First improvement and best improvement**
 
     Best improvement · Comparison
 
     [:octicons-arrow-right-24: Open](first-improvement-and-best-improvement.md)
 
--   **25.6 Evaluating a move incrementally**
+-   **30.6 Evaluating a move incrementally**
 
     [:octicons-arrow-right-24: Open](evaluating-a-move-incrementally.md)
 
--   **25.7 TSP: 2-opt and Or-opt**
+-   **30.7 TSP: 2-opt and Or-opt**
 
     The Or-opt local search · First and best improvement on a medium instance · 3-opt and Lin–Kernighan
 
     [:octicons-arrow-right-24: Open](tsp-2-opt-and-or-opt.md)
 
--   **25.8 $P\,||\,C_{\max}$: move and swap**
+-   **30.8 $P\,||\,C_{\max}$: move and swap**
 
     The swap local search
 
     [:octicons-arrow-right-24: Open](p-cmax-move-and-swap.md)
 
--   **25.9 Flat landscapes and auxiliary objectives**
+-   **30.9 Flat landscapes and auxiliary objectives**
 
     The auxiliary objective · The move local search for the BPP · The swap local search for the BPP · Properties of the auxiliary objective · Examples
 
     [:octicons-arrow-right-24: Open](flat-landscapes-and-auxiliary-objectives.md)
 
--   **25.10 KP: feasibility and penalties**
+-   **30.10 KP: feasibility and penalties**
 
     Penalizing the excess weight
 
     [:octicons-arrow-right-24: Open](kp-feasibility-and-penalties.md)
 
--   **25.11 Variable neighbourhood descent**
+-   **30.11 Variable neighbourhood descent**
 
     [:octicons-arrow-right-24: Open](variable-neighbourhood-descent.md)
 
--   **25.12 Multi-start local search**
+-   **30.12 Multi-start local search**
 
     What local search gives, and what it does not
 
@@ -112,7 +112,7 @@ title: "Local search"
 
     [:octicons-arrow-right-24: Open](typical-mistakes.md)
 
--   **25.15 <code>C++</code> implementation**
+-   **30.15 <code>C++</code> implementation**
 
     [:octicons-arrow-right-24: Open](c-implementation.md)
 
@@ -120,7 +120,7 @@ title: "Local search"
 
 ---
 
-**Next:** [25.2 The problems, the assumptions and the starting solutions](the-problems-the-assumptions-and-the-starting-solutions.md)
+**Next:** [30.2 The problems, the assumptions and the starting solutions](the-problems-the-assumptions-and-the-starting-solutions.md)
 
 ---
 

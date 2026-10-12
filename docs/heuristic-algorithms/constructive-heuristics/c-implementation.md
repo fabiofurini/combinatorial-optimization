@@ -2,11 +2,11 @@
 title: "C++ implementation"
 ---
 
-# 24.14 <code>C++</code> implementation { #sez-sec-CODE }
+# 29.14 <code>C++</code> implementation { #sez-sec-CODE }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 24** · [:material-book-open-variant: Chapter 24: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
+**Part 4 · Heuristic algorithms · Chapter 29** · [:material-book-open-variant: Chapter 29: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
 
 </div>
 
@@ -56,9 +56,9 @@ title: "C++ implementation"
     #endif
     ```
 
-## 24.14.1 Sorting
+## 29.14.1 Sorting
 
-- The orders of the KP items (Section [24.4](the-knapsack-problem-which-order.md#sez-sec-KP)) and the decreasing order used by FFD, BFD and $LPT$ are computed by insertion sort, which keeps the index order among equal keys. The efficiencies are compared without divisions: $\frac{p_i}{w_i}>\frac{p_j}{w_j}$ if and only if $p_iw_j>p_jw_i$.
+- The orders of the KP items (Section [29.4](the-knapsack-problem-which-order.md#sez-sec-KP)) and the decreasing order used by FFD, BFD and $LPT$ are computed by insertion sort, which keeps the index order among equal keys. The efficiencies are compared without divisions: $\frac{p_i}{w_i}>\frac{p_j}{w_j}$ if and only if $p_iw_j>p_jw_i$.
 
 ??? codice "KPOrder.cpp"
 
@@ -111,7 +111,7 @@ title: "C++ implementation"
     }
     ```
 
-## 24.14.2 The knapsack problem
+## 29.14.2 The knapsack problem
 
 ??? codice "GreedyOrderKP.cpp"
 
@@ -143,7 +143,7 @@ title: "C++ implementation"
     }
     ```
 
-## 24.14.3 The bin packing problem
+## 29.14.3 The bin packing problem
 
 ??? codice "FirstFitDecreasing.cpp"
 
@@ -230,7 +230,7 @@ title: "C++ implementation"
     }
     ```
 
-## 24.14.4 Scheduling on parallel machines
+## 29.14.4 Scheduling on parallel machines
 
 ??? codice "ListScheduling.cpp"
 
@@ -286,7 +286,7 @@ title: "C++ implementation"
     }
     ```
 
-## 24.14.5 The travelling salesman problem
+## 29.14.5 The travelling salesman problem
 
 - The distances are stored in an $n\times n$ matrix <code>d</code>, and a tour in an array of $n$ cities.
 
@@ -446,7 +446,7 @@ title: "C++ implementation"
     }
     ```
 
-## 24.14.6 Randomized construction
+## 29.14.6 Randomized construction
 
 - The threshold of the RCL is tested in integer arithmetic, with $\alpha$ given as a fraction $\frac{\alpha_{num}}{\alpha_{den}}$, so that no rounding error can change the list.
 
@@ -520,7 +520,7 @@ title: "C++ implementation"
     }
     ```
 
-## 24.14.7 Regret and look-ahead
+## 29.14.7 Regret and look-ahead
 
 ??? codice "Regret2Insertion.cpp"
 

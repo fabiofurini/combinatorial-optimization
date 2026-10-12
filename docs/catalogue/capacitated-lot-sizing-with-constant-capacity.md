@@ -18,4 +18,4 @@ title: "Capacitated lot sizing with constant capacity (CLS-C)"
 
     The CLS in which the capacity is the same in all periods, $cap_t=C$ for all $t\in T$.
 
-- Defined in [Chapter 22 «Dynamic programming for lot sizing»](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#2232-the-case-of-constant-capacity).
+- Defined in [Chapter 27 «Dynamic programming for lot sizing»](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#2732-the-case-of-constant-capacity).

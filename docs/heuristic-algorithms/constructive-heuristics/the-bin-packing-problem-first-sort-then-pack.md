@@ -2,11 +2,11 @@
 title: "The bin packing problem: first sort, then pack"
 ---
 
-# 24.5 The bin packing problem: first sort, then pack { #sez-sec-BPP }
+# 29.5 The bin packing problem: first sort, then pack { #sez-sec-BPP }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 24** · [:material-book-open-variant: Chapter 24: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
+**Part 4 · Heuristic algorithms · Chapter 29** · [:material-book-open-variant: Chapter 29: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
 
 </div>
 
@@ -20,7 +20,7 @@ title: "The bin packing problem: first sort, then pack"
 
 - <strong>Why the large items first.</strong> The difficult items of a BPP instance are the large ones: two items larger than $\frac{c}{2}$ never share a bin, and a large item fits only into a bin that is still almost empty. Small items, on the contrary, can fill the gaps left in any bin. If the small items come first, they are spread over the bins and occupy the space that the large items will need later; if the large items come first, each of them gets its own bin, and the small items are then used to fill the gaps.
 
-## 24.5.1 First Fit Decreasing { #sez-sec-FFD }
+## 29.5.1 First Fit Decreasing { #sez-sec-FFD }
 
 !!! chiave ""
 
@@ -40,7 +40,7 @@ title: "The bin packing problem: first sort, then pack"
 
 <a id="box-4-ex-ffd"></a>
 
-!!! esempio "Example 24.2: FF and FFD on the BPP reference instance"
+!!! esempio "Example 29.2: FF and FFD on the BPP reference instance"
 
     <strong>FF</strong>, in the input order: items $1$, $2$ and $3$ (weights $4,4,5$) open one bin each, because no two of them fit together; item $4$ (weight $3$) goes into bin $1$ ($rc[1]=0$); item $5$ (weight $2$) goes into bin $2$ ($rc[2]=1$); item $6$ (weight $3$) fits into no bin, whose residual capacities are $0,1,2$, and opens bin $4$. Hence $FF(I)=4$.
 
@@ -70,7 +70,7 @@ title: "The bin packing problem: first sort, then pack"
 
     In FF the small item $5$ arrives before the large item $6$ and takes the space that item $6$ would need in bin $2$; in FFD item $5$ comes last and fills the gap of bin $1$.
 
-## 24.5.2 Best Fit Decreasing { #sez-sec-BFD }
+## 29.5.2 Best Fit Decreasing { #sez-sec-BFD }
 
 !!! chiave ""
 
@@ -90,11 +90,11 @@ title: "The bin packing problem: first sort, then pack"
 
 <a id="box-5-ex-bfd"></a>
 
-!!! esempio "Example 24.3: BFD on the BPP reference instance"
+!!! esempio "Example 29.3: BFD on the BPP reference instance"
 
     The order is $\rho=(3,1,2,4,6,5)$, as for FFD. Items $3$, $1$ and $2$ open bins $1$, $2$, $3$, with residual capacities $2,3,3$. Item $4$ (weight $3$) fits into bins $2$ and $3$, both with residual capacity $3$: the tie is broken in favour of bin $2$, and $rc[2]=0$. Item $6$ (weight $3$) fits only into bin $3$, and $rc[3]=0$. Item $5$ (weight $2$) fits only into bin $1$, and $rc[1]=0$. BFD returns the same packing patterns as FFD, $P_1=\{3,5\}$, $P_2=\{1,4\}$, $P_3=\{2,6\}$, and $BFD(I)=3$.
 
-## 24.5.3 What sorting gives, and what it does not
+## 29.5.3 What sorting gives, and what it does not
 
 - <strong>A better guarantee.</strong> Sorting the items improves the worst case. The notes on approximation algorithms show that FF and BF have worst-case performance ratio $\frac{17}{10}$. For FFD it is known that
 
@@ -108,7 +108,7 @@ title: "The bin packing problem: first sort, then pack"
 
 <a id="box-6-ex-ffdworse"></a>
 
-!!! esempio "Example 24.4: Sorting can hurt"
+!!! esempio "Example 29.4: Sorting can hurt"
 
     Let $c=7$ and $w=(2,2,3,2,2,3)$, with total weight $14$, so that $z(I)\ge\left\lceil\frac{14}{7}\right\rceil=2$.
 
@@ -120,4 +120,4 @@ title: "The bin packing problem: first sort, then pack"
 
 ---
 
-**Next:** [24.6 Scheduling on parallel machines: longest jobs first](scheduling-on-parallel-machines-longest-jobs-first.md)
+**Next:** [29.6 Scheduling on parallel machines: longest jobs first](scheduling-on-parallel-machines-longest-jobs-first.md)

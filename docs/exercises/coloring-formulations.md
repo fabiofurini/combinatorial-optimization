@@ -10,21 +10,22 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
 </div>
 
-!!! formula "Formulations used in these exercises"
+!!! chiave ""
 
-    The model $\mathrm{ILP}_{\mathrm{VCP}}$ of the chapter [Formulations of the vertex coloring problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/coloring-formulations/), with the set of colors $\mathscr{C}=\{1,\dots,k\}$:
+    <strong>Formulations used in these exercises.</strong> The model $\mathrm{ILP}_{\mathrm{VCP}}$ of the chapter [Formulations of the vertex coloring problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/coloring-formulations/), with the set of colors $\mathscr{C}=\{1,\dots,k\}$:
 
     \begin{align*}
-    \min~~ & \sum_{c\in\mathscr{C}} y_c \tag{C0}\\
-    \text{subject to}~~ & \sum_{c\in\mathscr{C}} x_{vc}=1, && v\in V, \tag{C1}\\
-    & -x_{uc}-x_{vc}+y_c\ge 0, && c\in\mathscr{C},~\{u,v\}\in E, \tag{C2}\\
-    & x_{vc},~y_c\in\{0,1\}, && v\in V,~c\in\mathscr{C}. \tag{C3}
+    && \min ~~ \sum_{c\in\mathscr{C}} y_c \tag{C0}\\
+    && \text{subject to} \quad \sum_{c\in\mathscr{C}} x_{vc} &= 1, & \forall v\in V, \tag{C1}\\
+    && -x_{uc}-x_{vc}+y_c &\ge 0, & \forall c\in\mathscr{C},~\forall\{u,v\}\in E, \tag{C2}\\
+    && x_{vc} &\in\{0,1\}, & \forall v\in V,~\forall c\in\mathscr{C}, \tag{C3}\\
+    && y_c &\in\{0,1\}, & \forall c\in\mathscr{C}. \tag{C4}
     \end{align*}
 
-    The relaxation $\mathrm{LP}\text{-}0_{\mathrm{VCP}}$ replaces (C3) with $x_{vc}\ge 0$, $y_c\ge 0$; the relaxation $\mathrm{LP}_{\mathrm{VCP}}$ also keeps $y_c\le 1$. For every graph with at least one edge and every valid $k$, an optimal solution of both relaxations is
+    The relaxations $\mathrm{LP}\text{-}0_{\mathrm{VCP}}$ and $\mathrm{LP}_{\mathrm{VCP}}$ of the chapter relax (C3) and (C4) into $x_{vc}\ge 0$ and $y_c\ge 0$, with also $y_c\le 1$ in $\mathrm{LP}_{\mathrm{VCP}}$. For every graph with at least one edge and every valid $k$, an optimal solution of both relaxations is
 
     \begin{equation*}
-    \tilde x_{v1}=\tilde x_{v2}=\frac{1}{2}~~(v\in V),\qquad \tilde y_1=\tilde y_2=1, \tag{C4}
+    \tilde x_{v1}=\tilde x_{v2}=\frac{1}{2}~~(v\in V),\qquad \tilde y_1=\tilde y_2=1, \tag{C5}
     \end{equation*}
 
     with all the other variables equal to $0$, and $z(\mathrm{LP}\text{-}0_{\mathrm{VCP}})=z(\mathrm{LP}_{\mathrm{VCP}})=2$. An optimal dual solution chooses one edge $\{u,v\}\in E$ and sets $\tilde\mu_u=\tilde\mu_v=1$, $\tilde\pi_{c\{u,v\}}=1$ for every color $c$, and all the other dual variables equal to $0$.
@@ -65,21 +66,33 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
     3. With $\mathscr{C}=\{1,2,3\}$ the $\mathrm{ILP}_{\mathrm{VCP}}$ model is:
 
-        \begin{align*}
-        \min~~ & y_1 + y_2 + y_3 \\[0.5ex]
-        \text{subject to}~~ & x_{11} + x_{12} + x_{13} = 1 \\[0.5ex]
-        & x_{21} + x_{22} + x_{23} = 1 \\[0.5ex]
-        & x_{31} + x_{32} + x_{33} = 1 \\[0.5ex]
-        & x_{41} + x_{42} + x_{43} = 1 \\[0.5ex]
-        & x_{51} + x_{52} + x_{53} = 1 \\[0.5ex]
-        & {-}x_{1c} - x_{2c} + y_c \ge 0, ~~ c \in \{1,2,3\} \\[0.5ex]
-        & {-}x_{2c} - x_{3c} + y_c \ge 0, ~~ c \in \{1,2,3\} \\[0.5ex]
-        & {-}x_{3c} - x_{4c} + y_c \ge 0, ~~ c \in \{1,2,3\} \\[0.5ex]
-        & {-}x_{4c} - x_{5c} + y_c \ge 0, ~~ c \in \{1,2,3\} \\[0.5ex]
-        & {-}x_{1c} - x_{5c} + y_c \ge 0, ~~ c \in \{1,2,3\} \\[0.5ex]
-        & x_{vc} \in \{0,1\}, ~~ v \in V,~ c \in \mathscr{C} \\[0.5ex]
-        & y_c \in \{0,1\}, ~~ c \in \mathscr{C}
-        \end{align*}
+        $$
+        \begin{array}{rlcl}
+        {\min} & {y_1+y_2+y_3} &  &  \\[1ex]
+        \text{subject to} & {x_{11}+x_{12}+x_{13}} & {=} & {1} \\
+        & {x_{21}+x_{22}+x_{23}} & {=} & {1} \\
+        & {x_{31}+x_{32}+x_{33}} & {=} & {1} \\
+        & {x_{41}+x_{42}+x_{43}} & {=} & {1} \\
+        & {x_{51}+x_{52}+x_{53}} & {=} & {1} \\
+        & {-x_{11}-x_{21}+y_1} & {\ge} & {0} \\
+        & {-x_{21}-x_{31}+y_1} & {\ge} & {0} \\
+        & {-x_{31}-x_{41}+y_1} & {\ge} & {0} \\
+        & {-x_{41}-x_{51}+y_1} & {\ge} & {0} \\
+        & {-x_{11}-x_{51}+y_1} & {\ge} & {0} \\
+        & {-x_{12}-x_{22}+y_2} & {\ge} & {0} \\
+        & {-x_{22}-x_{32}+y_2} & {\ge} & {0} \\
+        & {-x_{32}-x_{42}+y_2} & {\ge} & {0} \\
+        & {-x_{42}-x_{52}+y_2} & {\ge} & {0} \\
+        & {-x_{12}-x_{52}+y_2} & {\ge} & {0} \\
+        & {-x_{13}-x_{23}+y_3} & {\ge} & {0} \\
+        & {-x_{23}-x_{33}+y_3} & {\ge} & {0} \\
+        & {-x_{33}-x_{43}+y_3} & {\ge} & {0} \\
+        & {-x_{43}-x_{53}+y_3} & {\ge} & {0} \\
+        & {-x_{13}-x_{53}+y_3} & {\ge} & {0} \\[1ex]
+        & {x_{11},~x_{12},~x_{13},~\dots,~x_{53}} & {\in} & {\{0,1\}} \\
+        & {y_1,~y_2,~y_3} & {\in} & {\{0,1\}}
+        \end{array}
+        $$
 
     4. Gurobi returns $z(\mathrm{ILP}_{\mathrm{VCP}})=3$. Two colors are not enough: the cycle has an odd number of vertices, and colors that alternate along it would give the same color to vertices $1$ and $5$. An optimal coloring is $\tilde Q_1=\{1,3\}$, $\tilde Q_2=\{2,4\}$, $\tilde Q_3=\{5\}$, that is
 
@@ -111,7 +124,7 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
     1. Solve $\mathrm{LP}\text{-}0_{\mathrm{VCP}}$, $\mathrm{LP}_{\mathrm{VCP}}$ and $\mathrm{ILP}_{\mathrm{VCP}}$ with Gurobi.
 
-    2. Write the primal solution (C4) for this graph and verify that it is feasible for $\mathrm{LP}_{\mathrm{VCP}}$.
+    2. Write the primal solution (C5) for this graph and verify that it is feasible for $\mathrm{LP}_{\mathrm{VCP}}$.
 
     3. Write the dual solution of the chapter built on the edge $\{1,2\}$ and verify that it is feasible for $D(\mathrm{LP}\text{-}0_{\mathrm{VCP}})$, with the same objective value.
 
@@ -119,7 +132,7 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
 ??? soluzione "Solution"
 
-    We use the primal solution (C4) and the dual solution built on one edge, given in the box at the beginning of the chapter.
+    We use the primal solution (C5) and the dual solution built on one edge, given in the box at the beginning of the chapter.
 
     1. Gurobi gives $z(\mathrm{LP}\text{-}0_{\mathrm{VCP}})=z(\mathrm{LP}_{\mathrm{VCP}})=2$ and $z(\mathrm{ILP}_{\mathrm{VCP}})=4$: all the vertices are pairwise adjacent, so they need $4$ different colors.
 
@@ -236,7 +249,7 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
 ??? soluzione "Solution"
 
-    We use the primal solution (C4) and the dual solution built on one edge, given in the box at the beginning of the chapter.
+    We use the primal solution (C5) and the dual solution built on one edge, given in the box at the beginning of the chapter.
 
     1. The edges incident to vertex $1$ are $\{1,2\}$, $\{1,3\}$ and $\{1,4\}$. The constraint of $x_{1c}$ and the constraint of $y_c$ are
 
@@ -289,7 +302,7 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
 ??? soluzione "Solution"
 
-    We use the primal solution (C4) and the dual solution built on one edge, given in the box at the beginning of the chapter.
+    We use the primal solution (C5) and the dual solution built on one edge, given in the box at the beginning of the chapter.
 
     1. Gurobi gives $z(\mathrm{LP}_{\mathrm{VCP}})=2$ and $z(\mathrm{ILP}_{\mathrm{VCP}})=4$. The cycle $1,\dots,5$ needs $3$ colors, and vertex $6$, adjacent to all its vertices, needs a fourth one.
 

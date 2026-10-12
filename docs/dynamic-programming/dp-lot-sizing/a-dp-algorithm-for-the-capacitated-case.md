@@ -2,11 +2,11 @@
 title: "A DP algorithm for the capacitated case"
 ---
 
-# 22.3 A DP algorithm for the capacitated case
+# 27.3 A DP algorithm for the capacitated case
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 22** · [:material-book-open-variant: Chapter 22: Lot sizing](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/dp-lot-sizing.md)
+**Part 3 · Dynamic programming · Chapter 27** · [:material-book-open-variant: Chapter 27: Lot sizing](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/dp-lot-sizing.md)
 
 </div>
 
@@ -14,7 +14,7 @@ title: "A DP algorithm for the capacitated case"
 
 <a id="box-32-defCLS"></a>
 
-!!! definizione "Definition 22.3: Capacitated Lot-Sizing Problem"
+!!! definizione "Definition 27.3: Capacitated Lot-Sizing Problem"
 
     Given:
 
@@ -38,9 +38,9 @@ title: "A DP algorithm for the capacitated case"
 
 <a id="box-33-texcls1"></a>
 
-!!! esempio "Example 22.10: Capacitated lot sizing"
+!!! esempio "Example 27.10: Capacitated lot sizing"
 
-    We consider <span style="color:#1971c2">[Example 22.1](index.md#box-2-texuls1)</span> measured in units of $10$ products (hence the holding cost is $10$ per unit), with a constant capacity of $4$ units per period:
+    We consider <span style="color:#1971c2">[Example 27.1](index.md#box-2-texuls1)</span> measured in units of $10$ products (hence the holding cost is $10$ per unit), with a constant capacity of $4$ units per period:
 
     $$
     \begin{array}{l|rrrrr}
@@ -54,7 +54,7 @@ title: "A DP algorithm for the capacitated case"
     \end{array}
     $$
 
-    We refer to this CLS instance as <span style="color:#1971c2">[Example 22.10](#box-33-texcls1)</span>. The optimal solution of <span style="color:#1971c2">[Example 22.1](index.md#box-2-texuls1)</span>, in units of $10$, is the vector $(3,\allowbreak 0,\allowbreak 8,\allowbreak 0,\allowbreak 0)$, of cost $170$: it is not feasible for <span style="color:#1971c2">[Example 22.10](#box-33-texcls1)</span>, since period $3$ produces more than $4$ units.
+    We refer to this CLS instance as <span style="color:#1971c2">[Example 27.10](#box-33-texcls1)</span>. The optimal solution of <span style="color:#1971c2">[Example 27.1](index.md#box-2-texuls1)</span>, in units of $10$, is the vector $(3,\allowbreak 0,\allowbreak 8,\allowbreak 0,\allowbreak 0)$, of cost $170$: it is not feasible for <span style="color:#1971c2">[Example 27.10](#box-33-texcls1)</span>, since period $3$ produces more than $4$ units.
 
 - <u>Step 1</u>: computation of the optimal value
 
@@ -91,7 +91,7 @@ title: "A DP algorithm for the capacitated case"
         \begin{array}[t]{@{}l@{}}\displaystyle \min \bigg\{ v(t-1,k+d_t-x) + f_t(x) : x \in X_t(k)\bigg\}\\ {}+ hc_t\,k\end{array} & \textrm{if $1\le t \le m$,}\\[2ex]
         0 & \textrm{if $t=0$ and $k=0$,}\\[2ex]
         +\infty & \textrm{if $t=0$ and $k>0$,}
-        \end{array} \right. \tag{22.9}
+        \end{array} \right. \tag{27.4}
         \end{equation*}
 
         where $X_t(k)=\{0,1,\dots,\min\{cap_t,\,k+d_t\}\}$ is the set of the possible productions of period $t$.
@@ -114,7 +114,7 @@ title: "A DP algorithm for the capacitated case"
 
         $\rightsquigarrow$ <strong>Optimal Substructure verified!</strong>
 
-    - Different sequences of production decisions can lead to the same state. For instance, in <span style="color:#1971c2">[Example 22.10](#box-33-texcls1)</span>, starting from the state $(5,0)$, the decisions $x_5=0$ and $x_4=4$ lead to the state $(3,1)$, and the decisions $x_5=1$ and $x_4=3$ lead to the same state $(3,1)$.
+    - Different sequences of production decisions can lead to the same state. For instance, in <span style="color:#1971c2">[Example 27.10](#box-33-texcls1)</span>, starting from the state $(5,0)$, the decisions $x_5=0$ and $x_4=4$ lead to the state $(3,1)$, and the decisions $x_5=1$ and $x_4=3$ lead to the same state $(3,1)$.
 
     - Therefore the same value $v(t,k)$ may need to be computed several times during the recursive evaluation of formula $\eqref{eq:cls}$.
 
@@ -146,9 +146,9 @@ title: "A DP algorithm for the capacitated case"
 
         <a id="box-50-texclsbu"></a>
 
-        !!! esempio "Example 22.11: Execution of the DP algorithm"
+        !!! esempio "Example 27.11: Execution of the DP algorithm"
 
-            We consider the CLS instance of <span style="color:#1971c2">[Example 22.10](#box-33-texcls1)</span>:
+            We consider the CLS instance of <span style="color:#1971c2">[Example 27.10](#box-33-texcls1)</span>:
 
             $$
             \begin{array}{l|rrrrr}
@@ -452,9 +452,9 @@ title: "A DP algorithm for the capacitated case"
 
         <a id="box-51-texclsbuinfo"></a>
 
-        !!! esempio "Example 22.12: Computation of the additional information"
+        !!! esempio "Example 27.12: Computation of the additional information"
 
-            We consider the CLS instance of <span style="color:#1971c2">[Example 22.10](#box-33-texcls1)</span>:
+            We consider the CLS instance of <span style="color:#1971c2">[Example 27.10](#box-33-texcls1)</span>:
 
             $$
             \begin{array}{l|rrrrr}
@@ -468,7 +468,7 @@ title: "A DP algorithm for the capacitated case"
             \end{array}
             $$
 
-            For each step of the DP algorithm, the table shows the values of $t$ and $k$, the cell ${r}[t][k]$, and the production $x$ for which the minimum of the corresponding row of <span style="color:#1971c2">[Example 22.11](#box-50-texclsbu)</span> is attained first.
+            For each step of the DP algorithm, the table shows the values of $t$ and $k$, the cell ${r}[t][k]$, and the production $x$ for which the minimum of the corresponding row of <span style="color:#1971c2">[Example 27.11](#box-50-texclsbu)</span> is attained first.
 
             <div class="tabella" markdown="0"><table>
             <tr>
@@ -752,9 +752,9 @@ title: "A DP algorithm for the capacitated case"
 
         <a id="box-52-texclssolvector"></a>
 
-        !!! esempio "Example 22.13: Computing an optimal solution"
+        !!! esempio "Example 27.13: Computing an optimal solution"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 22.10](#box-33-texcls1)</span>, we have the matrix ${r}$ of <span style="color:#1971c2">[Example 22.12](#box-51-texclsbuinfo)</span>. We can compute an optimal solution as follows:
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 27.10](#box-33-texcls1)</span>, we have the matrix ${r}$ of <span style="color:#1971c2">[Example 27.12](#box-51-texclsbuinfo)</span>. We can compute an optimal solution as follows:
 
             <div class="tabella" markdown="0"><table>
             <tr>
@@ -855,13 +855,13 @@ title: "A DP algorithm for the capacitated case"
             \underbrace{50+50+50}_{\text{setup}}+\underbrace{10\cdot 1+10\cdot 0+10\cdot 1+10\cdot 1+10\cdot 0}_{\text{holding}}=150+30=180.
             $$
 
-            The corresponding optimal value is ${v}[5][0]=180$, the same value given by Gurobi on the MIP model; the capacity costs $180-170$ with respect to <span style="color:#1971c2">[Example 22.1](index.md#box-2-texuls1)</span>. The network of the solution is:
+            The corresponding optimal value is ${v}[5][0]=180$, the same value given by Gurobi on the MIP model; the capacity costs $180-170$ with respect to <span style="color:#1971c2">[Example 27.1](index.md#box-2-texuls1)</span>. The network of the solution is:
 
             ![Figure 3](../../img/dp-lot-sizing/fig03.svg){ .fig loading=lazy  }
 
             Period $4$ produces although one unit is in stock at the end of period $3$: the solution does not have the zero-inventory ordering property (and it is the unique optimal solution with integer quantities).
 
-## 22.3.1 Number of steps
+## 27.3.1 Number of steps
 
 - Let $S(m,D,C)$ denote the number of steps executed by DP\_CLS in the worst case, where $m$ is the number of periods, $D=D_{1,m}$ is the total demand, and $C=\max_{t\in T} cap_t$ is the largest capacity. For every $t\ge 1$ we have ${R}[t]+1\le D$ (since $d_1\ge 1$), and the inner loop has at most $C+1$ iterations. In the worst case, the condition at line [16](#box-46-cl-m) is always true. The number of executions of the lines is:
 
@@ -907,7 +907,7 @@ title: "A DP algorithm for the capacitated case"
 
 - The DP algorithm gives the optimal value $160$, with the production plan $(50,\allowbreak 50,\allowbreak 0,\allowbreak 0,\allowbreak 50,\allowbreak 0)$ (in the original units): the same value proved optimal by the MIP solver.
 
-## 22.3.2 The case of constant capacity
+## 27.3.2 The case of constant capacity
 
 - With general capacities $cap_t$ the CLS is NP-hard, so a polynomial algorithm is not expected and the pseudo-polynomial DP algorithm is a natural exact method for small values of $D$ and $C$.
 
@@ -919,7 +919,7 @@ title: "A DP algorithm for the capacitated case"
 
 - We do not develop the polynomial algorithms based on this property here.
 
-- <span style="color:#1971c2">[Example 22.10](#box-33-texcls1)</span> has constant capacity $C=4$. Its optimal solution $(3,\allowbreak 0,\allowbreak 4,\allowbreak 4,\allowbreak 0)$ has inventories $(1,\allowbreak 0,\allowbreak 1,\allowbreak 1,\allowbreak 0)$, empty at the end of periods $0$, $2$, and $5$.
+- <span style="color:#1971c2">[Example 27.10](#box-33-texcls1)</span> has constant capacity $C=4$. Its optimal solution $(3,\allowbreak 0,\allowbreak 4,\allowbreak 4,\allowbreak 0)$ has inventories $(1,\allowbreak 0,\allowbreak 1,\allowbreak 1,\allowbreak 0)$, empty at the end of periods $0$, $2$, and $5$.
 
 - In periods $1$–$2$ only period $1$ produces a quantity strictly between $0$ and $4$, and in periods $3$–$5$ every period produces $0$ or $4$, as stated by the property.
 

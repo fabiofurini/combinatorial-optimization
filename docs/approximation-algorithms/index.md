@@ -6,7 +6,7 @@
 
 <div class="grid cards" markdown>
 
--   **28. Approximation algorithms: definitions**
+-   **33. Approximation algorithms: definitions**
 
     ---
 
@@ -14,7 +14,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](approximation.md) · [Exercises](../exercises/approximation.md)
 
--   **29. Approximation algorithms for bin packing**
+-   **34. Approximation algorithms for bin packing**
 
     ---
 
@@ -22,7 +22,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](bin-packing-approximation.md) · [Exercises](../exercises/bin-packing-approximation.md)
 
--   **30. Approximation algorithms for the knapsack problem**
+-   **35. Approximation algorithms for the knapsack problem**
 
     ---
 
@@ -30,7 +30,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](knapsack-approximation.md) · [Exercises](../exercises/knapsack-approximation.md)
 
--   **31. Approximation for P|Cmax**
+-   **36. Approximation for P|Cmax**
 
     ---
 
@@ -38,7 +38,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](pcmax-approximation.md) · [Exercises](../exercises/pcmax-approximation.md)
 
--   **32. Approximation for the metric TSP**
+-   **37. Approximation for the metric TSP**
 
     ---
 

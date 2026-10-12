@@ -6,11 +6,11 @@ title: "Local search: the scheme · Neighbourhoods for the four problems"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 25** · [:material-book-open-variant: Chapter 25: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
+**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
 
 </div>
 
-## 25.3 Local search: the scheme { #sez-sec-scheme }
+## 30.3 Local search: the scheme { #sez-sec-scheme }
 
 - The pseudo-code of $LS$ reads as follows. The function $\textit{Improve}$ explores the neighbourhood and returns an improving neighbour of $x$, or $\textit{NULL}$ if there is none.
 
@@ -32,7 +32,7 @@ title: "Local search: the scheme · Neighbourhoods for the four problems"
 
 <a id="box-2-prop-termination"></a>
 
-!!! teorema "Proposition 25.2"
+!!! teorema "Proposition 30.2"
 
     For every starting solution, $LS$ stops after a finite number of moves, in a local optimum with respect to $N$. If the objective function takes integer values and the problem is a minimization problem, the number of moves is at most $f(x^0)-z(I)$; for a maximization problem, at most $z(I)-f(x^0)$.
 
@@ -44,11 +44,11 @@ title: "Local search: the scheme · Neighbourhoods for the four problems"
 
 - Local search <strong>intensifies</strong>: it moves downhill until it reaches the bottom of the valley in which it started. Which valley, and therefore which local optimum, depends on the starting solution, on the neighbourhood and on the rule used to choose the move.
 
-## 25.4 Neighbourhoods for the four problems { #sez-sec-neigh }
+## 30.4 Neighbourhoods for the four problems { #sez-sec-neigh }
 
 - The neighbourhoods are defined by small modifications of the representation of the solutions. Only <strong>feasible</strong> neighbours belong to the neighbourhood: a modification that produces an infeasible object is not a move. For every neighbourhood we fix the <strong>order</strong> in which the moves are examined, which matters when the search accepts the first improving neighbour it finds.
 
-### 25.4.1 KP: flip and swap
+### 30.4.1 KP: flip and swap
 
 - The <strong>flip</strong> neighbourhood, defined in the notes on definitions, changes one component of $x$, i.e., adds or removes one item; it has $n$ elements before the feasibility test. The flips are examined for $i=1,2,\dots,n$.
 
@@ -56,7 +56,7 @@ title: "Local search: the scheme · Neighbourhoods for the four problems"
 
 - The two neighbourhoods are complementary: a flip changes the number of selected items, a swap keeps it. The neighbourhood <strong>flip+swap</strong> is their union, with the flips examined first.
 
-### 25.4.2 BPP: move and swap
+### 30.4.2 BPP: move and swap
 
 - The <strong>move</strong> neighbourhood moves one item $i$ from its bin $a=bin_i$ to another non-empty bin $b$ with $L_b+w_i\le c$. It has at most $n\,(nb-1)$ elements; the moves are examined for $i=1,2,\dots,n$ and, for each $i$, for the bins in increasing order of their label.
 
@@ -64,7 +64,7 @@ title: "Local search: the scheme · Neighbourhoods for the four problems"
 
 - The <strong>swap</strong> neighbourhood exchanges two items $i<k$ in different bins, provided that both bins remain feasible: $L_{bin_i}-w_i+w_k\le c$ and $L_{bin_k}-w_k+w_i\le c$. Exchanging two items of equal weight does not change any load, and is not considered. It has at most $\frac{n(n-1)}{2}$ elements, examined for $i=1,\dots,n$ and $k=i+1,\dots,n$.
 
-### 25.4.3 TSP: 2-opt and Or-opt
+### 30.4.3 TSP: 2-opt and Or-opt
 
 - A tour is a permutation $\sigma=(\sigma_1,\sigma_2,\dots,\sigma_n)$ of the cities, with $\sigma_{n+1}=\sigma_1$. We keep city $1$ in the first position, $\sigma_1=1$.
 
@@ -90,13 +90,13 @@ title: "Local search: the scheme · Neighbourhoods for the four problems"
 
 - An Or-opt move removes <em>three</em> edges, $\{p,s_1\}$, $\{s_\ell,q\}$ and $\{a,b\}$. The <strong>3-opt</strong> neighbourhood (Lin, <em>Bell System Technical Journal</em> 44, 1965) contains all the ways of removing three edges and reconnecting the three paths: it has $O(n^3)$ elements, and Or-opt is the part of it that can be explored in $O(n^2)$ time.
 
-### 25.4.4 $P\,||\,C_{\max}$: move and swap
+### 30.4.4 $P\,||\,C_{\max}$: move and swap
 
 - The <strong>move</strong> neighbourhood moves one job $j$ from its machine $a=mach_j$ to another machine $h\ne a$. Every move is feasible, and the neighbourhood has $n\,(m-1)$ elements, examined for $j=1,\dots,n$ and, for each $j$, for $h=1,\dots,m$.
 
 - The <strong>swap</strong> neighbourhood exchanges the machines of two jobs $j<k$ on different machines with $t_j\ne t_k$ (otherwise no load changes). It has at most $\frac{n(n-1)}{2}$ elements, examined for $j=1,\dots,n$ and $k=j+1,\dots,n$. A swap never changes the number of jobs on a machine.
 
-### 25.4.5 Summary
+### 30.4.5 Summary
 
 <div class="tabella" markdown="0"><table>
 <tr>
@@ -165,4 +165,4 @@ title: "Local search: the scheme · Neighbourhoods for the four problems"
 
 ---
 
-**Next:** [25.5 First improvement and best improvement](first-improvement-and-best-improvement.md)
+**Next:** [30.5 First improvement and best improvement](first-improvement-and-best-improvement.md)

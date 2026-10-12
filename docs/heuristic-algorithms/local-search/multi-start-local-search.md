@@ -2,11 +2,11 @@
 title: "Multi-start local search"
 ---
 
-# 25.12 Multi-start local search { #sez-sec-multistart }
+# 30.12 Multi-start local search { #sez-sec-multistart }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 25** · [:material-book-open-variant: Chapter 25: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
+**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
 
 </div>
 
@@ -24,9 +24,9 @@ title: "Multi-start local search"
 
 <a id="box-18-ex-ms10"></a>
 
-!!! esempio "Example 25.11: $MSLS$ on the TSP with $10$ cities"
+!!! esempio "Example 30.11: $MSLS$ on the TSP with $10$ cities"
 
-    On the instance of [Example 25.3](tsp-2-opt-and-or-opt.md#box-6-ex-tsp10), $100$ random tours (seed $1$), each improved by a local search, end in the following local optima:
+    On the instance of [Example 30.3](tsp-2-opt-and-or-opt.md#box-6-ex-tsp10), $100$ random tours (seed $1$), each improved by a local search, end in the following local optima:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -77,7 +77,7 @@ title: "Multi-start local search"
 
 <a id="box-19-ex-ms30"></a>
 
-!!! esempio "Example 25.12: $MSLS$ on the TSP with $30$ cities"
+!!! esempio "Example 30.12: $MSLS$ on the TSP with $30$ cities"
 
     The $30$ cities have coordinates $(\lfloor 101u_{2k-1}\rfloor,\lfloor 101u_{2k}\rfloor)$, $k=1,\dots,30$, where $u_1,u_2,\dots$ are generated with seed $12345$, and $d_{ij}$ is the Euclidean distance rounded to the nearest integer. The optimal tour, computed with a MIP solver, has length $z(I)=478$. The best of the $30$ tours of $NN$ (one for each starting city) has length $537$.
 
@@ -122,7 +122,7 @@ title: "Multi-start local search"
 
     Local search turns tours of length about $1769$ into tours within $2\%$ of the optimum on average; but every run ends in its own valley, and only about one run in eight reaches the optimum.
 
-## 25.12.1 The limits of multi-start
+## 30.12.1 The limits of multi-start
 
 - <strong>No memory.</strong> Each run starts from scratch and ignores what the previous runs found. If a run reaches the optimum with probability $q$, independently of the others, $M$ runs all miss it with probability $(1-q)^M$. With $q=0.12$, as in the last example with best improvement, $10$ runs miss the optimum with probability $0.88^{10}\approx 0.28$, and $37$ runs are needed to bring this probability below $1\%$.
 
@@ -132,7 +132,7 @@ title: "Multi-start local search"
 
 - A better strategy would <strong>use the local optima already found</strong>: restart <em>near</em> a good local optimum rather than anywhere, or continue the search from it by accepting some worse moves. These are the ideas of the metaheuristics, studied in the next notes.
 
-## 25.12.2 What local search gives, and what it does not
+## 30.12.2 What local search gives, and what it does not
 
 - Local search improves a feasible solution until it reaches a local optimum: a better <strong>primal bound</strong>, often much better than the starting one.
 

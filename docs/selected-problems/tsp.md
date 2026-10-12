@@ -42,31 +42,31 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Formulations { #sez-sec-cat-tsp-formulations }
 
-- The MTZ model eliminates the subtours with $n-1$ position variables $u_i$; the DFJ model with $2^{n-1}-n$ subtour constraints, added only when violated ([Ch. 13](../formulations/tsp-formulations.md#box-5-prop-DFJ-subtours)).
+- The MTZ model eliminates the subtours with $n-1$ position variables $u_i$; the DFJ model with $2^{n-1}-n$ subtour constraints, added only when violated ([Ch. 13](../formulations/tsp-formulations.md#box-4-prop-DFJ-subtours)).
 
-- The MTZ relaxation is weak; on the instance of [Ch. 6](../combinatorial-optimization-problems/tsp/index.md) the bounds are $16$ (assignment), $17$ (MTZ) and $18$ (DFJ) ([Ch. 13](../formulations/tsp-formulations.md#box-8-ex-TSP-LP)).
+- The MTZ relaxation is weak; on the instance of [Ch. 6](../combinatorial-optimization-problems/tsp/index.md) the bounds are $16$ (assignment), $17$ (MTZ) and $18$ (DFJ) ([Ch. 13](../formulations/tsp-formulations.md#box-10-ex-TSP-LP)).
 
 ## Heuristics { #sez-sec-cat-tsp-heuristics }
 
-- Multi-start nearest neighbour and the insertion heuristics NI, FI and CI all reach $18$ on the instance of [Ch. 6](../combinatorial-optimization-problems/tsp/index.md) ([Ch. 24](../heuristic-algorithms/constructive-heuristics/the-travelling-salesman-problem-append-or-insert.md#sez-sec-INS)).
+- Multi-start nearest neighbour and the insertion heuristics NI, FI and CI all reach $18$ on the instance of [Ch. 6](../combinatorial-optimization-problems/tsp/index.md) ([Ch. 29](../heuristic-algorithms/constructive-heuristics/the-travelling-salesman-problem-append-or-insert.md#sez-sec-INS)).
 
-- 2-opt evaluates each of its $\frac{n(n-3)}{2}$ moves in $O(1)$ and turns the tour of length $25$ into an optimal one in two moves ([Ch. 25](../heuristic-algorithms/local-search/tsp-2-opt-and-or-opt.md#box-5-ex-twooptref)).
+- 2-opt evaluates each of its $\frac{n(n-3)}{2}$ moves in $O(1)$ and turns the tour of length $25$ into an optimal one in two moves ([Ch. 30](../heuristic-algorithms/local-search/tsp-2-opt-and-or-opt.md#box-5-ex-twooptref)).
 
-- Or-opt and VND escape the local optima of 2-opt ([Ch. 25](../heuristic-algorithms/local-search/tsp-2-opt-and-or-opt.md#box-7-ex-oropt)).
+- Or-opt and VND escape the local optima of 2-opt ([Ch. 30](../heuristic-algorithms/local-search/tsp-2-opt-and-or-opt.md#box-7-ex-oropt)).
 
-- Simulated annealing, tabu search, iterated local search, GRASP and LNS are compared on TSP20 (optimum $291$) ([Ch. 26](../heuristic-algorithms/metaheuristics/comparison-and-conclusions.md#26111-the-methods-on-the-medium-instances)).
+- Simulated annealing, tabu search, iterated local search, GRASP and LNS are compared on TSP20 (optimum $291$) ([Ch. 31](../heuristic-algorithms/metaheuristics/comparison-and-conclusions.md#31111-the-methods-on-the-medium-instances)).
 
 ## MIP heuristics { #sez-sec-cat-tsp-mipheuristics }
 
-- With the subtour constraints the LP optimum of the instance of [Ch. 6](../combinatorial-optimization-problems/tsp/index.md) is integer: rounding gives $18$, gap $0\%$ ([Ch. 27](../heuristic-algorithms/mip-heuristics-classical.md#2725-the-lp-relaxations-on-the-reference-instances)).
+- With the subtour constraints the LP optimum of the instance of [Ch. 6](../combinatorial-optimization-problems/tsp/index.md) is integer: rounding gives $18$, gap $0\%$ ([Ch. 32](../heuristic-algorithms/mip-heuristics-classical.md#3225-the-lp-relaxations-on-the-reference-instances)).
 
 ## Approximation { #sez-sec-cat-tsp-approximation }
 
-- Metric TSP: the double tree algorithm is a $2$-approximation, tight ([Ch. 32](../approximation-algorithms/tsp-approximation.md#box-7-prop-DT)).
+- Metric TSP: the double tree algorithm is a $2$-approximation, tight ([Ch. 37](../approximation-algorithms/tsp-approximation.md#box-7-prop-DT)).
 
-- Christofides is a $\frac32$-approximation, tight ([Ch. 32](../approximation-algorithms/tsp-approximation.md#box-9-prop-CH)).
+- Christofides is a $\frac32$-approximation, tight ([Ch. 37](../approximation-algorithms/tsp-approximation.md#box-9-prop-CH)).
 
-- General TSP: no constant ratio, unless $P=NP$ ([Ch. 32](../approximation-algorithms/tsp-approximation.md#box-11-prop-TSPinapx)).
+- General TSP: no constant ratio, unless $P=NP$ ([Ch. 37](../approximation-algorithms/tsp-approximation.md#box-11-prop-TSPinapx)).
 
 ## Exercises { #sez-sec-cat-tsp-es }
 
@@ -74,15 +74,15 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - [Ch. 13 — Formulations of the travelling salesman problem](../exercises/tsp-formulations.md) (5 exercises).
 
-- [Ch. 23 — Heuristic algorithms: definitions](../exercises/heuristics.md) (1 exercise).
+- [Ch. 28 — Heuristic algorithms: definitions](../exercises/heuristics.md) (1 exercise).
 
-- [Ch. 24 — Constructive heuristics](../exercises/constructive-heuristics.md) (3 exercises).
+- [Ch. 29 — Constructive heuristics](../exercises/constructive-heuristics.md) (3 exercises).
 
-- [Ch. 25 — Local search](../exercises/local-search.md) (3 exercises).
+- [Ch. 30 — Local search](../exercises/local-search.md) (3 exercises).
 
-- [Ch. 26 — Metaheuristics](../exercises/metaheuristics.md) (7 exercises).
+- [Ch. 31 — Metaheuristics](../exercises/metaheuristics.md) (7 exercises).
 
-- [Ch. 32 — Approximation for the metric TSP](../exercises/tsp-approximation.md) (3 exercises).
+- [Ch. 37 — Approximation for the metric TSP](../exercises/tsp-approximation.md) (3 exercises).
 
 ## Variants { #sez-sec-cat-tsp-var }
 

@@ -26,4 +26,4 @@ title: "Uncapacitated lot sizing problem (ULS)"
 
     the <strong>Uncapacitated Lot-Sizing Problem</strong> (ULS) asks to decide how many units to produce in each period, so that, starting with an empty inventory and ending with an empty inventory, the demand of every period is satisfied, and the total cost of setups, production, and holding is minimized.
 
-- Defined in [Chapter 22 «Dynamic programming for lot sizing»](../dynamic-programming/dp-lot-sizing/index.md#box-1-defULS).
+- Defined in [Chapter 27 «Dynamic programming for lot sizing»](../dynamic-programming/dp-lot-sizing/index.md#box-1-defULS).

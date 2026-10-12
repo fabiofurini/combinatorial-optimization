@@ -6,11 +6,11 @@ title: "How to escape from a local optimum · Simulated annealing"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 26** · [:material-book-open-variant: Chapter 26: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
+**Part 4 · Heuristic algorithms · Chapter 31** · [:material-book-open-variant: Chapter 31: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
 
 </div>
 
-## 26.3 How to escape from a local optimum { #sez-sec-escape }
+## 31.3 How to escape from a local optimum { #sez-sec-escape }
 
 - A local search moves from a solution to a better neighbour, and stops at the first <strong>local optimum</strong>: a solution with no better neighbour. In the landscape of the objective function, it descends to the bottom of the valley where it starts, and stays there. This is pure <strong>intensification</strong>.
 
@@ -29,47 +29,47 @@ title: "How to escape from a local optimum · Simulated annealing"
 <tr>
 <td>accept worse moves <em>at random</em></td>
 <td>a worse neighbour is accepted with a probability that decreases with the worsening and with time</td>
-<td>simulated annealing (Section [26.4](#sez-sec-sa))</td>
+<td>simulated annealing (Section [31.4](#sez-sec-sa))</td>
 </tr>
 <tr>
 <td>accept worse moves <em>deterministically, with memory</em></td>
 <td>move to the best neighbour even if it is worse, and forbid going back to the solutions just visited</td>
-<td>tabu search (Section [26.5](tabu-search.md#sez-sec-ts))</td>
+<td>tabu search (Section [31.5](tabu-search.md#sez-sec-ts))</td>
 </tr>
 <tr>
 <td><em>perturb</em> the local optimum and restart</td>
 <td>apply a random modification that the local search cannot undo, and descend again</td>
-<td>iterated local search (Section [26.6](iterated-local-search.md#sez-sec-ils))</td>
+<td>iterated local search (Section [31.6](iterated-local-search.md#sez-sec-ils))</td>
 </tr>
 <tr>
 <td><em>change the neighbourhood</em></td>
 <td>when the search is stuck, use a larger neighbourhood, of which the local optimum is no longer a local optimum</td>
-<td>variable neighbourhood search (Section [26.7](variable-neighbourhood-search.md#sez-sec-vns))</td>
+<td>variable neighbourhood search (Section [31.7](variable-neighbourhood-search.md#sez-sec-vns))</td>
 </tr>
 <tr>
 <td><em>restart</em> from a randomized construction</td>
 <td>build a different good solution at every restart, and improve it</td>
-<td>GRASP (Section [26.8](grasp.md#sez-sec-grasp))</td>
+<td>GRASP (Section [31.8](grasp.md#sez-sec-grasp))</td>
 </tr>
 <tr>
 <td><em>destroy and repair</em></td>
 <td>remove a large part of the solution and rebuild it with a heuristic or an exact algorithm</td>
-<td>large neighbourhood search (Section [26.9](large-neighbourhood-search.md#sez-sec-lns))</td>
+<td>large neighbourhood search (Section [31.9](large-neighbourhood-search.md#sez-sec-lns))</td>
 </tr>
 <tr>
 <td>work with a <em>population</em></td>
 <td>combine the parts of several good solutions into new ones</td>
-<td>genetic and memetic algorithms (Section [26.10](population-based-methods-genetic-and-memetic-algorithms.md#sez-sec-ga))</td>
+<td>genetic and memetic algorithms (Section [31.10](population-based-methods-genetic-and-memetic-algorithms.md#sez-sec-ga))</td>
 </tr>
 </table></div>
 
 - The first two ways keep <strong>one current solution</strong> and change the <strong>acceptance rule</strong> of the local search: they walk out of the valley through worse solutions. The next four <strong>jump</strong>: they generate a new starting point, far enough to leave the valley but close enough to keep what is good. The last one keeps <strong>many solutions</strong> at the same time.
 
-- Every metaheuristic must balance <strong>intensification</strong> (descend to the bottom of the current valley) and <strong>diversification</strong> (leave it for another one). For each method we point out which component does what, and Section [26.11](comparison-and-conclusions.md#sez-sec-closing) compares them.
+- Every metaheuristic must balance <strong>intensification</strong> (descend to the bottom of the current valley) and <strong>diversification</strong> (leave it for another one). For each method we point out which component does what, and Section [31.11](comparison-and-conclusions.md#sez-sec-closing) compares them.
 
 - A metaheuristic is a <em>scheme</em>, not an algorithm: to obtain an algorithm one must choose the representation, the neighbourhoods, the local search and the parameters, and these choices matter at least as much as the scheme. We present every metaheuristic on the problems where its idea is most natural, not on all four.
 
-## 26.4 Simulated annealing { #sez-sec-sa }
+## 31.4 Simulated annealing { #sez-sec-sa }
 
 !!! chiave ""
 
@@ -112,7 +112,7 @@ title: "How to escape from a local optimum · Simulated annealing"
 
 - The figure shows the acceptance probability as a function of the worsening, for four temperatures. At $T=10$ a worsening of $5$ is accepted with probability $e^{-0.5}\approx 0.61$; at $T=1$ with probability $e^{-5}\approx 0.007$. The temperature has the same unit as the objective: $T$ is “large” or “small” only compared with the typical values of $\delta$.
 
-### 26.4.1 The cooling schedule and the parameters { #sez-sec-sa-param }
+### 31.4.1 The cooling schedule and the parameters { #sez-sec-sa-param }
 
 - The <strong>cooling schedule</strong> is the sequence of temperatures. The pseudo-code uses the <strong>geometric</strong> schedule $T\leftarrow\alpha T$, the most common in practice, with $\alpha$ between $0.8$ and $0.99$, and $L$ moves at each temperature. Other schedules are the <em>linear</em> one, $T_k=T_0-k\beta$, and the <em>logarithmic</em> one, $T_k=\frac{\Gamma}{\ln(k+1)}$, which matters in the theory of $SA$ but is far too slow in practice.
 
@@ -124,11 +124,11 @@ title: "How to escape from a local optimum · Simulated annealing"
 
 - Slow cooling ($\alpha$ close to $1$) gives better solutions but more iterations: the parameters trade quality for time, as every heuristic does.
 
-### 26.4.2 Examples
+### 31.4.2 Examples
 
 <a id="box-4-ex-saTSP"></a>
 
-!!! esempio "Example 26.3: $SA$ with the 2-opt neighbourhood on the TSP reference instance"
+!!! esempio "Example 31.3: $SA$ with the 2-opt neighbourhood on the TSP reference instance"
 
     We start from the tour computed by the nearest neighbour heuristic from city $1$ in the notes on constructive heuristics, $\sigma=(1,3,2,4,5)$ of length $25$, with $T_0=5$, $\alpha=0.8$, $L=2$ and $T_{\min}=3$: the temperatures are $5$, $4$ and $3.2$ (then $2.56\le 3$ stops the search), for a total of $6$ iterations. The $M=5$ moves of 2-opt on $5$ cities are numbered
 
@@ -136,7 +136,7 @@ title: "How to escape from a local optimum · Simulated annealing"
     1:(1,3),\quad 2:(1,4),\quad 3:(2,4),\quad 4:(2,5),\quad 5:(3,5),
     $$
 
-    and the random numbers, with $seed=1$, are those of Section [26.2.2](the-problems-and-the-assumptions.md#sez-sec-random): the first number of each iteration ($u$) chooses the move $1+\lfloor 5u\rfloor$, the second ($v$) is used in the acceptance test.
+    and the random numbers, with $seed=1$, are those of Section [31.2.2](the-problems-and-the-assumptions.md#sez-sec-random): the first number of each iteration ($u$) chooses the move $1+\lfloor 5u\rfloor$, the second ($v$) is used in the acceptance test.
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -229,7 +229,7 @@ title: "How to escape from a local optimum · Simulated annealing"
 
 - On this small instance the optimal tour is the only 2-opt local optimum among the $12$ tours, so a 2-opt local search would reach it as well: the example shows the mechanics of $SA$; its ability to escape from local optima needs instances with bad local optima, as the next ones.
 
-### 26.4.3 Infeasible solutions: simulated annealing with a penalty { #sez-sec-sa-kp }
+### 31.4.3 Infeasible solutions: simulated annealing with a penalty { #sez-sec-sa-kp }
 
 - For the KP, the flip neighbourhood of a solution close to the capacity contains many infeasible solutions. Instead of discarding them, $SA$ can <strong>visit</strong> them, with a penalty on the excess weight that makes them less attractive:
 
@@ -248,7 +248,7 @@ title: "How to escape from a local optimum · Simulated annealing"
 
 <a id="box-5-ex-saKP"></a>
 
-!!! esempio "Example 26.4: $SA$ with a penalty on the KP reference instance"
+!!! esempio "Example 31.4: $SA$ with a penalty on the KP reference instance"
 
     We start from $x=(1,0,1,0)$, the solution $\{1,3\}$ of the greedy algorithm by efficiency, of profit $16$. It is a local optimum for the flip neighbourhood (notes on heuristic algorithms): its feasible neighbours have profit $6$ and $10$. We use $\beta=3$, $T_0=4$, $\alpha=0.8$, $L=2$, $T_{\min}=2.5$ (temperatures $4$, $3.2$, $2.56$: $6$ iterations) and $seed=3$. At each iteration $u$ chooses the item $k=1+\lfloor 4u\rfloor$ to flip, and $v$ is used in the acceptance test.
 
@@ -341,9 +341,9 @@ title: "How to escape from a local optimum · Simulated annealing"
 
     At iteration $2$ the search moves to the <strong>infeasible</strong> solution $(1,1,1,0)$, of weight $12>9$: its profit is $23$ and its penalized value $23-3\cdot 3=14$, a worsening of $2$ accepted with probability $0.6065$. From there, removing item $3$ gives the feasible solution $(1,1,0,0)$ of profit $17$: the optimum, $SA(I)=17=z(I)$. Iteration $4$ shows that at this temperature even a worsening of $10$ can be accepted, with a small probability; iteration $5$ goes back to the optimum.
 
-### 26.4.4 An experiment on the medium TSP instance { #sez-sec-sa-exp }
+### 31.4.4 An experiment on the medium TSP instance { #sez-sec-sa-exp }
 
-- We run $SA$ with the 2-opt neighbourhood on TSP20 ([Example 26.1](the-problems-and-the-assumptions.md#box-2-ex-tsp20)), from the nearest neighbour tour of length $326$, with $L=100$ and $T_{\min}=0.5$. The figure shows one run, with $T_0=20$, $\alpha=0.95$ and $seed=1$: the length of the current tour (gray) and of the best tour (blue) along the $7200$ iterations, every $10$ iterations. The data are produced by the <code>C++</code> code of these notes (<code>make data</code>).
+- We run $SA$ with the 2-opt neighbourhood on TSP20 ([Example 31.1](the-problems-and-the-assumptions.md#box-2-ex-tsp20)), from the nearest neighbour tour of length $326$, with $L=100$ and $T_{\min}=0.5$. The figure shows one run, with $T_0=20$, $\alpha=0.95$ and $seed=1$: the length of the current tour (gray) and of the best tour (blue) along the $7200$ iterations, every $10$ iterations. The data are produced by the <code>C++</code> code of these notes (<code>make data</code>).
 
 ![Figure 5](../../img/metaheuristics/fig05.svg){ .fig loading=lazy  }
 
@@ -473,7 +473,7 @@ title: "How to escape from a local optimum · Simulated annealing"
 
 - With $T_0=1$ the temperature is too low from the beginning: few worsening moves are accepted, and $SA$ behaves like a randomized local search. Slower cooling ($\alpha=0.99$) spends more iterations at every temperature range and reaches the optimum in almost every run, at the price of many more iterations. A single run says little: the comparison must look at the distribution over several seeds, as recalled in the notes on heuristic algorithms.
 
-### 26.4.5 Properties { #sez-sec-sa-prop }
+### 31.4.5 Properties { #sez-sec-sa-prop }
 
 - At a fixed temperature $T$, the sequence of current solutions of $SA$ is a Markov chain: the next solution depends only on the current one. If the neighbourhood is symmetric ($S'\in N(S)$ if and only if $S\in N(S')$, all neighbourhoods having the same size) and connected (every solution can reach every other one through moves), the chain has a unique stationary distribution, the <strong>Boltzmann distribution</strong>:
 
@@ -489,4 +489,4 @@ title: "How to escape from a local optimum · Simulated annealing"
 
 ---
 
-**Next:** [26.5 Tabu search](tabu-search.md)
+**Next:** [31.5 Tabu search](tabu-search.md)

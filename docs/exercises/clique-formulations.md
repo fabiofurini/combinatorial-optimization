@@ -10,23 +10,25 @@ title: "Exercises · Formulations of the maximum clique problem"
 
 </div>
 
-!!! formula "Formulations used in these exercises"
+!!! chiave ""
 
-    The two models of the chapter [Formulations of the maximum clique problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/clique-formulations/), where $\overline{E}$ is the set of non-edges of $G$ and $\mathcal{Q}$ the set of the maximal stable sets of $G$ (the maximal cliques of the complement graph). The edge formulation $\mathrm{ILP}_{\mathrm{MCP}}$:
-
-    \begin{align*}
-    \max~~ & \sum_{v\in V} x_v \tag{M0}\\
-    \text{subject to}~~ & x_u+x_v\le 1, && \{u,v\}\in\overline{E}, \tag{M1}\\
-    & x_v\in\{0,1\}, && v\in V. \tag{M2}
-    \end{align*}
-
-    The clique formulation $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}$ has the objective (M0), the domains (M2) and, instead of (M1),
+    <strong>Formulations used in these exercises.</strong> The two models of the chapter [Formulations of the maximum clique problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/clique-formulations/), where $\overline{E}$ is the set of non-edges of $G$ and $\mathcal{Q}$ the set of the maximal stable sets of $G$ (the maximal cliques of the complement graph). The edge formulation $\mathrm{ILP}_{\mathrm{MCP}}$:
 
     \begin{align*}
-    & \sum_{v\in Q} x_v\le 1, && Q\in\mathcal{Q}. \tag{M3}
+    && \max ~~ \sum_{v\in V} x_v \tag{M0}\\
+    && \text{subject to} \quad x_u+x_v &\le 1, & \forall\{u,v\}\in\overline{E}, \tag{M1}\\
+    && x_v &\in\{0,1\}, & \forall v\in V. \tag{M2}
     \end{align*}
 
-    The relaxations $\mathrm{LP}_{\mathrm{MCP}}$ and $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ replace (M2) with $0\le x_v\le 1$ (with $x_v\ge 0$ alone in the clique formulation, since (M3) gives $x_v\le 1$).
+    The clique formulation $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}$:
+
+    \begin{align*}
+    && \max ~~ \sum_{v\in V} x_v \tag{M3}\\
+    && \text{subject to} \quad \sum_{v\in Q} x_v &\le 1, & \forall Q\in\mathcal{Q}, \tag{M4}\\
+    && x_v &\in\{0,1\}, & \forall v\in V. \tag{M5}
+    \end{align*}
+
+    The relaxation $\mathrm{LP}_{\mathrm{MCP}}$ relaxes (M2) into $0\le x_v\le 1$; the relaxation $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ relaxes (M5) into $x_v\ge 0$, since (M4) gives $x_v\le 1$.
 
 <a id="esercizio-12-1"></a>
 
@@ -62,12 +64,20 @@ title: "Exercises · Formulations of the maximum clique problem"
 
     2. The $\mathrm{ILP}_{\mathrm{MCP}}$ model is:
 
-        \begin{align*}
-        \max\quad & x_1+x_2+x_3+x_4+x_5+x_6\\
-        \text{subject to}\quad & x_1+x_4\le 1,~~ x_1+x_5\le 1,~~ x_1+x_6\le 1,~~ x_2+x_5\le 1,\\
-        & x_2+x_6\le 1,~~ x_3+x_4\le 1,~~ x_3+x_6\le 1,~~ x_4+x_6\le 1,\\
-        & x_1,\dots,x_6\in\{0,1\}.
-        \end{align*}
+        $$
+        \begin{array}{rrrrrrrcl}
+        {\max} & {x_1} & {+\,x_2} & {+\,x_3} & {+\,x_4} & {+\,x_5} & {+\,x_6} \\[1ex]
+        \text{subject to} & {x_1} &  &  & {+\,x_4} &  &  & {\le} & {1} \\
+        & {x_1} &  &  &  & {+\,x_5} &  & {\le} & {1} \\
+        & {x_1} &  &  &  &  & {+\,x_6} & {\le} & {1} \\
+        &  & {x_2} &  &  & {+\,x_5} &  & {\le} & {1} \\
+        &  & {x_2} &  &  &  & {+\,x_6} & {\le} & {1} \\
+        &  &  & {x_3} & {+\,x_4} &  &  & {\le} & {1} \\
+        &  &  & {x_3} &  &  & {+\,x_6} & {\le} & {1} \\
+        &  &  &  & {x_4} &  & {+\,x_6} & {\le} & {1} \\[1ex]
+        & {x_1}, & {x_2}, & {x_3}, & {x_4}, & {x_5}, & {x_6} & {\in} & {\{0,1\}}
+        \end{array}
+        $$
 
     3. Gurobi returns $z(\mathrm{ILP}_{\mathrm{MCP}})=3$ with $\tilde x_1=\tilde x_2=\tilde x_3=1$ and $\tilde x_4=\tilde x_5=\tilde x_6=0$: the clique $\{1,2,3\}$. The enumeration of the cliques shows that it is the only triangle, and no clique has $4$ vertices (only vertices $2$, $3$ and $5$ have degree $3$). The optimal solution is unique.
 
@@ -115,11 +125,16 @@ title: "Exercises · Formulations of the maximum clique problem"
 
     3. The clique formulation has one constraint per maximal clique of $\overline{G}$:
 
-        \begin{align*}
-        \max\quad & x_1+x_2+x_3+x_4+x_5+x_6\\
-        \text{subject to}\quad & x_1+x_2+x_3\le 1,~~ x_3+x_4+x_5\le 1,~~ x_1+x_6\le 1,~~ x_5+x_6\le 1,\\
-        & x_1,\dots,x_6\in\{0,1\}.
-        \end{align*}
+        $$
+        \begin{array}{rrrrrrrcl}
+        {\max} & {x_1} & {+\,x_2} & {+\,x_3} & {+\,x_4} & {+\,x_5} & {+\,x_6} \\[1ex]
+        \text{subject to} & {x_1} & {+\,x_2} & {+\,x_3} &  &  &  & {\le} & {1} \\
+        &  &  & {x_3} & {+\,x_4} & {+\,x_5} &  & {\le} & {1} \\
+        & {x_1} &  &  &  &  & {+\,x_6} & {\le} & {1} \\
+        &  &  &  &  & {x_5} & {+\,x_6} & {\le} & {1} \\[1ex]
+        & {x_1}, & {x_2}, & {x_3}, & {x_4}, & {x_5}, & {x_6} & {\in} & {\{0,1\}}
+        \end{array}
+        $$
 
         It has $4$ constraints, against the $8$ constraints of $\mathrm{ILP}_{\mathrm{MCP}}$ (one per edge of $\overline{G}$).
 
@@ -195,24 +210,48 @@ title: "Exercises · Formulations of the maximum clique problem"
 
     1. The $12$ non-edges give the model
 
-        \begin{align*}
-        \max\quad & x_1+x_2+x_3+x_4+x_5+x_6+x_7\\
-        \text{subject to}\quad & x_1+x_3\le 1,~~ x_1+x_7\le 1,~~ x_2+x_3\le 1,~~ x_2+x_4\le 1,\\
-        & x_2+x_5\le 1,~~ x_2+x_6\le 1,~~ x_3+x_6\le 1,~~ x_3+x_7\le 1,\\
-        & x_4+x_5\le 1,~~ x_4+x_6\le 1,~~ x_4+x_7\le 1,~~ x_6+x_7\le 1,\\
-        & 0\le x_1,\dots,x_7\le 1.
-        \end{align*}
+        $$
+        \begin{array}{rrrrrrrrcl}
+        {\max} & {x_1} & {+\,x_2} & {+\,x_3} & {+\,x_4} & {+\,x_5} & {+\,x_6} & {+\,x_7} \\[1ex]
+        \text{subject to} & {x_1} &  & {+\,x_3} &  &  &  &  & {\le} & {1} \\
+        & {x_1} &  &  &  &  &  & {+\,x_7} & {\le} & {1} \\
+        &  & {x_2} & {+\,x_3} &  &  &  &  & {\le} & {1} \\
+        &  & {x_2} &  & {+\,x_4} &  &  &  & {\le} & {1} \\
+        &  & {x_2} &  &  & {+\,x_5} &  &  & {\le} & {1} \\
+        &  & {x_2} &  &  &  & {+\,x_6} &  & {\le} & {1} \\
+        &  &  & {x_3} &  &  & {+\,x_6} &  & {\le} & {1} \\
+        &  &  & {x_3} &  &  &  & {+\,x_7} & {\le} & {1} \\
+        &  &  &  & {x_4} & {+\,x_5} &  &  & {\le} & {1} \\
+        &  &  &  & {x_4} &  & {+\,x_6} &  & {\le} & {1} \\
+        &  &  &  & {x_4} &  &  & {+\,x_7} & {\le} & {1} \\
+        &  &  &  &  &  & {x_6} & {+\,x_7} & {\le} & {1} \\
+        & {x_1} &  &  &  &  &  &  & {\le} & {1} \\
+        &  & {x_2} &  &  &  &  &  & {\le} & {1} \\
+        &  &  & {x_3} &  &  &  &  & {\le} & {1} \\
+        &  &  &  & {x_4} &  &  &  & {\le} & {1} \\
+        &  &  &  &  & {x_5} &  &  & {\le} & {1} \\
+        &  &  &  &  &  & {x_6} &  & {\le} & {1} \\
+        &  &  &  &  &  &  & {x_7} & {\le} & {1} \\[1ex]
+        & {x_1}, & {x_2}, & {x_3}, & {x_4}, & {x_5}, & {x_6}, & {x_7} & {\ge} & {0}
+        \end{array}
+        $$
 
         With $\bar x_v=\frac{1}{2}$ every constraint reads $\frac{1}{2}+\frac{1}{2}=1\le 1$, and the value is $\frac{7}{2}$. Gurobi returns $z(\mathrm{LP}_{\mathrm{MCP}})=\frac{7}{2}$: the point is optimal.
 
     2. The $6$ maximal cliques of $\overline{G}$ (maximal stable sets of $G$) are $\{1,3,7\}$, $\{2,3,6\}$, $\{2,4,5\}$, $\{2,4,6\}$, $\{3,6,7\}$, $\{4,6,7\}$, and the model is
 
-        \begin{align*}
-        \max\quad & x_1+x_2+x_3+x_4+x_5+x_6+x_7\\
-        \text{subject to}\quad & x_1+x_3+x_7\le 1,~~ x_2+x_3+x_6\le 1,~~ x_2+x_4+x_5\le 1,\\
-        & x_2+x_4+x_6\le 1,~~ x_3+x_6+x_7\le 1,~~ x_4+x_6+x_7\le 1,\\
-        & x_1,\dots,x_7\ge 0.
-        \end{align*}
+        $$
+        \begin{array}{rrrrrrrrcl}
+        {\max} & {x_1} & {+\,x_2} & {+\,x_3} & {+\,x_4} & {+\,x_5} & {+\,x_6} & {+\,x_7} \\[1ex]
+        \text{subject to} & {x_1} &  & {+\,x_3} &  &  &  & {+\,x_7} & {\le} & {1} \\
+        &  & {x_2} & {+\,x_3} &  &  & {+\,x_6} &  & {\le} & {1} \\
+        &  & {x_2} &  & {+\,x_4} & {+\,x_5} &  &  & {\le} & {1} \\
+        &  & {x_2} &  & {+\,x_4} &  & {+\,x_6} &  & {\le} & {1} \\
+        &  &  & {x_3} &  &  & {+\,x_6} & {+\,x_7} & {\le} & {1} \\
+        &  &  &  & {x_4} &  & {+\,x_6} & {+\,x_7} & {\le} & {1} \\[1ex]
+        & {x_1}, & {x_2}, & {x_3}, & {x_4}, & {x_5}, & {x_6}, & {x_7} & {\ge} & {0}
+        \end{array}
+        $$
 
     3. No: $\bar x_1+\bar x_3+\bar x_7=\frac{3}{2}>1$. Gurobi returns $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})=3$. The three constraints of $\{1,3,7\}$, $\{2,3,6\}$, $\{2,4,5\}$ cover every vertex at least once; summing them, every variable appears with coefficient at least $1$, so $\sum_{v=1}^{7}x_v\le 3$ for every feasible point.
 
@@ -246,25 +285,37 @@ title: "Exercises · Formulations of the maximum clique problem"
 
     2. With one constraint per maximal stable set:
 
-        \begin{align*}
-        \max\quad & x_1+x_2+x_3+x_4+x_5+x_6\\
-        \text{subject to}\quad & x_1+x_3\le 1,~~ x_1+x_4\le 1,~~ x_2+x_4\le 1,\\
-        & x_2+x_5\le 1,~~ x_3+x_5\le 1,~~ x_6\le 1,\\
-        & x_1,\dots,x_6\ge 0.
-        \end{align*}
+        $$
+        \begin{array}{rrrrrrrcl}
+        {\max} & {x_1} & {+\,x_2} & {+\,x_3} & {+\,x_4} & {+\,x_5} & {+\,x_6} \\[1ex]
+        \text{subject to} & {x_1} &  & {+\,x_3} &  &  &  & {\le} & {1} \\
+        & {x_1} &  &  & {+\,x_4} &  &  & {\le} & {1} \\
+        &  & {x_2} &  & {+\,x_4} &  &  & {\le} & {1} \\
+        &  & {x_2} &  &  & {+\,x_5} &  & {\le} & {1} \\
+        &  &  & {x_3} &  & {+\,x_5} &  & {\le} & {1} \\
+        &  &  &  &  &  & {x_6} & {\le} & {1} \\[1ex]
+        & {x_1}, & {x_2}, & {x_3}, & {x_4}, & {x_5}, & {x_6} & {\ge} & {0}
+        \end{array}
+        $$
 
-        With a variable $y_Q\ge 0$ per constraint (index $Q$ written as its vertices), the dual is
+        With a non-negative dual variable $\pi_Q$ per constraint (index $Q$ written as its vertices), the dual is
 
-        \begin{align*}
-        \min\quad & y_{13}+y_{14}+y_{24}+y_{25}+y_{35}+y_{6}\\
-        \text{subject to}\quad & y_{13}+y_{14}\ge 1,~~ y_{24}+y_{25}\ge 1,~~ y_{13}+y_{35}\ge 1,\\
-        & y_{14}+y_{24}\ge 1,~~ y_{25}+y_{35}\ge 1,~~ y_{6}\ge 1,\\
-        & y_Q\ge 0 \text{ for every maximal stable set } Q.
-        \end{align*}
+        $$
+        \begin{array}{rrrrrrrcl}
+        {\min} & {\pi_{13}} & {+\,\pi_{14}} & {+\,\pi_{24}} & {+\,\pi_{25}} & {+\,\pi_{35}} & {+\,\pi_{6}} \\[1ex]
+        \text{subject to} & {\pi_{13}} & {+\,\pi_{14}} &  &  &  &  & {\ge} & {1} \\
+        &  &  & {\pi_{24}} & {+\,\pi_{25}} &  &  & {\ge} & {1} \\
+        & {\pi_{13}} &  &  &  & {+\,\pi_{35}} &  & {\ge} & {1} \\
+        &  & {\pi_{14}} & {+\,\pi_{24}} &  &  &  & {\ge} & {1} \\
+        &  &  &  & {\pi_{25}} & {+\,\pi_{35}} &  & {\ge} & {1} \\
+        &  &  &  &  &  & {\pi_{6}} & {\ge} & {1} \\[1ex]
+        & {\pi_{13}}, & {\pi_{14}}, & {\pi_{24}}, & {\pi_{25}}, & {\pi_{35}}, & {\pi_{6}} & {\ge} & {0}
+        \end{array}
+        $$
 
         It is the LP relaxation of the coloring formulation with the maximal stable sets: every vertex must be covered by a chosen stable set.
 
-    3. The primal point $\bar x_1=\dots=\bar x_5=\frac{1}{2}$, $\bar x_6=1$ satisfies all the constraints and has value $\frac{5}{2}+1=\frac{7}{2}$. The dual point $\bar y_Q=\frac{1}{2}$ for the five pairs and $\bar y_{6}=1$ covers every vertex of the cycle with $\frac{1}{2}+\frac{1}{2}=1$ and vertex $6$ with $1$, and has value $\frac{7}{2}$. Equal values: by weak duality both are optimal, and $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})=\frac{7}{2}$ (Gurobi agrees).
+    3. The primal point $\bar x_1=\dots=\bar x_5=\frac{1}{2}$, $\bar x_6=1$ satisfies all the constraints and has value $\frac{5}{2}+1=\frac{7}{2}$. The dual point $\bar\pi_Q=\frac{1}{2}$ for the five pairs and $\bar\pi_{6}=1$ covers every vertex of the cycle with $\frac{1}{2}+\frac{1}{2}=1$ and vertex $6$ with $1$, and has value $\frac{7}{2}$. Equal values: by weak duality both are optimal, and $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})=\frac{7}{2}$ (Gurobi agrees).
 
     4. $\omega(W_5)\le\frac{7}{2}$ and $\omega(W_5)$ is an integer, so $\omega(W_5)\le 3$; the triangle $\{1,2,6\}$ gives $\omega(W_5)=3$. $\chi(W_5)\ge\frac{7}{2}$, so $\chi(W_5)\ge 4$; the coloring $\{1,3\},\{2,4\},\{5\},\{6\}$ gives $\chi(W_5)=4$. The chain reads
 
@@ -302,20 +353,43 @@ title: "Exercises · Formulations of the maximum clique problem"
 
 ??? soluzione "Solution"
 
-    1. $\mathrm{LP}_{\mathrm{MCP}}$ has the $9$ non-edge constraints
+    1. With the $9$ non-edge constraints, the $\mathrm{LP}_{\mathrm{MCP}}$ model is
 
-        \begin{align*}
-        & x_1+x_3\le 1,~~ x_1+x_4\le 1,~~ x_1+x_5\le 1,~~ x_2+x_4\le 1,~~ x_2+x_5\le 1,\\
-        & x_2+x_6\le 1,~~ x_3+x_5\le 1,~~ x_3+x_6\le 1,~~ x_4+x_6\le 1,
-        \end{align*}
+        $$
+        \begin{array}{rrrrrrrcl}
+        {\max} & {x_1} & {+\,x_2} & {+\,x_3} & {+\,x_4} & {+\,x_5} & {+\,x_6} \\[1ex]
+        \text{subject to} & {x_1} &  & {+\,x_3} &  &  &  & {\le} & {1} \\
+        & {x_1} &  &  & {+\,x_4} &  &  & {\le} & {1} \\
+        & {x_1} &  &  &  & {+\,x_5} &  & {\le} & {1} \\
+        &  & {x_2} &  & {+\,x_4} &  &  & {\le} & {1} \\
+        &  & {x_2} &  &  & {+\,x_5} &  & {\le} & {1} \\
+        &  & {x_2} &  &  &  & {+\,x_6} & {\le} & {1} \\
+        &  &  & {x_3} &  & {+\,x_5} &  & {\le} & {1} \\
+        &  &  & {x_3} &  &  & {+\,x_6} & {\le} & {1} \\
+        &  &  &  & {x_4} &  & {+\,x_6} & {\le} & {1} \\
+        & {x_1} &  &  &  &  &  & {\le} & {1} \\
+        &  & {x_2} &  &  &  &  & {\le} & {1} \\
+        &  &  & {x_3} &  &  &  & {\le} & {1} \\
+        &  &  &  & {x_4} &  &  & {\le} & {1} \\
+        &  &  &  &  & {x_5} &  & {\le} & {1} \\
+        &  &  &  &  &  & {x_6} & {\le} & {1} \\[1ex]
+        & {x_1}, & {x_2}, & {x_3}, & {x_4}, & {x_5}, & {x_6} & {\ge} & {0}
+        \end{array}
+        $$
 
-        plus $0\le x_v\le 1$. $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ has one constraint per maximal stable set of $C_6$:
+        With one constraint per maximal stable set of $C_6$, the $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ model is
 
-        \begin{align*}
-        & x_1+x_3+x_5\le 1,~~ x_2+x_4+x_6\le 1,~~ x_1+x_4\le 1,~~ x_2+x_5\le 1,~~ x_3+x_6\le 1,
-        \end{align*}
-
-        plus $x_v\ge 0$.
+        $$
+        \begin{array}{rrrrrrrcl}
+        {\max} & {x_1} & {+\,x_2} & {+\,x_3} & {+\,x_4} & {+\,x_5} & {+\,x_6} \\[1ex]
+        \text{subject to} & {x_1} &  & {+\,x_3} &  & {+\,x_5} &  & {\le} & {1} \\
+        &  & {x_2} &  & {+\,x_4} &  & {+\,x_6} & {\le} & {1} \\
+        & {x_1} &  &  & {+\,x_4} &  &  & {\le} & {1} \\
+        &  & {x_2} &  &  & {+\,x_5} &  & {\le} & {1} \\
+        &  &  & {x_3} &  &  & {+\,x_6} & {\le} & {1} \\[1ex]
+        & {x_1}, & {x_2}, & {x_3}, & {x_4}, & {x_5}, & {x_6} & {\ge} & {0}
+        \end{array}
+        $$
 
     2. - $\bar{\vet x}^{a}$: feasible for $\mathrm{LP}_{\mathrm{MCP}}$; the clique inequality of $\{1,3,5\}$ gives $\frac{3}{2}>1$, so infeasible for $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ and $\mathrm{ILP}_{\mathrm{MCP}}$.
 

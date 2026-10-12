@@ -2,11 +2,11 @@
 title: "Evaluating a move incrementally"
 ---
 
-# 25.6 Evaluating a move incrementally { #sez-sec-incremental }
+# 30.6 Evaluating a move incrementally { #sez-sec-incremental }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 25** · [:material-book-open-variant: Chapter 25: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
+**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
 
 </div>
 
@@ -16,7 +16,7 @@ title: "Evaluating a move incrementally"
 
 <a id="box-4-prop-twoopt"></a>
 
-!!! teorema "Proposition 25.3"
+!!! teorema "Proposition 30.3"
 
     Let $\sigma'$ be the tour obtained from $\sigma$ by the 2-opt move with positions $i<j$, and let $u_1=\sigma_i$, $v_1=\sigma_{i+1}$, $u_2=\sigma_j$, $v_2=\sigma_{j+1}$. Then $L(\sigma')=L(\sigma)+\Delta$, with
 
@@ -147,4 +147,4 @@ title: "Evaluating a move incrementally"
 
 ---
 
-**Next:** [25.7 TSP: 2-opt and Or-opt](tsp-2-opt-and-or-opt.md)
+**Next:** [30.7 TSP: 2-opt and Or-opt](tsp-2-opt-and-or-opt.md)

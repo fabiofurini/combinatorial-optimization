@@ -2,11 +2,11 @@
 title: "Large neighbourhood search"
 ---
 
-# 26.9 Large neighbourhood search { #sez-sec-lns }
+# 31.9 Large neighbourhood search { #sez-sec-lns }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 26** · [:material-book-open-variant: Chapter 26: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
+**Part 4 · Heuristic algorithms · Chapter 31** · [:material-book-open-variant: Chapter 31: Metaheuristics](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
 
 </div>
 
@@ -30,7 +30,7 @@ title: "Large neighbourhood search"
 
 <a id="box-10-ex-lnsTSP"></a>
 
-!!! esempio "Example 26.9: $LNS$ on the TSP reference instance"
+!!! esempio "Example 31.9: $LNS$ on the TSP reference instance"
 
     From the nearest neighbour tour $(1,3,2,4,5)$ of length $25$, with $q=2$ and $seed=1$. The first random number $0.0000$ removes the city in position $2+\lfloor 4\cdot 0.0000\rfloor=2$, city $3$; the partial tour is $(1,2,4,5)$, and $0.1315$ removes the city in position $2+\lfloor 3\cdot 0.1315\rfloor=2$, city $2$. The partial tour $(1,4,5)$ has length $2+7+9=18$. Cheapest insertion of city $3$:
 
@@ -51,7 +51,7 @@ title: "Large neighbourhood search"
 
     so city $2$ goes between $4$ and $5$: $(1,4,2,5,3)$, of length $18$, accepted. It is the optimal tour, traversed in the opposite direction: one destroy-and-repair step has changed four edges of the tour.
 
-## 26.9.1 Large neighbourhood search for the BPP: heuristic and exact repair { #sez-sec-lns-bpp }
+## 31.9.1 Large neighbourhood search for the BPP: heuristic and exact repair { #sez-sec-lns-bpp }
 
 - For the BPP the natural destroy method <strong>empties bins</strong>: the least loaded bin, which is the one we would like to get rid of, and $q-1$ other bins chosen at random. The repair method repacks the removed items into new bins, while the other bins are kept as they are. The new packing is accepted if it uses fewer bins, or the same number of bins and a value of the auxiliary objective $\sum_b(\sum_{i\in P_b}w_i)^2$ not smaller: on the plateaus of the flat objective, the search moves toward fuller bins.
 
@@ -64,7 +64,7 @@ title: "Large neighbourhood search"
 
 <a id="box-11-ex-lnsBPP"></a>
 
-!!! esempio "Example 26.10: $LNS$ on the BPP reference instance"
+!!! esempio "Example 31.10: $LNS$ on the BPP reference instance"
 
     We start from the packing computed by First Fit, $P_1=\{1,4\}$, $P_2=\{2,5\}$, $P_3=\{3\}$, $P_4=\{6\}$, with loads $(7,6,5,3)$, and use $q=2$, repair by FFD and $seed=3$ (random numbers $0.0000$, $0.3946$, $0.2668$, $0.3760$). At every iteration the least loaded bin is emptied, together with the bin in position $1+\lfloor 3u\rfloor$ among the other three.
 
@@ -177,7 +177,7 @@ title: "Large neighbourhood search"
 
     A large neighbourhood is explored by solving a <strong>subproblem</strong>: the part of the solution left free by the destroy method is re-optimized, while the rest is fixed. The more powerful the method that solves the subproblem, the more powerful the neighbourhood.
 
-## 26.9.2 Adaptive large neighbourhood search { #sez-sec-alns }
+## 31.9.2 Adaptive large neighbourhood search { #sez-sec-alns }
 
 - Which destroy method works best depends on the instance, and on the phase of the search. <strong>Adaptive</strong> LNS (ALNS), introduced by Ropke and Pisinger (2006), uses several destroy (and repair) methods, chooses one at random at every iteration, and <strong>learns</strong> which ones work, by giving to each method $o$ a weight $w_o$:
 
@@ -201,4 +201,4 @@ title: "Large neighbourhood search"
 
 ---
 
-**Next:** [26.10 Population-based methods: genetic and memetic algorithms](population-based-methods-genetic-and-memetic-algorithms.md)
+**Next:** [31.10 Population-based methods: genetic and memetic algorithms](population-based-methods-genetic-and-memetic-algorithms.md)

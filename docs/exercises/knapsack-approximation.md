@@ -6,15 +6,15 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 30** · each solution opens with a click · [:material-book-open-variant: Chapter 30: Knapsack](../approximation-algorithms/knapsack-approximation.md) · [:material-file-pdf-box: Exercises, volume 5 (PDF)](../pdf/exercises-5-approximation-algorithms.pdf)
+**Exercises · Chapter 35** · each solution opens with a click · [:material-book-open-variant: Chapter 35: Knapsack](../approximation-algorithms/knapsack-approximation.md) · [:material-file-pdf-box: Exercises, volume 5 (PDF)](../pdf/exercises-5-approximation-algorithms.pdf)
 
 </div>
 
 ## Greedy algorithm
 
-<a id="esercizio-30-1"></a>
+<a id="esercizio-35-1"></a>
 
-!!! esercizio "Exercise 30.1: Greedy 1"
+!!! esercizio "Exercise 35.1: Greedy 1"
 
     We consider a knapsack of capacity $c = 15$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
@@ -92,9 +92,9 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     4. Since $GR(I)=30=\lfloor U\rfloor$, no feasible solution has a larger profit: $GR$ finds an <strong>optimal</strong> solution on this instance, and $z(I)=30$.
 
-<a id="esercizio-30-2"></a>
+<a id="esercizio-35-2"></a>
 
-!!! esercizio "Exercise 30.2: Greedy 2"
+!!! esercizio "Exercise 35.2: Greedy 2"
 
     We consider a knapsack of capacity $c = 13$ and a set $\mathscr{I} = \{1,2,3,4,5,6\}$ of $6$ items ($n=6$), with the following profits and weights:
 
@@ -180,9 +180,9 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
         Note that the item of maximum profit, item $5$ with $p_{5}=11$, is not selected by $GR$: its low efficiency puts it late in the order, when the residual capacity is no longer sufficient.
 
-<a id="esercizio-30-3"></a>
+<a id="esercizio-35-3"></a>
 
-!!! esercizio "Exercise 30.3: Greedy 3"
+!!! esercizio "Exercise 35.3: Greedy 3"
 
     We consider a knapsack of capacity $c = 12$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
@@ -268,9 +268,9 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
 ## Extended greedy algorithm
 
-<a id="esercizio-30-4"></a>
+<a id="esercizio-35-4"></a>
 
-!!! esercizio "Exercise 30.4: Ext-Greedy 1"
+!!! esercizio "Exercise 35.4: Ext-Greedy 1"
 
     We consider a knapsack of capacity $c = 22$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
@@ -346,9 +346,9 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
         as guaranteed.
 
-<a id="esercizio-30-5"></a>
+<a id="esercizio-35-5"></a>
 
-!!! esercizio "Exercise 30.5: Ext-Greedy 2"
+!!! esercizio "Exercise 35.5: Ext-Greedy 2"
 
     We consider a knapsack of capacity $c = 8$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
@@ -418,9 +418,9 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     4. The solution returned by $GR^e$ is <strong>optimal</strong>: $S^*=\{2\}$, of weight $8=8\le 8$ and profit $z(I)=19=19$. The performance ratio is $\frac{z(I)}{GR^e(I)}=1$.
 
-<a id="esercizio-30-6"></a>
+<a id="esercizio-35-6"></a>
 
-!!! esercizio "Exercise 30.6: Ext-Greedy 3"
+!!! esercizio "Exercise 35.6: Ext-Greedy 3"
 
     We consider a knapsack of capacity $c = 16$ and a set $\mathscr{I} = \{1,2,3\}$ of $3$ items ($n=3$), with the following profits and weights:
 
@@ -493,9 +493,9 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
 ## The $H^2$ heuristic
 
-<a id="esercizio-30-7"></a>
+<a id="esercizio-35-7"></a>
 
-!!! esercizio "Exercise 30.7: $H^2$ 1"
+!!! esercizio "Exercise 35.7: $H^2$ 1"
 
     We consider a knapsack of capacity $c = 11$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
@@ -615,9 +615,9 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     4. On this instance $GR^e(I)=10$, so $H^2$ improves on $GR^e$. The solution returned by $H^2$ is <strong>optimal</strong>: $S^*=\{2,3\}$, of weight $8+3=11\le 11$ and profit $z(I)=9+2=11$, and the performance ratio is $1$.
 
-<a id="esercizio-30-8"></a>
+<a id="esercizio-35-8"></a>
 
-!!! esercizio "Exercise 30.8: $H^2$ 2"
+!!! esercizio "Exercise 35.8: $H^2$ 2"
 
     We consider a knapsack of capacity $c = 15$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
@@ -764,9 +764,9 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
         as guaranteed.
 
-<a id="esercizio-30-9"></a>
+<a id="esercizio-35-9"></a>
 
-!!! esercizio "Exercise 30.9: $H^2$ 3"
+!!! esercizio "Exercise 35.9: $H^2$ 3"
 
     We consider a knapsack of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
@@ -915,9 +915,9 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
 ## The $H^\ell$ heuristic
 
-<a id="esercizio-30-10"></a>
+<a id="esercizio-35-10"></a>
 
-!!! esercizio "Exercise 30.10: $H^{\ell}$ 1"
+!!! esercizio "Exercise 35.10: $H^{\ell}$ 1"
 
     We consider a knapsack of capacity $c = 16$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
@@ -1045,9 +1045,9 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     4. The solution returned by $H^{3}$ is <strong>optimal</strong>: $S^*=\{1,2,3,5\}$, of weight $1+2+3+9=15\le 16$ and profit $z(I)=14+13+13+11=51$, and the performance ratio is $1$. For comparison, on this instance $H^2(I)=50$: guessing three items instead of two is enough to find the optimal solution.
 
-<a id="esercizio-30-11"></a>
+<a id="esercizio-35-11"></a>
 
-!!! esercizio "Exercise 30.11: $H^{\ell}$ 2"
+!!! esercizio "Exercise 35.11: $H^{\ell}$ 2"
 
     We consider a knapsack of capacity $c = 20$ and a set $\mathscr{I} = \{1,2,3,4,5,6\}$ of $6$ items ($n=6$), with the following profits and weights:
 
@@ -1263,9 +1263,9 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
     - <strong>Remark.</strong> This instance belongs to the family of instances used to show that the relative performance guarantee $\frac{\ell+2}{\ell+1}$ of $H^{\ell}$ is tight, with $\ell=3$ and $M=4$: there $H^{\ell}(I_M)=(\ell+1)\,M+2$ and $z(I_M)=(\ell+2)\,M$, here $18$ and $20$.
 
-<a id="esercizio-30-12"></a>
+<a id="esercizio-35-12"></a>
 
-!!! esercizio "Exercise 30.12: $H^{\ell}$ 3"
+!!! esercizio "Exercise 35.12: $H^{\ell}$ 3"
 
     We consider a knapsack of capacity $c = 18$ and a set $\mathscr{I} = \{1,2,3,4,5,6\}$ of $6$ items ($n=6$), with the following profits and weights:
 
@@ -1481,9 +1481,9 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
 ## The FPTAS
 
-<a id="esercizio-30-13"></a>
+<a id="esercizio-35-13"></a>
 
-!!! esercizio "Exercise 30.13: Basic-FPTAS 1"
+!!! esercizio "Exercise 35.13: Basic-FPTAS 1"
 
     We consider a knapsack of capacity $c = 13$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following profits and weights:
 
@@ -1572,9 +1572,9 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
         in the original instance, better than $GR^e(I)=40$. The solution is <strong>optimal</strong>: $S^*=\{1,3\}$, of weight $2+9=11\le 13$ and profit $z(I)=24+23=47$, and the performance ratio is $1$.
 
-<a id="esercizio-30-14"></a>
+<a id="esercizio-35-14"></a>
 
-!!! esercizio "Exercise 30.14: Basic-FPTAS 2"
+!!! esercizio "Exercise 35.14: Basic-FPTAS 2"
 
     We consider a knapsack of capacity $c = 16$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following profits and weights:
 
@@ -1657,9 +1657,9 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
         as guaranteed.
 
-<a id="esercizio-30-15"></a>
+<a id="esercizio-35-15"></a>
 
-!!! esercizio "Exercise 30.15: Basic-FPTAS 3"
+!!! esercizio "Exercise 35.15: Basic-FPTAS 3"
 
     We consider a knapsack of capacity $c = 16$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n=4$), with the following profits and weights:
 

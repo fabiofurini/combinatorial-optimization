@@ -6,7 +6,7 @@ title: "Approximation algorithms: definitions"
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 28** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Definitions](../exercises/approximation.md) · [:material-gesture-tap: App: Tight instances](../lab/tight-instances.md)
+**Part 5 · Approximation algorithms · Chapter 33** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Definitions](../exercises/approximation.md) · [:material-gesture-tap: App: Tight instances](../lab/tight-instances.md)
 
 </div>
 
@@ -28,11 +28,11 @@ title: "Approximation algorithms: definitions"
 
     - define an approximation scheme, a PTAS and an FPTAS, and translate the accuracy $\varepsilon$ into a performance guarantee.
 
-## 28.1 Approximation algorithms
+## 33.1 Approximation algorithms
 
 <a id="box-1-def-heurvalue"></a>
 
-!!! definizione "Definition 28.1: heuristic value"
+!!! definizione "Definition 33.1: heuristic value"
 
     Let $\mathscr{A}$ be a <strong>heuristic algorithm</strong> for an <strong>optimization problem</strong> $\mathscr{P}$. For every <strong>instance</strong> $I$ of $\mathscr{P}$:
 
@@ -63,11 +63,11 @@ title: "Approximation algorithms: definitions"
 
     2. <strong>Absolute performance guarantee</strong> (additive guarantee): in this case we measure the quality of the heuristic solution by looking at the <em>absolute error</em>, that is, the difference between the heuristic value and the optimal value.
 
-### 28.1.1 Relative performance guarantee
+### 33.1.1 Relative performance guarantee
 
 <a id="box-2-def-pratio"></a>
 
-!!! definizione "Definition 28.2: performance ratio"
+!!! definizione "Definition 33.2: performance ratio"
 
     The <strong>performance ratio</strong> of $\mathscr{A}$ on an instance $I$ is
 
@@ -82,7 +82,7 @@ title: "Approximation algorithms: definitions"
 
 <a id="box-3-def-alpha-approx"></a>
 
-!!! definizione "Definition 28.3: $\alpha$-approximation algorithm"
+!!! definizione "Definition 33.3: $\alpha$-approximation algorithm"
 
     A heuristic algorithm $\mathscr{A}$ for an optimization problem $\mathscr{P}$ is an <strong>$\alpha$-approximation algorithm</strong> if there exists a constant $\alpha \in [1,+\infty)$ such that, for every instance $I$ of $~\mathscr{P}$,
 
@@ -109,7 +109,7 @@ title: "Approximation algorithms: definitions"
 
 <a id="box-4-def-wcr"></a>
 
-!!! definizione "Definition 28.4: Worst-case performance ratio"
+!!! definizione "Definition 33.4: Worst-case performance ratio"
 
     The <strong>worst-case performance ratio</strong> of $\mathscr{A}$ is
 
@@ -135,7 +135,7 @@ title: "Approximation algorithms: definitions"
 
     - $r(\mathscr{A})$ is also called the <strong>(worst-case) approximation ratio</strong> of $\mathscr{A}$
 
-### 28.1.2 Additive performance guarantee
+### 33.1.2 Additive performance guarantee
 
 - The <strong>additive error</strong> (or <strong>absolute error</strong>) of $\mathscr{A}$ on an instance $I$ is
 
@@ -150,7 +150,7 @@ title: "Approximation algorithms: definitions"
 
 <a id="box-5-def-beta-add"></a>
 
-!!! definizione "Definition 28.5: $\beta$-additive approximation algorithm"
+!!! definizione "Definition 33.5: $\beta$-additive approximation algorithm"
 
     A heuristic algorithm $\mathscr{A}$ for an optimization problem $\mathscr{P}$ is a <strong>$\beta$-additive approximation algorithm</strong> if there exists a constant $\beta \in [0,+\infty)$ such that, for every instance $I$ of $~\mathscr{P}$,
 
@@ -177,7 +177,7 @@ title: "Approximation algorithms: definitions"
 
 <a id="box-6-def-wcae"></a>
 
-!!! definizione "Definition 28.6: Worst-case additive error"
+!!! definizione "Definition 33.6: Worst-case additive error"
 
     The <strong>worst-case additive error</strong> of $\mathscr{A}$ is
 
@@ -201,7 +201,7 @@ title: "Approximation algorithms: definitions"
 
     - $e(\mathscr{A})$ is also called the <strong>worst-case absolute (additive) error</strong> of $\mathscr{A}$
 
-## 28.2 Approximation schemes
+## 33.2 Approximation schemes
 
 - The <strong>relative error</strong> (also called <strong>percentage error</strong>) of $\mathscr{A}$ on an instance $I$ is
 
@@ -218,7 +218,7 @@ title: "Approximation algorithms: definitions"
 
 <a id="box-7-def-as"></a>
 
-!!! definizione "Definition 28.7: Approximation scheme"
+!!! definizione "Definition 33.7: Approximation scheme"
 
     An <strong>approximation scheme</strong> for an optimization problem $\mathscr{P}$ is a family of heuristic algorithms $\{\mathscr{A}_{\varepsilon}\}_{\varepsilon \in (0,1)}$ such that, for every $\varepsilon \in (0,1)$ and for every instance $I$ of $\mathscr{P}$,
 
@@ -309,7 +309,7 @@ title: "Approximation algorithms: definitions"
 
 <a id="box-8-def-ptas"></a>
 
-!!! definizione "Definition 28.8: Polynomial-time approximation scheme (PTAS)"
+!!! definizione "Definition 33.8: Polynomial-time approximation scheme (PTAS)"
 
     An approximation scheme $\{\mathscr{A}_{\varepsilon}\}_{\varepsilon\in(0,1)}$ is a <strong>polynomial-time approximation scheme</strong> if, for every fixed $\varepsilon\in(0,1)$, the running time of $\mathscr{A}_{\varepsilon}$ is polynomial in the size of the instance.
 
@@ -317,11 +317,11 @@ title: "Approximation algorithms: definitions"
 
 <a id="box-9-def-fptas"></a>
 
-!!! definizione "Definition 28.9: Fully polynomial-time approximation scheme (FPTAS)"
+!!! definizione "Definition 33.9: Fully polynomial-time approximation scheme (FPTAS)"
 
     An approximation scheme $\{\mathscr{A}_{\varepsilon}\}_{\varepsilon\in(0,1)}$ is a <strong>fully polynomial-time approximation scheme</strong>  if the running time of $\mathscr{A}_{\varepsilon}$ is polynomial both in the size of the instance and in the accuracy $\frac{1}{\varepsilon}$.
 
-## 28.3 Typical mistakes
+## 33.3 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -335,7 +335,7 @@ title: "Approximation algorithms: definitions"
 
     - <strong>PTAS and FPTAS.</strong> The running time of a PTAS may grow like $n^{1/\varepsilon}$; only for an FPTAS it is polynomial in $\frac{1}{\varepsilon}$ as well.
 
-## 28.4 In summary
+## 33.4 In summary
 
 !!! chiave "In summary"
 

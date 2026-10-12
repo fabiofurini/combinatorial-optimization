@@ -134,6 +134,36 @@ title: "Principles of dynamic programming"
 <td><span class="arithmatex">\(\Theta(nc\,b_{\max})\)</span></td>
 </tr>
 <tr>
+<td>SSP</td>
+<td><span class="arithmatex">\(r(j,k)\)</span></td>
+<td>items and target values</td>
+<td><span class="arithmatex">\(\Theta(nc)\)</span></td>
+</tr>
+<tr>
+<td>MCKP</td>
+<td><span class="arithmatex">\(v(h,k)\)</span></td>
+<td>classes and capacities</td>
+<td><span class="arithmatex">\(\Theta(nc)\)</span></td>
+</tr>
+<tr>
+<td>MDKP</td>
+<td><span class="arithmatex">\(v(j,k_1,\dots,k_m)\)</span></td>
+<td>items and capacity vectors</td>
+<td><span class="arithmatex">\(\Theta(m\,n\prod_{d}(c_d+1))\)</span></td>
+</tr>
+<tr>
+<td>KPS</td>
+<td><span class="arithmatex">\(v(h,k)\)</span>, <span class="arithmatex">\(u(h,i,k)\)</span></td>
+<td>classes, items and capacities</td>
+<td><span class="arithmatex">\(\Theta(nc)\)</span></td>
+</tr>
+<tr>
+<td>MKP</td>
+<td><span class="arithmatex">\(v(j,k_1,\dots,k_m)\)</span></td>
+<td>items and residual capacities</td>
+<td><span class="arithmatex">\(\Theta(m\,n\prod_{i}(c_i+1))\)</span></td>
+</tr>
+<tr>
 <td>RCP</td>
 <td><span class="arithmatex">\(v(\ell)\)</span></td>
 <td>rod lengths</td>
@@ -160,6 +190,8 @@ title: "Principles of dynamic programming"
 </table></div>
 
 - In all the numerical examples the data are integers: the number of states is finite, and each state is a table cell. The running times $\Theta(nc)$, $\Theta(nc\,b_{\max})$ and $O(mDC)$ contain numbers of the input (a capacity, a bound, a demand), not only its size: they are <strong>pseudo-polynomial</strong>.
+
+- With a vector of capacities (MDKP, MKP) the table has one dimension for each capacity: the number of steps is pseudo-polynomial only for a fixed number $m$ of dimensions or knapsacks.
 
 ## 16.5 Typical mistakes
 

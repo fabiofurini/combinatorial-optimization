@@ -2,17 +2,17 @@
 title: "First improvement and best improvement"
 ---
 
-# 25.5 First improvement and best improvement { #sez-sec-firstbest }
+# 30.5 First improvement and best improvement { #sez-sec-firstbest }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 25** · [:material-book-open-variant: Chapter 25: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
+**Part 4 · Heuristic algorithms · Chapter 30** · [:material-book-open-variant: Chapter 30: Local search](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../../lab/tsp-nn-2opt.md)
 
 </div>
 
 - The function $\textit{Improve}$ of $LS$ can stop at the <em>first</em> improving neighbour it finds, or examine the whole neighbourhood and return the <em>best</em> neighbour. The pseudo-codes are written for a minimization problem; for a maximization problem, “$<$” becomes “$>$”.
 
-## 25.5.1 First improvement
+## 30.5.1 First improvement
 
 !!! chiave ""
 
@@ -22,7 +22,7 @@ title: "First improvement and best improvement"
 
     <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> a feasible solution <span class="arithmatex">\(x\)</span>, a neighbourhood <span class="arithmatex">\(N\)</span>, an objective function <span class="arithmatex">\(f\)</span> (to be minimized)</div><div class="pc" style="--liv:0"><strong>Output:</strong> the first neighbour <span class="arithmatex">\(y\in N(x)\)</span> with <span class="arithmatex">\(f(y)<f(x)\)</span>, or <span class="arithmatex">\(\textit{NULL}\)</span></div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> FirstImprovement(<span class="arithmatex">\(x, N, f\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><strong>for</strong> <span class="arithmatex">\(y \in N(x)\)</span>, in the order of the neighbourhood <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">3</span><strong>if</strong> <span class="arithmatex">\(f(y) < f(x)\)</span> <strong>then</strong></div><div class="pc" style="--liv:3"><span class="pc-n">4</span><strong>return</strong> <span class="arithmatex">\(y\)</span> <span class="pc-com">▹ improving neighbour: accept it at once</span></div><div class="pc" style="--liv:2"><span class="pc-n">5</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><strong>return</strong> <span class="arithmatex">\(\textit{NULL}\)</span> <span class="pc-com">▹ <span class="arithmatex">\(x\)</span> is a local optimum</span></div></div>
 
-## 25.5.2 Best improvement
+## 30.5.2 Best improvement
 
 !!! chiave ""
 
@@ -34,7 +34,7 @@ title: "First improvement and best improvement"
     <span class="arithmatex">\(f^* := f(x)\)</span> <span class="pc-com">▹ best improving neighbour found so far its value</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>for</strong> <span class="arithmatex">\(y \in N(x)\)</span>, in the order of the neighbourhood <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><strong>if</strong> <span class="arithmatex">\(f(y) < f^*\)</span> <strong>then</strong></div><div class="pc" style="--liv:3"><span class="pc-n">5</span><span class="arithmatex">\(y^* \leftarrow y\)</span>
     <span class="arithmatex">\(f^* \leftarrow f(y)\)</span> <span class="pc-com">▹ better than all the neighbours seen so far</span></div><div class="pc" style="--liv:2"><span class="pc-n">6</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">8</span><strong>return</strong> <span class="arithmatex">\(y^*\)</span> <span class="pc-com">▹ NULL if <span class="arithmatex">\(x\)</span> is a local optimum</span></div></div>
 
-## 25.5.3 Comparison
+## 30.5.3 Comparison
 
 - In a local optimum both rules examine the whole neighbourhood: the last iteration costs the same.
 
@@ -46,9 +46,9 @@ title: "First improvement and best improvement"
 
 <a id="box-3-ex-kpfirstbest"></a>
 
-!!! esempio "Example 25.1: First and best improvement on the KP"
+!!! esempio "Example 30.1: First and best improvement on the KP"
 
-    We start from the solution of the greedy by weight $GR_w$ on the KP reference instance ($c=9$), i.e., $x=(0,0,1,1)$, of weight $6$ and profit $10$, with the neighbourhood flip+swap. The neighbours are examined in the order of Section [25.4](local-search-the-scheme.md#sez-sec-neigh):
+    We start from the solution of the greedy by weight $GR_w$ on the KP reference instance ($c=9$), i.e., $x=(0,0,1,1)$, of weight $6$ and profit $10$, with the neighbourhood flip+swap. The neighbours are examined in the order of Section [30.4](local-search-the-scheme.md#sez-sec-neigh):
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -185,4 +185,4 @@ title: "First improvement and best improvement"
 
 ---
 
-**Next:** [25.6 Evaluating a move incrementally](evaluating-a-move-incrementally.md)
+**Next:** [30.6 Evaluating a move incrementally](evaluating-a-move-incrementally.md)

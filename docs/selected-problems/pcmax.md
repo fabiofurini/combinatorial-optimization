@@ -46,29 +46,29 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - The model $\ILP_{\PCmax}$ has $nm$ binary variables $x_{jh}$ and the continuous variable $C_{\max}$ ([Ch. 14](../formulations/pcmax-formulations.md#eq-ILP-PCMAX)).
 
-- The LP bound is $\sum_j t_j/m$; its ratio to the optimum is at least $1/m$, and $1/m$ is approached ([Ch. 14](../formulations/pcmax-formulations.md#box-5-prop-PCMAX-tight)).
+- The LP bound is $\sum_j t_j/m$; its ratio to the optimum is at least $1/m$, and $1/m$ is approached ([Ch. 14](../formulations/pcmax-formulations.md#box-8-prop-PCMAX-tight)).
 
 - Valid inequalities strengthen the model; load ordering breaks the symmetry only when the loads are distinct ([Ch. 14](../formulations/pcmax-formulations.md#144-additional-considerations)).
 
 ## Heuristics { #sez-sec-cat-pcmax-heuristics }
 
-- On the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax.md) (three machines, optimum $9$) LIST with the shortest jobs first gives $12$ and LPT gives $11$ ([Ch. 24](../heuristic-algorithms/constructive-heuristics/scheduling-on-parallel-machines-longest-jobs-first.md#sez-sec-LPT)).
+- On the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax.md) (three machines, optimum $9$) LIST with the shortest jobs first gives $12$ and LPT gives $11$ ([Ch. 29](../heuristic-algorithms/constructive-heuristics/scheduling-on-parallel-machines-longest-jobs-first.md#sez-sec-LPT)).
 
-- The LPT solution is a local optimum for move, while two swaps reach $9$; the auxiliary objective $\sum_h L_h^2$ gives a slope to the plateaus ([Ch. 25](../heuristic-algorithms/local-search/p-cmax-move-and-swap.md#box-8-ex-lpt)).
+- The LPT solution is a local optimum for move, while two swaps reach $9$; the auxiliary objective $\sum_h L_h^2$ gives a slope to the plateaus ([Ch. 30](../heuristic-algorithms/local-search/p-cmax-move-and-swap.md#box-8-ex-lpt)).
 
-- Tabu search and VNS reach $9$ on the same instance ([Ch. 26](../heuristic-algorithms/metaheuristics/variable-neighbourhood-search.md#box-8-ex-vnsPCM)).
+- Tabu search and VNS reach $9$ on the same instance ([Ch. 31](../heuristic-algorithms/metaheuristics/variable-neighbourhood-search.md#box-8-ex-vnsPCM)).
 
 ## MIP heuristics { #sez-sec-cat-pcmax-mipheuristics }
 
-- On the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax.md) fractional diving ends at $10$, guided diving from LPT finds $9$, the feasibility pump returns $11$ ([Ch. 27](../heuristic-algorithms/mip-heuristics-classical.md#box-5-ex-divepcm)).
+- On the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax.md) fractional diving ends at $10$, guided diving from LPT finds $9$, the feasibility pump returns $11$ ([Ch. 32](../heuristic-algorithms/mip-heuristics-classical.md#box-5-ex-divepcm)).
 
-- RINS, local branching and proximity search, started from LPT, reach $9$; proximity search also proves it optimal ([Ch. 27](../heuristic-algorithms/mip-heuristics-classical.md#box-10-ex-rinspcm)).
+- RINS, local branching and proximity search, started from LPT, reach $9$; proximity search also proves it optimal ([Ch. 32](../heuristic-algorithms/mip-heuristics-classical.md#box-10-ex-rinspcm)).
 
 ## Approximation { #sez-sec-cat-pcmax-approximation }
 
-- LIST is a $\left(2-\frac1m\right)$-approximation for every list, tight ([Ch. 31](../approximation-algorithms/pcmax-approximation.md#box-5-prop-LIST)).
+- LIST is a $\left(2-\frac1m\right)$-approximation for every list, tight ([Ch. 36](../approximation-algorithms/pcmax-approximation.md#box-5-prop-LIST)).
 
-- LPT is a $\left(\frac43-\frac1{3m}\right)$-approximation, tight on Graham's family; for $m=3$ it is the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax.md) ([Ch. 31](../approximation-algorithms/pcmax-approximation.md#box-7-prop-LPT)).
+- LPT is a $\left(\frac43-\frac1{3m}\right)$-approximation, tight on Graham's family; for $m=3$ it is the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax.md) ([Ch. 36](../approximation-algorithms/pcmax-approximation.md#box-7-prop-LPT)).
 
 ## Exercises { #sez-sec-cat-pcmax-es }
 
@@ -76,19 +76,19 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - [Ch. 14 — Formulations of parallel machine scheduling](../exercises/pcmax-formulations.md) (5 exercises).
 
-- [Ch. 23 — Heuristic algorithms: definitions](../exercises/heuristics.md) (2 exercises).
+- [Ch. 28 — Heuristic algorithms: definitions](../exercises/heuristics.md) (2 exercises).
 
-- [Ch. 24 — Constructive heuristics](../exercises/constructive-heuristics.md) (3 exercises).
+- [Ch. 29 — Constructive heuristics](../exercises/constructive-heuristics.md) (3 exercises).
 
-- [Ch. 25 — Local search](../exercises/local-search.md) (3 exercises).
+- [Ch. 30 — Local search](../exercises/local-search.md) (3 exercises).
 
-- [Ch. 26 — Metaheuristics](../exercises/metaheuristics.md) (3 exercises).
+- [Ch. 31 — Metaheuristics](../exercises/metaheuristics.md) (3 exercises).
 
-- [Ch. 27 — MIP heuristics for the classical problems](../exercises/mip-heuristics-classical.md) (1 exercise).
+- [Ch. 32 — MIP heuristics for the classical problems](../exercises/mip-heuristics-classical.md) (1 exercise).
 
-- [Ch. 28 — Approximation algorithms: definitions](../exercises/approximation.md) (1 exercise).
+- [Ch. 33 — Approximation algorithms: definitions](../exercises/approximation.md) (1 exercise).
 
-- [Ch. 31 — Approximation for $P\|C_{\max}$](../exercises/pcmax-approximation.md) (3 exercises).
+- [Ch. 36 — Approximation for $P\|C_{\max}$](../exercises/pcmax-approximation.md) (3 exercises).
 
 ## Variants { #sez-sec-cat-pcmax-var }
 

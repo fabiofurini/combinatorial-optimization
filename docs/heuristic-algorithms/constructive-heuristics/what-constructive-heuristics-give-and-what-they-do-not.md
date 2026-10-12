@@ -2,11 +2,11 @@
 title: "What constructive heuristics give, and what they do not"
 ---
 
-# 24.11 What constructive heuristics give, and what they do not { #sez-sec-WHAT }
+# 29.11 What constructive heuristics give, and what they do not { #sez-sec-WHAT }
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 24** · [:material-book-open-variant: Chapter 24: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
+**Part 4 · Heuristic algorithms · Chapter 29** · [:material-book-open-variant: Chapter 29: Constructive](index.md) · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../../lab/list-scheduling-lpt.md)
 
 </div>
 
@@ -59,7 +59,7 @@ title: "What constructive heuristics give, and what they do not"
 
 - <strong>A choice is never revised.</strong> Every heuristic of these notes stops as soon as the solution is complete, and every decision taken along the way is final. In the $LPT$ schedule, job $7$ is put on machine $1$ when the three loads are equal, and the makespan $11$ is fixed at that moment; in the $NN$ tour from city $1$, the edge $(5,1)$ of length $9$ is the consequence of the very first choices. Looking at the Gantt chart or at the tour, a better solution seems close; but a constructive heuristic has no mechanism to go back.
 
-- <strong>The order decides everything.</strong> The examples of these notes show the same lesson on four problems: sorting the elements in the right order (efficiency, decreasing weights, longest jobs first) is the main design choice; still, no order is the best on every instance ([Example 24.1](the-knapsack-problem-which-order.md#box-3-ex-kp3), [Example 24.4](the-bin-packing-problem-first-sort-then-pack.md#box-6-ex-ffdworse)), and running several orders, several starting points or several randomized constructions, and keeping the best solution, is a cheap and effective protection.
+- <strong>The order decides everything.</strong> The examples of these notes show the same lesson on four problems: sorting the elements in the right order (efficiency, decreasing weights, longest jobs first) is the main design choice; still, no order is the best on every instance ([Example 29.1](the-knapsack-problem-which-order.md#box-3-ex-kp3), [Example 29.4](the-bin-packing-problem-first-sort-then-pack.md#box-6-ex-ffdworse)), and running several orders, several starting points or several randomized constructions, and keeping the best solution, is a cheap and effective protection.
 
 - <strong>Cheap, and useful as a start.</strong> Constructive heuristics are fast, and they are rarely used alone: their solutions are the starting points of the methods that try to improve a complete solution. The next notes, on local search, start from the solutions computed here and modify them, a little at a time, as long as they improve.
 

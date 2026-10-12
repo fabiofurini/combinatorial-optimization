@@ -6,15 +6,15 @@ title: "Exercises · Local search"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 25** · each solution opens with a click · [:material-book-open-variant: Chapter 25: Local search](../heuristic-algorithms/local-search/index.md) · [:material-file-pdf-box: Exercises, volume 4 (PDF)](../pdf/exercises-4-heuristic-algorithms.pdf)
+**Exercises · Chapter 30** · each solution opens with a click · [:material-book-open-variant: Chapter 30: Local search](../heuristic-algorithms/local-search/index.md) · [:material-file-pdf-box: Exercises, volume 4 (PDF)](../pdf/exercises-4-heuristic-algorithms.pdf)
 
 </div>
 
 ## Knapsack
 
-<a id="esercizio-25-1"></a>
+<a id="esercizio-30-1"></a>
 
-!!! esercizio "Exercise 25.1: Local search KP 1"
+!!! esercizio "Exercise 30.1: Local search KP 1"
 
     We consider a knapsack of capacity $c = 18$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
@@ -437,9 +437,9 @@ title: "Exercises · Local search"
 
     4. The local search from $GR$ reaches $x=(1,0,0,1,1)$, of profit $32=z(I)$: an <strong>optimal</strong> solution. The local search from the greedy solution by profit stops immediately in $x=(0,0,1,1,0)$, of profit $27$, a local optimum that is not optimal. To go from $\{3,4\}$ to the optimal set $\{1,4,5\}$ one must remove item $3$ and add the items $1$ and $5$: three flips, or one swap and one flip, and every intermediate vector is either infeasible or worse. The local optimum reached depends on the <strong>starting solution</strong>.
 
-<a id="esercizio-25-2"></a>
+<a id="esercizio-30-2"></a>
 
-!!! esercizio "Exercise 25.2: Local search KP 2"
+!!! esercizio "Exercise 30.2: Local search KP 2"
 
     We consider a knapsack of capacity $c = 13$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
@@ -850,9 +850,9 @@ title: "Exercises · Local search"
 
     4. First improvement accepts the first improving swap it finds, which gains only $1$, and stops in a local optimum of profit $18$; best improvement takes the largest gain and reaches profit $22$. They examine 7 and 11 feasible neighbours. The LP relaxation gives $z(I)\le 8+9+14\cdot\frac{5}{9}=\frac{223}{9}$, hence $z(I)\le 24$, which does not prove that $22$ is optimal. We argue directly. If item $3$ is selected, the residual capacity is $4$ and only item $1$ fits, for a profit of $22$. If item $3$ is not selected, the best solution is $\{1,4\}$, of profit $19$. Hence $z(I)=22$ and the solution of best improvement, $x=(1,0,1,0,0)$, is <strong>optimal</strong>. From the same starting solution the two rules reach <strong>different local optima</strong>.
 
-<a id="esercizio-25-3"></a>
+<a id="esercizio-30-3"></a>
 
-!!! esercizio "Exercise 25.3: Local search KP 3"
+!!! esercizio "Exercise 30.3: Local search KP 3"
 
     We consider a knapsack of capacity $c = 11$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n=5$), with the following profits and weights:
 
@@ -1325,9 +1325,9 @@ title: "Exercises · Local search"
 
 ## Bin packing
 
-<a id="esercizio-25-4"></a>
+<a id="esercizio-30-4"></a>
 
-!!! esercizio "Exercise 25.4: Local search BPP 1"
+!!! esercizio "Exercise 30.4: Local search BPP 1"
 
     Bins of capacity $c=10$ and a set $\mathscr{I}=\{1,2,3,4,5,6,7\}$ of $7$ items with weights
 
@@ -1627,9 +1627,9 @@ title: "Exercises · Local search"
 
     4. The final solution uses $3=\lceil 29/10\rceil$ bins: it is <strong>optimal</strong>. With $nb$ the search sees no difference between the neighbours, since only a move that empties a bin changes $nb$; with $SQ$ the moves that make a heavy bin heavier and a light bin lighter are improving, and they prepare the move that empties a bin (which always increases $SQ$).
 
-<a id="esercizio-25-5"></a>
+<a id="esercizio-30-5"></a>
 
-!!! esercizio "Exercise 25.5: Local search BPP 2"
+!!! esercizio "Exercise 30.5: Local search BPP 2"
 
     Bins of capacity $c=10$ and a set $\mathscr{I}=\{1,2,3,4,5,6\}$ of $6$ items with weights
 
@@ -1969,9 +1969,9 @@ title: "Exercises · Local search"
 
         $VND$ stops with packing patterns $\{1,3,5\}, \{2,4,6\}$: $2=\lceil 20/10\rceil$ bins, an <strong>optimal</strong> solution. The solution of $FF$ is a local optimum for move, the swap alone cannot change the number of bins, but the swap prepares a move that empties a bin: the local optimum <strong>depends on the neighbourhood</strong>, and combining the two neighbourhoods reaches the optimum.
 
-<a id="esercizio-25-6"></a>
+<a id="esercizio-30-6"></a>
 
-!!! esercizio "Exercise 25.6: Local search BPP 3"
+!!! esercizio "Exercise 30.6: Local search BPP 3"
 
     Bins of capacity $c=10$ and a set $\mathscr{I}=\{1,2,3,4,5,6,7\}$ of $7$ items with weights
 
@@ -2186,9 +2186,9 @@ title: "Exercises · Local search"
 
 ## TSP: 2-opt
 
-<a id="esercizio-25-7"></a>
+<a id="esercizio-30-7"></a>
 
-!!! esercizio "Exercise 25.7: Local search TSP 1"
+!!! esercizio "Exercise 30.7: Local search TSP 1"
 
     $6$ cities with the symmetric distances
 
@@ -2672,9 +2672,9 @@ title: "Exercises · Local search"
 
     4. The final tour has length $23=z(I)$: it is <strong>optimal</strong>. The search made 3 moves, while the termination property of the notes allows at most $27-23=4$.
 
-<a id="esercizio-25-8"></a>
+<a id="esercizio-30-8"></a>
 
-!!! esercizio "Exercise 25.8: Local search TSP 2"
+!!! esercizio "Exercise 30.8: Local search TSP 2"
 
     $6$ cities with the symmetric distances
 
@@ -3247,9 +3247,9 @@ title: "Exercises · Local search"
 
     4. First improvement reaches a tour of length $30=z(I)$, an <strong>optimal</strong> tour, while best improvement stops in a local optimum of length $31$, $3.3\%$ above the optimum. The steepest first move ($\Delta=-2$) leads into a worse valley: best improvement is not always better than first improvement. First improvement examines 25 moves in total, best improvement 18: the better local optimum costs more evaluations here, because first improvement makes more moves.
 
-<a id="esercizio-25-9"></a>
+<a id="esercizio-30-9"></a>
 
-!!! esercizio "Exercise 25.9: Local search TSP 3"
+!!! esercizio "Exercise 30.9: Local search TSP 3"
 
     $6$ cities with the symmetric distances
 
@@ -3539,9 +3539,9 @@ title: "Exercises · Local search"
 
 ## $P\|C_{\max}$
 
-<a id="esercizio-25-10"></a>
+<a id="esercizio-30-10"></a>
 
-!!! esercizio "Exercise 25.10: Local search $P\,||\,C_{\max}$ 1"
+!!! esercizio "Exercise 30.10: Local search $P\,||\,C_{\max}$ 1"
 
     $m=3$ identical machines and $6$ jobs with processing times
 
@@ -3842,9 +3842,9 @@ title: "Exercises · Local search"
 
     4. The bound $11$ is not attained, but a makespan of $11$ is impossible. Job $6$ ($t_{6}=9$) can share its machine only with jobs of total time at most $11-9=2$, and every other job has $t_j\ge 3$: its machine contains job $6$ only. The other $5$ jobs, of total time $32-9=23$, should fit on two machines of load at most $11$, i.e., at most $22$: impossible. Hence $z(I)\ge 12$, and the final schedule, with $C_{\max}=12$, is <strong>optimal</strong>.
 
-<a id="esercizio-25-11"></a>
+<a id="esercizio-30-11"></a>
 
-!!! esercizio "Exercise 25.11: Local search $P\,||\,C_{\max}$ 2"
+!!! esercizio "Exercise 30.11: Local search $P\,||\,C_{\max}$ 2"
 
     $m=3$ identical machines and $7$ jobs with processing times
 
@@ -4306,9 +4306,9 @@ title: "Exercises · Local search"
 
     4. The bound is $\lceil 47/3\rceil=16$, attained by the final schedule: it is <strong>optimal</strong>. The schedule of $LPT$ is a local optimum for move and not for swap: the local optimum <strong>depends on the neighbourhood</strong>.
 
-<a id="esercizio-25-12"></a>
+<a id="esercizio-30-12"></a>
 
-!!! esercizio "Exercise 25.12: Local search $P\,||\,C_{\max}$ 3"
+!!! esercizio "Exercise 30.12: Local search $P\,||\,C_{\max}$ 3"
 
     $m=3$ identical machines and $6$ jobs with processing times
 

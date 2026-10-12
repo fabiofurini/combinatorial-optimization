@@ -16,7 +16,7 @@ title: "Formulations of the bin packing problem"
 
     - From the module <em>Integer linear programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/) and [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): ILP problems, LP relaxations and bounds.
 
-    - From this module, the chapter «Bin packing and cutting stock»: the problem and its assumptions.
+    - From this module, [Chapter 3 «Bin packing and cutting stock»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/): the problem and its assumptions.
 
 !!! chiave "Objectives"
 
@@ -30,35 +30,7 @@ title: "Formulations of the bin packing problem"
 
     - prove that the LP bound is at least one half of the optimal value, and that the factor is tight.
 
-## 10.1 The problem in brief
-
-!!! nota "Where we were"
-
-    In the chapter «Bin packing and cutting stock» we met the Bin Packing Problem as a <em>problem</em>: definition, applications and a first bound on the number of bins. Here we look at it as a <em>model</em> and we compute lower bounds on its optimal value. The same problem returns with heuristic algorithms and approximation algorithms for the BPP.
-
-<a id="box-1-def-BPP"></a>
-
-!!! definizione "Definition 10.1: Bin Packing Problem"
-
-    Given:
-
-    1. an infinite number of bins, each with <em>capacity</em> $c \in \Z_{\ge 1}$,
-
-    2. a set $\mathscr{I} = \{1,2,\dots,n\}$ of $n$ items,
-
-    3. for each item $j \in \mathscr{I}$, a <em>weight</em> $w_j \in \Z_{\ge 1}$,
-
-    the <strong>Bin Packing Problem</strong> (BPP) asks to decide in which bin to place each item, so that the total weight of the items in any bin does not exceed the bin capacity, and the total number of bins used is minimized.
-
-- We assume that any BPP instance satisfies the problem assumptions, i.e.,
-
-    $$
-    w_j \le c ~~~~\text{for all}~~~~ j \in \mathscr{I} ~~~~~~~\text{and}~~~~~~~ \sum_{j \in \mathscr{I}} w_j>c
-    $$
-
-    The first assumption guarantees that every item can be packed into a bin, the second one that more than one bin is needed.
-
-## 10.2 An ILP model for the Bin Packing Problem
+## 10.1 An ILP model for the Bin Packing Problem
 
 - Given an upper bound $m \in \Z_{\ge 2}$ on the number of bins used in any optimal BPP solution, we introduce the following $mn$ <strong>binary variables</strong>:
 
@@ -124,7 +96,7 @@ title: "Formulations of the bin packing problem"
 
 - <strong>If bin $b$ is used, then it contains at least one item, but only in an optimal solution.</strong> The constraints do not impose it. However, if $x_{jb}=0$ for all $j$ and $y_b=1$, setting $y_b=0$ keeps all the constraints satisfied and decreases the objective value by one. Hence, in every optimal solution, empty bins are not counted as used.
 
-<a id="box-2-texexpbox_ilp_bpp"></a>
+<a id="box-1-texexpbox_ilp_bpp"></a>
 
 !!! esempio "Example 10.1: $\mathrm{ILP}_{\mathrm{BPP}}$ model"
 
@@ -181,7 +153,7 @@ title: "Formulations of the bin packing problem"
 
     The optimal solution is not unique: also the packing patterns $\{1\}$ and $\{2,3\}$ use two bins.
 
-## 10.3 A first Linear Programming relaxation
+## 10.2 A first Linear Programming relaxation
 
 !!! chiave ""
 
@@ -194,7 +166,7 @@ title: "Formulations of the bin packing problem"
 
     The obtained LP model is referred to as the $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ model.
 
-<a id="box-3-texexpbox_lp0_bpp"></a>
+<a id="box-2-texexpbox_lp0_bpp"></a>
 
 !!! esempio "Example 10.2: $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ model"
 
@@ -253,7 +225,7 @@ title: "Formulations of the bin packing problem"
 
     The obtained model is referred to as the dual $D(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ model.
 
-<a id="box-4-texexpbox_dlp0_bpp"></a>
+<a id="box-3-texexpbox_dlp0_bpp"></a>
 
 !!! esempio "Example 10.3: $D(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ model"
 
@@ -287,9 +259,9 @@ title: "Formulations of the bin packing problem"
 
     The optimal value $z(D(\mathrm{LP}\text{-}0_{\mathrm{BPP}}))$ is $\frac{8}{5}$.
 
-<a id="box-5-prop_lp0_bpp_opt"></a>
+<a id="box-4-prop_lp0_bpp_opt"></a>
 
-!!! teorema "Proposition 10.2"
+!!! teorema "Proposition 10.1"
 
     An optimal solution of the primal $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ model is:
 
@@ -315,9 +287,9 @@ title: "Formulations of the bin packing problem"
     \end{aligned} \tag{10.5}
     \end{equation*}
 
-<a id="box-6-cor_lp0_bpp_value"></a>
+<a id="box-5-cor_lp0_bpp_value"></a>
 
-!!! teorema "Corollary 10.3"
+!!! teorema "Corollary 10.2"
 
     The optimal value of the primal $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ and dual $D(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ models is:
 
@@ -394,9 +366,9 @@ title: "Formulations of the bin packing problem"
 
 - This is an alternative proof that does not rely on the dual formulation but instead reasons directly on the minimum objective function value imposed by the constraints.
 
-<a id="box-7-prop_lp0_bpp_alternative"></a>
+<a id="box-6-prop_lp0_bpp_alternative"></a>
 
-!!! teorema "Proposition 10.4"
+!!! teorema "Proposition 10.3"
 
     An optimal solution of the primal $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ model is:
 
@@ -464,7 +436,7 @@ title: "Formulations of the bin packing problem"
 
     which matches the lower bound $\eqref{eq:bpp-lb}$. Therefore the point $\eqref{PP_alternative}$ is an optimal solution with objective value $\eqref{VAL_alternative}$. <span class="qed">□</span>
 
-## 10.4 A second Linear Programming relaxation
+## 10.3 A second Linear Programming relaxation
 
 !!! chiave ""
 
@@ -476,7 +448,7 @@ title: "Formulations of the bin packing problem"
     && y_{b} &\ge 0, & \forall b \in \mathscr{B}. \label{cons4_BPP_LP_LL} \tag{10.10c}
     \end{align*}
 
-<a id="box-8-texexpbox_lp_bpp"></a>
+<a id="box-7-texexpbox_lp_bpp"></a>
 
 !!! esempio "Example 10.4: $\mathrm{LP}_{\mathrm{BPP}}$ model"
 
@@ -531,7 +503,7 @@ title: "Formulations of the bin packing problem"
     && \lambda_{b} &\le 0, & \forall b \in \mathscr{B}. \label{cons5_D_2} \tag{10.11f}
     \end{align*}
 
-<a id="box-9-texexpbox_dlp_bpp"></a>
+<a id="box-8-texexpbox_dlp_bpp"></a>
 
 !!! esempio "Example 10.5: $D(\mathrm{LP}_{\mathrm{BPP}})$ model"
 
@@ -578,9 +550,9 @@ title: "Formulations of the bin packing problem"
 
     but they are implied by constraints $\eqref{cons1_BPP}$.
 
-<a id="box-10-prop_lp_bpp_opt"></a>
+<a id="box-9-prop_lp_bpp_opt"></a>
 
-!!! teorema "Proposition 10.5"
+!!! teorema "Proposition 10.4"
 
     An optimal solution of the primal $\mathrm{LP}_{\mathrm{BPP}}$ model is:
 
@@ -608,9 +580,9 @@ title: "Formulations of the bin packing problem"
     \end{aligned} \tag{10.13}
     \end{equation*}
 
-<a id="box-11-cor_lp_bpp_value"></a>
+<a id="box-10-cor_lp_bpp_value"></a>
 
-!!! teorema "Corollary 10.6"
+!!! teorema "Corollary 10.5"
 
     The optimal value of the primal $\mathrm{LP}_{\mathrm{BPP}}$ and dual $D(\mathrm{LP}_{\mathrm{BPP}})$ models is:
 
@@ -633,13 +605,13 @@ title: "Formulations of the bin packing problem"
 
     since $\sum_{j} w_j / c \le z(\mathrm{ILP}_{\mathrm{BPP}}) \le m$, where the last inequality holds because $m$ is an upper bound on the number of bins in any optimal BPP solution. Accordingly, constraints $\eqref{cons3_BPP_LP_LL}$ are also satisfied. <span class="qed">□</span>
 
-### 10.4.1 Some important theoretical properties
+### 10.3.1 Some important theoretical properties
 
 - The following two propositions show that the ratio between $z(\mathrm{LP}_{\mathrm{BPP}})$ and $z(\mathrm{ILP}_{\mathrm{BPP}})$ is at least one half for every BPP instance (<strong>by hypothesis</strong>  $z(\mathrm{ILP}_{\mathrm{BPP}}) >1$ since all items do not fit in a single bin). Furthermore, there exist instances for which the value one half can be asymptotically achieved as the capacity $c \to +\infty$.
 
-<a id="box-12-prop_lp_bpp_ratio_half"></a>
+<a id="box-11-prop_lp_bpp_ratio_half"></a>
 
-!!! teorema "Proposition 10.7"
+!!! teorema "Proposition 10.6"
 
     For every BPP instance, we have:
 
@@ -699,9 +671,9 @@ title: "Formulations of the bin packing problem"
 
     <p class="qed-riga"><span class="qed">□</span></p>
 
-<a id="box-13-prop_lp_bpp_ratio_tight"></a>
+<a id="box-12-prop_lp_bpp_ratio_tight"></a>
 
-!!! teorema "Proposition 10.8"
+!!! teorema "Proposition 10.7"
 
     There are BPP instances such that:
 
@@ -747,9 +719,9 @@ title: "Formulations of the bin packing problem"
 
 - The following two propositions show that the ratio between $\lceil z(\mathrm{LP}_{\mathrm{BPP}}) \rceil$ and $z(\mathrm{ILP}_{\mathrm{BPP}})$ is at least one half for every BPP instance. Furthermore, there exist instances for which the value one half can be asymptotically achieved as the number of items $n \to +\infty$.
 
-<a id="box-14-prop_ceil_lp_bpp_ratio_half"></a>
+<a id="box-13-prop_ceil_lp_bpp_ratio_half"></a>
 
-!!! teorema "Proposition 10.9"
+!!! teorema "Proposition 10.8"
 
     For every BPP instance, we have:
 
@@ -810,9 +782,9 @@ title: "Formulations of the bin packing problem"
 
     <p class="qed-riga"><span class="qed">□</span></p>
 
-<a id="box-15-prop_ceil_lp_bpp_ratio_tight"></a>
+<a id="box-14-prop_ceil_lp_bpp_ratio_tight"></a>
 
-!!! teorema "Proposition 10.10"
+!!! teorema "Proposition 10.9"
 
     There are BPP instances such that:
 
@@ -862,7 +834,7 @@ title: "Formulations of the bin packing problem"
 
     <p class="qed-riga"><span class="qed">□</span></p>
 
-## 10.5 Typical mistakes
+## 10.4 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -876,7 +848,7 @@ title: "Formulations of the bin packing problem"
 
     - <strong>Expecting a better relaxation from $y_b \le 1$.</strong> The second relaxation has the same optimal value as the first one: the upper bounds $y_b \le 1$ do not cut off the optimal solution of the first relaxation.
 
-## 10.6 In summary
+## 10.5 In summary
 
 !!! chiave "In summary"
 

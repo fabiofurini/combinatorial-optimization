@@ -50,15 +50,15 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Dynamic programming { #sez-sec-cat-cls-dynamicprogramming }
 
-- Without capacities an optimal plan produces only with empty stock (Wagner and Whitin): a DP over the last production run solves the ULS in $\Theta(m^2)$ steps ([Ch. 22](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls.md#222-a-dp-algorithm-for-the-uls)).
+- Without capacities an optimal plan produces only with empty stock (Wagner and Whitin): a DP over the last production run solves the ULS in $\Theta(m^2)$ steps ([Ch. 27](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls.md#272-a-dp-algorithm-for-the-uls)).
 
-- With capacities the state is (period, inventory): $O(m\,D\,C)$ steps, pseudo-polynomial ([Ch. 22](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#2231-number-of-steps)).
+- With capacities the state is (period, inventory): $O(m\,D\,C)$ steps, pseudo-polynomial ([Ch. 27](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#2731-number-of-steps)).
 
 ## MIP heuristics { #sez-sec-cat-cls-mipheuristics }
 
-- On the uncapacitated instance of the MIP course relax-and-fix finds the optimum $170$, while the least unit cost heuristic gives $200$ ([Ch. 27](../heuristic-algorithms/mip-heuristics-classical.md#box-16-ex-rfcourse)).
+- On the uncapacitated instance of the MIP course relax-and-fix finds the optimum $170$, while the least unit cost heuristic gives $200$ ([Ch. 32](../heuristic-algorithms/mip-heuristics-classical.md#box-16-ex-rfcourse)).
 
-- On a capacitated instance relax-and-fix stops at $170$, and fix-and-optimize reaches the optimum $160$ ([Ch. 27](../heuristic-algorithms/mip-heuristics-classical.md#box-18-ex-fo)).
+- On a capacitated instance relax-and-fix stops at $170$, and fix-and-optimize reaches the optimum $160$ ([Ch. 32](../heuristic-algorithms/mip-heuristics-classical.md#box-18-ex-fo)).
 
 ## Exercises { #sez-sec-cat-cls-es }
 
@@ -66,7 +66,7 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - [Ch. 15 — Formulations of capacitated lot sizing](../exercises/lot-sizing-formulations.md) (5 exercises).
 
-- [Ch. 22 — Dynamic programming for lot sizing](../exercises/dp-lot-sizing.md) (5 exercises).
+- [Ch. 27 — Dynamic programming for lot sizing](../exercises/dp-lot-sizing.md) (5 exercises).
 
 ## Variants { #sez-sec-cat-cls-var }
 

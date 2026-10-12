@@ -38,7 +38,47 @@
 
     [:octicons-arrow-right-24: Read the chapter](dp-bounded-knapsack.md) · [Exercises](../exercises/dp-bounded-knapsack.md)
 
--   **20. DP for the rod cutting problem**
+-   **20. DP for the subset sum problem**
+
+    ---
+
+    A DP algorithm
+
+    [:octicons-arrow-right-24: Read the chapter](dp-subset-sum.md) · [Exercises](../exercises/dp-subset-sum.md)
+
+-   **21. DP for the multiple-choice knapsack problem**
+
+    ---
+
+    A DP algorithm
+
+    [:octicons-arrow-right-24: Read the chapter](dp-multiple-choice-knapsack.md) · [Exercises](../exercises/dp-multiple-choice-knapsack.md)
+
+-   **22. DP for the multidimensional knapsack problem**
+
+    ---
+
+    A DP algorithm
+
+    [:octicons-arrow-right-24: Read the chapter](dp-multidimensional-knapsack.md) · [Exercises](../exercises/dp-multidimensional-knapsack.md)
+
+-   **23. DP for the knapsack problem with setups**
+
+    ---
+
+    A DP algorithm
+
+    [:octicons-arrow-right-24: Read the chapter](dp-knapsack-setups.md) · [Exercises](../exercises/dp-knapsack-setups.md)
+
+-   **24. DP for the multiple knapsack problem**
+
+    ---
+
+    A DP algorithm
+
+    [:octicons-arrow-right-24: Read the chapter](dp-multiple-knapsack.md) · [Exercises](../exercises/dp-multiple-knapsack.md)
+
+-   **25. DP for the rod cutting problem**
 
     ---
 
@@ -46,7 +86,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](dp-rod-cutting/index.md) · [Exercises](../exercises/dp-rod-cutting.md)
 
--   **21. DP for the coin change problem**
+-   **26. DP for the coin change problem**
 
     ---
 
@@ -54,7 +94,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](dp-coin-change.md) · [Exercises](../exercises/dp-coin-change.md)
 
--   **22. Dynamic programming for lot sizing**
+-   **27. Dynamic programming for lot sizing**
 
     ---
 
