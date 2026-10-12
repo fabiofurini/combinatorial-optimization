@@ -44,7 +44,7 @@ title: "Knapsack family"
         w_j \le c,~~~~ \forall j \in \mathscr{I}
         $$
 
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-4-defSSP).
+- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-subset-sum-problem.md#box-4-defSSP).
 
 ## Bounded knapsack problem (BKP) { #sez-sec-cat-def-bkp }
 
@@ -84,7 +84,7 @@ title: "Knapsack family"
         b_j \, w_j \le c, \qquad \forall j \in \mathscr{I}
         $$
 
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-6-defBKP).
+- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-bounded-knapsack-problem.md#box-6-defBKP).
 
 ## Unbounded knapsack problem (UKP) { #sez-sec-cat-def-ukp }
 
@@ -118,7 +118,7 @@ title: "Knapsack family"
         w_j \le c, \qquad \forall j \in \mathscr{I}
         $$
 
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-8-defUKP).
+- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-unbounded-knapsack-problem.md#box-8-defUKP).
 
 ## Multidimensional knapsack problem (MDKP) { #sez-sec-cat-def-mdkp }
 
@@ -156,7 +156,7 @@ title: "Knapsack family"
         w_{dj} \le c_d, \qquad \forall\, d\in \mathscr{D},\ \forall\, j\in \mathscr{I}.
         $$
 
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-10-defMDKP).
+- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-multidimensional-knapsack-problem.md#box-10-defMDKP).
 
 ## Multiple knapsack problem (MKP) { #sez-sec-cat-def-mkp }
 
@@ -192,7 +192,7 @@ title: "Knapsack family"
         \exists\, k\in \mathscr{K}\ \text{such that}\ w_j \le c_k, \qquad \forall\, j\in \mathscr{I}.
         $$
 
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-12-defMKP).
+- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-multiple-knapsack-problem.md#box-12-defMKP).
 
 ## Multiple-choice knapsack problem (MCKP) { #sez-sec-cat-def-mckp }
 
@@ -230,7 +230,7 @@ title: "Knapsack family"
         \sum_{h=1}^{q}\ \min_{j\in \mathscr{J}_h} w_j \;\le\; c.
         $$
 
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-14-defMCKP).
+- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem.md#box-14-defMCKP).
 
 ## Knapsack problem with setups (KPS) { #sez-sec-cat-def-kps }
 
@@ -268,7 +268,7 @@ title: "Knapsack family"
         w_j + s_h \le c \qquad \forall\, h\in\{1,2,\dots,q\},\ \forall\, j\in \mathscr{J}_h.
         $$
 
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-16-defKPS).
+- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md#box-16-defKPS).
 
 ## Rod-Cutting Problem (RCP) { #sez-sec-cat-def-rcp }
 

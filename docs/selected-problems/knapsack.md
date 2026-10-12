@@ -22,7 +22,7 @@ title: "The knapsack problem"
 
     - [Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#121-knapsack-problem): First definition, brute force on a small instance, greedy primal bound and continuous dual bound
 
-    - [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md): Definition, assumptions, counting, cardinality bound and the seven variants
+    - [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/index.md): Definition, assumptions, counting, cardinality bound and the seven variants
 
     - [Chapter 9 «Formulations of the knapsack problem»](../formulations/knapsack-formulations.md): ILP model, the two LP relaxations and their duals, split item, Dantzig and Martello–Toth bounds
 
@@ -54,13 +54,13 @@ title: "The knapsack problem"
 
 - A solution is a <strong>subset</strong> of the items, so an instance with $n$ items has $2^n$ candidate solutions ([Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#box-13-prop-subsets)).
 
-- The assumptions $w_j \le c$ for all $j\in\Ioggetti$ and $\sum_{j\in\Ioggetti} w_j > c$ remove the items that never fit and the trivial instances ([Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#211-assumptions)).
+- The assumptions $w_j \le c$ for all $j\in\Ioggetti$ and $\sum_{j\in\Ioggetti} w_j > c$ remove the items that never fit and the trivial instances ([Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/index.md#211-assumptions)).
 
 ## Bounds and complexity { #sez-sec-cat-kp-prop }
 
 - <strong>Complexity</strong>: Weakly NP-hard: it contains the SSP as the special case $p_j=w_j$, and it is solved by dynamic programming in $\Theta(nc)$ steps, a pseudo-polynomial time ([Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#box-23-def-pseudo)).
 
-- Cardinality bound: if the $\bar k$ lightest items are the most that fit, $z(I)$ is at most the sum of the $\bar k$ largest profits ([Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-3-obs-kp-card)).
+- Cardinality bound: if the $\bar k$ lightest items are the most that fit, $z(I)$ is at most the sum of the $\bar k$ largest profits ([Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/index.md#box-3-obs-kp-card)).
 
 - $z(\LP\text{-}0_{\KP}) = p_1\,\frac{c}{w_1}$, with item $1$ of largest efficiency (relaxation without $x_j\le 1$) ([Chapter 9 «Formulations of the knapsack problem»](../formulations/knapsack-formulations.md#box-6-propXX)).
 
@@ -72,7 +72,7 @@ title: "The knapsack problem"
 
 - For every instance $z(\LP_{\KP})/z(\ILP_{\KP}) \le 2$, and there are instances where the ratio tends to $2$ as $c\to+\infty$ ([Chapter 9 «Formulations of the knapsack problem»](../formulations/knapsack-formulations.md#box-17-propRatio2tight)).
 
-- The order by efficiency is not enough to find an optimal solution: on the reference instance it gives $\{1,2\}$ with profit $11$, while the optimum is $15$ ([Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#211-typical-mistakes)).
+- The order by efficiency is not enough to find an optimal solution: on the reference instance it gives $\{1,2\}$ with profit $11$, while the optimum is $15$ ([Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/remarks-and-summary.md#211-typical-mistakes)).
 
 - In every node of the branch-and-bound tree at most one variable is fractional, the one of the split item ([Chapter 33 «Knapsack: branch-and-bound on the critical item»](../specialized-algorithms/knapsack-branch-and-bound.md#3311-solving-the-lp_kpk-problem-of-a-node)).
 
@@ -193,7 +193,7 @@ $$
 
 - Optimal value $z(\mathrm{KP1})=15$, attained by $\tilde S=\{1,4\}$, the unique optimal solution.
 
-- Used in [Example «KP instance»](../combinatorial-optimization-problems/knapsack.md#box-2-ex-kp), [Counting, a first solution and the cardinality bound](../combinatorial-optimization-problems/knapsack.md#212-counting-the-solutions-a-first-solution-and-a-simple-bound), [Example «$\ILP_{\KP}$ model» and the following examples of the chapter](../formulations/knapsack-formulations.md#box-2-texexp_ilp_kp), [Example «Dantzig and Martello-Toth upper bound»](../formulations/knapsack-formulations.md#box-20-texexp_ub_kp), [Example «The $\ILP_{\KP}$ model»](../specialized-algorithms/knapsack-branch-and-bound.md#box-2-texexpbox1), [Example «Branch-and-bound algorithm for the $\ILP_{\KP}$ model»](../specialized-algorithms/knapsack-branch-and-bound.md#box-3-texexpbox2), [Exercise 9.4](../exercises/knapsack-formulations.md#esercizio-9-4), [Exercise 33.4](../exercises/knapsack-branch-and-bound.md#esercizio-33-4).
+- Used in [Example «KP instance»](../combinatorial-optimization-problems/knapsack/index.md#box-2-ex-kp), [Counting, a first solution and the cardinality bound](../combinatorial-optimization-problems/knapsack/index.md#212-counting-the-solutions-a-first-solution-and-a-simple-bound), [Example «$\ILP_{\KP}$ model» and the following examples of the chapter](../formulations/knapsack-formulations.md#box-2-texexp_ilp_kp), [Example «Dantzig and Martello-Toth upper bound»](../formulations/knapsack-formulations.md#box-20-texexp_ub_kp), [Example «The $\ILP_{\KP}$ model»](../specialized-algorithms/knapsack-branch-and-bound.md#box-2-texexpbox1), [Example «Branch-and-bound algorithm for the $\ILP_{\KP}$ model»](../specialized-algorithms/knapsack-branch-and-bound.md#box-3-texexpbox2), [Exercise 9.4](../exercises/knapsack-formulations.md#esercizio-9-4), [Exercise 33.4](../exercises/knapsack-branch-and-bound.md#esercizio-33-4).
 
 ### Instance KP2 { #sez-sec-cat-ist-kp2 }
 
@@ -1295,7 +1295,7 @@ $$
 
 - Answer: yes ($\{6\}$, $\{1,4\}$, $\{2,3\}$).
 
-- Used in [Example «SSP instance»](../combinatorial-optimization-problems/knapsack.md#box-5-ex-ssp), [The variants at a glance](../combinatorial-optimization-problems/knapsack.md#29-the-variants-at-a-glance).
+- Used in [Example «SSP instance»](../combinatorial-optimization-problems/knapsack/the-subset-sum-problem.md#box-5-ex-ssp), [The variants at a glance](../combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md#29-the-variants-at-a-glance).
 
 ### Instance SSP2 { #sez-sec-cat-ist-ssp2 }
 
@@ -1357,7 +1357,7 @@ $$
 
 - Optimal value $z(\mathrm{BKP1})=18$, attained by two copies of item $1$ and item $5$.
 
-- Used in [Example «BKP instance»](../combinatorial-optimization-problems/knapsack.md#box-7-ex-bkp), [The variants at a glance](../combinatorial-optimization-problems/knapsack.md#29-the-variants-at-a-glance).
+- Used in [Example «BKP instance»](../combinatorial-optimization-problems/knapsack/the-bounded-knapsack-problem.md#box-7-ex-bkp), [The variants at a glance](../combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md#29-the-variants-at-a-glance).
 
 ### Instance BKP2 { #sez-sec-cat-ist-bkp2 }
 
@@ -1532,7 +1532,7 @@ $$
 
 - Optimal value $z(\mathrm{UKP1})=24$, attained by four copies of item $1$.
 
-- Used in [Example «UKP instance»](../combinatorial-optimization-problems/knapsack.md#box-9-ex-ukp), [The variants at a glance](../combinatorial-optimization-problems/knapsack.md#29-the-variants-at-a-glance).
+- Used in [Example «UKP instance»](../combinatorial-optimization-problems/knapsack/the-unbounded-knapsack-problem.md#box-9-ex-ukp), [The variants at a glance](../combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md#29-the-variants-at-a-glance).
 
 ### Instance UKP2 { #sez-sec-cat-ist-ukp2 }
 
@@ -1680,7 +1680,7 @@ $$
 
 - Optimal value $z(\mathrm{MDKP1})=14$, attained by $\{3,4\}$.
 
-- Used in [Example «MDKP instance»](../combinatorial-optimization-problems/knapsack.md#box-11-ex-mdkp), [The variants at a glance](../combinatorial-optimization-problems/knapsack.md#29-the-variants-at-a-glance).
+- Used in [Example «MDKP instance»](../combinatorial-optimization-problems/knapsack/the-multidimensional-knapsack-problem.md#box-11-ex-mdkp), [The variants at a glance](../combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md#29-the-variants-at-a-glance).
 
 ### Instance MKP1 { #sez-sec-cat-ist-mkp1 }
 
@@ -1701,7 +1701,7 @@ $$
 
 - Optimal value $z(\mathrm{MKP1})=30$, attained by $(S_1,S_2) = (\{1,2\},\{4,5\})$, $(\{2,4\},\{1,5\})$, $(\{4,5\},\{1,2\})$.
 
-- Used in [Example «MKP instance»](../combinatorial-optimization-problems/knapsack.md#box-13-ex-mkp), [The variants at a glance](../combinatorial-optimization-problems/knapsack.md#29-the-variants-at-a-glance).
+- Used in [Example «MKP instance»](../combinatorial-optimization-problems/knapsack/the-multiple-knapsack-problem.md#box-13-ex-mkp), [The variants at a glance](../combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md#29-the-variants-at-a-glance).
 
 ### Instance MKP2 { #sez-sec-cat-ist-mkp2 }
 
@@ -1738,7 +1738,7 @@ Capacity $c=15$, $3$ classes (pairs $(p,w)$ of the items of each class):
 
 - Optimal value $z(\mathrm{MCKP1})=17$, attained by $\{1,4,5\}$ and $\{2,3,5\}$.
 
-- Used in [Example «MCKP instance»](../combinatorial-optimization-problems/knapsack.md#box-15-ex-mckp), [The variants at a glance](../combinatorial-optimization-problems/knapsack.md#29-the-variants-at-a-glance).
+- Used in [Example «MCKP instance»](../combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem.md#box-15-ex-mckp), [The variants at a glance](../combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md#29-the-variants-at-a-glance).
 
 ### Instance MCKP2 { #sez-sec-cat-ist-mckp2 }
 
@@ -1775,7 +1775,7 @@ $$
 
 - Optimal value $z(\mathrm{KPS1})=16$, attained by $\{1,2,3\}$, $\{4,5,6\}$, $\{1,2,3,6\}$.
 
-- Used in [Example «KPS instance»](../combinatorial-optimization-problems/knapsack.md#box-17-ex-kps), [The variants at a glance](../combinatorial-optimization-problems/knapsack.md#29-the-variants-at-a-glance).
+- Used in [Example «KPS instance»](../combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md#box-17-ex-kps), [The variants at a glance](../combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md#29-the-variants-at-a-glance).
 
 ## Exercises { #sez-sec-cat-kp-es }
 

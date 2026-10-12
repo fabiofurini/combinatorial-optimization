@@ -34,7 +34,7 @@ title: "Graphs"
 
 - The assumption can be made without loss of generality: if the graph has no edge, every single vertex is a maximum clique and $\omega(G)=1$; if the graph is complete, $V$ itself is a clique and $\omega(G)=n$.
 
-- Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-3-mcpP-def-MSSP).
+- Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md#box-3-mcpP-def-MSSP).
 
 ## Vertex-weighted maximum clique problem (VWMCP) { #sez-sec-cat-def-vwmcp }
 
@@ -46,7 +46,7 @@ title: "Graphs"
 
     2. Given a graph $G$ and an edge-weight vector $\vet{r}$, the <strong>edge-weighted maximum clique problem</strong> asks to find a clique $K$ of $G$ with maximum total edge weight $r(K)$.
 
-- Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-12-mcpP-def-weighted).
+- Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/weighted-variants.md#box-12-mcpP-def-weighted).
 
 ## Edge-weighted maximum clique problem (EWMCP) { #sez-sec-cat-def-ewmcp }
 
@@ -58,4 +58,4 @@ title: "Graphs"
 
     2. Given a graph $G$ and an edge-weight vector $\vet{r}$, the <strong>edge-weighted maximum clique problem</strong> asks to find a clique $K$ of $G$ with maximum total edge weight $r(K)$.
 
-- Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-12-mcpP-def-weighted).
+- Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/weighted-variants.md#box-12-mcpP-def-weighted).

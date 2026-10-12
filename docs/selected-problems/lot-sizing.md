@@ -22,7 +22,7 @@ title: "Capacitated lot sizing"
 
     - [Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#box-12-def-oc1-cls): One of the six problems of the course: the subset of setup periods and the complexity
 
-    - [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing.md): Definition, variants, counting the setup choices, a first plan by hand and the setup lower bound
+    - [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing/index.md): Definition, variants, counting the setup choices, a first plan by hand and the setup lower bound
 
     - [Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations.md): The big-M formulation with weak and strong values, the shortest-path formulation, several products
 
@@ -44,7 +44,7 @@ title: "Capacitated lot sizing"
 
 - <strong>Complexity</strong>: NP-hard with general capacities; with integer data the DP algorithm on (period, inventory) is pseudo-polynomial, $O(m\,D\,C)$; polynomial with constant capacity, and the ULS in $\Theta(m^2)$.
 
-- $z(I) \ge$ the sum of the $k$ smallest setup costs, with $k$ the smallest number of periods whose capacities sum up to at least $D=\sum_t d_t$ ([Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing.md#box-5-obs-cls-lb)).
+- $z(I) \ge$ the sum of the $k$ smallest setup costs, with $k$ the smallest number of periods whose capacities sum up to at least $D=\sum_t d_t$ ([Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing/variants.md#box-5-obs-cls-lb)).
 
 - $z(\LP_{\CLSP}^{\mathrm{strong}})$ with $M_t=\min\{cap_t,D_{t,m}\}$: the smaller the big-M value, the stronger the LP relaxation ([Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations.md#1521-weak-and-strong-big-m-values)).
 
@@ -102,7 +102,7 @@ title: "Capacitated lot sizing"
 
 ## Constructive heuristics { #sez-sec-cat-cls-constructiveheuristics }
 
-- The lot-for-lot plan produces every demand in its period, and merging moves a demand to an earlier period, saving a setup and paying the stock: $250\to210\to180$ on the reference instance ([Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing.md#box-4-ex-cls-hand)).
+- The lot-for-lot plan produces every demand in its period, and merging moves a demand to an earlier period, saving a setup and paying the stock: $250\to210\to180$ on the reference instance ([Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing/variants.md#box-4-ex-cls-hand)).
 
 - On the uncapacitated instance of the MIP course the least unit cost heuristic gives $200$, against the optimum $170$ ([Chapter 27 «MIP heuristics for the classical problems»](../heuristic-algorithms/mip-heuristics-classical.md#box-16-ex-rfcourse)).
 
@@ -138,7 +138,7 @@ $$
 
 - Optimal value $z(\mathrm{CLS1})=180$, attained by $\tilde{\vet x}=(3,0,4,4,0)$, $\tilde{\vet y}=(1,0,1,1,0)$, stocks $(1,0,1,1,0)$; unique.
 
-- Used in [CLS instance](../combinatorial-optimization-problems/lot-sizing.md#box-2-ex-cls5), [Counting the plans](../combinatorial-optimization-problems/lot-sizing.md#box-3-ex-cls-count), [From lot-for-lot to a better plan](../combinatorial-optimization-problems/lot-sizing.md#box-4-ex-cls-hand), [The bound on the reference instance](../combinatorial-optimization-problems/lot-sizing.md#box-6-ex-cls-lb), [The reference instance](../formulations/lot-sizing-formulations.md#box-2-ex-CLS-ref), [Big-M values and LP bounds](../formulations/lot-sizing-formulations.md#box-3-ex-CLS-bigM), [Costs and combinations of paths](../formulations/lot-sizing-formulations.md#box-4-ex-CLS-SP), [Comparing the formulations](../formulations/lot-sizing-formulations.md#154-comparing-the-formulations), [Capacitated lot sizing](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#box-33-texcls1), [Execution of the DP algorithm](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#box-50-texclsbu), [Computing an optimal solution](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#box-52-texclssolvector), [The case of constant capacity](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#2232-the-case-of-constant-capacity).
+- Used in [CLS instance](../combinatorial-optimization-problems/lot-sizing/variants.md#box-2-ex-cls5), [Counting the plans](../combinatorial-optimization-problems/lot-sizing/variants.md#box-3-ex-cls-count), [From lot-for-lot to a better plan](../combinatorial-optimization-problems/lot-sizing/variants.md#box-4-ex-cls-hand), [The bound on the reference instance](../combinatorial-optimization-problems/lot-sizing/variants.md#box-6-ex-cls-lb), [The reference instance](../formulations/lot-sizing-formulations.md#box-2-ex-CLS-ref), [Big-M values and LP bounds](../formulations/lot-sizing-formulations.md#box-3-ex-CLS-bigM), [Costs and combinations of paths](../formulations/lot-sizing-formulations.md#box-4-ex-CLS-SP), [Comparing the formulations](../formulations/lot-sizing-formulations.md#154-comparing-the-formulations), [Capacitated lot sizing](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#box-33-texcls1), [Execution of the DP algorithm](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#box-50-texclsbu), [Computing an optimal solution](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#box-52-texclssolvector), [The case of constant capacity](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#2232-the-case-of-constant-capacity).
 
 ### Instance ULS1 { #sez-sec-cat-ist-uls1 }
 
@@ -161,7 +161,7 @@ $$
 
 - Optimal value $z(\mathrm{ULS1})=170$, attained by $(3,0,8,0,0)$.
 
-- Used in [Counting the solutions: without the capacities the optimal cost is $170$](../combinatorial-optimization-problems/lot-sizing.md#84-counting-the-solutions), [Bound of the shortest-path formulation](../formulations/lot-sizing-formulations.md#154-comparing-the-formulations), [Optimal ULS solution, not feasible with capacity $4$](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#box-33-texcls1).
+- Used in [Counting the solutions: without the capacities the optimal cost is $170$](../combinatorial-optimization-problems/lot-sizing/variants.md#84-counting-the-solutions), [Bound of the shortest-path formulation](../formulations/lot-sizing-formulations.md#154-comparing-the-formulations), [Optimal ULS solution, not feasible with capacity $4$](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#box-33-texcls1).
 
 ### Instance ULS2 { #sez-sec-cat-ist-uls2 }
 

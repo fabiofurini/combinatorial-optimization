@@ -20,8 +20,8 @@ professor at [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
 
 [Start with the problems :material-arrow-right:](combinatorial-optimization-problems/index.md){ .md-button .md-button--primary }
 [The exercises](exercises/index.md){ .md-button }
-[:material-view-list: Catalogue of problems](catalogue/index.md){ .md-button }
 [:material-star-outline: Selected problems](selected-problems/index.md){ .md-button }
+[:material-view-list: Catalogue of problems](catalogue/index.md){ .md-button }
 [:material-download: Download the lecture notes (PDF)](downloads.md){ .md-button }
 
 </div>
@@ -58,6 +58,14 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 ## The parts of the course
 
 <div class="grid cards" markdown>
+
+-   :material-star-outline: **Selected problems**
+
+    ---
+
+    The problems on which the whole course focuses: for each one, everything the course does on it — where it is treated, the techniques, the instances and the exercises.
+
+    [:octicons-arrow-right-24: The selected problems](selected-problems/index.md)
 
 -   :material-puzzle-outline: **1 · Combinatorial optimization problems**
 
@@ -114,14 +122,6 @@ Each chapter is one of the course notes, with the same numbers and the same colo
     All the problems defined in the course, by family: definition and assumptions.
 
     [:octicons-arrow-right-24: The catalogue](catalogue/index.md) · [:material-file-pdf-box: PDF](pdf/combinatorial-problem-catalogue.pdf)
-
--   :material-star-outline: **Selected problems**
-
-    ---
-
-    The central problems in depth: where they are treated, each technique of the course, instances and exercises.
-
-    [:octicons-arrow-right-24: The selected problems](selected-problems/index.md)
 
 </div>
 

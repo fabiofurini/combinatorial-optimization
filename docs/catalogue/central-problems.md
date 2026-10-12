@@ -44,7 +44,7 @@ title: "Central problems"
         w_j \le c,~~~~ \forall j \in \mathscr{I}
         $$
 
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-1-defKP).
+- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/index.md#box-1-defKP).
 
 - Studied in depth in [Selected problems: The knapsack problem](../selected-problems/knapsack.md).
 
@@ -80,7 +80,7 @@ title: "Central problems"
         w_j \le c,~~~~ \forall j \in \mathscr{I}
         $$
 
-- Defined in [Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing.md#box-1-defBPP).
+- Defined in [Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing/index.md#box-1-defBPP).
 
 - Studied in depth in [Selected problems: The bin packing problem](../selected-problems/bin-packing.md).
 
@@ -168,7 +168,7 @@ title: "Central problems"
 
 - The assumption can be made without loss of generality: if the graph has no edge, every single vertex is a maximum clique and $\omega(G)=1$; if the graph is complete, $V$ itself is a clique and $\omega(G)=n$.
 
-- Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-2-mcpP-def-MCP).
+- Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md#box-2-mcpP-def-MCP).
 
 - Studied in depth in [Selected problems: The maximum clique problem](../selected-problems/maximum-clique.md).
 
@@ -202,7 +202,7 @@ title: "Central problems"
         d_{ij}=d_{ji},~~~~ \forall i,j \in \mathscr{V},~ i\neq j
         $$
 
-- Defined in [Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp.md#box-1-defTSP).
+- Defined in [Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp/index.md#box-1-defTSP).
 
 - Studied in depth in [Selected problems: The travelling salesman problem](../selected-problems/tsp.md).
 
@@ -232,7 +232,7 @@ title: "Central problems"
         n > m
         $$
 
-- Defined in [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax.md#box-1-defPCmax).
+- Defined in [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax/index.md#box-1-defPCmax).
 
 - Studied in depth in [Selected problems: Scheduling on identical parallel machines](../selected-problems/pcmax.md).
 
@@ -266,6 +266,6 @@ title: "Central problems"
 
     3. The quantities are integer. With integer data, once the periods with a setup are fixed, what remains is a minimum cost flow problem, which has an integer optimal solution: restricting the quantities to integers does not change the optimal cost.
 
-- Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing.md#box-1-defCLS).
+- Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing/index.md#box-1-defCLS).
 
 - Studied in depth in [Selected problems: Capacitated lot sizing](../selected-problems/lot-sizing.md).

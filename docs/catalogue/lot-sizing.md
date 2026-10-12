@@ -58,7 +58,7 @@ title: "Lot sizing"
 
     The quantity $si_p$ of product $p$ available at the beginning of the horizon is a decision, bought at the cost $fc_p$ per unit; the balance of the first period becomes $si_{p} + x_{p1} = d_{p1} + s_{p1}$.
 
-- Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing.md#82-variants).
+- Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing/variants.md#82-variants).
 
 ## Lot sizing with overtime (LS-OT) { #sez-sec-cat-def-lsot }
 
@@ -68,7 +68,7 @@ title: "Lot sizing"
 
     The capacity is not fixed: working time in normal hours costs $cw_t$ per unit up to $cap^{N}_t$, and overtime costs $co_t$ per unit up to $cap^{O}_t$.
 
-- Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing.md#82-variants).
+- Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing/variants.md#82-variants).
 
 ## Lot sizing with unsatisfied demand (LS-UD) { #sez-sec-cat-def-lsud }
 
@@ -78,4 +78,4 @@ title: "Lot sizing"
 
     A part of the demand may be left unsatisfied, at a penalty $cu_{pt}$ per unit.
 
-- Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing.md#82-variants).
+- Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing/variants.md#82-variants).

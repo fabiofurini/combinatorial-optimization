@@ -324,6 +324,10 @@ title: "Vertex coloring"
 
 **Exercises on this chapter:** [:material-pencil: Vertex coloring](../exercises/coloring.md)
 
+---
+
+**In depth:** [:material-star-outline: the course on this problem](../selected-problems/vertex-coloring.md)
+
 <!-- laboratorio-interattivo: sezione generata da interattivi.py -->
 
 :material-flask-outline: **In the interactive lab:** [Vertex coloring: greedy and DSATUR](../lab/coloring-greedy-dsatur.md).

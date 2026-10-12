@@ -44,4 +44,4 @@ title: "Packing"
         w_j \le c, \qquad \forall\, j\in \mathscr{I}.
         $$
 
-- Defined in [Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing.md#box-4-defCSP).
+- Defined in [Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md#box-4-defCSP).

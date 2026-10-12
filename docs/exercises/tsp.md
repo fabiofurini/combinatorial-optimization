@@ -6,7 +6,7 @@ title: "Exercises · The travelling salesman problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 6** · each solution opens with a click · [:material-book-open-variant: Chapter 6: TSP](../combinatorial-optimization-problems/tsp.md) · [:material-file-pdf-box: Exercises, volume 1 (PDF)](../pdf/exercises-1-combinatorial-optimization-problems.pdf)
+**Exercises · Chapter 6** · each solution opens with a click · [:material-book-open-variant: Chapter 6: TSP](../combinatorial-optimization-problems/tsp/index.md) · [:material-file-pdf-box: Exercises, volume 1 (PDF)](../pdf/exercises-1-combinatorial-optimization-problems.pdf)
 
 </div>
 

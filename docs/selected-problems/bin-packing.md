@@ -22,9 +22,9 @@ title: "The bin packing problem"
 
     - [Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#box-4-def-oc1-bpp): First statement, a small instance, counting of the partitions and first bounds
 
-    - [Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing.md): Definition, assumptions, weight bound, and the cutting stock problem
+    - [Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing/index.md): Definition, assumptions, weight bound, and the cutting stock problem
 
-    - [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax.md#76-relation-with-the-bin-packing-problem): Relation with $P\,||\,C_{\max}$: machines as bins, makespan as capacity
+    - [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax/index.md#76-relation-with-the-bin-packing-problem): Relation with $P\,||\,C_{\max}$: machines as bins, makespan as capacity
 
     - [Chapter 10 «Formulations of the bin packing problem»](../formulations/bin-packing-formulations.md): The $\ILP_{\BPP}$ model, its two LP relaxations and their duals, and the ratio $\frac{1}{2}$
 
@@ -48,17 +48,17 @@ title: "The bin packing problem"
 
 - The bins model containers, vans, disks or time slots of fixed size, and the problem asks to use as few of them as possible.
 
-- The assumptions $w_j \le c$ for all $j\in\Ioggetti$ and $\sum_{j\in\Ioggetti} w_j > c$ guarantee that every item fits in a bin and that more than one bin is needed ([Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing.md#311-assumptions)).
+- The assumptions $w_j \le c$ for all $j\in\Ioggetti$ and $\sum_{j\in\Ioggetti} w_j > c$ guarantee that every item fits in a bin and that more than one bin is needed ([Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing/index.md#311-assumptions)).
 
 ## Bounds and complexity { #sez-sec-cat-bpp-prop }
 
 - <strong>Complexity</strong>: Strongly NP-hard: no pseudo-polynomial algorithm exists unless $P=NP$.
 
-- $\LB = \left\lceil \sum_{j \in \Ioggetti} w_j / c \right\rceil$ (weight bound): every feasible solution uses at least this number of bins ([Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing.md#box-3-obs-bpp-l1)).
+- $\LB = \left\lceil \sum_{j \in \Ioggetti} w_j / c \right\rceil$ (weight bound): every feasible solution uses at least this number of bins ([Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing/index.md#box-3-obs-bpp-l1)).
 
 - $z(\LP\text{-}0_{\BPP}) = z(\LP_{\BPP}) = \sum_{j \in \Ioggetti} w_j / c$, so rounding the LP bound up gives the weight bound again ([Chapter 10 «Formulations of the bin packing problem»](../formulations/bin-packing-formulations.md#box-11-cor_lp_bpp_value)).
 
-- The weight bound is not always tight: with three items of weight $6$ and $c=10$ it gives $\lceil 18/10 \rceil = 2$, while $3$ bins are needed ([Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing.md#34-typical-mistakes)).
+- The weight bound is not always tight: with three items of weight $6$ and $c=10$ it gives $\lceil 18/10 \rceil = 2$, while $3$ bins are needed ([Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing/remarks-and-summary.md#34-typical-mistakes)).
 
 - In an optimal solution no two bins have total weight at most $c/2$, which yields the ratio $\frac12$ of the LP bound ([Chapter 10 «Formulations of the bin packing problem»](../formulations/bin-packing-formulations.md#box-12-prop_lp_bpp_ratio_half)).
 
@@ -154,7 +154,7 @@ $$
 
 - Optimal value $z(\mathrm{BPP1})=3$, attained by $\{\{4,5\},\{1,3\},\{2\}\}$ (one of $4$ optimal partitions).
 
-- Used in [Example «BPP instances»](../combinatorial-optimization-problems/bin-packing.md#box-2-ex-bpp), [Section «Counting the solutions, a first solution and a simple bound»](../combinatorial-optimization-problems/bin-packing.md#312-counting-the-solutions-a-first-solution-and-a-simple-bound), [Example «Execution of NF»](../approximation-algorithms/bin-packing-approximation.md#box-2-ex-NFexec1), [Example «Execution of FF»](../approximation-algorithms/bin-packing-approximation.md#box-6-ex-FFexec1), [Example «Execution of BF»](../approximation-algorithms/bin-packing-approximation.md#box-8-ex-BFexec1), [Example «Execution of WF»](../approximation-algorithms/bin-packing-approximation.md#box-10-ex-WFexec1).
+- Used in [Example «BPP instances»](../combinatorial-optimization-problems/bin-packing/index.md#box-2-ex-bpp), [Section «Counting the solutions, a first solution and a simple bound»](../combinatorial-optimization-problems/bin-packing/index.md#312-counting-the-solutions-a-first-solution-and-a-simple-bound), [Example «Execution of NF»](../approximation-algorithms/bin-packing-approximation.md#box-2-ex-NFexec1), [Example «Execution of FF»](../approximation-algorithms/bin-packing-approximation.md#box-6-ex-FFexec1), [Example «Execution of BF»](../approximation-algorithms/bin-packing-approximation.md#box-8-ex-BFexec1), [Example «Execution of WF»](../approximation-algorithms/bin-packing-approximation.md#box-10-ex-WFexec1).
 
 ### Instance CSP1 { #sez-sec-cat-ist-csp1 }
 
@@ -181,7 +181,7 @@ $$
 
     .
 
-- Used in [Example «CSP instances»](../combinatorial-optimization-problems/bin-packing.md#box-5-ex-csp), [Section «Counting the solutions, a first solution and a simple bound»](../combinatorial-optimization-problems/bin-packing.md#322-counting-the-solutions-a-first-solution-and-a-simple-bound).
+- Used in [Example «CSP instances»](../combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md#box-5-ex-csp), [Section «Counting the solutions, a first solution and a simple bound»](../combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md#322-counting-the-solutions-a-first-solution-and-a-simple-bound).
 
 ### Instance BPP2 { #sez-sec-cat-ist-bpp2 }
 
@@ -388,7 +388,7 @@ $$
 
 - Optimal value $z(\mathrm{BPP10})=3$, attained by one item per bin.
 
-- Used in [Section «Typical mistakes»](../combinatorial-optimization-problems/bin-packing.md#34-typical-mistakes), [«The bounds $y_b\le 1$ and the choice of m (1)»](../exercises/bin-packing-formulations.md#esercizio-10-4).
+- Used in [Section «Typical mistakes»](../combinatorial-optimization-problems/bin-packing/remarks-and-summary.md#34-typical-mistakes), [«The bounds $y_b\le 1$ and the choice of m (1)»](../exercises/bin-packing-formulations.md#esercizio-10-4).
 
 ### Instance BPP11 { #sez-sec-cat-ist-bpp11 }
 

@@ -30,7 +30,7 @@ title: "Scheduling"
 
     In the three-field notation $\alpha\,|\,\beta\,|\,\gamma$, the machine environment $\alpha=Q$ denotes parallel machines with different speeds; $Q\,||\,C_{\max}$ assigns jobs without additional characteristics to such machines, minimizing the makespan $C_{\max}$.
 
-- Defined in [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax.md#sez-sec-threefield).
+- Defined in [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax/index.md#sez-sec-threefield).
 
 ## Scheduling on unrelated parallel machines, $R\,||\,C_{\max}$ { #sez-sec-cat-def-rcmax }
 
@@ -40,4 +40,4 @@ title: "Scheduling"
 
     In the three-field notation $\alpha\,|\,\beta\,|\,\gamma$, the machine environment $\alpha=R$ denotes unrelated parallel machines; $R\,||\,C_{\max}$ assigns jobs without additional characteristics to such machines, minimizing the makespan $C_{\max}$.
 
-- Defined in [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax.md#sez-sec-threefield).
+- Defined in [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax/index.md#sez-sec-threefield).

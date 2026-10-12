@@ -4,7 +4,7 @@ title: Selected problems
 
 # Selected problems
 
-The problems the course dwells on most, studied in depth one by one: where they are treated, what each technique of the course does on them, and the instances of the examples and exercises with their optimal value.
+The problems on which the whole course focuses: for each one, everything the course does on it — where it is treated, the techniques, the instances and the exercises.
 
 [:material-table: Comparison](at-a-glance.md){ .md-button } [:material-view-list: Catalogue of combinatorial problems](../catalogue/index.md){ .md-button }
 

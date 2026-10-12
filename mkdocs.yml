@@ -146,17 +146,50 @@ extra_javascript:
 
 nav:
   - Home: index.md
+  - Selected problems:
+      - selected-problems/index.md
+      - "Comparison": selected-problems/at-a-glance.md
+      - "KP": selected-problems/knapsack.md
+      - "BPP": selected-problems/bin-packing.md
+      - "VCP": selected-problems/vertex-coloring.md
+      - "MCP": selected-problems/maximum-clique.md
+      - "TSP": selected-problems/tsp.md
+      - "P||Cmax": selected-problems/pcmax.md
+      - "CLS": selected-problems/lot-sizing.md
   - Problems:
       - combinatorial-optimization-problems/index.md
       - "The problems at a glance": combinatorial-optimization-problems/problems.md
       - "1. Combinatorial optimization": combinatorial-optimization-problems/combinatorial-optimization.md
-      - "2. Knapsack": combinatorial-optimization-problems/knapsack.md
-      - "3. Bin packing": combinatorial-optimization-problems/bin-packing.md
+      - "2. Knapsack":
+          - combinatorial-optimization-problems/knapsack/index.md
+          - "Subset sum": combinatorial-optimization-problems/knapsack/the-subset-sum-problem.md
+          - "Bounded knapsack": combinatorial-optimization-problems/knapsack/the-bounded-knapsack-problem.md
+          - "Unbounded knapsack": combinatorial-optimization-problems/knapsack/the-unbounded-knapsack-problem.md
+          - "Multidimensional knapsack": combinatorial-optimization-problems/knapsack/the-multidimensional-knapsack-problem.md
+          - "Multiple knapsack": combinatorial-optimization-problems/knapsack/the-multiple-knapsack-problem.md
+          - "Multiple-choice knapsack": combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem.md
+          - "Knapsack with setups": combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md
+          - "Remarks and summary": combinatorial-optimization-problems/knapsack/remarks-and-summary.md
+      - "3. Bin packing":
+          - combinatorial-optimization-problems/bin-packing/index.md
+          - "Cutting stock": combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md
+          - "Remarks and summary": combinatorial-optimization-problems/bin-packing/remarks-and-summary.md
       - "4. Vertex coloring": combinatorial-optimization-problems/coloring.md
-      - "5. Maximum clique": combinatorial-optimization-problems/clique.md
-      - "6. TSP": combinatorial-optimization-problems/tsp.md
-      - "7. Machine scheduling": combinatorial-optimization-problems/pcmax.md
-      - "8. Lot sizing": combinatorial-optimization-problems/lot-sizing.md
+      - "5. Maximum clique":
+          - combinatorial-optimization-problems/clique/index.md
+          - "Weighted variants": combinatorial-optimization-problems/clique/weighted-variants.md
+          - "Remarks and summary": combinatorial-optimization-problems/clique/remarks-and-summary.md
+      - "6. TSP":
+          - combinatorial-optimization-problems/tsp/index.md
+          - "Metric and asymmetric TSP": combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md
+          - "Remarks and summary": combinatorial-optimization-problems/tsp/remarks-and-summary.md
+      - "7. Machine scheduling":
+          - combinatorial-optimization-problems/pcmax/index.md
+          - "Remarks and summary": combinatorial-optimization-problems/pcmax/remarks-and-summary.md
+      - "8. Lot sizing":
+          - combinatorial-optimization-problems/lot-sizing/index.md
+          - "Variants": combinatorial-optimization-problems/lot-sizing/variants.md
+          - "Remarks and summary": combinatorial-optimization-problems/lot-sizing/remarks-and-summary.md
   - Formulations:
       - formulations/index.md
       - "9. Knapsack": formulations/knapsack-formulations.md
@@ -247,25 +280,6 @@ nav:
   - Branch-and-bound:
       - specialized-algorithms/index.md
       - "33. Knapsack: B&B": specialized-algorithms/knapsack-branch-and-bound.md
-  - Catalogue:
-      - catalogue/index.md
-      - "Central problems": catalogue/central-problems.md
-      - "Knapsack family": catalogue/knapsack-family.md
-      - "Packing": catalogue/packing.md
-      - "Graphs": catalogue/graphs.md
-      - "Routing": catalogue/routing.md
-      - "Scheduling": catalogue/scheduling.md
-      - "Lot sizing": catalogue/lot-sizing.md
-  - Selected problems:
-      - selected-problems/index.md
-      - "Comparison": selected-problems/at-a-glance.md
-      - "KP": selected-problems/knapsack.md
-      - "BPP": selected-problems/bin-packing.md
-      - "VCP": selected-problems/vertex-coloring.md
-      - "MCP": selected-problems/maximum-clique.md
-      - "TSP": selected-problems/tsp.md
-      - "P||Cmax": selected-problems/pcmax.md
-      - "CLS": selected-problems/lot-sizing.md
   - Exercises:
       - exercises/index.md
       - "1. Combinatorial optimization": exercises/combinatorial-optimization.md
@@ -301,6 +315,15 @@ nav:
       - "31. P||Cmax": exercises/pcmax-approximation.md
       - "32. Metric TSP": exercises/tsp-approximation.md
       - "33. Knapsack: B&B": exercises/knapsack-branch-and-bound.md
+  - Catalogue:
+      - catalogue/index.md
+      - "Central problems": catalogue/central-problems.md
+      - "Knapsack family": catalogue/knapsack-family.md
+      - "Packing": catalogue/packing.md
+      - "Graphs": catalogue/graphs.md
+      - "Routing": catalogue/routing.md
+      - "Scheduling": catalogue/scheduling.md
+      - "Lot sizing": catalogue/lot-sizing.md
   - Lab: lab/index.md
   - Downloads: downloads.md
   - Index: full-index.md

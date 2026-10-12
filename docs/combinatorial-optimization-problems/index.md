@@ -18,17 +18,17 @@
 
     ---
 
-    The knapsack problem · The subset sum problem · The bounded knapsack problem · The unbounded knapsack problem
+    The knapsack problem
 
-    [:octicons-arrow-right-24: Read the chapter](knapsack.md) · [Exercises](../exercises/knapsack.md)
+    [:octicons-arrow-right-24: Read the chapter](knapsack/index.md) · [Exercises](../exercises/knapsack.md)
 
 -   **3. Bin packing and cutting stock**
 
     ---
 
-    The bin packing problem · The cutting stock problem
+    The bin packing problem
 
-    [:octicons-arrow-right-24: Read the chapter](bin-packing.md) · [Exercises](../exercises/bin-packing.md)
+    [:octicons-arrow-right-24: Read the chapter](bin-packing/index.md) · [Exercises](../exercises/bin-packing.md)
 
 -   **4. Vertex coloring**
 
@@ -42,17 +42,17 @@
 
     ---
 
-    The maximum clique problem · Counting the solutions, a first solution and the bounds · Weighted variants · Complexity
+    The maximum clique problem · Counting the solutions, a first solution and the bounds
 
-    [:octicons-arrow-right-24: Read the chapter](clique.md) · [Exercises](../exercises/clique.md)
+    [:octicons-arrow-right-24: Read the chapter](clique/index.md) · [Exercises](../exercises/clique.md)
 
 -   **6. The travelling salesman problem**
 
     ---
 
-    The travelling salesman problem · Variants: metric and asymmetric TSP · Counting the tours · A first tour by hand
+    The travelling salesman problem
 
-    [:octicons-arrow-right-24: Read the chapter](tsp.md) · [Exercises](../exercises/tsp.md)
+    [:octicons-arrow-right-24: Read the chapter](tsp/index.md) · [Exercises](../exercises/tsp.md)
 
 -   **7. Parallel machine scheduling**
 
@@ -60,14 +60,14 @@
 
     Scheduling on identical parallel machines · The three-field notation · Counting the solutions · A first schedule by hand
 
-    [:octicons-arrow-right-24: Read the chapter](pcmax.md) · [Exercises](../exercises/pcmax.md)
+    [:octicons-arrow-right-24: Read the chapter](pcmax/index.md) · [Exercises](../exercises/pcmax.md)
 
 -   **8. Capacitated lot sizing**
 
     ---
 
-    The capacitated lot sizing problem · Variants · The reference instance · Counting the solutions
+    The capacitated lot sizing problem
 
-    [:octicons-arrow-right-24: Read the chapter](lot-sizing.md) · [Exercises](../exercises/lot-sizing.md)
+    [:octicons-arrow-right-24: Read the chapter](lot-sizing/index.md) · [Exercises](../exercises/lot-sizing.md)
 
 </div>

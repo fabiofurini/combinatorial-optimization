@@ -22,7 +22,7 @@ title: "The maximum clique problem"
 
     - [Chapter 4 «Vertex coloring»](../combinatorial-optimization-problems/coloring.md#41-a-short-review-of-graphs): Cliques, stable sets, $\omega(G)$ and $\alpha(G)$, the clique bound of the VCP
 
-    - [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md): Definition, complement graph, counting, a first clique by hand, four upper bounds, weighted variants, complexity
+    - [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md): Definition, complement graph, counting, a first clique by hand, four upper bounds, weighted variants, complexity
 
     - [Chapter 12 «Formulations of the maximum clique problem»](../formulations/clique-formulations.md): The $ILP_{MCP}$ model and its LP relaxations
 
@@ -40,13 +40,13 @@ title: "The maximum clique problem"
 
 - <strong>Complexity</strong>: NP-hard: the decision version (is there a clique with $k$ vertices?) is among the $21$ NP-complete problems of Karp (1972); for every $\varepsilon>0$ no polynomial algorithm guarantees $\omega(G)/n^{1-\varepsilon}$ vertices unless NP problems are solvable in randomized polynomial time (Håstad, 1999).
 
-- $\omega(G) \le \Delta + 1$ (degree bound) ([Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-8-mcpP-obs-degree)).
+- $\omega(G) \le \Delta + 1$ (degree bound) ([Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md#box-8-mcpP-obs-degree)).
 
-- $\omega(G)\,(\omega(G)-1)/2 \le m$ (edge bound) ([Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-9-mcpP-obs-edge)).
+- $\omega(G)\,(\omega(G)-1)/2 \le m$ (edge bound) ([Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md#box-9-mcpP-obs-edge)).
 
-- $\omega(G) \le k^{\max}$, the largest $k$ such that at least $k$ vertices have degree at least $k-1$ (degree count bound) ([Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-10-mcpP-obs-count)).
+- $\omega(G) \le k^{\max}$, the largest $k$ such that at least $k$ vertices have degree at least $k-1$ (degree count bound) ([Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md#box-10-mcpP-obs-count)).
 
-- $\omega(G) \le \chi(G)$: the number of colors of any feasible coloring is an upper bound (coloring bound) ([Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-11-mcpP-obs-coloring)).
+- $\omega(G) \le \chi(G)$: the number of colors of any feasible coloring is an upper bound (coloring bound) ([Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md#box-11-mcpP-obs-coloring)).
 
 - $z(LP_{MCP})\ge n/2$: the LP bound can be arbitrarily weak ([Chapter 12 «Formulations of the maximum clique problem»](../formulations/clique-formulations.md)).
 
@@ -74,7 +74,7 @@ title: "The maximum clique problem"
 
 ## Constructive heuristics { #sez-sec-cat-mcp-constructiveheuristics }
 
-- A first clique by hand: start from a vertex of maximum degree and add, one at a time, a vertex adjacent to all the vertices already chosen; on the reference instance it gives $K=\{1,2,3\}$ and $\LB=3$ ([Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-6-mcpP-ex1)).
+- A first clique by hand: start from a vertex of maximum degree and add, one at a time, a vertex adjacent to all the vertices already chosen; on the reference instance it gives $K=\{1,2,3\}$ and $\LB=3$ ([Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md#box-6-mcpP-ex1)).
 
 ## Approximation { #sez-sec-cat-mcp-approximation }
 
@@ -94,7 +94,7 @@ $$
 
 - Optimal value $z(\mathrm{MCP1})=3$, attained by $\tilde K=\{1,2,3\}$, unique; $17$ of the $128$ subsets are cliques; bounds $\Delta+1=4$, edge $4$, $k^{\max}=3$, coloring $3$.
 
-- Used in [Example «MCP instance: a cycle with a chord»](../combinatorial-optimization-problems/clique.md#box-6-mcpP-ex1).
+- Used in [Example «MCP instance: a cycle with a chord»](../combinatorial-optimization-problems/clique/index.md#box-6-mcpP-ex1).
 
 ### Instance MCP2 { #sez-sec-cat-ist-mcp2 }
 
@@ -112,7 +112,7 @@ $$
 
 - Optimal value $z(\mathrm{MCP2})=4$, attained by $\tilde K=\{1,3,4,6\}$, one of $16$ maximum cliques; $81$ cliques; degree bounds $7$, coloring bound $4$.
 
-- Used in [Example «MCP instance: a dense graph with $8$ vertices»](../combinatorial-optimization-problems/clique.md#box-7-mcpP-ex2).
+- Used in [Example «MCP instance: a dense graph with $8$ vertices»](../combinatorial-optimization-problems/clique/index.md#box-7-mcpP-ex2).
 
 ### Instance VWMCP1 { #sez-sec-cat-ist-vwmcp1 }
 
@@ -142,7 +142,7 @@ $$
 
 - Optimal value $z(\mathrm{VWMCP1})=32$, attained by $\{2,3,5,8\}$, unique.
 
-- Used in [Example «vertex-weighted maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-13-mcpP-ex3).
+- Used in [Example «vertex-weighted maximum clique problem»](../combinatorial-optimization-problems/clique/weighted-variants.md#box-13-mcpP-ex3).
 
 ### Instance EWMCP1 { #sez-sec-cat-ist-ewmcp1 }
 
@@ -162,7 +162,7 @@ Edge weights: $r_{12}=1$, $r_{13}=4$, $r_{14}=5$, $r_{16}=4$, $r_{17}=3$, $r_{18
 
 - Optimal value $z(\mathrm{EWMCP1})=37$, attained by $\{2,5,7,8\}$, unique.
 
-- Used in [Example «edge-weighted maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-14-mcpP-ex4).
+- Used in [Example «edge-weighted maximum clique problem»](../combinatorial-optimization-problems/clique/weighted-variants.md#box-14-mcpP-ex4).
 
 ### Instance MCP3 { #sez-sec-cat-ist-mcp3 }
 
@@ -179,7 +179,7 @@ $$
 
 - Optimal value $z(\mathrm{MCP3})=2$, attained by no triangle: the maximum cliques are the edges.
 
-- Used in [Dual bounds on the Petersen graph](../combinatorial-optimization-problems/coloring.md#423-counting-the-solutions-a-first-solution-and-the-bounds), [Remark after Example «MCP instance: a dense graph with $8$ vertices»](../combinatorial-optimization-problems/clique.md#box-7-mcpP-ex2).
+- Used in [Dual bounds on the Petersen graph](../combinatorial-optimization-problems/coloring.md#423-counting-the-solutions-a-first-solution-and-the-bounds), [Remark after Example «MCP instance: a dense graph with $8$ vertices»](../combinatorial-optimization-problems/clique/index.md#box-7-mcpP-ex2).
 
 ### Instance MSSP1 { #sez-sec-cat-ist-mssp1 }
 
@@ -210,7 +210,7 @@ $$
 
 - Optimal value $z(\mathrm{MCP4})=2$, attained by $\omega(C_5)=2<\chi(C_5)=3$.
 
-- Used in [Typical mistakes «believing that the coloring bound is tight»](../combinatorial-optimization-problems/clique.md), [Example «$ILP_{MCP}$ model»](../formulations/clique-formulations.md).
+- Used in [Typical mistakes «believing that the coloring bound is tight»](../combinatorial-optimization-problems/clique/index.md), [Example «$ILP_{MCP}$ model»](../formulations/clique-formulations.md).
 
 ### Instance MCP5 { #sez-sec-cat-ist-mcp5 }
 
