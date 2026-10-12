@@ -18,15 +18,86 @@ professor at [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
 
 **The course lecture notes, online**: knapsack, bin packing, vertex coloring, maximum clique, TSP, parallel machine scheduling and lot sizing, solved in every way: formulations and their properties, dynamic programming, heuristic and approximation algorithms, problem-specific branch-and-bound; with definitions, results with proofs, examples worked out step by step and exercises with solutions.
 
-[Start :material-arrow-right:](combinatorial-optimization-problems/combinatorial-optimization/index.md){ .md-button .md-button--primary }
-[:material-star-outline: Selected problems](selected-problems/index.md){ .md-button }
-[The exercises](exercises/index.md){ .md-button }
-[:material-view-list: Catalogue of problems](catalogue/index.md){ .md-button }
-[:material-download: Download the lecture notes (PDF)](downloads.md){ .md-button }
+For the students of the Master's degree in Management Engineering at Sapienza, and for anyone who wants to learn how to solve combinatorial optimization problems.
+
+[:material-school: Study the course](combinatorial-optimization-problems/combinatorial-optimization/index.md){ .md-button .md-button--primary }
+[:material-star-outline: Explore the problems](selected-problems/index.md){ .md-button }
+[:material-pencil: Practice](exercises/index.md){ .md-button }
+[:material-download: Get the materials](downloads.md){ .md-button }
 
 </div>
 
-## How each chapter is organized
+## The parts of the course
+
+<div class="grid cards" markdown>
+
+-   :material-puzzle-outline: **Combinatorial optimization**
+
+    ---
+
+    What a combinatorial optimization problem is: counting the solutions, combinatorial explosion, bounds and gap, complexity.
+
+    [:octicons-arrow-right-24: Chapter 1](combinatorial-optimization-problems/combinatorial-optimization/index.md)
+
+-   :material-star-outline: **Selected problems**
+
+    ---
+
+    2\. Knapsack · 3\. Bin packing · 4\. Vertex coloring · 5\. Maximum clique · 6\. TSP · 7\. Machine scheduling · 8\. Lot sizing
+
+    [:octicons-arrow-right-24: The problems](selected-problems/index.md)
+
+-   :material-function-variant: **Formulations and their properties**
+
+    ---
+
+    9\. Knapsack · 10\. Bin packing · 11\. Vertex coloring · 12\. Maximum clique · 13\. TSP · 14\. Machine scheduling · 15\. Lot sizing
+
+    [:octicons-arrow-right-24: The chapters](formulations/index.md)
+
+-   :material-table-arrow-right: **Dynamic programming**
+
+    ---
+
+    16\. Principles · 17\. KP · 18\. UKP · 19\. BKP · 20\. Rod cutting · 21\. Coin change · 22\. Lot sizing
+
+    [:octicons-arrow-right-24: The chapters](dynamic-programming/index.md)
+
+-   :material-map-marker-path: **Heuristic algorithms**
+
+    ---
+
+    23\. Definitions · 24\. Constructive · 25\. Local search · 26\. Metaheuristics · 27\. MIP heuristics
+
+    [:octicons-arrow-right-24: The chapters](heuristic-algorithms/index.md)
+
+-   :material-approximately-equal: **Approximation algorithms**
+
+    ---
+
+    28\. Definitions · 29\. Bin packing · 30\. Knapsack · 31\. P||Cmax · 32\. Metric TSP
+
+    [:octicons-arrow-right-24: The chapters](approximation-algorithms/index.md)
+
+-   :material-tools: **Problem-specific branch-and-bound**
+
+    ---
+
+    33\. Knapsack: B&B
+
+    [:octicons-arrow-right-24: The chapters](specialized-algorithms/index.md)
+
+-   :material-view-list: **Catalogue of problems**
+
+    ---
+
+    All the problems defined in the course, by family: definition and assumptions.
+
+    [:octicons-arrow-right-24: The catalogue](catalogue/index.md) · [:material-file-pdf-box: PDF](pdf/combinatorial-problem-catalogue.pdf)
+
+</div>
+
+## How to use these notes
 
 Each chapter is one of the course notes, with the same numbers and the same colors as the lecture notes: on the website and in the PDF you find everything in the same place.
 
@@ -54,76 +125,6 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
 ??? dimostrazione "Proof: opens with a click"
     All proofs are included, but folded: first read the statement, then open the proof when you want to study it. The same holds for the solutions of the exercises.
-
-## The parts of the course
-
-<div class="grid cards" markdown>
-
--   :material-puzzle-outline: **1 · Combinatorial optimization problems**
-
-    ---
-
-    1\. Combinatorial optimization · 2\. Knapsack · 3\. Bin packing · 4\. Vertex coloring · 5\. Maximum clique · 6\. TSP · 7\. Machine scheduling · 8\. Lot sizing
-
-    [:octicons-arrow-right-24: The chapters](combinatorial-optimization-problems/index.md)
-
--   :material-star-outline: **Selected problems**
-
-    ---
-
-    The problems on which the whole course focuses, introduced one by one: definition, assumptions, variants and a first example.
-
-    [:octicons-arrow-right-24: The selected problems](selected-problems/index.md)
-
--   :material-function-variant: **2 · Formulations and their properties**
-
-    ---
-
-    9\. Knapsack · 10\. Bin packing · 11\. Vertex coloring · 12\. Maximum clique · 13\. TSP · 14\. Machine scheduling · 15\. Lot sizing
-
-    [:octicons-arrow-right-24: The chapters](formulations/index.md)
-
--   :material-table-arrow-right: **3 · Dynamic programming**
-
-    ---
-
-    16\. Principles · 17\. KP · 18\. UKP · 19\. BKP · 20\. Rod cutting · 21\. Coin change · 22\. Lot sizing
-
-    [:octicons-arrow-right-24: The chapters](dynamic-programming/index.md)
-
--   :material-map-marker-path: **4 · Heuristic algorithms**
-
-    ---
-
-    23\. Definitions · 24\. Constructive · 25\. Local search · 26\. Metaheuristics · 27\. MIP heuristics
-
-    [:octicons-arrow-right-24: The chapters](heuristic-algorithms/index.md)
-
--   :material-approximately-equal: **5 · Approximation algorithms**
-
-    ---
-
-    28\. Definitions · 29\. Bin packing · 30\. Knapsack · 31\. P||Cmax · 32\. Metric TSP
-
-    [:octicons-arrow-right-24: The chapters](approximation-algorithms/index.md)
-
--   :material-tools: **6 · Problem-specific branch-and-bound**
-
-    ---
-
-    33\. Knapsack: B&B
-
-    [:octicons-arrow-right-24: The chapters](specialized-algorithms/index.md)
-
--   :material-view-list: **Catalogue of problems**
-
-    ---
-
-    All the problems defined in the course, by family: definition and assumptions.
-
-    [:octicons-arrow-right-24: The catalogue](catalogue/index.md) · [:material-file-pdf-box: PDF](pdf/combinatorial-problem-catalogue.pdf)
-
-</div>
 
 ---
 
