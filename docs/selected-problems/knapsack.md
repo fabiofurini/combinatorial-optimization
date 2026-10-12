@@ -40,7 +40,7 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - Cardinality bound: if at most $\bar k$ items fit, $z(I)$ is at most the sum of the $\bar k$ largest profits ([Ch. 2](../combinatorial-optimization-problems/knapsack/index.md#box-3-obs-kp-card)).
 
-- Sorting by efficiency is not enough: on the instance of Ch. 2 it gives profit $11$, while the optimum is $15$ ([Ch. 2](../combinatorial-optimization-problems/knapsack/remarks-and-summary.md#211-typical-mistakes)).
+- Sorting by efficiency is not enough: on the instance of Ch. 2 it gives profit $11$, while the optimum is $15$ ([Ch. 2](../combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md#211-typical-mistakes)).
 
 ## Formulations { #sez-sec-cat-kp-formulations }
 
