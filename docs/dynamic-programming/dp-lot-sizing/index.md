@@ -6,7 +6,7 @@ title: "DP for the uncapacitated lot sizing problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 25** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Uncapacitated lot sizing (ULS)](../../exercises/dp-lot-sizing.md)
+**Part 3 · Dynamic programming · Chapter 25** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Uncapacitated lot sizing (ULS)](../../exercises/dp-lot-sizing.md) · [:material-gesture-tap: App: Wagner-Whitin for uncapacitated lot sizing](../../lab/wagner-whitin-lot-sizing.md)
 
 </div>
 
@@ -395,3 +395,7 @@ The problem of this chapter is the [uncapacitated lot sizing problem (ULS)](http
 ---
 
 **Exercises on this chapter:** [:material-pencil: Uncapacitated lot sizing (ULS)](../../exercises/dp-lot-sizing.md)
+
+<!-- laboratorio-interattivo: sezione generata da interattivi.py -->
+
+:material-flask-outline: **In the interactive lab:** [Wagner-Whitin for uncapacitated lot sizing](../../lab/wagner-whitin-lot-sizing.md).

@@ -190,6 +190,9 @@ extra_javascript:
   - javascripts/gi-oc-a.js?v=845e684939
   - javascripts/gi-oc-b.js?v=445a1b1c3f
   - javascripts/gi-oc-c.js?v=7be68e397e
+  - javascripts/gi-oc-d.js?v=c702b61e84
+  - javascripts/gi-oc-e.js?v=81b96a11df
+  - javascripts/gi-oc-f.js?v=16cc0cf8e9
 
 
 nav:

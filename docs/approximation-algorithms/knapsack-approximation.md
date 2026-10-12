@@ -6,7 +6,7 @@ title: "Approximation algorithms for the knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 35** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../exercises/knapsack-approximation.md) · [:material-gesture-tap: App: Tight instances](../lab/tight-instances.md)
+**Part 5 · Approximation algorithms · Chapter 35** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../exercises/knapsack-approximation.md) · [:material-gesture-tap: App: 0/1 KP: greedy, Ext-Greedy, H² and FPTAS](../lab/kp-approximation.md) · [:material-gesture-tap: App: Tight instances](../lab/tight-instances.md)
 
 </div>
 
@@ -1600,4 +1600,4 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
 
 <!-- laboratorio-interattivo: sezione generata da interattivi.py -->
 
-:material-flask-outline: **In the interactive lab:** [Tight instances](../lab/tight-instances.md#voce=ge).
+:material-flask-outline: **In the interactive lab:** [0/1 KP: greedy, Ext-Greedy, H² and FPTAS](../lab/kp-approximation.md), [Tight instances](../lab/tight-instances.md#voce=ge).

@@ -6,7 +6,7 @@ title: "The TSP: the general case and the metric case"
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 39** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Travelling salesman (TSP)](../exercises/tsp-approximation.md)
+**Part 5 · Approximation algorithms · Chapter 39** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Travelling salesman (TSP)](../exercises/tsp-approximation.md) · [:material-gesture-tap: App: Metric TSP: double tree and Christofides](../lab/metric-tsp-double-tree-christofides.md)
 
 </div>
 
@@ -484,3 +484,7 @@ The problem of this chapter is the [travelling salesman problem (TSP)](https://f
 ---
 
 **Exercises on this chapter:** [:material-pencil: Travelling salesman (TSP)](../exercises/tsp-approximation.md)
+
+<!-- laboratorio-interattivo: sezione generata da interattivi.py -->
+
+:material-flask-outline: **In the interactive lab:** [Metric TSP: double tree and Christofides](../lab/metric-tsp-double-tree-christofides.md).

@@ -6,7 +6,7 @@ title: "Knapsack problems"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 2** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Knapsack problems](../../exercises/knapsack.md)
+**Part 1 · Combinatorial optimization problems · Chapter 2** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Knapsack problems](../../exercises/knapsack.md) · [:material-gesture-tap: App: Brute force on the 0/1 knapsack problem](../../lab/kp-brute-force.md)
 
 </div>
 
@@ -245,3 +245,7 @@ title: "Knapsack problems"
 ---
 
 **In depth:** [:material-view-list: what the course does on this problem](../../catalogue/knapsack-problem.md)
+
+<!-- laboratorio-interattivo: sezione generata da interattivi.py -->
+
+:material-flask-outline: **In the interactive lab:** [Brute force on the 0/1 knapsack problem](../../lab/kp-brute-force.md).

@@ -6,7 +6,7 @@ title: "Metaheuristics"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 32** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md)
+**Part 4 · Heuristic algorithms · Chapter 32** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../../exercises/metaheuristics.md) · [:material-gesture-tap: App: TSP: simulated annealing and tabu search](../../lab/simulated-annealing-tabu-search.md)
 
 </div>
 
@@ -119,3 +119,7 @@ title: "Metaheuristics"
 ---
 
 **Exercises on this chapter:** [:material-pencil: Metaheuristics](../../exercises/metaheuristics.md)
+
+<!-- laboratorio-interattivo: sezione generata da interattivi.py -->
+
+:material-flask-outline: **In the interactive lab:** [TSP: simulated annealing and tabu search](../../lab/simulated-annealing-tabu-search.md).
