@@ -6,7 +6,7 @@ title: "DP for the unbounded knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 18** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: UKP](../../exercises/dp-unbounded-knapsack.md)
+**Part 3 · Dynamic programming · Chapter 18** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Unbounded knapsack (UKP)](../../exercises/dp-unbounded-knapsack.md)
 
 </div>
 
@@ -123,4 +123,4 @@ $$
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: UKP](../../exercises/dp-unbounded-knapsack.md)
+**Exercises on this chapter:** [:material-pencil: Unbounded knapsack (UKP)](../../exercises/dp-unbounded-knapsack.md)

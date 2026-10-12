@@ -6,7 +6,7 @@ title: "Exercises · DP for the bounded knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 19** · each solution opens with a click · [:material-book-open-variant: Chapter 19: BKP](../dynamic-programming/dp-bounded-knapsack.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
+**Exercises · Chapter 19** · each solution opens with a click · [:material-book-open-variant: Chapter 19: Bounded knapsack (BKP)](../dynamic-programming/dp-bounded-knapsack.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
 
 </div>
 

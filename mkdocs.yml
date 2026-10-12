@@ -199,19 +199,19 @@ nav:
   - Dynamic programming:
       - dynamic-programming/index.md
       - "16. Principles": dynamic-programming/dp-principles.md
-      - "17. KP":
+      - "17. Knapsack (KP)":
           - dynamic-programming/dp-knapsack/index.md
           - "A first DP algorithm": dynamic-programming/dp-knapsack/a-first-dp-algorithm.md
           - "A first DP algorithm: An implementation with lists": dynamic-programming/dp-knapsack/a-first-dp-algorithm-an-implementation-with-lists.md
           - "A second DP algorithm": dynamic-programming/dp-knapsack/a-second-dp-algorithm.md
           - "A second DP algorithm: An implementation with lists": dynamic-programming/dp-knapsack/a-second-dp-algorithm-an-implementation-with-lists.md
           - "Typical mistakes · In summary": dynamic-programming/dp-knapsack/typical-mistakes.md
-      - "18. UKP":
+      - "18. Unbounded knapsack (UKP)":
           - dynamic-programming/dp-unbounded-knapsack/index.md
           - "A first DP algorithm": dynamic-programming/dp-unbounded-knapsack/a-first-dp-algorithm.md
           - "A second DP algorithm": dynamic-programming/dp-unbounded-knapsack/a-second-dp-algorithm.md
           - "Typical mistakes · In summary": dynamic-programming/dp-unbounded-knapsack/typical-mistakes.md
-      - "19. BKP": dynamic-programming/dp-bounded-knapsack.md
+      - "19. Bounded knapsack (BKP)": dynamic-programming/dp-bounded-knapsack.md
       - "20. Rod cutting":
           - dynamic-programming/dp-rod-cutting/index.md
           - "A first DP algorithm": dynamic-programming/dp-rod-cutting/a-first-dp-algorithm.md
@@ -277,7 +277,7 @@ nav:
       - "32. Metric TSP": approximation-algorithms/tsp-approximation.md
   - Branch-and-bound:
       - specialized-algorithms/index.md
-      - "33. Knapsack: B&B": specialized-algorithms/knapsack-branch-and-bound.md
+      - "33. Knapsack": specialized-algorithms/knapsack-branch-and-bound.md
   - Exercises:
       - exercises/index.md
       - "Combinatorial optimization":
@@ -300,9 +300,9 @@ nav:
           - "15. Lot sizing": exercises/lot-sizing-formulations.md
       - "Dynamic programming":
           - "16. Principles": exercises/dp-principles.md
-          - "17. KP": exercises/dp-knapsack.md
-          - "18. UKP": exercises/dp-unbounded-knapsack.md
-          - "19. BKP": exercises/dp-bounded-knapsack.md
+          - "17. Knapsack (KP)": exercises/dp-knapsack.md
+          - "18. Unbounded knapsack (UKP)": exercises/dp-unbounded-knapsack.md
+          - "19. Bounded knapsack (BKP)": exercises/dp-bounded-knapsack.md
           - "20. Rod cutting": exercises/dp-rod-cutting.md
           - "21. Coin change": exercises/dp-coin-change.md
           - "22. Lot sizing": exercises/dp-lot-sizing.md
@@ -319,7 +319,7 @@ nav:
           - "31. P||Cmax": exercises/pcmax-approximation.md
           - "32. Metric TSP": exercises/tsp-approximation.md
       - "Branch-and-bound":
-          - "33. Knapsack: B&B": exercises/knapsack-branch-and-bound.md
+          - "33. Knapsack": exercises/knapsack-branch-and-bound.md
   - Catalogue:
       - catalogue/index.md
       - "The problems at a glance": combinatorial-optimization-problems/problems.md

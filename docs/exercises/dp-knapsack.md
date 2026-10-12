@@ -6,7 +6,7 @@ title: "Exercises · DP for the knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 17** · each solution opens with a click · [:material-book-open-variant: Chapter 17: KP](../dynamic-programming/dp-knapsack/index.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
+**Exercises · Chapter 17** · each solution opens with a click · [:material-book-open-variant: Chapter 17: Knapsack (KP)](../dynamic-programming/dp-knapsack/index.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
 
 </div>
 

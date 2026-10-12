@@ -59,7 +59,7 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 
     ---
 
-    16\. Principles · 17\. KP · 18\. UKP · 19\. BKP · 20\. Rod cutting · 21\. Coin change · 22\. Lot sizing
+    16\. Principles · 17\. Knapsack (KP) · 18\. Unbounded knapsack (UKP) · 19\. Bounded knapsack (BKP) · 20\. Rod cutting · 21\. Coin change · 22\. Lot sizing
 
     [:octicons-arrow-right-24: The chapters](dynamic-programming/index.md)
 
@@ -83,7 +83,7 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 
     ---
 
-    33\. Knapsack: B&B
+    33\. Knapsack
 
     [:octicons-arrow-right-24: The chapters](specialized-algorithms/index.md)
 
