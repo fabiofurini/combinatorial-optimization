@@ -12,7 +12,7 @@ title: "The vertex coloring problem"
 
 <a id="sec:cat-vcp"></a>
 
-<a id="sec:cat-pagina-central-problems"></a>
+<a id="sec:cat-scelto-vertex-coloring"></a>
 
 !!! chiave ""
 
@@ -42,7 +42,7 @@ title: "The vertex coloring problem"
 
     the <strong>Vertex Coloring Problem</strong> (VCP) asks to decide how to assign a color to each vertex, so that no two adjacent vertices share the same color, and the total number of colors used is minimized.
 
-Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-vcp).
+Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/vertex-coloring-problem.md).
 
 - Strongly NP-hard: deciding whether $\chi(G)\le 3$ is NP-complete ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization.md#box-23-def-pseudo)).
 

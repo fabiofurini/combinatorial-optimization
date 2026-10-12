@@ -77,4 +77,4 @@ title: "The problems at a glance"
 </tr>
 </table></div>
 
-- The definitions of all the problems of the course, the central ones and their variants, are in the [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-kp).
+- The definitions of all the problems of the course, the central ones and their variants, are in the [Catalogue of combinatorial problems](../catalogue/index.md).

@@ -12,7 +12,7 @@ title: "The bin packing problem"
 
 <a id="sec:cat-bpp"></a>
 
-<a id="sec:cat-pagina-central-problems"></a>
+<a id="sec:cat-scelto-bin-packing"></a>
 
 !!! chiave ""
 
@@ -34,7 +34,7 @@ title: "The bin packing problem"
 
     the <strong>Bin Packing Problem</strong> (BPP) asks to decide in which bin to place each item, so that the total weight of the items in any bin does not exceed the bin capacity, and the total number of bins used is minimized.
 
-Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-bpp).
+Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/bin-packing-problem.md).
 
 - Strongly NP-hard: no pseudo-polynomial algorithm exists, unless $P=NP$ ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization.md#box-23-def-pseudo)).
 
@@ -98,4 +98,4 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Variants { #sez-sec-cat-bpp-var }
 
-- [Cutting stock problem (CSP)](../catalogue/packing.md#sez-sec-cat-def-csp): The CSP is the BPP with $d_j$ identical copies of every item $j$, and the BPP is the case $d_j = 1$ for all $j\in\Ioggetti$.
+- [Cutting stock problem (CSP)](../catalogue/cutting-stock-problem.md): The CSP is the BPP with $d_j$ identical copies of every item $j$, and the BPP is the case $d_j = 1$ for all $j\in\Ioggetti$.

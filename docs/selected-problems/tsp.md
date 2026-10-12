@@ -12,7 +12,7 @@ title: "The travelling salesman problem"
 
 <a id="sec:cat-tsp"></a>
 
-<a id="sec:cat-pagina-central-problems"></a>
+<a id="sec:cat-scelto-tsp"></a>
 
 !!! chiave ""
 
@@ -32,7 +32,7 @@ title: "The travelling salesman problem"
 
     the <strong>travelling salesman problem</strong> (TSP) asks to find a closed route that starts from a city, visits every other city exactly once and returns to the starting city, so that the total distance travelled is minimized.
 
-Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-tsp).
+Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/travelling-salesman-problem.md).
 
 - Strongly NP-hard: it contains the Hamiltonian cycle problem ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization.md#box-23-def-pseudo)).
 
@@ -88,8 +88,8 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Variants { #sez-sec-cat-tsp-var }
 
-- [Metric travelling salesman problem (metric TSP)](../catalogue/routing.md#sez-sec-cat-def-metrictsp): The special case of the TSP with the triangle inequality, where approximation guarantees exist.
+- [Metric travelling salesman problem (metric TSP)](../catalogue/metric-travelling-salesman-problem.md): The special case of the TSP with the triangle inequality, where approximation guarantees exist.
 
-- [Asymmetric travelling salesman problem (ATSP)](../catalogue/routing.md#sez-sec-cat-def-atsp): The TSP is the special case of the ATSP in which $d_{ij}=d_{ji}$ for all $i,j$; an ATSP instance has $(n-1)!$ tours.
+- [Asymmetric travelling salesman problem (ATSP)](../catalogue/asymmetric-travelling-salesman-problem.md): The TSP is the special case of the ATSP in which $d_{ij}=d_{ji}$ for all $i,j$; an ATSP instance has $(n-1)!$ tours.
 
-- [Hamiltonian cycle problem (HCP)](../catalogue/routing.md#sez-sec-cat-def-hcp): With $d_{ij}=1$ on the edges and a large distance elsewhere, $G$ is Hamiltonian if and only if $z(I_G)=n$: the TSP contains it.
+- [Hamiltonian cycle problem (HCP)](../catalogue/hamiltonian-cycle-problem.md): With $d_{ij}=1$ on the edges and a large distance elsewhere, $G$ is Hamiltonian if and only if $z(I_G)=n$: the TSP contains it.

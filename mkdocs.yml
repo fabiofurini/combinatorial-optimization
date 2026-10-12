@@ -67,6 +67,14 @@ plugins:
         approximation-algorithms/coloring-approximation.md: approximation-algorithms/index.md
         exercises/coloring-approximation.md: approximation-algorithms/index.md
         catalogue/dp-examples.md: catalogue/index.md
+        # 2026-10-12: one catalogue page per problem (catalogue/<slug>/), no more pages per family
+        catalogue/central-problems.md: catalogue/index.md
+        catalogue/knapsack-family.md: catalogue/index.md
+        catalogue/packing.md: catalogue/index.md
+        catalogue/graphs.md: catalogue/index.md
+        catalogue/routing.md: catalogue/index.md
+        catalogue/scheduling.md: catalogue/index.md
+        catalogue/lot-sizing.md: catalogue/index.md
 
 extra:
   social:
@@ -317,13 +325,45 @@ nav:
       - "33. Knapsack: B&B": exercises/knapsack-branch-and-bound.md
   - Catalogue:
       - catalogue/index.md
-      - "Central problems": catalogue/central-problems.md
-      - "Knapsack family": catalogue/knapsack-family.md
-      - "Packing": catalogue/packing.md
-      - "Graphs": catalogue/graphs.md
-      - "Routing": catalogue/routing.md
-      - "Scheduling": catalogue/scheduling.md
-      - "Lot sizing": catalogue/lot-sizing.md
+      - "Central problems":
+          - "Knapsack": catalogue/knapsack-problem.md
+          - "Bin packing": catalogue/bin-packing-problem.md
+          - "Vertex coloring": catalogue/vertex-coloring-problem.md
+          - "Maximum clique": catalogue/maximum-clique-problem.md
+          - "Travelling salesman": catalogue/travelling-salesman-problem.md
+          - "P||Cmax": catalogue/scheduling-on-identical-parallel-machines.md
+          - "Capacitated lot sizing": catalogue/capacitated-lot-sizing.md
+      - "Knapsack family":
+          - "Subset sum": catalogue/subset-sum-problem.md
+          - "Bounded knapsack": catalogue/bounded-knapsack-problem.md
+          - "Unbounded knapsack": catalogue/unbounded-knapsack-problem.md
+          - "Multidimensional knapsack": catalogue/multidimensional-knapsack-problem.md
+          - "Multiple knapsack": catalogue/multiple-knapsack-problem.md
+          - "Multiple-choice knapsack": catalogue/multiple-choice-knapsack-problem.md
+          - "Knapsack problem with setups": catalogue/knapsack-problem-with-setups.md
+          - "Rod cutting": catalogue/rod-cutting-problem.md
+          - "Coin change": catalogue/coin-change-problem.md
+      - "Packing":
+          - "Cutting stock": catalogue/cutting-stock-problem.md
+      - "Graphs":
+          - "Maximum stable set": catalogue/maximum-stable-set-problem.md
+          - "Vertex-weighted maximum clique": catalogue/vertex-weighted-maximum-clique-problem.md
+          - "Edge-weighted maximum clique": catalogue/edge-weighted-maximum-clique-problem.md
+      - "Routing":
+          - "Metric TSP": catalogue/metric-travelling-salesman-problem.md
+          - "Asymmetric TSP": catalogue/asymmetric-travelling-salesman-problem.md
+          - "Hamiltonian cycle": catalogue/hamiltonian-cycle-problem.md
+      - "Scheduling":
+          - "Pm||Cmax": catalogue/scheduling-on-a-fixed-number-of-identical-machines.md
+          - "Q||Cmax": catalogue/scheduling-on-parallel-machines-with-different-speeds.md
+          - "R||Cmax": catalogue/scheduling-on-unrelated-parallel-machines.md
+      - "Lot sizing":
+          - "Uncapacitated lot sizing": catalogue/uncapacitated-lot-sizing-problem.md
+          - "Capacitated lot sizing with constant capacity": catalogue/capacitated-lot-sizing-with-constant-capacity.md
+          - "Lot sizing with several products and setup times": catalogue/lot-sizing-with-several-products-and-setup-times.md
+          - "Lot sizing with initial stock": catalogue/lot-sizing-with-initial-stock.md
+          - "Lot sizing with overtime": catalogue/lot-sizing-with-overtime.md
+          - "Lot sizing with unsatisfied demand": catalogue/lot-sizing-with-unsatisfied-demand.md
   - Lab: lab/index.md
   - Downloads: downloads.md
   - Index: full-index.md

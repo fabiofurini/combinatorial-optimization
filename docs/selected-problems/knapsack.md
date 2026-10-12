@@ -12,7 +12,7 @@ title: "The knapsack problem"
 
 <a id="sec:cat-kp"></a>
 
-<a id="sec:cat-pagina-central-problems"></a>
+<a id="sec:cat-scelto-knapsack"></a>
 
 !!! chiave ""
 
@@ -34,7 +34,7 @@ title: "The knapsack problem"
 
     the <strong>Knapsack Problem</strong> (KP) asks to decide which items to insert into the knapsack, so that the total weight of the selected items does not exceed the knapsack capacity, and the total profit of the selected items is maximized.
 
-Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-kp).
+Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/knapsack-problem.md).
 
 - Weakly NP-hard: dynamic programming solves it in $\Theta(nc)$ steps, a pseudo-polynomial time ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization.md#box-23-def-pseudo)).
 
@@ -126,16 +126,16 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Variants { #sez-sec-cat-kp-var }
 
-- [Subset sum problem (SSP)](../catalogue/knapsack-family.md#sez-sec-cat-def-ssp): The SSP is solved as the KP with $p_j = w_j$ for all $j\in\Ioggetti$: the answer is yes if and only if the optimal value of this KP equals $c$.
+- [Subset sum problem (SSP)](../catalogue/subset-sum-problem.md): The SSP is solved as the KP with $p_j = w_j$ for all $j\in\Ioggetti$: the answer is yes if and only if the optimal value of this KP equals $c$.
 
-- [Bounded knapsack problem (BKP)](../catalogue/knapsack-family.md#sez-sec-cat-def-bkp): The BKP reduces to the KP when $b_j=1$ for every item, and to the UKP when every bound $b_j$ is large enough not to be binding.
+- [Bounded knapsack problem (BKP)](../catalogue/bounded-knapsack-problem.md): The BKP reduces to the KP when $b_j=1$ for every item, and to the UKP when every bound $b_j$ is large enough not to be binding.
 
-- [Unbounded knapsack problem (UKP)](../catalogue/knapsack-family.md#sez-sec-cat-def-ukp): The UKP is the BKP with $b_j = \hat b_j = \lfloor c/w_j \rfloor$: each item can be taken as many times as it fits.
+- [Unbounded knapsack problem (UKP)](../catalogue/unbounded-knapsack-problem.md): The UKP is the BKP with $b_j = \hat b_j = \lfloor c/w_j \rfloor$: each item can be taken as many times as it fits.
 
-- [Multidimensional knapsack problem (MDKP)](../catalogue/knapsack-family.md#sez-sec-cat-def-mdkp): The MDKP is the KP with $k$ capacity constraints, one for each resource; with $k=1$ it is the KP.
+- [Multidimensional knapsack problem (MDKP)](../catalogue/multidimensional-knapsack-problem.md): The MDKP is the KP with $k$ capacity constraints, one for each resource; with $k=1$ it is the KP.
 
-- [Multiple knapsack problem (MKP)](../catalogue/knapsack-family.md#sez-sec-cat-def-mkp): The MKP is the KP with $m$ knapsacks; every feasible solution of the MKP is feasible for the KP with capacity $\sum_{k\in\mathscr{K}} c_k$, which gives a dual bound.
+- [Multiple knapsack problem (MKP)](../catalogue/multiple-knapsack-problem.md): The MKP is the KP with $m$ knapsacks; every feasible solution of the MKP is feasible for the KP with capacity $\sum_{k\in\mathscr{K}} c_k$, which gives a dual bound.
 
-- [Multiple-choice knapsack problem (MCKP)](../catalogue/knapsack-family.md#sez-sec-cat-def-mckp): The MCKP is the KP with the additional constraint that exactly one item of every class is selected, so an instance can be infeasible.
+- [Multiple-choice knapsack problem (MCKP)](../catalogue/multiple-choice-knapsack-problem.md): The MCKP is the KP with the additional constraint that exactly one item of every class is selected, so an instance can be infeasible.
 
-- [Knapsack problem with setups (KPS)](../catalogue/knapsack-family.md#sez-sec-cat-def-kps): The KPS is the KP in which selecting the first item of a class costs the setup $f_h$ and consumes the setup weight $s_h$; a class with no selected item costs nothing.
+- [Knapsack problem with setups (KPS)](../catalogue/knapsack-problem-with-setups.md): The KPS is the KP in which selecting the first item of a class costs the setup $f_h$ and consumes the setup weight $s_h$; a class with no selected item costs nothing.

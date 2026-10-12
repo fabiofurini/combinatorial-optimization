@@ -12,7 +12,7 @@ title: "The maximum clique problem"
 
 <a id="sec:cat-mcp"></a>
 
-<a id="sec:cat-pagina-central-problems"></a>
+<a id="sec:cat-scelto-maximum-clique"></a>
 
 !!! chiave ""
 
@@ -42,7 +42,7 @@ title: "The maximum clique problem"
 
     the <strong>Maximum Clique Problem</strong> (MCP) asks to find a clique $K \subseteq V$ of $G$ whose number of vertices is maximum. Its optimal value is the clique number $\omega(G)$.
 
-Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-mcp).
+Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/maximum-clique-problem.md).
 
 - NP-hard: deciding whether a clique with $k$ vertices exists is one of the $21$ NP-complete problems of Karp ([Ch. 5](../combinatorial-optimization-problems/clique/index.md)).
 
@@ -68,8 +68,8 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Variants { #sez-sec-cat-mcp-var }
 
-- [Maximum stable set problem (MSSP)](../catalogue/graphs.md#sez-sec-cat-def-mssp): A subset is a clique of $G$ if and only if it is a stable set of $\overline{G}$: $\omega(G) = \alpha(\overline{G})$ and $\alpha(G) = \omega(\overline{G})$.
+- [Maximum stable set problem (MSSP)](../catalogue/maximum-stable-set-problem.md): A subset is a clique of $G$ if and only if it is a stable set of $\overline{G}$: $\omega(G) = \alpha(\overline{G})$ and $\alpha(G) = \omega(\overline{G})$.
 
-- [Vertex-weighted maximum clique problem (VWMCP)](../catalogue/graphs.md#sez-sec-cat-def-vwmcp): With all the weights $w_v=1$ it is the MCP.
+- [Vertex-weighted maximum clique problem (VWMCP)](../catalogue/vertex-weighted-maximum-clique-problem.md): With all the weights $w_v=1$ it is the MCP.
 
-- [Edge-weighted maximum clique problem (EWMCP)](../catalogue/graphs.md#sez-sec-cat-def-ewmcp): With $r_{uv}=1$ it is again the MCP, since $r(K)=\binom{|K|}{2}$ grows with $|K|$.
+- [Edge-weighted maximum clique problem (EWMCP)](../catalogue/edge-weighted-maximum-clique-problem.md): With $r_{uv}=1$ it is again the MCP, since $r(K)=\binom{|K|}{2}$ grows with $|K|$.

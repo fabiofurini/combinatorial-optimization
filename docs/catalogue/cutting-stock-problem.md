@@ -1,18 +1,16 @@
 ---
-title: "Packing"
+title: "Cutting stock problem (CSP)"
 ---
 
-# Packing
+# Cutting stock problem (CSP)
 
 <div class="info-capitolo" markdown>
 
-**Catalogue of combinatorial problems** · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
+[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
 
 </div>
 
-<a id="sec:cat-pagina-packing"></a>
-
-## Cutting stock problem (CSP) { #sez-sec-cat-def-csp }
+<a id="sec:cat-pagina-cutting-stock-problem"></a>
 
 <a id="box-1-def-catdef-csp"></a>
 

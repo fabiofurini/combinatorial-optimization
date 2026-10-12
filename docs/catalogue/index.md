@@ -4,59 +4,59 @@ title: Catalogue
 
 # Catalogue of combinatorial problems
 
-All the problems defined in the course, grouped by family: for each one its definition and its assumptions, as in the chapters. The central problems also have an in-depth page among the selected problems.
+All the problems defined in the course, grouped by family: each one has its own page with its definition and its assumptions, as in the chapters. The central problems also have an in-depth page among the selected problems.
 
 [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf){ .md-button } [:material-star-outline: Selected problems](../selected-problems/index.md){ .md-button }
 
-## [Central problems](central-problems.md)
+## Central problems
 
-- [The knapsack problem (KP)](central-problems.md#sez-sec-cat-def-kp) · [in depth](../selected-problems/knapsack.md)
-- [The bin packing problem (BPP)](central-problems.md#sez-sec-cat-def-bpp) · [in depth](../selected-problems/bin-packing.md)
-- [The vertex coloring problem (VCP)](central-problems.md#sez-sec-cat-def-vcp) · [in depth](../selected-problems/vertex-coloring.md)
-- [The maximum clique problem (MCP)](central-problems.md#sez-sec-cat-def-mcp) · [in depth](../selected-problems/maximum-clique.md)
-- [The travelling salesman problem (TSP)](central-problems.md#sez-sec-cat-def-tsp) · [in depth](../selected-problems/tsp.md)
-- [Scheduling on identical parallel machines (P||Cmax)](central-problems.md#sez-sec-cat-def-pcmax) · [in depth](../selected-problems/pcmax.md)
-- [Capacitated lot sizing (CLS)](central-problems.md#sez-sec-cat-def-cls) · [in depth](../selected-problems/lot-sizing.md)
+- [The knapsack problem (KP)](knapsack-problem.md) · [in depth](../selected-problems/knapsack.md)
+- [The bin packing problem (BPP)](bin-packing-problem.md) · [in depth](../selected-problems/bin-packing.md)
+- [The vertex coloring problem (VCP)](vertex-coloring-problem.md) · [in depth](../selected-problems/vertex-coloring.md)
+- [The maximum clique problem (MCP)](maximum-clique-problem.md) · [in depth](../selected-problems/maximum-clique.md)
+- [The travelling salesman problem (TSP)](travelling-salesman-problem.md) · [in depth](../selected-problems/tsp.md)
+- [Scheduling on identical parallel machines (P||Cmax)](scheduling-on-identical-parallel-machines.md) · [in depth](../selected-problems/pcmax.md)
+- [Capacitated lot sizing (CLS)](capacitated-lot-sizing.md) · [in depth](../selected-problems/lot-sizing.md)
 
-## [Knapsack family](knapsack-family.md)
+## Knapsack family
 
-- [Subset sum problem (SSP)](knapsack-family.md#sez-sec-cat-def-ssp)
-- [Bounded knapsack problem (BKP)](knapsack-family.md#sez-sec-cat-def-bkp)
-- [Unbounded knapsack problem (UKP)](knapsack-family.md#sez-sec-cat-def-ukp)
-- [Multidimensional knapsack problem (MDKP)](knapsack-family.md#sez-sec-cat-def-mdkp)
-- [Multiple knapsack problem (MKP)](knapsack-family.md#sez-sec-cat-def-mkp)
-- [Multiple-choice knapsack problem (MCKP)](knapsack-family.md#sez-sec-cat-def-mckp)
-- [Knapsack problem with setups (KPS)](knapsack-family.md#sez-sec-cat-def-kps)
-- [Rod cutting problem (RCP)](knapsack-family.md#sez-sec-cat-def-rcp)
-- [Coin change problem (CCP)](knapsack-family.md#sez-sec-cat-def-ccp)
+- [Subset sum problem (SSP)](subset-sum-problem.md)
+- [Bounded knapsack problem (BKP)](bounded-knapsack-problem.md)
+- [Unbounded knapsack problem (UKP)](unbounded-knapsack-problem.md)
+- [Multidimensional knapsack problem (MDKP)](multidimensional-knapsack-problem.md)
+- [Multiple knapsack problem (MKP)](multiple-knapsack-problem.md)
+- [Multiple-choice knapsack problem (MCKP)](multiple-choice-knapsack-problem.md)
+- [Knapsack problem with setups (KPS)](knapsack-problem-with-setups.md)
+- [Rod cutting problem (RCP)](rod-cutting-problem.md)
+- [Coin change problem (CCP)](coin-change-problem.md)
 
-## [Packing](packing.md)
+## Packing
 
-- [Cutting stock problem (CSP)](packing.md#sez-sec-cat-def-csp)
+- [Cutting stock problem (CSP)](cutting-stock-problem.md)
 
-## [Graphs](graphs.md)
+## Graphs
 
-- [Maximum stable set problem (MSSP)](graphs.md#sez-sec-cat-def-mssp)
-- [Vertex-weighted maximum clique problem (VWMCP)](graphs.md#sez-sec-cat-def-vwmcp)
-- [Edge-weighted maximum clique problem (EWMCP)](graphs.md#sez-sec-cat-def-ewmcp)
+- [Maximum stable set problem (MSSP)](maximum-stable-set-problem.md)
+- [Vertex-weighted maximum clique problem (VWMCP)](vertex-weighted-maximum-clique-problem.md)
+- [Edge-weighted maximum clique problem (EWMCP)](edge-weighted-maximum-clique-problem.md)
 
-## [Routing](routing.md)
+## Routing
 
-- [Metric travelling salesman problem (metric TSP)](routing.md#sez-sec-cat-def-metrictsp)
-- [Asymmetric travelling salesman problem (ATSP)](routing.md#sez-sec-cat-def-atsp)
-- [Hamiltonian cycle problem (HCP)](routing.md#sez-sec-cat-def-hcp)
+- [Metric travelling salesman problem (metric TSP)](metric-travelling-salesman-problem.md)
+- [Asymmetric travelling salesman problem (ATSP)](asymmetric-travelling-salesman-problem.md)
+- [Hamiltonian cycle problem (HCP)](hamiltonian-cycle-problem.md)
 
-## [Scheduling](scheduling.md)
+## Scheduling
 
-- [Scheduling on a fixed number of identical machines (Pm||Cmax)](scheduling.md#sez-sec-cat-def-pmcmax)
-- [Scheduling on parallel machines with different speeds (Q||Cmax)](scheduling.md#sez-sec-cat-def-qcmax)
-- [Scheduling on unrelated parallel machines (R||Cmax)](scheduling.md#sez-sec-cat-def-rcmax)
+- [Scheduling on a fixed number of identical machines (Pm||Cmax)](scheduling-on-a-fixed-number-of-identical-machines.md)
+- [Scheduling on parallel machines with different speeds (Q||Cmax)](scheduling-on-parallel-machines-with-different-speeds.md)
+- [Scheduling on unrelated parallel machines (R||Cmax)](scheduling-on-unrelated-parallel-machines.md)
 
-## [Lot sizing](lot-sizing.md)
+## Lot sizing
 
-- [Uncapacitated lot sizing problem (ULS)](lot-sizing.md#sez-sec-cat-def-uls)
-- [Capacitated lot sizing with constant capacity (CLS-C)](lot-sizing.md#sez-sec-cat-def-clsc)
-- [Lot sizing with several products and setup times (MLS)](lot-sizing.md#sez-sec-cat-def-mls)
-- [Lot sizing with initial stock (LS-SI)](lot-sizing.md#sez-sec-cat-def-lssi)
-- [Lot sizing with overtime (LS-OT)](lot-sizing.md#sez-sec-cat-def-lsot)
-- [Lot sizing with unsatisfied demand (LS-UD)](lot-sizing.md#sez-sec-cat-def-lsud)
+- [Uncapacitated lot sizing problem (ULS)](uncapacitated-lot-sizing-problem.md)
+- [Capacitated lot sizing with constant capacity (CLS-C)](capacitated-lot-sizing-with-constant-capacity.md)
+- [Lot sizing with several products and setup times (MLS)](lot-sizing-with-several-products-and-setup-times.md)
+- [Lot sizing with initial stock (LS-SI)](lot-sizing-with-initial-stock.md)
+- [Lot sizing with overtime (LS-OT)](lot-sizing-with-overtime.md)
+- [Lot sizing with unsatisfied demand (LS-UD)](lot-sizing-with-unsatisfied-demand.md)

@@ -12,7 +12,7 @@ title: "Capacitated lot sizing"
 
 <a id="sec:cat-cls"></a>
 
-<a id="sec:cat-pagina-central-problems"></a>
+<a id="sec:cat-scelto-lot-sizing"></a>
 
 !!! chiave ""
 
@@ -34,7 +34,7 @@ title: "Capacitated lot sizing"
 
     the <strong>capacitated lot sizing problem</strong> (CLS) asks to decide how much to produce in every period, so that every demand is satisfied with what is produced and what is in stock, the capacities are respected, and the total cost of setups, production and holding is minimized.
 
-Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-cls).
+Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/capacitated-lot-sizing.md).
 
 - NP-hard with general capacities; without capacities (ULS) it is polynomial ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization.md#box-23-def-pseudo)).
 
@@ -70,14 +70,14 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Variants { #sez-sec-cat-cls-var }
 
-- [Uncapacitated lot sizing problem (ULS)](../catalogue/lot-sizing.md#sez-sec-cat-def-uls): Special case of the CLS in which the capacities are not binding, for example $cap_t \ge \sum_u d_u$.
+- [Uncapacitated lot sizing problem (ULS)](../catalogue/uncapacitated-lot-sizing-problem.md): Special case of the CLS in which the capacities are not binding, for example $cap_t \ge \sum_u d_u$.
 
-- [Capacitated lot sizing with constant capacity (CLS-C)](../catalogue/lot-sizing.md#sez-sec-cat-def-clsc): Special case of the CLS; the zero-inventory ordering property is replaced by a weaker one: between two periods with empty inventory at most one period produces a quantity strictly between $0$ and $C$.
+- [Capacitated lot sizing with constant capacity (CLS-C)](../catalogue/capacitated-lot-sizing-with-constant-capacity.md): Special case of the CLS; the zero-inventory ordering property is replaced by a weaker one: between two periods with empty inventory at most one period produces a quantity strictly between $0$ and $C$.
 
-- [Lot sizing with several products and setup times (MLS)](../catalogue/lot-sizing.md#sez-sec-cat-def-mls): Generalizes the CLS, which is the case of one product with $vt_t=1$ and no setup time.
+- [Lot sizing with several products and setup times (MLS)](../catalogue/lot-sizing-with-several-products-and-setup-times.md): Generalizes the CLS, which is the case of one product with $vt_t=1$ and no setup time.
 
-- [Lot sizing with initial stock (LS-SI)](../catalogue/lot-sizing.md#sez-sec-cat-def-lssi): Removes the assumption of an empty initial stock of the CLS.
+- [Lot sizing with initial stock (LS-SI)](../catalogue/lot-sizing-with-initial-stock.md): Removes the assumption of an empty initial stock of the CLS.
 
-- [Lot sizing with overtime (LS-OT)](../catalogue/lot-sizing.md#sez-sec-cat-def-lsot): Replaces the fixed capacity $cap_t$ of the CLS by two levels of capacity with different costs.
+- [Lot sizing with overtime (LS-OT)](../catalogue/lot-sizing-with-overtime.md): Replaces the fixed capacity $cap_t$ of the CLS by two levels of capacity with different costs.
 
-- [Lot sizing with unsatisfied demand (LS-UD)](../catalogue/lot-sizing.md#sez-sec-cat-def-lsud): Relaxes the demand constraints of the CLS, with a penalty in the objective.
+- [Lot sizing with unsatisfied demand (LS-UD)](../catalogue/lot-sizing-with-unsatisfied-demand.md): Relaxes the demand constraints of the CLS, with a penalty in the objective.

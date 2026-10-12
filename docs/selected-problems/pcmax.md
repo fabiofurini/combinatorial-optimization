@@ -12,7 +12,7 @@ title: "Scheduling on identical parallel machines"
 
 <a id="sec:cat-pcmax"></a>
 
-<a id="sec:cat-pagina-central-problems"></a>
+<a id="sec:cat-scelto-pcmax"></a>
 
 !!! chiave ""
 
@@ -34,7 +34,7 @@ title: "Scheduling on identical parallel machines"
 
     the problem $P\,||\,C_{\max}$ asks to assign each job to a machine, so that the time needed to complete all the jobs, i.e., the largest total processing time assigned to a machine, is minimized.
 
-Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-pcmax).
+Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/scheduling-on-identical-parallel-machines.md).
 
 - Strongly NP-hard when $m$ is part of the input; weakly NP-hard for a fixed number of machines ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization.md#box-23-def-pseudo)).
 
@@ -94,8 +94,8 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Variants { #sez-sec-cat-pcmax-var }
 
-- [Scheduling on a fixed number of identical machines ($Pm\|C_{\max}$)](../catalogue/scheduling.md#sez-sec-cat-def-pmcmax): Special case of $P\,||\,C_{\max}$ with $m$ fixed; with $m=2$ it asks for a split of the jobs into two sets of loads as equal as possible.
+- [Scheduling on a fixed number of identical machines ($Pm\|C_{\max}$)](../catalogue/scheduling-on-a-fixed-number-of-identical-machines.md): Special case of $P\,||\,C_{\max}$ with $m$ fixed; with $m=2$ it asks for a split of the jobs into two sets of loads as equal as possible.
 
-- [Scheduling on parallel machines with different speeds ($Q\|C_{\max}$)](../catalogue/scheduling.md#sez-sec-cat-def-qcmax): Generalizes $P\,||\,C_{\max}$, which is the case of machines with equal speeds.
+- [Scheduling on parallel machines with different speeds ($Q\|C_{\max}$)](../catalogue/scheduling-on-parallel-machines-with-different-speeds.md): Generalizes $P\,||\,C_{\max}$, which is the case of machines with equal speeds.
 
-- [Scheduling on unrelated parallel machines ($R\|C_{\max}$)](../catalogue/scheduling.md#sez-sec-cat-def-rcmax): Generalizes $Q\,||\,C_{\max}$ and $P\,||\,C_{\max}$.
+- [Scheduling on unrelated parallel machines ($R\|C_{\max}$)](../catalogue/scheduling-on-unrelated-parallel-machines.md): Generalizes $Q\,||\,C_{\max}$ and $P\,||\,C_{\max}$.
