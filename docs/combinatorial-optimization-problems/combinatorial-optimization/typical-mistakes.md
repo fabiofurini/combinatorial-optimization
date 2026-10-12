@@ -38,4 +38,4 @@ title: "Typical mistakes · In summary"
 
 ---
 
-**Next:** [Exercises · Roadmap of the course](exercises.md)
+**Next:** [1.8 Exercises](exercises.md)

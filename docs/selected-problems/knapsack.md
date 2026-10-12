@@ -36,7 +36,7 @@ title: "The knapsack problem"
 
 Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/knapsack-problem.md).
 
-- Weakly NP-hard: dynamic programming solves it in $\Theta(nc)$ steps, a pseudo-polynomial time ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization/primal-bounds-dual-bounds-and-gap.md#box-12-def-pseudo)).
+- Weakly NP-hard: dynamic programming solves it in $\Theta(nc)$ steps, a pseudo-polynomial time ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md#box-12-def-pseudo)).
 
 - Cardinality bound: if at most $\bar k$ items fit, $z(I)$ is at most the sum of the $\bar k$ largest profits ([Ch. 2](../combinatorial-optimization-problems/knapsack/index.md#box-3-obs-kp-card)).
 

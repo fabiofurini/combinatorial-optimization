@@ -36,7 +36,7 @@ title: "Capacitated lot sizing"
 
 Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/capacitated-lot-sizing.md).
 
-- NP-hard with general capacities; without capacities (ULS) it is polynomial ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization/primal-bounds-dual-bounds-and-gap.md#box-12-def-pseudo)).
+- NP-hard with general capacities; without capacities (ULS) it is polynomial ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md#box-12-def-pseudo)).
 
 - Lower bound: the sum of the $k$ smallest setup costs, with $k$ the fewest periods whose capacities cover the total demand ([Ch. 8](../combinatorial-optimization-problems/lot-sizing/variants.md#box-5-obs-cls-lb)).
 

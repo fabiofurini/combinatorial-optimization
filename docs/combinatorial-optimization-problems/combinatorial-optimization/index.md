@@ -32,10 +32,13 @@ title: "Combinatorial optimization problems"
 
 **The chapter is organised in pages: this page and**
 
-1. [Counting the solutions · Combinatorial explosion and brute force](counting-the-solutions.md)
-2. [Primal bounds, dual bounds and gap · A glimpse of computational complexity](primal-bounds-dual-bounds-and-gap.md)
-3. [Typical mistakes · In summary](typical-mistakes.md)
-4. [Exercises · Roadmap of the course](exercises.md)
+1. [1.2 Counting the solutions](counting-the-solutions.md)
+2. [1.3 Combinatorial explosion and brute force](combinatorial-explosion-and-brute-force.md)
+3. [1.4 Primal bounds, dual bounds and gap](primal-bounds-dual-bounds-and-gap.md)
+4. [1.5 A glimpse of computational complexity](a-glimpse-of-computational-complexity.md)
+5. [Typical mistakes · In summary](typical-mistakes.md)
+6. [1.8 Exercises](exercises.md)
+7. [1.9 Roadmap of the course](roadmap-of-the-course.md)
 
 </div>
 
@@ -102,7 +105,7 @@ title: "Combinatorial optimization problems"
 
     2. the number of feasible solutions is typically <strong>enormous</strong>: it grows exponentially (or faster) with the size of the instance;
 
-    3. finding an optimal solution can be <strong>computationally very difficult</strong> (Section [1.5](primal-bounds-dual-bounds-and-gap.md#sez-sec-complexity));
+    3. finding an optimal solution can be <strong>computationally very difficult</strong> (Section [1.5](a-glimpse-of-computational-complexity.md#sez-sec-complexity));
 
     4. specialized algorithms are needed to explore the solution space without enumerating it.
 
@@ -142,7 +145,7 @@ title: "Combinatorial optimization problems"
 
 ---
 
-**Next:** [Counting the solutions · Combinatorial explosion and brute force](counting-the-solutions.md)
+**Next:** [1.2 Counting the solutions](counting-the-solutions.md)
 
 ---
 
