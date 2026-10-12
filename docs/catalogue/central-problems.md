@@ -46,7 +46,7 @@ title: "Central problems"
 
 - Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/index.md#box-1-defKP).
 
-- Studied in depth in [Selected problems: The knapsack problem](../selected-problems/knapsack.md).
+- [The course on this problem $\rightarrow$](../selected-problems/knapsack.md).
 
 ## The bin packing problem (BPP) { #sez-sec-cat-def-bpp }
 
@@ -82,7 +82,7 @@ title: "Central problems"
 
 - Defined in [Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing/index.md#box-1-defBPP).
 
-- Studied in depth in [Selected problems: The bin packing problem](../selected-problems/bin-packing.md).
+- [The course on this problem $\rightarrow$](../selected-problems/bin-packing.md).
 
 ## The vertex coloring problem (VCP) { #sez-sec-cat-def-vcp }
 
@@ -132,7 +132,7 @@ title: "Central problems"
 
 - Defined in [Chapter 4 «Vertex coloring»](../combinatorial-optimization-problems/coloring.md#box-3-defVCP).
 
-- Studied in depth in [Selected problems: The vertex coloring problem](../selected-problems/vertex-coloring.md).
+- [The course on this problem $\rightarrow$](../selected-problems/vertex-coloring.md).
 
 ## The maximum clique problem (MCP) { #sez-sec-cat-def-mcp }
 
@@ -170,7 +170,7 @@ title: "Central problems"
 
 - Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md#box-2-mcpP-def-MCP).
 
-- Studied in depth in [Selected problems: The maximum clique problem](../selected-problems/maximum-clique.md).
+- [The course on this problem $\rightarrow$](../selected-problems/maximum-clique.md).
 
 ## The travelling salesman problem (TSP) { #sez-sec-cat-def-tsp }
 
@@ -204,7 +204,7 @@ title: "Central problems"
 
 - Defined in [Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp/index.md#box-1-defTSP).
 
-- Studied in depth in [Selected problems: The travelling salesman problem](../selected-problems/tsp.md).
+- [The course on this problem $\rightarrow$](../selected-problems/tsp.md).
 
 ## Scheduling on identical parallel machines ($P\|C_{\max}$) { #sez-sec-cat-def-pcmax }
 
@@ -234,7 +234,7 @@ title: "Central problems"
 
 - Defined in [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax/index.md#box-1-defPCmax).
 
-- Studied in depth in [Selected problems: Scheduling on identical parallel machines](../selected-problems/pcmax.md).
+- [The course on this problem $\rightarrow$](../selected-problems/pcmax.md).
 
 ## Capacitated lot sizing (CLS) { #sez-sec-cat-def-cls }
 
@@ -268,4 +268,4 @@ title: "Central problems"
 
 - Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing/index.md#box-1-defCLS).
 
-- Studied in depth in [Selected problems: Capacitated lot sizing](../selected-problems/lot-sizing.md).
+- [The course on this problem $\rightarrow$](../selected-problems/lot-sizing.md).

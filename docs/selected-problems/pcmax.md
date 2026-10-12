@@ -16,171 +16,81 @@ title: "Scheduling on identical parallel machines"
 
 !!! chiave ""
 
-    Assign jobs to $m$ identical machines so that the makespan, the largest machine load, is minimum.
+    What the course does on scheduling on identical parallel machines ($P\|C_{\max}$): a summary.
 
-!!! nota "Where it is treated"
+## Definition { #sez-sec-cat-pcmax-definition }
 
-    - [Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#box-10-def-oc1-pcm): One of the six problems of the course, with the reference instance, the count of the assignments and the first bounds
+<a id="box-1-def-cat-pcmax"></a>
 
-    - [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax/index.md): Definition, three-field notation, counting the schedules, a first schedule by hand, the lower bound and the relation with bin packing
+!!! definizione "Definition 1: Scheduling on identical parallel machines"
 
-    - [Chapter 14 «Formulations of parallel machine scheduling»](../formulations/pcmax-formulations.md): The ILP model $\ILP_{\PCmax}$, its LP relaxation and dual, the ratio $1/m$, valid inequalities and symmetry
+    Given:
 
-    - [Chapter 23 «Heuristic algorithms: definitions»](../heuristic-algorithms/heuristics.md#box-5-ex-refPCM): Reference instance of the heuristic chapters, gap and relative error of a schedule
+    1. a set of $m$ identical <em>machines</em>,
 
-    - [Chapter 24 «Constructive heuristics»](../heuristic-algorithms/constructive-heuristics/scheduling-on-parallel-machines-longest-jobs-first.md#sez-sec-PCM): List scheduling $LIST$ and $LPT$, with Graham's guarantees
+    2. a set $\mathscr{J} = \{1,2,\dots,n\}$ of $n$ <em>jobs</em>,
 
-    - [Chapter 25 «Local search»](../heuristic-algorithms/local-search/p-cmax-move-and-swap.md#sez-sec-pcmax): Move and swap neighbourhoods, plateaus and the auxiliary objective $\sum_h L_h^2$, VND and multi-start
+    3. for each job $j \in \mathscr{J}$, a <em>processing time</em> $t_j \in \Z_{\ge 1}$,
 
-    - [Chapter 26 «Metaheuristics»](../heuristic-algorithms/metaheuristics/tabu-search.md#sez-sec-ts): Tabu search with the lexicographic comparison $(C_{\max},\sum_h L_h^2)$
+    the problem $P\,||\,C_{\max}$ asks to assign each job to a machine, so that the time needed to complete all the jobs, i.e., the largest total processing time assigned to a machine, is minimized.
 
-    - [Chapter 26 «Metaheuristics»](../heuristic-algorithms/metaheuristics/variable-neighbourhood-search.md#sez-sec-vns): Variable neighbourhood search, on the reference instance and on the medium instance PCM15
+Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-pcmax).
 
-    - [Chapter 27 «MIP heuristics for the classical problems»](../heuristic-algorithms/mip-heuristics-classical.md#eq-eq-pcm): Rounding, diving, feasibility pump, RINS, local branching and proximity search on the assignment model
+- Strongly NP-hard when $m$ is part of the input; weakly NP-hard for a fixed number of machines ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization.md#box-23-def-pseudo)).
 
-    - [Chapter 28 «Approximation algorithms: definitions»](../approximation-algorithms/approximation.md): Exercise on the algorithm ONE, an $m$-approximation with a tight ratio
+- Lower bound $\max\{\max_j t_j, \lceil \sum_j t_j/m \rceil\}$; it is not always attained: $(4,3,3)$ on two machines gives $5$, the optimum is $6$ ([Ch. 7](../combinatorial-optimization-problems/pcmax/index.md#box-5-obs-pcmaxlb)).
 
-    - [Chapter 31 «Approximation for $P\|C_{\max}$»](../approximation-algorithms/pcmax-approximation.md#312-the-algorithms-list-and-lpt): Guarantees of $LIST$ and $LPT$, proved, with Graham's tight families
+- A makespan at most $T$ exists if and only if the jobs fit into $m$ bins of capacity $T$ ([Ch. 7](../combinatorial-optimization-problems/pcmax/index.md#76-relation-with-the-bin-packing-problem)).
 
-## Definition { #sez-sec-cat-pcmax-def }
+## Formulations { #sez-sec-cat-pcmax-formulations }
 
-- Definition and assumptions: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-pcmax).
+- The model $\ILP_{\PCmax}$ has $nm$ binary variables $x_{jh}$ and the continuous variable $C_{\max}$ ([Ch. 14](../formulations/pcmax-formulations.md#eq-ILP-PCMAX)).
 
-- It models the balancing of work among identical resources (machines, processors, workers), where the plan ends when the last resource finishes.
+- The LP bound is $\sum_j t_j/m$; its ratio to the optimum is at least $1/m$, and $1/m$ is approached ([Ch. 14](../formulations/pcmax-formulations.md#box-5-prop-PCMAX-tight)).
 
-- A solution is an <strong>assignment</strong> $\mathrm{mach}_j=h$ of the jobs to the machines; since the machines are identical, a schedule is a partition of $\Jlavori$ into at most $m$ sets $J_1,\dots,J_m$.
+- Valid inequalities strengthen the model; load ordering breaks the symmetry only when the loads are distinct ([Ch. 14](../formulations/pcmax-formulations.md#144-additional-considerations)).
 
-- The order of the jobs on a machine does not change its load, so the makespan $C_{\max}=\max_h L_h$ depends only on the sets $J_h$.
+## Heuristics { #sez-sec-cat-pcmax-heuristics }
 
-## Bounds and complexity { #sez-sec-cat-pcmax-prop }
+- On the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax/index.md) (three machines, optimum $9$) LIST with the shortest jobs first gives $12$ and LPT gives $11$ ([Ch. 24](../heuristic-algorithms/constructive-heuristics/scheduling-on-parallel-machines-longest-jobs-first.md#sez-sec-LPT)).
 
-- <strong>Complexity</strong>: Strongly NP-hard when $m$ is part of the input; weakly NP-hard for a fixed number of machines, e.g. $m=2$.
+- The LPT solution is a local optimum for move, while two swaps reach $9$; the auxiliary objective $\sum_h L_h^2$ gives a slope to the plateaus ([Ch. 25](../heuristic-algorithms/local-search/p-cmax-move-and-swap.md#box-8-ex-lpt)).
 
-- $z(I) \ge \max\left\{ \max_{j\in\Jlavori} t_j,\ \left\lceil \frac{1}{m}\sum_{j\in\Jlavori} t_j \right\rceil \right\}$: the longest job and the rounded average load ([Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax/index.md#box-5-obs-pcmaxlb)).
-
-- $z(\LP_{\PCmax}) = \frac{1}{m}\sum_{j\in\Jlavori} t_j$ (LP bound, at least $1/m$ of the optimum) ([Chapter 14 «Formulations of parallel machine scheduling»](../formulations/pcmax-formulations.md#box-3-prop-LP0-PCMAX)).
-
-- There are $m^n$ assignments but only $\sum_{k=1}^{m} S(n,k)$ distinct schedules, with $S(n,k)$ the Stirling numbers of the second kind ([Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax/index.md#73-counting-the-solutions)).
-
-- A schedule of makespan at most $T$ exists if and only if the jobs, as items of weight $t_j$, fit into $m$ bins of capacity $T$: $P\,||\,C_{\max}$ fixes the number of bins and minimizes the capacity ([Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax/index.md#76-relation-with-the-bin-packing-problem)).
-
-- The bound $\max\{\max_j t_j,\lceil\sum_j t_j/m\rceil\}$ is not always attained: $(4,3,3)$ on two machines gives $5$, while the optimum is $6$.
-
-## Formulation { #sez-sec-cat-pcmax-formulation }
-
-- <strong>ILP model of $P\,||\,C_{\max}$ ($\ILP_{\PCmax}$), with $\mathscr{H}=\{1,2,\dots,m\}$</strong> ([Chapter 14 «Formulations of parallel machine scheduling»](../formulations/pcmax-formulations.md#eq-ILP-PCMAX)):
-
-\begin{align*}
-\min\ & C_{\max} \\
-\text{subject to}\ & \sum_{h\in\mathscr{H}}x_{jh}=1, & \forall j\in\Jlavori, \\
-& -\sum_{j\in\Jlavori}t_jx_{jh}+C_{\max}\ge0, & \forall h\in\mathscr{H}, \\
-& x_{jh}\in\{0,1\}, & \forall j\in\Jlavori,~\forall h\in\mathscr{H}, \\
-& C_{\max}\ge0.
-\end{align*}
-
-- The model $\ILP_{\PCmax}$ has $nm$ binary variables $x_{jh}$, the continuous variable $C_{\max}$, $n$ assignment constraints and $m$ load constraints $C_{\max}\ge\sum_j t_jx_{jh}$ ([Chapter 14 «Formulations of parallel machine scheduling»](../formulations/pcmax-formulations.md#eq-ILP-PCMAX)).
-
-- The LP relaxation has value $z(\LP_{\PCmax})=\sum_j t_j/m$, attained by $x_{jh}=1/m$, with the dual solution $\pi_h=1/m$, $\mu_j=t_j/m$ ([Chapter 14 «Formulations of parallel machine scheduling»](../formulations/pcmax-formulations.md#box-3-prop-LP0-PCMAX)).
-
-- The ratio $z(\LP_{\PCmax})/z(\ILP_{\PCmax})$ is at least $1/m$, and one long job of time $M$ with $m$ unit jobs makes it tend to $1/m$ ([Chapter 14 «Formulations of parallel machine scheduling»](../formulations/pcmax-formulations.md#box-5-prop-PCMAX-tight)).
-
-- The valid inequalities $C_{\max}\ge t_j$ and $C_{\max}\ge\lceil\sum_j t_j/m\rceil$ strengthen the model; the load ordering constraints break the symmetry only when the loads are distinct ([Chapter 14 «Formulations of parallel machine scheduling»](../formulations/pcmax-formulations.md#144-additional-considerations)).
-
-## Constructive heuristics { #sez-sec-cat-pcmax-constructiveheuristics }
-
-- $LIST$ assigns the jobs, in the order of a list, to a least loaded machine, in $O(nm)$ or $O(n\log m)$ time; on the reference instance with the shortest jobs first it gives $12$ ([Chapter 24 «Constructive heuristics»](../heuristic-algorithms/constructive-heuristics/scheduling-on-parallel-machines-longest-jobs-first.md#sez-sec-LIST)).
-
-- $LPT$ applies $LIST$ to the jobs by non-increasing $t_j$; on the reference instance it gives $11$, and $11/9=4/3-1/9$ is Graham's bound for $m=3$ ([Chapter 24 «Constructive heuristics»](../heuristic-algorithms/constructive-heuristics/scheduling-on-parallel-machines-longest-jobs-first.md#sez-sec-LPT)).
-
-## Local search { #sez-sec-cat-pcmax-localsearch }
-
-- The <em>move</em> neighbourhood has $n(m-1)$ elements and the <em>swap</em> neighbourhood at most $n(n-1)/2$; a transfer lowers the makespan only from the unique critical machine ([Chapter 25 «Local search»](../heuristic-algorithms/local-search/p-cmax-move-and-swap.md#sez-sec-pcmax)).
-
-- The $LPT$ solution of the reference instance is a local optimum for move, while two swaps reach the optimum $9$ ([Chapter 25 «Local search»](../heuristic-algorithms/local-search/p-cmax-move-and-swap.md#box-8-ex-lpt)).
-
-- The auxiliary objective $\sum_h L_h^2$ gives a slope to the plateaus of the makespan: a move that improves the makespan improves it, and none that worsens the makespan does ([Chapter 25 «Local search»](../heuristic-algorithms/local-search/flat-landscapes-and-auxiliary-objectives.md#box-11-prop-pcmsq)).
-
-- VND with move and swap and the auxiliary objective reaches the optimum $19$ of the instance with $12$ jobs in $68$ of $100$ runs ([Chapter 25 «Local search»](../heuristic-algorithms/local-search/variable-neighbourhood-descent.md#sez-sec-vnd)).
-
-## Metaheuristics { #sez-sec-cat-pcmax-metaheuristics }
-
-- Tabu search with the move neighbourhood leaves the plateau of makespan $11$ of the reference instance and stops at $\LB=9$ at iteration $8$ ([Chapter 26 «Metaheuristics»](../heuristic-algorithms/metaheuristics/tabu-search.md#box-6-ex-tsPCM)).
-
-- VNS with $k_{\max}=3$ reaches the optimum $9$ of the reference instance in three iterations, and the optimum $69$ of PCM15 in $7$ runs out of $10$ ([Chapter 26 «Metaheuristics»](../heuristic-algorithms/metaheuristics/variable-neighbourhood-search.md#box-8-ex-vnsPCM)).
+- Tabu search and VNS reach $9$ on the same instance ([Ch. 26](../heuristic-algorithms/metaheuristics/variable-neighbourhood-search.md#box-8-ex-vnsPCM)).
 
 ## MIP heuristics { #sez-sec-cat-pcmax-mipheuristics }
 
-- Rounding the LP solution violates an assignment constraint, fractional diving ends at makespan $10$, and guided diving from $LPT$ finds the optimum $9$ ([Chapter 27 «MIP heuristics for the classical problems»](../heuristic-algorithms/mip-heuristics-classical.md#box-5-ex-divepcm)).
+- On the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax/index.md) fractional diving ends at $10$, guided diving from LPT finds $9$, the feasibility pump returns $11$ ([Ch. 27](../heuristic-algorithms/mip-heuristics-classical.md#box-5-ex-divepcm)).
 
-- The feasibility pump returns a schedule of makespan $11$, since $C_{\max}$ does not enter the distance $\Delta$ ([Chapter 27 «MIP heuristics for the classical problems»](../heuristic-algorithms/mip-heuristics-classical.md#box-7-ex-fppcm)).
-
-- RINS, local branching and proximity search, started from $LPT$, all reach makespan $9$; proximity search also proves its optimality ([Chapter 27 «MIP heuristics for the classical problems»](../heuristic-algorithms/mip-heuristics-classical.md#box-10-ex-rinspcm)).
+- RINS, local branching and proximity search, started from LPT, reach $9$; proximity search also proves it optimal ([Ch. 27](../heuristic-algorithms/mip-heuristics-classical.md#box-10-ex-rinspcm)).
 
 ## Approximation { #sez-sec-cat-pcmax-approximation }
 
-- $LIST$ is a $\left(2-\frac1m\right)$-approximation algorithm for every list, and the instance with $m(m-1)$ unit jobs followed by a job of time $m$ shows that the ratio is tight ([Chapter 31 «Approximation for $P\|C_{\max}$»](../approximation-algorithms/pcmax-approximation.md#box-5-prop-LIST)).
+- LIST is a $\left(2-\frac1m\right)$-approximation for every list, tight ([Ch. 31](../approximation-algorithms/pcmax-approximation.md#box-5-prop-LIST)).
 
-- $LPT$ is a $\left(\frac43-\frac1{3m}\right)$-approximation algorithm, tight on Graham's family $t=(2m-1,2m-1,\dots,m+1,m+1,m,m,m)$, which for $m=3$ is the reference instance ([Chapter 31 «Approximation for $P\|C_{\max}$»](../approximation-algorithms/pcmax-approximation.md#box-7-prop-LPT)).
-
-- The algorithm ONE, all the jobs on machine $1$, is an $m$-approximation algorithm with $r(\mathrm{ONE})=m$ and no finite additive guarantee ([Exercise 28.2](../exercises/approximation.md#esercizio-28-2)).
+- LPT is a $\left(\frac43-\frac1{3m}\right)$-approximation, tight on Graham's family; for $m=3$ it is the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax/index.md) ([Ch. 31](../approximation-algorithms/pcmax-approximation.md#box-7-prop-LPT)).
 
 ## Exercises { #sez-sec-cat-pcmax-es }
 
-- [Exercises «Recognizing the problems» (counting the assignments) and «LPT, bounds and gap on $P\|C_{\max}$»](../combinatorial-optimization-problems/combinatorial-optimization.md#110-exercises)
+- [Ch. 1 — Combinatorial optimization problems](../exercises/combinatorial-optimization.md) (1 exercise).
 
-- [Counting the solutions (instance (d))](../exercises/combinatorial-optimization.md#esercizio-1-3)
+- [Ch. 7 — Parallel machine scheduling](../exercises/pcmax.md) (5 exercises).
 
-- [Loads, makespan and Gantt chart](../exercises/pcmax.md#esercizio-7-1)
+- [Ch. 14 — Formulations of parallel machine scheduling](../exercises/pcmax-formulations.md) (5 exercises).
 
-- [Counting the schedules](../exercises/pcmax.md#esercizio-7-2)
+- [Ch. 23 — Heuristic algorithms: definitions](../exercises/heuristics.md) (2 exercises).
 
-- [A first schedule, a lower bound and the optimum](../exercises/pcmax.md#esercizio-7-3)
+- [Ch. 24 — Constructive heuristics](../exercises/constructive-heuristics.md) (3 exercises).
 
-- [When the lower bound is not attained](../exercises/pcmax.md#esercizio-7-4)
+- [Ch. 25 — Local search](../exercises/local-search.md) (3 exercises).
 
-- [Makespan and bin packing](../exercises/pcmax.md#esercizio-7-5)
+- [Ch. 26 — Metaheuristics](../exercises/metaheuristics.md) (3 exercises).
 
-- [ILP model of $P\|C_{\max}$](../exercises/pcmax-formulations.md#esercizio-14-1)
+- [Ch. 27 — MIP heuristics for the classical problems](../exercises/mip-heuristics-classical.md) (1 exercise).
 
-- [LP relaxation of the $P\|C_{\max}$ model](../exercises/pcmax-formulations.md#esercizio-14-2)
+- [Ch. 28 — Approximation algorithms: definitions](../exercises/approximation.md) (1 exercise).
 
-- [Feasible solutions of the $P\|C_{\max}$ model](../exercises/pcmax-formulations.md#esercizio-14-3)
-
-- [Valid inequalities and symmetry for $P\|C_{\max}$](../exercises/pcmax-formulations.md#esercizio-14-4)
-
-- [Integrality gap of the $P\|C_{\max}$ model](../exercises/pcmax-formulations.md#esercizio-14-5)
-
-- [Gaps for minimization problems](../exercises/heuristics.md#esercizio-23-2)
-
-- [Constructive heuristics, local search and metaheuristics](../exercises/heuristics.md#esercizio-23-5)
-
-- [List scheduling and LPT 1](../exercises/constructive-heuristics.md#esercizio-24-7)
-
-- [List scheduling and LPT 2](../exercises/constructive-heuristics.md#esercizio-24-8)
-
-- [List scheduling and LPT 3](../exercises/constructive-heuristics.md#esercizio-24-9)
-
-- [Local search $P\,||\,C_{\max}$ 1](../exercises/local-search.md#esercizio-25-10)
-
-- [Local search $P\,||\,C_{\max}$ 2](../exercises/local-search.md#esercizio-25-11)
-
-- [Local search $P\,||\,C_{\max}$ 3](../exercises/local-search.md#esercizio-25-12)
-
-- [Tabu search 1](../exercises/metaheuristics.md#esercizio-26-4)
-
-- [Tabu search 2](../exercises/metaheuristics.md#esercizio-26-5)
-
-- [Iterated local search and VNS 3](../exercises/metaheuristics.md#esercizio-26-9)
-
-- [Proximity search on $P\,||\,C_{\max}$](../exercises/mip-heuristics-classical.md#esercizio-27-5)
-
-- [A tight guarantee for a simple algorithm](../exercises/approximation.md#esercizio-28-2)
-
-- [$P\,||\,C_{\max}$ approximation 1](../exercises/pcmax-approximation.md#esercizio-31-1)
-
-- [$P\,||\,C_{\max}$ approximation 2](../exercises/pcmax-approximation.md#esercizio-31-2)
-
-- [$P\,||\,C_{\max}$ approximation 3](../exercises/pcmax-approximation.md#esercizio-31-3)
+- [Ch. 31 — Approximation for $P\|C_{\max}$](../exercises/pcmax-approximation.md) (3 exercises).
 
 ## Variants { #sez-sec-cat-pcmax-var }
 

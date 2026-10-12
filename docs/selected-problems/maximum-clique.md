@@ -16,79 +16,55 @@ title: "The maximum clique problem"
 
 !!! chiave ""
 
-    Find a largest set of pairwise adjacent vertices of a graph.
+    What the course does on the maximum clique problem (MCP): a summary.
 
-!!! nota "Where it is treated"
+## Definition { #sez-sec-cat-mcp-definition }
 
-    - [Chapter 4 «Vertex coloring»](../combinatorial-optimization-problems/coloring.md#41-a-short-review-of-graphs): Cliques, stable sets, $\omega(G)$ and $\alpha(G)$, the clique bound of the VCP
+<a id="box-1-def-cat-mcp"></a>
 
-    - [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md): Definition, complement graph, counting, a first clique by hand, four upper bounds, weighted variants, complexity
+!!! definizione "Definition 1: The maximum clique problem"
 
-    - [Chapter 12 «Formulations of the maximum clique problem»](../formulations/clique-formulations.md): The $ILP_{MCP}$ model and its LP relaxations
+    Given:
 
-## Definition { #sez-sec-cat-mcp-def }
+    1. a simple <em>graph</em> $G = (V,E)$, where
 
-- Definition and assumptions: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-mcp).
+        $$
+        V = \{1,2,\dots,n\}
+        $$
 
-- A clique is a set of pairwise adjacent vertices: groups of pairwise connected members of a social network, of pairwise compatible tasks or exams, common substructures of two molecules.
+        is the set of $n$ <em>vertices</em>, and
 
-- A feasible solution is a clique $K\subseteq V$, the candidate solutions are the $2^n$ subsets of $V$, and the optimal value is the clique number $\omega(G)$.
+        $$
+        E \subseteq \big\{\, \{u,v\} : u,v \in V,~ u \neq v \,\big\}
+        $$
 
-- A clique of $G$ is a stable set of the complement graph $\overline{G}$, and in a coloring the vertices of a clique need pairwise different colors.
+        is the set of $m$ <em>edges</em>,
 
-## Bounds and complexity { #sez-sec-cat-mcp-prop }
+    the <strong>Maximum Clique Problem</strong> (MCP) asks to find a clique $K \subseteq V$ of $G$ whose number of vertices is maximum. Its optimal value is the clique number $\omega(G)$.
 
-- <strong>Complexity</strong>: NP-hard: the decision version (is there a clique with $k$ vertices?) is among the $21$ NP-complete problems of Karp (1972); for every $\varepsilon>0$ no polynomial algorithm guarantees $\omega(G)/n^{1-\varepsilon}$ vertices unless NP problems are solvable in randomized polynomial time (Håstad, 1999).
+Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-mcp).
 
-- $\omega(G) \le \Delta + 1$ (degree bound) ([Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md#box-8-mcpP-obs-degree)).
+- NP-hard: deciding whether a clique with $k$ vertices exists is one of the $21$ NP-complete problems of Karp ([Ch. 5](../combinatorial-optimization-problems/clique/index.md)).
 
-- $\omega(G)\,(\omega(G)-1)/2 \le m$ (edge bound) ([Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md#box-9-mcpP-obs-edge)).
+- Upper bounds: degree $\Delta+1$, edges, degree count $k^{\max}$ and coloring $\chi(G)$ ([Ch. 5](../combinatorial-optimization-problems/clique/index.md#box-8-mcpP-obs-degree)).
 
-- $\omega(G) \le k^{\max}$, the largest $k$ such that at least $k$ vertices have degree at least $k-1$ (degree count bound) ([Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md#box-10-mcpP-obs-count)).
+- A first clique by hand: start from a vertex of maximum degree and add vertices adjacent to all those chosen ([Ch. 5](../combinatorial-optimization-problems/clique/index.md#box-6-mcpP-ex1)).
 
-- $\omega(G) \le \chi(G)$: the number of colors of any feasible coloring is an upper bound (coloring bound) ([Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md#box-11-mcpP-obs-coloring)).
+## Formulations { #sez-sec-cat-mcp-formulations }
 
-- $z(LP_{MCP})\ge n/2$: the LP bound can be arbitrarily weak ([Chapter 12 «Formulations of the maximum clique problem»](../formulations/clique-formulations.md)).
+- The model $\ILP_{\MCP}$ has one binary variable per vertex and one constraint $x_u+x_v\le1$ per non-edge ([Ch. 12](../formulations/clique-formulations.md)).
 
-- For a fixed $k$, the cliques with $k$ vertices are checked in $O(n^k\, k^2)$ steps, while listing all the subsets takes $O(2^n\, n^2)$.
+- $x_v=\frac12$ for all vertices is feasible, so $z(\LP_{\MCP})\ge n/2$: the LP bound can be arbitrarily weak ([Ch. 12](../formulations/clique-formulations.md)).
 
-- A maximal clique is not necessarily maximum: in the reference instance $\{4,5\}$ is maximal but not maximum.
-
-- The coloring bound is not always tight: on the cycle with $5$ vertices $\omega(G)=2$ and $\chi(G)=3$, and on the wheel $W_5$ $\omega=3<\chi=4$ ([Exercise 4.4](../exercises/coloring.md#esercizio-4-4)).
-
-## Formulation { #sez-sec-cat-mcp-formulation }
-
-- <strong>$ILP_{MCP}$ model</strong> ([Chapter 12 «Formulations of the maximum clique problem»](../formulations/clique-formulations.md)):
-
-\begin{align*}
-\max\ & \sum_{v\in V}x_v \\
-& x_u+x_v \le 1 && \forall\{u,v\}\in\overline{E} \\
-& x_v \in \{0,1\} && \forall v\in V
-\end{align*}
-
-- The $ILP_{MCP}$ model has one binary variable $x_v$ per vertex and one constraint $x_u+x_v\le1$ per non-edge $\{u,v\}\in\overline{E}$ ([Chapter 12 «Formulations of the maximum clique problem»](../formulations/clique-formulations.md)).
-
-- Setting $x_v=\frac12$ for every vertex is feasible for $LP_{MCP}$, so $z(LP_{MCP})\ge n/2$ and the ratio $z(LP_{MCP})/z(ILP_{MCP})$ is not bounded above over all graphs ([Chapter 12 «Formulations of the maximum clique problem»](../formulations/clique-formulations.md)).
-
-- For a stable set $S$ of $G$, $\sum_{v\in S}x_v\le1$ is a valid inequality, and so is $\sum_{v\in C}x_v\le(|C|-1)/2$ for a chordless odd cycle $C$ of $\overline{G}$ ([Chapter 12 «Formulations of the maximum clique problem»](../formulations/clique-formulations.md)).
-
-## Constructive heuristics { #sez-sec-cat-mcp-constructiveheuristics }
-
-- A first clique by hand: start from a vertex of maximum degree and add, one at a time, a vertex adjacent to all the vertices already chosen; on the reference instance it gives $K=\{1,2,3\}$ and $\LB=3$ ([Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/index.md#box-6-mcpP-ex1)).
+- Stable set inequalities and odd cycle inequalities strengthen the model ([Ch. 12](../formulations/clique-formulations.md)).
 
 ## Approximation { #sez-sec-cat-mcp-approximation }
 
-- The MCP is not approximable: for every $\varepsilon>0$ no polynomial algorithm guarantees a ratio within $n^{1-\varepsilon}$, unless NP problems are solvable in randomized polynomial time (Håstad), or unless $P=NP$ (Zuckerman).
+- Not approximable: for every $\varepsilon>0$ no polynomial algorithm guarantees a ratio within $n^{1-\varepsilon}$, unless $P=NP$ (Zuckerman).
 
 ## Exercises { #sez-sec-cat-mcp-es }
 
-- [Checking a coloring (VCP)](../exercises/coloring.md#esercizio-4-1)
-
-- [Neighbourhoods, cliques and stable sets (VCP)](../exercises/coloring.md#esercizio-4-2)
-
-- [The stable set bound on a complement graph (VCP)](../exercises/coloring.md#esercizio-4-3)
-
-- [When both bounds are not tight (VCP)](../exercises/coloring.md#esercizio-4-4)
+- [Ch. 4 — Vertex coloring](../exercises/coloring.md) (4 exercises).
 
 ## Variants { #sez-sec-cat-mcp-var }
 
