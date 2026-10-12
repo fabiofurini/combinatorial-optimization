@@ -6,7 +6,7 @@ title: "Vertex coloring"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 4** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Vertex coloring](../exercises/coloring.md)
+**Part 1 · Combinatorial optimization problems · Chapter 4** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Vertex coloring](../exercises/coloring.md) · [:material-gesture-tap: App: Vertex coloring: greedy and DSATUR](../lab/coloring-greedy-dsatur.md)
 
 </div>
 
@@ -323,3 +323,7 @@ title: "Vertex coloring"
 ---
 
 **Exercises on this chapter:** [:material-pencil: Vertex coloring](../exercises/coloring.md)
+
+<!-- laboratorio-interattivo: sezione generata da interattivi.py -->
+
+:material-flask-outline: **In the interactive lab:** [Vertex coloring: greedy and DSATUR](../lab/coloring-greedy-dsatur.md).

@@ -45,14 +45,14 @@ title: "The problems at a glance"
 <td>min number of colors <span class="arithmatex">\(\chi(G)\)</span></td>
 <td>strongly NP-hard</td>
 <td><span class="arithmatex">\(\omega(G) \le \chi(G) \le \Delta(G)+1\)</span></td>
-<td>no ratio <span class="arithmatex">\(<\frac43\)</span>; greedy <span class="arithmatex">\(GC\)</span> no constant ratio</td>
+<td>not approximable: no ratio <span class="arithmatex">\(<\frac43\)</span> unless <span class="arithmatex">\(P=NP\)</span>; no <span class="arithmatex">\(n^{1-\varepsilon}\)</span> (Zuckerman)</td>
 </tr>
 <tr>
 <td><a href="../../selected-problems/maximum-clique/">MCP</a></td>
 <td>max clique size <span class="arithmatex">\(\omega(G)\)</span></td>
 <td>NP-hard</td>
 <td><span class="arithmatex">\(\omega(G) \le \chi(G)\)</span>, <span class="arithmatex">\(\omega(G) \le \Delta+1\)</span></td>
-<td>no <span class="arithmatex">\(n^{1-\varepsilon}\)</span> guarantee (Håstad)</td>
+<td>not approximable: no <span class="arithmatex">\(n^{1-\varepsilon}\)</span> (Håstad, Zuckerman)</td>
 </tr>
 <tr>
 <td><a href="../../selected-problems/tsp/">TSP</a></td>

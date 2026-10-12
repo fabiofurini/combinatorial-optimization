@@ -95,15 +95,15 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
     ---
 
-    28\. Definitions · 29\. Bin packing · 30\. Knapsack · 31\. P||Cmax · 32\. Metric TSP · 33\. Coloring: limits
+    28\. Definitions · 29\. Bin packing · 30\. Knapsack · 31\. P||Cmax · 32\. Metric TSP
 
     [:octicons-arrow-right-24: The chapters](approximation-algorithms/index.md)
 
--   :material-tools: **6 · Specialized algorithms**
+-   :material-tools: **6 · Problem-specific branch-and-bound**
 
     ---
 
-    34\. Knapsack: B&B
+    33\. Knapsack: B&B
 
     [:octicons-arrow-right-24: The chapters](specialized-algorithms/index.md)
 

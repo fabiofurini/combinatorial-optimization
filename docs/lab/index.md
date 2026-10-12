@@ -8,6 +8,20 @@ hide:
 Here you can get your hands on combinatorial optimization: each app runs an algorithm step by step on the reference instances of the course,
 which you can also change. Pick an app: it opens full page. Everything runs in the browser; the numbers are computed by the algorithm, not typed by hand.
 
+## Combinatorial optimization problems
+
+<div class="grid cards" markdown>
+
+-   :material-graph-outline: **Vertex coloring: greedy and DSATUR**
+
+    ---
+
+    The graph is colored vertex by vertex with greedy and DSATUR: Petersen, crown graph or a random graph.
+
+    [Open the app →](coloring-greedy-dsatur.md)
+
+</div>
+
 ## Dynamic programming
 
 <div class="grid cards" markdown>
@@ -42,14 +56,6 @@ which you can also change. Pick an app: it opens full page. Everything runs in t
 
     [Open the app →](list-scheduling-lpt.md)
 
--   :material-graph-outline: **Vertex coloring: greedy and DSATUR**
-
-    ---
-
-    The graph is colored vertex by vertex with greedy and DSATUR: Petersen, crown graph or a random graph.
-
-    [Open the app →](coloring-greedy-dsatur.md)
-
 -   :material-map-marker-path: **TSP: nearest neighbour and 2-opt**
 
     ---
@@ -74,7 +80,7 @@ which you can also change. Pick an app: it opens full page. Everything runs in t
 
 </div>
 
-## Specialized algorithms
+## Problem-specific branch-and-bound
 
 <div class="grid cards" markdown>
 

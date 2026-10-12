@@ -76,6 +76,10 @@ title: "The maximum clique problem"
 
 - A first clique by hand: start from a vertex of maximum degree and add, one at a time, a vertex adjacent to all the vertices already chosen; on the reference instance it gives $K=\{1,2,3\}$ and $\LB=3$ ([Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-6-mcpP-ex1)).
 
+## Approximation { #sez-sec-cat-mcp-approximation }
+
+- The MCP is not approximable: for every $\varepsilon>0$ no polynomial algorithm guarantees a ratio within $n^{1-\varepsilon}$, unless NP problems are solvable in randomized polynomial time (Håstad), or unless $P=NP$ (Zuckerman).
+
 ## Instances { #sez-sec-cat-mcp-ist }
 
 ### Instance MCP1 { #sez-sec-cat-ist-mcp1 }
@@ -335,23 +339,6 @@ $$
 
 - Used in [Exercise 4.4](../exercises/coloring.md#esercizio-4-4).
 
-### Instance MCP10 { #sez-sec-cat-ist-mcp10 }
-
-A graph with $7$ vertices and $11$ edges, $z=\omega(G)$.
-
-Graph with $n=7$ vertices $V=\{1,\dots,7\}$ and $11$ edges:
-
-$$
-\begin{aligned}
-E=\big\{ & \{1,2\},\{1,3\},\{1,4\},\{2,4\},\{2,6\},\{3,7\},\{4,5\},\{4,6\},\{5,6\},\\
-& \{5,7\},\{6,7\}\big\}.
-\end{aligned}
-$$
-
-- Optimal value $z(\mathrm{MCP10})=3$, attained by $\{1,2,4\}$; no clique of size $4$.
-
-- Used in [Exercise 33.1](../exercises/coloring-approximation.md#esercizio-33-1).
-
 ## Exercises { #sez-sec-cat-mcp-es }
 
 - [Checking a coloring (VCP)](../exercises/coloring.md#esercizio-4-1)
@@ -361,8 +348,6 @@ $$
 - [The stable set bound on a complement graph (VCP)](../exercises/coloring.md#esercizio-4-3)
 
 - [When both bounds are not tight (VCP)](../exercises/coloring.md#esercizio-4-4)
-
-- [Vertex coloring approximation 1](../exercises/coloring-approximation.md#esercizio-33-1)
 
 ## Variants { #sez-sec-cat-mcp-var }
 

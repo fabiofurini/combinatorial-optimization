@@ -21,7 +21,7 @@ The course solves 7 combinatorial optimization problems in every way: their char
 - Chapter 17: [DP for the knapsack problem](../dynamic-programming/dp-knapsack/index.md)
 - Chapter 24: [Constructive heuristics](../heuristic-algorithms/constructive-heuristics/index.md)
 - Chapter 30: [Approximation algorithms for the knapsack problem](../approximation-algorithms/knapsack-approximation.md)
-- Chapter 34: [Knapsack: branch-and-bound on the critical item](../specialized-algorithms/knapsack-branch-and-bound.md)
+- Chapter 33: [Knapsack: branch-and-bound on the critical item](../specialized-algorithms/knapsack-branch-and-bound.md)
 - Definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-kp)
 - Selected problems: [everything the course does on this problem](../selected-problems/knapsack.md)
 
@@ -43,7 +43,6 @@ The course solves 7 combinatorial optimization problems in every way: their char
 - Chapter 4: [Vertex coloring](../combinatorial-optimization-problems/coloring.md)
 - Chapter 11: [Formulations of the vertex coloring problem](../formulations/coloring-formulations.md)
 - Chapter 24: [Constructive heuristics](../heuristic-algorithms/constructive-heuristics/index.md)
-- Chapter 33: [Limits of approximation: vertex coloring](../approximation-algorithms/coloring-approximation.md)
 - Definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-vcp)
 - Selected problems: [everything the course does on this problem](../selected-problems/vertex-coloring.md)
 

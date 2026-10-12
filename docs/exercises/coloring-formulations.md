@@ -10,6 +10,25 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
 </div>
 
+!!! formula "Formulations used in these exercises"
+
+    The model $\mathrm{ILP}_{\mathrm{VCP}}$ of the chapter [Formulations of the vertex coloring problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/coloring-formulations/), with the set of colors $\mathscr{C}=\{1,\dots,k\}$:
+
+    \begin{align*}
+    \min~~ & \sum_{c\in\mathscr{C}} y_c \tag{C0}\\
+    \text{subject to}~~ & \sum_{c\in\mathscr{C}} x_{vc}=1, && v\in V, \tag{C1}\\
+    & -x_{uc}-x_{vc}+y_c\ge 0, && c\in\mathscr{C},~\{u,v\}\in E, \tag{C2}\\
+    & x_{vc},~y_c\in\{0,1\}, && v\in V,~c\in\mathscr{C}. \tag{C3}
+    \end{align*}
+
+    The relaxation $\mathrm{LP}\text{-}0_{\mathrm{VCP}}$ replaces (C3) with $x_{vc}\ge 0$, $y_c\ge 0$; the relaxation $\mathrm{LP}_{\mathrm{VCP}}$ also keeps $y_c\le 1$. For every graph with at least one edge and every valid $k$, an optimal solution of both relaxations is
+
+    \begin{equation*}
+    \tilde x_{v1}=\tilde x_{v2}=\frac{1}{2}~~(v\in V),\qquad \tilde y_1=\tilde y_2=1, \tag{C4}
+    \end{equation*}
+
+    with all the other variables equal to $0$, and $z(\mathrm{LP}\text{-}0_{\mathrm{VCP}})=z(\mathrm{LP}_{\mathrm{VCP}})=2$. An optimal dual solution chooses one edge $\{u,v\}\in E$ and sets $\tilde\mu_u=\tilde\mu_v=1$, $\tilde\pi_{c\{u,v\}}=1$ for every color $c$, and all the other dual variables equal to $0$.
+
 <a id="esercizio-11-1"></a>
 
 !!! esercizio "Exercise 11.1: ILP model of the Vertex Coloring Problem (1)"
@@ -92,7 +111,7 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
     1. Solve $\mathrm{LP}\text{-}0_{\mathrm{VCP}}$, $\mathrm{LP}_{\mathrm{VCP}}$ and $\mathrm{ILP}_{\mathrm{VCP}}$ with Gurobi.
 
-    2. Write the primal solution of the chapter for this graph and verify that it is feasible for $\mathrm{LP}_{\mathrm{VCP}}$.
+    2. Write the primal solution (C4) for this graph and verify that it is feasible for $\mathrm{LP}_{\mathrm{VCP}}$.
 
     3. Write the dual solution of the chapter built on the edge $\{1,2\}$ and verify that it is feasible for $D(\mathrm{LP}\text{-}0_{\mathrm{VCP}})$, with the same objective value.
 
@@ -100,15 +119,7 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
 ??? soluzione "Solution"
 
-    !!! nota ""
-
-        For every graph with at least one edge and every valid $k$, an optimal solution of both LP relaxations is
-
-        $$
-        \tilde x_{v1}=\tilde x_{v2}=\frac{1}{2}~~(v\in V),\qquad \tilde y_1=\tilde y_2=1,
-        $$
-
-        with all the other variables equal to $0$, and $z(\mathrm{LP}\text{-}0_{\mathrm{VCP}})=z(\mathrm{LP}_{\mathrm{VCP}})=2$. An optimal dual solution chooses one edge $\{u,v\}\in E$ and sets $\tilde\mu_u=\tilde\mu_v=1$, $\tilde\pi_{c\{u,v\}}=1$ for every color $c$, and all the other dual variables equal to $0$.
+    We use the primal solution (C4) and the dual solution built on one edge, given in the box at the beginning of the chapter.
 
     1. Gurobi gives $z(\mathrm{LP}\text{-}0_{\mathrm{VCP}})=z(\mathrm{LP}_{\mathrm{VCP}})=2$ and $z(\mathrm{ILP}_{\mathrm{VCP}})=4$: all the vertices are pairwise adjacent, so they need $4$ different colors.
 
@@ -225,15 +236,7 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
 ??? soluzione "Solution"
 
-    !!! nota ""
-
-        For every graph with at least one edge and every valid $k$, an optimal solution of both LP relaxations is
-
-        $$
-        \tilde x_{v1}=\tilde x_{v2}=\frac{1}{2}~~(v\in V),\qquad \tilde y_1=\tilde y_2=1,
-        $$
-
-        with all the other variables equal to $0$, and $z(\mathrm{LP}\text{-}0_{\mathrm{VCP}})=z(\mathrm{LP}_{\mathrm{VCP}})=2$. An optimal dual solution chooses one edge $\{u,v\}\in E$ and sets $\tilde\mu_u=\tilde\mu_v=1$, $\tilde\pi_{c\{u,v\}}=1$ for every color $c$, and all the other dual variables equal to $0$.
+    We use the primal solution (C4) and the dual solution built on one edge, given in the box at the beginning of the chapter.
 
     1. The edges incident to vertex $1$ are $\{1,2\}$, $\{1,3\}$ and $\{1,4\}$. The constraint of $x_{1c}$ and the constraint of $y_c$ are
 
@@ -286,15 +289,7 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
 ??? soluzione "Solution"
 
-    !!! nota ""
-
-        For every graph with at least one edge and every valid $k$, an optimal solution of both LP relaxations is
-
-        $$
-        \tilde x_{v1}=\tilde x_{v2}=\frac{1}{2}~~(v\in V),\qquad \tilde y_1=\tilde y_2=1,
-        $$
-
-        with all the other variables equal to $0$, and $z(\mathrm{LP}\text{-}0_{\mathrm{VCP}})=z(\mathrm{LP}_{\mathrm{VCP}})=2$. An optimal dual solution chooses one edge $\{u,v\}\in E$ and sets $\tilde\mu_u=\tilde\mu_v=1$, $\tilde\pi_{c\{u,v\}}=1$ for every color $c$, and all the other dual variables equal to $0$.
+    We use the primal solution (C4) and the dual solution built on one edge, given in the box at the beginning of the chapter.
 
     1. Gurobi gives $z(\mathrm{LP}_{\mathrm{VCP}})=2$ and $z(\mathrm{ILP}_{\mathrm{VCP}})=4$. The cycle $1,\dots,5$ needs $3$ colors, and vertex $6$, adjacent to all its vertices, needs a fourth one.
 

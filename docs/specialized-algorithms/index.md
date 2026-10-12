@@ -1,4 +1,4 @@
-# Specialized algorithms
+# Problem-specific branch-and-bound
 
 *Part 6 of the course, volume 6 of the lecture notes.*
 
@@ -6,7 +6,7 @@
 
 <div class="grid cards" markdown>
 
--   **34. Knapsack: branch-and-bound on the critical item**
+-   **33. Knapsack: branch-and-bound on the critical item**
 
     ---
 

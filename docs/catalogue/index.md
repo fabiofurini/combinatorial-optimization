@@ -36,7 +36,6 @@ All the problems defined in the course, grouped by family: for each one its defi
 
 ## [Graphs](graphs.md)
 
-- [3-colorability (3-COL)](graphs.md#sez-sec-cat-def-3col)
 - [Maximum stable set problem (MSSP)](graphs.md#sez-sec-cat-def-mssp)
 - [Vertex-weighted maximum clique problem (VWMCP)](graphs.md#sez-sec-cat-def-vwmcp)
 - [Edge-weighted maximum clique problem (EWMCP)](graphs.md#sez-sec-cat-def-ewmcp)
@@ -61,11 +60,3 @@ All the problems defined in the course, grouped by family: for each one its defi
 - [Lot sizing with initial stock (LS-SI)](lot-sizing.md#sez-sec-cat-def-lssi)
 - [Lot sizing with overtime (LS-OT)](lot-sizing.md#sez-sec-cat-def-lsot)
 - [Lot sizing with unsatisfied demand (LS-UD)](lot-sizing.md#sez-sec-cat-def-lsud)
-
-## [DP examples](dp-examples.md)
-
-- [Minimum-cost staircase (STAIR)](dp-examples.md#sez-sec-cat-def-stair)
-- [Billboards with no two consecutive positions (NOCONS)](dp-examples.md#sez-sec-cat-def-nocons)
-- [Maximum-profit path on a grid (GRID)](dp-examples.md#sez-sec-cat-def-grid)
-- [Shortest path in a layered network (SPP)](dp-examples.md#sez-sec-cat-def-spp)
-- [Compatible requests (REQ)](dp-examples.md#sez-sec-cat-def-req)

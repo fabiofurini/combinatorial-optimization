@@ -12,21 +12,11 @@ title: "Graphs"
 
 <a id="sec:cat-pagina-graphs"></a>
 
-## 3-colorability (3-COL) { #sez-sec-cat-def-3col }
-
-<a id="box-1-def-catdef-3col"></a>
-
-!!! definizione "Definition 1: 3-colorability"
-
-    Given a graph $G=(V,E)$, decide whether $\chi(G)\le 3$.
-
-- Defined in [Chapter 33 «Limits of approximation: vertex coloring»](../approximation-algorithms/coloring-approximation.md#box-4-prop-VCP43).
-
 ## Maximum stable set problem (MSSP) { #sez-sec-cat-def-mssp }
 
-<a id="box-2-def-catdef-mssp"></a>
+<a id="box-1-def-catdef-mssp"></a>
 
-!!! definizione "Definition 2: Maximum stable set problem"
+!!! definizione "Definition 1: Maximum stable set problem"
 
     Let $G=(V,E)$ be a graph.
 
@@ -48,9 +38,9 @@ title: "Graphs"
 
 ## Vertex-weighted maximum clique problem (VWMCP) { #sez-sec-cat-def-vwmcp }
 
-<a id="box-3-def-catdef-vwmcp"></a>
+<a id="box-2-def-catdef-vwmcp"></a>
 
-!!! definizione "Definition 3: Vertex-weighted maximum clique problem"
+!!! definizione "Definition 2: Vertex-weighted maximum clique problem"
 
     1. Given a graph $G$ and a vertex-weight vector $\vet{w}$, the <strong>vertex-weighted maximum clique problem</strong> asks to find a clique $K$ of $G$ with maximum total vertex weight $w(K)$.
 
@@ -60,9 +50,9 @@ title: "Graphs"
 
 ## Edge-weighted maximum clique problem (EWMCP) { #sez-sec-cat-def-ewmcp }
 
-<a id="box-4-def-catdef-ewmcp"></a>
+<a id="box-3-def-catdef-ewmcp"></a>
 
-!!! definizione "Definition 4: Edge-weighted maximum clique problem"
+!!! definizione "Definition 3: Edge-weighted maximum clique problem"
 
     1. Given a graph $G$ and a vertex-weight vector $\vet{w}$, the <strong>vertex-weighted maximum clique problem</strong> asks to find a clique $K$ of $G$ with maximum total vertex weight $w(K)$.
 

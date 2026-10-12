@@ -63,6 +63,10 @@ plugins:
         # 2026-10-12: one problem per chapter in the dynamic programming part
         dynamic-programming/dp-rod-cutting-coin-change.md: dynamic-programming/dp-rod-cutting/index.md
         exercises/dp-rod-cutting-coin-change.md: exercises/dp-rod-cutting.md
+        # 2026-10-12: chapter «Limits of approximation: vertex coloring» removed, «DP examples» removed from the catalogue
+        approximation-algorithms/coloring-approximation.md: approximation-algorithms/index.md
+        exercises/coloring-approximation.md: approximation-algorithms/index.md
+        catalogue/dp-examples.md: catalogue/index.md
 
 extra:
   social:
@@ -240,10 +244,9 @@ nav:
       - "30. Knapsack": approximation-algorithms/knapsack-approximation.md
       - "31. P||Cmax": approximation-algorithms/pcmax-approximation.md
       - "32. Metric TSP": approximation-algorithms/tsp-approximation.md
-      - "33. Coloring: limits": approximation-algorithms/coloring-approximation.md
-  - Specialized:
+  - Branch-and-bound:
       - specialized-algorithms/index.md
-      - "34. Knapsack: B&B": specialized-algorithms/knapsack-branch-and-bound.md
+      - "33. Knapsack: B&B": specialized-algorithms/knapsack-branch-and-bound.md
   - Catalogue:
       - catalogue/index.md
       - "Central problems": catalogue/central-problems.md
@@ -253,7 +256,6 @@ nav:
       - "Routing": catalogue/routing.md
       - "Scheduling": catalogue/scheduling.md
       - "Lot sizing": catalogue/lot-sizing.md
-      - "DP examples": catalogue/dp-examples.md
   - Selected problems:
       - selected-problems/index.md
       - "Comparison": selected-problems/at-a-glance.md
@@ -298,8 +300,7 @@ nav:
       - "30. Knapsack": exercises/knapsack-approximation.md
       - "31. P||Cmax": exercises/pcmax-approximation.md
       - "32. Metric TSP": exercises/tsp-approximation.md
-      - "33. Coloring: limits": exercises/coloring-approximation.md
-      - "34. Knapsack: B&B": exercises/knapsack-branch-and-bound.md
+      - "33. Knapsack: B&B": exercises/knapsack-branch-and-bound.md
   - Lab: lab/index.md
   - Downloads: downloads.md
   - Index: full-index.md

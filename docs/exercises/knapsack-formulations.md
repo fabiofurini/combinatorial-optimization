@@ -10,6 +10,28 @@ title: "Exercises · Formulations of the knapsack problem"
 
 </div>
 
+!!! formula "Upper bounds used in these exercises"
+
+    The bounds of the chapter [Formulations of the knapsack problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/), for a KP instance with the items sorted by non-increasing efficiency. The <strong>split item</strong> $s\in\mathscr{N}$ and the <strong>residual capacity</strong> $\bar c$ are
+
+    \begin{equation*}
+    \sum_{i=1}^{s-1} w_i \leq c ~~~\text{and}~~~ \sum_{i=1}^{s} w_i > c, \qquad \bar{c} = c - \sum_{i=1}^{s-1} w_i . \tag{K1}
+    \end{equation*}
+
+    The <strong>Dantzig upper bound</strong> for $z(\mathrm{ILP_{KP}})$ is
+
+    \begin{equation*}
+    UB_D = \sum_{j=1}^{s-1} p_{j} + \left\lfloor p_s ~ \frac{\bar{c}}{w_s} \right\rfloor . \tag{K2}
+    \end{equation*}
+
+    The <strong>Martello-Toth upper bound</strong> for $z(\mathrm{ILP_{KP}})$ is $UB_{MT} = \max\{UB_0,\, UB_1\}$, where
+
+    \begin{equation*}
+    UB_0 = \sum_{j=1}^{s-1} p_j + \left\lfloor \bar{c} ~ \frac{p_{s+1}}{w_{s+1}} \right\rfloor
+    \quad \text{and} \quad
+    UB_1 = \sum_{j=1}^{s-1} p_j + \left\lfloor p_{s} - (w_{s} - \bar{c}) ~ \frac{p_{s-1}}{w_{s-1}} \right\rfloor . \tag{K3}
+    \end{equation*}
+
 <a id="esercizio-9-1"></a>
 
 !!! esercizio "Exercise 9.1: Upper bounds for the Knapsack Problem (1)"
@@ -31,45 +53,9 @@ title: "Exercises · Formulations of the knapsack problem"
 
     2. Compute the Dantzig and the Martello-Toth upper bound and determine which one is stronger for this KP instance.
 
-    !!! nota ""
-
-        Given a KP instance with items are sorted by non-increasing efficiency,  the <strong>Dantzig upper bound</strong> for $z(~{\rm ILP_{KP}}~)$ is:
-
-        \begin{equation*}
-        UB_D =  \sum_{j = 1}^{s-1} p_{j}  +  \left\lfloor p_s ~   \frac{\bar{c}}{w_s} \right\rfloor
-        \end{equation*}
-
-        where the <strong>split item</strong> is the item
-
-        \begin{equation*}
-        {s} \in \mathscr{N}
-        ~~~~\text{such that }~~~~
-        \sum_{i=1}^{s-1} w_i \leq c
-        ~~~~\text{and }~~~~
-        \sum_{i=1}^{s} w_i > c
-        \end{equation*}
-
-        and the <strong>residual capacity</strong>  is
-
-        \begin{equation*}
-        \bar{c} = c - \sum_{i=1}^{s-1} w_i
-        \end{equation*}
-
-        The <strong>Martello-Toth upper bound</strong> for $z(~{\rm ILP_{KP}}~)$ is:
-
-        \begin{equation*}
-        UB_{MT} = \max \bigg\{~~UB_0,~~ UB_1 ~~\bigg\}
-        \end{equation*}
-
-        where
-
-        $$
-        UB_0 = \sum_{j=1}^{s - 1} p_j + \left\lfloor \bar{c} ~  \frac{p_{s+1}}{w_{s+1}} \right\rfloor
-        \quad \text{and} \quad
-        UB_1= \sum_{j=1}^{s - 1} p_j + \left\lfloor p_{s} - (w_{s} - \bar{c}) ~  \frac{p_{s-1}}{w_{s-1}} \right\rfloor
-        $$
-
 ??? soluzione "Solution"
+
+    We use the split item and the residual capacity (K1), the Dantzig bound (K2) and the Martello-Toth bound (K3) of the box at the beginning of the chapter.
 
     1. The items are sorted by non-increasing efficiency since we have:
 
@@ -130,45 +116,9 @@ title: "Exercises · Formulations of the knapsack problem"
 
     2. Compute the Dantzig and the Martello-Toth upper bound and determine which one is stronger for this KP instance.
 
-    !!! nota ""
-
-        Given a KP instance with items are sorted by non-increasing efficiency,  the <strong>Dantzig upper bound</strong> for $z(~{\rm ILP_{KP}}~)$ is:
-
-        \begin{equation*}
-        UB_D =  \sum_{j = 1}^{s-1} p_{j}  +  \left\lfloor p_s ~   \frac{\bar{c}}{w_s} \right\rfloor
-        \end{equation*}
-
-        where the <strong>split item</strong> is the item
-
-        \begin{equation*}
-        {s} \in \mathscr{N}
-        ~~~~\text{such that }~~~~
-        \sum_{i=1}^{s-1} w_i \leq c
-        ~~~~\text{and }~~~~
-        \sum_{i=1}^{s} w_i > c
-        \end{equation*}
-
-        and the <strong>residual capacity</strong>  is
-
-        \begin{equation*}
-        \bar{c} = c - \sum_{i=1}^{s-1} w_i
-        \end{equation*}
-
-        The <strong>Martello-Toth upper bound</strong> for $z(~{\rm ILP_{KP}}~)$ is:
-
-        \begin{equation*}
-        UB_{MT} = \max \bigg\{~~UB_0,~~ UB_1 ~~\bigg\}
-        \end{equation*}
-
-        where
-
-        $$
-        UB_0 = \sum_{j=1}^{s - 1} p_j + \left\lfloor \bar{c} ~  \frac{p_{s+1}}{w_{s+1}} \right\rfloor
-        \quad \text{and} \quad
-        UB_1= \sum_{j=1}^{s - 1} p_j + \left\lfloor p_{s} - (w_{s} - \bar{c}) ~  \frac{p_{s-1}}{w_{s-1}} \right\rfloor
-        $$
-
 ??? soluzione "Solution"
+
+    We use the split item and the residual capacity (K1), the Dantzig bound (K2) and the Martello-Toth bound (K3) of the box at the beginning of the chapter.
 
     1. The items are sorted by non-increasing efficiency since we have:
 
@@ -229,45 +179,9 @@ title: "Exercises · Formulations of the knapsack problem"
 
     2. Compute the Dantzig and the Martello-Toth upper bound and determine which one is stronger for this KP instance.
 
-    !!! nota ""
-
-        Given a KP instance with items are sorted by non-increasing efficiency,  the <strong>Dantzig upper bound</strong> for $z(~{\rm ILP_{KP}}~)$ is:
-
-        \begin{equation*}
-        UB_D =  \sum_{j = 1}^{s-1} p_{j}  +  \left\lfloor p_s ~   \frac{\bar{c}}{w_s} \right\rfloor
-        \end{equation*}
-
-        where the <strong>split item</strong> is the item
-
-        \begin{equation*}
-        {s} \in \mathscr{N}
-        ~~~~\text{such that }~~~~
-        \sum_{i=1}^{s-1} w_i \leq c
-        ~~~~\text{and }~~~~
-        \sum_{i=1}^{s} w_i > c
-        \end{equation*}
-
-        and the <strong>residual capacity</strong>  is
-
-        \begin{equation*}
-        \bar{c} = c - \sum_{i=1}^{s-1} w_i
-        \end{equation*}
-
-        The <strong>Martello-Toth upper bound</strong> for $z(~{\rm ILP_{KP}}~)$ is:
-
-        \begin{equation*}
-        UB_{MT} = \max \bigg\{~~UB_0,~~ UB_1 ~~\bigg\}
-        \end{equation*}
-
-        where
-
-        $$
-        UB_0 = \sum_{j=1}^{s - 1} p_j + \left\lfloor \bar{c} ~  \frac{p_{s+1}}{w_{s+1}} \right\rfloor
-        \quad \text{and} \quad
-        UB_1= \sum_{j=1}^{s - 1} p_j + \left\lfloor p_{s} - (w_{s} - \bar{c}) ~  \frac{p_{s-1}}{w_{s-1}} \right\rfloor
-        $$
-
 ??? soluzione "Solution"
+
+    We use the split item and the residual capacity (K1), the Dantzig bound (K2) and the Martello-Toth bound (K3) of the box at the beginning of the chapter.
 
     1. The items are sorted by non-increasing efficiency since we have:
 
@@ -328,45 +242,9 @@ title: "Exercises · Formulations of the knapsack problem"
 
     2. Compute the Dantzig and the Martello-Toth upper bound and determine which one is stronger for this KP instance.
 
-    !!! nota ""
-
-        Given a KP instance with items are sorted by non-increasing efficiency,  the <strong>Dantzig upper bound</strong> for $z(~{\rm ILP_{KP}}~)$ is:
-
-        \begin{equation*}
-        UB_D =  \sum_{j = 1}^{s-1} p_{j}  +  \left\lfloor p_s ~   \frac{\bar{c}}{w_s} \right\rfloor
-        \end{equation*}
-
-        where the <strong>split item</strong> is the item
-
-        \begin{equation*}
-        {s} \in \mathscr{N}
-        ~~~~\text{such that }~~~~
-        \sum_{i=1}^{s-1} w_i \leq c
-        ~~~~\text{and }~~~~
-        \sum_{i=1}^{s} w_i > c
-        \end{equation*}
-
-        and the <strong>residual capacity</strong>  is
-
-        \begin{equation*}
-        \bar{c} = c - \sum_{i=1}^{s-1} w_i
-        \end{equation*}
-
-        The <strong>Martello-Toth upper bound</strong> for $z(~{\rm ILP_{KP}}~)$ is:
-
-        \begin{equation*}
-        UB_{MT} = \max \bigg\{~~UB_0,~~ UB_1 ~~\bigg\}
-        \end{equation*}
-
-        where
-
-        $$
-        UB_0 = \sum_{j=1}^{s - 1} p_j + \left\lfloor \bar{c} ~  \frac{p_{s+1}}{w_{s+1}} \right\rfloor
-        \quad \text{and} \quad
-        UB_1= \sum_{j=1}^{s - 1} p_j + \left\lfloor p_{s} - (w_{s} - \bar{c}) ~  \frac{p_{s-1}}{w_{s-1}} \right\rfloor
-        $$
-
 ??? soluzione "Solution"
+
+    We use the split item and the residual capacity (K1), the Dantzig bound (K2) and the Martello-Toth bound (K3) of the box at the beginning of the chapter.
 
     1. The items are sorted by non-increasing efficiency since we have:
 
@@ -427,45 +305,9 @@ title: "Exercises · Formulations of the knapsack problem"
 
     2. Compute the Dantzig and the Martello-Toth upper bound and determine which one is stronger for this KP instance.
 
-    !!! nota ""
-
-        Given a KP instance with items are sorted by non-increasing efficiency,  the <strong>Dantzig upper bound</strong> for $z(~{\rm ILP_{KP}}~)$ is:
-
-        \begin{equation*}
-        UB_D =  \sum_{j = 1}^{s-1} p_{j}  +  \left\lfloor p_s ~   \frac{\bar{c}}{w_s} \right\rfloor
-        \end{equation*}
-
-        where the <strong>split item</strong> is the item
-
-        \begin{equation*}
-        {s} \in \mathscr{N}
-        ~~~~\text{such that }~~~~
-        \sum_{i=1}^{s-1} w_i \leq c
-        ~~~~\text{and }~~~~
-        \sum_{i=1}^{s} w_i > c
-        \end{equation*}
-
-        and the <strong>residual capacity</strong>  is
-
-        \begin{equation*}
-        \bar{c} = c - \sum_{i=1}^{s-1} w_i
-        \end{equation*}
-
-        The <strong>Martello-Toth upper bound</strong> for $z(~{\rm ILP_{KP}}~)$ is:
-
-        \begin{equation*}
-        UB_{MT} = \max \bigg\{~~UB_0,~~ UB_1 ~~\bigg\}
-        \end{equation*}
-
-        where
-
-        $$
-        UB_0 = \sum_{j=1}^{s - 1} p_j + \left\lfloor \bar{c} ~  \frac{p_{s+1}}{w_{s+1}} \right\rfloor
-        \quad \text{and} \quad
-        UB_1= \sum_{j=1}^{s - 1} p_j + \left\lfloor p_{s} - (w_{s} - \bar{c}) ~  \frac{p_{s-1}}{w_{s-1}} \right\rfloor
-        $$
-
 ??? soluzione "Solution"
+
+    We use the split item and the residual capacity (K1), the Dantzig bound (K2) and the Martello-Toth bound (K3) of the box at the beginning of the chapter.
 
     1. The items are sorted by non-increasing efficiency since we have:
 

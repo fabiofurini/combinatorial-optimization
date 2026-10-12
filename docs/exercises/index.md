@@ -48,8 +48,7 @@ Exercises with **worked solutions**, chapter by chapter. Try each exercise on yo
 - [30. Approximation algorithms for the knapsack problem](knapsack-approximation.md) · 15 exercises
 - [31. Approximation for P|Cmax](pcmax-approximation.md) · 3 exercises
 - [32. Approximation for the metric TSP](tsp-approximation.md) · 3 exercises
-- [33. Limits of approximation: vertex coloring](coloring-approximation.md) · 3 exercises
 
-## Specialized algorithms
+## Problem-specific branch-and-bound
 
-- [34. Knapsack: branch-and-bound on the critical item](knapsack-branch-and-bound.md) · 4 exercises
+- [33. Knapsack: branch-and-bound on the critical item](knapsack-branch-and-bound.md) · 4 exercises

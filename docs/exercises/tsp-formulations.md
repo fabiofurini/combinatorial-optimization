@@ -10,6 +10,30 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
 </div>
 
+!!! formula "Formulations used in these exercises"
+
+    The two models of the chapter [Formulations of the travelling salesman problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/tsp-formulations/), on the arcs $A=\{(i,j): i,j\in\mathscr{V},~i\neq j\}$. Both have the objective and the degree constraints
+
+    \begin{align*}
+    \min~~ & \sum_{(i,j)\in A} d_{ij}\,x_{ij} \tag{T0}\\
+    \text{subject to}~~ & \sum_{j\neq i} x_{ij}=1,~~ i\in\mathscr{V}, \qquad \sum_{i\neq j} x_{ij}=1,~~ j\in\mathscr{V}, \tag{T1}\\
+    & x_{ij}\in\{0,1\},~~ (i,j)\in A. \tag{T2}
+    \end{align*}
+
+    The model $\mathrm{ILP}^{\mathrm{MTZ}}_{\mathrm{TSP}}$ adds the positions $1\le u_i\le n-1$ ($i\in\mathscr{V}\setminus\{1\}$) and the constraints
+
+    \begin{equation*}
+    u_i-u_j+(n-1)\,x_{ij}\le n-2, \qquad i,j\in\mathscr{V}\setminus\{1\},~i\neq j. \tag{MTZ}
+    \end{equation*}
+
+    The model $\mathrm{ILP}^{\mathrm{DFJ}}_{\mathrm{TSP}}$ adds instead the subtour elimination constraints
+
+    \begin{equation*}
+    \sum_{i\in S}\sum_{j\in S,\,j\neq i} x_{ij}\le |S|-1, \qquad S\subseteq\mathscr{V}\setminus\{1\},~|S|\ge 2. \tag{SEC}
+    \end{equation*}
+
+    The relaxations $\mathrm{LP}^{\mathrm{MTZ}}_{\mathrm{TSP}}$ and $\mathrm{LP}^{\mathrm{DFJ}}_{\mathrm{TSP}}$ replace (T2) with $0\le x_{ij}\le 1$.
+
 <a id="esercizio-13-1"></a>
 
 !!! esercizio "Exercise 13.1: The MTZ model of the TSP (1)"

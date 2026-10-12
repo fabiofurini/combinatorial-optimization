@@ -10,6 +10,24 @@ title: "Exercises · Formulations of the maximum clique problem"
 
 </div>
 
+!!! formula "Formulations used in these exercises"
+
+    The two models of the chapter [Formulations of the maximum clique problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/clique-formulations/), where $\overline{E}$ is the set of non-edges of $G$ and $\mathcal{Q}$ the set of the maximal stable sets of $G$ (the maximal cliques of the complement graph). The edge formulation $\mathrm{ILP}_{\mathrm{MCP}}$:
+
+    \begin{align*}
+    \max~~ & \sum_{v\in V} x_v \tag{M0}\\
+    \text{subject to}~~ & x_u+x_v\le 1, && \{u,v\}\in\overline{E}, \tag{M1}\\
+    & x_v\in\{0,1\}, && v\in V. \tag{M2}
+    \end{align*}
+
+    The clique formulation $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}$ has the objective (M0), the domains (M2) and, instead of (M1),
+
+    \begin{align*}
+    & \sum_{v\in Q} x_v\le 1, && Q\in\mathcal{Q}. \tag{M3}
+    \end{align*}
+
+    The relaxations $\mathrm{LP}_{\mathrm{MCP}}$ and $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ replace (M2) with $0\le x_v\le 1$ (with $x_v\ge 0$ alone in the clique formulation, since (M3) gives $x_v\le 1$).
+
 <a id="esercizio-12-1"></a>
 
 !!! esercizio "Exercise 12.1: ILP model of the Maximum Clique Problem (MCP)"

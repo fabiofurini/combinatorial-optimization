@@ -10,6 +10,34 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
 </div>
 
+!!! formula "Formulations used in these exercises"
+
+    The two formulations of the chapter [Formulations of capacitated lot sizing](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/), on the periods $T=\{1,\dots,m\}$, with $D_{t,k}=\sum_{s=t}^{k}d_s$. The big-M formulation:
+
+    \begin{align*}
+    \min~~ & \sum_{t\in T}\left(sc_t\,y_t+vc_t\,x_t+hc_t\,s_t\right) \tag{L0}\\
+    \text{subject to}~~ & s_{t-1}+x_t=d_t+s_t, && t\in T, \tag{L1}\\
+    & x_t\le M_t\,y_t, \quad x_t\le cap_t, && t\in T, \tag{L2}\\
+    & s_0=s_m=0,~~ x_t,s_t\in\Z_{\ge 0},~~ y_t\in\{0,1\}, && t\in T. \tag{L3}
+    \end{align*}
+
+    Big-M values in (L2): $M^{\mathrm{dem}}_t=D_{t,m}$, $M^{\mathrm{cap}}_t=cap_t$, and the strong value $M_t=\min\{cap_t,D_{t,m}\}$. The shortest-path formulation, where $zv_{tk}=1$ when the production of period $t$ covers the demands of the periods $t,\dots,k$:
+
+    \begin{align*}
+    \min~~ & \sum_{t\in T} sc_t\,y_t+\sum_{t\in T}\sum_{k=t}^{m} cv_{tk}\,zv_{tk} \tag{S0}\\
+    \text{subject to}~~ & \sum_{k=1}^{m} zv_{1k}=1, \qquad \sum_{u=1}^{t-1} zv_{u,t-1}=\sum_{k=t}^{m} zv_{tk}, && t\in T\setminus\{1\}, \tag{S1}\\
+    & \sum_{k=t}^{m} zv_{tk}\le y_t, \qquad \sum_{k=t}^{m} D_{t,k}\,zv_{tk}\le cap_t, && t\in T, \tag{S2}\\
+    & zv_{tk}\ge 0,~~ y_t\in\{0,1\}, && t,k\in T,~k\ge t, \tag{S3}
+    \end{align*}
+
+    with the costs
+
+    \begin{equation*}
+    cv_{tk}=vc_t\,D_{t,k}+\sum_{s=t+1}^{k}\sum_{u=t}^{s-1}hc_u\,d_s . \tag{S4}
+    \end{equation*}
+
+    The LP relaxations replace the domains with $x_t,s_t\ge 0$ and $0\le y_t\le 1$.
+
 <a id="esercizio-15-1"></a>
 
 !!! esercizio "Exercise 15.1: The big-M formulation of lot sizing (1)"
@@ -73,13 +101,7 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
 ??? soluzione "Solution"
 
-    !!! nota ""
-
-        Big-M values for the link $x_t\le M_t\,y_t$: $M^{\mathrm{dem}}_t=D_{t,m}=\sum_{k=t}^{m}d_k$, $M^{\mathrm{cap}}_t=cap_t$, and the strong value $M_t=\min\{cap_t,D_{t,m}\}$. Costs of the shortest-path formulation:
-
-        $$
-        cv_{tk}=vc_t\,D_{t,k}+\sum_{s=t+1}^{k}\sum_{u=t}^{s-1}hc_u\,d_s .
-        $$
+    We use the big-M values and the costs (S4) of the box at the beginning of the chapter.
 
     1. The demands of the periods $t,\dots,m$ give $D_{t,m}$, and the strong value is the smaller of the two:
 
@@ -195,13 +217,7 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
 ??? soluzione "Solution"
 
-    !!! nota ""
-
-        Big-M values for the link $x_t\le M_t\,y_t$: $M^{\mathrm{dem}}_t=D_{t,m}=\sum_{k=t}^{m}d_k$, $M^{\mathrm{cap}}_t=cap_t$, and the strong value $M_t=\min\{cap_t,D_{t,m}\}$. Costs of the shortest-path formulation:
-
-        $$
-        cv_{tk}=vc_t\,D_{t,k}+\sum_{s=t+1}^{k}\sum_{u=t}^{s-1}hc_u\,d_s .
-        $$
+    We use the big-M values and the costs (S4) of the box at the beginning of the chapter.
 
     1. Without the setups the best plan produces in every period its demand, $\vet x=(1,4,1,3)$: there is no inventory and the production cost is zero, so the bound is $0$.
 
@@ -426,13 +442,7 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
 ??? soluzione "Solution"
 
-    !!! nota ""
-
-        Big-M values for the link $x_t\le M_t\,y_t$: $M^{\mathrm{dem}}_t=D_{t,m}=\sum_{k=t}^{m}d_k$, $M^{\mathrm{cap}}_t=cap_t$, and the strong value $M_t=\min\{cap_t,D_{t,m}\}$. Costs of the shortest-path formulation:
-
-        $$
-        cv_{tk}=vc_t\,D_{t,k}+\sum_{s=t+1}^{k}\sum_{u=t}^{s-1}hc_u\,d_s .
-        $$
+    We use the big-M values and the costs (S4) of the box at the beginning of the chapter.
 
     1. The production cost is zero, so $cv_{tk}$ is only holding cost:
 
@@ -547,13 +557,7 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
 ??? soluzione "Solution"
 
-    !!! nota ""
-
-        Big-M values for the link $x_t\le M_t\,y_t$: $M^{\mathrm{dem}}_t=D_{t,m}=\sum_{k=t}^{m}d_k$, $M^{\mathrm{cap}}_t=cap_t$, and the strong value $M_t=\min\{cap_t,D_{t,m}\}$. Costs of the shortest-path formulation:
-
-        $$
-        cv_{tk}=vc_t\,D_{t,k}+\sum_{s=t+1}^{k}\sum_{u=t}^{s-1}hc_u\,d_s .
-        $$
+    We use the big-M values and the costs (S4) of the box at the beginning of the chapter.
 
     1. &#8203;
 

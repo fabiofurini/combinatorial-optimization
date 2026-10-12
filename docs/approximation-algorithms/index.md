@@ -46,12 +46,4 @@
 
     [:octicons-arrow-right-24: Read the chapter](tsp-approximation.md) · [Exercises](../exercises/tsp-approximation.md)
 
--   **33. Limits of approximation: vertex coloring**
-
-    ---
-
-    The problem and the assumptions · The greedy coloring and DSATUR · No ratio below four thirds · What the greedy coloring guarantees
-
-    [:octicons-arrow-right-24: Read the chapter](coloring-approximation.md) · [Exercises](../exercises/coloring-approximation.md)
-
 </div>

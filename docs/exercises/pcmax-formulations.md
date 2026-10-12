@@ -10,6 +10,31 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
 </div>
 
+!!! formula "Formulations used in these exercises"
+
+    The model $\mathrm{ILP}_{P\|C_{\max}}$ of the chapter [Formulations of parallel machine scheduling](https://fabiofurini.github.io/combinatorial-optimization/formulations/pcmax-formulations/), with the set of machines $\mathscr{H}=\{1,\dots,m\}$:
+
+    \begin{align*}
+    \min~~ & C_{\max} \tag{P0}\\
+    \text{subject to}~~ & \sum_{h\in\mathscr{H}} x_{jh}=1, && j\in\mathscr{J}, \tag{P1}\\
+    & -\sum_{j\in\mathscr{J}} t_j\,x_{jh}+C_{\max}\ge 0, && h\in\mathscr{H}, \tag{P2}\\
+    & x_{jh}\in\{0,1\},~~ C_{\max}\ge 0, && j\in\mathscr{J},~h\in\mathscr{H}. \tag{P3}
+    \end{align*}
+
+    The relaxation $\mathrm{LP}\text{-}0_{P\|C_{\max}}$ replaces $x_{jh}\in\{0,1\}$ with $x_{jh}\ge 0$; the relaxation $\mathrm{LP}_{P\|C_{\max}}$ also keeps $x_{jh}\le 1$. For every instance
+
+    \begin{equation*}
+    z(\mathrm{LP}\text{-}0_{P\|C_{\max}})=z(\mathrm{LP}_{P\|C_{\max}})=\frac{\sum_{j\in\mathscr{J}}t_j}{m}, \tag{P4}
+    \end{equation*}
+
+    attained by $\tilde x_{jh}=\frac{1}{m}$; an optimal dual solution is $\tilde\pi_h=\frac{1}{m}$ and $\tilde\mu_j=\frac{t_j}{m}$. The inequalities
+
+    \begin{equation*}
+    C_{\max}\ge t_j~~(j\in\mathscr{J}), \qquad C_{\max}\ge\left\lceil\frac{\sum_j t_j}{m}\right\rceil \tag{P5}
+    \end{equation*}
+
+    are valid for the model $\mathrm{ILP}_{P\|C_{\max}}$.
+
 <a id="esercizio-14-1"></a>
 
 !!! esercizio "Exercise 14.1: ILP model of $P\|C_{\max}$ (1)"
@@ -79,7 +104,7 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
     **Questions**
 
-    1. Solve $\mathrm{LP}\text{-}0_{P\|C_{\max}}$ with Gurobi and compare its value with the formula of the chapter.
+    1. Solve $\mathrm{LP}\text{-}0_{P\|C_{\max}}$ with Gurobi and compare its value with formula (P4).
 
     2. Write the primal and the dual solutions of the chapter for this instance, and verify feasibility and equal objective values.
 
@@ -87,9 +112,7 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
 ??? soluzione "Solution"
 
-    !!! nota ""
-
-        For every $P\|C_{\max}$ instance, $z(\mathrm{LP}\text{-}0_{P\|C_{\max}})=z(\mathrm{LP}_{P\|C_{\max}})=\frac{\sum_{j\in\mathscr{J}}t_j}{m}$, attained by $\tilde x_{jh}=\frac{1}{m}$; an optimal dual solution is $\tilde\pi_h=\frac{1}{m}$ and $\tilde\mu_j=\frac{t_j}{m}$. The inequalities $C_{\max}\ge t_j$ ($j\in\mathscr{J}$) and $C_{\max}\ge\left\lceil\frac{\sum_j t_j}{m}\right\rceil$ are valid for the $\mathrm{ILP}_{P\|C_{\max}}$ model.
+    We use the value (P4) of the relaxations, the primal and dual solutions given with it and the valid inequalities (P5) of the box at the beginning of the chapter.
 
     1. Gurobi gives $z(\mathrm{LP}\text{-}0_{P\|C_{\max}})=\frac{29}{3}$, and the formula gives $\frac{\sum_j t_j}{m}=\frac{29}{3}$, the same value. Adding the bounds $x_{jh}\le 1$ does not change it.
 
@@ -189,9 +212,7 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
 ??? soluzione "Solution"
 
-    !!! nota ""
-
-        For every $P\|C_{\max}$ instance, $z(\mathrm{LP}\text{-}0_{P\|C_{\max}})=z(\mathrm{LP}_{P\|C_{\max}})=\frac{\sum_{j\in\mathscr{J}}t_j}{m}$, attained by $\tilde x_{jh}=\frac{1}{m}$; an optimal dual solution is $\tilde\pi_h=\frac{1}{m}$ and $\tilde\mu_j=\frac{t_j}{m}$. The inequalities $C_{\max}\ge t_j$ ($j\in\mathscr{J}$) and $C_{\max}\ge\left\lceil\frac{\sum_j t_j}{m}\right\rceil$ are valid for the $\mathrm{ILP}_{P\|C_{\max}}$ model.
+    We use the value (P4) of the relaxations, the primal and dual solutions given with it and the valid inequalities (P5) of the box at the beginning of the chapter.
 
     1. Gurobi gives $z(\mathrm{LP}_{P\|C_{\max}})=24/3=8$.
 
@@ -223,15 +244,13 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
     2. Compute the absolute gap and the ratio $\frac{z(\mathrm{LP}_{P\|C_{\max}})}{z(\mathrm{ILP}_{P\|C_{\max}})}$.
 
-    3. Add both valid inequalities of the chapter and solve the relaxation again. How much of the gap is closed?
+    3. Add both valid inequalities (P5) and solve the relaxation again. How much of the gap is closed?
 
     4. Consider the family of the chapter with $m=3$ machines, one job of time $M=10$ and $3$ jobs of time $1$. Compute the ratio with Gurobi, and its limit for $M\to+\infty$.
 
 ??? soluzione "Solution"
 
-    !!! nota ""
-
-        For every $P\|C_{\max}$ instance, $z(\mathrm{LP}\text{-}0_{P\|C_{\max}})=z(\mathrm{LP}_{P\|C_{\max}})=\frac{\sum_{j\in\mathscr{J}}t_j}{m}$, attained by $\tilde x_{jh}=\frac{1}{m}$; an optimal dual solution is $\tilde\pi_h=\frac{1}{m}$ and $\tilde\mu_j=\frac{t_j}{m}$. The inequalities $C_{\max}\ge t_j$ ($j\in\mathscr{J}$) and $C_{\max}\ge\left\lceil\frac{\sum_j t_j}{m}\right\rceil$ are valid for the $\mathrm{ILP}_{P\|C_{\max}}$ model.
+    We use the value (P4) of the relaxations, the primal and dual solutions given with it and the valid inequalities (P5) of the box at the beginning of the chapter.
 
     1. Gurobi gives $z(\mathrm{LP}_{P\|C_{\max}})=\frac{13}{2}=\frac{13}{2}$ and $z(\mathrm{ILP}_{P\|C_{\max}})=8$. The two jobs of time $5$ on the same machine give load $10$; otherwise the job of time $3$ shares a machine with a job of time $5$, with load $8$.
 

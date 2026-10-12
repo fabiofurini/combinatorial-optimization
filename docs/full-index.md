@@ -293,20 +293,11 @@
     - 32.6 Sources
     - 32.7 Typical mistakes
     - 32.8 In summary
-33. [Limits of approximation: vertex coloring](approximation-algorithms/coloring-approximation.md)
-    - 33.1 The problem and the assumptions
-    - 33.2 The greedy coloring and DSATUR
-    - 33.3 No ratio below four thirds
-    - 33.4 What the greedy coloring guarantees
-    - 33.5 DSATUR as a heuristic
-    - 33.6 Sources
-    - 33.7 Typical mistakes
-    - 33.8 In summary
 
-## [Specialized algorithms](specialized-algorithms/index.md)
+## [Problem-specific branch-and-bound](specialized-algorithms/index.md)
 
-34. [Knapsack: branch-and-bound on the critical item](specialized-algorithms/knapsack-branch-and-bound.md)
-    - 34.1 The algorithm for the KP
-    - 34.2 A worked example
-    - 34.3 Typical mistakes
-    - 34.4 In summary
+33. [Knapsack: branch-and-bound on the critical item](specialized-algorithms/knapsack-branch-and-bound.md)
+    - 33.1 The algorithm for the KP
+    - 33.2 A worked example
+    - 33.3 Typical mistakes
+    - 33.4 In summary

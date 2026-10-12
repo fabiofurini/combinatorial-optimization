@@ -10,6 +10,25 @@ title: "Exercises · Formulations of the bin packing problem"
 
 </div>
 
+!!! formula "Formulations used in these exercises"
+
+    The model $\mathrm{ILP}_{\mathrm{BPP}}$ of the chapter [Formulations of the bin packing problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/bin-packing-formulations/), with the set of bins $\mathscr{B}=\{1,\dots,m\}$:
+
+    \begin{align*}
+    \min~~ & \sum_{b\in\mathscr{B}} y_b \tag{B0}\\
+    \text{subject to}~~ & \sum_{b\in\mathscr{B}} x_{jb}=1, && j\in\mathscr{I}, \tag{B1}\\
+    & -\sum_{j\in\mathscr{I}} w_j\,x_{jb}+c\,y_b\ge 0, && b\in\mathscr{B}, \tag{B2}\\
+    & x_{jb},~y_b\in\{0,1\}, && j\in\mathscr{I},~b\in\mathscr{B}. \tag{B3}
+    \end{align*}
+
+    The relaxation $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ replaces (B3) with $x_{jb}\ge 0$, $y_b\ge 0$; the relaxation $\mathrm{LP}_{\mathrm{BPP}}$ also keeps $y_b\le 1$. For every instance and every valid $m$ the two relaxations have the same optimal value
+
+    \begin{equation*}
+    z(\mathrm{LP}\text{-}0_{\mathrm{BPP}}) \;=\; z(\mathrm{LP}_{\mathrm{BPP}}) \;=\; \frac{\sum_{j\in\mathscr{I}} w_j}{c}, \tag{B4}
+    \end{equation*}
+
+    attained by $\tilde x_{jb}=\frac{1}{m}$ and $\tilde y_b=\frac{\sum_{j} w_j}{m\,c}$; an optimal dual solution is $\tilde\mu_j=\frac{w_j}{c}$ and $\tilde\pi_b=\frac{1}{c}$ (and $\tilde\lambda_b=0$ for $\mathrm{LP}_{\mathrm{BPP}}$).
+
 <a id="esercizio-10-1"></a>
 
 !!! esercizio "Exercise 10.1: ILP model of the Bin Packing Problem (1)"
@@ -86,7 +105,7 @@ title: "Exercises · Formulations of the bin packing problem"
 
     **Questions**
 
-    1. Solve the two LP relaxations $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ and $\mathrm{LP}_{\mathrm{BPP}}$ with Gurobi and compare their optimal values with the formula of the chapter.
+    1. Solve the two LP relaxations $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ and $\mathrm{LP}_{\mathrm{BPP}}$ with Gurobi and compare their optimal values with formula (B4).
 
     2. Write the primal solution and the dual solution given by the chapter for this instance, and verify that they are feasible and have the same objective value.
 
@@ -94,15 +113,7 @@ title: "Exercises · Formulations of the bin packing problem"
 
 ??? soluzione "Solution"
 
-    !!! nota ""
-
-        For every BPP instance and every valid $m$, the optimal value of both LP relaxations is
-
-        $$
-        z(\mathrm{LP}\text{-}0_{\mathrm{BPP}}) \;=\; z(\mathrm{LP}_{\mathrm{BPP}}) \;=\; \frac{\sum_{j\in\mathscr{I}} w_j}{c},
-        $$
-
-        attained by $\tilde x_{jb}=\frac{1}{m}$ and $\tilde y_b=\frac{\sum_{j} w_j}{m\,c}$; an optimal dual solution is $\tilde\mu_j=\frac{w_j}{c}$ and $\tilde\pi_b=\frac{1}{c}$ (and $\tilde\lambda_b=0$ for $\mathrm{LP}_{\mathrm{BPP}}$).
+    We use the value (B4) of the relaxations and the primal and dual solutions given with it in the box at the beginning of the chapter.
 
     1. Gurobi returns $z(\mathrm{LP}\text{-}0_{\mathrm{BPP}})=\frac{25}{12}$ and $z(\mathrm{LP}_{\mathrm{BPP}})=\frac{25}{12}$. The formula gives the same value:
 
@@ -258,15 +269,7 @@ title: "Exercises · Formulations of the bin packing problem"
 
 ??? soluzione "Solution"
 
-    !!! nota ""
-
-        For every BPP instance and every valid $m$, the optimal value of both LP relaxations is
-
-        $$
-        z(\mathrm{LP}\text{-}0_{\mathrm{BPP}}) \;=\; z(\mathrm{LP}_{\mathrm{BPP}}) \;=\; \frac{\sum_{j\in\mathscr{I}} w_j}{c},
-        $$
-
-        attained by $\tilde x_{jb}=\frac{1}{m}$ and $\tilde y_b=\frac{\sum_{j} w_j}{m\,c}$; an optimal dual solution is $\tilde\mu_j=\frac{w_j}{c}$ and $\tilde\pi_b=\frac{1}{c}$ (and $\tilde\lambda_b=0$ for $\mathrm{LP}_{\mathrm{BPP}}$).
+    We use the value (B4) of the relaxations and the primal and dual solutions given with it in the box at the beginning of the chapter.
 
     1. Gurobi gives $z(\mathrm{LP}_{\mathrm{BPP}})=\frac{4\cdot 5}{8}=\frac{5}{2}$ and $z(\mathrm{ILP}_{\mathrm{BPP}})=4$. Every item has weight $5>\frac{c}{2}=4$, so two items never fit in the same bin, and each item needs its own bin.
 

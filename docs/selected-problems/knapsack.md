@@ -44,7 +44,7 @@ title: "The knapsack problem"
 
     - [Chapter 30 «Approximation algorithms for the knapsack problem»](../approximation-algorithms/knapsack-approximation.md): Greedy, Ext-Greedy, $H^2$, $H^{\ell}$, the PTAS, the Basic-FPTAS and the absence of an absolute guarantee
 
-    - [Chapter 34 «Knapsack: branch-and-bound on the critical item»](../specialized-algorithms/knapsack-branch-and-bound.md): LP-based branch-and-bound with the Dantzig formulas and branching on the split item
+    - [Chapter 33 «Knapsack: branch-and-bound on the critical item»](../specialized-algorithms/knapsack-branch-and-bound.md): LP-based branch-and-bound with the Dantzig formulas and branching on the split item
 
 ## Definition { #sez-sec-cat-kp-def }
 
@@ -74,7 +74,7 @@ title: "The knapsack problem"
 
 - The order by efficiency is not enough to find an optimal solution: on the reference instance it gives $\{1,2\}$ with profit $11$, while the optimum is $15$ ([Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#211-typical-mistakes)).
 
-- In every node of the branch-and-bound tree at most one variable is fractional, the one of the split item ([Chapter 34 «Knapsack: branch-and-bound on the critical item»](../specialized-algorithms/knapsack-branch-and-bound.md#3411-solving-the-lp_kpk-problem-of-a-node)).
+- In every node of the branch-and-bound tree at most one variable is fractional, the one of the split item ([Chapter 33 «Knapsack: branch-and-bound on the critical item»](../specialized-algorithms/knapsack-branch-and-bound.md#3311-solving-the-lp_kpk-problem-of-a-node)).
 
 ## Formulation { #sez-sec-cat-kp-formulation }
 
@@ -166,11 +166,11 @@ title: "The knapsack problem"
 
 ## Branch-and-bound { #sez-sec-cat-kp-branchandbound }
 
-- The problem $\LP_{\KP}^k$ of a node is a knapsack LP on the remaining items with capacity $c(k)$, solved by the Dantzig formulas without the simplex algorithm ([Chapter 34 «Knapsack: branch-and-bound on the critical item»](../specialized-algorithms/knapsack-branch-and-bound.md#box-1-def-LPKPk)).
+- The problem $\LP_{\KP}^k$ of a node is a knapsack LP on the remaining items with capacity $c(k)$, solved by the Dantzig formulas without the simplex algorithm ([Chapter 33 «Knapsack: branch-and-bound on the critical item»](../specialized-algorithms/knapsack-branch-and-bound.md#box-1-def-LPKPk)).
 
-- The algorithm branches on the variable of the split item, the only fractional one, and prunes a node when $\lfloor z(\LP_{\KP}^k)\rfloor \le \LB$ ([Chapter 34 «Knapsack: branch-and-bound on the critical item»](../specialized-algorithms/knapsack-branch-and-bound.md#341-the-algorithm-for-the-kp)).
+- The algorithm branches on the variable of the split item, the only fractional one, and prunes a node when $\lfloor z(\LP_{\KP}^k)\rfloor \le \LB$ ([Chapter 33 «Knapsack: branch-and-bound on the critical item»](../specialized-algorithms/knapsack-branch-and-bound.md#331-the-algorithm-for-the-kp)).
 
-- On the reference instance the algorithm closes the gap between $\LB=15$ and $\UB=16$ with $5$ nodes ([Chapter 34 «Knapsack: branch-and-bound on the critical item»](../specialized-algorithms/knapsack-branch-and-bound.md#box-3-texexpbox2)).
+- On the reference instance the algorithm closes the gap between $\LB=15$ and $\UB=16$ with $5$ nodes ([Chapter 33 «Knapsack: branch-and-bound on the critical item»](../specialized-algorithms/knapsack-branch-and-bound.md#box-3-texexpbox2)).
 
 ## Instances { #sez-sec-cat-kp-ist }
 
@@ -193,7 +193,7 @@ $$
 
 - Optimal value $z(\mathrm{KP1})=15$, attained by $\tilde S=\{1,4\}$, the unique optimal solution.
 
-- Used in [Example «KP instance»](../combinatorial-optimization-problems/knapsack.md#box-2-ex-kp), [Counting, a first solution and the cardinality bound](../combinatorial-optimization-problems/knapsack.md#212-counting-the-solutions-a-first-solution-and-a-simple-bound), [Example «$\ILP_{\KP}$ model» and the following examples of the chapter](../formulations/knapsack-formulations.md#box-2-texexp_ilp_kp), [Example «Dantzig and Martello-Toth upper bound»](../formulations/knapsack-formulations.md#box-20-texexp_ub_kp), [Example «The $\ILP_{\KP}$ model»](../specialized-algorithms/knapsack-branch-and-bound.md#box-2-texexpbox1), [Example «Branch-and-bound algorithm for the $\ILP_{\KP}$ model»](../specialized-algorithms/knapsack-branch-and-bound.md#box-3-texexpbox2), [Exercise 9.4](../exercises/knapsack-formulations.md#esercizio-9-4), [Exercise 34.4](../exercises/knapsack-branch-and-bound.md#esercizio-34-4).
+- Used in [Example «KP instance»](../combinatorial-optimization-problems/knapsack.md#box-2-ex-kp), [Counting, a first solution and the cardinality bound](../combinatorial-optimization-problems/knapsack.md#212-counting-the-solutions-a-first-solution-and-a-simple-bound), [Example «$\ILP_{\KP}$ model» and the following examples of the chapter](../formulations/knapsack-formulations.md#box-2-texexp_ilp_kp), [Example «Dantzig and Martello-Toth upper bound»](../formulations/knapsack-formulations.md#box-20-texexp_ub_kp), [Example «The $\ILP_{\KP}$ model»](../specialized-algorithms/knapsack-branch-and-bound.md#box-2-texexpbox1), [Example «Branch-and-bound algorithm for the $\ILP_{\KP}$ model»](../specialized-algorithms/knapsack-branch-and-bound.md#box-3-texexpbox2), [Exercise 9.4](../exercises/knapsack-formulations.md#esercizio-9-4), [Exercise 33.4](../exercises/knapsack-branch-and-bound.md#esercizio-33-4).
 
 ### Instance KP2 { #sez-sec-cat-ist-kp2 }
 
@@ -319,7 +319,7 @@ $$
 
 - Optimal value $z(\mathrm{KP7})=20$, attained by $\tilde{\vet x}=(1,1,0,1,0)$.
 
-- Used in [Exercise 9.1](../exercises/knapsack-formulations.md#esercizio-9-1), [Exercise 34.1](../exercises/knapsack-branch-and-bound.md#esercizio-34-1).
+- Used in [Exercise 9.1](../exercises/knapsack-formulations.md#esercizio-9-1), [Exercise 33.1](../exercises/knapsack-branch-and-bound.md#esercizio-33-1).
 
 ### Instance KP8 { #sez-sec-cat-ist-kp8 }
 
@@ -340,7 +340,7 @@ $$
 
 - Optimal value $z(\mathrm{KP8})=52$, attained by $\tilde{\vet x}=(1,0,0,1)$.
 
-- Used in [Exercise 9.2](../exercises/knapsack-formulations.md#esercizio-9-2), [Exercise 34.2](../exercises/knapsack-branch-and-bound.md#esercizio-34-2).
+- Used in [Exercise 9.2](../exercises/knapsack-formulations.md#esercizio-9-2), [Exercise 33.2](../exercises/knapsack-branch-and-bound.md#esercizio-33-2).
 
 ### Instance KP9 { #sez-sec-cat-ist-kp9 }
 
@@ -361,7 +361,7 @@ $$
 
 - Optimal value $z(\mathrm{KP9})=30$, attained by $\tilde{\vet x}=(1,0,0,1)$.
 
-- Used in [Exercise 9.3](../exercises/knapsack-formulations.md#esercizio-9-3), [Exercise 34.3](../exercises/knapsack-branch-and-bound.md#esercizio-34-3).
+- Used in [Exercise 9.3](../exercises/knapsack-formulations.md#esercizio-9-3), [Exercise 33.3](../exercises/knapsack-branch-and-bound.md#esercizio-33-3).
 
 ### Instance KP10 { #sez-sec-cat-ist-kp10 }
 
@@ -1901,13 +1901,13 @@ $$
 
 - [«Basic-FPTAS 3»](../exercises/knapsack-approximation.md#esercizio-30-15)
 
-- [«Branch-and-Bound Algorithm for the Knapsack Problem (P1)»](../exercises/knapsack-branch-and-bound.md#esercizio-34-1)
+- [«Branch-and-Bound Algorithm for the Knapsack Problem (P1)»](../exercises/knapsack-branch-and-bound.md#esercizio-33-1)
 
-- [«Branch-and-Bound Algorithm for the Knapsack Problem (P2)»](../exercises/knapsack-branch-and-bound.md#esercizio-34-2)
+- [«Branch-and-Bound Algorithm for the Knapsack Problem (P2)»](../exercises/knapsack-branch-and-bound.md#esercizio-33-2)
 
-- [«Branch-and-Bound Algorithm for the Knapsack Problem (P3)»](../exercises/knapsack-branch-and-bound.md#esercizio-34-3)
+- [«Branch-and-Bound Algorithm for the Knapsack Problem (P3)»](../exercises/knapsack-branch-and-bound.md#esercizio-33-3)
 
-- [«Branch-and-bound Algorithm for the Knapsack Problem (P4)»](../exercises/knapsack-branch-and-bound.md#esercizio-34-4)
+- [«Branch-and-bound Algorithm for the Knapsack Problem (P4)»](../exercises/knapsack-branch-and-bound.md#esercizio-33-4)
 
 ## Variants { #sez-sec-cat-kp-var }
 
