@@ -20,7 +20,7 @@ professor at [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
 
 [Start with the problems :material-arrow-right:](combinatorial-optimization-problems/index.md){ .md-button .md-button--primary }
 [The exercises](exercises/index.md){ .md-button }
-[:material-view-list: The catalogue of problems](catalogue/index.md){ .md-button }
+[:material-view-list: Selected problems](selected-problems/index.md){ .md-button }
 [:material-download: Download the lecture notes (PDF)](downloads.md){ .md-button }
 
 </div>
@@ -78,7 +78,7 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
     ---
 
-    16\. Principles · 17\. Knapsack · 18\. Rod cutting, coin change · 19\. Lot sizing
+    16\. Principles · 17\. KP · 18\. UKP · 19\. BKP · 20\. Rod cutting · 21\. Coin change · 22\. Lot sizing
 
     [:octicons-arrow-right-24: The chapters](dynamic-programming/index.md)
 
@@ -86,7 +86,7 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
     ---
 
-    20\. Definitions · 21\. Constructive · 22\. Local search · 23\. Metaheuristics · 24\. MIP heuristics
+    23\. Definitions · 24\. Constructive · 25\. Local search · 26\. Metaheuristics · 27\. MIP heuristics
 
     [:octicons-arrow-right-24: The chapters](heuristic-algorithms/index.md)
 
@@ -94,7 +94,7 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
     ---
 
-    25\. Definitions · 26\. Bin packing · 27\. Knapsack · 28\. P||Cmax, TSP, coloring
+    28\. Definitions · 29\. Bin packing · 30\. Knapsack · 31\. P||Cmax · 32\. Metric TSP · 33\. Coloring: limits
 
     [:octicons-arrow-right-24: The chapters](approximation-algorithms/index.md)
 
@@ -102,17 +102,17 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
     ---
 
-    29\. Knapsack: B&B
+    34\. Knapsack: B&B
 
     [:octicons-arrow-right-24: The chapters](specialized-algorithms/index.md)
 
--   :material-view-list: **Catalogue of problems**
+-   :material-view-list: **Selected problems**
 
     ---
 
     The course seen problem by problem: definitions, models, bounds, techniques and instances of every problem.
 
-    [:octicons-arrow-right-24: The catalogue](catalogue/index.md) · [:material-file-pdf-box: PDF](pdf/combinatorial-problem-catalogue.pdf)
+    [:octicons-arrow-right-24: The selected problems](selected-problems/index.md) · [:material-file-pdf-box: PDF](pdf/selected-problems.pdf)
 
 </div>
 

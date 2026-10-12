@@ -26,27 +26,30 @@ Exercises with **worked solutions**, chapter by chapter. Try each exercise on yo
 ## Dynamic programming
 
 - [16. Principles of dynamic programming](dp-principles.md) · 5 exercises
-- [17. Dynamic programming for knapsack problems](dp-knapsack.md) · 15 exercises
-- [18. Rod cutting and coin change](dp-rod-cutting-coin-change.md) · 10 exercises
-- [19. Dynamic programming for lot sizing](dp-lot-sizing.md) · 5 exercises
+- [17. DP for the knapsack problem](dp-knapsack.md) · 5 exercises
+- [18. DP for the unbounded knapsack problem](dp-unbounded-knapsack.md) · 5 exercises
+- [19. DP for the bounded knapsack problem](dp-bounded-knapsack.md) · 5 exercises
+- [20. DP for the rod cutting problem](dp-rod-cutting.md) · 5 exercises
+- [21. DP for the coin change problem](dp-coin-change.md) · 5 exercises
+- [22. Dynamic programming for lot sizing](dp-lot-sizing.md) · 5 exercises
 
 ## Heuristic algorithms
 
-- [20. Heuristic algorithms: definitions](heuristics.md) · 5 exercises
-- [21. Constructive heuristics](constructive-heuristics.md) · 12 exercises
-- [22. Local search](local-search.md) · 12 exercises
-- [23. Metaheuristics](metaheuristics.md) · 17 exercises
-- [24. MIP heuristics for the classical problems](mip-heuristics-classical.md) · 5 exercises
+- [23. Heuristic algorithms: definitions](heuristics.md) · 5 exercises
+- [24. Constructive heuristics](constructive-heuristics.md) · 12 exercises
+- [25. Local search](local-search.md) · 12 exercises
+- [26. Metaheuristics](metaheuristics.md) · 17 exercises
+- [27. MIP heuristics for the classical problems](mip-heuristics-classical.md) · 5 exercises
 
 ## Approximation algorithms
 
-- [25. Approximation algorithms: definitions](approximation.md) · 5 exercises
-- [26. Approximation algorithms for bin packing](bin-packing-approximation.md) · 12 exercises
-- [27. Approximation algorithms for the knapsack problem](knapsack-approximation.md) · 15 exercises
-- [28. Approximation for P|Cmax](pcmax-approximation.md) · 3 exercises
-- [29. Approximation for the metric TSP](tsp-approximation.md) · 3 exercises
-- [30. Limits of approximation: vertex coloring](coloring-approximation.md) · 3 exercises
+- [28. Approximation algorithms: definitions](approximation.md) · 5 exercises
+- [29. Approximation algorithms for bin packing](bin-packing-approximation.md) · 12 exercises
+- [30. Approximation algorithms for the knapsack problem](knapsack-approximation.md) · 15 exercises
+- [31. Approximation for P|Cmax](pcmax-approximation.md) · 3 exercises
+- [32. Approximation for the metric TSP](tsp-approximation.md) · 3 exercises
+- [33. Limits of approximation: vertex coloring](coloring-approximation.md) · 3 exercises
 
 ## Specialized algorithms
 
-- [31. Knapsack: branch-and-bound on the critical item](knapsack-branch-and-bound.md) · 4 exercises
+- [34. Knapsack: branch-and-bound on the critical item](knapsack-branch-and-bound.md) · 4 exercises

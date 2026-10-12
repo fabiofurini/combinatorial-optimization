@@ -118,9 +118,9 @@ title: "Combinatorial optimization problems"
 
 ## 1.2 The six problems of the course { #sez-sec-six }
 
-- The course is built around <strong>six problems</strong>. Each one is defined here in words, with a small instance; the formal definitions and the variants are in Chapters OC 2–7.
+- The course is built around <strong>six problems</strong>. Each one is defined here in words, with a small instance; the formal definitions and the variants are in the chapters of the part «Combinatorial optimization problems».
 
-- The same problems return in every part of the course, solved each time with a different method; the reference instances of the knapsack, bin packing and coloring problems are introduced in Chapters OC 2–4.
+- The same problems return in every part of the course, solved each time with a different method; the reference instances of the knapsack, bin packing and coloring problems are introduced in their own chapters.
 
 ### 1.2.1 Knapsack problem
 

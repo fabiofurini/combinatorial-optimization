@@ -117,7 +117,7 @@
     - 13.6 In summary
 14. [Formulations of parallel machine scheduling](formulations/pcmax-formulations.md)
     - 14.1 The problem in brief
-    - 14.2 An ILP model for $\PCmax$
+    - 14.2 An ILP model for $P\|C_{\max}$
     - 14.3 A first Linear Programming relaxation
     - 14.4 Additional considerations
     - 14.5 Typical mistakes
@@ -140,152 +140,173 @@
     - 16.4 The DP algorithms of this module
     - 16.5 Typical mistakes
     - 16.6 In summary
-17. [Dynamic programming for knapsack problems](dynamic-programming/dp-knapsack.md)
-    - 17.1 A DP algorithm for the Knapsack Problem
-    - 17.2 A DP algorithm for the Unbounded Knapsack Problem
-    - 17.3 A DP algorithm for the Bounded Knapsack Problem
-18. [Rod cutting and coin change](dynamic-programming/dp-rod-cutting-coin-change.md)
-    - 18.1 A DP algorithm for the Rod Cutting Problem
-    - 18.2 A DP algorithm for the Coin Change Problem
-19. [Dynamic programming for lot sizing](dynamic-programming/dp-lot-sizing.md)
+17. [DP for the knapsack problem](dynamic-programming/dp-knapsack/index.md)
+    - 17.1 Problem definition
+    - [17.2 A first DP algorithm](dynamic-programming/dp-knapsack/a-first-dp-algorithm.md)
+    - [17.3 A second DP algorithm](dynamic-programming/dp-knapsack/a-second-dp-algorithm.md)
+    - [17.4 Typical mistakes](dynamic-programming/dp-knapsack/typical-mistakes.md)
+    - [17.5 In summary](dynamic-programming/dp-knapsack/typical-mistakes.md)
+18. [DP for the unbounded knapsack problem](dynamic-programming/dp-unbounded-knapsack/index.md)
+    - 18.1 Problem definition
+    - [18.2 A first DP algorithm](dynamic-programming/dp-unbounded-knapsack/a-first-dp-algorithm.md)
+    - [18.3 A second DP algorithm](dynamic-programming/dp-unbounded-knapsack/a-second-dp-algorithm.md)
+    - [18.4 Typical mistakes](dynamic-programming/dp-unbounded-knapsack/typical-mistakes.md)
+    - [18.5 In summary](dynamic-programming/dp-unbounded-knapsack/typical-mistakes.md)
+19. [DP for the bounded knapsack problem](dynamic-programming/dp-bounded-knapsack.md)
     - 19.1 Problem definition
-    - 19.2 A DP algorithm for the ULS
-    - 19.3 A DP algorithm for the capacitated case
-    - 19.4 Typical mistakes
-    - 19.5 In summary
+    - 19.2 A DP algorithm
+    - 19.3 Typical mistakes
+    - 19.4 In summary
+20. [DP for the rod cutting problem](dynamic-programming/dp-rod-cutting/index.md)
+    - 20.1 Problem definition
+    - [20.2 A first DP algorithm](dynamic-programming/dp-rod-cutting/a-first-dp-algorithm.md)
+    - [20.3 A second DP algorithm](dynamic-programming/dp-rod-cutting/a-second-dp-algorithm.md)
+    - [20.4 Typical mistakes](dynamic-programming/dp-rod-cutting/typical-mistakes.md)
+    - [20.5 In summary](dynamic-programming/dp-rod-cutting/typical-mistakes.md)
+21. [DP for the coin change problem](dynamic-programming/dp-coin-change.md)
+    - 21.1 Problem definition
+    - 21.2 A DP algorithm
+    - 21.3 Typical mistakes
+    - 21.4 In summary
+22. [Dynamic programming for lot sizing](dynamic-programming/dp-lot-sizing/index.md)
+    - 22.1 Problem definition
+    - [22.2 A DP algorithm for the ULS](dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls.md)
+    - [22.3 A DP algorithm for the capacitated case](dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md)
+    - [22.4 Typical mistakes](dynamic-programming/dp-lot-sizing/typical-mistakes.md)
+    - [22.5 In summary](dynamic-programming/dp-lot-sizing/typical-mistakes.md)
 
 ## [Heuristic algorithms](heuristic-algorithms/index.md)
 
-20. [Heuristic algorithms: definitions](heuristic-algorithms/heuristics.md)
-    - 20.1 Heuristic algorithms
-    - 20.2 The problems and the assumptions
-    - 20.3 Primal and dual bounds
-    - 20.4 Classification of heuristic algorithms
-    - 20.5 Solution representation and search space
-    - 20.6 Neighbourhoods and local optima
-    - 20.7 Intensification and diversification
-    - 20.8 How to evaluate a heuristic algorithm
-    - 20.9 Typical mistakes
-    - 20.10 In summary
-21. [Constructive heuristics](heuristic-algorithms/constructive-heuristics.md)
-    - 21.1 Constructive heuristics
-    - 21.2 The problems and the assumptions
-    - 21.3 The greedy paradigm
-    - 21.4 The knapsack problem: which order?
-    - 21.5 The bin packing problem: first sort, then pack
-    - 21.6 Scheduling on parallel machines: longest jobs first
-    - 21.7 The travelling salesman problem: append or insert?
-    - 21.8 Randomized construction
-    - 21.9 Look-ahead and regret
-    - 21.10 What constructive heuristics give, and what they do not
-    - 21.11 Typical mistakes
-    - 21.12 In summary
-    - 21.13 <code>C++</code> implementation
-22. [Local search](heuristic-algorithms/local-search.md)
-    - 22.1 Local search
-    - 22.2 The problems, the assumptions and the starting solutions
-    - 22.3 Local search: the scheme
-    - 22.4 Neighbourhoods for the four problems
-    - 22.5 First improvement and best improvement
-    - 22.6 Evaluating a move incrementally
-    - 22.7 TSP: 2-opt and Or-opt
-    - 22.8 $P\,||\,C_{\max}$: move and swap
-    - 22.9 Flat landscapes and auxiliary objectives
-    - 22.10 KP: feasibility and penalties
-    - 22.11 Variable neighbourhood descent
-    - 22.12 Multi-start local search
-    - 22.13 Typical mistakes
-    - 22.14 In summary
-    - 22.15 <code>C++</code> implementation
-23. [Metaheuristics](heuristic-algorithms/metaheuristics.md)
-    - 23.1 Metaheuristics
+23. [Heuristic algorithms: definitions](heuristic-algorithms/heuristics.md)
+    - 23.1 Heuristic algorithms
     - 23.2 The problems and the assumptions
-    - 23.3 How to escape from a local optimum
-    - 23.4 Simulated annealing
-    - 23.5 Tabu search
-    - 23.6 Iterated local search
-    - 23.7 Variable neighbourhood search
-    - 23.8 GRASP
-    - 23.9 Large neighbourhood search
-    - 23.10 Population-based methods: genetic and memetic algorithms
-    - 23.11 Comparison and conclusions
-    - 23.12 Typical mistakes
-    - 23.13 In summary
-    - 23.14 <code>C++</code> implementation
-24. [MIP heuristics for the classical problems](heuristic-algorithms/mip-heuristics-classical.md)
-    - 24.1 MIP-based heuristics
-    - 24.2 The problems and their MIP models
-    - 24.3 Rounding
-    - 24.4 Diving
-    - 24.5 The feasibility pump
-    - 24.6 RINS, local branching and proximity search
-    - 24.7 Relax-and-fix and fix-and-optimize on lot sizing
-    - 24.8 Heuristics inside the solver
-    - 24.9 What the MIP-based heuristics give
-    - 24.10 <code>Python</code> implementation
-    - 24.11 Typical mistakes
-    - 24.12 In summary
+    - 23.3 Primal and dual bounds
+    - 23.4 Classification of heuristic algorithms
+    - 23.5 Solution representation and search space
+    - 23.6 Neighbourhoods and local optima
+    - 23.7 Intensification and diversification
+    - 23.8 How to evaluate a heuristic algorithm
+    - 23.9 Typical mistakes
+    - 23.10 In summary
+24. [Constructive heuristics](heuristic-algorithms/constructive-heuristics/index.md)
+    - 24.1 Constructive heuristics
+    - [24.2 The problems and the assumptions](heuristic-algorithms/constructive-heuristics/the-problems-and-the-assumptions.md)
+    - [24.3 The greedy paradigm](heuristic-algorithms/constructive-heuristics/the-problems-and-the-assumptions.md)
+    - [24.4 The knapsack problem: which order?](heuristic-algorithms/constructive-heuristics/the-knapsack-problem-which-order.md)
+    - [24.5 The bin packing problem: first sort, then pack](heuristic-algorithms/constructive-heuristics/the-bin-packing-problem-first-sort-then-pack.md)
+    - [24.6 Scheduling on parallel machines: longest jobs first](heuristic-algorithms/constructive-heuristics/scheduling-on-parallel-machines-longest-jobs-first.md)
+    - [24.7 The travelling salesman problem: append or insert?](heuristic-algorithms/constructive-heuristics/the-travelling-salesman-problem-append-or-insert.md)
+    - [24.8 Randomized construction](heuristic-algorithms/constructive-heuristics/randomized-construction.md)
+    - [24.9 Look-ahead and regret](heuristic-algorithms/constructive-heuristics/look-ahead-and-regret.md)
+    - [24.10 What constructive heuristics give, and what they do not](heuristic-algorithms/constructive-heuristics/what-constructive-heuristics-give-and-what-they-do-not.md)
+    - [24.11 Typical mistakes](heuristic-algorithms/constructive-heuristics/typical-mistakes.md)
+    - [24.12 In summary](heuristic-algorithms/constructive-heuristics/typical-mistakes.md)
+    - [24.13 <code>C++</code> implementation](heuristic-algorithms/constructive-heuristics/c-implementation.md)
+25. [Local search](heuristic-algorithms/local-search/index.md)
+    - 25.1 Local search
+    - [25.2 The problems, the assumptions and the starting solutions](heuristic-algorithms/local-search/the-problems-the-assumptions-and-the-starting-solutions.md)
+    - [25.3 Local search: the scheme](heuristic-algorithms/local-search/local-search-the-scheme.md)
+    - [25.4 Neighbourhoods for the four problems](heuristic-algorithms/local-search/local-search-the-scheme.md)
+    - [25.5 First improvement and best improvement](heuristic-algorithms/local-search/first-improvement-and-best-improvement.md)
+    - [25.6 Evaluating a move incrementally](heuristic-algorithms/local-search/evaluating-a-move-incrementally.md)
+    - [25.7 TSP: 2-opt and Or-opt](heuristic-algorithms/local-search/tsp-2-opt-and-or-opt.md)
+    - [25.8 $P\,||\,C_{\max}$: move and swap](heuristic-algorithms/local-search/p-cmax-move-and-swap.md)
+    - [25.9 Flat landscapes and auxiliary objectives](heuristic-algorithms/local-search/flat-landscapes-and-auxiliary-objectives.md)
+    - [25.10 KP: feasibility and penalties](heuristic-algorithms/local-search/kp-feasibility-and-penalties.md)
+    - [25.11 Variable neighbourhood descent](heuristic-algorithms/local-search/variable-neighbourhood-descent.md)
+    - [25.12 Multi-start local search](heuristic-algorithms/local-search/multi-start-local-search.md)
+    - [25.13 Typical mistakes](heuristic-algorithms/local-search/typical-mistakes.md)
+    - [25.14 In summary](heuristic-algorithms/local-search/typical-mistakes.md)
+    - [25.15 <code>C++</code> implementation](heuristic-algorithms/local-search/c-implementation.md)
+26. [Metaheuristics](heuristic-algorithms/metaheuristics/index.md)
+    - 26.1 Metaheuristics
+    - [26.2 The problems and the assumptions](heuristic-algorithms/metaheuristics/the-problems-and-the-assumptions.md)
+    - [26.3 How to escape from a local optimum](heuristic-algorithms/metaheuristics/how-to-escape-from-a-local-optimum.md)
+    - [26.4 Simulated annealing](heuristic-algorithms/metaheuristics/how-to-escape-from-a-local-optimum.md)
+    - [26.5 Tabu search](heuristic-algorithms/metaheuristics/tabu-search.md)
+    - [26.6 Iterated local search](heuristic-algorithms/metaheuristics/iterated-local-search.md)
+    - [26.7 Variable neighbourhood search](heuristic-algorithms/metaheuristics/variable-neighbourhood-search.md)
+    - [26.8 GRASP](heuristic-algorithms/metaheuristics/grasp.md)
+    - [26.9 Large neighbourhood search](heuristic-algorithms/metaheuristics/large-neighbourhood-search.md)
+    - [26.10 Population-based methods: genetic and memetic algorithms](heuristic-algorithms/metaheuristics/population-based-methods-genetic-and-memetic-algorithms.md)
+    - [26.11 Comparison and conclusions](heuristic-algorithms/metaheuristics/comparison-and-conclusions.md)
+    - [26.12 Typical mistakes](heuristic-algorithms/metaheuristics/typical-mistakes.md)
+    - [26.13 In summary](heuristic-algorithms/metaheuristics/typical-mistakes.md)
+    - [26.14 <code>C++</code> implementation](heuristic-algorithms/metaheuristics/c-implementation.md)
+27. [MIP heuristics for the classical problems](heuristic-algorithms/mip-heuristics-classical.md)
+    - 27.1 MIP-based heuristics
+    - 27.2 The problems and their MIP models
+    - 27.3 Rounding
+    - 27.4 Diving
+    - 27.5 The feasibility pump
+    - 27.6 RINS, local branching and proximity search
+    - 27.7 Relax-and-fix and fix-and-optimize on lot sizing
+    - 27.8 Heuristics inside the solver
+    - 27.9 What the MIP-based heuristics give
+    - 27.10 <code>Python</code> implementation
+    - 27.11 Typical mistakes
+    - 27.12 In summary
 
 ## [Approximation algorithms](approximation-algorithms/index.md)
 
-25. [Approximation algorithms: definitions](approximation-algorithms/approximation.md)
-    - 25.1 Approximation algorithms
-    - 25.2 Approximation schemes
-    - 25.3 Typical mistakes
-    - 25.4 In summary
-26. [Approximation algorithms for bin packing](approximation-algorithms/bin-packing-approximation.md)
-    - 26.1 The problem and the assumptions
-    - 26.2 The Next Fit
-    - 26.3 The Any Fit class
-    - 26.4 Half-full property
-    - 26.5 Performance guarantees
-    - 26.6 Typical mistakes
-    - 26.7 In summary
-    - 26.8 <code>C++</code> implementation
-27. [Approximation algorithms for the knapsack problem](approximation-algorithms/knapsack-approximation.md)
-    - 27.1 The problem and the assumptions
-    - 27.2 Split item and residual capacity
-    - 27.3 The greedy algorithm
-    - 27.4 The Ext-Greedy algorithm
-    - 27.5 The $H^2$ algorithm
-    - 27.6 The $H^{\ell}$ algorithm
-    - 27.7 The Basic-FPTAS algorithm
-    - 27.8 Performance guarantees
-    - 27.9 Absolute performance guarantee
-    - 27.10 Typical mistakes
-    - 27.11 In summary
-    - 27.12 <code>C++</code> implementation
-28. [Approximation for P|Cmax](approximation-algorithms/pcmax-approximation.md)
-    - 28.1 The problem and the assumptions
-    - 28.2 The algorithms $LIST$ and $LPT$
-    - 28.3 A property of list scheduling
-    - 28.4 Performance guarantees
-    - 28.5 Sources
-    - 28.6 Typical mistakes
-    - 28.7 In summary
-29. [Approximation for the metric TSP](approximation-algorithms/tsp-approximation.md)
+28. [Approximation algorithms: definitions](approximation-algorithms/approximation.md)
+    - 28.1 Approximation algorithms
+    - 28.2 Approximation schemes
+    - 28.3 Typical mistakes
+    - 28.4 In summary
+29. [Approximation algorithms for bin packing](approximation-algorithms/bin-packing-approximation.md)
     - 29.1 The problem and the assumptions
-    - 29.2 The double tree and the Christofides algorithms
-    - 29.3 Structural properties
-    - 29.4 Performance guarantees
-    - 29.5 The general TSP
-    - 29.6 Sources
-    - 29.7 Typical mistakes
-    - 29.8 In summary
-30. [Limits of approximation: vertex coloring](approximation-algorithms/coloring-approximation.md)
+    - 29.2 The Next Fit
+    - 29.3 The Any Fit class
+    - 29.4 Half-full property
+    - 29.5 Performance guarantees
+    - 29.6 Typical mistakes
+    - 29.7 In summary
+    - 29.8 <code>C++</code> implementation
+30. [Approximation algorithms for the knapsack problem](approximation-algorithms/knapsack-approximation.md)
     - 30.1 The problem and the assumptions
-    - 30.2 The greedy coloring and DSATUR
-    - 30.3 No ratio below four thirds
-    - 30.4 What the greedy coloring guarantees
-    - 30.5 DSATUR as a heuristic
-    - 30.6 Sources
-    - 30.7 Typical mistakes
-    - 30.8 In summary
+    - 30.2 Split item and residual capacity
+    - 30.3 The greedy algorithm
+    - 30.4 The Ext-Greedy algorithm
+    - 30.5 The $H^2$ algorithm
+    - 30.6 The $H^{\ell}$ algorithm
+    - 30.7 The Basic-FPTAS algorithm
+    - 30.8 Performance guarantees
+    - 30.9 Absolute performance guarantee
+    - 30.10 Typical mistakes
+    - 30.11 In summary
+    - 30.12 <code>C++</code> implementation
+31. [Approximation for P|Cmax](approximation-algorithms/pcmax-approximation.md)
+    - 31.1 The problem and the assumptions
+    - 31.2 The algorithms $LIST$ and $LPT$
+    - 31.3 A property of list scheduling
+    - 31.4 Performance guarantees
+    - 31.5 Sources
+    - 31.6 Typical mistakes
+    - 31.7 In summary
+32. [Approximation for the metric TSP](approximation-algorithms/tsp-approximation.md)
+    - 32.1 The problem and the assumptions
+    - 32.2 The double tree and the Christofides algorithms
+    - 32.3 Structural properties
+    - 32.4 Performance guarantees
+    - 32.5 The general TSP
+    - 32.6 Sources
+    - 32.7 Typical mistakes
+    - 32.8 In summary
+33. [Limits of approximation: vertex coloring](approximation-algorithms/coloring-approximation.md)
+    - 33.1 The problem and the assumptions
+    - 33.2 The greedy coloring and DSATUR
+    - 33.3 No ratio below four thirds
+    - 33.4 What the greedy coloring guarantees
+    - 33.5 DSATUR as a heuristic
+    - 33.6 Sources
+    - 33.7 Typical mistakes
+    - 33.8 In summary
 
 ## [Specialized algorithms](specialized-algorithms/index.md)
 
-31. [Knapsack: branch-and-bound on the critical item](specialized-algorithms/knapsack-branch-and-bound.md)
-    - 31.1 The algorithm for the KP
-    - 31.2 A worked example
-    - 31.3 Typical mistakes
-    - 31.4 In summary
+34. [Knapsack: branch-and-bound on the critical item](specialized-algorithms/knapsack-branch-and-bound.md)
+    - 34.1 The algorithm for the KP
+    - 34.2 A worked example
+    - 34.3 Typical mistakes
+    - 34.4 In summary

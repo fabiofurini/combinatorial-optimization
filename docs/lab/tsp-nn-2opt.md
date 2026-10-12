@@ -5,7 +5,7 @@ hide:
 title: "TSP: nearest neighbour and 2-opt"
 ---
 
-[← Lab](index.md) · Chapter: [Local search](../heuristic-algorithms/local-search.md)
+[← Lab](index.md) · Chapter: [Local search](../heuristic-algorithms/local-search/index.md)
 
 # TSP: nearest neighbour and 2-opt
 

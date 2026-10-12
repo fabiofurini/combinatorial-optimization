@@ -60,6 +60,9 @@ plugins:
       redirect_maps:
         approximation-algorithms/pcmax-tsp-coloring-approximation.md: approximation-algorithms/pcmax-approximation.md
         exercises/pcmax-tsp-coloring-approximation.md: exercises/pcmax-approximation.md
+        # 2026-10-12: one problem per chapter in the dynamic programming part
+        dynamic-programming/dp-rod-cutting-coin-change.md: dynamic-programming/dp-rod-cutting/index.md
+        exercises/dp-rod-cutting-coin-change.md: exercises/dp-rod-cutting.md
 
 extra:
   social:
@@ -102,7 +105,7 @@ extra:
       lang: it
 
 extra_css:
-  - stylesheets/extra.css?v=b636566d1b
+  - stylesheets/extra.css?v=d011dddb22
   - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraph.css
   - stylesheets/interattivi.css?v=c51ac2286b
 
@@ -141,6 +144,7 @@ nav:
   - Home: index.md
   - Problems:
       - combinatorial-optimization-problems/index.md
+      - "Problem definitions": combinatorial-optimization-problems/definitions.md
       - "The problems at a glance": combinatorial-optimization-problems/problems.md
       - "1. Combinatorial optimization": combinatorial-optimization-problems/combinatorial-optimization.md
       - "2. Knapsack": combinatorial-optimization-problems/knapsack.md
@@ -162,39 +166,97 @@ nav:
   - Dynamic programming:
       - dynamic-programming/index.md
       - "16. Principles": dynamic-programming/dp-principles.md
-      - "17. Knapsack": dynamic-programming/dp-knapsack.md
-      - "18. Rod cutting, coin change": dynamic-programming/dp-rod-cutting-coin-change.md
-      - "19. Lot sizing": dynamic-programming/dp-lot-sizing.md
+      - "17. KP":
+          - dynamic-programming/dp-knapsack/index.md
+          - "A first DP algorithm": dynamic-programming/dp-knapsack/a-first-dp-algorithm.md
+          - "A first DP algorithm: An implementation with lists": dynamic-programming/dp-knapsack/a-first-dp-algorithm-an-implementation-with-lists.md
+          - "A second DP algorithm": dynamic-programming/dp-knapsack/a-second-dp-algorithm.md
+          - "A second DP algorithm: An implementation with lists": dynamic-programming/dp-knapsack/a-second-dp-algorithm-an-implementation-with-lists.md
+          - "Typical mistakes · In summary": dynamic-programming/dp-knapsack/typical-mistakes.md
+      - "18. UKP":
+          - dynamic-programming/dp-unbounded-knapsack/index.md
+          - "A first DP algorithm": dynamic-programming/dp-unbounded-knapsack/a-first-dp-algorithm.md
+          - "A second DP algorithm": dynamic-programming/dp-unbounded-knapsack/a-second-dp-algorithm.md
+          - "Typical mistakes · In summary": dynamic-programming/dp-unbounded-knapsack/typical-mistakes.md
+      - "19. BKP": dynamic-programming/dp-bounded-knapsack.md
+      - "20. Rod cutting":
+          - dynamic-programming/dp-rod-cutting/index.md
+          - "A first DP algorithm": dynamic-programming/dp-rod-cutting/a-first-dp-algorithm.md
+          - "A second DP algorithm": dynamic-programming/dp-rod-cutting/a-second-dp-algorithm.md
+          - "Typical mistakes · In summary": dynamic-programming/dp-rod-cutting/typical-mistakes.md
+      - "21. Coin change": dynamic-programming/dp-coin-change.md
+      - "22. Lot sizing":
+          - dynamic-programming/dp-lot-sizing/index.md
+          - "A DP algorithm for the ULS": dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls.md
+          - "A DP algorithm for the ULS: Step 1 and Step 2": dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls-step-1-and-step-2.md
+          - "A DP algorithm for the capacitated case": dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md
+          - "Typical mistakes · In summary": dynamic-programming/dp-lot-sizing/typical-mistakes.md
   - Heuristics:
       - heuristic-algorithms/index.md
-      - "20. Definitions": heuristic-algorithms/heuristics.md
-      - "21. Constructive": heuristic-algorithms/constructive-heuristics.md
-      - "22. Local search": heuristic-algorithms/local-search.md
-      - "23. Metaheuristics": heuristic-algorithms/metaheuristics.md
-      - "24. MIP heuristics": heuristic-algorithms/mip-heuristics-classical.md
+      - "23. Definitions": heuristic-algorithms/heuristics.md
+      - "24. Constructive":
+          - heuristic-algorithms/constructive-heuristics/index.md
+          - "The problems and the assumptions · The greedy paradigm": heuristic-algorithms/constructive-heuristics/the-problems-and-the-assumptions.md
+          - "The knapsack problem: which order?": heuristic-algorithms/constructive-heuristics/the-knapsack-problem-which-order.md
+          - "The bin packing problem: first sort, then pack": heuristic-algorithms/constructive-heuristics/the-bin-packing-problem-first-sort-then-pack.md
+          - "Scheduling on parallel machines: longest jobs first": heuristic-algorithms/constructive-heuristics/scheduling-on-parallel-machines-longest-jobs-first.md
+          - "The travelling salesman problem: append or insert?": heuristic-algorithms/constructive-heuristics/the-travelling-salesman-problem-append-or-insert.md
+          - "Randomized construction": heuristic-algorithms/constructive-heuristics/randomized-construction.md
+          - "Look-ahead and regret": heuristic-algorithms/constructive-heuristics/look-ahead-and-regret.md
+          - "What constructive heuristics give, and what they do not": heuristic-algorithms/constructive-heuristics/what-constructive-heuristics-give-and-what-they-do-not.md
+          - "Typical mistakes · In summary": heuristic-algorithms/constructive-heuristics/typical-mistakes.md
+          - "C++ implementation": heuristic-algorithms/constructive-heuristics/c-implementation.md
+      - "25. Local search":
+          - heuristic-algorithms/local-search/index.md
+          - "The problems, the assumptions and the starting solutions": heuristic-algorithms/local-search/the-problems-the-assumptions-and-the-starting-solutions.md
+          - "Local search: the scheme · Neighbourhoods for the four problems": heuristic-algorithms/local-search/local-search-the-scheme.md
+          - "First improvement and best improvement": heuristic-algorithms/local-search/first-improvement-and-best-improvement.md
+          - "Evaluating a move incrementally": heuristic-algorithms/local-search/evaluating-a-move-incrementally.md
+          - "TSP: 2-opt and Or-opt": heuristic-algorithms/local-search/tsp-2-opt-and-or-opt.md
+          - "P||Cmax: move and swap": heuristic-algorithms/local-search/p-cmax-move-and-swap.md
+          - "Flat landscapes and auxiliary objectives": heuristic-algorithms/local-search/flat-landscapes-and-auxiliary-objectives.md
+          - "KP: feasibility and penalties": heuristic-algorithms/local-search/kp-feasibility-and-penalties.md
+          - "Variable neighbourhood descent": heuristic-algorithms/local-search/variable-neighbourhood-descent.md
+          - "Multi-start local search": heuristic-algorithms/local-search/multi-start-local-search.md
+          - "Typical mistakes · In summary": heuristic-algorithms/local-search/typical-mistakes.md
+          - "C++ implementation": heuristic-algorithms/local-search/c-implementation.md
+      - "26. Metaheuristics":
+          - heuristic-algorithms/metaheuristics/index.md
+          - "The problems and the assumptions": heuristic-algorithms/metaheuristics/the-problems-and-the-assumptions.md
+          - "How to escape from a local optimum · Simulated annealing": heuristic-algorithms/metaheuristics/how-to-escape-from-a-local-optimum.md
+          - "Tabu search": heuristic-algorithms/metaheuristics/tabu-search.md
+          - "Iterated local search": heuristic-algorithms/metaheuristics/iterated-local-search.md
+          - "Variable neighbourhood search": heuristic-algorithms/metaheuristics/variable-neighbourhood-search.md
+          - "GRASP": heuristic-algorithms/metaheuristics/grasp.md
+          - "Large neighbourhood search": heuristic-algorithms/metaheuristics/large-neighbourhood-search.md
+          - "Population-based methods: genetic and memetic algorithms": heuristic-algorithms/metaheuristics/population-based-methods-genetic-and-memetic-algorithms.md
+          - "Comparison and conclusions": heuristic-algorithms/metaheuristics/comparison-and-conclusions.md
+          - "Typical mistakes · In summary": heuristic-algorithms/metaheuristics/typical-mistakes.md
+          - "C++ implementation · References": heuristic-algorithms/metaheuristics/c-implementation.md
+      - "27. MIP heuristics": heuristic-algorithms/mip-heuristics-classical.md
   - Approximation:
       - approximation-algorithms/index.md
-      - "25. Definitions": approximation-algorithms/approximation.md
-      - "26. Bin packing": approximation-algorithms/bin-packing-approximation.md
-      - "27. Knapsack": approximation-algorithms/knapsack-approximation.md
-      - "28. P||Cmax": approximation-algorithms/pcmax-approximation.md
-      - "29. Metric TSP": approximation-algorithms/tsp-approximation.md
-      - "30. Coloring: limits": approximation-algorithms/coloring-approximation.md
+      - "28. Definitions": approximation-algorithms/approximation.md
+      - "29. Bin packing": approximation-algorithms/bin-packing-approximation.md
+      - "30. Knapsack": approximation-algorithms/knapsack-approximation.md
+      - "31. P||Cmax": approximation-algorithms/pcmax-approximation.md
+      - "32. Metric TSP": approximation-algorithms/tsp-approximation.md
+      - "33. Coloring: limits": approximation-algorithms/coloring-approximation.md
   - Specialized:
       - specialized-algorithms/index.md
-      - "31. Knapsack: B&B": specialized-algorithms/knapsack-branch-and-bound.md
-  - Catalogue:
-      - catalogue/index.md
-      - "At a glance": catalogue/at-a-glance.md
-      - "KP": catalogue/knapsack.md
-      - "BPP": catalogue/bin-packing.md
-      - "VCP": catalogue/vertex-coloring.md
-      - "MCP": catalogue/maximum-clique.md
-      - "TSP": catalogue/tsp.md
-      - "P||Cmax": catalogue/pcmax.md
-      - "CLS": catalogue/lot-sizing.md
-      - "Knapsack family": catalogue/knapsack-family.md
-      - "DP examples": catalogue/dp-examples.md
+      - "34. Knapsack: B&B": specialized-algorithms/knapsack-branch-and-bound.md
+  - Selected problems:
+      - selected-problems/index.md
+      - "At a glance": selected-problems/at-a-glance.md
+      - "KP": selected-problems/knapsack.md
+      - "BPP": selected-problems/bin-packing.md
+      - "VCP": selected-problems/vertex-coloring.md
+      - "MCP": selected-problems/maximum-clique.md
+      - "TSP": selected-problems/tsp.md
+      - "P||Cmax": selected-problems/pcmax.md
+      - "CLS": selected-problems/lot-sizing.md
+      - "Knapsack family": selected-problems/knapsack-family.md
+      - "DP examples": selected-problems/dp-examples.md
   - Exercises:
       - exercises/index.md
       - "1. Combinatorial optimization": exercises/combinatorial-optimization.md
@@ -213,21 +275,24 @@ nav:
       - "14. Machine scheduling": exercises/pcmax-formulations.md
       - "15. Lot sizing": exercises/lot-sizing-formulations.md
       - "16. Principles": exercises/dp-principles.md
-      - "17. Knapsack": exercises/dp-knapsack.md
-      - "18. Rod cutting, coin change": exercises/dp-rod-cutting-coin-change.md
-      - "19. Lot sizing": exercises/dp-lot-sizing.md
-      - "20. Definitions": exercises/heuristics.md
-      - "21. Constructive": exercises/constructive-heuristics.md
-      - "22. Local search": exercises/local-search.md
-      - "23. Metaheuristics": exercises/metaheuristics.md
-      - "24. MIP heuristics": exercises/mip-heuristics-classical.md
-      - "25. Definitions": exercises/approximation.md
-      - "26. Bin packing": exercises/bin-packing-approximation.md
-      - "27. Knapsack": exercises/knapsack-approximation.md
-      - "28. P||Cmax": exercises/pcmax-approximation.md
-      - "29. Metric TSP": exercises/tsp-approximation.md
-      - "30. Coloring: limits": exercises/coloring-approximation.md
-      - "31. Knapsack: B&B": exercises/knapsack-branch-and-bound.md
+      - "17. KP": exercises/dp-knapsack.md
+      - "18. UKP": exercises/dp-unbounded-knapsack.md
+      - "19. BKP": exercises/dp-bounded-knapsack.md
+      - "20. Rod cutting": exercises/dp-rod-cutting.md
+      - "21. Coin change": exercises/dp-coin-change.md
+      - "22. Lot sizing": exercises/dp-lot-sizing.md
+      - "23. Definitions": exercises/heuristics.md
+      - "24. Constructive": exercises/constructive-heuristics.md
+      - "25. Local search": exercises/local-search.md
+      - "26. Metaheuristics": exercises/metaheuristics.md
+      - "27. MIP heuristics": exercises/mip-heuristics-classical.md
+      - "28. Definitions": exercises/approximation.md
+      - "29. Bin packing": exercises/bin-packing-approximation.md
+      - "30. Knapsack": exercises/knapsack-approximation.md
+      - "31. P||Cmax": exercises/pcmax-approximation.md
+      - "32. Metric TSP": exercises/tsp-approximation.md
+      - "33. Coloring: limits": exercises/coloring-approximation.md
+      - "34. Knapsack: B&B": exercises/knapsack-branch-and-bound.md
   - Lab: lab/index.md
   - Downloads: downloads.md
   - Index: full-index.md

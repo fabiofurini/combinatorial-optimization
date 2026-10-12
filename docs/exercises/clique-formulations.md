@@ -24,11 +24,11 @@ title: "Exercises · Formulations of the maximum clique problem"
 
     **Questions**
 
-    1. Write the non-edges of $G$. How many variables and constraints does the $\ILP_{\MCP}$ model have?
+    1. Write the non-edges of $G$. How many variables and constraints does the $\mathrm{ILP}_{\mathrm{MCP}}$ model have?
 
-    2. Write the $\ILP_{\MCP}$ model of $G$.
+    2. Write the $\mathrm{ILP}_{\mathrm{MCP}}$ model of $G$.
 
-    3. Solve the model with Gurobi: give $z(\ILP_{\MCP})$ and the optimal solution. Is it unique?
+    3. Solve the model with Gurobi: give $z(\mathrm{ILP}_{\mathrm{MCP}})$ and the optimal solution. Is it unique?
 
     4. Which ILP model of the Maximum Stable Set Problem on $\overline{G}$ do you obtain? Explain.
 
@@ -42,7 +42,7 @@ title: "Exercises · Formulations of the maximum clique problem"
 
         The model has $n=6$ binary variables and one constraint per non-edge: $8$ linear constraints.
 
-    2. The $\ILP_{\MCP}$ model is:
+    2. The $\mathrm{ILP}_{\mathrm{MCP}}$ model is:
 
         \begin{align*}
         \max\quad & x_1+x_2+x_3+x_4+x_5+x_6\\
@@ -51,7 +51,7 @@ title: "Exercises · Formulations of the maximum clique problem"
         & x_1,\dots,x_6\in\{0,1\}.
         \end{align*}
 
-    3. Gurobi returns $z(\ILP_{\MCP})=3$ with $\tilde x_1=\tilde x_2=\tilde x_3=1$ and $\tilde x_4=\tilde x_5=\tilde x_6=0$: the clique $\{1,2,3\}$. The enumeration of the cliques shows that it is the only triangle, and no clique has $4$ vertices (only vertices $2$, $3$ and $5$ have degree $3$). The optimal solution is unique.
+    3. Gurobi returns $z(\mathrm{ILP}_{\mathrm{MCP}})=3$ with $\tilde x_1=\tilde x_2=\tilde x_3=1$ and $\tilde x_4=\tilde x_5=\tilde x_6=0$: the clique $\{1,2,3\}$. The enumeration of the cliques shows that it is the only triangle, and no clique has $4$ vertices (only vertices $2$, $3$ and $5$ have degree $3$). The optimal solution is unique.
 
         ![Figure 2](../img/ex-clique-formulations/fig02.svg){ .fig loading=lazy  }
 
@@ -75,9 +75,9 @@ title: "Exercises · Formulations of the maximum clique problem"
 
     2. List the maximal cliques of $\overline{G}$.
 
-    3. Write the clique formulation $\ILP^{\mathrm{CL}}_{\MCP}$ and compare its number of constraints with the $\ILP_{\MCP}$ model.
+    3. Write the clique formulation $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}$ and compare its number of constraints with the $\mathrm{ILP}_{\mathrm{MCP}}$ model.
 
-    4. Show that every constraint of $\ILP_{\MCP}$ is implied by a constraint of $\ILP^{\mathrm{CL}}_{\MCP}$.
+    4. Show that every constraint of $\mathrm{ILP}_{\mathrm{MCP}}$ is implied by a constraint of $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}$.
 
     5. Solve both models with Gurobi and give a maximum clique of $G$.
 
@@ -103,13 +103,13 @@ title: "Exercises · Formulations of the maximum clique problem"
         & x_1,\dots,x_6\in\{0,1\}.
         \end{align*}
 
-        It has $4$ constraints, against the $8$ constraints of $\ILP_{\MCP}$ (one per edge of $\overline{G}$).
+        It has $4$ constraints, against the $8$ constraints of $\mathrm{ILP}_{\mathrm{MCP}}$ (one per edge of $\overline{G}$).
 
     4. Every edge of $\overline{G}$ lies in a maximal clique, and the variables are non-negative:
 
         <div class="tabella" markdown="0"><table>
         <tr>
-        <th>constraint of <span class="arithmatex">\(\ILP_{\MCP}\)</span></th>
+        <th>constraint of <span class="arithmatex">\(\mathrm{ILP}_{\mathrm{MCP}}\)</span></th>
         <th>implied by</th>
         </tr>
         <tr>
@@ -165,11 +165,11 @@ title: "Exercises · Formulations of the maximum clique problem"
 
     **Questions**
 
-    1. Write the $\LP_{\MCP}$ model (edge formulation with $0\le x_v\le 1$). Show that $\bar x_v=\frac{1}{2}$ for every vertex is feasible, and compute $z(\LP_{\MCP})$ with Gurobi.
+    1. Write the $\mathrm{LP}_{\mathrm{MCP}}$ model (edge formulation with $0\le x_v\le 1$). Show that $\bar x_v=\frac{1}{2}$ for every vertex is feasible, and compute $z(\mathrm{LP}_{\mathrm{MCP}})$ with Gurobi.
 
-    2. List the maximal cliques of $\overline{G}$ and write the $\LP^{\mathrm{CL}}_{\MCP}$ model.
+    2. List the maximal cliques of $\overline{G}$ and write the $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ model.
 
-    3. Is the point $\bar x_v=\frac{1}{2}$ feasible for $\LP^{\mathrm{CL}}_{\MCP}$? Compute $z(\LP^{\mathrm{CL}}_{\MCP})$ with Gurobi, and prove the value by summing some constraints.
+    3. Is the point $\bar x_v=\frac{1}{2}$ feasible for $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$? Compute $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})$ with Gurobi, and prove the value by summing some constraints.
 
     4. Find $\omega(G)$ and compare the two LP bounds.
 
@@ -185,7 +185,7 @@ title: "Exercises · Formulations of the maximum clique problem"
         & 0\le x_1,\dots,x_7\le 1.
         \end{align*}
 
-        With $\bar x_v=\frac{1}{2}$ every constraint reads $\frac{1}{2}+\frac{1}{2}=1\le 1$, and the value is $\frac{7}{2}$. Gurobi returns $z(\LP_{\MCP})=\frac{7}{2}$: the point is optimal.
+        With $\bar x_v=\frac{1}{2}$ every constraint reads $\frac{1}{2}+\frac{1}{2}=1\le 1$, and the value is $\frac{7}{2}$. Gurobi returns $z(\mathrm{LP}_{\mathrm{MCP}})=\frac{7}{2}$: the point is optimal.
 
     2. The $6$ maximal cliques of $\overline{G}$ (maximal stable sets of $G$) are $\{1,3,7\}$, $\{2,3,6\}$, $\{2,4,5\}$, $\{2,4,6\}$, $\{3,6,7\}$, $\{4,6,7\}$, and the model is
 
@@ -196,7 +196,7 @@ title: "Exercises · Formulations of the maximum clique problem"
         & x_1,\dots,x_7\ge 0.
         \end{align*}
 
-    3. No: $\bar x_1+\bar x_3+\bar x_7=\frac{3}{2}>1$. Gurobi returns $z(\LP^{\mathrm{CL}}_{\MCP})=3$. The three constraints of $\{1,3,7\}$, $\{2,3,6\}$, $\{2,4,5\}$ cover every vertex at least once; summing them, every variable appears with coefficient at least $1$, so $\sum_{v=1}^{7}x_v\le 3$ for every feasible point.
+    3. No: $\bar x_1+\bar x_3+\bar x_7=\frac{3}{2}>1$. Gurobi returns $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})=3$. The three constraints of $\{1,3,7\}$, $\{2,3,6\}$, $\{2,4,5\}$ cover every vertex at least once; summing them, every variable appears with coefficient at least $1$, so $\sum_{v=1}^{7}x_v\le 3$ for every feasible point.
 
     4. The triangle $\{1,5,6\}$ is the unique maximum clique (enumeration), so $\omega(G)=3$.
 
@@ -216,7 +216,7 @@ title: "Exercises · Formulations of the maximum clique problem"
 
     1. List the maximal stable sets of $W_5$, that is, the maximal cliques of $\overline{W_5}$.
 
-    2. Write the $\LP^{\mathrm{CL}}_{\MCP}$ model and its dual, and say which coloring formulation the dual relaxes.
+    2. Write the $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ model and its dual, and say which coloring formulation the dual relaxes.
 
     3. Find a primal solution and a dual solution of value $\frac{7}{2}$. What can you conclude?
 
@@ -246,12 +246,12 @@ title: "Exercises · Formulations of the maximum clique problem"
 
         It is the LP relaxation of the coloring formulation with the maximal stable sets: every vertex must be covered by a chosen stable set.
 
-    3. The primal point $\bar x_1=\dots=\bar x_5=\frac{1}{2}$, $\bar x_6=1$ satisfies all the constraints and has value $\frac{5}{2}+1=\frac{7}{2}$. The dual point $\bar y_Q=\frac{1}{2}$ for the five pairs and $\bar y_{6}=1$ covers every vertex of the cycle with $\frac{1}{2}+\frac{1}{2}=1$ and vertex $6$ with $1$, and has value $\frac{7}{2}$. Equal values: by weak duality both are optimal, and $z(\LP^{\mathrm{CL}}_{\MCP})=\frac{7}{2}$ (Gurobi agrees).
+    3. The primal point $\bar x_1=\dots=\bar x_5=\frac{1}{2}$, $\bar x_6=1$ satisfies all the constraints and has value $\frac{5}{2}+1=\frac{7}{2}$. The dual point $\bar y_Q=\frac{1}{2}$ for the five pairs and $\bar y_{6}=1$ covers every vertex of the cycle with $\frac{1}{2}+\frac{1}{2}=1$ and vertex $6$ with $1$, and has value $\frac{7}{2}$. Equal values: by weak duality both are optimal, and $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})=\frac{7}{2}$ (Gurobi agrees).
 
     4. $\omega(W_5)\le\frac{7}{2}$ and $\omega(W_5)$ is an integer, so $\omega(W_5)\le 3$; the triangle $\{1,2,6\}$ gives $\omega(W_5)=3$. $\chi(W_5)\ge\frac{7}{2}$, so $\chi(W_5)\ge 4$; the coloring $\{1,3\},\{2,4\},\{5\},\{6\}$ gives $\chi(W_5)=4$. The chain reads
 
         $$
-        \omega(W_5)=3\;<\;z(\LP^{\mathrm{CL}}_{\MCP})=\frac{7}{2}\;<\;\chi(W_5)=4 .
+        \omega(W_5)=3\;<\;z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})=\frac{7}{2}\;<\;\chi(W_5)=4 .
         $$
 
 <a id="esercizio-12-5"></a>
@@ -274,9 +274,9 @@ title: "Exercises · Formulations of the maximum clique problem"
 
     **Questions**
 
-    1. Write the constraints of $\LP_{\MCP}$ and of $\LP^{\mathrm{CL}}_{\MCP}$ for $C_6$.
+    1. Write the constraints of $\mathrm{LP}_{\mathrm{MCP}}$ and of $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ for $C_6$.
 
-    2. For each point, decide whether it is feasible for $\LP_{\MCP}$, for $\LP^{\mathrm{CL}}_{\MCP}$ and for $\ILP_{\MCP}$.
+    2. For each point, decide whether it is feasible for $\mathrm{LP}_{\mathrm{MCP}}$, for $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ and for $\mathrm{ILP}_{\mathrm{MCP}}$.
 
     3. What do the values of the feasible points say about the two LP bounds?
 
@@ -284,14 +284,14 @@ title: "Exercises · Formulations of the maximum clique problem"
 
 ??? soluzione "Solution"
 
-    1. $\LP_{\MCP}$ has the $9$ non-edge constraints
+    1. $\mathrm{LP}_{\mathrm{MCP}}$ has the $9$ non-edge constraints
 
         \begin{align*}
         & x_1+x_3\le 1,~~ x_1+x_4\le 1,~~ x_1+x_5\le 1,~~ x_2+x_4\le 1,~~ x_2+x_5\le 1,\\
         & x_2+x_6\le 1,~~ x_3+x_5\le 1,~~ x_3+x_6\le 1,~~ x_4+x_6\le 1,
         \end{align*}
 
-        plus $0\le x_v\le 1$. $\LP^{\mathrm{CL}}_{\MCP}$ has one constraint per maximal stable set of $C_6$:
+        plus $0\le x_v\le 1$. $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ has one constraint per maximal stable set of $C_6$:
 
         \begin{align*}
         & x_1+x_3+x_5\le 1,~~ x_2+x_4+x_6\le 1,~~ x_1+x_4\le 1,~~ x_2+x_5\le 1,~~ x_3+x_6\le 1,
@@ -299,16 +299,16 @@ title: "Exercises · Formulations of the maximum clique problem"
 
         plus $x_v\ge 0$.
 
-    2. - $\bar{\vet x}^{a}$: feasible for $\LP_{\MCP}$; the clique inequality of $\{1,3,5\}$ gives $\frac{3}{2}>1$, so infeasible for $\LP^{\mathrm{CL}}_{\MCP}$ and $\ILP_{\MCP}$.
+    2. - $\bar{\vet x}^{a}$: feasible for $\mathrm{LP}_{\mathrm{MCP}}$; the clique inequality of $\{1,3,5\}$ gives $\frac{3}{2}>1$, so infeasible for $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ and $\mathrm{ILP}_{\mathrm{MCP}}$.
 
         - $\bar{\vet x}^{b}$: feasible for all three models: it is the clique $\{1,2\}$.
 
-        - $\bar{\vet x}^{c}$: $x_1+x_3=2>1$ violates a non-edge constraint: infeasible for all three models (every constraint of $\LP_{\MCP}$ is implied by $\LP^{\mathrm{CL}}_{\MCP}$).
+        - $\bar{\vet x}^{c}$: $x_1+x_3=2>1$ violates a non-edge constraint: infeasible for all three models (every constraint of $\mathrm{LP}_{\mathrm{MCP}}$ is implied by $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$).
 
-        - $\bar{\vet x}^{d}$: feasible for $\LP_{\MCP}$ and $\LP^{\mathrm{CL}}_{\MCP}$, not for $\ILP_{\MCP}$ (fractional).
+        - $\bar{\vet x}^{d}$: feasible for $\mathrm{LP}_{\mathrm{MCP}}$ and $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$, not for $\mathrm{ILP}_{\mathrm{MCP}}$ (fractional).
 
-        - $\bar{\vet x}^{e}$: feasible for $\LP_{\MCP}$ and $\LP^{\mathrm{CL}}_{\MCP}$, not for $\ILP_{\MCP}$ (fractional).
+        - $\bar{\vet x}^{e}$: feasible for $\mathrm{LP}_{\mathrm{MCP}}$ and $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$, not for $\mathrm{ILP}_{\mathrm{MCP}}$ (fractional).
 
-    3. $\bar{\vet x}^{a}$ has value $3$, so $z(\LP_{\MCP})\ge 3$. In $\LP^{\mathrm{CL}}_{\MCP}$ the best feasible point among the five is $\bar{\vet x}^{e}$, of value $2$; $\bar{\vet x}^{d}$ has value $\frac{3}{2}$ and $\bar{\vet x}^{b}$ has value $2$.
+    3. $\bar{\vet x}^{a}$ has value $3$, so $z(\mathrm{LP}_{\mathrm{MCP}})\ge 3$. In $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ the best feasible point among the five is $\bar{\vet x}^{e}$, of value $2$; $\bar{\vet x}^{d}$ has value $\frac{3}{2}$ and $\bar{\vet x}^{b}$ has value $2$.
 
-    4. Gurobi returns $z(\LP_{\MCP})=3$ and $z(\LP^{\mathrm{CL}}_{\MCP})=2$. The second value is proved by summing the constraints of $\{1,3,5\}$ and $\{2,4,6\}$, which give $\sum_{v=1}^{6}x_v\le 2$. $C_6$ has no triangle, so $\omega(C_6)=2$: the clique formulation closes the gap, the edge formulation leaves $3$ against $2$.
+    4. Gurobi returns $z(\mathrm{LP}_{\mathrm{MCP}})=3$ and $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})=2$. The second value is proved by summing the constraints of $\{1,3,5\}$ and $\{2,4,6\}$, which give $\sum_{v=1}^{6}x_v\le 2$. $C_6$ has no triangle, so $\omega(C_6)=2$: the clique formulation closes the gap, the edge formulation leaves $3$ against $2$.

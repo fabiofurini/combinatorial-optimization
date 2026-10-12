@@ -5,7 +5,7 @@ hide:
 title: "Bin packing heuristics"
 ---
 
-[← Lab](index.md) · Chapter: [Constructive heuristics](../heuristic-algorithms/constructive-heuristics.md)
+[← Lab](index.md) · Chapter: [Constructive heuristics](../heuristic-algorithms/constructive-heuristics/index.md)
 
 # Bin packing heuristics
 

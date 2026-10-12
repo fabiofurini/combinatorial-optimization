@@ -14,7 +14,7 @@ title: "Exercises · Combinatorial optimization problems"
 
 !!! esercizio "Exercise 1.1: Ground set, feasible solutions and objective (TSP)"
 
-    We consider the TSP instance with $4$ cities, $\Vcitta=\{1,2,3,4\}$, and the symmetric distances
+    We consider the TSP instance with $4$ cities, $\mathscr{V}=\{1,2,3,4\}$, and the symmetric distances
 
     $$
     d_{12}=3,\quad d_{13}=6,\quad d_{14}=4,\quad d_{23}=5,\quad d_{24}=2,\quad d_{34}=7.
@@ -99,7 +99,7 @@ title: "Exercises · Combinatorial optimization problems"
 
 !!! esercizio "Exercise 1.2: A greedy choice that is not optimal (KP)"
 
-    A fund has a budget of $c=14$ and $n=5$ candidate projects, the items $\Ioggetti=\{1,\dots,5\}$ of a knapsack instance, with the following profits and costs (weights):
+    A fund has a budget of $c=14$ and $n=5$ candidate projects, the items $\mathscr{I}=\{1,\dots,5\}$ of a knapsack instance, with the following profits and costs (weights):
 
     $$
     \begin{array}{l|ccccc}
@@ -122,7 +122,7 @@ title: "Exercises · Combinatorial optimization problems"
 
 ??? soluzione "Solution"
 
-    1. The ground set is $\mathscr{U}=\Ioggetti=\{1,2,3,4,5\}$. A subset $S\subseteq\mathscr{U}$ is feasible if $\sum_{j\in S} w_j\le 14$, and the objective is $f(S)=\sum_{j\in S} p_j$, to be maximized. The candidate solutions are the $2^5=32$ subsets.
+    1. The ground set is $\mathscr{U}=\mathscr{I}=\{1,2,3,4,5\}$. A subset $S\subseteq\mathscr{U}$ is feasible if $\sum_{j\in S} w_j\le 14$, and the objective is $f(S)=\sum_{j\in S} p_j$, to be maximized. The candidate solutions are the $2^5=32$ subsets.
 
     2. The three lightest items weigh $2+6+7=15>14$, so a feasible subset has at most $2$ items. The $12$ feasible subsets are:
 
@@ -205,12 +205,12 @@ title: "Exercises · Combinatorial optimization problems"
 
         - item $5$ does not fit (weight $8 > 6$);
 
-        It returns $\bar S=\{2,4\}$, of profit $22$: a primal bound $\LB=22$. It is not optimal, since $z(I)=27$. The two efficient items fill $8$ units of the budget, and the residual capacity $6$ is too small for any other item; the optimal solution gives up item $2$, the most efficient one, and uses $13$ of the $14$ units of the budget with items $1$ and $4$.
+        It returns $\bar S=\{2,4\}$, of profit $22$: a primal bound $\mathrm{LB}=22$. It is not optimal, since $z(I)=27$. The two efficient items fill $8$ units of the budget, and the residual capacity $6$ is too small for any other item; the optimal solution gives up item $2$, the most efficient one, and uses $13$ of the $14$ units of the budget with items $1$ and $4$.
 
     4. In the continuous relaxation the items are taken in the same order: items $2, 4$ fill $8$ units, and the fraction $\frac{6}{7}$ of item $1$ fills the residual capacity $6$:
 
         $$
-        \UB=9+13+\frac{6}{7}\cdot 14=34.
+        \mathrm{UB}=9+13+\frac{6}{7}\cdot 14=34.
         $$
 
         The bound is an integer, no rounding is needed. With respect to the bound, the relative gap of the greedy solution is $\frac{34-22}{22}=\frac{6}{11}\approx 54.5\%$; with respect to the optimum it is $\frac{27-22}{22}=\frac{5}{22}\approx 22.7\%$. Without the enumeration, the bound alone cannot certify the optimum.
@@ -231,7 +231,7 @@ title: "Exercises · Combinatorial optimization problems"
 
     - **(c)** A bin packing instance with $n=5$ items, capacity $c=8$ and weights $\vet{w}=(5,4,3,3,2)$.
 
-    - **(d)** A $\PCmax$ instance with $4$ jobs and $m=2$ machines.
+    - **(d)** A $P\|C_{\max}$ instance with $4$ jobs and $m=2$ machines.
 
     **Questions**
 
@@ -369,11 +369,11 @@ title: "Exercises · Combinatorial optimization problems"
         </tr>
         </table></div>
 
-        First Fit returns $\{\{1,2\},\{3,6\},\{4\},\{5\}\}$, with $4$ bins: a primal bound $\UB=4$.
+        First Fit returns $\{\{1,2\},\{3,6\},\{4\},\{5\}\}$, with $4$ bins: a primal bound $\mathrm{UB}=4$.
 
         ![Figure 3](../img/ex-combinatorial-optimization/fig03.svg){ .fig loading=lazy  }
 
-    2. $\sum_j w_j=5+4+5+6+8+2=30$, hence $\LB=\lceil 30/10\rceil=3$.
+    2. $\sum_j w_j=5+4+5+6+8+2=30$, hence $\mathrm{LB}=\lceil 30/10\rceil=3$.
 
     3. The partition $\{\{1,3\},\{2,4\},\{5,6\}\}$ has bins of weight $10, 10, 10$, all at most $10$: it is feasible and uses $3$ bins.
 
@@ -429,7 +429,7 @@ title: "Exercises · Combinatorial optimization problems"
 
         - we return from $4$ to $1$, at distance $d_{41}=9$.
 
-        The tour is $\bar\sigma=(1,2,3,5,4)$, of length $L(\bar\sigma)=2+4+4+8+9=27$. It is the length of a feasible solution of a minimization problem, hence a primal bound: $\UB=27$.
+        The tour is $\bar\sigma=(1,2,3,5,4)$, of length $L(\bar\sigma)=2+4+4+8+9=27$. It is the length of a feasible solution of a minimization problem, hence a primal bound: $\mathrm{UB}=27$.
 
         ![Figure 5](../img/ex-combinatorial-optimization/fig05.svg){ .fig loading=lazy  }
 
@@ -474,7 +474,7 @@ title: "Exercises · Combinatorial optimization problems"
         </tr>
         </table></div>
 
-        Hence $\LB=\frac{38}{2}=19$ (the sum is even, no rounding is needed).
+        Hence $\mathrm{LB}=\frac{38}{2}=19$ (the sum is even, no rounding is needed).
 
     3. The $12$ tours, all starting from city $1$, are:
 
@@ -529,4 +529,4 @@ title: "Exercises · Combinatorial optimization problems"
 
     !!! chiave ""
 
-        Nearest neighbour gives $\UB=27$, the two shortest edges give $\LB=19$, and the enumeration of the $12$ tours gives $z(I)=21$: $19\le z(I)=21\le 27$.
+        Nearest neighbour gives $\mathrm{UB}=27$, the two shortest edges give $\mathrm{LB}=19$, and the enumeration of the $12$ tours gives $z(I)=21$: $19\le z(I)=21\le 27$.

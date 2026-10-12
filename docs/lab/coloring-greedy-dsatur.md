@@ -5,7 +5,7 @@ hide:
 title: "Vertex coloring: greedy and DSATUR"
 ---
 
-[← Lab](index.md) · Chapter: [Constructive heuristics](../heuristic-algorithms/constructive-heuristics.md)
+[← Lab](index.md) · Chapter: [Constructive heuristics](../heuristic-algorithms/constructive-heuristics/index.md)
 
 # Vertex coloring: greedy and DSATUR
 

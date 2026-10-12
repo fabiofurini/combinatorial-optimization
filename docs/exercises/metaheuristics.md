@@ -6,15 +6,15 @@ title: "Exercises · Metaheuristics"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 23** · each solution opens with a click · [:material-book-open-variant: Chapter 23: Metaheuristics](../heuristic-algorithms/metaheuristics.md) · [:material-file-pdf-box: Exercises, volume 4 (PDF)](../pdf/exercises-4-heuristic-algorithms.pdf)
+**Exercises · Chapter 26** · each solution opens with a click · [:material-book-open-variant: Chapter 26: Metaheuristics](../heuristic-algorithms/metaheuristics/index.md) · [:material-file-pdf-box: Exercises, volume 4 (PDF)](../pdf/exercises-4-heuristic-algorithms.pdf)
 
 </div>
 
 ## Simulated annealing
 
-<a id="esercizio-23-1"></a>
+<a id="esercizio-26-1"></a>
 
-!!! esercizio "Exercise 23.1: Simulated annealing 1"
+!!! esercizio "Exercise 26.1: Simulated annealing 1"
 
     A TSP instance with $6$ cities and the symmetric distances
 
@@ -69,9 +69,9 @@ title: "Exercises · Metaheuristics"
 
     4. The best tour found is $(1,6,5,2,4,3)$ of length $20$; by enumeration of the $60$ tours the optimal tour is $(1,3,4,2,5,6)$, of length $20$: simulated annealing finds the optimum. The escape is due to the accepted moves with $\delta\ge 0$ (iterations $2$, $3$), which lead the search away from the local optimum $22$, from where improving moves reach $20$.
 
-<a id="esercizio-23-2"></a>
+<a id="esercizio-26-2"></a>
 
-!!! esercizio "Exercise 23.2: Simulated annealing 2"
+!!! esercizio "Exercise 26.2: Simulated annealing 2"
 
     A knapsack of capacity $c=16$ and $5$ items:
 
@@ -148,9 +148,9 @@ title: "Exercises · Metaheuristics"
 
     4. With $\beta=1$ an excess weight costs only $1$ per unit, and the infeasible solutions containing item $3$ have a large penalized value (for instance $f_1(1,1,1,1,0)=42-9=33$): the search stays in the infeasible region and never comes back to a better feasible solution. With $\beta=3$ the infeasible solutions are only a bridge: the search crosses them and reaches $\{1,3\}$, of profit $29$, which is optimal (by enumeration). The penalty coefficient must be large enough to make the infeasible solutions less attractive than the good feasible ones.
 
-<a id="esercizio-23-3"></a>
+<a id="esercizio-26-3"></a>
 
-!!! esercizio "Exercise 23.3: Simulated annealing 3"
+!!! esercizio "Exercise 26.3: Simulated annealing 3"
 
     A TSP instance with $6$ cities and the symmetric distances
 
@@ -207,9 +207,9 @@ title: "Exercises · Metaheuristics"
 
 ## Tabu search
 
-<a id="esercizio-23-4"></a>
+<a id="esercizio-26-4"></a>
 
-!!! esercizio "Exercise 23.4: Tabu search 1"
+!!! esercizio "Exercise 26.4: Tabu search 1"
 
     $m=2$ identical machines and $5$ jobs with processing times $t=(3,3,2,2,2)$. Tabu search uses the move neighbourhood, compares the solutions lexicographically by $(C_{\max},\sum_h L_h^2)$, forbids moving a job back to the machine it has just left for $tenure$ iterations (aspiration: a tabu move is allowed if it gives a makespan smaller than the best one), and stops when $C_{\max}$ equals the lower bound. Ties between moves: smallest job, then smallest machine.
 
@@ -241,9 +241,9 @@ title: "Exercises · Metaheuristics"
 
     4. At iteration $5$ the makespan reaches $LB=6$: the solution $J_1=\{1,2\}$, $J_2=\{3,4,5\}$ is optimal and the search stops. The search accepts worse solutions (in the lexicographic order) at iteration $4$, because the best non-tabu neighbour is worse than the current solution: this is how tabu search leaves the plateau of makespan $7$.
 
-<a id="esercizio-23-5"></a>
+<a id="esercizio-26-5"></a>
 
-!!! esercizio "Exercise 23.5: Tabu search 2"
+!!! esercizio "Exercise 26.5: Tabu search 2"
 
     $m=2$ identical machines and $5$ jobs with processing times $t=(3,3,2,2,2)$. The starting solution is the LPT solution $J_1=\{1,3,5\}$, $J_2=\{2,4\}$. Tabu search uses the move neighbourhood and the lexicographic comparison by $(C_{\max},\sum_hL_h^2)$; after moving job $j$ away from machine $h$, the attribute $(j,h)$ is tabu for $tenure$ iterations. Ties: smallest job, then smallest machine.
 
@@ -287,9 +287,9 @@ title: "Exercises · Metaheuristics"
 
     4. The tabu list forbids undoing the recent moves, so that the search is forced to make worse moves and leave the plateau (with $tenure=3$ the worsening moves lead to the optimum). A tabu list that is too long forbids too many moves, possibly the good ones; in the extreme, all moves are tabu and the search is driven only by the aspiration criterion. The tenure must be tuned.
 
-<a id="esercizio-23-6"></a>
+<a id="esercizio-26-6"></a>
 
-!!! esercizio "Exercise 23.6: Tabu search 3"
+!!! esercizio "Exercise 26.6: Tabu search 3"
 
     A TSP instance with $6$ cities and the symmetric distances
 
@@ -332,9 +332,9 @@ title: "Exercises · Metaheuristics"
 
 ## Iterated local search and VNS
 
-<a id="esercizio-23-7"></a>
+<a id="esercizio-26-7"></a>
 
-!!! esercizio "Exercise 23.7: Iterated local search and VNS 1"
+!!! esercizio "Exercise 26.7: Iterated local search and VNS 1"
 
     A TSP instance with $6$ cities and the symmetric distances
 
@@ -373,9 +373,9 @@ title: "Exercises · Metaheuristics"
 
     4. Yes: $20<22$, the new local optimum replaces the current one. Its length is $20$: it is the optimal tour. One kick and one local search have escaped from the local optimum where the 2-opt local search alone stops.
 
-<a id="esercizio-23-8"></a>
+<a id="esercizio-26-8"></a>
 
-!!! esercizio "Exercise 23.8: Iterated local search and VNS 2"
+!!! esercizio "Exercise 26.8: Iterated local search and VNS 2"
 
     A TSP instance with $6$ cities and the symmetric distances
 
@@ -414,9 +414,9 @@ title: "Exercises · Metaheuristics"
 
     4. The new local optimum is the starting tour itself, of length $22$: it is not shorter, and the current solution does not change. The kick was too weak: with segments $B$ and $C$ of a single city it changes only two edges, which is a 2-opt move, and the 2-opt local search undoes it at once. With “always accept” nothing would change either; the strength of the kick, not the acceptance criterion, is the problem here.
 
-<a id="esercizio-23-9"></a>
+<a id="esercizio-26-9"></a>
 
-!!! esercizio "Exercise 23.9: Iterated local search and VNS 3"
+!!! esercizio "Exercise 26.9: Iterated local search and VNS 3"
 
     $m=3$ identical machines and $7$ jobs with processing times $t=(4,4,3,3,2,2,2)$. Variable neighbourhood search starts from the LPT solution, uses $k_{\max}=3$, shakes with $k$ random moves (each move: job $j=1+\lfloor 7u\rfloor$ goes to the $g$-th machine different from its own, $g=1+\lfloor 2u\rfloor$, with two consecutive random numbers), uses as local search the move descent with best improvement in the lexicographic order $(C_{\max},\sum_hL_h^2)$, and stops when $C_{\max}=LB$. The random numbers are $0.26$, $0.51$, $0.92$, $0.07$, $0.44$, $0.09$, $0.36$, $0.36$, $0.87$, $0.77$, $0.04$, $0.66$.
 
@@ -446,9 +446,9 @@ title: "Exercises · Metaheuristics"
 
 ## GRASP
 
-<a id="esercizio-23-10"></a>
+<a id="esercizio-26-10"></a>
 
-!!! esercizio "Exercise 23.10: GRASP 1"
+!!! esercizio "Exercise 26.10: GRASP 1"
 
     A knapsack of capacity $c=16$ and $5$ items:
 
@@ -483,9 +483,9 @@ title: "Exercises · Metaheuristics"
 
     4. The best solution is $(1,0,1,0,0)$ of profit $29$, which is optimal (by enumeration: items $\{1,3\}$ fill the capacity exactly). The deterministic greedy algorithm never selects item $3$, because after items $1$ and $2$ it does not fit; the randomized construction sometimes chooses item $3$ before item $2$, and reaches a different valley.
 
-<a id="esercizio-23-11"></a>
+<a id="esercizio-26-11"></a>
 
-!!! esercizio "Exercise 23.11: GRASP 2"
+!!! esercizio "Exercise 26.11: GRASP 2"
 
     A TSP instance with $6$ cities and the symmetric distances
 
@@ -524,9 +524,9 @@ title: "Exercises · Metaheuristics"
 
     4. With $\alpha=0$ the RCL contains only the nearest cities: the construction is the nearest neighbour heuristic (up to ties), every iteration builds $(1,3,2,6,5,4)$, and the local search stops at $22$.
 
-<a id="esercizio-23-12"></a>
+<a id="esercizio-26-12"></a>
 
-!!! esercizio "Exercise 23.12: GRASP 3"
+!!! esercizio "Exercise 26.12: GRASP 3"
 
     A knapsack of capacity $c=16$ and $5$ items:
 
@@ -571,9 +571,9 @@ title: "Exercises · Metaheuristics"
 
 ## Large neighbourhood search
 
-<a id="esercizio-23-13"></a>
+<a id="esercizio-26-13"></a>
 
-!!! esercizio "Exercise 23.13: Large neighbourhood search 1"
+!!! esercizio "Exercise 26.13: Large neighbourhood search 1"
 
     Bins of capacity $c=10$ and $8$ items with weights $w=(2,7,5,5,3,2,6,6)$. LNS empties the least loaded bin (ties: smallest index) and one other bin chosen at random (the bin in position $1+\lfloor u\cdot(nb-1)\rfloor$ among the others), repacks the removed items by FFD into new bins, keeps the other bins, and accepts the new packing if it uses fewer bins, or as many bins and a sum of squared loads not smaller. It stops when $nb$ reaches $\lceil\sum_iw_i/c\rceil$. The random numbers are $0.13$, $0.76$, $0.46$.
 
@@ -599,9 +599,9 @@ title: "Exercises · Metaheuristics"
 
     4. The final packing $P_{1}=\{3,4\}$, $P_{2}=\{8\}$, $P_{3}=\{2,5\}$, $P_{4}=\{1,6,7\}$ uses $4$ bins, equal to the lower bound: it is optimal. Accepting packings with the same number of bins and a larger (or equal) sum of squared loads lets the search move on the plateau of the flat objective, toward packings with fuller bins and one almost empty bin, which is easier to eliminate.
 
-<a id="esercizio-23-14"></a>
+<a id="esercizio-26-14"></a>
 
-!!! esercizio "Exercise 23.14: Large neighbourhood search 2"
+!!! esercizio "Exercise 26.14: Large neighbourhood search 2"
 
     Bins of capacity $c=10$ and $8$ items with weights $w=(3,3,6,5,4,4,2,3)$. LNS starts from the FFD packing, empties the least loaded bin and two other bins at random ($q=3$; each one is the bin in position $1+\lfloor uK\rfloor$ among the $K$ bins not yet chosen), and repacks the removed items into new bins, either by FFD or optimally. The random numbers are $0.66$, $0.78$.
 
@@ -627,9 +627,9 @@ title: "Exercises · Metaheuristics"
 
     4. The FFD repair repacks the removed items as FFD does, and finds $3$ bins for them; the exact repair finds $2$, and the packing becomes optimal ($3$ bins). Since the removed items are repacked by the same rule that built the packing, LNS with FFD repair tends to rebuild the same bins: with $200$ iterations ($seed=1$) it never goes below $4$. The power of a large neighbourhood depends on the method that explores it.
 
-<a id="esercizio-23-15"></a>
+<a id="esercizio-26-15"></a>
 
-!!! esercizio "Exercise 23.15: Large neighbourhood search 3"
+!!! esercizio "Exercise 26.15: Large neighbourhood search 3"
 
     A TSP instance with $6$ cities and the symmetric distances
 
@@ -670,9 +670,9 @@ title: "Exercises · Metaheuristics"
 
 ## Genetic algorithms
 
-<a id="esercizio-23-16"></a>
+<a id="esercizio-26-16"></a>
 
-!!! esercizio "Exercise 23.16: Genetic algorithms 1"
+!!! esercizio "Exercise 26.16: Genetic algorithms 1"
 
     A knapsack of capacity $c=16$ and $5$ items:
 
@@ -707,9 +707,9 @@ title: "Exercises · Metaheuristics"
 
     4. No: crossover copies genes from the parents, and gene $3$ is $0$ in every individual. Only mutation can set it to $1$, as in iteration $1$; but the child is infeasible, and the repair removes the least efficient items, not item $3$, so the result is the solution $(0,0,1,0,0)$ of profit 18. The best individual after two iterations has profit $24<29$.
 
-<a id="esercizio-23-17"></a>
+<a id="esercizio-26-17"></a>
 
-!!! esercizio "Exercise 23.17: Genetic algorithms 2"
+!!! esercizio "Exercise 26.17: Genetic algorithms 2"
 
     A knapsack of capacity $c=16$ and $5$ items:
 

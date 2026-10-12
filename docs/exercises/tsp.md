@@ -14,7 +14,7 @@ title: "Exercises · The travelling salesman problem"
 
 !!! esercizio "Exercise 6.1: Tours and their length (TSP)"
 
-    We consider the TSP instance with $6$ cities, $\Vcitta=\{1,\dots,6\}$, and the symmetric distances
+    We consider the TSP instance with $6$ cities, $\mathscr{V}=\{1,\dots,6\}$, and the symmetric distances
 
     $$
     \begin{array}{c|cccccc}
@@ -273,13 +273,13 @@ title: "Exercises · The travelling salesman problem"
         </tr>
         </table></div>
 
-        Hence $\LB=44/2=22$.
+        Hence $\mathrm{LB}=44/2=22$.
 
     3. The absolute gap is $26-22=4$ and the relative gap is $\frac{4}{22}=\frac{2}{11}\approx 18.2\%$. The bound alone cannot certify the optimum: only the enumeration of the $12$ tours shows that no tour is shorter than $26$.
 
     !!! chiave ""
 
-        Starting from city $3$ the nearest neighbour rule finds the optimal tour, of length $26$; the two shortest edges give $\LB=22$, and the gap $4$ stays open without enumeration.
+        Starting from city $3$ the nearest neighbour rule finds the optimal tour, of length $26$; the two shortest edges give $\mathrm{LB}=22$, and the gap $4$ stays open without enumeration.
 
 <a id="esercizio-6-4"></a>
 

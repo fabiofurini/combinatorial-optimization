@@ -147,7 +147,7 @@ title: "Exercises · The maximum clique problem"
 
 ??? soluzione "Solution"
 
-    1. Vertex $6$ has degree $5$, the maximum. The vertices adjacent to $6$ are $1,\dots,5$: we add $1$. The vertices adjacent to both $6$ and $1$ are $2$ and $5$: we add $2$. No vertex is adjacent to $6$, $1$ and $2$, so we stop with $K=\{1,2,6\}$ and $\LB=3$.
+    1. Vertex $6$ has degree $5$, the maximum. The vertices adjacent to $6$ are $1,\dots,5$: we add $1$. The vertices adjacent to both $6$ and $1$ are $2$ and $5$: we add $2$. No vertex is adjacent to $6$, $1$ and $2$, so we stop with $K=\{1,2,6\}$ and $\mathrm{LB}=3$.
 
     2. The degrees are:
 
@@ -171,7 +171,7 @@ title: "Exercises · The maximum clique problem"
 
     !!! chiave ""
 
-        $\LB=3$ from the clique $\{1,2,6\}$; upper bounds $6$ (degree), $5$ (edges), $4$ (degree count) and $4$ (coloring); $\omega(W_5)=3$.
+        $\mathrm{LB}=3$ from the clique $\{1,2,6\}$; upper bounds $6$ (degree), $5$ (edges), $4$ (degree count) and $4$ (coloring); $\omega(W_5)=3$.
 
 <a id="esercizio-5-4"></a>
 

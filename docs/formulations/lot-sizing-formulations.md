@@ -156,9 +156,9 @@ title: "Formulations of capacitated lot sizing"
     && y_{t} & \in \{0, 1\}, & \forall t\in T. \label{CL1:bin} \tag{15.1g}
     \end{align*}
 
-    This model is referred to as the $\ILP_{\CLSP}$ model.
+    This model is referred to as the $\mathrm{ILP}_{\mathrm{CLSP}}$ model.
 
-- Description of the objective function and constraints of the $\ILP_{\CLSP}$ model:
+- Description of the objective function and constraints of the $\mathrm{ILP}_{\mathrm{CLSP}}$ model:
 
     - the objective function $\eqref{obj:CLS-1}$ minimizes the cost of the setups, of the production and of the holding;
 
@@ -225,15 +225,15 @@ title: "Formulations of capacitated lot sizing"
     </tr>
     </table></div>
 
-    The three choices give the following optimal values of the LP relaxation, called $\LP_{\CLSP}^{\mathrm{dem}}$, $\LP_{\CLSP}^{\mathrm{cap}}$ and $\LP_{\CLSP}^{\mathrm{strong}}$:
+    The three choices give the following optimal values of the LP relaxation, called $\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{dem}}$, $\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{cap}}$ and $\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{strong}}$:
 
     \begin{align*}
-    z(\LP_{\CLSP}^{\mathrm{dem}})&=\frac{9865}{99}\approx 99.65,\\
-    z(\LP_{\CLSP}^{\mathrm{cap}})&=\frac{275}{2}=137.5,\\
-    z(\LP_{\CLSP}^{\mathrm{strong}})&=\frac{315}{2}=157.5.
+    z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{dem}})&=\frac{9865}{99}\approx 99.65,\\
+    z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{cap}})&=\frac{275}{2}=137.5,\\
+    z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{strong}})&=\frac{315}{2}=157.5.
     \end{align*}
 
-    The integer optimal solution is the same for all the choices: $\tilde{\vet x}=(3,0,4,4,0)$ with $\tilde{\vet y}=(1,0,1,1,0)$, and $z(\ILP_{\CLSP})=180$.
+    The integer optimal solution is the same for all the choices: $\tilde{\vet x}=(3,0,4,4,0)$ with $\tilde{\vet y}=(1,0,1,1,0)$, and $z(\mathrm{ILP}_{\mathrm{CLSP}})=180$.
 
 ## 15.3 A shortest-path formulation
 
@@ -261,7 +261,7 @@ title: "Formulations of capacitated lot sizing"
     && y_{t} & \in \{0, 1\}, & \forall t \in T. \tag{15.2g}
     \end{align*}
 
-    This model is referred to as the shortest-path formulation; its LP relaxation is the $\LP_{\CLSP}^{\mathrm{SP}}$ model.
+    This model is referred to as the shortest-path formulation; its LP relaxation is the $\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{SP}}$ model.
 
 - Constraints $\eqref{SP1}$ and $\eqref{SP2}$ are the flow constraints of a network, drawn in Figure $\ref{fig:CLS-SP}$: the nodes are $0,1,\dots,m$, and the variable $zv_{tk}$ is the arc from node $t-1$ to node $k$, with cost $cv_{tk}$. A unit of flow leaves node $0$ (constraint $\eqref{SP1}$), and the flow is conserved at the other nodes (constraint $\eqref{SP2}$).
 
@@ -310,7 +310,7 @@ title: "Formulations of capacitated lot sizing"
 
 ## 15.4 Comparing the formulations
 
-- The formulations have the same optimal value $z(\ILP_{\CLSP})=180$, but their LP relaxations have different optimal values. On the reference instance the lower bounds, computed with the exact simplex algorithm and checked with Gurobi, are the following; the shortest-path formulation, solved with integer quantities, gives again the optimal value $180$.
+- The formulations have the same optimal value $z(\mathrm{ILP}_{\mathrm{CLSP}})=180$, but their LP relaxations have different optimal values. On the reference instance the lower bounds, computed with the exact simplex algorithm and checked with Gurobi, are the following; the shortest-path formulation, solved with integer quantities, gives again the optimal value $180$.
 
 - The last column is the gap of Chapter «Combinatorial optimization problems» between the bound and the optimal value; it is undefined for the bound $0$.
 
@@ -326,22 +326,22 @@ title: "Formulations of capacitated lot sizing"
 <td>undefined</td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{dem}}\)</span> (<span class="arithmatex">\(M_t=D_{t,m}\)</span>)</td>
+<td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{dem}}\)</span> (<span class="arithmatex">\(M_t=D_{t,m}\)</span>)</td>
 <td><span class="arithmatex">\(99.65\)</span></td>
 <td><span class="arithmatex">\(80.6\%\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{cap}}\)</span> (<span class="arithmatex">\(M_t=cap_t\)</span>)</td>
+<td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{cap}}\)</span> (<span class="arithmatex">\(M_t=cap_t\)</span>)</td>
 <td><span class="arithmatex">\(137.50\)</span></td>
 <td><span class="arithmatex">\(30.9\%\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{strong}}\)</span> (<span class="arithmatex">\(M_t=\min\{cap_t,D_{t,m}\}\)</span>)</td>
+<td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{strong}}\)</span> (<span class="arithmatex">\(M_t=\min\{cap_t,D_{t,m}\}\)</span>)</td>
 <td><span class="arithmatex">\(157.50\)</span></td>
 <td><span class="arithmatex">\(14.3\%\)</span></td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{SP}}\)</span> (shortest path)</td>
+<td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{SP}}\)</span> (shortest path)</td>
 <td><span class="arithmatex">\(170\)</span></td>
 <td><span class="arithmatex">\(5.9\%\)</span></td>
 </tr>
@@ -552,22 +552,22 @@ title: "Formulations of capacitated lot sizing"
     <tr>
     <td>Big-M, <span class="arithmatex">\(M_t=D_{t,m}\)</span></td>
     <td><span class="arithmatex">\(99.65\)</span></td>
-    <td><span class="arithmatex">\(z(\LP_{\CLSP}^{\mathrm{dem}})=\tfrac{9865}{99}\)</span></td>
+    <td><span class="arithmatex">\(z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{dem}})=\tfrac{9865}{99}\)</span></td>
     </tr>
     <tr>
     <td>Big-M, <span class="arithmatex">\(M_t=cap_t\)</span></td>
     <td><span class="arithmatex">\(137.5\)</span></td>
-    <td><span class="arithmatex">\(z(\LP_{\CLSP}^{\mathrm{cap}})\)</span></td>
+    <td><span class="arithmatex">\(z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{cap}})\)</span></td>
     </tr>
     <tr>
     <td>Strong big-M</td>
     <td><span class="arithmatex">\(157.5\)</span></td>
-    <td><span class="arithmatex">\(z(\LP_{\CLSP}^{\mathrm{strong}})\)</span></td>
+    <td><span class="arithmatex">\(z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{strong}})\)</span></td>
     </tr>
     <tr>
     <td>Shortest path</td>
     <td><span class="arithmatex">\(170\)</span></td>
-    <td><span class="arithmatex">\(z(\LP_{\CLSP}^{\mathrm{SP}})\)</span></td>
+    <td><span class="arithmatex">\(z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{SP}})\)</span></td>
     </tr>
     <tr>
     <td>Optimal value</td>

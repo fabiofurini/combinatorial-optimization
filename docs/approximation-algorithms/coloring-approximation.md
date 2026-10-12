@@ -6,7 +6,7 @@ title: "Limits of approximation: vertex coloring"
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 30** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Coloring: limits](../exercises/coloring-approximation.md)
+**Part 5 · Approximation algorithms · Chapter 33** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Coloring: limits](../exercises/coloring-approximation.md)
 
 </div>
 
@@ -32,11 +32,11 @@ title: "Limits of approximation: vertex coloring"
 
     - build the crown graphs, on which a bad list forces the greedy coloring to use $\frac{n}{2}$ colors.
 
-## 30.1 The problem and the assumptions
+## 33.1 The problem and the assumptions
 
 <a id="box-1-def-VCP"></a>
 
-!!! definizione "Definition 30.1: Vertex Coloring Problem"
+!!! definizione "Definition 33.1: Vertex Coloring Problem"
 
     An instance of the VCP is a simple graph $G=(V,E)$ with $n$ vertices; a coloring assigns a color to each vertex so that adjacent vertices get different colors, and the number of colors is minimized. The optimal value is the <strong>chromatic number</strong> $\chi(G)=z(I)$.
 
@@ -59,9 +59,9 @@ title: "Limits of approximation: vertex coloring"
     \end{aligned}
     $$
 
-## 30.2 The greedy coloring and DSATUR
+## 33.2 The greedy coloring and DSATUR
 
-### 30.2.1 The greedy coloring { #sez-sec-GC }
+### 33.2.1 The greedy coloring { #sez-sec-GC }
 
 !!! chiave ""
 
@@ -78,7 +78,7 @@ title: "Limits of approximation: vertex coloring"
 
 <a id="box-2-ex-gc"></a>
 
-!!! esempio "Example 30.1: $GC$ on the Petersen graph, two orders"
+!!! esempio "Example 33.1: $GC$ on the Petersen graph, two orders"
 
     ![Figure 1](../img/coloring-approximation/fig01.svg){ .fig loading=lazy  }
 
@@ -108,7 +108,7 @@ title: "Limits of approximation: vertex coloring"
 
     and $GC$ uses $4$ colors: vertex $8$ takes color $2$, which the first order gave to vertex $6$, and vertices $9$ and $10$ then see all three colors among their neighbours.
 
-### 30.2.2 DSATUR { #sez-sec-DSATUR }
+### 33.2.2 DSATUR { #sez-sec-DSATUR }
 
 !!! chiave ""
 
@@ -125,7 +125,7 @@ title: "Limits of approximation: vertex coloring"
 
 <a id="box-3-ex-dsatur"></a>
 
-!!! esempio "Example 30.2: $DSATUR$ on the Petersen graph"
+!!! esempio "Example 33.2: $DSATUR$ on the Petersen graph"
 
     All the vertices have degree $3$. The vertex chosen at each step, its saturation degree, its degree among the uncolored vertices and its color are:
 
@@ -199,7 +199,7 @@ title: "Limits of approximation: vertex coloring"
 
     At step $1$ all the vertices tie and vertex $1$ is chosen. At step $2$ the vertices $2$, $5$, $6$ have saturation degree $1$ and two uncolored neighbours each: the smallest index, $2$, is chosen. At step $7$ vertex $8$ (neighbours $3$ and $6$, colors $1$ and $2$) has saturation degree $2$ and goes before vertex $7$. $DSATUR$ uses $3=\chi(G)$ colors, the same coloring as $GC$ with the list $(1,2,\dots,10)$.
 
-## 30.3 No ratio below four thirds
+## 33.3 No ratio below four thirds
 
 - For $P\,||\,C_{\max}$ (chapter [«Approximation for $P\,||\,C_{\max}$»](https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/pcmax-approximation/)) and for the metric TSP (chapter [«Approximation for the metric TSP»](https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/tsp-approximation/)) simple algorithms have a constant performance guarantee.
 
@@ -207,7 +207,7 @@ title: "Limits of approximation: vertex coloring"
 
 <a id="box-4-prop-VCP43"></a>
 
-!!! teorema "Proposition 30.2"
+!!! teorema "Proposition 33.2"
 
     If $P\neq NP$, there is no polynomial algorithm $\mathscr{A}$ for the VCP such that, for every VCP instance $I$,
 
@@ -227,7 +227,7 @@ title: "Limits of approximation: vertex coloring"
 
     <strong>Much stronger results (cited without proof).</strong>
 
-    - Garey and Johnson (1976) raised the bound of [Proposition 30.2](#box-4-prop-VCP43) to $2$: unless $P=NP$, no polynomial algorithm colors every graph with fewer than $2\chi(G)$ colors.
+    - Garey and Johnson (1976) raised the bound of [Proposition 33.2](#box-4-prop-VCP43) to $2$: unless $P=NP$, no polynomial algorithm colors every graph with fewer than $2\chi(G)$ colors.
 
     - Much more is true: the ratio cannot even be bounded by a small power of $n$. For every $\varepsilon>0$, unless $P=NP$, no polynomial algorithm $\mathscr{A}$ satisfies
 
@@ -237,11 +237,11 @@ title: "Limits of approximation: vertex coloring"
 
         for every graph $G$ with $n$ vertices. Since every graph can be colored with $n$ colors, a ratio of $n$ is trivial: the chromatic number is essentially as hard to approximate as possible (Zuckerman, 2007).
 
-## 30.4 What the greedy coloring guarantees
+## 33.4 What the greedy coloring guarantees
 
 <a id="box-5-prop-GCDelta"></a>
 
-!!! teorema "Proposition 30.3"
+!!! teorema "Proposition 33.3"
 
     For every graph $G$ and every list $\lambda$,
 
@@ -261,7 +261,7 @@ title: "Limits of approximation: vertex coloring"
 
 <a id="box-6-prop-crown"></a>
 
-!!! teorema "Proposition 30.4"
+!!! teorema "Proposition 33.4"
 
     For every $k\ge3$ there is a graph $G_k$ with $n=2k$ vertices, $\chi(G_k)=2$ and $\Delta(G_k)=k-1$, and a list $\lambda$, such that
 
@@ -281,7 +281,7 @@ title: "Limits of approximation: vertex coloring"
 
 <a id="box-7-ex-crown"></a>
 
-!!! esempio "Example 30.3: $GC$ and $DSATUR$ on the crown graph $G_4$"
+!!! esempio "Example 33.3: $GC$ and $DSATUR$ on the crown graph $G_4$"
 
     Number the vertices $u_i=2i-1$ and $v_i=2i$, so that $u_1,v_1,\dots,u_4,v_4$ are $1,2,\dots,8$, and $E=\{\{2i-1,2j\}: i\neq j\}$, with $12$ edges.
 
@@ -291,13 +291,13 @@ title: "Limits of approximation: vertex coloring"
 
     $DSATUR$ chooses vertex $1$ ($u_1$, color $1$), then the vertices $4$, $5$, $2$, $3$, $6$, $7$, $8$, with colors $2,1,2,1,2,1,2$: the vertices $u_i$ get color $1$ and the vertices $v_i$ color $2$, and $DSATUR$ uses $2=\chi(G_4)$ colors. After the first step, every vertex adjacent to a colored vertex has saturation degree $1$, and the vertex chosen is always on the side opposite to the last one colored.
 
-## 30.5 DSATUR as a heuristic
+## 33.5 DSATUR as a heuristic
 
 - On bipartite graphs $DSATUR$ always uses at most $2$ colors, as on the crown graphs; this is proved in the paper that introduced it (Brélaz, 1979).
 
 - On general graphs $DSATUR$ is a polynomial algorithm, so by the results of this section it cannot have a performance guarantee below $\frac43$ (and, by the cited results, not even below $n^{1-\varepsilon}$), unless $P=NP$. It is nevertheless one of the most used constructive heuristics for the VCP, because on most graphs it uses few colors more than $\chi(G)$, often none; it is also the base of exact branch and bound algorithms for the VCP, which branch on the vertex chosen by the $DSATUR$ rule.
 
-## 30.6 Sources
+## 33.6 Sources
 
 - M.R. Garey, D.S. Johnson, L. Stockmeyer, Some simplified NP-complete graph problems, <em>Theoretical Computer Science</em> 1(3):237–267, 1976.
 
@@ -307,7 +307,7 @@ title: "Limits of approximation: vertex coloring"
 
 - D. Brélaz, New methods to color the vertices of a graph, <em>Communications of the ACM</em> 22(4):251–256, 1979.
 
-## 30.7 Typical mistakes
+## 33.7 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -317,7 +317,7 @@ title: "Limits of approximation: vertex coloring"
 
     - <strong>Reading the bipartite case as a general guarantee.</strong> $DSATUR$ uses at most $2$ colors on every bipartite graph, but on general graphs it is a heuristic: unless $P=NP$, it has no performance guarantee below $\frac{4}{3}$.
 
-## 30.8 In summary
+## 33.8 In summary
 
 !!! chiave "In summary"
 

@@ -31,15 +31,15 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
     **Questions**
 
-    1. Count the variables and the constraints (besides the domains) of the $\ILP_{\TSP}^{\mathrm{MTZ}}$ model for $n=4$.
+    1. Count the variables and the constraints (besides the domains) of the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ model for $n=4$.
 
-    2. Write the $\ILP_{\TSP}^{\mathrm{MTZ}}$ model for this instance.
+    2. Write the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ model for this instance.
 
     3. List the distinct tours with their lengths, and give the optimal tour $\sigma$.
 
     4. Write the values of the variables $x_{ij}$ and $u_i$ that represent $\sigma$, and verify the constraints (MTZ) one by one.
 
-    5. Solve the LP relaxation $\LP_{\TSP}^{\mathrm{MTZ}}$ with Gurobi and compare its value with the optimal value.
+    5. Solve the LP relaxation $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ with Gurobi and compare its value with the optimal value.
 
 ??? soluzione "Solution"
 
@@ -113,7 +113,7 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
         All of them hold; the selected arcs $(i,j)$ with $i,j\neq 1$ hold with equality.
 
-    5. Gurobi gives $z(\LP_{\TSP}^{\mathrm{MTZ}})=12$, against the optimal value $13$: the relaxation leaves a gap of $1$.
+    5. Gurobi gives $z(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}})=12$, against the optimal value $13$: the relaxation leaves a gap of $1$.
 
 <a id="esercizio-13-2"></a>
 
@@ -136,13 +136,13 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
     **Questions**
 
-    1. Count the subtour elimination constraints of the $\ILP_{\TSP}^{\mathrm{DFJ}}$ model for $n=4$, and write them.
+    1. Count the subtour elimination constraints of the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$ model for $n=4$, and write them.
 
     2. The arcs $(1,2)$, $(2,1)$, $(3,4)$, $(4,3)$ satisfy the degree constraints. Find the subtour elimination constraint they violate.
 
     3. Do the same for the arcs $(1,3)$, $(3,1)$, $(2,4)$, $(4,2)$, which form two subtours both of length $22$.
 
-    4. Solve with Gurobi the assignment relaxation (degree constraints only), the relaxation $\LP_{\TSP}^{\mathrm{DFJ}}$ and the model $\ILP_{\TSP}^{\mathrm{DFJ}}$, and compare the values.
+    4. Solve with Gurobi the assignment relaxation (degree constraints only), the relaxation $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$ and the model $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$, and compare the values.
 
 ??? soluzione "Solution"
 
@@ -159,7 +159,7 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
     3. The arcs form $1\to 3\to 1$ and $2\to 4\to 2$. The subtour without city $1$ is on $\{2,4\}$: $x_{24}+x_{42}=2>1$. One set $S$ is enough for every solution with subtours, because one of the subtours never contains city $1$.
 
-    4. Gurobi gives the assignment relaxation $10$, $z(\LP_{\TSP}^{\mathrm{DFJ}})=13$ and $z(\ILP_{\TSP}^{\mathrm{DFJ}})=13$, attained by the tour $(1,2,3,4)$. The subtour elimination constraints raise the bound from $10$ to $13$, which is the optimal value.
+    4. Gurobi gives the assignment relaxation $10$, $z(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{DFJ}})=13$ and $z(\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}})=13$, attained by the tour $(1,2,3,4)$. The subtour elimination constraints raise the bound from $10$ to $13$, which is the optimal value.
 
 <a id="esercizio-13-3"></a>
 
@@ -199,7 +199,7 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
     3. Which candidates represent a feasible solution of the integer models? For candidate (c), show that no choice of the positions $u_i$ satisfies the constraints (MTZ).
 
-    4. Give the objective value of candidate (d), and compare it with the optimal value and with $z(\LP_{\TSP}^{\mathrm{MTZ}})$ (use Gurobi).
+    4. Give the objective value of candidate (d), and compare it with the optimal value and with $z(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}})$ (use Gurobi).
 
 ??? soluzione "Solution"
 
@@ -213,11 +213,11 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
         - **(d)** Every arc has $x_{ij}=\frac{1}{4}$, so with $u_i=1$ every constraint (MTZ) reads $4\cdot\frac{1}{4}=1\le 3$. A set $S$ contains $|S|(|S|-1)$ arcs, of total value $\frac{|S|(|S|-1)}{4}\le |S|-1$ since $|S|\le 4$: all the subtour elimination constraints hold.
 
-    3. Only (a) and (b) are integer and form a tour. Candidate (a) is feasible for both integer models; the arcs of (b) are feasible for $\ILP_{\TSP}^{\mathrm{DFJ}}$, and become feasible for $\ILP_{\TSP}^{\mathrm{MTZ}}$ with the positions of (a). Candidate (d) is feasible only for the two relaxations.
+    3. Only (a) and (b) are integer and form a tour. Candidate (a) is feasible for both integer models; the arcs of (b) are feasible for $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$, and become feasible for $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ with the positions of (a). Candidate (d) is feasible only for the two relaxations.
 
         For (c), the selected arcs $(4,5)$ and $(5,4)$ force $u_5\ge u_4+1$ and $u_4\ge u_5+1$. Summing gives $0\ge 2$, which is impossible: no positions work, because the subtour $4\to 5\to 4$ does not contain city $1$.
 
-    4. The value of (d) is one quarter of the sum of $d_{ij}$ over all the arcs, that is $\frac{2\cdot 59}{4}=\frac{59}{2}$. It is larger than the optimal value $L((1,3,2,5,4))=21$, so it does not improve the bound $z(\LP_{\TSP}^{\mathrm{MTZ}})=20$ given by Gurobi; it shows only that the relaxations contain fractional points far from every tour.
+    4. The value of (d) is one quarter of the sum of $d_{ij}$ over all the arcs, that is $\frac{2\cdot 59}{4}=\frac{59}{2}$. It is larger than the optimal value $L((1,3,2,5,4))=21$, so it does not improve the bound $z(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}})=20$ given by Gurobi; it shows only that the relaxations contain fractional points far from every tour.
 
 <a id="esercizio-13-4"></a>
 
@@ -241,13 +241,13 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
     **Questions**
 
-    1. Count the variables and the constraints (besides the domains) of the three relaxations: degree constraints only, $\LP_{\TSP}^{\mathrm{MTZ}}$ and $\LP_{\TSP}^{\mathrm{DFJ}}$.
+    1. Count the variables and the constraints (besides the domains) of the three relaxations: degree constraints only, $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ and $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$.
 
     2. Solve the three relaxations with Gurobi and report their optimal solutions.
 
     3. Find the optimal tour by enumerating the $12$ distinct tours, and compute the gap $\frac{z-\LB}{\LB}$ of each bound.
 
-    4. Show that the optimal solution of $\LP_{\TSP}^{\mathrm{MTZ}}$ found by Gurobi lies in the weak region of the chapter, and that it violates subtour elimination constraints.
+    4. Show that the optimal solution of $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ found by Gurobi lies in the weak region of the chapter, and that it violates subtour elimination constraints.
 
 ??? soluzione "Solution"
 
@@ -265,12 +265,12 @@ title: "Exercises · Formulations of the travelling salesman problem"
         <td><span class="arithmatex">\(10\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\TSP}^{\mathrm{MTZ}}\)</span></td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}}\)</span></td>
         <td><span class="arithmatex">\(20+4\)</span></td>
         <td><span class="arithmatex">\(10+12\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\TSP}^{\mathrm{DFJ}}\)</span></td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{DFJ}}\)</span></td>
         <td><span class="arithmatex">\(20\)</span></td>
         <td><span class="arithmatex">\(10+11\)</span></td>
         </tr>
@@ -278,9 +278,9 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
     2. - Degree constraints only: value $20$, with $x_{15}=x_{23}=x_{32}=x_{41}=x_{54}=1$: the subtours $1\to 5\to 4\to 1$, $2\to 3\to 2$.
 
-        - $\LP_{\TSP}^{\mathrm{MTZ}}$: value $\frac{43}{2}$, with $x_{14}=x_{23}=x_{32}=x_{45}=\frac{3}{4},~~x_{51}=\frac{1}{2},~~x_{12}=x_{21}=x_{35}=x_{41}=x_{53}=x_{54}=\frac{1}{4}$ and $u_2=u_3=u_4=u_5=1$.
+        - $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$: value $\frac{43}{2}$, with $x_{14}=x_{23}=x_{32}=x_{45}=\frac{3}{4},~~x_{51}=\frac{1}{2},~~x_{12}=x_{21}=x_{35}=x_{41}=x_{53}=x_{54}=\frac{1}{4}$ and $u_2=u_3=u_4=u_5=1$.
 
-        - $\LP_{\TSP}^{\mathrm{DFJ}}$: value $23$, with $x_{12}=x_{23}=x_{35}=x_{41}=x_{54}=1$, which is the tour $(1,2,3,5,4)$.
+        - $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$: value $23$, with $x_{12}=x_{23}=x_{35}=x_{41}=x_{54}=1$, which is the tour $(1,2,3,5,4)$.
 
     3. The optimal tour is $\sigma=(1,2,3,5,4)$, of length $L(\sigma)=23$. The gaps are:
 
@@ -296,12 +296,12 @@ title: "Exercises · Formulations of the travelling salesman problem"
         <td><span class="arithmatex">\(15.0\%\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\TSP}^{\mathrm{MTZ}}\)</span></td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}}\)</span></td>
         <td><span class="arithmatex">\(\frac{43}{2}\)</span></td>
         <td><span class="arithmatex">\(7.0\%\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\TSP}^{\mathrm{DFJ}}\)</span></td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{DFJ}}\)</span></td>
         <td><span class="arithmatex">\(23\)</span></td>
         <td><span class="arithmatex">\(0.0\%\)</span></td>
         </tr>
@@ -359,7 +359,7 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
         \*\*Iteration 3\*\*<br> Gurobi gives value $17$ with $x_{12}=1$, $x_{25}=1$, $x_{34}=1$, $x_{41}=1$, $x_{53}=1$. The arcs form the tour $(1,2,5,3,4)$. No subtour elimination constraint is violated, and the procedure stops.
 
-    3. Enumeration gives the optimal tour $(1,2,5,3,4)$, of length $17$, which is the tour found at the last iteration. Gurobi gives $z(\LP_{\TSP}^{\mathrm{MTZ}})=14$. The gaps are:
+    3. Enumeration gives the optimal tour $(1,2,5,3,4)$, of length $17$, which is the tour found at the last iteration. Gurobi gives $z(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}})=14$. The gaps are:
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -373,7 +373,7 @@ title: "Exercises · Formulations of the travelling salesman problem"
         <td><span class="arithmatex">\(41.7\%\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\TSP}^{\mathrm{MTZ}}\)</span></td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}}\)</span></td>
         <td><span class="arithmatex">\(14\)</span></td>
         <td><span class="arithmatex">\(21.4\%\)</span></td>
         </tr>

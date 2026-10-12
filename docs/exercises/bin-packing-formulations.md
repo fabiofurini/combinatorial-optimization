@@ -30,19 +30,19 @@ title: "Exercises · Formulations of the bin packing problem"
 
     1. Explain why $m=3$ is a valid upper bound on the number of bins used in any optimal solution.
 
-    2. Count the variables and the constraints (besides the domains of the variables) of the $\ILP_{\BPP}$ model with $m=3$.
+    2. Count the variables and the constraints (besides the domains of the variables) of the $\mathrm{ILP}_{\mathrm{BPP}}$ model with $m=3$.
 
-    3. Write the $\ILP_{\BPP}$ model with $m=3$ for this instance.
+    3. Write the $\mathrm{ILP}_{\mathrm{BPP}}$ model with $m=3$ for this instance.
 
     4. Solve the model with Gurobi. Give the optimal value, an optimal solution and the associated packing patterns, and say whether the optimal solution is unique.
 
 ??? soluzione "Solution"
 
-    1. The given packing patterns have weights $9$, $9$ and $2$, all at most $c=10$: they are a feasible solution with $3$ bins. Hence $z(\ILP_{\BPP})\le 3$, and $m=3$ is a valid upper bound.
+    1. The given packing patterns have weights $9$, $9$ and $2$, all at most $c=10$: they are a feasible solution with $3$ bins. Hence $z(\mathrm{ILP}_{\mathrm{BPP}})\le 3$, and $m=3$ is a valid upper bound.
 
     2. There are $m\,n=3\cdot5=15$ assignment variables $x_{jb}$ and $m=3$ activation variables $y_b$, so $18$ binary variables. There are $n=5$ assignment constraints and $m=3$ capacity constraints, so $8$ linear constraints.
 
-    3. With $\mathscr{B}=\{1,2,3\}$ the $\ILP_{\BPP}$ model is:
+    3. With $\mathscr{B}=\{1,2,3\}$ the $\mathrm{ILP}_{\mathrm{BPP}}$ model is:
 
         \begin{align*}
         \min~~ & y_1 + y_2 + y_3 \\[0.5ex]
@@ -58,7 +58,7 @@ title: "Exercises · Formulations of the bin packing problem"
         & y_b \in \{0,1\}, ~~ b \in \mathscr{B}
         \end{align*}
 
-    4. Gurobi returns the optimal value $z(\ILP_{\BPP})=2$. The lower bound $\left\lceil \frac{6+5+4+3+2}{10}\right\rceil=2$ confirms it. An optimal solution is
+    4. Gurobi returns the optimal value $z(\mathrm{ILP}_{\mathrm{BPP}})=2$. The lower bound $\left\lceil \frac{6+5+4+3+2}{10}\right\rceil=2$ confirms it. An optimal solution is
 
         $$
         \tilde x_{11}=1,~~\tilde x_{31}=1,~~\tilde x_{22}=1,~~\tilde x_{42}=1,~~\tilde x_{52}=1,~~ \tilde y_1=\tilde y_2=1,~~\tilde y_3=0,
@@ -86,7 +86,7 @@ title: "Exercises · Formulations of the bin packing problem"
 
     **Questions**
 
-    1. Solve the two LP relaxations $\LP\text{-}0_{\BPP}$ and $\LP_{\BPP}$ with Gurobi and compare their optimal values with the formula of the chapter.
+    1. Solve the two LP relaxations $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ and $\mathrm{LP}_{\mathrm{BPP}}$ with Gurobi and compare their optimal values with the formula of the chapter.
 
     2. Write the primal solution and the dual solution given by the chapter for this instance, and verify that they are feasible and have the same objective value.
 
@@ -99,12 +99,12 @@ title: "Exercises · Formulations of the bin packing problem"
         For every BPP instance and every valid $m$, the optimal value of both LP relaxations is
 
         $$
-        z(\LP\text{-}0_{\BPP}) \;=\; z(\LP_{\BPP}) \;=\; \frac{\sum_{j\in\mathscr{I}} w_j}{c},
+        z(\mathrm{LP}\text{-}0_{\mathrm{BPP}}) \;=\; z(\mathrm{LP}_{\mathrm{BPP}}) \;=\; \frac{\sum_{j\in\mathscr{I}} w_j}{c},
         $$
 
-        attained by $\tilde x_{jb}=\frac{1}{m}$ and $\tilde y_b=\frac{\sum_{j} w_j}{m\,c}$; an optimal dual solution is $\tilde\mu_j=\frac{w_j}{c}$ and $\tilde\pi_b=\frac{1}{c}$ (and $\tilde\lambda_b=0$ for $\LP_{\BPP}$).
+        attained by $\tilde x_{jb}=\frac{1}{m}$ and $\tilde y_b=\frac{\sum_{j} w_j}{m\,c}$; an optimal dual solution is $\tilde\mu_j=\frac{w_j}{c}$ and $\tilde\pi_b=\frac{1}{c}$ (and $\tilde\lambda_b=0$ for $\mathrm{LP}_{\mathrm{BPP}}$).
 
-    1. Gurobi returns $z(\LP\text{-}0_{\BPP})=\frac{25}{12}$ and $z(\LP_{\BPP})=\frac{25}{12}$. The formula gives the same value:
+    1. Gurobi returns $z(\mathrm{LP}\text{-}0_{\mathrm{BPP}})=\frac{25}{12}$ and $z(\mathrm{LP}_{\mathrm{BPP}})=\frac{25}{12}$. The formula gives the same value:
 
         $$
         \frac{\sum_{j\in\mathscr{I}} w_j}{c}=\frac{7+6+5+4+3}{12}=\frac{25}{12}.
@@ -130,7 +130,7 @@ title: "Exercises · Formulations of the bin packing problem"
 
         Primal value: $\sum_b\tilde y_b=3\cdot\frac{25}{36}=\frac{25}{12}$. Dual value: $\sum_j\tilde\mu_j=\frac{25}{12}$. The two values are equal, so by LP Weak Duality both solutions are optimal.
 
-    3. Since $z(\ILP_{\BPP})$ is an integer, $z(\ILP_{\BPP})\ge\left\lceil \frac{25}{12}\right\rceil=3$. The feasible solution of the statement uses $3$ bins, so $z(\ILP_{\BPP})=3$ (Gurobi gives the same value): the rounded bound is equal to the optimal value.
+    3. Since $z(\mathrm{ILP}_{\mathrm{BPP}})$ is an integer, $z(\mathrm{ILP}_{\mathrm{BPP}})\ge\left\lceil \frac{25}{12}\right\rceil=3$. The feasible solution of the statement uses $3$ bins, so $z(\mathrm{ILP}_{\mathrm{BPP}})=3$ (Gurobi gives the same value): the rounded bound is equal to the optimal value.
 
 <a id="esercizio-10-3"></a>
 
@@ -146,7 +146,7 @@ title: "Exercises · Formulations of the bin packing problem"
     \end{array}
     $$
 
-    We use the $\ILP_{\BPP}$ model with $m=3$ bins. The following candidate solutions give the items in each bin (all the variables not listed are equal to $0$):
+    We use the $\mathrm{ILP}_{\mathrm{BPP}}$ model with $m=3$ bins. The following candidate solutions give the items in each bin (all the variables not listed are equal to $0$):
 
     - **(a)** bin $1$: $\{1,3\}$, bin $2$: $\{2,4,5\}$, bin $3$: $\{6\}$, and $y_1=y_2=y_3=1$;
 
@@ -162,7 +162,7 @@ title: "Exercises · Formulations of the bin packing problem"
 
     1. For each candidate, check the assignment constraints and the capacity constraints of the model.
 
-    2. Decide which candidates are feasible for the $\ILP_{\BPP}$ model and which are feasible for its relaxation $\LP_{\BPP}$, and give the objective value of the feasible ones.
+    2. Decide which candidates are feasible for the $\mathrm{ILP}_{\mathrm{BPP}}$ model and which are feasible for its relaxation $\mathrm{LP}_{\mathrm{BPP}}$, and give the objective value of the feasible ones.
 
     3. Use the candidates to find the optimal value of the instance.
 
@@ -178,7 +178,7 @@ title: "Exercises · Formulations of the bin packing problem"
 
         - **(e)** Every item is in exactly one bin. The loads are $\frac{20}{3}$, $\frac{20}{3}$, $\frac{20}{3}$ against the capacities $\frac{20}{3}$, $\frac{20}{3}$, $\frac{20}{3}$. All the capacity constraints hold.
 
-    2. - **(a)** Feasible for $\ILP_{\BPP}$, hence for $\LP_{\BPP}$, of value $3$.
+    2. - **(a)** Feasible for $\mathrm{ILP}_{\mathrm{BPP}}$, hence for $\mathrm{LP}_{\mathrm{BPP}}$, of value $3$.
 
         - **(b)** Infeasible for both models: bin $1$ contains weight $12>10$.
 
@@ -186,9 +186,9 @@ title: "Exercises · Formulations of the bin packing problem"
 
         - **(d)** Infeasible for both models: item $6$ is packed twice.
 
-        - **(e)** Feasible for $\LP_{\BPP}$, of value $3\cdot\frac{2}{3}=2$, but not for $\ILP_{\BPP}$, since the variables are fractional. Every capacity constraint holds with equality: $\frac{20}{3}=10\cdot\frac{2}{3}$.
+        - **(e)** Feasible for $\mathrm{LP}_{\mathrm{BPP}}$, of value $3\cdot\frac{2}{3}=2$, but not for $\mathrm{ILP}_{\mathrm{BPP}}$, since the variables are fractional. Every capacity constraint holds with equality: $\frac{20}{3}=10\cdot\frac{2}{3}$.
 
-    3. Candidate (c) with $y_3=0$ uses $2$ bins, with patterns $\{1,4,5\}$ and $\{2,3,6\}$, both of weight $10$. The lower bound $\left\lceil\frac{5+4+4+3+2+2}{10}\right\rceil=2$ shows that no solution uses fewer bins: $z(\ILP_{\BPP})=2$. The value $2$ of candidate (e) is the value $\frac{\sum_j w_j}{c}=2$ of the LP relaxations.
+    3. Candidate (c) with $y_3=0$ uses $2$ bins, with patterns $\{1,4,5\}$ and $\{2,3,6\}$, both of weight $10$. The lower bound $\left\lceil\frac{5+4+4+3+2+2}{10}\right\rceil=2$ shows that no solution uses fewer bins: $z(\mathrm{ILP}_{\mathrm{BPP}})=2$. The value $2$ of candidate (e) is the value $\frac{\sum_j w_j}{c}=2$ of the LP relaxations.
 
 <a id="esercizio-10-4"></a>
 
@@ -208,7 +208,7 @@ title: "Exercises · Formulations of the bin packing problem"
 
     **Questions**
 
-    1. Solve $\LP\text{-}0_{\BPP}$, $\LP_{\BPP}$ and $\ILP_{\BPP}$ with $m=3$ using Gurobi, and explain why the bounds $y_b\le 1$ do not change the value of the relaxation.
+    1. Solve $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$, $\mathrm{LP}_{\mathrm{BPP}}$ and $\mathrm{ILP}_{\mathrm{BPP}}$ with $m=3$ using Gurobi, and explain why the bounds $y_b\le 1$ do not change the value of the relaxation.
 
     2. Show that the upper bounds $x_{jb}\le 1$ are valid but implied by the other constraints.
 
@@ -218,7 +218,7 @@ title: "Exercises · Formulations of the bin packing problem"
 
 ??? soluzione "Solution"
 
-    1. Gurobi gives $z(\LP\text{-}0_{\BPP})=z(\LP_{\BPP})=\frac{9}{5}$ and $z(\ILP_{\BPP})=3$. The optimal solution of the chapter has $\tilde y_b=\frac{18}{3\cdot 10}=\frac{3}{5}\le 1$: it satisfies the bounds $y_b\le 1$, so adding them cuts off no optimal solution of $\LP\text{-}0_{\BPP}$. In general $\frac{\sum_j w_j}{m\,c}\le 1$ whenever $\frac{\sum_j w_j}{c}\le z(\ILP_{\BPP})\le m$.
+    1. Gurobi gives $z(\mathrm{LP}\text{-}0_{\mathrm{BPP}})=z(\mathrm{LP}_{\mathrm{BPP}})=\frac{9}{5}$ and $z(\mathrm{ILP}_{\mathrm{BPP}})=3$. The optimal solution of the chapter has $\tilde y_b=\frac{18}{3\cdot 10}=\frac{3}{5}\le 1$: it satisfies the bounds $y_b\le 1$, so adding them cuts off no optimal solution of $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$. In general $\frac{\sum_j w_j}{m\,c}\le 1$ whenever $\frac{\sum_j w_j}{c}\le z(\mathrm{ILP}_{\mathrm{BPP}})\le m$.
 
     2. For every item $j$ and bin $b$, the assignment constraint and $x_{jk}\ge 0$ give
 
@@ -228,9 +228,9 @@ title: "Exercises · Formulations of the bin packing problem"
 
         Every point that satisfies the assignment constraints and the non-negativity constraints already satisfies $x_{jb}\le 1$.
 
-    3. With $m=2$ the $\ILP_{\BPP}$ model is infeasible (Gurobi): every item has weight $6>\frac{c}{2}=5$, so no two items share a bin and $3$ bins are needed. The relaxations are feasible, with value $\frac{9}{5}$ and $\tilde y_1=\tilde y_2=\frac{18}{2\cdot 10}=\frac{9}{10}\le 1$. A value $m<z(\ILP_{\BPP})$ makes the model wrong, and the relaxation does not reveal it.
+    3. With $m=2$ the $\mathrm{ILP}_{\mathrm{BPP}}$ model is infeasible (Gurobi): every item has weight $6>\frac{c}{2}=5$, so no two items share a bin and $3$ bins are needed. The relaxations are feasible, with value $\frac{9}{5}$ and $\tilde y_1=\tilde y_2=\frac{18}{2\cdot 10}=\frac{9}{10}\le 1$. A value $m<z(\mathrm{ILP}_{\mathrm{BPP}})$ makes the model wrong, and the relaxation does not reveal it.
 
-    4. With $m=1$, $\LP\text{-}0_{\BPP}$ is still feasible, with $\tilde y_1=\frac{9}{5}$ and value $\frac{9}{5}$. Instead $\LP_{\BPP}$ is infeasible (Gurobi): the capacity constraint and the assignment constraints give $10\,y_1\ge 18$, that is $y_1\ge \frac{9}{5}>1$, against $y_1\le 1$. Here the bounds $y_b\le 1$ do make a difference: they detect that one bin cannot hold all the items.
+    4. With $m=1$, $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ is still feasible, with $\tilde y_1=\frac{9}{5}$ and value $\frac{9}{5}$. Instead $\mathrm{LP}_{\mathrm{BPP}}$ is infeasible (Gurobi): the capacity constraint and the assignment constraints give $10\,y_1\ge 18$, that is $y_1\ge \frac{9}{5}>1$, against $y_1\le 1$. Here the bounds $y_b\le 1$ do make a difference: they detect that one bin cannot hold all the items.
 
 <a id="esercizio-10-5"></a>
 
@@ -248,13 +248,13 @@ title: "Exercises · Formulations of the bin packing problem"
 
     **Questions**
 
-    1. Use $m=4$ and Gurobi to compute $z(\LP_{\BPP})$ and $z(\ILP_{\BPP})$, and explain the value of $z(\ILP_{\BPP})$.
+    1. Use $m=4$ and Gurobi to compute $z(\mathrm{LP}_{\mathrm{BPP}})$ and $z(\mathrm{ILP}_{\mathrm{BPP}})$, and explain the value of $z(\mathrm{ILP}_{\mathrm{BPP}})$.
 
-    2. Compute the absolute gap $z(\ILP_{\BPP})-z(\LP_{\BPP})$ and the ratios $\frac{z(\LP_{\BPP})}{z(\ILP_{\BPP})}$ and $\frac{\lceil z(\LP_{\BPP})\rceil}{z(\ILP_{\BPP})}$, and compare them with the value $\frac{1}{2}$ of the chapter.
+    2. Compute the absolute gap $z(\mathrm{ILP}_{\mathrm{BPP}})-z(\mathrm{LP}_{\mathrm{BPP}})$ and the ratios $\frac{z(\mathrm{LP}_{\mathrm{BPP}})}{z(\mathrm{ILP}_{\mathrm{BPP}})}$ and $\frac{\lceil z(\mathrm{LP}_{\mathrm{BPP}})\rceil}{z(\mathrm{ILP}_{\mathrm{BPP}})}$, and compare them with the value $\frac{1}{2}$ of the chapter.
 
-    3. Find the smallest $\vartheta$ for which the ratio $\frac{z(\LP_{\BPP})}{z(\ILP_{\BPP})}$ is at most $\frac{11}{20}$.
+    3. Find the smallest $\vartheta$ for which the ratio $\frac{z(\mathrm{LP}_{\mathrm{BPP}})}{z(\mathrm{ILP}_{\mathrm{BPP}})}$ is at most $\frac{11}{20}$.
 
-    4. Consider the second family of the chapter with $n=6$: capacity $c=6$ and $6$ items of weight $\frac{c}{2}+1=4$. Compute the ratio $\frac{\lceil z(\LP_{\BPP})\rceil}{z(\ILP_{\BPP})}$ with Gurobi.
+    4. Consider the second family of the chapter with $n=6$: capacity $c=6$ and $6$ items of weight $\frac{c}{2}+1=4$. Compute the ratio $\frac{\lceil z(\mathrm{LP}_{\mathrm{BPP}})\rceil}{z(\mathrm{ILP}_{\mathrm{BPP}})}$ with Gurobi.
 
 ??? soluzione "Solution"
 
@@ -263,17 +263,17 @@ title: "Exercises · Formulations of the bin packing problem"
         For every BPP instance and every valid $m$, the optimal value of both LP relaxations is
 
         $$
-        z(\LP\text{-}0_{\BPP}) \;=\; z(\LP_{\BPP}) \;=\; \frac{\sum_{j\in\mathscr{I}} w_j}{c},
+        z(\mathrm{LP}\text{-}0_{\mathrm{BPP}}) \;=\; z(\mathrm{LP}_{\mathrm{BPP}}) \;=\; \frac{\sum_{j\in\mathscr{I}} w_j}{c},
         $$
 
-        attained by $\tilde x_{jb}=\frac{1}{m}$ and $\tilde y_b=\frac{\sum_{j} w_j}{m\,c}$; an optimal dual solution is $\tilde\mu_j=\frac{w_j}{c}$ and $\tilde\pi_b=\frac{1}{c}$ (and $\tilde\lambda_b=0$ for $\LP_{\BPP}$).
+        attained by $\tilde x_{jb}=\frac{1}{m}$ and $\tilde y_b=\frac{\sum_{j} w_j}{m\,c}$; an optimal dual solution is $\tilde\mu_j=\frac{w_j}{c}$ and $\tilde\pi_b=\frac{1}{c}$ (and $\tilde\lambda_b=0$ for $\mathrm{LP}_{\mathrm{BPP}}$).
 
-    1. Gurobi gives $z(\LP_{\BPP})=\frac{4\cdot 5}{8}=\frac{5}{2}$ and $z(\ILP_{\BPP})=4$. Every item has weight $5>\frac{c}{2}=4$, so two items never fit in the same bin, and each item needs its own bin.
+    1. Gurobi gives $z(\mathrm{LP}_{\mathrm{BPP}})=\frac{4\cdot 5}{8}=\frac{5}{2}$ and $z(\mathrm{ILP}_{\mathrm{BPP}})=4$. Every item has weight $5>\frac{c}{2}=4$, so two items never fit in the same bin, and each item needs its own bin.
 
     2. The absolute gap is $4-\frac{5}{2}=\frac{3}{2}$. The ratios are
 
         $$
-        \frac{z(\LP_{\BPP})}{z(\ILP_{\BPP})}=\frac{\frac{5}{2}}{4}=\frac{5}{8}\qquad\text{and}\qquad\frac{\lceil z(\LP_{\BPP})\rceil}{z(\ILP_{\BPP})}=\frac{3}{4}=\frac{3}{4}.
+        \frac{z(\mathrm{LP}_{\mathrm{BPP}})}{z(\mathrm{ILP}_{\mathrm{BPP}})}=\frac{\frac{5}{2}}{4}=\frac{5}{8}\qquad\text{and}\qquad\frac{\lceil z(\mathrm{LP}_{\mathrm{BPP}})\rceil}{z(\mathrm{ILP}_{\mathrm{BPP}})}=\frac{3}{4}=\frac{3}{4}.
         $$
 
         Both are at least $\frac{1}{2}$, as the chapter proves for every instance.
@@ -281,9 +281,9 @@ title: "Exercises · Formulations of the bin packing problem"
     3. For this family the ratio is
 
         $$
-        \frac{z(\LP_{\BPP})}{z(\ILP_{\BPP})}=\frac{\frac{n(\vartheta+1)}{2\vartheta}}{n}=\frac{\vartheta+1}{2\vartheta}.
+        \frac{z(\mathrm{LP}_{\mathrm{BPP}})}{z(\mathrm{ILP}_{\mathrm{BPP}})}=\frac{\frac{n(\vartheta+1)}{2\vartheta}}{n}=\frac{\vartheta+1}{2\vartheta}.
         $$
 
         The condition $\frac{\vartheta+1}{2\vartheta}\le\frac{11}{20}$ is $20\vartheta+20\le 22\vartheta$, that is $\vartheta\ge 10$. The smallest value is $\vartheta=10$, with $c=20$ and items of weight $11$.
 
-    4. Gurobi gives $z(\LP_{\BPP})=\frac{6\cdot 4}{6}=4$ and $z(\ILP_{\BPP})=6$, since again no two items share a bin. The ratio is $4/6=\frac{2}{3}$. In general it is $\frac{n/2+1}{n}=\frac{1}{2}+\frac{1}{n}$, which tends to $\frac{1}{2}$.
+    4. Gurobi gives $z(\mathrm{LP}_{\mathrm{BPP}})=\frac{6\cdot 4}{6}=4$ and $z(\mathrm{ILP}_{\mathrm{BPP}})=6$, since again no two items share a bin. The ratio is $4/6=\frac{2}{3}$. In general it is $\frac{n/2+1}{n}=\frac{1}{2}+\frac{1}{n}$, which tends to $\frac{1}{2}$.

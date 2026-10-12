@@ -6,13 +6,13 @@ title: "Exercises · Limits of approximation: vertex coloring"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 30** · each solution opens with a click · [:material-book-open-variant: Chapter 30: Coloring: limits](../approximation-algorithms/coloring-approximation.md) · [:material-file-pdf-box: Exercises, volume 5 (PDF)](../pdf/exercises-5-approximation-algorithms.pdf)
+**Exercises · Chapter 33** · each solution opens with a click · [:material-book-open-variant: Chapter 33: Coloring: limits](../approximation-algorithms/coloring-approximation.md) · [:material-file-pdf-box: Exercises, volume 5 (PDF)](../pdf/exercises-5-approximation-algorithms.pdf)
 
 </div>
 
-<a id="esercizio-30-1"></a>
+<a id="esercizio-33-1"></a>
 
-!!! esercizio "Exercise 30.1: Vertex coloring approximation 1"
+!!! esercizio "Exercise 33.1: Vertex coloring approximation 1"
 
     We consider the graph $G=(V,E)$ with $V=\{1,\dots,7\}$ ($n=7$) and $|E|=11$ edges:
 
@@ -112,9 +112,9 @@ title: "Exercises · Limits of approximation: vertex coloring"
         \frac{GC(I)}{\chi(G)}=\frac43,\qquad\frac{DSATUR(I)}{\chi(G)}=1 .
         $$
 
-<a id="esercizio-30-2"></a>
+<a id="esercizio-33-2"></a>
 
-!!! esercizio "Exercise 30.2: Vertex coloring approximation 2"
+!!! esercizio "Exercise 33.2: Vertex coloring approximation 2"
 
     We consider the crown graph $G_5$ with $n=10$ vertices: the vertices $1,\dots,5$ on one side, the vertices $6,\dots,10$ on the other, and vertex $i\in\{1,\dots,5\}$ adjacent to vertex $j+5$, $j\in\{1,\dots,5\}$, if and only if $i\neq j$:
 
@@ -227,9 +227,9 @@ title: "Exercises · Limits of approximation: vertex coloring"
 
         At step $2$ the neighbours $7,8,9,10$ of vertex $1$ have saturation degree $1$ and $3$ uncolored neighbours each: vertex $7$ is chosen and gets color $2$. From then on, every vertex adjacent to a colored vertex has saturation degree $1$ (its colored neighbours are all on the other side, with the same color); the vertices of the side $\{1,\dots,5\}$ get color $1$ and those of the side $\{6,\dots,10\}$ color $2$. Hence $DSATUR(I)=2=\chi(G_5)$, as guaranteed on bipartite graphs.
 
-<a id="esercizio-30-3"></a>
+<a id="esercizio-33-3"></a>
 
-!!! esercizio "Exercise 30.3: Vertex coloring approximation 3"
+!!! esercizio "Exercise 33.3: Vertex coloring approximation 3"
 
     We consider the graph $G=(V,E)$ with $V=\{1,\dots,7\}$ ($n=7$) and $|E|=10$ edges:
 

@@ -14,7 +14,7 @@ title: "Exercises · Knapsack problems"
 
 !!! esercizio "Exercise 2.1: Feasibility, value and bounds (KP)"
 
-    We consider the knapsack instance with capacity $c=12$ and $n=5$ items, $\Ioggetti=\{1,\dots,5\}$, with the following profits and weights:
+    We consider the knapsack instance with capacity $c=12$ and $n=5$ items, $\mathscr{I}=\{1,\dots,5\}$, with the following profits and weights:
 
     $$
     \begin{array}{l|ccccc}
@@ -50,16 +50,16 @@ title: "Exercises · Knapsack problems"
     3. The weights in non-decreasing order are $3, 4, 5, 6, 8$: the $3$ lightest items weigh $3+4+5=12\le 12$, the $4$ lightest weigh $18>12$. Hence $\bar k=3$: a feasible subset has at most $3$ items, and the $3$ largest profits give
 
         $$
-        \UB=13+12+8=33.
+        \mathrm{UB}=13+12+8=33.
         $$
 
     4. The efficiencies are $\frac{6}{3}=2,\ \frac{12}{4}=3,\ \frac{5}{5}=1,\ \frac{13}{6},\ \frac{8}{8}=1$, so the order is $2,4,1,3,5$. Items $2, 4$ weigh $10$, and the fraction $\frac{2}{3}$ of item $1$ fills the residual capacity $2$:
 
         $$
-        \UB=12+13+\frac{2}{3}\cdot 6=29.
+        \mathrm{UB}=12+13+\frac{2}{3}\cdot 6=29.
         $$
 
-        The profits are integer, so $\UB=\lfloor 29\rfloor=29$; it is stronger than the cardinality bound.
+        The profits are integer, so $\mathrm{UB}=\lfloor 29\rfloor=29$; it is stronger than the cardinality bound.
 
     5. There are $15$ feasible subsets:
 
@@ -220,7 +220,7 @@ title: "Exercises · Knapsack problems"
 
     **Questions**
 
-    1. Check the assumptions of the BKP and write the extended set of items $\hat{\Ioggetti}$.
+    1. Check the assumptions of the BKP and write the extended set of items $\hat{\mathscr{I}}$.
 
     2. A solution of the BKP is the vector $(x_1,x_2,x_3)$ of the numbers of copies, with $0\le x_j\le b_j$. How many such vectors are there? Is $(1,1,1)$ feasible? And $(0,2,1)$?
 
@@ -233,7 +233,7 @@ title: "Exercises · Knapsack problems"
     1. $\sum_j b_j w_j=1\cdot 3+2\cdot 5+2\cdot 2=17>10$; every item fits ($w_j\le 10$) and so do all its copies: $b_jw_j=3, 10, 4\le 10$. The extended set has $\sum_j b_j=5$ copies:
 
         $$
-        \hat{\Ioggetti}=\{(1,1),(2,1),(2,2),(3,1),(3,2)\}.
+        \hat{\mathscr{I}}=\{(1,1),(2,1),(2,2),(3,1),(3,2)\}.
         $$
 
     2. There are $\prod_j (b_j+1)=2\cdot 3\cdot 3=18$ vectors, of which $12$ are feasible. The vector $(1,1,1)$ weighs $10\le 10$, feasible, profit $30$; the vector $(0,2,1)$ weighs $12$, not feasible.
@@ -277,7 +277,7 @@ title: "Exercises · Knapsack problems"
 
     2. $S_1$ weighs $2+5+2=9\le 10$ and $S_2$ weighs $6+3=9>6$: the solution is not feasible.
 
-    3. If $S_1,S_2$ is feasible for the MKP, the union $S_1\cup S_2$ weighs at most $c_1+c_2=16$, so its profit is at most the optimal value of the KP with capacity $16$. The KP has the optimal solution $\{2,3,4,5\}$, of weight $16$ and profit $40$: $\UB=40$.
+    3. If $S_1,S_2$ is feasible for the MKP, the union $S_1\cup S_2$ weighs at most $c_1+c_2=16$, so its profit is at most the optimal value of the KP with capacity $16$. The KP has the optimal solution $\{2,3,4,5\}$, of weight $16$ and profit $40$: $\mathrm{UB}=40$.
 
     4. The items $\{2,3,4,5\}$ of the KP solution can be split between the two knapsacks: $S_1=\{2,3,5\}$ weighs $10\le 10$ and $S_2=\{4\}$ weighs $6\le 6$. Its profit $40$ attains the dual bound, so it is optimal: $z(I)=40$. The enumeration of the $100$ feasible solutions shows that it is the only optimal one.
 
@@ -291,7 +291,7 @@ title: "Exercises · Knapsack problems"
 
 !!! esercizio "Exercise 2.5: One item per class (MCKP)"
 
-    We consider the multiple-choice knapsack instance with capacity $c=16$ and $n=7$ items, partitioned into the classes $\Jlavori_1=\{1,2\}$, $\Jlavori_2=\{3,4,5\}$, $\Jlavori_3=\{6,7\}$, with the following profits and weights:
+    We consider the multiple-choice knapsack instance with capacity $c=16$ and $n=7$ items, partitioned into the classes $\mathscr{J}_1=\{1,2\}$, $\mathscr{J}_2=\{3,4,5\}$, $\mathscr{J}_3=\{6,7\}$, with the following profits and weights:
 
     $$
     \begin{array}{l|ccccccc}
@@ -304,7 +304,7 @@ title: "Exercises · Knapsack problems"
 
     **Questions**
 
-    1. Check the feasibility condition $\sum_h \min_{j\in\Jlavori_h} w_j\le c$ of the assumptions.
+    1. Check the feasibility condition $\sum_h \min_{j\in\mathscr{J}_h} w_j\le c$ of the assumptions.
 
     2. How many candidate solutions are there? Is the choice of the most profitable item of every class feasible?
 

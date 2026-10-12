@@ -439,7 +439,7 @@ title: "Exercises · Capacitated lot sizing"
 
     1. Lot-for-lot produces $\vet{x}=(4,3,5)$: every demand fits in the capacity of its period, there is no stock and there are $3$ setups, $c=50+20+60=130$.
 
-    2. The total demand is $D=12$. The largest capacity, $7$, is smaller than $D$, while the two largest sum up to $14\ge 12$: $k=2$. The two smallest setup costs are $20$ and $50$, so $z(I)\ge \LB=70$.
+    2. The total demand is $D=12$. The largest capacity, $7$, is smaller than $D$, while the two largest sum up to $14\ge 12$: $k=2$. The two smallest setup costs are $20$ and $50$, so $z(I)\ge \mathrm{LB}=70$.
 
     3. For every feasible setup choice, the plan that produces as late as possible is:
 

@@ -65,7 +65,7 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
     1. Compute the big-M values $M^{\mathrm{dem}}_t$, $M^{\mathrm{cap}}_t$ and the strong value $M_t$ for every period.
 
-    2. Write the big-M formulation $\ILP_{\CLSP}$ with the strong values $M_t$.
+    2. Write the big-M formulation $\mathrm{ILP}_{\mathrm{CLSP}}$ with the strong values $M_t$.
 
     3. Count the variables and the constraints (besides the domains) of the formulation.
 
@@ -130,7 +130,7 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
     3. There are $m=4$ variables $x_t$, $5$ variables $s_0,\dots,s_4$ and $4$ variables $y_t$, so $13$ variables. There are $4$ balance constraints, $4$ big-M constraints, $4$ capacity constraints and the $2$ constraints on the inventories at the ends, so $14$ linear constraints.
 
-    4. Gurobi gives $z(\ILP_{\CLSP})=130$, with the plan $\tilde{\vet x}=(2,4,0,3)$, the inventories $(s_1,\dots,s_4)=(1,1,0,0)$ and the setups $\tilde{\vet y}=(1,1,0,1)$. The cost is $3\cdot 40$ for the setups plus $5\cdot(1+1)=10$ for the holding, that is $130$. By enumeration of the plans, the optimal plan is unique.
+    4. Gurobi gives $z(\mathrm{ILP}_{\mathrm{CLSP}})=130$, with the plan $\tilde{\vet x}=(2,4,0,3)$, the inventories $(s_1,\dots,s_4)=(1,1,0,0)$ and the setups $\tilde{\vet y}=(1,1,0,1)$. The cost is $3\cdot 40$ for the setups plus $5\cdot(1+1)=10$ for the holding, that is $130$. By enumeration of the plans, the optimal plan is unique.
 
 <a id="esercizio-15-2"></a>
 
@@ -187,7 +187,7 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
     1. Compute the cost of the best plan when the setups are ignored.
 
-    2. Solve with Gurobi the LP relaxations $\LP_{\CLSP}^{\mathrm{dem}}$, $\LP_{\CLSP}^{\mathrm{cap}}$ and $\LP_{\CLSP}^{\mathrm{strong}}$ of the big-M formulation, and give the values of $y_t$ in their optimal solutions.
+    2. Solve with Gurobi the LP relaxations $\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{dem}}$, $\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{cap}}$ and $\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{strong}}$ of the big-M formulation, and give the values of $y_t$ in their optimal solutions.
 
     3. Explain the values of $y_t$ using the big-M constraints.
 
@@ -214,17 +214,17 @@ title: "Exercises · Formulations of capacitated lot sizing"
         <th><span class="arithmatex">\(\tilde{\vet y}\)</span></th>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{dem}}\)</span> (<span class="arithmatex">\(M_t=D_{t,m}\)</span>)</td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{dem}}\)</span> (<span class="arithmatex">\(M_t=D_{t,m}\)</span>)</td>
         <td><span class="arithmatex">\(\frac{670}{9}\)</span></td>
         <td><span class="arithmatex">\((\frac{1}{9},\frac{1}{2},\frac{1}{4},1)\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{cap}}\)</span> (<span class="arithmatex">\(M_t=cap_t\)</span>)</td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{cap}}\)</span> (<span class="arithmatex">\(M_t=cap_t\)</span>)</td>
         <td><span class="arithmatex">\(90\)</span></td>
         <td><span class="arithmatex">\((\frac{1}{4},1,\frac{1}{4},\frac{3}{4})\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{strong}}\)</span> (<span class="arithmatex">\(M_t=\min\{cap_t,D_{t,m}\}\)</span>)</td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{strong}}\)</span> (<span class="arithmatex">\(M_t=\min\{cap_t,D_{t,m}\}\)</span>)</td>
         <td><span class="arithmatex">\(100\)</span></td>
         <td><span class="arithmatex">\((\frac{1}{4},1,\frac{1}{4},1)\)</span></td>
         </tr>
@@ -232,7 +232,7 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
     3. In all three solutions the plan is the lot-for-lot plan $\vet x=(1,4,1,3)$, which has no holding cost. The setup variables take the smallest value allowed by the big-M constraints, $y_t=\frac{x_t}{M_t}$: for instance, in period $1$ we get $\frac{1}{9}$, $\frac{1}{4}$ and $\frac{1}{4}$. The smaller $M_t$, the larger $y_t$ and the higher the bound.
 
-    4. Gurobi gives $z(\ILP_{\CLSP})=130$. The gaps are:
+    4. Gurobi gives $z(\mathrm{ILP}_{\mathrm{CLSP}})=130$. The gaps are:
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -246,17 +246,17 @@ title: "Exercises · Formulations of capacitated lot sizing"
         <td><span class="arithmatex">\(\text{undefined}\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{dem}}\)</span></td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{dem}}\)</span></td>
         <td><span class="arithmatex">\(\frac{670}{9}\)</span></td>
         <td><span class="arithmatex">\(74.6\%\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{cap}}\)</span></td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{cap}}\)</span></td>
         <td><span class="arithmatex">\(90\)</span></td>
         <td><span class="arithmatex">\(44.4\%\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{strong}}\)</span></td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{strong}}\)</span></td>
         <td><span class="arithmatex">\(100\)</span></td>
         <td><span class="arithmatex">\(30.0\%\)</span></td>
         </tr>
@@ -331,9 +331,9 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
     1. Compute the inventories $s_1,\dots,s_4$ of every candidate and check the balance constraints with $s_0=s_4=0$.
 
-    2. Check the big-M constraints and the capacity constraints, and decide which candidates are feasible for $\ILP_{\CLSP}$ and which for its LP relaxation.
+    2. Check the big-M constraints and the capacity constraints, and decide which candidates are feasible for $\mathrm{ILP}_{\mathrm{CLSP}}$ and which for its LP relaxation.
 
-    3. Give the cost of the feasible candidates, and compare them with $z(\LP_{\CLSP}^{\mathrm{strong}})$ computed with Gurobi.
+    3. Give the cost of the feasible candidates, and compare them with $z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{strong}})$ computed with Gurobi.
 
 ??? soluzione "Solution"
 
@@ -361,7 +361,7 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
         - **(f)** All the constraints hold: feasible for the LP relaxation only, since $y_1$ and $y_3$ are fractional.
 
-    3. Candidate (a) costs $3\cdot 40+5\cdot(1+1)=130$ and (b), the lot-for-lot plan with four setups, costs $4\cdot 40=160$. Candidate (f) costs $40\cdot\left(\frac{1}{4}+1+\frac{1}{4}+1\right)=100$. Gurobi gives $z(\LP_{\CLSP}^{\mathrm{strong}})=100$: candidate (f) is an optimal solution of the relaxation, and (a) is the optimal plan of the instance.
+    3. Candidate (a) costs $3\cdot 40+5\cdot(1+1)=130$ and (b), the lot-for-lot plan with four setups, costs $4\cdot 40=160$. Candidate (f) costs $40\cdot\left(\frac{1}{4}+1+\frac{1}{4}+1\right)=100$. Gurobi gives $z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{strong}})=100$: candidate (f) is an optimal solution of the relaxation, and (a) is the optimal plan of the instance.
 
 <a id="esercizio-15-4"></a>
 
@@ -420,7 +420,7 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
     2. Write the shortest-path formulation for this instance.
 
-    3. Solve its LP relaxation $\LP_{\CLSP}^{\mathrm{SP}}$ with Gurobi, and compare the bound with $z(\LP_{\CLSP}^{\mathrm{strong}})$ of the big-M formulation.
+    3. Solve its LP relaxation $\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{SP}}$ with Gurobi, and compare the bound with $z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{strong}})$ of the big-M formulation.
 
     4. The optimal plan is $\tilde{\vet x}=(2,4,0,3)$. Write it as a combination of paths of the network, and verify its quantities and its cost.
 
@@ -468,7 +468,7 @@ title: "Exercises · Formulations of capacitated lot sizing"
         & zv_{tk} \ge 0,~~ y_t \in \{0,1\}
         \end{align*}
 
-    3. Gurobi gives $z(\LP_{\CLSP}^{\mathrm{SP}})=112$, with $zv_{11}=\frac{2}{5}$, $zv_{13}=\frac{3}{5}$, $zv_{24}=\frac{2}{5}$, $zv_{44}=\frac{3}{5}$. The bound is better than $z(\LP_{\CLSP}^{\mathrm{strong}})=100$, and the optimal value is $130$.
+    3. Gurobi gives $z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{SP}})=112$, with $zv_{11}=\frac{2}{5}$, $zv_{13}=\frac{3}{5}$, $zv_{24}=\frac{2}{5}$, $zv_{44}=\frac{3}{5}$. The bound is better than $z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{strong}})=100$, and the optimal value is $130$.
 
     4. With the quantities fixed to $\tilde{\vet x}$, Gurobi gives $zv_{11}=\frac{4}{5}$, $zv_{13}=\frac{1}{5}$, $zv_{23}=\frac{4}{5}$, $zv_{44}=1$, all the others $0$. These arcs decompose into the paths
 
@@ -604,26 +604,26 @@ title: "Exercises · Formulations of capacitated lot sizing"
         <td><span class="arithmatex">\(0\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{dem}}\)</span></td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{dem}}\)</span></td>
         <td><span class="arithmatex">\(84\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{cap}}\)</span></td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{cap}}\)</span></td>
         <td><span class="arithmatex">\(120\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{strong}}\)</span></td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{strong}}\)</span></td>
         <td><span class="arithmatex">\(130\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{SP}}\)</span></td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{SP}}\)</span></td>
         <td><span class="arithmatex">\(160\)</span></td>
         </tr>
         </table></div>
 
         Each bound improves the previous one.
 
-    3. Both formulations give $z(\ILP_{\CLSP})=170$, with the unique optimal plan $\tilde{\vet x}=(3,0,3,3,3)$. The gaps are:
+    3. Both formulations give $z(\mathrm{ILP}_{\mathrm{CLSP}})=170$, with the unique optimal plan $\tilde{\vet x}=(3,0,3,3,3)$. The gaps are:
 
         <div class="tabella" markdown="0"><table>
         <tr>
@@ -637,22 +637,22 @@ title: "Exercises · Formulations of capacitated lot sizing"
         <td><span class="arithmatex">\(\text{undefined}\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{dem}}\)</span></td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{dem}}\)</span></td>
         <td><span class="arithmatex">\(84\)</span></td>
         <td><span class="arithmatex">\(102.4\%\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{cap}}\)</span></td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{cap}}\)</span></td>
         <td><span class="arithmatex">\(120\)</span></td>
         <td><span class="arithmatex">\(41.7\%\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{strong}}\)</span></td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{strong}}\)</span></td>
         <td><span class="arithmatex">\(130\)</span></td>
         <td><span class="arithmatex">\(30.8\%\)</span></td>
         </tr>
         <tr>
-        <td><span class="arithmatex">\(\LP_{\CLSP}^{\mathrm{SP}}\)</span></td>
+        <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{SP}}\)</span></td>
         <td><span class="arithmatex">\(160\)</span></td>
         <td><span class="arithmatex">\(6.2\%\)</span></td>
         </tr>

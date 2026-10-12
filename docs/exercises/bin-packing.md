@@ -50,9 +50,9 @@ title: "Exercises · Bin packing and cutting stock"
 
         - $\mathcal{P}_b$: the bins weigh $7+6=13$, $5+4+3=12$, $8+4=12$, $2=2$. It is a partition, but the bin $\{1,4\}$ weighs $13>12$. Not feasible.
 
-        - $\mathcal{P}_c$: the bins weigh $7+5=12$, $4+8=12$, $6+3=9$, $4=4$. It is not a partition of $\Ioggetti$: item $7$ is in no bin. Not feasible.
+        - $\mathcal{P}_c$: the bins weigh $7+5=12$, $4+8=12$, $6+3=9$, $4=4$. It is not a partition of $\mathscr{I}$: item $7$ is in no bin. Not feasible.
 
-    3. $\LB=\lceil 39/12\rceil=4$. The feasible solution $\mathcal{P}_a$ uses $4$ bins, so it attains the bound: it is optimal and $z(I)=4$.
+    3. $\mathrm{LB}=\lceil 39/12\rceil=4$. The feasible solution $\mathcal{P}_a$ uses $4$ bins, so it attains the bound: it is optimal and $z(I)=4$.
 
     4. The four bins of $\mathcal{P}_a$, with the dashed line at the capacity:
 
@@ -163,7 +163,7 @@ title: "Exercises · Bin packing and cutting stock"
         </tr>
         </table></div>
 
-    4. $\LB=\lceil 24/12\rceil=2$, and there are partitions with $2$ bins: $z(I)=2$. The optimal solution is unique, $\{\{1,3\},\{2,4,5\}\}$: both bins are filled exactly.
+    4. $\mathrm{LB}=\lceil 24/12\rceil=2$, and there are partitions with $2$ bins: $z(I)=2$. The optimal solution is unique, $\{\{1,3\},\{2,4,5\}\}$: both bins are filled exactly.
 
         ![Figure 3](../img/ex-bin-packing/fig03.svg){ .fig loading=lazy  }
 
@@ -188,7 +188,7 @@ title: "Exercises · Bin packing and cutting stock"
 
     **Questions**
 
-    1. Write the extended set of items $\hat{\Ioggetti}$ and check the assumptions.
+    1. Write the extended set of items $\hat{\mathscr{I}}$ and check the assumptions.
 
     2. Is the family $\{\{(1,1),(2,1)\},\{(1,2),(2,2)\},\{(3,1),(3,2)\}\}$ a feasible solution? How many bins does it use?
 
@@ -201,14 +201,14 @@ title: "Exercises · Bin packing and cutting stock"
     1. The extended set has $\sum_j d_j=7$ copies:
 
         $$
-        \hat{\Ioggetti}=\{(1,1),(1,2),(2,1),(2,2),(2,3),(3,1),(3,2)\}.
+        \hat{\mathscr{I}}=\{(1,1),(1,2),(2,1),(2,2),(2,3),(3,1),(3,2)\}.
         $$
 
         The total weight is $\sum_j d_jw_j=2\cdot 5+3\cdot 4+2\cdot 3=28>10$ and every item fits in a bin, $w_j\le 10$: both assumptions hold.
 
-    2. The bins weigh $9$, $9$, $6$, all at most $10$, but the copy $(2,3)$ is in no bin: the family is not a partition of $\hat{\Ioggetti}$ and it is not feasible.
+    2. The bins weigh $9$, $9$, $6$, all at most $10$, but the copy $(2,3)$ is in no bin: the family is not a partition of $\hat{\mathscr{I}}$ and it is not feasible.
 
-    3. $\LB=\left\lceil \sum_j d_jw_j/c\right\rceil=\lceil 28/10\rceil=3$.
+    3. $\mathrm{LB}=\left\lceil \sum_j d_jw_j/c\right\rceil=\lceil 28/10\rceil=3$.
 
     4. The two copies of item $1$ fill a bin ($10$); one copy of item $2$ and the two copies of item $3$ fill another one ($4+3+3=10$); the last two copies of item $2$ weigh $8$. The solution
 
@@ -250,7 +250,7 @@ title: "Exercises · Bin packing and cutting stock"
 
 ??? soluzione "Solution"
 
-    1. $\sum_j w_j=30$, hence $\LB=\lceil 30/10\rceil=3$.
+    1. $\sum_j w_j=30$, hence $\mathrm{LB}=\lceil 30/10\rceil=3$.
 
     2. $3$ bins hold at most $3\cdot 10=30$, and the items weigh exactly $30$: if a bin weighed less than $10$, the others could not hold the rest.
 
@@ -270,4 +270,4 @@ title: "Exercises · Bin packing and cutting stock"
 
     !!! chiave ""
 
-        When $\sum_j w_j=\LB\cdot c$, a solution with $\LB$ bins fills every bin exactly; here the bins $\{5,5\}$, $\{4,4,2\}$, $\{4,3,3\}$ give $z(I)=3$.
+        When $\sum_j w_j=\mathrm{LB}\cdot c$, a solution with $\mathrm{LB}$ bins fills every bin exactly; here the bins $\{5,5\}$, $\{4,4,2\}$, $\{4,3,3\}$ give $z(I)=3$.

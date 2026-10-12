@@ -6,7 +6,7 @@ title: "Approximation algorithms for bin packing"
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 26** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Bin packing](../exercises/bin-packing-approximation.md)
+**Part 5 · Approximation algorithms · Chapter 29** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Bin packing](../exercises/bin-packing-approximation.md)
 
 </div>
 
@@ -32,11 +32,11 @@ title: "Approximation algorithms for bin packing"
 
     - read and run the <code>C++</code> implementations of the four algorithms.
 
-## 26.1 The problem and the assumptions
+## 29.1 The problem and the assumptions
 
 <a id="box-1-def-BPP"></a>
 
-!!! definizione "Definition 26.1: Bin Packing Problem"
+!!! definizione "Definition 29.1: Bin Packing Problem"
 
     Given:
 
@@ -66,7 +66,7 @@ title: "Approximation algorithms for bin packing"
 
     for every BPP instance $I$.
 
-## 26.2 The Next Fit { #sez-sec-NF }
+## 29.2 The Next Fit { #sez-sec-NF }
 
 !!! chiave ""
 
@@ -92,7 +92,7 @@ title: "Approximation algorithms for bin packing"
 
 <a id="box-2-ex-NFexec1"></a>
 
-!!! esempio "Example 26.1: Execution of NF"
+!!! esempio "Example 29.1: Execution of NF"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n = 5$), with the following item weights:
 
@@ -140,7 +140,7 @@ title: "Approximation algorithms for bin packing"
 
 <a id="box-3-exsubsets"></a>
 
-!!! esempio "Example 26.2: Packing patterns from bin vector"
+!!! esempio "Example 29.2: Packing patterns from bin vector"
 
     Consider the instance of the previous example where NF returns:
 
@@ -164,7 +164,7 @@ title: "Approximation algorithms for bin packing"
 
     - Bin $3$ contains items $4$ and $5$ with total weight $w_4+w_5=7+3=10$.
 
-## 26.3 The Any Fit class { #sez-sec-AF }
+## 29.3 The Any Fit class { #sez-sec-AF }
 
 !!! chiave ""
 
@@ -172,7 +172,7 @@ title: "Approximation algorithms for bin packing"
 
 <a id="box-4-def-AF"></a>
 
-!!! definizione "Definition 26.2: Any Fit algorithm"
+!!! definizione "Definition 29.2: Any Fit algorithm"
 
     A constructive heuristic $\mathscr{A}$ for the BPP is an <strong>Any Fit algorithm</strong> if, denoting by $P_1,P_2,\dots,P_{nb}$ the packing patterns of the bins opened so far, it opens a new bin for item $i$ only when
 
@@ -194,7 +194,7 @@ title: "Approximation algorithms for bin packing"
 
 <a id="box-5-ex-notAF"></a>
 
-!!! esempio "Example 26.3: NF is not an Any Fit algorithm"
+!!! esempio "Example 29.3: NF is not an Any Fit algorithm"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n = 4$), with the following item weights:
 
@@ -228,13 +228,13 @@ title: "Approximation algorithms for bin packing"
 
     An Any Fit algorithm, on the contrary, cannot open a third bin for item $3$, because the item fits into bin $1$: it packs item $3$ there and then opens a new bin for item $4$, which fits in neither bin, using $3$ bins instead of $4$. This holds for every algorithm of the class, whatever the selection rule.
 
-### 26.3.1 The First Fit
+### 29.3.1 The First Fit
 
 !!! chiave ""
 
     The <em>First Fit Algorithm</em> (denoted by FF) is a constructive heuristic for the BPP. It processes the items in the order in which they are given in the input instance, maintaining all bins opened so far. For each item, FF scans the bins in the order they were opened and packs the item into the <em>first</em> bin in which it fits; if no current bin can accommodate the item, FF opens a new bin and places the item there.
 
-- FF is an Any Fit algorithm: it opens a new bin only when the item fits into none of the bins opened so far, and the rule left unspecified by [Definition 26.2](#box-4-def-AF) is here resolved by taking the first bin in which the item fits.
+- FF is an Any Fit algorithm: it opens a new bin only when the item fits into none of the bins opened so far, and the rule left unspecified by [Definition 29.2](#box-4-def-AF) is here resolved by taking the first bin in which the item fits.
 
 - The pseudo-code of FF reads as follows:
 
@@ -249,7 +249,7 @@ title: "Approximation algorithms for bin packing"
 
 <a id="box-6-ex-FFexec1"></a>
 
-!!! esempio "Example 26.4: Execution of FF"
+!!! esempio "Example 29.4: Execution of FF"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n = 5$), with the following item weights:
 
@@ -289,7 +289,7 @@ title: "Approximation algorithms for bin packing"
 
 <a id="box-7-exsubsetsFF"></a>
 
-!!! esempio "Example 26.5: Packing patterns from bin vector"
+!!! esempio "Example 29.5: Packing patterns from bin vector"
 
     Consider the instance of the previous example where FF returns:
 
@@ -313,7 +313,7 @@ title: "Approximation algorithms for bin packing"
 
     - Bin $3$ contains item $4$ with weight $w_4=7$.
 
-### 26.3.2 The Best Fit
+### 29.3.2 The Best Fit
 
 !!! chiave ""
 
@@ -321,7 +321,7 @@ title: "Approximation algorithms for bin packing"
 
 - The rationale is to fill the bins as tightly as possible: by using the bin where the item leaves the least space unused, BF keeps the bins with a larger residual capacity available for the larger items that may still arrive.
 
-- BF is an Any Fit algorithm: it opens a new bin only when the item fits into none of the bins opened so far, and the rule left unspecified by [Definition 26.2](#box-4-def-AF) is here resolved by taking the bin with the smallest residual capacity.
+- BF is an Any Fit algorithm: it opens a new bin only when the item fits into none of the bins opened so far, and the rule left unspecified by [Definition 29.2](#box-4-def-AF) is here resolved by taking the bin with the smallest residual capacity.
 
 - The pseudo-code of BF reads as follows:
 
@@ -337,7 +337,7 @@ title: "Approximation algorithms for bin packing"
 
 <a id="box-8-ex-BFexec1"></a>
 
-!!! esempio "Example 26.6: Execution of BF"
+!!! esempio "Example 29.6: Execution of BF"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n = 5$), with the following item weights:
 
@@ -377,7 +377,7 @@ title: "Approximation algorithms for bin packing"
 
 <a id="box-9-exsubsetsBF"></a>
 
-!!! esempio "Example 26.7: Packing patterns from bin vector"
+!!! esempio "Example 29.7: Packing patterns from bin vector"
 
     Consider the instance of the previous example where BF returns:
 
@@ -401,7 +401,7 @@ title: "Approximation algorithms for bin packing"
 
     - Bin $3$ contains items $4$ and $5$ with total weight $w_4+w_5=7+3=10$.
 
-### 26.3.3 The Worst Fit
+### 29.3.3 The Worst Fit
 
 !!! chiave ""
 
@@ -409,7 +409,7 @@ title: "Approximation algorithms for bin packing"
 
 - The rationale is the opposite of the one of BF: by packing each item into the emptiest bin, WF avoids creating bins whose residual capacity is so small that no future item can use it, and it keeps the free space spread over the open bins.
 
-- WF is an Any Fit algorithm: it opens a new bin only when the item fits into none of the bins opened so far, and the rule left unspecified by [Definition 26.2](#box-4-def-AF) is here resolved by taking the bin with the largest residual capacity.
+- WF is an Any Fit algorithm: it opens a new bin only when the item fits into none of the bins opened so far, and the rule left unspecified by [Definition 29.2](#box-4-def-AF) is here resolved by taking the bin with the largest residual capacity.
 
 - The pseudo-code of WF reads as follows:
 
@@ -425,7 +425,7 @@ title: "Approximation algorithms for bin packing"
 
 <a id="box-10-ex-WFexec1"></a>
 
-!!! esempio "Example 26.8: Execution of WF"
+!!! esempio "Example 29.8: Execution of WF"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4,5\}$ of $5$ items ($n = 5$), with the following item weights:
 
@@ -465,7 +465,7 @@ title: "Approximation algorithms for bin packing"
 
 <a id="box-11-exsubsetsWF"></a>
 
-!!! esempio "Example 26.9: Packing patterns from bin vector"
+!!! esempio "Example 29.9: Packing patterns from bin vector"
 
     Consider the instance of the previous example where WF returns:
 
@@ -489,7 +489,7 @@ title: "Approximation algorithms for bin packing"
 
     - Bin $3$ contains item $4$ with weight $w_4=7$.
 
-## 26.4 Half-full property
+## 29.4 Half-full property
 
 - The results of this section do not depend on the rule used to select the bin: they are proved using <em>only</em> the Any Fit condition, and therefore hold for every algorithm of the family, including FF, BF and WF.
 
@@ -499,7 +499,7 @@ title: "Approximation algorithms for bin packing"
 
 <a id="box-12-def-halffull"></a>
 
-!!! definizione "Definition 26.3: Half-full property"
+!!! definizione "Definition 29.3: Half-full property"
 
     Given a feasible BPP solution with $k$ bins and packing patterns $\mathcal{P}=\{P_1,P_2,\dots,P_k\}$ (where $P_b$ is the set of items packed into bin $b$, for $b\in\{1,2,\dots,k\}$), we say that the solution satisfies the <strong>half-full property</strong> if one of the following equivalent conditions holds:
 
@@ -519,7 +519,7 @@ title: "Approximation algorithms for bin packing"
 
 <a id="box-13-ex-halffullNFok"></a>
 
-!!! esempio "Example 26.10: Half-full property"
+!!! esempio "Example 29.10: Half-full property"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n = 4$), with the following item weights:
 
@@ -561,7 +561,7 @@ title: "Approximation algorithms for bin packing"
 
 <a id="box-14-prop-halffullAF"></a>
 
-!!! teorema "Proposition 26.4"
+!!! teorema "Proposition 29.4"
 
     For every BPP instance, the heuristic BPP solutions produced by <em>any</em> Any Fit algorithm satisfy the half-full property. In particular this holds for FF, BF and WF.
 
@@ -583,15 +583,15 @@ title: "Approximation algorithms for bin packing"
     \sum_{i\in P_b} w_i + \sum_{i\in P_{b'}} w_i \le \frac{c}{2} + \frac{c}{2} = c,
     $$
 
-    which contradicts the property of the Any Fit class proved in Section [26.3](#sez-sec-AF), namely that the items of two distinct bins never fit together into a single bin. Therefore there can be at most one bin with total weight at most $\frac{c}{2}$.
+    which contradicts the property of the Any Fit class proved in Section [29.3](#sez-sec-AF), namely that the items of two distinct bins never fit together into a single bin. Therefore there can be at most one bin with total weight at most $\frac{c}{2}$.
 
     Only the Any Fit condition is used, so the statement holds for every algorithm of the class. <span class="qed">□</span>
 
 <a id="box-15-ex-halffullFFcheck"></a>
 
-!!! esempio "Example 26.11: Half-full property"
+!!! esempio "Example 29.11: Half-full property"
 
-    As an illustration of [Proposition 26.4](#box-14-prop-halffullAF), we consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n = 4$), with the following item weights:
+    As an illustration of [Proposition 29.4](#box-14-prop-halffullAF), we consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3,4\}$ of $4$ items ($n = 4$), with the following item weights:
 
     $$
     \begin{array}{l|cccc}
@@ -629,7 +629,7 @@ title: "Approximation algorithms for bin packing"
     \sum_{i \in P_3} w_i = 4 \le \frac{c}{2}=5.
     $$
 
-    Since there is <em>exactly one</em> bin (bin $3$) with total weight at most $\frac{c}{2}$, the solution <strong>satisfies</strong> the half-full property, as guaranteed by [Proposition 26.4](#box-14-prop-halffullAF) since FF is an Any Fit algorithm.
+    Since there is <em>exactly one</em> bin (bin $3$) with total weight at most $\frac{c}{2}$, the solution <strong>satisfies</strong> the half-full property, as guaranteed by [Proposition 29.4](#box-14-prop-halffullAF) since FF is an Any Fit algorithm.
 
 !!! chiave ""
 
@@ -637,9 +637,9 @@ title: "Approximation algorithms for bin packing"
 
 <a id="box-16-ex-halffullNF"></a>
 
-!!! esempio "Example 26.12: Half-full property"
+!!! esempio "Example 29.12: Half-full property"
 
-    We consider again the instance of [Example 26.3](#box-5-ex-notAF), with bin capacity $c = 10$ and item weights $w=(3,8,3,8)$, on which NF opens a new bin for every item and returns:
+    We consider again the instance of [Example 29.3](#box-5-ex-notAF), with bin capacity $c = 10$ and item weights $w=(3,8,3,8)$, on which NF opens a new bin for every item and returns:
 
     $$
     bin = \begin{pmatrix} 1 & 2 & 3 & 4 \end{pmatrix},
@@ -670,13 +670,13 @@ title: "Approximation algorithms for bin packing"
 
     Since there are <em>two</em> bins (bins $1$ and $3$) with total weight at most $\frac{c}{2}$, the solution does <strong>not</strong> satisfy the half-full property.
 
-## 26.5 Performance guarantees
+## 29.5 Performance guarantees
 
 - We now determine the worst case performance ratio of the four algorithms. Next Fit is not an Any Fit algorithm, so it needs an argument of its own. For the three Any Fit algorithms the bound $\mathscr{A}(I)\le 2\,z(I)$ comes at once from the half-full property, without any assumption on the rule used to select the bin, and the question is how tight that bound is: for WF the factor $2$ cannot be improved, whereas FF and BF obey a strictly better bound.
 
 <a id="box-17-prop-halffull2approx"></a>
 
-!!! teorema "Proposition 26.5"
+!!! teorema "Proposition 29.5"
 
     Let $\mathscr{A}$ be a heuristic algorithm for the BPP that produces solutions satisfying the half-full property. Then, for every BPP instance $I$, we have
 
@@ -749,16 +749,16 @@ title: "Approximation algorithms for bin packing"
 
     and therefore FF, BF and WF are $2$-approximation algorithms.
 
-### 26.5.1 The worst case performance ratio of NF
+### 29.5.1 The worst case performance ratio of NF
 
 <a id="box-18-prop-NF2approx"></a>
 
-!!! teorema "Proposition 26.6"
+!!! teorema "Proposition 29.6"
 
     For every BPP instance $I$, we have:
 
     \begin{equation*}
-    \frac{ NF(I) }{z(I)} \le 2 . \tag{26.1}
+    \frac{ NF(I) }{z(I)} \le 2 . \tag{29.1}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -825,12 +825,12 @@ title: "Approximation algorithms for bin packing"
 
 <a id="box-19-prop-NFtight"></a>
 
-!!! teorema "Proposition 26.7"
+!!! teorema "Proposition 29.7"
 
     There are BPP instances $I_n$ such that:
 
     \begin{equation*}
-    \frac{ NF(I_n) }{z(I_n)} \;\to\; 2 \qquad\text{as}\qquad n\to+\infty . \tag{26.2}
+    \frac{ NF(I_n) }{z(I_n)} \;\to\; 2 \qquad\text{as}\qquad n\to+\infty . \tag{29.2}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -891,22 +891,22 @@ title: "Approximation algorithms for bin packing"
 
 !!! chiave ""
 
-    From [Proposition 26.6](#box-18-prop-NF2approx) and [Proposition 26.7](#box-19-prop-NFtight) it follows that the worst case performance ratio of NF is two, i.e., we have
+    From [Proposition 29.6](#box-18-prop-NF2approx) and [Proposition 29.7](#box-19-prop-NFtight) it follows that the worst case performance ratio of NF is two, i.e., we have
 
     $$
     r(NF)=2
     $$
 
-### 26.5.2 The worst case performance ratio of WF { #sez-sec-WFratio }
+### 29.5.2 The worst case performance ratio of WF { #sez-sec-WFratio }
 
 <a id="box-20-prop-WFtight"></a>
 
-!!! teorema "Proposition 26.8"
+!!! teorema "Proposition 29.8"
 
     There are BPP instances $I_n$ such that:
 
     \begin{equation*}
-    \frac{ WF(I_n) }{z(I_n)} \;\to\; 2 \qquad\text{as}\qquad n\to+\infty . \tag{26.3}
+    \frac{ WF(I_n) }{z(I_n)} \;\to\; 2 \qquad\text{as}\qquad n\to+\infty . \tag{29.3}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -962,7 +962,7 @@ title: "Approximation algorithms for bin packing"
 
 !!! chiave ""
 
-    From [Proposition 26.5](#box-17-prop-halffull2approx) and [Proposition 26.8](#box-20-prop-WFtight) it follows that the worst case performance ratio of WF is two, i.e., we have
+    From [Proposition 29.5](#box-17-prop-halffull2approx) and [Proposition 29.8](#box-20-prop-WFtight) it follows that the worst case performance ratio of WF is two, i.e., we have
 
     $$
     r(WF)=2
@@ -976,18 +976,18 @@ title: "Approximation algorithms for bin packing"
 
     D.S. Johnson, <em>Fast algorithms for bin packing</em>, Journal of Computer and System Sciences, 8(3):272–314, 1974.
 
-### 26.5.3 The worst case performance ratios of FF and BF
+### 29.5.3 The worst case performance ratios of FF and BF
 
 <a id="box-21-propFF"></a>
 
-!!! teorema "Proposition 26.9"
+!!! teorema "Proposition 29.9"
 
     For every BPP instance $I$, we have:
 
     \begin{equation*}
     FF(I)\;\le\;\frac{17}{10}\,z(I) ~~~~
     \text{and} ~~~~
-    BF(I)\;\le\;\frac{17}{10}\,z(I). \tag{26.4}
+    BF(I)\;\le\;\frac{17}{10}\,z(I). \tag{29.4}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -1010,7 +1010,7 @@ title: "Approximation algorithms for bin packing"
 
 <a id="box-22-propFFtight"></a>
 
-!!! teorema "Proposition 26.10"
+!!! teorema "Proposition 29.10"
 
     There are BPP instances $I_n$ such that:
 
@@ -1018,7 +1018,7 @@ title: "Approximation algorithms for bin packing"
     \frac{FF(I_n)}{z(I_n)} \;\to\; \frac{17}{10} ~~~~
     \text{and} ~~~~
     \frac{BF(I_n)}{z(I_n)} \;\to\; \frac{17}{10}
-    \qquad\text{as}\qquad n\to+\infty . \tag{26.5}
+    \qquad\text{as}\qquad n\to+\infty . \tag{29.5}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -1029,7 +1029,7 @@ title: "Approximation algorithms for bin packing"
 
 !!! chiave ""
 
-    From [Proposition 26.9](#box-21-propFF) and [Proposition 26.10](#box-22-propFFtight) it follows that the worst case performance ratio of FF and BF is seventeen tenths, i.e., we have
+    From [Proposition 29.9](#box-21-propFF) and [Proposition 29.10](#box-22-propFFtight) it follows that the worst case performance ratio of FF and BF is seventeen tenths, i.e., we have
 
     $$
     r(FF)=r(BF)=\frac{17}{10}
@@ -1037,7 +1037,7 @@ title: "Approximation algorithms for bin packing"
 
     Unlike WF, FF and BF stay strictly below the factor $2$ that the Any Fit condition alone guarantees.
 
-### 26.5.4 What the Any Fit condition does and does not give
+### 29.5.4 What the Any Fit condition does and does not give
 
 - <strong>What the Any Fit condition gives.</strong> The Any Fit condition alone guarantees the half-full property, and therefore the bound
 
@@ -1047,17 +1047,17 @@ title: "Approximation algorithms for bin packing"
 
     for every algorithm $\mathscr{A}$ of the class. This bound cannot be improved for the class as a whole: WF is an Any Fit algorithm and, as shown above, $r(WF)=2$.
 
-- <strong>What the Any Fit condition leaves free.</strong> The rule used to select one of the bins in which the item fits is what distinguishes the members of the family. On the instances of [Proposition 26.10](#box-22-propFFtight) the ratio of FF and BF tends to $\frac{17}{10}$, while on those of [Proposition 26.8](#box-20-prop-WFtight) the ratio of WF tends to $2$: the selection rule alone accounts for the whole gap between $\frac{17}{10}$ and $2$.
+- <strong>What the Any Fit condition leaves free.</strong> The rule used to select one of the bins in which the item fits is what distinguishes the members of the family. On the instances of [Proposition 29.10](#box-22-propFFtight) the ratio of FF and BF tends to $\frac{17}{10}$, while on those of [Proposition 29.8](#box-20-prop-WFtight) the ratio of WF tends to $2$: the selection rule alone accounts for the whole gap between $\frac{17}{10}$ and $2$.
 
 - It is known that no algorithm of the class can go below $\frac{17}{10}$, so $\frac{17}{10}$ and $2$ are exactly the best and the worst behaviour that the Any Fit condition allows, and both are attained, the first by FF and BF, the second by WF.
 
-- The Any Fit class and the bounds above are due to the paper of Johnson already cited in Section [26.5.2](#sez-sec-WFratio): in particular, the lower bound $\frac{17}{10}$ for every Any Fit algorithm is due to that paper (D.S. Johnson, 1974).
+- The Any Fit class and the bounds above are due to the paper of Johnson already cited in Section [29.5.2](#sez-sec-WFratio): in particular, the lower bound $\frac{17}{10}$ for every Any Fit algorithm is due to that paper (D.S. Johnson, 1974).
 
-## 26.6 Typical mistakes
+## 29.6 Typical mistakes
 
 !!! attenzione "Warning"
 
-    - <strong>Believing that Next Fit is an Any Fit algorithm.</strong> NF never reconsiders a closed bin, so it may open a new bin for an item that would fit into an older one ([Example 26.3](#box-5-ex-notAF)).
+    - <strong>Believing that Next Fit is an Any Fit algorithm.</strong> NF never reconsiders a closed bin, so it may open a new bin for an item that would fit into an older one ([Example 29.3](#box-5-ex-notAF)).
 
     - <strong>Choosing the wrong bin in BF and WF.</strong> BF packs the item into the bin with the <em>smallest</em> residual capacity among the bins in which it fits, WF into the one with the <em>largest</em> residual capacity; in case of ties, both take the bin of smallest index.
 
@@ -1067,7 +1067,7 @@ title: "Approximation algorithms for bin packing"
 
     - <strong>Changing the order of the items.</strong> The four algorithms process the items in the order in which they are given; sorting them first is a different algorithm.
 
-## 26.7 In summary
+## 29.7 In summary
 
 !!! chiave "In summary"
 
@@ -1112,7 +1112,7 @@ title: "Approximation algorithms for bin packing"
     </tr>
     </table></div>
 
-## 26.8 <code>C++</code> implementation
+## 29.8 <code>C++</code> implementation
 
 - In this C++ implementation section we use 0-based indexing (items and bins are numbered starting from 0). The algorithmic logic is unchanged.
 

@@ -130,9 +130,9 @@ title: "Formulations of the travelling salesman problem"
     && \forall i\in\mathscr{V}\setminus\{1\}. \label{pos:TSP} \tag{13.1f}
     \end{align*}
 
-    This model is referred to as the $\ILP_{\TSP}^{\mathrm{MTZ}}$ model.
+    This model is referred to as the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ model.
 
-- Description of the objective function and constraints of the $\ILP_{\TSP}^{\mathrm{MTZ}}$ model:
+- Description of the objective function and constraints of the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ model:
 
     - the linear objective function $\eqref{obj:TSP}$ minimizes the total distance travelled by the tour;
 
@@ -187,7 +187,7 @@ title: "Formulations of the travelling salesman problem"
 
 <a id="box-4-ex-TSP-ILP"></a>
 
-!!! esempio "Example 13.2: $\ILP_{\TSP}^{\mathrm{MTZ}}$ model"
+!!! esempio "Example 13.2: $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ model"
 
     For the instance of the chapter, the tour $\sigma=(1,3,5,2,4)$ is represented by
 
@@ -201,7 +201,7 @@ title: "Formulations of the travelling salesman problem"
     u_3=1,\qquad u_5=2,\qquad u_2=3,\qquad u_4=4.
     $$
 
-    The value of the objective function is $L(\sigma)=18$, hence $z(\ILP_{\TSP}^{\mathrm{MTZ}})=18$.
+    The value of the objective function is $L(\sigma)=18$, hence $z(\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{MTZ}})=18$.
 
 ## 13.3 A model with subtour elimination constraints (DFJ)
 
@@ -226,7 +226,7 @@ title: "Formulations of the travelling salesman problem"
     && \forall(i,j)\in A. \label{bin:TSP-DFJ} \tag{13.2e}
     \end{align*}
 
-    This model is referred to as the $\ILP_{\TSP}^{\mathrm{DFJ}}$ model.
+    This model is referred to as the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$ model.
 
 - Constraints $\eqref{SEC:TSP}$ are called <strong>subtour elimination constraints</strong>: a tour cannot contain all the $|S|$ arcs of a cycle on the cities of $S$, so it uses at most $|S|-1$ arcs inside $S$.
 
@@ -246,7 +246,7 @@ title: "Formulations of the travelling salesman problem"
 
 <a id="box-6-ex-TSP-DFJ"></a>
 
-!!! esempio "Example 13.3: $\ILP_{\TSP}^{\mathrm{DFJ}}$ model"
+!!! esempio "Example 13.3: $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$ model"
 
     For the instance of the chapter, the constraints $\eqref{SEC:TSP}$ are $11$, one for every subset $S\subseteq\{2,3,4,5\}$ with at least two cities. The subset $S=\{2,5\}$ gives $x_{25}+x_{52}\le1$, and $S=\{2,4,5\}$ gives
 
@@ -254,11 +254,11 @@ title: "Formulations of the travelling salesman problem"
     x_{24}+x_{25}+x_{42}+x_{45}+x_{52}+x_{54}\le2.
     $$
 
-    The subtour $2\to5\to2$ together with the subtour $1\to3\to4\to1$ satisfies the degree constraints but violates the first one. The tour $\sigma$ satisfies all of them, and $z(\ILP_{\TSP}^{\mathrm{DFJ}})=18$.
+    The subtour $2\to5\to2$ together with the subtour $1\to3\to4\to1$ satisfies the degree constraints but violates the first one. The tour $\sigma$ satisfies all of them, and $z(\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}})=18$.
 
 ## 13.4 Linear Programming relaxations
 
-- We obtain the LP relaxation of each model by replacing the binary requirements with non-negativity constraints. In the MTZ model the position variables remain continuous and keep their bounds. The relaxations are called $\LP_{\TSP}^{\mathrm{MTZ}}$ and $\LP_{\TSP}^{\mathrm{DFJ}}$.
+- We obtain the LP relaxation of each model by replacing the binary requirements with non-negativity constraints. In the MTZ model the position variables remain continuous and keep their bounds. The relaxations are called $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ and $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$.
 
 - Adding the upper bounds $x_{ij}\le1$ does not change the relaxations: for every arc $(i,j)$, non-negativity and the degree equation $\eqref{out:TSP}$ give
 
@@ -281,7 +281,7 @@ title: "Formulations of the travelling salesman problem"
     \qquad \forall i,j\in\mathscr{V}\setminus\{1\},~i\neq j,
     $$
 
-    then $(x,u)$ is feasible for $\LP_{\TSP}^{\mathrm{MTZ}}$ after setting $u_i=1$ for every $i\neq1$.
+    then $(x,u)$ is feasible for $\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ after setting $u_i=1$ for every $i\neq1$.
 
 ??? dimostrazione "Proof"
 
@@ -313,11 +313,11 @@ title: "Formulations of the travelling salesman problem"
     <td><span class="arithmatex">\(16\)</span></td>
     </tr>
     <tr>
-    <td><span class="arithmatex">\(\LP_{\TSP}^{\mathrm{MTZ}}\)</span></td>
+    <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}}\)</span></td>
     <td><span class="arithmatex">\(17\)</span></td>
     </tr>
     <tr>
-    <td><span class="arithmatex">\(\LP_{\TSP}^{\mathrm{DFJ}}\)</span></td>
+    <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{DFJ}}\)</span></td>
     <td><span class="arithmatex">\(18\)</span></td>
     </tr>
     </table></div>
@@ -366,12 +366,12 @@ title: "Formulations of the travelling salesman problem"
     <tr>
     <td>MTZ relaxation</td>
     <td><span class="arithmatex">\(17\)</span></td>
-    <td><span class="arithmatex">\(z(\LP_{\TSP}^{\mathrm{MTZ}})\)</span></td>
+    <td><span class="arithmatex">\(z(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}})\)</span></td>
     </tr>
     <tr>
     <td>DFJ relaxation</td>
     <td><span class="arithmatex">\(18\)</span></td>
-    <td><span class="arithmatex">\(z(\LP_{\TSP}^{\mathrm{DFJ}})\)</span></td>
+    <td><span class="arithmatex">\(z(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{DFJ}})\)</span></td>
     </tr>
     <tr>
     <td>Optimal value</td>

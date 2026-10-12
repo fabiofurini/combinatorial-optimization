@@ -30,7 +30,7 @@ title: "Formulations of the maximum clique problem"
 
     - write the clique formulation and compare the two LP bounds on a small graph;
 
-    - prove $\omega(G)\le z(\LP^{\mathrm{CL}}_{\MCP})\le\chi(G)$ through LP duality and a coloring formulation.
+    - prove $\omega(G)\le z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})\le\chi(G)$ through LP duality and a coloring formulation.
 
 ## 12.1 The problem in brief
 
@@ -92,9 +92,9 @@ title: "Formulations of the maximum clique problem"
     & x_v\in\{0,1\}, && \forall v\in V. \label{mcpF:bin} \tag{12.1c}
     \end{align*}
 
-    This ILP model is referred to as the $\ILP_{\MCP}$ model, or <strong>edge formulation</strong>: it has one constraint for each edge of $\overline{G}$.
+    This ILP model is referred to as the $\mathrm{ILP}_{\mathrm{MCP}}$ model, or <strong>edge formulation</strong>: it has one constraint for each edge of $\overline{G}$.
 
-- Description of the objective function and constraints of the $\ILP_{\MCP}$ model:
+- Description of the objective function and constraints of the $\mathrm{ILP}_{\mathrm{MCP}}$ model:
 
     - the linear objective function $\eqref{mcpF:obj}$ maximizes the cardinality of the selected clique;
 
@@ -108,9 +108,9 @@ title: "Formulations of the maximum clique problem"
 
 <a id="box-3-mcpF-ex-ilp"></a>
 
-!!! esempio "Example 12.2: $\ILP_{\MCP}$ model"
+!!! esempio "Example 12.2: $\mathrm{ILP}_{\mathrm{MCP}}$ model"
 
-    The $\ILP_{\MCP}$ model of <span style="color:#1971c2">[Example 12.1](#box-2-mcpF-ex1)</span> has $7$ binary variables and one constraint for each of the $13$ edges of $\overline{G}$:
+    The $\mathrm{ILP}_{\mathrm{MCP}}$ model of <span style="color:#1971c2">[Example 12.1](#box-2-mcpF-ex1)</span> has $7$ binary variables and one constraint for each of the $13$ edges of $\overline{G}$:
 
     \begin{align*}
     \max\quad & x_1+x_2+x_3+x_4+x_5+x_6+x_7\\
@@ -120,24 +120,24 @@ title: "Formulations of the maximum clique problem"
     & x_1,\dots,x_7\in\{0,1\}.
     \end{align*}
 
-    The optimal solution is $\tilde x_1=\tilde x_2=\tilde x_3=1$ and $\tilde x_4=\dots=\tilde x_7=0$, and $z(\ILP_{\MCP})=3=\omega(G)$.
+    The optimal solution is $\tilde x_1=\tilde x_2=\tilde x_3=1$ and $\tilde x_4=\dots=\tilde x_7=0$, and $z(\mathrm{ILP}_{\mathrm{MCP}})=3=\omega(G)$.
 
 ## 12.3 The Linear Programming relaxations
 
 !!! chiave ""
 
-    Replacing constraints $\eqref{mcpF:bin}$ with $x_v\ge 0$ for every $v\in V$ gives the $\LP\text{-}0_{\MCP}$ model. Adding also the valid bounds
+    Replacing constraints $\eqref{mcpF:bin}$ with $x_v\ge 0$ for every $v\in V$ gives the $\mathrm{LP}\text{-}0_{\mathrm{MCP}}$ model. Adding also the valid bounds
 
     \begin{equation*}
     \label{mcpF:ub}
     x_v\le 1, \qquad \forall v\in V, \tag{12.2}
     \end{equation*}
 
-    gives the $\LP_{\MCP}$ model.
+    gives the $\mathrm{LP}_{\mathrm{MCP}}$ model.
 
-- The upper bounds $x_v\le1$ are not implied in $\LP\text{-}0_{\MCP}$: if a vertex is adjacent to all the others, it belongs to no non-edge constraint, and $\LP\text{-}0_{\MCP}$ is unbounded.
+- The upper bounds $x_v\le1$ are not implied in $\mathrm{LP}\text{-}0_{\mathrm{MCP}}$: if a vertex is adjacent to all the others, it belongs to no non-edge constraint, and $\mathrm{LP}\text{-}0_{\mathrm{MCP}}$ is unbounded.
 
-- Using a non-negative dual variable $\pi_{uv}$ for each constraint $\eqref{mcpF:nonedge}$ and a non-negative dual variable $\lambda_v$ for each constraint $\eqref{mcpF:ub}$, the dual of $\LP_{\MCP}$ reads:
+- Using a non-negative dual variable $\pi_{uv}$ for each constraint $\eqref{mcpF:nonedge}$ and a non-negative dual variable $\lambda_v$ for each constraint $\eqref{mcpF:ub}$, the dual of $\mathrm{LP}_{\mathrm{MCP}}$ reads:
 
     \begin{align*}
     \min\quad & \sum_{\{u,v\}\in\overline{E}}\pi_{uv}+\sum_{v\in V}\lambda_v\\
@@ -145,31 +145,31 @@ title: "Formulations of the maximum clique problem"
     & \pi_{uv}\ge 0,~ \forall\{u,v\}\in\overline{E}, \qquad \lambda_v\ge 0,~ \forall v\in V.
     \end{align*}
 
-    Without the variables $\lambda_v$ it is the dual of $\LP\text{-}0_{\MCP}$: a fractional cover of the vertices with the edges of $\overline{G}$.
+    Without the variables $\lambda_v$ it is the dual of $\mathrm{LP}\text{-}0_{\mathrm{MCP}}$: a fractional cover of the vertices with the edges of $\overline{G}$.
 
 <a id="box-4-mcpF-prop-gap"></a>
 
 !!! teorema "Proposition 12.2: The LP bound can be arbitrarily weak"
 
-    For every graph $G$ with $n$ vertices, $z(\LP_{\MCP})\ge n/2$. Consequently, the ratio $z(\LP_{\MCP})/z(\ILP_{\MCP})$ is not bounded over all graphs.
+    For every graph $G$ with $n$ vertices, $z(\mathrm{LP}_{\mathrm{MCP}})\ge n/2$. Consequently, the ratio $z(\mathrm{LP}_{\mathrm{MCP}})/z(\mathrm{ILP}_{\mathrm{MCP}})$ is not bounded over all graphs.
 
 ??? dimostrazione "Proof"
 
-    Set $x_v=\frac{1}{2}$ for every vertex. Each non-edge constraint becomes $\frac{1}{2}+\frac{1}{2}=1$, and all the bounds hold, so this is a feasible solution of $\LP_{\MCP}$ of value $n/2$. Graphs without triangles and with an edge have $\omega(G)=2$ for every $n$, and for them the ratio is at least $n/4$. <span class="qed">□</span>
+    Set $x_v=\frac{1}{2}$ for every vertex. Each non-edge constraint becomes $\frac{1}{2}+\frac{1}{2}=1$, and all the bounds hold, so this is a feasible solution of $\mathrm{LP}_{\mathrm{MCP}}$ of value $n/2$. Graphs without triangles and with an edge have $\omega(G)=2$ for every $n$, and for them the ratio is at least $n/4$. <span class="qed">□</span>
 
 <a id="box-5-mcpF-ex-lp"></a>
 
-!!! esempio "Example 12.3: $\LP_{\MCP}$ model"
+!!! esempio "Example 12.3: $\mathrm{LP}_{\mathrm{MCP}}$ model"
 
     For <span style="color:#1971c2">[Example 12.1](#box-2-mcpF-ex1)</span>, the point $\bar x_v=\frac{1}{2}$ for $v=1,\dots,7$ is feasible, with value $\frac{7}{2}$. It is optimal: the edges of the cycle $1,4,7,2,5,3,6,1$ of $\overline{G}$ with $\tilde\pi_{uv}=\frac{1}{2}$, and all the other dual variables equal to $0$, give every vertex a total of $\frac{1}{2}+\frac{1}{2}=1$. This dual solution has value $7\cdot\frac{1}{2}=\frac{7}{2}$, hence
 
     $$
-    z(\LP_{\MCP})=\frac{7}{2} \qquad\text{and}\qquad \omega(G)=3 \le \Big\lfloor\frac{7}{2}\Big\rfloor = 3.
+    z(\mathrm{LP}_{\mathrm{MCP}})=\frac{7}{2} \qquad\text{and}\qquad \omega(G)=3 \le \Big\lfloor\frac{7}{2}\Big\rfloor = 3.
     $$
 
-    On the cycle with $5$ vertices $C_5$, where $\omega(C_5)=2$, the same point gives $z(\LP_{\MCP})=\frac{5}{2}$.
+    On the cycle with $5$ vertices $C_5$, where $\omega(C_5)=2$, the same point gives $z(\mathrm{LP}_{\mathrm{MCP}})=\frac{5}{2}$.
 
-- The data are integer and the optimal value of the ILP is integer, so $\lfloor z(\LP_{\MCP})\rfloor$ is also a dual bound. On <span style="color:#1971c2">[Example 12.1](#box-2-mcpF-ex1)</span> it gives $3$ by luck; on a graph without triangles it gives $\lfloor n/2\rfloor$, against $\omega(G)=2$.
+- The data are integer and the optimal value of the ILP is integer, so $\lfloor z(\mathrm{LP}_{\mathrm{MCP}})\rfloor$ is also a dual bound. On <span style="color:#1971c2">[Example 12.1](#box-2-mcpF-ex1)</span> it gives $3$ by luck; on a graph without triangles it gives $\lfloor n/2\rfloor$, against $\omega(G)=2$.
 
 ## 12.4 Clique inequalities: a stronger formulation
 
@@ -184,11 +184,11 @@ title: "Formulations of the maximum clique problem"
     \sum_{v\in Q}x_v\le 1 \tag{12.3}
     \end{equation*}
 
-    is a <strong>valid inequality</strong> for $\ILP_{\MCP}$.
+    is a <strong>valid inequality</strong> for $\mathrm{ILP}_{\mathrm{MCP}}$.
 
 ??? dimostrazione "Proof"
 
-    A clique of $G$ and a stable set $Q$ of $G$ share at most one vertex: two common vertices would be both adjacent and non-adjacent. So every feasible solution of $\ILP_{\MCP}$ selects at most one vertex of $Q$. <span class="qed">□</span>
+    A clique of $G$ and a stable set $Q$ of $G$ share at most one vertex: two common vertices would be both adjacent and non-adjacent. So every feasible solution of $\mathrm{ILP}_{\mathrm{MCP}}$ selects at most one vertex of $Q$. <span class="qed">□</span>
 
 - Inequalities $\eqref{mcpF:cliqueineq}$ are called <strong>clique inequalities</strong>, after the clique $Q$ of $\overline{G}$; read on $G$, they are <strong>stable set inequalities</strong>. The non-edge constraints are the case $|Q|=2$.
 
@@ -206,21 +206,21 @@ title: "Formulations of the maximum clique problem"
     & x_v\in\{0,1\}, && \forall v\in V. \tag{12.4c}
     \end{align*}
 
-    It is referred to as the $\ILP^{\mathrm{CL}}_{\MCP}$ model, and its LP relaxation, with $x_v\ge 0$, as the $\LP^{\mathrm{CL}}_{\MCP}$ model.
+    It is referred to as the $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}$ model, and its LP relaxation, with $x_v\ge 0$, as the $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ model.
 
 - Every vertex lies in some maximal clique of $\overline{G}$, so constraints $\eqref{mcpF:cl}$ imply $x_v\le 1$: the bounds $\eqref{mcpF:ub}$ are not needed.
 
-- Every edge of $\overline{G}$ lies in a maximal clique, so each non-edge constraint is implied by a constraint $\eqref{mcpF:cl}$. Hence the feasible region of $\LP^{\mathrm{CL}}_{\MCP}$ is contained in that of $\LP_{\MCP}$, and
+- Every edge of $\overline{G}$ lies in a maximal clique, so each non-edge constraint is implied by a constraint $\eqref{mcpF:cl}$. Hence the feasible region of $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ is contained in that of $\mathrm{LP}_{\mathrm{MCP}}$, and
 
     $$
-    \omega(G) \;\le\; z(\LP^{\mathrm{CL}}_{\MCP}) \;\le\; z(\LP_{\MCP}).
+    \omega(G) \;\le\; z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}) \;\le\; z(\mathrm{LP}_{\mathrm{MCP}}).
     $$
 
 - The family $\mathcal{Q}$ can be very large: Moon and Moser (1965) showed graphs with $3^{n/3}$ maximal cliques. In practice the inequalities are added only when they are violated, as in the chapter «Valid inequalities» of the module <em>Integer linear programming</em>.
 
 <a id="box-7-mcpF-ex-cl"></a>
 
-!!! esempio "Example 12.4: $\ILP^{\mathrm{CL}}_{\MCP}$ model"
+!!! esempio "Example 12.4: $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}$ model"
 
     The maximal cliques of $\overline{G}$ in <span style="color:#1971c2">[Example 12.1](#box-2-mcpF-ex1)</span> are the $5$ triangles and the $2$ edges
 
@@ -245,9 +245,9 @@ title: "Formulations of the maximum clique problem"
     \sum_{v=1}^{7}x_v\le 3,
     $$
 
-    and the clique $\{1,2,3\}$ attains the bound: $z(\LP^{\mathrm{CL}}_{\MCP})=3=\omega(G)$. The LP bound drops from $\frac{7}{2}$ to $3$ and closes the gap.
+    and the clique $\{1,2,3\}$ attains the bound: $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})=3=\omega(G)$. The LP bound drops from $\frac{7}{2}$ to $3$ and closes the gap.
 
-- Clique inequalities do not always close the gap. On $C_5$ the complement is again a cycle with $5$ vertices, whose maximal cliques are its edges: the two formulations coincide and $z(\LP^{\mathrm{CL}}_{\MCP})= \frac{5}{2}>2=\omega(C_5)$.
+- Clique inequalities do not always close the gap. On $C_5$ the complement is again a cycle with $5$ vertices, whose maximal cliques are its edges: the two formulations coincide and $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})= \frac{5}{2}>2=\omega(C_5)$.
 
 - If $C$ is a cycle of $\overline{G}$ with an odd number of vertices and no chord, then $\sum_{v\in C}x_v\le(|C|-1)/2$ is a valid inequality (an <strong>odd cycle inequality</strong>): a stable set of $\overline{G}$ takes at most $(|C|-1)/2$ vertices of $C$. For $C_5$ it reads $x_1+\dots+x_5\le 2$ and closes the gap.
 
@@ -275,35 +275,35 @@ title: "Formulations of the maximum clique problem"
 
 !!! teorema "Proposition 12.4: clique bound from LP duality"
 
-    The dual of $\LP^{\mathrm{CL}}_{\MCP}$ is the LP relaxation of the coloring formulation $\eqref{mcpF:col}$. Hence
+    The dual of $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ is the LP relaxation of the coloring formulation $\eqref{mcpF:col}$. Hence
 
     $$
-    \omega(G)\;\le\; z(\LP^{\mathrm{CL}}_{\MCP}) \;\le\; \chi(G).
+    \omega(G)\;\le\; z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}) \;\le\; \chi(G).
     $$
 
 ??? dimostrazione "Proof"
 
-    $\LP^{\mathrm{CL}}_{\MCP}$ has one constraint for each $Q\in\mathcal{Q}$ and one variable for each vertex. With a non-negative dual variable $y_Q$ for constraint $\eqref{mcpF:cl}$, the dual reads
+    $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ has one constraint for each $Q\in\mathcal{Q}$ and one variable for each vertex. With a non-negative dual variable $y_Q$ for constraint $\eqref{mcpF:cl}$, the dual reads
 
     $$
     \min\Big\{\,\sum_{Q\in\mathcal{Q}}y_Q \;:\; \sum_{Q\in\mathcal{Q}:\,v\in Q}y_Q\ge 1,~\forall v\in V,\quad
     y_Q\ge 0,~\forall Q\in\mathcal{Q}\,\Big\},
     $$
 
-    which is the LP relaxation of $\eqref{mcpF:col}$. By strong duality the two optimal values are equal. The first inequality holds because $\LP^{\mathrm{CL}}_{\MCP}$ is a relaxation of the MCP. The second one holds because the LP relaxation of $\eqref{mcpF:col}$ is a relaxation of a minimization problem with optimal value $\chi(G)$. <span class="qed">□</span>
+    which is the LP relaxation of $\eqref{mcpF:col}$. By strong duality the two optimal values are equal. The first inequality holds because $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ is a relaxation of the MCP. The second one holds because the LP relaxation of $\eqref{mcpF:col}$ is a relaxation of a minimization problem with optimal value $\chi(G)$. <span class="qed">□</span>
 
-- The common value $z(\LP^{\mathrm{CL}}_{\MCP})$ is called the <strong>fractional chromatic number</strong> of $G$. The clique formulation of the MCP and the stable set formulation of the VCP are two faces of the same LP.
+- The common value $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})$ is called the <strong>fractional chromatic number</strong> of $G$. The clique formulation of the MCP and the stable set formulation of the VCP are two faces of the same LP.
 
 <a id="box-9-mcpF-ex-chain"></a>
 
-!!! esempio "Example 12.5: the chain $\omega\le z(\LP^{\mathrm{CL}}_{\MCP})\le\chi$"
+!!! esempio "Example 12.5: the chain $\omega\le z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})\le\chi$"
 
     - On <span style="color:#1971c2">[Example 12.1](#box-2-mcpF-ex1)</span>, the dual solution $\tilde y_Q=1$ for $Q=\{1,4,6\}$, $\{2,5,7\}$, $\{3,5,7\}$ (the multipliers used above) is a feasible coloring with $3$ colors: the classes $\{1,4,6\}$, $\{2,5,7\}$ and $\{3\}$. The chain reads $3\le 3\le 3$.
 
     - On $C_5$, with vertices $1,\dots,5$, the maximal stable sets are the $5$ non-edges. Setting $y_Q=\frac{1}{2}$ on each of them gives every vertex a total of $1$, so the dual has value $\frac{5}{2}$, as the primal. The chain reads
 
         $$
-        \omega(C_5)=2 \;<\; z(\LP^{\mathrm{CL}}_{\MCP})=\frac{5}{2} \;<\; \chi(C_5)=3 .
+        \omega(C_5)=2 \;<\; z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})=\frac{5}{2} \;<\; \chi(C_5)=3 .
         $$
 
 ## 12.6 Typical mistakes
@@ -312,9 +312,9 @@ title: "Formulations of the maximum clique problem"
 
     - <strong>Writing the constraints on the edges of $G$.</strong> The edge formulation of the MCP has one constraint for each <em>non-edge</em> of $G$; on the edges of $G$ the same constraints describe the stable sets of $G$.
 
-    - <strong>Trusting the LP bound of the edge formulation.</strong> The point $x_v=\frac{1}{2}$ is always feasible, so $z(\LP_{\MCP})\ge n/2$ even when $\omega(G)=2$.
+    - <strong>Trusting the LP bound of the edge formulation.</strong> The point $x_v=\frac{1}{2}$ is always feasible, so $z(\mathrm{LP}_{\mathrm{MCP}})\ge n/2$ even when $\omega(G)=2$.
 
-    - <strong>Forgetting the bounds $x_v\le 1$ in the edge formulation.</strong> A vertex adjacent to all the others appears in no constraint, and $\LP\text{-}0_{\MCP}$ becomes unbounded. In the clique formulation the bounds are implied.
+    - <strong>Forgetting the bounds $x_v\le 1$ in the edge formulation.</strong> A vertex adjacent to all the others appears in no constraint, and $\mathrm{LP}\text{-}0_{\mathrm{MCP}}$ becomes unbounded. In the clique formulation the bounds are implied.
 
     - <strong>Believing that clique inequalities close every gap.</strong> On $C_5$ they coincide with the non-edge constraints, and the odd cycle inequality is needed.
 
@@ -324,21 +324,21 @@ title: "Formulations of the maximum clique problem"
 
 !!! chiave "In summary"
 
-    - The edge formulation $\ILP_{\MCP}$ has one binary variable per vertex and one constraint $x_u+x_v\le 1$ per edge of $\overline{G}$: it is the edge formulation of the MSSP on $\overline{G}$.
+    - The edge formulation $\mathrm{ILP}_{\mathrm{MCP}}$ has one binary variable per vertex and one constraint $x_u+x_v\le 1$ per edge of $\overline{G}$: it is the edge formulation of the MSSP on $\overline{G}$.
 
-    - Its LP relaxation is weak: $x_v=\frac{1}{2}$ is feasible and $z(\LP_{\MCP})\ge n/2$.
+    - Its LP relaxation is weak: $x_v=\frac{1}{2}$ is feasible and $z(\mathrm{LP}_{\mathrm{MCP}})\ge n/2$.
 
-    - The clique inequalities $\sum_{v\in Q}x_v\le 1$, for the maximal cliques $Q$ of $\overline{G}$, give a stronger formulation with $\omega(G)\le z(\LP^{\mathrm{CL}}_{\MCP})\le z(\LP_{\MCP})$.
+    - The clique inequalities $\sum_{v\in Q}x_v\le 1$, for the maximal cliques $Q$ of $\overline{G}$, give a stronger formulation with $\omega(G)\le z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})\le z(\mathrm{LP}_{\mathrm{MCP}})$.
 
-    - The dual of $\LP^{\mathrm{CL}}_{\MCP}$ is the LP relaxation of a coloring formulation, hence $\omega(G)\le z(\LP^{\mathrm{CL}}_{\MCP})\le\chi(G)$.
+    - The dual of $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ is the LP relaxation of a coloring formulation, hence $\omega(G)\le z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})\le\chi(G)$.
 
     <strong>Dashboard</strong> (maximization). Bounds on $\omega(G)$ computed in this chapter:
 
     <div class="tabella" markdown="0"><table>
     <tr>
     <th>instance</th>
-    <th><span class="arithmatex">\(z(\LP_{\MCP})\)</span></th>
-    <th><span class="arithmatex">\(z(\LP^{\mathrm{CL}}_{\MCP})\)</span></th>
+    <th><span class="arithmatex">\(z(\mathrm{LP}_{\mathrm{MCP}})\)</span></th>
+    <th><span class="arithmatex">\(z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})\)</span></th>
     <th><span class="arithmatex">\(\omega(G)\)</span></th>
     </tr>
     <tr>

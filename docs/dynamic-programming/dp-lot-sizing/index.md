@@ -1,0 +1,381 @@
+---
+title: "Dynamic programming for lot sizing"
+---
+
+# Dynamic programming for lot sizing
+
+<div class="info-capitolo" markdown>
+
+**Part 3 · Dynamic programming · Chapter 22** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/dp-lot-sizing.md)
+
+</div>
+
+!!! nota "Prerequisites"
+
+    - From this module, the chapters on lot sizing: the single-item problem, its MIP model with the variables $x_t$, $s_t$, $y_t$, and the example of the MIP course.
+
+    - From this module, the chapter «Principles of dynamic programming» and the DP algorithms of the previous chapters: recurrence, base cases, lookup table and reconstruction of a solution.
+
+    - From the module <em>Algorithms</em>: [pseudocode (Chapter 2)](https://fabiofurini.github.io/algorithms/basic-algorithms/02-pseudo-code/), and [the size of the input (Chapter 11)](https://fabiofurini.github.io/algorithms/analysis/11-input-size/).
+
+!!! nota "Where we were"
+
+    - <strong>As a problem and as a model</strong>: single-item lot sizing, its MIP model and its formulations (lot-sizing chapters).
+
+    - <strong>Now, as a table</strong>: the DP algorithm of Wagner and Whitin gives the optimal value of the uncapacitated problem in $\Theta(m^2)$ steps, and a DP algorithm on the inventory handles the capacitated one.
+
+!!! chiave "Objectives"
+
+    At the end of this chapter you will be able to:
+
+    - state the zero-inventory ordering property, and prove it with the exchange argument;
+
+    - compute the cost $c_{j,t}$ of a production run, and the matrix of the costs, in $O(m^2)$ steps;
+
+    - write the recurrence $v(t)$ over the last production run, run the DP algorithm by hand and reconstruct an optimal plan;
+
+    - explain why the property fails with capacities, and write the recurrence $v(t,k)$ on the pairs (period, final inventory);
+
+    - count the steps of the two DP algorithms, and say why the second one is pseudo-polynomial.
+
+<div class="sottopagine" markdown>
+
+**The chapter is organised in pages: this page and**
+
+1. [22.2 A DP algorithm for the ULS](a-dp-algorithm-for-the-uls.md)
+2. [22.2.2 A DP algorithm for the ULS: Step 1 and Step 2](a-dp-algorithm-for-the-uls-step-1-and-step-2.md)
+3. [22.3 A DP algorithm for the capacitated case](a-dp-algorithm-for-the-capacitated-case.md)
+4. [Typical mistakes · In summary](typical-mistakes.md)
+
+</div>
+
+## 22.1 Problem definition
+
+<a id="box-1-defULS"></a>
+
+!!! definizione "Definition 22.1: Uncapacitated Lot-Sizing Problem"
+
+    Given:
+
+    1. a set $T=\{1,2,\dots,m\}$ of $m \in \Z_{\ge 1}$ <em>time periods</em>,
+
+    2. for each period $t \in T$, a <em>demand</em> $d_t \in \Z_{\ge 1}$,
+
+    3. for each period $t \in T$, a <em>setup cost</em> $sc_t \in \Z_{\ge 0}$, a <em>variable production cost</em> $vc_t \in \Z_{\ge 0}$ per unit, and a <em>holding cost</em> $hc_t \in \Z_{\ge 0}$ per unit in stock at the end of period $t$,
+
+    the <strong>Uncapacitated Lot-Sizing Problem</strong> (ULS) asks to decide how many units to produce in each period, so that, starting with an empty inventory and ending with an empty inventory, the demand of every period is satisfied, and the total cost of setups, production, and holding is minimized.
+
+- This is the lot-sizing problem of the chapter on lot sizing, restricted to a <strong>single product</strong>: we drop the product index $p$, we measure the capacity in units of product (variable production time $vt_t=1$, no setup time), and we assume that there is no initial inventory.
+
+- For any $j,t \in T$, we denote by
+
+    $$
+    D_{j,t}=\sum_{k=j}^{t} d_k
+    $$
+
+    the total demand of periods $j,j+1,\dots,t$, with $D_{j,t}=0$ if $j>t$.
+
+- With the variables of the chapter on lot sizing ($x_t$ production, $s_t$ inventory at the end of period $t$, $y_t$ setup), the ULS reads as follows, where $s_0=0$ and the big-M value of period $t$ is the total demand $D_{t,m}$ of the remaining periods:
+
+!!! chiave ""
+
+    \begin{align*}
+    &&\min \sum_{t \in T} \left(sc_t\, y_t + vc_t\, x_t + hc_t\, s_t\right) \label{uls:obj} \tag{22.1}\\
+    && s_{t-1} + x_t & = d_t + s_t & t \in T \label{uls:bal} \tag{22.2}\\
+    && x_t & \le D_{t,m}\, y_t & t \in T \label{uls:big} \tag{22.3}\\
+    && s_m & = 0 \label{uls:end} \tag{22.4}\\
+    && x_t,\ s_t & \ge 0 & t \in T \tag{22.5}\\
+    && y_t & \in \{0,1\} & t \in T \tag{22.6}
+    \end{align*}
+
+- Constraints $\eqref{uls:bal}$ are the flow balancing constraints, constraints $\eqref{uls:big}$ force a setup in every period with positive production, and constraint $\eqref{uls:end}$ imposes an empty inventory at the end of the horizon (with nonnegative costs, a final inventory is never useful).
+
+<a id="box-2-texuls1"></a>
+
+!!! esempio "Example 22.1: Uncapacitated lot sizing"
+
+    We consider $m=5$ periods with the following data:
+
+    $$
+    \begin{array}{l|rrrrr}
+    \hline {t} & {1} & {2} & {3} & {4} & {5} \\
+    \hline {d_t} & {20} & {10} & {30} & {40} & {10} \\
+    {sc_t} & {50} & {50} & {50} & {50} & {50} \\
+    {vc_t} & {0} & {0} & {0} & {0} & {0} \\
+    {hc_t} & {1} & {1} & {1} & {1} & {1} \\
+    \hline
+    \end{array}
+    $$
+
+    We refer to this ULS instance as <span style="color:#1971c2">[Example 22.1](#box-2-texuls1)</span>. It is the uncapacitated instance used in the MIP course (setup cost $50$, holding cost $1$, no variable production cost).
+
+### 22.1.1 Encoding of feasible solutions
+
+!!! chiave ""
+
+    A <em>feasible solution</em> of the ULS is a production plan that satisfies the demand of every period, starting and ending with an empty inventory.
+
+- A ULS feasible solution can be described by a solution vector
+
+    $$
+    (x_1,x_2,\dots,x_m)
+    $$
+
+    where each component has the following meaning:
+
+    $$
+    x_t = \text{number of units produced in period } t,
+    \qquad \forall t \in \{1,2,\dots,m\}.
+    $$
+
+    The inventory at the end of period $t$ is determined by the vector:
+
+    $$
+    s_t=\sum_{j=1}^{t} x_j - D_{1,t},
+    \qquad \forall t \in \{1,2,\dots,m\}.
+    $$
+
+    Since the solution is feasible, the inventories are nonnegative and the last one is empty:
+
+    $$
+    s_t \ge 0 \quad \forall t \in \{1,2,\dots,m-1\}, \qquad s_m=0.
+    $$
+
+    A setup is paid in period $t$ if and only if $x_t>0$. The total cost of a feasible solution is
+
+    $$
+    \sum_{t=1,\ x_t>0}^{m} sc_t+\sum_{t=1}^{m} vc_t\, x_t+\sum_{t=1}^{m} hc_t\, s_t.
+    $$
+
+<a id="box-3-texulsnetwork"></a>
+
+!!! esempio "Example 22.2: A feasible solution"
+
+    We consider the ULS instance of <span style="color:#1971c2">[Example 22.1](#box-2-texuls1)</span>. The following network represents the feasible solution $(30,\allowbreak 0,\allowbreak 80,\allowbreak 0,\allowbreak 0)$: each period is a node, the production $x_t$ enters node $t$, the demand $d_t$ leaves it, and the inventory $s_t$ flows from node $t$ to node $t+1$. Thick arcs carry a positive flow.
+
+    ![Figure 1](../../img/dp-lot-sizing/fig01.svg){ .fig loading=lazy  }
+
+    The setups are in periods $1$, $3$, the inventories are $(s_1,\dots,s_{5})=(10,\allowbreak 0,\allowbreak 50,\allowbreak 10,\allowbreak 0)$, and the total cost is (there is no variable production cost)
+
+    $$
+    \underbrace{50+50}_{\text{setup}}+\underbrace{1\cdot 10+1\cdot 0+1\cdot 50+1\cdot 10+1\cdot 0}_{\text{holding}}=100+70=170.
+    $$
+
+- A production quantity can take many values, and a ULS instance has a huge number of feasible solutions (infinitely many, if the quantities are not required to be integer). The next property shows that only very few of them need to be considered.
+
+### 22.1.2 The zero-inventory ordering property
+
+<a id="box-4-thmZIO"></a>
+
+!!! teorema "Theorem 22.2: Zero-inventory ordering (Wagner and Whitin, 1958)"
+
+    Every ULS instance has an optimal solution in which no period with positive production starts with a positive inventory, that is,
+
+    $$
+    s_{t-1}\, x_t = 0 \qquad \forall t \in \{1,2,\dots,m\}.
+    $$
+
+- <em>Proof.</em> First, an optimal solution exists: the vector $(d_1,d_2,\dots,d_m)$ is feasible, and for each of the $2^m$ choices of the set of periods with a setup, the remaining problem is a linear program over a bounded polyhedron (since $s_m=0$, every $x_t$ is between $0$ and $D_{1,m}$), so it has an optimal solution whenever it is feasible.
+
+- Among all optimal solutions, consider one with the <strong>smallest number of periods with positive production</strong>, and suppose, by contradiction, that there exists a period $t$ with $x_t>0$ and $s_{t-1}>0$.
+
+- Since $s_0=0$ and $s_{t-1}>0$, something is produced before period $t$: let $j<t$ be the last period before $t$ with $x_j>0$. No unit is produced in periods $j+1,\dots,t-1$, so the inventory can only decrease from period $j$ to period $t-1$:
+
+    $$
+    s_k \ge s_{t-1} > 0 \qquad \forall k \in \{j,j+1,\dots,t-1\}.
+    $$
+
+- For a number $\varepsilon$, move $\varepsilon$ units of production from period $j$ to period $t$: replace $x_j$ by $x_j-\varepsilon$, $x_t$ by $x_t+\varepsilon$, and $s_k$ by $s_k-\varepsilon$ for all $k \in \{j,\dots,t-1\}$. All balancing constraints remain satisfied, and the new plan is feasible for every $\varepsilon$ with
+
+    $$
+    -x_t \le \varepsilon \le \min\{x_j,\ s_{t-1}\}.
+    $$
+
+- As long as $x_j$ and $x_t$ stay positive, the setups do not change and the cost changes by $\varepsilon\,\Delta$, where
+
+    $$
+    \Delta = vc_t - vc_j - \sum_{k=j}^{t-1} hc_k
+    $$
+
+    is the cost of producing one unit in period $t$ minus the cost of producing it in period $j$ and holding it until period $t$.
+
+- If $\Delta<0$, a small $\varepsilon>0$ gives a feasible solution with a smaller cost, which contradicts optimality.
+
+- If $\Delta\ge 0$, choose $\varepsilon=-x_t$: the whole production of period $t$ is moved to period $j$, the cost changes by $-x_t\,\Delta \le 0$, and the setup cost $sc_t\ge 0$ of period $t$ is saved. The new solution is optimal and has one period with positive production less, which contradicts the choice of the solution.
+
+- Hence no such period $t$ exists.  $\square$
+
+!!! chiave ""
+
+    In an optimal solution with the zero-inventory ordering property, each period $j$ with positive production produces exactly the demands of periods $j,j+1,\dots,t$, where $t+1$ is the next period with positive production (or $t=m$ if there is none):
+
+    $$
+    x_j = D_{j,t}.
+    $$
+
+- Indeed, $s_{j-1}=0$ (zero-inventory ordering in period $j$), $s_t=0$ (zero-inventory ordering in period $t+1$, or $s_m=0$), and nothing is produced in periods $j+1,\dots,t$; summing the balancing constraints of periods $j,\dots,t$ gives $x_j=D_{j,t}$.
+
+- Period $1$ always produces, since $s_0=0$ and $d_1\ge 1$. A solution with the zero-inventory ordering property is therefore determined by the set of its production periods, which contains period $1$ and any subset of $\{2,3,\dots,m\}$.
+
+!!! chiave ""
+
+    The number of ULS solutions with the zero-inventory ordering property is $2^{m-1}$, since each period $t\in\{2,3,\dots,m\}$ can independently produce or not.
+
+- The number of these solutions grows exponentially with the number $m$ of periods:
+
+    $$
+    2^{m-1}=O(2^m).
+    $$
+
+    Therefore, enumerating them quickly becomes impractical as $m$ increases.
+
+<a id="box-5-texulsenum"></a>
+
+!!! esempio "Example 22.3: Enumeration of the solutions with the zero-inventory ordering property"
+
+    We consider the ULS instance of <span style="color:#1971c2">[Example 22.1](#box-2-texuls1)</span>:
+
+    $$
+    \begin{array}{l|rrrrr}
+    \hline {t} & {1} & {2} & {3} & {4} & {5} \\
+    \hline {d_t} & {20} & {10} & {30} & {40} & {10} \\
+    {sc_t} & {50} & {50} & {50} & {50} & {50} \\
+    {vc_t} & {0} & {0} & {0} & {0} & {0} \\
+    {hc_t} & {1} & {1} & {1} & {1} & {1} \\
+    \hline
+    \end{array}
+    $$
+
+    There are $2^{5-1}=16$ solutions with the zero-inventory ordering property. For each of them, the table reports the production periods, the solution vector, the inventories, and the total cost, written as setup cost plus holding cost. The optimal costs are highlighted.
+
+    <div class="tabella" markdown="0"><table>
+    <tr>
+    <th>Label</th>
+    <th>Production periods</th>
+    <th>Solution vector</th>
+    <th>Inventories <span class="arithmatex">\((s_1,\dots,s_{5})\)</span></th>
+    <th>Total cost</th>
+    </tr>
+    <tr>
+    <td><span style="color:#1971c2"><span class="arithmatex">\((1)\)</span></span></td>
+    <td><span class="arithmatex">\(\{1\}\)</span></td>
+    <td><span class="arithmatex">\((110,\allowbreak 0,\allowbreak 0,\allowbreak 0,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\((90,\allowbreak 80,\allowbreak 50,\allowbreak 10,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\(50+230=280\)</span></td>
+    </tr>
+    <tr>
+    <td><span style="color:#1971c2"><span class="arithmatex">\((2)\)</span></span></td>
+    <td><span class="arithmatex">\(\{1,5\}\)</span></td>
+    <td><span class="arithmatex">\((100,\allowbreak 0,\allowbreak 0,\allowbreak 0,\allowbreak 10)\)</span></td>
+    <td><span class="arithmatex">\((80,\allowbreak 70,\allowbreak 40,\allowbreak 0,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\(100+190=290\)</span></td>
+    </tr>
+    <tr>
+    <td><span style="color:#1971c2"><span class="arithmatex">\((3)\)</span></span></td>
+    <td><span class="arithmatex">\(\{1,4\}\)</span></td>
+    <td><span class="arithmatex">\((60,\allowbreak 0,\allowbreak 0,\allowbreak 50,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\((40,\allowbreak 30,\allowbreak 0,\allowbreak 10,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\(100+80=180\)</span></td>
+    </tr>
+    <tr>
+    <td><span style="color:#1971c2"><span class="arithmatex">\((4)\)</span></span></td>
+    <td><span class="arithmatex">\(\{1,4,5\}\)</span></td>
+    <td><span class="arithmatex">\((60,\allowbreak 0,\allowbreak 0,\allowbreak 40,\allowbreak 10)\)</span></td>
+    <td><span class="arithmatex">\((40,\allowbreak 30,\allowbreak 0,\allowbreak 0,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\(150+70=220\)</span></td>
+    </tr>
+    <tr>
+    <td><span style="color:#1971c2"><span class="arithmatex">\((5)\)</span></span></td>
+    <td><span class="arithmatex">\(\{1,3\}\)</span></td>
+    <td><span class="arithmatex">\((30,\allowbreak 0,\allowbreak 80,\allowbreak 0,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\((10,\allowbreak 0,\allowbreak 50,\allowbreak 10,\allowbreak 0)\)</span></td>
+    <td class="cella-blu"><span class="arithmatex">\(100+70=170\)</span></td>
+    </tr>
+    <tr>
+    <td><span style="color:#1971c2"><span class="arithmatex">\((6)\)</span></span></td>
+    <td><span class="arithmatex">\(\{1,3,5\}\)</span></td>
+    <td><span class="arithmatex">\((30,\allowbreak 0,\allowbreak 70,\allowbreak 0,\allowbreak 10)\)</span></td>
+    <td><span class="arithmatex">\((10,\allowbreak 0,\allowbreak 40,\allowbreak 0,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\(150+50=200\)</span></td>
+    </tr>
+    <tr>
+    <td><span style="color:#1971c2"><span class="arithmatex">\((7)\)</span></span></td>
+    <td><span class="arithmatex">\(\{1,3,4\}\)</span></td>
+    <td><span class="arithmatex">\((30,\allowbreak 0,\allowbreak 30,\allowbreak 50,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\((10,\allowbreak 0,\allowbreak 0,\allowbreak 10,\allowbreak 0)\)</span></td>
+    <td class="cella-blu"><span class="arithmatex">\(150+20=170\)</span></td>
+    </tr>
+    <tr>
+    <td><span style="color:#1971c2"><span class="arithmatex">\((8)\)</span></span></td>
+    <td><span class="arithmatex">\(\{1,3,4,5\}\)</span></td>
+    <td><span class="arithmatex">\((30,\allowbreak 0,\allowbreak 30,\allowbreak 40,\allowbreak 10)\)</span></td>
+    <td><span class="arithmatex">\((10,\allowbreak 0,\allowbreak 0,\allowbreak 0,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\(200+10=210\)</span></td>
+    </tr>
+    <tr>
+    <td><span style="color:#1971c2"><span class="arithmatex">\((9)\)</span></span></td>
+    <td><span class="arithmatex">\(\{1,2\}\)</span></td>
+    <td><span class="arithmatex">\((20,\allowbreak 90,\allowbreak 0,\allowbreak 0,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\((0,\allowbreak 80,\allowbreak 50,\allowbreak 10,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\(100+140=240\)</span></td>
+    </tr>
+    <tr>
+    <td><span style="color:#1971c2"><span class="arithmatex">\((10)\)</span></span></td>
+    <td><span class="arithmatex">\(\{1,2,5\}\)</span></td>
+    <td><span class="arithmatex">\((20,\allowbreak 80,\allowbreak 0,\allowbreak 0,\allowbreak 10)\)</span></td>
+    <td><span class="arithmatex">\((0,\allowbreak 70,\allowbreak 40,\allowbreak 0,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\(150+110=260\)</span></td>
+    </tr>
+    <tr>
+    <td><span style="color:#1971c2"><span class="arithmatex">\((11)\)</span></span></td>
+    <td><span class="arithmatex">\(\{1,2,4\}\)</span></td>
+    <td><span class="arithmatex">\((20,\allowbreak 40,\allowbreak 0,\allowbreak 50,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\((0,\allowbreak 30,\allowbreak 0,\allowbreak 10,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\(150+40=190\)</span></td>
+    </tr>
+    <tr>
+    <td><span style="color:#1971c2"><span class="arithmatex">\((12)\)</span></span></td>
+    <td><span class="arithmatex">\(\{1,2,4,5\}\)</span></td>
+    <td><span class="arithmatex">\((20,\allowbreak 40,\allowbreak 0,\allowbreak 40,\allowbreak 10)\)</span></td>
+    <td><span class="arithmatex">\((0,\allowbreak 30,\allowbreak 0,\allowbreak 0,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\(200+30=230\)</span></td>
+    </tr>
+    <tr>
+    <td><span style="color:#1971c2"><span class="arithmatex">\((13)\)</span></span></td>
+    <td><span class="arithmatex">\(\{1,2,3\}\)</span></td>
+    <td><span class="arithmatex">\((20,\allowbreak 10,\allowbreak 80,\allowbreak 0,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\((0,\allowbreak 0,\allowbreak 50,\allowbreak 10,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\(150+60=210\)</span></td>
+    </tr>
+    <tr>
+    <td><span style="color:#1971c2"><span class="arithmatex">\((14)\)</span></span></td>
+    <td><span class="arithmatex">\(\{1,2,3,5\}\)</span></td>
+    <td><span class="arithmatex">\((20,\allowbreak 10,\allowbreak 70,\allowbreak 0,\allowbreak 10)\)</span></td>
+    <td><span class="arithmatex">\((0,\allowbreak 0,\allowbreak 40,\allowbreak 0,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\(200+40=240\)</span></td>
+    </tr>
+    <tr>
+    <td><span style="color:#1971c2"><span class="arithmatex">\((15)\)</span></span></td>
+    <td><span class="arithmatex">\(\{1,2,3,4\}\)</span></td>
+    <td><span class="arithmatex">\((20,\allowbreak 10,\allowbreak 30,\allowbreak 50,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\((0,\allowbreak 0,\allowbreak 0,\allowbreak 10,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\(200+10=210\)</span></td>
+    </tr>
+    <tr>
+    <td><span style="color:#1971c2"><span class="arithmatex">\((16)\)</span></span></td>
+    <td><span class="arithmatex">\(\{1,2,3,4,5\}\)</span></td>
+    <td><span class="arithmatex">\((20,\allowbreak 10,\allowbreak 30,\allowbreak 40,\allowbreak 10)\)</span></td>
+    <td><span class="arithmatex">\((0,\allowbreak 0,\allowbreak 0,\allowbreak 0,\allowbreak 0)\)</span></td>
+    <td><span class="arithmatex">\(250+0=250\)</span></td>
+    </tr>
+    </table></div>
+
+    The optimal value of the ULS instance is $170$, attained by $2$ solutions: <span style="color:#1971c2">$(5)$</span> and <span style="color:#1971c2">$(7)$</span>.
+
+---
+
+**Next:** [22.2 A DP algorithm for the ULS](a-dp-algorithm-for-the-uls.md)
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Lot sizing](../../exercises/dp-lot-sizing.md)

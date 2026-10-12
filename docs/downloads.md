@@ -4,7 +4,7 @@ title: Downloads
 
 # Downloads
 
-The lecture notes, the exercise books and the catalogue of problems in PDF, with the same numbering of definitions, theorems, examples and exercises as the website. Text and figures are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en).
+The lecture notes, the exercise books and the selected problems in PDF, with the same numbering of definitions, theorems, examples and exercises as the website. Text and figures are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en).
 
 ## Lecture notes
 
@@ -12,10 +12,10 @@ The lecture notes, the exercise books and the catalogue of problems in PDF, with
 |---|---|---|
 | 1. Combinatorial optimization problems | 1–8 | [:material-file-pdf-box: lecture-notes-1-combinatorial-optimization-problems.pdf](pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) (0.8 MB) |
 | 2. Formulations and their properties | 9–15 | [:material-file-pdf-box: lecture-notes-2-formulations.pdf](pdf/lecture-notes-2-formulations.pdf) (0.7 MB) |
-| 3. Dynamic programming | 16–19 | [:material-file-pdf-box: lecture-notes-3-dynamic-programming.pdf](pdf/lecture-notes-3-dynamic-programming.pdf) (1.1 MB) |
-| 4. Heuristic algorithms | 20–24 | [:material-file-pdf-box: lecture-notes-4-heuristic-algorithms.pdf](pdf/lecture-notes-4-heuristic-algorithms.pdf) (1.6 MB) |
-| 5. Approximation algorithms | 25–28 | [:material-file-pdf-box: lecture-notes-5-approximation-algorithms.pdf](pdf/lecture-notes-5-approximation-algorithms.pdf) (1.0 MB) |
-| 6. Specialized algorithms | 29 | [:material-file-pdf-box: lecture-notes-6-specialized-algorithms.pdf](pdf/lecture-notes-6-specialized-algorithms.pdf) (0.4 MB) |
+| 3. Dynamic programming | 16–22 | [:material-file-pdf-box: lecture-notes-3-dynamic-programming.pdf](pdf/lecture-notes-3-dynamic-programming.pdf) (1.1 MB) |
+| 4. Heuristic algorithms | 23–27 | [:material-file-pdf-box: lecture-notes-4-heuristic-algorithms.pdf](pdf/lecture-notes-4-heuristic-algorithms.pdf) (1.6 MB) |
+| 5. Approximation algorithms | 28–33 | [:material-file-pdf-box: lecture-notes-5-approximation-algorithms.pdf](pdf/lecture-notes-5-approximation-algorithms.pdf) (1.1 MB) |
+| 6. Specialized algorithms | 34 | [:material-file-pdf-box: lecture-notes-6-specialized-algorithms.pdf](pdf/lecture-notes-6-specialized-algorithms.pdf) (0.4 MB) |
 
 ## Exercise books
 
@@ -23,18 +23,18 @@ The lecture notes, the exercise books and the catalogue of problems in PDF, with
 |---|---|---|
 | 1. Combinatorial optimization problems | 1–8 | [:material-file-pdf-box: exercises-1-combinatorial-optimization-problems.pdf](pdf/exercises-1-combinatorial-optimization-problems.pdf) (0.6 MB) |
 | 2. Formulations and their properties | 9–15 | [:material-file-pdf-box: exercises-2-formulations.pdf](pdf/exercises-2-formulations.pdf) (0.5 MB) |
-| 3. Dynamic programming | 16–19 | [:material-file-pdf-box: exercises-3-dynamic-programming.pdf](pdf/exercises-3-dynamic-programming.pdf) (0.7 MB) |
-| 4. Heuristic algorithms | 20–24 | [:material-file-pdf-box: exercises-4-heuristic-algorithms.pdf](pdf/exercises-4-heuristic-algorithms.pdf) (0.6 MB) |
-| 5. Approximation algorithms | 25–28 | [:material-file-pdf-box: exercises-5-approximation-algorithms.pdf](pdf/exercises-5-approximation-algorithms.pdf) (0.6 MB) |
-| 6. Specialized algorithms | 29 | [:material-file-pdf-box: exercises-6-specialized-algorithms.pdf](pdf/exercises-6-specialized-algorithms.pdf) (0.3 MB) |
+| 3. Dynamic programming | 16–22 | [:material-file-pdf-box: exercises-3-dynamic-programming.pdf](pdf/exercises-3-dynamic-programming.pdf) (0.7 MB) |
+| 4. Heuristic algorithms | 23–27 | [:material-file-pdf-box: exercises-4-heuristic-algorithms.pdf](pdf/exercises-4-heuristic-algorithms.pdf) (0.6 MB) |
+| 5. Approximation algorithms | 28–33 | [:material-file-pdf-box: exercises-5-approximation-algorithms.pdf](pdf/exercises-5-approximation-algorithms.pdf) (0.6 MB) |
+| 6. Specialized algorithms | 34 | [:material-file-pdf-box: exercises-6-specialized-algorithms.pdf](pdf/exercises-6-specialized-algorithms.pdf) (0.3 MB) |
 
-## Catalogue of problems
+## Selected problems
 
-The course seen problem by problem ([catalogue pages](catalogue/index.md)).
+The problems of the course, studied in depth one by one ([the pages](selected-problems/index.md)).
 
 | | Chapters | PDF |
 |---|---|---|
-| Catalogue of combinatorial problems | all | [:material-file-pdf-box: combinatorial-problem-catalogue.pdf](pdf/combinatorial-problem-catalogue.pdf) (0.9 MB) |
+| Selected problems | all | [:material-file-pdf-box: selected-problems.pdf](pdf/selected-problems.pdf) (1.0 MB) |
 
 !!! nota "In preparation"
 

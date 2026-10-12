@@ -12,9 +12,9 @@ title: "Exercises · Parallel machine scheduling"
 
 <a id="esercizio-7-1"></a>
 
-!!! esercizio "Exercise 7.1: Loads, makespan and Gantt chart ($\PCmax$)"
+!!! esercizio "Exercise 7.1: Loads, makespan and Gantt chart ($P\|C_{\max}$)"
 
-    We consider the $\PCmax$ instance with $m=3$ machines and $n=7$ jobs, with processing times
+    We consider the $P\|C_{\max}$ instance with $m=3$ machines and $n=7$ jobs, with processing times
 
     $$
     \begin{array}{l|ccccccc}
@@ -54,7 +54,7 @@ title: "Exercises · Parallel machine scheduling"
 
         ![Figure 1](../img/ex-pcmax/fig01.svg){ .fig loading=lazy  }
 
-    4. $\sum_j t_j=25$ and $\max_j t_j=6$, so $\LB=\max\{6,\lceil 25/3\rceil\}=9$. The schedule of $\mathrm{mach}^3$ attains it: it is optimal, $z(I)=9$.
+    4. $\sum_j t_j=25$ and $\max_j t_j=6$, so $\mathrm{LB}=\max\{6,\lceil 25/3\rceil\}=9$. The schedule of $\mathrm{mach}^3$ attains it: it is optimal, $z(I)=9$.
 
     !!! chiave ""
 
@@ -62,9 +62,9 @@ title: "Exercises · Parallel machine scheduling"
 
 <a id="esercizio-7-2"></a>
 
-!!! esercizio "Exercise 7.2: Counting the schedules ($\PCmax$)"
+!!! esercizio "Exercise 7.2: Counting the schedules ($P\|C_{\max}$)"
 
-    We consider a $\PCmax$ instance with $n=5$ jobs. We count the assignments and the distinct schedules for $m=2$ and for $m=3$ machines.
+    We consider a $P\|C_{\max}$ instance with $n=5$ jobs. We count the assignments and the distinct schedules for $m=2$ and for $m=3$ machines.
 
     **Questions**
 
@@ -98,9 +98,9 @@ title: "Exercises · Parallel machine scheduling"
 
 <a id="esercizio-7-3"></a>
 
-!!! esercizio "Exercise 7.3: A first schedule, a lower bound and the optimum ($\PCmax$)"
+!!! esercizio "Exercise 7.3: A first schedule, a lower bound and the optimum ($P\|C_{\max}$)"
 
-    We consider the $\PCmax$ instance with $m=3$ machines and $n=7$ jobs, with processing times
+    We consider the $P\|C_{\max}$ instance with $m=3$ machines and $n=7$ jobs, with processing times
 
     $$
     \begin{array}{l|ccccccc}
@@ -169,7 +169,7 @@ title: "Exercises · Parallel machine scheduling"
 
         ![Figure 2](../img/ex-pcmax/fig02.svg){ .fig loading=lazy  }
 
-    2. $\LB=\max\{6,\lceil 27/3\rceil\}=9$, so $9\le z(I)\le 10$.
+    2. $\mathrm{LB}=\max\{6,\lceil 27/3\rceil\}=9$, so $9\le z(I)\le 10$.
 
     3. A makespan of $9$ needs three loads of exactly $9$, since the loads sum up to $27=3\cdot9$. Job $4$ ($6$) needs a partner of length $3$, job $2$ ($5$) one of length $4$, and the remaining jobs fill the third machine. The schedule $J_1=\{4,7\},\ J_2=\{2,6\},\ J_3=\{1,3,5\}$ has loads $(9,9,9)$:
 
@@ -183,9 +183,9 @@ title: "Exercises · Parallel machine scheduling"
 
 <a id="esercizio-7-4"></a>
 
-!!! esercizio "Exercise 7.4: When the lower bound is not attained ($\PCmax$)"
+!!! esercizio "Exercise 7.4: When the lower bound is not attained ($P\|C_{\max}$)"
 
-    We consider the $\PCmax$ instance with $m=2$ machines and $n=4$ jobs, with processing times
+    We consider the $P\|C_{\max}$ instance with $m=2$ machines and $n=4$ jobs, with processing times
 
     $$
     \begin{array}{l|cccc}
@@ -205,7 +205,7 @@ title: "Exercises · Parallel machine scheduling"
 
 ??? soluzione "Solution"
 
-    1. $\LB=\max\{8,\lceil 20/2\rceil\}=10$.
+    1. $\mathrm{LB}=\max\{8,\lceil 20/2\rceil\}=10$.
 
     2. The two loads sum up to $20$: a makespan of $10$ needs both loads equal to $10$, that is a set of jobs of total length exactly $10$. The totals of the subsets of jobs are $0$, $3$, $4$, $5$, $7$, $8$, $9$, $11$, $12$, $13$, $15$, $16$, $17$, $20$, and $10$ is not among them. Hence $z(I)\ge 11$.
 
@@ -278,9 +278,9 @@ title: "Exercises · Parallel machine scheduling"
 
 <a id="esercizio-7-5"></a>
 
-!!! esercizio "Exercise 7.5: Makespan and bin packing ($\PCmax$)"
+!!! esercizio "Exercise 7.5: Makespan and bin packing ($P\|C_{\max}$)"
 
-    We consider the $\PCmax$ instance with $m=3$ machines and $n=5$ jobs, with processing times
+    We consider the $P\|C_{\max}$ instance with $m=3$ machines and $n=5$ jobs, with processing times
 
     $$
     \begin{array}{l|ccccc}
@@ -294,9 +294,9 @@ title: "Exercises · Parallel machine scheduling"
 
     **Questions**
 
-    1. Compute the lower bound $\LB$ of the chapter.
+    1. Compute the lower bound $\mathrm{LB}$ of the chapter.
 
-    2. Can the jobs be packed into $3$ bins of capacity $T=\LB$?
+    2. Can the jobs be packed into $3$ bins of capacity $T=\mathrm{LB}$?
 
     3. Find the smallest $T$ for which the jobs fit into $3$ bins, and the corresponding schedule.
 
@@ -304,7 +304,7 @@ title: "Exercises · Parallel machine scheduling"
 
 ??? soluzione "Solution"
 
-    1. $\LB=\max\{7,\lceil 27/3\rceil\}=\max\{7,9\}=9$.
+    1. $\mathrm{LB}=\max\{7,\lceil 27/3\rceil\}=\max\{7,9\}=9$.
 
     2. Three bins of capacity $9$ hold $27=27$, the total weight: every bin must be filled exactly. The item of weight $7$ needs items of total weight $2$, and every other item weighs at least $4$. Hence the jobs do not fit, and $z(I)\ge 10$.
 

@@ -1,41 +1,13 @@
 # Dynamic programming
 
-*Part 3 of the course, volume 3 of the lecture notes.*
+Part 3 of the course.
 
-[:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf){ .md-button }
+[:material-file-pdf-box: Lecture notes (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf){ .md-button } [:material-file-pdf-box: Exercises (PDF)](../pdf/exercises-3-dynamic-programming.pdf){ .md-button }
 
-<div class="grid cards" markdown>
-
--   **16. Principles of dynamic programming**
-
-    ---
-
-    Divide, conquer and combine · Problem properties required by DP algorithms · Steps for designing a DP algorithm · The DP algorithms of this module · …
-
-    [:octicons-arrow-right-24: Read the chapter](dp-principles.md) · [Exercises](../exercises/dp-principles.md)
-
--   **17. Dynamic programming for knapsack problems**
-
-    ---
-
-    A DP algorithm for the Knapsack Problem · A DP algorithm for the Unbounded Knapsack Problem · A DP algorithm for the Bounded Knapsack Problem
-
-    [:octicons-arrow-right-24: Read the chapter](dp-knapsack.md) · [Exercises](../exercises/dp-knapsack.md)
-
--   **18. Rod cutting and coin change**
-
-    ---
-
-    A DP algorithm for the Rod Cutting Problem · A DP algorithm for the Coin Change Problem
-
-    [:octicons-arrow-right-24: Read the chapter](dp-rod-cutting-coin-change.md) · [Exercises](../exercises/dp-rod-cutting-coin-change.md)
-
--   **19. Dynamic programming for lot sizing**
-
-    ---
-
-    Problem definition · A DP algorithm for the ULS · A DP algorithm for the capacitated case · Typical mistakes · …
-
-    [:octicons-arrow-right-24: Read the chapter](dp-lot-sizing.md) · [Exercises](../exercises/dp-lot-sizing.md)
-
-</div>
+16. [Principles of dynamic programming](dp-principles.md) · [exercises](../exercises/dp-principles.md)
+17. [DP for the knapsack problem](dp-knapsack/index.md) · [exercises](../exercises/dp-knapsack.md)
+18. [DP for the unbounded knapsack problem](dp-unbounded-knapsack/index.md) · [exercises](../exercises/dp-unbounded-knapsack.md)
+19. [DP for the bounded knapsack problem](dp-bounded-knapsack.md) · [exercises](../exercises/dp-bounded-knapsack.md)
+20. [DP for the rod cutting problem](dp-rod-cutting/index.md) · [exercises](../exercises/dp-rod-cutting.md)
+21. [DP for the coin change problem](dp-coin-change.md) · [exercises](../exercises/dp-coin-change.md)
+22. [Dynamic programming for lot sizing](dp-lot-sizing/index.md) · [exercises](../exercises/dp-lot-sizing.md)

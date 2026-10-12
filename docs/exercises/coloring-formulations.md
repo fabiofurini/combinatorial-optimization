@@ -32,19 +32,19 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
     1. Explain why $k=3$ is a valid upper bound on the number of colors of an optimal solution.
 
-    2. Count the variables and the constraints (besides the domains) of the $\ILP_{\VCP}$ model with $k=3$.
+    2. Count the variables and the constraints (besides the domains) of the $\mathrm{ILP}_{\mathrm{VCP}}$ model with $k=3$.
 
-    3. Write the $\ILP_{\VCP}$ model with $k=3$ for this graph (write the edge constraints for all the colors $c$ at once).
+    3. Write the $\mathrm{ILP}_{\mathrm{VCP}}$ model with $k=3$ for this graph (write the edge constraints for all the colors $c$ at once).
 
     4. Solve the model with Gurobi. Give the optimal value and an optimal coloring, and count the optimal partitions of the vertices into color classes.
 
 ??? soluzione "Solution"
 
-    1. The given classes contain no edge: they are a feasible coloring with $3$ colors. Hence $z(\ILP_{\VCP})\le 3$ and $k=3$ is valid.
+    1. The given classes contain no edge: they are a feasible coloring with $3$ colors. Hence $z(\mathrm{ILP}_{\mathrm{VCP}})\le 3$ and $k=3$ is valid.
 
     2. There are $k\,n=3\cdot5=15$ variables $x_{vc}$ and $k=3$ variables $y_c$, so $18$ binary variables. There are $n=5$ assignment constraints and $k\,m=3\cdot5=15$ edge constraints, so $20$ linear constraints.
 
-    3. With $\mathscr{C}=\{1,2,3\}$ the $\ILP_{\VCP}$ model is:
+    3. With $\mathscr{C}=\{1,2,3\}$ the $\mathrm{ILP}_{\mathrm{VCP}}$ model is:
 
         \begin{align*}
         \min~~ & y_1 + y_2 + y_3 \\[0.5ex]
@@ -62,7 +62,7 @@ title: "Exercises · Formulations of the vertex coloring problem"
         & y_c \in \{0,1\}, ~~ c \in \mathscr{C}
         \end{align*}
 
-    4. Gurobi returns $z(\ILP_{\VCP})=3$. Two colors are not enough: the cycle has an odd number of vertices, and colors that alternate along it would give the same color to vertices $1$ and $5$. An optimal coloring is $\tilde Q_1=\{1,3\}$, $\tilde Q_2=\{2,4\}$, $\tilde Q_3=\{5\}$, that is
+    4. Gurobi returns $z(\mathrm{ILP}_{\mathrm{VCP}})=3$. Two colors are not enough: the cycle has an odd number of vertices, and colors that alternate along it would give the same color to vertices $1$ and $5$. An optimal coloring is $\tilde Q_1=\{1,3\}$, $\tilde Q_2=\{2,4\}$, $\tilde Q_3=\{5\}$, that is
 
         $$
         \tilde x_{11}=1,~~\tilde x_{31}=1,~~\tilde x_{22}=1,~~\tilde x_{42}=1,~~\tilde x_{53}=1,~~\tilde y_1=\tilde y_2=\tilde y_3=1 .
@@ -90,11 +90,11 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
     **Questions**
 
-    1. Solve $\LP\text{-}0_{\VCP}$, $\LP_{\VCP}$ and $\ILP_{\VCP}$ with Gurobi.
+    1. Solve $\mathrm{LP}\text{-}0_{\mathrm{VCP}}$, $\mathrm{LP}_{\mathrm{VCP}}$ and $\mathrm{ILP}_{\mathrm{VCP}}$ with Gurobi.
 
-    2. Write the primal solution of the chapter for this graph and verify that it is feasible for $\LP_{\VCP}$.
+    2. Write the primal solution of the chapter for this graph and verify that it is feasible for $\mathrm{LP}_{\mathrm{VCP}}$.
 
-    3. Write the dual solution of the chapter built on the edge $\{1,2\}$ and verify that it is feasible for $D(\LP\text{-}0_{\VCP})$, with the same objective value.
+    3. Write the dual solution of the chapter built on the edge $\{1,2\}$ and verify that it is feasible for $D(\mathrm{LP}\text{-}0_{\mathrm{VCP}})$, with the same objective value.
 
     4. Compute the absolute gap and the ratio between the LP bound and the optimal value. What happens on the complete graph with $n$ vertices?
 
@@ -108,9 +108,9 @@ title: "Exercises · Formulations of the vertex coloring problem"
         \tilde x_{v1}=\tilde x_{v2}=\frac{1}{2}~~(v\in V),\qquad \tilde y_1=\tilde y_2=1,
         $$
 
-        with all the other variables equal to $0$, and $z(\LP\text{-}0_{\VCP})=z(\LP_{\VCP})=2$. An optimal dual solution chooses one edge $\{u,v\}\in E$ and sets $\tilde\mu_u=\tilde\mu_v=1$, $\tilde\pi_{c\{u,v\}}=1$ for every color $c$, and all the other dual variables equal to $0$.
+        with all the other variables equal to $0$, and $z(\mathrm{LP}\text{-}0_{\mathrm{VCP}})=z(\mathrm{LP}_{\mathrm{VCP}})=2$. An optimal dual solution chooses one edge $\{u,v\}\in E$ and sets $\tilde\mu_u=\tilde\mu_v=1$, $\tilde\pi_{c\{u,v\}}=1$ for every color $c$, and all the other dual variables equal to $0$.
 
-    1. Gurobi gives $z(\LP\text{-}0_{\VCP})=z(\LP_{\VCP})=2$ and $z(\ILP_{\VCP})=4$: all the vertices are pairwise adjacent, so they need $4$ different colors.
+    1. Gurobi gives $z(\mathrm{LP}\text{-}0_{\mathrm{VCP}})=z(\mathrm{LP}_{\mathrm{VCP}})=2$ and $z(\mathrm{ILP}_{\mathrm{VCP}})=4$: all the vertices are pairwise adjacent, so they need $4$ different colors.
 
     2. The solution is $\tilde x_{v1}=\tilde x_{v2}=\frac{1}{2}$ for $v=1,\dots,4$, $\tilde x_{v3}=\tilde x_{v4}=0$, $\tilde y_1=\tilde y_2=1$ and $\tilde y_3=\tilde y_4=0$.
 
@@ -132,7 +132,7 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
         Its value is $\tilde\mu_1+\tilde\mu_2=2$, equal to the primal value: by LP Weak Duality both solutions are optimal.
 
-    4. The absolute gap is $4-2=2$ and the ratio is $\frac{z(\LP_{\VCP})}{z(\ILP_{\VCP})}=\frac{1}{2}$. On the complete graph with $n$ vertices the optimal value is $n$ and the LP bound is still $2$: the gap $n-2$ grows without limit and the ratio $\frac{2}{n}$ tends to $0$.
+    4. The absolute gap is $4-2=2$ and the ratio is $\frac{z(\mathrm{LP}_{\mathrm{VCP}})}{z(\mathrm{ILP}_{\mathrm{VCP}})}=\frac{1}{2}$. On the complete graph with $n$ vertices the optimal value is $n$ and the LP bound is still $2$: the gap $n-2$ grows without limit and the ratio $\frac{2}{n}$ tends to $0$.
 
 <a id="esercizio-11-3"></a>
 
@@ -150,7 +150,7 @@ title: "Exercises · Formulations of the vertex coloring problem"
     E=\{\{1,2\},~\{2,3\},~\{3,4\},~\{4,5\},~\{1,5\}\}.
     $$
 
-    We use the $\ILP_{\VCP}$ model with $k=3$ colors. The candidate solutions are (variables not listed are $0$):
+    We use the $\mathrm{ILP}_{\mathrm{VCP}}$ model with $k=3$ colors. The candidate solutions are (variables not listed are $0$):
 
     - **(a)** color $1$: $\{1,3\}$, color $2$: $\{2,4\}$, color $3$: $\{5\}$, and $y_1=y_2=y_3=1$;
 
@@ -166,9 +166,9 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
     1. For each candidate, check the assignment constraints and the edge constraints, and name a violated constraint when there is one.
 
-    2. Decide which candidates are feasible for $\ILP_{\VCP}$ and which for $\LP_{\VCP}$, and give the value of the feasible ones.
+    2. Decide which candidates are feasible for $\mathrm{ILP}_{\mathrm{VCP}}$ and which for $\mathrm{LP}_{\mathrm{VCP}}$, and give the value of the feasible ones.
 
-    3. Which candidates are optimal for $\LP_{\VCP}$? Use Gurobi to confirm the optimal value of the relaxation.
+    3. Which candidates are optimal for $\mathrm{LP}_{\mathrm{VCP}}$? Use Gurobi to confirm the optimal value of the relaxation.
 
 ??? soluzione "Solution"
 
@@ -182,17 +182,17 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
         - **(e)** Each vertex has $3\cdot\frac{1}{3}=1$; every edge and color give $\frac{2}{3}-\frac{1}{3}-\frac{1}{3}=0$: all the constraints hold.
 
-    2. - **(a)** Feasible for $\ILP_{\VCP}$ and for $\LP_{\VCP}$, of value $3$.
+    2. - **(a)** Feasible for $\mathrm{ILP}_{\mathrm{VCP}}$ and for $\mathrm{LP}_{\mathrm{VCP}}$, of value $3$.
 
         - **(b)** Infeasible for both models.
 
         - **(c)** Infeasible for both models.
 
-        - **(d)** Feasible for $\LP_{\VCP}$ only (fractional variables), of value $2$.
+        - **(d)** Feasible for $\mathrm{LP}_{\mathrm{VCP}}$ only (fractional variables), of value $2$.
 
-        - **(e)** Feasible for $\LP_{\VCP}$ only, of value $3\cdot\frac{2}{3}=2$.
+        - **(e)** Feasible for $\mathrm{LP}_{\mathrm{VCP}}$ only, of value $3\cdot\frac{2}{3}=2$.
 
-    3. The value of every feasible solution of $\LP_{\VCP}$ is at least $2$, and Gurobi gives $z(\LP_{\VCP})=2$: candidates (d) and (e) are both optimal for the relaxation. Candidate (d) is the solution of the chapter; (e) shows that the optimal solution of the relaxation is not unique. Candidate (a) is optimal for $\ILP_{\VCP}$, whose value is $3$.
+    3. The value of every feasible solution of $\mathrm{LP}_{\mathrm{VCP}}$ is at least $2$, and Gurobi gives $z(\mathrm{LP}_{\mathrm{VCP}})=2$: candidates (d) and (e) are both optimal for the relaxation. Candidate (d) is the solution of the chapter; (e) shows that the optimal solution of the relaxation is not unique. Candidate (a) is optimal for $\mathrm{ILP}_{\mathrm{VCP}}$, whose value is $3$.
 
 <a id="esercizio-11-4"></a>
 
@@ -215,13 +215,13 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
     **Questions**
 
-    1. Write the constraints of the dual $D(\LP\text{-}0_{\VCP})$ associated with the variable $x_{1c}$ and with the variable $y_c$, for a color $c$.
+    1. Write the constraints of the dual $D(\mathrm{LP}\text{-}0_{\mathrm{VCP}})$ associated with the variable $x_{1c}$ and with the variable $y_c$, for a color $c$.
 
     2. Verify that the dual solutions of the chapter built on the edge $\{1,4\}$ and on the edge $\{2,3\}$ are feasible, and give their value.
 
     3. Verify that $\tilde\mu_v=\frac{1}{3}=\frac{\deg(v)}{|E|}$ for every vertex and $\tilde\pi_{ce}=\frac{1}{9}$ for every color and edge is also an optimal dual solution.
 
-    4. Add the bounds $y_c\le 1$, with dual variables $\lambda_c\le 0$. Give an optimal solution of $D(\LP_{\VCP})$, and compare the two relaxations with the optimal value (use Gurobi).
+    4. Add the bounds $y_c\le 1$, with dual variables $\lambda_c\le 0$. Give an optimal solution of $D(\mathrm{LP}_{\mathrm{VCP}})$, and compare the two relaxations with the optimal value (use Gurobi).
 
 ??? soluzione "Solution"
 
@@ -233,7 +233,7 @@ title: "Exercises · Formulations of the vertex coloring problem"
         \tilde x_{v1}=\tilde x_{v2}=\frac{1}{2}~~(v\in V),\qquad \tilde y_1=\tilde y_2=1,
         $$
 
-        with all the other variables equal to $0$, and $z(\LP\text{-}0_{\VCP})=z(\LP_{\VCP})=2$. An optimal dual solution chooses one edge $\{u,v\}\in E$ and sets $\tilde\mu_u=\tilde\mu_v=1$, $\tilde\pi_{c\{u,v\}}=1$ for every color $c$, and all the other dual variables equal to $0$.
+        with all the other variables equal to $0$, and $z(\mathrm{LP}\text{-}0_{\mathrm{VCP}})=z(\mathrm{LP}_{\mathrm{VCP}})=2$. An optimal dual solution chooses one edge $\{u,v\}\in E$ and sets $\tilde\mu_u=\tilde\mu_v=1$, $\tilde\pi_{c\{u,v\}}=1$ for every color $c$, and all the other dual variables equal to $0$.
 
     1. The edges incident to vertex $1$ are $\{1,2\}$, $\{1,3\}$ and $\{1,4\}$. The constraint of $x_{1c}$ and the constraint of $y_c$ are
 
@@ -243,7 +243,7 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
     2. For the edge $\{1,4\}$: $\tilde\mu_1=\tilde\mu_4=1$ and $\tilde\pi_{c\{1,4\}}=1$ for $c=1,2,3$. Vertices $1$ and $4$ give $1-1=0$, the other vertices give $0-0=0$, and every color gives $\sum_e\tilde\pi_{ce}=1$. The value is $2$.
 
-        For the edge $\{2,3\}$ the check is the same with vertices $2$ and $3$: also this solution is feasible, of value $2$. Both are optimal, since $z(\LP\text{-}0_{\VCP})=2$.
+        For the edge $\{2,3\}$ the check is the same with vertices $2$ and $3$: also this solution is feasible, of value $2$. Both are optimal, since $z(\mathrm{LP}\text{-}0_{\mathrm{VCP}})=2$.
 
     3. Every vertex has $3$ incident edges, so $\tilde\mu_v-\sum_{e\in\delta(v)}\tilde\pi_{ce}=\frac{1}{3}-3\cdot\frac{1}{9}=0$. Every color gives $\sum_{e\in E}\tilde\pi_{ce}=9\cdot\frac{1}{9}=1$. The value is
 
@@ -253,7 +253,7 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
         the optimal value: this dual solution spreads the weight on all the edges, instead of choosing one.
 
-    4. The previous dual solutions with $\tilde\lambda_c=0$ for every color satisfy $\sum_e\tilde\pi_{ce}+\tilde\lambda_c\le 1$ and have value $2$. Gurobi gives $z(\LP\text{-}0_{\VCP})=z(\LP_{\VCP})=2$ and $z(\ILP_{\VCP})=3$: the bounds $y_c\le 1$ do not strengthen the relaxation, which stays at $2$ while the graph needs $3$ colors (it contains the triangle $\{1,2,3\}$).
+    4. The previous dual solutions with $\tilde\lambda_c=0$ for every color satisfy $\sum_e\tilde\pi_{ce}+\tilde\lambda_c\le 1$ and have value $2$. Gurobi gives $z(\mathrm{LP}\text{-}0_{\mathrm{VCP}})=z(\mathrm{LP}_{\mathrm{VCP}})=2$ and $z(\mathrm{ILP}_{\mathrm{VCP}})=3$: the bounds $y_c\le 1$ do not strengthen the relaxation, which stays at $2$ while the graph needs $3$ colors (it contains the triangle $\{1,2,3\}$).
 
 <a id="esercizio-11-5"></a>
 
@@ -276,9 +276,9 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
     **Questions**
 
-    1. Compute $z(\LP_{\VCP})$ and $z(\ILP_{\VCP})$ with Gurobi, and explain the optimal value.
+    1. Compute $z(\mathrm{LP}_{\mathrm{VCP}})$ and $z(\mathrm{ILP}_{\mathrm{VCP}})$ with Gurobi, and explain the optimal value.
 
-    2. Compute the absolute gap and the ratio $\frac{z(\LP_{\VCP})}{z(\ILP_{\VCP})}$.
+    2. Compute the absolute gap and the ratio $\frac{z(\mathrm{LP}_{\mathrm{VCP}})}{z(\mathrm{ILP}_{\mathrm{VCP}})}$.
 
     3. Solve the relaxation again with $k=6$. Does a larger $k$ change the bound?
 
@@ -294,12 +294,12 @@ title: "Exercises · Formulations of the vertex coloring problem"
         \tilde x_{v1}=\tilde x_{v2}=\frac{1}{2}~~(v\in V),\qquad \tilde y_1=\tilde y_2=1,
         $$
 
-        with all the other variables equal to $0$, and $z(\LP\text{-}0_{\VCP})=z(\LP_{\VCP})=2$. An optimal dual solution chooses one edge $\{u,v\}\in E$ and sets $\tilde\mu_u=\tilde\mu_v=1$, $\tilde\pi_{c\{u,v\}}=1$ for every color $c$, and all the other dual variables equal to $0$.
+        with all the other variables equal to $0$, and $z(\mathrm{LP}\text{-}0_{\mathrm{VCP}})=z(\mathrm{LP}_{\mathrm{VCP}})=2$. An optimal dual solution chooses one edge $\{u,v\}\in E$ and sets $\tilde\mu_u=\tilde\mu_v=1$, $\tilde\pi_{c\{u,v\}}=1$ for every color $c$, and all the other dual variables equal to $0$.
 
-    1. Gurobi gives $z(\LP_{\VCP})=2$ and $z(\ILP_{\VCP})=4$. The cycle $1,\dots,5$ needs $3$ colors, and vertex $6$, adjacent to all its vertices, needs a fourth one.
+    1. Gurobi gives $z(\mathrm{LP}_{\mathrm{VCP}})=2$ and $z(\mathrm{ILP}_{\mathrm{VCP}})=4$. The cycle $1,\dots,5$ needs $3$ colors, and vertex $6$, adjacent to all its vertices, needs a fourth one.
 
-    2. The absolute gap is $4-2=2$ and the ratio is $\frac{z(\LP_{\VCP})}{z(\ILP_{\VCP})}=\frac{1}{2}$.
+    2. The absolute gap is $4-2=2$ and the ratio is $\frac{z(\mathrm{LP}_{\mathrm{VCP}})}{z(\mathrm{ILP}_{\mathrm{VCP}})}=\frac{1}{2}$.
 
-    3. With $k=6$ Gurobi gives again $z(\LP_{\VCP})=2$. The value $2$ does not depend on $k$: the solution of the chapter uses only colors $1$ and $2$, whatever the number of colors.
+    3. With $k=6$ Gurobi gives again $z(\mathrm{LP}_{\mathrm{VCP}})=2$. The value $2$ does not depend on $k$: the solution of the chapter uses only colors $1$ and $2$, whatever the number of colors.
 
     4. On the complete graph the ratio is $\frac{2}{n}$, and $\frac{2}{n}\le\frac{1}{5}$ means $n\ge 10$. The smallest value is $n=10$.

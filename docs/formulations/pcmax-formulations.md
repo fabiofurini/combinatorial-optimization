@@ -22,7 +22,7 @@ title: "Formulations of parallel machine scheduling"
 
     At the end of this chapter you will be able to:
 
-    - write the ILP model of $\PCmax$ and explain how the makespan variable is linked to the machine loads;
+    - write the ILP model of $P\|C_{\max}$ and explain how the makespan variable is linked to the machine loads;
 
     - write the LP relaxation and its dual, and prove that its optimal value is $\sum_j t_j / m$;
 
@@ -34,7 +34,7 @@ title: "Formulations of parallel machine scheduling"
 
 !!! nota "Where we were"
 
-    In the chapter «Parallel machine scheduling» we met the problem $\PCmax$ as a <em>problem</em>: definition, Gantt charts and the lower bound on the makespan. Here we look at it as a <em>model</em> and we study its LP relaxations. The problem returns with heuristic algorithms and approximation algorithms.
+    In the chapter «Parallel machine scheduling» we met the problem $P\|C_{\max}$ as a <em>problem</em>: definition, Gantt charts and the lower bound on the makespan. Here we look at it as a <em>model</em> and we study its LP relaxations. The problem returns with heuristic algorithms and approximation algorithms.
 
 <a id="box-1-def-PCMAX"></a>
 
@@ -48,11 +48,11 @@ title: "Formulations of parallel machine scheduling"
 
     3. for each job $j\in\mathscr{J}$, a <em>processing time</em> $t_j\in\Z_{\ge1}$,
 
-    the problem $\PCmax$ asks to assign each job to a machine, so that the largest total processing time assigned to a machine is minimized.
+    the problem $P\|C_{\max}$ asks to assign each job to a machine, so that the largest total processing time assigned to a machine is minimized.
 
 - We assume that an instance has more jobs than machines, i.e., $n>m$. Otherwise each job can be assigned to a different machine and the optimal makespan is simply $\max_{j\in\mathscr{J}}t_j$.
 
-## 14.2 An ILP model for $\PCmax$
+## 14.2 An ILP model for $P\|C_{\max}$
 
 - Let $\mathscr{H}=\{1,2,\ldots,m\}$ be the set of machines. We introduce the following $nm$ <strong>binary variables</strong>:
 
@@ -73,7 +73,7 @@ title: "Formulations of parallel machine scheduling"
 
 !!! chiave ""
 
-    Using these variables, an Integer Linear Programming (ILP) model for $\PCmax$ reads as follows:
+    Using these variables, an Integer Linear Programming (ILP) model for $P\|C_{\max}$ reads as follows:
 
     <a id="eq-ILP-PCMAX"></a>
 
@@ -88,9 +88,9 @@ title: "Formulations of parallel machine scheduling"
     && C_{\max}&\ge0. && \label{nonneg:PCMAX} \tag{14.1e}
     \end{align*}
 
-    This ILP model is referred to as the $\ILP_{\PCmax}$ model.
+    This ILP model is referred to as the $\mathrm{ILP}_{P\|C_{\max}}$ model.
 
-- Description of the objective function and constraints of the $\ILP_{\PCmax}$ model:
+- Description of the objective function and constraints of the $\mathrm{ILP}_{P\|C_{\max}}$ model:
 
     - the linear objective function $\eqref{obj:PCMAX}$ minimizes the makespan;
 
@@ -122,7 +122,7 @@ title: "Formulations of parallel machine scheduling"
 
 <a id="box-2-ex-PCMAX-ILP"></a>
 
-!!! esempio "Example 14.1: $\ILP_{\PCmax}$ model"
+!!! esempio "Example 14.1: $\mathrm{ILP}_{P\|C_{\max}}$ model"
 
     Consider $m=3$ machines and the seven jobs with processing times
 
@@ -151,11 +151,11 @@ title: "Formulations of parallel machine scheduling"
     =\max\{5,\lceil27/3\rceil\}=9
     $$
 
-    is attained, $z(\ILP_{\PCmax})=9$.
+    is attained, $z(\mathrm{ILP}_{P\|C_{\max}})=9$.
 
 ## 14.3 A first Linear Programming relaxation
 
-- We obtain $\LP\text{-}0_{\PCmax}$ by replacing the binary requirements $\eqref{bin:PCMAX}$ with non-negativity constraints:
+- We obtain $\mathrm{LP}\text{-}0_{P\|C_{\max}}$ by replacing the binary requirements $\eqref{bin:PCMAX}$ with non-negativity constraints:
 
 !!! chiave ""
 
@@ -172,7 +172,7 @@ title: "Formulations of parallel machine scheduling"
     && C_{\max}&\ge0. && \label{nonnegC:LP0-PCMAX} \tag{14.2e}
     \end{align*}
 
-    This LP relaxation is referred to as the $\LP\text{-}0_{\PCmax}$ model.
+    This LP relaxation is referred to as the $\mathrm{LP}\text{-}0_{P\|C_{\max}}$ model.
 
 - The dual variables associated with constraints $\eqref{assign:LP0-PCMAX}$ are free variables $\mu_j$, and the dual variables associated with constraints $\eqref{load:LP0-PCMAX}$ are non-negative variables $\pi_h$. The dual model is:
 
@@ -189,16 +189,16 @@ title: "Formulations of parallel machine scheduling"
     && \pi_h&\ge0, && \forall h\in\mathscr{H}. \label{nonneg:DLP0-PCMAX} \tag{14.3e}
     \end{align*}
 
-    This dual LP model is referred to as $D(\LP\text{-}0_{\PCmax})$.
+    This dual LP model is referred to as $D(\mathrm{LP}\text{-}0_{P\|C_{\max}})$.
 
 <a id="box-3-prop-LP0-PCMAX"></a>
 
-!!! teorema "Proposition 14.2: Optimal value of $\LP\text{-}0_{\PCmax}$"
+!!! teorema "Proposition 14.2: Optimal value of $\mathrm{LP}\text{-}0_{P\|C_{\max}}$"
 
-    For every $\PCmax$ instance,
+    For every $P\|C_{\max}$ instance,
 
     $$
-    z(\LP\text{-}0_{\PCmax})=\frac{\sum_{j\in\mathscr{J}}t_j}{m}.
+    z(\mathrm{LP}\text{-}0_{P\|C_{\max}})=\frac{\sum_{j\in\mathscr{J}}t_j}{m}.
     $$
 
 ??? dimostrazione "Proof"
@@ -227,13 +227,13 @@ title: "Formulations of parallel machine scheduling"
 
 ### 14.3.1 A second Linear Programming relaxation
 
-- Adding the upper bounds $x_{jh}\le1$ gives $\LP_{\PCmax}$. They do not change the relaxation: by $\eqref{assign:LP0-PCMAX}$ and non-negativity, each $x_{jh}$ is at most one. Thus
+- Adding the upper bounds $x_{jh}\le1$ gives $\mathrm{LP}_{P\|C_{\max}}$. They do not change the relaxation: by $\eqref{assign:LP0-PCMAX}$ and non-negativity, each $x_{jh}$ is at most one. Thus
 
     $$
-    z(\LP_{\PCmax})=z(\LP\text{-}0_{\PCmax})=\frac{\sum_{j\in\mathscr{J}}t_j}{m}.
+    z(\mathrm{LP}_{P\|C_{\max}})=z(\mathrm{LP}\text{-}0_{P\|C_{\max}})=\frac{\sum_{j\in\mathscr{J}}t_j}{m}.
     $$
 
-    The dual is consequently the same as $D(\LP\text{-}0_{\PCmax})$, with zero dual multipliers for the redundant upper bounds.
+    The dual is consequently the same as $D(\mathrm{LP}\text{-}0_{P\|C_{\max}})$, with zero dual multipliers for the redundant upper bounds.
 
 ### 14.3.2 Some important theoretical properties
 
@@ -241,18 +241,18 @@ title: "Formulations of parallel machine scheduling"
 
 !!! teorema "Proposition 14.3: Worst-case ratio of the LP bound"
 
-    For every $\PCmax$ instance,
+    For every $P\|C_{\max}$ instance,
 
     $$
-    \frac{z(\LP_{\PCmax})}{z(\ILP_{\PCmax})}\ge\frac1m.
+    \frac{z(\mathrm{LP}_{P\|C_{\max}})}{z(\mathrm{ILP}_{P\|C_{\max}})}\ge\frac1m.
     $$
 
 ??? dimostrazione "Proof"
 
-    Assigning every job to one machine gives a feasible schedule of makespan $\sum_jt_j$. Hence $z(\ILP_{\PCmax})\le\sum_jt_j$. By [Proposition 14.2](#box-3-prop-LP0-PCMAX),
+    Assigning every job to one machine gives a feasible schedule of makespan $\sum_jt_j$. Hence $z(\mathrm{ILP}_{P\|C_{\max}})\le\sum_jt_j$. By [Proposition 14.2](#box-3-prop-LP0-PCMAX),
 
     $$
-    \frac{z(\LP_{\PCmax})}{z(\ILP_{\PCmax})}
+    \frac{z(\mathrm{LP}_{P\|C_{\max}})}{z(\mathrm{ILP}_{P\|C_{\max}})}
     \ge
     \frac{\frac{\sum_jt_j}{m}}{\sum_jt_j}
     =\frac1m.
@@ -267,21 +267,21 @@ title: "Formulations of parallel machine scheduling"
     For a fixed number $m \ge 2$ of machines, there are instances for which
 
     $$
-    \frac{z(\LP_{\PCmax})}{z(\ILP_{\PCmax})}\longrightarrow\frac1m.
+    \frac{z(\mathrm{LP}_{P\|C_{\max}})}{z(\mathrm{ILP}_{P\|C_{\max}})}\longrightarrow\frac1m.
     $$
 
 ??? dimostrazione "Proof"
 
-    For $M\in\Z_{\ge2}$, consider one job of processing time $M$ and $m$ jobs of processing time one. The long job alone forces $z(\ILP_{\PCmax})\ge M$. The schedule that assigns the long job alone to machine $1$ and the $m$ unit jobs to the other $m-1$ machines has loads at most $2 \le M$, hence the makespan $M$ is feasible. Thus $z(\ILP_{\PCmax})=M$. [Proposition 14.2](#box-3-prop-LP0-PCMAX) gives
+    For $M\in\Z_{\ge2}$, consider one job of processing time $M$ and $m$ jobs of processing time one. The long job alone forces $z(\mathrm{ILP}_{P\|C_{\max}})\ge M$. The schedule that assigns the long job alone to machine $1$ and the $m$ unit jobs to the other $m-1$ machines has loads at most $2 \le M$, hence the makespan $M$ is feasible. Thus $z(\mathrm{ILP}_{P\|C_{\max}})=M$. [Proposition 14.2](#box-3-prop-LP0-PCMAX) gives
 
     $$
-    z(\LP_{\PCmax})=\frac{M+m}{m}.
+    z(\mathrm{LP}_{P\|C_{\max}})=\frac{M+m}{m}.
     $$
 
     Therefore,
 
     $$
-    \lim_{M\to+\infty}\frac{z(\LP_{\PCmax})}{z(\ILP_{\PCmax})}
+    \lim_{M\to+\infty}\frac{z(\mathrm{LP}_{P\|C_{\max}})}{z(\mathrm{ILP}_{P\|C_{\max}})}
     =\lim_{M\to+\infty}\left(\frac1m+\frac1M\right)=\frac1m.
     $$
 
@@ -291,7 +291,7 @@ title: "Formulations of parallel machine scheduling"
 
 !!! esempio "Example 14.2: an integrality gap"
 
-    Consider two machines and three jobs with processing times $(3,3,2)$. [Proposition 14.2](#box-3-prop-LP0-PCMAX) gives $z(\LP_{\PCmax})=8/2=4$. In every integer schedule, the job of length two must share a machine with one job of length three, so $z(\ILP_{\PCmax})=5$. The fractional assignment
+    Consider two machines and three jobs with processing times $(3,3,2)$. [Proposition 14.2](#box-3-prop-LP0-PCMAX) gives $z(\mathrm{LP}_{P\|C_{\max}})=8/2=4$. In every integer schedule, the job of length two must share a machine with one job of length three, so $z(\mathrm{ILP}_{P\|C_{\max}})=5$. The fractional assignment
 
     $$
     x_{j1}=x_{j2}=\frac12\qquad\forall j\in\{1,2,3\}
@@ -350,11 +350,11 @@ title: "Formulations of parallel machine scheduling"
 
 !!! chiave "In summary"
 
-    - The $\ILP_{\PCmax}$ model has $n \cdot m$ assignment variables $x_{jh}$ and the makespan variable $C_{\max}$, linked by one load constraint for each machine.
+    - The $\mathrm{ILP}_{P\|C_{\max}}$ model has $n \cdot m$ assignment variables $x_{jh}$ and the makespan variable $C_{\max}$, linked by one load constraint for each machine.
 
-    - The LP relaxation has optimal value $z(\LP_{\PCmax}) = \sum_j t_j / m$, attained by assigning every job with value $1/m$ to every machine; the dual solution is $\tilde{\pi}_h = 1/m$ and $\tilde{\mu}_j = t_j/m$.
+    - The LP relaxation has optimal value $z(\mathrm{LP}_{P\|C_{\max}}) = \sum_j t_j / m$, attained by assigning every job with value $1/m$ to every machine; the dual solution is $\tilde{\pi}_h = 1/m$ and $\tilde{\mu}_j = t_j/m$.
 
-    - The ratio between $z(\LP_{\PCmax})$ and $z(\ILP_{\PCmax})$ is at least $1/m$, and $1/m$ is asymptotically attained.
+    - The ratio between $z(\mathrm{LP}_{P\|C_{\max}})$ and $z(\mathrm{ILP}_{P\|C_{\max}})$ is at least $1/m$, and $1/m$ is asymptotically attained.
 
     - The valid inequalities $C_{\max} \ge t_j$ and $C_{\max} \ge \lceil \sum_j t_j/m \rceil$ strengthen the model.
 

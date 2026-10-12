@@ -26,9 +26,9 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
     **Questions**
 
-    1. Count the variables and the constraints (besides the domains) of the $\ILP_{\PCmax}$ model for this instance.
+    1. Count the variables and the constraints (besides the domains) of the $\mathrm{ILP}_{P\|C_{\max}}$ model for this instance.
 
-    2. Write the $\ILP_{\PCmax}$ model for this instance.
+    2. Write the $\mathrm{ILP}_{P\|C_{\max}}$ model for this instance.
 
     3. Compute the lower bound $\max\left\{\max_j t_j,\left\lceil\frac{\sum_j t_j}{m}\right\rceil\right\}$ on the makespan.
 
@@ -59,7 +59,7 @@ title: "Exercises · Formulations of parallel machine scheduling"
         \max\left\{7,~\left\lceil22/2\right\rceil\right\}=\max\{7,11\}=11.
         $$
 
-    4. Gurobi gives $z(\ILP_{\PCmax})=11$, equal to the lower bound. An optimal schedule is $J_1=\{1,3\}$ and $J_2=\{2,4,5\}$, with loads $11$ and $11$: $\tilde x_{11}=1$, $\tilde x_{31}=1$, $\tilde x_{22}=1$, $\tilde x_{42}=1$, $\tilde x_{52}=1$, $\tilde C_{\max}=11$.
+    4. Gurobi gives $z(\mathrm{ILP}_{P\|C_{\max}})=11$, equal to the lower bound. An optimal schedule is $J_1=\{1,3\}$ and $J_2=\{2,4,5\}$, with loads $11$ and $11$: $\tilde x_{11}=1$, $\tilde x_{31}=1$, $\tilde x_{22}=1$, $\tilde x_{42}=1$, $\tilde x_{52}=1$, $\tilde C_{\max}=11$.
 
         By enumeration of the $2^5=32$ assignments, the partition of the jobs is unique: job $1$ can share a machine only with job $3$. Exchanging the two machines gives the second optimal solution of the model, so there are $2$ optimal solutions.
 
@@ -79,19 +79,19 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
     **Questions**
 
-    1. Solve $\LP\text{-}0_{\PCmax}$ with Gurobi and compare its value with the formula of the chapter.
+    1. Solve $\mathrm{LP}\text{-}0_{P\|C_{\max}}$ with Gurobi and compare its value with the formula of the chapter.
 
     2. Write the primal and the dual solutions of the chapter for this instance, and verify feasibility and equal objective values.
 
-    3. Solve the $\ILP_{\PCmax}$ model with Gurobi, and compute the ratio $\frac{z(\LP_{\PCmax})}{z(\ILP_{\PCmax})}$. Compare it with $\frac{1}{m}$.
+    3. Solve the $\mathrm{ILP}_{P\|C_{\max}}$ model with Gurobi, and compute the ratio $\frac{z(\mathrm{LP}_{P\|C_{\max}})}{z(\mathrm{ILP}_{P\|C_{\max}})}$. Compare it with $\frac{1}{m}$.
 
 ??? soluzione "Solution"
 
     !!! nota ""
 
-        For every $\PCmax$ instance, $z(\LP\text{-}0_{\PCmax})=z(\LP_{\PCmax})=\frac{\sum_{j\in\mathscr{J}}t_j}{m}$, attained by $\tilde x_{jh}=\frac{1}{m}$; an optimal dual solution is $\tilde\pi_h=\frac{1}{m}$ and $\tilde\mu_j=\frac{t_j}{m}$. The inequalities $C_{\max}\ge t_j$ ($j\in\mathscr{J}$) and $C_{\max}\ge\left\lceil\frac{\sum_j t_j}{m}\right\rceil$ are valid for the $\ILP_{\PCmax}$ model.
+        For every $P\|C_{\max}$ instance, $z(\mathrm{LP}\text{-}0_{P\|C_{\max}})=z(\mathrm{LP}_{P\|C_{\max}})=\frac{\sum_{j\in\mathscr{J}}t_j}{m}$, attained by $\tilde x_{jh}=\frac{1}{m}$; an optimal dual solution is $\tilde\pi_h=\frac{1}{m}$ and $\tilde\mu_j=\frac{t_j}{m}$. The inequalities $C_{\max}\ge t_j$ ($j\in\mathscr{J}$) and $C_{\max}\ge\left\lceil\frac{\sum_j t_j}{m}\right\rceil$ are valid for the $\mathrm{ILP}_{P\|C_{\max}}$ model.
 
-    1. Gurobi gives $z(\LP\text{-}0_{\PCmax})=\frac{29}{3}$, and the formula gives $\frac{\sum_j t_j}{m}=\frac{29}{3}$, the same value. Adding the bounds $x_{jh}\le 1$ does not change it.
+    1. Gurobi gives $z(\mathrm{LP}\text{-}0_{P\|C_{\max}})=\frac{29}{3}$, and the formula gives $\frac{\sum_j t_j}{m}=\frac{29}{3}$, the same value. Adding the bounds $x_{jh}\le 1$ does not change it.
 
     2. Primal: $\tilde x_{jh}=\frac{1}{3}$ for every job and machine, and $\tilde C_{\max}=\frac{29}{3}$. Each job has $3\cdot\frac{1}{3}=1$, and each machine has load $\frac{1}{3}\sum_j t_j=\frac{29}{3}=\tilde C_{\max}$: all the constraints hold with equality.
 
@@ -103,7 +103,7 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
         Every constraint $\mu_j-t_j\pi_h\le 0$ holds with equality, and $\sum_h\tilde\pi_h=3\cdot\frac{1}{3}=1$. The dual value is $\sum_j\tilde\mu_j=\frac{29}{3}$, equal to the primal value: both solutions are optimal.
 
-    3. Gurobi gives $z(\ILP_{\PCmax})=10$ (for instance $J_1=\{1,6\}$, $J_2=\{2,4\}$, $J_3=\{3,5\}$, with loads $10$, $10$, $9$). The ratio is $\frac{\frac{29}{3}}{10}=\frac{29}{30}$, much larger than $\frac{1}{3}$: the worst case of the chapter needs one very long job.
+    3. Gurobi gives $z(\mathrm{ILP}_{P\|C_{\max}})=10$ (for instance $J_1=\{1,6\}$, $J_2=\{2,4\}$, $J_3=\{3,5\}$, with loads $10$, $10$, $9$). The ratio is $\frac{\frac{29}{3}}{10}=\frac{29}{30}$, much larger than $\frac{1}{3}$: the worst case of the chapter needs one very long job.
 
 <a id="esercizio-14-3"></a>
 
@@ -119,7 +119,7 @@ title: "Exercises · Formulations of parallel machine scheduling"
     \end{array}
     $$
 
-    Consider the following candidate solutions of the $\ILP_{\PCmax}$ model, given by the jobs on each machine:
+    Consider the following candidate solutions of the $\mathrm{ILP}_{P\|C_{\max}}$ model, given by the jobs on each machine:
 
     - **(a)** machine $1$: $\{1,3\}$, machine $2$: $\{2,4,5\}$, and $C_{\max}=10$;
 
@@ -135,9 +135,9 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
     1. For each candidate, check the assignment constraints and the load constraints.
 
-    2. Decide which candidates are feasible for $\ILP_{\PCmax}$ and which for $\LP_{\PCmax}$. For the feasible ones, give the value and the smallest value of $C_{\max}$ that keeps the same assignment feasible.
+    2. Decide which candidates are feasible for $\mathrm{ILP}_{P\|C_{\max}}$ and which for $\mathrm{LP}_{P\|C_{\max}}$. For the feasible ones, give the value and the smallest value of $C_{\max}$ that keeps the same assignment feasible.
 
-    3. Find the optimal value of the instance, and decide which candidates are optimal for $\ILP_{\PCmax}$ or for $\LP_{\PCmax}$ (use Gurobi).
+    3. Find the optimal value of the instance, and decide which candidates are optimal for $\mathrm{ILP}_{P\|C_{\max}}$ or for $\mathrm{LP}_{P\|C_{\max}}$ (use Gurobi).
 
 ??? soluzione "Solution"
 
@@ -157,11 +157,11 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
         - **(c)** Feasible for both models, of value $12$; the largest load is $11$, so $C_{\max}=11$ keeps the assignment feasible and is better.
 
-        - **(d)** Feasible for $\LP_{\PCmax}$ only, of value $10$: the fractional assignment balances the loads exactly.
+        - **(d)** Feasible for $\mathrm{LP}_{P\|C_{\max}}$ only, of value $10$: the fractional assignment balances the loads exactly.
 
         - **(e)** Infeasible for both models.
 
-    3. The lower bound is $\left\lceil20/2\right\rceil=10$ and candidate (a) attains it: $z(\ILP_{\PCmax})=10$, and (a) is optimal. Gurobi gives $z(\LP_{\PCmax})=10$, so (a) and (d) are both optimal for the relaxation: on this instance there is no integrality gap.
+    3. The lower bound is $\left\lceil20/2\right\rceil=10$ and candidate (a) attains it: $z(\mathrm{ILP}_{P\|C_{\max}})=10$, and (a) is optimal. Gurobi gives $z(\mathrm{LP}_{P\|C_{\max}})=10$, so (a) and (d) are both optimal for the relaxation: on this instance there is no integrality gap.
 
 <a id="esercizio-14-4"></a>
 
@@ -179,7 +179,7 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
     **Questions**
 
-    1. Compute $z(\LP_{\PCmax})$ with Gurobi.
+    1. Compute $z(\mathrm{LP}_{P\|C_{\max}})$ with Gurobi.
 
     2. Add the valid inequality $C_{\max}\ge\left\lceil\frac{\sum_j t_j}{m}\right\rceil$ and solve the relaxation again. Then add the valid inequalities $C_{\max}\ge t_j$ instead, and solve again.
 
@@ -191,13 +191,13 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
     !!! nota ""
 
-        For every $\PCmax$ instance, $z(\LP\text{-}0_{\PCmax})=z(\LP_{\PCmax})=\frac{\sum_{j\in\mathscr{J}}t_j}{m}$, attained by $\tilde x_{jh}=\frac{1}{m}$; an optimal dual solution is $\tilde\pi_h=\frac{1}{m}$ and $\tilde\mu_j=\frac{t_j}{m}$. The inequalities $C_{\max}\ge t_j$ ($j\in\mathscr{J}$) and $C_{\max}\ge\left\lceil\frac{\sum_j t_j}{m}\right\rceil$ are valid for the $\ILP_{\PCmax}$ model.
+        For every $P\|C_{\max}$ instance, $z(\mathrm{LP}\text{-}0_{P\|C_{\max}})=z(\mathrm{LP}_{P\|C_{\max}})=\frac{\sum_{j\in\mathscr{J}}t_j}{m}$, attained by $\tilde x_{jh}=\frac{1}{m}$; an optimal dual solution is $\tilde\pi_h=\frac{1}{m}$ and $\tilde\mu_j=\frac{t_j}{m}$. The inequalities $C_{\max}\ge t_j$ ($j\in\mathscr{J}$) and $C_{\max}\ge\left\lceil\frac{\sum_j t_j}{m}\right\rceil$ are valid for the $\mathrm{ILP}_{P\|C_{\max}}$ model.
 
-    1. Gurobi gives $z(\LP_{\PCmax})=24/3=8$.
+    1. Gurobi gives $z(\mathrm{LP}_{P\|C_{\max}})=24/3=8$.
 
     2. The inequality $C_{\max}\ge\left\lceil24/3\right\rceil=8$ does not change the bound: Gurobi gives again $8$, since $24/3$ is already an integer. The inequalities $C_{\max}\ge t_j$ include $C_{\max}\ge 12$, and Gurobi gives $12$: the long job alone fixes the bound.
 
-    3. Gurobi gives $z(\ILP_{\PCmax})=12$: job $1$ alone on one machine, the other jobs on the other two machines. The LP bound $8$ has gap $\frac{12-8}{8}=50.0\%$; with the inequalities $C_{\max}\ge t_j$ the bound is $12$, equal to the optimal value.
+    3. Gurobi gives $z(\mathrm{ILP}_{P\|C_{\max}})=12$: job $1$ alone on one machine, the other jobs on the other two machines. The LP bound $8$ has gap $\frac{12-8}{8}=50.0\%$; with the inequalities $C_{\max}\ge t_j$ the bound is $12$, equal to the optimal value.
 
     4. Without the symmetry-breaking constraints: job $1$ must be alone (any other job would give a load larger than $12$), it can be on any of the $3$ machines, and the other $5$ jobs can be split in any way between the other two machines, whose loads stay at most $12$. This gives $3\cdot 2^5=96$ optimal solutions.
 
@@ -219,9 +219,9 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
     **Questions**
 
-    1. Compute $z(\LP_{\PCmax})$ and $z(\ILP_{\PCmax})$ with Gurobi, and explain the optimal value.
+    1. Compute $z(\mathrm{LP}_{P\|C_{\max}})$ and $z(\mathrm{ILP}_{P\|C_{\max}})$ with Gurobi, and explain the optimal value.
 
-    2. Compute the absolute gap and the ratio $\frac{z(\LP_{\PCmax})}{z(\ILP_{\PCmax})}$.
+    2. Compute the absolute gap and the ratio $\frac{z(\mathrm{LP}_{P\|C_{\max}})}{z(\mathrm{ILP}_{P\|C_{\max}})}$.
 
     3. Add both valid inequalities of the chapter and solve the relaxation again. How much of the gap is closed?
 
@@ -231,12 +231,12 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
     !!! nota ""
 
-        For every $\PCmax$ instance, $z(\LP\text{-}0_{\PCmax})=z(\LP_{\PCmax})=\frac{\sum_{j\in\mathscr{J}}t_j}{m}$, attained by $\tilde x_{jh}=\frac{1}{m}$; an optimal dual solution is $\tilde\pi_h=\frac{1}{m}$ and $\tilde\mu_j=\frac{t_j}{m}$. The inequalities $C_{\max}\ge t_j$ ($j\in\mathscr{J}$) and $C_{\max}\ge\left\lceil\frac{\sum_j t_j}{m}\right\rceil$ are valid for the $\ILP_{\PCmax}$ model.
+        For every $P\|C_{\max}$ instance, $z(\mathrm{LP}\text{-}0_{P\|C_{\max}})=z(\mathrm{LP}_{P\|C_{\max}})=\frac{\sum_{j\in\mathscr{J}}t_j}{m}$, attained by $\tilde x_{jh}=\frac{1}{m}$; an optimal dual solution is $\tilde\pi_h=\frac{1}{m}$ and $\tilde\mu_j=\frac{t_j}{m}$. The inequalities $C_{\max}\ge t_j$ ($j\in\mathscr{J}$) and $C_{\max}\ge\left\lceil\frac{\sum_j t_j}{m}\right\rceil$ are valid for the $\mathrm{ILP}_{P\|C_{\max}}$ model.
 
-    1. Gurobi gives $z(\LP_{\PCmax})=\frac{13}{2}=\frac{13}{2}$ and $z(\ILP_{\PCmax})=8$. The two jobs of time $5$ on the same machine give load $10$; otherwise the job of time $3$ shares a machine with a job of time $5$, with load $8$.
+    1. Gurobi gives $z(\mathrm{LP}_{P\|C_{\max}})=\frac{13}{2}=\frac{13}{2}$ and $z(\mathrm{ILP}_{P\|C_{\max}})=8$. The two jobs of time $5$ on the same machine give load $10$; otherwise the job of time $3$ shares a machine with a job of time $5$, with load $8$.
 
     2. The absolute gap is $8-\frac{13}{2}=\frac{3}{2}$, and the ratio is $\frac{\frac{13}{2}}{8}=\frac{13}{16}$, which is larger than $\frac{1}{m}=\frac{1}{2}$.
 
     3. The inequalities give $C_{\max}\ge\max\{5,\lceil \frac{13}{2}\rceil\}=7$, and Gurobi gives $7$. The gap goes from $\frac{3}{2}$ to $1$: the rounding closes one third of it, and the remaining unit comes from the integer assignment.
 
-    4. Gurobi gives $z(\LP_{\PCmax})=\frac{10+3}{3}=\frac{13}{3}$ and $z(\ILP_{\PCmax})=10$, the long job. The ratio is $\frac{\frac{13}{3}}{10}=\frac{13}{30}$. In general it is $\frac{M+m}{m\,M}=\frac{1}{m}+\frac{1}{M}$, which tends to $\frac{1}{3}$ as $M\to+\infty$.
+    4. Gurobi gives $z(\mathrm{LP}_{P\|C_{\max}})=\frac{10+3}{3}=\frac{13}{3}$ and $z(\mathrm{ILP}_{P\|C_{\max}})=10$, the long job. The ratio is $\frac{\frac{13}{3}}{10}=\frac{13}{30}$. In general it is $\frac{M+m}{m\,M}=\frac{1}{m}+\frac{1}{M}$, which tends to $\frac{1}{3}$ as $M\to+\infty$.

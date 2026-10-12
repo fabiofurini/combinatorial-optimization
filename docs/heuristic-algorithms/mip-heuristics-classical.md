@@ -6,7 +6,7 @@ title: "MIP heuristics for the classical problems"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 24** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: MIP heuristics](../exercises/mip-heuristics-classical.md)
+**Part 4 · Heuristic algorithms · Chapter 27** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: MIP heuristics](../exercises/mip-heuristics-classical.md)
 
 </div>
 
@@ -14,9 +14,9 @@ title: "MIP heuristics for the classical problems"
 
     - From the module <em>Integer Linear Programming</em>, [Chapter 10 «MIP heuristics»](https://fabiofurini.github.io/integer-linear-programming/mip-heuristics/mip-heuristics/): the methods of this chapter (rounding, diving, the feasibility pump, RINS, local branching, proximity search, relax-and-fix and fix-and-optimize), their pseudo-codes and the conditions under which they work.
 
-    - From this module, the chapters on the formulations of the classical problems (Chapters 9–15): the models of the knapsack problem, of the bin packing problem, of the travelling salesman problem, of $P\,||\,C_{\max}$ and of lot sizing.
+    - From this module, the chapters on the formulations of the classical problems (part «Formulations and their properties»): the models of the knapsack problem, of the bin packing problem, of the travelling salesman problem, of $P\,||\,C_{\max}$ and of lot sizing.
 
-    - From this module, the chapters on heuristic algorithms (Chapters 20–23): the constructive heuristics ($GR$, $FF$, $NN$, $LPT$), local search and metaheuristics, whose solutions are the starting points of this chapter.
+    - From this module, the chapters on heuristic algorithms, from «Heuristic algorithms: definitions» to «Metaheuristics»: the constructive heuristics ($GR$, $FF$, $NN$, $LPT$), local search and metaheuristics, whose solutions are the starting points of this chapter.
 
 !!! chiave "Objectives"
 
@@ -32,11 +32,11 @@ title: "MIP heuristics for the classical problems"
 
     - compute the gap of a heuristic solution when a dual bound is available.
 
-## 24.1 MIP-based heuristics { #sez-sec-intro }
+## 27.1 MIP-based heuristics { #sez-sec-intro }
 
 <a id="box-1-def-mipheur"></a>
 
-!!! definizione "Definition 24.1: MIP-based heuristic"
+!!! definizione "Definition 27.1: MIP-based heuristic"
 
     A heuristic algorithm for a problem with a MIP model is <strong>MIP-based</strong> (a <strong>matheuristic</strong>) if it uses the LP relaxation of the model and a MIP solver to search for a feasible solution.
 
@@ -50,7 +50,7 @@ title: "MIP heuristics for the classical problems"
 
     Constructive heuristics, local search and metaheuristics work on a representation of the solutions; a MIP-based heuristic works on the model of the problem, through its LP relaxation and a MIP solver.
 
-## 24.2 The problems and their MIP models { #sez-sec-models }
+## 27.2 The problems and their MIP models { #sez-sec-models }
 
 - The heuristics are illustrated on the four problems of the previous notes, whose definitions and assumptions are given in the notes on combinatorial optimization problems, and on their reference instances, recalled in the following table with the values computed in the previous notes on heuristic algorithms.
 
@@ -84,7 +84,7 @@ title: "MIP heuristics for the classical problems"
 
 - The MIP models below are the classical ones, studied in the notes on ILP formulations of classical problems and in the MIP modelling course; we recall them in the form used by the codes of these notes.
 
-### 24.2.1 The knapsack problem
+### 27.2.1 The knapsack problem
 
 !!! chiave ""
 
@@ -93,12 +93,12 @@ title: "MIP heuristics for the classical problems"
     <a id="eq-eq-kp"></a>
 
     \begin{align*}
-    && \max ~~ \sum_{j\in\mathscr{I}} p_j\, x_j \label{eq:kp-obj} \tag{24.1a}\\[1ex]
-    && \text{subject to} \quad \sum_{j\in\mathscr{I}} w_j\, x_j &\le c, & \label{eq:kp-cap} \tag{24.1b}\\[1ex]
-    && x_j &\in \{0,1\}, & \forall j\in\mathscr{I}. \label{eq:kp-dom} \tag{24.1c}
+    && \max ~~ \sum_{j\in\mathscr{I}} p_j\, x_j \label{eq:kp-obj} \tag{27.1a}\\[1ex]
+    && \text{subject to} \quad \sum_{j\in\mathscr{I}} w_j\, x_j &\le c, & \label{eq:kp-cap} \tag{27.1b}\\[1ex]
+    && x_j &\in \{0,1\}, & \forall j\in\mathscr{I}. \label{eq:kp-dom} \tag{27.1c}
     \end{align*}
 
-### 24.2.2 The bin packing problem
+### 27.2.2 The bin packing problem
 
 !!! chiave ""
 
@@ -107,16 +107,16 @@ title: "MIP heuristics for the classical problems"
     <a id="eq-eq-bpp"></a>
 
     \begin{align*}
-    && \min ~~ \sum_{b\in\mathscr{B}} y_b \label{eq:bpp-obj} \tag{24.2a}\\[1ex]
-    && \text{subject to} \quad \sum_{b\in\mathscr{B}} x_{jb} &= 1, & \forall j\in\mathscr{I}, \label{eq:bpp-assign} \tag{24.2b}\\[1ex]
-    && \sum_{j\in\mathscr{I}} w_j\, x_{jb} &\le c\, y_b, & \forall b\in\mathscr{B}, \label{eq:bpp-cap} \tag{24.2c}\\[1ex]
-    && x_{jb} &\in \{0,1\}, & \forall j\in\mathscr{I},~\forall b\in\mathscr{B}, \label{eq:bpp-domx} \tag{24.2d}\\[1ex]
-    && y_b &\in \{0,1\}, & \forall b\in\mathscr{B}. \label{eq:bpp-domy} \tag{24.2e}
+    && \min ~~ \sum_{b\in\mathscr{B}} y_b \label{eq:bpp-obj} \tag{27.2a}\\[1ex]
+    && \text{subject to} \quad \sum_{b\in\mathscr{B}} x_{jb} &= 1, & \forall j\in\mathscr{I}, \label{eq:bpp-assign} \tag{27.2b}\\[1ex]
+    && \sum_{j\in\mathscr{I}} w_j\, x_{jb} &\le c\, y_b, & \forall b\in\mathscr{B}, \label{eq:bpp-cap} \tag{27.2c}\\[1ex]
+    && x_{jb} &\in \{0,1\}, & \forall j\in\mathscr{I},~\forall b\in\mathscr{B}, \label{eq:bpp-domx} \tag{27.2d}\\[1ex]
+    && y_b &\in \{0,1\}, & \forall b\in\mathscr{B}. \label{eq:bpp-domy} \tag{27.2e}
     \end{align*}
 
 - The content of bin $b$ is the packing pattern $P_b=\{j\in\mathscr{I}: x_{jb}=1\}$. Any upper bound on the number of bins can be used as $|\mathscr{B}|$; we use $n$, which is always enough.
 
-### 24.2.3 The travelling salesman problem
+### 27.2.3 The travelling salesman problem
 
 !!! chiave ""
 
@@ -125,15 +125,15 @@ title: "MIP heuristics for the classical problems"
     <a id="eq-eq-tsp"></a>
 
     \begin{align*}
-    && \min ~~ \sum_{\{i,j\}\in E} d_{ij}\, x_{ij} \label{eq:tsp-obj} \tag{24.3a}\\[1ex]
-    && \text{subject to} \quad \sum_{\{i,j\}\in\delta(i)} x_{ij} &= 2, & \forall i\in\mathscr{V}, \label{eq:tsp-deg} \tag{24.3b}\\[1ex]
-    && \sum_{\{i,j\}\in E(S)} x_{ij} &\le |S|-1, & \forall S\subset\mathscr{V},~ 2\le|S|\le n-2, \label{eq:tsp-sec} \tag{24.3c}\\[1ex]
-    && x_{ij} &\in \{0,1\}, & \forall \{i,j\}\in E. \label{eq:tsp-dom} \tag{24.3d}
+    && \min ~~ \sum_{\{i,j\}\in E} d_{ij}\, x_{ij} \label{eq:tsp-obj} \tag{27.3a}\\[1ex]
+    && \text{subject to} \quad \sum_{\{i,j\}\in\delta(i)} x_{ij} &= 2, & \forall i\in\mathscr{V}, \label{eq:tsp-deg} \tag{27.3b}\\[1ex]
+    && \sum_{\{i,j\}\in E(S)} x_{ij} &\le |S|-1, & \forall S\subset\mathscr{V},~ 2\le|S|\le n-2, \label{eq:tsp-sec} \tag{27.3c}\\[1ex]
+    && x_{ij} &\in \{0,1\}, & \forall \{i,j\}\in E. \label{eq:tsp-dom} \tag{27.3d}
     \end{align*}
 
 - The <strong>degree constraints</strong> $\eqref{eq:tsp-deg}$ say that every city is the endpoint of two edges of the tour; the <strong>subtour elimination constraints</strong> $\eqref{eq:tsp-sec}$ forbid closed subtours on a proper subset $S$ of the cities. They are exponentially many, and on large instances they are generated only when violated.
 
-### 24.2.4 The scheduling problem $P\,||\,C_{\max}$
+### 27.2.4 The scheduling problem $P\,||\,C_{\max}$
 
 !!! chiave ""
 
@@ -142,25 +142,25 @@ title: "MIP heuristics for the classical problems"
     <a id="eq-eq-pcm"></a>
 
     \begin{align*}
-    && \min ~~ C_{\max} \label{eq:pcm-obj} \tag{24.4a}\\[1ex]
-    && \text{subject to} \quad \sum_{h=1}^{m} x_{jh} &= 1, & \forall j\in\mathscr{J}, \label{eq:pcm-assign} \tag{24.4b}\\[1ex]
-    && \sum_{j\in\mathscr{J}} t_j\, x_{jh} &\le C_{\max}, & \forall h\in\{1,2,\dots,m\}, \label{eq:pcm-load} \tag{24.4c}\\[1ex]
-    && x_{jh} &\in \{0,1\}, & \forall j\in\mathscr{J},~\forall h\in\{1,2,\dots,m\}, \label{eq:pcm-domx} \tag{24.4d}\\[1ex]
-    && C_{\max} &\ge 0. & \label{eq:pcm-domc} \tag{24.4e}
+    && \min ~~ C_{\max} \label{eq:pcm-obj} \tag{27.4a}\\[1ex]
+    && \text{subject to} \quad \sum_{h=1}^{m} x_{jh} &= 1, & \forall j\in\mathscr{J}, \label{eq:pcm-assign} \tag{27.4b}\\[1ex]
+    && \sum_{j\in\mathscr{J}} t_j\, x_{jh} &\le C_{\max}, & \forall h\in\{1,2,\dots,m\}, \label{eq:pcm-load} \tag{27.4c}\\[1ex]
+    && x_{jh} &\in \{0,1\}, & \forall j\in\mathscr{J},~\forall h\in\{1,2,\dots,m\}, \label{eq:pcm-domx} \tag{27.4d}\\[1ex]
+    && C_{\max} &\ge 0. & \label{eq:pcm-domc} \tag{27.4e}
     \end{align*}
 
 - $C_{\max}$ is the only continuous variable of the four models: given the assignment, the completion sets it to the largest load $L_h=\sum_{j\in\mathscr{J}} t_j\,x_{jh}$.
 
-### 24.2.5 The LP relaxations on the reference instances
+### 27.2.5 The LP relaxations on the reference instances
 
-- The following table reports the size of the four models on the reference instances, the value $z(\LP)$ of their LP relaxations, computed with Gurobi, and the optimal value $z(I)$.
+- The following table reports the size of the four models on the reference instances, the value $z(\mathrm{LP})$ of their LP relaxations, computed with Gurobi, and the optimal value $z(I)$.
 
 <div class="tabella" markdown="0"><table>
 <tr>
 <th>problem</th>
 <th>variables</th>
 <th>constraints</th>
-<th><span class="arithmatex">\(z(\LP)\)</span></th>
+<th><span class="arithmatex">\(z(\mathrm{LP})\)</span></th>
 <th><span class="arithmatex">\(z(I)\)</span></th>
 <th>LP solution integer?</th>
 </tr>
@@ -206,9 +206,9 @@ title: "MIP heuristics for the classical problems"
 
 <a id="box-2-ex-lpsol"></a>
 
-!!! esempio "Example 24.1: The LP solutions of the reference instances"
+!!! esempio "Example 27.1: The LP solutions of the reference instances"
 
-    <strong>KP.</strong> The LP solution is $\tilde{\vet x}=\big(1,\frac14,1,0\big)$: the items are taken by non-increasing efficiency, and the split item $2$ is taken for the fraction $\frac{9-8}{4}=\frac14$ of its weight, so $z(\LP)=10+\frac74+6=17.75$.
+    <strong>KP.</strong> The LP solution is $\tilde{\vet x}=\big(1,\frac14,1,0\big)$: the items are taken by non-increasing efficiency, and the split item $2$ is taken for the fraction $\frac{9-8}{4}=\frac14$ of its weight, so $z(\mathrm{LP})=10+\frac74+6=17.75$.
 
     <strong>$P\,||\,C_{\max}$.</strong> The LP solution returned by the solver is (zeros omitted)
 
@@ -232,17 +232,17 @@ title: "MIP heuristics for the classical problems"
 
     just enough to contain their loads: $2$, $0$, $7$, $5$, $0$, $7$. Its value is $\frac{21}{7}=3$.
 
-## 24.3 Rounding { #sez-sec-rounding }
+## 27.3 Rounding { #sez-sec-rounding }
 
 - <em>Rounding</em> rounds the LP solution to the nearest integer point and completes the continuous variables; it fails if the rounded point violates a constraint. Rounding down is always feasible when all the coefficients of $A$ are non-negative and $b\ge0$ (the observation on rounding down of Chapter 10 of the module <em>Integer Linear Programming</em>); an equality constraint, such as the assignment constraints of the BPP and of $P\,||\,C_{\max}$, is almost always violated by independent roundings.
 
 <a id="box-3-ex-rounding"></a>
 
-!!! esempio "Example 24.2: Rounding on the reference instances"
+!!! esempio "Example 27.2: Rounding on the reference instances"
 
     <strong>KP.</strong> The LP solution $\tilde{\vet x}=\big(1,\frac14,1,0\big)$ is rounded to $\bar{\vet x}=(1,0,1,0)$: weight $8\le9$, profit $16$. It is the solution of $GR$ of the chapter on constructive heuristics. Rounding $\tilde x_2=\frac14$ up instead would give $(1,1,1,0)$, of weight $12>9$: infeasible.
 
-    <strong>$P\,||\,C_{\max}$.</strong> In the LP solution of [Example 24.1](#box-2-ex-lpsol), $\rnd{\frac35}=1$ and $\rnd{\frac25}=0$ send job $2$ to machine $1$, but $\rnd{\frac12}=1$ assigns job $3$ to <em>both</em> machines $2$ and $3$:
+    <strong>$P\,||\,C_{\max}$.</strong> In the LP solution of [Example 27.1](#box-2-ex-lpsol), $\rnd{\frac35}=1$ and $\rnd{\frac25}=0$ send job $2$ to machine $1$, but $\rnd{\frac12}=1$ assigns job $3$ to <em>both</em> machines $2$ and $3$:
 
     $$
     \bar x_{31}+\bar x_{32}+\bar x_{33}=0+1+1=2\neq 1 .
@@ -250,17 +250,17 @@ title: "MIP heuristics for the classical problems"
 
     The assignment constraint $\eqref{eq:pcm-assign}$ of job $3$ is violated: <strong>rounding fails</strong>.
 
-    <strong>BPP.</strong> Rounding the LP solution of [Example 24.1](#box-2-ex-lpsol) gives $\bar{\vet y}=(0,0,1,1,0,1)$ and puts item $3$ into bin $3$. Two capacity constraints $\eqref{eq:bpp-cap}$ are violated: bin $1$ contains item $5$ but $\bar y_1=0$ ($2\le 0$ is false), and bin $3$ contains items $3$ and $6$ ($5+3=8>7$). <strong>Rounding fails</strong>.
+    <strong>BPP.</strong> Rounding the LP solution of [Example 27.1](#box-2-ex-lpsol) gives $\bar{\vet y}=(0,0,1,1,0,1)$ and puts item $3$ into bin $3$. Two capacity constraints $\eqref{eq:bpp-cap}$ are violated: bin $1$ contains item $5$ but $\bar y_1=0$ ($2\le 0$ is false), and bin $3$ contains items $3$ and $6$ ($5+3=8>7$). <strong>Rounding fails</strong>.
 
 - The three outcomes summarize the method: on the KP, with a single packing constraint, rounding is safe (the observation on rounding down of Chapter 10 of the module <em>Integer Linear Programming</em>); on the problems with assignment constraints it fails, because the LP spreads a job or an item over several machines or bins, and rounding cannot decide where it goes.
 
-## 24.4 Diving { #sez-sec-diving }
+## 27.4 Diving { #sez-sec-diving }
 
 - <em>Diving</em> fixes one fractional variable at a time and re-solves the LP: fractional diving fixes the least fractional variable to its nearest integer, guided diving fixes the variable closest to the incumbent to the incumbent value; it fails when the LP becomes infeasible. Ties are broken in favour of the variable that comes first in the order of the variables ($x_{11},x_{12},\dots$ for the assignment models, then $C_{\max}$ or $y_1,y_2,\dots$).
 
 <a id="box-4-ex-divekp"></a>
 
-!!! esempio "Example 24.3: Fractional diving on the KP"
+!!! esempio "Example 27.3: Fractional diving on the KP"
 
     <strong>Step 1.</strong> The LP solution is $\tilde{\vet x}=\big(1,\frac14,1,0\big)$, of value $17.75$. The only fractional variable is $x_2$, rounded to $\rnd{\frac14}=0$: fix $x_2:=0$.
 
@@ -276,9 +276,9 @@ title: "MIP heuristics for the classical problems"
 
 <a id="box-5-ex-divepcm"></a>
 
-!!! esempio "Example 24.4: Fractional diving on $P\,||\,C_{\max}$"
+!!! esempio "Example 27.4: Fractional diving on $P\,||\,C_{\max}$"
 
-    The dive starts from the LP solution of [Example 24.1](#box-2-ex-lpsol). The table reports, for each step, the value of the LP, its fractional variables and the fixing; a fractionality $|\tilde x_j-\rnd{\tilde x_j}|$ equal for two variables is broken by the order $x_{11},x_{12},x_{13},x_{21},\dots$
+    The dive starts from the LP solution of [Example 27.1](#box-2-ex-lpsol). The table reports, for each step, the value of the LP, its fractional variables and the fixing; a fractionality $|\tilde x_j-\rnd{\tilde x_j}|$ equal for two variables is broken by the order $x_{11},x_{12},x_{13},x_{21},\dots$
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -361,11 +361,11 @@ title: "MIP heuristics for the classical problems"
 
 <a id="box-6-ex-guided"></a>
 
-!!! esempio "Example 24.5: Guided diving on $P\,||\,C_{\max}$"
+!!! esempio "Example 27.5: Guided diving on $P\,||\,C_{\max}$"
 
     The incumbent is the solution of $LPT$, $J_1=\{1,5,7\}$, $J_2=\{2,6\}$, $J_3=\{3,4\}$, of makespan $11$, i.e., $\bar x_{11}=\bar x_{51}=\bar x_{71}=\bar x_{22}=\bar x_{62}=\bar x_{33}=\bar x_{43}=1$ and all the other $\bar x_{jh}=0$.
 
-    <strong>Step 1.</strong> In the LP solution of [Example 24.1](#box-2-ex-lpsol) the fractional variables and their distances from the incumbent are
+    <strong>Step 1.</strong> In the LP solution of [Example 27.1](#box-2-ex-lpsol) the fractional variables and their distances from the incumbent are
 
     $$
     |\tilde x_{21}-\bar x_{21}|=\tfrac35,\quad |\tilde x_{23}-\bar x_{23}|=\tfrac25,\quad |\tilde x_{32}-\bar x_{32}|=\tfrac12,\quad
@@ -382,15 +382,15 @@ title: "MIP heuristics for the classical problems"
 
 - On the BPP reference instance, fractional diving takes $8$ fixings, all with LP value $3$; the ninth, $x_{12}:=1$, puts item $1$ into bin $2$, which already contains item $2$ by an earlier fixing, and $4+4>7$ makes the LP infeasible: <strong>the dive fails</strong>. The fixings $x_{jb}=1$ commit items to bins one at a time, and the LP of the BPP is so weak ($3$ at every step) that it gives no warning before the dead end.
 
-## 24.5 The feasibility pump { #sez-sec-fp }
+## 27.5 The feasibility pump { #sez-sec-fp }
 
 - The <em>feasibility pump</em> alternates the projection of an integer point onto the LP feasible region (one LP minimizing $\Delta$) and the rounding of the projection, with a flip when the rounding returns the same integer point and a random restart when the pump cycles, until the distance is $0$. The random numbers are those of the <em>minimal standard</em> generator of Park and Miller with the seeds $1,2,\dots$, as in the metaheuristics chapter.
 
 <a id="box-7-ex-fppcm"></a>
 
-!!! esempio "Example 24.6: The feasibility pump on $P\,||\,C_{\max}$"
+!!! esempio "Example 27.6: The feasibility pump on $P\,||\,C_{\max}$"
 
-    <strong>Iteration 0.</strong> The LP solution of [Example 24.1](#box-2-ex-lpsol) is rounded as in [Example 24.2](#box-3-ex-rounding): job $3$ is assigned to machines $2$ and $3$, and $\bar{\vet x}^0$ is infeasible.
+    <strong>Iteration 0.</strong> The LP solution of [Example 27.1](#box-2-ex-lpsol) is rounded as in [Example 27.2](#box-3-ex-rounding): job $3$ is assigned to machines $2$ and $3$, and $\bar{\vet x}^0$ is infeasible.
 
     <strong>Iteration 1.</strong> The projection minimizes $\Delta(\vet x,\bar{\vet x}^0)$, which is linear since all the integer variables are binary. The solver returns the point of $\mathcal{L}$ that keeps all the assignments of $\bar{\vet x}^0$ and removes job $3$ from machine $2$, i.e., it moves $x_{32}$ from $1$ to $0$: $\Delta=1$ (removing job $3$ from machine $3$ would be equally close). The result is integer:
 
@@ -406,7 +406,7 @@ title: "MIP heuristics for the classical problems"
 
 <a id="box-8-ex-fpbpp"></a>
 
-!!! esempio "Example 24.7: The feasibility pump on the BPP"
+!!! esempio "Example 27.7: The feasibility pump on the BPP"
 
     On the BPP reference instance, where rounding and diving fail, the pump is run with the seeds $1,2,\dots,10$ of the random numbers. The table reports the number of projections, of flips and of restarts, the number of bins opened by the solution found ($\sum_b \bar y_b$, the value of the solution) and the number of non-empty bins.
 
@@ -495,15 +495,15 @@ title: "MIP heuristics for the classical problems"
 
 - The pump is a method to find a <em>first</em> feasible solution, and it does that well. The quality of the solution is the job of the improvement methods of the next sections, which start from an incumbent.
 
-## 24.6 RINS, local branching and proximity search { #sez-sec-submip }
+## 27.6 RINS, local branching and proximity search { #sez-sec-submip }
 
 - The three methods start from an incumbent $\bar{\vet x}$ and solve a sub-MIP with the cutoff constraint $f(\vet x)\le f(\bar{\vet x})-\theta$, which here has $\theta=1$ since the objective values are integer: RINS fixes the integer variables on which the LP solution and the incumbent agree; local branching adds $\Delta(\vet x,\bar{\vet x})\le k$ and enlarges $k$ when it finds nothing; proximity search minimizes $\Delta(\vet x,\bar{\vet x})$.
 
-### 24.6.1 RINS
+### 27.6.1 RINS
 
 <a id="box-9-ex-rinskp"></a>
 
-!!! esempio "Example 24.8: RINS on the KP"
+!!! esempio "Example 27.8: RINS on the KP"
 
     The incumbent is the solution $\bar{\vet x}=(1,0,1,0)$ of $GR$, of profit $16$, and the LP solution is $\tilde{\vet x}=\big(1,\frac14,1,0\big)$. They agree on $x_1=1$, $x_3=1$, $x_4=0$, which are fixed. The sub-MIP
 
@@ -515,9 +515,9 @@ title: "MIP heuristics for the classical problems"
 
 <a id="box-10-ex-rinspcm"></a>
 
-!!! esempio "Example 24.9: RINS on $P\,||\,C_{\max}$"
+!!! esempio "Example 27.9: RINS on $P\,||\,C_{\max}$"
 
-    The incumbent is the solution of $LPT$ ($J_1=\{1,5,7\}$, $J_2=\{2,6\}$, $J_3=\{3,4\}$, makespan $11$), and $\tilde{\vet x}$ is the LP solution of [Example 24.1](#box-2-ex-lpsol). The table compares, for each job, the machine of the incumbent with the LP solution.
+    The incumbent is the solution of $LPT$ ($J_1=\{1,5,7\}$, $J_2=\{2,6\}$, $J_3=\{3,4\}$, makespan $11$), and $\tilde{\vet x}$ is the LP solution of [Example 27.1](#box-2-ex-lpsol). The table compares, for each job, the machine of the incumbent with the LP solution.
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -572,13 +572,13 @@ title: "MIP heuristics for the classical problems"
 
 - On the KP the incumbent and the LP solution are too similar, and the neighbourhood of RINS has a single free variable; on $P\,||\,C_{\max}$ they are very different, and the neighbourhood is large enough to contain the optimum.
 
-### 24.6.2 Local branching
+### 27.6.2 Local branching
 
 - <strong>Local branching and local search.</strong> With $k=1$ the neighbourhood is the flip neighbourhood of the KP in the notes on definitions; with $k=2$ it contains the swap neighbourhood as well. For the assignment variables of the BPP and of $P\,||\,C_{\max}$ the distance has a simple meaning.
 
 <a id="box-11-obs-assign"></a>
 
-!!! teorema "Observation 24.2"
+!!! teorema "Observation 27.2"
 
     Let $\vet x$ and $\bar{\vet x}$ be two feasible assignments of $P\,||\,C_{\max}$. Then $\Delta(\vet x,\bar{\vet x})=2\,r$, where $r$ is the number of jobs assigned to different machines in $\vet x$ and in $\bar{\vet x}$.
 
@@ -590,7 +590,7 @@ title: "MIP heuristics for the classical problems"
 
 <a id="box-12-ex-lbkp"></a>
 
-!!! esempio "Example 24.10: Local branching on the KP"
+!!! esempio "Example 27.10: Local branching on the KP"
 
     Start from $\bar{\vet x}^1=(1,0,1,0)$, of profit $16$, with $k=1$, $k_{\max}=3$, $k_{step}=1$ and $\theta=1$.
 
@@ -602,11 +602,11 @@ title: "MIP heuristics for the classical problems"
 
 <a id="box-13-ex-lbpcm"></a>
 
-!!! esempio "Example 24.11: Local branching on $P\,||\,C_{\max}$"
+!!! esempio "Example 27.11: Local branching on $P\,||\,C_{\max}$"
 
     Start from the solution $\bar{\vet x}^1$ of $LPT$, of makespan $11$, with $k=2$, $k_{\max}=6$, $k_{step}=2$ and $\theta=1$, so that the cutoff is $C_{\max}\le 10$, then $9$, and so on.
 
-    <strong>$k=2$.</strong> By [Observation 24.2](#box-11-obs-assign) the neighbourhood is the move neighbourhood, and $LPT$ is a local optimum for it (chapter on local search): the sub-MIP is infeasible. Add $\Delta(\vet x,\bar{\vet x}^1)\ge 3$ and set $k=4$.
+    <strong>$k=2$.</strong> By [Observation 27.2](#box-11-obs-assign) the neighbourhood is the move neighbourhood, and $LPT$ is a local optimum for it (chapter on local search): the sub-MIP is infeasible. Add $\Delta(\vet x,\bar{\vet x}^1)\ge 3$ and set $k=4$.
 
     <strong>$k=4$.</strong> The best solution with two jobs reassigned has makespan $10$; the solver returns the swap of jobs $1$ and $4$, $\bar{\vet x}^2$ below. Add $\Delta(\vet x,\bar{\vet x}^1)\ge 5$.
 
@@ -620,19 +620,19 @@ title: "MIP heuristics for the classical problems"
 
 - In the language of the chapter on local search, local branching performs a local search with a neighbourhood whose size is controlled by $k$, explored exactly by the solver, and it enlarges the neighbourhood when it gets stuck — exactly the idea of variable neighbourhood search, with the solver doing the exploration.
 
-### 24.6.3 Proximity search
+### 27.6.3 Proximity search
 
 - A proximity sub-MIP that is infeasible with $\theta=1$ proves that the incumbent is optimal, when the objective takes integer values (the proposition of Chapter 10 of the module <em>Integer Linear Programming</em>).
 
 <a id="box-14-ex-pskp"></a>
 
-!!! esempio "Example 24.12: Proximity search on the KP"
+!!! esempio "Example 27.12: Proximity search on the KP"
 
     From $\bar{\vet x}=(1,0,1,0)$, of profit $16$: the closest solution of profit at least $17$ is $(1,1,0,0)$, at distance $2$ (item $3$ out, item $2$ in), of profit $17$. Around it, no solution has profit at least $18$: by the optimality condition of proximity search (Chapter 10 of the module <em>Integer Linear Programming</em>), $\{1,2\}$ is <strong>optimal</strong>.
 
 <a id="box-15-ex-pspcm"></a>
 
-!!! esempio "Example 24.13: Proximity search on $P\,||\,C_{\max}$"
+!!! esempio "Example 27.13: Proximity search on $P\,||\,C_{\max}$"
 
     From the solution of $LPT$, of makespan $11$:
 
@@ -667,11 +667,11 @@ title: "MIP heuristics for the classical problems"
     </tr>
     </table></div>
 
-    By [Observation 24.2](#box-11-obs-assign), distance $4$ means two jobs reassigned: jobs $1$ and $6$ at the first iteration, jobs $2$ and $4$ at the second. No solution at distance $2$ improves the makespan, as for local branching with $k=2$. At the third iteration the sub-MIP is infeasible, and the optimality condition of proximity search (Chapter 10 of the module <em>Integer Linear Programming</em>) proves that makespan $9$ is optimal.
+    By [Observation 27.2](#box-11-obs-assign), distance $4$ means two jobs reassigned: jobs $1$ and $6$ at the first iteration, jobs $2$ and $4$ at the second. No solution at distance $2$ improves the makespan, as for local branching with $k=2$. At the third iteration the sub-MIP is infeasible, and the optimality condition of proximity search (Chapter 10 of the module <em>Integer Linear Programming</em>) proves that makespan $9$ is optimal.
 
 - The proof of optimality comes from the solver, which proves the infeasibility of the last sub-MIP with its own dual bounds: proximity search, used with $\theta=1$, is an exact method that improves the incumbent along the way.
 
-## 24.7 Relax-and-fix and fix-and-optimize on lot sizing { #sez-sec-rf }
+## 27.7 Relax-and-fix and fix-and-optimize on lot sizing { #sez-sec-rf }
 
 - Relax-and-fix and fix-and-optimize decompose the MIP into blocks of integer variables. Lot sizing is a natural application, because its variables are indexed by the periods $t=1,2,\dots,T$ of a planning horizon, and the decisions of a period mainly interact with those of the nearby periods. The blocks are the set-up variables of consecutive periods.
 
@@ -684,25 +684,25 @@ title: "MIP heuristics for the classical problems"
     <a id="eq-eq-ls"></a>
 
     \begin{align*}
-    && \min ~~ \sum_{t=1}^{T} \big(F\, y_t + h\, s_t\big) \label{eq:ls-obj} \tag{24.5a}\\[1ex]
-    && \text{subject to} \quad s_{t-1}+q_t-s_t &= d_t, & \forall t\in\{1,2,\dots,T\}, \label{eq:ls-bal} \tag{24.5b}\\[1ex]
-    && q_t &\le M_t\, y_t, & \forall t\in\{1,2,\dots,T\}, \label{eq:ls-setup} \tag{24.5c}\\[1ex]
-    && q_t &\ge 0, & \forall t\in\{1,2,\dots,T\}, \label{eq:ls-domq} \tag{24.5d}\\[1ex]
-    && s_t &\ge 0, & \forall t\in\{1,2,\dots,T\}, \label{eq:ls-doms} \tag{24.5e}\\[1ex]
-    && y_t &\in\{0,1\}, & \forall t\in\{1,2,\dots,T\}. \label{eq:ls-domy} \tag{24.5f}
+    && \min ~~ \sum_{t=1}^{T} \big(F\, y_t + h\, s_t\big) \label{eq:ls-obj} \tag{27.5a}\\[1ex]
+    && \text{subject to} \quad s_{t-1}+q_t-s_t &= d_t, & \forall t\in\{1,2,\dots,T\}, \label{eq:ls-bal} \tag{27.5b}\\[1ex]
+    && q_t &\le M_t\, y_t, & \forall t\in\{1,2,\dots,T\}, \label{eq:ls-setup} \tag{27.5c}\\[1ex]
+    && q_t &\ge 0, & \forall t\in\{1,2,\dots,T\}, \label{eq:ls-domq} \tag{27.5d}\\[1ex]
+    && s_t &\ge 0, & \forall t\in\{1,2,\dots,T\}, \label{eq:ls-doms} \tag{27.5e}\\[1ex]
+    && y_t &\in\{0,1\}, & \forall t\in\{1,2,\dots,T\}. \label{eq:ls-domy} \tag{27.5f}
     \end{align*}
 
 - Once the set-ups $y$ are fixed, the rest is an LP: the hard decisions are the $T$ binary variables. The LP relaxation is weak, because a fraction $y_t=q_t/M_t$ of a set-up is enough to produce $q_t$.
 
 <a id="box-16-ex-rfcourse"></a>
 
-!!! esempio "Example 24.14: Relax-and-fix on the lot sizing instance of the MIP course"
+!!! esempio "Example 27.14: Relax-and-fix on the lot sizing instance of the MIP course"
 
     The instance of the MIP course has $T=5$, $d=(20,10,30,40,10)$, $F=50$, $h=1$, no capacity. Its LP relaxation has value $\frac{36985}{396}\approx 93.40$, the constructive heuristic least unit cost of the course gives $200$, and the optimal value is $170$. Relax-and-fix with one period per block, $B_t=\{y_t\}$, finds a solution of value $170$: <strong>optimal</strong>.
 
 <a id="box-17-ex-rfcap"></a>
 
-!!! esempio "Example 24.15: Relax-and-fix on a capacitated instance"
+!!! esempio "Example 27.15: Relax-and-fix on a capacitated instance"
 
     Consider $T=6$, $d=(50,30,10,10,40,10)$, $F=40$, $h=1$ and capacity $Q=80$. The LP relaxation has value $\frac{2150}{21}\approx 102.38$ and the optimal value is $160$, with set-ups in periods $1$, $2$, $5$. Relax-and-fix with $B_t=\{y_t\}$:
 
@@ -755,9 +755,9 @@ title: "MIP heuristics for the classical problems"
 
 <a id="box-18-ex-fo"></a>
 
-!!! esempio "Example 24.16: Fix-and-optimize on the capacitated instance"
+!!! esempio "Example 27.16: Fix-and-optimize on the capacitated instance"
 
-    Start from the solution of relax-and-fix of [Example 24.15](#box-17-ex-rfcap), $\bar{\vet y}=(1,0,1,0,1,0)$ of cost $170$, with the windows of two consecutive periods $W_t=\{y_t,y_{t+1}\}$, $t=1,2,\dots,5$.
+    Start from the solution of relax-and-fix of [Example 27.15](#box-17-ex-rfcap), $\bar{\vet y}=(1,0,1,0,1,0)$ of cost $170$, with the windows of two consecutive periods $W_t=\{y_t,y_{t+1}\}$, $t=1,2,\dots,5$.
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -789,13 +789,13 @@ title: "MIP heuristics for the classical problems"
 
     The window $\{y_2,y_3\}$ revises the wrong decision of relax-and-fix: the set-up moves from period $3$ to period $2$. The plan produces $50$, $50$, $50$ in periods $1$, $2$, $5$, with stocks $20$ and $10$ at the end of periods $2$, $3$ and $10$ at the end of period $5$: cost $3\cdot 40+40=160$, the <strong>optimum</strong>.
 
-## 24.8 Heuristics inside the solver { #sez-sec-gurobi }
+## 27.8 Heuristics inside the solver { #sez-sec-gurobi }
 
 - The heuristics of Gurobi, their parameters and the MIP start are described in Chapter 10 of the module <em>Integer Linear Programming</em> and in the chapter «MIP solvers: what they do». A heuristic solution computed outside the solver — by $FFD$, $LPT$, a local search — can be passed to it as a MIP start (the attribute <code>Start</code> of the variables).
 
 <a id="box-19-ex-gurobi"></a>
 
-!!! esempio "Example 24.17: The effect of the heuristics of Gurobi on a medium BPP instance"
+!!! esempio "Example 27.17: The effect of the heuristics of Gurobi on a medium BPP instance"
 
     The instance has $n=60$ items, with weights $w_j=20+(s_j \bmod 41)$, where $s_1,s_2,\dots$ is the Park–Miller sequence from the seed $1$, and capacity $c=100$:
 
@@ -877,7 +877,7 @@ title: "MIP heuristics for the classical problems"
 
 - The numbers depend on the instance, on the version of the solver and on the machine; a single instance proves nothing (notes on definitions). The lesson is qualitative: on instances whose bound is strong, as the BPP with $LB=z(I)$, the time to solve is the time to find a good solution, and the heuristics of the solver — or a good MIP start — decide it.
 
-## 24.9 What the MIP-based heuristics give { #sez-sec-give }
+## 27.9 What the MIP-based heuristics give { #sez-sec-give }
 
 - The notes on definitions ended with a warning: a heuristic gives only one side of the gap, and without a dual bound nothing can be said about the quality of its solution. The heuristics of the previous notes give <em>only</em> primal bounds.
 
@@ -960,7 +960,7 @@ title: "MIP heuristics for the classical problems"
 
     A MIP-based heuristic does not only find solutions: inside a MIP solver it works with a dual bound, so the gap of its solution is always known, and a gap equal to $0$ certifies optimality.
 
-## 24.10 <code>Python</code> implementation { #sez-sec-python }
+## 27.10 <code>Python</code> implementation { #sez-sec-python }
 
 - The codes of the methods (rounding, diving, the feasibility pump, RINS, local branching, proximity search, relax-and-fix and fix-and-optimize) are those of Chapter 10 of the module <em>Integer Linear Programming</em>. Here we give the models of the classical problems (<code>models.py</code>) and the experiment with the parameters of Gurobi (<code>gurobi\_heuristics.py</code>); the folder <code>MIP\_HEUR\_CODE</code> contains all the functions and <code>instances.py</code>, with the instances of the chapter and of the exercises. The command <code>python3 run\_tests.py</code> runs every example of the chapter and every instance of the exercises, checking each value against the expected value, written in the file.
 
@@ -1171,7 +1171,7 @@ title: "MIP heuristics for the classical problems"
         return z, s.ObjBound, int(s.NodeCount), s.Work, found
     ```
 
-## 24.11 Typical mistakes { #sez-sec-mistakes }
+## 27.11 Typical mistakes { #sez-sec-mistakes }
 
 !!! attenzione "Warning"
 
@@ -1191,7 +1191,7 @@ title: "MIP heuristics for the classical problems"
 
     - <strong>Generalizing from one instance or one solver run.</strong> Paths and times depend on the version of the solver and on the tie-breaking rules, so the lessons are qualitative.
 
-## 24.12 In summary { #sez-sec-summary }
+## 27.12 In summary { #sez-sec-summary }
 
 !!! chiave "In summary"
 

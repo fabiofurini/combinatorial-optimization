@@ -6,7 +6,7 @@ title: "Heuristic algorithms: definitions"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 20** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Definitions](../exercises/heuristics.md)
+**Part 4 · Heuristic algorithms · Chapter 23** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Definitions](../exercises/heuristics.md)
 
 </div>
 
@@ -30,11 +30,11 @@ title: "Heuristic algorithms: definitions"
 
     - evaluate a heuristic algorithm by quality, running time and repeated runs.
 
-## 20.1 Heuristic algorithms
+## 23.1 Heuristic algorithms
 
 <a id="box-1-def-heuristic"></a>
 
-!!! definizione "Definition 20.1: Heuristic algorithm"
+!!! definizione "Definition 23.1: Heuristic algorithm"
 
     Given an <strong>optimization problem</strong> $\mathscr{P}$, let $z(I)$ be the <strong>optimal value</strong> of $\mathscr{P}$ on an <strong>instance</strong> $I$. A <strong>heuristic algorithm</strong> for $\mathscr{P}$ is an algorithm that, for every instance $I$ of $\mathscr{P}$, computes a feasible solution of $I$, without guaranteeing that it is optimal. We denote by $\mathscr{A}(I)$ the value of the solution computed by the heuristic algorithm $\mathscr{A}$ on the instance $I$.
 
@@ -49,13 +49,13 @@ title: "Heuristic algorithms: definitions"
 
 - The four problems used as examples — the knapsack problem, the bin packing problem, the travelling salesman problem and the scheduling problem $P\,||\,C_{\max}$ — are all <strong>NP-hard</strong>: an exact algorithm may require a running time that grows exponentially with the size of the instance.
 
-- <strong>Approximation algorithms</strong> (chapter «Approximation algorithms: definitions») are heuristic algorithms with a <em>proved</em> worst-case guarantee on the ratio between $\mathscr{A}(I)$ and $z(I)$. Most of the heuristic algorithms used in practice have no such guarantee: their quality is assessed on the instances at hand, as described in Section [20.8](#sez-sec-evaluation).
+- <strong>Approximation algorithms</strong> (chapter «Approximation algorithms: definitions») are heuristic algorithms with a <em>proved</em> worst-case guarantee on the ratio between $\mathscr{A}(I)$ and $z(I)$. Most of the heuristic algorithms used in practice have no such guarantee: their quality is assessed on the instances at hand, as described in Section [23.8](#sez-sec-evaluation).
 
 !!! chiave ""
 
     A heuristic algorithm trades the <strong>quality</strong> of the solution for the <strong>running time</strong>: the point of a heuristic is to compute, in a short time, a solution whose value is close to $z(I)$.
 
-## 20.2 The problems and the assumptions { #sez-sec-problems }
+## 23.2 The problems and the assumptions { #sez-sec-problems }
 
 - The heuristic algorithms of these notes are illustrated on four classical combinatorial optimization problems. Their definitions and assumptions are given in the notes on combinatorial optimization problems; we recall them briefly.
 
@@ -98,7 +98,7 @@ title: "Heuristic algorithms: definitions"
 
 <a id="box-2-ex-refKP"></a>
 
-!!! esempio "Example 20.1: KP reference instance"
+!!! esempio "Example 23.1: KP reference instance"
 
     A knapsack of capacity $c=9$ and $4$ items with profits and weights
 
@@ -115,7 +115,7 @@ title: "Heuristic algorithms: definitions"
 
 <a id="box-3-ex-refBPP"></a>
 
-!!! esempio "Example 20.2: BPP reference instance"
+!!! esempio "Example 23.2: BPP reference instance"
 
     Bins of capacity $c=7$ and $6$ items with weights
 
@@ -131,7 +131,7 @@ title: "Heuristic algorithms: definitions"
 
 <a id="box-4-ex-refTSP"></a>
 
-!!! esempio "Example 20.3: TSP reference instance"
+!!! esempio "Example 23.3: TSP reference instance"
 
     $5$ cities with the symmetric distances
 
@@ -151,7 +151,7 @@ title: "Heuristic algorithms: definitions"
 
 <a id="box-5-ex-refPCM"></a>
 
-!!! esempio "Example 20.4: $P\,||\,C_{\max}$ reference instance"
+!!! esempio "Example 23.4: $P\,||\,C_{\max}$ reference instance"
 
     $m=3$ identical machines and $7$ jobs with processing times
 
@@ -165,7 +165,7 @@ title: "Heuristic algorithms: definitions"
 
     The total processing time is $27$, so the makespan is at least $\lceil 27/3\rceil=9$, and the sets $J_1=\{1,3\}$, $J_2=\{2,4\}$, $J_3=\{5,6,7\}$ attain it: $z(I)=9$.
 
-## 20.3 Primal and dual bounds
+## 23.3 Primal and dual bounds
 
 - The value of <em>any</em> feasible solution bounds the optimal value from one side, and is called a <strong>primal bound</strong>. A heuristic algorithm is a method for computing primal bounds.
 
@@ -196,7 +196,7 @@ title: "Heuristic algorithms: definitions"
 
 <a id="box-6-prop-gap"></a>
 
-!!! teorema "Proposition 20.2"
+!!! teorema "Proposition 23.2"
 
     For every instance $I$, the relative error of $\mathscr{A}$ on $I$ is at most $gap(I)$.
 
@@ -220,13 +220,13 @@ title: "Heuristic algorithms: definitions"
 
 <a id="box-7-ex-gaps"></a>
 
-!!! esempio "Example 20.5: Bounds and gaps on the reference instances"
+!!! esempio "Example 23.5: Bounds and gaps on the reference instances"
 
     <strong>KP.</strong> The solution $\{1,3\}$ has weight $8\le 9$ and profit $\mathscr{A}(I)=16$. The LP relaxation, with the items sorted by non-increasing efficiency $(1,3,2,4)$, packs items $1$ and $3$ and a fraction $\frac{1}{4}$ of item $2$, so $z(I)\le 10+6+7\cdot\frac{1}{4}=17.75$ and, the profits being integer, $\mathrm{UB}(I)=17$. Hence $gap(I)=\frac{17-16}{16}=6.25\%$, while the relative error is $\frac{17-16}{17}\approx 5.9\%$.
 
     <strong>BPP.</strong> The packing patterns $\{1\}$, $\{2\}$, $\{3\}$, $\{4,5\}$, $\{6\}$ are feasible and use $\mathscr{A}(I)=5$ bins, while $\mathrm{LB}(I)=\left\lceil \frac{21}{7}\right\rceil=3$. Hence $gap(I)=\frac{5-3}{3}\approx 66.7\%$.
 
-    <strong>TSP.</strong> The tour $(1,3,2,4,5)$ has length $\mathscr{A}(I)=2+4+3+7+9=25$. A dual bound is given by [Proposition 20.3](#box-8-prop-twoedges) below: $\mathrm{LB}(I)=17$. Hence $gap(I)=\frac{25-17}{17}\approx 47.1\%$, while the relative error is $\frac{25-18}{18}\approx 38.9\%$.
+    <strong>TSP.</strong> The tour $(1,3,2,4,5)$ has length $\mathscr{A}(I)=2+4+3+7+9=25$. A dual bound is given by [Proposition 23.3](#box-8-prop-twoedges) below: $\mathrm{LB}(I)=17$. Hence $gap(I)=\frac{25-17}{17}\approx 47.1\%$, while the relative error is $\frac{25-18}{18}\approx 38.9\%$.
 
     <strong>$P\,||\,C_{\max}$.</strong> The solution with $J_1=\{1,5,7\}$, $J_2=\{2,6\}$, $J_3=\{3,4\}$ has makespan $\mathscr{A}(I)=11$, while $\mathrm{LB}(I)=\max\{5,\lceil 27/3\rceil\}=9$. Hence $gap(I)=\frac{11-9}{9}\approx 22.2\%$.
 
@@ -234,7 +234,7 @@ title: "Heuristic algorithms: definitions"
 
 <a id="box-8-prop-twoedges"></a>
 
-!!! teorema "Proposition 20.3"
+!!! teorema "Proposition 23.3"
 
     For every TSP instance $I$, let $a_i$ and $b_i$ be the two smallest distances from city $i$ to the other cities. Then
 
@@ -258,7 +258,7 @@ title: "Heuristic algorithms: definitions"
 
     A heuristic algorithm gives only one side of the gap. Without a dual bound on the other side, nothing can be said about the quality of the solution, however good it may look.
 
-## 20.4 Classification of heuristic algorithms
+## 23.4 Classification of heuristic algorithms
 
 - Heuristic algorithms are classified according to how they produce and use solutions. The four classes below are the subject of the following notes on heuristic algorithms.
 
@@ -287,7 +287,7 @@ title: "Heuristic algorithms: definitions"
 
 - The classes are not alternatives: a local search needs a starting solution, typically computed by a constructive heuristic; a metaheuristic contains one or more local searches; a MIP-based heuristic may start from, and improve, the solution of any of the others.
 
-## 20.5 Solution representation and search space
+## 23.5 Solution representation and search space
 
 - A heuristic algorithm manipulates solutions, which must be stored in a data structure: the <strong>representation</strong> of the solutions. The set of all the objects that the representation can describe is the <strong>search space</strong>.
 
@@ -330,13 +330,13 @@ title: "Heuristic algorithms: definitions"
 
 - The search spaces grow very quickly: a TSP with $n=20$ cities has $\frac{19!}{2}\approx 6\cdot 10^{16}$ distinct tours. A heuristic explores only a tiny part of the search space, and the question is <em>which</em> part.
 
-## 20.6 Neighbourhoods and local optima
+## 23.6 Neighbourhoods and local optima
 
 - Let $\mathscr{F}(I)$ be the set of the feasible solutions of the instance $I$, and let $f(S)$ be the value of the solution $S\in\mathscr{F}(I)$, so that $z(I)$ is the minimum (or maximum) of $f$ over $\mathscr{F}(I)$.
 
 <a id="box-9-def-neigh"></a>
 
-!!! definizione "Definition 20.4: Neighbourhood"
+!!! definizione "Definition 23.4: Neighbourhood"
 
     A <strong>neighbourhood</strong> is a function $N$ that associates with every feasible solution $S\in\mathscr{F}(I)$ a set $N(S)\subseteq\mathscr{F}(I)$ of feasible solutions, the <strong>neighbours</strong> of $S$. A <strong>move</strong> is the transformation of $S$ into one of its neighbours.
 
@@ -344,7 +344,7 @@ title: "Heuristic algorithms: definitions"
 
 <a id="box-10-def-localopt"></a>
 
-!!! definizione "Definition 20.5: Local optimum"
+!!! definizione "Definition 23.5: Local optimum"
 
     A feasible solution $S\in\mathscr{F}(I)$ is a <strong>local optimum</strong> with respect to the neighbourhood $N$ if no neighbour of $S$ is better than $S$:
 
@@ -361,7 +361,7 @@ title: "Heuristic algorithms: definitions"
 
 <a id="box-11-ex-kpneigh"></a>
 
-!!! esempio "Example 20.6: Two neighbourhoods for the KP"
+!!! esempio "Example 23.6: Two neighbourhoods for the KP"
 
     On the KP reference instance ($c=9$), consider the solution $x=(1,0,1,0)$, i.e., the items $\{1,3\}$, of weight $8$ and profit $16$.
 
@@ -441,7 +441,7 @@ title: "Heuristic algorithms: definitions"
 
 <a id="box-12-def-exact"></a>
 
-!!! definizione "Definition 20.6: Exact neighbourhood"
+!!! definizione "Definition 23.6: Exact neighbourhood"
 
     A neighbourhood $N$ is <strong>exact</strong> if every local optimum with respect to $N$ is a global optimum.
 
@@ -449,7 +449,7 @@ title: "Heuristic algorithms: definitions"
 
 - For NP-hard problems, small neighbourhoods are not exact, and the neighbourhoods that are exact, such as the one containing all the feasible solutions, are too large to be explored. The design of a neighbourhood is a compromise between its <strong>size</strong>, which determines the time needed to explore it, and the <strong>quality</strong> of its local optima.
 
-## 20.7 Intensification and diversification
+## 23.7 Intensification and diversification
 
 - The values of the solutions, seen as a function on the search space, form the <strong>landscape</strong> explored by a heuristic. For a minimization problem the local optima are the bottoms of the valleys, and the global optimum is the bottom of the deepest valley.
 
@@ -461,7 +461,7 @@ title: "Heuristic algorithms: definitions"
 
 - Too much intensification traps the search in the first valley; too much diversification makes it wander without ever exploring a valley to its bottom. Every metaheuristic is a way of balancing the two.
 
-## 20.8 How to evaluate a heuristic algorithm { #sez-sec-evaluation }
+## 23.8 How to evaluate a heuristic algorithm { #sez-sec-evaluation }
 
 - A heuristic algorithm is evaluated by the <strong>quality</strong> of its solutions and by its <strong>running time</strong>, which are conflicting goals.
 
@@ -477,7 +477,7 @@ title: "Heuristic algorithms: definitions"
 
     A heuristic algorithm is good if, on the instances it is meant for, it finds solutions with a small gap in the time available, consistently.
 
-## 20.9 Typical mistakes
+## 23.9 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -491,7 +491,7 @@ title: "Heuristic algorithms: definitions"
 
     - <strong>Trusting a good-looking solution.</strong> Without a dual bound on the other side, nothing can be said about the quality of a solution.
 
-## 20.10 In summary
+## 23.10 In summary
 
 !!! chiave "In summary"
 

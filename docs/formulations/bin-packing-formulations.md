@@ -98,9 +98,9 @@ title: "Formulations of the bin packing problem"
     && y_b &\in \{0,1\}, & \forall b \in \mathscr{B}. \label{cons3_BPP} \tag{10.1e}
     \end{align*}
 
-    This ILP model is referred to as the $\ILP_{\BPP}$ model.
+    This ILP model is referred to as the $\mathrm{ILP}_{\mathrm{BPP}}$ model.
 
-- Description of the objective function and constraints of the $\ILP_{\BPP}$ model:
+- Description of the objective function and constraints of the $\mathrm{ILP}_{\mathrm{BPP}}$ model:
 
     - the linear objective function $\eqref{obj_BPP}$ minimizes the total number of used bins;
 
@@ -126,7 +126,7 @@ title: "Formulations of the bin packing problem"
 
 <a id="box-2-texexpbox_ilp_bpp"></a>
 
-!!! esempio "Example 10.1: $\ILP_{\BPP}$ model"
+!!! esempio "Example 10.1: $\mathrm{ILP}_{\mathrm{BPP}}$ model"
 
     We consider a bin of capacity $c = 10$ and a set $\mathscr{I} = \{1,2,3\}$ of $3$ items ($n=3$), with the following item weights:
 
@@ -140,7 +140,7 @@ title: "Formulations of the bin packing problem"
 
     We refer to this BPP instance as <span style="color:#1971c2">Example 1</span>.
 
-    The $\ILP_{\BPP}$ model with $m=3$ for this BPP instance is:
+    The $\mathrm{ILP}_{\mathrm{BPP}}$ model with $m=3$ for this BPP instance is:
 
     $$
     \begin{array}{rccccccccccccr}
@@ -155,7 +155,7 @@ title: "Formulations of the bin packing problem"
     \end{array}
     $$
 
-    An optimal solution ${\tilde{\vet{x}}}(\ILP_{\BPP})$ is:
+    An optimal solution ${\tilde{\vet{x}}}(\mathrm{ILP}_{\mathrm{BPP}})$ is:
 
     $$
     \tilde{x}_{11} = \tilde{x}_{31} = 1,~~ \tilde{x}_{12} = \tilde{x}_{13} =  \tilde{x}_{21} = 0,~~ \tilde{x}_{22} = 1,~~ \tilde{x}_{23} = \tilde{x}_{32} = \tilde{x}_{33} = 0,~~ \tilde{y}_1 = \tilde{y}_2 = 1,~~ \tilde{y}_3 = 0
@@ -170,7 +170,7 @@ title: "Formulations of the bin packing problem"
     The optimal value is:
 
     $$
-    z(\ILP_{\BPP}) = 2
+    z(\mathrm{ILP}_{\mathrm{BPP}}) = 2
     $$
 
     The associated optimal solution of the BPP is given by the packing patterns
@@ -185,20 +185,20 @@ title: "Formulations of the bin packing problem"
 
 !!! chiave ""
 
-    To obtain a Linear Programming (LP) relaxation of the $\ILP_{\BPP}$ model, we relax constraints $\eqref{cons4_BPP}$ and $\eqref{cons3_BPP}$ with the following ones:
+    To obtain a Linear Programming (LP) relaxation of the $\mathrm{ILP}_{\mathrm{BPP}}$ model, we relax constraints $\eqref{cons4_BPP}$ and $\eqref{cons3_BPP}$ with the following ones:
 
     \begin{align*}
     && x_{jb} &\ge 0, & \forall j \in \mathscr{I},~ \forall b \in \mathscr{B}, \label{cons4_BPP_LP}  \tag{10.2a}\\[2ex]
     && y_b &\ge 0, & \forall b \in \mathscr{B}. \label{cons3_BPP_LP} \tag{10.2b}
     \end{align*}
 
-    The obtained LP model is referred to as the $\LP\text{-}0_{\BPP}$ model.
+    The obtained LP model is referred to as the $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ model.
 
 <a id="box-3-texexpbox_lp0_bpp"></a>
 
-!!! esempio "Example 10.2: $\LP\text{-}0_{\BPP}$ model"
+!!! esempio "Example 10.2: $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ model"
 
-    The $\LP\text{-}0_{\BPP}$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
+    The $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
 
     $$
     \begin{array}{rccccccccccccr}
@@ -213,7 +213,7 @@ title: "Formulations of the bin packing problem"
     \end{array}
     $$
 
-    An optimal solution ${\tilde{\vet{x}}}(\LP\text{-}0_{\BPP})$ is:
+    An optimal solution ${\tilde{\vet{x}}}(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ is:
 
     $$
     \tilde x_{11}=\tilde x_{12}=\tilde  x_{13}=\tilde  x_{21}=\tilde x_{22}=\tilde  x_{23}= \tilde  x_{31}=\tilde x_{32}=\tilde  x_{33}=\frac{1}{3},
@@ -221,15 +221,15 @@ title: "Formulations of the bin packing problem"
     \tilde{y}_1 = \tilde{y}_2 = \tilde{y}_3 = \frac{8}{15}
     $$
 
-    The optimal value $z(\LP\text{-}0_{\BPP})$ is $\frac{8}{5}$.
+    The optimal value $z(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ is $\frac{8}{5}$.
 
     Accordingly, we have the lower bound:
 
     $$
-    \frac{8}{5} \leq z(\ILP_{\BPP})
+    \frac{8}{5} \leq z(\mathrm{ILP}_{\mathrm{BPP}})
     $$
 
-    and, since $z(\ILP_{\BPP})$ is an integer, $z(\ILP_{\BPP}) \ge \lceil \frac{8}{5} \rceil = 2$.
+    and, since $z(\mathrm{ILP}_{\mathrm{BPP}})$ is an integer, $z(\mathrm{ILP}_{\mathrm{BPP}}) \ge \lceil \frac{8}{5} \rceil = 2$.
 
 !!! chiave ""
 
@@ -239,7 +239,7 @@ title: "Formulations of the bin packing problem"
 
     - a non-negative dual variable $\pi_b$ for each constraint $\eqref{cons2_BPP}$ ($b \in \mathscr{B}$)
 
-    the dual model of the $\LP\text{-}0_{\BPP}$ model reads as follows:
+    the dual model of the $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ model reads as follows:
 
     <a id="eq-DUAL_0"></a>
 
@@ -251,13 +251,13 @@ title: "Formulations of the bin packing problem"
     && \pi_b &\ge 0, & \forall b \in \mathscr{B}. \label{cons4_D} \tag{10.3e}
     \end{align*}
 
-    The obtained model is referred to as the dual $D(\LP\text{-}0_{\BPP})$ model.
+    The obtained model is referred to as the dual $D(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ model.
 
 <a id="box-4-texexpbox_dlp0_bpp"></a>
 
-!!! esempio "Example 10.3: $D(\LP\text{-}0_{\BPP})$ model"
+!!! esempio "Example 10.3: $D(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ model"
 
-    The  dual $D(\LP\text{-}0_{\BPP})$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
+    The  dual $D(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
 
     $$
     \begin{array}{rccccccr}
@@ -279,19 +279,19 @@ title: "Formulations of the bin packing problem"
     \end{array}
     $$
 
-    An optimal solution $(\tilde{\vet{\mu}},\tilde{\vet{\pi}})$ of $D(\LP\text{-}0_{\BPP})$ is:
+    An optimal solution $(\tilde{\vet{\mu}},\tilde{\vet{\pi}})$ of $D(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ is:
 
     $$
     \tilde{\mu}_1 = \frac{7}{10}, \quad \tilde{\mu}_2 = \frac{3}{5}, \quad \tilde{\mu}_3 = \frac{3}{10}, \quad \tilde{\pi}_1 = \tilde{\pi}_2 = \tilde{\pi}_3 = \frac{1}{10}
     $$
 
-    The optimal value $z(D(\LP\text{-}0_{\BPP}))$ is $\frac{8}{5}$.
+    The optimal value $z(D(\mathrm{LP}\text{-}0_{\mathrm{BPP}}))$ is $\frac{8}{5}$.
 
 <a id="box-5-prop_lp0_bpp_opt"></a>
 
 !!! teorema "Proposition 10.2"
 
-    An optimal solution of the primal $\LP\text{-}0_{\BPP}$ model is:
+    An optimal solution of the primal $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ model is:
 
     \begin{equation*}
     \label{PP}
@@ -303,7 +303,7 @@ title: "Formulations of the bin packing problem"
     \end{aligned} \tag{10.4}
     \end{equation*}
 
-    and an optimal solution of the dual $D(\LP\text{-}0_{\BPP})$ model is:
+    and an optimal solution of the dual $D(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ model is:
 
     \begin{equation*}
     \label{DD}
@@ -319,22 +319,22 @@ title: "Formulations of the bin packing problem"
 
 !!! teorema "Corollary 10.3"
 
-    The optimal value of the primal $\LP\text{-}0_{\BPP}$ and dual $D(\LP\text{-}0_{\BPP})$ models is:
+    The optimal value of the primal $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ and dual $D(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ models is:
 
     \begin{equation*}
     \label{VAL_LP0_BPP}
-    z(\LP\text{-}0_{\BPP})
+    z(\mathrm{LP}\text{-}0_{\mathrm{BPP}})
     =
     \frac{\sum_{j \in \mathscr{I}} w_j}{c}
     =
-    z(D(\LP\text{-}0_{\BPP})) \tag{10.6}
+    z(D(\mathrm{LP}\text{-}0_{\mathrm{BPP}})) \tag{10.6}
     \end{equation*}
 
 - The proof proceeds in three steps:
 
-    1. We show that $\eqref{PP}$ is a feasible solution for the primal $\LP\text{-}0_{\BPP}$ model;
+    1. We show that $\eqref{PP}$ is a feasible solution for the primal $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ model;
 
-    2. We show that $\eqref{DD}$ is a feasible solution for the dual $D(\LP\text{-}0_{\BPP})$ model;
+    2. We show that $\eqref{DD}$ is a feasible solution for the dual $D(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ model;
 
     3. We show that both feasible solutions have the same objective function value.
 
@@ -360,7 +360,7 @@ title: "Formulations of the bin packing problem"
 
         We have $\tilde{x}_{jb} \geq 0$ and $\tilde{y}_b \geq 0$, for every $j \in \mathscr{I}$ and every $b \in \mathscr{B}$, thus constraints $\eqref{cons4_BPP_LP}$ and $\eqref{cons3_BPP_LP}$ are satisfied.
 
-        Therefore, $\eqref{PP}$ provides a feasible solution for the primal $\LP\text{-}0_{\BPP}$ model.
+        Therefore, $\eqref{PP}$ provides a feasible solution for the primal $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ model.
 
     - **2.** For every $b \in \mathscr{B}$ and every $j \in \mathscr{I}$, we have:
 
@@ -380,7 +380,7 @@ title: "Formulations of the bin packing problem"
 
         We have $\tilde{\mu}_j \geq 0$ and $\tilde{\pi}_b \geq 0$, for every $b \in \mathscr{B}$ and every $j \in \mathscr{I}$, thus constraints $\eqref{cons3_D}$ and $\eqref{cons4_D}$ are satisfied.
 
-        Therefore, $\eqref{DD}$ provides a feasible solution for the dual $D(\LP\text{-}0_{\BPP})$ model.
+        Therefore, $\eqref{DD}$ provides a feasible solution for the dual $D(\mathrm{LP}\text{-}0_{\mathrm{BPP}})$ model.
 
     - **3.** For the objective functions, we have:
 
@@ -398,7 +398,7 @@ title: "Formulations of the bin packing problem"
 
 !!! teorema "Proposition 10.4"
 
-    An optimal solution of the primal $\LP\text{-}0_{\BPP}$ model is:
+    An optimal solution of the primal $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ model is:
 
     \begin{equation*}
     \label{PP_alternative}
@@ -414,7 +414,7 @@ title: "Formulations of the bin packing problem"
 
     \begin{equation*}
     \label{VAL_alternative}
-    z(\LP\text{-}0_{\BPP}) = \frac{\sum_{j \in \mathscr{I}} w_j}{c}. \tag{10.8}
+    z(\mathrm{LP}\text{-}0_{\mathrm{BPP}}) = \frac{\sum_{j \in \mathscr{I}} w_j}{c}. \tag{10.8}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -434,7 +434,7 @@ title: "Formulations of the bin packing problem"
     \sum_{b\in\mathscr{B}} y_b \;\ge\; \frac{1}{c}\sum_{j\in\mathscr{I}} w_j . \tag{10.9}
     \end{equation*}
 
-    Therefore every feasible solution of $\LP\text{-}0_{\BPP}$ satisfies $\eqref{eq:bpp-lb}$.
+    Therefore every feasible solution of $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$ satisfies $\eqref{eq:bpp-lb}$.
 
     Now consider the point defined in $\eqref{PP_alternative}$. For every $j\in\mathscr{I}$, we have
 
@@ -452,7 +452,7 @@ title: "Formulations of the bin packing problem"
     = c \; \tilde y_b ,
     $$
 
-    so constraints $\eqref{cons2_BPP}$ hold with equality. Finally, constraints $\eqref{cons4_BPP_LP}$ and $\eqref{cons3_BPP_LP}$ are satisfied by construction. Hence the point defined in $\eqref{PP_alternative}$ is a feasible solution for $\LP\text{-}0_{\BPP}$.
+    so constraints $\eqref{cons2_BPP}$ hold with equality. Finally, constraints $\eqref{cons4_BPP_LP}$ and $\eqref{cons3_BPP_LP}$ are satisfied by construction. Hence the point defined in $\eqref{PP_alternative}$ is a feasible solution for $\mathrm{LP}\text{-}0_{\mathrm{BPP}}$.
 
     The objective value of $\eqref{PP_alternative}$ is
 
@@ -468,7 +468,7 @@ title: "Formulations of the bin packing problem"
 
 !!! chiave ""
 
-    To obtain a Linear Programming (LP) relaxation of the $\ILP_{\BPP}$ model, we relax constraints $\eqref{cons4_BPP}$ and $\eqref{cons3_BPP}$ with the following ones:
+    To obtain a Linear Programming (LP) relaxation of the $\mathrm{ILP}_{\mathrm{BPP}}$ model, we relax constraints $\eqref{cons4_BPP}$ and $\eqref{cons3_BPP}$ with the following ones:
 
     \begin{align*}
     && x_{jb} &\ge 0, & \forall j \in \mathscr{I},\; \forall b \in \mathscr{B}, \label{cons5_BPP_LP_LL}  \tag{10.10a}\\[2ex]
@@ -478,9 +478,9 @@ title: "Formulations of the bin packing problem"
 
 <a id="box-8-texexpbox_lp_bpp"></a>
 
-!!! esempio "Example 10.4: $\LP_{\BPP}$ model"
+!!! esempio "Example 10.4: $\mathrm{LP}_{\mathrm{BPP}}$ model"
 
-    The  $\LP_{\BPP}$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
+    The  $\mathrm{LP}_{\mathrm{BPP}}$ model for the BPP instance of <span style="color:#1971c2">Example 1</span> is:
 
     $$
     \begin{array}{rccccccccccccr}
@@ -498,7 +498,7 @@ title: "Formulations of the bin packing problem"
     \end{array}
     $$
 
-    An optimal solution ${\tilde{\vet{x}}}(\LP_{\BPP})$ is:
+    An optimal solution ${\tilde{\vet{x}}}(\mathrm{LP}_{\mathrm{BPP}})$ is:
 
     $$
     \tilde x_{11}=\tilde x_{12}=\tilde  x_{13}=\tilde  x_{21}=\tilde x_{22}=\tilde  x_{23}= \tilde  x_{31}=\tilde x_{32}=\tilde  x_{33}=\frac{1}{3},
@@ -506,7 +506,7 @@ title: "Formulations of the bin packing problem"
     \tilde{y}_1 = \tilde{y}_2 = \tilde{y}_3 = \frac{8}{15}
     $$
 
-    The optimal value $z(\LP_{\BPP})$ is $\frac{8}{5}$. Accordingly, we have the same lower bound as before.
+    The optimal value $z(\mathrm{LP}_{\mathrm{BPP}})$ is $\frac{8}{5}$. Accordingly, we have the same lower bound as before.
 
 !!! chiave ""
 
@@ -518,7 +518,7 @@ title: "Formulations of the bin packing problem"
 
     - a non-positive dual variable $\lambda_b$ for each constraint $\eqref{cons3_BPP_LP_LL}$ ($b \in \mathscr{B}$)
 
-    the dual model of the $\LP_{\BPP}$ model reads as follows:
+    the dual model of the $\mathrm{LP}_{\mathrm{BPP}}$ model reads as follows:
 
     <a id="eq-DUAL_2"></a>
 
@@ -533,9 +533,9 @@ title: "Formulations of the bin packing problem"
 
 <a id="box-9-texexpbox_dlp_bpp"></a>
 
-!!! esempio "Example 10.5: $D(\LP_{\BPP})$ model"
+!!! esempio "Example 10.5: $D(\mathrm{LP}_{\mathrm{BPP}})$ model"
 
-    The  $D(\LP_{\BPP})$ model of <span style="color:#1971c2">Example 1</span> is:
+    The  $D(\mathrm{LP}_{\mathrm{BPP}})$ model of <span style="color:#1971c2">Example 1</span> is:
 
     $$
     \begin{array}{rcccccccccc}
@@ -558,7 +558,7 @@ title: "Formulations of the bin packing problem"
     \end{array}
     $$
 
-    The optimal value $z(D(\LP_{\BPP}))$  is $\frac{8}{5}$.  An optimal solution $(\tilde{\vet{\mu}},\tilde{\vet{\pi}},\tilde{\vet{\lambda}})$ of $D(\LP_{\BPP})$ is:
+    The optimal value $z(D(\mathrm{LP}_{\mathrm{BPP}}))$  is $\frac{8}{5}$.  An optimal solution $(\tilde{\vet{\mu}},\tilde{\vet{\pi}},\tilde{\vet{\lambda}})$ of $D(\mathrm{LP}_{\mathrm{BPP}})$ is:
 
     $$
     \tilde \mu_{1}= \frac{7}{10},~~~~\tilde \mu_{2}=\frac{3}{5},~~~~\tilde  \mu_{3}=\frac{3}{10},~~~~\tilde \pi_{1}= \tilde \pi_{2}=\tilde \pi_{3}=\frac{1}{10},~~~~\tilde  \lambda_{1}=\tilde  \lambda_{2}=\tilde \lambda_{3}=0
@@ -582,7 +582,7 @@ title: "Formulations of the bin packing problem"
 
 !!! teorema "Proposition 10.5"
 
-    An optimal solution of the primal $\LP_{\BPP}$ model is:
+    An optimal solution of the primal $\mathrm{LP}_{\mathrm{BPP}}$ model is:
 
     \begin{equation*}
     \label{PP_bis}
@@ -594,7 +594,7 @@ title: "Formulations of the bin packing problem"
     \end{aligned} \tag{10.12}
     \end{equation*}
 
-    and an optimal solution of the dual $D(\LP_{\BPP})$ model is:
+    and an optimal solution of the dual $D(\mathrm{LP}_{\mathrm{BPP}})$ model is:
 
     \begin{equation*}
     \label{DD_bis}
@@ -612,15 +612,15 @@ title: "Formulations of the bin packing problem"
 
 !!! teorema "Corollary 10.6"
 
-    The optimal value of the primal $\LP_{\BPP}$ and dual $D(\LP_{\BPP})$ models is:
+    The optimal value of the primal $\mathrm{LP}_{\mathrm{BPP}}$ and dual $D(\mathrm{LP}_{\mathrm{BPP}})$ models is:
 
     \begin{equation*}
     \label{VAL_LP_BPP}
-    z(\LP_{\BPP})
+    z(\mathrm{LP}_{\mathrm{BPP}})
     =
     \frac{\sum_{j \in \mathscr{I}} w_j}{c}
     =
-    z(D(\LP_{\BPP})) \tag{10.14}
+    z(D(\mathrm{LP}_{\mathrm{BPP}})) \tag{10.14}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -631,11 +631,11 @@ title: "Formulations of the bin packing problem"
     \tilde{y}_b = \frac{\sum_{j \in \mathscr{I}}  w_j}{m \; c} \le 1, \quad \forall b \in \mathscr{B},
     $$
 
-    since $\sum_{j} w_j / c \le z(\ILP_{\BPP}) \le m$, where the last inequality holds because $m$ is an upper bound on the number of bins in any optimal BPP solution. Accordingly, constraints $\eqref{cons3_BPP_LP_LL}$ are also satisfied. <span class="qed">□</span>
+    since $\sum_{j} w_j / c \le z(\mathrm{ILP}_{\mathrm{BPP}}) \le m$, where the last inequality holds because $m$ is an upper bound on the number of bins in any optimal BPP solution. Accordingly, constraints $\eqref{cons3_BPP_LP_LL}$ are also satisfied. <span class="qed">□</span>
 
 ### 10.4.1 Some important theoretical properties
 
-- The following two propositions show that the ratio between $z(\LP_{\BPP})$ and $z(\ILP_{\BPP})$ is at least one half for every BPP instance (<strong>by hypothesis</strong>  $z(\ILP_{\BPP}) >1$ since all items do not fit in a single bin). Furthermore, there exist instances for which the value one half can be asymptotically achieved as the capacity $c \to +\infty$.
+- The following two propositions show that the ratio between $z(\mathrm{LP}_{\mathrm{BPP}})$ and $z(\mathrm{ILP}_{\mathrm{BPP}})$ is at least one half for every BPP instance (<strong>by hypothesis</strong>  $z(\mathrm{ILP}_{\mathrm{BPP}}) >1$ since all items do not fit in a single bin). Furthermore, there exist instances for which the value one half can be asymptotically achieved as the capacity $c \to +\infty$.
 
 <a id="box-12-prop_lp_bpp_ratio_half"></a>
 
@@ -644,12 +644,12 @@ title: "Formulations of the bin packing problem"
     For every BPP instance, we have:
 
     \begin{equation*}
-    \frac{ z(\LP_{\BPP}) }{z(\ILP_{\BPP})} \ge \frac{1}{2} \tag{10.15}
+    \frac{ z(\mathrm{LP}_{\mathrm{BPP}}) }{z(\mathrm{ILP}_{\mathrm{BPP}})} \ge \frac{1}{2} \tag{10.15}
     \end{equation*}
 
 ??? dimostrazione "Proof"
 
-    Consider an optimal solution $\tilde{\vet{x}}(\ILP_{\BPP})$ of value $z=z(\ILP_{\BPP})$ (number of used bins). We can assume, without loss of generality, that bins $1,2,\dots,z$ are the non-empty ones.
+    Consider an optimal solution $\tilde{\vet{x}}(\mathrm{ILP}_{\mathrm{BPP}})$ of value $z=z(\mathrm{ILP}_{\mathrm{BPP}})$ (number of used bins). We can assume, without loss of generality, that bins $1,2,\dots,z$ are the non-empty ones.
 
     In an optimal solution, no two bins can have total item weight at most $c/2$, since otherwise their contents could be merged into a single bin without exceeding the bin capacity $c$ (contradicting optimality).
 
@@ -662,7 +662,7 @@ title: "Formulations of the bin packing problem"
     ~~~ \Longrightarrow ~~~
     \frac{ \frac{\sum_{j\in\mathscr{I}} w_j}{c} }{z} > \frac{1}{2}
     ~~~ \Longrightarrow ~~~
-    \frac{ z(\LP_{\BPP}) }{z(\ILP_{\BPP})} \ge \frac{1}{2}.
+    \frac{ z(\mathrm{LP}_{\mathrm{BPP}}) }{z(\mathrm{ILP}_{\mathrm{BPP}})} \ge \frac{1}{2}.
     $$
 
     Otherwise, suppose that there exists a bin with total item weight at most $c/2$. Renumbering bins if necessary, let it be bin $z$, so that
@@ -693,7 +693,7 @@ title: "Formulations of the bin packing problem"
     ~~~ \Longrightarrow ~~~
     \frac{ \frac{\sum_{j\in\mathscr{I}} w_j}{c} }{z} > \frac{1}{2}
     ~~~ \Longrightarrow ~~~
-    \frac{ z(\LP_{\BPP}) }{z(\ILP_{\BPP})} \ge \frac{1}{2}.
+    \frac{ z(\mathrm{LP}_{\mathrm{BPP}}) }{z(\mathrm{ILP}_{\mathrm{BPP}})} \ge \frac{1}{2}.
     \end{aligned}
     $$
 
@@ -706,7 +706,7 @@ title: "Formulations of the bin packing problem"
     There are BPP instances such that:
 
     \begin{equation*}
-    \frac{ z(\LP_{\BPP}) }{z(\ILP_{\BPP})} \to \frac{1}{2} \text{    as    } c \to +\infty \tag{10.16}
+    \frac{ z(\mathrm{LP}_{\mathrm{BPP}}) }{z(\mathrm{ILP}_{\mathrm{BPP}})} \to \frac{1}{2} \text{    as    } c \to +\infty \tag{10.16}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -720,19 +720,19 @@ title: "Formulations of the bin packing problem"
     No bin can contain more than one item, thus each item must be packed alone in its own bin. Therefore, the BPP optimal value is
 
     $$
-    z(\ILP_{\BPP}) = n.
+    z(\mathrm{ILP}_{\mathrm{BPP}}) = n.
     $$
 
     For the LP relaxation we have:
 
     $$
-    z(\LP_{\BPP})  =  \frac{n(\vartheta+1)}{2\;\vartheta}.
+    z(\mathrm{LP}_{\mathrm{BPP}})  =  \frac{n(\vartheta+1)}{2\;\vartheta}.
     $$
 
     It follows that:
 
     \begin{align*}
-    \lim_{\vartheta \to +\infty} \frac{ z(\LP_{\BPP}) }{z(\ILP_{\BPP})}
+    \lim_{\vartheta \to +\infty} \frac{ z(\mathrm{LP}_{\mathrm{BPP}}) }{z(\mathrm{ILP}_{\mathrm{BPP}})}
     &= \lim_{\vartheta \to +\infty} \frac{ \frac{n(\vartheta+1)}{2\;\vartheta} }{n}
     =\lim_{\vartheta \to +\infty}  \left( \frac{1}{2} + \underbrace{\frac{1}{2\;\vartheta}}_{\to 0}  \right) = \frac{1}{2}.
     \end{align*}
@@ -740,12 +740,12 @@ title: "Formulations of the bin packing problem"
     Accordingly,  we conclude that:
 
     $$
-    \frac{ z(\LP_{\BPP}) }{z(\ILP_{\BPP})} \to \frac{1}{2} \qquad \text{as} \qquad c \to +\infty.
+    \frac{ z(\mathrm{LP}_{\mathrm{BPP}}) }{z(\mathrm{ILP}_{\mathrm{BPP}})} \to \frac{1}{2} \qquad \text{as} \qquad c \to +\infty.
     $$
 
     <p class="qed-riga"><span class="qed">□</span></p>
 
-- The following two propositions show that the ratio between $\lceil z(\LP_{\BPP}) \rceil$ and $z(\ILP_{\BPP})$ is at least one half for every BPP instance. Furthermore, there exist instances for which the value one half can be asymptotically achieved as the number of items $n \to +\infty$.
+- The following two propositions show that the ratio between $\lceil z(\mathrm{LP}_{\mathrm{BPP}}) \rceil$ and $z(\mathrm{ILP}_{\mathrm{BPP}})$ is at least one half for every BPP instance. Furthermore, there exist instances for which the value one half can be asymptotically achieved as the number of items $n \to +\infty$.
 
 <a id="box-14-prop_ceil_lp_bpp_ratio_half"></a>
 
@@ -754,12 +754,12 @@ title: "Formulations of the bin packing problem"
     For every BPP instance, we have:
 
     \begin{equation*}
-    \frac{\lceil z(\LP_{\BPP}) \rceil}{z(\ILP_{\BPP})} \ge \frac{1}{2} \tag{10.17}
+    \frac{\lceil z(\mathrm{LP}_{\mathrm{BPP}}) \rceil}{z(\mathrm{ILP}_{\mathrm{BPP}})} \ge \frac{1}{2} \tag{10.17}
     \end{equation*}
 
 ??? dimostrazione "Proof"
 
-    Consider an optimal solution $\tilde{\vet{x}}(\ILP_{\BPP})$ of value $z=z(\ILP_{\BPP})$ (number of used bins). We can assume, without loss of generality, that bins $1,2,\dots,z$ are the non-empty ones.
+    Consider an optimal solution $\tilde{\vet{x}}(\mathrm{ILP}_{\mathrm{BPP}})$ of value $z=z(\mathrm{ILP}_{\mathrm{BPP}})$ (number of used bins). We can assume, without loss of generality, that bins $1,2,\dots,z$ are the non-empty ones.
 
     In an optimal solution, no two bins can have total item weight at most $c/2$, since otherwise their contents could be merged into a single bin without exceeding the bin capacity $c$ (contradicting optimality).
 
@@ -777,7 +777,7 @@ title: "Formulations of the bin packing problem"
     &\Longrightarrow ~~~
     \frac{\left\lceil \frac{\sum_{j\in\mathscr{I}} w_j}{c} \right\rceil}{z} \ge \frac{1}{2}
     ~~~ \Longrightarrow ~~~
-    \frac{\lceil z(\LP_{\BPP})\rceil}{z(\ILP_{\BPP})} \ge \frac{1}{2}.
+    \frac{\lceil z(\mathrm{LP}_{\mathrm{BPP}})\rceil}{z(\mathrm{ILP}_{\mathrm{BPP}})} \ge \frac{1}{2}.
     \end{aligned}
     $$
 
@@ -805,7 +805,7 @@ title: "Formulations of the bin packing problem"
     $$
     \frac{\left\lceil  \sum_{j \in \mathscr{I}}  \frac{w_j}{c} \right\rceil }{z} \ge \frac{1}{2} ~~~~
     \Longrightarrow ~~~~
-    \frac{\lceil z(\LP_{\BPP}) \rceil}{z(\ILP_{\BPP})} \ge \frac{1}{2}.
+    \frac{\lceil z(\mathrm{LP}_{\mathrm{BPP}}) \rceil}{z(\mathrm{ILP}_{\mathrm{BPP}})} \ge \frac{1}{2}.
     $$
 
     <p class="qed-riga"><span class="qed">□</span></p>
@@ -817,7 +817,7 @@ title: "Formulations of the bin packing problem"
     There are BPP instances such that:
 
     \begin{equation*}
-    \frac{\lceil z(\LP_{\BPP}) \rceil}{z(\ILP_{\BPP})}  \to \frac{1}{2} \text{    as    } n \to +\infty \tag{10.18}
+    \frac{\lceil z(\mathrm{LP}_{\mathrm{BPP}}) \rceil}{z(\mathrm{ILP}_{\mathrm{BPP}})}  \to \frac{1}{2} \text{    as    } n \to +\infty \tag{10.18}
     \end{equation*}
 
 ??? dimostrazione "Proof"
@@ -831,21 +831,21 @@ title: "Formulations of the bin packing problem"
     No bin can contain more than one item, since $w_j>c/2$ for every $j$. Thus each item must be packed alone in its own bin. Therefore, the BPP optimal value is
 
     $$
-    z(\ILP_{\BPP})=n.
+    z(\mathrm{ILP}_{\mathrm{BPP}})=n.
     $$
 
     For the LP relaxation we have:
 
     $$
-    z(\LP_{\BPP})=\frac{\sum_{j\in\mathscr I} w_j}{c}
+    z(\mathrm{LP}_{\mathrm{BPP}})=\frac{\sum_{j\in\mathscr I} w_j}{c}
     =\frac{n\left(\frac{n}{2}+1\right)}{n}
     =\frac{n}{2}+1,
     $$
 
-    hence $\lceil z(\LP_{\BPP})\rceil=\frac{n}{2}+1$ (since $n$ is even). It follows that:
+    hence $\lceil z(\mathrm{LP}_{\mathrm{BPP}})\rceil=\frac{n}{2}+1$ (since $n$ is even). It follows that:
 
     $$
-    \lim_{n\to+\infty}\frac{\lceil z(\LP_{\BPP})\rceil}{z(\ILP_{\BPP})}
+    \lim_{n\to+\infty}\frac{\lceil z(\mathrm{LP}_{\mathrm{BPP}})\rceil}{z(\mathrm{ILP}_{\mathrm{BPP}})}
     =
     \lim_{n\to+\infty}\frac{\frac{n}{2}+1}{n}
     =
@@ -856,7 +856,7 @@ title: "Formulations of the bin packing problem"
     Accordingly, we conclude that:
 
     $$
-    \frac{\lceil z(\LP_{\BPP})\rceil}{z(\ILP_{\BPP})} \to \frac{1}{2}
+    \frac{\lceil z(\mathrm{LP}_{\mathrm{BPP}})\rceil}{z(\mathrm{ILP}_{\mathrm{BPP}})} \to \frac{1}{2}
     \qquad \text{as} \qquad n \to +\infty.
     $$
 
@@ -866,13 +866,13 @@ title: "Formulations of the bin packing problem"
 
 !!! attenzione "Warning"
 
-    - <strong>Choosing $m$ too small.</strong> The number $m$ of bins must be an upper bound on the number of bins of an optimal solution: with $m < z(\ILP_{\BPP})$ the model has no feasible solution. The value $m=n$ is always valid.
+    - <strong>Choosing $m$ too small.</strong> The number $m$ of bins must be an upper bound on the number of bins of an optimal solution: with $m < z(\mathrm{ILP}_{\mathrm{BPP}})$ the model has no feasible solution. The value $m=n$ is always valid.
 
-    - <strong>Forgetting to round up.</strong> The optimal value of the $\ILP_{\BPP}$ model is an integer, so the lower bound from the relaxations is $\lceil \sum_{j} w_j / c \rceil$; in Example 1 it is $\lceil \tfrac{8}{5} \rceil = 2$, not $\tfrac{8}{5}$.
+    - <strong>Forgetting to round up.</strong> The optimal value of the $\mathrm{ILP}_{\mathrm{BPP}}$ model is an integer, so the lower bound from the relaxations is $\lceil \sum_{j} w_j / c \rceil$; in Example 1 it is $\lceil \tfrac{8}{5} \rceil = 2$, not $\tfrac{8}{5}$.
 
     - <strong>Believing that the model counts only non-empty bins.</strong> The constraints allow $y_b=1$ for an empty bin: it is the objective function that switches such bins off, in every optimal solution.
 
-    - <strong>Ignoring the symmetry.</strong> Permuting the indices of the bins gives another optimal solution with the same packing: the $\ILP_{\BPP}$ model has many equivalent optimal solutions.
+    - <strong>Ignoring the symmetry.</strong> Permuting the indices of the bins gives another optimal solution with the same packing: the $\mathrm{ILP}_{\mathrm{BPP}}$ model has many equivalent optimal solutions.
 
     - <strong>Expecting a better relaxation from $y_b \le 1$.</strong> The second relaxation has the same optimal value as the first one: the upper bounds $y_b \le 1$ do not cut off the optimal solution of the first relaxation.
 
@@ -880,15 +880,15 @@ title: "Formulations of the bin packing problem"
 
 !!! chiave "In summary"
 
-    - The $\ILP_{\BPP}$ model has $m \cdot n$ assignment variables $x_{jb}$ and $m$ activation variables $y_b$; the capacity constraints link them.
+    - The $\mathrm{ILP}_{\mathrm{BPP}}$ model has $m \cdot n$ assignment variables $x_{jb}$ and $m$ activation variables $y_b$; the capacity constraints link them.
 
-    - Both LP relaxations have optimal value $z(\LP_{\BPP}) = \sum_{j} w_j / c$, with dual solution $\tilde{\mu}_j = w_j/c$ and $\tilde{\pi}_b = 1/c$.
+    - Both LP relaxations have optimal value $z(\mathrm{LP}_{\mathrm{BPP}}) = \sum_{j} w_j / c$, with dual solution $\tilde{\mu}_j = w_j/c$ and $\tilde{\pi}_b = 1/c$.
 
-    - Since the optimal value is an integer, $\lceil z(\LP_{\BPP}) \rceil$ is a lower bound on the number of bins.
+    - Since the optimal value is an integer, $\lceil z(\mathrm{LP}_{\mathrm{BPP}}) \rceil$ is a lower bound on the number of bins.
 
-    - The ratio between $z(\LP_{\BPP})$ and $z(\ILP_{\BPP})$ is at least $\tfrac{1}{2}$, and the value $\tfrac{1}{2}$ is asymptotically attained; the same holds for $\lceil z(\LP_{\BPP}) \rceil$.
+    - The ratio between $z(\mathrm{LP}_{\mathrm{BPP}})$ and $z(\mathrm{ILP}_{\mathrm{BPP}})$ is at least $\tfrac{1}{2}$, and the value $\tfrac{1}{2}$ is asymptotically attained; the same holds for $\lceil z(\mathrm{LP}_{\mathrm{BPP}}) \rceil$.
 
-    <strong>Dashboard of Example 1.</strong> Bounds on $z(\ILP_{\BPP})$ computed in this chapter:
+    <strong>Dashboard of Example 1.</strong> Bounds on $z(\mathrm{ILP}_{\mathrm{BPP}})$ computed in this chapter:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -899,12 +899,12 @@ title: "Formulations of the bin packing problem"
     <tr>
     <td>First relaxation</td>
     <td><span class="arithmatex">\(\tfrac{8}{5}\)</span></td>
-    <td><span class="arithmatex">\(z(\LP\text{-}0_{\BPP})\)</span></td>
+    <td><span class="arithmatex">\(z(\mathrm{LP}\text{-}0_{\mathrm{BPP}})\)</span></td>
     </tr>
     <tr>
     <td>Second relaxation</td>
     <td><span class="arithmatex">\(\tfrac{8}{5}\)</span></td>
-    <td><span class="arithmatex">\(z(\LP_{\BPP})\)</span></td>
+    <td><span class="arithmatex">\(z(\mathrm{LP}_{\mathrm{BPP}})\)</span></td>
     </tr>
     <tr>
     <td>Lower bound</td>

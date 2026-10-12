@@ -5,7 +5,7 @@ hide:
 title: "List scheduling and LPT"
 ---
 
-[← Lab](index.md) · Chapter: [Constructive heuristics](../heuristic-algorithms/constructive-heuristics.md)
+[← Lab](index.md) · Chapter: [Constructive heuristics](../heuristic-algorithms/constructive-heuristics/index.md)
 
 # List scheduling and LPT
 
