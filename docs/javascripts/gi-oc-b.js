@@ -572,8 +572,14 @@
   /** le città della board corrente: una per punto di D.P; trascinabili solo nel piano */
   function cittaSullaBoard(board, st) {
     const D = st.dati, C = M.COL(st);
+    // etichetta della città verso l'esterno (lontano dal baricentro): non cade sui lati del giro
+    const fuori = (i) => {
+      const cx = D.P.reduce((a, q) => a + q[0], 0) / D.P.length, cy = D.P.reduce((a, q) => a + q[1], 0) / D.P.length;
+      const dx = D.P[i][0] - cx, dy = D.P[i][1] - cy, n = Math.hypot(dx, dy) || 1;
+      return [Math.round(16 * dx / n) - 4, Math.round(16 * dy / n) - 2];
+    };
     if (D.ptsBoard === board && D.pts.length === D.P.length) {
-      D.pts.forEach((pt, i) => { if (Math.abs(pt.X() - D.P[i][0]) > 1e-9 || Math.abs(pt.Y() - D.P[i][1]) > 1e-9) pt.moveTo(D.P[i]); pt.setAttribute({ fixed: !!D.mat }); });
+      D.pts.forEach((pt, i) => { if (Math.abs(pt.X() - D.P[i][0]) > 1e-9 || Math.abs(pt.Y() - D.P[i][1]) > 1e-9) pt.moveTo(D.P[i]); pt.setAttribute({ fixed: !!D.mat }); if (pt.label) pt.label.setAttribute({ offset: fuori(i) }); });
       return;
     }
     if (D.ptsBoard === board) for (const o of D.pts) { try { board.removeObject(o); } catch (e) { /* già tolto */ } }
@@ -582,13 +588,17 @@
       const pt = board.create("point", q.slice(), {
         name: String(i + 1), size: 7, snapToGrid: !D.mat, snapSizeX: 1, snapSizeY: 1, showInfobox: false, fixed: !!D.mat,
         fillColor: C.grigio, strokeColor: C.muted, strokeWidth: 2, highlightFillColor: C.a, highlightStrokeColor: C.a,
-        label: { offset: [10, 10], fontSize: 15, cssStyle: "font-weight:700" },
+        label: { offset: fuori(i), fontSize: 15, cssStyle: "font-weight:700" },
       });
       pt.on("drag", () => {
         if (D.mat) return;
         const X = clamp(Math.round(pt.X()), 0, LATO), Y = clamp(Math.round(pt.Y()), 0, LATO);
         if (X !== pt.X() || Y !== pt.Y()) pt.moveTo([X, Y]);
-        if (D.P[i][0] !== X || D.P[i][1] !== Y) { D.P[i] = [X, Y]; st.aggiorna(); }
+        if (D.P[i][0] !== X || D.P[i][1] !== Y) {
+          D.P[i] = [X, Y];
+          D.pts.forEach((o, j) => o.label && o.label.setAttribute({ offset: fuori(j) }));
+          st.aggiorna();
+        }
       });
       return pt;
     });

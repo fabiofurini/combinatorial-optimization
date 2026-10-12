@@ -97,7 +97,7 @@ extra:
       lang: it
 
 extra_css:
-  - stylesheets/extra.css?v=c32dbc0e9e
+  - stylesheets/extra.css?v=ca00ff56e6
   - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraph.css
   - stylesheets/interattivi.css?v=c51ac2286b
 
@@ -124,11 +124,11 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
   # grafici interattivi: JSXGraph, il motore, poi le ricette (gi-*.js, le aggiunge genera_sito.py)
   - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraphcore.js
-  - javascripts/interattivi.js?v=2d16e8470b
+  - javascripts/interattivi.js?v=2687ca69e3
   - javascripts/gi-comune.js?v=40df75e3e5
   - javascripts/gi-oc-0.js?v=5844319aa9
   - javascripts/gi-oc-a.js?v=7dec72111d
-  - javascripts/gi-oc-b.js?v=a9b6f62b6a
+  - javascripts/gi-oc-b.js?v=445a1b1c3f
   - javascripts/gi-oc-c.js?v=7be68e397e
 
 

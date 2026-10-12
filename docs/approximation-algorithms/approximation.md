@@ -45,9 +45,9 @@ title: "Approximation algorithms: definitions"
     $$
     \begin{cases}
     \mathscr{A}(I)\ge z(I)\ \ \text{and}\ \ \dfrac{\mathscr{A}(I)}{z(I)} \ge 1
-    & \quad \text{if~ $\mathscr{P}$ is a minimization problem,}\\[2.5ex]
+    & \quad \text{if $\mathscr{P}$ is a minimization problem,}\\[2.5ex]
     \mathscr{A}(I)\le z(I)\ \ \text{and}\ \ \dfrac{z(I)}{\mathscr{A}(I)} \ge 1
-    & \quad \text{if~ $\mathscr{P}$ is a maximization problem.}
+    & \quad \text{if $\mathscr{P}$ is a maximization problem.}
     \end{cases}
     $$
 
@@ -73,8 +73,8 @@ title: "Approximation algorithms: definitions"
 
     $$
     \begin{cases}
-    \dfrac{\mathscr{A}(I)}{z(I)} & \quad \text{if~ $\mathscr{P}$ is a minimization problem,}\\[2.5ex]
-    \dfrac{z(I)}{\mathscr{A}(I)} & \quad \text{if~ $\mathscr{P}$ is a maximization problem.}
+    \dfrac{\mathscr{A}(I)}{z(I)} & \quad \text{if $\mathscr{P}$ is a minimization problem,}\\[2.5ex]
+    \dfrac{z(I)}{\mathscr{A}(I)} & \quad \text{if $\mathscr{P}$ is a maximization problem.}
     \end{cases}
     $$
 
@@ -88,8 +88,8 @@ title: "Approximation algorithms: definitions"
 
     $$
     \begin{cases}
-    \dfrac{\mathscr{A}(I)}{z(I)} \le \alpha & \quad \text{if~ $\mathscr{P}$ is a minimization problem,}\\[2.5ex]
-    \dfrac{z(I)}{\mathscr{A}(I)} \le \alpha & \quad \text{if~ $\mathscr{P}$ is a maximization problem.}
+    \dfrac{\mathscr{A}(I)}{z(I)} \le \alpha & \quad \text{if $\mathscr{P}$ is a minimization problem,}\\[2.5ex]
+    \dfrac{z(I)}{\mathscr{A}(I)} \le \alpha & \quad \text{if $\mathscr{P}$ is a maximization problem.}
     \end{cases}
     $$
 
@@ -117,9 +117,9 @@ title: "Approximation algorithms: definitions"
     r(\mathscr{A}) \;=\;
     \begin{cases}
     \sup \left\{\, \dfrac{\mathscr{A}(I)}{z(I)} : I \text{ is an instance of } \mathscr{P} \,\right\}
-    & \quad \text{if~ $\mathscr{P}$ is a minimization problem,}\\[3.0ex]
+    & \quad \text{if $\mathscr{P}$ is a minimization problem,}\\[3.0ex]
     \sup \left\{\, \dfrac{z(I)}{\mathscr{A}(I)} : I \text{ is an instance of } \mathscr{P} \,\right\}
-    & \quad \text{if~ $\mathscr{P}$ is a maximization problem.}
+    & \quad \text{if $\mathscr{P}$ is a maximization problem.}
     \end{cases}
     $$
 
@@ -156,8 +156,8 @@ title: "Approximation algorithms: definitions"
 
     $$
     \begin{cases}
-    \mathscr{A}(I)-z(I) \le \beta & \text{if~ $\mathscr{P}$ is a minimization problem,}\\[2ex]
-    z(I)-\mathscr{A}(I) \le \beta & \text{if~ $\mathscr{P}$ is a maximization problem.}
+    \mathscr{A}(I)-z(I) \le \beta & \text{if $\mathscr{P}$ is a minimization problem,}\\[2ex]
+    z(I)-\mathscr{A}(I) \le \beta & \text{if $\mathscr{P}$ is a maximization problem.}
     \end{cases}
     $$
 
@@ -185,9 +185,9 @@ title: "Approximation algorithms: definitions"
     e(\mathscr{A}) \;=\;
     \begin{cases}
     \sup \left\{\, \mathscr{A}(I)-z(I) : I \text{ instance of } \mathscr{P} \,\right\}
-    & \text{if~ $\mathscr{P}$ is a minimization problem,}\\[3.0ex]
+    & \text{if $\mathscr{P}$ is a minimization problem,}\\[3.0ex]
     \sup \left\{\, z(I)-\mathscr{A}(I) : I \text{ instance of } \mathscr{P} \,\right\}
-    & \text{if~ $\mathscr{P}$ is a maximization problem.}
+    & \text{if $\mathscr{P}$ is a maximization problem.}
     \end{cases}
     $$
 
@@ -207,8 +207,8 @@ title: "Approximation algorithms: definitions"
 
     $$
     \begin{cases}
-    \dfrac{\mathscr{A}(I)-z(I)}{z(I)} & \quad \text{if~ $\mathscr{P}$ is a minimization problem,}\\[2.5ex]
-    \dfrac{z(I)-\mathscr{A}(I)}{z(I)} & \quad \text{if~ $\mathscr{P}$ is a maximization problem.}
+    \dfrac{\mathscr{A}(I)-z(I)}{z(I)} & \quad \text{if $\mathscr{P}$ is a minimization problem,}\\[2.5ex]
+    \dfrac{z(I)-\mathscr{A}(I)}{z(I)} & \quad \text{if $\mathscr{P}$ is a maximization problem.}
     \end{cases}
     $$
 
@@ -225,9 +225,9 @@ title: "Approximation algorithms: definitions"
     $$
     \begin{cases}
     \dfrac{\mathscr{A}_{\varepsilon}(I)-z(I)}{z(I)} \le \varepsilon
-    & \text{if~ $\mathscr{P}$ is a minimization problem,}\\[2.5ex]
+    & \text{if $\mathscr{P}$ is a minimization problem,}\\[2.5ex]
     \dfrac{z(I)-\mathscr{A}_{\varepsilon}(I)}{z(I)} \le \varepsilon
-    & \text{if~ $\mathscr{P}$ is a maximization problem.}
+    & \text{if $\mathscr{P}$ is a maximization problem.}
     \end{cases}
     $$
 
