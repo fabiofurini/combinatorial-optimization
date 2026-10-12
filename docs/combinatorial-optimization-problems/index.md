@@ -10,9 +10,9 @@
 
     ---
 
-    Combinatorial optimization problems · Counting the solutions · Combinatorial explosion and brute force · Primal bounds, dual bounds and gap
+    Combinatorial optimization problems
 
-    [:octicons-arrow-right-24: Read the chapter](combinatorial-optimization.md) · [Exercises](../exercises/combinatorial-optimization.md)
+    [:octicons-arrow-right-24: Read the chapter](combinatorial-optimization/index.md) · [Exercises](../exercises/combinatorial-optimization.md)
 
 -   **2. Knapsack problems**
 

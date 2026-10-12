@@ -18,7 +18,7 @@ The problems on which the whole course focuses: for each one, everything the cou
 
 - The whole course focuses on the problems below: for each one, a page summarizes what the course does on it.
 
-The general concepts are in [Chapter 1](../combinatorial-optimization-problems/combinatorial-optimization.md).
+The general concepts are in [Chapter 1](../combinatorial-optimization-problems/combinatorial-optimization/index.md).
 
 ## The selected problems
 

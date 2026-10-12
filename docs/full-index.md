@@ -2,16 +2,16 @@
 
 ## [Combinatorial optimization problems](combinatorial-optimization-problems/index.md)
 
-1. [Combinatorial optimization problems](combinatorial-optimization-problems/combinatorial-optimization.md)
+1. [Combinatorial optimization problems](combinatorial-optimization-problems/combinatorial-optimization/index.md)
     - 1.1 Combinatorial optimization problems
-    - 1.2 Counting the solutions
-    - 1.3 Combinatorial explosion and brute force
-    - 1.4 Primal bounds, dual bounds and gap
-    - 1.5 A glimpse of computational complexity
-    - 1.6 Typical mistakes
-    - 1.7 In summary
-    - 1.8 Exercises
-    - 1.9 Roadmap of the course
+    - [1.2 Counting the solutions](combinatorial-optimization-problems/combinatorial-optimization/counting-the-solutions.md)
+    - [1.3 Combinatorial explosion and brute force](combinatorial-optimization-problems/combinatorial-optimization/counting-the-solutions.md)
+    - [1.4 Primal bounds, dual bounds and gap](combinatorial-optimization-problems/combinatorial-optimization/primal-bounds-dual-bounds-and-gap.md)
+    - [1.5 A glimpse of computational complexity](combinatorial-optimization-problems/combinatorial-optimization/primal-bounds-dual-bounds-and-gap.md)
+    - [1.6 Typical mistakes](combinatorial-optimization-problems/combinatorial-optimization/typical-mistakes.md)
+    - [1.7 In summary](combinatorial-optimization-problems/combinatorial-optimization/typical-mistakes.md)
+    - [1.8 Exercises](combinatorial-optimization-problems/combinatorial-optimization/exercises.md)
+    - [1.9 Roadmap of the course](combinatorial-optimization-problems/combinatorial-optimization/exercises.md)
 2. [Knapsack problems](combinatorial-optimization-problems/knapsack/index.md)
     - 2.1 The knapsack problem
     - [2.2 The subset sum problem](combinatorial-optimization-problems/knapsack/the-subset-sum-problem.md)

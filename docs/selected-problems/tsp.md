@@ -34,7 +34,7 @@ title: "The travelling salesman problem"
 
 Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/travelling-salesman-problem.md).
 
-- Strongly NP-hard: it contains the Hamiltonian cycle problem ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization.md#box-12-def-pseudo)).
+- Strongly NP-hard: it contains the Hamiltonian cycle problem ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization/primal-bounds-dual-bounds-and-gap.md#box-12-def-pseudo)).
 
 - Lower bound $\lceil \frac12 \sum_i (a_i+b_i) \rceil$, with $a_i, b_i$ the two shortest edges at city $i$ ([Ch. 6](../combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md#box-7-obs-tsp-lb)).
 

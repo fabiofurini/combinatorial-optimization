@@ -18,7 +18,7 @@ professor at [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
 
 **The course lecture notes, online**: knapsack, bin packing, vertex coloring, maximum clique, TSP, parallel machine scheduling and lot sizing, solved in every way: formulations and their properties, dynamic programming, heuristic and approximation algorithms, problem-specific branch-and-bound; with definitions, results with proofs, examples worked out step by step and exercises with solutions.
 
-[Start :material-arrow-right:](combinatorial-optimization-problems/index.md){ .md-button .md-button--primary }
+[Start :material-arrow-right:](combinatorial-optimization-problems/combinatorial-optimization/index.md){ .md-button .md-button--primary }
 [:material-star-outline: Selected problems](selected-problems/index.md){ .md-button }
 [The exercises](exercises/index.md){ .md-button }
 [:material-view-list: Catalogue of problems](catalogue/index.md){ .md-button }

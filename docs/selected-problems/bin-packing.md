@@ -36,7 +36,7 @@ title: "The bin packing problem"
 
 Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/bin-packing-problem.md).
 
-- Strongly NP-hard: no pseudo-polynomial algorithm exists, unless $P=NP$ ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization.md#box-12-def-pseudo)).
+- Strongly NP-hard: no pseudo-polynomial algorithm exists, unless $P=NP$ ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization/primal-bounds-dual-bounds-and-gap.md#box-12-def-pseudo)).
 
 - Weight bound $\LB = \lceil \sum_j w_j / c \rceil$; it is not always tight: three items of weight $6$ with $c=10$ need $3$ bins, not $2$ ([Ch. 3](../combinatorial-optimization-problems/bin-packing/index.md#box-3-obs-bpp-l1)).
 

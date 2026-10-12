@@ -155,10 +155,15 @@ extra_javascript:
 nav:
   - Home: index.md
   - Combinatorial optimization:
-      - combinatorial-optimization-problems/index.md
+      - combinatorial-optimization-problems/combinatorial-optimization/index.md
+      - "Counting the solutions · Combinatorial explosion and brute force": combinatorial-optimization-problems/combinatorial-optimization/counting-the-solutions.md
+      - "Primal bounds, dual bounds and gap · A glimpse of computational complexity": combinatorial-optimization-problems/combinatorial-optimization/primal-bounds-dual-bounds-and-gap.md
+      - "Typical mistakes · In summary": combinatorial-optimization-problems/combinatorial-optimization/typical-mistakes.md
+      - "Exercises · Roadmap of the course": combinatorial-optimization-problems/combinatorial-optimization/exercises.md
+  - Selected problems:
+      - selected-problems/index.md
       - "The problems at a glance": combinatorial-optimization-problems/problems.md
-      - "1. Combinatorial optimization": combinatorial-optimization-problems/combinatorial-optimization.md
-      - "2. Knapsack":
+      - "Knapsack":
           - combinatorial-optimization-problems/knapsack/index.md
           - "Subset sum": combinatorial-optimization-problems/knapsack/the-subset-sum-problem.md
           - "Bounded knapsack": combinatorial-optimization-problems/knapsack/the-bounded-knapsack-problem.md
@@ -168,36 +173,34 @@ nav:
           - "Multiple-choice knapsack": combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem.md
           - "Knapsack with setups": combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md
           - "Remarks and summary": combinatorial-optimization-problems/knapsack/remarks-and-summary.md
-      - "3. Bin packing":
+          - "The course on this problem": selected-problems/knapsack.md
+      - "Bin packing":
           - combinatorial-optimization-problems/bin-packing/index.md
           - "Cutting stock": combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md
           - "Remarks and summary": combinatorial-optimization-problems/bin-packing/remarks-and-summary.md
-      - "4. Vertex coloring": combinatorial-optimization-problems/coloring.md
-      - "5. Maximum clique":
+          - "The course on this problem": selected-problems/bin-packing.md
+      - "Vertex coloring":
+          - combinatorial-optimization-problems/coloring.md
+          - "The course on this problem": selected-problems/vertex-coloring.md
+      - "Maximum clique":
           - combinatorial-optimization-problems/clique/index.md
           - "Weighted variants": combinatorial-optimization-problems/clique/weighted-variants.md
           - "Remarks and summary": combinatorial-optimization-problems/clique/remarks-and-summary.md
-      - "6. TSP":
+          - "The course on this problem": selected-problems/maximum-clique.md
+      - "TSP":
           - combinatorial-optimization-problems/tsp/index.md
           - "Metric and asymmetric TSP": combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md
           - "Remarks and summary": combinatorial-optimization-problems/tsp/remarks-and-summary.md
-      - "7. Machine scheduling":
+          - "The course on this problem": selected-problems/tsp.md
+      - "Machine scheduling":
           - combinatorial-optimization-problems/pcmax/index.md
           - "Remarks and summary": combinatorial-optimization-problems/pcmax/remarks-and-summary.md
-      - "8. Lot sizing":
+          - "The course on this problem": selected-problems/pcmax.md
+      - "Lot sizing":
           - combinatorial-optimization-problems/lot-sizing/index.md
           - "Variants": combinatorial-optimization-problems/lot-sizing/variants.md
           - "Remarks and summary": combinatorial-optimization-problems/lot-sizing/remarks-and-summary.md
-  - Selected problems:
-      - selected-problems/index.md
-      - "Comparison": selected-problems/at-a-glance.md
-      - "KP": selected-problems/knapsack.md
-      - "BPP": selected-problems/bin-packing.md
-      - "VCP": selected-problems/vertex-coloring.md
-      - "MCP": selected-problems/maximum-clique.md
-      - "TSP": selected-problems/tsp.md
-      - "P||Cmax": selected-problems/pcmax.md
-      - "CLS": selected-problems/lot-sizing.md
+          - "The course on this problem": selected-problems/lot-sizing.md
   - Formulations:
       - formulations/index.md
       - "9. Knapsack": formulations/knapsack-formulations.md
