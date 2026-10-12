@@ -30,18 +30,45 @@ title: "Knapsack problems"
 
     - tell the variants apart: copies of the items, several resources, several knapsacks, classes of items.
 
-<div class="sottopagine" markdown>
+<div class="grid cards sottopagine" markdown>
 
-**The chapter is organised in pages: this page and**
+-   **Definition**
 
-1. [2.2 The subset sum problem](the-subset-sum-problem.md)
-2. [2.3 The bounded knapsack problem](the-bounded-knapsack-problem.md)
-3. [2.4 The unbounded knapsack problem](the-unbounded-knapsack-problem.md)
-4. [2.5 The multidimensional knapsack problem](the-multidimensional-knapsack-problem.md)
-5. [2.6 The multiple knapsack problem](the-multiple-knapsack-problem.md)
-6. [2.7 The multiple-choice knapsack problem](the-multiple-choice-knapsack-problem.md)
-7. [2.8 The knapsack problem with setups](the-knapsack-problem-with-setups.md)
-8. [Remarks and summary](remarks-and-summary.md)
+    The knapsack problem
+
+    [:octicons-arrow-right-24: Open](#21-the-knapsack-problem)
+
+-   **2.2 The subset sum problem**
+
+    [:octicons-arrow-right-24: Open](the-subset-sum-problem.md)
+
+-   **2.3 The bounded knapsack problem**
+
+    [:octicons-arrow-right-24: Open](the-bounded-knapsack-problem.md)
+
+-   **2.4 The unbounded knapsack problem**
+
+    [:octicons-arrow-right-24: Open](the-unbounded-knapsack-problem.md)
+
+-   **2.5 The multidimensional knapsack problem**
+
+    [:octicons-arrow-right-24: Open](the-multidimensional-knapsack-problem.md)
+
+-   **2.6 The multiple knapsack problem**
+
+    [:octicons-arrow-right-24: Open](the-multiple-knapsack-problem.md)
+
+-   **2.7 The multiple-choice knapsack problem**
+
+    [:octicons-arrow-right-24: Open](the-multiple-choice-knapsack-problem.md)
+
+-   **2.8 The knapsack problem with setups**
+
+    [:octicons-arrow-right-24: Open](the-knapsack-problem-with-setups.md)
+
+-   **Remarks and summary**
+
+    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
 
 </div>
 

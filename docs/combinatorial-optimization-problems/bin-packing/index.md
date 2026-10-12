@@ -30,12 +30,21 @@ title: "Bin packing and cutting stock"
 
     - use the two bounds to certify that a solution is optimal.
 
-<div class="sottopagine" markdown>
+<div class="grid cards sottopagine" markdown>
 
-**The chapter is organised in pages: this page and**
+-   **Definition**
 
-1. [3.2 The cutting stock problem](the-cutting-stock-problem.md)
-2. [Remarks and summary](remarks-and-summary.md)
+    The bin packing problem
+
+    [:octicons-arrow-right-24: Open](#31-the-bin-packing-problem)
+
+-   **3.2 The cutting stock problem**
+
+    [:octicons-arrow-right-24: Open](the-cutting-stock-problem.md)
+
+-   **Remarks and summary**
+
+    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
 
 </div>
 

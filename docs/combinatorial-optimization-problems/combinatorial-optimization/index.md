@@ -28,17 +28,41 @@ title: "Combinatorial optimization problems"
 
     - place a problem in the classes P, NP and NP-hard, and tell a pseudo-polynomial algorithm from a polynomial one.
 
-<div class="sottopagine" markdown>
+<div class="grid cards sottopagine" markdown>
 
-**The chapter is organised in pages: this page and**
+-   **Overview**
 
-1. [1.2 Counting the solutions](counting-the-solutions.md)
-2. [1.3 Combinatorial explosion and brute force](combinatorial-explosion-and-brute-force.md)
-3. [1.4 Primal bounds, dual bounds and gap](primal-bounds-dual-bounds-and-gap.md)
-4. [1.5 A glimpse of computational complexity](a-glimpse-of-computational-complexity.md)
-5. [Typical mistakes · In summary](typical-mistakes.md)
-6. [1.8 Exercises](exercises.md)
-7. [1.9 Roadmap of the course](roadmap-of-the-course.md)
+    Combinatorial optimization problems
+
+    [:octicons-arrow-right-24: Open](#11-combinatorial-optimization-problems)
+
+-   **1.2 Counting the solutions**
+
+    [:octicons-arrow-right-24: Open](counting-the-solutions.md)
+
+-   **1.3 Combinatorial explosion and brute force**
+
+    [:octicons-arrow-right-24: Open](combinatorial-explosion-and-brute-force.md)
+
+-   **1.4 Primal bounds, dual bounds and gap**
+
+    [:octicons-arrow-right-24: Open](primal-bounds-dual-bounds-and-gap.md)
+
+-   **1.5 A glimpse of computational complexity**
+
+    [:octicons-arrow-right-24: Open](a-glimpse-of-computational-complexity.md)
+
+-   **Typical mistakes · In summary**
+
+    [:octicons-arrow-right-24: Open](typical-mistakes.md)
+
+-   **1.8 Exercises**
+
+    [:octicons-arrow-right-24: Open](exercises.md)
+
+-   **1.9 Roadmap of the course**
+
+    [:octicons-arrow-right-24: Open](roadmap-of-the-course.md)
 
 </div>
 

@@ -38,14 +38,29 @@ title: "Dynamic programming for lot sizing"
 
     - count the steps of the two DP algorithms, and say why the second one is pseudo-polynomial.
 
-<div class="sottopagine" markdown>
+<div class="grid cards sottopagine" markdown>
 
-**The chapter is organised in pages: this page and**
+-   **Overview**
 
-1. [22.2 A DP algorithm for the ULS](a-dp-algorithm-for-the-uls.md)
-2. [22.2.2 A DP algorithm for the ULS: Step 1 and Step 2](a-dp-algorithm-for-the-uls-step-1-and-step-2.md)
-3. [22.3 A DP algorithm for the capacitated case](a-dp-algorithm-for-the-capacitated-case.md)
-4. [Typical mistakes · In summary](typical-mistakes.md)
+    Problem definition
+
+    [:octicons-arrow-right-24: Open](#221-problem-definition)
+
+-   **22.2 A DP algorithm for the ULS**
+
+    [:octicons-arrow-right-24: Open](a-dp-algorithm-for-the-uls.md)
+
+-   **22.2.2 A DP algorithm for the ULS: Step 1 and Step 2**
+
+    [:octicons-arrow-right-24: Open](a-dp-algorithm-for-the-uls-step-1-and-step-2.md)
+
+-   **22.3 A DP algorithm for the capacitated case**
+
+    [:octicons-arrow-right-24: Open](a-dp-algorithm-for-the-capacitated-case.md)
+
+-   **Typical mistakes · In summary**
+
+    [:octicons-arrow-right-24: Open](typical-mistakes.md)
 
 </div>
 

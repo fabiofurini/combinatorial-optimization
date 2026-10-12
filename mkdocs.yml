@@ -165,7 +165,6 @@ nav:
       - "Roadmap of the course": combinatorial-optimization-problems/combinatorial-optimization/roadmap-of-the-course.md
   - Selected problems:
       - selected-problems/index.md
-      - "The problems at a glance": combinatorial-optimization-problems/problems.md
       - "Knapsack":
           - combinatorial-optimization-problems/knapsack/index.md
           - "Subset sum": combinatorial-optimization-problems/knapsack/the-subset-sum-problem.md
@@ -176,34 +175,27 @@ nav:
           - "Multiple-choice knapsack": combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem.md
           - "Knapsack with setups": combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md
           - "Remarks and summary": combinatorial-optimization-problems/knapsack/remarks-and-summary.md
-          - "The course on this problem": selected-problems/knapsack.md
       - "Bin packing":
           - combinatorial-optimization-problems/bin-packing/index.md
           - "Cutting stock": combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md
           - "Remarks and summary": combinatorial-optimization-problems/bin-packing/remarks-and-summary.md
-          - "The course on this problem": selected-problems/bin-packing.md
       - "Vertex coloring":
           - combinatorial-optimization-problems/coloring.md
-          - "The course on this problem": selected-problems/vertex-coloring.md
       - "Maximum clique":
           - combinatorial-optimization-problems/clique/index.md
           - "Weighted variants": combinatorial-optimization-problems/clique/weighted-variants.md
           - "Remarks and summary": combinatorial-optimization-problems/clique/remarks-and-summary.md
-          - "The course on this problem": selected-problems/maximum-clique.md
       - "TSP":
           - combinatorial-optimization-problems/tsp/index.md
           - "Metric and asymmetric TSP": combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md
           - "Remarks and summary": combinatorial-optimization-problems/tsp/remarks-and-summary.md
-          - "The course on this problem": selected-problems/tsp.md
       - "Machine scheduling":
           - combinatorial-optimization-problems/pcmax/index.md
           - "Remarks and summary": combinatorial-optimization-problems/pcmax/remarks-and-summary.md
-          - "The course on this problem": selected-problems/pcmax.md
       - "Lot sizing":
           - combinatorial-optimization-problems/lot-sizing/index.md
           - "Variants": combinatorial-optimization-problems/lot-sizing/variants.md
           - "Remarks and summary": combinatorial-optimization-problems/lot-sizing/remarks-and-summary.md
-          - "The course on this problem": selected-problems/lot-sizing.md
   - Formulations:
       - formulations/index.md
       - "9. Knapsack": formulations/knapsack-formulations.md
@@ -332,14 +324,29 @@ nav:
       - "33. Knapsack: B&B": exercises/knapsack-branch-and-bound.md
   - Catalogue:
       - catalogue/index.md
+      - "The problems at a glance": combinatorial-optimization-problems/problems.md
       - "Central problems":
-          - "Knapsack": catalogue/knapsack-problem.md
-          - "Bin packing": catalogue/bin-packing-problem.md
-          - "Vertex coloring": catalogue/vertex-coloring-problem.md
-          - "Maximum clique": catalogue/maximum-clique-problem.md
-          - "Travelling salesman": catalogue/travelling-salesman-problem.md
-          - "P||Cmax": catalogue/scheduling-on-identical-parallel-machines.md
-          - "Capacitated lot sizing": catalogue/capacitated-lot-sizing.md
+          - "Knapsack":
+              - catalogue/knapsack-problem.md
+              - "The course on this problem": selected-problems/knapsack.md
+          - "Bin packing":
+              - catalogue/bin-packing-problem.md
+              - "The course on this problem": selected-problems/bin-packing.md
+          - "Vertex coloring":
+              - catalogue/vertex-coloring-problem.md
+              - "The course on this problem": selected-problems/vertex-coloring.md
+          - "Maximum clique":
+              - catalogue/maximum-clique-problem.md
+              - "The course on this problem": selected-problems/maximum-clique.md
+          - "Travelling salesman":
+              - catalogue/travelling-salesman-problem.md
+              - "The course on this problem": selected-problems/tsp.md
+          - "P||Cmax":
+              - catalogue/scheduling-on-identical-parallel-machines.md
+              - "The course on this problem": selected-problems/pcmax.md
+          - "Capacitated lot sizing":
+              - catalogue/capacitated-lot-sizing.md
+              - "The course on this problem": selected-problems/lot-sizing.md
       - "Knapsack family":
           - "Subset sum": catalogue/subset-sum-problem.md
           - "Bounded knapsack": catalogue/bounded-knapsack-problem.md

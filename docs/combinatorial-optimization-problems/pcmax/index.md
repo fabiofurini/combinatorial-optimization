@@ -30,11 +30,17 @@ title: "Parallel machine scheduling"
 
     - compute a lower bound on the optimal makespan and use it to prove that a schedule is optimal.
 
-<div class="sottopagine" markdown>
+<div class="grid cards sottopagine" markdown>
 
-**The chapter is organised in pages: this page and**
+-   **Definition**
 
-1. [Remarks and summary](remarks-and-summary.md)
+    Scheduling on identical parallel machines
+
+    [:octicons-arrow-right-24: Open](#71-scheduling-on-identical-parallel-machines)
+
+-   **Remarks and summary**
+
+    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
 
 </div>
 

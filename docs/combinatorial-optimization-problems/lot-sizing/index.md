@@ -28,12 +28,21 @@ title: "Capacitated lot sizing"
 
     - compute a lower bound on the cost from the number of setups that the total demand requires.
 
-<div class="sottopagine" markdown>
+<div class="grid cards sottopagine" markdown>
 
-**The chapter is organised in pages: this page and**
+-   **Definition**
 
-1. [8.2 Variants](variants.md)
-2. [Remarks and summary](remarks-and-summary.md)
+    The capacitated lot sizing problem
+
+    [:octicons-arrow-right-24: Open](#81-the-capacitated-lot-sizing-problem)
+
+-   **8.2 Variants**
+
+    [:octicons-arrow-right-24: Open](variants.md)
+
+-   **Remarks and summary**
+
+    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
 
 </div>
 

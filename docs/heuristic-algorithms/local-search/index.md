@@ -30,22 +30,61 @@ title: "Local search"
 
     - combine neighbourhoods (variable neighbourhood descent) and restarts (multi-start).
 
-<div class="sottopagine" markdown>
+<div class="grid cards sottopagine" markdown>
 
-**The chapter is organised in pages: this page and**
+-   **Overview**
 
-1. [25.2 The problems, the assumptions and the starting solutions](the-problems-the-assumptions-and-the-starting-solutions.md)
-2. [Local search: the scheme · Neighbourhoods for the four problems](local-search-the-scheme.md)
-3. [25.5 First improvement and best improvement](first-improvement-and-best-improvement.md)
-4. [25.6 Evaluating a move incrementally](evaluating-a-move-incrementally.md)
-5. [25.7 TSP: 2-opt and Or-opt](tsp-2-opt-and-or-opt.md)
-6. [25.8 $P\,||\,C_{\max}$: move and swap](p-cmax-move-and-swap.md)
-7. [25.9 Flat landscapes and auxiliary objectives](flat-landscapes-and-auxiliary-objectives.md)
-8. [25.10 KP: feasibility and penalties](kp-feasibility-and-penalties.md)
-9. [25.11 Variable neighbourhood descent](variable-neighbourhood-descent.md)
-10. [25.12 Multi-start local search](multi-start-local-search.md)
-11. [Typical mistakes · In summary](typical-mistakes.md)
-12. [25.15 <code>C++</code> implementation](c-implementation.md)
+    Local search
+
+    [:octicons-arrow-right-24: Open](#sez-sec-ls)
+
+-   **25.2 The problems, the assumptions and the starting solutions**
+
+    [:octicons-arrow-right-24: Open](the-problems-the-assumptions-and-the-starting-solutions.md)
+
+-   **Local search: the scheme · Neighbourhoods for the four problems**
+
+    [:octicons-arrow-right-24: Open](local-search-the-scheme.md)
+
+-   **25.5 First improvement and best improvement**
+
+    [:octicons-arrow-right-24: Open](first-improvement-and-best-improvement.md)
+
+-   **25.6 Evaluating a move incrementally**
+
+    [:octicons-arrow-right-24: Open](evaluating-a-move-incrementally.md)
+
+-   **25.7 TSP: 2-opt and Or-opt**
+
+    [:octicons-arrow-right-24: Open](tsp-2-opt-and-or-opt.md)
+
+-   **25.8 $P\,||\,C_{\max}$: move and swap**
+
+    [:octicons-arrow-right-24: Open](p-cmax-move-and-swap.md)
+
+-   **25.9 Flat landscapes and auxiliary objectives**
+
+    [:octicons-arrow-right-24: Open](flat-landscapes-and-auxiliary-objectives.md)
+
+-   **25.10 KP: feasibility and penalties**
+
+    [:octicons-arrow-right-24: Open](kp-feasibility-and-penalties.md)
+
+-   **25.11 Variable neighbourhood descent**
+
+    [:octicons-arrow-right-24: Open](variable-neighbourhood-descent.md)
+
+-   **25.12 Multi-start local search**
+
+    [:octicons-arrow-right-24: Open](multi-start-local-search.md)
+
+-   **Typical mistakes · In summary**
+
+    [:octicons-arrow-right-24: Open](typical-mistakes.md)
+
+-   **25.15 <code>C++</code> implementation**
+
+    [:octicons-arrow-right-24: Open](c-implementation.md)
 
 </div>
 

@@ -40,15 +40,33 @@ title: "DP for the knapsack problem"
 
     - exchange the roles of profits and weights, and compute the optimal value from the table $u(j,q)$.
 
-<div class="sottopagine" markdown>
+<div class="grid cards sottopagine" markdown>
 
-**The chapter is organised in pages: this page and**
+-   **Overview**
 
-1. [17.2 A first DP algorithm](a-first-dp-algorithm.md)
-2. [17.2.2 A first DP algorithm: An implementation with lists](a-first-dp-algorithm-an-implementation-with-lists.md)
-3. [17.3 A second DP algorithm](a-second-dp-algorithm.md)
-4. [17.3.2 A second DP algorithm: An implementation with lists](a-second-dp-algorithm-an-implementation-with-lists.md)
-5. [Typical mistakes · In summary](typical-mistakes.md)
+    Problem definition
+
+    [:octicons-arrow-right-24: Open](#171-problem-definition)
+
+-   **17.2 A first DP algorithm**
+
+    [:octicons-arrow-right-24: Open](a-first-dp-algorithm.md)
+
+-   **17.2.2 A first DP algorithm: An implementation with lists**
+
+    [:octicons-arrow-right-24: Open](a-first-dp-algorithm-an-implementation-with-lists.md)
+
+-   **17.3 A second DP algorithm**
+
+    [:octicons-arrow-right-24: Open](a-second-dp-algorithm.md)
+
+-   **17.3.2 A second DP algorithm: An implementation with lists**
+
+    [:octicons-arrow-right-24: Open](a-second-dp-algorithm-an-implementation-with-lists.md)
+
+-   **Typical mistakes · In summary**
+
+    [:octicons-arrow-right-24: Open](typical-mistakes.md)
 
 </div>
 

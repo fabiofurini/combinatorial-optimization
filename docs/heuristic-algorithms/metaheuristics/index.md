@@ -30,21 +30,57 @@ title: "Metaheuristics"
 
     - say what metaheuristics do not give: a dual bound.
 
-<div class="sottopagine" markdown>
+<div class="grid cards sottopagine" markdown>
 
-**The chapter is organised in pages: this page and**
+-   **Overview**
 
-1. [26.2 The problems and the assumptions](the-problems-and-the-assumptions.md)
-2. [How to escape from a local optimum · Simulated annealing](how-to-escape-from-a-local-optimum.md)
-3. [26.5 Tabu search](tabu-search.md)
-4. [26.6 Iterated local search](iterated-local-search.md)
-5. [26.7 Variable neighbourhood search](variable-neighbourhood-search.md)
-6. [26.8 GRASP](grasp.md)
-7. [26.9 Large neighbourhood search](large-neighbourhood-search.md)
-8. [26.10 Population-based methods: genetic and memetic algorithms](population-based-methods-genetic-and-memetic-algorithms.md)
-9. [26.11 Comparison and conclusions](comparison-and-conclusions.md)
-10. [Typical mistakes · In summary](typical-mistakes.md)
-11. [<code>C++</code> implementation · References](c-implementation.md)
+    Metaheuristics
+
+    [:octicons-arrow-right-24: Open](#sez-sec-metaheuristic)
+
+-   **26.2 The problems and the assumptions**
+
+    [:octicons-arrow-right-24: Open](the-problems-and-the-assumptions.md)
+
+-   **How to escape from a local optimum · Simulated annealing**
+
+    [:octicons-arrow-right-24: Open](how-to-escape-from-a-local-optimum.md)
+
+-   **26.5 Tabu search**
+
+    [:octicons-arrow-right-24: Open](tabu-search.md)
+
+-   **26.6 Iterated local search**
+
+    [:octicons-arrow-right-24: Open](iterated-local-search.md)
+
+-   **26.7 Variable neighbourhood search**
+
+    [:octicons-arrow-right-24: Open](variable-neighbourhood-search.md)
+
+-   **26.8 GRASP**
+
+    [:octicons-arrow-right-24: Open](grasp.md)
+
+-   **26.9 Large neighbourhood search**
+
+    [:octicons-arrow-right-24: Open](large-neighbourhood-search.md)
+
+-   **26.10 Population-based methods: genetic and memetic algorithms**
+
+    [:octicons-arrow-right-24: Open](population-based-methods-genetic-and-memetic-algorithms.md)
+
+-   **26.11 Comparison and conclusions**
+
+    [:octicons-arrow-right-24: Open](comparison-and-conclusions.md)
+
+-   **Typical mistakes · In summary**
+
+    [:octicons-arrow-right-24: Open](typical-mistakes.md)
+
+-   **<code>C++</code> implementation · References**
+
+    [:octicons-arrow-right-24: Open](c-implementation.md)
 
 </div>
 

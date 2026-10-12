@@ -28,12 +28,21 @@ title: "The maximum clique problem"
 
     - state the weighted variants of the problem and its complexity.
 
-<div class="sottopagine" markdown>
+<div class="grid cards sottopagine" markdown>
 
-**The chapter is organised in pages: this page and**
+-   **Definition**
 
-1. [5.3 Weighted variants](weighted-variants.md)
-2. [Remarks and summary](remarks-and-summary.md)
+    The maximum clique problem
+
+    [:octicons-arrow-right-24: Open](#51-the-maximum-clique-problem)
+
+-   **5.3 Weighted variants**
+
+    [:octicons-arrow-right-24: Open](weighted-variants.md)
+
+-   **Remarks and summary**
+
+    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
 
 </div>
 

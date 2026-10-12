@@ -30,13 +30,25 @@ title: "DP for the unbounded knapsack problem"
 
     - count the steps of the two DP algorithms and compare them.
 
-<div class="sottopagine" markdown>
+<div class="grid cards sottopagine" markdown>
 
-**The chapter is organised in pages: this page and**
+-   **Overview**
 
-1. [18.2 A first DP algorithm](a-first-dp-algorithm.md)
-2. [18.3 A second DP algorithm](a-second-dp-algorithm.md)
-3. [Typical mistakes · In summary](typical-mistakes.md)
+    Problem definition
+
+    [:octicons-arrow-right-24: Open](#181-problem-definition)
+
+-   **18.2 A first DP algorithm**
+
+    [:octicons-arrow-right-24: Open](a-first-dp-algorithm.md)
+
+-   **18.3 A second DP algorithm**
+
+    [:octicons-arrow-right-24: Open](a-second-dp-algorithm.md)
+
+-   **Typical mistakes · In summary**
+
+    [:octicons-arrow-right-24: Open](typical-mistakes.md)
 
 </div>
 

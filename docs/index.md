@@ -71,7 +71,7 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
     ---
 
-    The problems on which the whole course focuses: for each one, everything the course does on it — where it is treated, the techniques and the exercises.
+    The problems on which the whole course focuses, introduced one by one: definition, assumptions, variants and a first example.
 
     [:octicons-arrow-right-24: The selected problems](selected-problems/index.md)
 
