@@ -6,7 +6,7 @@ title: "Local search"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 20** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises](../exercises/local-search.md)
+**Part 4 · Heuristic algorithms · Chapter 20** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Local search](../exercises/local-search.md) · [:material-gesture-tap: App: TSP: nearest neighbour and 2-opt](../lab/tsp-nn-2opt.md)
 
 </div>
 
@@ -2186,6 +2186,10 @@ VND({ [&]() { return TwoOptStep(n, d, pi, FIRST); },
         return pi;
     }
     ```
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Local search](../exercises/local-search.md)
 
 <!-- laboratorio-interattivo: sezione generata da interattivi.py -->
 

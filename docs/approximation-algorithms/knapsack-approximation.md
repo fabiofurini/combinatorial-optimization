@@ -6,7 +6,7 @@ title: "Approximation algorithms for the knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 25** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises](../exercises/knapsack-approximation.md)
+**Part 5 · Approximation algorithms · Chapter 25** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Knapsack](../exercises/knapsack-approximation.md)
 
 </div>
 
@@ -2195,3 +2195,7 @@ $$
     ```
 
 - All the functions of this section are in the folder <code>KP\_HEUR\_CODE/src</code>. The command <code>make test</code> compiles them and runs every example of these notes and every instance of the exercises, checking the value found against the expected one.
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Knapsack](../exercises/knapsack-approximation.md)

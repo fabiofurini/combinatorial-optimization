@@ -6,7 +6,7 @@ title: "Formulations of the knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 8** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises](../exercises/knapsack-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 8** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Knapsack](../exercises/knapsack-formulations.md)
 
 </div>
 
@@ -929,3 +929,7 @@ title: "Formulations of the knapsack problem"
     </table></div>
 
     The gap between the best upper bound ($16$) and the optimal value ($15$) is closed by the exact algorithms of the following chapters.
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Knapsack](../exercises/knapsack-formulations.md)

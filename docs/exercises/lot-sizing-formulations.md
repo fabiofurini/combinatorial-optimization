@@ -6,7 +6,7 @@ title: "Exercises · Formulations of capacitated lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 13** · each solution opens with a click · [:material-book-open-variant: Chapter 13](../formulations/lot-sizing-formulations.md)
+**Exercises · Chapter 13** · each solution opens with a click · [:material-book-open-variant: Chapter 13: Lot sizing](../formulations/lot-sizing-formulations.md)
 
 </div>
 

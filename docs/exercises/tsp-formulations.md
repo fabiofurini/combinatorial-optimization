@@ -6,7 +6,7 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 11** · each solution opens with a click · [:material-book-open-variant: Chapter 11](../formulations/tsp-formulations.md)
+**Exercises · Chapter 11** · each solution opens with a click · [:material-book-open-variant: Chapter 11: TSP](../formulations/tsp-formulations.md)
 
 </div>
 

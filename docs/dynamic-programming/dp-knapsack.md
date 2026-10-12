@@ -6,7 +6,7 @@ title: "Dynamic programming for knapsack problems"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 15** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises](../exercises/dp-knapsack.md)
+**Part 3 · Dynamic programming · Chapter 15** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Knapsack](../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP table for the knapsack](../lab/dp-knapsack-table.md)
 
 </div>
 
@@ -6439,6 +6439,10 @@ $$
     <td>optimal value, solution <span class="arithmatex">\((2,2,0)\)</span></td>
     </tr>
     </table></div>
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Knapsack](../exercises/dp-knapsack.md)
 
 <!-- laboratorio-interattivo: sezione generata da interattivi.py -->
 

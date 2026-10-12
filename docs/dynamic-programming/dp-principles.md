@@ -6,7 +6,7 @@ title: "Principles of dynamic programming"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 14** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises](../exercises/dp-principles.md)
+**Part 3 · Dynamic programming · Chapter 14** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Principles](../exercises/dp-principles.md)
 
 </div>
 
@@ -184,3 +184,7 @@ title: "Principles of dynamic programming"
     - The design has two steps: the optimal value (recurrence, base cases, bottom-up table) and an optimal solution (decisions stored and read backwards).
 
     - Brute force takes exponential time; DP takes a time that is polynomial in the number of states, and pseudo-polynomial when a number of the input is a table dimension.
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Principles](../exercises/dp-principles.md)

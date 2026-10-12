@@ -6,7 +6,7 @@ title: "Exercises · Combinatorial optimization problems"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 1** · each solution opens with a click · [:material-book-open-variant: Chapter 1](../combinatorial-optimization-problems/combinatorial-optimization.md)
+**Exercises · Chapter 1** · each solution opens with a click · [:material-book-open-variant: Chapter 1: Combinatorial optimization](../combinatorial-optimization-problems/combinatorial-optimization.md)
 
 </div>
 

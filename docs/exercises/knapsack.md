@@ -6,7 +6,7 @@ title: "Exercises · Knapsack problems"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 2** · each solution opens with a click · [:material-book-open-variant: Chapter 2](../combinatorial-optimization-problems/knapsack.md)
+**Exercises · Chapter 2** · each solution opens with a click · [:material-book-open-variant: Chapter 2: Knapsack](../combinatorial-optimization-problems/knapsack.md)
 
 </div>
 

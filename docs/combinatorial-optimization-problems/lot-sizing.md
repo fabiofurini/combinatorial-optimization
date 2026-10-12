@@ -6,7 +6,7 @@ title: "Capacitated lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 7** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises](../exercises/lot-sizing.md)
+**Part 1 · Combinatorial optimization problems · Chapter 7** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Lot sizing](../exercises/lot-sizing.md)
 
 </div>
 
@@ -372,3 +372,7 @@ title: "Capacitated lot sizing"
     <td>the <span class="arithmatex">\(94\)</span> feasible plans</td>
     </tr>
     </table></div>
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Lot sizing](../exercises/lot-sizing.md)

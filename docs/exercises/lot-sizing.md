@@ -6,7 +6,7 @@ title: "Exercises · Capacitated lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 7** · each solution opens with a click · [:material-book-open-variant: Chapter 7](../combinatorial-optimization-problems/lot-sizing.md)
+**Exercises · Chapter 7** · each solution opens with a click · [:material-book-open-variant: Chapter 7: Lot sizing](../combinatorial-optimization-problems/lot-sizing.md)
 
 </div>
 

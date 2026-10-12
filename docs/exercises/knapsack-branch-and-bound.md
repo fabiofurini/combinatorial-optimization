@@ -6,7 +6,7 @@ title: "Exercises · Knapsack: branch-and-bound on the critical item"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 27** · each solution opens with a click · [:material-book-open-variant: Chapter 27](../specialized-algorithms/knapsack-branch-and-bound.md)
+**Exercises · Chapter 27** · each solution opens with a click · [:material-book-open-variant: Chapter 27: Knapsack: B&B](../specialized-algorithms/knapsack-branch-and-bound.md)
 
 </div>
 

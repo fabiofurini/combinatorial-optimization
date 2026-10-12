@@ -6,7 +6,7 @@ title: "Formulations of the bin packing problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 9** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises](../exercises/bin-packing-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 9** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Bin packing](../exercises/bin-packing-formulations.md)
 
 </div>
 
@@ -919,3 +919,7 @@ title: "Formulations of the bin packing problem"
     </table></div>
 
     Here the rounded bound is already equal to the optimal value.
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Bin packing](../exercises/bin-packing-formulations.md)

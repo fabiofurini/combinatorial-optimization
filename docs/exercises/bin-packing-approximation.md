@@ -6,7 +6,7 @@ title: "Exercises · Approximation algorithms for bin packing"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 24** · each solution opens with a click · [:material-book-open-variant: Chapter 24](../approximation-algorithms/bin-packing-approximation.md)
+**Exercises · Chapter 24** · each solution opens with a click · [:material-book-open-variant: Chapter 24: Bin packing](../approximation-algorithms/bin-packing-approximation.md)
 
 </div>
 

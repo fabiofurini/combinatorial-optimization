@@ -6,7 +6,7 @@ title: "Combinatorial optimization problems"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 1** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises](../exercises/combinatorial-optimization.md)
+**Part 1 · Combinatorial optimization problems · Chapter 1** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Combinatorial optimization](../exercises/combinatorial-optimization.md)
 
 </div>
 
@@ -1270,3 +1270,7 @@ $$
     2. $\sum_j t_j = 18$, hence $\LB = \max\{\lceil 18/2 \rceil, 5\} = 9$. The absolute gap is $10-9 = 1$ and the relative gap is $\tfrac{1}{9} \approx 11.1\%$.
 
     3. The schedule $J_1 = \{1,2\}$, $J_2 = \{3,4,5\}$ has loads $5+4 = 9$ and $3+3+3 = 9$, hence $C_{\max} = 9 = \LB$. The gap is zero, so this schedule is optimal and $z(I) = 9$.
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Combinatorial optimization](../exercises/combinatorial-optimization.md)

@@ -6,7 +6,7 @@ title: "Exercises · Bin packing and cutting stock"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 3** · each solution opens with a click · [:material-book-open-variant: Chapter 3](../combinatorial-optimization-problems/bin-packing.md)
+**Exercises · Chapter 3** · each solution opens with a click · [:material-book-open-variant: Chapter 3: Bin packing](../combinatorial-optimization-problems/bin-packing.md)
 
 </div>
 

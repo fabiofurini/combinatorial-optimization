@@ -6,7 +6,7 @@ title: "The travelling salesman problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 5** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises](../exercises/tsp.md)
+**Part 1 · Combinatorial optimization problems · Chapter 5** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: TSP](../exercises/tsp.md)
 
 </div>
 
@@ -395,3 +395,7 @@ title: "The travelling salesman problem"
     <td>the <span class="arithmatex">\(12\)</span> tours</td>
     </tr>
     </table></div>
+
+---
+
+**Exercises on this chapter:** [:material-pencil: TSP](../exercises/tsp.md)

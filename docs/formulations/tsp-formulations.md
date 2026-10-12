@@ -6,7 +6,7 @@ title: "Formulations of the travelling salesman problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 11** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises](../exercises/tsp-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 11** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: TSP](../exercises/tsp-formulations.md)
 
 </div>
 
@@ -379,3 +379,7 @@ title: "Formulations of the travelling salesman problem"
     <td>tour <span class="arithmatex">\(\sigma=(1,3,5,2,4)\)</span></td>
     </tr>
     </table></div>
+
+---
+
+**Exercises on this chapter:** [:material-pencil: TSP](../exercises/tsp-formulations.md)

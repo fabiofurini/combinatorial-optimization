@@ -6,7 +6,7 @@ title: "Exercises · The travelling salesman problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 5** · each solution opens with a click · [:material-book-open-variant: Chapter 5](../combinatorial-optimization-problems/tsp.md)
+**Exercises · Chapter 5** · each solution opens with a click · [:material-book-open-variant: Chapter 5: TSP](../combinatorial-optimization-problems/tsp.md)
 
 </div>
 

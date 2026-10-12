@@ -6,7 +6,7 @@ title: "Approximation algorithms for bin packing"
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 24** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises](../exercises/bin-packing-approximation.md)
+**Part 5 · Approximation algorithms · Chapter 24** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Bin packing](../exercises/bin-packing-approximation.md)
 
 </div>
 
@@ -2170,3 +2170,7 @@ $$
     $$
 
 - All the functions of this section are in the folder <code>BPP\_HEUR\_CODE/src</code>. The command <code>make test</code> compiles them and runs every example of these notes and every instance of the exercises, checking the number of bins and the item-bin assignment against the expected ones.
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Bin packing](../exercises/bin-packing-approximation.md)

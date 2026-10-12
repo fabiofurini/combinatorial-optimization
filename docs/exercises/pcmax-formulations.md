@@ -6,7 +6,7 @@ title: "Exercises · Formulations of parallel machine scheduling"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 12** · each solution opens with a click · [:material-book-open-variant: Chapter 12](../formulations/pcmax-formulations.md)
+**Exercises · Chapter 12** · each solution opens with a click · [:material-book-open-variant: Chapter 12: Machine scheduling](../formulations/pcmax-formulations.md)
 
 </div>
 

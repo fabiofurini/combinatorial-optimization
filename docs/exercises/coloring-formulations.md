@@ -6,7 +6,7 @@ title: "Exercises · Formulations of the vertex coloring problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 10** · each solution opens with a click · [:material-book-open-variant: Chapter 10](../formulations/coloring-formulations.md)
+**Exercises · Chapter 10** · each solution opens with a click · [:material-book-open-variant: Chapter 10: Vertex coloring](../formulations/coloring-formulations.md)
 
 </div>
 

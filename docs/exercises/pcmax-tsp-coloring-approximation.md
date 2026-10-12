@@ -6,7 +6,7 @@ title: "Exercises · P|Cmax, metric TSP and the limits of approximation"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 26** · each solution opens with a click · [:material-book-open-variant: Chapter 26](../approximation-algorithms/pcmax-tsp-coloring-approximation.md)
+**Exercises · Chapter 26** · each solution opens with a click · [:material-book-open-variant: Chapter 26: P||Cmax, TSP, coloring](../approximation-algorithms/pcmax-tsp-coloring-approximation.md)
 
 </div>
 

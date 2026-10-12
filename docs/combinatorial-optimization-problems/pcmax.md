@@ -6,7 +6,7 @@ title: "Parallel machine scheduling"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 6** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises](../exercises/pcmax.md)
+**Part 1 · Combinatorial optimization problems · Chapter 6** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Machine scheduling](../exercises/pcmax.md)
 
 </div>
 
@@ -343,3 +343,7 @@ title: "Parallel machine scheduling"
     <td><span class="arithmatex">\(J_1=\{1,3\}\)</span>, <span class="arithmatex">\(J_2=\{2,4\}\)</span>, <span class="arithmatex">\(J_3=\{5,6,7\}\)</span></td>
     </tr>
     </table></div>
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Machine scheduling](../exercises/pcmax.md)

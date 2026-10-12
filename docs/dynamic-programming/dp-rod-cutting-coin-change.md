@@ -6,7 +6,7 @@ title: "Rod cutting and coin change"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 16** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises](../exercises/dp-rod-cutting-coin-change.md)
+**Part 3 · Dynamic programming · Chapter 16** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting, coin change](../exercises/dp-rod-cutting-coin-change.md)
 
 </div>
 
@@ -2659,3 +2659,7 @@ title: "Rod cutting and coin change"
     <td>minimum number of coins, solution <span class="arithmatex">\((0,0,2)\)</span></td>
     </tr>
     </table></div>
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Rod cutting, coin change](../exercises/dp-rod-cutting-coin-change.md)

@@ -6,7 +6,7 @@ title: "Dynamic programming for lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 17** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises](../exercises/dp-lot-sizing.md)
+**Part 3 · Dynamic programming · Chapter 17** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Lot sizing](../exercises/dp-lot-sizing.md)
 
 </div>
 
@@ -2303,3 +2303,7 @@ This is the pseudo-code that computes the matrix of the production-run costs:
     <td>DP algorithm on (period, inventory)</td>
     </tr>
     </table></div>
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Lot sizing](../exercises/dp-lot-sizing.md)

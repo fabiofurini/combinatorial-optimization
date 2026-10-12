@@ -6,7 +6,7 @@ title: "Formulations of parallel machine scheduling"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 12** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises](../exercises/pcmax-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 12** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Machine scheduling](../exercises/pcmax-formulations.md)
 
 </div>
 
@@ -384,3 +384,7 @@ title: "Formulations of parallel machine scheduling"
     </table></div>
 
     On the instance of the integrality gap ($m=2$, $t=(3,3,2)$) the LP bound is $4$ and the optimal value is $5$.
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Machine scheduling](../exercises/pcmax-formulations.md)

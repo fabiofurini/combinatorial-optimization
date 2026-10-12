@@ -6,7 +6,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 26** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises](../exercises/pcmax-tsp-coloring-approximation.md)
+**Part 5 · Approximation algorithms · Chapter 26** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: P||Cmax, TSP, coloring](../exercises/pcmax-tsp-coloring-approximation.md)
 
 </div>
 
@@ -1069,3 +1069,7 @@ title: "P|Cmax, metric TSP and the limits of approximation"
     <td><span class="arithmatex">\(3\)</span></td>
     </tr>
     </table></div>
+
+---
+
+**Exercises on this chapter:** [:material-pencil: P||Cmax, TSP, coloring](../exercises/pcmax-tsp-coloring-approximation.md)

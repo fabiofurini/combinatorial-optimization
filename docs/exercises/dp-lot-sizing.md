@@ -6,7 +6,7 @@ title: "Exercises · Dynamic programming for lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 17** · each solution opens with a click · [:material-book-open-variant: Chapter 17](../dynamic-programming/dp-lot-sizing.md)
+**Exercises · Chapter 17** · each solution opens with a click · [:material-book-open-variant: Chapter 17: Lot sizing](../dynamic-programming/dp-lot-sizing.md)
 
 </div>
 

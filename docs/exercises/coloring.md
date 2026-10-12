@@ -6,7 +6,7 @@ title: "Exercises · Vertex coloring"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 4** · each solution opens with a click · [:material-book-open-variant: Chapter 4](../combinatorial-optimization-problems/coloring.md)
+**Exercises · Chapter 4** · each solution opens with a click · [:material-book-open-variant: Chapter 4: Vertex coloring](../combinatorial-optimization-problems/coloring.md)
 
 </div>
 

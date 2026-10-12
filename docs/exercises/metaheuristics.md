@@ -6,7 +6,7 @@ title: "Exercises · Metaheuristics"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 21** · each solution opens with a click · [:material-book-open-variant: Chapter 21](../heuristic-algorithms/metaheuristics.md)
+**Exercises · Chapter 21** · each solution opens with a click · [:material-book-open-variant: Chapter 21: Metaheuristics](../heuristic-algorithms/metaheuristics.md)
 
 </div>
 

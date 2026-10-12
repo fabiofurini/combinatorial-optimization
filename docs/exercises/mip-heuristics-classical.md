@@ -6,7 +6,7 @@ title: "Exercises · MIP heuristics for the classical problems"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 22** · each solution opens with a click · [:material-book-open-variant: Chapter 22](../heuristic-algorithms/mip-heuristics-classical.md)
+**Exercises · Chapter 22** · each solution opens with a click · [:material-book-open-variant: Chapter 22: MIP heuristics](../heuristic-algorithms/mip-heuristics-classical.md)
 
 </div>
 

@@ -6,7 +6,7 @@ title: "Exercises · Local search"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 20** · each solution opens with a click · [:material-book-open-variant: Chapter 20](../heuristic-algorithms/local-search.md)
+**Exercises · Chapter 20** · each solution opens with a click · [:material-book-open-variant: Chapter 20: Local search](../heuristic-algorithms/local-search.md)
 
 </div>
 

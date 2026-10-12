@@ -6,7 +6,7 @@ title: "Exercises · Formulations of the bin packing problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 9** · each solution opens with a click · [:material-book-open-variant: Chapter 9](../formulations/bin-packing-formulations.md)
+**Exercises · Chapter 9** · each solution opens with a click · [:material-book-open-variant: Chapter 9: Bin packing](../formulations/bin-packing-formulations.md)
 
 </div>
 

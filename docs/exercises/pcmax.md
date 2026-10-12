@@ -6,7 +6,7 @@ title: "Exercises · Parallel machine scheduling"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 6** · each solution opens with a click · [:material-book-open-variant: Chapter 6](../combinatorial-optimization-problems/pcmax.md)
+**Exercises · Chapter 6** · each solution opens with a click · [:material-book-open-variant: Chapter 6: Machine scheduling](../combinatorial-optimization-problems/pcmax.md)
 
 </div>
 

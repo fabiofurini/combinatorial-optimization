@@ -6,7 +6,7 @@ title: "Metaheuristics"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 21** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises](../exercises/metaheuristics.md)
+**Part 4 · Heuristic algorithms · Chapter 21** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Metaheuristics](../exercises/metaheuristics.md)
 
 </div>
 
@@ -3134,3 +3134,7 @@ $$
 - P. Shaw, Using constraint programming and local search methods to solve vehicle routing problems, in <em>Principles and Practice of Constraint Programming – CP98</em>, Lecture Notes in Computer Science 1520, Springer, 1998, 417–431.
 
 - É. Taillard, Robust taboo search for the quadratic assignment problem, <em>Parallel Computing</em> 17 (1991) 443–455.
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Metaheuristics](../exercises/metaheuristics.md)

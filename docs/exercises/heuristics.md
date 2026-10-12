@@ -6,7 +6,7 @@ title: "Exercises · Heuristic algorithms: definitions"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 18** · each solution opens with a click · [:material-book-open-variant: Chapter 18](../heuristic-algorithms/heuristics.md)
+**Exercises · Chapter 18** · each solution opens with a click · [:material-book-open-variant: Chapter 18: Definitions](../heuristic-algorithms/heuristics.md)
 
 </div>
 

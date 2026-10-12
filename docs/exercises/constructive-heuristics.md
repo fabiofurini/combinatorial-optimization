@@ -6,7 +6,7 @@ title: "Exercises · Constructive heuristics"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 19** · each solution opens with a click · [:material-book-open-variant: Chapter 19](../heuristic-algorithms/constructive-heuristics.md)
+**Exercises · Chapter 19** · each solution opens with a click · [:material-book-open-variant: Chapter 19: Constructive](../heuristic-algorithms/constructive-heuristics.md)
 
 </div>
 

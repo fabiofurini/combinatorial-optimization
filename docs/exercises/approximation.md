@@ -6,7 +6,7 @@ title: "Exercises · Approximation algorithms: definitions"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 23** · each solution opens with a click · [:material-book-open-variant: Chapter 23](../approximation-algorithms/approximation.md)
+**Exercises · Chapter 23** · each solution opens with a click · [:material-book-open-variant: Chapter 23: Definitions](../approximation-algorithms/approximation.md)
 
 </div>
 

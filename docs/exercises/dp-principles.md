@@ -6,7 +6,7 @@ title: "Exercises · Principles of dynamic programming"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 14** · each solution opens with a click · [:material-book-open-variant: Chapter 14](../dynamic-programming/dp-principles.md)
+**Exercises · Chapter 14** · each solution opens with a click · [:material-book-open-variant: Chapter 14: Principles](../dynamic-programming/dp-principles.md)
 
 </div>
 

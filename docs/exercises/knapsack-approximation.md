@@ -6,7 +6,7 @@ title: "Exercises · Approximation algorithms for the knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 25** · each solution opens with a click · [:material-book-open-variant: Chapter 25](../approximation-algorithms/knapsack-approximation.md)
+**Exercises · Chapter 25** · each solution opens with a click · [:material-book-open-variant: Chapter 25: Knapsack](../approximation-algorithms/knapsack-approximation.md)
 
 </div>
 

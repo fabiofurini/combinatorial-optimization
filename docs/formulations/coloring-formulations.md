@@ -6,7 +6,7 @@ title: "Formulations of the vertex coloring problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 10** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises](../exercises/coloring-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 10** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Vertex coloring](../exercises/coloring-formulations.md)
 
 </div>
 
@@ -729,3 +729,7 @@ title: "Formulations of the vertex coloring problem"
     </table></div>
 
     The gap between $2$ and $3$ is small here, but it grows with the size of the complete graph: $2$ against $n$.
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Vertex coloring](../exercises/coloring-formulations.md)

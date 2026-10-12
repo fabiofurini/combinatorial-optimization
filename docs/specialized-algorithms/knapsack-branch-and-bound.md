@@ -6,7 +6,7 @@ title: "Knapsack: branch-and-bound on the critical item"
 
 <div class="info-capitolo" markdown>
 
-**Part 6 · Specialized algorithms · Chapter 27** · [:material-file-pdf-box: Lecture notes, volume 6 (PDF)](../pdf/lecture-notes-6-specialized-algorithms.pdf) · [:material-pencil: Exercises](../exercises/knapsack-branch-and-bound.md)
+**Part 6 · Specialized algorithms · Chapter 27** · [:material-file-pdf-box: Lecture notes, volume 6 (PDF)](../pdf/lecture-notes-6-specialized-algorithms.pdf) · [:material-pencil: Exercises: Knapsack: B&B](../exercises/knapsack-branch-and-bound.md) · [:material-gesture-tap: App: Branch-and-bound for the knapsack](../lab/knapsack-branch-and-bound.md)
 
 </div>
 
@@ -393,6 +393,10 @@ title: "Knapsack: branch-and-bound on the critical item"
     <td>empty list, <span class="arithmatex">\(5\)</span> nodes</td>
     </tr>
     </table></div>
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Knapsack: B&B](../exercises/knapsack-branch-and-bound.md)
 
 <!-- laboratorio-interattivo: sezione generata da interattivi.py -->
 

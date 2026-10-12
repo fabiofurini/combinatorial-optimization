@@ -6,7 +6,7 @@ title: "Exercises · Rod cutting and coin change"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 16** · each solution opens with a click · [:material-book-open-variant: Chapter 16](../dynamic-programming/dp-rod-cutting-coin-change.md)
+**Exercises · Chapter 16** · each solution opens with a click · [:material-book-open-variant: Chapter 16: Rod cutting, coin change](../dynamic-programming/dp-rod-cutting-coin-change.md)
 
 </div>
 

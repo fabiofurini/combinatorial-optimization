@@ -6,7 +6,7 @@ title: "Exercises · Formulations of the knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 8** · each solution opens with a click · [:material-book-open-variant: Chapter 8](../formulations/knapsack-formulations.md)
+**Exercises · Chapter 8** · each solution opens with a click · [:material-book-open-variant: Chapter 8: Knapsack](../formulations/knapsack-formulations.md)
 
 </div>
 

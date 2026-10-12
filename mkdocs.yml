@@ -97,7 +97,7 @@ extra:
       lang: it
 
 extra_css:
-  - stylesheets/extra.css?v=2f877c1879
+  - stylesheets/extra.css?v=1967ecebc7
   - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraph.css
   - stylesheets/interattivi.css?v=c51ac2286b
 

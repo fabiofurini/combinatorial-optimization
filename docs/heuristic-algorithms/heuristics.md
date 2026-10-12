@@ -6,7 +6,7 @@ title: "Heuristic algorithms: definitions"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 18** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises](../exercises/heuristics.md)
+**Part 4 · Heuristic algorithms · Chapter 18** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Definitions](../exercises/heuristics.md)
 
 </div>
 
@@ -542,3 +542,7 @@ title: "Heuristic algorithms: definitions"
     <td><span class="arithmatex">\(9\)</span></td>
     </tr>
     </table></div>
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Definitions](../exercises/heuristics.md)

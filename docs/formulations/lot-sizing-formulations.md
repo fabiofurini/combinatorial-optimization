@@ -6,7 +6,7 @@ title: "Formulations of capacitated lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 13** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises](../exercises/lot-sizing-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 13** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Lot sizing](../exercises/lot-sizing-formulations.md)
 
 </div>
 
@@ -575,3 +575,7 @@ title: "Formulations of capacitated lot sizing"
     <td>plan <span class="arithmatex">\((3,0,4,4,0)\)</span></td>
     </tr>
     </table></div>
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Lot sizing](../exercises/lot-sizing-formulations.md)

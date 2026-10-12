@@ -6,7 +6,7 @@ title: "Constructive heuristics"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 19** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises](../exercises/constructive-heuristics.md)
+**Part 4 · Heuristic algorithms · Chapter 19** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: Constructive](../exercises/constructive-heuristics.md) · [:material-gesture-tap: App: Bin packing heuristics](../lab/bin-packing-heuristics.md) · [:material-gesture-tap: App: List scheduling and LPT](../lab/list-scheduling-lpt.md) · [:material-gesture-tap: App: Vertex coloring: greedy and DSATUR](../lab/coloring-greedy-dsatur.md)
 
 </div>
 
@@ -1852,6 +1852,10 @@ $$
         return TourLength(n, d, tour);
     }
     ```
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Constructive](../exercises/constructive-heuristics.md)
 
 <!-- laboratorio-interattivo: sezione generata da interattivi.py -->
 
