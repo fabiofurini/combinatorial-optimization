@@ -119,7 +119,7 @@ title: "Counting the solutions"
 
     The last line counts the partitions of $5$ elements into $1$, $2$ or $3$ blocks ($1$, $15$ and $25$ of them); the other $10+1$ partitions of the $52$ have $4$ or $5$ blocks.
 
-- These numbers count the <strong>candidate</strong> solutions. The feasible ones can be far fewer: in <span style="color:#1971c2">[Example 1.1](index.md#box-2-ex-oc1-small)</span> only $11$ of the $16$ subsets are feasible.
+- These numbers count the <strong>candidate</strong> solutions. The feasible ones can be far fewer: in <span style="color:#1971c2">[Example 1.1](combinatorial-optimization-problems.md#box-2-ex-oc1-small)</span> only $11$ of the $16$ subsets are feasible.
 
 ---
 

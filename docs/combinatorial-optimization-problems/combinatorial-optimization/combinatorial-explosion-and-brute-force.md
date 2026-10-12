@@ -32,7 +32,7 @@ title: "Combinatorial explosion and brute force"
 
 !!! esempio "Example 1.3: brute force on the small instance"
 
-    For the instance of <span style="color:#1971c2">[Example 1.1](index.md#box-2-ex-oc1-small)</span> the $2^4=16$ subsets of $\mathscr{U}$ are:
+    For the instance of <span style="color:#1971c2">[Example 1.1](combinatorial-optimization-problems.md#box-2-ex-oc1-small)</span> the $2^4=16$ subsets of $\mathscr{U}$ are:
 
     <div class="tabella" markdown="0"><table>
     <tr>

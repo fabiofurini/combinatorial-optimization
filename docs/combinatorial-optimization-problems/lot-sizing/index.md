@@ -28,24 +28,6 @@ title: "Capacitated lot sizing"
 
     - compute a lower bound on the cost from the number of setups that the total demand requires.
 
-<div class="grid cards sottopagine" markdown>
-
--   **Definition**
-
-    The capacitated lot sizing problem
-
-    [:octicons-arrow-right-24: Open](#81-the-capacitated-lot-sizing-problem)
-
--   **8.2 Variants**
-
-    [:octicons-arrow-right-24: Open](variants.md)
-
--   **Remarks and summary**
-
-    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
-
-</div>
-
 ## 8.1 The capacitated lot sizing problem
 
 <a id="box-1-defCLS"></a>
@@ -129,6 +111,28 @@ title: "Capacitated lot sizing"
         $$
 
     3. The quantities are integer. With integer data, once the periods with a setup are fixed, what remains is a minimum cost flow problem, which has an integer optimal solution: restricting the quantities to integers does not change the optimal cost.
+
+<div class="grid cards sottopagine" markdown>
+
+-   **Definition**
+
+    The capacitated lot sizing problem · Assumptions
+
+    [:octicons-arrow-right-24: Open](#81-the-capacitated-lot-sizing-problem)
+
+-   **8.2 Variants**
+
+    Counting the solutions · A first plan by hand · A combinatorial lower bound
+
+    [:octicons-arrow-right-24: Open](variants.md)
+
+-   **Remarks and summary**
+
+    Typical mistakes · In summary
+
+    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
+
+</div>
 
 ---
 

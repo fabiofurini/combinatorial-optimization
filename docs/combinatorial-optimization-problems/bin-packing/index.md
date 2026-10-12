@@ -30,24 +30,6 @@ title: "Bin packing and cutting stock"
 
     - use the two bounds to certify that a solution is optimal.
 
-<div class="grid cards sottopagine" markdown>
-
--   **Definition**
-
-    The bin packing problem
-
-    [:octicons-arrow-right-24: Open](#31-the-bin-packing-problem)
-
--   **3.2 The cutting stock problem**
-
-    [:octicons-arrow-right-24: Open](the-cutting-stock-problem.md)
-
--   **Remarks and summary**
-
-    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
-
-</div>
-
 ## 3.1 The bin packing problem
 
 <a id="box-1-defBPP"></a>
@@ -208,6 +190,28 @@ title: "Bin packing and cutting stock"
     \{\{4\},\{1,5\},\{2,3\}\}, & \{\{4\},\{1,3\},\{2,5\}\}.
     \end{array}
     $$
+
+<div class="grid cards sottopagine" markdown>
+
+-   **Definition**
+
+    The bin packing problem · Assumptions · Counting the solutions, a first solution and a simple bound
+
+    [:octicons-arrow-right-24: Open](#31-the-bin-packing-problem)
+
+-   **3.2 The cutting stock problem**
+
+    Counting the solutions, a first solution and a simple bound
+
+    [:octicons-arrow-right-24: Open](the-cutting-stock-problem.md)
+
+-   **Remarks and summary**
+
+    Typical mistakes · In summary
+
+    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
+
+</div>
 
 ---
 

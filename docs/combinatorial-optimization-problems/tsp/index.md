@@ -30,24 +30,6 @@ title: "The travelling salesman problem"
 
     - compute a lower bound on the optimal length from the two shortest edges of every city, and measure the gap with a tour.
 
-<div class="grid cards sottopagine" markdown>
-
--   **Definition**
-
-    The travelling salesman problem
-
-    [:octicons-arrow-right-24: Open](#61-the-travelling-salesman-problem)
-
--   **6.2 Variants: metric and asymmetric TSP**
-
-    [:octicons-arrow-right-24: Open](variants-metric-and-asymmetric-tsp.md)
-
--   **Remarks and summary**
-
-    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
-
-</div>
-
 ## 6.1 The travelling salesman problem
 
 <a id="box-1-defTSP"></a>
@@ -145,6 +127,28 @@ title: "The travelling salesman problem"
     ![Figure 1](../../img/tsp/fig01.svg){ .fig loading=lazy  }
 
     Its length is $L(\sigma)=d_{13}+d_{35}+d_{52}+d_{24}+d_{41}=2+7+4+3+2=18$.
+
+<div class="grid cards sottopagine" markdown>
+
+-   **Definition**
+
+    The travelling salesman problem · Assumptions
+
+    [:octicons-arrow-right-24: Open](#61-the-travelling-salesman-problem)
+
+-   **6.2 Variants: metric and asymmetric TSP**
+
+    A first tour by hand · A combinatorial lower bound
+
+    [:octicons-arrow-right-24: Open](variants-metric-and-asymmetric-tsp.md)
+
+-   **Remarks and summary**
+
+    Typical mistakes · In summary
+
+    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
+
+</div>
 
 ---
 

@@ -32,28 +32,6 @@ title: "DP for the rod cutting problem"
 
     - write the second recurrence $v(j,\ell)$ on pairs (largest piece length, rod length) and count the steps of the DP algorithm.
 
-<div class="grid cards sottopagine" markdown>
-
--   **Overview**
-
-    Problem definition
-
-    [:octicons-arrow-right-24: Open](#201-problem-definition)
-
--   **20.2 A first DP algorithm**
-
-    [:octicons-arrow-right-24: Open](a-first-dp-algorithm.md)
-
--   **20.3 A second DP algorithm**
-
-    [:octicons-arrow-right-24: Open](a-second-dp-algorithm.md)
-
--   **Typical mistakes · In summary**
-
-    [:octicons-arrow-right-24: Open](typical-mistakes.md)
-
-</div>
-
 ## 20.1 Problem definition
 
 <a id="box-1-defRCP"></a>
@@ -217,6 +195,30 @@ title: "DP for the rod cutting problem"
     <td><span class="arithmatex">\(1+1+1+1=4\)</span></td>
     </tr>
     </table></div>
+
+<div class="grid cards sottopagine" markdown>
+
+-   **Overview**
+
+    Problem definition · Encoding of feasible solutions
+
+    [:octicons-arrow-right-24: Open](#201-problem-definition)
+
+-   **20.2 A first DP algorithm**
+
+    [:octicons-arrow-right-24: Open](a-first-dp-algorithm.md)
+
+-   **20.3 A second DP algorithm**
+
+    [:octicons-arrow-right-24: Open](a-second-dp-algorithm.md)
+
+-   **Typical mistakes · In summary**
+
+    In summary
+
+    [:octicons-arrow-right-24: Open](typical-mistakes.md)
+
+</div>
 
 ---
 

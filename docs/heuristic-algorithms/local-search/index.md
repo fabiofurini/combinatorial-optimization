@@ -30,6 +30,20 @@ title: "Local search"
 
     - combine neighbourhoods (variable neighbourhood descent) and restarts (multi-start).
 
+## 25.1 Local search { #sez-sec-ls }
+
+<a id="box-1-def-ls"></a>
+
+!!! definizione "Definition 25.1: Local search"
+
+    Given a neighbourhood $N$, a <strong>local search</strong> (denoted by $LS$) is an improvement heuristic. It starts from a feasible solution and, at every iteration, looks in the neighbourhood of the current solution for a <em>better</em> solution. If it finds one, it moves to it and repeats; if no neighbour is better, the current solution is a local optimum with respect to $N$, and the search stops.
+
+- The <strong>neighbourhood</strong> $N(S)$ of a feasible solution $S$, the <strong>move</strong> from $S$ to a neighbour and the <strong>local optimum</strong> with respect to $N$ are defined in the chapter «Heuristic algorithms: definitions».
+
+!!! chiave ""
+
+    A local search improves a feasible solution by moving from a solution to a better neighbour, and it stops in a local optimum with respect to $N$.
+
 <div class="grid cards sottopagine" markdown>
 
 -   **Overview**
@@ -44,9 +58,13 @@ title: "Local search"
 
 -   **Local search: the scheme · Neighbourhoods for the four problems**
 
+    KP: flip and swap · BPP: move and swap · TSP: 2-opt and Or-opt · P\,||\,Cmax: move and swap · Summary
+
     [:octicons-arrow-right-24: Open](local-search-the-scheme.md)
 
 -   **25.5 First improvement and best improvement**
+
+    Best improvement · Comparison
 
     [:octicons-arrow-right-24: Open](first-improvement-and-best-improvement.md)
 
@@ -56,17 +74,25 @@ title: "Local search"
 
 -   **25.7 TSP: 2-opt and Or-opt**
 
+    The Or-opt local search · First and best improvement on a medium instance · 3-opt and Lin–Kernighan
+
     [:octicons-arrow-right-24: Open](tsp-2-opt-and-or-opt.md)
 
 -   **25.8 $P\,||\,C_{\max}$: move and swap**
+
+    The swap local search
 
     [:octicons-arrow-right-24: Open](p-cmax-move-and-swap.md)
 
 -   **25.9 Flat landscapes and auxiliary objectives**
 
+    The auxiliary objective · The move local search for the BPP · The swap local search for the BPP · Properties of the auxiliary objective · Examples
+
     [:octicons-arrow-right-24: Open](flat-landscapes-and-auxiliary-objectives.md)
 
 -   **25.10 KP: feasibility and penalties**
+
+    Penalizing the excess weight
 
     [:octicons-arrow-right-24: Open](kp-feasibility-and-penalties.md)
 
@@ -76,9 +102,13 @@ title: "Local search"
 
 -   **25.12 Multi-start local search**
 
+    What local search gives, and what it does not
+
     [:octicons-arrow-right-24: Open](multi-start-local-search.md)
 
 -   **Typical mistakes · In summary**
+
+    In summary
 
     [:octicons-arrow-right-24: Open](typical-mistakes.md)
 
@@ -87,20 +117,6 @@ title: "Local search"
     [:octicons-arrow-right-24: Open](c-implementation.md)
 
 </div>
-
-## 25.1 Local search { #sez-sec-ls }
-
-<a id="box-1-def-ls"></a>
-
-!!! definizione "Definition 25.1: Local search"
-
-    Given a neighbourhood $N$, a <strong>local search</strong> (denoted by $LS$) is an improvement heuristic. It starts from a feasible solution and, at every iteration, looks in the neighbourhood of the current solution for a <em>better</em> solution. If it finds one, it moves to it and repeats; if no neighbour is better, the current solution is a local optimum with respect to $N$, and the search stops.
-
-- The <strong>neighbourhood</strong> $N(S)$ of a feasible solution $S$, the <strong>move</strong> from $S$ to a neighbour and the <strong>local optimum</strong> with respect to $N$ are defined in the chapter «Heuristic algorithms: definitions».
-
-!!! chiave ""
-
-    A local search improves a feasible solution by moving from a solution to a better neighbour, and it stops in a local optimum with respect to $N$.
 
 ---
 

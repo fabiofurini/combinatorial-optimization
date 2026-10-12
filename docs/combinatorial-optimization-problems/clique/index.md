@@ -28,24 +28,6 @@ title: "The maximum clique problem"
 
     - state the weighted variants of the problem and its complexity.
 
-<div class="grid cards sottopagine" markdown>
-
--   **Definition**
-
-    The maximum clique problem
-
-    [:octicons-arrow-right-24: Open](#51-the-maximum-clique-problem)
-
--   **5.3 Weighted variants**
-
-    [:octicons-arrow-right-24: Open](weighted-variants.md)
-
--   **Remarks and summary**
-
-    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
-
-</div>
-
 ## 5.1 The maximum clique problem
 
 <a id="box-1-mcpP-def-clique"></a>
@@ -266,6 +248,26 @@ title: "The maximum clique problem"
 - <strong>Bounds on <span style="color:#1971c2">[Example 5.2](#box-7-mcpP-ex2)</span>.</strong> Every vertex has degree $6$: the degree bound and the degree count bound give $7$, and the edge bound gives $7$, since $7 \cdot 6/2 = 21 \le 24 < 28$.
 
 - The four pairs $\{1,5\},\{2,6\},\{3,7\},\{4,8\}$ are stable sets, so they color the graph with $4$ colors: the coloring bound gives $4 = \omega(G)$. On dense graphs the bounds based on degrees are weak, and a good coloring is much better.
+
+<div class="grid cards sottopagine" markdown>
+
+-   **Definition**
+
+    The maximum clique problem · Assumptions · Simple upper bounds
+
+    [:octicons-arrow-right-24: Open](#51-the-maximum-clique-problem)
+
+-   **5.3 Weighted variants**
+
+    [:octicons-arrow-right-24: Open](weighted-variants.md)
+
+-   **Remarks and summary**
+
+    Typical mistakes · In summary
+
+    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
+
+</div>
 
 ---
 

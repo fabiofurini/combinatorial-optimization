@@ -156,13 +156,12 @@ nav:
   - Home: index.md
   - Combinatorial optimization:
       - combinatorial-optimization-problems/combinatorial-optimization/index.md
+      - "Combinatorial optimization problems": combinatorial-optimization-problems/combinatorial-optimization/combinatorial-optimization-problems.md
       - "Counting the solutions": combinatorial-optimization-problems/combinatorial-optimization/counting-the-solutions.md
       - "Combinatorial explosion and brute force": combinatorial-optimization-problems/combinatorial-optimization/combinatorial-explosion-and-brute-force.md
       - "Primal bounds, dual bounds and gap": combinatorial-optimization-problems/combinatorial-optimization/primal-bounds-dual-bounds-and-gap.md
       - "A glimpse of computational complexity": combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md
       - "Typical mistakes · In summary": combinatorial-optimization-problems/combinatorial-optimization/typical-mistakes.md
-      - "Exercises": combinatorial-optimization-problems/combinatorial-optimization/exercises.md
-      - "Roadmap of the course": combinatorial-optimization-problems/combinatorial-optimization/roadmap-of-the-course.md
   - Selected problems:
       - selected-problems/index.md
       - "Knapsack":

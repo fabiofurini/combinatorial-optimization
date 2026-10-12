@@ -30,28 +30,6 @@ title: "DP for the unbounded knapsack problem"
 
     - count the steps of the two DP algorithms and compare them.
 
-<div class="grid cards sottopagine" markdown>
-
--   **Overview**
-
-    Problem definition
-
-    [:octicons-arrow-right-24: Open](#181-problem-definition)
-
--   **18.2 A first DP algorithm**
-
-    [:octicons-arrow-right-24: Open](a-first-dp-algorithm.md)
-
--   **18.3 A second DP algorithm**
-
-    [:octicons-arrow-right-24: Open](a-second-dp-algorithm.md)
-
--   **Typical mistakes · In summary**
-
-    [:octicons-arrow-right-24: Open](typical-mistakes.md)
-
-</div>
-
 ## 18.1 Problem definition
 
 <a id="box-1-defUKP"></a>
@@ -114,6 +92,30 @@ $$
 !!! chiave ""
 
     The main difference with the $0$–$1$ Knapsack Problem is that the variables are no longer binary. In UKP, each variable $x_j$ can take any non-negative integer value, provided that the capacity constraint is respected.
+
+<div class="grid cards sottopagine" markdown>
+
+-   **Overview**
+
+    Problem definition · Encoding of feasible solutions
+
+    [:octicons-arrow-right-24: Open](#181-problem-definition)
+
+-   **18.2 A first DP algorithm**
+
+    [:octicons-arrow-right-24: Open](a-first-dp-algorithm.md)
+
+-   **18.3 A second DP algorithm**
+
+    [:octicons-arrow-right-24: Open](a-second-dp-algorithm.md)
+
+-   **Typical mistakes · In summary**
+
+    In summary
+
+    [:octicons-arrow-right-24: Open](typical-mistakes.md)
+
+</div>
 
 ---
 

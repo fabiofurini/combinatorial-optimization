@@ -74,7 +74,7 @@ title: "Primal bounds, dual bounds and gap"
 
 !!! esempio "Example 1.4: bounds on the small instance"
 
-    We consider again the instance of <span style="color:#1971c2">[Example 1.1](index.md#box-2-ex-oc1-small)</span> (maximization), and we suppose that we have not enumerated its subsets.
+    We consider again the instance of <span style="color:#1971c2">[Example 1.1](combinatorial-optimization-problems.md#box-2-ex-oc1-small)</span> (maximization), and we suppose that we have not enumerated its subsets.
 
     - <em>Primal bound.</em> We start from $\emptyset$ and examine the elements by non-increasing weight, adding each one if the set stays feasible: $\{1\}$ is feasible, $\{1,2\}$ is not, $\{1,3\}$ is feasible, $\{1,3,4\}$ is not. The feasible solution $\bar S = \{1,3\}$ gives $\LB = 11$.
 

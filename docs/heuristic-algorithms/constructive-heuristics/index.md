@@ -30,60 +30,6 @@ title: "Constructive heuristics"
 
     - compare the results with the dual bounds, and explain when a constructive heuristic fails.
 
-<div class="grid cards sottopagine" markdown>
-
--   **Overview**
-
-    Constructive heuristics
-
-    [:octicons-arrow-right-24: Open](#sez-sec-constructive)
-
--   **The problems and the assumptions · The greedy paradigm**
-
-    [:octicons-arrow-right-24: Open](the-problems-and-the-assumptions.md)
-
--   **24.4 The knapsack problem: which order?**
-
-    [:octicons-arrow-right-24: Open](the-knapsack-problem-which-order.md)
-
--   **24.5 The bin packing problem: first sort, then pack**
-
-    [:octicons-arrow-right-24: Open](the-bin-packing-problem-first-sort-then-pack.md)
-
--   **24.6 Scheduling on parallel machines: longest jobs first**
-
-    [:octicons-arrow-right-24: Open](scheduling-on-parallel-machines-longest-jobs-first.md)
-
--   **24.7 The travelling salesman problem: append or insert?**
-
-    [:octicons-arrow-right-24: Open](the-travelling-salesman-problem-append-or-insert.md)
-
--   **24.8 Vertex coloring: greedy and DSATUR**
-
-    [:octicons-arrow-right-24: Open](vertex-coloring-greedy-and-dsatur.md)
-
--   **24.9 Randomized construction**
-
-    [:octicons-arrow-right-24: Open](randomized-construction.md)
-
--   **24.10 Look-ahead and regret**
-
-    [:octicons-arrow-right-24: Open](look-ahead-and-regret.md)
-
--   **24.11 What constructive heuristics give, and what they do not**
-
-    [:octicons-arrow-right-24: Open](what-constructive-heuristics-give-and-what-they-do-not.md)
-
--   **Typical mistakes · In summary**
-
-    [:octicons-arrow-right-24: Open](typical-mistakes.md)
-
--   **24.14 <code>C++</code> implementation**
-
-    [:octicons-arrow-right-24: Open](c-implementation.md)
-
-</div>
-
 ## 24.1 Constructive heuristics { #sez-sec-constructive }
 
 <a id="box-1-def-constructive"></a>
@@ -95,6 +41,76 @@ title: "Constructive heuristics"
 - The elements depend on the problem: the items selected for the knapsack, the assignments of items to bins and of jobs to machines, the edges of a tour.
 
 - The quality of the result depends on how the element to add is chosen at every step (Section [24.3](the-problems-and-the-assumptions.md#sez-sec-greedy)).
+
+<div class="grid cards sottopagine" markdown>
+
+-   **Overview**
+
+    Constructive heuristics
+
+    [:octicons-arrow-right-24: Open](#sez-sec-constructive)
+
+-   **The problems and the assumptions · The greedy paradigm**
+
+    The greedy paradigm
+
+    [:octicons-arrow-right-24: Open](the-problems-and-the-assumptions.md)
+
+-   **24.4 The knapsack problem: which order?**
+
+    [:octicons-arrow-right-24: Open](the-knapsack-problem-which-order.md)
+
+-   **24.5 The bin packing problem: first sort, then pack**
+
+    Best Fit Decreasing · What sorting gives, and what it does not
+
+    [:octicons-arrow-right-24: Open](the-bin-packing-problem-first-sort-then-pack.md)
+
+-   **24.6 Scheduling on parallel machines: longest jobs first**
+
+    Longest processing time first
+
+    [:octicons-arrow-right-24: Open](scheduling-on-parallel-machines-longest-jobs-first.md)
+
+-   **24.7 The travelling salesman problem: append or insert?**
+
+    Multi-start nearest neighbour · Insertion heuristics · A comparison on a larger instance
+
+    [:octicons-arrow-right-24: Open](the-travelling-salesman-problem-append-or-insert.md)
+
+-   **24.8 Vertex coloring: greedy and DSATUR**
+
+    DSATUR · What the greedy coloring guarantees · DSATUR as a heuristic
+
+    [:octicons-arrow-right-24: Open](vertex-coloring-greedy-and-dsatur.md)
+
+-   **24.9 Randomized construction**
+
+    [:octicons-arrow-right-24: Open](randomized-construction.md)
+
+-   **24.10 Look-ahead and regret**
+
+    Look-ahead: the pilot method
+
+    [:octicons-arrow-right-24: Open](look-ahead-and-regret.md)
+
+-   **24.11 What constructive heuristics give, and what they do not**
+
+    [:octicons-arrow-right-24: Open](what-constructive-heuristics-give-and-what-they-do-not.md)
+
+-   **Typical mistakes · In summary**
+
+    In summary
+
+    [:octicons-arrow-right-24: Open](typical-mistakes.md)
+
+-   **24.14 <code>C++</code> implementation**
+
+    The knapsack problem · The bin packing problem · Scheduling on parallel machines · The travelling salesman problem · Randomized construction
+
+    [:octicons-arrow-right-24: Open](c-implementation.md)
+
+</div>
 
 ---
 

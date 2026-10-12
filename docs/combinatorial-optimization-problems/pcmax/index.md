@@ -30,20 +30,6 @@ title: "Parallel machine scheduling"
 
     - compute a lower bound on the optimal makespan and use it to prove that a schedule is optimal.
 
-<div class="grid cards sottopagine" markdown>
-
--   **Definition**
-
-    Scheduling on identical parallel machines
-
-    [:octicons-arrow-right-24: Open](#71-scheduling-on-identical-parallel-machines)
-
--   **Remarks and summary**
-
-    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
-
-</div>
-
 ## 7.1 Scheduling on identical parallel machines
 
 <a id="box-1-defPCmax"></a>
@@ -300,6 +286,22 @@ title: "Parallel machine scheduling"
     </table></div>
 
 - For this reason the two problems share many ideas: several heuristic algorithms for one of them have a counterpart for the other.
+
+<div class="grid cards sottopagine" markdown>
+
+-   **Definition**
+
+    Scheduling on identical parallel machines · Assumptions
+
+    [:octicons-arrow-right-24: Open](#71-scheduling-on-identical-parallel-machines)
+
+-   **Remarks and summary**
+
+    Typical mistakes · In summary
+
+    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
+
+</div>
 
 ---
 

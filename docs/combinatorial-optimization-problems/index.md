@@ -10,7 +10,7 @@
 
     ---
 
-    Combinatorial optimization problems
+    
 
     [:octicons-arrow-right-24: Read the chapter](combinatorial-optimization/index.md) · [Exercises](../exercises/combinatorial-optimization.md)
 

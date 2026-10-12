@@ -38,32 +38,6 @@ title: "Dynamic programming for lot sizing"
 
     - count the steps of the two DP algorithms, and say why the second one is pseudo-polynomial.
 
-<div class="grid cards sottopagine" markdown>
-
--   **Overview**
-
-    Problem definition
-
-    [:octicons-arrow-right-24: Open](#221-problem-definition)
-
--   **22.2 A DP algorithm for the ULS**
-
-    [:octicons-arrow-right-24: Open](a-dp-algorithm-for-the-uls.md)
-
--   **22.2.2 A DP algorithm for the ULS: Step 1 and Step 2**
-
-    [:octicons-arrow-right-24: Open](a-dp-algorithm-for-the-uls-step-1-and-step-2.md)
-
--   **22.3 A DP algorithm for the capacitated case**
-
-    [:octicons-arrow-right-24: Open](a-dp-algorithm-for-the-capacitated-case.md)
-
--   **Typical mistakes · In summary**
-
-    [:octicons-arrow-right-24: Open](typical-mistakes.md)
-
-</div>
-
 ## 22.1 Problem definition
 
 <a id="box-1-defULS"></a>
@@ -386,6 +360,36 @@ title: "Dynamic programming for lot sizing"
     </table></div>
 
     The optimal value of the ULS instance is $170$, attained by $2$ solutions: <span style="color:#1971c2">$(5)$</span> and <span style="color:#1971c2">$(7)$</span>.
+
+<div class="grid cards sottopagine" markdown>
+
+-   **Overview**
+
+    Problem definition · Encoding of feasible solutions · The zero-inventory ordering property
+
+    [:octicons-arrow-right-24: Open](#221-problem-definition)
+
+-   **22.2 A DP algorithm for the ULS**
+
+    [:octicons-arrow-right-24: Open](a-dp-algorithm-for-the-uls.md)
+
+-   **22.2.2 A DP algorithm for the ULS: Step 1 and Step 2**
+
+    [:octicons-arrow-right-24: Open](a-dp-algorithm-for-the-uls-step-1-and-step-2.md)
+
+-   **22.3 A DP algorithm for the capacitated case**
+
+    The case of constant capacity
+
+    [:octicons-arrow-right-24: Open](a-dp-algorithm-for-the-capacitated-case.md)
+
+-   **Typical mistakes · In summary**
+
+    In summary
+
+    [:octicons-arrow-right-24: Open](typical-mistakes.md)
+
+</div>
 
 ---
 

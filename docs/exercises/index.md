@@ -4,7 +4,7 @@ Exercises with **worked solutions**, chapter by chapter. Try each exercise on yo
 
 ## Combinatorial optimization problems
 
-- [1. Combinatorial optimization problems](combinatorial-optimization.md) · 4 exercises
+- [1. Combinatorial optimization problems](combinatorial-optimization.md) · 8 exercises
 - [2. Knapsack problems](knapsack.md) · 6 exercises
 - [3. Bin packing and cutting stock](bin-packing.md) · 6 exercises
 - [4. Vertex coloring](coloring.md) · 5 exercises
