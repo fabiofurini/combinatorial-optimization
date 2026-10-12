@@ -12,278 +12,331 @@ title: "Exercises · Principles of dynamic programming"
 
 <a id="esercizio-16-1"></a>
 
-!!! esercizio "Exercise 16.1: Optimal substructure and overlapping subproblems"
+!!! esercizio "Exercise 16.1: Optimal substructure and overlapping subproblems: the knapsack problem"
 
-    A staircase has $n=6$ steps. Stepping on step $k$ costs $c_k$, and from a step we can climb to the next one or skip one step. We start from the ground, step $0$, at no cost, and we want to reach step $6$ at minimum total cost:
+    Consider the 0–1 knapsack problem with $n=4$ items and capacity $c=8$:
 
     $$
-    \begin{array}{l|cccccc}
-    \hline  & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} \\[1ex]
-    \hline {c_k} & {3} & {1} & {4} & {1} & {5} & {2} \\
+    \max\Big\{\sum_{j=1}^n p_jx_j:\ \sum_{j=1}^n w_jx_j\le c,\ x_j\in\{0,1\},\ j=1,\dots,n\Big\},
+    $$
+
+    with the data
+
+    $$
+    \begin{array}{l|cccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\[1ex]
+    \hline {p_j} & {3} & {5} & {4} & {5} \\[1ex]
+    {w_j} & {2} & {4} & {3} & {3} \\
     \hline
     \end{array}
     $$
 
-    For $k\in\{0,1,\dots,n\}$, let $v(k)$ be the minimum cost to reach step $k$.
+    For $j\in\{0,\dots,n\}$ and $k\in\{0,\dots,c\}$, let $v(j,k)$ be the optimal value with the items $1,\dots,j$ only and capacity $k$.
 
     **Questions**
 
-    1. Check the optimal substructure: if an optimal way to reach step $k$ arrives from step $k-1$, what can be said about its part from step $0$ to step $k-1$? Write the recurrence for $v(k)$, with the base cases.
+    1. Check the optimal substructure: if an optimal solution of the subproblem $(j,k)$ takes item $j$, what can be said about its restriction to the items $1,\dots,j-1$? Write the recurrence for $v(j,k)$ and the base cases.
 
-    2. Draw the recursion tree of the top-down evaluation of $v(6)$ down to the base cases. How many times is $v(2)$ evaluated? What property does this show?
+    2. Evaluate $v(4,8)$ top-down and list, for each $j$, the subproblems $(j,k)$ that the recursion generates. Which of them are generated more than once? What property does this show?
 
-    3. Fill the lookup table bottom-up, storing also in $s[k]$ the step from which the best way arrives.
+    3. Fill the lookup table of $v(j,k)$ row by row, storing in $s(j,k)$ whether item $j$ is taken ($1$) or not ($0$); a tie is broken in favour of not taking it.
 
     4. Reconstruct an optimal solution from the table $s$.
 
 ??? soluzione "Solution"
 
-    1. The part from step $0$ to step $k-1$ is a way to reach step $k-1$, and it must be optimal: a cheaper way to reach step $k-1$, followed by the last move, would reach step $k$ at a lower cost. The same holds when the last move comes from step $k-2$. Hence:
+    1. Its restriction is a solution of the subproblem $(j-1,k-w_j)$, and it must be optimal: a better one, plus item $j$, would beat the optimal solution of $(j,k)$. If item $j$ is not taken, the restriction is optimal for $(j-1,k)$. Hence:
 
         !!! nota ""
 
             $$
-            v(k)=\left\{\begin{array}{ll}
-            c_k+\min\{v(k-1),\,v(k-2)\} & \textrm{if } 2\le k\le n,\\[1ex]
-            c_1 & \textrm{if } k=1,\\[1ex]
-            0 & \textrm{if } k=0.
+            v(j,k)=\left\{\begin{array}{ll}
+            \max\{v(j-1,k),\;p_j+v(j-1,k-w_j)\} & \textrm{if } j\ge 1,\ w_j\le k,\\[1ex]
+            v(j-1,k) & \textrm{if } j\ge 1,\ w_j>k,\\[1ex]
+            0 & \textrm{if } j=0.
             \end{array}\right.
             $$
 
-    2. Each call for $k\ge 2$ calls $k-1$ and $k-2$. The tree has $25$ calls, and the numbers of evaluations of $v(0),\dots,v(6)$ are $5, 8, 5, 3, 2, 1, 1$:
+    2. Each call $(j,k)$ generates $(j-1,k)$ and, if $w_j\le k$, $(j-1,k-w_j)$:
 
-        ![Figure 1](../img/ex-dp-principles/fig01.svg){ .fig loading=lazy  }
+        - $j=4$: $(4,8)$;
 
-        The value $v(2)$ is evaluated $5$ times: the subproblems <strong>overlap</strong>. With a lookup table each of the $7$ values is computed once.
+        - $j=3$: $(3,8)$, $(3,5)$;
 
-    3. The values are computed for increasing $k$:
+        - $j=2$: $(2,8)$, $(2,5)$, $(2,5)$, $(2,2)$ (repeated: $(2,5)$);
 
-        <div class="tabella" markdown="0"><table>
-        <tr>
-        <th><span class="arithmatex">\(k\)</span></th>
-        <th><span class="arithmatex">\(\min\{v(k-1),v(k-2)\}\)</span></th>
-        <th><span class="arithmatex">\({v}[k]\)</span></th>
-        <th><span class="arithmatex">\({s}[k]\)</span></th>
-        <th>action</th>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td>—</td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td>—</td>
-        <td>base case</td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(1\)</span></td>
-        <td>—</td>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td>base case: <span class="arithmatex">\({v}[1]\leftarrow c_1=3\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td><span class="arithmatex">\(\min\{3,0\}\)</span></td>
-        <td><span class="arithmatex">\(1+0=1\)</span></td>
-        <td><span class="arithmatex">\(0\)</span></td>
-        <td>from step <span class="arithmatex">\(0\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(3\)</span></td>
-        <td><span class="arithmatex">\(\min\{1,3\}\)</span></td>
-        <td><span class="arithmatex">\(4+1=5\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td>from step <span class="arithmatex">\(2\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td><span class="arithmatex">\(\min\{5,1\}\)</span></td>
-        <td><span class="arithmatex">\(1+1=2\)</span></td>
-        <td><span class="arithmatex">\(2\)</span></td>
-        <td>from step <span class="arithmatex">\(2\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(5\)</span></td>
-        <td><span class="arithmatex">\(\min\{2,5\}\)</span></td>
-        <td><span class="arithmatex">\(5+2=7\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td>from step <span class="arithmatex">\(4\)</span></td>
-        </tr>
-        <tr>
-        <td><span class="arithmatex">\(6\)</span></td>
-        <td><span class="arithmatex">\(\min\{7,2\}\)</span></td>
-        <td><span class="arithmatex">\(2+2=4\)</span></td>
-        <td><span class="arithmatex">\(4\)</span></td>
-        <td>from step <span class="arithmatex">\(4\)</span></td>
-        </tr>
-        </table></div>
+        - $j=1$: $(1,8)$, $(1,4)$, $(1,5)$, $(1,1)$, $(1,5)$, $(1,1)$, $(1,2)$ (repeated: $(1,1)$, $(1,5)$);
 
-        A tie is broken in favour of step $k-1$.
+        - $j=0$: $(0,8)$, $(0,6)$, $(0,4)$, $(0,2)$, $(0,5)$, $(0,3)$, $(0,1)$, $(0,5)$, $(0,3)$, $(0,1)$, $(0,2)$, $(0,0)$ (repeated: $(0,1)$, $(0,2)$, $(0,3)$, $(0,5)$);
 
-    4. Starting from $k=6$ and following $s$ backwards: $s[6]=4$, $s[4]=2$, $s[2]=0$. The optimal way is $0\to 2\to 4\to 6$, with cost $1+1+2=4=v(6)$.
-
-    !!! chiave ""
-
-        $v(6)=4$, reached by the steps $0\to 2\to 4\to 6$; the recursion tree evaluates $v(2)$ $5$ times, the lookup table once.
-
-<a id="esercizio-16-2"></a>
-
-!!! esercizio "Exercise 16.2: Writing a recurrence: no two consecutive positions"
-
-    Along a road there are $n=7$ positions for billboards, numbered in order. A billboard in position $k$ brings a profit $p_k$, and two billboards cannot be in consecutive positions:
-
-    $$
-    \begin{array}{l|ccccccc}
-    \hline  & {k=1} & {k=2} & {k=3} & {k=4} & {k=5} & {k=6} & {k=7} \\[1ex]
-    \hline {p_k} & {5} & {8} & {6} & {3} & {7} & {9} & {4} \\
-    \hline
-    \end{array}
-    $$
-
-    We want a set of positions, no two consecutive, of maximum total profit.
-
-    **Questions**
-
-    1. Define the subproblems: let $v(k)$ be the optimal value when only the positions $1,\dots,k$ are available. Write a recurrence for $v(k)$, distinguishing whether position $k$ is used, and the base cases.
-
-    2. Fill the lookup table bottom-up, storing in $s[k]$ whether position $k$ is used ($1$) or not ($0$).
-
-    3. Reconstruct an optimal solution.
-
-    4. Choose the positions greedily, by non-increasing profit, skipping the positions next to a chosen one. Is the result optimal?
-
-??? soluzione "Solution"
-
-    1. If position $k$ is not used, the best choice among $1,\dots,k$ is the best choice among $1,\dots,k-1$. If it is used, position $k-1$ is forbidden and the rest is an optimal choice among $1,\dots,k-2$ (optimal substructure: a better choice there would improve the whole). Hence:
-
-        !!! nota ""
-
-            $$
-            v(k)=\left\{\begin{array}{ll}
-            \max\{v(k-1),\;p_k+v(k-2)\} & \textrm{if } 2\le k\le n,\\[1ex]
-            p_1 & \textrm{if } k=1,\\[1ex]
-            0 & \textrm{if } k=0.
-            \end{array}\right.
-            $$
-
-    2. The values are computed for increasing $k$ (a tie is broken in favour of not using position $k$):
-
-        $$
-        \begin{array}{c|c|c|c|c}
-        \hline {k} & {v(k-1)} & {p_k+v(k-2)} & {{v}[k]} & {{s}[k]} \\
-        \hline {0} & --- & --- & {0} & {0} \\
-        {1} & --- & --- & {5} & {1} \\
-        {2} & {5} & {8+0=8} & {8} & {1} \\
-        {3} & {8} & {6+5=11} & {11} & {1} \\
-        {4} & {11} & {3+8=11} & {11} & {0} \\
-        {5} & {11} & {7+11=18} & {18} & {1} \\
-        {6} & {18} & {9+11=20} & {20} & {1} \\
-        {7} & {20} & {4+18=22} & {22} & {1} \\
-        \hline
-        \end{array}
-        $$
-
-    3. Starting from $k=7$:
-
-        - $s[7]=1$: position $7$ is chosen, go to $k=5$;
-
-        - $s[5]=1$: position $5$ is chosen, go to $k=3$;
-
-        - $s[3]=1$: position $3$ is chosen, go to $k=1$;
-
-        - $s[1]=1$: position $1$ is chosen, go to $k=0$;
-
-        The optimal solution is $\{1,3,5,7\}$, with profit $5+6+7+4=22=v(7)$.
-
-    4. The greedy choice takes the positions $6, 2, 4$ (in this order), of profit $8+3+9=20<22$: it is not optimal. Taking position $6$ first forbids its neighbours, which together are worth more.
-
-    !!! chiave ""
-
-        $v(7)=22$ with the positions $\{1,3,5,7\}$; the greedy choice by profit gives only $20$.
-
-<a id="esercizio-16-3"></a>
-
-!!! esercizio "Exercise 16.3: Filling a DP table: paths on a grid"
-
-    A robot moves on a grid of $3$ rows and $4$ columns, from the cell $(1,1)$ to the cell $(3,4)$, one cell down or one cell right at each move. Every cell $(i,j)$ it visits gives a profit $a_{ij}$:
-
-    $$
-    \begin{array}{c|cccc}
-    \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\
-    \hline {i=1} & {3} & {1} & {4} & {2} \\
-    {i=2} & {2} & {6} & {1} & {5} \\
-    {i=3} & {4} & {2} & {3} & {1} \\
-    \hline
-    \end{array}
-    $$
-
-    We want a path of maximum total profit.
-
-    **Questions**
-
-    1. How many paths are there? Why is the enumeration of the paths not a good idea on large grids?
-
-    2. Let $v(i,j)$ be the maximum profit of a path from $(1,1)$ to $(i,j)$. Write the recurrence and the base cases.
-
-    3. Fill the table of $v(i,j)$ row by row, storing in $s(i,j)$ whether the best path arrives from above ($\uparrow$) or from the left ($\leftarrow$); a tie is broken in favour of above.
-
-    4. Reconstruct the optimal path.
-
-??? soluzione "Solution"
-
-    1. A path makes $2$ moves down and $3$ moves right, in any order: $\binom{5}{2}=10$ paths. On a grid with $r$ rows and $q$ columns there are $\binom{r+q-2}{r-1}$ paths, which grows exponentially, while the table has only $rq$ cells.
-
-    2. The last move into $(i,j)$ comes from $(i-1,j)$ or from $(i,j-1)$, and the path up to there must be optimal (optimal substructure):
-
-        !!! nota ""
-
-            $$
-            v(i,j)=\left\{\begin{array}{ll}
-            a_{ij}+\max\{v(i-1,j),\,v(i,j-1)\} & \textrm{if } i\ge 2,\ j\ge 2,\\[1ex]
-            a_{1j}+v(1,j-1) & \textrm{if } i=1,\ j\ge 2,\\[1ex]
-            a_{i1}+v(i-1,1) & \textrm{if } i\ge 2,\ j=1,\\[1ex]
-            a_{11} & \textrm{if } i=j=1.
-            \end{array}\right.
-            $$
+        The recursion makes $26$ calls for $19$ distinct subproblems: the subproblems <strong>overlap</strong> (items $3$ and $4$ have the same weight). A lookup table computes each value once.
 
     3. The tables $v$ and $s$ are:
 
         $$
-        \begin{array}{c|cccc}
-        \hline {v(i,j)} & {j=1} & {j=2} & {j=3} & {j=4} \\
-        \hline {i=1} & {3} & {4} & {8} & {10} \\
-        {i=2} & {5} & {11} & {12} & {17} \\
-        {i=3} & {9} & {13} & {16} & {18} \\
+        \begin{array}{c|ccccccccc}
+        \hline {v(j,k)} & {k=0} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} \\
+        \hline {j=0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} \\
+        {j=1} & {0} & {0} & {3} & {3} & {3} & {3} & {3} & {3} & {3} \\
+        {j=2} & {0} & {0} & {3} & {3} & {5} & {5} & {8} & {8} & {8} \\
+        {j=3} & {0} & {0} & {3} & {4} & {5} & {7} & {8} & {9} & {9} \\
+        {j=4} & {0} & {0} & {3} & {5} & {5} & {8} & {9} & {10} & {12} \\
         \hline
         \end{array}
         $$
 
         $$
-        \begin{array}{c|cccc}
-        \hline  & {j=1} & {j=2} & {j=3} & {j=4} \\
-        \hline {i=1} & --- & {\leftarrow} & {\leftarrow} & {\leftarrow} \\
-        {i=2} & {\uparrow} & {\leftarrow} & {\leftarrow} & {\leftarrow} \\
-        {i=3} & {\uparrow} & {\uparrow} & {\leftarrow} & {\uparrow} \\
+        \begin{array}{c|ccccccccc}
+        \hline {s(j,k)} & {k=0} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} \\
+        \hline {j=0} & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+        {j=1} & {0} & {0} & {1} & {1} & {1} & {1} & {1} & {1} & {1} \\
+        {j=2} & {0} & {0} & {0} & {0} & {1} & {1} & {1} & {1} & {1} \\
+        {j=3} & {0} & {0} & {0} & {1} & {0} & {1} & {0} & {1} & {1} \\
+        {j=4} & {0} & {0} & {0} & {1} & {0} & {1} & {1} & {1} & {1} \\
         \hline
         \end{array}
         $$
 
-        For example $v(2,2)=a_{22}+\max\{v(1,2),v(2,1)\}=6+\max\{4,5\}=11$.
+        For example $v(3,7)=\max\{v(2,7),\,4+v(2,4)\}=\max\{8,9\}=9$.
 
-    4. From $(3,4)$ we follow the arrows backwards: the path is $(1,1)\to (2,1)\to (2,2)\to (2,3)\to (2,4)\to (3,4)$, with profit $3+2+6+1+5+1=18=v(3,4)$. Its cells are highlighted:
+    4. Starting from $(4,8)$:
+
+        - $s(4,8)=1$: item $4$ is taken, go to $(3,8-3)=(3,5)$;
+
+        - $s(3,5)=1$: item $3$ is taken, go to $(2,5-3)=(2,2)$;
+
+        - $s(2,2)=0$: item $2$ is not taken, go to $(1,2)$;
+
+        - $s(1,2)=1$: item $1$ is taken, go to $(0,2-2)=(0,0)$;
+
+        The optimal solution is $\{1,3,4\}$, of weight $2+3+3=8\le 8$ and profit $3+4+5=12=v(4,8)$. The visited cells:
 
         $$
-        \begin{array}{c|cccc}
-        \hline {v(i,j)} & {j=1} & {j=2} & {j=3} & {j=4} \\
-        \hline {i=1} & \bbox[#9999ff]{{3}} & {4} & {8} & {10} \\
-        {i=2} & \bbox[#9999ff]{{5}} & \bbox[#9999ff]{{11}} & \bbox[#9999ff]{{12}} & \bbox[#9999ff]{{17}} \\
-        {i=3} & {9} & {13} & {16} & \bbox[#9999ff]{{18}} \\
+        \begin{array}{c|ccccccccc}
+        \hline {v(j,k)} & {k=0} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} \\
+        \hline {j=0} & \bbox[#9999ff]{{0}} & {0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} \\
+        {j=1} & {0} & {0} & \bbox[#9999ff]{{3}} & {3} & {3} & {3} & {3} & {3} & {3} \\
+        {j=2} & {0} & {0} & \bbox[#9999ff]{{3}} & {3} & {5} & {5} & {8} & {8} & {8} \\
+        {j=3} & {0} & {0} & {3} & {4} & {5} & \bbox[#9999ff]{{7}} & {8} & {9} & {9} \\
+        {j=4} & {0} & {0} & {3} & {5} & {5} & {8} & {9} & {10} & \bbox[#9999ff]{{12}} \\
         \hline
         \end{array}
         $$
 
     !!! chiave ""
 
-        The optimal path collects $v(3,4)=18$. The DP algorithm fills one cell per subproblem, $12$ here, while the number of paths grows exponentially with the size of the grid.
+        $v(4,8)=12$ with the items $\{1,3,4\}$; the top-down recursion makes $26$ calls for $19$ distinct subproblems, the lookup table has $(n+1)(c+1)=45$ cells.
+
+<a id="esercizio-16-2"></a>
+
+!!! esercizio "Exercise 16.2: Writing a recurrence: subset sum via reachable sums"
+
+    Given $n=5$ items with integer weights $w_j$ and a capacity $c=30$, the <strong>subset sum problem</strong> asks for a subset of items of maximum total weight not exceeding $c$:
+
+    $$
+    \max\Big\{\sum_{j=1}^n w_jx_j:\ \sum_{j=1}^n w_jx_j\le c,\ x_j\in\{0,1\},\ j=1,\dots,n\Big\}.
+    $$
+
+    The data are
+
+    $$
+    \begin{array}{l|ccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} \\[1ex]
+    \hline {w_j} & {6} & {9} & {11} & {14} & {17} \\
+    \hline
+    \end{array}
+    $$
+
+    For $j\in\{0,\dots,n\}$, let $R_j$ be the set of the <strong>reachable sums</strong>: the totals $k\le c$ of the subsets of $\{1,\dots,j\}$.
+
+    **Questions**
+
+    1. Write a recurrence for $R_j$, distinguishing whether item $j$ is used, with the base case. How is the optimal value $z^*$ read from $R_n$?
+
+    2. Compute $R_1,\dots,R_n$. For every reachable sum, store the first index $j$ such that it belongs to $R_j$.
+
+    3. Reconstruct an optimal solution.
+
+    4. Take the items greedily by non-increasing weight, as long as they fit. Is the result optimal?
+
+??? soluzione "Solution"
+
+    1. A subset of $\{1,\dots,j\}$ either avoids item $j$, and then its total is in $R_{j-1}$, or uses it, and then its total is $k+w_j$ with $k\in R_{j-1}$. Hence:
+
+        !!! nota ""
+
+            $$
+            R_j=\left\{\begin{array}{ll}
+            R_{j-1}\,\cup\,\{k+w_j:\ k\in R_{j-1},\ k+w_j\le c\} & \textrm{if } 1\le j\le n,\\[1ex]
+            \{0\} & \textrm{if } j=0,
+            \end{array}\right.
+            $$
+
+            $$
+            z^*=\max\{k:\ k\in R_n\}.
+            $$
+
+        It is the KP of the previous chapter with $p_j=w_j$, written with sets of reachable values.
+
+    2. The row $j$ lists only the new sums; a sum belongs to $R_j$ if it appears in a row $\le j$:
+
+        <div class="tabella" markdown="0"><table>
+        <tr>
+        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(w_j\)</span></th>
+        <th>sums of <span class="arithmatex">\(R_j\)</span> that are not in <span class="arithmatex">\(R_{j-1}\)</span></th>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(0\)</span></td>
+        <td>—</td>
+        <td><span class="arithmatex">\(0\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(1\)</span></td>
+        <td><span class="arithmatex">\(6\)</span></td>
+        <td><span class="arithmatex">\(6\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(2\)</span></td>
+        <td><span class="arithmatex">\(9\)</span></td>
+        <td><span class="arithmatex">\(9, 15\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(3\)</span></td>
+        <td><span class="arithmatex">\(11\)</span></td>
+        <td><span class="arithmatex">\(11, 17, 20, 26\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(4\)</span></td>
+        <td><span class="arithmatex">\(14\)</span></td>
+        <td><span class="arithmatex">\(14, 23, 25, 29\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(5\)</span></td>
+        <td><span class="arithmatex">\(17\)</span></td>
+        <td><span class="arithmatex">\(28\)</span></td>
+        </tr>
+        </table></div>
+
+        So $|R_5|=13$ and $z^*=\max R_5=29$.
+
+    3. A sum $k$ appearing first in $R_j$ uses item $j$, and $k-w_j$ lies in $R_{j-1}$:
+
+        - $29$ first appears in $R_{4}$: item $4$ is taken, go to $29-14=15$;
+
+        - $15$ first appears in $R_{2}$: item $2$ is taken, go to $15-9=6$;
+
+        - $6$ first appears in $R_{1}$: item $1$ is taken, go to $6-6=0$;
+
+        The optimal solution is $\{1,2,4\}$, of total $6+9+14=29\le 30$.
+
+    4. The greedy choice takes the items $5, 3$, of total $11+17=28<29$: it is not optimal.
+
+    !!! chiave ""
+
+        $z^*=29$ with the items $\{1,2,4\}$; there are $13$ reachable sums, while the subsets are $2^5=32$. The greedy choice by weight gives only $28$.
+
+<a id="esercizio-16-3"></a>
+
+!!! esercizio "Exercise 16.3: Reusing a recurrence: two parallel machines via subset sum"
+
+    In the problem $P2\|C_{\max}$, $n=6$ jobs with integer processing times $p_j$ are assigned to $2$ identical machines, and the <strong>makespan</strong> $C_{\max}$, the largest load of a machine, is minimized:
+
+    $$
+    \begin{array}{l|cccccc}
+    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\[1ex]
+    \hline {p_j} & {13} & {11} & {10} & {5} & {4} & {3} \\
+    \hline
+    \end{array}
+    $$
+
+    Let $P=\sum_j p_j=46$, and let $L$ be the load of machine $1$.
+
+    **Questions**
+
+    1. Express $C_{\max}$ as a function of $L$. Show that minimizing $C_{\max}$ amounts to a subset sum problem, with capacity $\lfloor P/2\rfloor$, and write the recurrence of its reachable sums.
+
+    2. Compute the reachable sums $R_1,\dots,R_n$.
+
+    3. Reconstruct an optimal assignment and its makespan.
+
+    4. Compare with the LPT rule: jobs by non-increasing $p_j$, each on the least loaded machine.
+
+??? soluzione "Solution"
+
+    1. Machine $2$ gets $P-L$, so $C_{\max}=\max\{L,\,P-L\}\ge P/2$. Up to swapping the machines we may assume $L\le P/2$, and then $C_{\max}=P-L$ is minimum when $L$ is maximum: a subset sum problem with capacity $c=\lfloor 46/2\rfloor=23$ and weights $p_j$:
+
+        !!! nota ""
+
+            $$
+            R_j=\left\{\begin{array}{ll}
+            R_{j-1}\,\cup\,\{k+p_j:\ k\in R_{j-1},\ k+p_j\le c\} & \textrm{if } 1\le j\le n,\\[1ex]
+            \{0\} & \textrm{if } j=0,
+            \end{array}\right.
+            $$
+
+            $$
+            C^*_{\max}=P-\max\{k:\ k\in R_n\}.
+            $$
+
+    2. The row $j$ lists only the new sums:
+
+        <div class="tabella" markdown="0"><table>
+        <tr>
+        <th><span class="arithmatex">\(j\)</span></th>
+        <th><span class="arithmatex">\(p_j\)</span></th>
+        <th>sums of <span class="arithmatex">\(R_j\)</span> that are not in <span class="arithmatex">\(R_{j-1}\)</span></th>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(0\)</span></td>
+        <td>—</td>
+        <td><span class="arithmatex">\(0\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(1\)</span></td>
+        <td><span class="arithmatex">\(13\)</span></td>
+        <td><span class="arithmatex">\(13\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(2\)</span></td>
+        <td><span class="arithmatex">\(11\)</span></td>
+        <td><span class="arithmatex">\(11\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(3\)</span></td>
+        <td><span class="arithmatex">\(10\)</span></td>
+        <td><span class="arithmatex">\(10, 21, 23\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(4\)</span></td>
+        <td><span class="arithmatex">\(5\)</span></td>
+        <td><span class="arithmatex">\(5, 15, 16, 18\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(5\)</span></td>
+        <td><span class="arithmatex">\(4\)</span></td>
+        <td><span class="arithmatex">\(4, 9, 14, 17, 19, 20, 22\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\(6\)</span></td>
+        <td><span class="arithmatex">\(3\)</span></td>
+        <td><span class="arithmatex">\(3, 7, 8, 12\)</span></td>
+        </tr>
+        </table></div>
+
+        The largest reachable sum is $L=23$, and $C^*_{\max}=46-23=23$, equal to the lower bound $\lceil P/2\rceil=23$.
+
+    3. - $23$ first appears in $R_{3}$: item $3$ is taken, go to $23-10=13$;
+
+        - $13$ first appears in $R_{1}$: item $1$ is taken, go to $13-13=0$;
+
+        Machine $1$ gets the jobs $\{1,3\}$ (load $13+10=23$), machine $2$ the jobs $\{2,4,5,6\}$ (load $11+5+4+3=23$).
+
+    4. LPT gives the machines the jobs $\{1,4,5\}$ and $\{2,3,6\}$, with loads $22$ and $24$: makespan $24>23$, not optimal.
+
+    !!! chiave ""
+
+        $C^*_{\max}=23$, with the jobs $\{1,3\}$ on machine $1$ and $\{2,4,5,6\}$ on machine $2$; LPT gives $24$.
 
 <a id="esercizio-16-4"></a>
 
@@ -291,7 +344,7 @@ title: "Exercises · Principles of dynamic programming"
 
     We look for a shortest path from $s$ to $t$ in the directed network $G=(N,A)$ below, where every arc $(i,j)\in A$ has a cost $c_{ij}$:
 
-    ![Figure 2](../img/ex-dp-principles/fig02.svg){ .fig loading=lazy  }
+    ![Figure 1](../img/ex-dp-principles/fig01.svg){ .fig loading=lazy  }
 
     For every node $i$, let $v(i)$ be the cost of a shortest path from $i$ to $t$.
 
@@ -381,7 +434,7 @@ title: "Exercises · Principles of dynamic programming"
 
     4. Following $s$ from $s$: $s\to a_2\to b_2\to t$, of cost $2+4+3=9=v(s)$:
 
-        ![Figure 3](../img/ex-dp-principles/fig03.svg){ .fig loading=lazy  }
+        ![Figure 2](../img/ex-dp-principles/fig02.svg){ .fig loading=lazy  }
 
         The network has $7$ paths from $s$ to $t$; their enumeration gives the same optimal path, the only one of cost $9$.
 
@@ -391,87 +444,137 @@ title: "Exercises · Principles of dynamic programming"
 
 <a id="esercizio-16-5"></a>
 
-!!! esercizio "Exercise 16.5: A recurrence for a new problem: compatible requests"
+!!! esercizio "Exercise 16.5: A two-index table: the multiple-choice knapsack problem"
 
-    A room can host one event at a time. There are $n=6$ requests: request $j$ occupies the room from time $a_j$ to time $b_j$ and pays $w_j$; two requests are compatible if one ends before (or when) the other starts. The requests are numbered by non-decreasing end time:
+    In the <strong>multiple-choice knapsack problem</strong> the items are partitioned into classes $K_1,\dots,K_m$, and <strong>exactly one</strong> item per class is chosen, with total weight at most $c$ and maximum total profit:
 
     $$
-    \begin{array}{l|cccccc}
-    \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\[1ex]
-    \hline {a_j} & {0} & {1} & {4} & {2} & {5} & {7} \\[1ex]
-    {b_j} & {3} & {5} & {6} & {8} & {9} & {10} \\[1ex]
-    {w_j} & {4} & {6} & {3} & {8} & {5} & {5} \\
-    \hline
-    \end{array}
+    \max\Big\{\sum_{h=1}^m\sum_{j\in K_h} p_jx_j:\ \sum_{h=1}^m\sum_{j\in K_h} w_jx_j\le c,\ \sum_{j\in K_h}x_j=1,\ h=1,\dots,m,\ x_j\in\{0,1\}\Big\}.
     $$
 
-    ![Figure 4](../img/ex-dp-principles/fig04.svg){ .fig loading=lazy  }
+    Here $m=3$, $c=10$ and
 
-    We want a set of pairwise compatible requests of maximum total payment.
+    <div class="tabella" markdown="0"><table>
+    <tr>
+    <th>class</th>
+    <th colspan="3"><span class="arithmatex">\(K_1\)</span></th>
+    <th colspan="3"><span class="arithmatex">\(K_2\)</span></th>
+    <th colspan="3"><span class="arithmatex">\(K_3\)</span></th>
+    </tr>
+    <tr>
+    <td><span class="arithmatex">\(j\)</span></td>
+    <td><span class="arithmatex">\(1\)</span></td>
+    <td><span class="arithmatex">\(2\)</span></td>
+    <td><span class="arithmatex">\(3\)</span></td>
+    <td><span class="arithmatex">\(4\)</span></td>
+    <td><span class="arithmatex">\(5\)</span></td>
+    <td><span class="arithmatex">\(6\)</span></td>
+    <td><span class="arithmatex">\(7\)</span></td>
+    <td><span class="arithmatex">\(8\)</span></td>
+    <td><span class="arithmatex">\(9\)</span></td>
+    </tr>
+    <tr>
+    <td><span class="arithmatex">\(w_j\)</span></td>
+    <td><span class="arithmatex">\(2\)</span></td>
+    <td><span class="arithmatex">\(3\)</span></td>
+    <td><span class="arithmatex">\(5\)</span></td>
+    <td><span class="arithmatex">\(1\)</span></td>
+    <td><span class="arithmatex">\(4\)</span></td>
+    <td><span class="arithmatex">\(6\)</span></td>
+    <td><span class="arithmatex">\(2\)</span></td>
+    <td><span class="arithmatex">\(3\)</span></td>
+    <td><span class="arithmatex">\(4\)</span></td>
+    </tr>
+    <tr>
+    <td><span class="arithmatex">\(p_j\)</span></td>
+    <td><span class="arithmatex">\(3\)</span></td>
+    <td><span class="arithmatex">\(5\)</span></td>
+    <td><span class="arithmatex">\(8\)</span></td>
+    <td><span class="arithmatex">\(2\)</span></td>
+    <td><span class="arithmatex">\(6\)</span></td>
+    <td><span class="arithmatex">\(9\)</span></td>
+    <td><span class="arithmatex">\(4\)</span></td>
+    <td><span class="arithmatex">\(5\)</span></td>
+    <td><span class="arithmatex">\(7\)</span></td>
+    </tr>
+    </table></div>
+
+    For $h\in\{0,\dots,m\}$ and $k\in\{0,\dots,c\}$, let $v(h,k)$ be the optimal value with the classes $K_1,\dots,K_h$ only and capacity $k$ ($v(h,k)=-\infty$ if there is no feasible choice).
 
     **Questions**
 
-    1. For every $j$, let $q(j)$ be the largest index $i<j$ of a request compatible with $j$ ($q(j)=0$ if there is none). Compute $q(1),\dots,q(n)$.
+    1. Write the recurrence for $v(h,k)$, deciding which item of class $K_h$ is chosen, and the base cases. Why does the optimal substructure hold?
 
-    2. Let $v(j)$ be the optimal value with the requests $1,\dots,j$ only. Write a recurrence for $v(j)$, distinguishing whether request $j$ is taken, and the base case.
+    2. Fill the table of $v(h,k)$ row by row, storing in $s(h,k)$ the item chosen in class $K_h$.
 
-    3. Fill the lookup table, storing in $s[j]$ whether request $j$ is taken; a tie is broken in favour of not taking it.
+    3. Reconstruct an optimal solution.
 
-    4. Reconstruct an optimal solution. Does the greedy choice by non-increasing payment find it?
+    4. Without new computations, give the optimal value for every capacity $k\le 10$. What is the smallest capacity with a feasible solution?
 
 ??? soluzione "Solution"
 
-    1. Request $j$ starts at $a_j$, and the compatible requests with smaller index are those with $b_i\le a_j$; since the end times are sorted, they are the requests $1,\dots,q(j)$:
-
-        $$
-        \begin{array}{c|cccccc}
-        \hline  & {j=1} & {j=2} & {j=3} & {j=4} & {j=5} & {j=6} \\
-        \hline {q(j)} & {0} & {0} & {1} & {0} & {2} & {3} \\
-        \hline
-        \end{array}
-        $$
-
-    2. If request $j$ is not taken, the best choice is among $1,\dots,j-1$. If it is taken, the requests $q(j)+1,\dots,j-1$ overlap with it, and the rest is an optimal choice among $1,\dots,q(j)$:
+    1. If item $j\in K_h$ is chosen in an optimal solution of $(h,k)$, the items of $K_1,\dots,K_{h-1}$ form an optimal solution of $(h-1,k-w_j)$: a better one would improve the whole. Hence:
 
         !!! nota ""
 
             $$
-            v(j)=\left\{\begin{array}{ll}
-            \max\{v(j-1),\;w_j+v(q(j))\} & \textrm{if } 1\le j\le n,\\[1ex]
-            0 & \textrm{if } j=0.
+            v(h,k)=\left\{\begin{array}{ll}
+            \max\{p_j+v(h-1,k-w_j):\ j\in K_h,\ w_j\le k\} & \textrm{if } h\ge 1,\\[1ex]
+            0 & \textrm{if } h=0,
             \end{array}\right.
             $$
 
-    3. The values are computed for increasing $j$:
+        where the maximum of an empty set is $-\infty$.
+
+    2. The tables $v$ and $s$ are:
 
         $$
-        \begin{array}{c|c|c|c|c|c}
-        \hline {j} & {q(j)} & {v(j-1)} & {w_j+v(q(j))} & {{v}[j]} & {{s}[j]} \\
-        \hline {0} & --- & --- & --- & {0} & --- \\
-        {1} & {0} & {0} & {4+0=4} & {4} & {1} \\
-        {2} & {0} & {4} & {6+0=6} & {6} & {1} \\
-        {3} & {1} & {6} & {3+4=7} & {7} & {1} \\
-        {4} & {0} & {7} & {8+0=8} & {8} & {1} \\
-        {5} & {2} & {8} & {5+6=11} & {11} & {1} \\
-        {6} & {3} & {11} & {5+7=12} & {12} & {1} \\
+        \begin{array}{c|ccccccccccc}
+        \hline {v(h,k)} & {k=0} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} & {9} & {10} \\
+        \hline {h=0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} \\
+        {h=1} & {-\infty} & {-\infty} & {3} & {5} & {5} & {8} & {8} & {8} & {8} & {8} & {8} \\
+        {h=2} & {-\infty} & {-\infty} & {-\infty} & {5} & {7} & {7} & {10} & {11} & {12} & {14} & {14} \\
+        {h=3} & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {9} & {11} & {12} & {14} & {15} & {17} \\
         \hline
         \end{array}
         $$
 
-    4. Starting from $j=6$:
+        $$
+        \begin{array}{c|ccccccccccc}
+        \hline {s(h,k)} & {k=0} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} & {9} & {10} \\
+        \hline {h=0} & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+        {h=1} & -- & -- & {1} & {2} & {2} & {3} & {3} & {3} & {3} & {3} & {3} \\
+        {h=2} & -- & -- & -- & {4} & {4} & {4} & {4} & {5} & {6} & {5} & {5} \\
+        {h=3} & -- & -- & -- & -- & -- & {7} & {7} & {8} & {7} & {7} & {9} \\
+        \hline
+        \end{array}
+        $$
 
-        - $s[6]=1$: job $6$ is taken, go to $q(6)=3$;
+        For example $v(2,7)=\max\{2+v(1,6),\,6+v(1,3),\,9+v(1,1)\}=11$.
 
-        - $s[3]=1$: job $3$ is taken, go to $q(3)=1$;
+    3. Starting from $(3,10)$:
 
-        - $s[1]=1$: job $1$ is taken, go to $q(1)=0$;
+        - $s(3,10)=9$: item $9$ of class $K_3$, go to $(2,10-4)=(2,6)$;
 
-        The optimal solution is $\{1,3,6\}$, with payment $4+3+5=12=v(6)$:
+        - $s(2,6)=4$: item $4$ of class $K_2$, go to $(1,6-1)=(1,5)$;
 
-        ![Figure 5](../img/ex-dp-principles/fig05.svg){ .fig loading=lazy  }
+        - $s(1,5)=3$: item $3$ of class $K_1$, go to $(0,5-5)=(0,0)$;
 
-        The greedy choice by payment takes $4$, of payment $8<12$: request $4$, the richest one, overlaps with the requests $1, 3, 6$ of the optimal solution, which together pay $12$.
+        The optimal solution is $\{3,4,9\}$, of weight $5+1+4=10\le 10$ and profit $8+2+7=17=v(3,10)$. The visited cells:
+
+        $$
+        \begin{array}{c|ccccccccccc}
+        \hline {v(h,k)} & {k=0} & {1} & {2} & {3} & {4} & {5} & {6} & {7} & {8} & {9} & {10} \\
+        \hline {h=0} & \bbox[#9999ff]{{0}} & {0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} & {0} \\
+        {h=1} & {-\infty} & {-\infty} & {3} & {5} & {5} & \bbox[#9999ff]{{8}} & {8} & {8} & {8} & {8} & {8} \\
+        {h=2} & {-\infty} & {-\infty} & {-\infty} & {5} & {7} & {7} & \bbox[#9999ff]{{10}} & {11} & {12} & {14} & {14} \\
+        {h=3} & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {-\infty} & {9} & {11} & {12} & {14} & {15} & \bbox[#9999ff]{{17}} \\
+        \hline
+        \end{array}
+        $$
+
+    4. The row $h=3$ gives the optimal value for every capacity $k\le 10$: it is $-\infty$ for $k<5$, and the smallest feasible capacity is $5$, the sum of the lightest weights of the classes.
 
     !!! chiave ""
 
-        $v(6)=12$ with the requests $\{1,3,6\}$; the greedy choice by payment gives only $8$.
+        $v(3,10)=17$ with the items $\{3,4,9\}$, one per class; the table has $(m+1)(c+1)=44$ cells, while the choices are $27$.
