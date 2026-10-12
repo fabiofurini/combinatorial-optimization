@@ -2,7 +2,7 @@
 title: "Randomized construction"
 ---
 
-# 24.8 Randomized construction { #sez-sec-RCL }
+# 24.9 Randomized construction { #sez-sec-RCL }
 
 <div class="info-capitolo" markdown>
 
@@ -45,9 +45,9 @@ title: "Randomized construction"
 
 - Repeating the construction with the same generator — the seed is <em>not</em> reset between two runs — gives different tours; the best one is kept. The parameter $\alpha$ balances quality and variety: a small $\alpha$ gives tours close to the $NN$ tour, a large $\alpha$ gives very different but usually poor tours.
 
-<a id="box-16-ex-rnn"></a>
+<a id="box-21-ex-rnn"></a>
 
-!!! esempio "Example 24.12: $RNN_{0.3}$ on the TSP reference instance"
+!!! esempio "Example 24.15: $RNN_{0.3}$ on the TSP reference instance"
 
     We run $RNN_\alpha$ four times from city $1$, with $\alpha=0.3$ and initial seed $1$. The generator gives
 
@@ -73,4 +73,4 @@ title: "Randomized construction"
 
 ---
 
-**Next:** [24.9 Look-ahead and regret](look-ahead-and-regret.md)
+**Next:** [24.10 Look-ahead and regret](look-ahead-and-regret.md)

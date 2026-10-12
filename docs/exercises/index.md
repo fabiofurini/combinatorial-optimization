@@ -36,7 +36,7 @@ Exercises with **worked solutions**, chapter by chapter. Try each exercise on yo
 ## Heuristic algorithms
 
 - [23. Heuristic algorithms: definitions](heuristics.md) · 5 exercises
-- [24. Constructive heuristics](constructive-heuristics.md) · 12 exercises
+- [24. Constructive heuristics](constructive-heuristics.md) · 15 exercises
 - [25. Local search](local-search.md) · 12 exercises
 - [26. Metaheuristics](metaheuristics.md) · 17 exercises
 - [27. MIP heuristics for the classical problems](mip-heuristics-classical.md) · 5 exercises

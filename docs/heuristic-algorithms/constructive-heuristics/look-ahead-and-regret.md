@@ -2,7 +2,7 @@
 title: "Look-ahead and regret"
 ---
 
-# 24.9 Look-ahead and regret { #sez-sec-LOOK }
+# 24.10 Look-ahead and regret { #sez-sec-LOOK }
 
 <div class="info-capitolo" markdown>
 
@@ -18,7 +18,7 @@ title: "Look-ahead and regret"
 
     Both ideas cost more time per step than the plain greedy criterion, and both keep the essential feature of a constructive heuristic: the choice made is final.
 
-## 24.9.1 Regret insertion { #sez-sec-REG }
+## 24.10.1 Regret insertion { #sez-sec-REG }
 
 - For an insertion heuristic, let $\Delta^{1}_q\le\Delta^{2}_q$ be the two smallest insertion costs of city $q$ over the edges of the current subtour (with $\Delta^2_q=\Delta^1_q$ if the subtour has a single edge). The <strong>regret</strong> of $q$ is
 
@@ -42,9 +42,9 @@ title: "Look-ahead and regret"
 
 - As long as all the regrets are $0$, the tie-breaking rule makes $REG_2$ behave like $CI$.
 
-<a id="box-17-ex-reg"></a>
+<a id="box-22-ex-reg"></a>
 
-!!! esempio "Example 24.13: $REG_2$ against $CI$ on the $6$-city instance"
+!!! esempio "Example 24.16: $REG_2$ against $CI$ on the $6$-city instance"
 
     On the instance of [Example 24.11](the-travelling-salesman-problem-append-or-insert.md#box-15-ex-tsp6), from city $1$. In the first two steps all the regrets are $0$ (the subtours $(1)$ and $(1,6)$ have one edge, or two copies of the same edge), and both $REG_2$ and $CI$ insert city $6$ (cost $4$) and then city $3$ (cost $5$), obtaining $(1,3,6)$ of length $9$. At the third step the insertion costs on the edges $(1,3)$, $(3,6)$, $(6,1)$ are
 
@@ -111,7 +111,7 @@ title: "Look-ahead and regret"
 
     At step $4$ of $REG_2$ the costs of city $2$ on the edges of $(1,4,3,6)$ are $(6,2,2,7)$, regret $0$, and those of city $5$ are $(10,10,5,6)$, regret $1$: city $5$ goes first. City $2$, postponed twice, is finally inserted for $1$ instead of $2$, between cities $3$ and $5$. $REG_2(I)=19=z(I)$, while $CI(I)=20$.
 
-## 24.9.2 Look-ahead: the pilot method { #sez-sec-PILOT }
+## 24.10.2 Look-ahead: the pilot method { #sez-sec-PILOT }
 
 !!! chiave ""
 
@@ -125,9 +125,9 @@ title: "Look-ahead and regret"
 
 - <strong>The pilot method is never worse than its pilot.</strong> At the first step, the candidate chosen by $NN$ is among those tried, and its completion is the $NN$ tour from $s$, so the best completion found has length at most $NN(I)$. At every later step, the completion of the chosen candidate is again among the completions tried at the next step (the candidate that $NN$ would append), so the length of the best completion never increases. The final tour is the last completion, hence $PILOT$-$NN(I)\le NN(I)$ from the same starting city.
 
-<a id="box-18-ex-pilot"></a>
+<a id="box-23-ex-pilot"></a>
 
-!!! esempio "Example 24.14: $PILOT$-$NN$ on the TSP reference instance"
+!!! esempio "Example 24.17: $PILOT$-$NN$ on the TSP reference instance"
 
     From city $1$, the candidates and their $NN$ completions are:
 
@@ -163,4 +163,4 @@ title: "Look-ahead and regret"
 
 ---
 
-**Next:** [24.10 What constructive heuristics give, and what they do not](what-constructive-heuristics-give-and-what-they-do-not.md)
+**Next:** [24.11 What constructive heuristics give, and what they do not](what-constructive-heuristics-give-and-what-they-do-not.md)

@@ -13,7 +13,7 @@ The lecture notes, the exercise books and the selected problems in PDF, with the
 | 1. Combinatorial optimization problems | 1–8 | [:material-file-pdf-box: lecture-notes-1-combinatorial-optimization-problems.pdf](pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) (0.8 MB) |
 | 2. Formulations and their properties | 9–15 | [:material-file-pdf-box: lecture-notes-2-formulations.pdf](pdf/lecture-notes-2-formulations.pdf) (0.7 MB) |
 | 3. Dynamic programming | 16–22 | [:material-file-pdf-box: lecture-notes-3-dynamic-programming.pdf](pdf/lecture-notes-3-dynamic-programming.pdf) (1.1 MB) |
-| 4. Heuristic algorithms | 23–27 | [:material-file-pdf-box: lecture-notes-4-heuristic-algorithms.pdf](pdf/lecture-notes-4-heuristic-algorithms.pdf) (1.6 MB) |
+| 4. Heuristic algorithms | 23–27 | [:material-file-pdf-box: lecture-notes-4-heuristic-algorithms.pdf](pdf/lecture-notes-4-heuristic-algorithms.pdf) (1.7 MB) |
 | 5. Approximation algorithms | 28–32 | [:material-file-pdf-box: lecture-notes-5-approximation-algorithms.pdf](pdf/lecture-notes-5-approximation-algorithms.pdf) (1.0 MB) |
 | 6. Problem-specific branch-and-bound | 33 | [:material-file-pdf-box: lecture-notes-6-specialized-algorithms.pdf](pdf/lecture-notes-6-specialized-algorithms.pdf) (0.4 MB) |
 
@@ -24,7 +24,7 @@ The lecture notes, the exercise books and the selected problems in PDF, with the
 | 1. Combinatorial optimization problems | 1–8 | [:material-file-pdf-box: exercises-1-combinatorial-optimization-problems.pdf](pdf/exercises-1-combinatorial-optimization-problems.pdf) (0.6 MB) |
 | 2. Formulations and their properties | 9–15 | [:material-file-pdf-box: exercises-2-formulations.pdf](pdf/exercises-2-formulations.pdf) (0.5 MB) |
 | 3. Dynamic programming | 16–22 | [:material-file-pdf-box: exercises-3-dynamic-programming.pdf](pdf/exercises-3-dynamic-programming.pdf) (0.7 MB) |
-| 4. Heuristic algorithms | 23–27 | [:material-file-pdf-box: exercises-4-heuristic-algorithms.pdf](pdf/exercises-4-heuristic-algorithms.pdf) (0.6 MB) |
+| 4. Heuristic algorithms | 23–27 | [:material-file-pdf-box: exercises-4-heuristic-algorithms.pdf](pdf/exercises-4-heuristic-algorithms.pdf) (0.7 MB) |
 | 5. Approximation algorithms | 28–32 | [:material-file-pdf-box: exercises-5-approximation-algorithms.pdf](pdf/exercises-5-approximation-algorithms.pdf) (0.6 MB) |
 | 6. Problem-specific branch-and-bound | 33 | [:material-file-pdf-box: exercises-6-specialized-algorithms.pdf](pdf/exercises-6-specialized-algorithms.pdf) (0.3 MB) |
 

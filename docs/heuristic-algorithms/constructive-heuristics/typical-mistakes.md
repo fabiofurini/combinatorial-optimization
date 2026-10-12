@@ -10,7 +10,7 @@ title: "Typical mistakes · In summary"
 
 </div>
 
-## 24.11 Typical mistakes
+## 24.12 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -24,7 +24,7 @@ title: "Typical mistakes · In summary"
 
     - <strong>Reading $\mathscr{A}(I)$ as a bound on $z(I)$.</strong> It is only a primal bound.
 
-## 24.12 In summary
+## 24.13 In summary
 
 !!! chiave "In summary"
 
@@ -78,4 +78,4 @@ title: "Typical mistakes · In summary"
 
 ---
 
-**Next:** [24.13 <code>C++</code> implementation](c-implementation.md)
+**Next:** [24.14 <code>C++</code> implementation](c-implementation.md)

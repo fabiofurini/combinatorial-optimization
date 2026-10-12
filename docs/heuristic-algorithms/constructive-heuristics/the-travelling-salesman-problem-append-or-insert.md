@@ -336,4 +336,4 @@ title: "The travelling salesman problem: append or insert?"
 
 ---
 
-**Next:** [24.8 Randomized construction](randomized-construction.md)
+**Next:** [24.8 Vertex coloring: greedy and DSATUR](vertex-coloring-greedy-and-dsatur.md)

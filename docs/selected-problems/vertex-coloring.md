@@ -60,6 +60,12 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - On the complete graph with $n$ vertices the gap is $n-2$ and the ratio $\frac{2}{n}$ tends to $0$ ([Ch. 11](../formulations/coloring-formulations.md#115-typical-mistakes)).
 
+## Heuristics { #sez-sec-cat-vcp-heuristics }
+
+- The greedy coloring uses at most $\Delta(G)+1$ colors, and the order of the vertices matters ([Ch. 24](../heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur.md#sez-sec-VCPgreedy)).
+
+- $DSATUR$ colors first the vertex that sees the most colors; it is exact on bipartite graphs ([Ch. 24](../heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur.md#sez-sec-VCPgreedy)).
+
 ## Approximation { #sez-sec-cat-vcp-approximation }
 
 - Not approximable: no polynomial algorithm guarantees a ratio below $\frac43$ unless $P=NP$, and not even $n^{1-\varepsilon}$ (Zuckerman).

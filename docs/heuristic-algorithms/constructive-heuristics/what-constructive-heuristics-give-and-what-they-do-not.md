@@ -2,7 +2,7 @@
 title: "What constructive heuristics give, and what they do not"
 ---
 
-# 24.10 What constructive heuristics give, and what they do not { #sez-sec-WHAT }
+# 24.11 What constructive heuristics give, and what they do not { #sez-sec-WHAT }
 
 <div class="info-capitolo" markdown>
 

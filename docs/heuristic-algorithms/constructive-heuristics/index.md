@@ -39,11 +39,12 @@ title: "Constructive heuristics"
 3. [24.5 The bin packing problem: first sort, then pack](the-bin-packing-problem-first-sort-then-pack.md)
 4. [24.6 Scheduling on parallel machines: longest jobs first](scheduling-on-parallel-machines-longest-jobs-first.md)
 5. [24.7 The travelling salesman problem: append or insert?](the-travelling-salesman-problem-append-or-insert.md)
-6. [24.8 Randomized construction](randomized-construction.md)
-7. [24.9 Look-ahead and regret](look-ahead-and-regret.md)
-8. [24.10 What constructive heuristics give, and what they do not](what-constructive-heuristics-give-and-what-they-do-not.md)
-9. [Typical mistakes · In summary](typical-mistakes.md)
-10. [24.13 <code>C++</code> implementation](c-implementation.md)
+6. [24.8 Vertex coloring: greedy and DSATUR](vertex-coloring-greedy-and-dsatur.md)
+7. [24.9 Randomized construction](randomized-construction.md)
+8. [24.10 Look-ahead and regret](look-ahead-and-regret.md)
+9. [24.11 What constructive heuristics give, and what they do not](what-constructive-heuristics-give-and-what-they-do-not.md)
+10. [Typical mistakes · In summary](typical-mistakes.md)
+11. [24.14 <code>C++</code> implementation](c-implementation.md)
 
 </div>
 
