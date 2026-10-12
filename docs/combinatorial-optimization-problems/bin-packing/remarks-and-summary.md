@@ -14,7 +14,7 @@ title: "Remarks and summary"
 
 - The worst-case behaviour of simple packing rules, such as First Fit, was analysed by Garey, Graham and Ullman (1972) and by Johnson, Demers, Ullman, Garey and Graham (1974).
 
-- Johnson et al. (1974) proved that First Fit uses at most $\tfrac{17}{10}$ of the optimal number of bins, plus $2$ (Chapter «Approximation algorithms for bin packing»).
+- Johnson et al. (1974) proved that First Fit uses at most $\tfrac{17}{10}$ of the optimal number of bins, plus $2$.
 
 ## 3.4 Typical mistakes
 

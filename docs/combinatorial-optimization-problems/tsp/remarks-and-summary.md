@@ -16,7 +16,7 @@ title: "Remarks and summary"
 
 - On the road maps of real countries, the record of 2025 is the instance korea81998, with $81\,998$ bars of South Korea.
 
-- The TSP is strongly NP-hard (chapter «Combinatorial optimization problems»). The approximation algorithm of Christofides (1976) is in the chapter [«Approximation for the metric TSP»](https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/tsp-approximation/).
+- The TSP is strongly NP-hard (chapter «Combinatorial optimization problems»). Christofides (1976) gave an approximation algorithm with ratio $\frac32$ for the metric TSP.
 
 ## 6.7 Typical mistakes
 

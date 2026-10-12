@@ -16,8 +16,6 @@ title: "Formulations of capacitated lot sizing"
 
     - From this module, the chapter «Capacitated lot sizing»: the problem, the plans and the reference instance.
 
-    - From this module, the chapter «Dynamic programming for lot sizing»: the demand $D_{j,t}$ of a range of periods and the plans that produce only when the stock is empty.
-
 !!! chiave "Objectives"
 
     At the end of this chapter you will be able to:

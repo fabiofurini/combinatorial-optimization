@@ -12,7 +12,7 @@ title: "Remarks and summary"
 
 ## 8.7 Remarks
 
-- In 1958 Wagner and Whitin gave a dynamic programming algorithm for the case without capacity and with demand that varies over time. It rests on a property of the optimal plans: one produces only when the stock is empty (chapter «Dynamic programming for lot sizing»).
+- In 1958 Wagner and Whitin gave a dynamic programming algorithm for the case without capacity and with demand that varies over time. It rests on a property of the optimal plans: one produces only when the stock is empty.
 
 - With capacities the property fails, and the problem is NP-hard (chapter «Combinatorial optimization problems»).
 

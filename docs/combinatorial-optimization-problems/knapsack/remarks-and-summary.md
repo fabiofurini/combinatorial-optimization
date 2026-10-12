@@ -16,7 +16,7 @@ title: "Remarks and summary"
 
 - Karp (1972) put the subset sum problem, called knapsack in his paper, among the first $21$ NP-complete problems. The KP contains the SSP as the special case $p_j = w_j$, so it is NP-hard.
 
-- Ibarra and Kim (1975) gave the first fully polynomial-time approximation scheme for the KP (Chapter «Approximation algorithms for the knapsack problem»).
+- Ibarra and Kim (1975) gave the first fully polynomial-time approximation scheme for the KP.
 
 ## 2.11 Typical mistakes
 
