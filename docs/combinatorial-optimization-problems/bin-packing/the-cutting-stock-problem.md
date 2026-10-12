@@ -135,6 +135,10 @@ title: "Cutting stock"
     </tr>
     </table></div>
 
+    In the drawing the copies of the same item have the same colour, and the copy $(j,k)$ is a block of height $w_j$. The $7$ copies fit in $3$ bins, of weights $10$, $10$ and $8$.
+
+    ![Figure 2](../../img/bin-packing/fig02.svg){ .fig loading=lazy  }
+
 ## 3.2.1 Assumptions
 
 - We make the following assumptions:
@@ -207,13 +211,13 @@ title: "Cutting stock"
     <th>from</th>
     </tr>
     <tr>
-    <td>BPP, <span style="color:#1971c2">[Example 3.1](index.md#box-2-ex-bpp)</span></td>
+    <td>BPP, <span style="color:#1971c2"><a href="../#box-2-ex-bpp">Example 3.1</a></span></td>
     <td><span class="arithmatex">\(3\)</span> (weight bound)</td>
     <td><span class="arithmatex">\(3\)</span> (by eye)</td>
     <td>this chapter</td>
     </tr>
     <tr>
-    <td>CSP, <span style="color:#1971c2">[Example 3.2](#box-5-ex-csp)</span></td>
+    <td>CSP, <span style="color:#1971c2"><a href="#box-5-ex-csp">Example 3.2</a></span></td>
     <td><span class="arithmatex">\(3\)</span> (weight bound)</td>
     <td><span class="arithmatex">\(3\)</span> (by eye)</td>
     <td>this chapter</td>

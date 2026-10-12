@@ -104,12 +104,6 @@ title: "Constructive heuristics"
 
     [:octicons-arrow-right-24: Open](typical-mistakes.md)
 
--   **29.14 <code>C++</code> implementation**
-
-    The knapsack problem · The bin packing problem · Scheduling on parallel machines · The travelling salesman problem · Randomized construction
-
-    [:octicons-arrow-right-24: Open](c-implementation.md)
-
 </div>
 
 ---

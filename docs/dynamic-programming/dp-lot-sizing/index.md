@@ -6,7 +6,7 @@ title: "Dynamic programming for lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 27** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/dp-lot-sizing.md)
+**Part 3 · Dynamic programming · Chapter 25** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/dp-lot-sizing.md)
 
 </div>
 
@@ -40,7 +40,7 @@ title: "Dynamic programming for lot sizing"
 
 The problem of this chapter is the [uncapacitated lot-sizing problem (ULS)](https://fabiofurini.github.io/combinatorial-optimization/catalogue/uncapacitated-lot-sizing-problem/): its definition and its assumptions are on its page.
 
-## 27.1 Notation, model and feasible solutions
+## 25.1 Notation, model and feasible solutions
 
 - For any $j,t \in T$, we denote by
 
@@ -50,22 +50,22 @@ The problem of this chapter is the [uncapacitated lot-sizing problem (ULS)](http
 
     the total demand of periods $j,j+1,\dots,t$, with $D_{j,t}=0$ if $j>t$.
 
-- The ILP model is the $\mathrm{ILP}_{\mathrm{CLSP}}$ model of the chapter [«Formulations of capacitated lot sizing»](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/), without the capacity constraints and with the big-M value $D_{t,m}$ of period $t$, the total demand of the remaining periods. Its variables are those of that chapter: the production $x_t$, the inventory $s_t$ at the end of period $t$, and the setup $y_t\in\{0,1\}$, for every period $t \in T$.
+- The ILP model is the $\mathrm{ILP}_{\mathrm{ULS}}$ model of [Chapter 15 «Formulations of capacitated lot sizing»](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/), section «ILP models for the variants»: the $\mathrm{ILP}_{\mathrm{CLSP}}$ model without the capacity constraints and with the big-M value $D_{t,m}$ of period $t$, the total demand of the remaining periods. Its variables are the production $x_t$, the inventory $s_t$ at the end of period $t$, and the setup $y_t\in\{0,1\}$, for every period $t \in T$.
 
 !!! chiave ""
 
-    Using these variables, an ILP model for the Uncapacitated Lot-Sizing Problem (ULS) reads as follows:
+    We recall the $\mathrm{ILP}_{\mathrm{ULS}}$ model of the Uncapacitated Lot-Sizing Problem (ULS):
 
     <a id="eq-uls-model"></a>
 
     \begin{align*}
-    && \min ~~ \sum_{t \in T} \left(sc_t\, y_t + vc_t\, x_t + hc_t\, s_t\right) \label{uls:obj} \tag{27.1a}\\[1ex]
-    && \text{subject to} \quad s_{t-1} + x_t & = d_t + s_t, & \forall t \in T, \label{uls:bal} \tag{27.1b}\\[1ex]
-    && x_t & \le D_{t,m}\, y_t, & \forall t \in T, \label{uls:big} \tag{27.1c}\\[1ex]
-    && s_0 = s_m & = 0, \label{uls:end} \tag{27.1d}\\[1ex]
-    && x_t & \in \Z_{\ge 0}, & \forall t \in T, \label{uls:domx} \tag{27.1e}\\[1ex]
-    && s_t & \in \Z_{\ge 0}, & \forall t \in T, \label{uls:doms} \tag{27.1f}\\[1ex]
-    && y_t & \in \{0,1\}, & \forall t \in T. \label{uls:domy} \tag{27.1g}
+    && \min ~~ \sum_{t \in T} \left(sc_t\, y_t + vc_t\, x_t + hc_t\, s_t\right) \label{uls:obj} \tag{25.1a}\\[1ex]
+    && \text{subject to} \quad s_{t-1} + x_t & = d_t + s_t, & \forall t \in T, \label{uls:bal} \tag{25.1b}\\[1ex]
+    && x_t & \le D_{t,m}\, y_t, & \forall t \in T, \label{uls:big} \tag{25.1c}\\[1ex]
+    && s_0 = s_m & = 0, \label{uls:end} \tag{25.1d}\\[1ex]
+    && x_t & \in \Z_{\ge 0}, & \forall t \in T, \label{uls:domx} \tag{25.1e}\\[1ex]
+    && s_t & \in \Z_{\ge 0}, & \forall t \in T, \label{uls:doms} \tag{25.1f}\\[1ex]
+    && y_t & \in \{0,1\}, & \forall t \in T. \label{uls:domy} \tag{25.1g}
     \end{align*}
 
     This ILP model is referred to as the $\mathrm{ILP}_{\mathrm{ULS}}$ model.
@@ -84,7 +84,7 @@ The problem of this chapter is the [uncapacitated lot-sizing problem (ULS)](http
 
 <a id="box-1-texuls1"></a>
 
-!!! esempio "Example 27.1: Uncapacitated lot sizing"
+!!! esempio "Example 25.1: Uncapacitated lot sizing"
 
     We consider $m=5$ periods with the following data:
 
@@ -99,9 +99,9 @@ The problem of this chapter is the [uncapacitated lot-sizing problem (ULS)](http
     \end{array}
     $$
 
-    We refer to this ULS instance as <span style="color:#1971c2">[Example 27.1](#box-1-texuls1)</span>. It is the uncapacitated instance used in the MIP course (setup cost $50$, holding cost $1$, no variable production cost).
+    We refer to this ULS instance as <span style="color:#1971c2">[Example 25.1](#box-1-texuls1)</span>. It is the uncapacitated instance used in the MIP course (setup cost $50$, holding cost $1$, no variable production cost).
 
-### 27.1.1 Encoding of feasible solutions
+### 25.1.1 Encoding of feasible solutions
 
 !!! chiave ""
 
@@ -141,9 +141,9 @@ The problem of this chapter is the [uncapacitated lot-sizing problem (ULS)](http
 
 <a id="box-2-texulsnetwork"></a>
 
-!!! esempio "Example 27.2: A feasible solution"
+!!! esempio "Example 25.2: A feasible solution"
 
-    We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](#box-1-texuls1)</span>. The following network represents the feasible solution $(30,\allowbreak 0,\allowbreak 80,\allowbreak 0,\allowbreak 0)$: each period is a node, the production $x_t$ enters node $t$, the demand $d_t$ leaves it, and the inventory $s_t$ flows from node $t$ to node $t+1$. Thick arcs carry a positive flow.
+    We consider the ULS instance of <span style="color:#1971c2">[Example 25.1](#box-1-texuls1)</span>. The following network represents the feasible solution $(30,\allowbreak 0,\allowbreak 80,\allowbreak 0,\allowbreak 0)$: each period is a node, the production $x_t$ enters node $t$, the demand $d_t$ leaves it, and the inventory $s_t$ flows from node $t$ to node $t+1$. Thick arcs carry a positive flow.
 
     ![Figure 1](../../img/dp-lot-sizing/fig01.svg){ .fig loading=lazy  }
 
@@ -155,11 +155,11 @@ The problem of this chapter is the [uncapacitated lot-sizing problem (ULS)](http
 
 - A production quantity can take many values, and a ULS instance has a huge number of feasible solutions (infinitely many, if the quantities are not required to be integer). The next property shows that only very few of them need to be considered.
 
-### 27.1.2 The zero-inventory ordering property
+### 25.1.2 The zero-inventory ordering property
 
 <a id="box-3-thmZIO"></a>
 
-!!! teorema "Theorem 27.1: Zero-inventory ordering (Wagner and Whitin, 1958)"
+!!! teorema "Theorem 25.1: Zero-inventory ordering (Wagner and Whitin, 1958)"
 
     Every ULS instance has an optimal solution in which no period with positive production starts with a positive inventory, that is,
 
@@ -223,9 +223,9 @@ The problem of this chapter is the [uncapacitated lot-sizing problem (ULS)](http
 
 <a id="box-4-texulsenum"></a>
 
-!!! esempio "Example 27.3: Enumeration of the solutions with the zero-inventory ordering property"
+!!! esempio "Example 25.3: Enumeration of the solutions with the zero-inventory ordering property"
 
-    We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](#box-1-texuls1)</span>:
+    We consider the ULS instance of <span style="color:#1971c2">[Example 25.1](#box-1-texuls1)</span>:
 
     $$
     \begin{array}{l|rrrrr}
@@ -370,17 +370,17 @@ The problem of this chapter is the [uncapacitated lot-sizing problem (ULS)](http
 
     Notation, model and feasible solutions · Encoding of feasible solutions · The zero-inventory ordering property
 
-    [:octicons-arrow-right-24: Open](#271-notation-model-and-feasible-solutions)
+    [:octicons-arrow-right-24: Open](#251-notation-model-and-feasible-solutions)
 
--   **27.2 A DP algorithm for the ULS**
+-   **25.2 A DP algorithm for the ULS**
 
     [:octicons-arrow-right-24: Open](a-dp-algorithm-for-the-uls.md)
 
--   **27.2.2 A DP algorithm for the ULS: Step 1 and Step 2**
+-   **25.2.2 A DP algorithm for the ULS: Step 1 and Step 2**
 
     [:octicons-arrow-right-24: Open](a-dp-algorithm-for-the-uls-step-1-and-step-2.md)
 
--   **27.3 A DP algorithm for the capacitated case**
+-   **25.3 A DP algorithm for the capacitated case**
 
     The case of constant capacity
 
@@ -396,7 +396,7 @@ The problem of this chapter is the [uncapacitated lot-sizing problem (ULS)](http
 
 ---
 
-**Next:** [27.2 A DP algorithm for the ULS](a-dp-algorithm-for-the-uls.md)
+**Next:** [25.2 A DP algorithm for the ULS](a-dp-algorithm-for-the-uls.md)
 
 ---
 

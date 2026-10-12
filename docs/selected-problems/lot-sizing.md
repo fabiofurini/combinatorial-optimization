@@ -44,15 +44,15 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Formulations { #sez-sec-cat-cls-formulations }
 
-- Big-M formulation: the strong value $M_t=\min\{cap_t,D_{t,m}\}$ raises the LP bound on the instance of [Ch. 8](../combinatorial-optimization-problems/lot-sizing/index.md) from $99.65$ to $157.5$ ([Ch. 15](../formulations/lot-sizing-formulations.md#box-3-ex-CLS-bigM)).
+- Big-M formulation: the strong value $M_t=\min\{cap_t,D_{t,m}\}$ raises the LP bound on the instance of [Ch. 8](../combinatorial-optimization-problems/lot-sizing/index.md) from $99.65$ to $157.5$ ([Ch. 15](../formulations/lot-sizing-formulations/index.md#box-3-ex-CLS-bigM)).
 
-- The shortest-path formulation gives the bound $170$, the strongest of the chapter ([Ch. 15](../formulations/lot-sizing-formulations.md#154-comparing-the-formulations)).
+- The shortest-path formulation gives the bound $170$, the strongest of the chapter ([Ch. 15](../formulations/lot-sizing-formulations/index.md#154-comparing-the-formulations)).
 
 ## Dynamic programming { #sez-sec-cat-cls-dynamicprogramming }
 
-- Without capacities an optimal plan produces only with empty stock (Wagner and Whitin): a DP over the last production run solves the ULS in $\Theta(m^2)$ steps ([Ch. 27](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls.md#272-a-dp-algorithm-for-the-uls)).
+- Without capacities an optimal plan produces only with empty stock (Wagner and Whitin): a DP over the last production run solves the ULS in $\Theta(m^2)$ steps ([Ch. 25](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls.md#252-a-dp-algorithm-for-the-uls)).
 
-- With capacities the state is (period, inventory): $O(m\,D\,C)$ steps, pseudo-polynomial ([Ch. 27](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#2731-number-of-steps)).
+- With capacities the state is (period, inventory): $O(m\,D\,C)$ steps, pseudo-polynomial ([Ch. 25](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#2531-number-of-steps)).
 
 ## MIP heuristics { #sez-sec-cat-cls-mipheuristics }
 
@@ -66,7 +66,7 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - [Ch. 15 — Formulations of capacitated lot sizing](../exercises/lot-sizing-formulations.md) (5 exercises).
 
-- [Ch. 27 — Dynamic programming for lot sizing](../exercises/dp-lot-sizing.md) (5 exercises).
+- [Ch. 25 — Dynamic programming for lot sizing](../exercises/dp-lot-sizing.md) (5 exercises).
 
 ## Variants { #sez-sec-cat-cls-var }
 

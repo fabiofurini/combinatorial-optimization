@@ -76,4 +76,4 @@ title: "Typical mistakes · In summary"
 
 ---
 
-**Next:** [<code>C++</code> implementation · References](c-implementation.md)
+**Next:** [References](references.md)

@@ -104,13 +104,13 @@ title: "Weighted variants"
     <th>from</th>
     </tr>
     <tr>
-    <td><span style="color:#1971c2">[Example 5.1](index.md#box-6-mcpP-ex1)</span> (cycle with a chord)</td>
+    <td><span style="color:#1971c2"><a href="../#box-6-mcpP-ex1">Example 5.1</a></span> (cycle with a chord)</td>
     <td><span class="arithmatex">\(3\)</span> (by hand)</td>
     <td><span class="arithmatex">\(3\)</span> (degree count, coloring)</td>
     <td>this chapter</td>
     </tr>
     <tr>
-    <td><span style="color:#1971c2">[Example 5.2](index.md#box-7-mcpP-ex2)</span> (dense graph)</td>
+    <td><span style="color:#1971c2"><a href="../#box-7-mcpP-ex2">Example 5.2</a></span> (dense graph)</td>
     <td><span class="arithmatex">\(4\)</span> (by hand)</td>
     <td><span class="arithmatex">\(4\)</span> (coloring)</td>
     <td>this chapter</td>

@@ -14,7 +14,7 @@ The problems on which the whole course focuses, introduced one by one: definitio
 
     Choose a subset of items of maximum total profit whose total weight does not exceed the capacity.
 
-    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/knapsack/index.md) · [Formulations](../formulations/knapsack-formulations.md)
+    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/knapsack/index.md) · [Formulations](../formulations/knapsack-formulations/index.md)
 
 -   **The bin packing problem**
 
@@ -22,7 +22,7 @@ The problems on which the whole course focuses, introduced one by one: definitio
 
     Pack items of given weights into the minimum number of identical bins of capacity $c$.
 
-    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/bin-packing/index.md) · [Formulations](../formulations/bin-packing-formulations.md)
+    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/bin-packing/index.md) · [Formulations](../formulations/bin-packing-formulations/index.md)
 
 -   **The vertex coloring problem**
 
@@ -38,7 +38,7 @@ The problems on which the whole course focuses, introduced one by one: definitio
 
     Find a largest set of pairwise adjacent vertices of a graph.
 
-    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/clique/index.md) · [Formulations](../formulations/clique-formulations.md)
+    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/clique/index.md) · [Formulations](../formulations/clique-formulations/index.md)
 
 -   **The travelling salesman problem**
 
@@ -46,7 +46,7 @@ The problems on which the whole course focuses, introduced one by one: definitio
 
     Find a shortest closed route that visits every city exactly once and returns to the starting city.
 
-    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/tsp/index.md) · [Formulations](../formulations/tsp-formulations.md)
+    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/tsp/index.md) · [Formulations](../formulations/tsp-formulations/index.md)
 
 -   **Scheduling on identical parallel machines**
 
@@ -62,6 +62,6 @@ The problems on which the whole course focuses, introduced one by one: definitio
 
     Plan the production of every period, with capacities, setup costs and stock, at minimum total cost.
 
-    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/lot-sizing/index.md) · [Formulations](../formulations/lot-sizing-formulations.md)
+    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/lot-sizing/index.md) · [Formulations](../formulations/lot-sizing-formulations/index.md)
 
 </div>

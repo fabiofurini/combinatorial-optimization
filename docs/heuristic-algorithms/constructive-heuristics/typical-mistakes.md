@@ -78,4 +78,5 @@ title: "Typical mistakes · In summary"
 
 ---
 
-**Next:** [29.14 <code>C++</code> implementation](c-implementation.md)
+**Exercises on this chapter:** [:material-pencil: Constructive](../../exercises/constructive-heuristics.md)
+

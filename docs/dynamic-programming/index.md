@@ -14,6 +14,12 @@
 
     [:octicons-arrow-right-24: Read the chapter](dp-principles.md) · [Exercises](../exercises/dp-principles.md)
 
+</div>
+
+## Knapsack problems
+
+<div class="grid cards" markdown>
+
 -   **17. DP for the knapsack problem**
 
     ---
@@ -78,13 +84,25 @@
 
     [:octicons-arrow-right-24: Read the chapter](dp-multiple-knapsack.md) · [Exercises](../exercises/dp-multiple-knapsack.md)
 
--   **25. DP for the rod cutting problem**
+</div>
+
+## Lot sizing problems
+
+<div class="grid cards" markdown>
+
+-   **25. Dynamic programming for lot sizing**
 
     ---
 
-    Instances and feasible solutions
+    Notation, model and feasible solutions
 
-    [:octicons-arrow-right-24: Read the chapter](dp-rod-cutting/index.md) · [Exercises](../exercises/dp-rod-cutting.md)
+    [:octicons-arrow-right-24: Read the chapter](dp-lot-sizing/index.md) · [Exercises](../exercises/dp-lot-sizing.md)
+
+</div>
+
+## Miscellaneous problems
+
+<div class="grid cards" markdown>
 
 -   **26. DP for the coin change problem**
 
@@ -94,12 +112,12 @@
 
     [:octicons-arrow-right-24: Read the chapter](dp-coin-change.md) · [Exercises](../exercises/dp-coin-change.md)
 
--   **27. Dynamic programming for lot sizing**
+-   **27. DP for the rod cutting problem**
 
     ---
 
-    Notation, model and feasible solutions
+    Instances and feasible solutions
 
-    [:octicons-arrow-right-24: Read the chapter](dp-lot-sizing/index.md) · [Exercises](../exercises/dp-lot-sizing.md)
+    [:octicons-arrow-right-24: Read the chapter](dp-rod-cutting/index.md) · [Exercises](../exercises/dp-rod-cutting.md)
 
 </div>

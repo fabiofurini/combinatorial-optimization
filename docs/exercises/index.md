@@ -15,13 +15,13 @@ Exercises with **worked solutions**, chapter by chapter. Try each exercise on yo
 
 ## Formulations and their properties
 
-- [9. Formulations of the knapsack problem](knapsack-formulations.md) · 5 exercises
-- [10. Formulations of the bin packing problem](bin-packing-formulations.md) · 5 exercises
+- [9. Formulations of the knapsack problem](knapsack-formulations.md) · 12 exercises
+- [10. Formulations of the bin packing problem](bin-packing-formulations.md) · 6 exercises
 - [11. Formulations of the vertex coloring problem](coloring-formulations.md) · 5 exercises
-- [12. Formulations of the maximum clique problem](clique-formulations.md) · 5 exercises
-- [13. Formulations of the travelling salesman problem](tsp-formulations.md) · 5 exercises
+- [12. Formulations of the maximum clique problem](clique-formulations.md) · 8 exercises
+- [13. Formulations of the travelling salesman problem](tsp-formulations.md) · 6 exercises
 - [14. Formulations of parallel machine scheduling](pcmax-formulations.md) · 5 exercises
-- [15. Formulations of capacitated lot sizing](lot-sizing-formulations.md) · 5 exercises
+- [15. Formulations of capacitated lot sizing](lot-sizing-formulations.md) · 9 exercises
 
 ## Dynamic programming
 
@@ -34,9 +34,9 @@ Exercises with **worked solutions**, chapter by chapter. Try each exercise on yo
 - [22. DP for the multidimensional knapsack problem](dp-multidimensional-knapsack.md) · 5 exercises
 - [23. DP for the knapsack problem with setups](dp-knapsack-setups.md) · 5 exercises
 - [24. DP for the multiple knapsack problem](dp-multiple-knapsack.md) · 5 exercises
-- [25. DP for the rod cutting problem](dp-rod-cutting.md) · 5 exercises
+- [25. Dynamic programming for lot sizing](dp-lot-sizing.md) · 5 exercises
 - [26. DP for the coin change problem](dp-coin-change.md) · 5 exercises
-- [27. Dynamic programming for lot sizing](dp-lot-sizing.md) · 5 exercises
+- [27. DP for the rod cutting problem](dp-rod-cutting.md) · 5 exercises
 
 ## Heuristic algorithms
 
@@ -54,6 +54,7 @@ Exercises with **worked solutions**, chapter by chapter. Try each exercise on yo
 - [36. Approximation for P|Cmax](pcmax-approximation.md) · 3 exercises
 - [37. Approximation for the metric TSP](tsp-approximation.md) · 3 exercises
 
-## Problem-specific branch-and-bound
+## Ad hoc algorithms
 
 - [38. Knapsack: branch-and-bound on the critical item](knapsack-branch-and-bound.md) · 4 exercises
+- [39. Vertex coloring: the DSATUR branch-and-bound](dsatur-branch-and-bound.md) · 5 exercises

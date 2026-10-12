@@ -113,6 +113,10 @@ title: "Multidimensional knapsack"
     </tr>
     </table></div>
 
+    The drawing has one box per dimension, of length $c_1=10$ and $c_2=12$: a selected item occupies a block of length $w_{1j}$ in the first box and one of length $w_{2j}$ in the second. The optimal solution $\{3,4\}$ fills the first dimension and uses $8$ units of the second, with profit $5+9=14$.
+
+    ![Figure 5](../../img/knapsack/fig05.svg){ .fig loading=lazy  }
+
 ## 2.5.1 Assumptions
 
 - We make the following assumptions:

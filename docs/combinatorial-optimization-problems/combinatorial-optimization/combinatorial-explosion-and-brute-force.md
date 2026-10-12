@@ -2,7 +2,7 @@
 title: "Combinatorial explosion and brute force"
 ---
 
-# 1.3 Combinatorial explosion and brute force { #sez-sec-bruteforce }
+# 1.4 Combinatorial explosion and brute force { #sez-sec-bruteforce }
 
 <div class="info-capitolo" markdown>
 
@@ -111,7 +111,7 @@ title: "Combinatorial explosion and brute force"
 
     Among the $11$ feasible subsets, the best one is $\tilde S = \{2,3,4\}$, with $z(I)=13$. It is the only optimal solution: the subset $\{1,2\}$ also has value $13$, but it is not feasible.
 
-## 1.3.1 Exponential growth
+## 1.4.1 Exponential growth
 
 - Brute force works for the small instances above, but the number of candidates grows very quickly with the size $n$ of the instance. The following table compares polynomial and exponential growth.
 
@@ -130,7 +130,7 @@ $$
 
 ![Figure 1](../../img/combinatorial-optimization/fig01.svg){ .fig .cornice loading=lazy style="width:65%" }
 
-## 1.3.2 Computing times
+## 1.4.2 Computing times
 
 - We assume that a computer evaluates $10^9$ candidate solutions per second, and we compute the time of a complete enumeration (one year $=365.25$ days):
 
@@ -247,4 +247,4 @@ $$
 
 ---
 
-**Next:** [1.4 Primal bounds, dual bounds and gap](primal-bounds-dual-bounds-and-gap.md)
+**Next:** [1.5 Primal bounds, dual bounds and gap](primal-bounds-dual-bounds-and-gap.md)

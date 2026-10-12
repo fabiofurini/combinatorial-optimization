@@ -69,4 +69,5 @@ title: "Typical mistakes · In summary"
 
 ---
 
-**Next:** [30.15 <code>C++</code> implementation](c-implementation.md)
+**Exercises on this chapter:** [:material-pencil: Local search](../../exercises/local-search.md)
+

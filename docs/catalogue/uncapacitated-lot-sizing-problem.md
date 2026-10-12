@@ -34,4 +34,4 @@ title: "Uncapacitated lot sizing problem (ULS)"
 
     2. The quantities are integer. With integer data, once the periods with a setup are fixed, what remains is a minimum cost flow problem, which has an integer optimal solution: restricting the quantities to integers does not change the optimal cost.
 
-- Treated in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing/index.md), [Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations.md), [Chapter 27 «Dynamic programming for lot sizing»](../dynamic-programming/dp-lot-sizing/index.md), [Chapter 32 «MIP heuristics for the classical problems»](../heuristic-algorithms/mip-heuristics-classical.md).
+- Treated in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing/index.md), [Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations/index.md), [Chapter 25 «Dynamic programming for lot sizing»](../dynamic-programming/dp-lot-sizing/index.md), [Chapter 32 «MIP heuristics for the classical problems»](../heuristic-algorithms/mip-heuristics-classical.md).

@@ -106,11 +106,9 @@ title: "Metaheuristics"
 
     [:octicons-arrow-right-24: Open](typical-mistakes.md)
 
--   **<code>C++</code> implementation · References**
+-   **References**
 
-    Local searches and auxiliary functions · Simulated annealing · Tabu search · Iterated local search and variable neighbourhood search · GRASP
-
-    [:octicons-arrow-right-24: Open](c-implementation.md)
+    [:octicons-arrow-right-24: Open](references.md)
 
 </div>
 

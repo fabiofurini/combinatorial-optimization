@@ -2,7 +2,7 @@
 title: "Primal bounds, dual bounds and gap"
 ---
 
-# 1.4 Primal bounds, dual bounds and gap { #sez-sec-bounds }
+# 1.5 Primal bounds, dual bounds and gap { #sez-sec-bounds }
 
 <div class="info-capitolo" markdown>
 

@@ -6,7 +6,7 @@ title: "Formulations of capacitated lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 15** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Lot sizing](../exercises/lot-sizing-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 15** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/lot-sizing-formulations.md)
 
 </div>
 
@@ -28,7 +28,9 @@ title: "Formulations of capacitated lot sizing"
 
     - compare the LP bounds of the formulations on the reference instance;
 
-    - extend the formulations to several products, with setup times and initial inventory.
+    - write the ILP model of the uncapacitated lot sizing problem;
+
+    - extend the big-M formulation to several products with setup times, to the initial stock, to overtime and to unsatisfied demand, and compute the strong big-M values of each model.
 
 ## 15.1 A formulation with a big-M link
 
@@ -382,7 +384,7 @@ title: "Formulations of capacitated lot sizing"
 
 - The paths are the building blocks, and a plan that is not a path is a <strong>combination of paths</strong>: the quantities are integer, but the variables $zv_{tk}$ may be fractional.
 
-![Figure 1](../img/lot-sizing-formulations/fig01.svg){ .fig loading=lazy  }
+![Figure 1](../../img/lot-sizing-formulations/fig01.svg){ .fig loading=lazy  }
 
 <a id="fig:CLS-SP"></a>
 
@@ -554,321 +556,26 @@ title: "Formulations of capacitated lot sizing"
 
 - The price of the shortest-path formulation is its size: there are $O(m^2)$ variables $zv_{tk}$, against the $O(m)$ variables of the big-M formulation.
 
-## 15.5 Several products, setup times and initial inventory
+<div class="grid cards sottopagine" markdown>
 
-- In the general problem a set $P$ of products shares the resource of each period. We write $d_{pt}$, $sc_{pt}$, $vc_{pt}$ and $hc_{pt}$ for the data of product $p \in P$ in period $t \in T$. Producing a unit of $p$ takes the time $vt_{pt} \in \Z_{\ge 1}$, a setup takes the time $st_{pt} \in \Z_{\ge 0}$, and the capacity $cap_t$ is a time. The initial inventory $si_p \in \Z_{\ge 0}$ of product $p$ is a decision, bought at the cost $fc_p$ per unit.
+-   **Definition**
 
-- For $j\le k$ we write $sd_{pjk}=\sum_{u=j}^{k} d_{pu}$ for the demand of product $p$ in the periods $j,\dots,k$. The variables are $x_{pt}$, $s_{pt}$, $si_p$ and $y_{pt}$, with the meaning of the single-product model.
+    A formulation with a big-M link · Weak and strong big-M values
 
-!!! chiave ""
+    [:octicons-arrow-right-24: Open](#151-a-formulation-with-a-big-m-link)
 
-    Using these variables, an ILP model for the CLS with several products, setup times and initial inventory reads as follows:
+-   **15.5 ILP models for the variants**
 
-    <a id="eq-CLSP-bigM"></a>
+    Several products and setup times · Initial stock · Overtime · Unsatisfied demand · Typical mistakes
 
-    \begin{align*}
-    &&\min ~~ \sum_{p \in P} fc_p\,si_p + {} \\
-    && \sum_{p \in P}\sum_{t \in T} \left(sc_{pt}\,y_{pt} + vc_{pt}\,x_{pt} + hc_{pt}\,s_{pt} \right) \label{obj:CLSP} \tag{15.5a}\\[1ex]
-    && \text{subject to}\quad si_{p} + x_{p1} & = d_{p1} + s_{p1}, & \forall p \in P, \label{CLSP:bal1} \tag{15.5b}\\[1ex]
-    && s_{p,t-1} + x_{pt} & = d_{pt} + s_{pt}, & \forall p \in P,~\forall t\in T\setminus\{1\}, \label{CLSP:bal} \tag{15.5c}\\[1ex]
-    && \sum_{p \in P}\left(st_{pt}\,y_{pt} + vt_{pt}\,x_{pt}\right) &\leq cap_t, & \forall t\in T, \label{CLSP:cap} \tag{15.5d}\\[1ex]
-    && x_{pt} &\le M_{pt}\, y_{pt}, & \forall p \in P,~ \forall t\in T, \label{CLSP:M} \tag{15.5e}\\[1ex]
-    && s_{pm} &= 0, & \forall p \in P, \label{CLSP:end} \tag{15.5f}\\[1ex]
-    && x_{pt} &\in \Z_{\ge 0}, & \forall p \in P,~ \forall t\in T, \label{CLSP:x} \tag{15.5g}\\[1ex]
-    && s_{pt} &\in \Z_{\ge 0}, & \forall p \in P,~ \forall t\in T, \label{CLSP:s} \tag{15.5h}\\[1ex]
-    && si_{p} &\in \Z_{\ge 0}, & \forall p \in P, \label{CLSP:si} \tag{15.5i}\\[1ex]
-    && y_{pt} &\in \{0,1\}, & \forall p \in P,~ \forall t\in T. \label{CLSP:y} \tag{15.5j}
-    \end{align*}
+    [:octicons-arrow-right-24: Open](ilp-models-for-the-variants.md)
 
-    This ILP model is referred to as the $\mathrm{ILP}_{\mathrm{CLSP}}^{P}$ model.
-
-- Description of the objective function and constraints of the $\mathrm{ILP}_{\mathrm{CLSP}}^{P}$ model:
-
-    - the linear objective function $\eqref{obj:CLSP}$ minimizes the cost of the initial inventory, of the setups, of the production and of the holding;
-
-    - constraints $\eqref{CLSP:bal1}$ and $\eqref{CLSP:bal}$ are the flow balancing constraints of every product, with the initial inventory $si_p$ in the first period;
-
-    - constraints $\eqref{CLSP:cap}$ impose that the setup times and the production times of each period do not exceed its capacity; constraints $\eqref{CLSP:M}$ link the quantities with the setups;
-
-    - constraints $\eqref{CLSP:end}$ impose an empty inventory at the end of the horizon;
-
-    - finally, constraints $\eqref{CLSP:x}$–$\eqref{CLSP:y}$ define the variables of the ILP model.
-
-- The strong big-M value is
-
-    $$
-    M_{pt}=\min\left\{\left\lfloor\frac{cap_t-st_{pt}}{vt_{pt}}\right\rfloor,~sd_{ptm}\right\}.
-    $$
-
-!!! chiave ""
-
-    To obtain an LP relaxation of the $\mathrm{ILP}_{\mathrm{CLSP}}^{P}$ model, we relax constraints $\eqref{CLSP:x}$–$\eqref{CLSP:y}$ into non-negativity constraints and the bounds $y_{pt}\le 1$. The obtained LP model reads as follows:
-
-    <a id="eq-CLSP-LP"></a>
-
-    \begin{align*}
-    &&\min ~~ \sum_{p \in P} fc_p\,si_p + {} \\
-    && \sum_{p \in P}\sum_{t \in T} \left(sc_{pt}\,y_{pt} + vc_{pt}\,x_{pt} + hc_{pt}\,s_{pt} \right) \label{obj:CLSP-LP} \tag{15.6a}\\[1ex]
-    && \text{subject to}\quad si_{p} + x_{p1} & = d_{p1} + s_{p1}, & \forall p \in P, \label{CLSPLP:bal1} \tag{15.6b}\\[1ex]
-    && s_{p,t-1} + x_{pt} & = d_{pt} + s_{pt}, & \forall p \in P,~\forall t\in T\setminus\{1\}, \label{CLSPLP:bal} \tag{15.6c}\\[1ex]
-    && \sum_{p \in P}\left(st_{pt}\,y_{pt} + vt_{pt}\,x_{pt}\right) &\leq cap_t, & \forall t\in T, \label{CLSPLP:cap} \tag{15.6d}\\[1ex]
-    && x_{pt} &\le M_{pt}\, y_{pt}, & \forall p \in P,~ \forall t\in T, \label{CLSPLP:M} \tag{15.6e}\\[1ex]
-    && s_{pm} &= 0, & \forall p \in P, \label{CLSPLP:end} \tag{15.6f}\\[1ex]
-    && y_{pt} &\le 1, & \forall p \in P,~ \forall t\in T, \label{CLSPLP:ub} \tag{15.6g}\\[1ex]
-    && x_{pt},\; s_{pt},\; y_{pt} &\ge 0, & \forall p \in P,~ \forall t\in T, \label{CLSPLP:nn} \tag{15.6h}\\[1ex]
-    && si_{p} &\ge 0, & \forall p \in P. \label{CLSPLP:si} \tag{15.6i}
-    \end{align*}
-
-    This LP model is referred to as the $\mathrm{LP}_{\mathrm{CLSP}}^{P}$ model.
-
-- In the shortest-path formulation each product has its own network, with an additional continuous variable $w_{pt}\ge 0$, the arc from node $0$ to node $t$, for the fraction of the initial inventory that covers the demands of the first $t$ periods. The costs of the arcs are
-
-    $$
-    cv_{ptk}=vc_{pt}\,sd_{ptk}+\sum_{s=t+1}^{k}\sum_{u=t}^{s-1}hc_{pu}\,d_{ps},
-    \qquad
-    ci_{pt}=fc_p\,sd_{p1t}+\sum_{s=2}^{t}\sum_{u=1}^{s-1}hc_{pu}\,d_{ps}.
-    $$
-
-!!! chiave ""
-
-    Using these variables, a MIP model for the CLS with several products, setup times and initial inventory reads as follows:
-
-    <a id="eq-CLSP-SP"></a>
-
-    \begin{align*}
-    &&\min ~~ \sum_{p \in P}\sum_{t \in T}\left(sc_{pt}\,y_{pt} + ci_{pt}\,w_{pt}\right) + {} \\
-    && \sum_{p \in P}\sum_{t \in T}\sum_{k=t}^{m} cv_{ptk}\,zv_{ptk} \label{obj:CLSP-SP} \tag{15.7a}\\[1ex]
-    && \text{subject to}\quad \sum_{k=1}^{m}\left(w_{pk}+zv_{p1k}\right) &= 1, & \forall p \in P, \label{CLSPSP1} \tag{15.7b}\\[1ex]
-    && w_{p,t-1}+\sum_{u=1}^{t-1}zv_{p,u,t-1} - \sum_{k=t}^{m}zv_{ptk} &= 0, & \forall p \in P,~\forall t\in T\setminus\{1\}, \label{CLSPSP2} \tag{15.7c}\\[1ex]
-    && \sum_{k=t}^{m}zv_{ptk} &\leq y_{pt}, & \forall p \in P,~\forall t\in T, \label{CLSPSP3} \tag{15.7d}\\[1ex]
-    && \sum_{p\in P}st_{pt}\,y_{pt}+\sum_{p\in P}\sum_{k=t}^{m} vt_{pt}\,sd_{ptk}\,zv_{ptk} &\leq cap_t, & \forall t\in T, \label{CLSPSP4} \tag{15.7e}\\[1ex]
-    && \sum_{k=t}^{m} sd_{ptk}\,zv_{ptk} &\in \Z_{\ge 0}, & \forall p \in P,~\forall t\in T, \label{CLSPSP-intx} \tag{15.7f}\\[1ex]
-    && \sum_{t\in T} sd_{p1t}\,w_{pt} &\in \Z_{\ge 0}, & \forall p \in P, \label{CLSPSP-intsi} \tag{15.7g}\\[1ex]
-    && zv_{ptk} & \geq 0, & \forall p \in P,~\forall t,k\in T,~ k\geq t, \label{CLSPSP5} \tag{15.7h}\\[1ex]
-    && w_{pt} & \geq 0, & \forall p \in P,~\forall t\in T, \label{CLSPSP6} \tag{15.7i}\\[1ex]
-    && y_{pt} & \in \{0, 1\}, & \forall p \in P,~\forall t \in T. \label{CLSPSP7} \tag{15.7j}
-    \end{align*}
-
-    This MIP model is referred to as the $\mathrm{MIP}^{\mathrm{SP},P}_{\mathrm{CLSP}}$ model. Relaxing constraints $\eqref{CLSPSP7}$ into $0\le y_{pt}\le 1$ and removing constraints $\eqref{CLSPSP-intx}$ and $\eqref{CLSPSP-intsi}$ gives the LP model referred to as the $\mathrm{LP}^{\mathrm{SP},P}_{\mathrm{CLSP}}$ model.
-
-- The quantity produced is $x_{pt}=\sum_{k=t}^{m} sd_{ptk}\,zv_{ptk}$, and the initial inventory is $si_p=\sum_{t\in T} sd_{p1t}\,w_{pt}$: constraints $\eqref{CLSPSP-intx}$ and $\eqref{CLSPSP-intsi}$ keep them integer, as in the $\mathrm{ILP}_{\mathrm{CLSP}}^{P}$ model.
-
-- With one product and $vt_t=1$ these constraints are not needed: once the setups are fixed, what remains is a minimum cost flow problem, which has an integer optimal solution.
-
-- With several products and production times $vt_{pt}>1$, a fractional quantity can use the capacity better. Without constraints $\eqref{CLSPSP-intx}$ and $\eqref{CLSPSP-intsi}$ the model is only a relaxation of the problem, and its optimal value can be smaller than $z(\mathrm{ILP}_{\mathrm{CLSP}}^{P})$ (<span style="color:#1971c2">[Example 15.6](#box-6-ex-CLSP-inst)</span>).
-
-<a id="box-6-ex-CLSP-inst"></a>
-
-!!! esempio "Example 15.6: two products"
-
-    We consider $|P|=2$ products and $m=3$ periods, with capacities $cap_1=2500$, $cap_2=2100$, $cap_3=2500$, the initial inventory costs $fc_1=fc_2=3000$ and the setup costs $sc_{pt}=10000$. The other data are:
-
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th></th>
-    <th colspan="3">product <span class="arithmatex">\(1\)</span></th>
-    <th colspan="3">product <span class="arithmatex">\(2\)</span></th>
-    </tr>
-    <tr>
-    <td>period <span class="arithmatex">\(t\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(d_{pt}\)</span></td>
-    <td><span class="arithmatex">\(100\)</span></td>
-    <td><span class="arithmatex">\(200\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(100\)</span></td>
-    <td><span class="arithmatex">\(150\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(vt_{pt}\)</span></td>
-    <td><span class="arithmatex">\(20\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    <td><span class="arithmatex">\(5\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(st_{pt}\)</span></td>
-    <td><span class="arithmatex">\(100\)</span></td>
-    <td><span class="arithmatex">\(100\)</span></td>
-    <td><span class="arithmatex">\(100\)</span></td>
-    <td><span class="arithmatex">\(110\)</span></td>
-    <td><span class="arithmatex">\(110\)</span></td>
-    <td><span class="arithmatex">\(110\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(hc_{pt}\)</span></td>
-    <td><span class="arithmatex">\(110\)</span></td>
-    <td><span class="arithmatex">\(100\)</span></td>
-    <td><span class="arithmatex">\(100\)</span></td>
-    <td><span class="arithmatex">\(105\)</span></td>
-    <td><span class="arithmatex">\(105\)</span></td>
-    <td><span class="arithmatex">\(105\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(vc_{pt}\)</span></td>
-    <td><span class="arithmatex">\(1100\)</span></td>
-    <td><span class="arithmatex">\(1000\)</span></td>
-    <td><span class="arithmatex">\(1000\)</span></td>
-    <td><span class="arithmatex">\(900\)</span></td>
-    <td><span class="arithmatex">\(800\)</span></td>
-    <td><span class="arithmatex">\(800\)</span></td>
-    </tr>
-    </table></div>
-
-    The big-M values are:
-
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th>period <span class="arithmatex">\(t\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(sd_{ptm}\)</span></td>
-    <td><span class="arithmatex">\(310\)</span></td>
-    <td><span class="arithmatex">\(210\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(260\)</span></td>
-    <td><span class="arithmatex">\(250\)</span></td>
-    <td><span class="arithmatex">\(150\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(\lfloor (cap_t-st_{pt})/vt_{pt} \rfloor\)</span></td>
-    <td><span class="arithmatex">\(120\)</span></td>
-    <td><span class="arithmatex">\(200\)</span></td>
-    <td><span class="arithmatex">\(240\)</span></td>
-    <td><span class="arithmatex">\(239\)</span></td>
-    <td><span class="arithmatex">\(398\)</span></td>
-    <td><span class="arithmatex">\(478\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(M_{pt}\)</span></td>
-    <td><span class="arithmatex">\(120\)</span></td>
-    <td><span class="arithmatex">\(200\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(239\)</span></td>
-    <td><span class="arithmatex">\(250\)</span></td>
-    <td><span class="arithmatex">\(150\)</span></td>
-    </tr>
-    </table></div>
-
-    Ignoring the setups (in the costs and in the capacities), the optimal value is $575400$, attained by the integer solution $x_{11}=120$, $x_{12}=160$, $x_{13}=10$, $x_{21}=10$, $x_{22}=100$, $x_{23}=150$, $s_{11}=40$, $si_1=20$. The lower bounds and the optimal value of the formulations are:
-
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th>Model</th>
-    <th>Value</th>
-    </tr>
-    <tr>
-    <td>Without setups</td>
-    <td><span class="arithmatex">\(575\,400.00\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{P}\)</span> with <span class="arithmatex">\(M_{pt}=sd_{ptm}\)</span></td>
-    <td><span class="arithmatex">\(638\,882.20\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(\mathrm{LP}_{\mathrm{CLSP}}^{P}\)</span> with the strong <span class="arithmatex">\(M_{pt}\)</span></td>
-    <td><span class="arithmatex">\(651\,267.37\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(\mathrm{LP}^{\mathrm{SP},P}_{\mathrm{CLSP}}\)</span></td>
-    <td><span class="arithmatex">\(668\,928.57\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(\mathrm{MIP}^{\mathrm{SP},P}_{\mathrm{CLSP}}\)</span> without <span class="arithmatex">\(\eqref{CLSPSP-intx}\)</span> and <span class="arithmatex">\(\eqref{CLSPSP-intsi}\)</span></td>
-    <td><span class="arithmatex">\(676\,450.00\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(\mathrm{ILP}_{\mathrm{CLSP}}^{P}\)</span> and <span class="arithmatex">\(\mathrm{MIP}^{\mathrm{SP},P}_{\mathrm{CLSP}}\)</span> (integer optimum)</td>
-    <td><span class="arithmatex">\(677\,400\)</span></td>
-    </tr>
-    </table></div>
-
-    The optimal solution of the $\mathrm{ILP}_{\mathrm{CLSP}}^{P}$ model is unique: $x_{11}=59$, $x_{12}=200$, $x_{13}=10$, $x_{21}=110$, $x_{22}=0$, $x_{23}=150$, $si_1=41$, with a setup in every period except for product $2$ in period $2$. Without constraints $\eqref{CLSPSP-intx}$ and $\eqref{CLSPSP-intsi}$ the shortest-path model reaches $676\,450$ with the same setups and the fractional quantities $x_{11}=59.5$ and $si_1=40.5$: period $1$ then uses its whole capacity, $100+20\cdot 59.5+110+10\cdot 110=2500$.
-
-## 15.6 Typical mistakes
-
-!!! attenzione "Warning"
-
-    - <strong>Taking a big-M value that is too small.</strong> A value smaller than the production of a feasible plan cuts off that plan: the values $D_{t,m}$ and $cap_t$ are both valid.
-
-    - <strong>Taking a big-M value that is too large.</strong> Every valid value gives a correct model, but a large value gives a weak relaxation: the setup variables become almost zero in the LP solutions, as in the bound $99.65$ of the reference instance.
-
-    - <strong>Forgetting the setup times in the capacity constraints.</strong> With several products the constraints contain $st_{pt}\,y_{pt}$ besides $vt_{pt}\,x_{pt}$.
-
-    - <strong>Counting the holding cost of the demand of the production period.</strong> In $cv_{tk}$ the units for period $t$ are not stored: the holding sum starts from the demand of period $t+1$.
-
-    - <strong>Believing that the shortest-path formulation needs binary paths.</strong> The variables $zv_{tk}$ are continuous: a feasible plan that is not a path is a combination of paths.
-
-    - <strong>Forgetting the integrality of the quantities with several products.</strong> With production times $vt_{pt}>1$ the continuous variables $zv_{ptk}$ can give fractional quantities: the shortest-path model needs the integrality constraints $\eqref{CLSPSP-intx}$ and $\eqref{CLSPSP-intsi}$, otherwise it is only a relaxation ($676\,450<677\,400$).
-
-## 15.7 In summary
-
-!!! chiave "In summary"
-
-    - Without the setups the CLS is a simple flow problem; the setups need the binary variables $y_t$ and a link with the quantities.
-
-    - In the big-M formulation the link $x_t \le M_t\, y_t$ is correct for every valid $M_t$, but the LP bound improves when $M_t$ decreases: the strong value is $\min\{cap_t, D_{t,m}\}$.
-
-    - The shortest-path formulation writes the plans as paths in a network, with the link $\sum_k zv_{tk} \le y_t$ and no big-M value: its relaxation is the strongest.
-
-    - The three formulations have the same optimal value; they differ in the lower bound and in the size of the model.
-
-    <strong>Dashboard of the reference instance.</strong> Lower bounds on the optimal value computed in this chapter:
-
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th>Bound</th>
-    <th>Value</th>
-    <th>From</th>
-    </tr>
-    <tr>
-    <td>Without setups</td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td>lot-for-lot plan</td>
-    </tr>
-    <tr>
-    <td>Big-M, <span class="arithmatex">\(M_t=D_{t,m}\)</span></td>
-    <td><span class="arithmatex">\(99.65\)</span></td>
-    <td><span class="arithmatex">\(z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{dem}})=\tfrac{9865}{99}\)</span></td>
-    </tr>
-    <tr>
-    <td>Big-M, <span class="arithmatex">\(M_t=cap_t\)</span></td>
-    <td><span class="arithmatex">\(137.5\)</span></td>
-    <td><span class="arithmatex">\(z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{cap}})\)</span></td>
-    </tr>
-    <tr>
-    <td>Strong big-M</td>
-    <td><span class="arithmatex">\(157.5\)</span></td>
-    <td><span class="arithmatex">\(z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{strong}})\)</span></td>
-    </tr>
-    <tr>
-    <td>Shortest path</td>
-    <td><span class="arithmatex">\(170\)</span></td>
-    <td><span class="arithmatex">\(z(\mathrm{LP}_{\mathrm{CLSP}}^{\mathrm{SP}})\)</span></td>
-    </tr>
-    <tr>
-    <td>Optimal value</td>
-    <td><span class="arithmatex">\(180\)</span></td>
-    <td>plan <span class="arithmatex">\((3,0,4,4,0)\)</span></td>
-    </tr>
-    </table></div>
+</div>
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Lot sizing](../exercises/lot-sizing-formulations.md)
+**Next:** [15.5 ILP models for the variants](ilp-models-for-the-variants.md)
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Lot sizing](../../exercises/lot-sizing-formulations.md)

@@ -6,7 +6,7 @@ title: "Formulations of the knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 9** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Knapsack](../exercises/knapsack-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 9** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Knapsack](../../exercises/knapsack-formulations.md)
 
 </div>
 
@@ -16,13 +16,15 @@ title: "Formulations of the knapsack problem"
 
     - From the module <em>Integer linear programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/) and [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): ILP problems, LP relaxations and upper bounds.
 
-    - From this module, [Chapter 2 «Knapsack problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/): the problem, its assumptions and the instance of Example 1.
+    - From this module, [Chapter 2 «Knapsack problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/): the knapsack problem and its variants, their assumptions and their reference instances.
 
 !!! chiave "Objectives"
 
     At the end of this chapter you will be able to:
 
     - write the ILP model of the Knapsack Problem and explain each of its constraints;
+
+    - write the ILP models of the SSP, the BKP, the UKP, the MDKP, the MKP, the MCKP and the KPS, and write them on a numerical instance;
 
     - write the two LP relaxations and their duals, and compute their optimal solutions with closed formulas;
 
@@ -839,69 +841,50 @@ title: "Formulations of the knapsack problem"
 
     For this KP instance, the Martello-Toth upper bound is as strong as the Dantzig upper bound.
 
-## 9.5 Typical mistakes
+<div class="grid cards sottopagine" markdown>
 
-!!! attenzione "Warning"
+-   **Definition**
 
-    - <strong>Forgetting to sort the items.</strong> The formulas $\eqref{PP}$, $\eqref{DD}$ and the bounds hold only if the items are sorted by non-increasing efficiency: with another order the vector $\eqref{PP}$ is feasible but not optimal.
+    An ILP model for the Knapsack Problem · Item efficiency · Split item and residual capacity · Some important theoretical properties
 
-    - <strong>Using $z(\mathrm{LP}\text{-}0_{\mathrm{KP}})$ as the bound.</strong> The first relaxation has no upper bounds on the variables, and it is much weaker: in Example 1 it gives $27$, against $\tfrac{49}{3}$ for the second relaxation.
+    [:octicons-arrow-right-24: Open](#91-an-ilp-model-for-the-knapsack-problem)
 
-    - <strong>Rounding when the profits are not integer.</strong> The bounds $\UB_{\mathrm{D}}$ and $\UB_{\mathrm{MT}}$ round down the fractional part: this is valid only because all the profits are integer.
+-   **9.5 An ILP model for the Subset Sum Problem**
 
-    - <strong>Confusing the split item with the last selected item.</strong> The split item $s$ is the first item that does <u>not</u> fit: in Example 1 it is $s=3$, while the items $1$ and $2$ are selected entirely.
+    [:octicons-arrow-right-24: Open](an-ilp-model-for-the-subset-sum-problem.md)
 
-    - <strong>Assuming that the LP optimum is unique.</strong> With items of equal efficiency the $\mathrm{LP}_{\mathrm{KP}}$ problem has other optimal solutions; the formulas $\eqref{PP}$ give one of them.
+-   **9.6 An ILP model for the Bounded Knapsack Problem**
 
-## 9.6 In summary
+    [:octicons-arrow-right-24: Open](an-ilp-model-for-the-bounded-knapsack-problem.md)
 
-!!! chiave "In summary"
+-   **9.7 An ILP model for the Unbounded Knapsack Problem**
 
-    - The $\mathrm{ILP}_{\mathrm{KP}}$ model has one binary variable per item, one capacity constraint and the objective of maximizing the total profit.
+    [:octicons-arrow-right-24: Open](an-ilp-model-for-the-unbounded-knapsack-problem.md)
 
-    - The relaxation $\mathrm{LP}_{\mathrm{KP}}$ is solved by sorting the items by non-increasing efficiency: the items before the split item are selected, the split item is taken fractionally, the others are discarded.
+-   **9.8 An ILP model for the Multidimensional Knapsack Problem**
 
-    - The dual of $\mathrm{LP}_{\mathrm{KP}}$ has the optimal solution $\tilde{\pi} = p_s/w_s$, and $z(\mathrm{LP}_{\mathrm{KP}})$ is never larger than twice $z(\mathrm{ILP}_{\mathrm{KP}})$.
+    [:octicons-arrow-right-24: Open](an-ilp-model-for-the-multidimensional-knapsack-problem.md)
 
-    - Rounding down $z(\mathrm{LP}_{\mathrm{KP}})$ gives the Dantzig bound; the Martello-Toth bound considers separately the split item out and in.
+-   **9.9 An ILP model for the Multiple Knapsack Problem**
 
-    <strong>Dashboard of Example 1.</strong> Upper bounds on $z(\mathrm{ILP}_{\mathrm{KP}})$ computed in this chapter:
+    [:octicons-arrow-right-24: Open](an-ilp-model-for-the-multiple-knapsack-problem.md)
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th>Bound</th>
-    <th>Value</th>
-    <th>From</th>
-    </tr>
-    <tr>
-    <td>First relaxation</td>
-    <td><span class="arithmatex">\(27\)</span></td>
-    <td><span class="arithmatex">\(z(\mathrm{LP}\text{-}0_{\mathrm{KP}})\)</span>, item <span class="arithmatex">\(1\)</span> with <span class="arithmatex">\(\tfrac{9}{2}\)</span> copies</td>
-    </tr>
-    <tr>
-    <td>Second relaxation</td>
-    <td><span class="arithmatex">\(\tfrac{49}{3}\)</span></td>
-    <td><span class="arithmatex">\(z(\mathrm{LP}_{\mathrm{KP}})\)</span>, split item <span class="arithmatex">\(s=3\)</span></td>
-    </tr>
-    <tr>
-    <td>Dantzig bound</td>
-    <td><span class="arithmatex">\(16\)</span></td>
-    <td><span class="arithmatex">\(\lfloor \tfrac{49}{3} \rfloor\)</span></td>
-    </tr>
-    <tr>
-    <td>Martello-Toth bound</td>
-    <td><span class="arithmatex">\(16\)</span></td>
-    <td><span class="arithmatex">\(\max\{16, 15\}\)</span></td>
-    </tr>
-    <tr>
-    <td>Optimal value</td>
-    <td><span class="arithmatex">\(15\)</span></td>
-    <td>solution <span class="arithmatex">\(\{1,4\}\)</span> of the <span class="arithmatex">\(\mathrm{ILP}_{\mathrm{KP}}\)</span> model</td>
-    </tr>
-    </table></div>
+-   **9.10 An ILP model for the Multiple-Choice Knapsack Problem**
 
-    The gap between the best upper bound ($16$) and the optimal value ($15$) is closed by the exact algorithms of the following chapters.
+    [:octicons-arrow-right-24: Open](an-ilp-model-for-the-multiple-choice-knapsack-problem.md)
+
+-   **9.11 An ILP model for the Knapsack Problem with Setups**
+
+    In summary
+
+    [:octicons-arrow-right-24: Open](an-ilp-model-for-the-knapsack-problem-with-setups.md)
+
+</div>
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Knapsack](../exercises/knapsack-formulations.md)
+**Next:** [9.5 An ILP model for the Subset Sum Problem](an-ilp-model-for-the-subset-sum-problem.md)
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Knapsack](../../exercises/knapsack-formulations.md)

@@ -123,6 +123,10 @@ title: "Knapsack problems"
     </tr>
     </table></div>
 
+    In the drawing, the knapsack is a box of length $c=9$ and every item is a block of length $w_j$. The items $1$ and $4$ fill the knapsack, with weight $9$ and profit $15$; the other items stay out (dashed).
+
+    ![Figure 1](../../img/knapsack/fig01.svg){ .fig loading=lazy  }
+
     We call this KP instance <span style="color:#1971c2">[Example 2.1](#box-2-ex-kp)</span>: it is the reference instance of the chapter.
 
 ### 2.1.1 Assumptions

@@ -203,6 +203,10 @@ title: "Unbounded knapsack"
     </tr>
     </table></div>
 
+    The drawing shows an optimal solution: four copies of item $1$, with weight $4\cdot 2=8$ and profit $4\cdot 6=24$; one unit of capacity stays free.
+
+    ![Figure 4](../../img/knapsack/fig04.svg){ .fig loading=lazy  }
+
 ## 2.4.1 Assumptions
 
 - We make the following assumptions:

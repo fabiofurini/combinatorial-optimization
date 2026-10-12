@@ -185,6 +185,10 @@ title: "Bounded knapsack"
     </tr>
     </table></div>
 
+    The drawing shows an optimal solution: the two copies of item $1$ and the copy of item $5$, with weight $2+2+5=9$ and profit $6+6+6=18$.
+
+    ![Figure 3](../../img/knapsack/fig03.svg){ .fig loading=lazy  }
+
 ## 2.3.1 Assumptions
 
 - We make the following assumptions:

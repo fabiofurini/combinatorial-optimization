@@ -71,44 +71,10 @@ title: "Combinatorial optimization problems"
 
     2. the number of feasible solutions is typically <strong>enormous</strong>: it grows exponentially (or faster) with the size of the instance;
 
-    3. finding an optimal solution can be <strong>computationally very difficult</strong> (Section [1.5](a-glimpse-of-computational-complexity.md#sez-sec-complexity));
+    3. finding an optimal solution can be <strong>computationally very difficult</strong> (Section [1.6](a-glimpse-of-computational-complexity.md#sez-sec-complexity));
 
     4. specialized algorithms are needed to explore the solution space without enumerating it.
 
-## 1.1.1 Four kinds of discrete decisions
-
-- The discrete decisions met in practice fall into a few families, each one associated with a combinatorial object:
-
-<div class="tabella" markdown="0"><table>
-<tr>
-<th><strong>Decision</strong></th>
-<th><strong>Examples</strong></th>
-<th><strong>Combinatorial object</strong></th>
-</tr>
-<tr>
-<td>IN/OUT (inclusion)</td>
-<td>select projects to fund with a limited budget; choose the products of a portfolio</td>
-<td>a <strong>subset</strong></td>
-</tr>
-<tr>
-<td>ordering, sequencing</td>
-<td>order in which jobs are processed; order of visit of the customers</td>
-<td>a <strong>permutation</strong></td>
-</tr>
-<tr>
-<td>partitioning, packing</td>
-<td>split items among bins; group exams into days</td>
-<td>a <strong>partition</strong></td>
-</tr>
-<tr>
-<td>assignment</td>
-<td>assign jobs to machines, students to projects</td>
-<td>a <strong>function</strong> (a partition with labelled classes)</td>
-</tr>
-</table></div>
-
-- A fifth family, <strong>counting</strong> decisions (how many units to produce, how many operators in a shift), leads to integer quantities, modelled by integer variables (module <em>Integer Linear Programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/)).
-
 ---
 
-**Next:** [1.2 Counting the solutions](counting-the-solutions.md)
+**Next:** [1.2 Categories of combinatorial optimization problems](categories-of-combinatorial-optimization-problems.md)

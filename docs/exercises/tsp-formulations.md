@@ -6,7 +6,7 @@ title: "Exercises · Formulations of the travelling salesman problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 13** · each solution opens with a click · [:material-book-open-variant: Chapter 13: TSP](../formulations/tsp-formulations.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
+**Exercises · Chapter 13** · each solution opens with a click · [:material-book-open-variant: Chapter 13: TSP](../formulations/tsp-formulations/index.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
 
@@ -418,3 +418,97 @@ title: "Exercises · Formulations of the travelling salesman problem"
         </table></div>
 
         Two subtour elimination constraints, out of the $11$ of the DFJ model, are enough to close the gap.
+
+<a id="esercizio-13-6"></a>
+
+!!! esercizio "Exercise 13.6: ILP model of the asymmetric TSP (ATSP)"
+
+    We consider an ATSP instance with $\mathscr{V}=\{1,\dots,4\}$ ($n=4$ cities) and the asymmetric distance matrix
+
+    $$
+    \begin{array}{c|cccc}
+    \hline
+    d_{ij} & 1 & 2 & 3 & 4\\
+    \hline
+    1 & - & 8 & 7 & 5\\
+    2 & 8 & - & 3 & 6\\
+    3 & 9 & 8 & - & 8\\
+    4 & 2 & 9 & 9 & -\\
+    \hline
+    \end{array}
+    $$
+
+    where $d_{ij}$ is the distance from city $i$ to city $j$.
+
+    **Questions**
+
+    1. Count the variables and the constraints of the $\mathrm{ILP}_{\mathrm{ATSP}}$ model of the chapter (the DFJ model on the arcs, with $d_{ij}\neq d_{ji}$ allowed), and write it for this instance.
+
+    2. Solve with Gurobi the model with only the degree constraints. Describe the solution and find the subtour elimination constraint that it violates.
+
+    3. Solve the $\mathrm{ILP}_{\mathrm{ATSP}}$ model with Gurobi: give the optimal tour and its length.
+
+    4. List the lengths of all the tours, each in its direction, and verify the result. Compare the optimal tour with the same tour travelled backwards.
+
+??? soluzione "Solution"
+
+    1. There are $n(n-1)=12$ binary variables $x_{ij}$, $2n=8$ degree constraints and $2^{n-1}-n=4$ subtour elimination constraints, one for every $S\subseteq\{2,3,4\}$ with $|S|\ge 2$. The model is:
+
+        $$
+        \begin{array}{rlcl}
+        {\min} & {8\,x_{12}+7\,x_{13}+5\,x_{14}+8\,x_{21}+3\,x_{23}+6\,x_{24}+9\,x_{31}} &  &  \\
+        & {+8\,x_{32}+8\,x_{34}+2\,x_{41}+9\,x_{42}+9\,x_{43}} &  &  \\[1ex]
+        \text{subject to} & {x_{12}+x_{13}+x_{14}} & {=} & {1} \\
+        & {x_{21}+x_{23}+x_{24}} & {=} & {1} \\
+        & {x_{31}+x_{32}+x_{34}} & {=} & {1} \\
+        & {x_{41}+x_{42}+x_{43}} & {=} & {1} \\
+        & {x_{21}+x_{31}+x_{41}} & {=} & {1} \\
+        & {x_{12}+x_{32}+x_{42}} & {=} & {1} \\
+        & {x_{13}+x_{23}+x_{43}} & {=} & {1} \\
+        & {x_{14}+x_{24}+x_{34}} & {=} & {1} \\
+        & {x_{23}+x_{32}} & {\le} & {1} \\
+        & {x_{24}+x_{42}} & {\le} & {1} \\
+        & {x_{34}+x_{43}} & {\le} & {1} \\
+        & {x_{23}+x_{24}+x_{32}+x_{34}+x_{42}+x_{43}} & {\le} & {2} \\[1ex]
+        & {x_{12},~x_{13},~x_{14},~\dots,~x_{43}} & {\in} & {\{0,1\}}
+        \end{array}
+        $$
+
+    2. Gurobi returns the value $18$ with $x_{14}=x_{23}=x_{32}=x_{41}=1$: two subtours, $1\to4\to1$ and $2\to3\to2$. The subtour on $S=\{2,3\}$ uses $2>|S|-1=1$ arcs inside $S$: it violates the constraint $x_{23}+x_{32}\le 1$.
+
+    3. Gurobi returns $z(\mathrm{ILP}_{\mathrm{ATSP}})=21$ with the tour $\tilde\sigma=(1,2,3,4)$, that is $\tilde x_{12}=\tilde x_{23}=\tilde x_{34}=\tilde x_{41}=1$, of length $8+3+8+2=21$. The MTZ model gives the same value.
+
+    4. The $(n-1)!=6$ tours from city $1$ are:
+
+        <div class="tabella" markdown="0"><table>
+        <tr>
+        <th>tour</th>
+        <th>length</th>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\((1,2,3,4)\)</span></td>
+        <td><span class="arithmatex">\(8+3+8+2=21\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\((1,2,4,3)\)</span></td>
+        <td><span class="arithmatex">\(8+6+9+9=32\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\((1,3,2,4)\)</span></td>
+        <td><span class="arithmatex">\(7+8+6+2=23\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\((1,3,4,2)\)</span></td>
+        <td><span class="arithmatex">\(7+8+9+8=32\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\((1,4,2,3)\)</span></td>
+        <td><span class="arithmatex">\(5+9+3+9=26\)</span></td>
+        </tr>
+        <tr>
+        <td><span class="arithmatex">\((1,4,3,2)\)</span></td>
+        <td><span class="arithmatex">\(5+9+8+8=30\)</span></td>
+        </tr>
+        </table></div>
+
+        The minimum $21$ is attained only by $(1,2,3,4)$: the optimal tour is unique. Travelled backwards it is the tour $(1,4,3,2)$, of length $30$: in the ATSP the two directions are different solutions.

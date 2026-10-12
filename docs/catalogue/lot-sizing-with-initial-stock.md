@@ -20,4 +20,4 @@ title: "Lot sizing with initial stock (LS-SI)"
 
 - Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing/variants.md#82-variants).
 
-- Treated in [Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations.md).
+- Treated in [Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations/index.md).

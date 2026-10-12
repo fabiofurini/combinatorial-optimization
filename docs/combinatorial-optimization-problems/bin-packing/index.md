@@ -132,6 +132,10 @@ title: "Bin packing and cutting stock"
     </tr>
     </table></div>
 
+    In the drawing every bin is a box of height $c=10$ and every item a block of height $w_j$. The three bins hold $\{4,5\}$, $\{1,3\}$ and $\{2\}$; we show below that $3$ bins are the minimum.
+
+    ![Figure 1](../../img/bin-packing/fig01.svg){ .fig loading=lazy  }
+
     We call this BPP instance <span style="color:#1971c2">[Example 3.1](#box-2-ex-bpp)</span>: it is the reference instance of the chapter.
 
 ### 3.1.1 Assumptions

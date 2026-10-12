@@ -16,19 +16,25 @@ title: "Combinatorial optimization problems"
 
     [:octicons-arrow-right-24: Open](combinatorial-optimization-problems.md)
 
--   **1.2 Counting the solutions**
+-   **1.2 Categories of combinatorial optimization problems**
+
+    Application areas · The problems of the course by category
+
+    [:octicons-arrow-right-24: Open](categories-of-combinatorial-optimization-problems.md)
+
+-   **1.3 Counting the solutions**
 
     Orderings and cyclic orderings · Partitions and Bell numbers
 
     [:octicons-arrow-right-24: Open](counting-the-solutions.md)
 
--   **1.3 Combinatorial explosion and brute force**
+-   **1.4 Combinatorial explosion and brute force**
 
     Computing times
 
     [:octicons-arrow-right-24: Open](combinatorial-explosion-and-brute-force.md)
 
--   **1.4 Primal bounds, dual bounds and gap**
+-   **1.5 Primal bounds, dual bounds and gap**
 
     [:octicons-arrow-right-24: Open](primal-bounds-dual-bounds-and-gap.md)
 
@@ -50,7 +56,7 @@ title: "Combinatorial optimization problems"
 
     At the end of this chapter you will be able to:
 
-    - recognize a combinatorial optimization problem and the combinatorial object behind its solutions (a subset, an ordering, a partition, an assignment);
+    - recognize a combinatorial optimization problem, the category of its decisions and the combinatorial object behind its solutions (a subset, an ordering, a partition, an assignment);
 
     - count the candidate solutions ($2^n$ subsets, $n!$ orderings, $(n-1)!/2$ cyclic orderings, Bell numbers for the partitions) and estimate the computing time of a brute force enumeration;
 

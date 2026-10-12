@@ -2,7 +2,7 @@
 title: "Counting the solutions"
 ---
 
-# 1.2 Counting the solutions { #sez-sec-counting }
+# 1.3 Counting the solutions { #sez-sec-counting }
 
 <div class="info-capitolo" markdown>
 
@@ -12,7 +12,7 @@ title: "Counting the solutions"
 
 - Before solving a problem we ask <strong>how many</strong> candidate solutions it has. The answer depends only on the combinatorial object: subsets, orderings or partitions.
 
-## 1.2.1 Subsets
+## 1.3.1 Subsets
 
 <a id="box-3-prop-subsets"></a>
 
@@ -34,7 +34,7 @@ title: "Counting the solutions"
 
 - Every IN/OUT decision on $n$ elements is a subset: the $2^n$ subsets are its candidate solutions.
 
-## 1.2.2 Orderings and cyclic orderings
+## 1.3.2 Orderings and cyclic orderings
 
 - The $n$ elements of a set can be ordered in $n! = n \cdot (n-1) \cdots 2 \cdot 1$ ways (<strong>permutations</strong>).
 
@@ -56,7 +56,7 @@ title: "Counting the solutions"
 
 - For $n=4$ there are $3!/2 = 3$ cyclic orderings: $(1,2,3,4)$, $(1,2,4,3)$ and $(1,3,2,4)$. Every other sequence is a rotation or a reverse of one of them, for example $(2,1,4,3)$ is the reverse of $(1,2,3,4)$ started from element $2$.
 
-## 1.2.3 Partitions and Bell numbers
+## 1.3.3 Partitions and Bell numbers
 
 - A <strong>partition</strong> of a finite set $A$ is a collection of non-empty, pairwise disjoint subsets of $A$ whose union is $A$. Grouping decisions, such as splitting objects into groups, have partitions as solutions.
 
@@ -123,4 +123,4 @@ title: "Counting the solutions"
 
 ---
 
-**Next:** [1.3 Combinatorial explosion and brute force](combinatorial-explosion-and-brute-force.md)
+**Next:** [1.4 Combinatorial explosion and brute force](combinatorial-explosion-and-brute-force.md)

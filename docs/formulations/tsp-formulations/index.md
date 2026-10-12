@@ -6,7 +6,7 @@ title: "Formulations of the travelling salesman problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 13** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: TSP](../exercises/tsp-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 13** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: TSP](../../exercises/tsp-formulations.md)
 
 </div>
 
@@ -28,7 +28,9 @@ title: "Formulations of the travelling salesman problem"
 
     - count the variables and the constraints of the two models;
 
-    - compare the LP relaxations of the two models on the same instance.
+    - compare the LP relaxations of the two models on the same instance;
+
+    - write the ILP model of the asymmetric TSP, and explain why the metric TSP has the same models as the TSP.
 
 ## 13.1 A model with position variables (MTZ)
 
@@ -562,62 +564,26 @@ title: "Formulations of the travelling salesman problem"
 
     The ordering constraints raise the bound from $16$ to $17$; the subtour elimination constraints close the gap on this instance.
 
-## 13.4 Typical mistakes
+<div class="grid cards sottopagine" markdown>
 
-!!! attenzione "Warning"
+-   **Definition**
 
-    - <strong>Writing the MTZ constraints for the city $1$.</strong> The constraints $\eqref{MTZ:TSP}$ are written only for the pairs of cities different from city $1$: the city $1$ has no position variable.
+    A model with position variables (MTZ) · The assignment relaxation · The relaxation of the MTZ model · The relaxation of the DFJ model
 
-    - <strong>Using a smaller coefficient than $n-1$.</strong> With a coefficient smaller than $n-1$ the constraint cuts off feasible tours; $n-1$ is the smallest valid value.
+    [:octicons-arrow-right-24: Open](#131-a-model-with-position-variables-mtz)
 
-    - <strong>Taking $S=\mathscr{V}$ in the subtour elimination constraints.</strong> A tour uses $|\mathscr{V}|$ arcs inside $\mathscr{V}$: the constraint would cut off every tour. The sets $S$ are proper subsets of the cities, with at least two cities.
+-   **13.4 ILP models for the metric and asymmetric TSP**
 
-    - <strong>Trusting the MTZ bound.</strong> By [Proposition 13.3](#box-7-prop-MTZ-weak), many fractional solutions of the assignment relaxation are feasible for the MTZ relaxation: the compact formulation is not a strong one.
+    In summary
 
-    - <strong>Listing all the subtour elimination constraints.</strong> Their number is $2^{n-1}-n$: they are not written all at once, but added when violated.
+    [:octicons-arrow-right-24: Open](ilp-models-for-the-metric-and-asymmetric-tsp.md)
 
-## 13.5 In summary
-
-!!! chiave "In summary"
-
-    - The two models have the same arc variables $x_{ij}$ and the same degree constraints; they differ in how they forbid the subtours.
-
-    - The MTZ model adds $n-1$ position variables and $(n-1)(n-2)$ constraints: it is compact, but its relaxation is weak.
-
-    - The DFJ model adds $2^{n-1}-n$ subtour elimination constraints: the relaxation is stronger, and the constraints are generated when needed.
-
-    - Both models are correct: an integer solution is feasible if and only if its arcs form one tour.
-
-    <strong>Dashboard of the instance of the chapter.</strong> Lower bounds on the optimal value $18$ computed in this chapter:
-
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th>Bound</th>
-    <th>Value</th>
-    <th>From</th>
-    </tr>
-    <tr>
-    <td>Assignment relaxation</td>
-    <td><span class="arithmatex">\(16\)</span></td>
-    <td><span class="arithmatex">\(z(\mathrm{LP}\text{-}0_{\mathrm{TSP}})\)</span></td>
-    </tr>
-    <tr>
-    <td>MTZ relaxation</td>
-    <td><span class="arithmatex">\(17\)</span></td>
-    <td><span class="arithmatex">\(z(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{MTZ}})\)</span></td>
-    </tr>
-    <tr>
-    <td>DFJ relaxation</td>
-    <td><span class="arithmatex">\(18\)</span></td>
-    <td><span class="arithmatex">\(z(\mathrm{LP}_{\mathrm{TSP}}^{\mathrm{DFJ}})\)</span></td>
-    </tr>
-    <tr>
-    <td>Optimal value</td>
-    <td><span class="arithmatex">\(18\)</span></td>
-    <td>tour <span class="arithmatex">\(\sigma=(1,3,5,2,4)\)</span></td>
-    </tr>
-    </table></div>
+</div>
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: TSP](../exercises/tsp-formulations.md)
+**Next:** [13.4 ILP models for the metric and asymmetric TSP](ilp-models-for-the-metric-and-asymmetric-tsp.md)
+
+---
+
+**Exercises on this chapter:** [:material-pencil: TSP](../../exercises/tsp-formulations.md)

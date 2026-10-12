@@ -6,13 +6,13 @@ title: "Exercises · DP for the rod cutting problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 25** · each solution opens with a click · [:material-book-open-variant: Chapter 25: Rod cutting](../dynamic-programming/dp-rod-cutting/index.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
+**Exercises · Chapter 27** · each solution opens with a click · [:material-book-open-variant: Chapter 27: Rod cutting](../dynamic-programming/dp-rod-cutting/index.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
 
 </div>
 
-<a id="esercizio-25-1"></a>
+<a id="esercizio-27-1"></a>
 
-!!! esercizio "Exercise 25.1: Exercise 1: Rod Cutting Problem"
+!!! esercizio "Exercise 27.1: Exercise 1: Rod Cutting Problem"
 
     Consider the following RCP instance, where the rod has length $n=6$, and the profits associated with the possible piece lengths are:
 
@@ -975,9 +975,9 @@ title: "Exercises · DP for the rod cutting problem"
         {v}[6][6]=15.
         $$
 
-<a id="esercizio-25-2"></a>
+<a id="esercizio-27-2"></a>
 
-!!! esercizio "Exercise 25.2: Exercise 2: Rod Cutting Problem"
+!!! esercizio "Exercise 27.2: Exercise 2: Rod Cutting Problem"
 
     Consider the following RCP instance, where the rod has length $n=5$, and the profits associated with the possible piece lengths are:
 
@@ -1727,9 +1727,9 @@ title: "Exercises · DP for the rod cutting problem"
         {v}[5][5]=10.
         $$
 
-<a id="esercizio-25-3"></a>
+<a id="esercizio-27-3"></a>
 
-!!! esercizio "Exercise 25.3: Exercise 3: Rod Cutting Problem"
+!!! esercizio "Exercise 27.3: Exercise 3: Rod Cutting Problem"
 
     Consider the following RCP instance, where the rod has length $n=5$, and the profits associated with the possible piece lengths are:
 
@@ -2560,9 +2560,9 @@ title: "Exercises · DP for the rod cutting problem"
         {v}[5][5]=15.
         $$
 
-<a id="esercizio-25-4"></a>
+<a id="esercizio-27-4"></a>
 
-!!! esercizio "Exercise 25.4: Exercise 4: Rod Cutting Problem"
+!!! esercizio "Exercise 27.4: Exercise 4: Rod Cutting Problem"
 
     Consider the following RCP instance, where the rod has length $n=6$, and the profits associated with the possible piece lengths are:
 
@@ -3525,9 +3525,9 @@ title: "Exercises · DP for the rod cutting problem"
         {v}[6][6]=18.
         $$
 
-<a id="esercizio-25-5"></a>
+<a id="esercizio-27-5"></a>
 
-!!! esercizio "Exercise 25.5: Exercise 5: Rod Cutting Problem"
+!!! esercizio "Exercise 27.5: Exercise 5: Rod Cutting Problem"
 
     Consider the following RCP instance, where the rod has length $n=6$, and the profits associated with the possible piece lengths are:
 

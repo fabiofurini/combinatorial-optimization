@@ -6,7 +6,7 @@ title: "Formulations of the bin packing problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 10** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Bin packing](../exercises/bin-packing-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 10** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Bin packing](../../exercises/bin-packing-formulations.md)
 
 </div>
 
@@ -28,7 +28,9 @@ title: "Formulations of the bin packing problem"
 
     - round the LP bound up to obtain a lower bound on the number of bins;
 
-    - prove that the LP bound is at least one half of the optimal value, and that the factor is tight.
+    - prove that the LP bound is at least one half of the optimal value, and that the factor is tight;
+
+    - write the ILP model of the Cutting Stock Problem, with integer variables for the copies of the items.
 
 ## 10.1 An ILP model for the Bin Packing Problem
 
@@ -834,64 +836,26 @@ title: "Formulations of the bin packing problem"
 
     <p class="qed-riga"><span class="qed">□</span></p>
 
-## 10.4 Typical mistakes
+<div class="grid cards sottopagine" markdown>
 
-!!! attenzione "Warning"
+-   **Definition**
 
-    - <strong>Choosing $m$ too small.</strong> The number $m$ of bins must be an upper bound on the number of bins of an optimal solution: with $m < z(\mathrm{ILP}_{\mathrm{BPP}})$ the model has no feasible solution. The value $m=n$ is always valid.
+    An ILP model for the Bin Packing Problem · Some important theoretical properties
 
-    - <strong>Forgetting to round up.</strong> The optimal value of the $\mathrm{ILP}_{\mathrm{BPP}}$ model is an integer, so the lower bound from the relaxations is $\lceil \sum_{j} w_j / c \rceil$; in Example 1 it is $\lceil \tfrac{8}{5} \rceil = 2$, not $\tfrac{8}{5}$.
+    [:octicons-arrow-right-24: Open](#101-an-ilp-model-for-the-bin-packing-problem)
 
-    - <strong>Believing that the model counts only non-empty bins.</strong> The constraints allow $y_b=1$ for an empty bin: it is the objective function that switches such bins off, in every optimal solution.
+-   **10.4 An ILP model for the Cutting Stock Problem**
 
-    - <strong>Ignoring the symmetry.</strong> Permuting the indices of the bins gives another optimal solution with the same packing: the $\mathrm{ILP}_{\mathrm{BPP}}$ model has many equivalent optimal solutions.
+    In summary
 
-    - <strong>Expecting a better relaxation from $y_b \le 1$.</strong> The second relaxation has the same optimal value as the first one: the upper bounds $y_b \le 1$ do not cut off the optimal solution of the first relaxation.
+    [:octicons-arrow-right-24: Open](an-ilp-model-for-the-cutting-stock-problem.md)
 
-## 10.5 In summary
-
-!!! chiave "In summary"
-
-    - The $\mathrm{ILP}_{\mathrm{BPP}}$ model has $m \cdot n$ assignment variables $x_{jb}$ and $m$ activation variables $y_b$; the capacity constraints link them.
-
-    - Both LP relaxations have optimal value $z(\mathrm{LP}_{\mathrm{BPP}}) = \sum_{j} w_j / c$, with dual solution $\tilde{\mu}_j = w_j/c$ and $\tilde{\pi}_b = 1/c$.
-
-    - Since the optimal value is an integer, $\lceil z(\mathrm{LP}_{\mathrm{BPP}}) \rceil$ is a lower bound on the number of bins.
-
-    - The ratio between $z(\mathrm{LP}_{\mathrm{BPP}})$ and $z(\mathrm{ILP}_{\mathrm{BPP}})$ is at least $\tfrac{1}{2}$, and the value $\tfrac{1}{2}$ is asymptotically attained; the same holds for $\lceil z(\mathrm{LP}_{\mathrm{BPP}}) \rceil$.
-
-    <strong>Dashboard of Example 1.</strong> Bounds on $z(\mathrm{ILP}_{\mathrm{BPP}})$ computed in this chapter:
-
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th>Bound</th>
-    <th>Value</th>
-    <th>From</th>
-    </tr>
-    <tr>
-    <td>First relaxation</td>
-    <td><span class="arithmatex">\(\tfrac{8}{5}\)</span></td>
-    <td><span class="arithmatex">\(z(\mathrm{LP}\text{-}0_{\mathrm{BPP}})\)</span></td>
-    </tr>
-    <tr>
-    <td>Second relaxation</td>
-    <td><span class="arithmatex">\(\tfrac{8}{5}\)</span></td>
-    <td><span class="arithmatex">\(z(\mathrm{LP}_{\mathrm{BPP}})\)</span></td>
-    </tr>
-    <tr>
-    <td>Lower bound</td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(\lceil \tfrac{8}{5} \rceil\)</span></td>
-    </tr>
-    <tr>
-    <td>Optimal value</td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td>patterns <span class="arithmatex">\(\{1,3\}\)</span> and <span class="arithmatex">\(\{2\}\)</span></td>
-    </tr>
-    </table></div>
-
-    Here the rounded bound is already equal to the optimal value.
+</div>
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Bin packing](../exercises/bin-packing-formulations.md)
+**Next:** [10.4 An ILP model for the Cutting Stock Problem](an-ilp-model-for-the-cutting-stock-problem.md)
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Bin packing](../../exercises/bin-packing-formulations.md)

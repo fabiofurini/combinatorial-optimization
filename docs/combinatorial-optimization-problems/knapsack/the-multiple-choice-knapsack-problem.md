@@ -128,6 +128,10 @@ title: "Multiple-choice knapsack"
     </tr>
     </table></div>
 
+    In the drawing every class is a coloured group, and the item chosen in each class is drawn solid, the other one dashed. The optimal solution $\{1,4,5\}$ fills the knapsack, with weight $4+8+3=15$ and profit $6+7+4=17$.
+
+    ![Figure 7](../../img/knapsack/fig07.svg){ .fig loading=lazy  }
+
 ## 2.7.1 Assumptions
 
 - We make the following assumptions:

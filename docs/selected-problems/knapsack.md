@@ -44,13 +44,13 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Formulations { #sez-sec-cat-kp-formulations }
 
-- The model $\ILP_{\KP}$ has one binary variable per item and one capacity constraint ([Ch. 9](../formulations/knapsack-formulations.md#eq-NAT_KP)).
+- The model $\ILP_{\KP}$ has one binary variable per item and one capacity constraint ([Ch. 9](../formulations/knapsack-formulations/index.md#eq-NAT_KP)).
 
-- The relaxation $\LP_{\KP}$ is solved by sorting the items by efficiency: the items before the split item $s$ are taken, $s$ only in part ([Ch. 9](../formulations/knapsack-formulations.md#box-12-propLPKP)).
+- The relaxation $\LP_{\KP}$ is solved by sorting the items by efficiency: the items before the split item $s$ are taken, $s$ only in part ([Ch. 9](../formulations/knapsack-formulations/index.md#box-12-propLPKP)).
 
-- $z(\LP_{\KP}) \le 2\, z(\ILP_{\KP})$, and the ratio $2$ is approached ([Ch. 9](../formulations/knapsack-formulations.md#box-16-propRatio2tight)).
+- $z(\LP_{\KP}) \le 2\, z(\ILP_{\KP})$, and the ratio $2$ is approached ([Ch. 9](../formulations/knapsack-formulations/index.md#box-16-propRatio2tight)).
 
-- Rounding down $z(\LP_{\KP})$ gives the Dantzig bound $\UB_{\mathrm{D}}$; the Martello–Toth bound $\UB_{\mathrm{MT}}$ treats the split item out and in ([Ch. 9](../formulations/knapsack-formulations.md#94-knapsack-problem-upper-bounds)).
+- Rounding down $z(\LP_{\KP})$ gives the Dantzig bound $\UB_{\mathrm{D}}$; the Martello–Toth bound $\UB_{\mathrm{MT}}$ treats the split item out and in ([Ch. 9](../formulations/knapsack-formulations/index.md#94-knapsack-problem-upper-bounds)).
 
 ## Dynamic programming { #sez-sec-cat-kp-dynamicprogramming }
 

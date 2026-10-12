@@ -22,78 +22,7 @@ title: "Variants"
 
 - The models of all these variants, with their big-$M$ constraints, are the subject of the chapter «Formulations of capacitated lot sizing». This chapter studies the problem of the definition above.
 
-## 8.3 The reference instance
-
-<a id="box-2-ex-cls5"></a>
-
-!!! esempio "Example 8.1: CLS instance"
-
-    We consider $m=5$ periods, with the following data, all integer:
-
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th>period <span class="arithmatex">\(t\)</span></th>
-    <th><span class="arithmatex">\(1\)</span></th>
-    <th><span class="arithmatex">\(2\)</span></th>
-    <th><span class="arithmatex">\(3\)</span></th>
-    <th><span class="arithmatex">\(4\)</span></th>
-    <th><span class="arithmatex">\(5\)</span></th>
-    </tr>
-    <tr>
-    <td>demand <span class="arithmatex">\(d_t\)</span></td>
-    <td><span class="arithmatex">\(2\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(1\)</span></td>
-    </tr>
-    <tr>
-    <td>capacity <span class="arithmatex">\(cap_t\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    <td><span class="arithmatex">\(4\)</span></td>
-    </tr>
-    <tr>
-    <td>setup cost <span class="arithmatex">\(sc_t\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    <td><span class="arithmatex">\(50\)</span></td>
-    </tr>
-    <tr>
-    <td>production cost <span class="arithmatex">\(vc_t\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    <td><span class="arithmatex">\(0\)</span></td>
-    </tr>
-    <tr>
-    <td>holding cost <span class="arithmatex">\(hc_t\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    <td><span class="arithmatex">\(10\)</span></td>
-    </tr>
-    </table></div>
-
-    This is the lot sizing instance of the course on MIP heuristics, with the demands counted in units of ten items. The total demand is $2+1+3+4+1=11$.
-
-    The plan $\vet{x}=(3,0,4,4,0)$ is feasible: the stocks are $s=(1,0,1,1,0)$, all non-negative, with $s_5=0$, and every quantity is at most $4$. There are $3$ setups, in the periods $1$, $3$ and $4$:
-
-    $$
-    c(\vet{x}) = 3\cdot 50 + 10\cdot(1+0+1+1+0) = 150+30=180.
-    $$
-
-    The plan is drawn below: the bars are the quantities produced, the dots the demands.
-
-    ![Figure 1](../../img/lot-sizing/fig01.svg){ .fig loading=lazy  }
-
-## 8.4 Counting the solutions
+## 8.3 Counting the solutions
 
 - The combinatorial part of the decision is the choice of the periods with a setup: there are $2^m$ subsets of periods. Not all of them are feasible, because the periods with a setup must have enough capacity to produce everything.
 
@@ -103,7 +32,7 @@ title: "Variants"
 
 !!! esempio "Example 8.2: counting the plans"
 
-    For the instance of <span style="color:#1971c2">[Example 8.1](#box-2-ex-cls5)</span> there are $2^5=32$ subsets of periods. Let $k_t$ be the number of setups in the periods $1,\dots,t$: the cumulative demands $2,3,6,10,11$ require, with capacity $4$, at least one setup in the periods $1$–$2$, two in the periods $1$–$3$ and three in the periods $1$–$4$. Since $d_1>0$ there is a setup in period $1$, and in the periods $2,3,4$ we need at least two setups, one of which in the periods $2$ or $3$:
+    For the instance of <span style="color:#1971c2">[Example 8.1](index.md#box-2-ex-cls5)</span> there are $2^5=32$ subsets of periods. Let $k_t$ be the number of setups in the periods $1,\dots,t$: the cumulative demands $2,3,6,10,11$ require, with capacity $4$, at least one setup in the periods $1$–$2$, two in the periods $1$–$3$ and three in the periods $1$–$4$. Since $d_1>0$ there is a setup in period $1$, and in the periods $2,3,4$ we need at least two setups, one of which in the periods $2$ or $3$:
 
     $$
     (y_2,y_3,y_4) \in \{(1,1,0),(1,0,1),(0,1,1),(1,1,1)\}.
@@ -148,7 +77,7 @@ title: "Variants"
 
 - The number of setup choices grows as $2^m$: with $m=52$ weeks it is more than $4\cdot 10^{15}$.
 
-## 8.5 A first plan by hand
+## 8.4 A first plan by hand
 
 - The simplest feasible plan is <strong>lot-for-lot</strong>: in every period we produce exactly the demand of that period. There is no stock, and there are $m$ setups; it is feasible when every demand fits in the capacity of its period.
 
@@ -158,7 +87,7 @@ title: "Variants"
 
 !!! esempio "Example 8.3: from lot-for-lot to a better plan"
 
-    On the instance of <span style="color:#1971c2">[Example 8.1](#box-2-ex-cls5)</span>:
+    On the instance of <span style="color:#1971c2">[Example 8.1](index.md#box-2-ex-cls5)</span>:
 
     1. the lot-for-lot plan $(2,1,3,4,1)$ has $5$ setups and no stock: cost $5\cdot 50=250$;
 
@@ -170,7 +99,7 @@ title: "Variants"
 
 - We have found the plan of cost $180$ by hand, but we cannot yet tell whether a cheaper plan exists: we need a lower bound.
 
-## 8.6 A combinatorial lower bound
+## 8.5 A combinatorial lower bound
 
 - Let $D=\sum_{t \in T} d_t$ be the total demand. Let $k$ be the smallest number of periods whose capacities sum up to at least $D$, which is found by taking the periods with the largest capacities.
 
@@ -192,7 +121,7 @@ title: "Variants"
 
 !!! esempio "Example 8.4: the bound on the reference instance"
 
-    For the instance of <span style="color:#1971c2">[Example 8.1](#box-2-ex-cls5)</span> we have $D=11$ and all capacities equal to $4$, so $k=\lceil 11/4 \rceil = 3$. All the setup costs are $50$, hence
+    For the instance of <span style="color:#1971c2">[Example 8.1](index.md#box-2-ex-cls5)</span> we have $D=11$ and all capacities equal to $4$, so $k=\lceil 11/4 \rceil = 3$. All the setup costs are $50$, hence
 
     $$
     z(I) \ge 3 \cdot 50 = 150.
@@ -206,13 +135,13 @@ title: "Variants"
 
     an absolute gap of $30$, that is a relative gap of $\frac{30}{150}=20\%$. The enumeration of the $94$ plans proves that $180$ is optimal.
 
-## 8.7 Remarks
+## 8.6 Remarks
 
 - In 1958 Wagner and Whitin gave a dynamic programming algorithm for the case without capacity and with demand that varies over time. It rests on a property of the optimal plans: one produces only when the stock is empty.
 
 - With capacities the property fails, and the problem is NP-hard (chapter «Combinatorial optimization problems»).
 
-## 8.8 Typical mistakes
+## 8.7 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -222,11 +151,11 @@ title: "Variants"
 
     - <strong>Forgetting the stock of the last periods.</strong> The holding cost is paid on the stock at the end of every period, including the periods in which the plan produces nothing.
 
-    - <strong>Believing that one produces only with empty stock.</strong> The property of Wagner and Whitin holds without capacities; with capacities the optimal plan of <span style="color:#1971c2">[Example 8.1](#box-2-ex-cls5)</span> violates it.
+    - <strong>Believing that one produces only with empty stock.</strong> The property of Wagner and Whitin holds without capacities; with capacities the optimal plan of <span style="color:#1971c2">[Example 8.1](index.md#box-2-ex-cls5)</span> violates it.
 
     - <strong>Counting $2^m$ feasible plans.</strong> The $2^m$ subsets of periods are the setup choices: some are infeasible, and each feasible one carries one or more plans.
 
-## 8.9 In summary
+## 8.8 In summary
 
 !!! chiave "In summary"
 

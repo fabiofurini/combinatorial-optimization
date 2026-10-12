@@ -2,11 +2,11 @@
 title: "A DP algorithm for the ULS: Step 1 and Step 2"
 ---
 
-# 27.2.2 A DP algorithm for the ULS: Step 1 and Step 2 { #2722-step-1-and-step-2 }
+# 25.2.2 A DP algorithm for the ULS: Step 1 and Step 2 { #2522-step-1-and-step-2 }
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 27** · [:material-book-open-variant: Chapter 27: Lot sizing](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/dp-lot-sizing.md)
+**Part 3 · Dynamic programming · Chapter 25** · [:material-book-open-variant: Chapter 25: Lot sizing](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/dp-lot-sizing.md)
 
 </div>
 
@@ -29,7 +29,7 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
         v(t)= \left\{ \begin{array}{ll}
         \displaystyle \min \bigg\{ v(j-1) + c_{j,t} : j \in \{1,2,\dots,t\}\bigg\} & \textrm{if $1\le t \le m$,}\\[2ex]
         0 & \textrm{if $t=0$.}
-        \end{array} \right. \tag{27.3}
+        \end{array} \right. \tag{25.3}
         \end{equation*}
 
     - The subinstance with periods $\{1,\dots,t\}$ is a ULS instance of the same type: its inventory must be empty at the end of period $t$. Here, $v(0)=0$, since an empty set of periods has no demand and no cost.
@@ -52,9 +52,9 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
 
         <a id="box-16-texulstree"></a>
 
-        !!! esempio "Example 27.5: Recursion tree"
+        !!! esempio "Example 25.5: Recursion tree"
 
-            We consider the first four periods of the ULS instance of <span style="color:#1971c2">[Example 27.1](index.md#box-1-texuls1)</span> (with five periods the tree has $32$ nodes). This is the recursion tree of the top-down approach to compute $v(4)$:
+            We consider the first four periods of the ULS instance of <span style="color:#1971c2">[Example 25.1](index.md#box-1-texuls1)</span> (with five periods the tree has $32$ nodes). This is the recursion tree of the top-down approach to compute $v(4)$:
 
             ![Figure 2](../../img/dp-lot-sizing/fig02.svg){ .fig loading=lazy  }
 
@@ -64,9 +64,9 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
 
         <a id="box-17-texulsvalues"></a>
 
-        !!! esempio "Example 27.6: Computing the values of the $v$ function"
+        !!! esempio "Example 25.6: Computing the values of the $v$ function"
 
-            We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](index.md#box-1-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
+            We consider the ULS instance of <span style="color:#1971c2">[Example 25.1](index.md#box-1-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
 
             $$
             \begin{array}{l|rrrrr}
@@ -142,9 +142,9 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
 
         <a id="box-28-texulsbu"></a>
 
-        !!! esempio "Example 27.7: Execution of the DP algorithm"
+        !!! esempio "Example 25.7: Execution of the DP algorithm"
 
-            We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](index.md#box-1-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
+            We consider the ULS instance of <span style="color:#1971c2">[Example 25.1](index.md#box-1-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
 
             $$
             \begin{array}{l|rrrrr}
@@ -386,9 +386,9 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
 
         <a id="box-29-texulsbuinfo"></a>
 
-        !!! esempio "Example 27.8: Computation of the additional information"
+        !!! esempio "Example 25.8: Computation of the additional information"
 
-            We consider the ULS instance of <span style="color:#1971c2">[Example 27.1](index.md#box-1-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
+            We consider the ULS instance of <span style="color:#1971c2">[Example 25.1](index.md#box-1-texuls1)</span>, with the matrix ${c}$ of the production-run costs:
 
             $$
             \begin{array}{l|rrrrr}
@@ -651,9 +651,9 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
 
         <a id="box-30-texulssolvector"></a>
 
-        !!! esempio "Example 27.9: Computing an optimal solution"
+        !!! esempio "Example 25.9: Computing an optimal solution"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 27.1](index.md#box-1-texuls1)</span>, we have the following vector ${r}$:
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 25.1](index.md#box-1-texuls1)</span>, we have the following vector ${r}$:
 
             $$
             \begin{array}{c|ccccc}
@@ -722,11 +722,11 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
             (30,\allowbreak 0,\allowbreak 80,\allowbreak 0,\allowbreak 0)
             $$
 
-            The corresponding optimal value is ${v}[5]=170$, the same value obtained by the enumeration of <span style="color:#1971c2">[Example 27.3](index.md#box-4-texulsenum)</span> and by Gurobi on the MIP model.
+            The corresponding optimal value is ${v}[5]=170$, the same value obtained by the enumeration of <span style="color:#1971c2">[Example 25.3](index.md#box-4-texulsenum)</span> and by Gurobi on the MIP model.
 
-    - <em>Remark (ties).</em> In the computation of ${v}[5]$, the run in period $4$ gives the same value as the run in period $3$, but the strict comparison keeps $j=3$. Choosing $j=4$ instead leads to the other optimal solution $(30,\allowbreak 0,\allowbreak 30,\allowbreak 50,\allowbreak 0)$ of <span style="color:#1971c2">[Example 27.3](index.md#box-4-texulsenum)</span>. The DP algorithm returns one optimal solution, not all of them.
+    - <em>Remark (ties).</em> In the computation of ${v}[5]$, the run in period $4$ gives the same value as the run in period $3$, but the strict comparison keeps $j=3$. Choosing $j=4$ instead leads to the other optimal solution $(30,\allowbreak 0,\allowbreak 30,\allowbreak 50,\allowbreak 0)$ of <span style="color:#1971c2">[Example 25.3](index.md#box-4-texulsenum)</span>. The DP algorithm returns one optimal solution, not all of them.
 
-## 27.2.3 Number of steps
+## 25.2.3 Number of steps
 
 - Let $S_c(m)$ denote the number of steps executed by CostMatrix in the worst case, where $m$ is the number of periods. The number of executions of its lines is:
 
@@ -804,4 +804,4 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
 
 ---
 
-**Next:** [27.3 A DP algorithm for the capacitated case](a-dp-algorithm-for-the-capacitated-case.md)
+**Next:** [25.3 A DP algorithm for the capacitated case](a-dp-algorithm-for-the-capacitated-case.md)

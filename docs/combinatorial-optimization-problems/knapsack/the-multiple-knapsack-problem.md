@@ -125,6 +125,10 @@ title: "Multiple knapsack"
     </tr>
     </table></div>
 
+    The drawing shows an optimal solution: $S_1=\{1,2\}$ in knapsack $1$ and $S_2=\{4,5\}$ in knapsack $2$, with total profit $14+16=30$; item $3$ stays out.
+
+    ![Figure 6](../../img/knapsack/fig06.svg){ .fig loading=lazy  }
+
 ## 2.6.1 Assumptions
 
 - We make the following assumptions:

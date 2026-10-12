@@ -6,7 +6,7 @@ title: "DP for the rod cutting problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 25** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting](../../exercises/dp-rod-cutting.md)
+**Part 3 · Dynamic programming · Chapter 27** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting](../../exercises/dp-rod-cutting.md)
 
 </div>
 
@@ -34,11 +34,11 @@ title: "DP for the rod cutting problem"
 
 The problem of this chapter is the [rod cutting problem (RCP)](https://fabiofurini.github.io/combinatorial-optimization/catalogue/rod-cutting-problem/): its definition is on its page.
 
-## 25.1 Instances and feasible solutions
+## 27.1 Instances and feasible solutions
 
 <a id="box-1-texexpbox1"></a>
 
-!!! esempio "Example 25.1: Rod cutting problem"
+!!! esempio "Example 27.1: Rod cutting problem"
 
     We consider a rod of length $n = 4$ and a set $\{1,2,3,4\}$ of $4$ possible piece lengths with the following profits:
 
@@ -64,7 +64,7 @@ The problem of this chapter is the [rod cutting problem (RCP)](https://fabiofuri
 
     Therefore, enumerating all possible solutions quickly becomes impractical as $n$ increases.
 
-### 25.1.1 Encoding of feasible solutions
+### 27.1.1 Encoding of feasible solutions
 
 !!! chiave ""
 
@@ -105,7 +105,7 @@ The problem of this chapter is the [rod cutting problem (RCP)](https://fabiofuri
 
 <a id="box-2-texrcpenumeration"></a>
 
-!!! esempio "Example 25.2: Enumeration of all possible RCP solutions"
+!!! esempio "Example 27.2: Enumeration of all possible RCP solutions"
 
     We consider the RCP instance of  <span style="color:#1971c2">Example 1</span> with a rod of length $n = 4$ and the profits associated with the possible piece lengths are:
 
@@ -190,13 +190,13 @@ The problem of this chapter is the [rod cutting problem (RCP)](https://fabiofuri
 
     Instances and feasible solutions · Encoding of feasible solutions
 
-    [:octicons-arrow-right-24: Open](#251-instances-and-feasible-solutions)
+    [:octicons-arrow-right-24: Open](#271-instances-and-feasible-solutions)
 
--   **25.2 A first DP algorithm**
+-   **27.2 A first DP algorithm**
 
     [:octicons-arrow-right-24: Open](a-first-dp-algorithm.md)
 
--   **25.3 A second DP algorithm**
+-   **27.3 A second DP algorithm**
 
     [:octicons-arrow-right-24: Open](a-second-dp-algorithm.md)
 
@@ -210,7 +210,7 @@ The problem of this chapter is the [rod cutting problem (RCP)](https://fabiofuri
 
 ---
 
-**Next:** [25.2 A first DP algorithm](a-first-dp-algorithm.md)
+**Next:** [27.2 A first DP algorithm](a-first-dp-algorithm.md)
 
 ---
 

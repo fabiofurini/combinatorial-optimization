@@ -6,9 +6,11 @@ title: "Exercises · Formulations of the knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 9** · each solution opens with a click · [:material-book-open-variant: Chapter 9: Knapsack](../formulations/knapsack-formulations.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
+**Exercises · Chapter 9** · each solution opens with a click · [:material-book-open-variant: Chapter 9: Knapsack](../formulations/knapsack-formulations/index.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
+
+## Knapsack: Dantzig and Martello-Toth upper bounds
 
 !!! formula "Upper bounds used in these exercises"
 
@@ -346,3 +348,326 @@ title: "Exercises · Formulations of the knapsack problem"
         $$
         UB_{MT}  < UB_{D}
         $$
+
+## ILP models of the knapsack variants
+
+<a id="esercizio-9-6"></a>
+
+!!! esercizio "Exercise 9.6: ILP model of the Subset Sum Problem"
+
+    The Subset Sum Problem (SSP) and its $\mathrm{ILP}_{\mathrm{SSP}}$ model are in the chapter [Formulations of the knapsack problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a target value $c = 16$ and a set $\mathscr{I} = \{1,2,\dots,6\}$ of $6$ items ($n = 6$), with the following weights:
+
+    $$
+    \begin{array}{l|rrrrrr}
+    \hline  & {j = 1} & {j = 2} & {j = 3} & {j = 4} & {j = 5} & {j = 6} \\
+    \hline {w_j} & {2} & {4} & {5} & {8} & {9} & {13} \\
+    \hline
+    \end{array}
+    $$
+
+    **Questions**
+
+    1. Write the $\mathrm{ILP}_{\mathrm{SSP}}$ model of the chapter for this instance.
+
+    2. Solve the model with Gurobi. Give the optimal value, an optimal solution and the associated solution of the SSP, and say whether the optimal solution is unique.
+
+??? soluzione "Solution"
+
+    1. The model has $6$ binary variables and one linear constraint (besides the domains of the variables). The $\mathrm{ILP}_{\mathrm{SSP}}$ model for this instance is:
+
+        $$
+        \begin{array}{rrrrrrrcl}
+        {\max} & {2\,x_{1}} & {+\,4\,x_{2}} & {+\,5\,x_{3}} & {+\,8\,x_{4}} & {+\,9\,x_{5}} & {+\,13\,x_{6}} \\[1ex]
+        \text{subject to} & {2\,x_{1}} & {+\,4\,x_{2}} & {+\,5\,x_{3}} & {+\,8\,x_{4}} & {+\,9\,x_{5}} & {+\,13\,x_{6}} & {\le} & {16} \\[1ex]
+        & {x_{1}}, & {x_{2}}, & {x_{3}}, & {x_{4}}, & {x_{5}}, & {x_{6}} & {\in} & {\{0,1\}}
+        \end{array}
+        $$
+
+    2. Gurobi returns the optimal value $z(\mathrm{ILP}_{\mathrm{SSP}}) = 16$. An optimal solution is
+
+        $$
+        \tilde x_{1}=1,~~\tilde x_{2}=0,~~\tilde x_{3}=1,~~\tilde x_{4}=0,~~\tilde x_{5}=1,~~\tilde x_{6}=0
+        $$
+
+        The selected items have total weight $2 + 5 + 9 = 16$. Since $z(\mathrm{ILP}_{\mathrm{SSP}}) = c = 16$, the answer to the SSP is <strong>yes</strong>, with the subset $\tilde S = \{1,3,5\}$.
+
+        Enumerating the $22$ subsets of weight at most $16$ shows that $\tilde S$ is the only subset of weight exactly $16$: the optimal solution is unique.
+
+<a id="esercizio-9-7"></a>
+
+!!! esercizio "Exercise 9.7: ILP model of the Bounded Knapsack Problem"
+
+    The Bounded Knapsack Problem (BKP) and its $\mathrm{ILP}_{\mathrm{BKP}}$ model are in the chapter [Formulations of the knapsack problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a knapsack of capacity $c = 18$ and a set $\mathscr{I} = \{1,2,\dots,5\}$ of $5$ items ($n = 5$), with the following profits, weights and available copies:
+
+    $$
+    \begin{array}{l|rrrrr}
+    \hline  & {j = 1} & {j = 2} & {j = 3} & {j = 4} & {j = 5} \\
+    \hline {p_j} & {5} & {12} & {11} & {7} & {4} \\
+    {w_j} & {5} & {7} & {3} & {3} & {8} \\
+    {b_j} & {3} & {2} & {3} & {2} & {2} \\
+    \hline
+    \end{array}
+    $$
+
+    **Questions**
+
+    1. Write the $\mathrm{ILP}_{\mathrm{BKP}}$ model of the chapter for this instance.
+
+    2. Solve the model with Gurobi. Give the optimal value, an optimal solution and the associated solution of the BKP, and say whether the optimal solution is unique.
+
+??? soluzione "Solution"
+
+    1. The model has $5$ integer variables and one linear constraint (besides the domains of the variables). The $\mathrm{ILP}_{\mathrm{BKP}}$ model for this instance is:
+
+        $$
+        \begin{array}{rrrrrrcl}
+        {\max} & {5\,x_{1}} & {+\,12\,x_{2}} & {+\,11\,x_{3}} & {+\,7\,x_{4}} & {+\,4\,x_{5}} \\[1ex]
+        \text{subject to} & {5\,x_{1}} & {+\,7\,x_{2}} & {+\,3\,x_{3}} & {+\,3\,x_{4}} & {+\,8\,x_{5}} & {\le} & {18} \\[1ex]
+        & {x_{1}}, &  & {x_{3}} &  &  & {\in} & {\{0,1,2,3\}} \\
+        &  & {x_{2}}, &  & {x_{4}}, & {x_{5}} & {\in} & {\{0,1,2\}}
+        \end{array}
+        $$
+
+    2. Gurobi returns the optimal value $z(\mathrm{ILP}_{\mathrm{BKP}}) = 47$. An optimal solution is
+
+        $$
+        \tilde x_{1}=0,~~\tilde x_{2}=0,~~\tilde x_{3}=3,~~\tilde x_{4}=2,~~\tilde x_{5}=0
+        $$
+
+        It takes three copies of item $3$ and two copies of item $4$: the total weight is $3 \cdot 3 + 2 \cdot 3 = 15 \le 18$ and every $\tilde x_j$ is at most $b_j$.
+
+        Enumerating the $68$ feasible vectors of copies shows that the optimal solution is unique.
+
+<a id="esercizio-9-8"></a>
+
+!!! esercizio "Exercise 9.8: ILP model of the Unbounded Knapsack Problem"
+
+    The Unbounded Knapsack Problem (UKP) and its $\mathrm{ILP}_{\mathrm{UKP}}$ model are in the chapter [Formulations of the knapsack problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a knapsack of capacity $c = 19$ and a set $\mathscr{I} = \{1,2,\dots,5\}$ of $5$ items ($n = 5$), each available in an unlimited number of copies, with the following profits and weights:
+
+    $$
+    \begin{array}{l|rrrrr}
+    \hline  & {j = 1} & {j = 2} & {j = 3} & {j = 4} & {j = 5} \\
+    \hline {p_j} & {4} & {9} & {7} & {5} & {8} \\
+    {w_j} & {4} & {5} & {6} & {6} & {9} \\
+    \hline
+    \end{array}
+    $$
+
+    **Questions**
+
+    1. Write the $\mathrm{ILP}_{\mathrm{UKP}}$ model of the chapter for this instance.
+
+    2. Solve the model with Gurobi. Give the optimal value, an optimal solution and the associated solution of the UKP, and say whether the optimal solution is unique.
+
+??? soluzione "Solution"
+
+    1. The model has $5$ integer variables and one linear constraint (besides the domains of the variables). The $\mathrm{ILP}_{\mathrm{UKP}}$ model for this instance is:
+
+        $$
+        \begin{array}{rrrrrrcl}
+        {\max} & {4\,x_{1}} & {+\,9\,x_{2}} & {+\,7\,x_{3}} & {+\,5\,x_{4}} & {+\,8\,x_{5}} \\[1ex]
+        \text{subject to} & {4\,x_{1}} & {+\,5\,x_{2}} & {+\,6\,x_{3}} & {+\,6\,x_{4}} & {+\,9\,x_{5}} & {\le} & {19} \\[1ex]
+        & {x_{1}}, & {x_{2}}, & {x_{3}}, & {x_{4}}, & {x_{5}} & {\in} & {\Z_{\ge 0}}
+        \end{array}
+        $$
+
+    2. Gurobi returns the optimal value $z(\mathrm{ILP}_{\mathrm{UKP}}) = 31$. An optimal solution is
+
+        $$
+        \tilde x_{1}=1,~~\tilde x_{2}=3,~~\tilde x_{3}=0,~~\tilde x_{4}=0,~~\tilde x_{5}=0
+        $$
+
+        It takes one copy of item $1$ and three copies of item $2$: the total weight is $1 \cdot 4 + 3 \cdot 5 = 19 \le 19$.
+
+        The capacity constraint gives $x_j \le \hat b_j = \lfloor c/w_j \rfloor$, that is $\hat b_1 = 4$, $\hat b_2 = 3$, $\hat b_3 = 3$, $\hat b_4 = 3$, $\hat b_5 = 2$. Enumerating the $54$ feasible vectors of copies within these bounds shows that the optimal solution is unique.
+
+<a id="esercizio-9-9"></a>
+
+!!! esercizio "Exercise 9.9: ILP model of the Multidimensional Knapsack Problem"
+
+    The Multidimensional Knapsack Problem (MDKP) and its $\mathrm{ILP}_{\mathrm{MDKP}}$ model are in the chapter [Formulations of the knapsack problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a $2$-dimensional knapsack ($k = 2$) with capacities $c_1 = 17$ and $c_2 = 14$, and a set $\mathscr{I} = \{1,2,\dots,5\}$ of $5$ items ($n = 5$), with the following profits and weights:
+
+    $$
+    \begin{array}{l|rrrrr}
+    \hline  & {j = 1} & {j = 2} & {j = 3} & {j = 4} & {j = 5} \\
+    \hline {p_j} & {10} & {8} & {11} & {6} & {9} \\
+    {w_{1j}} & {9} & {9} & {3} & {6} & {3} \\
+    {w_{2j}} & {5} & {5} & {2} & {3} & {9} \\
+    \hline
+    \end{array}
+    $$
+
+    **Questions**
+
+    1. Write the $\mathrm{ILP}_{\mathrm{MDKP}}$ model of the chapter for this instance.
+
+    2. Solve the model with Gurobi. Give the optimal value, an optimal solution and the associated solution of the MDKP, and say whether the optimal solution is unique.
+
+??? soluzione "Solution"
+
+    1. The model has $5$ binary variables and $k = 2$ linear constraints, one for each dimension (besides the domains of the variables). The $\mathrm{ILP}_{\mathrm{MDKP}}$ model for this instance is:
+
+        $$
+        \begin{array}{rrrrrrcl}
+        {\max} & {10\,x_{1}} & {+\,8\,x_{2}} & {+\,11\,x_{3}} & {+\,6\,x_{4}} & {+\,9\,x_{5}} \\[1ex]
+        \text{subject to} & {9\,x_{1}} & {+\,9\,x_{2}} & {+\,3\,x_{3}} & {+\,6\,x_{4}} & {+\,3\,x_{5}} & {\le} & {17} \\
+        & {5\,x_{1}} & {+\,5\,x_{2}} & {+\,2\,x_{3}} & {+\,3\,x_{4}} & {+\,9\,x_{5}} & {\le} & {14} \\[1ex]
+        & {x_{1}}, & {x_{2}}, & {x_{3}}, & {x_{4}}, & {x_{5}} & {\in} & {\{0,1\}}
+        \end{array}
+        $$
+
+    2. Gurobi returns the optimal value $z(\mathrm{ILP}_{\mathrm{MDKP}}) = 26$. An optimal solution is
+
+        $$
+        \tilde x_{1}=0,~~\tilde x_{2}=0,~~\tilde x_{3}=1,~~\tilde x_{4}=1,~~\tilde x_{5}=1
+        $$
+
+        The associated subset is $\tilde S = \{3,4,5\}$, with weight $12 \le 17$ in dimension $1$ and $14 \le 14$ in dimension $2$.
+
+        Enumerating the $16$ feasible subsets shows that the optimal solution is unique.
+
+<a id="esercizio-9-10"></a>
+
+!!! esercizio "Exercise 9.10: ILP model of the Multiple Knapsack Problem"
+
+    The Multiple Knapsack Problem (MKP) and its $\mathrm{ILP}_{\mathrm{MKP}}$ model are in the chapter [Formulations of the knapsack problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider $m = 2$ knapsacks with capacities $c_1 = 12$ and $c_2 = 14$, and a set $\mathscr{I} = \{1,2,\dots,5\}$ of $5$ items ($n = 5$), with the following profits and weights:
+
+    $$
+    \begin{array}{l|rrrrr}
+    \hline  & {j = 1} & {j = 2} & {j = 3} & {j = 4} & {j = 5} \\
+    \hline {p_j} & {10} & {12} & {6} & {4} & {9} \\
+    {w_j} & {9} & {4} & {5} & {7} & {8} \\
+    \hline
+    \end{array}
+    $$
+
+    **Questions**
+
+    1. Write the $\mathrm{ILP}_{\mathrm{MKP}}$ model of the chapter for this instance.
+
+    2. Solve the model with Gurobi. Give the optimal value, an optimal solution and the associated solution of the MKP, and say whether the optimal solution is unique.
+
+??? soluzione "Solution"
+
+    1. The model has $n\,m = 10$ binary variables, $m = 2$ capacity constraints and $n = 5$ assignment constraints (besides the domains of the variables). With so many variables we write one constraint per line. The $\mathrm{ILP}_{\mathrm{MKP}}$ model for this instance is:
+
+        $$
+        \begin{array}{rlcl}
+        {\max} & {10\,x_{11}+12\,x_{21}+6\,x_{31}+4\,x_{41}+9\,x_{51}} &  &  \\
+        & {+10\,x_{12}+12\,x_{22}+6\,x_{32}+4\,x_{42}+9\,x_{52}} &  &  \\[1ex]
+        \text{subject to} & {9\,x_{11}+4\,x_{21}+5\,x_{31}+7\,x_{41}+8\,x_{51}} & {\le} & {12} \\
+        & {9\,x_{12}+4\,x_{22}+5\,x_{32}+7\,x_{42}+8\,x_{52}} & {\le} & {14} \\
+        & {x_{11}+x_{12}} & {\le} & {1} \\
+        & {x_{21}+x_{22}} & {\le} & {1} \\
+        & {x_{31}+x_{32}} & {\le} & {1} \\
+        & {x_{41}+x_{42}} & {\le} & {1} \\
+        & {x_{51}+x_{52}} & {\le} & {1} \\[1ex]
+        & {x_{11},~x_{21},~x_{31},~\dots,~x_{52}} & {\in} & {\{0,1\}}
+        \end{array}
+        $$
+
+    2. Gurobi returns the optimal value $z(\mathrm{ILP}_{\mathrm{MKP}}) = 37$. An optimal solution is
+
+        $$
+        \tilde x_{21}=1,~~\tilde x_{51}=1,~~\tilde x_{12}=1,~~\tilde x_{32}=1,
+        $$
+
+        with all the other variables equal to $0$. The associated solution of the MKP is $(\tilde S_1, \tilde S_2) = (\{2,5\}, \{1,3\})$: knapsack $1$ has weight $4 + 8 = 12 \le 12$, knapsack $2$ has weight $9 + 5 = 14 \le 14$, and item $4$ is left out.
+
+        Enumerating the $81$ feasible assignments of the items to the knapsacks shows that the optimal solution is unique.
+
+<a id="esercizio-9-11"></a>
+
+!!! esercizio "Exercise 9.11: ILP model of the Multiple-Choice Knapsack Problem"
+
+    The Multiple-Choice Knapsack Problem (MCKP) and its $\mathrm{ILP}_{\mathrm{MCKP}}$ model are in the chapter [Formulations of the knapsack problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a knapsack of capacity $c = 14$ and a set $\mathscr{I} = \{1,2,\dots,7\}$ of $7$ items ($n = 7$), partitioned into $q = 3$ classes $\mathscr{J}_1 = \{1,2\}$, $\mathscr{J}_2 = \{3,4,5\}$ and $\mathscr{J}_3 = \{6,7\}$, with the following profits and weights:
+
+    $$
+    \begin{array}{l|rrrrrrr}
+    \hline  & {j = 1} & {j = 2} & {j = 3} & {j = 4} & {j = 5} & {j = 6} & {j = 7} \\
+    \hline {p_j} & {6} & {4} & {12} & {7} & {11} & {12} & {6} \\
+    {w_j} & {6} & {6} & {4} & {3} & {6} & {3} & {8} \\
+    \hline
+    \end{array}
+    $$
+
+    **Questions**
+
+    1. Write the $\mathrm{ILP}_{\mathrm{MCKP}}$ model of the chapter for this instance.
+
+    2. Solve the model with Gurobi. Give the optimal value, an optimal solution and the associated solution of the MCKP, and say whether the optimal solution is unique.
+
+??? soluzione "Solution"
+
+    1. The model has $7$ binary variables, one capacity constraint and $q = 3$ class constraints (besides the domains of the variables). The $\mathrm{ILP}_{\mathrm{MCKP}}$ model for this instance is:
+
+        $$
+        \begin{array}{rrrrrrrrcl}
+        {\max} & {6\,x_{1}} & {+\,4\,x_{2}} & {+\,12\,x_{3}} & {+\,7\,x_{4}} & {+\,11\,x_{5}} & {+\,12\,x_{6}} & {+\,6\,x_{7}} \\[1ex]
+        \text{subject to} & {6\,x_{1}} & {+\,6\,x_{2}} & {+\,4\,x_{3}} & {+\,3\,x_{4}} & {+\,6\,x_{5}} & {+\,3\,x_{6}} & {+\,8\,x_{7}} & {\le} & {14} \\
+        & {x_{1}} & {+\,x_{2}} &  &  &  &  &  & {=} & {1} \\
+        &  &  & {x_{3}} & {+\,x_{4}} & {+\,x_{5}} &  &  & {=} & {1} \\
+        &  &  &  &  &  & {x_{6}} & {+\,x_{7}} & {=} & {1} \\[1ex]
+        & {x_{1}}, & {x_{2}}, & {x_{3}}, & {x_{4}}, & {x_{5}}, & {x_{6}}, & {x_{7}} & {\in} & {\{0,1\}}
+        \end{array}
+        $$
+
+    2. Gurobi returns the optimal value $z(\mathrm{ILP}_{\mathrm{MCKP}}) = 30$. An optimal solution is
+
+        $$
+        \tilde x_{1}=1,~~\tilde x_{2}=0,~~\tilde x_{3}=1,~~\tilde x_{4}=0,~~\tilde x_{5}=0,~~\tilde x_{6}=1,~~\tilde x_{7}=0
+        $$
+
+        The associated subset is $\tilde S = \{1,3,6\}$: one item per class, with total weight $6 + 4 + 3 = 13 \le 14$.
+
+        Only $4$ of the $12$ choices of one item per class fit in the knapsack; enumerating them shows that the optimal solution is unique.
+
+<a id="esercizio-9-12"></a>
+
+!!! esercizio "Exercise 9.12: ILP model of the Knapsack Problem with Setups"
+
+    The Knapsack Problem with Setups (KPS) and its $\mathrm{ILP}_{\mathrm{KPS}}$ model are in the chapter [Formulations of the knapsack problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a knapsack of capacity $c = 19$ and a set $\mathscr{I} = \{1,2,\dots,6\}$ of $6$ items ($n = 6$), partitioned into $q = 2$ classes $\mathscr{J}_1 = \{1,2,3\}$ and $\mathscr{J}_2 = \{4,5,6\}$, with setup costs $f_1 = 4$, $f_2 = 2$, setup weights $s_1 = 1$, $s_2 = 4$, and the following revenues and weights:
+
+    $$
+    \begin{array}{l|rrrrrr}
+    \hline  & {j = 1} & {j = 2} & {j = 3} & {j = 4} & {j = 5} & {j = 6} \\
+    \hline {p_j} & {4} & {3} & {8} & {5} & {4} & {11} \\
+    {w_j} & {7} & {6} & {3} & {6} & {7} & {4} \\
+    \hline
+    \end{array}
+    $$
+
+    **Questions**
+
+    1. Write the $\mathrm{ILP}_{\mathrm{KPS}}$ model of the chapter for this instance.
+
+    2. Solve the model with Gurobi. Give the optimal value, an optimal solution and the associated solution of the KPS, and say whether the optimal solution is unique.
+
+??? soluzione "Solution"
+
+    1. The model has $6$ variables $x_j$, $q = 2$ variables $y_h$, one capacity constraint and $n = 6$ linking constraints $x_j \le y_h$, written as $x_j - y_h \le 0$ (besides the domains of the variables). The $\mathrm{ILP}_{\mathrm{KPS}}$ model for this instance is:
+
+        $$
+        \begin{array}{rrrrrrrrrcl}
+        {\max} & {4\,x_{1}} & {+\,3\,x_{2}} & {+\,8\,x_{3}} & {+\,5\,x_{4}} & {+\,4\,x_{5}} & {+\,11\,x_{6}} & {-\,4\,y_{1}} & {-\,2\,y_{2}} \\[1ex]
+        \text{subject to} & {7\,x_{1}} & {+\,6\,x_{2}} & {+\,3\,x_{3}} & {+\,6\,x_{4}} & {+\,7\,x_{5}} & {+\,4\,x_{6}} & {+\,y_{1}} & {+\,4\,y_{2}} & {\le} & {19} \\
+        & {x_{1}} &  &  &  &  &  & {-\,y_{1}} &  & {\le} & {0} \\
+        &  & {x_{2}} &  &  &  &  & {-\,y_{1}} &  & {\le} & {0} \\
+        &  &  & {x_{3}} &  &  &  & {-\,y_{1}} &  & {\le} & {0} \\
+        &  &  &  & {x_{4}} &  &  &  & {-\,y_{2}} & {\le} & {0} \\
+        &  &  &  &  & {x_{5}} &  &  & {-\,y_{2}} & {\le} & {0} \\
+        &  &  &  &  &  & {x_{6}} &  & {-\,y_{2}} & {\le} & {0} \\[1ex]
+        & {x_{1}}, & {x_{2}}, & {x_{3}}, & {x_{4}}, & {x_{5}}, & {x_{6}} &  &  & {\in} & {\{0,1\}} \\
+        &  &  &  &  &  &  & {y_{1}}, & {y_{2}} & {\in} & {\{0,1\}}
+        \end{array}
+        $$
+
+    2. Gurobi returns the optimal value $z(\mathrm{ILP}_{\mathrm{KPS}}) = 18$. An optimal solution is
+
+        $$
+        \tilde x_{1}=0,~~\tilde x_{2}=0,~~\tilde x_{3}=1,~~\tilde x_{4}=1,~~\tilde x_{5}=0,~~\tilde x_{6}=1,~~\tilde y_{1}=1,~~\tilde y_{2}=1
+        $$
+
+        The associated subset is $\tilde S = \{3,4,6\}$, which activates both classes: the total weight is $3 + 6 + 4 + 1 + 4 = 18 \le 19$, and the value is $8 + 5 + 11 - 4 - 2 = 18$.
+
+        Enumerating the $27$ feasible subsets shows that the optimal solution is unique.

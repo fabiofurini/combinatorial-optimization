@@ -42,9 +42,9 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Formulations { #sez-sec-cat-tsp-formulations }
 
-- The MTZ model eliminates the subtours with $n-1$ position variables $u_i$; the DFJ model with $2^{n-1}-n$ subtour constraints, added only when violated ([Ch. 13](../formulations/tsp-formulations.md#box-4-prop-DFJ-subtours)).
+- The MTZ model eliminates the subtours with $n-1$ position variables $u_i$; the DFJ model with $2^{n-1}-n$ subtour constraints, added only when violated ([Ch. 13](../formulations/tsp-formulations/index.md#box-4-prop-DFJ-subtours)).
 
-- The MTZ relaxation is weak; on the instance of [Ch. 6](../combinatorial-optimization-problems/tsp/index.md) the bounds are $16$ (assignment), $17$ (MTZ) and $18$ (DFJ) ([Ch. 13](../formulations/tsp-formulations.md#box-10-ex-TSP-LP)).
+- The MTZ relaxation is weak; on the instance of [Ch. 6](../combinatorial-optimization-problems/tsp/index.md) the bounds are $16$ (assignment), $17$ (MTZ) and $18$ (DFJ) ([Ch. 13](../formulations/tsp-formulations/index.md#box-10-ex-TSP-LP)).
 
 ## Heuristics { #sez-sec-cat-tsp-heuristics }
 

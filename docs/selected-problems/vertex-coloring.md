@@ -70,8 +70,16 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - Not approximable: no polynomial algorithm guarantees a ratio below $\frac43$ unless $P=NP$, and not even $n^{1-\varepsilon}$ (Zuckerman).
 
+## Branch-and-bound { #sez-sec-cat-vcp-branchandbound }
+
+- The DSATUR branch-and-bound branches on the most saturated vertex, with one child per feasible color and one new color, and prunes a node when $q(k)\ge\UB$ ([Ch. 39](../specialized-algorithms/dsatur-branch-and-bound.md#box-1-def-VCPnode)).
+
+- On the Petersen graph it proves $\chi(G)=3$ with $6$ nodes ([Ch. 39](../specialized-algorithms/dsatur-branch-and-bound.md#box-3-ex-petersenBB)).
+
 ## Exercises { #sez-sec-cat-vcp-es }
 
 - [Ch. 4 — Vertex coloring](../exercises/coloring.md) (5 exercises).
 
 - [Ch. 11 — Formulations of the vertex coloring problem](../exercises/coloring-formulations.md) (5 exercises).
+
+- [Ch. 39 — Vertex coloring: the DSATUR branch-and-bound](../exercises/dsatur-branch-and-bound.md) (5 exercises).

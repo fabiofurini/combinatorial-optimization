@@ -307,13 +307,13 @@ title: "Vertex coloring"
     <th>from</th>
     </tr>
     <tr>
-    <td><span style="color:#1971c2">[Example 4.1](#box-4-ex-vcp1)</span> (triangle)</td>
+    <td><span style="color:#1971c2"><a href="#box-4-ex-vcp1">Example 4.1</a></span> (triangle)</td>
     <td><span class="arithmatex">\(3\)</span> (clique bound)</td>
     <td><span class="arithmatex">\(3\)</span> (by eye)</td>
     <td>this chapter</td>
     </tr>
     <tr>
-    <td><span style="color:#1971c2">[Example 4.2](#box-5-ex-vcp2)</span> (Petersen)</td>
+    <td><span style="color:#1971c2"><a href="#box-5-ex-vcp2">Example 4.2</a></span> (Petersen)</td>
     <td><span class="arithmatex">\(3\)</span> (stable set bound)</td>
     <td><span class="arithmatex">\(3\)</span> (by eye)</td>
     <td>this chapter</td>

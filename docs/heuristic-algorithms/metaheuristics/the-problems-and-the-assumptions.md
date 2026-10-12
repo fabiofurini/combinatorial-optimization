@@ -130,7 +130,7 @@ title: "The problems and the assumptions"
 
 ## 31.2.2 Random numbers { #sez-sec-random }
 
-- Most metaheuristics make <strong>random choices</strong>. To make every example and every exercise reproducible, all the random numbers of these notes, and of their <code>C++</code> code, are produced by the <strong>minimal standard generator</strong> of Park and Miller (1988):
+- Most metaheuristics make <strong>random choices</strong>. To make every example and every exercise reproducible, all the random numbers of these notes, and of the code in the Colab notebooks of the chapter, are produced by the <strong>minimal standard generator</strong> of Park and Miller (1988):
 
 !!! chiave ""
 

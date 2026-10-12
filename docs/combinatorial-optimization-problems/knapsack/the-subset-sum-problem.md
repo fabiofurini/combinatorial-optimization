@@ -90,7 +90,9 @@ title: "Subset sum"
     </tr>
     </table></div>
 
-    For instance, the subset $S=\{1,4\}$ is feasible since $w_1+w_4=2+7=9$. Also, the subset $S=\{6\}$ is feasible since $w_6=9$.
+    For instance, the subset $S=\{1,4\}$ is feasible since $w_1+w_4=2+7=9$. Also, the subset $S=\{6\}$ is feasible since $w_6=9$. The drawing shows the three subsets whose weights fill the box of length $c=9$ exactly: $\{1,4\}$, $\{6\}$ and $\{2,3\}$.
+
+    ![Figure 2](../../img/knapsack/fig02.svg){ .fig loading=lazy  }
 
 - The SSP is not an <strong>optimization problem</strong>, since its answer is either <strong>yes</strong> or <strong>no</strong>. However, it can be solved by using an optimization problem.
 

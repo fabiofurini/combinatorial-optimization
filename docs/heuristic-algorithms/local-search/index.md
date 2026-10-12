@@ -112,10 +112,6 @@ title: "Local search"
 
     [:octicons-arrow-right-24: Open](typical-mistakes.md)
 
--   **30.15 <code>C++</code> implementation**
-
-    [:octicons-arrow-right-24: Open](c-implementation.md)
-
 </div>
 
 ---

@@ -52,11 +52,11 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Formulations { #sez-sec-cat-mcp-formulations }
 
-- The model $\ILP_{\MCP}$ has one binary variable per vertex and one constraint $x_u+x_v\le1$ per non-edge ([Ch. 12](../formulations/clique-formulations.md)).
+- The model $\ILP_{\MCP}$ has one binary variable per vertex and one constraint $x_u+x_v\le1$ per non-edge ([Ch. 12](../formulations/clique-formulations/index.md)).
 
-- $x_v=\frac12$ for all vertices is feasible, so $z(\LP_{\MCP})\ge n/2$: the LP bound can be arbitrarily weak ([Ch. 12](../formulations/clique-formulations.md)).
+- $x_v=\frac12$ for all vertices is feasible, so $z(\LP_{\MCP})\ge n/2$: the LP bound can be arbitrarily weak ([Ch. 12](../formulations/clique-formulations/index.md)).
 
-- Stable set inequalities and odd cycle inequalities strengthen the model ([Ch. 12](../formulations/clique-formulations.md)).
+- Stable set inequalities and odd cycle inequalities strengthen the model ([Ch. 12](../formulations/clique-formulations/index.md)).
 
 ## Approximation { #sez-sec-cat-mcp-approximation }
 

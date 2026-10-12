@@ -1,4 +1,4 @@
-# Problem-specific branch-and-bound
+# Ad hoc algorithms
 
 *Part 6 of the course, volume 6 of the lecture notes.*
 
@@ -13,5 +13,13 @@
     The algorithm for the KP · A worked example
 
     [:octicons-arrow-right-24: Read the chapter](knapsack-branch-and-bound.md) · [Exercises](../exercises/knapsack-branch-and-bound.md)
+
+-   **39. Vertex coloring: the DSATUR branch-and-bound**
+
+    ---
+
+    The algorithm for the VCP · A worked example
+
+    [:octicons-arrow-right-24: Read the chapter](dsatur-branch-and-bound.md) · [Exercises](../exercises/dsatur-branch-and-bound.md)
 
 </div>

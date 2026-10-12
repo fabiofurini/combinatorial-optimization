@@ -6,11 +6,11 @@ title: "Typical mistakes · In summary"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 25** · [:material-book-open-variant: Chapter 25: Rod cutting](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting](../../exercises/dp-rod-cutting.md)
+**Part 3 · Dynamic programming · Chapter 27** · [:material-book-open-variant: Chapter 27: Rod cutting](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting](../../exercises/dp-rod-cutting.md)
 
 </div>
 
-## 25.4 Typical mistakes
+## 27.4 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -22,7 +22,7 @@ title: "Typical mistakes · In summary"
 
     - <strong>Stopping the reconstruction early.</strong> The rule $x_{{s}[\ell]}\leftarrow x_{{s}[\ell]}+1$, $\ell\leftarrow\ell-{s}[\ell]$ is repeated until $\ell=0$; the last piece completes the rod.
 
-## 25.5 In summary
+## 27.5 In summary
 
 !!! chiave "In summary"
 

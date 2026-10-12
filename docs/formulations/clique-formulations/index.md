@@ -6,7 +6,7 @@ title: "Formulations of the maximum clique problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 12** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Maximum clique](../exercises/clique-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 12** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Maximum clique](../../exercises/clique-formulations.md)
 
 </div>
 
@@ -30,7 +30,11 @@ title: "Formulations of the maximum clique problem"
 
     - write the clique formulation and compare the two LP bounds on a small graph;
 
-    - prove $\omega(G)\le z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})\le\chi(G)$ through LP duality and a coloring formulation.
+    - prove $\omega(G)\le z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})\le\chi(G)$ through LP duality and a coloring formulation;
+
+    - write the edge and the clique formulations of the Maximum Stable Set Problem;
+
+    - write the ILP models of the vertex-weighted and of the edge-weighted maximum clique problems, linearizing the product $x_u\,x_v$ with the variables $y_{uv}$.
 
 ## 12.1 The edge formulation
 
@@ -82,7 +86,7 @@ title: "Formulations of the maximum clique problem"
 
     We consider the graph $G$ with $7$ vertices made of the cycle $1,2,\dots,7,1$ and the chord $\{1,3\}$ (the reference instance of the chapter «The maximum clique problem»), and its complement $\overline{G}$:
 
-    ![Figure 1](../img/clique-formulations/fig01.svg){ .fig loading=lazy  }
+    ![Figure 1](../../img/clique-formulations/fig01.svg){ .fig loading=lazy  }
 
     $G$ has $m=8$ edges, and $\overline{G}$ has the $\binom{7}{2}-8=13$ non-edges of $G$:
 
@@ -626,55 +630,138 @@ title: "Formulations of the maximum clique problem"
         \omega(C_5)=2 \;<\; z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})=\frac{5}{2} \;<\; \chi(C_5)=3 .
         $$
 
-## 12.6 Typical mistakes
+## 12.6 Stable sets on the complement graph
 
-!!! attenzione "Warning"
+The problem of this section is the Maximum Stable Set Problem (MSSP), defined in [Chapter 5 «The maximum clique problem»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/clique/).
 
-    - <strong>Writing the constraints on the edges of $G$.</strong> The edge formulation of the MCP has one constraint for each <em>non-edge</em> of $G$; on the edges of $G$ the same constraints describe the stable sets of $G$.
+- Given a simple graph $G=(V,E)$, with $V=\{1,2,\dots,n\}$ and $m$ edges, we introduce the following $n$ <strong>binary variables</strong>:
 
-    - <strong>Trusting the LP bound of the edge formulation.</strong> The point $x_v=\frac{1}{2}$ is always feasible, so $z(\mathrm{LP}_{\mathrm{MCP}})\ge n/2$ even when $\omega(G)=2$.
+    \begin{equation*}
+    \label{mcpF:var-mssp}
+    x_v=\begin{cases}1&\text{if vertex $v$ is selected in the stable set}\\[1.5ex]0&\text{otherwise}\end{cases}
+    \qquad\forall v\in V. \tag{12.13}
+    \end{equation*}
 
-    - <strong>Forgetting the bounds $x_v\le 1$ in the edge formulation.</strong> A vertex adjacent to all the others appears in no constraint, and $\mathrm{LP}\text{-}0_{\mathrm{MCP}}$ becomes unbounded. In the clique formulation the bounds are implied.
+!!! chiave ""
 
-    - <strong>Believing that clique inequalities close every gap.</strong> On $C_5$ they coincide with the non-edge constraints, and the odd cycle inequality is needed.
+    Using these variables, an Integer Linear Programming (ILP) model for the Maximum Stable Set Problem (MSSP) reads as follows:
 
-    - <strong>Using non-maximal cliques of $\overline{G}$.</strong> Their inequalities are valid but dominated: the maximal cliques give the strongest constraints of this family.
+    <a id="eq-mcpF-MSSP"></a>
 
-## 12.7 In summary
+    \begin{align*}
+    && \max \;\; \sum_{v\in V}x_v \label{mcpF:obj-mssp} \tag{12.14a}\\[1ex]
+    && \text{subject to} \quad x_u+x_v &\le 1, & \forall\{u,v\}\in E, \label{mcpF:edge-mssp} \tag{12.14b}\\[1ex]
+    && x_v &\in\{0,1\}, & \forall v\in V. \label{mcpF:bin-mssp} \tag{12.14c}
+    \end{align*}
 
-!!! chiave "In summary"
+    This ILP model is referred to as the $\mathrm{ILP}_{\mathrm{MSSP}}$ model, or <strong>edge formulation</strong> of the MSSP.
 
-    - The edge formulation $\mathrm{ILP}_{\mathrm{MCP}}$ has one binary variable per vertex and one constraint $x_u+x_v\le 1$ per edge of $\overline{G}$: it is the edge formulation of the MSSP on $\overline{G}$.
+- Description of the objective function and constraints of the $\mathrm{ILP}_{\mathrm{MSSP}}$ model:
 
-    - Its LP relaxation is weak: $x_v=\frac{1}{2}$ is feasible and $z(\mathrm{LP}_{\mathrm{MCP}})\ge n/2$.
+    - the linear objective function $\eqref{mcpF:obj-mssp}$ maximizes the cardinality of the selected stable set;
 
-    - The clique inequalities $\sum_{v\in Q}x_v\le 1$, for the maximal cliques $Q$ of $\overline{G}$, give a stronger formulation with $\omega(G)\le z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})\le z(\mathrm{LP}_{\mathrm{MCP}})$.
+    - constraints $\eqref{mcpF:edge-mssp}$ ensure that no two adjacent vertices are both selected ($m$ linear constraints, one for each edge of $G$);
 
-    - The dual of $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ is the LP relaxation of a coloring formulation, hence $\omega(G)\le z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})\le\chi(G)$.
+    - finally, constraints $\eqref{mcpF:bin-mssp}$ define the variables of the ILP model.
 
-    <strong>Dashboard</strong> (maximization). Bounds on $\omega(G)$ computed in this chapter:
+- The $\mathrm{ILP}_{\mathrm{MSSP}}$ model on $G$ is the $\mathrm{ILP}_{\mathrm{MCP}}$ model on $\overline{G}$: the non-edges of $\overline{G}$ are the edges of $G$. This is the identity $\alpha(G)=\omega(\overline{G})$ written as a model.
 
-    <div class="tabella" markdown="0"><table>
-    <tr>
-    <th>instance</th>
-    <th><span class="arithmatex">\(z(\mathrm{LP}_{\mathrm{MCP}})\)</span></th>
-    <th><span class="arithmatex">\(z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})\)</span></th>
-    <th><span class="arithmatex">\(\omega(G)\)</span></th>
-    </tr>
-    <tr>
-    <td><span style="color:#1971c2">[Example 12.1](#box-1-mcpF-ex1)</span> (cycle with a chord)</td>
-    <td><span class="arithmatex">\(\frac{7}{2}\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    <td><span class="arithmatex">\(3\)</span></td>
-    </tr>
-    <tr>
-    <td><span class="arithmatex">\(C_5\)</span></td>
-    <td><span class="arithmatex">\(\frac{5}{2}\)</span></td>
-    <td><span class="arithmatex">\(\frac{5}{2}\)</span></td>
-    <td><span class="arithmatex">\(2\)</span> (odd cycle inequality)</td>
-    </tr>
-    </table></div>
+<a id="box-14-mcpF-ex-mssp"></a>
+
+!!! esempio "Example 12.11: $\mathrm{ILP}_{\mathrm{MSSP}}$ model"
+
+    We consider the graph $G$ of <span style="color:#1971c2">[Example 12.1](#box-1-mcpF-ex1)</span>, the cycle $1,2,\dots,7,1$ with the chord $\{1,3\}$, and we look for a maximum stable set of $G$. The $\mathrm{ILP}_{\mathrm{MSSP}}$ model has $7$ binary variables and one constraint for each of the $8$ edges of $G$:
+
+    $$
+    \begin{array}{rrrrrrrrcl}
+    {\max} & {x_1} & {+\,x_2} & {+\,x_3} & {+\,x_4} & {+\,x_5} & {+\,x_6} & {+\,x_7} \\[1ex]
+    \text{subject to} & {x_1} & {+\,x_2} &  &  &  &  &  & {\le} & {1} \\
+    & {x_1} &  & {+\,x_3} &  &  &  &  & {\le} & {1} \\
+    & {x_1} &  &  &  &  &  & {+\,x_7} & {\le} & {1} \\
+    &  & {x_2} & {+\,x_3} &  &  &  &  & {\le} & {1} \\
+    &  &  & {x_3} & {+\,x_4} &  &  &  & {\le} & {1} \\
+    &  &  &  & {x_4} & {+\,x_5} &  &  & {\le} & {1} \\
+    &  &  &  &  & {x_5} & {+\,x_6} &  & {\le} & {1} \\
+    &  &  &  &  &  & {x_6} & {+\,x_7} & {\le} & {1} \\[1ex]
+    & {x_1}, & {x_2}, & {x_3}, & {x_4}, & {x_5}, & {x_6}, & {x_7} & {\in} & {\{0,1\}}
+    \end{array}
+    $$
+
+    An optimal solution $\tilde{\vet x}(\mathrm{ILP}_{\mathrm{MSSP}})$ is:
+
+    $$
+    \tilde x_1=\tilde x_4=\tilde x_6=1,~~\tilde x_2=\tilde x_3=\tilde x_5=\tilde x_7=0
+    $$
+
+    The optimal value $z(\mathrm{ILP}_{\mathrm{MSSP}})$ is $3=\alpha(G)$. The optimal solution is not unique: the maximum stable sets of $G$ are $\{1,4,6\}$, $\{2,4,6\}$, $\{2,4,7\}$, $\{2,5,7\}$ and $\{3,5,7\}$, the five triangles of $\overline{G}$.
+
+- A stable set and a clique of $G$ share at most one vertex, so for every clique $K$ of $G$ the <strong>clique inequality</strong> $\sum_{v\in K}x_v\le 1$ is valid, and it implies the constraints $\eqref{mcpF:edge-mssp}$ of the edges of $K$. As for the MCP, it is enough to write the inequalities of the family $\mathcal{K}$ of the <strong>maximal</strong> cliques of $G$.
+
+!!! chiave ""
+
+    Using the variables $\eqref{mcpF:var-mssp}$, a second ILP model for the Maximum Stable Set Problem (MSSP) reads as follows:
+
+    <a id="eq-mcpF-MSSP-CL"></a>
+
+    \begin{align*}
+    && \max \;\; \sum_{v\in V}x_v \label{mcpF:obj-mssp-cl} \tag{12.15a}\\[1ex]
+    && \text{subject to} \quad \sum_{v\in K}x_v &\le 1, & \forall K\in\mathcal{K}, \label{mcpF:cl-mssp} \tag{12.15b}\\[1ex]
+    && x_v &\in\{0,1\}, & \forall v\in V. \label{mcpF:bin-mssp-cl} \tag{12.15c}
+    \end{align*}
+
+    This ILP model is referred to as the $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$ model, or <strong>clique formulation</strong> of the MSSP.
+
+- Description of the objective function and constraints of the $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$ model:
+
+    - the linear objective function $\eqref{mcpF:obj-mssp-cl}$ maximizes the cardinality of the selected stable set;
+
+    - constraints $\eqref{mcpF:cl-mssp}$ ensure that at most one vertex of every maximal clique of $G$ is selected ($|\mathcal{K}|$ linear constraints);
+
+    - finally, constraints $\eqref{mcpF:bin-mssp-cl}$ define the variables of the ILP model.
+
+- The $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$ model on $G$ is the $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MCP}}$ model on $\overline{G}$, and its LP relaxation is at least as strong as that of the $\mathrm{ILP}_{\mathrm{MSSP}}$ model.
+
+<a id="box-15-mcpF-ex-mssp-cl"></a>
+
+!!! esempio "Example 12.12: $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$ model"
+
+    The maximal cliques of the graph $G$ of <span style="color:#1971c2">[Example 12.1](#box-1-mcpF-ex1)</span> are the triangle $\{1,2,3\}$ and the five edges $\{3,4\},\{4,5\},\{5,6\},\{6,7\},\{1,7\}$. The $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$ model replaces the three constraints of the triangle with one constraint, and has $6$ constraints:
+
+    $$
+    \begin{array}{rrrrrrrrcl}
+    {\max} & {x_1} & {+\,x_2} & {+\,x_3} & {+\,x_4} & {+\,x_5} & {+\,x_6} & {+\,x_7} \\[1ex]
+    \text{subject to} & {x_1} & {+\,x_2} & {+\,x_3} &  &  &  &  & {\le} & {1} \\
+    &  &  & {x_3} & {+\,x_4} &  &  &  & {\le} & {1} \\
+    &  &  &  & {x_4} & {+\,x_5} &  &  & {\le} & {1} \\
+    &  &  &  &  & {x_5} & {+\,x_6} &  & {\le} & {1} \\
+    &  &  &  &  &  & {x_6} & {+\,x_7} & {\le} & {1} \\
+    & {x_1} &  &  &  &  &  & {+\,x_7} & {\le} & {1} \\[1ex]
+    & {x_1}, & {x_2}, & {x_3}, & {x_4}, & {x_5}, & {x_6}, & {x_7} & {\in} & {\{0,1\}}
+    \end{array}
+    $$
+
+    The optimal solution $\tilde x_1=\tilde x_4=\tilde x_6=1$ of <span style="color:#1971c2">[Example 12.11](#box-14-mcpF-ex-mssp)</span> is optimal here too, with value $z(\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}})=3$. The LP relaxations differ (Gurobi): the edge formulation, with $0\le x_v\le 1$, has optimal value $\frac{7}{2}$ at $x_v=\frac{1}{2}$, while the clique formulation has optimal value $3$, attained by $x_2=x_5=x_7=1$.
+
+<div class="grid cards sottopagine" markdown>
+
+-   **Definition**
+
+    The edge formulation · A first Linear Programming relaxation · A second Linear Programming relaxation · Clique inequalities: a stronger formulation · The relation with vertex coloring · Stable sets on the complement graph
+
+    [:octicons-arrow-right-24: Open](#121-the-edge-formulation)
+
+-   **12.7 ILP models for the weighted variants**
+
+    The edge-weighted maximum clique problem · Typical mistakes · In summary
+
+    [:octicons-arrow-right-24: Open](ilp-models-for-the-weighted-variants.md)
+
+</div>
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Maximum clique](../exercises/clique-formulations.md)
+**Next:** [12.7 ILP models for the weighted variants](ilp-models-for-the-weighted-variants.md)
+
+---
+
+**Exercises on this chapter:** [:material-pencil: Maximum clique](../../exercises/clique-formulations.md)

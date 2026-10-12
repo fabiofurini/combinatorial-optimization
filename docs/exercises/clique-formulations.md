@@ -6,7 +6,7 @@ title: "Exercises · Formulations of the maximum clique problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 12** · each solution opens with a click · [:material-book-open-variant: Chapter 12: Maximum clique](../formulations/clique-formulations.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
+**Exercises · Chapter 12** · each solution opens with a click · [:material-book-open-variant: Chapter 12: Maximum clique](../formulations/clique-formulations/index.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
 
@@ -404,3 +404,214 @@ title: "Exercises · Formulations of the maximum clique problem"
     3. $\bar{\vet x}^{a}$ has value $3$, so $z(\mathrm{LP}_{\mathrm{MCP}})\ge 3$. In $\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}}$ the best feasible point among the five is $\bar{\vet x}^{e}$, of value $2$; $\bar{\vet x}^{d}$ has value $\frac{3}{2}$ and $\bar{\vet x}^{b}$ has value $2$.
 
     4. Gurobi returns $z(\mathrm{LP}_{\mathrm{MCP}})=3$ and $z(\mathrm{LP}^{\mathrm{CL}}_{\mathrm{MCP}})=2$. The second value is proved by summing the constraints of $\{1,3,5\}$ and $\{2,4,6\}$, which give $\sum_{v=1}^{6}x_v\le 2$. $C_6$ has no triangle, so $\omega(C_6)=2$: the clique formulation closes the gap, the edge formulation leaves $3$ against $2$.
+
+<a id="esercizio-12-6"></a>
+
+!!! esercizio "Exercise 12.6: ILP models of the Maximum Stable Set Problem (MSSP)"
+
+    We consider the graph $G=(V,E)$ with $V=\{1,\dots,6\}$ and the $7$ edges
+
+    $$
+    E=\{\{1,2\},~\{1,3\},~\{1,6\},~\{2,3\},~\{3,4\},~\{4,5\},~\{5,6\}\}.
+    $$
+
+    ![Figure 11](../img/ex-clique-formulations/fig11.svg){ .fig loading=lazy  }
+
+    We look for a maximum stable set of $G$.
+
+    **Questions**
+
+    1. How many variables and constraints does the edge formulation $\mathrm{ILP}_{\mathrm{MSSP}}$ of $G$ have? Write it.
+
+    2. Solve the model with Gurobi: give $z(\mathrm{ILP}_{\mathrm{MSSP}})$ and an optimal solution. Is it unique?
+
+    3. Write the maximal cliques of $G$ and the clique formulation $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$.
+
+    4. Compare the optimal values of the LP relaxations of the two formulations (Gurobi).
+
+??? soluzione "Solution"
+
+    1. There are $n=6$ binary variables and one constraint $x_u+x_v\le 1$ per edge of $G$: $7$ linear constraints. The $\mathrm{ILP}_{\mathrm{MSSP}}$ model is:
+
+        $$
+        \begin{array}{rrrrrrrcl}
+        {\max} & {x_1} & {+\,x_2} & {+\,x_3} & {+\,x_4} & {+\,x_5} & {+\,x_6} \\[1ex]
+        \text{subject to} & {x_1} & {+\,x_2} &  &  &  &  & {\le} & {1} \\
+        & {x_1} &  & {+\,x_3} &  &  &  & {\le} & {1} \\
+        & {x_1} &  &  &  &  & {+\,x_6} & {\le} & {1} \\
+        &  & {x_2} & {+\,x_3} &  &  &  & {\le} & {1} \\
+        &  &  & {x_3} & {+\,x_4} &  &  & {\le} & {1} \\
+        &  &  &  & {x_4} & {+\,x_5} &  & {\le} & {1} \\
+        &  &  &  &  & {x_5} & {+\,x_6} & {\le} & {1} \\[1ex]
+        & {x_1}, & {x_2}, & {x_3}, & {x_4}, & {x_5}, & {x_6} & {\in} & {\{0,1\}}
+        \end{array}
+        $$
+
+    2. Gurobi returns $z(\mathrm{ILP}_{\mathrm{MSSP}})=3$ with the stable set $\{2,4,6\}$. The optimal solution is unique.
+
+        ![Figure 12](../img/ex-clique-formulations/fig12.svg){ .fig loading=lazy  }
+
+    3. The maximal cliques of $G$ are the triangle $\{1,2,3\}$ and the edges $\{1,6\}$, $\{3,4\}$, $\{4,5\}$, $\{5,6\}$: $5$ cliques instead of $7$ edges, since the three edges of the triangle are replaced by $x_1+x_2+x_3\le 1$. The $\mathrm{ILP}^{\mathrm{CL}}_{\mathrm{MSSP}}$ model is:
+
+        $$
+        \begin{array}{rrrrrrrcl}
+        {\max} & {x_1} & {+\,x_2} & {+\,x_3} & {+\,x_4} & {+\,x_5} & {+\,x_6} \\[1ex]
+        \text{subject to} & {x_1} & {+\,x_2} & {+\,x_3} &  &  &  & {\le} & {1} \\
+        & {x_1} &  &  &  &  & {+\,x_6} & {\le} & {1} \\
+        &  &  & {x_3} & {+\,x_4} &  &  & {\le} & {1} \\
+        &  &  &  & {x_4} & {+\,x_5} &  & {\le} & {1} \\
+        &  &  &  &  & {x_5} & {+\,x_6} & {\le} & {1} \\[1ex]
+        & {x_1}, & {x_2}, & {x_3}, & {x_4}, & {x_5}, & {x_6} & {\in} & {\{0,1\}}
+        \end{array}
+        $$
+
+        Its optimal value is again $3$.
+
+    4. The LP relaxation of the edge formulation, with $0\le x_v\le 1$, has optimal value $3$; the LP relaxation of the clique formulation has optimal value $3$. On this graph both bounds are equal to $\alpha(G)=3$: the point $x_v=\frac{1}{2}$, of value $3$, is feasible for the edge formulation but violates $x_1+x_2+x_3\le 1$, and the bound does not change because the integer optimum also has value $3$.
+
+<a id="esercizio-12-7"></a>
+
+!!! esercizio "Exercise 12.7: ILP model of the vertex-weighted maximum clique problem"
+
+    We consider the graph $G=(V,E)$ with $V=\{1,\dots,6\}$ and the $7$ edges
+
+    $$
+    E=\{\{1,2\},~\{1,3\},~\{2,3\},~\{2,4\},~\{3,5\},~\{4,5\},~\{5,6\}\}.
+    $$
+
+    ![Figure 13](../img/ex-clique-formulations/fig13.svg){ .fig loading=lazy  }
+
+    and the vertex weights
+
+    $$
+    \begin{array}{l|cccccc}
+    \hline  & {v=1} & {v=2} & {v=3} & {v=4} & {v=5} & {v=6} \\
+    \hline {w_v} & {2} & {3} & {4} & {6} & {5} & {7} \\
+    \hline
+    \end{array}
+    $$
+
+    **Questions**
+
+    1. Write the $\mathrm{ILP}^{\mathrm{VW}}_{\mathrm{MCP}}$ model of the vertex-weighted maximum clique problem on this instance.
+
+    2. Solve the model with Gurobi: give the optimal value and the optimal clique. Is it unique?
+
+    3. Compare the optimal clique with the maximum clique of $G$, and explain the difference.
+
+??? soluzione "Solution"
+
+    1. $G$ has $\binom{6}{2}-7=8$ non-edges, one constraint each:
+
+        $$
+        \begin{array}{rrrrrrrcl}
+        {\max} & {2\,x_1} & {+\,3\,x_2} & {+\,4\,x_3} & {+\,6\,x_4} & {+\,5\,x_5} & {+\,7\,x_6} \\[1ex]
+        \text{subject to} & {x_1} &  &  & {+\,x_4} &  &  & {\le} & {1} \\
+        & {x_1} &  &  &  & {+\,x_5} &  & {\le} & {1} \\
+        & {x_1} &  &  &  &  & {+\,x_6} & {\le} & {1} \\
+        &  & {x_2} &  &  & {+\,x_5} &  & {\le} & {1} \\
+        &  & {x_2} &  &  &  & {+\,x_6} & {\le} & {1} \\
+        &  &  & {x_3} & {+\,x_4} &  &  & {\le} & {1} \\
+        &  &  & {x_3} &  &  & {+\,x_6} & {\le} & {1} \\
+        &  &  &  & {x_4} &  & {+\,x_6} & {\le} & {1} \\[1ex]
+        & {x_1}, & {x_2}, & {x_3}, & {x_4}, & {x_5}, & {x_6} & {\in} & {\{0,1\}}
+        \end{array}
+        $$
+
+    2. Gurobi returns the optimal value $12$ with $\tilde x_5=\tilde x_6=1$: the clique $\{5,6\}$, of weight $5+7=12$. The enumeration of the cliques gives the second best value $11$ (clique $\{4,5\}$): the optimal solution is unique.
+
+        ![Figure 14](../img/ex-clique-formulations/fig14.svg){ .fig loading=lazy  }
+
+    3. The maximum clique of $G$ is the triangle $\{1,2,3\}$, with $3$ vertices but weight only $2+3+4=9$. The two models have the same constraints, hence the same feasible solutions (the cliques of $G$); only the objective function changes, and the light vertices of the triangle lose against the heavy edge $\{5,6\}$.
+
+<a id="esercizio-12-8"></a>
+
+!!! esercizio "Exercise 12.8: ILP model of the edge-weighted maximum clique problem"
+
+    We consider the graph $G=(V,E)$ with $V=\{1,\dots,5\}$ and the $7$ edges
+
+    $$
+    E=\{\{1,2\},~\{1,3\},~\{2,3\},~\{2,4\},~\{3,4\},~\{3,5\},~\{4,5\}\}.
+    $$
+
+    ![Figure 15](../img/ex-clique-formulations/fig15.svg){ .fig loading=lazy  }
+
+    and the edge weights
+
+    <div class="tabella" markdown="0"><table>
+    <tr>
+    <th>edge</th>
+    <th><span class="arithmatex">\(\{1,2\}\)</span></th>
+    <th><span class="arithmatex">\(\{1,3\}\)</span></th>
+    <th><span class="arithmatex">\(\{2,3\}\)</span></th>
+    <th><span class="arithmatex">\(\{2,4\}\)</span></th>
+    <th><span class="arithmatex">\(\{3,4\}\)</span></th>
+    <th><span class="arithmatex">\(\{3,5\}\)</span></th>
+    <th><span class="arithmatex">\(\{4,5\}\)</span></th>
+    </tr>
+    <tr>
+    <td><span class="arithmatex">\(r_{uv}\)</span></td>
+    <td><span class="arithmatex">\(2\)</span></td>
+    <td><span class="arithmatex">\(3\)</span></td>
+    <td><span class="arithmatex">\(1\)</span></td>
+    <td><span class="arithmatex">\(4\)</span></td>
+    <td><span class="arithmatex">\(2\)</span></td>
+    <td><span class="arithmatex">\(5\)</span></td>
+    <td><span class="arithmatex">\(6\)</span></td>
+    </tr>
+    </table></div>
+
+    **Questions**
+
+    1. Count the variables and the constraints of the $\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}}$ model of the edge-weighted maximum clique problem on this instance, and write it.
+
+    2. Solve the model with Gurobi: give the optimal value, the optimal clique and the variables $y_{uv}$ equal to $1$.
+
+    3. Verify the result by listing the maximal cliques of $G$ with their total edge weight.
+
+    4. Explain why the constraints $y_{uv}\ge x_u+x_v-1$ are not needed in the model.
+
+??? soluzione "Solution"
+
+    1. There are $n=5$ variables $x_v$ and $m=7$ variables $y_{uv}$, so $12$ binary variables. There are $2m=14$ constraints $y_{uv}\le x_u$, $y_{uv}\le x_v$ and one constraint per non-edge, $3$ of them: $17$ linear constraints. The model is:
+
+        $$
+        \begin{array}{rlcl}
+        {\max} & {2\,y_{12}+3\,y_{13}+y_{23}+4\,y_{24}+2\,y_{34}+5\,y_{35}+6\,y_{45}} &  &  \\[1ex]
+        \text{subject to} & {y_{12}-x_1} & {\le} & {0} \\
+        & {y_{12}-x_2} & {\le} & {0} \\
+        & {y_{13}-x_1} & {\le} & {0} \\
+        & {y_{13}-x_3} & {\le} & {0} \\
+        & {y_{23}-x_2} & {\le} & {0} \\
+        & {y_{23}-x_3} & {\le} & {0} \\
+        & {y_{24}-x_2} & {\le} & {0} \\
+        & {y_{24}-x_4} & {\le} & {0} \\
+        & {y_{34}-x_3} & {\le} & {0} \\
+        & {y_{34}-x_4} & {\le} & {0} \\
+        & {y_{35}-x_3} & {\le} & {0} \\
+        & {y_{35}-x_5} & {\le} & {0} \\
+        & {y_{45}-x_4} & {\le} & {0} \\
+        & {y_{45}-x_5} & {\le} & {0} \\
+        & {x_1+x_4} & {\le} & {1} \\
+        & {x_1+x_5} & {\le} & {1} \\
+        & {x_2+x_5} & {\le} & {1} \\[1ex]
+        & {x_1,~x_2,~x_3,~x_4,~x_5} & {\in} & {\{0,1\}} \\
+        & {y_{12},~y_{13},~y_{23},~y_{24},~y_{34},~y_{35},~y_{45}} & {\in} & {\{0,1\}}
+        \end{array}
+        $$
+
+    2. Gurobi returns the optimal value $13$ with $\tilde x_3=\tilde x_4=\tilde x_5=1$ and $\tilde y_{34}=\tilde y_{35}=\tilde y_{45}=1$, all the other variables equal to $0$: the clique $\{3,4,5\}$, of weight $2+5+6=13$.
+
+        ![Figure 16](../img/ex-clique-formulations/fig16.svg){ .fig loading=lazy  }
+
+    3. The maximal cliques of $G$ and their weights are:
+
+        - $\{1,2,3\}$: $2+3+1=6$;
+
+        - $\{2,3,4\}$: $1+4+2=7$;
+
+        - $\{3,4,5\}$: $2+5+6=13$;
+
+        Every clique is contained in one of them and the weights are positive, so the optimal value is $13$, attained only by $\{3,4,5\}$.
+
+    4. If both endpoints of $\{u,v\}$ are selected, the constraints allow $y_{uv}=1$, and since $r_{uv}>0$ the objective function prefers $y_{uv}=1$ to $y_{uv}=0$: every optimal solution has $y_{uv}=\min\{x_u,x_v\}$. The constraint $y_{uv}\ge x_u+x_v-1$ would be needed only with negative weights.

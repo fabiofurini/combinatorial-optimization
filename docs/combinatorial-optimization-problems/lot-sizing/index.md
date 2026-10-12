@@ -98,6 +98,77 @@ title: "Capacitated lot sizing"
 
 - We denote by $z(I)$ the cost of an optimal plan $\tilde{\vet{x}}$ of the instance $I$.
 
+<a id="box-2-ex-cls5"></a>
+
+!!! esempio "Example 8.1: CLS instance"
+
+    We consider $m=5$ periods, with the following data, all integer:
+
+    <div class="tabella" markdown="0"><table>
+    <tr>
+    <th>period <span class="arithmatex">\(t\)</span></th>
+    <th><span class="arithmatex">\(1\)</span></th>
+    <th><span class="arithmatex">\(2\)</span></th>
+    <th><span class="arithmatex">\(3\)</span></th>
+    <th><span class="arithmatex">\(4\)</span></th>
+    <th><span class="arithmatex">\(5\)</span></th>
+    </tr>
+    <tr>
+    <td>demand <span class="arithmatex">\(d_t\)</span></td>
+    <td><span class="arithmatex">\(2\)</span></td>
+    <td><span class="arithmatex">\(1\)</span></td>
+    <td><span class="arithmatex">\(3\)</span></td>
+    <td><span class="arithmatex">\(4\)</span></td>
+    <td><span class="arithmatex">\(1\)</span></td>
+    </tr>
+    <tr>
+    <td>capacity <span class="arithmatex">\(cap_t\)</span></td>
+    <td><span class="arithmatex">\(4\)</span></td>
+    <td><span class="arithmatex">\(4\)</span></td>
+    <td><span class="arithmatex">\(4\)</span></td>
+    <td><span class="arithmatex">\(4\)</span></td>
+    <td><span class="arithmatex">\(4\)</span></td>
+    </tr>
+    <tr>
+    <td>setup cost <span class="arithmatex">\(sc_t\)</span></td>
+    <td><span class="arithmatex">\(50\)</span></td>
+    <td><span class="arithmatex">\(50\)</span></td>
+    <td><span class="arithmatex">\(50\)</span></td>
+    <td><span class="arithmatex">\(50\)</span></td>
+    <td><span class="arithmatex">\(50\)</span></td>
+    </tr>
+    <tr>
+    <td>production cost <span class="arithmatex">\(vc_t\)</span></td>
+    <td><span class="arithmatex">\(0\)</span></td>
+    <td><span class="arithmatex">\(0\)</span></td>
+    <td><span class="arithmatex">\(0\)</span></td>
+    <td><span class="arithmatex">\(0\)</span></td>
+    <td><span class="arithmatex">\(0\)</span></td>
+    </tr>
+    <tr>
+    <td>holding cost <span class="arithmatex">\(hc_t\)</span></td>
+    <td><span class="arithmatex">\(10\)</span></td>
+    <td><span class="arithmatex">\(10\)</span></td>
+    <td><span class="arithmatex">\(10\)</span></td>
+    <td><span class="arithmatex">\(10\)</span></td>
+    <td><span class="arithmatex">\(10\)</span></td>
+    </tr>
+    </table></div>
+
+    This is the lot sizing instance of the course on MIP heuristics, with the demands counted in units of ten items. The total demand is $2+1+3+4+1=11$. We call this CLS instance <span style="color:#1971c2">[Example 8.1](#box-2-ex-cls5)</span>: it is the reference instance of the chapter.
+
+    The plan $\vet{x}=(3,0,4,4,0)$ is feasible: the stocks are $s=(1,0,1,1,0)$, all non-negative, with $s_5=0$, and every quantity is at most $4$. There are $3$ setups, in the periods $1$, $3$ and $4$:
+
+    $$
+    c(\vet{x}) = 3\cdot 50 + 10\cdot(1+0+1+1+0) = 150+30=180.
+    $$
+
+    The plan is drawn below, period by period from left to right: the production $x_t$ enters a period from above, through a setup (solid) or not at all (dashed); the stock $s_t$ passes to the next period; the demand $d_t$ leaves the period from below.
+
+    ![Figure 1](../../img/lot-sizing/fig01.svg){ .fig loading=lazy  }
+
+    Every period has capacity $cap_t=4$, and the three setups cost $50$ each.
+
 ### 8.1.1 Assumptions
 
 - We make the following assumptions:
@@ -122,7 +193,7 @@ title: "Capacitated lot sizing"
 
 -   **8.2 Variants**
 
-    Counting the solutions · A first plan by hand · A combinatorial lower bound · Remarks · Typical mistakes
+    A first plan by hand · A combinatorial lower bound · Remarks · Typical mistakes · In summary
 
     [:octicons-arrow-right-24: Open](variants.md)
 

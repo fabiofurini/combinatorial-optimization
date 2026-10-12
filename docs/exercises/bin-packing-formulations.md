@@ -6,7 +6,7 @@ title: "Exercises · Formulations of the bin packing problem"
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 10** · each solution opens with a click · [:material-book-open-variant: Chapter 10: Bin packing](../formulations/bin-packing-formulations.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
+**Exercises · Chapter 10** · each solution opens with a click · [:material-book-open-variant: Chapter 10: Bin packing](../formulations/bin-packing-formulations/index.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
 
@@ -293,3 +293,59 @@ title: "Exercises · Formulations of the bin packing problem"
         The condition $\frac{\vartheta+1}{2\vartheta}\le\frac{11}{20}$ is $20\vartheta+20\le 22\vartheta$, that is $\vartheta\ge 10$. The smallest value is $\vartheta=10$, with $c=20$ and items of weight $11$.
 
     4. Gurobi gives $z(\mathrm{LP}_{\mathrm{BPP}})=\frac{6\cdot 4}{6}=4$ and $z(\mathrm{ILP}_{\mathrm{BPP}})=6$, since again no two items share a bin. The ratio is $4/6=\frac{2}{3}$. In general it is $\frac{n/2+1}{n}=\frac{1}{2}+\frac{1}{n}$, which tends to $\frac{1}{2}$.
+
+<a id="esercizio-10-6"></a>
+
+!!! esercizio "Exercise 10.6: ILP model of the Cutting Stock Problem (CSP)"
+
+    We consider a Cutting Stock Problem with bins of capacity $c=10$ and a set $\mathscr{I}=\{1,2,3\}$ of $3$ items, with the following weights $w_j$ and required copies $d_j$:
+
+    $$
+    \begin{array}{l|ccc}
+    \hline  & {j=1} & {j=2} & {j=3} \\[1ex]
+    \hline {w_j} & {6} & {5} & {3} \\[1ex]
+    {d_j} & {3} & {1} & {2} \\[1ex]
+    \hline
+    \end{array}
+    $$
+
+    We use the $\mathrm{ILP}_{\mathrm{CSP}}$ model of the chapter, with integer variables $x_{jb}$ for the number of copies of item $j$ packed in bin $b$ and binary variables $y_b$ for the used bins.
+
+    **Questions**
+
+    1. Find a feasible solution with $4$ bins, and count the variables and the constraints (besides the domains) of the $\mathrm{ILP}_{\mathrm{CSP}}$ model with $m=4$.
+
+    2. Write the $\mathrm{ILP}_{\mathrm{CSP}}$ model with $m=4$ for this instance.
+
+    3. Solve the model with Gurobi: give the optimal value and the content of the used bins.
+
+    4. Compute the weight bound $\lceil \sum_j d_j w_j / c \rceil$ and the optimal value of the LP relaxation (Gurobi), and explain the gap with the optimal value.
+
+    5. How many binary variables would the $\mathrm{ILP}_{\mathrm{BPP}}$ model need on the extended set of items, with the same $m$?
+
+??? soluzione "Solution"
+
+    1. Each copy of item $1$ in its own bin, with a copy of item $3$ in two of them, and item $2$ alone: the bins $\{1,3\}$, $\{1,3\}$, $\{1\}$, $\{2\}$ have weights $9$, $9$, $6$, $5$, all at most $10$. Hence $m=4$ is a valid upper bound. The model has $mn=4\cdot3=12$ integer variables $x_{jb}$ and $m=4$ binary variables $y_b$, so $16$ variables, and $n+m=3+4=7$ linear constraints.
+
+    2. The $\mathrm{ILP}_{\mathrm{CSP}}$ model is:
+
+        $$
+        \begin{array}{rlcl}
+        {\min} & {y_1+y_2+y_3+y_4} &  &  \\[1ex]
+        \text{subject to} & {x_{11}+x_{12}+x_{13}+x_{14}} & {=} & {3} \\
+        & {x_{21}+x_{22}+x_{23}+x_{24}} & {=} & {1} \\
+        & {x_{31}+x_{32}+x_{33}+x_{34}} & {=} & {2} \\
+        & {-6\,x_{11}-5\,x_{21}-3\,x_{31}+10\,y_1} & {\ge} & {0} \\
+        & {-6\,x_{12}-5\,x_{22}-3\,x_{32}+10\,y_2} & {\ge} & {0} \\
+        & {-6\,x_{13}-5\,x_{23}-3\,x_{33}+10\,y_3} & {\ge} & {0} \\
+        & {-6\,x_{14}-5\,x_{24}-3\,x_{34}+10\,y_4} & {\ge} & {0} \\[1ex]
+        & {x_{11},~x_{12},~x_{13},~\dots,~x_{34}} & {\in} & {\Z_{\ge 0}} \\
+        & {y_1,~y_2,~y_3,~y_4} & {\in} & {\{0,1\}}
+        \end{array}
+        $$
+
+    3. Gurobi returns $z(\mathrm{ILP}_{\mathrm{CSP}})=4$. The used bins of the solution found contain the copies $\{2\}$ (weight $5$); $\{1\}$ (weight $6$); $\{1,3\}$ (weight $9$); $\{1,3\}$ (weight $9$).
+
+    4. The total weight is $\sum_j d_j w_j=3\cdot6+1\cdot5+2\cdot3=29$, so the weight bound is $\lceil \frac{29}{10} \rceil=3$, and Gurobi gives the optimal value $\frac{29}{10}$ for the LP relaxation, with $x_{jb}\ge 0$ and $0\le y_b\le 1$. Both are smaller than the optimal value $4$: two copies of item $1$ never share a bin ($6+6>10$), and item $2$ does not fit with a copy of item $1$ ($6+5>10$), so the three copies of item $1$ and item $2$ need four different bins.
+
+    5. The extended set of items has $\sum_j d_j=6$ copies, so the $\mathrm{ILP}_{\mathrm{BPP}}$ model would have $4\cdot6=24$ binary variables $x_{jb}$ and $4$ variables $y_b$, against the $12$ integer variables of the $\mathrm{ILP}_{\mathrm{CSP}}$ model; it would also have many equivalent solutions, obtained by exchanging copies of the same item.

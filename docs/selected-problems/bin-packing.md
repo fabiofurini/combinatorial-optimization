@@ -42,11 +42,11 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Formulations { #sez-sec-cat-bpp-formulations }
 
-- The model $\ILP_{\BPP}$ has $mn$ assignment variables $x_{jb}$ and $m$ activation variables $y_b$ ([Ch. 10](../formulations/bin-packing-formulations.md#101-an-ilp-model-for-the-bin-packing-problem)).
+- The model $\ILP_{\BPP}$ has $mn$ assignment variables $x_{jb}$ and $m$ activation variables $y_b$ ([Ch. 10](../formulations/bin-packing-formulations/index.md#101-an-ilp-model-for-the-bin-packing-problem)).
 
-- Both LP relaxations have value $\sum_j w_j/c$: rounded up, the weight bound again ([Ch. 10](../formulations/bin-packing-formulations.md#box-10-cor_lp_bpp_value)).
+- Both LP relaxations have value $\sum_j w_j/c$: rounded up, the weight bound again ([Ch. 10](../formulations/bin-packing-formulations/index.md#box-10-cor_lp_bpp_value)).
 
-- The ratio of the LP bound to the optimum is at least $\frac12$, and $\frac12$ is approached ([Ch. 10](../formulations/bin-packing-formulations.md#box-11-prop_lp_bpp_ratio_half)).
+- The ratio of the LP bound to the optimum is at least $\frac12$, and $\frac12$ is approached ([Ch. 10](../formulations/bin-packing-formulations/index.md#box-11-prop_lp_bpp_ratio_half)).
 
 ## Heuristics { #sez-sec-cat-bpp-heuristics }
 

@@ -345,7 +345,7 @@ The problem of this chapter is the [scheduling problem on identical parallel mac
 
     - <strong>Computing the ratio with the lower bound.</strong> The bound $\eqref{eq:pcmaxlb}$ can be smaller than $z(I)$: the ratio $\mathscr{A}(I)/\LB$ is only an upper bound on the performance ratio $\mathscr{A}(I)/z(I)$, and the two coincide only when the bound is tight.
 
-    - <strong>Breaking ties with another rule.</strong> $LIST$ assigns each job to a least loaded machine of smallest index; another tie rule can give a different schedule, and the solutions of the exercises follow the rule of Algorithm (?).
+    - <strong>Breaking ties with another rule.</strong> $LIST$ assigns each job to a least loaded machine of smallest index; another tie rule can give a different schedule, and the solutions of the exercises follow the rule of the List Scheduling algorithm.
 
 ## 36.7 In summary
 

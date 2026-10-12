@@ -10,7 +10,7 @@ title: "A glimpse of computational complexity"
 
 </div>
 
-## 1.5 A glimpse of computational complexity { #sez-sec-complexity }
+## 1.6 A glimpse of computational complexity { #sez-sec-complexity }
 
 - Brute force takes exponential time. Is there an algorithm that solves a combinatorial optimization problem in polynomial time? Computational complexity classifies problems according to this question; here we give only the definitions needed in the course.
 
@@ -32,7 +32,7 @@ title: "A glimpse of computational complexity"
 
 - It is not known whether $P = NP$. No polynomial algorithm is known for any NP-complete problem, and it is widely believed that none exists: for an NP-hard problem we do not expect a polynomial exact algorithm.
 
-### 1.5.1 Pseudo-polynomial algorithms and strong NP-hardness
+### 1.6.1 Pseudo-polynomial algorithms and strong NP-hardness
 
 - Some NP-hard problems can be solved in time polynomial in $n$ <strong>and in the value</strong> of the numbers of the instance. For example, an algorithm that takes $O(n\,M)$ time, where $M$ is the largest number of the instance, is not polynomial: $M$ is exponential in its number of bits $\log_2 M$.
 
@@ -52,7 +52,7 @@ title: "A glimpse of computational complexity"
 
 - The problems of the next chapters are all NP-hard: the knapsack problem is weakly NP-hard, while bin packing, vertex coloring, maximum clique and the travelling salesman problem are strongly NP-hard. Each chapter discusses the complexity of its problem.
 
-## 1.6 Typical mistakes
+## 1.7 Typical mistakes
 
 !!! attenzione "Warning"
 
@@ -66,7 +66,7 @@ title: "A glimpse of computational complexity"
 
     - <strong>Reading NP-hard as unsolvable.</strong> NP-hardness is a statement on the worst case: many instances of practical size are solved, and the rest of the course shows how.
 
-## 1.7 In summary
+## 1.8 In summary
 
 ---
 

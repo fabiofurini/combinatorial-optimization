@@ -9,14 +9,14 @@ hide:
 
 ![Under construction: the website and the course material are still being written](img/under-construction.svg){ width="560" }
 
-**Website under construction.** The material is still being written: slides, notebooks and interactive apps will follow later.
+**Website under construction.** The material is still being written: slides and interactive apps will follow later.
 
 # Combinatorial Optimization
 
 Teaching material conceived and developed by **[Fabio Furini](https://fabiofurini.github.io/)**, associate
 professor at [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
 
-**The course lecture notes, online**: knapsack, bin packing, vertex coloring, maximum clique, TSP, parallel machine scheduling and lot sizing, solved in every way: formulations and their properties, dynamic programming, heuristic and approximation algorithms, problem-specific branch-and-bound; with definitions, results with proofs, examples worked out step by step and exercises with solutions.
+**The course lecture notes, online**: knapsack, bin packing, vertex coloring, maximum clique, TSP, parallel machine scheduling and lot sizing, solved in every way: formulations and their properties, dynamic programming, heuristic and approximation algorithms, ad hoc algorithms; with definitions, results with proofs, examples worked out step by step and exercises with solutions.
 
 For the students of the Master's degree in Management Engineering at Sapienza, and for anyone who wants to learn how to solve combinatorial optimization problems.
 
@@ -59,7 +59,7 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 
     ---
 
-    16\. Principles · 17\. Knapsack (KP) · 18\. Unbounded knapsack (UKP) · 19\. Bounded knapsack (BKP) · 20\. Subset sum (SSP) · 21\. Multiple-choice knapsack (MCKP) · 22\. Multidimensional knapsack (MDKP) · 23\. Knapsack with setups (KPS) · 24\. Multiple knapsack (MKP) · 25\. Rod cutting · 26\. Coin change · 27\. Lot sizing
+    16\. Principles · 17\. Knapsack (KP) · 18\. Unbounded knapsack (UKP) · 19\. Bounded knapsack (BKP) · 20\. Subset sum (SSP) · 21\. Multiple-choice knapsack (MCKP) · 22\. Multidimensional knapsack (MDKP) · 23\. Knapsack with setups (KPS) · 24\. Multiple knapsack (MKP) · 25\. Lot sizing · 26\. Coin change · 27\. Rod cutting
 
     [:octicons-arrow-right-24: The chapters](dynamic-programming/index.md)
 
@@ -79,11 +79,11 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 
     [:octicons-arrow-right-24: The chapters](approximation-algorithms/index.md)
 
--   :material-tools: **Problem-specific branch-and-bound**
+-   :material-tools: **Ad hoc algorithms**
 
     ---
 
-    38\. Knapsack
+    38\. Knapsack · 39\. Vertex coloring (DSATUR)
 
     [:octicons-arrow-right-24: The chapters](specialized-algorithms/index.md)
 
@@ -94,6 +94,14 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
     All the problems defined in the course, by family: definition and assumptions.
 
     [:octicons-arrow-right-24: The catalogue](catalogue/index.md) · [:material-file-pdf-box: PDF](pdf/combinatorial-problem-catalogue.pdf)
+
+-   :simple-googlecolab: **Notebooks in Python and C++**
+
+    ---
+
+    The code of the algorithms of the chapters, to run in Google Colab on the examples and the exercises.
+
+    [:octicons-arrow-right-24: The notebooks](notebooks.md)
 
 </div>
 

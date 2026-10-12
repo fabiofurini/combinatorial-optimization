@@ -23,7 +23,9 @@ title: "Metric and asymmetric TSP"
     \qquad \text{for all distinct } i,j,k \in \mathscr{V}.
     $$
 
-- The instance of <span style="color:#1971c2">[Example 6.1](index.md#box-2-ex-tsp5)</span> is metric: all the $5\cdot4\cdot3=60$ triangle inequalities hold, some of them with equality, e.g., $d_{15}=9=d_{12}+d_{25}=5+4$.
+- The instance of <span style="color:#1971c2">[Example 6.1](index.md#box-2-ex-tsp5)</span> is metric: all the $5\cdot4\cdot3=60$ triangle inequalities hold, some of them with equality, e.g., $d_{15}=9=d_{12}+d_{25}=5+4$. In the drawing, the direct edge $\{1,5\}$ (dashed) is as long as the path from $1$ to $5$ through city $2$.
+
+![Figure 2](../../img/tsp/fig02.svg){ .fig loading=lazy  }
 
 - Instances obtained from points in the plane, with $d_{ij}$ equal to the Euclidean distance between the points, are metric (when the distances are not rounded).
 

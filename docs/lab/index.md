@@ -80,7 +80,7 @@ which you can also change. Pick an app: it opens full page. Everything runs in t
 
 </div>
 
-## Problem-specific branch-and-bound
+## Ad hoc algorithms
 
 <div class="grid cards" markdown>
 

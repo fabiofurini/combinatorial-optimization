@@ -29,37 +29,37 @@ title: "How to escape from a local optimum · Simulated annealing"
 <tr>
 <td>accept worse moves <em>at random</em></td>
 <td>a worse neighbour is accepted with a probability that decreases with the worsening and with time</td>
-<td>simulated annealing (Section [31.4](#sez-sec-sa))</td>
+<td>simulated annealing (Section <a href="#sez-sec-sa">31.4</a>)</td>
 </tr>
 <tr>
 <td>accept worse moves <em>deterministically, with memory</em></td>
 <td>move to the best neighbour even if it is worse, and forbid going back to the solutions just visited</td>
-<td>tabu search (Section [31.5](tabu-search.md#sez-sec-ts))</td>
+<td>tabu search (Section <a href="../tabu-search/#sez-sec-ts">31.5</a>)</td>
 </tr>
 <tr>
 <td><em>perturb</em> the local optimum and restart</td>
 <td>apply a random modification that the local search cannot undo, and descend again</td>
-<td>iterated local search (Section [31.6](iterated-local-search.md#sez-sec-ils))</td>
+<td>iterated local search (Section <a href="../iterated-local-search/#sez-sec-ils">31.6</a>)</td>
 </tr>
 <tr>
 <td><em>change the neighbourhood</em></td>
 <td>when the search is stuck, use a larger neighbourhood, of which the local optimum is no longer a local optimum</td>
-<td>variable neighbourhood search (Section [31.7](variable-neighbourhood-search.md#sez-sec-vns))</td>
+<td>variable neighbourhood search (Section <a href="../variable-neighbourhood-search/#sez-sec-vns">31.7</a>)</td>
 </tr>
 <tr>
 <td><em>restart</em> from a randomized construction</td>
 <td>build a different good solution at every restart, and improve it</td>
-<td>GRASP (Section [31.8](grasp.md#sez-sec-grasp))</td>
+<td>GRASP (Section <a href="../grasp/#sez-sec-grasp">31.8</a>)</td>
 </tr>
 <tr>
 <td><em>destroy and repair</em></td>
 <td>remove a large part of the solution and rebuild it with a heuristic or an exact algorithm</td>
-<td>large neighbourhood search (Section [31.9](large-neighbourhood-search.md#sez-sec-lns))</td>
+<td>large neighbourhood search (Section <a href="../large-neighbourhood-search/#sez-sec-lns">31.9</a>)</td>
 </tr>
 <tr>
 <td>work with a <em>population</em></td>
 <td>combine the parts of several good solutions into new ones</td>
-<td>genetic and memetic algorithms (Section [31.10](population-based-methods-genetic-and-memetic-algorithms.md#sez-sec-ga))</td>
+<td>genetic and memetic algorithms (Section <a href="../population-based-methods-genetic-and-memetic-algorithms/#sez-sec-ga">31.10</a>)</td>
 </tr>
 </table></div>
 
@@ -83,6 +83,8 @@ title: "How to escape from a local optimum · Simulated annealing"
     per temperature, final temperature <span class="arithmatex">\(T_{\min}\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> best solution found</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> SimulatedAnnealing(<span class="arithmatex">\(S, T_0, \alpha, L, T_{\min}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(cur := S\)</span>;  <span class="arithmatex">\(fcur := f(cur)\)</span>
     <span class="arithmatex">\(best := cur\)</span>;  <span class="arithmatex">\(fbest := fcur\)</span>
     <span class="arithmatex">\(T := T_0\)</span> <span class="pc-com">▹ current solution best solution found temperature</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><strong>while</strong> <span class="arithmatex">\(T > T_{\min}\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(l := 1\)</span> <strong>to</strong> <span class="arithmatex">\(L\)</span> <strong>do</strong></div><div class="pc" style="--liv:3"><span class="pc-n">5</span><span class="arithmatex">\(S' :=\)</span> random neighbour in <span class="arithmatex">\(N(cur)\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">6</span><span class="arithmatex">\(\delta := f(S') - fcur\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">7</span><span class="arithmatex">\(v := \textsc{Rand}()\)</span></div><div class="pc" style="--liv:3"><span class="pc-n">8</span><strong>if</strong> <span class="arithmatex">\(\delta \le 0\)</span> <strong>or</strong> <span class="arithmatex">\(v < e^{-\delta/T}\)</span> <strong>then</strong></div><div class="pc" style="--liv:4"><span class="pc-n">9</span><span class="arithmatex">\(cur := S'\)</span>;  <span class="arithmatex">\(fcur := fcur + \delta\)</span> <span class="pc-com">▹ move accepted</span></div><div class="pc" style="--liv:4"><span class="pc-n">10</span><strong>if</strong> <span class="arithmatex">\(fcur < fbest\)</span> <strong>then</strong></div><div class="pc" style="--liv:5"><span class="pc-n">11</span><span class="arithmatex">\(best := cur\)</span>;  <span class="arithmatex">\(fbest := fcur\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">12</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">13</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">14</span><strong>end</strong></div><div class="pc" style="--liv:2"><span class="pc-n">15</span><span class="arithmatex">\(T := \alpha\cdot T\)</span> <span class="pc-com">▹ cooling</span></div><div class="pc" style="--liv:1"><span class="pc-n">16</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">17</span><strong>return</strong> <span class="arithmatex">\(best\)</span></div></div>
+
+<div class="colab-pulsanti" markdown="0"><span class="colab-etichetta">Run in Colab:</span><a class="colab-pulsante" href="https://colab.research.google.com/github/fabiofurini/combinatorial-optimization/blob/main/notebooks/metaheuristics_python.ipynb" target="_blank" rel="noopener" title="Open the Python notebook of the chapter in Google Colab">Python</a><a class="colab-pulsante" href="https://colab.research.google.com/github/fabiofurini/combinatorial-optimization/blob/main/notebooks/metaheuristics_cpp.ipynb" target="_blank" rel="noopener" title="Open the C++ notebook of the chapter in Google Colab">C++</a></div>
 
 - The name comes from metallurgy: <em>annealing</em> is the process of heating a metal and cooling it slowly, so that its atoms settle into a state of minimum energy; cooled too fast, the metal freezes into a disordered state of higher energy. Kirkpatrick, Gelatt and Vecchi (1983) and, independently, Černy (1985) proposed to simulate this process on an optimization problem, with the objective $f$ in the role of the energy. The acceptance rule is the one used by Metropolis et al. (1953) to simulate the atoms.
 
@@ -343,7 +345,7 @@ title: "How to escape from a local optimum · Simulated annealing"
 
 ### 31.4.4 An experiment on the medium TSP instance { #sez-sec-sa-exp }
 
-- We run $SA$ with the 2-opt neighbourhood on TSP20 ([Example 31.1](the-problems-and-the-assumptions.md#box-2-ex-tsp20)), from the nearest neighbour tour of length $326$, with $L=100$ and $T_{\min}=0.5$. The figure shows one run, with $T_0=20$, $\alpha=0.95$ and $seed=1$: the length of the current tour (gray) and of the best tour (blue) along the $7200$ iterations, every $10$ iterations. The data are produced by the <code>C++</code> code of these notes (<code>make data</code>).
+- We run $SA$ with the 2-opt neighbourhood on TSP20 ([Example 31.1](the-problems-and-the-assumptions.md#box-2-ex-tsp20)), from the nearest neighbour tour of length $326$, with $L=100$ and $T_{\min}=0.5$. The figure shows one run, with $T_0=20$, $\alpha=0.95$ and $seed=1$: the length of the current tour (gray) and of the best tour (blue) along the $7200$ iterations, every $10$ iterations. The data are produced by the <code>C++</code> code of the chapter, in its Colab notebook.
 
 ![Figure 5](../../img/metaheuristics/fig05.svg){ .fig loading=lazy  }
 
