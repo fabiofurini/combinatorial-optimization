@@ -6,13 +6,13 @@ title: "The knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Selected problems** · [:material-file-pdf-box: Selected problems (PDF)](../pdf/selected-problems.pdf)
+**Selected problems** · [:material-view-list: Catalogue of combinatorial problems](../catalogue/index.md)
 
 </div>
 
 <a id="sec:cat-kp"></a>
 
-<a id="sec:cat-pagina-knapsack"></a>
+<a id="sec:cat-pagina-central-problems"></a>
 
 !!! chiave ""
 
@@ -48,26 +48,7 @@ title: "The knapsack problem"
 
 ## Definition { #sez-sec-cat-kp-def }
 
-<a id="box-1-def-cat-kp"></a>
-
-!!! definizione "Definition 1: The knapsack problem"
-
-    Given:
-
-    1. a knapsack of <em>capacity</em> $c \in \Z_{\ge 1}$,
-
-    2. a set $\Ioggetti = \{1,2,\dots,n\}$ of $n$ items,
-
-    3. for each item $j \in \Ioggetti$, a <em>profit</em> $p_j \in \Z_{\ge 1}$ and a <em>weight</em> $w_j \in \Z_{\ge 1}$,
-
-    the <strong>Knapsack Problem</strong> (KP) asks to decide which items to insert into the knapsack, so that the total weight of the selected items does not exceed the knapsack capacity, and the total profit of the selected items is maximized. A KP feasible solution is a subset $S \subseteq \Ioggetti$ with $\sum_{j\in S} w_j \le c$, and
-
-    $$
-    \tilde{S}\in \argmax_{S \subseteq \Ioggetti}
-    \left\{~~ \sum_{j \in S} p_j \;\;:\;\; \sum_{j \in S} w_j \le c ~~\right\}.
-    $$
-
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-1-defKP).
+- Definition and assumptions: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-kp).
 
 - The KP models the choice of a subset of objects, projects or investments under one budget or capacity constraint.
 
@@ -1296,174 +1277,6 @@ $$
 
 - Used in [Exercise 30.14](../exercises/knapsack-approximation.md#esercizio-30-14), [Exercise 30.15](../exercises/knapsack-approximation.md#esercizio-30-15).
 
-## Exercises { #sez-sec-cat-kp-es }
-
-- [Exercise «Brute force, greedy and bound on a knapsack» (in the chapter)](../combinatorial-optimization-problems/combinatorial-optimization.md#110-exercises)
-
-- [«A greedy choice that is not optimal (KP)»](../exercises/combinatorial-optimization.md#esercizio-1-2)
-
-- [«Counting the solutions» (part (a))](../exercises/combinatorial-optimization.md#esercizio-1-3)
-
-- [«Feasibility, value and bounds (KP)»](../exercises/knapsack.md#esercizio-2-1)
-
-- [«Subset sum and its solution as a KP (SSP)»](../exercises/knapsack.md#esercizio-2-2)
-
-- [«Copies of the items (BKP and UKP)»](../exercises/knapsack.md#esercizio-2-3)
-
-- [«Two knapsacks (MKP)»](../exercises/knapsack.md#esercizio-2-4)
-
-- [«One item per class (MCKP)»](../exercises/knapsack.md#esercizio-2-5)
-
-- [«Upper bounds for the Knapsack Problem (1)»](../exercises/knapsack-formulations.md#esercizio-9-1)
-
-- [«Upper bounds for the Knapsack Problem (2)»](../exercises/knapsack-formulations.md#esercizio-9-2)
-
-- [«Upper bounds for the Knapsack Problem (3)»](../exercises/knapsack-formulations.md#esercizio-9-3)
-
-- [«Upper bounds for the Knapsack Problem (4)»](../exercises/knapsack-formulations.md#esercizio-9-4)
-
-- [«Upper bounds for the Knapsack Problem (5)»](../exercises/knapsack-formulations.md#esercizio-9-5)
-
-- [«Knapsack Problem» (DP 1)](../exercises/dp-knapsack.md#esercizio-17-1)
-
-- [«Knapsack Problem» (DP 2)](../exercises/dp-knapsack.md#esercizio-17-2)
-
-- [«Knapsack Problem» (DP 3)](../exercises/dp-knapsack.md#esercizio-17-3)
-
-- [«Knapsack Problem» (DP 4)](../exercises/dp-knapsack.md#esercizio-17-4)
-
-- [«Knapsack Problem» (DP 5)](../exercises/dp-knapsack.md#esercizio-17-5)
-
-- [«Unbounded Knapsack Problem» (DP 1)](../exercises/dp-unbounded-knapsack.md#esercizio-18-1)
-
-- [«Unbounded Knapsack Problem» (DP 2)](../exercises/dp-unbounded-knapsack.md#esercizio-18-2)
-
-- [«Unbounded Knapsack Problem» (DP 3)](../exercises/dp-unbounded-knapsack.md#esercizio-18-3)
-
-- [«Unbounded Knapsack Problem» (DP 4)](../exercises/dp-unbounded-knapsack.md#esercizio-18-4)
-
-- [«Unbounded Knapsack Problem» (DP 5)](../exercises/dp-unbounded-knapsack.md#esercizio-18-5)
-
-- [«Bounded Knapsack Problem» (DP 1)](../exercises/dp-bounded-knapsack.md#esercizio-19-1)
-
-- [«Bounded Knapsack Problem» (DP 2)](../exercises/dp-bounded-knapsack.md#esercizio-19-2)
-
-- [«Bounded Knapsack Problem» (DP 3)](../exercises/dp-bounded-knapsack.md#esercizio-19-3)
-
-- [«Bounded Knapsack Problem» (DP 4)](../exercises/dp-bounded-knapsack.md#esercizio-19-4)
-
-- [«Bounded Knapsack Problem» (DP 5)](../exercises/dp-bounded-knapsack.md#esercizio-19-5)
-
-- [«Gap and relative error»](../exercises/heuristics.md#esercizio-23-1)
-
-- [«Neighbourhoods and local optima»](../exercises/heuristics.md#esercizio-23-4)
-
-- [«Greedy orders for the KP 1»](../exercises/constructive-heuristics.md#esercizio-24-1)
-
-- [«Greedy orders for the KP 2»](../exercises/constructive-heuristics.md#esercizio-24-2)
-
-- [«Greedy orders for the KP 3»](../exercises/constructive-heuristics.md#esercizio-24-3)
-
-- [«Local search KP 1»](../exercises/local-search.md#esercizio-25-1)
-
-- [«Local search KP 2»](../exercises/local-search.md#esercizio-25-2)
-
-- [«Local search KP 3»](../exercises/local-search.md#esercizio-25-3)
-
-- [«Simulated annealing 2» (KP)](../exercises/metaheuristics.md#esercizio-26-2)
-
-- [«GRASP 1» (KP)](../exercises/metaheuristics.md#esercizio-26-10)
-
-- [«GRASP 3» (KP)](../exercises/metaheuristics.md#esercizio-26-12)
-
-- [«Genetic algorithms 1» (KP)](../exercises/metaheuristics.md#esercizio-26-16)
-
-- [«Genetic algorithms 2» (KP)](../exercises/metaheuristics.md#esercizio-26-17)
-
-- [«Rounding and diving on the KP (KP1)»](../exercises/mip-heuristics-classical.md#esercizio-27-1)
-
-- [«Rounding and diving on the KP (KP2)»](../exercises/mip-heuristics-classical.md#esercizio-27-2)
-
-- [«RINS, local branching and proximity search on the KP (KP3)»](../exercises/mip-heuristics-classical.md#esercizio-27-3)
-
-- [«RINS, local branching and proximity search on the KP (KP4)»](../exercises/mip-heuristics-classical.md#esercizio-27-4)
-
-- [«Unbounded ratio of a greedy algorithm»](../exercises/approximation.md#esercizio-28-4)
-
-- [«Greedy 1»](../exercises/knapsack-approximation.md#esercizio-30-1)
-
-- [«Greedy 2»](../exercises/knapsack-approximation.md#esercizio-30-2)
-
-- [«Greedy 3»](../exercises/knapsack-approximation.md#esercizio-30-3)
-
-- [«Ext-Greedy 1»](../exercises/knapsack-approximation.md#esercizio-30-4)
-
-- [«Ext-Greedy 2»](../exercises/knapsack-approximation.md#esercizio-30-5)
-
-- [«Ext-Greedy 3»](../exercises/knapsack-approximation.md#esercizio-30-6)
-
-- [«$H^2$ 1»](../exercises/knapsack-approximation.md#esercizio-30-7)
-
-- [«$H^2$ 2»](../exercises/knapsack-approximation.md#esercizio-30-8)
-
-- [«$H^2$ 3»](../exercises/knapsack-approximation.md#esercizio-30-9)
-
-- [«$H^{\ell}$ 1»](../exercises/knapsack-approximation.md#esercizio-30-10)
-
-- [«$H^{\ell}$ 2»](../exercises/knapsack-approximation.md#esercizio-30-11)
-
-- [«$H^{\ell}$ 3»](../exercises/knapsack-approximation.md#esercizio-30-12)
-
-- [«Basic-FPTAS 1»](../exercises/knapsack-approximation.md#esercizio-30-13)
-
-- [«Basic-FPTAS 2»](../exercises/knapsack-approximation.md#esercizio-30-14)
-
-- [«Basic-FPTAS 3»](../exercises/knapsack-approximation.md#esercizio-30-15)
-
-- [«Branch-and-Bound Algorithm for the Knapsack Problem (P1)»](../exercises/knapsack-branch-and-bound.md#esercizio-34-1)
-
-- [«Branch-and-Bound Algorithm for the Knapsack Problem (P2)»](../exercises/knapsack-branch-and-bound.md#esercizio-34-2)
-
-- [«Branch-and-Bound Algorithm for the Knapsack Problem (P3)»](../exercises/knapsack-branch-and-bound.md#esercizio-34-3)
-
-- [«Branch-and-bound Algorithm for the Knapsack Problem (P4)»](../exercises/knapsack-branch-and-bound.md#esercizio-34-4)
-
-## Subset sum problem (SSP) { #sez-sec-cat-ssp }
-
-<a id="box-2-def-cat-ssp"></a>
-
-!!! definizione "Definition 2: Subset sum problem"
-
-    Given:
-
-    1. a <em>target value</em> $c \in \Z_{\ge 1}$,
-
-    2. a set $\Ioggetti = \{1,2,\dots,n\}$ of $n$ items,
-
-    3. for each item $j \in \Ioggetti$, a <em>weight</em> $w_j \in \Z_{\ge 1}$,
-
-    the <strong>Subset Sum Problem</strong> (SSP) asks to decide whether there exists a subset of items whose total weight is exactly equal to the target value:
-
-    $$
-    \text{find } S \subseteq \Ioggetti
-    \quad \text{such that} \quad
-    \sum_{j \in S} w_j = c .
-    $$
-
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-4-defSSP).
-
-- The SSP is solved as the KP with $p_j = w_j$ for all $j\in\Ioggetti$: the answer is yes if and only if the optimal value of this KP equals $c$.
-
-- <strong>Complexity</strong>: Karp (1972) put the SSP among the first $21$ NP-complete problems ([Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#210-remarks)).
-
-<strong>Where it is treated</strong>
-
-- [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-4-defSSP): Definition, assumptions and solution as a KP
-
-- [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#29-the-variants-at-a-glance): Enumeration of the reference instance: three subsets reach the target
-
-- [Exercise 2.2](../exercises/knapsack.md#esercizio-2-2):
-
 ### Instance SSP1 { #sez-sec-cat-ist-ssp1 }
 
 Reference instance of the SSP.
@@ -1523,45 +1336,6 @@ $$
 - Optimal value $z(\mathrm{SSP3})=15$, attained by the KP with $p_j=w_j$ reaches at most $15$, e.g. $\{5\}$.
 
 - Used in [question 4](../exercises/knapsack.md#esercizio-2-2).
-
-## Bounded knapsack problem (BKP) { #sez-sec-cat-bkp }
-
-<a id="box-3-def-cat-bkp"></a>
-
-!!! definizione "Definition 3: Bounded knapsack problem"
-
-    Given:
-
-    1. a knapsack of <em>capacity</em> $c \in \Z_{\ge 1}$,
-
-    2. a set $\Ioggetti = \{1,2,\dots,n\}$ of $n$ items,
-
-    3. for each item $j \in \Ioggetti$, a <em>profit</em> $p_j \in \Z_{\ge 1}$, a <em>weight</em> $w_j \in \Z_{\ge 1}$, and a <em>number of available copies</em> $b_j \in \Z_{\ge 1}$,
-
-    the <strong>Bounded Knapsack Problem</strong> (BKP) asks to decide how many copies of each item to insert into the knapsack, so that the total weight of all selected item copies does not exceed the knapsack capacity, each item is taken no more than its available copies, and the total profit of all selected item copies is maximized. With the extended set of items $\hat{\Ioggetti} = \{(j,k) : j \in \Ioggetti,~ k \in \{1,2,\dots,b_j\}\}$,
-
-    $$
-    \tilde{S}\in
-    \argmax_{S \subseteq \hat{\Ioggetti} }
-    \left\{~~ \sum_{(j,k) \in S} p_j
-    \;:\; \sum_{(j,k) \in S} w_j \le c ~~\right\}.
-    $$
-
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-6-defBKP).
-
-- The BKP reduces to the KP when $b_j=1$ for every item, and to the UKP when every bound $b_j$ is large enough not to be binding.
-
-- <strong>Complexity</strong>: The DP algorithm takes $\Theta(nc\,b_{\max})$ steps, which is pseudo-polynomial ([Chapter 19 «DP for the bounded knapsack problem»](../dynamic-programming/dp-bounded-knapsack.md)).
-
-<strong>Where it is treated</strong>
-
-- [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-6-defBKP): Definition, extended set of items and assumptions
-
-- [Exercise 2.3](../exercises/knapsack.md#esercizio-2-3):
-
-- [Chapter 19 «DP for the bounded knapsack problem»](../dynamic-programming/dp-bounded-knapsack.md): DP algorithm $v(j,k)$ over the numbers of copies, $\Theta(nc\,b_{\max})$ steps
-
-- [Exercise 19.1](../exercises/dp-bounded-knapsack.md#esercizio-19-1):
 
 ### Instance BKP1 { #sez-sec-cat-ist-bkp1 }
 
@@ -1739,51 +1513,6 @@ $$
 
 - Used in [Exercise 19.5](../exercises/dp-bounded-knapsack.md#esercizio-19-5).
 
-## Unbounded knapsack problem (UKP) { #sez-sec-cat-ukp }
-
-<a id="box-4-def-cat-ukp"></a>
-
-!!! definizione "Definition 4: Unbounded knapsack problem"
-
-    Given:
-
-    1. a knapsack of <em>capacity</em> $c \in \Z_{\ge 1}$,
-
-    2. a set $\Ioggetti = \{1,2,\dots,n\}$ of $n$ items,
-
-    3. for each item $j \in \Ioggetti$, which is available in an unlimited number of copies, a <em>profit</em> $p_j \in \Z_{\ge 1}$ and a <em>weight</em> $w_j \in \Z_{\ge 1}$,
-
-    the <strong>Unbounded Knapsack Problem</strong> (UKP) asks to decide how many copies of each item to insert into the knapsack, so that the total weight of all selected item copies does not exceed the knapsack capacity and the total profit of all selected item copies is maximized. With $\hat{b}_j = \lfloor c/w_j \rfloor$ and the extended set $\hat{\Ioggetti} = \{(j,k) : j \in \Ioggetti,~ k \in \{1,2,\dots,\hat{b}_j\}\}$,
-
-    $$
-    \tilde{S} \in
-    \argmax_{S \subseteq \hat{\Ioggetti} }
-    \left\{ \sum_{(j,k) \in S} p_j
-    \;:\; \sum_{(j,k) \in S} w_j \le c \right\}.
-    $$
-
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-8-defUKP).
-
-- The UKP is the BKP with $b_j = \hat b_j = \lfloor c/w_j \rfloor$: each item can be taken as many times as it fits.
-
-- <strong>Complexity</strong>: Both DP algorithms take $\Theta(nc)$ steps, which is pseudo-polynomial ([Chapter 18 «DP for the unbounded knapsack problem»](../dynamic-programming/dp-unbounded-knapsack/index.md)).
-
-<strong>Where it is treated</strong>
-
-- [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-8-defUKP): Definition, maximum feasible number of copies and assumptions
-
-- [Exercise 2.3](../exercises/knapsack.md#esercizio-2-3):
-
-- [Chapter 16 «Principles of dynamic programming»](../dynamic-programming/dp-principles.md#164-the-dp-algorithms-of-this-module): The recurrence $v(k)$ over the capacities among the DP algorithms of the module
-
-- [Chapter 18 «DP for the unbounded knapsack problem»](../dynamic-programming/dp-unbounded-knapsack/index.md): Two DP algorithms, $v(k)$ and $v(j,k)$, both in $\Theta(nc)$ steps
-
-- [Exercise 18.1](../exercises/dp-unbounded-knapsack.md#esercizio-18-1):
-
-- [Chapter 20 «DP for the rod cutting problem»](../dynamic-programming/dp-rod-cutting/index.md): Rod cutting reuses the DP of the UKP
-
-- [Chapter 21 «DP for the coin change problem»](../dynamic-programming/dp-coin-change.md): Coin change reuses the DP of the UKP
-
 ### Instance UKP1 { #sez-sec-cat-ist-ukp1 }
 
 Reference instance of the UKP.
@@ -1931,41 +1660,6 @@ $$
 
 - Used in [Exercise 18.5](../exercises/dp-unbounded-knapsack.md#esercizio-18-5).
 
-## Multidimensional knapsack problem (MDKP) { #sez-sec-cat-mdkp }
-
-<a id="box-5-def-cat-mdkp"></a>
-
-!!! definizione "Definition 5: Multidimensional knapsack problem"
-
-    Given:
-
-    1. a $k$-dimensional knapsack,
-
-    2. for each dimension $d \in \{1,2,\dots,k\} = \mathscr{D}$, a <em>capacity</em> $c_d \in \Z_{\ge 1}$,
-
-    3. a set $\Ioggetti = \{1,2,\dots,n\}$ of $n$ items,
-
-    4. for each item $j \in \Ioggetti$, a <em>profit</em> $p_j \in \Z_{\ge 1}$,
-
-    5. for each dimension $d \in \mathscr{D}$ and each item $j \in \Ioggetti$, a <em>weight</em> $w_{dj} \in \Z_{\ge 1}$,
-
-    the <strong>Multidimensional Knapsack Problem</strong> (MDKP) asks to decide which items to insert into the knapsack, so that for every dimension the total weight of the selected items does not exceed the corresponding capacity, and the total profit of the selected items is maximized:
-
-    $$
-    \tilde{S}\in \argmax_{S \subseteq \Ioggetti}
-    \left\{~~ \sum_{j \in S} p_j \;\;:\;\; \sum_{j\in S} w_{dj} \le c_d \ \ \forall\, d\in \mathscr{D} ~~\right\}.
-    $$
-
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-10-defMDKP).
-
-- The MDKP is the KP with $k$ capacity constraints, one for each resource; with $k=1$ it is the KP.
-
-<strong>Where it is treated</strong>
-
-- [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-10-defMDKP): Definition, assumptions and an instance with two dimensions
-
-- [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#29-the-variants-at-a-glance): Enumeration of the reference instance
-
 ### Instance MDKP1 { #sez-sec-cat-ist-mdkp1 }
 
 Reference instance of the MDKP.
@@ -1987,36 +1681,6 @@ $$
 - Optimal value $z(\mathrm{MDKP1})=14$, attained by $\{3,4\}$.
 
 - Used in [Example «MDKP instance»](../combinatorial-optimization-problems/knapsack.md#box-11-ex-mdkp), [The variants at a glance](../combinatorial-optimization-problems/knapsack.md#29-the-variants-at-a-glance).
-
-## Multiple knapsack problem (MKP) { #sez-sec-cat-mkp }
-
-<a id="box-6-def-cat-mkp"></a>
-
-!!! definizione "Definition 6: Multiple knapsack problem"
-
-    Given:
-
-    1. $m \in \Z_{\ge 1}$ knapsacks,
-
-    2. for each knapsack $k \in \{1,2,\dots,m\} = \mathscr{K}$, a <em>capacity</em> $c_k \in \Z_{\ge 1}$,
-
-    3. a set $\Ioggetti = \{1,2,\dots,n\}$ of $n$ items,
-
-    4. for each item $j \in \Ioggetti$, a <em>profit</em> $p_j \in \Z_{\ge 1}$ and a <em>weight</em> $w_{j} \in \Z_{\ge 1}$,
-
-    the <strong>Multiple Knapsack Problem</strong> (MKP) asks to decide which items to insert into each knapsack, so that in every knapsack the total weight of the assigned items does not exceed its capacity, and the total profit of the selected items is maximized. A feasible solution is a family $\mathcal{S}=\{S_k\}_{k\in \mathscr{K}}$ of pairwise disjoint subsets $S_k \subseteq \Ioggetti$ with $\sum_{j\in S_k} w_j \le c_k$ for all $k\in \mathscr{K}$, and the objective is $\sum_{k\in \mathscr{K}} \sum_{j\in S_k} p_j$.
-
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-12-defMKP).
-
-- The MKP is the KP with $m$ knapsacks; every feasible solution of the MKP is feasible for the KP with capacity $\sum_{k\in\mathscr{K}} c_k$, which gives a dual bound.
-
-<strong>Where it is treated</strong>
-
-- [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-12-defMKP): Definition, assumptions and an instance with two knapsacks
-
-- [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#29-the-variants-at-a-glance): Enumeration of the reference instance: three optimal solutions
-
-- [Exercise 2.4](../exercises/knapsack.md#esercizio-2-4):
 
 ### Instance MKP1 { #sez-sec-cat-ist-mkp1 }
 
@@ -2060,48 +1724,6 @@ $$
 
 - Used in [Exercise 2.4](../exercises/knapsack.md#esercizio-2-4).
 
-## Multiple-choice knapsack problem (MCKP) { #sez-sec-cat-mckp }
-
-<a id="box-7-def-cat-mckp"></a>
-
-!!! definizione "Definition 7: Multiple-choice knapsack problem"
-
-    Given:
-
-    1. a knapsack of <em>capacity</em> $c \in \Z_{\ge 1}$,
-
-    2. a set $\Ioggetti = \{1,2,\dots,n\}$ of $n$ items,
-
-    3. the set of items is partitioned into $q \in \Z_{\ge 2}$ classes,
-
-    4. for each class $h \in \{1,2,\dots,q\}$, the subset $\mathscr{J}_h \subseteq \Ioggetti$ contains the items of that class,
-
-    5. for each item $j \in \Ioggetti$, a <em>profit</em> $p_j \in \Z_{\ge 1}$ and a <em>weight</em> $w_j \in \Z_{\ge 1}$,
-
-    the <strong>Multiple-Choice Knapsack Problem</strong> (MCKP) asks to decide which items to insert into the knapsack, so that exactly one item is selected from each class, the total weight of the selected items does not exceed the knapsack capacity, and the total profit of the selected items is maximized:
-
-    $$
-    \tilde{S}\in \argmax_{S \subseteq \Ioggetti}
-    \left\{
-    ~~ \sum_{j \in S} p_j
-    \;\;:\;\;
-    \sum_{j \in S} w_j \le c,\ \
-    |S \cap \mathscr{J}_h| = 1 \ \ \forall\, h\in\{1,2,\dots,q\}
-    ~~\right\}.
-    $$
-
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-14-defMCKP).
-
-- The MCKP is the KP with the additional constraint that exactly one item of every class is selected, so an instance can be infeasible.
-
-<strong>Where it is treated</strong>
-
-- [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-14-defMCKP): Definition, feasibility condition $\sum_{h=1}^{q} \min_{j\in \mathscr{J}_h} w_j \le c$ and an instance
-
-- [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#29-the-variants-at-a-glance): Enumeration of the reference instance: only $3$ of the $8$ choices fit
-
-- [Exercise 2.5](../exercises/knapsack.md#esercizio-2-5):
-
 ### Instance MCKP1 { #sez-sec-cat-ist-mckp1 }
 
 Reference instance of the MCKP (classes $\{1,2\}$, $\{3,4\}$, $\{5,6\}$).
@@ -2134,45 +1756,6 @@ Capacity $c=16$, $3$ classes (pairs $(p,w)$ of the items of each class):
 
 - Used in [Exercise 2.5](../exercises/knapsack.md#esercizio-2-5).
 
-## Knapsack problem with setups (KPS) { #sez-sec-cat-kps }
-
-<a id="box-8-def-cat-kps"></a>
-
-!!! definizione "Definition 8: Knapsack problem with setups"
-
-    Given:
-
-    1. a knapsack of <em>capacity</em> $c \in \Z_{\ge 1}$,
-
-    2. a set $\Ioggetti = \{1,2,\dots,n\}$ of $n$ items,
-
-    3. the set of items is partitioned into $q \in \Z_{\ge 2}$ classes,
-
-    4. for each class $h \in \{1,2,\dots,q\}$, the subset $\mathscr{J}_h \subseteq \Ioggetti$ contains the items of that class, with an associated <em>setup cost</em> $f_h \in \Z_{\ge 1}$ and a <em>setup weight</em> $s_h \in \Z_{\ge 1}$,
-
-    5. for each item $j \in \Ioggetti$, a <em>revenue</em> $p_j \in \Z_{\ge 1}$ and a <em>weight</em> $w_j \in \Z_{\ge 1}$,
-
-    the <strong>Knapsack Problem with Setups</strong> (KPS) asks to decide which items to insert into the knapsack, so that the total weight of the selected items plus the setup weights of their classes does not exceed the knapsack capacity, and the total revenue of the selected items minus the setup costs of their classes is maximized. With the activated classes $\mathscr{H}(S) := \{ h : S\cap \mathscr{J}_h \neq \emptyset \}$,
-
-    $$
-    \tilde{S}\in \argmax_{S \subseteq \Ioggetti}
-    \left\{~~
-    \sum_{j \in S} p_j \;-\; \sum_{h\in \mathscr{H}(S)} f_h
-    \;\;:\;\;
-    \sum_{j\in S} w_j \;+\; \sum_{h\in \mathscr{H}(S)} s_h \le c
-    ~~\right\}.
-    $$
-
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-16-defKPS).
-
-- The KPS is the KP in which selecting the first item of a class costs the setup $f_h$ and consumes the setup weight $s_h$; a class with no selected item costs nothing.
-
-<strong>Where it is treated</strong>
-
-- [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-16-defKPS): Definition, activated classes, assumptions and an instance with two classes
-
-- [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#29-the-variants-at-a-glance): Enumeration of the reference instance: three optimal solutions
-
 ### Instance KPS1 { #sez-sec-cat-ist-kps1 }
 
 Reference instance of the KPS.
@@ -2193,3 +1776,151 @@ $$
 - Optimal value $z(\mathrm{KPS1})=16$, attained by $\{1,2,3\}$, $\{4,5,6\}$, $\{1,2,3,6\}$.
 
 - Used in [Example «KPS instance»](../combinatorial-optimization-problems/knapsack.md#box-17-ex-kps), [The variants at a glance](../combinatorial-optimization-problems/knapsack.md#29-the-variants-at-a-glance).
+
+## Exercises { #sez-sec-cat-kp-es }
+
+- [Exercise «Brute force, greedy and bound on a knapsack» (in the chapter)](../combinatorial-optimization-problems/combinatorial-optimization.md#110-exercises)
+
+- [«A greedy choice that is not optimal (KP)»](../exercises/combinatorial-optimization.md#esercizio-1-2)
+
+- [«Counting the solutions» (part (a))](../exercises/combinatorial-optimization.md#esercizio-1-3)
+
+- [«Feasibility, value and bounds (KP)»](../exercises/knapsack.md#esercizio-2-1)
+
+- [«Subset sum and its solution as a KP (SSP)»](../exercises/knapsack.md#esercizio-2-2)
+
+- [«Copies of the items (BKP and UKP)»](../exercises/knapsack.md#esercizio-2-3)
+
+- [«Two knapsacks (MKP)»](../exercises/knapsack.md#esercizio-2-4)
+
+- [«One item per class (MCKP)»](../exercises/knapsack.md#esercizio-2-5)
+
+- [«Upper bounds for the Knapsack Problem (1)»](../exercises/knapsack-formulations.md#esercizio-9-1)
+
+- [«Upper bounds for the Knapsack Problem (2)»](../exercises/knapsack-formulations.md#esercizio-9-2)
+
+- [«Upper bounds for the Knapsack Problem (3)»](../exercises/knapsack-formulations.md#esercizio-9-3)
+
+- [«Upper bounds for the Knapsack Problem (4)»](../exercises/knapsack-formulations.md#esercizio-9-4)
+
+- [«Upper bounds for the Knapsack Problem (5)»](../exercises/knapsack-formulations.md#esercizio-9-5)
+
+- [«Knapsack Problem» (DP 1)](../exercises/dp-knapsack.md#esercizio-17-1)
+
+- [«Knapsack Problem» (DP 2)](../exercises/dp-knapsack.md#esercizio-17-2)
+
+- [«Knapsack Problem» (DP 3)](../exercises/dp-knapsack.md#esercizio-17-3)
+
+- [«Knapsack Problem» (DP 4)](../exercises/dp-knapsack.md#esercizio-17-4)
+
+- [«Knapsack Problem» (DP 5)](../exercises/dp-knapsack.md#esercizio-17-5)
+
+- [«Unbounded Knapsack Problem» (DP 1)](../exercises/dp-unbounded-knapsack.md#esercizio-18-1)
+
+- [«Unbounded Knapsack Problem» (DP 2)](../exercises/dp-unbounded-knapsack.md#esercizio-18-2)
+
+- [«Unbounded Knapsack Problem» (DP 3)](../exercises/dp-unbounded-knapsack.md#esercizio-18-3)
+
+- [«Unbounded Knapsack Problem» (DP 4)](../exercises/dp-unbounded-knapsack.md#esercizio-18-4)
+
+- [«Unbounded Knapsack Problem» (DP 5)](../exercises/dp-unbounded-knapsack.md#esercizio-18-5)
+
+- [«Bounded Knapsack Problem» (DP 1)](../exercises/dp-bounded-knapsack.md#esercizio-19-1)
+
+- [«Bounded Knapsack Problem» (DP 2)](../exercises/dp-bounded-knapsack.md#esercizio-19-2)
+
+- [«Bounded Knapsack Problem» (DP 3)](../exercises/dp-bounded-knapsack.md#esercizio-19-3)
+
+- [«Bounded Knapsack Problem» (DP 4)](../exercises/dp-bounded-knapsack.md#esercizio-19-4)
+
+- [«Bounded Knapsack Problem» (DP 5)](../exercises/dp-bounded-knapsack.md#esercizio-19-5)
+
+- [«Gap and relative error»](../exercises/heuristics.md#esercizio-23-1)
+
+- [«Neighbourhoods and local optima»](../exercises/heuristics.md#esercizio-23-4)
+
+- [«Greedy orders for the KP 1»](../exercises/constructive-heuristics.md#esercizio-24-1)
+
+- [«Greedy orders for the KP 2»](../exercises/constructive-heuristics.md#esercizio-24-2)
+
+- [«Greedy orders for the KP 3»](../exercises/constructive-heuristics.md#esercizio-24-3)
+
+- [«Local search KP 1»](../exercises/local-search.md#esercizio-25-1)
+
+- [«Local search KP 2»](../exercises/local-search.md#esercizio-25-2)
+
+- [«Local search KP 3»](../exercises/local-search.md#esercizio-25-3)
+
+- [«Simulated annealing 2» (KP)](../exercises/metaheuristics.md#esercizio-26-2)
+
+- [«GRASP 1» (KP)](../exercises/metaheuristics.md#esercizio-26-10)
+
+- [«GRASP 3» (KP)](../exercises/metaheuristics.md#esercizio-26-12)
+
+- [«Genetic algorithms 1» (KP)](../exercises/metaheuristics.md#esercizio-26-16)
+
+- [«Genetic algorithms 2» (KP)](../exercises/metaheuristics.md#esercizio-26-17)
+
+- [«Rounding and diving on the KP (KP1)»](../exercises/mip-heuristics-classical.md#esercizio-27-1)
+
+- [«Rounding and diving on the KP (KP2)»](../exercises/mip-heuristics-classical.md#esercizio-27-2)
+
+- [«RINS, local branching and proximity search on the KP (KP3)»](../exercises/mip-heuristics-classical.md#esercizio-27-3)
+
+- [«RINS, local branching and proximity search on the KP (KP4)»](../exercises/mip-heuristics-classical.md#esercizio-27-4)
+
+- [«Unbounded ratio of a greedy algorithm»](../exercises/approximation.md#esercizio-28-4)
+
+- [«Greedy 1»](../exercises/knapsack-approximation.md#esercizio-30-1)
+
+- [«Greedy 2»](../exercises/knapsack-approximation.md#esercizio-30-2)
+
+- [«Greedy 3»](../exercises/knapsack-approximation.md#esercizio-30-3)
+
+- [«Ext-Greedy 1»](../exercises/knapsack-approximation.md#esercizio-30-4)
+
+- [«Ext-Greedy 2»](../exercises/knapsack-approximation.md#esercizio-30-5)
+
+- [«Ext-Greedy 3»](../exercises/knapsack-approximation.md#esercizio-30-6)
+
+- [«$H^2$ 1»](../exercises/knapsack-approximation.md#esercizio-30-7)
+
+- [«$H^2$ 2»](../exercises/knapsack-approximation.md#esercizio-30-8)
+
+- [«$H^2$ 3»](../exercises/knapsack-approximation.md#esercizio-30-9)
+
+- [«$H^{\ell}$ 1»](../exercises/knapsack-approximation.md#esercizio-30-10)
+
+- [«$H^{\ell}$ 2»](../exercises/knapsack-approximation.md#esercizio-30-11)
+
+- [«$H^{\ell}$ 3»](../exercises/knapsack-approximation.md#esercizio-30-12)
+
+- [«Basic-FPTAS 1»](../exercises/knapsack-approximation.md#esercizio-30-13)
+
+- [«Basic-FPTAS 2»](../exercises/knapsack-approximation.md#esercizio-30-14)
+
+- [«Basic-FPTAS 3»](../exercises/knapsack-approximation.md#esercizio-30-15)
+
+- [«Branch-and-Bound Algorithm for the Knapsack Problem (P1)»](../exercises/knapsack-branch-and-bound.md#esercizio-34-1)
+
+- [«Branch-and-Bound Algorithm for the Knapsack Problem (P2)»](../exercises/knapsack-branch-and-bound.md#esercizio-34-2)
+
+- [«Branch-and-Bound Algorithm for the Knapsack Problem (P3)»](../exercises/knapsack-branch-and-bound.md#esercizio-34-3)
+
+- [«Branch-and-bound Algorithm for the Knapsack Problem (P4)»](../exercises/knapsack-branch-and-bound.md#esercizio-34-4)
+
+## Variants { #sez-sec-cat-kp-var }
+
+- [Subset sum problem (SSP)](../catalogue/knapsack-family.md#sez-sec-cat-def-ssp): The SSP is solved as the KP with $p_j = w_j$ for all $j\in\Ioggetti$: the answer is yes if and only if the optimal value of this KP equals $c$.
+
+- [Bounded knapsack problem (BKP)](../catalogue/knapsack-family.md#sez-sec-cat-def-bkp): The BKP reduces to the KP when $b_j=1$ for every item, and to the UKP when every bound $b_j$ is large enough not to be binding.
+
+- [Unbounded knapsack problem (UKP)](../catalogue/knapsack-family.md#sez-sec-cat-def-ukp): The UKP is the BKP with $b_j = \hat b_j = \lfloor c/w_j \rfloor$: each item can be taken as many times as it fits.
+
+- [Multidimensional knapsack problem (MDKP)](../catalogue/knapsack-family.md#sez-sec-cat-def-mdkp): The MDKP is the KP with $k$ capacity constraints, one for each resource; with $k=1$ it is the KP.
+
+- [Multiple knapsack problem (MKP)](../catalogue/knapsack-family.md#sez-sec-cat-def-mkp): The MKP is the KP with $m$ knapsacks; every feasible solution of the MKP is feasible for the KP with capacity $\sum_{k\in\mathscr{K}} c_k$, which gives a dual bound.
+
+- [Multiple-choice knapsack problem (MCKP)](../catalogue/knapsack-family.md#sez-sec-cat-def-mckp): The MCKP is the KP with the additional constraint that exactly one item of every class is selected, so an instance can be infeasible.
+
+- [Knapsack problem with setups (KPS)](../catalogue/knapsack-family.md#sez-sec-cat-def-kps): The KPS is the KP in which selecting the first item of a class costs the setup $f_h$ and consumes the setup weight $s_h$; a class with no selected item costs nothing.

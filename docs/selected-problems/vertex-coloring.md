@@ -6,13 +6,13 @@ title: "The vertex coloring problem"
 
 <div class="info-capitolo" markdown>
 
-**Selected problems** · [:material-file-pdf-box: Selected problems (PDF)](../pdf/selected-problems.pdf)
+**Selected problems** · [:material-view-list: Catalogue of combinatorial problems](../catalogue/index.md)
 
 </div>
 
 <a id="sec:cat-vcp"></a>
 
-<a id="sec:cat-pagina-vertex-coloring"></a>
+<a id="sec:cat-pagina-central-problems"></a>
 
 !!! chiave ""
 
@@ -32,29 +32,7 @@ title: "The vertex coloring problem"
 
 ## Definition { #sez-sec-cat-vcp-def }
 
-<a id="box-1-def-cat-vcp"></a>
-
-!!! definizione "Definition 1: The vertex coloring problem"
-
-    Given:
-
-    1. a simple <em>graph</em> $G = (V,E)$, where
-
-        $$
-        V = \{1,2,\dots,n\}
-        $$
-
-        is the set of $n$ <em>vertices</em>, and
-
-        $$
-        E \subseteq \big\{\, \{u,v\} : u,v \in V,~ u \neq v \,\big\}
-        $$
-
-        is the set of $m$ <em>edges</em>,
-
-    the <strong>Vertex Coloring Problem</strong> (VCP) asks to decide how to assign a color to each vertex, so that no two adjacent vertices share the same color, and the total number of colors used is minimized.
-
-- Defined in [Chapter 4 «Vertex coloring»](../combinatorial-optimization-problems/coloring.md#box-3-defVCP).
+- Definition and assumptions: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-vcp).
 
 - The vertices are objects in conflict and the colors are resources that conflicting objects cannot share, as in the exam calendar of [Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#box-7-ex-oc1-vcp), where the colors are the days of the session.
 
@@ -387,26 +365,6 @@ $$
 
 - [Vertex coloring approximation 3](../exercises/coloring-approximation.md#esercizio-33-3)
 
-## 3-colorability (3-COL) { #sez-sec-cat-3col }
+## Variants { #sez-sec-cat-vcp-var }
 
-<a id="box-2-def-cat-3col"></a>
-
-!!! definizione "Definition 2: 3-colorability"
-
-    Given a graph $G=(V,E)$, decide whether $\chi(G)\le 3$.
-
-- Defined in [Chapter 33 «Limits of approximation: vertex coloring»](../approximation-algorithms/coloring-approximation.md#box-4-prop-VCP43).
-
-- The decision version of the VCP with the number of colors fixed to $3$: an algorithm with ratio below $\frac43$ for the VCP would decide it.
-
-- <strong>Complexity</strong>: NP-complete, even for planar graphs of maximum degree $4$ (Garey, Johnson and Stockmeyer, 1976).
-
-<strong>Where it is treated</strong>
-
-- [Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#sez-sec-complexity): Deciding whether $\chi(G)\le 3$ is NP-complete, so the VCP is strongly NP-hard
-
-- [Chapter 4 «Vertex coloring»](../combinatorial-optimization-problems/coloring.md#43-remarks): NP-complete even on planar graphs of maximum degree $4$ (Garey, Johnson and Stockmeyer)
-
-- [Chapter 33 «Limits of approximation: vertex coloring»](../approximation-algorithms/coloring-approximation.md#box-4-prop-VCP43): The reduction behind the bound $\frac43$
-
-- [Exercise 33.3](../exercises/coloring-approximation.md#esercizio-33-3): The reduction on a graph where $DSATUR$ uses $4$ colors
+- [3-colorability (3-COL)](../catalogue/graphs.md#sez-sec-cat-def-3col): The decision version of the VCP with the number of colors fixed to $3$: an algorithm with ratio below $\frac43$ for the VCP would decide it.

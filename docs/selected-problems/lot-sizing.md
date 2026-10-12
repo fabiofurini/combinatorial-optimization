@@ -6,13 +6,13 @@ title: "Capacitated lot sizing"
 
 <div class="info-capitolo" markdown>
 
-**Selected problems** · [:material-file-pdf-box: Selected problems (PDF)](../pdf/selected-problems.pdf)
+**Selected problems** · [:material-view-list: Catalogue of combinatorial problems](../catalogue/index.md)
 
 </div>
 
 <a id="sec:cat-cls"></a>
 
-<a id="sec:cat-pagina-lot-sizing"></a>
+<a id="sec:cat-pagina-central-problems"></a>
 
 !!! chiave ""
 
@@ -32,25 +32,7 @@ title: "Capacitated lot sizing"
 
 ## Definition { #sez-sec-cat-cls-def }
 
-<a id="box-1-def-cat-cls"></a>
-
-!!! definizione "Definition 1: Capacitated lot sizing"
-
-    Given:
-
-    1. a set $T = \{1,2,\dots,m\}$ of $m$ <em>time periods</em>,
-
-    2. for each period $t \in T$, a <em>demand</em> $d_t \in \Z_{\ge 1}$ and a <em>capacity</em> $cap_t \in \Z_{\ge 1}$, both counted in units of one product,
-
-    3. for each period $t \in T$, three non-negative integer costs: the <em>setup cost</em> $sc_t$, the <em>variable production cost</em> $vc_t$ per unit produced and the <em>holding cost</em> $hc_t$ per unit kept in stock at the end of the period,
-
-    the <strong>capacitated lot sizing problem</strong> (CLS) asks to decide how much to produce in every period, so that every demand is satisfied with what is produced and what is in stock, the capacities are respected, and the total cost of setups, production and holding is minimized. With the stock $s_t(\vet{x})=\sum_{u=1}^{t}(x_u-d_u)$ and $y_t=1$ when $x_t>0$, the cost of a plan is $c(\vet{x})=\sum_{t\in T}\bigl(sc_t\,y_t+vc_t\,x_t+hc_t\,s_t(\vet{x})\bigr)$, and the problem reads
-
-    $$
-    \min_{\vet{x}}\left\{ c(\vet{x}) \;:\; x_t \le cap_t,~ s_t(\vet{x}) \ge 0,~ \forall t \in T,~ s_m(\vet{x}) = 0,~ \vet{x} \in \Z_{\ge 0}^m \right\}.
-    $$
-
-- Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing.md#box-1-defCLS).
+- Definition and assumptions: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-cls).
 
 - It models the production planning of one product over a horizon of periods, where every production run pays a fixed setup cost and anticipated units pay a holding cost.
 
@@ -158,6 +140,52 @@ $$
 
 - Used in [CLS instance](../combinatorial-optimization-problems/lot-sizing.md#box-2-ex-cls5), [Counting the plans](../combinatorial-optimization-problems/lot-sizing.md#box-3-ex-cls-count), [From lot-for-lot to a better plan](../combinatorial-optimization-problems/lot-sizing.md#box-4-ex-cls-hand), [The bound on the reference instance](../combinatorial-optimization-problems/lot-sizing.md#box-6-ex-cls-lb), [The reference instance](../formulations/lot-sizing-formulations.md#box-2-ex-CLS-ref), [Big-M values and LP bounds](../formulations/lot-sizing-formulations.md#box-3-ex-CLS-bigM), [Costs and combinations of paths](../formulations/lot-sizing-formulations.md#box-4-ex-CLS-SP), [Comparing the formulations](../formulations/lot-sizing-formulations.md#154-comparing-the-formulations), [Capacitated lot sizing](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#box-33-texcls1), [Execution of the DP algorithm](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#box-50-texclsbu), [Computing an optimal solution](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#box-52-texclssolvector), [The case of constant capacity](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#2232-the-case-of-constant-capacity).
 
+### Instance ULS1 { #sez-sec-cat-ist-uls1 }
+
+The reference instance without capacities.
+
+$T=5$ periods:
+
+$$
+\begin{array}{l|ccccc}
+\hline
+t & 1 & 2 & 3 & 4 & 5 \\
+\hline
+d_t & 2 & 1 & 3 & 4 & 1 \\
+f_t & 50 & 50 & 50 & 50 & 50 \\
+p_t & 0 & 0 & 0 & 0 & 0 \\
+h_t & 10 & 10 & 10 & 10 & 10 \\
+\hline
+\end{array}
+$$
+
+- Optimal value $z(\mathrm{ULS1})=170$, attained by $(3,0,8,0,0)$.
+
+- Used in [Counting the solutions: without the capacities the optimal cost is $170$](../combinatorial-optimization-problems/lot-sizing.md#84-counting-the-solutions), [Bound of the shortest-path formulation](../formulations/lot-sizing-formulations.md#154-comparing-the-formulations), [Optimal ULS solution, not feasible with capacity $4$](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#box-33-texcls1).
+
+### Instance ULS2 { #sez-sec-cat-ist-uls2 }
+
+Uncapacitated instance of the MIP course (the ULS above in original units: demands $\times 10$, holding cost $1$).
+
+$T=5$ periods:
+
+$$
+\begin{array}{l|ccccc}
+\hline
+t & 1 & 2 & 3 & 4 & 5 \\
+\hline
+d_t & 20 & 10 & 30 & 40 & 10 \\
+f_t & 50 & 50 & 50 & 50 & 50 \\
+p_t & 0 & 0 & 0 & 0 & 0 \\
+h_t & 1 & 1 & 1 & 1 & 1 \\
+\hline
+\end{array}
+$$
+
+- Optimal value $z(\mathrm{ULS2})=170$, attained by $(30,0,80,0,0)$ and $(30,0,30,50,0)$, two optimal plans.
+
+- Used in [Uncapacitated lot sizing](../dynamic-programming/dp-lot-sizing/index.md#box-2-texuls1), [Enumeration of the solutions with the zero-inventory ordering property](../dynamic-programming/dp-lot-sizing/index.md#box-5-texulsenum), [Computation of the production-run costs](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls.md#box-16-texulscost), [Computing the values of the $v$ function](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls-step-1-and-step-2.md#box-18-texulsvalues), [Execution of the DP algorithm](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls-step-1-and-step-2.md#box-29-texulsbu), [Computing an optimal solution](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls-step-1-and-step-2.md#box-31-texulssolvector), [Relax-and-fix on the lot sizing instance of the MIP course](../heuristic-algorithms/mip-heuristics-classical.md#box-16-ex-rfcourse).
+
 ### Instance CLS2 { #sez-sec-cat-ist-cls2 }
 
 Capacitated instance of the MIP course ($F=40$, $h=1$, $Q=80$).
@@ -230,6 +258,29 @@ $$
 
 - Used in [capacity $6$](../exercises/lot-sizing.md#esercizio-8-4).
 
+### Instance ULS3 { #sez-sec-cat-ist-uls3 }
+
+The same four periods without capacities.
+
+$T=4$ periods:
+
+$$
+\begin{array}{l|cccc}
+\hline
+t & 1 & 2 & 3 & 4 \\
+\hline
+d_t & 3 & 2 & 4 & 3 \\
+f_t & 30 & 40 & 30 & 40 \\
+p_t & 2 & 2 & 2 & 2 \\
+h_t & 4 & 4 & 4 & 4 \\
+\hline
+\end{array}
+$$
+
+- Optimal value $z(\mathrm{ULS3})=104$, attained by $(5,0,7,0)$.
+
+- Used in [no capacity](../exercises/lot-sizing.md#esercizio-8-4).
+
 ### Instance CLS5 { #sez-sec-cat-ist-cls5 }
 
 Lot-for-lot, a lower bound and the optimum.
@@ -301,6 +352,117 @@ $$
 - Optimal value $z(\mathrm{CLS7})=170$, attained by $(3,0,3,3,3)$; unique.
 
 - Used in [Exercise 15.5](../exercises/lot-sizing-formulations.md#esercizio-15-5).
+
+### Instance MLS1 { #sez-sec-cat-ist-mls1 }
+
+Two products, three periods, setup times and initial inventory.
+
+$2$ products, $T=3$ periods, capacities (time) $cap_1=2500$, $cap_2=2100$, $cap_3=2500$, unit costs of the initial stock $3000$, $3000$: product 1:
+
+$$
+\begin{array}{l|ccc}
+\hline
+t & 1 & 2 & 3 \\
+\hline
+d_{1t} & 100 & 200 & 10 \\
+vt_{1t} & 20 & 10 & 10 \\
+st_{1t} & 100 & 100 & 100 \\
+f_{1t} & 10000 & 10000 & 10000 \\
+p_{1t} & 1100 & 1000 & 1000 \\
+h_{1t} & 110 & 100 & 100 \\
+\hline
+\end{array}
+$$
+
+product 2:
+
+$$
+\begin{array}{l|ccc}
+\hline
+t & 1 & 2 & 3 \\
+\hline
+d_{2t} & 10 & 100 & 150 \\
+vt_{2t} & 10 & 5 & 5 \\
+st_{2t} & 110 & 110 & 110 \\
+f_{2t} & 10000 & 10000 & 10000 \\
+p_{2t} & 900 & 800 & 800 \\
+h_{2t} & 105 & 105 & 105 \\
+\hline
+\end{array}
+$$
+
+- Optimal value $z(\mathrm{MLS1})=677400$, attained by $x_{11}=59$, $x_{12}=200$, $x_{13}=10$, $x_{21}=110$, $x_{22}=0$, $x_{23}=150$, $si_1=41$; unique.
+
+- Used in [Two products](../formulations/lot-sizing-formulations.md#box-5-ex-CLSP-inst).
+
+### Instance ULS4 { #sez-sec-cat-ist-uls4 }
+
+Wagner–Whitin DP, exercise 1.
+
+$T=4$ periods:
+
+$$
+\begin{array}{l|cccc}
+\hline
+t & 1 & 2 & 3 & 4 \\
+\hline
+d_t & 30 & 10 & 40 & 10 \\
+f_t & 50 & 80 & 70 & 60 \\
+p_t & 2 & 3 & 1 & 2 \\
+h_t & 1 & 2 & 2 & 1 \\
+\hline
+\end{array}
+$$
+
+- Optimal value $z(\mathrm{ULS4})=280$, attained by $(40,0,50,0)$.
+
+- Used in [Exercise 22.1](../exercises/dp-lot-sizing.md#esercizio-22-1).
+
+### Instance ULS5 { #sez-sec-cat-ist-uls5 }
+
+Wagner–Whitin DP, exercise 2.
+
+$T=4$ periods:
+
+$$
+\begin{array}{l|cccc}
+\hline
+t & 1 & 2 & 3 & 4 \\
+\hline
+d_t & 30 & 40 & 10 & 20 \\
+f_t & 50 & 80 & 80 & 50 \\
+p_t & 1 & 3 & 2 & 1 \\
+h_t & 1 & 1 & 1 & 2 \\
+\hline
+\end{array}
+$$
+
+- Optimal value $z(\mathrm{ULS5})=260$, attained by $(80,0,0,20)$.
+
+- Used in [Exercise 22.2](../exercises/dp-lot-sizing.md#esercizio-22-2).
+
+### Instance ULS6 { #sez-sec-cat-ist-uls6 }
+
+Wagner–Whitin DP, exercise 3.
+
+$T=5$ periods:
+
+$$
+\begin{array}{l|ccccc}
+\hline
+t & 1 & 2 & 3 & 4 & 5 \\
+\hline
+d_t & 10 & 30 & 40 & 30 & 40 \\
+f_t & 70 & 80 & 50 & 80 & 50 \\
+p_t & 1 & 1 & 1 & 1 & 2 \\
+h_t & 1 & 1 & 2 & 1 & 2 \\
+\hline
+\end{array}
+$$
+
+- Optimal value $z(\mathrm{ULS6})=420$, attained by $(40,0,40,70,0)$.
+
+- Used in [Exercise 22.3](../exercises/dp-lot-sizing.md#esercizio-22-3).
 
 ### Instance CLS8 { #sez-sec-cat-ist-cls8 }
 
@@ -384,328 +546,16 @@ $$
 
 - [Capacitated lot sizing, DP on (period, inventory) 2](../exercises/dp-lot-sizing.md#esercizio-22-5)
 
-## Uncapacitated lot sizing problem (ULS) { #sez-sec-cat-uls }
+## Variants { #sez-sec-cat-cls-var }
 
-<a id="box-2-def-cat-uls"></a>
+- [Uncapacitated lot sizing problem (ULS)](../catalogue/lot-sizing.md#sez-sec-cat-def-uls): Special case of the CLS in which the capacities are not binding, for example $cap_t \ge \sum_u d_u$.
 
-!!! definizione "Definition 2: Uncapacitated lot sizing problem"
+- [Capacitated lot sizing with constant capacity (CLS-C)](../catalogue/lot-sizing.md#sez-sec-cat-def-clsc): Special case of the CLS; the zero-inventory ordering property is replaced by a weaker one: between two periods with empty inventory at most one period produces a quantity strictly between $0$ and $C$.
 
-    Given:
+- [Lot sizing with several products and setup times (MLS)](../catalogue/lot-sizing.md#sez-sec-cat-def-mls): Generalizes the CLS, which is the case of one product with $vt_t=1$ and no setup time.
 
-    1. a set $T=\{1,2,\dots,m\}$ of $m \in \Z_{\ge 1}$ <em>time periods</em>,
+- [Lot sizing with initial stock (LS-SI)](../catalogue/lot-sizing.md#sez-sec-cat-def-lssi): Removes the assumption of an empty initial stock of the CLS.
 
-    2. for each period $t \in T$, a <em>demand</em> $d_t \in \Z_{\ge 1}$,
+- [Lot sizing with overtime (LS-OT)](../catalogue/lot-sizing.md#sez-sec-cat-def-lsot): Replaces the fixed capacity $cap_t$ of the CLS by two levels of capacity with different costs.
 
-    3. for each period $t \in T$, a <em>setup cost</em> $sc_t \in \Z_{\ge 0}$, a <em>variable production cost</em> $vc_t \in \Z_{\ge 0}$ per unit, and a <em>holding cost</em> $hc_t \in \Z_{\ge 0}$ per unit in stock at the end of period $t$,
-
-    the <strong>Uncapacitated Lot-Sizing Problem</strong> (ULS) asks to decide how many units to produce in each period, so that, starting with an empty inventory and ending with an empty inventory, the demand of every period is satisfied, and the total cost of setups, production, and holding is minimized.
-
-- Defined in [Chapter 22 «Dynamic programming for lot sizing»](../dynamic-programming/dp-lot-sizing/index.md#box-1-defULS).
-
-- Special case of the CLS in which the capacities are not binding, for example $cap_t \ge \sum_u d_u$.
-
-- <strong>Complexity</strong>: Polynomial: the DP algorithm of Wagner and Whitin runs in $\Theta(m^2)$ steps.
-
-- $v(t)=\min\{v(j-1)+c_{j,t} : j\in\{1,\dots,t\}\}$, $v(0)=0$, with the run cost $c_{j,t}=sc_j+vc_j\,D_{j,t}+\sum_{k=j}^{t-1}hc_k\,D_{k+1,t}$ (exact recurrence) ([Chapter 22 «Dynamic programming for lot sizing»](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls-step-1-and-step-2.md#2222-step-1-and-step-2)).
-
-- <strong>MIP model of the ULS</strong> ([Chapter 22 «Dynamic programming for lot sizing»](../dynamic-programming/dp-lot-sizing/index.md#box-1-defULS)):
-
-\begin{align*}
-\min\ & \sum_{t \in T} \left(sc_t\, y_t + vc_t\, x_t + hc_t\, s_t\right) \\
-& s_{t-1} + x_t = d_t + s_t, & t \in T \\
-& x_t \le D_{t,m}\, y_t, & t \in T \\
-& s_m = 0 \\
-& x_t,\ s_t \ge 0, & t \in T \\
-& y_t \in \{0,1\}, & t \in T
-\end{align*}
-
-<strong>Where it is treated</strong>
-
-- [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing.md#82-variants): Variant of the CLS, and the optimal cost $170$ of the reference instance without capacities
-
-- [Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations.md#154-comparing-the-formulations): Its optimal value is the LP bound of the shortest-path formulation
-
-- [Chapter 22 «Dynamic programming for lot sizing»](../dynamic-programming/dp-lot-sizing/index.md#box-4-thmZIO): Zero-inventory ordering property (Wagner and Whitin, 1958)
-
-- [Chapter 22 «Dynamic programming for lot sizing»](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls.md#222-a-dp-algorithm-for-the-uls): DP algorithm on the last production run, $\Theta(m^2)$ steps
-
-- [Chapter 27 «MIP heuristics for the classical problems»](../heuristic-algorithms/mip-heuristics-classical.md#box-16-ex-rfcourse): Relax-and-fix on the instance of the MIP course
-
-### Instance ULS1 { #sez-sec-cat-ist-uls1 }
-
-The reference instance without capacities.
-
-$T=5$ periods:
-
-$$
-\begin{array}{l|ccccc}
-\hline
-t & 1 & 2 & 3 & 4 & 5 \\
-\hline
-d_t & 2 & 1 & 3 & 4 & 1 \\
-f_t & 50 & 50 & 50 & 50 & 50 \\
-p_t & 0 & 0 & 0 & 0 & 0 \\
-h_t & 10 & 10 & 10 & 10 & 10 \\
-\hline
-\end{array}
-$$
-
-- Optimal value $z(\mathrm{ULS1})=170$, attained by $(3,0,8,0,0)$.
-
-- Used in [Counting the solutions: without the capacities the optimal cost is $170$](../combinatorial-optimization-problems/lot-sizing.md#84-counting-the-solutions), [Bound of the shortest-path formulation](../formulations/lot-sizing-formulations.md#154-comparing-the-formulations), [Optimal ULS solution, not feasible with capacity $4$](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#box-33-texcls1).
-
-### Instance ULS2 { #sez-sec-cat-ist-uls2 }
-
-Uncapacitated instance of the MIP course (the ULS above in original units: demands $\times 10$, holding cost $1$).
-
-$T=5$ periods:
-
-$$
-\begin{array}{l|ccccc}
-\hline
-t & 1 & 2 & 3 & 4 & 5 \\
-\hline
-d_t & 20 & 10 & 30 & 40 & 10 \\
-f_t & 50 & 50 & 50 & 50 & 50 \\
-p_t & 0 & 0 & 0 & 0 & 0 \\
-h_t & 1 & 1 & 1 & 1 & 1 \\
-\hline
-\end{array}
-$$
-
-- Optimal value $z(\mathrm{ULS2})=170$, attained by $(30,0,80,0,0)$ and $(30,0,30,50,0)$, two optimal plans.
-
-- Used in [Uncapacitated lot sizing](../dynamic-programming/dp-lot-sizing/index.md#box-2-texuls1), [Enumeration of the solutions with the zero-inventory ordering property](../dynamic-programming/dp-lot-sizing/index.md#box-5-texulsenum), [Computation of the production-run costs](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls.md#box-16-texulscost), [Computing the values of the $v$ function](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls-step-1-and-step-2.md#box-18-texulsvalues), [Execution of the DP algorithm](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls-step-1-and-step-2.md#box-29-texulsbu), [Computing an optimal solution](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls-step-1-and-step-2.md#box-31-texulssolvector), [Relax-and-fix on the lot sizing instance of the MIP course](../heuristic-algorithms/mip-heuristics-classical.md#box-16-ex-rfcourse).
-
-### Instance ULS3 { #sez-sec-cat-ist-uls3 }
-
-The same four periods without capacities.
-
-$T=4$ periods:
-
-$$
-\begin{array}{l|cccc}
-\hline
-t & 1 & 2 & 3 & 4 \\
-\hline
-d_t & 3 & 2 & 4 & 3 \\
-f_t & 30 & 40 & 30 & 40 \\
-p_t & 2 & 2 & 2 & 2 \\
-h_t & 4 & 4 & 4 & 4 \\
-\hline
-\end{array}
-$$
-
-- Optimal value $z(\mathrm{ULS3})=104$, attained by $(5,0,7,0)$.
-
-- Used in [no capacity](../exercises/lot-sizing.md#esercizio-8-4).
-
-### Instance ULS4 { #sez-sec-cat-ist-uls4 }
-
-Wagner–Whitin DP, exercise 1.
-
-$T=4$ periods:
-
-$$
-\begin{array}{l|cccc}
-\hline
-t & 1 & 2 & 3 & 4 \\
-\hline
-d_t & 30 & 10 & 40 & 10 \\
-f_t & 50 & 80 & 70 & 60 \\
-p_t & 2 & 3 & 1 & 2 \\
-h_t & 1 & 2 & 2 & 1 \\
-\hline
-\end{array}
-$$
-
-- Optimal value $z(\mathrm{ULS4})=280$, attained by $(40,0,50,0)$.
-
-- Used in [Exercise 22.1](../exercises/dp-lot-sizing.md#esercizio-22-1).
-
-### Instance ULS5 { #sez-sec-cat-ist-uls5 }
-
-Wagner–Whitin DP, exercise 2.
-
-$T=4$ periods:
-
-$$
-\begin{array}{l|cccc}
-\hline
-t & 1 & 2 & 3 & 4 \\
-\hline
-d_t & 30 & 40 & 10 & 20 \\
-f_t & 50 & 80 & 80 & 50 \\
-p_t & 1 & 3 & 2 & 1 \\
-h_t & 1 & 1 & 1 & 2 \\
-\hline
-\end{array}
-$$
-
-- Optimal value $z(\mathrm{ULS5})=260$, attained by $(80,0,0,20)$.
-
-- Used in [Exercise 22.2](../exercises/dp-lot-sizing.md#esercizio-22-2).
-
-### Instance ULS6 { #sez-sec-cat-ist-uls6 }
-
-Wagner–Whitin DP, exercise 3.
-
-$T=5$ periods:
-
-$$
-\begin{array}{l|ccccc}
-\hline
-t & 1 & 2 & 3 & 4 & 5 \\
-\hline
-d_t & 10 & 30 & 40 & 30 & 40 \\
-f_t & 70 & 80 & 50 & 80 & 50 \\
-p_t & 1 & 1 & 1 & 1 & 2 \\
-h_t & 1 & 1 & 2 & 1 & 2 \\
-\hline
-\end{array}
-$$
-
-- Optimal value $z(\mathrm{ULS6})=420$, attained by $(40,0,40,70,0)$.
-
-- Used in [Exercise 22.3](../exercises/dp-lot-sizing.md#esercizio-22-3).
-
-## Capacitated lot sizing with constant capacity (CLS-C) { #sez-sec-cat-clsc }
-
-<a id="box-3-def-cat-clsc"></a>
-
-!!! definizione "Definition 3: Capacitated lot sizing with constant capacity"
-
-    The CLS in which the capacity is the same in all periods, $cap_t=C$ for all $t\in T$.
-
-- Defined in [Chapter 22 «Dynamic programming for lot sizing»](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#2232-the-case-of-constant-capacity).
-
-- Special case of the CLS; the zero-inventory ordering property is replaced by a weaker one: between two periods with empty inventory at most one period produces a quantity strictly between $0$ and $C$.
-
-- <strong>Complexity</strong>: Solvable in polynomial time.
-
-<strong>Where it is treated</strong>
-
-- [Chapter 22 «Dynamic programming for lot sizing»](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md#2232-the-case-of-constant-capacity): The weaker property, checked on the reference instance ($C=4$)
-
-## Lot sizing with several products and setup times (MLS) { #sez-sec-cat-mls }
-
-<a id="box-4-def-cat-mls"></a>
-
-!!! definizione "Definition 4: Lot sizing with several products and setup times"
-
-    A set $P$ of products shares the resource of each period: $d_{pt}$, $sc_{pt}$, $vc_{pt}$ and $hc_{pt}$ are the data of product $p \in P$ in period $t \in T$; producing a unit of $p$ takes the time $vt_{pt} \in \Z_{\ge 1}$, a setup takes the time $st_{pt} \in \Z_{\ge 0}$, and the capacity $cap_t$ is a time.
-
-- Defined in [Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations.md#155-several-products-setup-times-and-initial-inventory).
-
-- Generalizes the CLS, which is the case of one product with $vt_t=1$ and no setup time.
-
-- Strong big-M value $M_{pt}=\min\left\{\left\lfloor\frac{cap_t-st_{pt}}{vt_{pt}}\right\rfloor,~sd_{ptm}\right\}$, with $sd_{ptk}=\sum_{j=t}^{k} d_{pj}$ ([Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations.md#155-several-products-setup-times-and-initial-inventory)).
-
-- <strong>Capacity and big-M constraints with several products</strong> ([Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations.md#155-several-products-setup-times-and-initial-inventory)):
-
-\begin{align*}
-\sum_{p \in P}\left(st_{pt}\,y_{pt} + vt_{pt}\,x_{pt}\right) &\leq cap_t, & \forall t\in T,\\
-x_{pt} &\le M_{pt}\, y_{pt}, & \forall p \in P,~ \forall t\in T
-\end{align*}
-
-<strong>Where it is treated</strong>
-
-- [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing.md#82-variants): Variant of the CLS
-
-- [Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations.md#155-several-products-setup-times-and-initial-inventory): Big-M and shortest-path formulations, strong big-M values
-
-- [Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations.md#box-5-ex-CLSP-inst): Instance with two products and three periods
-
-### Instance MLS1 { #sez-sec-cat-ist-mls1 }
-
-Two products, three periods, setup times and initial inventory.
-
-$2$ products, $T=3$ periods, capacities (time) $cap_1=2500$, $cap_2=2100$, $cap_3=2500$, unit costs of the initial stock $3000$, $3000$: product 1:
-
-$$
-\begin{array}{l|ccc}
-\hline
-t & 1 & 2 & 3 \\
-\hline
-d_{1t} & 100 & 200 & 10 \\
-vt_{1t} & 20 & 10 & 10 \\
-st_{1t} & 100 & 100 & 100 \\
-f_{1t} & 10000 & 10000 & 10000 \\
-p_{1t} & 1100 & 1000 & 1000 \\
-h_{1t} & 110 & 100 & 100 \\
-\hline
-\end{array}
-$$
-
-product 2:
-
-$$
-\begin{array}{l|ccc}
-\hline
-t & 1 & 2 & 3 \\
-\hline
-d_{2t} & 10 & 100 & 150 \\
-vt_{2t} & 10 & 5 & 5 \\
-st_{2t} & 110 & 110 & 110 \\
-f_{2t} & 10000 & 10000 & 10000 \\
-p_{2t} & 900 & 800 & 800 \\
-h_{2t} & 105 & 105 & 105 \\
-\hline
-\end{array}
-$$
-
-- Optimal value $z(\mathrm{MLS1})=677400$, attained by $x_{11}=59$, $x_{12}=200$, $x_{13}=10$, $x_{21}=110$, $x_{22}=0$, $x_{23}=150$, $si_1=41$; unique.
-
-- Used in [Two products](../formulations/lot-sizing-formulations.md#box-5-ex-CLSP-inst).
-
-## Lot sizing with initial stock (LS-SI) { #sez-sec-cat-lssi }
-
-<a id="box-5-def-cat-lssi"></a>
-
-!!! definizione "Definition 5: Lot sizing with initial stock"
-
-    The quantity $si_p$ of product $p$ available at the beginning of the horizon is a decision, bought at the cost $fc_p$ per unit; the balance of the first period becomes $si_{p} + x_{p1} = d_{p1} + s_{p1}$.
-
-- Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing.md#82-variants).
-
-- Removes the assumption of an empty initial stock of the CLS.
-
-<strong>Where it is treated</strong>
-
-- [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing.md#82-variants): Variant of the CLS
-
-- [Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations.md#155-several-products-setup-times-and-initial-inventory): Formulations, with an arc $w_{pt}$ of cost $ci_{pt}$ in the shortest-path network
-
-- [Chapter 15 «Formulations of capacitated lot sizing»](../formulations/lot-sizing-formulations.md#box-5-ex-CLSP-inst): Instance with two products, $fc_1=fc_2=3000$
-
-## Lot sizing with overtime (LS-OT) { #sez-sec-cat-lsot }
-
-<a id="box-6-def-cat-lsot"></a>
-
-!!! definizione "Definition 6: Lot sizing with overtime"
-
-    The capacity is not fixed: working time in normal hours costs $cw_t$ per unit up to $cap^{N}_t$, and overtime costs $co_t$ per unit up to $cap^{O}_t$.
-
-- Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing.md#82-variants).
-
-- Replaces the fixed capacity $cap_t$ of the CLS by two levels of capacity with different costs.
-
-<strong>Where it is treated</strong>
-
-- [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing.md#82-variants): Variant of the CLS
-
-## Lot sizing with unsatisfied demand (LS-UD) { #sez-sec-cat-lsud }
-
-<a id="box-7-def-cat-lsud"></a>
-
-!!! definizione "Definition 7: Lot sizing with unsatisfied demand"
-
-    A part of the demand may be left unsatisfied, at a penalty $cu_{pt}$ per unit.
-
-- Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing.md#82-variants).
-
-- Relaxes the demand constraints of the CLS, with a penalty in the objective.
-
-<strong>Where it is treated</strong>
-
-- [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing.md#82-variants): Variant of the CLS
+- [Lot sizing with unsatisfied demand (LS-UD)](../catalogue/lot-sizing.md#sez-sec-cat-def-lsud): Relaxes the demand constraints of the CLS, with a penalty in the objective.

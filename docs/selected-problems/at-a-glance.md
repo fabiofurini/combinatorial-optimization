@@ -6,15 +6,15 @@ title: "The problems at a glance"
 
 <div class="info-capitolo" markdown>
 
-**Selected problems** · [:material-file-pdf-box: Selected problems (PDF)](../pdf/selected-problems.pdf)
+**Selected problems** · [:material-view-list: Catalogue of combinatorial problems](../catalogue/index.md)
 
 </div>
 
-<a id="sec:cat-sintesi"></a><a id="sec:cat-pagina-at-a-glance"></a>
+<a id="sec:cat-sintesi"></a>
 
 !!! chiave ""
 
-    The course seen problem by problem: for each problem defined in the course, its definition, the chapters that treat it, its models and bounds, what each technique of the course gives on it, and the instances of the examples and exercises with their optimal value.
+    The problems the course dwells on most, compared: objective, complexity, the simplest bound and the approximation results of the course. Each name opens its page.
 
 ## The central problems { #sez-sec-cat-centrali }
 
@@ -77,96 +77,4 @@ title: "The problems at a glance"
 </tr>
 </table></div>
 
-## All the problems of the course { #sez-sec-cat-tutti }
-
-<strong>Central problems</strong>
-
-- [The knapsack problem](knapsack.md) (KP).
-
-- [The bin packing problem](bin-packing.md) (BPP).
-
-- [The vertex coloring problem](vertex-coloring.md) (VCP).
-
-- [The maximum clique problem](maximum-clique.md) (MCP).
-
-- [The travelling salesman problem](tsp.md) (TSP).
-
-- [Scheduling on identical parallel machines](pcmax.md) ($P\|C_{\max}$).
-
-- [Capacitated lot sizing](lot-sizing.md) (CLS).
-
-<strong>Knapsack family</strong>
-
-- [Subset sum problem](knapsack.md#sez-sec-cat-ssp) (SSP).
-
-- [Bounded knapsack problem](knapsack.md#sez-sec-cat-bkp) (BKP).
-
-- [Unbounded knapsack problem](knapsack.md#sez-sec-cat-ukp) (UKP).
-
-- [Multidimensional knapsack problem](knapsack.md#sez-sec-cat-mdkp) (MDKP).
-
-- [Multiple knapsack problem](knapsack.md#sez-sec-cat-mkp) (MKP).
-
-- [Multiple-choice knapsack problem](knapsack.md#sez-sec-cat-mckp) (MCKP).
-
-- [Knapsack problem with setups](knapsack.md#sez-sec-cat-kps) (KPS).
-
-- [Rod-Cutting Problem](knapsack-family.md#sez-sec-cat-rcp) (RCP).
-
-- [Coin Change Problem](knapsack-family.md#sez-sec-cat-ccp) (CCP).
-
-<strong>Packing</strong>
-
-- [Cutting stock problem](bin-packing.md#sez-sec-cat-csp) (CSP).
-
-<strong>Graphs</strong>
-
-- [3-colorability](vertex-coloring.md#sez-sec-cat-3col) (3-COL).
-
-- [Maximum stable set problem](maximum-clique.md#sez-sec-cat-mssp) (MSSP).
-
-- [Vertex-weighted maximum clique problem](maximum-clique.md#sez-sec-cat-vwmcp) (VWMCP).
-
-- [Edge-weighted maximum clique problem](maximum-clique.md#sez-sec-cat-ewmcp) (EWMCP).
-
-<strong>Routing</strong>
-
-- [Metric travelling salesman problem](tsp.md#sez-sec-cat-metrictsp) (metric TSP).
-
-- [Asymmetric travelling salesman problem](tsp.md#sez-sec-cat-atsp) (ATSP).
-
-- [Hamiltonian cycle problem](tsp.md#sez-sec-cat-hcp) (HCP).
-
-<strong>Scheduling</strong>
-
-- [Scheduling on a fixed number of identical machines ($m$ not part of the input)](pcmax.md#sez-sec-cat-pmcmax) ($Pm\|C_{\max}$).
-
-- [Scheduling on parallel machines with different speeds, $Q\,||\,C_{\max}$](pcmax.md#sez-sec-cat-qcmax).
-
-- [Scheduling on unrelated parallel machines, $R\,||\,C_{\max}$](pcmax.md#sez-sec-cat-rcmax).
-
-<strong>Lot sizing</strong>
-
-- [Uncapacitated lot sizing problem](lot-sizing.md#sez-sec-cat-uls) (ULS).
-
-- [Capacitated lot sizing with constant capacity](lot-sizing.md#sez-sec-cat-clsc) (CLS-C).
-
-- [Lot sizing with several products and setup times](lot-sizing.md#sez-sec-cat-mls) (MLS).
-
-- [Lot sizing with initial stock](lot-sizing.md#sez-sec-cat-lssi) (LS-SI).
-
-- [Lot sizing with overtime](lot-sizing.md#sez-sec-cat-lsot) (LS-OT).
-
-- [Lot sizing with unsatisfied demand](lot-sizing.md#sez-sec-cat-lsud) (LS-UD).
-
-<strong>DP examples</strong>
-
-- [Minimum-cost staircase](dp-examples.md#sez-sec-cat-stair) (STAIR).
-
-- [Billboards with no two consecutive positions](dp-examples.md#sez-sec-cat-nocons) (NOCONS).
-
-- [Maximum-profit path on a grid](dp-examples.md#sez-sec-cat-grid) (GRID).
-
-- [Shortest path in a layered network](dp-examples.md#sez-sec-cat-spp) (SPP).
-
-- [Compatible requests](dp-examples.md#sez-sec-cat-req) (REQ).
+- The definitions of all the problems of the course, the central ones and their variants, are in the [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-kp).

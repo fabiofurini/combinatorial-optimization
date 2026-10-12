@@ -6,13 +6,13 @@ title: "The maximum clique problem"
 
 <div class="info-capitolo" markdown>
 
-**Selected problems** · [:material-file-pdf-box: Selected problems (PDF)](../pdf/selected-problems.pdf)
+**Selected problems** · [:material-view-list: Catalogue of combinatorial problems](../catalogue/index.md)
 
 </div>
 
 <a id="sec:cat-mcp"></a>
 
-<a id="sec:cat-pagina-maximum-clique"></a>
+<a id="sec:cat-pagina-central-problems"></a>
 
 !!! chiave ""
 
@@ -28,29 +28,7 @@ title: "The maximum clique problem"
 
 ## Definition { #sez-sec-cat-mcp-def }
 
-<a id="box-1-def-cat-mcp"></a>
-
-!!! definizione "Definition 1: The maximum clique problem"
-
-    Given:
-
-    1. a simple <em>graph</em> $G = (V,E)$, where
-
-        $$
-        V = \{1,2,\dots,n\}
-        $$
-
-        is the set of $n$ <em>vertices</em>, and
-
-        $$
-        E \subseteq \big\{\, \{u,v\} : u,v \in V,~ u \neq v \,\big\}
-        $$
-
-        is the set of $m$ <em>edges</em>,
-
-    the <strong>Maximum Clique Problem</strong> (MCP) asks to find a clique $K \subseteq V$ of $G$ whose number of vertices is maximum. Its optimal value is the clique number $\omega(G)$.
-
-- Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-2-mcpP-def-MCP).
+- Definition and assumptions: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-mcp).
 
 - A clique is a set of pairwise adjacent vertices: groups of pairwise connected members of a social network, of pairwise compatible tasks or exams, common substructures of two molecules.
 
@@ -132,6 +110,56 @@ $$
 
 - Used in [Example «MCP instance: a dense graph with $8$ vertices»](../combinatorial-optimization-problems/clique.md#box-7-mcpP-ex2).
 
+### Instance VWMCP1 { #sez-sec-cat-ist-vwmcp1 }
+
+The dense graph with $8$ vertices and vertex weights.
+
+Graph with $n=8$ vertices $V=\{1,\dots,8\}$ and $24$ edges:
+
+$$
+\begin{aligned}
+E=\big\{ & \{1,2\},\{1,3\},\{1,4\},\{1,6\},\{1,7\},\{1,8\},\{2,3\},\{2,4\},\{2,5\},\\
+& \{2,7\},\{2,8\},\{3,4\},\{3,5\},\{3,6\},\{3,8\},\{4,5\},\{4,6\},\{4,7\},\\
+& \{5,6\},\{5,7\},\{5,8\},\{6,7\},\{6,8\},\{7,8\}\big\}.
+\end{aligned}
+$$
+
+Vertex weights:
+
+$$
+\begin{array}{l|cccccccc}
+\hline
+v & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+\hline
+w_v & 5 & 8 & 9 & 5 & 6 & 5 & 5 & 9 \\
+\hline
+\end{array}
+$$
+
+- Optimal value $z(\mathrm{VWMCP1})=32$, attained by $\{2,3,5,8\}$, unique.
+
+- Used in [Example «vertex-weighted maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-13-mcpP-ex3).
+
+### Instance EWMCP1 { #sez-sec-cat-ist-ewmcp1 }
+
+The dense graph with $8$ vertices and edge weights.
+
+Graph with $n=8$ vertices $V=\{1,\dots,8\}$ and $24$ edges:
+
+$$
+\begin{aligned}
+E=\big\{ & \{1,2\},\{1,3\},\{1,4\},\{1,6\},\{1,7\},\{1,8\},\{2,3\},\{2,4\},\{2,5\},\\
+& \{2,7\},\{2,8\},\{3,4\},\{3,5\},\{3,6\},\{3,8\},\{4,5\},\{4,6\},\{4,7\},\\
+& \{5,6\},\{5,7\},\{5,8\},\{6,7\},\{6,8\},\{7,8\}\big\}.
+\end{aligned}
+$$
+
+Edge weights: $r_{12}=1$, $r_{13}=4$, $r_{14}=5$, $r_{16}=4$, $r_{17}=3$, $r_{18}=3$, $r_{23}=2$, $r_{24}=5$, $r_{25}=6$, $r_{27}=9$, $r_{28}=4$, $r_{34}=3$, $r_{35}=6$, $r_{36}=1$, $r_{38}=6$, $r_{45}=4$, $r_{46}=7$, $r_{47}=2$, $r_{56}=5$, $r_{57}=7$, $r_{58}=3$, $r_{67}=1$, $r_{68}=2$, $r_{78}=8$.
+
+- Optimal value $z(\mathrm{EWMCP1})=37$, attained by $\{2,5,7,8\}$, unique.
+
+- Used in [Example «edge-weighted maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-14-mcpP-ex4).
+
 ### Instance MCP3 { #sez-sec-cat-ist-mcp3 }
 
 The Petersen graph, $z=\omega(G)$.
@@ -148,6 +176,23 @@ $$
 - Optimal value $z(\mathrm{MCP3})=2$, attained by no triangle: the maximum cliques are the edges.
 
 - Used in [Dual bounds on the Petersen graph](../combinatorial-optimization-problems/coloring.md#423-counting-the-solutions-a-first-solution-and-the-bounds), [Remark after Example «MCP instance: a dense graph with $8$ vertices»](../combinatorial-optimization-problems/clique.md#box-7-mcpP-ex2).
+
+### Instance MSSP1 { #sez-sec-cat-ist-mssp1 }
+
+The Petersen graph, $z=\alpha(G)$.
+
+Graph with $n=10$ vertices $V=\{1,\dots,10\}$ and $15$ edges:
+
+$$
+\begin{aligned}
+E=\big\{ & \{1,2\},\{1,5\},\{1,6\},\{2,3\},\{2,7\},\{3,4\},\{3,8\},\{4,5\},\{4,9\},\\
+& \{5,10\},\{6,8\},\{6,9\},\{7,9\},\{7,10\},\{8,10\}\big\}.
+\end{aligned}
+$$
+
+- Optimal value $z(\mathrm{MSSP1})=4$, attained by $\{1,4,7,8\}$.
+
+- Used in [Dual bounds on the Petersen graph](../combinatorial-optimization-problems/coloring.md#423-counting-the-solutions-a-first-solution-and-the-bounds).
 
 ### Instance MCP4 { #sez-sec-cat-ist-mcp4 }
 
@@ -208,6 +253,20 @@ $$
 
 - Used in [Exercise 4.2](../exercises/coloring.md#esercizio-4-2).
 
+### Instance MSSP2 { #sez-sec-cat-ist-mssp2 }
+
+A graph with $6$ vertices and $7$ edges, $z=\alpha(G)$.
+
+Graph with $n=6$ vertices $V=\{1,\dots,6\}$ and $7$ edges:
+
+$$
+E=\big\{\{1,2\},\{1,4\},\{1,5\},\{2,3\},\{2,4\},\{3,6\},\{5,6\}\big\}.
+$$
+
+- Optimal value $z(\mathrm{MSSP2})=3$, attained by the unique maximum stable set $\{3,4,5\}$.
+
+- Used in [Exercise 4.2](../exercises/coloring.md#esercizio-4-2).
+
 ### Instance MCP8 { #sez-sec-cat-ist-mcp8 }
 
 The complement of the cycle $C_7$, $z=\omega(G)$.
@@ -225,6 +284,23 @@ $$
 
 - Used in [Exercise 4.3](../exercises/coloring.md#esercizio-4-3).
 
+### Instance MSSP3 { #sez-sec-cat-ist-mssp3 }
+
+The complement of the cycle $C_7$, $z=\alpha(G)$.
+
+Graph with $n=7$ vertices $V=\{1,\dots,7\}$ and $14$ edges:
+
+$$
+\begin{aligned}
+E=\big\{ & \{1,3\},\{1,4\},\{1,5\},\{1,6\},\{2,4\},\{2,5\},\{2,6\},\{2,7\},\{3,5\},\\
+& \{3,6\},\{3,7\},\{4,6\},\{4,7\},\{5,7\}\big\}.
+\end{aligned}
+$$
+
+- Optimal value $z(\mathrm{MSSP3})=2$, attained by $\{1,2\}$, an edge of $\overline{G}=C_7$.
+
+- Used in [Exercise 4.3](../exercises/coloring.md#esercizio-4-3).
+
 ### Instance MCP9 { #sez-sec-cat-ist-mcp9 }
 
 The wheel $W_5$, $z=\omega(W_5)$.
@@ -239,6 +315,23 @@ E=\big\{ & \{1,2\},\{2,3\},\{3,4\},\{4,5\},\{1,5\},\{1,6\},\{2,6\},\{3,6\},\{4,6
 $$
 
 - Optimal value $z(\mathrm{MCP9})=3$, attained by $\{1,2,6\}$.
+
+- Used in [Exercise 4.4](../exercises/coloring.md#esercizio-4-4).
+
+### Instance MSSP4 { #sez-sec-cat-ist-mssp4 }
+
+The wheel $W_5$, $z=\alpha(W_5)$.
+
+Graph with $n=6$ vertices $V=\{1,\dots,6\}$ and $10$ edges:
+
+$$
+\begin{aligned}
+E=\big\{ & \{1,2\},\{2,3\},\{3,4\},\{4,5\},\{1,5\},\{1,6\},\{2,6\},\{3,6\},\{4,6\},\\
+& \{5,6\}\big\}.
+\end{aligned}
+$$
+
+- Optimal value $z(\mathrm{MSSP4})=2$, attained by $\{1,3\}$.
 
 - Used in [Exercise 4.4](../exercises/coloring.md#esercizio-4-4).
 
@@ -271,175 +364,10 @@ $$
 
 - [Vertex coloring approximation 1](../exercises/coloring-approximation.md#esercizio-33-1)
 
-## Maximum stable set problem (MSSP) { #sez-sec-cat-mssp }
+## Variants { #sez-sec-cat-mcp-var }
 
-<a id="box-2-def-cat-mssp"></a>
+- [Maximum stable set problem (MSSP)](../catalogue/graphs.md#sez-sec-cat-def-mssp): A subset is a clique of $G$ if and only if it is a stable set of $\overline{G}$: $\omega(G) = \alpha(\overline{G})$ and $\alpha(G) = \omega(\overline{G})$.
 
-!!! definizione "Definition 2: Maximum stable set problem"
+- [Vertex-weighted maximum clique problem (VWMCP)](../catalogue/graphs.md#sez-sec-cat-def-vwmcp): With all the weights $w_v=1$ it is the MCP.
 
-    Let $G=(V,E)$ be a graph.
-
-    1. A <strong>stable set</strong> (also called <strong>independent set</strong>) is a subset $Q \subseteq V$ of pairwise non-adjacent vertices: $\{u,v\} \notin E$ for all $u,v \in Q$ with $u \neq v$.
-
-    2. The <strong>Maximum Stable Set Problem</strong> (MSSP) asks to find a stable set of $G$ whose number of vertices is maximum. Its optimal value is the <strong>stability number</strong> $\alpha(G)$.
-
-- Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-3-mcpP-def-MSSP).
-
-- A subset is a clique of $G$ if and only if it is a stable set of $\overline{G}$: $\omega(G) = \alpha(\overline{G})$ and $\alpha(G) = \omega(\overline{G})$.
-
-- <strong>Complexity</strong>: NP-hard, as the MCP (through the complement graph).
-
-<strong>Where it is treated</strong>
-
-- [Chapter 4 «Vertex coloring»](../combinatorial-optimization-problems/coloring.md#box-7-obs-stable-bound): The stable set bound $\lceil n/\alpha(G)\rceil\le\chi(G)$ of the VCP
-
-- [Exercise 4.3](../exercises/coloring.md#esercizio-4-3): $\alpha(G)$ as the clique number of the complement graph
-
-- [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-5-mcpP-prop-omega-alpha): The MCP on $G$ is the MSSP on $\overline{G}$
-
-### Instance MSSP1 { #sez-sec-cat-ist-mssp1 }
-
-The Petersen graph, $z=\alpha(G)$.
-
-Graph with $n=10$ vertices $V=\{1,\dots,10\}$ and $15$ edges:
-
-$$
-\begin{aligned}
-E=\big\{ & \{1,2\},\{1,5\},\{1,6\},\{2,3\},\{2,7\},\{3,4\},\{3,8\},\{4,5\},\{4,9\},\\
-& \{5,10\},\{6,8\},\{6,9\},\{7,9\},\{7,10\},\{8,10\}\big\}.
-\end{aligned}
-$$
-
-- Optimal value $z(\mathrm{MSSP1})=4$, attained by $\{1,4,7,8\}$.
-
-- Used in [Dual bounds on the Petersen graph](../combinatorial-optimization-problems/coloring.md#423-counting-the-solutions-a-first-solution-and-the-bounds).
-
-### Instance MSSP2 { #sez-sec-cat-ist-mssp2 }
-
-A graph with $6$ vertices and $7$ edges, $z=\alpha(G)$.
-
-Graph with $n=6$ vertices $V=\{1,\dots,6\}$ and $7$ edges:
-
-$$
-E=\big\{\{1,2\},\{1,4\},\{1,5\},\{2,3\},\{2,4\},\{3,6\},\{5,6\}\big\}.
-$$
-
-- Optimal value $z(\mathrm{MSSP2})=3$, attained by the unique maximum stable set $\{3,4,5\}$.
-
-- Used in [Exercise 4.2](../exercises/coloring.md#esercizio-4-2).
-
-### Instance MSSP3 { #sez-sec-cat-ist-mssp3 }
-
-The complement of the cycle $C_7$, $z=\alpha(G)$.
-
-Graph with $n=7$ vertices $V=\{1,\dots,7\}$ and $14$ edges:
-
-$$
-\begin{aligned}
-E=\big\{ & \{1,3\},\{1,4\},\{1,5\},\{1,6\},\{2,4\},\{2,5\},\{2,6\},\{2,7\},\{3,5\},\\
-& \{3,6\},\{3,7\},\{4,6\},\{4,7\},\{5,7\}\big\}.
-\end{aligned}
-$$
-
-- Optimal value $z(\mathrm{MSSP3})=2$, attained by $\{1,2\}$, an edge of $\overline{G}=C_7$.
-
-- Used in [Exercise 4.3](../exercises/coloring.md#esercizio-4-3).
-
-### Instance MSSP4 { #sez-sec-cat-ist-mssp4 }
-
-The wheel $W_5$, $z=\alpha(W_5)$.
-
-Graph with $n=6$ vertices $V=\{1,\dots,6\}$ and $10$ edges:
-
-$$
-\begin{aligned}
-E=\big\{ & \{1,2\},\{2,3\},\{3,4\},\{4,5\},\{1,5\},\{1,6\},\{2,6\},\{3,6\},\{4,6\},\\
-& \{5,6\}\big\}.
-\end{aligned}
-$$
-
-- Optimal value $z(\mathrm{MSSP4})=2$, attained by $\{1,3\}$.
-
-- Used in [Exercise 4.4](../exercises/coloring.md#esercizio-4-4).
-
-## Vertex-weighted maximum clique problem (VWMCP) { #sez-sec-cat-vwmcp }
-
-<a id="box-3-def-cat-vwmcp"></a>
-
-!!! definizione "Definition 3: Vertex-weighted maximum clique problem"
-
-    Given a graph $G$ and a vertex-weight vector $\vet{w} \in \Z_{\ge 1}^n$, the <strong>vertex-weighted maximum clique problem</strong> asks to find a clique $K$ of $G$ with maximum total vertex weight $w(K) = \sum_{v \in K} w_v$.
-
-- Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-12-mcpP-def-weighted).
-
-- With all the weights $w_v=1$ it is the MCP.
-
-<strong>Where it is treated</strong>
-
-- [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-13-mcpP-ex3): Example «vertex-weighted maximum clique problem»
-
-### Instance VWMCP1 { #sez-sec-cat-ist-vwmcp1 }
-
-The dense graph with $8$ vertices and vertex weights.
-
-Graph with $n=8$ vertices $V=\{1,\dots,8\}$ and $24$ edges:
-
-$$
-\begin{aligned}
-E=\big\{ & \{1,2\},\{1,3\},\{1,4\},\{1,6\},\{1,7\},\{1,8\},\{2,3\},\{2,4\},\{2,5\},\\
-& \{2,7\},\{2,8\},\{3,4\},\{3,5\},\{3,6\},\{3,8\},\{4,5\},\{4,6\},\{4,7\},\\
-& \{5,6\},\{5,7\},\{5,8\},\{6,7\},\{6,8\},\{7,8\}\big\}.
-\end{aligned}
-$$
-
-Vertex weights:
-
-$$
-\begin{array}{l|cccccccc}
-\hline
-v & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
-\hline
-w_v & 5 & 8 & 9 & 5 & 6 & 5 & 5 & 9 \\
-\hline
-\end{array}
-$$
-
-- Optimal value $z(\mathrm{VWMCP1})=32$, attained by $\{2,3,5,8\}$, unique.
-
-- Used in [Example «vertex-weighted maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-13-mcpP-ex3).
-
-## Edge-weighted maximum clique problem (EWMCP) { #sez-sec-cat-ewmcp }
-
-<a id="box-4-def-cat-ewmcp"></a>
-
-!!! definizione "Definition 4: Edge-weighted maximum clique problem"
-
-    Given a graph $G$ and an edge-weight vector $\vet{r} \in \Z_{\ge 1}^m$, the <strong>edge-weighted maximum clique problem</strong> asks to find a clique $K$ of $G$ with maximum total edge weight $r(K) = \sum_{\{u,v\} \in E[K]} r_{uv}$, where $E[K]$ is the set of the edges with both endpoints in $K$.
-
-- Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-12-mcpP-def-weighted).
-
-- With $r_{uv}=1$ it is again the MCP, since $r(K)=\binom{|K|}{2}$ grows with $|K|$.
-
-<strong>Where it is treated</strong>
-
-- [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-14-mcpP-ex4): Example «edge-weighted maximum clique problem»
-
-### Instance EWMCP1 { #sez-sec-cat-ist-ewmcp1 }
-
-The dense graph with $8$ vertices and edge weights.
-
-Graph with $n=8$ vertices $V=\{1,\dots,8\}$ and $24$ edges:
-
-$$
-\begin{aligned}
-E=\big\{ & \{1,2\},\{1,3\},\{1,4\},\{1,6\},\{1,7\},\{1,8\},\{2,3\},\{2,4\},\{2,5\},\\
-& \{2,7\},\{2,8\},\{3,4\},\{3,5\},\{3,6\},\{3,8\},\{4,5\},\{4,6\},\{4,7\},\\
-& \{5,6\},\{5,7\},\{5,8\},\{6,7\},\{6,8\},\{7,8\}\big\}.
-\end{aligned}
-$$
-
-Edge weights: $r_{12}=1$, $r_{13}=4$, $r_{14}=5$, $r_{16}=4$, $r_{17}=3$, $r_{18}=3$, $r_{23}=2$, $r_{24}=5$, $r_{25}=6$, $r_{27}=9$, $r_{28}=4$, $r_{34}=3$, $r_{35}=6$, $r_{36}=1$, $r_{38}=6$, $r_{45}=4$, $r_{46}=7$, $r_{47}=2$, $r_{56}=5$, $r_{57}=7$, $r_{58}=3$, $r_{67}=1$, $r_{68}=2$, $r_{78}=8$.
-
-- Optimal value $z(\mathrm{EWMCP1})=37$, attained by $\{2,5,7,8\}$, unique.
-
-- Used in [Example «edge-weighted maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-14-mcpP-ex4).
+- [Edge-weighted maximum clique problem (EWMCP)](../catalogue/graphs.md#sez-sec-cat-def-ewmcp): With $r_{uv}=1$ it is again the MCP, since $r(K)=\binom{|K|}{2}$ grows with $|K|$.

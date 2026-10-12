@@ -28,13 +28,13 @@ The lecture notes, the exercise books and the selected problems in PDF, with the
 | 5. Approximation algorithms | 28–33 | [:material-file-pdf-box: exercises-5-approximation-algorithms.pdf](pdf/exercises-5-approximation-algorithms.pdf) (0.6 MB) |
 | 6. Specialized algorithms | 34 | [:material-file-pdf-box: exercises-6-specialized-algorithms.pdf](pdf/exercises-6-specialized-algorithms.pdf) (0.3 MB) |
 
-## Selected problems
+## Catalogue of problems
 
-The problems of the course, studied in depth one by one ([the pages](selected-problems/index.md)).
+All the problems of the course with their definition and assumptions ([the catalogue](catalogue/index.md)); the central problems, studied in depth one by one, are in the [selected problems](selected-problems/index.md).
 
 | | Chapters | PDF |
 |---|---|---|
-| Selected problems | all | [:material-file-pdf-box: selected-problems.pdf](pdf/selected-problems.pdf) (1.0 MB) |
+| Catalogue of combinatorial problems | all | [:material-file-pdf-box: combinatorial-problem-catalogue.pdf](pdf/combinatorial-problem-catalogue.pdf) (0.4 MB) |
 
 !!! nota "In preparation"
 

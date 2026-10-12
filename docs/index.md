@@ -20,7 +20,8 @@ professor at [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
 
 [Start with the problems :material-arrow-right:](combinatorial-optimization-problems/index.md){ .md-button .md-button--primary }
 [The exercises](exercises/index.md){ .md-button }
-[:material-view-list: Selected problems](selected-problems/index.md){ .md-button }
+[:material-view-list: Catalogue of problems](catalogue/index.md){ .md-button }
+[:material-star-outline: Selected problems](selected-problems/index.md){ .md-button }
 [:material-download: Download the lecture notes (PDF)](downloads.md){ .md-button }
 
 </div>
@@ -106,13 +107,21 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
     [:octicons-arrow-right-24: The chapters](specialized-algorithms/index.md)
 
--   :material-view-list: **Selected problems**
+-   :material-view-list: **Catalogue of problems**
 
     ---
 
-    The course seen problem by problem: definitions, models, bounds, techniques and instances of every problem.
+    All the problems defined in the course, by family: definition and assumptions.
 
-    [:octicons-arrow-right-24: The selected problems](selected-problems/index.md) · [:material-file-pdf-box: PDF](pdf/selected-problems.pdf)
+    [:octicons-arrow-right-24: The catalogue](catalogue/index.md) · [:material-file-pdf-box: PDF](pdf/combinatorial-problem-catalogue.pdf)
+
+-   :material-star-outline: **Selected problems**
+
+    ---
+
+    The central problems in depth: where they are treated, each technique of the course, instances and exercises.
+
+    [:octicons-arrow-right-24: The selected problems](selected-problems/index.md)
 
 </div>
 

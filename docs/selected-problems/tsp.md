@@ -6,13 +6,13 @@ title: "The travelling salesman problem"
 
 <div class="info-capitolo" markdown>
 
-**Selected problems** · [:material-file-pdf-box: Selected problems (PDF)](../pdf/selected-problems.pdf)
+**Selected problems** · [:material-view-list: Catalogue of combinatorial problems](../catalogue/index.md)
 
 </div>
 
 <a id="sec:cat-tsp"></a>
 
-<a id="sec:cat-pagina-tsp"></a>
+<a id="sec:cat-pagina-central-problems"></a>
 
 !!! chiave ""
 
@@ -42,19 +42,7 @@ title: "The travelling salesman problem"
 
 ## Definition { #sez-sec-cat-tsp-def }
 
-<a id="box-1-def-cat-tsp"></a>
-
-!!! definizione "Definition 1: The travelling salesman problem"
-
-    Given:
-
-    1. a set $\Vcitta = \{1,2,\dots,n\}$ of $n$ <em>cities</em>,
-
-    2. for each pair of distinct cities $i,j \in \Vcitta$, a <em>distance</em> $d_{ij} \in \Z_{\ge 1}$, with $d_{ij}=d_{ji}$,
-
-    the <strong>travelling salesman problem</strong> (TSP) asks to find a closed route that starts from a city, visits every other city exactly once and returns to the starting city, so that the total distance travelled is minimized.
-
-- Defined in [Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp.md#box-1-defTSP).
+- Definition and assumptions: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-tsp).
 
 - The cities are places to visit and $d_{ij}$ the cost of going from $i$ to $j$, as for a technician who visits her sites and comes back to the office ([Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#110-exercises)).
 
@@ -339,6 +327,29 @@ $$
 - Optimal value $z(\mathrm{TSP8})=18$, attained by $(1,2,3,4)$.
 
 - Used in [Exercise 6.4](../exercises/tsp.md#esercizio-6-4).
+
+### Instance ATSP1 { #sez-sec-cat-ist-atsp1 }
+
+$4$ cities with asymmetric distances.
+
+$n=4$ cities, asymmetric distances:
+
+$$
+\begin{array}{c|cccc}
+\hline
+d_{ij} & 1 & 2 & 3 & 4 \\
+\hline
+1 & - & 3 & 8 & 5 \\
+2 & 6 & - & 2 & 9 \\
+3 & 4 & 7 & - & 3 \\
+4 & 2 & 6 & 5 & - \\
+\hline
+\end{array}
+$$
+
+- Optimal value $z(\mathrm{ATSP1})=10$, attained by its reverse has length $23$.
+
+- Used in [Exercise 6.5](../exercises/tsp.md#esercizio-6-5).
 
 ### Instance TSP9 { #sez-sec-cat-ist-tsp9 }
 
@@ -1066,102 +1077,10 @@ $$
 
 - [Large neighbourhood search 3](../exercises/metaheuristics.md#esercizio-26-15)
 
-## Metric travelling salesman problem (metric TSP) { #sez-sec-cat-metrictsp }
+## Variants { #sez-sec-cat-tsp-var }
 
-<a id="box-2-def-cat-metrictsp"></a>
+- [Metric travelling salesman problem (metric TSP)](../catalogue/routing.md#sez-sec-cat-def-metrictsp): The special case of the TSP with the triangle inequality, where approximation guarantees exist.
 
-!!! definizione "Definition 2: Metric travelling salesman problem"
+- [Asymmetric travelling salesman problem (ATSP)](../catalogue/routing.md#sez-sec-cat-def-atsp): The TSP is the special case of the ATSP in which $d_{ij}=d_{ji}$ for all $i,j$; an ATSP instance has $(n-1)!$ tours.
 
-    A TSP instance is <strong>metric</strong> if its distances satisfy the <strong>triangle inequality</strong>
-
-    $$
-    d_{ij} \le d_{ik} + d_{kj}
-    \qquad \text{for all distinct } i,j,k \in \Vcitta.
-    $$
-
-- Defined in [Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp.md#box-3-defMetricTSP).
-
-- The special case of the TSP with the triangle inequality, where approximation guarantees exist.
-
-- <strong>Complexity</strong>: Approximable within $\frac32$ (Christofides, 1976; Serdyukov, 1978).
-
-<strong>Where it is treated</strong>
-
-- [Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp.md#62-variants-metric-and-asymmetric-tsp): Definition; the reference instance is metric
-
-- [Exercise 6.4](../exercises/tsp.md#esercizio-6-4): Checking the triangle inequality
-
-- [Chapter 32 «Approximation for the metric TSP»](../approximation-algorithms/tsp-approximation.md#box-1-def-metricTSP): Definition in the approximation chapter
-
-- [Chapter 32 «Approximation for the metric TSP»](../approximation-algorithms/tsp-approximation.md#box-7-prop-DT): $DT$ is a $2$-approximation, tight
-
-- [Chapter 32 «Approximation for the metric TSP»](../approximation-algorithms/tsp-approximation.md#box-9-prop-CH): $CH$ is a $\frac32$-approximation, tight
-
-- [Exercise 32.1](../exercises/tsp-approximation.md#esercizio-32-1):
-
-- [Exercise 32.2](../exercises/tsp-approximation.md#esercizio-32-2):
-
-## Asymmetric travelling salesman problem (ATSP) { #sez-sec-cat-atsp }
-
-<a id="box-3-def-cat-atsp"></a>
-
-!!! definizione "Definition 3: Asymmetric travelling salesman problem"
-
-    In the <strong>asymmetric travelling salesman problem</strong> (ATSP) the distances are not required to be symmetric: $d_{ij}$ may differ from $d_{ji}$. The definition of tour and of its length $L(\sigma)$ is unchanged, but a tour and the same tour travelled backwards are different solutions.
-
-- Defined in [Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp.md#62-variants-metric-and-asymmetric-tsp).
-
-- The TSP is the special case of the ATSP in which $d_{ij}=d_{ji}$ for all $i,j$; an ATSP instance has $(n-1)!$ tours.
-
-<strong>Where it is treated</strong>
-
-- [Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp.md#62-variants-metric-and-asymmetric-tsp): Definition
-
-- [Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp.md#box-4-prop-tsp-count): $(n-1)!$ tours
-
-- [Exercise 6.5](../exercises/tsp.md#esercizio-6-5): An ATSP instance with $4$ cities
-
-### Instance ATSP1 { #sez-sec-cat-ist-atsp1 }
-
-$4$ cities with asymmetric distances.
-
-$n=4$ cities, asymmetric distances:
-
-$$
-\begin{array}{c|cccc}
-\hline
-d_{ij} & 1 & 2 & 3 & 4 \\
-\hline
-1 & - & 3 & 8 & 5 \\
-2 & 6 & - & 2 & 9 \\
-3 & 4 & 7 & - & 3 \\
-4 & 2 & 6 & 5 & - \\
-\hline
-\end{array}
-$$
-
-- Optimal value $z(\mathrm{ATSP1})=10$, attained by its reverse has length $23$.
-
-- Used in [Exercise 6.5](../exercises/tsp.md#esercizio-6-5).
-
-## Hamiltonian cycle problem (HCP) { #sez-sec-cat-hcp }
-
-<a id="box-4-def-cat-hcp"></a>
-
-!!! definizione "Definition 4: Hamiltonian cycle problem"
-
-    The <strong>Hamiltonian cycle problem</strong> asks whether a graph $G=(V,E)$ has a cycle through all its vertices.
-
-- Defined in [Chapter 32 «Approximation for the metric TSP»](../approximation-algorithms/tsp-approximation.md#box-11-prop-TSPinapx).
-
-- With $d_{ij}=1$ on the edges and a large distance elsewhere, $G$ is Hamiltonian if and only if $z(I_G)=n$: the TSP contains it.
-
-- <strong>Complexity</strong>: NP-complete (Karp, 1972).
-
-<strong>Where it is treated</strong>
-
-- [Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#sez-sec-complexity): Why the TSP is strongly NP-hard
-
-- [Chapter 32 «Approximation for the metric TSP»](../approximation-algorithms/tsp-approximation.md#box-11-prop-TSPinapx): The reduction behind the inapproximability of the general TSP
-
-- [Exercise 32.3](../exercises/tsp-approximation.md#esercizio-32-3):
+- [Hamiltonian cycle problem (HCP)](../catalogue/routing.md#sez-sec-cat-def-hcp): With $d_{ij}=1$ on the edges and a large distance elsewhere, $G$ is Hamiltonian if and only if $z(I_G)=n$: the TSP contains it.

@@ -6,13 +6,13 @@ title: "Scheduling on identical parallel machines"
 
 <div class="info-capitolo" markdown>
 
-**Selected problems** · [:material-file-pdf-box: Selected problems (PDF)](../pdf/selected-problems.pdf)
+**Selected problems** · [:material-view-list: Catalogue of combinatorial problems](../catalogue/index.md)
 
 </div>
 
 <a id="sec:cat-pcmax"></a>
 
-<a id="sec:cat-pagina-pcmax"></a>
+<a id="sec:cat-pagina-central-problems"></a>
 
 !!! chiave ""
 
@@ -44,25 +44,7 @@ title: "Scheduling on identical parallel machines"
 
 ## Definition { #sez-sec-cat-pcmax-def }
 
-<a id="box-1-def-cat-pcmax"></a>
-
-!!! definizione "Definition 1: Scheduling on identical parallel machines"
-
-    Given:
-
-    1. a set of $m$ identical <em>machines</em>,
-
-    2. a set $\Jlavori = \{1,2,\dots,n\}$ of $n$ <em>jobs</em>,
-
-    3. for each job $j \in \Jlavori$, a <em>processing time</em> $t_j \in \Z_{\ge 1}$,
-
-    the problem $P\,||\,C_{\max}$ asks to assign each job to a machine, so that the time needed to complete all the jobs, i.e., the largest total processing time assigned to a machine, is minimized. With $J_h$ the set of jobs of machine $h$ and $L_h=\sum_{j\in J_h} t_j$ its load, the problem reads
-
-    $$
-    \min\left\{\max_{h \in \{1,\dots,m\}} \sum_{j \in J_h} t_j \;:\; J_1,J_2,\dots,J_m \text{ is a partition of } \Jlavori\right\}.
-    $$
-
-- Defined in [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax.md#box-1-defPCmax).
+- Definition and assumptions: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-pcmax).
 
 - It models the balancing of work among identical resources (machines, processors, workers), where the plan ends when the last resource finishes.
 
@@ -872,54 +854,10 @@ $$
 
 - [$P\,||\,C_{\max}$ approximation 3](../exercises/pcmax-approximation.md#esercizio-31-3)
 
-## Scheduling on a fixed number of identical machines ($m$ not part of the input) ($Pm\|C_{\max}$) { #sez-sec-cat-pmcmax }
+## Variants { #sez-sec-cat-pcmax-var }
 
-<a id="box-2-def-cat-pmcmax"></a>
+- [Scheduling on a fixed number of identical machines ($m$ not part of the input) ($Pm\|C_{\max}$)](../catalogue/scheduling.md#sez-sec-cat-def-pmcmax): Special case of $P\,||\,C_{\max}$ with $m$ fixed; with $m=2$ it asks for a split of the jobs into two sets of loads as equal as possible.
 
-!!! definizione "Definition 2: Scheduling on a fixed number of identical machines"
+- [Scheduling on parallel machines with different speeds, $Q\,||\,C_{\max}$](../catalogue/scheduling.md#sez-sec-cat-def-qcmax): Generalizes $P\,||\,C_{\max}$, which is the case of machines with equal speeds.
 
-    The problem $P\,||\,C_{\max}$ in which the number $m$ of machines is a constant, for example $m=2$, and only the jobs $\Jlavori$ and the processing times $t_j \in \Z_{\ge 1}$ form the input.
-
-- Defined in [Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#sez-sec-complexity).
-
-- Special case of $P\,||\,C_{\max}$ with $m$ fixed; with $m=2$ it asks for a split of the jobs into two sets of loads as equal as possible.
-
-- <strong>Complexity</strong>: Weakly NP-hard for a fixed number of machines, e.g. $m=2$.
-
-<strong>Where it is treated</strong>
-
-- [Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#sez-sec-complexity): Complexity: weakly NP-hard for a fixed number of machines
-
-- [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax.md#box-6-ex-pcmax-lb): Instances with $m=2$ in the examples and exercises
-
-## Scheduling on parallel machines with different speeds, $Q\,||\,C_{\max}$ { #sez-sec-cat-qcmax }
-
-<a id="box-3-def-cat-qcmax"></a>
-
-!!! definizione "Definition 3: Scheduling on parallel machines with different speeds, $Q\,||\,C_{\max}$"
-
-    In the three-field notation $\alpha\,|\,\beta\,|\,\gamma$, the machine environment $\alpha=Q$ denotes parallel machines with different speeds; $Q\,||\,C_{\max}$ assigns jobs without additional characteristics to such machines, minimizing the makespan $C_{\max}$.
-
-- Defined in [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax.md#sez-sec-threefield).
-
-- Generalizes $P\,||\,C_{\max}$, which is the case of machines with equal speeds.
-
-<strong>Where it is treated</strong>
-
-- [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax.md#sez-sec-threefield): Three-field notation
-
-## Scheduling on unrelated parallel machines, $R\,||\,C_{\max}$ { #sez-sec-cat-rcmax }
-
-<a id="box-4-def-cat-rcmax"></a>
-
-!!! definizione "Definition 4: Scheduling on unrelated parallel machines, $R\,||\,C_{\max}$"
-
-    In the three-field notation $\alpha\,|\,\beta\,|\,\gamma$, the machine environment $\alpha=R$ denotes unrelated parallel machines; $R\,||\,C_{\max}$ assigns jobs without additional characteristics to such machines, minimizing the makespan $C_{\max}$.
-
-- Defined in [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax.md#sez-sec-threefield).
-
-- Generalizes $Q\,||\,C_{\max}$ and $P\,||\,C_{\max}$.
-
-<strong>Where it is treated</strong>
-
-- [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax.md#sez-sec-threefield): Three-field notation
+- [Scheduling on unrelated parallel machines, $R\,||\,C_{\max}$](../catalogue/scheduling.md#sez-sec-cat-def-rcmax): Generalizes $Q\,||\,C_{\max}$ and $P\,||\,C_{\max}$.

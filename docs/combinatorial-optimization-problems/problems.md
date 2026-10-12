@@ -2,8 +2,6 @@
 
 The course solves 7 combinatorial optimization problems in every way: their characteristics and, for each, the chapters where it appears.
 
-[:material-view-list: Selected problems](../selected-problems/index.md){ .md-button } [:material-file-pdf-box: Selected problems (PDF)](../pdf/selected-problems.pdf){ .md-button }
-
 | Problem | A solution is | Objective | Constraints | Complexity |
 |---|---|---|---|---|
 | [Knapsack problem (KP)](#knapsack-problem-kp) | a subset of items | maximum total profit | total weight at most $c$ | weakly NP-hard, pseudo-polynomial DP in $O(nc)$ |
@@ -24,6 +22,7 @@ The course solves 7 combinatorial optimization problems in every way: their char
 - Chapter 24: [Constructive heuristics](../heuristic-algorithms/constructive-heuristics/index.md)
 - Chapter 30: [Approximation algorithms for the knapsack problem](../approximation-algorithms/knapsack-approximation.md)
 - Chapter 34: [Knapsack: branch-and-bound on the critical item](../specialized-algorithms/knapsack-branch-and-bound.md)
+- Definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-kp)
 - Selected problems: [everything the course does on this problem](../selected-problems/knapsack.md)
 
 ## Bin packing (BPP)
@@ -34,6 +33,7 @@ The course solves 7 combinatorial optimization problems in every way: their char
 - Chapter 10: [Formulations of the bin packing problem](../formulations/bin-packing-formulations.md)
 - Chapter 24: [Constructive heuristics](../heuristic-algorithms/constructive-heuristics/index.md)
 - Chapter 29: [Approximation algorithms for bin packing](../approximation-algorithms/bin-packing-approximation.md)
+- Definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-bpp)
 - Selected problems: [everything the course does on this problem](../selected-problems/bin-packing.md)
 
 ## Vertex coloring (VCP)
@@ -44,6 +44,7 @@ The course solves 7 combinatorial optimization problems in every way: their char
 - Chapter 11: [Formulations of the vertex coloring problem](../formulations/coloring-formulations.md)
 - Chapter 24: [Constructive heuristics](../heuristic-algorithms/constructive-heuristics/index.md)
 - Chapter 33: [Limits of approximation: vertex coloring](../approximation-algorithms/coloring-approximation.md)
+- Definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-vcp)
 - Selected problems: [everything the course does on this problem](../selected-problems/vertex-coloring.md)
 
 ## Maximum clique (MCP)
@@ -52,6 +53,7 @@ The course solves 7 combinatorial optimization problems in every way: their char
 
 - Chapter 5: [The maximum clique problem](../combinatorial-optimization-problems/clique.md)
 - Chapter 12: [Formulations of the maximum clique problem](../formulations/clique-formulations.md)
+- Definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-mcp)
 - Selected problems: [everything the course does on this problem](../selected-problems/maximum-clique.md)
 
 ## Travelling salesman (TSP)
@@ -64,6 +66,7 @@ The course solves 7 combinatorial optimization problems in every way: their char
 - Chapter 25: [Local search](../heuristic-algorithms/local-search/index.md)
 - Chapter 26: [Metaheuristics](../heuristic-algorithms/metaheuristics/index.md)
 - Chapter 32: [Approximation for the metric TSP](../approximation-algorithms/tsp-approximation.md)
+- Definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-tsp)
 - Selected problems: [everything the course does on this problem](../selected-problems/tsp.md)
 
 ## Parallel machine scheduling (P||Cmax)
@@ -74,6 +77,7 @@ The course solves 7 combinatorial optimization problems in every way: their char
 - Chapter 14: [Formulations of parallel machine scheduling](../formulations/pcmax-formulations.md)
 - Chapter 24: [Constructive heuristics](../heuristic-algorithms/constructive-heuristics/index.md)
 - Chapter 31: [Approximation for P|Cmax](../approximation-algorithms/pcmax-approximation.md)
+- Definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-pcmax)
 - Selected problems: [everything the course does on this problem](../selected-problems/pcmax.md)
 
 ## Capacitated lot sizing (CLS)
@@ -83,6 +87,7 @@ The course solves 7 combinatorial optimization problems in every way: their char
 - Chapter 8: [Capacitated lot sizing](../combinatorial-optimization-problems/lot-sizing.md)
 - Chapter 15: [Formulations of capacitated lot sizing](../formulations/lot-sizing-formulations.md)
 - Chapter 22: [Dynamic programming for lot sizing](../dynamic-programming/dp-lot-sizing/index.md)
+- Definition: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-cls)
 - Selected problems: [everything the course does on this problem](../selected-problems/lot-sizing.md)
 
 The heuristic algorithms (chapters 23, 24, 25, 26) apply to all the problems.

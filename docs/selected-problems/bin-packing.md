@@ -6,13 +6,13 @@ title: "The bin packing problem"
 
 <div class="info-capitolo" markdown>
 
-**Selected problems** · [:material-file-pdf-box: Selected problems (PDF)](../pdf/selected-problems.pdf)
+**Selected problems** · [:material-view-list: Catalogue of combinatorial problems](../catalogue/index.md)
 
 </div>
 
 <a id="sec:cat-bpp"></a>
 
-<a id="sec:cat-pagina-bin-packing"></a>
+<a id="sec:cat-pagina-central-problems"></a>
 
 !!! chiave ""
 
@@ -44,33 +44,7 @@ title: "The bin packing problem"
 
 ## Definition { #sez-sec-cat-bpp-def }
 
-<a id="box-1-def-cat-bpp"></a>
-
-!!! definizione "Definition 1: The bin packing problem"
-
-    Given:
-
-    1. an infinite number of bins, each with <em>capacity</em> $c \in \Z_{\ge 1}$,
-
-    2. a set $\Ioggetti = \{1,2,\dots,n\}$ of $n$ items,
-
-    3. for each item $j \in \Ioggetti$, a <em>weight</em> $w_j \in \Z_{\ge 1}$,
-
-    the <strong>Bin Packing Problem</strong> (BPP) asks to decide in which bin to place each item, so that the total weight of the items in any bin does not exceed the bin capacity, and the total number of bins used is minimized. A feasible solution is a family $\mathcal{P} \subseteq 2^{\Ioggetti}$ of nonempty, pairwise disjoint packing patterns whose union is $\Ioggetti$, with $\sum_{j\in P} w_j \le c$ for all $P\in\mathcal{P}$:
-
-    $$
-    \tilde{\mathcal{P}} \in \argmin_{\mathcal{P}\subseteq 2^{\Ioggetti}}
-    \left\{ |\mathcal{P}| \;:\;
-    \begin{array}{l}
-    P\neq \emptyset, \quad \forall\, P\in\mathcal{P},\\[4pt]
-    P\cap P'=\emptyset, \quad \forall\, P,P'\in\mathcal{P},\, P\neq P',\\[4pt]
-    \displaystyle \bigcup_{P\in\mathcal{P}} P=\Ioggetti,\\[8pt]
-    \displaystyle \sum_{j\in P} w_j \le c, \quad \forall\, P\in\mathcal{P}
-    \end{array}
-    \right\}.
-    $$
-
-- Defined in [Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing.md#box-1-defBPP).
+- Definition and assumptions: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-bpp).
 
 - A solution is a <strong>partition</strong> of the items into packing patterns, one per bin, so the candidate solutions are counted by the Bell numbers ([Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#133-partitions-and-bell-numbers)).
 
@@ -183,6 +157,33 @@ $$
 - Optimal value $z(\mathrm{BPP1})=3$, attained by $\{\{4,5\},\{1,3\},\{2\}\}$ (one of $4$ optimal partitions).
 
 - Used in [Example «BPP instances»](../combinatorial-optimization-problems/bin-packing.md#box-2-ex-bpp), [Section «Counting the solutions, a first solution and a simple bound»](../combinatorial-optimization-problems/bin-packing.md#312-counting-the-solutions-a-first-solution-and-a-simple-bound), [Example «Execution of NF»](../approximation-algorithms/bin-packing-approximation.md#box-2-ex-NFexec1), [Example «Execution of FF»](../approximation-algorithms/bin-packing-approximation.md#box-6-ex-FFexec1), [Example «Execution of BF»](../approximation-algorithms/bin-packing-approximation.md#box-8-ex-BFexec1), [Example «Execution of WF»](../approximation-algorithms/bin-packing-approximation.md#box-10-ex-WFexec1).
+
+### Instance CSP1 { #sez-sec-cat-ist-csp1 }
+
+Reference cutting stock instance of the bin packing chapter.
+
+Roll length $c=10$, $4$ item types:
+
+$$
+\begin{array}{l|cccc}
+\hline
+j & 1 & 2 & 3 & 4 \\
+\hline
+w_j & 4 & 5 & 3 & 6 \\
+d_j & 2 & 1 & 3 & 1 \\
+\hline
+\end{array}
+$$
+
+- Optimal value $z(\mathrm{CSP1})=3$, attained by
+
+    $$
+    \{\{(4,1),(1,1)\},\{(1,2),(3,1),(3,2)\},\{(2,1),(3,3)\}\}
+    $$
+
+    .
+
+- Used in [Example «CSP instances»](../combinatorial-optimization-problems/bin-packing.md#box-5-ex-csp), [Section «Counting the solutions, a first solution and a simple bound»](../combinatorial-optimization-problems/bin-packing.md#322-counting-the-solutions-a-first-solution-and-a-simple-bound).
 
 ### Instance BPP2 { #sez-sec-cat-ist-bpp2 }
 
@@ -303,6 +304,33 @@ $$
 - Optimal value $z(\mathrm{BPP7})=2$, attained by $\{\{1,3\},\{2,4,5\}\}$ (unique).
 
 - Used in [«Counting the packings (BPP)»](../exercises/bin-packing.md#esercizio-3-3).
+
+### Instance CSP2 { #sez-sec-cat-ist-csp2 }
+
+Copies of the items.
+
+Roll length $c=10$, $3$ item types:
+
+$$
+\begin{array}{l|ccc}
+\hline
+j & 1 & 2 & 3 \\
+\hline
+w_j & 5 & 4 & 3 \\
+d_j & 2 & 3 & 2 \\
+\hline
+\end{array}
+$$
+
+- Optimal value $z(\mathrm{CSP2})=3$, attained by
+
+    $$
+    \{\{(1,1),(1,2)\},\{(2,1),(3,1),(3,2)\},\{(2,2),(2,3)\}\}
+    $$
+
+    .
+
+- Used in [«Copies of the items (cutting stock)»](../exercises/bin-packing.md#esercizio-3-4).
 
 ### Instance BPP8 { #sez-sec-cat-ist-bpp8 }
 
@@ -1028,95 +1056,6 @@ $$
 
 - [«Worst Fit 3»](../exercises/bin-packing-approximation.md#esercizio-29-12)
 
-## Cutting stock problem (CSP) { #sez-sec-cat-csp }
+## Variants { #sez-sec-cat-bpp-var }
 
-<a id="box-2-def-cat-csp"></a>
-
-!!! definizione "Definition 2: Cutting stock problem"
-
-    Given:
-
-    1. an infinite number of bins, each with <em>capacity</em> $c \in \Z_{\ge 1}$,
-
-    2. a set $\Ioggetti = \{1,2,\dots,n\}$ of $n$ items,
-
-    3. for each item $j \in \Ioggetti$, a <em>weight</em> $w_j \in \Z_{\ge 1}$ and a <em>number of required copies</em> $d_j \in \Z_{\ge 1}$,
-
-    the <strong>Cutting Stock Problem</strong> (CSP) asks to decide in which bin to place each copy of every item, so that the total weight of all item copies in any bin does not exceed the bin capacity, the required number of copies of each item is placed into the bins, and the total number of bins used is minimized. With the extended set of items
-
-    $$
-    \hat{\Ioggetti} = \big\{\, (j,k) : j \in \Ioggetti,~ k \in \{1,2,\dots,d_j\} \,\big\},
-    \qquad |\hat{\Ioggetti}| = \sum_{j\in \Ioggetti} d_j,
-    $$
-
-    a feasible solution is a partition $\mathcal{P} \subseteq 2^{\hat{\Ioggetti}}$ of $\hat{\Ioggetti}$ into nonempty packing patterns with $\sum_{(j,k)\in P} w_j \le c$ for all $P\in\mathcal{P}$, and $|\mathcal{P}|$ is minimized.
-
-- Defined in [Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing.md#box-4-defCSP).
-
-- The CSP is the BPP with $d_j$ identical copies of every item $j$, and the BPP is the case $d_j = 1$ for all $j\in\Ioggetti$.
-
-- <strong>Complexity</strong>: Contains the BPP as the case $d_j=1$, hence strongly NP-hard.
-
-- $\LB = \left\lceil \sum_{j\in\Ioggetti} d_j\, w_j / c \right\rceil$ (weight bound with the weights of all the copies) ([Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing.md#322-counting-the-solutions-a-first-solution-and-a-simple-bound)).
-
-<strong>Where it is treated</strong>
-
-- [Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing.md#32-the-cutting-stock-problem): Definition, extended set of items, assumptions
-
-- [Chapter 3 «Bin packing and cutting stock»](../combinatorial-optimization-problems/bin-packing.md#322-counting-the-solutions-a-first-solution-and-a-simple-bound): Counting the partitions, a first solution and the weight bound $\lceil \sum_j d_j w_j / c \rceil$
-
-- [Exercise 3.4](../exercises/bin-packing.md#esercizio-3-4): Exercise on the extended set of items and an optimal packing
-
-### Instance CSP1 { #sez-sec-cat-ist-csp1 }
-
-Reference cutting stock instance of the bin packing chapter.
-
-Roll length $c=10$, $4$ item types:
-
-$$
-\begin{array}{l|cccc}
-\hline
-j & 1 & 2 & 3 & 4 \\
-\hline
-w_j & 4 & 5 & 3 & 6 \\
-d_j & 2 & 1 & 3 & 1 \\
-\hline
-\end{array}
-$$
-
-- Optimal value $z(\mathrm{CSP1})=3$, attained by
-
-    $$
-    \{\{(4,1),(1,1)\},\{(1,2),(3,1),(3,2)\},\{(2,1),(3,3)\}\}
-    $$
-
-    .
-
-- Used in [Example «CSP instances»](../combinatorial-optimization-problems/bin-packing.md#box-5-ex-csp), [Section «Counting the solutions, a first solution and a simple bound»](../combinatorial-optimization-problems/bin-packing.md#322-counting-the-solutions-a-first-solution-and-a-simple-bound).
-
-### Instance CSP2 { #sez-sec-cat-ist-csp2 }
-
-Copies of the items.
-
-Roll length $c=10$, $3$ item types:
-
-$$
-\begin{array}{l|ccc}
-\hline
-j & 1 & 2 & 3 \\
-\hline
-w_j & 5 & 4 & 3 \\
-d_j & 2 & 3 & 2 \\
-\hline
-\end{array}
-$$
-
-- Optimal value $z(\mathrm{CSP2})=3$, attained by
-
-    $$
-    \{\{(1,1),(1,2)\},\{(2,1),(3,1),(3,2)\},\{(2,2),(2,3)\}\}
-    $$
-
-    .
-
-- Used in [«Copies of the items (cutting stock)»](../exercises/bin-packing.md#esercizio-3-4).
+- [Cutting stock problem (CSP)](../catalogue/packing.md#sez-sec-cat-def-csp): The CSP is the BPP with $d_j$ identical copies of every item $j$, and the BPP is the case $d_j = 1$ for all $j\in\Ioggetti$.

@@ -128,7 +128,7 @@ markdown_extensions:
 
 extra_javascript:
   - javascripts/cloudflare-analytics.js?v=bff73345a1
-  - javascripts/mathjax.js?v=bbee911dbf
+  - javascripts/mathjax.js?v=2f2f0d6685
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
   # grafici interattivi: JSXGraph, il motore, poi le ricette (gi-*.js, le aggiunge genera_sito.py)
   - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraphcore.js
@@ -144,7 +144,6 @@ nav:
   - Home: index.md
   - Problems:
       - combinatorial-optimization-problems/index.md
-      - "Problem definitions": combinatorial-optimization-problems/definitions.md
       - "The problems at a glance": combinatorial-optimization-problems/problems.md
       - "1. Combinatorial optimization": combinatorial-optimization-problems/combinatorial-optimization.md
       - "2. Knapsack": combinatorial-optimization-problems/knapsack.md
@@ -245,9 +244,19 @@ nav:
   - Specialized:
       - specialized-algorithms/index.md
       - "34. Knapsack: B&B": specialized-algorithms/knapsack-branch-and-bound.md
+  - Catalogue:
+      - catalogue/index.md
+      - "Central problems": catalogue/central-problems.md
+      - "Knapsack family": catalogue/knapsack-family.md
+      - "Packing": catalogue/packing.md
+      - "Graphs": catalogue/graphs.md
+      - "Routing": catalogue/routing.md
+      - "Scheduling": catalogue/scheduling.md
+      - "Lot sizing": catalogue/lot-sizing.md
+      - "DP examples": catalogue/dp-examples.md
   - Selected problems:
       - selected-problems/index.md
-      - "At a glance": selected-problems/at-a-glance.md
+      - "Comparison": selected-problems/at-a-glance.md
       - "KP": selected-problems/knapsack.md
       - "BPP": selected-problems/bin-packing.md
       - "VCP": selected-problems/vertex-coloring.md
@@ -255,8 +264,6 @@ nav:
       - "TSP": selected-problems/tsp.md
       - "P||Cmax": selected-problems/pcmax.md
       - "CLS": selected-problems/lot-sizing.md
-      - "Knapsack family": selected-problems/knapsack-family.md
-      - "DP examples": selected-problems/dp-examples.md
   - Exercises:
       - exercises/index.md
       - "1. Combinatorial optimization": exercises/combinatorial-optimization.md
