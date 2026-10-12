@@ -50,7 +50,7 @@ The problem of this chapter is the [uncapacitated lot-sizing problem (ULS)](http
 
     the total demand of periods $j,j+1,\dots,t$, with $D_{j,t}=0$ if $j>t$.
 
-- The ILP model is the $\mathrm{ILP}_{\mathrm{ULS}}$ model of [Chapter 15 «Formulations of capacitated lot sizing»](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/), section «ILP models for the variants»: the $\mathrm{ILP}_{\mathrm{CLSP}}$ model without the capacity constraints and with the big-M value $D_{t,m}$ of period $t$, the total demand of the remaining periods. Its variables are the production $x_t$, the inventory $s_t$ at the end of period $t$, and the setup $y_t\in\{0,1\}$, for every period $t \in T$.
+- The ILP model is the $\mathrm{ILP}_{\mathrm{ULS}}$ model of [Chapter 15 «Formulations of lot sizing problems»](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/), section «ILP models for the variants»: the $\mathrm{ILP}_{\mathrm{CLSP}}$ model without the capacity constraints and with the big-M value $D_{t,m}$ of period $t$, the total demand of the remaining periods. Its variables are the production $x_t$, the inventory $s_t$ at the end of period $t$, and the setup $y_t\in\{0,1\}$, for every period $t \in T$.
 
 !!! chiave ""
 

@@ -1,12 +1,12 @@
 ---
-title: "Parallel machine scheduling"
+title: "Scheduling problems"
 ---
 
-# Parallel machine scheduling
+# Scheduling problems
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 7** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Machine scheduling](../exercises/pcmax.md)
+**Part 1 · Combinatorial optimization problems · Chapter 7** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Scheduling problems](../exercises/pcmax.md)
 
 </div>
 
@@ -346,7 +346,7 @@ title: "Parallel machine scheduling"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Machine scheduling](../exercises/pcmax.md)
+**Exercises on this chapter:** [:material-pencil: Scheduling problems](../exercises/pcmax.md)
 
 ---
 

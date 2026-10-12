@@ -1,12 +1,12 @@
 ---
-title: "Vertex coloring"
+title: "Coloring problems"
 ---
 
-# Vertex coloring
+# Coloring problems
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 4** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Vertex coloring](../exercises/coloring.md) · [:material-gesture-tap: App: Vertex coloring: greedy and DSATUR](../lab/coloring-greedy-dsatur.md)
+**Part 1 · Combinatorial optimization problems · Chapter 4** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Coloring problems](../exercises/coloring.md) · [:material-gesture-tap: App: Vertex coloring: greedy and DSATUR](../lab/coloring-greedy-dsatur.md)
 
 </div>
 
@@ -14,7 +14,7 @@ title: "Vertex coloring"
 
     - From this module, the chapter «Combinatorial optimization problems»: instances, feasible solutions, primal and dual bounds, the gap, and the Bell numbers that count the partitions of a set.
 
-    - From the chapter «Bin packing and cutting stock problems»: the weight bound as an example of a dual bound.
+    - From the chapter «Packing problems»: the weight bound as an example of a dual bound.
 
     - No knowledge of graph theory is needed: the definitions used here are recalled in a short section.
 
@@ -322,7 +322,7 @@ title: "Vertex coloring"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Vertex coloring](../exercises/coloring.md)
+**Exercises on this chapter:** [:material-pencil: Coloring problems](../exercises/coloring.md)
 
 ---
 

@@ -1,12 +1,12 @@
 ---
-title: "Formulations of capacitated lot sizing"
+title: "Formulations of lot sizing problems"
 ---
 
-# Formulations of capacitated lot sizing
+# Formulations of lot sizing problems
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 15** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/lot-sizing-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 15** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Lot sizing problems](../../exercises/lot-sizing-formulations.md)
 
 </div>
 
@@ -14,7 +14,7 @@ title: "Formulations of capacitated lot sizing"
 
     - From the module <em>Integer linear programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/) and [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): ILP problems, LP relaxations and lower bounds.
 
-    - From this module, [Chapter 8 «Capacitated lot sizing»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/): the problem, its assumptions, the plans and the reference instance.
+    - From this module, [Chapter 8 «Lot sizing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/): the problem, its assumptions, the plans and the reference instance.
 
 !!! chiave "Objectives"
 
@@ -165,7 +165,7 @@ title: "Formulations of capacitated lot sizing"
     </tr>
     </table></div>
 
-    This is the reference instance of the chapter «Capacitated lot sizing». The big-M values are:
+    This is the reference instance of the chapter «Lot sizing problems». The big-M values are:
 
     <div class="tabella" markdown="0"><table>
     <tr>
@@ -242,7 +242,7 @@ title: "Formulations of capacitated lot sizing"
     \tilde{\vet y}=(1,0,1,1,0),\qquad \tilde{\vet x}=(3,0,4,4,0),\qquad \tilde{\vet s}=(1,0,1,1,0)
     $$
 
-    The optimal value $z(\mathrm{ILP}_{\mathrm{CLSP}})$ is $3\cdot 50+3\cdot 10=180$, the cost of the optimal plan of the chapter «Capacitated lot sizing». The weak big-M values give the same optimal solution.
+    The optimal value $z(\mathrm{ILP}_{\mathrm{CLSP}})$ is $3\cdot 50+3\cdot 10=180$, the cost of the optimal plan of the chapter «Lot sizing problems». The weak big-M values give the same optimal solution.
 
 ## 15.2 The Linear Programming relaxation of the big-M formulation
 
@@ -578,4 +578,4 @@ title: "Formulations of capacitated lot sizing"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Lot sizing](../../exercises/lot-sizing-formulations.md)
+**Exercises on this chapter:** [:material-pencil: Lot sizing problems](../../exercises/lot-sizing-formulations.md)

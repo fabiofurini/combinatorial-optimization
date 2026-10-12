@@ -6,27 +6,27 @@ Exercises with **worked solutions**, chapter by chapter. Try each exercise on yo
 
 - [1. Combinatorial optimization problems](combinatorial-optimization.md) · 8 exercises
 - [2. Knapsack problems](knapsack.md) · 6 exercises
-- [3. Bin packing and cutting stock](bin-packing.md) · 6 exercises
-- [4. Vertex coloring](coloring.md) · 5 exercises
-- [5. The maximum clique problem](clique.md) · 5 exercises
-- [6. The travelling salesman problem](tsp.md) · 7 exercises
-- [7. Parallel machine scheduling](pcmax.md) · 5 exercises
-- [8. Capacitated lot sizing](lot-sizing.md) · 5 exercises
+- [3. Packing problems](bin-packing.md) · 6 exercises
+- [4. Coloring problems](coloring.md) · 5 exercises
+- [5. Clique problems](clique.md) · 5 exercises
+- [6. Routing problems](tsp.md) · 7 exercises
+- [7. Scheduling problems](pcmax.md) · 5 exercises
+- [8. Lot sizing problems](lot-sizing.md) · 5 exercises
 
 ## Formulations and their properties
 
-- [9. Formulations of the knapsack problem](knapsack-formulations.md) · 12 exercises
-- [10. Formulations of the bin packing problem](bin-packing-formulations.md) · 6 exercises
-- [11. Formulations of the vertex coloring problem](coloring-formulations.md) · 5 exercises
-- [12. Formulations of the maximum clique problem](clique-formulations.md) · 8 exercises
-- [13. Formulations of the travelling salesman problem](tsp-formulations.md) · 6 exercises
-- [14. Formulations of parallel machine scheduling](pcmax-formulations.md) · 5 exercises
-- [15. Formulations of capacitated lot sizing](lot-sizing-formulations.md) · 9 exercises
+- [9. Formulations of knapsack problems](knapsack-formulations.md) · 12 exercises
+- [10. Formulations of packing problems](bin-packing-formulations.md) · 6 exercises
+- [11. Formulations of coloring problems](coloring-formulations.md) · 5 exercises
+- [12. Formulations of clique problems](clique-formulations.md) · 8 exercises
+- [13. Formulations of routing problems](tsp-formulations.md) · 6 exercises
+- [14. Formulations of scheduling problems](pcmax-formulations.md) · 5 exercises
+- [15. Formulations of lot sizing problems](lot-sizing-formulations.md) · 9 exercises
 
 ## Dynamic programming
 
 - [16. Principles of dynamic programming](dp-principles.md) · 5 exercises
-- [17. DP for the knapsack problem](dp-knapsack.md) · 5 exercises
+- [17. DP for the 0/1 knapsack problem](dp-knapsack.md) · 5 exercises
 - [18. DP for the unbounded knapsack problem](dp-unbounded-knapsack.md) · 5 exercises
 - [19. DP for the bounded knapsack problem](dp-bounded-knapsack.md) · 5 exercises
 - [20. DP for the subset sum problem](dp-subset-sum.md) · 5 exercises

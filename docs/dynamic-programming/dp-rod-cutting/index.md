@@ -14,7 +14,7 @@ title: "DP for the rod cutting problem"
 
     - From this module, the chapter «Principles of dynamic programming»: optimal substructure, overlapping subproblems, recurrence relations, base cases, and the top-down and bottom-up approaches.
 
-    - From this module, the chapter [«DP for the knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/): the pairs (item, capacity) and the reconstruction of a solution, which return here.
+    - From this module, the chapter [«DP for the 0/1 knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/): the pairs (item, capacity) and the reconstruction of a solution, which return here.
 
     - From the module <em>Algorithms</em>: how to read [pseudocode (Chapter 2)](https://fabiofurini.github.io/algorithms/basic-algorithms/02-pseudo-code/) and how to count the steps of an algorithm ([Chapter 12 «Running time»](https://fabiofurini.github.io/algorithms/analysis/12-running-time/)).
 

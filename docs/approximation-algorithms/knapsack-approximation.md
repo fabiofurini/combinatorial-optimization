@@ -14,9 +14,9 @@ title: "Approximation algorithms for the knapsack problem"
 
     - From this module, the chapter «Approximation algorithms»: performance ratio, relative and absolute performance guarantees, tightness, approximation schemes, PTAS and FPTAS.
 
-    - From this module, the chapters «Knapsack problems» and «Knapsack formulations»: the KP, the LP relaxation $\mathrm{LP}_{\mathrm{KP}}$ and the bound of Dantzig, which uses the split item.
+    - From this module, the chapters «Knapsack problems» and «Formulations of knapsack problems»: the KP, the LP relaxation $\mathrm{LP}_{\mathrm{KP}}$ and the bound of Dantzig, which uses the split item.
 
-    - From this module, the chapters «Constructive heuristics» and «Dynamic programming for the knapsack problem»: the greedy algorithm and the dynamic programming by profits, used by the Basic-FPTAS algorithm.
+    - From this module, the chapters «Constructive heuristics» and «DP for the 0/1 knapsack problem»: the greedy algorithm and the dynamic programming by profits, used by the Basic-FPTAS algorithm.
 
 !!! chiave "Objectives"
 
@@ -32,7 +32,7 @@ title: "Approximation algorithms for the knapsack problem"
 
     - explain why an absolute performance guarantee for the KP forces an exact algorithm.
 
-The problem of this chapter is the [knapsack problem (KP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/): its definition and its assumptions are on its page.
+The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/): its definition and its assumptions are on its page.
 
 ## 35.1 Notation
 
@@ -1368,7 +1368,7 @@ The problem of this chapter is the [knapsack problem (KP)](https://fabiofurini.g
 
 !!! teorema "Observation 35.12"
 
-    The family $\{H^{\varepsilon}\}_{\varepsilon\in(0,1)}$ is a PTAS for the knapsack problem.
+    The family $\{H^{\varepsilon}\}_{\varepsilon\in(0,1)}$ is a PTAS for the 0/1 knapsack problem.
 
 - For every fixed $\varepsilon$, $\ell(\varepsilon)$ is a constant, and by [Observation 35.4](#box-13-obs-Hltime) the running time $O\big(n^{\ell(\varepsilon)+1}\big)$ is polynomial in the size $n$ of the instance.
 
@@ -1445,15 +1445,15 @@ The problem of this chapter is the [knapsack problem (KP)](https://fabiofurini.g
 
 !!! chiave ""
 
-    From [Proposition 35.13](#box-23-prop-fptas) and [Observation 35.14](#box-24-obs-fptastime) it follows that the family $\{FP^{\varepsilon}\}_{\varepsilon\in(0,1)}$ is an <strong>approximation scheme</strong> whose running time is polynomial both in the size $n$ of the instance and in the accuracy $\frac{1}{\varepsilon}$, i.e., an <strong>FPTAS</strong> for the knapsack problem.
+    From [Proposition 35.13](#box-23-prop-fptas) and [Observation 35.14](#box-24-obs-fptastime) it follows that the family $\{FP^{\varepsilon}\}_{\varepsilon\in(0,1)}$ is an <strong>approximation scheme</strong> whose running time is polynomial both in the size $n$ of the instance and in the accuracy $\frac{1}{\varepsilon}$, i.e., an <strong>FPTAS</strong> for the 0/1 knapsack problem.
 
 - The guarantee of $GR^e$ is used twice, and in two different roles: $GR^e(I)\le z(I)$ fixes the scaling factor, and $z(I)\le 2\,GR^e(I)$ bounds the size of the dynamic programming table. A better heuristic in place of $GR^e$ would shorten the table, not improve the guarantee.
 
 ## 35.9 Absolute performance guarantee
 
-- Unfortunately, there is only a negative result concerning absolute performance guarantees for the knapsack problem.
+- Unfortunately, there is only a negative result concerning absolute performance guarantees for the 0/1 knapsack problem.
 
-- The following theorem says that if an approximation algorithm would have an absolute performance guarantee $k$ for some fixed $k$, then this algorithm could be used to solve any instance of a knapsack problem to optimality.
+- The following theorem says that if an approximation algorithm would have an absolute performance guarantee $k$ for some fixed $k$, then this algorithm could be used to solve any instance of a 0/1 knapsack problem to optimality.
 
     !!! chiave ""
 

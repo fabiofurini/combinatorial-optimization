@@ -6,7 +6,7 @@ title: "Knapsack problems"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 2** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Knapsack](../../exercises/knapsack.md)
+**Part 1 · Combinatorial optimization problems · Chapter 2** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Knapsack problems](../../exercises/knapsack.md)
 
 </div>
 
@@ -20,7 +20,7 @@ title: "Knapsack problems"
 
     At the end of this chapter you will be able to:
 
-    - state the definition of the knapsack problem and of its variants, with instances and feasible solutions;
+    - state the definition of the 0/1 knapsack problem and of its variants, with instances and feasible solutions;
 
     - explain the assumptions on the data and why they can be made without loss of generality;
 
@@ -30,11 +30,11 @@ title: "Knapsack problems"
 
     - tell the variants apart: copies of the items, several resources, several knapsacks, classes of items.
 
-## 2.1 The knapsack problem
+## 2.1 The 0/1 knapsack problem
 
 <a id="box-1-defKP"></a>
 
-!!! definizione "Definition 2.1: Knapsack Problem"
+!!! definizione "Definition 2.1: 0/1 Knapsack Problem"
 
     Given:
 
@@ -44,7 +44,7 @@ title: "Knapsack problems"
 
     3. for each item $j \in \mathscr{I}$, a <em>profit</em> $p_j \in \Z_{\ge 1}$ and a <em>weight</em> $w_j \in \Z_{\ge 1}$,
 
-    the <strong>Knapsack Problem</strong> (KP) asks to decide which items to insert into the knapsack, so that the total weight of the selected items does not exceed the knapsack capacity, and the total profit of the selected items is maximized.
+    the <strong>0/1 Knapsack Problem</strong> (KP) asks to decide which items to insert into the knapsack, so that the total weight of the selected items does not exceed the knapsack capacity, and the total profit of the selected items is maximized.
 
 - A <strong>KP instance</strong> is specified by:
 
@@ -201,9 +201,9 @@ title: "Knapsack problems"
 
 -   **Definition**
 
-    The knapsack problem · Assumptions · Counting the solutions, a first solution and a simple bound
+    The 0/1 knapsack problem · Assumptions · Counting the solutions, a first solution and a simple bound
 
-    [:octicons-arrow-right-24: Open](#21-the-knapsack-problem)
+    [:octicons-arrow-right-24: Open](#21-the-01-knapsack-problem)
 
 -   **2.2 The subset sum problem**
 
@@ -243,7 +243,7 @@ title: "Knapsack problems"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Knapsack](../../exercises/knapsack.md)
+**Exercises on this chapter:** [:material-pencil: Knapsack problems](../../exercises/knapsack.md)
 
 ---
 

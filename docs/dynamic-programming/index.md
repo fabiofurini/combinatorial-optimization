@@ -20,7 +20,7 @@
 
 <div class="grid cards" markdown>
 
--   **17. DP for the knapsack problem**
+-   **17. DP for the 0/1 knapsack problem**
 
     ---
 

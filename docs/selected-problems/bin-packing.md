@@ -1,8 +1,8 @@
 ---
-title: "The bin packing problem"
+title: "Packing problems"
 ---
 
-# The bin packing problem
+# Packing problems
 
 <div class="info-capitolo" markdown>
 
@@ -76,11 +76,11 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Exercises { #sez-sec-cat-bpp-es }
 
-- [Ch. 3 — Bin packing and cutting stock](../exercises/bin-packing.md) (5 exercises).
+- [Ch. 3 — Packing problems](../exercises/bin-packing.md) (5 exercises).
 
-- [Ch. 7 — Parallel machine scheduling](../exercises/pcmax.md) (1 exercise).
+- [Ch. 7 — Scheduling problems](../exercises/pcmax.md) (1 exercise).
 
-- [Ch. 10 — Formulations of the bin packing problem](../exercises/bin-packing-formulations.md) (5 exercises).
+- [Ch. 10 — Formulations of packing problems](../exercises/bin-packing-formulations.md) (5 exercises).
 
 - [Ch. 28 — Heuristic algorithms: definitions](../exercises/heuristics.md) (1 exercise).
 

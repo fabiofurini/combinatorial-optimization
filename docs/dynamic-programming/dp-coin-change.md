@@ -50,7 +50,7 @@ The problem of this chapter is the [coin change problem (CCP)](https://fabiofuri
 
 !!! chiave ""
 
-    Unlike the Knapsack Problem, where the total weight of the selected items must not exceed the capacity, the CCP requires the total value of the selected coins to be <em>exactly equal</em> to $c$. Moreover, since every denomination is available in unlimited supply, the number of coins of a given denomination used in a solution is not bounded a priori.
+    Unlike the 0/1 Knapsack Problem, where the total weight of the selected items must not exceed the capacity, the CCP requires the total value of the selected coins to be <em>exactly equal</em> to $c$. Moreover, since every denomination is available in unlimited supply, the number of coins of a given denomination used in a solution is not bounded a priori.
 
 ### 26.1.1 Encoding of feasible solutions
 

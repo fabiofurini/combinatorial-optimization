@@ -6,7 +6,7 @@ title: "Knapsack with setups"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 2** · [:material-book-open-variant: Chapter 2: Knapsack](index.md) · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Knapsack](../../exercises/knapsack.md)
+**Part 1 · Combinatorial optimization problems · Chapter 2** · [:material-book-open-variant: Chapter 2: Knapsack problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Knapsack problems](../../exercises/knapsack.md)
 
 </div>
 
@@ -287,7 +287,7 @@ title: "Knapsack with setups"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Knapsack](../../exercises/knapsack.md)
+**Exercises on this chapter:** [:material-pencil: Knapsack problems](../../exercises/knapsack.md)
 
 ---
 

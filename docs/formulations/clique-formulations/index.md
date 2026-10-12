@@ -1,20 +1,20 @@
 ---
-title: "Formulations of the maximum clique problem"
+title: "Formulations of clique problems"
 ---
 
-# Formulations of the maximum clique problem
+# Formulations of clique problems
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 12** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Maximum clique](../../exercises/clique-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 12** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Clique problems](../../exercises/clique-formulations.md)
 
 </div>
 
 !!! nota "Prerequisites"
 
-    - From this module, [Chapter 5 «The maximum clique problem»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/clique/): the problem, its assumptions, cliques, stable sets, the complement graph and $\omega(G)=\alpha(\overline{G})$.
+    - From this module, [Chapter 5 «Clique problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/clique/): the problem, its assumptions, cliques, stable sets, the complement graph and $\omega(G)=\alpha(\overline{G})$.
 
-    - From this module, [Chapter 4 «Vertex coloring»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/) and [Chapter 11 «Formulations of the vertex coloring problem»](https://fabiofurini.github.io/combinatorial-optimization/formulations/coloring-formulations/): the chromatic number $\chi(G)$ and an ILP model with its LP relaxations.
+    - From this module, [Chapter 4 «Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/) and [Chapter 11 «Formulations of coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/formulations/coloring-formulations/): the chromatic number $\chi(G)$ and an ILP model with its LP relaxations.
 
     - From the module <em>Integer linear programming</em>, [Chapter 2 «Primal and dual bounds»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/), [Chapter 3 «Ideal formulations»](https://fabiofurini.github.io/integer-linear-programming/formulations/ideal-formulations/) and [Chapter 4 «Valid inequalities»](https://fabiofurini.github.io/integer-linear-programming/formulations/valid-inequalities/): LP relaxations, stronger formulations and valid inequalities.
 
@@ -84,7 +84,7 @@ title: "Formulations of the maximum clique problem"
 
 !!! esempio "Example 12.1: MCP instance"
 
-    We consider the graph $G$ with $7$ vertices made of the cycle $1,2,\dots,7,1$ and the chord $\{1,3\}$ (the reference instance of the chapter «The maximum clique problem»), and its complement $\overline{G}$:
+    We consider the graph $G$ with $7$ vertices made of the cycle $1,2,\dots,7,1$ and the chord $\{1,3\}$ (the reference instance of the chapter «Clique problems»), and its complement $\overline{G}$:
 
     ![Figure 1](../../img/clique-formulations/fig01.svg){ .fig loading=lazy  }
 
@@ -504,7 +504,7 @@ title: "Formulations of the maximum clique problem"
 
 ## 12.5 The relation with vertex coloring
 
-- In a coloring of $G$ the vertices of a clique take pairwise different colors, hence (chapter «Vertex coloring»)
+- In a coloring of $G$ the vertices of a clique take pairwise different colors, hence (chapter «Coloring problems»)
 
     $$
     \omega(G)\le\chi(G).
@@ -632,7 +632,7 @@ title: "Formulations of the maximum clique problem"
 
 ## 12.6 Stable sets on the complement graph
 
-The problem of this section is the Maximum Stable Set Problem (MSSP), defined in [Chapter 5 «The maximum clique problem»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/clique/).
+The problem of this section is the Maximum Stable Set Problem (MSSP), defined in [Chapter 5 «Clique problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/clique/).
 
 - Given a simple graph $G=(V,E)$, with $V=\{1,2,\dots,n\}$ and $m$ edges, we introduce the following $n$ <strong>binary variables</strong>:
 
@@ -764,4 +764,4 @@ The problem of this section is the Maximum Stable Set Problem (MSSP), defined in
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Maximum clique](../../exercises/clique-formulations.md)
+**Exercises on this chapter:** [:material-pencil: Clique problems](../../exercises/clique-formulations.md)

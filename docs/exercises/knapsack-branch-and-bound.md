@@ -12,7 +12,7 @@ title: "Exercises · Knapsack: branch-and-bound on the critical item"
 
 <a id="esercizio-38-1"></a>
 
-!!! esercizio "Exercise 38.1: Branch-and-Bound Algorithm for the Knapsack Problem (P1)"
+!!! esercizio "Exercise 38.1: Branch-and-Bound Algorithm for the 0/1 Knapsack Problem (P1)"
 
     We consider a knapsack capacity $c=11$ and a set $\mathscr{I}=\{1,2,3,4,5\}$ of $5$ items ($n=5$) with the following profits and weights:
 
@@ -29,7 +29,7 @@ title: "Exercises · Knapsack: branch-and-bound on the critical item"
 
     1. Check if the items are sorted by non-increasing efficiency otherwise sort them in this order.  Write the $ILP_\text{KP}$ model and the $LP_\text{KP}$ model for the KP instance.
 
-    2. Execute the branch-and-bound algorithm to solve the $ILP_\text{KP}$ model for the Knapsack Problem using:
+    2. Execute the branch-and-bound algorithm to solve the $ILP_\text{KP}$ model for the 0/1 Knapsack Problem using:
 
         1. the split-item rule as branching-variable selection strategy;
 
@@ -174,7 +174,7 @@ title: "Exercises · Knapsack: branch-and-bound on the critical item"
 
 <a id="esercizio-38-2"></a>
 
-!!! esercizio "Exercise 38.2: Branch-and-Bound Algorithm for the Knapsack Problem (P2)"
+!!! esercizio "Exercise 38.2: Branch-and-Bound Algorithm for the 0/1 Knapsack Problem (P2)"
 
     We consider a knapsack capacity $c=8$ and a set $\mathscr{I}=\{1,2,3,4\}$ of $4$ items ($n=4$) with the following profits and weights:
 
@@ -191,7 +191,7 @@ title: "Exercises · Knapsack: branch-and-bound on the critical item"
 
     1. Check if the items are sorted by non-increasing efficiency otherwise sort them in this order.  Write the $ILP_\text{KP}$ model and the $LP_\text{KP}$ model for the KP instance.
 
-    2. Execute the branch-and-bound algorithm to solve the $ILP_\text{KP}$ model for the Knapsack Problem using:
+    2. Execute the branch-and-bound algorithm to solve the $ILP_\text{KP}$ model for the 0/1 Knapsack Problem using:
 
         1. the split-item rule as branching-variable selection strategy;
 
@@ -443,7 +443,7 @@ title: "Exercises · Knapsack: branch-and-bound on the critical item"
 
 <a id="esercizio-38-3"></a>
 
-!!! esercizio "Exercise 38.3: Branch-and-Bound Algorithm for the Knapsack Problem (P3)"
+!!! esercizio "Exercise 38.3: Branch-and-Bound Algorithm for the 0/1 Knapsack Problem (P3)"
 
     We consider a knapsack capacity $c=15$ and a set $\mathscr{I}=\{1,2,3,4\}$ of $4$ items ($n=4$) with the following profits and weights:
 
@@ -460,7 +460,7 @@ title: "Exercises · Knapsack: branch-and-bound on the critical item"
 
     1. Check if the items are sorted by non-increasing efficiency otherwise sort them in this order.  Write the $ILP_\text{KP}$ model and the $LP_\text{KP}$ model for the KP instance.
 
-    2. Execute the branch-and-bound algorithm to solve the $ILP_\text{KP}$ model for the Knapsack Problem using:
+    2. Execute the branch-and-bound algorithm to solve the $ILP_\text{KP}$ model for the 0/1 Knapsack Problem using:
 
         1. the split-item rule as branching-variable selection strategy;
 
@@ -750,7 +750,7 @@ title: "Exercises · Knapsack: branch-and-bound on the critical item"
 
 <a id="esercizio-38-4"></a>
 
-!!! esercizio "Exercise 38.4: Branch-and-bound Algorithm for the Knapsack Problem (P4)"
+!!! esercizio "Exercise 38.4: Branch-and-bound Algorithm for the 0/1 Knapsack Problem (P4)"
 
     We consider a knapsack capacity $c=9$ and a set $\mathscr{I}=\{1,2,3,4,5,6\}$ of $6$ items ($n=6$) with the following profits and weights:
 
@@ -767,7 +767,7 @@ title: "Exercises · Knapsack: branch-and-bound on the critical item"
 
     1. Check if the items are sorted by non-increasing efficiency otherwise sort them in this order.  Write the $ILP_\text{KP}$ model and the $LP_\text{KP}$ model for the KP instance.
 
-    2. Execute the branch-and-bound algorithm to solve the $ILP_\text{KP}$ model for the Knapsack Problem using:
+    2. Execute the branch-and-bound algorithm to solve the $ILP_\text{KP}$ model for the 0/1 Knapsack Problem using:
 
         1. the split-item rule as branching-variable selection strategy;
 

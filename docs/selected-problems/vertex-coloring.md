@@ -1,8 +1,8 @@
 ---
-title: "The vertex coloring problem"
+title: "Coloring problems"
 ---
 
-# The vertex coloring problem
+# Coloring problems
 
 <div class="info-capitolo" markdown>
 
@@ -78,8 +78,8 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Exercises { #sez-sec-cat-vcp-es }
 
-- [Ch. 4 — Vertex coloring](../exercises/coloring.md) (5 exercises).
+- [Ch. 4 — Coloring problems](../exercises/coloring.md) (5 exercises).
 
-- [Ch. 11 — Formulations of the vertex coloring problem](../exercises/coloring-formulations.md) (5 exercises).
+- [Ch. 11 — Formulations of coloring problems](../exercises/coloring-formulations.md) (5 exercises).
 
 - [Ch. 39 — Vertex coloring: the DSATUR branch-and-bound](../exercises/dsatur-branch-and-bound.md) (5 exercises).

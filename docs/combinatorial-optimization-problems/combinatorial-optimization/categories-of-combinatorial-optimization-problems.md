@@ -147,7 +147,7 @@ title: "Categories of combinatorial optimization problems"
 <th><strong>Category</strong></th>
 </tr>
 <tr>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/">knapsack problem (KP)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/">0/1 knapsack problem (KP)</a></td>
 <td>subset of items</td>
 <td>IN/OUT</td>
 </tr>

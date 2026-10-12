@@ -18,4 +18,4 @@ title: "Asymmetric travelling salesman problem (ATSP)"
 
     In the <strong>asymmetric travelling salesman problem</strong> (ATSP) the distances are not required to be symmetric: $d_{ij}$ may differ from $d_{ji}$. The definition of tour and of its length $L(\sigma)$ is unchanged, but a tour and the same tour travelled backwards are different solutions.
 
-- Defined in [Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md#62-variants-metric-and-asymmetric-tsp).
+- Defined in [Chapter 6 «Routing problems»](../combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md#62-variants-metric-and-asymmetric-tsp).

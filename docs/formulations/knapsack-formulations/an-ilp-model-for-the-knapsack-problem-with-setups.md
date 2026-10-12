@@ -6,7 +6,7 @@ title: "Knapsack with setups"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 9** · [:material-book-open-variant: Chapter 9: Knapsack](index.md) · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Knapsack](../../exercises/knapsack-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 9** · [:material-book-open-variant: Chapter 9: Knapsack problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Knapsack problems](../../exercises/knapsack-formulations.md)
 
 </div>
 
@@ -167,5 +167,5 @@ The Knapsack Problem with Setups and its reference instance (Example 2.8) are d
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Knapsack](../../exercises/knapsack-formulations.md)
+**Exercises on this chapter:** [:material-pencil: Knapsack problems](../../exercises/knapsack-formulations.md)
 

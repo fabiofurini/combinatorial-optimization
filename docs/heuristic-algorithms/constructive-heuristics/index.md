@@ -56,9 +56,9 @@ title: "Constructive heuristics"
 
     [:octicons-arrow-right-24: Open](the-problems-and-the-assumptions.md)
 
--   **29.4 The knapsack problem: which order?**
+-   **29.4 The 0/1 knapsack problem: which order?**
 
-    [:octicons-arrow-right-24: Open](the-knapsack-problem-which-order.md)
+    [:octicons-arrow-right-24: Open](the-0-1-knapsack-problem-which-order.md)
 
 -   **29.5 The bin packing problem: first sort, then pack**
 

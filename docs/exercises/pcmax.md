@@ -1,12 +1,12 @@
 ---
-title: "Exercises · Parallel machine scheduling"
+title: "Exercises · Scheduling problems"
 ---
 
-# Exercises · Parallel machine scheduling
+# Exercises · Scheduling problems
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 7** · each solution opens with a click · [:material-book-open-variant: Chapter 7: Machine scheduling](../combinatorial-optimization-problems/pcmax.md) · [:material-file-pdf-box: Exercises, volume 1 (PDF)](../pdf/exercises-1-combinatorial-optimization-problems.pdf)
+**Exercises · Chapter 7** · each solution opens with a click · [:material-book-open-variant: Chapter 7: Scheduling problems](../combinatorial-optimization-problems/pcmax.md) · [:material-file-pdf-box: Exercises, volume 1 (PDF)](../pdf/exercises-1-combinatorial-optimization-problems.pdf)
 
 </div>
 

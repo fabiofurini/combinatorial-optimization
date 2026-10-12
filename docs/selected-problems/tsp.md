@@ -1,8 +1,8 @@
 ---
-title: "The travelling salesman problem"
+title: "Routing problems"
 ---
 
-# The travelling salesman problem
+# Routing problems
 
 <div class="info-capitolo" markdown>
 
@@ -70,9 +70,9 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Exercises { #sez-sec-cat-tsp-es }
 
-- [Ch. 6 — The travelling salesman problem](../exercises/tsp.md) (5 exercises).
+- [Ch. 6 — Routing problems](../exercises/tsp.md) (5 exercises).
 
-- [Ch. 13 — Formulations of the travelling salesman problem](../exercises/tsp-formulations.md) (5 exercises).
+- [Ch. 13 — Formulations of routing problems](../exercises/tsp-formulations.md) (5 exercises).
 
 - [Ch. 28 — Heuristic algorithms: definitions](../exercises/heuristics.md) (1 exercise).
 

@@ -6,11 +6,11 @@ title: "Cutting stock"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 10** · [:material-book-open-variant: Chapter 10: Bin packing](index.md) · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Bin packing](../../exercises/bin-packing-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 10** · [:material-book-open-variant: Chapter 10: Packing problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Packing problems](../../exercises/bin-packing-formulations.md)
 
 </div>
 
-The problem of this section is the Cutting Stock Problem (CSP), defined in [Chapter 3 «Bin packing and cutting stock»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem/), with its reference instance.
+The problem of this section is the Cutting Stock Problem (CSP), defined in [Chapter 3 «Packing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem/), with its reference instance.
 
 - Given an upper bound $m \in \Z_{\ge 2}$ on the number of bins used in any optimal CSP solution, we introduce the following $mn$ <strong>integer variables</strong>:
 
@@ -77,7 +77,7 @@ The problem of this section is the Cutting Stock Problem (CSP), defined in [Chap
     \end{array}
     $$
 
-    This is the CSP instance of the chapter «Bin packing and cutting stock», where a solution with $3$ bins is found by eye: hence $m=3$ is a valid upper bound. The $\mathrm{ILP}_{\mathrm{CSP}}$ model with $m=3$ for this CSP instance is:
+    This is the CSP instance of the chapter «Packing problems», where a solution with $3$ bins is found by eye: hence $m=3$ is a valid upper bound. The $\mathrm{ILP}_{\mathrm{CSP}}$ model with $m=3$ for this CSP instance is:
 
     $$
     \begin{array}{rlcl}
@@ -101,7 +101,7 @@ The problem of this section is the Cutting Stock Problem (CSP), defined in [Chap
     \tilde{y}_1 = \tilde{y}_2 = \tilde{y}_3 = 1,
     $$
 
-    with all the other variables equal to $0$. The optimal value is $z(\mathrm{ILP}_{\mathrm{CSP}}) = 3$, as found in the chapter «Bin packing and cutting stock». The bins contain one copy of items $1$ and $4$ (weight $10$), three copies of item $3$ (weight $9$), and one copy of items $1$ and $2$ (weight $9$). The optimal solution is not unique: the solution of that chapter, with the bins $\{4,1\}$, $\{1,3,3\}$ and $\{2,3\}$, also uses $3$ bins.
+    with all the other variables equal to $0$. The optimal value is $z(\mathrm{ILP}_{\mathrm{CSP}}) = 3$, as found in the chapter «Packing problems». The bins contain one copy of items $1$ and $4$ (weight $10$), three copies of item $3$ (weight $9$), and one copy of items $1$ and $2$ (weight $9$). The optimal solution is not unique: the solution of that chapter, with the bins $\{4,1\}$, $\{1,3,3\}$ and $\{2,3\}$, also uses $3$ bins.
 
 ## 10.5 Typical mistakes
 
@@ -131,7 +131,7 @@ The problem of this section is the Cutting Stock Problem (CSP), defined in [Chap
 
     - The ratio between $z(\mathrm{LP}_{\mathrm{BPP}})$ and $z(\mathrm{ILP}_{\mathrm{BPP}})$ is at least $\tfrac{1}{2}$, and the value $\tfrac{1}{2}$ is asymptotically attained; the same holds for $\lceil z(\mathrm{LP}_{\mathrm{BPP}}) \rceil$.
 
-    - The $\mathrm{ILP}_{\mathrm{CSP}}$ model has the structure of the $\mathrm{ILP}_{\mathrm{BPP}}$ model, with $mn$ integer variables $x_{jb}$ that count the copies and the demands $d_j$ on the right-hand side; on the CSP instance of the chapter «Bin packing and cutting stock» its optimal value is $3$.
+    - The $\mathrm{ILP}_{\mathrm{CSP}}$ model has the structure of the $\mathrm{ILP}_{\mathrm{BPP}}$ model, with $mn$ integer variables $x_{jb}$ that count the copies and the demands $d_j$ on the right-hand side; on the CSP instance of the chapter «Packing problems» its optimal value is $3$.
 
     <strong>Dashboard of Example 1.</strong> Bounds on $z(\mathrm{ILP}_{\mathrm{BPP}})$ computed in this chapter:
 
@@ -167,5 +167,5 @@ The problem of this section is the Cutting Stock Problem (CSP), defined in [Chap
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Bin packing](../../exercises/bin-packing-formulations.md)
+**Exercises on this chapter:** [:material-pencil: Packing problems](../../exercises/bin-packing-formulations.md)
 

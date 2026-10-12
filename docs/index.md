@@ -43,7 +43,7 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 
     ---
 
-    2\. Knapsack · 3\. Bin packing · 4\. Vertex coloring · 5\. Maximum clique · 6\. TSP · 7\. Machine scheduling · 8\. Lot sizing
+    Knapsack problems · Packing problems · Coloring problems · Clique problems · Routing problems · Scheduling problems · Lot sizing problems
 
     [:octicons-arrow-right-24: The problems](selected-problems/index.md)
 
@@ -51,7 +51,7 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 
     ---
 
-    9\. Knapsack · 10\. Bin packing · 11\. Vertex coloring · 12\. Maximum clique · 13\. TSP · 14\. Machine scheduling · 15\. Lot sizing
+    Knapsack problems · Packing problems · Coloring problems · Clique problems · Routing problems · Scheduling problems · Lot sizing problems
 
     [:octicons-arrow-right-24: The chapters](formulations/index.md)
 
@@ -59,7 +59,7 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 
     ---
 
-    16\. Principles · 17\. Knapsack (KP) · 18\. Unbounded knapsack (UKP) · 19\. Bounded knapsack (BKP) · 20\. Subset sum (SSP) · 21\. Multiple-choice knapsack (MCKP) · 22\. Multidimensional knapsack (MDKP) · 23\. Knapsack with setups (KPS) · 24\. Multiple knapsack (MKP) · 25\. Lot sizing · 26\. Coin change · 27\. Rod cutting
+    Principles · Knapsack problems · Lot sizing problems · Miscellaneous problems
 
     [:octicons-arrow-right-24: The chapters](dynamic-programming/index.md)
 

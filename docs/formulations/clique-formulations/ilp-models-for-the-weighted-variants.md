@@ -6,11 +6,11 @@ title: "Weighted variants"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 12** · [:material-book-open-variant: Chapter 12: Maximum clique](index.md) · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Maximum clique](../../exercises/clique-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 12** · [:material-book-open-variant: Chapter 12: Clique problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Clique problems](../../exercises/clique-formulations.md)
 
 </div>
 
-The problems of this section are the vertex-weighted and the edge-weighted maximum clique problems, defined in [Chapter 5 «The maximum clique problem»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/clique/weighted-variants/), with their reference instances.
+The problems of this section are the vertex-weighted and the edge-weighted maximum clique problems, defined in [Chapter 5 «Clique problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/clique/weighted-variants/), with their reference instances.
 
 ## 12.7.1 The vertex-weighted maximum clique problem
 
@@ -59,7 +59,7 @@ The problems of this section are the vertex-weighted and the edge-weighted maxim
     \end{array}
     $$
 
-    This is the instance of the vertex-weighted maximum clique problem of the chapter «The maximum clique problem». The $\mathrm{ILP}^{\mathrm{VW}}_{\mathrm{MCP}}$ model has $8$ binary variables and one constraint for each of the $4$ edges of $\overline{G}$:
+    This is the instance of the vertex-weighted maximum clique problem of the chapter «Clique problems». The $\mathrm{ILP}^{\mathrm{VW}}_{\mathrm{MCP}}$ model has $8$ binary variables and one constraint for each of the $4$ edges of $\overline{G}$:
 
     $$
     \begin{array}{rrrrrrrrrcl}
@@ -78,7 +78,7 @@ The problems of this section are the vertex-weighted and the edge-weighted maxim
     \tilde x_2=\tilde x_3=\tilde x_5=\tilde x_8=1,~~\tilde x_1=\tilde x_4=\tilde x_6=\tilde x_7=0
     $$
 
-    The optimal value $z(\mathrm{ILP}^{\mathrm{VW}}_{\mathrm{MCP}})$ is $8+9+6+9=32$, as stated in the chapter «The maximum clique problem». The associated optimal solution is the clique $\tilde K=\{2,3,5,8\}$, and it is the unique optimal solution: each constraint keeps the heavier vertex of its pair.
+    The optimal value $z(\mathrm{ILP}^{\mathrm{VW}}_{\mathrm{MCP}})$ is $8+9+6+9=32$, as stated in the chapter «Clique problems». The associated optimal solution is the clique $\tilde K=\{2,3,5,8\}$, and it is the unique optimal solution: each constraint keeps the heavier vertex of its pair.
 
 ## 12.7.2 The edge-weighted maximum clique problem
 
@@ -123,7 +123,7 @@ The problems of this section are the vertex-weighted and the edge-weighted maxim
 
 !!! esempio "Example 12.14: $\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}}$ model"
 
-    We consider the graph $G$ of <span style="color:#1971c2">[Example 12.13](#box-16-mcpF-ex-vw)</span>, with the edge weights of the instance of the edge-weighted maximum clique problem of the chapter «The maximum clique problem»; they are the coefficients of the objective function below. The $\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}}$ model has $8+24=32$ binary variables, $48$ constraints $y_{uv}\le x_u$, $y_{uv}\le x_v$ and $4$ non-edge constraints:
+    We consider the graph $G$ of <span style="color:#1971c2">[Example 12.13](#box-16-mcpF-ex-vw)</span>, with the edge weights of the instance of the edge-weighted maximum clique problem of the chapter «Clique problems»; they are the coefficients of the objective function below. The $\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}}$ model has $8+24=32$ binary variables, $48$ constraints $y_{uv}\le x_u$, $y_{uv}\le x_v$ and $4$ non-edge constraints:
 
     $$
     \begin{array}{rllll}
@@ -156,7 +156,7 @@ The problems of this section are the vertex-weighted and the edge-weighted maxim
     &\tilde y_{25}=\tilde y_{27}=\tilde y_{28}=\tilde y_{57}=\tilde y_{58}=\tilde y_{78}=1,~~\text{all the other }\tilde y_{uv}=0
     \end{align*}
 
-    The optimal value $z(\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}})$ is $6+9+4+7+3+8=37$, as stated in the chapter «The maximum clique problem». The associated optimal solution is the clique $\tilde K=\{2,5,7,8\}$, and it is the unique optimal solution.
+    The optimal value $z(\mathrm{ILP}^{\mathrm{EW}}_{\mathrm{MCP}})$ is $6+9+4+7+3+8=37$, as stated in the chapter «Clique problems». The associated optimal solution is the clique $\tilde K=\{2,5,7,8\}$, and it is the unique optimal solution.
 
 ## 12.8 Typical mistakes
 
@@ -190,7 +190,7 @@ The problems of this section are the vertex-weighted and the edge-weighted maxim
 
     - The $\mathrm{ILP}_{\mathrm{MSSP}}$ model has one constraint $x_u+x_v\le 1$ per edge of $G$; with the maximal cliques of $G$ it becomes the clique formulation. On <span style="color:#1971c2">[Example 12.1](index.md#box-1-mcpF-ex1)</span> the optimal value is $\alpha(G)=3$.
 
-    - The vertex-weighted model changes only the objective function; the edge-weighted model adds a variable $y_{uv}$ per edge, with $y_{uv}\le x_u$ and $y_{uv}\le x_v$. On the instances of the chapter «The maximum clique problem» their optimal values are $32$ and $37$.
+    - The vertex-weighted model changes only the objective function; the edge-weighted model adds a variable $y_{uv}$ per edge, with $y_{uv}\le x_u$ and $y_{uv}\le x_v$. On the instances of the chapter «Clique problems» their optimal values are $32$ and $37$.
 
     <strong>Dashboard</strong> (maximization). Bounds on $\omega(G)$ computed in this chapter:
 
@@ -217,5 +217,5 @@ The problems of this section are the vertex-weighted and the edge-weighted maxim
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Maximum clique](../../exercises/clique-formulations.md)
+**Exercises on this chapter:** [:material-pencil: Clique problems](../../exercises/clique-formulations.md)
 

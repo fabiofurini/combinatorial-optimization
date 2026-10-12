@@ -5,7 +5,7 @@ hide:
 title: "DP table for the knapsack"
 ---
 
-[← Lab](index.md) · Chapter: [DP for the knapsack problem](../dynamic-programming/dp-knapsack/index.md)
+[← Lab](index.md) · Chapter: [DP for the 0/1 knapsack problem](../dynamic-programming/dp-knapsack/index.md)
 
 # DP table for the knapsack
 

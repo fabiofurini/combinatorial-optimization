@@ -20,4 +20,4 @@ title: "Scheduling on a fixed number of identical machines (Pm|Cmax)"
 
 - Defined in [Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md#sez-sec-complexity).
 
-- Treated in [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax.md).
+- Treated in [Chapter 7 «Scheduling problems»](../combinatorial-optimization-problems/pcmax.md).

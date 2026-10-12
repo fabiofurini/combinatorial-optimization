@@ -1,18 +1,18 @@
 ---
-title: "Exercises · Formulations of the bin packing problem"
+title: "Exercises · Formulations of packing problems"
 ---
 
-# Exercises · Formulations of the bin packing problem
+# Exercises · Formulations of packing problems
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 10** · each solution opens with a click · [:material-book-open-variant: Chapter 10: Bin packing](../formulations/bin-packing-formulations/index.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
+**Exercises · Chapter 10** · each solution opens with a click · [:material-book-open-variant: Chapter 10: Packing problems](../formulations/bin-packing-formulations/index.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
 
 !!! chiave ""
 
-    <strong>Formulations used in these exercises.</strong> The model $\mathrm{ILP}_{\mathrm{BPP}}$ of the chapter [Formulations of the bin packing problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/bin-packing-formulations/), with the set of bins $\mathscr{B}=\{1,\dots,m\}$:
+    <strong>Formulations used in these exercises.</strong> The model $\mathrm{ILP}_{\mathrm{BPP}}$ of the chapter [Formulations of packing problems](https://fabiofurini.github.io/combinatorial-optimization/formulations/bin-packing-formulations/), with the set of bins $\mathscr{B}=\{1,\dots,m\}$:
 
     \begin{align*}
     && \min ~~ \sum_{b\in\mathscr{B}} y_b \tag{B0}\\

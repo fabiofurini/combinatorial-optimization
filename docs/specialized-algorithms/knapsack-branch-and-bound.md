@@ -12,9 +12,9 @@ title: "Knapsack: branch-and-bound on the critical item"
 
 !!! nota "Prerequisites"
 
-    - From the module <em>Integer linear programming</em>, [Chapter 7 «Branch-and-bound»](https://fabiofurini.github.io/integer-linear-programming/exact-methods/bb/): branching and bounding operations, the problem list, the pruning criteria, the lower bound $\LB$ and the upper bound $\UB$. The general algorithm is applied here to the knapsack problem.
+    - From the module <em>Integer linear programming</em>, [Chapter 7 «Branch-and-bound»](https://fabiofurini.github.io/integer-linear-programming/exact-methods/bb/): branching and bounding operations, the problem list, the pruning criteria, the lower bound $\LB$ and the upper bound $\UB$. The general algorithm is applied here to the 0/1 knapsack problem.
 
-    - From this module, the chapter «Knapsack formulations»: the models $\mathrm{ILP}_{\mathrm{KP}}$ and $\mathrm{LP}_{\mathrm{KP}}$, the efficiency of an item, the split item $s$, the residual capacity $\mathit{rc}$ and the bound of Dantzig.
+    - From this module, the chapter «Formulations of knapsack problems»: the models $\mathrm{ILP}_{\mathrm{KP}}$ and $\mathrm{LP}_{\mathrm{KP}}$, the efficiency of an item, the split item $s$, the residual capacity $\mathit{rc}$ and the bound of Dantzig.
 
 !!! chiave "Objectives"
 

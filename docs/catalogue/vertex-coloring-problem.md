@@ -56,6 +56,6 @@ title: "The vertex coloring problem (VCP)"
 
     2. the vertices $u$ and $v$ are not adjacent: otherwise $v \in N(u) \subseteq N(v)$, which is impossible in a simple graph, so $u$ and $v$ can share a color.
 
-- Defined in [Chapter 4 «Vertex coloring»](../combinatorial-optimization-problems/coloring.md#box-3-defVCP).
+- Defined in [Chapter 4 «Coloring problems»](../combinatorial-optimization-problems/coloring.md#box-3-defVCP).
 
 - [The course on this problem $\rightarrow$](../selected-problems/vertex-coloring.md).

@@ -1,18 +1,18 @@
 ---
-title: "Exercises · DP for the knapsack problem"
+title: "Exercises · DP for the 0/1 knapsack problem"
 ---
 
-# Exercises · DP for the knapsack problem
+# Exercises · DP for the 0/1 knapsack problem
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 17** · each solution opens with a click · [:material-book-open-variant: Chapter 17: Knapsack (KP)](../dynamic-programming/dp-knapsack/index.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
+**Exercises · Chapter 17** · each solution opens with a click · [:material-book-open-variant: Chapter 17: 0/1 knapsack (KP)](../dynamic-programming/dp-knapsack/index.md) · [:material-file-pdf-box: Exercises, volume 3 (PDF)](../pdf/exercises-3-dynamic-programming.pdf)
 
 </div>
 
 <a id="esercizio-17-1"></a>
 
-!!! esercizio "Exercise 17.1: Exercise 1: Knapsack Problem"
+!!! esercizio "Exercise 17.1: Exercise 1: 0/1 Knapsack Problem"
 
     Consider the following KP instance, where the knapsack has capacity $c=6$, and the profits and weights associated with the items are:
 
@@ -419,7 +419,7 @@ title: "Exercises · DP for the knapsack problem"
 
 <a id="esercizio-17-2"></a>
 
-!!! esercizio "Exercise 17.2: Exercise 2: Knapsack Problem"
+!!! esercizio "Exercise 17.2: Exercise 2: 0/1 Knapsack Problem"
 
     Consider the following KP instance, where the knapsack has capacity $c=7$, and the profits and weights associated with the items are:
 
@@ -861,7 +861,7 @@ title: "Exercises · DP for the knapsack problem"
 
 <a id="esercizio-17-3"></a>
 
-!!! esercizio "Exercise 17.3: Exercise 3: Knapsack Problem"
+!!! esercizio "Exercise 17.3: Exercise 3: 0/1 Knapsack Problem"
 
     Consider the following KP instance, where the knapsack has capacity $c=8$, and the profits and weights associated with the items are:
 
@@ -1422,7 +1422,7 @@ title: "Exercises · DP for the knapsack problem"
 
 <a id="esercizio-17-4"></a>
 
-!!! esercizio "Exercise 17.4: Exercise 4: Knapsack Problem"
+!!! esercizio "Exercise 17.4: Exercise 4: 0/1 Knapsack Problem"
 
     Consider the following KP instance, where the knapsack has capacity $c=9$, and the profits and weights associated with the items are:
 
@@ -2025,7 +2025,7 @@ title: "Exercises · DP for the knapsack problem"
 
 <a id="esercizio-17-5"></a>
 
-!!! esercizio "Exercise 17.5: Exercise 5: Knapsack Problem"
+!!! esercizio "Exercise 17.5: Exercise 5: 0/1 Knapsack Problem"
 
     Consider the following KP instance, where the knapsack has capacity $c=10$, and the profits and weights associated with the items are:
 

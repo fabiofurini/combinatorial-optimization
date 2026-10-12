@@ -6,7 +6,7 @@ title: "Weighted variants"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 5** · [:material-book-open-variant: Chapter 5: Maximum clique](index.md) · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Maximum clique](../../exercises/clique.md)
+**Part 1 · Combinatorial optimization problems · Chapter 5** · [:material-book-open-variant: Chapter 5: Clique problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Clique problems](../../exercises/clique.md)
 
 </div>
 
@@ -58,7 +58,7 @@ title: "Weighted variants"
 
 ## 5.5 Remarks
 
-- In a coloring, every color class is a stable set: the MSSP is the problem of the largest color class, and the clique number is the dual bound of the chapter «Vertex coloring».
+- In a coloring, every color class is a stable set: the MSSP is the problem of the largest color class, and the clique number is the dual bound of the chapter «Coloring problems».
 
 - Applications of cliques and stable sets:
 
@@ -119,7 +119,7 @@ title: "Weighted variants"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Maximum clique](../../exercises/clique.md)
+**Exercises on this chapter:** [:material-pencil: Clique problems](../../exercises/clique.md)
 
 ---
 

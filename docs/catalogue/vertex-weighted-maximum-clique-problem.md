@@ -20,4 +20,4 @@ title: "Vertex-weighted maximum clique problem (VWMCP)"
 
     2. Given a graph $G$ and an edge-weight vector $\vet{r}$, the <strong>edge-weighted maximum clique problem</strong> asks to find a clique $K$ of $G$ with maximum total edge weight $r(K)$.
 
-- Defined in [Chapter 5 «The maximum clique problem»](../combinatorial-optimization-problems/clique/weighted-variants.md#box-12-mcpP-def-weighted).
+- Defined in [Chapter 5 «Clique problems»](../combinatorial-optimization-problems/clique/weighted-variants.md#box-12-mcpP-def-weighted).

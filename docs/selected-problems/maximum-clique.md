@@ -1,8 +1,8 @@
 ---
-title: "The maximum clique problem"
+title: "Clique problems"
 ---
 
-# The maximum clique problem
+# Clique problems
 
 <div class="info-capitolo" markdown>
 
@@ -64,7 +64,7 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Exercises { #sez-sec-cat-mcp-es }
 
-- [Ch. 4 — Vertex coloring](../exercises/coloring.md) (4 exercises).
+- [Ch. 4 — Coloring problems](../exercises/coloring.md) (4 exercises).
 
 ## Variants { #sez-sec-cat-mcp-var }
 

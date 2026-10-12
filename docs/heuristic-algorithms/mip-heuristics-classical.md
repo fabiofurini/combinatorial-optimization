@@ -14,7 +14,7 @@ title: "MIP heuristics for the classical problems"
 
     - From the module <em>Integer Linear Programming</em>, [Chapter 10 «MIP heuristics»](https://fabiofurini.github.io/integer-linear-programming/mip-heuristics/mip-heuristics/): the methods of this chapter (rounding, diving, the feasibility pump, RINS, local branching, proximity search, relax-and-fix and fix-and-optimize), their pseudo-codes and the conditions under which they work.
 
-    - From this module, the chapters on the formulations of the classical problems (part «Formulations and their properties»): the models of the knapsack problem, of the bin packing problem, of the travelling salesman problem, of $P\,||\,C_{\max}$ and of lot sizing.
+    - From this module, the chapters on the formulations of the classical problems (part «Formulations and their properties»): the models of the 0/1 knapsack problem, of the bin packing problem, of the travelling salesman problem, of $P\,||\,C_{\max}$ and of lot sizing.
 
     - From this module, the chapters on heuristic algorithms, from «Heuristic algorithms: definitions» to «Metaheuristics»: the constructive heuristics ($GR$, $FF$, $NN$, $LPT$), local search and metaheuristics, whose solutions are the starting points of this chapter.
 
@@ -24,7 +24,7 @@ title: "MIP heuristics for the classical problems"
 
     - write the MIP models of the classical problems in the form required by the MIP-based heuristics, and compute their LP relaxations;
 
-    - execute by hand rounding, diving, the feasibility pump, RINS, local branching and proximity search on the knapsack problem, on bin packing and on $P\,||\,C_{\max}$;
+    - execute by hand rounding, diving, the feasibility pump, RINS, local branching and proximity search on the 0/1 knapsack problem, on bin packing and on $P\,||\,C_{\max}$;
 
     - execute relax-and-fix and fix-and-optimize on a lot sizing instance;
 
@@ -82,15 +82,15 @@ title: "MIP heuristics for the classical problems"
 </tr>
 </table></div>
 
-- The MIP models are those of the part «Formulations and their properties»: the $\mathrm{ILP}_{\mathrm{KP}}$ model of the chapter [«Formulations of the knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/), the $\mathrm{ILP}_{\mathrm{BPP}}$ model of the chapter [«Formulations of the bin packing problem»](https://fabiofurini.github.io/combinatorial-optimization/formulations/bin-packing-formulations/), the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$ model of the chapter [«Formulations of the travelling salesman problem»](https://fabiofurini.github.io/combinatorial-optimization/formulations/tsp-formulations/) and the $\mathrm{ILP}_{P\|C_{\max}}$ model of the chapter [«Formulations of parallel machine scheduling»](https://fabiofurini.github.io/combinatorial-optimization/formulations/pcmax-formulations/). We recall the three models used in the examples, with the variables and the notation of those chapters.
+- The MIP models are those of the part «Formulations and their properties»: the $\mathrm{ILP}_{\mathrm{KP}}$ model of the chapter [«Formulations of knapsack problems»](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/), the $\mathrm{ILP}_{\mathrm{BPP}}$ model of the chapter [«Formulations of packing problems»](https://fabiofurini.github.io/combinatorial-optimization/formulations/bin-packing-formulations/), the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$ model of the chapter [«Formulations of routing problems»](https://fabiofurini.github.io/combinatorial-optimization/formulations/tsp-formulations/) and the $\mathrm{ILP}_{P\|C_{\max}}$ model of the chapter [«Formulations of scheduling problems»](https://fabiofurini.github.io/combinatorial-optimization/formulations/pcmax-formulations/). We recall the three models used in the examples, with the variables and the notation of those chapters.
 
-### 32.2.1 The knapsack problem
+### 32.2.1 The 0/1 knapsack problem
 
 - The binary variable $x_j$ is equal to $1$ if item $j$ is selected in the knapsack, and to $0$ otherwise, for every $j \in \mathscr{I}$.
 
 !!! chiave ""
 
-    Using these variables, an ILP model for the Knapsack Problem (KP) reads as follows:
+    Using these variables, an ILP model for the 0/1 Knapsack Problem (KP) reads as follows:
 
     <a id="eq-eq-kp"></a>
 
@@ -679,7 +679,7 @@ title: "MIP heuristics for the classical problems"
 
 - Relax-and-fix and fix-and-optimize decompose the MIP into blocks of integer variables. Lot sizing is a natural application, because its variables are indexed by the periods $t\in T=\{1,2,\dots,m\}$ of a planning horizon, and the decisions of a period mainly interact with those of the nearby periods. The blocks are the setup variables of consecutive periods.
 
-- The model is the $\mathrm{ILP}_{\mathrm{CLSP}}$ model of the chapter [«Formulations of capacitated lot sizing»](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/), with the strong big-M value $M_t=\min\{cap_t,\,D_{t,m}\}$, where $D_{t,m}=\sum_{k=t}^{m} d_k$; for an uncapacitated instance, $cap_t=D_{t,m}$. Its variables are the production $x_t$, the inventory $s_t$ at the end of period $t$ and the setup $y_t$, for every period $t\in T$.
+- The model is the $\mathrm{ILP}_{\mathrm{CLSP}}$ model of the chapter [«Formulations of lot sizing problems»](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/), with the strong big-M value $M_t=\min\{cap_t,\,D_{t,m}\}$, where $D_{t,m}=\sum_{k=t}^{m} d_k$; for an uncapacitated instance, $cap_t=D_{t,m}$. Its variables are the production $x_t$, the inventory $s_t$ at the end of period $t$ and the setup $y_t$, for every period $t\in T$.
 
 !!! chiave ""
 

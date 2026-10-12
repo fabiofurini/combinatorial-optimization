@@ -1,18 +1,18 @@
 ---
-title: "Exercises · Formulations of the maximum clique problem"
+title: "Exercises · Formulations of clique problems"
 ---
 
-# Exercises · Formulations of the maximum clique problem
+# Exercises · Formulations of clique problems
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 12** · each solution opens with a click · [:material-book-open-variant: Chapter 12: Maximum clique](../formulations/clique-formulations/index.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
+**Exercises · Chapter 12** · each solution opens with a click · [:material-book-open-variant: Chapter 12: Clique problems](../formulations/clique-formulations/index.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
 
 !!! chiave ""
 
-    <strong>Formulations used in these exercises.</strong> The two models of the chapter [Formulations of the maximum clique problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/clique-formulations/), where $\overline{E}$ is the set of non-edges of $G$ and $\mathcal{Q}$ the set of the maximal stable sets of $G$ (the maximal cliques of the complement graph). The edge formulation $\mathrm{ILP}_{\mathrm{MCP}}$:
+    <strong>Formulations used in these exercises.</strong> The two models of the chapter [Formulations of clique problems](https://fabiofurini.github.io/combinatorial-optimization/formulations/clique-formulations/), where $\overline{E}$ is the set of non-edges of $G$ and $\mathcal{Q}$ the set of the maximal stable sets of $G$ (the maximal cliques of the complement graph). The edge formulation $\mathrm{ILP}_{\mathrm{MCP}}$:
 
     \begin{align*}
     && \max ~~ \sum_{v\in V} x_v \tag{M0}\\

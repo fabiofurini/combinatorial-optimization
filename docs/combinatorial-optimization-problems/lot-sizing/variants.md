@@ -6,7 +6,7 @@ title: "Variants"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 8** · [:material-book-open-variant: Chapter 8: Lot sizing](index.md) · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/lot-sizing.md)
+**Part 1 · Combinatorial optimization problems · Chapter 8** · [:material-book-open-variant: Chapter 8: Lot sizing problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Lot sizing problems](../../exercises/lot-sizing.md)
 
 </div>
 
@@ -20,7 +20,7 @@ title: "Variants"
 
 - With <strong>unsatisfied demand</strong>, a part of the demand may be left unsatisfied, at a penalty $cu_{pt}$ per unit.
 
-- The models of all these variants, with their big-$M$ constraints, are the subject of the chapter «Formulations of capacitated lot sizing». This chapter studies the problem of the definition above.
+- The models of all these variants, with their big-$M$ constraints, are the subject of the chapter «Formulations of lot sizing problems». This chapter studies the problem of the definition above.
 
 ## 8.3 Counting the solutions
 
@@ -200,7 +200,7 @@ title: "Variants"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Lot sizing](../../exercises/lot-sizing.md)
+**Exercises on this chapter:** [:material-pencil: Lot sizing problems](../../exercises/lot-sizing.md)
 
 ---
 

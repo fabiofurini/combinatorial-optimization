@@ -6,7 +6,7 @@ The course solves 7 combinatorial optimization problems in every way: their char
 
 | Problem | A solution is | Objective | Constraints | Complexity |
 |---|---|---|---|---|
-| Knapsack problem (KP) | a subset of items | maximum total profit | total weight at most $c$ | weakly NP-hard, pseudo-polynomial DP in $O(nc)$ |
+| 0/1 knapsack problem (KP) | a subset of items | maximum total profit | total weight at most $c$ | weakly NP-hard, pseudo-polynomial DP in $O(nc)$ |
 | Bin packing (BPP) | a partition of the items into bins | minimum number of bins | load of each bin at most $c$ | strongly NP-hard |
 | Vertex coloring (VCP) | a partition of the vertices into stable sets | minimum number of colors $\chi(G)$ | adjacent vertices with different colors | strongly NP-hard |
 | Maximum clique (MCP) | a subset of vertices | maximum cardinality $\omega(G)$ | pairwise adjacent vertices | NP-hard |
@@ -30,7 +30,7 @@ Each cell links to the chapter.
 
 ## In depth
 
-- **Knapsack problem (KP)** — In depth: [the course on this problem](../selected-problems/knapsack.md)
+- **0/1 knapsack problem (KP)** — In depth: [the course on this problem](../selected-problems/knapsack.md)
 - **Bin packing (BPP)** — In depth: [the course on this problem](../selected-problems/bin-packing.md)
 - **Vertex coloring (VCP)** — In depth: [the course on this problem](../selected-problems/vertex-coloring.md)
 - **Maximum clique (MCP)** — In depth: [the course on this problem](../selected-problems/maximum-clique.md)

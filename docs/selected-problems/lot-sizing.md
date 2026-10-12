@@ -1,8 +1,8 @@
 ---
-title: "Capacitated lot sizing"
+title: "Lot sizing problems"
 ---
 
-# Capacitated lot sizing
+# Lot sizing problems
 
 <div class="info-capitolo" markdown>
 
@@ -62,9 +62,9 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Exercises { #sez-sec-cat-cls-es }
 
-- [Ch. 8 — Capacitated lot sizing](../exercises/lot-sizing.md) (5 exercises).
+- [Ch. 8 — Lot sizing problems](../exercises/lot-sizing.md) (5 exercises).
 
-- [Ch. 15 — Formulations of capacitated lot sizing](../exercises/lot-sizing-formulations.md) (5 exercises).
+- [Ch. 15 — Formulations of lot sizing problems](../exercises/lot-sizing-formulations.md) (5 exercises).
 
 - [Ch. 25 — Dynamic programming for lot sizing](../exercises/dp-lot-sizing.md) (5 exercises).
 

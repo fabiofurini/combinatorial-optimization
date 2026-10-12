@@ -1,8 +1,8 @@
 ---
-title: "Scheduling on identical parallel machines"
+title: "Scheduling problems"
 ---
 
-# Scheduling on identical parallel machines
+# Scheduling problems
 
 <div class="info-capitolo" markdown>
 
@@ -72,9 +72,9 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Exercises { #sez-sec-cat-pcmax-es }
 
-- [Ch. 7 — Parallel machine scheduling](../exercises/pcmax.md) (5 exercises).
+- [Ch. 7 — Scheduling problems](../exercises/pcmax.md) (5 exercises).
 
-- [Ch. 14 — Formulations of parallel machine scheduling](../exercises/pcmax-formulations.md) (5 exercises).
+- [Ch. 14 — Formulations of scheduling problems](../exercises/pcmax-formulations.md) (5 exercises).
 
 - [Ch. 28 — Heuristic algorithms: definitions](../exercises/heuristics.md) (2 exercises).
 

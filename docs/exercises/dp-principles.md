@@ -12,9 +12,9 @@ title: "Exercises · Principles of dynamic programming"
 
 <a id="esercizio-16-1"></a>
 
-!!! esercizio "Exercise 16.1: Optimal substructure and overlapping subproblems: the knapsack problem"
+!!! esercizio "Exercise 16.1: Optimal substructure and overlapping subproblems: the 0/1 knapsack problem"
 
-    Consider the 0–1 knapsack problem with $n=4$ items and capacity $c=8$:
+    Consider the 0/1 knapsack problem with $n=4$ items and capacity $c=8$:
 
     $$
     \max\Big\{\sum_{j=1}^n p_jx_j:\ \sum_{j=1}^n w_jx_j\le c,\ x_j\in\{0,1\},\ j=1,\dots,n\Big\},

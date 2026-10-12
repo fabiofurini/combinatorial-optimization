@@ -1,12 +1,12 @@
 ---
-title: "Formulations of the knapsack problem"
+title: "Formulations of knapsack problems"
 ---
 
-# Formulations of the knapsack problem
+# Formulations of knapsack problems
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 9** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Knapsack](../../exercises/knapsack-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 9** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Knapsack problems](../../exercises/knapsack-formulations.md)
 
 </div>
 
@@ -16,13 +16,13 @@ title: "Formulations of the knapsack problem"
 
     - From the module <em>Integer linear programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/) and [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): ILP problems, LP relaxations and upper bounds.
 
-    - From this module, [Chapter 2 «Knapsack problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/): the knapsack problem and its variants, their assumptions and their reference instances.
+    - From this module, [Chapter 2 «Knapsack problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/): the 0/1 knapsack problem and its variants, their assumptions and their reference instances.
 
 !!! chiave "Objectives"
 
     At the end of this chapter you will be able to:
 
-    - write the ILP model of the Knapsack Problem and explain each of its constraints;
+    - write the ILP model of the 0/1 Knapsack Problem and explain each of its constraints;
 
     - write the ILP models of the SSP, the BKP, the UKP, the MDKP, the MKP, the MCKP and the KPS, and write them on a numerical instance;
 
@@ -34,7 +34,7 @@ title: "Formulations of the knapsack problem"
 
     - explain why $z(\mathrm{LP}_{\mathrm{KP}})$ is never larger than twice $z(\mathrm{ILP}_{\mathrm{KP}})$.
 
-## 9.1 An ILP model for the Knapsack Problem
+## 9.1 An ILP model for the 0/1 Knapsack Problem
 
 - We introduce the following  $n$ <strong>binary variables</strong>:
 
@@ -48,7 +48,7 @@ title: "Formulations of the knapsack problem"
 
 !!! chiave ""
 
-    Using these variables, an Integer Linear Programming (ILP) model for the Knapsack Problem (KP) reads as follows:
+    Using these variables, an Integer Linear Programming (ILP) model for the 0/1 Knapsack Problem (KP) reads as follows:
 
     <a id="eq-NAT_KP"></a>
 
@@ -764,7 +764,7 @@ title: "Formulations of the knapsack problem"
 
     <p class="qed-riga"><span class="qed">□</span></p>
 
-## 9.4 Knapsack Problem upper bounds
+## 9.4 0/1 Knapsack Problem upper bounds
 
 - <strong>The following two propositions require that the items are sorted by non-increasing efficiency</strong>.
 
@@ -845,9 +845,9 @@ title: "Formulations of the knapsack problem"
 
 -   **Definition**
 
-    An ILP model for the Knapsack Problem · Item efficiency · Split item and residual capacity · Some important theoretical properties
+    An ILP model for the 0/1 Knapsack Problem · Item efficiency · Split item and residual capacity · Some important theoretical properties
 
-    [:octicons-arrow-right-24: Open](#91-an-ilp-model-for-the-knapsack-problem)
+    [:octicons-arrow-right-24: Open](#91-an-ilp-model-for-the-01-knapsack-problem)
 
 -   **9.5 An ILP model for the Subset Sum Problem**
 
@@ -887,4 +887,4 @@ title: "Formulations of the knapsack problem"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Knapsack](../../exercises/knapsack-formulations.md)
+**Exercises on this chapter:** [:material-pencil: Knapsack problems](../../exercises/knapsack-formulations.md)

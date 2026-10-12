@@ -40,6 +40,6 @@ title: "Capacitated lot sizing (CLS)"
 
     3. The quantities are integer. With integer data, once the periods with a setup are fixed, what remains is a minimum cost flow problem, which has an integer optimal solution: restricting the quantities to integers does not change the optimal cost.
 
-- Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing/index.md#box-1-defCLS).
+- Defined in [Chapter 8 «Lot sizing problems»](../combinatorial-optimization-problems/lot-sizing/index.md#box-1-defCLS).
 
 - [The course on this problem $\rightarrow$](../selected-problems/lot-sizing.md).

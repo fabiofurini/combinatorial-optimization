@@ -1,12 +1,12 @@
 ---
-title: "The maximum clique problem"
+title: "Clique problems"
 ---
 
-# The maximum clique problem
+# Clique problems
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 5** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Maximum clique](../../exercises/clique.md)
+**Part 1 · Combinatorial optimization problems · Chapter 5** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Clique problems](../../exercises/clique.md)
 
 </div>
 
@@ -14,7 +14,7 @@ title: "The maximum clique problem"
 
     - From this module, the chapter [«Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): instances, feasible solutions, primal and dual bounds, and the gap.
 
-    - From this module, the chapter [«Vertex coloring»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/): graphs, neighbourhoods, degrees, the complement graph and the chromatic number $\chi(G)$.
+    - From this module, the chapter [«Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/): graphs, neighbourhoods, degrees, the complement graph and the chromatic number $\chi(G)$.
 
 !!! chiave "Objectives"
 
@@ -154,7 +154,7 @@ title: "The maximum clique problem"
 
     In $\overline{G}$ the red vertices form a stable set: they take one vertex from each of the $4$ edges. We call this MCP instance <span style="color:#1971c2">[Example 5.2](#box-7-mcpP-ex2)</span>.
 
-- The Petersen graph of the chapter «Vertex coloring» has no triangle, so its largest cliques are its edges and $\omega(G)=2$.
+- The Petersen graph of the chapter «Coloring problems» has no triangle, so its largest cliques are its edges and $\omega(G)=2$.
 
 ### 5.1.1 Assumptions
 
@@ -239,7 +239,7 @@ title: "The maximum clique problem"
 
 ??? dimostrazione "Proof"
 
-    The vertices of a clique are pairwise adjacent, so they take pairwise different colors: a coloring with $k$ colors has $k \ge |K|$ for every clique $K$. This is the clique bound of the chapter «Vertex coloring», read from the side of the clique. <span class="qed">□</span>
+    The vertices of a clique are pairwise adjacent, so they take pairwise different colors: a coloring with $k$ colors has $k \ge |K|$ for every clique $K$. This is the clique bound of the chapter «Coloring problems», read from the side of the clique. <span class="qed">□</span>
 
 - <strong>Bounds on <span style="color:#1971c2">[Example 5.1](#box-6-mcpP-ex1)</span>.</strong> Vertices $1$ and $3$ have degree $3$, the other five have degree $2$. The degree bound gives $\Delta+1=4$, and the edge bound gives $4$ too, since $4\cdot 3/2 = 6 \le 8 < 10 = 5 \cdot 4/2$.
 
@@ -271,7 +271,7 @@ title: "The maximum clique problem"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Maximum clique](../../exercises/clique.md)
+**Exercises on this chapter:** [:material-pencil: Clique problems](../../exercises/clique.md)
 
 ---
 

@@ -1,18 +1,18 @@
 ---
-title: "Exercises · Formulations of the travelling salesman problem"
+title: "Exercises · Formulations of routing problems"
 ---
 
-# Exercises · Formulations of the travelling salesman problem
+# Exercises · Formulations of routing problems
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 13** · each solution opens with a click · [:material-book-open-variant: Chapter 13: TSP](../formulations/tsp-formulations/index.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
+**Exercises · Chapter 13** · each solution opens with a click · [:material-book-open-variant: Chapter 13: Routing problems](../formulations/tsp-formulations/index.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
 
 !!! chiave ""
 
-    <strong>Formulations used in these exercises.</strong> The two models of the chapter [Formulations of the travelling salesman problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/tsp-formulations/), on the arcs $A=\{(i,j): i,j\in\mathscr{V},~i\neq j\}$. The model $\mathrm{ILP}^{\mathrm{MTZ}}_{\mathrm{TSP}}$:
+    <strong>Formulations used in these exercises.</strong> The two models of the chapter [Formulations of routing problems](https://fabiofurini.github.io/combinatorial-optimization/formulations/tsp-formulations/), on the arcs $A=\{(i,j): i,j\in\mathscr{V},~i\neq j\}$. The model $\mathrm{ILP}^{\mathrm{MTZ}}_{\mathrm{TSP}}$:
 
     \begin{align*}
     && \min ~~ \sum_{(i,j)\in A} d_{ij}\,x_{ij} \tag{T0}\\

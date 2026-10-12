@@ -6,15 +6,15 @@
 
 <div class="grid cards" markdown>
 
--   **9. Formulations of the knapsack problem**
+-   **9. Formulations of knapsack problems**
 
     ---
 
-    An ILP model for the Knapsack Problem · A first Linear Programming relaxation · A second Linear Programming relaxation · Knapsack Problem upper bounds
+    An ILP model for the 0/1 Knapsack Problem · A first Linear Programming relaxation · A second Linear Programming relaxation · 0/1 Knapsack Problem upper bounds
 
     [:octicons-arrow-right-24: Read the chapter](knapsack-formulations/index.md) · [Exercises](../exercises/knapsack-formulations.md)
 
--   **10. Formulations of the bin packing problem**
+-   **10. Formulations of packing problems**
 
     ---
 
@@ -22,7 +22,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](bin-packing-formulations/index.md) · [Exercises](../exercises/bin-packing-formulations.md)
 
--   **11. Formulations of the vertex coloring problem**
+-   **11. Formulations of coloring problems**
 
     ---
 
@@ -30,7 +30,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](coloring-formulations.md) · [Exercises](../exercises/coloring-formulations.md)
 
--   **12. Formulations of the maximum clique problem**
+-   **12. Formulations of clique problems**
 
     ---
 
@@ -38,7 +38,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](clique-formulations/index.md) · [Exercises](../exercises/clique-formulations.md)
 
--   **13. Formulations of the travelling salesman problem**
+-   **13. Formulations of routing problems**
 
     ---
 
@@ -46,7 +46,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](tsp-formulations/index.md) · [Exercises](../exercises/tsp-formulations.md)
 
--   **14. Formulations of parallel machine scheduling**
+-   **14. Formulations of scheduling problems**
 
     ---
 
@@ -54,7 +54,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](pcmax-formulations.md) · [Exercises](../exercises/pcmax-formulations.md)
 
--   **15. Formulations of capacitated lot sizing**
+-   **15. Formulations of lot sizing problems**
 
     ---
 

@@ -6,7 +6,7 @@ title: "Cutting stock"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 3** · [:material-book-open-variant: Chapter 3: Bin packing](index.md) · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Bin packing](../../exercises/bin-packing.md)
+**Part 1 · Combinatorial optimization problems · Chapter 3** · [:material-book-open-variant: Chapter 3: Packing problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Packing problems](../../exercises/bin-packing.md)
 
 </div>
 
@@ -226,7 +226,7 @@ title: "Cutting stock"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Bin packing](../../exercises/bin-packing.md)
+**Exercises on this chapter:** [:material-pencil: Packing problems](../../exercises/bin-packing.md)
 
 ---
 

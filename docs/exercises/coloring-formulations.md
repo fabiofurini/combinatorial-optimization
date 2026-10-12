@@ -1,18 +1,18 @@
 ---
-title: "Exercises · Formulations of the vertex coloring problem"
+title: "Exercises · Formulations of coloring problems"
 ---
 
-# Exercises · Formulations of the vertex coloring problem
+# Exercises · Formulations of coloring problems
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 11** · each solution opens with a click · [:material-book-open-variant: Chapter 11: Vertex coloring](../formulations/coloring-formulations.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
+**Exercises · Chapter 11** · each solution opens with a click · [:material-book-open-variant: Chapter 11: Coloring problems](../formulations/coloring-formulations.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
 
 !!! chiave ""
 
-    <strong>Formulations used in these exercises.</strong> The model $\mathrm{ILP}_{\mathrm{VCP}}$ of the chapter [Formulations of the vertex coloring problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/coloring-formulations/), with the set of colors $\mathscr{C}=\{1,\dots,k\}$:
+    <strong>Formulations used in these exercises.</strong> The model $\mathrm{ILP}_{\mathrm{VCP}}$ of the chapter [Formulations of coloring problems](https://fabiofurini.github.io/combinatorial-optimization/formulations/coloring-formulations/), with the set of colors $\mathscr{C}=\{1,\dots,k\}$:
 
     \begin{align*}
     && \min ~~ \sum_{c\in\mathscr{C}} y_c \tag{C0}\\

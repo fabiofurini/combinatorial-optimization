@@ -6,11 +6,11 @@ title: "Variants"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 15** · [:material-book-open-variant: Chapter 15: Lot sizing](index.md) · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Lot sizing](../../exercises/lot-sizing-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 15** · [:material-book-open-variant: Chapter 15: Lot sizing problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Lot sizing problems](../../exercises/lot-sizing-formulations.md)
 
 </div>
 
-The problems of this section are the variants of the capacitated lot sizing problem defined in [Chapter 8 «Capacitated lot sizing»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/variants/). Each subsection writes the ILP model of one variant, in the order of that chapter.
+The problems of this section are the variants of the capacitated lot sizing problem defined in [Chapter 8 «Lot sizing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/variants/). Each subsection writes the ILP model of one variant, in the order of that chapter.
 
 ## 15.5.1 The uncapacitated lot sizing problem
 
@@ -824,5 +824,5 @@ The problems of this section are the variants of the capacitated lot sizing prob
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Lot sizing](../../exercises/lot-sizing-formulations.md)
+**Exercises on this chapter:** [:material-pencil: Lot sizing problems](../../exercises/lot-sizing-formulations.md)
 

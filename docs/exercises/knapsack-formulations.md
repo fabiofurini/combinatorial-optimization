@@ -1,12 +1,12 @@
 ---
-title: "Exercises · Formulations of the knapsack problem"
+title: "Exercises · Formulations of knapsack problems"
 ---
 
-# Exercises · Formulations of the knapsack problem
+# Exercises · Formulations of knapsack problems
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 9** · each solution opens with a click · [:material-book-open-variant: Chapter 9: Knapsack](../formulations/knapsack-formulations/index.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
+**Exercises · Chapter 9** · each solution opens with a click · [:material-book-open-variant: Chapter 9: Knapsack problems](../formulations/knapsack-formulations/index.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
 
@@ -14,7 +14,7 @@ title: "Exercises · Formulations of the knapsack problem"
 
 !!! formula "Upper bounds used in these exercises"
 
-    The bounds of the chapter [Formulations of the knapsack problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/), for a KP instance with the items sorted by non-increasing efficiency. The <strong>split item</strong> $s\in\mathscr{N}$ and the <strong>residual capacity</strong> $\bar c$ are
+    The bounds of the chapter [Formulations of knapsack problems](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/), for a KP instance with the items sorted by non-increasing efficiency. The <strong>split item</strong> $s\in\mathscr{N}$ and the <strong>residual capacity</strong> $\bar c$ are
 
     \begin{equation*}
     \sum_{i=1}^{s-1} w_i \leq c ~~~\text{and}~~~ \sum_{i=1}^{s} w_i > c, \qquad \bar{c} = c - \sum_{i=1}^{s-1} w_i . \tag{K1}
@@ -36,7 +36,7 @@ title: "Exercises · Formulations of the knapsack problem"
 
 <a id="esercizio-9-1"></a>
 
-!!! esercizio "Exercise 9.1: Upper bounds for the Knapsack Problem (1)"
+!!! esercizio "Exercise 9.1: Upper bounds for the 0/1 Knapsack Problem (1)"
 
     We consider a knapsack capacity $c=11$ and a set $\mathscr N=\{1,2,3,4,5\}$ of $5$ items ($n=5$) with the following profits and weights:
 
@@ -99,7 +99,7 @@ title: "Exercises · Formulations of the knapsack problem"
 
 <a id="esercizio-9-2"></a>
 
-!!! esercizio "Exercise 9.2: Upper bounds for the Knapsack Problem (2)"
+!!! esercizio "Exercise 9.2: Upper bounds for the 0/1 Knapsack Problem (2)"
 
     We consider a knapsack capacity $c=8$ and a set $\mathscr N=\{1,2,3,4\}$ of $4$ items ($n=4$) with the following profits and weights:
 
@@ -162,7 +162,7 @@ title: "Exercises · Formulations of the knapsack problem"
 
 <a id="esercizio-9-3"></a>
 
-!!! esercizio "Exercise 9.3: Upper bounds for the Knapsack Problem (3)"
+!!! esercizio "Exercise 9.3: Upper bounds for the 0/1 Knapsack Problem (3)"
 
     We consider a knapsack capacity $c=15$ and a set $\mathscr N=\{1,2,3,4\}$ of $4$ items ($n=4$) with the following profits and weights:
 
@@ -225,7 +225,7 @@ title: "Exercises · Formulations of the knapsack problem"
 
 <a id="esercizio-9-4"></a>
 
-!!! esercizio "Exercise 9.4: Upper bounds for the Knapsack Problem (4)"
+!!! esercizio "Exercise 9.4: Upper bounds for the 0/1 Knapsack Problem (4)"
 
     We consider a knapsack capacity $c=9$ and a set $\mathscr{N}=\{1,2,3,4,5,6\}$ of $6$ items ($n=6$) with the following profits, weights:
 
@@ -288,7 +288,7 @@ title: "Exercises · Formulations of the knapsack problem"
 
 <a id="esercizio-9-5"></a>
 
-!!! esercizio "Exercise 9.5: Upper bounds for the Knapsack Problem (5)"
+!!! esercizio "Exercise 9.5: Upper bounds for the 0/1 Knapsack Problem (5)"
 
     We consider a knapsack capacity $c=21$ and a set $\mathscr{N}=\{1,2,3,4,5,6\}$ of $6$ items ($n=6$) with the following profits, weights:
 
@@ -355,7 +355,7 @@ title: "Exercises · Formulations of the knapsack problem"
 
 !!! esercizio "Exercise 9.6: ILP model of the Subset Sum Problem"
 
-    The Subset Sum Problem (SSP) and its $\mathrm{ILP}_{\mathrm{SSP}}$ model are in the chapter [Formulations of the knapsack problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a target value $c = 16$ and a set $\mathscr{I} = \{1,2,\dots,6\}$ of $6$ items ($n = 6$), with the following weights:
+    The Subset Sum Problem (SSP) and its $\mathrm{ILP}_{\mathrm{SSP}}$ model are in the chapter [Formulations of knapsack problems](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a target value $c = 16$ and a set $\mathscr{I} = \{1,2,\dots,6\}$ of $6$ items ($n = 6$), with the following weights:
 
     $$
     \begin{array}{l|rrrrrr}
@@ -397,7 +397,7 @@ title: "Exercises · Formulations of the knapsack problem"
 
 !!! esercizio "Exercise 9.7: ILP model of the Bounded Knapsack Problem"
 
-    The Bounded Knapsack Problem (BKP) and its $\mathrm{ILP}_{\mathrm{BKP}}$ model are in the chapter [Formulations of the knapsack problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a knapsack of capacity $c = 18$ and a set $\mathscr{I} = \{1,2,\dots,5\}$ of $5$ items ($n = 5$), with the following profits, weights and available copies:
+    The Bounded Knapsack Problem (BKP) and its $\mathrm{ILP}_{\mathrm{BKP}}$ model are in the chapter [Formulations of knapsack problems](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a knapsack of capacity $c = 18$ and a set $\mathscr{I} = \{1,2,\dots,5\}$ of $5$ items ($n = 5$), with the following profits, weights and available copies:
 
     $$
     \begin{array}{l|rrrrr}
@@ -442,7 +442,7 @@ title: "Exercises · Formulations of the knapsack problem"
 
 !!! esercizio "Exercise 9.8: ILP model of the Unbounded Knapsack Problem"
 
-    The Unbounded Knapsack Problem (UKP) and its $\mathrm{ILP}_{\mathrm{UKP}}$ model are in the chapter [Formulations of the knapsack problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a knapsack of capacity $c = 19$ and a set $\mathscr{I} = \{1,2,\dots,5\}$ of $5$ items ($n = 5$), each available in an unlimited number of copies, with the following profits and weights:
+    The Unbounded Knapsack Problem (UKP) and its $\mathrm{ILP}_{\mathrm{UKP}}$ model are in the chapter [Formulations of knapsack problems](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a knapsack of capacity $c = 19$ and a set $\mathscr{I} = \{1,2,\dots,5\}$ of $5$ items ($n = 5$), each available in an unlimited number of copies, with the following profits and weights:
 
     $$
     \begin{array}{l|rrrrr}
@@ -485,7 +485,7 @@ title: "Exercises · Formulations of the knapsack problem"
 
 !!! esercizio "Exercise 9.9: ILP model of the Multidimensional Knapsack Problem"
 
-    The Multidimensional Knapsack Problem (MDKP) and its $\mathrm{ILP}_{\mathrm{MDKP}}$ model are in the chapter [Formulations of the knapsack problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a $2$-dimensional knapsack ($k = 2$) with capacities $c_1 = 17$ and $c_2 = 14$, and a set $\mathscr{I} = \{1,2,\dots,5\}$ of $5$ items ($n = 5$), with the following profits and weights:
+    The Multidimensional Knapsack Problem (MDKP) and its $\mathrm{ILP}_{\mathrm{MDKP}}$ model are in the chapter [Formulations of knapsack problems](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a $2$-dimensional knapsack ($k = 2$) with capacities $c_1 = 17$ and $c_2 = 14$, and a set $\mathscr{I} = \{1,2,\dots,5\}$ of $5$ items ($n = 5$), with the following profits and weights:
 
     $$
     \begin{array}{l|rrrrr}
@@ -530,7 +530,7 @@ title: "Exercises · Formulations of the knapsack problem"
 
 !!! esercizio "Exercise 9.10: ILP model of the Multiple Knapsack Problem"
 
-    The Multiple Knapsack Problem (MKP) and its $\mathrm{ILP}_{\mathrm{MKP}}$ model are in the chapter [Formulations of the knapsack problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider $m = 2$ knapsacks with capacities $c_1 = 12$ and $c_2 = 14$, and a set $\mathscr{I} = \{1,2,\dots,5\}$ of $5$ items ($n = 5$), with the following profits and weights:
+    The Multiple Knapsack Problem (MKP) and its $\mathrm{ILP}_{\mathrm{MKP}}$ model are in the chapter [Formulations of knapsack problems](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider $m = 2$ knapsacks with capacities $c_1 = 12$ and $c_2 = 14$, and a set $\mathscr{I} = \{1,2,\dots,5\}$ of $5$ items ($n = 5$), with the following profits and weights:
 
     $$
     \begin{array}{l|rrrrr}
@@ -580,7 +580,7 @@ title: "Exercises · Formulations of the knapsack problem"
 
 !!! esercizio "Exercise 9.11: ILP model of the Multiple-Choice Knapsack Problem"
 
-    The Multiple-Choice Knapsack Problem (MCKP) and its $\mathrm{ILP}_{\mathrm{MCKP}}$ model are in the chapter [Formulations of the knapsack problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a knapsack of capacity $c = 14$ and a set $\mathscr{I} = \{1,2,\dots,7\}$ of $7$ items ($n = 7$), partitioned into $q = 3$ classes $\mathscr{J}_1 = \{1,2\}$, $\mathscr{J}_2 = \{3,4,5\}$ and $\mathscr{J}_3 = \{6,7\}$, with the following profits and weights:
+    The Multiple-Choice Knapsack Problem (MCKP) and its $\mathrm{ILP}_{\mathrm{MCKP}}$ model are in the chapter [Formulations of knapsack problems](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a knapsack of capacity $c = 14$ and a set $\mathscr{I} = \{1,2,\dots,7\}$ of $7$ items ($n = 7$), partitioned into $q = 3$ classes $\mathscr{J}_1 = \{1,2\}$, $\mathscr{J}_2 = \{3,4,5\}$ and $\mathscr{J}_3 = \{6,7\}$, with the following profits and weights:
 
     $$
     \begin{array}{l|rrrrrrr}
@@ -626,7 +626,7 @@ title: "Exercises · Formulations of the knapsack problem"
 
 !!! esercizio "Exercise 9.12: ILP model of the Knapsack Problem with Setups"
 
-    The Knapsack Problem with Setups (KPS) and its $\mathrm{ILP}_{\mathrm{KPS}}$ model are in the chapter [Formulations of the knapsack problem](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a knapsack of capacity $c = 19$ and a set $\mathscr{I} = \{1,2,\dots,6\}$ of $6$ items ($n = 6$), partitioned into $q = 2$ classes $\mathscr{J}_1 = \{1,2,3\}$ and $\mathscr{J}_2 = \{4,5,6\}$, with setup costs $f_1 = 4$, $f_2 = 2$, setup weights $s_1 = 1$, $s_2 = 4$, and the following revenues and weights:
+    The Knapsack Problem with Setups (KPS) and its $\mathrm{ILP}_{\mathrm{KPS}}$ model are in the chapter [Formulations of knapsack problems](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/). We consider a knapsack of capacity $c = 19$ and a set $\mathscr{I} = \{1,2,\dots,6\}$ of $6$ items ($n = 6$), partitioned into $q = 2$ classes $\mathscr{J}_1 = \{1,2,3\}$ and $\mathscr{J}_2 = \{4,5,6\}$, with setup costs $f_1 = 4$, $f_2 = 2$, setup weights $s_1 = 1$, $s_2 = 4$, and the following revenues and weights:
 
     $$
     \begin{array}{l|rrrrrr}

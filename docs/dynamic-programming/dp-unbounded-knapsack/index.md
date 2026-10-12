@@ -12,7 +12,7 @@ title: "DP for the unbounded knapsack problem"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter [«DP for the knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/): the recurrence $v(j,k)$ over items and capacities, and the reconstruction of a solution.
+    - From this module, the chapter [«DP for the 0/1 knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/): the recurrence $v(j,k)$ over items and capacities, and the reconstruction of a solution.
 
     - From this module, the chapter «Principles of dynamic programming»: optimal substructure, overlapping subproblems, base cases.
 
@@ -79,7 +79,7 @@ $$
 
 !!! chiave ""
 
-    The main difference with the $0$–$1$ Knapsack Problem is that the variables are no longer binary. In UKP, each variable $x_j$ can take any non-negative integer value, provided that the capacity constraint is respected.
+    The main difference with the 0/1 Knapsack Problem is that the variables are no longer binary. In UKP, each variable $x_j$ can take any non-negative integer value, provided that the capacity constraint is respected.
 
 <div class="grid cards sottopagine" markdown>
 

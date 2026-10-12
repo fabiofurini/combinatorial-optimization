@@ -8,59 +8,59 @@ The problems on which the whole course focuses, introduced one by one: definitio
 
 <div class="grid cards" markdown>
 
--   **The knapsack problem**
+-   **Knapsack problems**
 
     ---
 
-    Choose a subset of items of maximum total profit whose total weight does not exceed the capacity.
+    Choose items of maximum total profit within the capacity: the 0/1 knapsack problem, subset sum, the bounded and unbounded knapsack problems, and more.
 
     [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/knapsack/index.md) · [Formulations](../formulations/knapsack-formulations/index.md)
 
--   **The bin packing problem**
+-   **Packing problems**
 
     ---
 
-    Pack items of given weights into the minimum number of identical bins of capacity $c$.
+    Pack items of given weights into the minimum number of bins of capacity $c$: bin packing and cutting stock.
 
     [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/bin-packing/index.md) · [Formulations](../formulations/bin-packing-formulations/index.md)
 
--   **The vertex coloring problem**
+-   **Coloring problems**
 
     ---
 
-    Color the vertices of a graph so that adjacent vertices get different colors, using the minimum number of colors.
+    Color the vertices of a graph so that adjacent vertices get different colors, using the minimum number of colors: vertex coloring.
 
     [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/coloring.md) · [Formulations](../formulations/coloring-formulations.md)
 
--   **The maximum clique problem**
+-   **Clique problems**
 
     ---
 
-    Find a largest set of pairwise adjacent vertices of a graph.
+    Find a largest set of pairwise adjacent vertices of a graph: maximum clique, maximum stable set and the weighted variants.
 
     [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/clique/index.md) · [Formulations](../formulations/clique-formulations/index.md)
 
--   **The travelling salesman problem**
+-   **Routing problems**
 
     ---
 
-    Find a shortest closed route that visits every city exactly once and returns to the starting city.
+    Find a shortest closed route that visits every city once: the travelling salesman problem, the metric and the asymmetric TSP.
 
     [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/tsp/index.md) · [Formulations](../formulations/tsp-formulations/index.md)
 
--   **Scheduling on identical parallel machines**
+-   **Scheduling problems**
 
     ---
 
-    Assign jobs to $m$ identical machines so that the makespan, the largest machine load, is minimum.
+    Assign jobs to parallel machines so that the makespan is minimum: identical, uniform and unrelated machines.
 
     [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/pcmax.md) · [Formulations](../formulations/pcmax-formulations.md)
 
--   **Capacitated lot sizing**
+-   **Lot sizing problems**
 
     ---
 
-    Plan the production of every period, with capacities, setup costs and stock, at minimum total cost.
+    Plan the production of every period at minimum total cost: capacitated and uncapacitated lot sizing, and their variants.
 
     [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/lot-sizing/index.md) · [Formulations](../formulations/lot-sizing-formulations/index.md)
 

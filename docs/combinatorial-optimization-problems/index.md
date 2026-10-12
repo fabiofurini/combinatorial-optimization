@@ -18,11 +18,11 @@
 
     ---
 
-    The knapsack problem
+    The 0/1 knapsack problem
 
     [:octicons-arrow-right-24: Read the chapter](knapsack/index.md) · [Exercises](../exercises/knapsack.md)
 
--   **3. Bin packing and cutting stock**
+-   **3. Packing problems**
 
     ---
 
@@ -30,7 +30,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](bin-packing/index.md) · [Exercises](../exercises/bin-packing.md)
 
--   **4. Vertex coloring**
+-   **4. Coloring problems**
 
     ---
 
@@ -38,7 +38,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](coloring.md) · [Exercises](../exercises/coloring.md)
 
--   **5. The maximum clique problem**
+-   **5. Clique problems**
 
     ---
 
@@ -46,7 +46,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](clique/index.md) · [Exercises](../exercises/clique.md)
 
--   **6. The travelling salesman problem**
+-   **6. Routing problems**
 
     ---
 
@@ -54,7 +54,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](tsp/index.md) · [Exercises](../exercises/tsp.md)
 
--   **7. Parallel machine scheduling**
+-   **7. Scheduling problems**
 
     ---
 
@@ -62,7 +62,7 @@
 
     [:octicons-arrow-right-24: Read the chapter](pcmax.md) · [Exercises](../exercises/pcmax.md)
 
--   **8. Capacitated lot sizing**
+-   **8. Lot sizing problems**
 
     ---
 

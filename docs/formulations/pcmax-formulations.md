@@ -1,12 +1,12 @@
 ---
-title: "Formulations of parallel machine scheduling"
+title: "Formulations of scheduling problems"
 ---
 
-# Formulations of parallel machine scheduling
+# Formulations of scheduling problems
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 14** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Machine scheduling](../exercises/pcmax-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 14** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Scheduling problems](../exercises/pcmax-formulations.md)
 
 </div>
 
@@ -16,7 +16,7 @@ title: "Formulations of parallel machine scheduling"
 
     - From the module <em>Integer linear programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/) and [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): ILP problems, LP relaxations and bounds.
 
-    - From this module, [Chapter 7 «Parallel machine scheduling»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/): the problem, its assumption, the makespan and the instance of Example 1.
+    - From this module, [Chapter 7 «Scheduling problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/): the problem, its assumption, the makespan and the instance of Example 1.
 
 !!! chiave "Objectives"
 
@@ -114,7 +114,7 @@ title: "Formulations of parallel machine scheduling"
     \end{array}
     $$
 
-    This is the instance of Example 1 of the chapter «Parallel machine scheduling»; we refer to it as <span style="color:#1971c2">[Example 14.1](#box-1-ex-PCMAX-ILP)</span>. The $\mathrm{ILP}_{P\|C_{\max}}$ model for this instance is:
+    This is the instance of Example 1 of the chapter «Scheduling problems»; we refer to it as <span style="color:#1971c2">[Example 14.1](#box-1-ex-PCMAX-ILP)</span>. The $\mathrm{ILP}_{P\|C_{\max}}$ model for this instance is:
 
     $$
     \begin{array}{rlcl}
@@ -584,4 +584,4 @@ title: "Formulations of parallel machine scheduling"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Machine scheduling](../exercises/pcmax-formulations.md)
+**Exercises on this chapter:** [:material-pencil: Scheduling problems](../exercises/pcmax-formulations.md)

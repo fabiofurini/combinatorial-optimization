@@ -14,7 +14,7 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
     - From the module <em>Integer linear programming</em>, [Chapter 7 «Branch-and-bound»](https://fabiofurini.github.io/integer-linear-programming/exact-methods/bb/): branching and bounding operations, the problem list, the pruning criteria, the bounds $\LB$ and $\UB$.
 
-    - From this module, [Chapter 4 «Vertex coloring»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/): the vertex coloring problem, cliques, stable sets and the clique bound $\omega(G)\le\chi(G)$.
+    - From this module, [Chapter 4 «Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/): the vertex coloring problem, cliques, stable sets and the clique bound $\omega(G)\le\chi(G)$.
 
     - From this module, [Chapter 29 «Constructive heuristics»](https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur/#sez-sec-VCPgreedy): the saturation degree and the $DSATUR$ heuristic.
 
@@ -32,7 +32,7 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
 ## 39.1 The algorithm for the VCP { #sez-sec-DSATURBB }
 
-- The vertex coloring problem (VCP) on a graph $G=(V,E)$ is defined in [Chapter 4 «Vertex coloring»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/#box-3-defVCP); its optimal value is the chromatic number $\chi(G)$.
+- The vertex coloring problem (VCP) on a graph $G=(V,E)$ is defined in [Chapter 4 «Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/#box-3-defVCP); its optimal value is the chromatic number $\chi(G)$.
 
 <a id="box-1-def-VCPnode"></a>
 
@@ -196,7 +196,7 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
 !!! esempio "Example 39.1: DSATUR branch-and-bound on the Petersen graph"
 
-    We consider the Petersen graph, the reference instance of [Chapter 4 «Vertex coloring»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/#box-5-ex-vcp2), with $n=10$ vertices, $m=15$ edges and all degrees equal to $3$:
+    We consider the Petersen graph, the reference instance of [Chapter 4 «Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/#box-5-ex-vcp2), with $n=10$ vertices, $m=15$ edges and all degrees equal to $3$:
 
     $$
     \begin{aligned}

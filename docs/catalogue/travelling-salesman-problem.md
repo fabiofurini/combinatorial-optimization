@@ -40,6 +40,6 @@ title: "The travelling salesman problem (TSP)"
         d_{ij}=d_{ji},~~~~ \forall i,j \in \mathscr{V},~ i\neq j
         $$
 
-- Defined in [Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp/index.md#box-1-defTSP).
+- Defined in [Chapter 6 «Routing problems»](../combinatorial-optimization-problems/tsp/index.md#box-1-defTSP).
 
 - [The course on this problem $\rightarrow$](../selected-problems/tsp.md).

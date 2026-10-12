@@ -1,12 +1,12 @@
 ---
-title: "Formulations of the bin packing problem"
+title: "Formulations of packing problems"
 ---
 
-# Formulations of the bin packing problem
+# Formulations of packing problems
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 10** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Bin packing](../../exercises/bin-packing-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 10** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Packing problems](../../exercises/bin-packing-formulations.md)
 
 </div>
 
@@ -16,7 +16,7 @@ title: "Formulations of the bin packing problem"
 
     - From the module <em>Integer linear programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/) and [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): ILP problems, LP relaxations and bounds.
 
-    - From this module, [Chapter 3 «Bin packing and cutting stock»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/): the problem and its assumptions.
+    - From this module, [Chapter 3 «Packing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/): the problem and its assumptions.
 
 !!! chiave "Objectives"
 
@@ -858,4 +858,4 @@ title: "Formulations of the bin packing problem"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Bin packing](../../exercises/bin-packing-formulations.md)
+**Exercises on this chapter:** [:material-pencil: Packing problems](../../exercises/bin-packing-formulations.md)

@@ -1,12 +1,12 @@
 ---
-title: "Formulations of the vertex coloring problem"
+title: "Formulations of coloring problems"
 ---
 
-# Formulations of the vertex coloring problem
+# Formulations of coloring problems
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 11** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Vertex coloring](../exercises/coloring-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 11** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Coloring problems](../exercises/coloring-formulations.md)
 
 </div>
 
@@ -16,7 +16,7 @@ title: "Formulations of the vertex coloring problem"
 
     - From the module <em>Integer linear programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/) and [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): ILP problems, LP relaxations and bounds.
 
-    - From this module, [Chapter 4 «Vertex coloring»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/): the problem, its assumptions and the notation on graphs.
+    - From this module, [Chapter 4 «Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/): the problem, its assumptions and the notation on graphs.
 
 !!! chiave "Objectives"
 
@@ -694,4 +694,4 @@ title: "Formulations of the vertex coloring problem"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Vertex coloring](../exercises/coloring-formulations.md)
+**Exercises on this chapter:** [:material-pencil: Coloring problems](../exercises/coloring-formulations.md)

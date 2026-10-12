@@ -12,7 +12,7 @@ title: "DP for the bounded knapsack problem"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapters [«DP for the knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/) and [«DP for the unbounded knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-unbounded-knapsack/): the recurrence $v(j,k)$ over items and capacities, and the reconstruction of a solution.
+    - From this module, the chapters [«DP for the 0/1 knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/) and [«DP for the unbounded knapsack problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-unbounded-knapsack/): the recurrence $v(j,k)$ over items and capacities, and the reconstruction of a solution.
 
     - From this module, the chapter «Principles of dynamic programming»: optimal substructure, overlapping subproblems, base cases.
 
@@ -54,7 +54,7 @@ The problem of this chapter is the [bounded knapsack problem (BKP)](https://fabi
 
 !!! chiave ""
 
-    The main difference with the Knapsack Problem is that each item type may be selected more than once: variable $x_j$ is no longer binary, but it is bounded by $b_j$. The BKP reduces to the $0$–$1$ Knapsack Problem when $b_j=1$ for every item type $j$, and to the Unbounded Knapsack Problem when every bound $b_j$ is large enough not to be binding.
+    The main difference with the 0/1 Knapsack Problem is that each item type may be selected more than once: variable $x_j$ is no longer binary, but it is bounded by $b_j$. The BKP reduces to the 0/1 Knapsack Problem when $b_j=1$ for every item type $j$, and to the Unbounded Knapsack Problem when every bound $b_j$ is large enough not to be binding.
 
 - The number of possible vectors $(x_1,x_2,\dots,x_n)$, with $x_j \in \{0,1,\dots,b_j\}$ for every item type $j$, is
 

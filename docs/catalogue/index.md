@@ -10,7 +10,7 @@ All the problems defined in the course, grouped by family: each one has its own 
 
 ## Central problems
 
-- [The knapsack problem (KP)](knapsack-problem.md) · [in depth](../selected-problems/knapsack.md)
+- [The 0/1 knapsack problem (KP)](knapsack-problem.md) · [in depth](../selected-problems/knapsack.md)
 - [The bin packing problem (BPP)](bin-packing-problem.md) · [in depth](../selected-problems/bin-packing.md)
 - [The vertex coloring problem (VCP)](vertex-coloring-problem.md) · [in depth](../selected-problems/vertex-coloring.md)
 - [The maximum clique problem (MCP)](maximum-clique-problem.md) · [in depth](../selected-problems/maximum-clique.md)

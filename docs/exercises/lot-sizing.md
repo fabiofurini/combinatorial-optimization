@@ -1,12 +1,12 @@
 ---
-title: "Exercises · Capacitated lot sizing"
+title: "Exercises · Lot sizing problems"
 ---
 
-# Exercises · Capacitated lot sizing
+# Exercises · Lot sizing problems
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 8** · each solution opens with a click · [:material-book-open-variant: Chapter 8: Lot sizing](../combinatorial-optimization-problems/lot-sizing/index.md) · [:material-file-pdf-box: Exercises, volume 1 (PDF)](../pdf/exercises-1-combinatorial-optimization-problems.pdf)
+**Exercises · Chapter 8** · each solution opens with a click · [:material-book-open-variant: Chapter 8: Lot sizing problems](../combinatorial-optimization-problems/lot-sizing/index.md) · [:material-file-pdf-box: Exercises, volume 1 (PDF)](../pdf/exercises-1-combinatorial-optimization-problems.pdf)
 
 </div>
 

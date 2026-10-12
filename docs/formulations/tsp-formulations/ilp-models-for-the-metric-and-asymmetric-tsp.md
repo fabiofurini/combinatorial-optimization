@@ -6,11 +6,11 @@ title: "Metric and asymmetric TSP"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 13** · [:material-book-open-variant: Chapter 13: TSP](index.md) · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: TSP](../../exercises/tsp-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 13** · [:material-book-open-variant: Chapter 13: Routing problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Routing problems](../../exercises/tsp-formulations.md)
 
 </div>
 
-The problems of this section are the asymmetric travelling salesman problem (ATSP) and the metric TSP, defined in [Chapter 6 «The travelling salesman problem»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp/).
+The problems of this section are the asymmetric travelling salesman problem (ATSP) and the metric TSP, defined in [Chapter 6 «Routing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp/).
 
 - Given the set $\mathscr{V}=\{1,2,\dots,n\}$ of cities and the set $A$ of directed arcs, each arc $(i,j)$ has its own distance $d_{ij}$, which may differ from $d_{ji}$. We introduce the following $n(n-1)$ <strong>binary variables</strong>:
 
@@ -58,7 +58,7 @@ The problems of this section are the asymmetric travelling salesman problem (ATS
 
 - A tour and the same tour travelled backwards use opposite arcs: in the ATSP they are different solutions, with different lengths in general.
 
-- The metric TSP, defined in [Chapter 6 «The travelling salesman problem»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp/), has the same ILP models as the TSP: the triangle inequality is a property of the distances, not a constraint of the model. The instance of <span style="color:#1971c2">[Example 13.1](index.md#box-2-ex-TSP-inst)</span> is metric, so the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ and $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$ models written for it are already models of a metric TSP instance.
+- The metric TSP, defined in [Chapter 6 «Routing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp/), has the same ILP models as the TSP: the triangle inequality is a property of the distances, not a constraint of the model. The instance of <span style="color:#1971c2">[Example 13.1](index.md#box-2-ex-TSP-inst)</span> is metric, so the $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{MTZ}}$ and $\mathrm{ILP}_{\mathrm{TSP}}^{\mathrm{DFJ}}$ models written for it are already models of a metric TSP instance.
 
 <a id="box-11-ex-ATSP"></a>
 
@@ -173,5 +173,5 @@ The problems of this section are the asymmetric travelling salesman problem (ATS
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: TSP](../../exercises/tsp-formulations.md)
+**Exercises on this chapter:** [:material-pencil: Routing problems](../../exercises/tsp-formulations.md)
 

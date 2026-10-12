@@ -1,8 +1,8 @@
 ---
-title: "The knapsack problem (KP)"
+title: "The 0/1 knapsack problem (KP)"
 ---
 
-# The knapsack problem (KP)
+# The 0/1 knapsack problem (KP)
 
 <div class="info-capitolo" markdown>
 
@@ -14,7 +14,7 @@ title: "The knapsack problem (KP)"
 
 <a id="box-1-def-catdef-kp"></a>
 
-!!! definizione "Definition 1: The knapsack problem"
+!!! definizione "Definition 1: The 0/1 knapsack problem"
 
     Given:
 
@@ -24,7 +24,7 @@ title: "The knapsack problem (KP)"
 
     3. for each item $j \in \mathscr{I}$, a <em>profit</em> $p_j \in \Z_{\ge 1}$ and a <em>weight</em> $w_j \in \Z_{\ge 1}$,
 
-    the <strong>Knapsack Problem</strong> (KP) asks to decide which items to insert into the knapsack, so that the total weight of the selected items does not exceed the knapsack capacity, and the total profit of the selected items is maximized.
+    the <strong>0/1 Knapsack Problem</strong> (KP) asks to decide which items to insert into the knapsack, so that the total weight of the selected items does not exceed the knapsack capacity, and the total profit of the selected items is maximized.
 
 <strong>Assumptions</strong>
 

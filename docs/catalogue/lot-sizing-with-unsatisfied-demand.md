@@ -18,4 +18,4 @@ title: "Lot sizing with unsatisfied demand (LS-UD)"
 
     A part of the demand may be left unsatisfied, at a penalty $cu_{pt}$ per unit.
 
-- Defined in [Chapter 8 «Capacitated lot sizing»](../combinatorial-optimization-problems/lot-sizing/variants.md#82-variants).
+- Defined in [Chapter 8 «Lot sizing problems»](../combinatorial-optimization-problems/lot-sizing/variants.md#82-variants).

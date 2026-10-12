@@ -1,12 +1,12 @@
 ---
-title: "Formulations of the travelling salesman problem"
+title: "Formulations of routing problems"
 ---
 
-# Formulations of the travelling salesman problem
+# Formulations of routing problems
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 13** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: TSP](../../exercises/tsp-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 13** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Routing problems](../../exercises/tsp-formulations.md)
 
 </div>
 
@@ -14,7 +14,7 @@ title: "Formulations of the travelling salesman problem"
 
     - From the module <em>Integer linear programming</em>, [Chapter 1 «Integer linear programming»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/ilp/) and [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): ILP problems, LP relaxations and bounds.
 
-    - From this module, [Chapter 6 «The travelling salesman problem»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/): the problem, its assumptions, tours, the distance matrix and the instance of Example 1.
+    - From this module, [Chapter 6 «Routing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/): the problem, its assumptions, tours, the distance matrix and the instance of Example 1.
 
     - Later, the chapter «Branch-and-cut algorithms» of the module <em>Integer linear programming</em> shows how the constraints of Section 2 are added only when they are needed.
 
@@ -158,7 +158,7 @@ title: "Formulations of the travelling salesman problem"
     \end{array}
     $$
 
-    This is the instance of Example 1 of the chapter «The travelling salesman problem». We refer to this TSP instance as <span style="color:#1971c2">[Example 13.1](#box-2-ex-TSP-inst)</span>.
+    This is the instance of Example 1 of the chapter «Routing problems». We refer to this TSP instance as <span style="color:#1971c2">[Example 13.1](#box-2-ex-TSP-inst)</span>.
 
 <a id="box-3-ex-TSP-ILP"></a>
 
@@ -586,4 +586,4 @@ title: "Formulations of the travelling salesman problem"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: TSP](../../exercises/tsp-formulations.md)
+**Exercises on this chapter:** [:material-pencil: Routing problems](../../exercises/tsp-formulations.md)

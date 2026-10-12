@@ -23,6 +23,6 @@ title: "Metric travelling salesman problem (metric TSP)"
     \qquad \text{for all distinct } i,j,k \in \mathscr{V}.
     $$
 
-- Defined in [Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md#box-3-defMetricTSP).
+- Defined in [Chapter 6 «Routing problems»](../combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md#box-3-defMetricTSP).
 
 - Treated in [Chapter 37 «Approximation for the metric TSP»](../approximation-algorithms/tsp-approximation.md).

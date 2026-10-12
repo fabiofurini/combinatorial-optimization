@@ -6,7 +6,7 @@ title: "Metric and asymmetric TSP"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 6** · [:material-book-open-variant: Chapter 6: TSP](index.md) · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: TSP](../../exercises/tsp.md)
+**Part 1 · Combinatorial optimization problems · Chapter 6** · [:material-book-open-variant: Chapter 6: Routing problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Routing problems](../../exercises/tsp.md)
 
 </div>
 
@@ -280,7 +280,7 @@ title: "Metric and asymmetric TSP"
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: TSP](../../exercises/tsp.md)
+**Exercises on this chapter:** [:material-pencil: Routing problems](../../exercises/tsp.md)
 
 ---
 

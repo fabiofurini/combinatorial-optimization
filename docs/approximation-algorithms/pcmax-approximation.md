@@ -14,7 +14,7 @@ title: "Approximation for P|Cmax"
 
     - From this module, the chapter [«Approximation algorithms: definitions»](https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/approximation/): performance ratio, relative performance guarantee, tight guarantee and worst-case performance ratio.
 
-    - From this module, the chapter [«Parallel machine scheduling»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/): the definition and the reference instance of $P\,||\,C_{\max}$, and its elementary lower bound.
+    - From this module, the chapter [«Scheduling problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/): the definition and the reference instance of $P\,||\,C_{\max}$, and its elementary lower bound.
 
     - From this module, the chapter [«Constructive heuristics»](https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/): the algorithms $LIST$ and $LPT$ as constructive rules.
 

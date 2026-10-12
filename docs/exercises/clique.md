@@ -1,12 +1,12 @@
 ---
-title: "Exercises · The maximum clique problem"
+title: "Exercises · Clique problems"
 ---
 
-# Exercises · The maximum clique problem
+# Exercises · Clique problems
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 5** · each solution opens with a click · [:material-book-open-variant: Chapter 5: Maximum clique](../combinatorial-optimization-problems/clique/index.md) · [:material-file-pdf-box: Exercises, volume 1 (PDF)](../pdf/exercises-1-combinatorial-optimization-problems.pdf)
+**Exercises · Chapter 5** · each solution opens with a click · [:material-book-open-variant: Chapter 5: Clique problems](../combinatorial-optimization-problems/clique/index.md) · [:material-file-pdf-box: Exercises, volume 1 (PDF)](../pdf/exercises-1-combinatorial-optimization-problems.pdf)
 
 </div>
 

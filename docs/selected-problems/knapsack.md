@@ -1,8 +1,8 @@
 ---
-title: "The knapsack problem"
+title: "Knapsack problems"
 ---
 
-# The knapsack problem
+# Knapsack problems
 
 <div class="info-capitolo" markdown>
 
@@ -16,13 +16,13 @@ title: "The knapsack problem"
 
 !!! chiave ""
 
-    What the course does on the knapsack problem (KP): a summary.
+    What the course does on the 0/1 knapsack problem (KP): a summary.
 
 ## Definition { #sez-sec-cat-kp-definition }
 
 <a id="box-1-def-cat-kp"></a>
 
-!!! definizione "Definition 1: The knapsack problem"
+!!! definizione "Definition 1: The 0/1 knapsack problem"
 
     Given:
 
@@ -32,7 +32,7 @@ title: "The knapsack problem"
 
     3. for each item $j \in \mathscr{I}$, a <em>profit</em> $p_j \in \Z_{\ge 1}$ and a <em>weight</em> $w_j \in \Z_{\ge 1}$,
 
-    the <strong>Knapsack Problem</strong> (KP) asks to decide which items to insert into the knapsack, so that the total weight of the selected items does not exceed the knapsack capacity, and the total profit of the selected items is maximized.
+    the <strong>0/1 Knapsack Problem</strong> (KP) asks to decide which items to insert into the knapsack, so that the total weight of the selected items does not exceed the knapsack capacity, and the total profit of the selected items is maximized.
 
 Assumptions and full definition: [Catalogue of combinatorial problems](../catalogue/knapsack-problem.md).
 
@@ -50,7 +50,7 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - $z(\LP_{\KP}) \le 2\, z(\ILP_{\KP})$, and the ratio $2$ is approached ([Ch. 9](../formulations/knapsack-formulations/index.md#box-16-propRatio2tight)).
 
-- Rounding down $z(\LP_{\KP})$ gives the Dantzig bound $\UB_{\mathrm{D}}$; the Martello–Toth bound $\UB_{\mathrm{MT}}$ treats the split item out and in ([Ch. 9](../formulations/knapsack-formulations/index.md#94-knapsack-problem-upper-bounds)).
+- Rounding down $z(\LP_{\KP})$ gives the Dantzig bound $\UB_{\mathrm{D}}$; the Martello–Toth bound $\UB_{\mathrm{MT}}$ treats the split item out and in ([Ch. 9](../formulations/knapsack-formulations/index.md#94-01-knapsack-problem-upper-bounds)).
 
 ## Dynamic programming { #sez-sec-cat-kp-dynamicprogramming }
 
@@ -66,7 +66,7 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Heuristics { #sez-sec-cat-kp-heuristics }
 
-- Greedy by profit, by weight and by efficiency: on the four-item instance of [Ch. 28](../heuristic-algorithms/heuristics.md) (optimum $17$) they give $17$, $10$ and $16$ ([Ch. 29](../heuristic-algorithms/constructive-heuristics/the-knapsack-problem-which-order.md#box-3-ex-kp3)).
+- Greedy by profit, by weight and by efficiency: on the four-item instance of [Ch. 28](../heuristic-algorithms/heuristics.md) (optimum $17$) they give $17$, $10$ and $16$ ([Ch. 29](../heuristic-algorithms/constructive-heuristics/the-0-1-knapsack-problem-which-order.md#box-3-ex-kp3)).
 
 - Flip and swap local search: first and best improvement reach $17$ along different paths ([Ch. 30](../heuristic-algorithms/local-search/first-improvement-and-best-improvement.md#box-3-ex-kpfirstbest)).
 
@@ -100,9 +100,9 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - [Ch. 2 — Knapsack problems](../exercises/knapsack.md) (5 exercises).
 
-- [Ch. 9 — Formulations of the knapsack problem](../exercises/knapsack-formulations.md) (5 exercises).
+- [Ch. 9 — Formulations of knapsack problems](../exercises/knapsack-formulations.md) (5 exercises).
 
-- [Ch. 17 — DP for the knapsack problem](../exercises/dp-knapsack.md) (5 exercises).
+- [Ch. 17 — DP for the 0/1 knapsack problem](../exercises/dp-knapsack.md) (5 exercises).
 
 - [Ch. 18 — DP for the unbounded knapsack problem](../exercises/dp-unbounded-knapsack.md) (5 exercises).
 

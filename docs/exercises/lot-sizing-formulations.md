@@ -1,18 +1,18 @@
 ---
-title: "Exercises · Formulations of capacitated lot sizing"
+title: "Exercises · Formulations of lot sizing problems"
 ---
 
-# Exercises · Formulations of capacitated lot sizing
+# Exercises · Formulations of lot sizing problems
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 15** · each solution opens with a click · [:material-book-open-variant: Chapter 15: Lot sizing](../formulations/lot-sizing-formulations/index.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
+**Exercises · Chapter 15** · each solution opens with a click · [:material-book-open-variant: Chapter 15: Lot sizing problems](../formulations/lot-sizing-formulations/index.md) · [:material-file-pdf-box: Exercises, volume 2 (PDF)](../pdf/exercises-2-formulations.pdf)
 
 </div>
 
 !!! chiave ""
 
-    <strong>Formulations used in these exercises.</strong> The two formulations of the chapter [Formulations of capacitated lot sizing](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/), on the periods $T=\{1,\dots,m\}$, with $D_{t,k}=\sum_{s=t}^{k}d_s$. The big-M formulation $\mathrm{ILP}_{\mathrm{CLSP}}$:
+    <strong>Formulations used in these exercises.</strong> The two formulations of the chapter [Formulations of lot sizing problems](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/), on the periods $T=\{1,\dots,m\}$, with $D_{t,k}=\sum_{s=t}^{k}d_s$. The big-M formulation $\mathrm{ILP}_{\mathrm{CLSP}}$:
 
     \begin{align*}
     && \min ~~ \sum_{t\in T}\left(sc_t\,y_t+vc_t\,x_t+hc_t\,s_t\right) \tag{L0}\\

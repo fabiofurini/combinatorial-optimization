@@ -12,7 +12,7 @@
     - [1.7 Typical mistakes](combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md)
     - [1.8 In summary](combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md)
 2. [Knapsack problems](combinatorial-optimization-problems/knapsack/index.md)
-    - 2.1 The knapsack problem
+    - 2.1 The 0/1 knapsack problem
     - [2.2 The subset sum problem](combinatorial-optimization-problems/knapsack/the-subset-sum-problem.md)
     - [2.3 The bounded knapsack problem](combinatorial-optimization-problems/knapsack/the-bounded-knapsack-problem.md)
     - [2.4 The unbounded knapsack problem](combinatorial-optimization-problems/knapsack/the-unbounded-knapsack-problem.md)
@@ -24,19 +24,19 @@
     - [2.10 Remarks](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
     - [2.11 Typical mistakes](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
     - [2.12 In summary](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
-3. [Bin packing and cutting stock](combinatorial-optimization-problems/bin-packing/index.md)
+3. [Packing problems](combinatorial-optimization-problems/bin-packing/index.md)
     - 3.1 The bin packing problem
     - [3.2 The cutting stock problem](combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md)
     - [3.3 Remarks](combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md)
     - [3.4 Typical mistakes](combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md)
     - [3.5 In summary](combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md)
-4. [Vertex coloring](combinatorial-optimization-problems/coloring.md)
+4. [Coloring problems](combinatorial-optimization-problems/coloring.md)
     - 4.1 A short review of graphs
     - 4.2 The vertex coloring problem
     - 4.3 Remarks
     - 4.4 Typical mistakes
     - 4.5 In summary
-5. [The maximum clique problem](combinatorial-optimization-problems/clique/index.md)
+5. [Clique problems](combinatorial-optimization-problems/clique/index.md)
     - 5.1 The maximum clique problem
     - 5.2 Counting the solutions, a first solution and the bounds
     - [5.3 Weighted variants](combinatorial-optimization-problems/clique/weighted-variants.md)
@@ -44,7 +44,7 @@
     - [5.5 Remarks](combinatorial-optimization-problems/clique/weighted-variants.md)
     - [5.6 Typical mistakes](combinatorial-optimization-problems/clique/weighted-variants.md)
     - [5.7 In summary](combinatorial-optimization-problems/clique/weighted-variants.md)
-6. [The travelling salesman problem](combinatorial-optimization-problems/tsp/index.md)
+6. [Routing problems](combinatorial-optimization-problems/tsp/index.md)
     - 6.1 The travelling salesman problem
     - [6.2 Variants: metric and asymmetric TSP](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
     - [6.3 Counting the tours](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
@@ -53,7 +53,7 @@
     - [6.6 Remarks](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
     - [6.7 Typical mistakes](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
     - [6.8 In summary](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
-7. [Parallel machine scheduling](combinatorial-optimization-problems/pcmax.md)
+7. [Scheduling problems](combinatorial-optimization-problems/pcmax.md)
     - 7.1 Scheduling on identical parallel machines
     - 7.2 The three-field notation
     - 7.3 Counting the solutions
@@ -63,7 +63,7 @@
     - 7.7 Remarks
     - 7.8 Typical mistakes
     - 7.9 In summary
-8. [Capacitated lot sizing](combinatorial-optimization-problems/lot-sizing/index.md)
+8. [Lot sizing problems](combinatorial-optimization-problems/lot-sizing/index.md)
     - 8.1 The capacitated lot sizing problem
     - [8.2 Variants](combinatorial-optimization-problems/lot-sizing/variants.md)
     - [8.3 Counting the solutions](combinatorial-optimization-problems/lot-sizing/variants.md)
@@ -75,11 +75,11 @@
 
 ## [Formulations and their properties](formulations/index.md)
 
-9. [Formulations of the knapsack problem](formulations/knapsack-formulations/index.md)
-    - 9.1 An ILP model for the Knapsack Problem
+9. [Formulations of knapsack problems](formulations/knapsack-formulations/index.md)
+    - 9.1 An ILP model for the 0/1 Knapsack Problem
     - 9.2 A first Linear Programming relaxation
     - 9.3 A second Linear Programming relaxation
-    - 9.4 Knapsack Problem upper bounds
+    - 9.4 0/1 Knapsack Problem upper bounds
     - [9.5 An ILP model for the Subset Sum Problem](formulations/knapsack-formulations/an-ilp-model-for-the-subset-sum-problem.md)
     - [9.6 An ILP model for the Bounded Knapsack Problem](formulations/knapsack-formulations/an-ilp-model-for-the-bounded-knapsack-problem.md)
     - [9.7 An ILP model for the Unbounded Knapsack Problem](formulations/knapsack-formulations/an-ilp-model-for-the-unbounded-knapsack-problem.md)
@@ -89,20 +89,20 @@
     - [9.11 An ILP model for the Knapsack Problem with Setups](formulations/knapsack-formulations/an-ilp-model-for-the-knapsack-problem-with-setups.md)
     - [9.12 Typical mistakes](formulations/knapsack-formulations/an-ilp-model-for-the-knapsack-problem-with-setups.md)
     - [9.13 In summary](formulations/knapsack-formulations/an-ilp-model-for-the-knapsack-problem-with-setups.md)
-10. [Formulations of the bin packing problem](formulations/bin-packing-formulations/index.md)
+10. [Formulations of packing problems](formulations/bin-packing-formulations/index.md)
     - 10.1 An ILP model for the Bin Packing Problem
     - 10.2 A first Linear Programming relaxation
     - 10.3 A second Linear Programming relaxation
     - [10.4 An ILP model for the Cutting Stock Problem](formulations/bin-packing-formulations/an-ilp-model-for-the-cutting-stock-problem.md)
     - [10.5 Typical mistakes](formulations/bin-packing-formulations/an-ilp-model-for-the-cutting-stock-problem.md)
     - [10.6 In summary](formulations/bin-packing-formulations/an-ilp-model-for-the-cutting-stock-problem.md)
-11. [Formulations of the vertex coloring problem](formulations/coloring-formulations.md)
+11. [Formulations of coloring problems](formulations/coloring-formulations.md)
     - 11.1 An ILP model for the Vertex Coloring Problem
     - 11.2 A first Linear Programming relaxation
     - 11.3 A second Linear Programming relaxation
     - 11.4 Typical mistakes
     - 11.5 In summary
-12. [Formulations of the maximum clique problem](formulations/clique-formulations/index.md)
+12. [Formulations of clique problems](formulations/clique-formulations/index.md)
     - 12.1 The edge formulation
     - 12.2 A first Linear Programming relaxation
     - 12.3 A second Linear Programming relaxation
@@ -112,21 +112,21 @@
     - [12.7 ILP models for the weighted variants](formulations/clique-formulations/ilp-models-for-the-weighted-variants.md)
     - [12.8 Typical mistakes](formulations/clique-formulations/ilp-models-for-the-weighted-variants.md)
     - [12.9 In summary](formulations/clique-formulations/ilp-models-for-the-weighted-variants.md)
-13. [Formulations of the travelling salesman problem](formulations/tsp-formulations/index.md)
+13. [Formulations of routing problems](formulations/tsp-formulations/index.md)
     - 13.1 A model with position variables (MTZ)
     - 13.2 A model with subtour elimination constraints (DFJ)
     - 13.3 Linear Programming relaxations
     - [13.4 ILP models for the metric and asymmetric TSP](formulations/tsp-formulations/ilp-models-for-the-metric-and-asymmetric-tsp.md)
     - [13.5 Typical mistakes](formulations/tsp-formulations/ilp-models-for-the-metric-and-asymmetric-tsp.md)
     - [13.6 In summary](formulations/tsp-formulations/ilp-models-for-the-metric-and-asymmetric-tsp.md)
-14. [Formulations of parallel machine scheduling](formulations/pcmax-formulations.md)
+14. [Formulations of scheduling problems](formulations/pcmax-formulations.md)
     - 14.1 An ILP model for $P\|C_{\max}$
     - 14.2 A first Linear Programming relaxation
     - 14.3 A second Linear Programming relaxation
     - 14.4 Additional considerations
     - 14.5 Typical mistakes
     - 14.6 In summary
-15. [Formulations of capacitated lot sizing](formulations/lot-sizing-formulations/index.md)
+15. [Formulations of lot sizing problems](formulations/lot-sizing-formulations/index.md)
     - 15.1 A formulation with a big-M link
     - 15.2 The Linear Programming relaxation of the big-M formulation
     - 15.3 A shortest-path formulation
@@ -144,7 +144,7 @@
     - 16.4 The DP algorithms of this module
     - 16.5 Typical mistakes
     - 16.6 In summary
-17. [DP for the knapsack problem](dynamic-programming/dp-knapsack/index.md)
+17. [DP for the 0/1 knapsack problem](dynamic-programming/dp-knapsack/index.md)
     - 17.1 Instances and feasible solutions
     - [17.2 A first DP algorithm](dynamic-programming/dp-knapsack/a-first-dp-algorithm.md)
     - [17.3 A second DP algorithm](dynamic-programming/dp-knapsack/a-second-dp-algorithm.md)
@@ -216,7 +216,7 @@
     - 29.1 Constructive heuristics
     - [29.2 The problems and the assumptions](heuristic-algorithms/constructive-heuristics/the-problems-and-the-assumptions.md)
     - [29.3 The greedy paradigm](heuristic-algorithms/constructive-heuristics/the-problems-and-the-assumptions.md)
-    - [29.4 The knapsack problem: which order?](heuristic-algorithms/constructive-heuristics/the-knapsack-problem-which-order.md)
+    - [29.4 The 0/1 knapsack problem: which order?](heuristic-algorithms/constructive-heuristics/the-0-1-knapsack-problem-which-order.md)
     - [29.5 The bin packing problem: first sort, then pack](heuristic-algorithms/constructive-heuristics/the-bin-packing-problem-first-sort-then-pack.md)
     - [29.6 Scheduling on parallel machines: longest jobs first](heuristic-algorithms/constructive-heuristics/scheduling-on-parallel-machines-longest-jobs-first.md)
     - [29.7 The travelling salesman problem: append or insert?](heuristic-algorithms/constructive-heuristics/the-travelling-salesman-problem-append-or-insert.md)

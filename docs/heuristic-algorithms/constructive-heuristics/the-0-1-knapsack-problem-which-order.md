@@ -1,8 +1,8 @@
 ---
-title: "The knapsack problem: which order?"
+title: "The 0/1 knapsack problem: which order?"
 ---
 
-# 29.4 The knapsack problem: which order? { #sez-sec-KP }
+# 29.4 The 0/1 knapsack problem: which order? { #sez-sec-KP }
 
 <div class="info-capitolo" markdown>
 

@@ -1,12 +1,12 @@
 ---
-title: "DP for the knapsack problem"
+title: "DP for the 0/1 knapsack problem"
 ---
 
-# DP for the knapsack problem
+# DP for the 0/1 knapsack problem
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 17** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Knapsack (KP)](../../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP table for the knapsack](../../lab/dp-knapsack-table.md)
+**Part 3 · Dynamic programming · Chapter 17** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP table for the knapsack](../../lab/dp-knapsack-table.md)
 
 </div>
 
@@ -22,7 +22,7 @@ title: "DP for the knapsack problem"
 
     - <strong>As a problem</strong>: the KP, its instances and the $2^n$ subsets (chapter «Knapsack problems»).
 
-    - <strong>As a model</strong>: the ILP model, its LP relaxation and the dual bounds (chapter «Knapsack formulations»).
+    - <strong>As a model</strong>: the ILP model, its LP relaxation and the dual bounds (chapter «Formulations of knapsack problems»).
 
     - <strong>Now, as a table</strong>: the DP algorithm computes the optimal value exactly, with no model and no solver.
 
@@ -40,7 +40,7 @@ title: "DP for the knapsack problem"
 
     - exchange the roles of profits and weights, and compute the optimal value from the table $u(j,q)$.
 
-The problem of this chapter is the [knapsack problem (KP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/): its definition and its assumptions are on its page.
+The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/): its definition and its assumptions are on its page.
 
 ## 17.1 Instances and feasible solutions
 
@@ -233,7 +233,7 @@ The problem of this chapter is the [knapsack problem (KP)](https://fabiofurini.g
 
 ---
 
-**Exercises on this chapter:** [:material-pencil: Knapsack (KP)](../../exercises/dp-knapsack.md)
+**Exercises on this chapter:** [:material-pencil: 0/1 knapsack (KP)](../../exercises/dp-knapsack.md)
 
 <!-- laboratorio-interattivo: sezione generata da interattivi.py -->
 

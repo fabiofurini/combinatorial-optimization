@@ -12,9 +12,9 @@ title: "Heuristic algorithms: definitions"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapters «Knapsack problems», «Bin packing problems», «Travelling salesman problems» and «Parallel machine scheduling»: instances, feasible solutions and optimal values of the four problems used as examples.
+    - From this module, the chapters «Knapsack problems», «Bin packing problems», «Travelling salesman problems» and «Scheduling problems»: instances, feasible solutions and optimal values of the four problems used as examples.
 
-    - From the module <em>Integer linear programming</em>, [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): the LP relaxation as a source of dual bounds. A short recap is given here for the knapsack problem.
+    - From the module <em>Integer linear programming</em>, [Chapter 2 «LP relaxation»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/): the LP relaxation as a source of dual bounds. A short recap is given here for the 0/1 knapsack problem.
 
 !!! chiave "Objectives"
 
@@ -47,7 +47,7 @@ title: "Heuristic algorithms: definitions"
     \end{cases}
     $$
 
-- The four problems used as examples — the knapsack problem, the bin packing problem, the travelling salesman problem and the scheduling problem $P\,||\,C_{\max}$ — are all <strong>NP-hard</strong>: an exact algorithm may require a running time that grows exponentially with the size of the instance.
+- The four problems used as examples — the 0/1 knapsack problem, the bin packing problem, the travelling salesman problem and the scheduling problem $P\,||\,C_{\max}$ — are all <strong>NP-hard</strong>: an exact algorithm may require a running time that grows exponentially with the size of the instance.
 
 - <strong>Approximation algorithms</strong> (chapter «Approximation algorithms: definitions») are heuristic algorithms with a <em>proved</em> worst-case guarantee on the ratio between $\mathscr{A}(I)$ and $z(I)$. Most of the heuristic algorithms used in practice have no such guarantee: their quality is assessed on the instances at hand, as described in Section [28.8](#sez-sec-evaluation).
 

@@ -10,7 +10,7 @@ title: "Vertex coloring: greedy and DSATUR"
 
 </div>
 
-- The vertex coloring problem (VCP) is defined in [Chapter 4 «Vertex coloring»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/): color the vertices of a graph $G=(V,E)$ so that adjacent vertices get different colors, with the minimum number $\chi(G)$ of colors.
+- The vertex coloring problem (VCP) is defined in [Chapter 4 «Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/): color the vertices of a graph $G=(V,E)$ so that adjacent vertices get different colors, with the minimum number $\chi(G)$ of colors.
 
 ## 29.8.1 The greedy coloring { #sez-sec-GC }
 
