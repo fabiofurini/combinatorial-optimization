@@ -27,49 +27,49 @@ title: "The problems at a glance"
 <th><strong>Approximation</strong></th>
 </tr>
 <tr>
-<td>[KP](../catalogue/knapsack.md)</td>
+<td><a href="../../catalogue/knapsack/">KP</a></td>
 <td>max total profit, total weight <span class="arithmatex">\(\le c\)</span></td>
 <td>weakly NP-hard, DP in <span class="arithmatex">\(\Theta(nc)\)</span></td>
 <td>Dantzig: <span class="arithmatex">\(\UB_{\mathrm{D}} = \sum_{j<s} p_j + \lfloor p_s\,\mathit{rc}/w_s \rfloor\)</span></td>
 <td>Ext-Greedy <span class="arithmatex">\(2\)</span>; <span class="arithmatex">\(H^{\ell}\)</span>: <span class="arithmatex">\(\frac{\ell+2}{\ell+1}\)</span>; FPTAS <span class="arithmatex">\(\frac{1}{1-\varepsilon}\)</span></td>
 </tr>
 <tr>
-<td>[BPP](../catalogue/bin-packing.md)</td>
+<td><a href="../../catalogue/bin-packing/">BPP</a></td>
 <td>min number of bins</td>
 <td>strongly NP-hard</td>
 <td><span class="arithmatex">\(\LB = \lceil \sum_j w_j / c \rceil\)</span></td>
 <td>NF, WF <span class="arithmatex">\(2\)</span>; FF, BF <span class="arithmatex">\(\frac{17}{10}\)</span>; no ratio <span class="arithmatex">\(<\frac32\)</span></td>
 </tr>
 <tr>
-<td>[VCP](../catalogue/vertex-coloring.md)</td>
+<td><a href="../../catalogue/vertex-coloring/">VCP</a></td>
 <td>min number of colors <span class="arithmatex">\(\chi(G)\)</span></td>
 <td>strongly NP-hard</td>
 <td><span class="arithmatex">\(\omega(G) \le \chi(G) \le \Delta(G)+1\)</span></td>
 <td>no ratio <span class="arithmatex">\(<\frac43\)</span>; greedy <span class="arithmatex">\(GC\)</span> no constant ratio</td>
 </tr>
 <tr>
-<td>[MCP](../catalogue/maximum-clique.md)</td>
+<td><a href="../../catalogue/maximum-clique/">MCP</a></td>
 <td>max clique size <span class="arithmatex">\(\omega(G)\)</span></td>
 <td>NP-hard</td>
 <td><span class="arithmatex">\(\omega(G) \le \chi(G)\)</span>, <span class="arithmatex">\(\omega(G) \le \Delta+1\)</span></td>
 <td>no <span class="arithmatex">\(n^{1-\varepsilon}\)</span> guarantee (Håstad)</td>
 </tr>
 <tr>
-<td>[TSP](../catalogue/tsp.md)</td>
+<td><a href="../../catalogue/tsp/">TSP</a></td>
 <td>min tour length <span class="arithmatex">\(L(\sigma)\)</span></td>
 <td>strongly NP-hard</td>
 <td><span class="arithmatex">\(\lceil \frac12 \sum_i (a_i+b_i) \rceil\)</span>; MST <span class="arithmatex">\(d(T) \le z(I)\)</span></td>
 <td>metric: double tree <span class="arithmatex">\(2\)</span>, Christofides <span class="arithmatex">\(\frac32\)</span>; general: no constant ratio</td>
 </tr>
 <tr>
-<td>[<span class="arithmatex">\(P\|C_{\max}\)</span>](../catalogue/pcmax.md)</td>
+<td><a href="../../catalogue/pcmax/"><span class="arithmatex">\(P\|C_{\max}\)</span></a></td>
 <td>min makespan <span class="arithmatex">\(C_{\max}\)</span></td>
 <td>strongly NP-hard (<span class="arithmatex">\(m\)</span> in the input)</td>
 <td><span class="arithmatex">\(\max\{\max_j t_j, \lceil \frac1m \sum_j t_j \rceil\}\)</span></td>
 <td>LIST <span class="arithmatex">\(2-\frac1m\)</span>; LPT <span class="arithmatex">\(\frac43-\frac1{3m}\)</span></td>
 </tr>
 <tr>
-<td>[CLS](../catalogue/lot-sizing.md)</td>
+<td><a href="../../catalogue/lot-sizing/">CLS</a></td>
 <td>min setup, production and holding cost</td>
 <td>NP-hard; ULS in <span class="arithmatex">\(\Theta(m^2)\)</span></td>
 <td><span class="arithmatex">\(k\)</span> smallest setup costs; LP of the shortest-path formulation</td>

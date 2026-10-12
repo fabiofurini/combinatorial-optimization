@@ -11,7 +11,7 @@ The course solves 7 combinatorial optimization problems in every way: their char
 | [Vertex coloring (VCP)](#vertex-coloring-vcp) | a partition of the vertices into stable sets | minimum number of colors $\chi(G)$ | adjacent vertices with different colors | strongly NP-hard |
 | [Maximum clique (MCP)](#maximum-clique-mcp) | a subset of vertices | maximum cardinality $\omega(G)$ | pairwise adjacent vertices | NP-hard |
 | [Travelling salesman (TSP)](#travelling-salesman-tsp) | a cyclic ordering of the cities | minimum tour length | each city visited exactly once | strongly NP-hard |
-| [Parallel machine scheduling (P||Cmax)](#parallel-machine-scheduling-p-cmax) | an assignment of jobs to machines | minimum makespan $C_{\max}$ | each job on one machine, without interruption | strongly NP-hard ($m$ part of the input) |
+| [Parallel machine scheduling (P\|\|Cmax)](#parallel-machine-scheduling-pcmax) | an assignment of jobs to machines | minimum makespan $C_{\max}$ | each job on one machine, without interruption | strongly NP-hard ($m$ part of the input) |
 | [Capacitated lot sizing (CLS)](#capacitated-lot-sizing-cls) | setup periods and production quantities | minimum setup, production and holding cost | demand satisfied, capacities respected | NP-hard (the uncapacitated case is polynomial) |
 
 ## Knapsack problem (KP)

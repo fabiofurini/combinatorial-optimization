@@ -40,7 +40,7 @@ title: "DP examples"
 
 - $v(k)=c_k+\min\{v(k-1),\,v(k-2)\}$ for $2\le k\le n$, with $v(1)=c_1$ and $v(0)=0$; the recursion tree of $v(6)$ has $25$ calls ([Exercise 16.1](../exercises/dp-principles.md#esercizio-16-1)).
 
-<strong>Instances</strong> <a id="sec:cat-stair-ist"></a>
+### Instances { #sez-sec-cat-stair-ist }
 
 <strong>Instance STAIR1</strong> <a id="sec:cat-ist-stair1"></a>
 
@@ -98,7 +98,7 @@ $$
 
 - The greedy choice by non-increasing profit, skipping the neighbours of a chosen position, gives $20<22$ on the instance of the exercise ([Exercise 16.2](../exercises/dp-principles.md#esercizio-16-2)).
 
-<strong>Instances</strong> <a id="sec:cat-nocons-ist"></a>
+### Instances { #sez-sec-cat-nocons-ist }
 
 <strong>Instance NOCONS1</strong> <a id="sec:cat-ist-nocons1"></a>
 
@@ -152,7 +152,7 @@ $$
 
 - $v(i,j)=a_{ij}+\max\{v(i-1,j),\,v(i,j-1)\}$ for $i,j\ge 2$, with the first row and column accumulated and $v(1,1)=a_{11}$ ([Exercise 16.3](../exercises/dp-principles.md#esercizio-16-3)).
 
-<strong>Instances</strong> <a id="sec:cat-grid-ist"></a>
+### Instances { #sez-sec-cat-grid-ist }
 
 <strong>Instance GRID1</strong> <a id="sec:cat-ist-grid1"></a>
 
@@ -210,7 +210,7 @@ $$
 
 - $v(i)=\min\{c_{ij}+v(j):(i,j)\in A\}$ for $i\neq t$, with $v(t)=0$, computed backwards from $t$ ([Exercise 16.4](../exercises/dp-principles.md#esercizio-16-4)).
 
-<strong>Instances</strong> <a id="sec:cat-spp-ist"></a>
+### Instances { #sez-sec-cat-spp-ist }
 
 <strong>Instance SPP1</strong> <a id="sec:cat-ist-spp1"></a>
 
@@ -262,7 +262,7 @@ $$
 
 - The greedy choice by payment gives only $8$ against the optimal value $12$ on the instance of the exercise ([Exercise 16.5](../exercises/dp-principles.md#esercizio-16-5)).
 
-<strong>Instances</strong> <a id="sec:cat-req-ist"></a>
+### Instances { #sez-sec-cat-req-ist }
 
 <strong>Instance REQ1</strong> <a id="sec:cat-ist-req1"></a>
 

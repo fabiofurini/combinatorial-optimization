@@ -60,7 +60,7 @@ title: "Knapsack family"
 
 - Both bottom-up algorithms take $S(n)=\Theta(n^2)$ steps, polynomial because the input has $n$ profits ([Chapter 18 «Rod cutting and coin change»](../dynamic-programming/dp-rod-cutting-coin-change.md#1815-in-summary)).
 
-<strong>Instances</strong> <a id="sec:cat-rcp-ist"></a>
+### Instances { #sez-sec-cat-rcp-ist }
 
 <strong>Instance RCP1</strong> <a id="sec:cat-ist-rcp1"></a>
 
@@ -238,7 +238,7 @@ $$
 
 - The bottom-up algorithm takes $S(n,c)=\Theta(nc)$ steps, which is pseudo-polynomial ([Chapter 18 «Rod cutting and coin change»](../dynamic-programming/dp-rod-cutting-coin-change.md#1824-in-summary)).
 
-<strong>Instances</strong> <a id="sec:cat-ccp-ist"></a>
+### Instances { #sez-sec-cat-ccp-ist }
 
 <strong>Instance CCP1</strong> <a id="sec:cat-ist-ccp1"></a>
 

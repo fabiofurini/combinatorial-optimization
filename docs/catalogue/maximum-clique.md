@@ -291,11 +291,11 @@ $$
 
 <strong>Where it is treated</strong>
 
-- [Chapter 6 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-5-mcpP-prop-omega-alpha): The MCP on $G$ is the MSSP on $\overline{G}$
-
 - [Chapter 4 «Vertex coloring»](../combinatorial-optimization-problems/coloring.md#box-7-obs-stable-bound): The stable set bound $\lceil n/\alpha(G)\rceil\le\chi(G)$ of the VCP
 
 - [Exercise 4.3](../exercises/coloring.md#esercizio-4-3): $\alpha(G)$ as the clique number of the complement graph
+
+- [Chapter 6 «The maximum clique problem»](../combinatorial-optimization-problems/clique.md#box-5-mcpP-prop-omega-alpha): The MCP on $G$ is the MSSP on $\overline{G}$
 
 ### Instance MSSP1 { #sez-sec-cat-ist-mssp1 }
 

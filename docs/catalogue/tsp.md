@@ -24,6 +24,8 @@ title: "The travelling salesman problem"
 
     - [Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp.md): Definition, metric TSP and ATSP, counting and enumeration, nearest neighbour, a combinatorial lower bound
 
+    - [Chapter 13 «Formulations of the travelling salesman problem»](../formulations/tsp-formulations.md): The MTZ and DFJ models and their LP relaxations
+
     - [Chapter 20 «Heuristic algorithms: definitions»](../heuristic-algorithms/heuristics.md#sez-sec-problems): Reference problem of the heuristic part: gap and relative error, the two-edge bound, the search space of the tours
 
     - [Chapter 21 «Constructive heuristics»](../heuristic-algorithms/constructive-heuristics.md#sez-sec-TSP): Append or insert: $NN$, multi-start $NN$, $NI$, $FI$, $CI$, randomized $NN$, regret insertion, the pilot method
@@ -33,8 +35,6 @@ title: "The travelling salesman problem"
     - [Chapter 23 «Metaheuristics»](../heuristic-algorithms/metaheuristics.md#sez-sec-instances): $SA$, tabu search, $ILS$ with the double bridge, GRASP, LNS and ALNS on TSP20
 
     - [Chapter 24 «MIP heuristics for the classical problems»](../heuristic-algorithms/mip-heuristics-classical.md#2423-the-travelling-salesman-problem): The symmetric edge model and its LP relaxation on the reference instance
-
-    - [Chapter 13 «Formulations of the travelling salesman problem»](../formulations/tsp-formulations.md): The MTZ and DFJ models and their LP relaxations
 
     - [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#283-the-metric-tsp): Double tree and Christofides for the metric TSP
 
@@ -1089,13 +1089,13 @@ $$
 
 - [Chapter 7 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp.md#62-variants-metric-and-asymmetric-tsp): Definition; the reference instance is metric
 
+- [Exercise 7.4](../exercises/tsp.md#esercizio-6-4): Checking the triangle inequality
+
 - [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-2-def-metricTSP): Definition in the approximation chapter
 
 - [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-18-prop-DT): $DT$ is a $2$-approximation, tight
 
 - [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-20-prop-CH): $CH$ is a $\frac32$-approximation, tight
-
-- [Exercise 7.4](../exercises/tsp.md#esercizio-6-4): Checking the triangle inequality
 
 - [Exercise 28.4](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-4):
 

@@ -1557,9 +1557,9 @@ $$
 
 - [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-6-defBKP): Definition, extended set of items and assumptions
 
-- [Chapter 19 «Dynamic programming for knapsack problems»](../dynamic-programming/dp-knapsack.md#173-a-dp-algorithm-for-the-bounded-knapsack-problem): DP algorithm $v(j,k)$ over the numbers of copies, $\Theta(nc\,b_{\max})$ steps
-
 - [Exercise 2.3](../exercises/knapsack.md#esercizio-2-3):
+
+- [Chapter 19 «Dynamic programming for knapsack problems»](../dynamic-programming/dp-knapsack.md#173-a-dp-algorithm-for-the-bounded-knapsack-problem): DP algorithm $v(j,k)$ over the numbers of copies, $\Theta(nc\,b_{\max})$ steps
 
 - [Exercise 19.11](../exercises/dp-knapsack.md#esercizio-17-11):
 
@@ -1772,15 +1772,15 @@ $$
 
 - [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack.md#box-8-defUKP): Definition, maximum feasible number of copies and assumptions
 
+- [Exercise 2.3](../exercises/knapsack.md#esercizio-2-3):
+
 - [Chapter 18 «Principles of dynamic programming»](../dynamic-programming/dp-principles.md#164-the-dp-algorithms-of-this-module): The recurrence $v(k)$ over the capacities among the DP algorithms of the module
 
 - [Chapter 19 «Dynamic programming for knapsack problems»](../dynamic-programming/dp-knapsack.md#172-a-dp-algorithm-for-the-unbounded-knapsack-problem): Two DP algorithms, $v(k)$ and $v(j,k)$, both in $\Theta(nc)$ steps
 
-- [Chapter 20 «Rod cutting and coin change»](../dynamic-programming/dp-rod-cutting-coin-change.md): Rod cutting and coin change reuse the DP of the UKP
-
-- [Exercise 2.3](../exercises/knapsack.md#esercizio-2-3):
-
 - [Exercise 19.6](../exercises/dp-knapsack.md#esercizio-17-6):
+
+- [Chapter 20 «Rod cutting and coin change»](../dynamic-programming/dp-rod-cutting-coin-change.md): Rod cutting and coin change reuse the DP of the UKP
 
 ### Instance UKP1 { #sez-sec-cat-ist-ukp1 }
 
