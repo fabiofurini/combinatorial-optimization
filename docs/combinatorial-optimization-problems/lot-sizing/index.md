@@ -122,15 +122,9 @@ title: "Capacitated lot sizing"
 
 -   **8.2 Variants**
 
-    Counting the solutions · A first plan by hand · A combinatorial lower bound
+    Counting the solutions · A first plan by hand · A combinatorial lower bound · Remarks · Typical mistakes
 
     [:octicons-arrow-right-24: Open](variants.md)
-
--   **Remarks and summary**
-
-    Typical mistakes · In summary
-
-    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
 
 </div>
 

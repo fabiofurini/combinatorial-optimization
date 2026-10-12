@@ -60,7 +60,7 @@
 
     Scheduling on identical parallel machines · The three-field notation · Counting the solutions · A first schedule by hand
 
-    [:octicons-arrow-right-24: Read the chapter](pcmax/index.md) · [Exercises](../exercises/pcmax.md)
+    [:octicons-arrow-right-24: Read the chapter](pcmax.md) · [Exercises](../exercises/pcmax.md)
 
 -   **8. Capacitated lot sizing**
 

@@ -259,13 +259,9 @@ title: "The maximum clique problem"
 
 -   **5.3 Weighted variants**
 
+    Remarks · Typical mistakes · In summary
+
     [:octicons-arrow-right-24: Open](weighted-variants.md)
-
--   **Remarks and summary**
-
-    Typical mistakes · In summary
-
-    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
 
 </div>
 

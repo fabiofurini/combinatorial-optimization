@@ -98,4 +98,4 @@ title: "Primal bounds, dual bounds and gap"
 
 ---
 
-**Next:** [1.5 A glimpse of computational complexity](a-glimpse-of-computational-complexity.md)
+**Next:** [A glimpse of computational complexity](a-glimpse-of-computational-complexity.md)

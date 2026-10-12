@@ -227,15 +227,9 @@ title: "Knapsack problems"
 
 -   **2.8 The knapsack problem with setups**
 
-    The variants at a glance
+    The variants at a glance · Remarks · Typical mistakes · In summary
 
     [:octicons-arrow-right-24: Open](the-knapsack-problem-with-setups.md)
-
--   **Remarks and summary**
-
-    Typical mistakes · In summary
-
-    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
 
 </div>
 

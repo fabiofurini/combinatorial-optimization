@@ -32,15 +32,11 @@ title: "Combinatorial optimization problems"
 
     [:octicons-arrow-right-24: Open](primal-bounds-dual-bounds-and-gap.md)
 
--   **1.5 A glimpse of computational complexity**
+-   **A glimpse of computational complexity**
+
+    Pseudo-polynomial algorithms and strong NP-hardness
 
     [:octicons-arrow-right-24: Open](a-glimpse-of-computational-complexity.md)
-
--   **Typical mistakes · In summary**
-
-    In summary
-
-    [:octicons-arrow-right-24: Open](typical-mistakes.md)
 
 </div>
 

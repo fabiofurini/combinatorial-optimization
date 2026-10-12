@@ -38,9 +38,9 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - Strongly NP-hard when $m$ is part of the input; weakly NP-hard for a fixed number of machines ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md#box-12-def-pseudo)).
 
-- Lower bound $\max\{\max_j t_j, \lceil \sum_j t_j/m \rceil\}$; it is not always attained: $(4,3,3)$ on two machines gives $5$, the optimum is $6$ ([Ch. 7](../combinatorial-optimization-problems/pcmax/index.md#box-5-obs-pcmaxlb)).
+- Lower bound $\max\{\max_j t_j, \lceil \sum_j t_j/m \rceil\}$; it is not always attained: $(4,3,3)$ on two machines gives $5$, the optimum is $6$ ([Ch. 7](../combinatorial-optimization-problems/pcmax.md#box-5-obs-pcmaxlb)).
 
-- A makespan at most $T$ exists if and only if the jobs fit into $m$ bins of capacity $T$ ([Ch. 7](../combinatorial-optimization-problems/pcmax/index.md#76-relation-with-the-bin-packing-problem)).
+- A makespan at most $T$ exists if and only if the jobs fit into $m$ bins of capacity $T$ ([Ch. 7](../combinatorial-optimization-problems/pcmax.md#76-relation-with-the-bin-packing-problem)).
 
 ## Formulations { #sez-sec-cat-pcmax-formulations }
 
@@ -52,7 +52,7 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## Heuristics { #sez-sec-cat-pcmax-heuristics }
 
-- On the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax/index.md) (three machines, optimum $9$) LIST with the shortest jobs first gives $12$ and LPT gives $11$ ([Ch. 24](../heuristic-algorithms/constructive-heuristics/scheduling-on-parallel-machines-longest-jobs-first.md#sez-sec-LPT)).
+- On the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax.md) (three machines, optimum $9$) LIST with the shortest jobs first gives $12$ and LPT gives $11$ ([Ch. 24](../heuristic-algorithms/constructive-heuristics/scheduling-on-parallel-machines-longest-jobs-first.md#sez-sec-LPT)).
 
 - The LPT solution is a local optimum for move, while two swaps reach $9$; the auxiliary objective $\sum_h L_h^2$ gives a slope to the plateaus ([Ch. 25](../heuristic-algorithms/local-search/p-cmax-move-and-swap.md#box-8-ex-lpt)).
 
@@ -60,7 +60,7 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 ## MIP heuristics { #sez-sec-cat-pcmax-mipheuristics }
 
-- On the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax/index.md) fractional diving ends at $10$, guided diving from LPT finds $9$, the feasibility pump returns $11$ ([Ch. 27](../heuristic-algorithms/mip-heuristics-classical.md#box-5-ex-divepcm)).
+- On the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax.md) fractional diving ends at $10$, guided diving from LPT finds $9$, the feasibility pump returns $11$ ([Ch. 27](../heuristic-algorithms/mip-heuristics-classical.md#box-5-ex-divepcm)).
 
 - RINS, local branching and proximity search, started from LPT, reach $9$; proximity search also proves it optimal ([Ch. 27](../heuristic-algorithms/mip-heuristics-classical.md#box-10-ex-rinspcm)).
 
@@ -68,7 +68,7 @@ Assumptions and full definition: [Catalogue of combinatorial problems](../catalo
 
 - LIST is a $\left(2-\frac1m\right)$-approximation for every list, tight ([Ch. 31](../approximation-algorithms/pcmax-approximation.md#box-5-prop-LIST)).
 
-- LPT is a $\left(\frac43-\frac1{3m}\right)$-approximation, tight on Graham's family; for $m=3$ it is the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax/index.md) ([Ch. 31](../approximation-algorithms/pcmax-approximation.md#box-7-prop-LPT)).
+- LPT is a $\left(\frac43-\frac1{3m}\right)$-approximation, tight on Graham's family; for $m=3$ it is the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax.md) ([Ch. 31](../approximation-algorithms/pcmax-approximation.md#box-7-prop-LPT)).
 
 ## Exercises { #sez-sec-cat-pcmax-es }
 

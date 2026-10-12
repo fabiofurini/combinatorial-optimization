@@ -201,15 +201,9 @@ title: "Bin packing and cutting stock"
 
 -   **3.2 The cutting stock problem**
 
-    Counting the solutions, a first solution and a simple bound
+    Counting the solutions, a first solution and a simple bound · Remarks · Typical mistakes · In summary
 
     [:octicons-arrow-right-24: Open](the-cutting-stock-problem.md)
-
--   **Remarks and summary**
-
-    Typical mistakes · In summary
-
-    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
 
 </div>
 

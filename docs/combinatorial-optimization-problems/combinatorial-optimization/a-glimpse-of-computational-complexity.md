@@ -2,13 +2,15 @@
 title: "A glimpse of computational complexity"
 ---
 
-# 1.5 A glimpse of computational complexity { #sez-sec-complexity }
+# A glimpse of computational complexity
 
 <div class="info-capitolo" markdown>
 
 **Part 1 · Combinatorial optimization problems · Chapter 1** · [:material-book-open-variant: Chapter 1: Combinatorial optimization](index.md) · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Combinatorial optimization](../../exercises/combinatorial-optimization.md)
 
 </div>
+
+## 1.5 A glimpse of computational complexity { #sez-sec-complexity }
 
 - Brute force takes exponential time. Is there an algorithm that solves a combinatorial optimization problem in polynomial time? Computational complexity classifies problems according to this question; here we give only the definitions needed in the course.
 
@@ -30,7 +32,7 @@ title: "A glimpse of computational complexity"
 
 - It is not known whether $P = NP$. No polynomial algorithm is known for any NP-complete problem, and it is widely believed that none exists: for an NP-hard problem we do not expect a polynomial exact algorithm.
 
-## 1.5.1 Pseudo-polynomial algorithms and strong NP-hardness
+### 1.5.1 Pseudo-polynomial algorithms and strong NP-hardness
 
 - Some NP-hard problems can be solved in time polynomial in $n$ <strong>and in the value</strong> of the numbers of the instance. For example, an algorithm that takes $O(n\,M)$ time, where $M$ is the largest number of the instance, is not polynomial: $M$ is exponential in its number of bits $\log_2 M$.
 
@@ -50,6 +52,23 @@ title: "A glimpse of computational complexity"
 
 - The problems of the next chapters are all NP-hard: the knapsack problem is weakly NP-hard, while bin packing, vertex coloring, maximum clique and the travelling salesman problem are strongly NP-hard. Each chapter discusses the complexity of its problem.
 
+## 1.6 Typical mistakes
+
+!!! attenzione "Warning"
+
+    - <strong>Confusing candidate and feasible solutions.</strong> The numbers $2^n$, $(n-1)!/2$ and $B(n)$ count the candidates; the feasible solutions can be far fewer, for example $11$ subsets out of $16$ in <span style="color:#1971c2">[Example 1.1](combinatorial-optimization-problems.md#box-2-ex-oc1-small)</span>.
+
+    - <strong>Exchanging the two directions of the bounds.</strong> In a maximization problem a primal bound is a lower bound and a dual bound is an upper bound; in a minimization problem the roles are exchanged.
+
+    - <strong>Rounding a dual bound when the objective is not integer.</strong> The rounding of [Observation 1.6](primal-bounds-dual-bounds-and-gap.md#box-9-obs-rounding) needs $f(S) \in \Z$ for every feasible solution.
+
+    - <strong>Counting equivalent solutions twice.</strong> A cyclic ordering and its reverse are the same cyclic ordering, and two assignments that differ by a renaming of interchangeable labels are the same solution.
+
+    - <strong>Reading NP-hard as unsolvable.</strong> NP-hardness is a statement on the worst case: many instances of practical size are solved, and the rest of the course shows how.
+
+## 1.7 In summary
+
 ---
 
-**Next:** [Typical mistakes · In summary](typical-mistakes.md)
+**Exercises on this chapter:** [:material-pencil: Combinatorial optimization](../../exercises/combinatorial-optimization.md)
+

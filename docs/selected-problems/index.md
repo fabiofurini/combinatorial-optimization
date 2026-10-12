@@ -54,7 +54,7 @@ The problems on which the whole course focuses, introduced one by one: definitio
 
     Assign jobs to $m$ identical machines so that the makespan, the largest machine load, is minimum.
 
-    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/pcmax/index.md)
+    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/pcmax.md)
 
 -   **Capacitated lot sizing**
 

@@ -138,15 +138,9 @@ title: "The travelling salesman problem"
 
 -   **6.2 Variants: metric and asymmetric TSP**
 
-    A first tour by hand · A combinatorial lower bound
+    A first tour by hand · A combinatorial lower bound · Remarks · Typical mistakes · In summary
 
     [:octicons-arrow-right-24: Open](variants-metric-and-asymmetric-tsp.md)
-
--   **Remarks and summary**
-
-    Typical mistakes · In summary
-
-    [:octicons-arrow-right-24: Open](remarks-and-summary.md)
 
 </div>
 

@@ -8,8 +8,8 @@
     - [1.3 Combinatorial explosion and brute force](combinatorial-optimization-problems/combinatorial-optimization/combinatorial-explosion-and-brute-force.md)
     - [1.4 Primal bounds, dual bounds and gap](combinatorial-optimization-problems/combinatorial-optimization/primal-bounds-dual-bounds-and-gap.md)
     - [1.5 A glimpse of computational complexity](combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md)
-    - [1.6 Typical mistakes](combinatorial-optimization-problems/combinatorial-optimization/typical-mistakes.md)
-    - [1.7 In summary](combinatorial-optimization-problems/combinatorial-optimization/typical-mistakes.md)
+    - [1.6 Typical mistakes](combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md)
+    - [1.7 In summary](combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md)
 2. [Knapsack problems](combinatorial-optimization-problems/knapsack/index.md)
     - 2.1 The knapsack problem
     - [2.2 The subset sum problem](combinatorial-optimization-problems/knapsack/the-subset-sum-problem.md)
@@ -20,15 +20,15 @@
     - [2.7 The multiple-choice knapsack problem](combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem.md)
     - [2.8 The knapsack problem with setups](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
     - [2.9 The variants at a glance](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
-    - [2.10 Remarks](combinatorial-optimization-problems/knapsack/remarks-and-summary.md)
-    - [2.11 Typical mistakes](combinatorial-optimization-problems/knapsack/remarks-and-summary.md)
-    - [2.12 In summary](combinatorial-optimization-problems/knapsack/remarks-and-summary.md)
+    - [2.10 Remarks](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
+    - [2.11 Typical mistakes](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
+    - [2.12 In summary](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
 3. [Bin packing and cutting stock](combinatorial-optimization-problems/bin-packing/index.md)
     - 3.1 The bin packing problem
     - [3.2 The cutting stock problem](combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md)
-    - [3.3 Remarks](combinatorial-optimization-problems/bin-packing/remarks-and-summary.md)
-    - [3.4 Typical mistakes](combinatorial-optimization-problems/bin-packing/remarks-and-summary.md)
-    - [3.5 In summary](combinatorial-optimization-problems/bin-packing/remarks-and-summary.md)
+    - [3.3 Remarks](combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md)
+    - [3.4 Typical mistakes](combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md)
+    - [3.5 In summary](combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md)
 4. [Vertex coloring](combinatorial-optimization-problems/coloring.md)
     - 4.1 A short review of graphs
     - 4.2 The vertex coloring problem
@@ -40,28 +40,28 @@
     - 5.2 Counting the solutions, a first solution and the bounds
     - [5.3 Weighted variants](combinatorial-optimization-problems/clique/weighted-variants.md)
     - [5.4 Complexity](combinatorial-optimization-problems/clique/weighted-variants.md)
-    - [5.5 Remarks](combinatorial-optimization-problems/clique/remarks-and-summary.md)
-    - [5.6 Typical mistakes](combinatorial-optimization-problems/clique/remarks-and-summary.md)
-    - [5.7 In summary](combinatorial-optimization-problems/clique/remarks-and-summary.md)
+    - [5.5 Remarks](combinatorial-optimization-problems/clique/weighted-variants.md)
+    - [5.6 Typical mistakes](combinatorial-optimization-problems/clique/weighted-variants.md)
+    - [5.7 In summary](combinatorial-optimization-problems/clique/weighted-variants.md)
 6. [The travelling salesman problem](combinatorial-optimization-problems/tsp/index.md)
     - 6.1 The travelling salesman problem
     - [6.2 Variants: metric and asymmetric TSP](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
     - [6.3 Counting the tours](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
     - [6.4 A first tour by hand](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
     - [6.5 A combinatorial lower bound](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
-    - [6.6 Remarks](combinatorial-optimization-problems/tsp/remarks-and-summary.md)
-    - [6.7 Typical mistakes](combinatorial-optimization-problems/tsp/remarks-and-summary.md)
-    - [6.8 In summary](combinatorial-optimization-problems/tsp/remarks-and-summary.md)
-7. [Parallel machine scheduling](combinatorial-optimization-problems/pcmax/index.md)
+    - [6.6 Remarks](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
+    - [6.7 Typical mistakes](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
+    - [6.8 In summary](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
+7. [Parallel machine scheduling](combinatorial-optimization-problems/pcmax.md)
     - 7.1 Scheduling on identical parallel machines
     - 7.2 The three-field notation
     - 7.3 Counting the solutions
     - 7.4 A first schedule by hand
     - 7.5 A combinatorial lower bound
     - 7.6 Relation with the bin packing problem
-    - [7.7 Remarks](combinatorial-optimization-problems/pcmax/remarks-and-summary.md)
-    - [7.8 Typical mistakes](combinatorial-optimization-problems/pcmax/remarks-and-summary.md)
-    - [7.9 In summary](combinatorial-optimization-problems/pcmax/remarks-and-summary.md)
+    - 7.7 Remarks
+    - 7.8 Typical mistakes
+    - 7.9 In summary
 8. [Capacitated lot sizing](combinatorial-optimization-problems/lot-sizing/index.md)
     - 8.1 The capacitated lot sizing problem
     - [8.2 Variants](combinatorial-optimization-problems/lot-sizing/variants.md)
@@ -69,9 +69,9 @@
     - [8.4 Counting the solutions](combinatorial-optimization-problems/lot-sizing/variants.md)
     - [8.5 A first plan by hand](combinatorial-optimization-problems/lot-sizing/variants.md)
     - [8.6 A combinatorial lower bound](combinatorial-optimization-problems/lot-sizing/variants.md)
-    - [8.7 Remarks](combinatorial-optimization-problems/lot-sizing/remarks-and-summary.md)
-    - [8.8 Typical mistakes](combinatorial-optimization-problems/lot-sizing/remarks-and-summary.md)
-    - [8.9 In summary](combinatorial-optimization-problems/lot-sizing/remarks-and-summary.md)
+    - [8.7 Remarks](combinatorial-optimization-problems/lot-sizing/variants.md)
+    - [8.8 Typical mistakes](combinatorial-optimization-problems/lot-sizing/variants.md)
+    - [8.9 In summary](combinatorial-optimization-problems/lot-sizing/variants.md)
 
 ## [Formulations and their properties](formulations/index.md)
 

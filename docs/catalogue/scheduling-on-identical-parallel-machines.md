@@ -36,6 +36,6 @@ title: "Scheduling on identical parallel machines (P|Cmax)"
         n > m
         $$
 
-- Defined in [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax/index.md#box-1-defPCmax).
+- Defined in [Chapter 7 «Parallel machine scheduling»](../combinatorial-optimization-problems/pcmax.md#box-1-defPCmax).
 
 - [The course on this problem $\rightarrow$](../selected-problems/pcmax.md).
