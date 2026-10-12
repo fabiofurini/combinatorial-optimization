@@ -230,5 +230,5 @@ title: "Cutting stock"
 
 ---
 
-**In depth:** [:material-star-outline: the course on this problem](../../selected-problems/bin-packing.md)
+**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/bin-packing-problem.md)
 

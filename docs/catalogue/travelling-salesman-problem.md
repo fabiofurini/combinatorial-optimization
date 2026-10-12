@@ -6,7 +6,7 @@ title: "The travelling salesman problem (TSP)"
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
+[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-folder-outline: Routing problems](routing-problems.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
 
 </div>
 
@@ -40,6 +40,75 @@ title: "The travelling salesman problem (TSP)"
         d_{ij}=d_{ji},~~~~ \forall i,j \in \mathscr{V},~ i\neq j
         $$
 
-- Defined in [Chapter 6 «Routing problems»](../combinatorial-optimization-problems/tsp/the-travelling-salesman-problem.md#box-1-defTSP).
+## What the course does on this problem { #sez-sec-cat-tsp-vert }
 
-- [The course on this problem $\rightarrow$](../selected-problems/tsp.md).
+<div class="tabella" markdown="0"><table>
+<tr>
+<th><strong>Technique</strong></th>
+<th><strong>Where</strong></th>
+</tr>
+<tr>
+<td><strong>Definition</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/the-travelling-salesman-problem/#box-1-defTSP">Ch. 6 «Routing problems»</a></td>
+</tr>
+<tr>
+<td><strong>Formulations</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/tsp-formulations/">Ch. 13 «Formulations of routing problems»</a></td>
+</tr>
+<tr>
+<td><strong>Heuristics</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/heuristics/#sez-sec-problems">Ch. 29 «Heuristic algorithms: definitions»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/the-travelling-salesman-problem-append-or-insert/#sez-sec-TSP">Ch. 30 «Constructive heuristics»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/local-search/tsp-2-opt-and-or-opt/#sez-sec-tsp">Ch. 31 «Local search»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/metaheuristics/the-problems-and-the-assumptions/#sez-sec-instances">Ch. 32 «Metaheuristics»</a></td>
+</tr>
+<tr>
+<td><strong>MIP heuristics</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/mip-heuristics-classical/#3323-the-travelling-salesman-problem">Ch. 33 «MIP heuristics for the classical problems»</a></td>
+</tr>
+<tr>
+<td><strong>Approximation</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/tsp-approximation/#393-the-double-tree-and-the-christofides-algorithms">Ch. 39 «The TSP: the general case and the metric case»</a></td>
+</tr>
+<tr>
+<td><strong>Exercises</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp/">Ch. 6 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp-formulations/">Ch. 13 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/heuristics/#esercizio-29-3">Exercise 29.3</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/constructive-heuristics/">Ch. 30 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/local-search/">Ch. 31 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/metaheuristics/">Ch. 32 (7 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp-approximation/">Ch. 39 (3 exercises)</a></td>
+</tr>
+<tr>
+<td><strong>Reference instances</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/tsp/the-travelling-salesman-problem/#box-2-ex-tsp5">Ch. 6</a> (<span class="arithmatex">\(z=18\)</span>); <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/metaheuristics/the-problems-and-the-assumptions/#box-2-ex-tsp20">Ch. 32, TSP20</a> (<span class="arithmatex">\(z=291\)</span>)</td>
+</tr>
+</table></div>
+
+### Properties { #sez-sec-cat-tsp-properties }
+
+- Strongly NP-hard: it contains the Hamiltonian cycle problem ([Ch. 1](../combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md#box-12-def-pseudo)).
+
+- Lower bound $\lceil \frac12 \sum_i (a_i+b_i) \rceil$, with $a_i, b_i$ the two shortest edges at city $i$ ([Ch. 6](../combinatorial-optimization-problems/tsp/the-travelling-salesman-problem.md#box-6-obs-tsp-lb)).
+
+- Nearest neighbour from city $1$ gives $25$ on the five-city instance of Ch. 6, whose optimum is $18$ ([Ch. 6](../combinatorial-optimization-problems/tsp/the-travelling-salesman-problem.md#box-5-ex-tsp-nn)).
+
+### Formulations { #sez-sec-cat-tsp-formulations }
+
+- The MTZ model eliminates the subtours with $n-1$ position variables $u_i$; the DFJ model with $2^{n-1}-n$ subtour constraints, added only when violated ([Ch. 13](../formulations/tsp-formulations/ilp-models-for-the-travelling-salesman-problem.md#box-4-prop-DFJ-subtours)).
+
+- The MTZ relaxation is weak; on the instance of [Ch. 6](../combinatorial-optimization-problems/tsp/index.md) the bounds are $16$ (assignment), $17$ (MTZ) and $18$ (DFJ) ([Ch. 13](../formulations/tsp-formulations/ilp-models-for-the-travelling-salesman-problem.md#box-10-ex-TSP-LP)).
+
+### Heuristics { #sez-sec-cat-tsp-heuristics }
+
+- Multi-start nearest neighbour and the insertion heuristics NI, FI and CI all reach $18$ on the instance of [Ch. 6](../combinatorial-optimization-problems/tsp/index.md) ([Ch. 30](../heuristic-algorithms/constructive-heuristics/the-travelling-salesman-problem-append-or-insert.md#sez-sec-INS)).
+
+- 2-opt evaluates each of its $\frac{n(n-3)}{2}$ moves in $O(1)$ and turns the tour of length $25$ into an optimal one in two moves ([Ch. 31](../heuristic-algorithms/local-search/tsp-2-opt-and-or-opt.md#box-5-ex-twooptref)).
+
+- Or-opt and VND escape the local optima of 2-opt ([Ch. 31](../heuristic-algorithms/local-search/tsp-2-opt-and-or-opt.md#box-7-ex-oropt)).
+
+- Simulated annealing, tabu search, iterated local search, GRASP and LNS are compared on TSP20 (optimum $291$) ([Ch. 32](../heuristic-algorithms/metaheuristics/comparison-and-conclusions.md#32111-the-methods-on-the-medium-instances)).
+
+### MIP heuristics { #sez-sec-cat-tsp-mipheuristics }
+
+- With the subtour constraints the LP optimum of the instance of [Ch. 6](../combinatorial-optimization-problems/tsp/index.md) is integer: rounding gives $18$, gap $0\%$ ([Ch. 33](../heuristic-algorithms/mip-heuristics-classical.md#3325-the-lp-relaxations-on-the-reference-instances)).
+
+### Approximation { #sez-sec-cat-tsp-approximation }
+
+- Metric TSP: the double tree algorithm is a $2$-approximation, tight ([Ch. 39](../approximation-algorithms/tsp-approximation.md#box-8-prop-DT)).
+
+- Christofides is a $\frac32$-approximation, tight ([Ch. 39](../approximation-algorithms/tsp-approximation.md#box-10-prop-CH)).
+
+- General TSP: no constant ratio, unless $P=NP$ ([Ch. 39](../approximation-algorithms/tsp-approximation.md#box-1-prop-TSPinapx)).

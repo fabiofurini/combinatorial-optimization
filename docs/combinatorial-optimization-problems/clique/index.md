@@ -87,7 +87,7 @@ title: "Clique problems"
 
 <div class="grid cards sottopagine" markdown>
 
--   **Definition**
+-   **Overview**
 
     Overview of the family
 
@@ -117,4 +117,4 @@ title: "Clique problems"
 
 ---
 
-**In depth:** [:material-star-outline: the course on this problem](../../selected-problems/maximum-clique.md)
+**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/maximum-clique-problem.md)

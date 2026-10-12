@@ -6,7 +6,7 @@ title: "Rod cutting problem (RCP)"
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
+[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-folder-outline: Miscellaneous problems](miscellaneous-problems.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
 
 </div>
 
@@ -26,4 +26,27 @@ title: "Rod cutting problem (RCP)"
 
     the <strong>Rod-Cutting Problem</strong> (RCP) asks to decide how many copies of each piece length to cut, so that the total length of the obtained pieces is equal to the rod length, and the total profit of the obtained pieces is maximized.
 
-- Treated in [Chapter 16 «Principles of dynamic programming»](../dynamic-programming/dp-principles.md), [Chapter 28 «DP for the rod cutting problem»](../dynamic-programming/dp-rod-cutting/index.md).
+## What the course does on this problem { #sez-sec-cat-rcp-vert }
+
+<div class="tabella" markdown="0"><table>
+<tr>
+<th><strong>Technique</strong></th>
+<th><strong>Where</strong></th>
+</tr>
+<tr>
+<td><strong>Definition</strong></td>
+<td>This page</td>
+</tr>
+<tr>
+<td><strong>Dynamic programming</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/#164-the-dp-algorithms-of-this-module">Ch. 16 «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-rod-cutting/">Ch. 28 «DP for the rod cutting problem»</a></td>
+</tr>
+<tr>
+<td><strong>Exercises</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-rod-cutting/">Ch. 28 (5 exercises)</a></td>
+</tr>
+<tr>
+<td><strong>Reference instances</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-rod-cutting/#box-1-texexpbox1">Ch. 28</a> (<span class="arithmatex">\(z=10\)</span>)</td>
+</tr>
+</table></div>

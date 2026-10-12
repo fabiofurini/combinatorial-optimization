@@ -34,7 +34,8 @@ Exercises with **worked solutions**, chapter by chapter. Try each exercise on yo
 - [22. DP for the multidimensional knapsack problem](dp-multidimensional-knapsack.md) · 5 exercises
 - [23. DP for the knapsack problem with setups](dp-knapsack-setups.md) · 5 exercises
 - [24. DP for the multiple knapsack problem](dp-multiple-knapsack.md) · 5 exercises
-- [25. DP for the uncapacitated lot sizing problem](dp-lot-sizing.md) · 5 exercises
+- [25. DP for the uncapacitated lot sizing problem](dp-lot-sizing.md) · 3 exercises
+- [26. DP for the capacitated lot sizing problem](dp-capacitated-lot-sizing.md) · 2 exercises
 - [27. DP for the coin change problem](dp-coin-change.md) · 5 exercises
 - [28. DP for the rod cutting problem](dp-rod-cutting.md) · 5 exercises
 
@@ -53,7 +54,7 @@ Exercises with **worked solutions**, chapter by chapter. Try each exercise on yo
 - [36. Approximation algorithms for bin packing](bin-packing-approximation.md) · 12 exercises
 - [37. Vertex coloring: limits of approximation](coloring-inapproximability.md) · 5 exercises
 - [38. Maximum clique: limits of approximation](clique-inapproximability.md) · 4 exercises
-- [39. Approximation for the metric TSP](tsp-approximation.md) · 3 exercises
+- [39. The TSP: the general case and the metric case](tsp-approximation.md) · 3 exercises
 - [40. Approximation for P|Cmax](pcmax-approximation.md) · 3 exercises
 
 ## Ad hoc algorithms

@@ -1,6 +1,6 @@
 # The problems at a glance
 
-The course solves 7 combinatorial optimization problems in every way: their characteristics, what the course does on each one, and its in-depth page.
+The course solves 7 combinatorial optimization problems in every way: their characteristics, what the course does on each one, and its catalogue page.
 
 ## Characteristics
 
@@ -26,14 +26,14 @@ Each cell links to the chapter.
 | MCP | Ch. [5](../combinatorial-optimization-problems/clique/index.md) | Ch. [12](../formulations/clique-formulations/index.md) | — | Ch. [5](../combinatorial-optimization-problems/clique/index.md) | — | not approximable | — | — |
 | TSP | Ch. [6](../combinatorial-optimization-problems/tsp/index.md) | Ch. [13](../formulations/tsp-formulations/index.md) | — | Ch. [6](../combinatorial-optimization-problems/tsp/index.md), [30](../heuristic-algorithms/constructive-heuristics/index.md), [31](../heuristic-algorithms/local-search/index.md), [32](../heuristic-algorithms/metaheuristics/index.md) | Ch. [33](../heuristic-algorithms/mip-heuristics-classical.md) | Ch. [39](../approximation-algorithms/tsp-approximation.md) | — | Ch. [1](../exercises/combinatorial-optimization.md), [6](../exercises/tsp.md), [13](../exercises/tsp-formulations.md), [29](../exercises/heuristics.md), [30](../exercises/constructive-heuristics.md), [31](../exercises/local-search.md), [32](../exercises/metaheuristics.md), [39](../exercises/tsp-approximation.md) |
 | P||Cmax | Ch. [7](../combinatorial-optimization-problems/pcmax/index.md) | Ch. [14](../formulations/pcmax-formulations/index.md) | — | Ch. [30](../heuristic-algorithms/constructive-heuristics/index.md), [31](../heuristic-algorithms/local-search/index.md), [32](../heuristic-algorithms/metaheuristics/index.md) | Ch. [33](../heuristic-algorithms/mip-heuristics-classical.md) | Ch. [34](../approximation-algorithms/approximation.md), [40](../approximation-algorithms/pcmax-approximation.md) | — | Ch. [1](../exercises/combinatorial-optimization.md), [7](../exercises/pcmax.md), [14](../exercises/pcmax-formulations.md), [29](../exercises/heuristics.md), [30](../exercises/constructive-heuristics.md), [31](../exercises/local-search.md), [32](../exercises/metaheuristics.md), [33](../exercises/mip-heuristics-classical.md), [34](../exercises/approximation.md), [40](../exercises/pcmax-approximation.md) |
-| CLS | Ch. [8](../combinatorial-optimization-problems/lot-sizing/index.md) | Ch. [15](../formulations/lot-sizing-formulations/index.md) | Ch. [25](../dynamic-programming/dp-lot-sizing/index.md) | Ch. [8](../combinatorial-optimization-problems/lot-sizing/index.md), [33](../heuristic-algorithms/mip-heuristics-classical.md) | Ch. [33](../heuristic-algorithms/mip-heuristics-classical.md) | — | — | Ch. [1](../exercises/combinatorial-optimization.md), [8](../exercises/lot-sizing.md), [15](../exercises/lot-sizing-formulations.md), [25](../exercises/dp-lot-sizing.md) |
+| CLS | Ch. [8](../combinatorial-optimization-problems/lot-sizing/index.md) | Ch. [15](../formulations/lot-sizing-formulations/index.md) | Ch. [26](../dynamic-programming/dp-capacitated-lot-sizing.md) | Ch. [8](../combinatorial-optimization-problems/lot-sizing/index.md), [33](../heuristic-algorithms/mip-heuristics-classical.md) | Ch. [33](../heuristic-algorithms/mip-heuristics-classical.md) | — | — | Ch. [1](../exercises/combinatorial-optimization.md), [8](../exercises/lot-sizing.md), [15](../exercises/lot-sizing-formulations.md), [26](../exercises/dp-capacitated-lot-sizing.md) |
 
-## In depth
+## The catalogue pages
 
-- **0/1 knapsack problem (KP)** — In depth: [the course on this problem](../selected-problems/knapsack.md)
-- **Bin packing (BPP)** — In depth: [the course on this problem](../selected-problems/bin-packing.md)
-- **Vertex coloring (VCP)** — In depth: [the course on this problem](../selected-problems/vertex-coloring.md)
-- **Maximum clique (MCP)** — In depth: [the course on this problem](../selected-problems/maximum-clique.md)
-- **Travelling salesman (TSP)** — In depth: [the course on this problem](../selected-problems/tsp.md)
-- **Parallel machine scheduling (P\|\|Cmax)** — In depth: [the course on this problem](../selected-problems/pcmax.md)
-- **Capacitated lot sizing (CLS)** — In depth: [the course on this problem](../selected-problems/lot-sizing.md)
+- **0/1 knapsack problem (KP)** — [what the course does on this problem](../catalogue/knapsack-problem.md)
+- **Bin packing (BPP)** — [what the course does on this problem](../catalogue/bin-packing-problem.md)
+- **Vertex coloring (VCP)** — [what the course does on this problem](../catalogue/vertex-coloring-problem.md)
+- **Maximum clique (MCP)** — [what the course does on this problem](../catalogue/maximum-clique-problem.md)
+- **Travelling salesman (TSP)** — [what the course does on this problem](../catalogue/travelling-salesman-problem.md)
+- **Parallel machine scheduling (P\|\|Cmax)** — [what the course does on this problem](../catalogue/scheduling-on-identical-parallel-machines.md)
+- **Capacitated lot sizing (CLS)** — [what the course does on this problem](../catalogue/capacitated-lot-sizing.md)

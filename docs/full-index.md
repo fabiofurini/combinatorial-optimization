@@ -21,10 +21,9 @@
     - [2.7 The multiple knapsack problem](combinatorial-optimization-problems/knapsack/the-multiple-knapsack-problem.md)
     - [2.8 The multiple-choice knapsack problem](combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem.md)
     - [2.9 The knapsack problem with setups](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
-    - [2.10 The variants at a glance](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
-    - [2.11 Remarks](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
-    - [2.12 Typical mistakes](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
-    - [2.13 In summary](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
+    - [2.10 Remarks](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
+    - [2.11 Typical mistakes](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
+    - [2.12 In summary](combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups.md)
 3. [Packing problems](combinatorial-optimization-problems/bin-packing/index.md)
     - 3.1 Overview of the family
     - [3.2 The bin packing problem](combinatorial-optimization-problems/bin-packing/the-bin-packing-problem.md)
@@ -50,10 +49,10 @@
 6. [Routing problems](combinatorial-optimization-problems/tsp/index.md)
     - 6.1 Overview of the family
     - [6.2 The travelling salesman problem](combinatorial-optimization-problems/tsp/the-travelling-salesman-problem.md)
-    - [6.3 Variants: metric and asymmetric TSP](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
-    - [6.4 Counting the tours](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
-    - [6.5 A first tour by hand](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
-    - [6.6 A combinatorial lower bound](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
+    - [6.3 Counting the tours](combinatorial-optimization-problems/tsp/the-travelling-salesman-problem.md)
+    - [6.4 A first tour by hand](combinatorial-optimization-problems/tsp/the-travelling-salesman-problem.md)
+    - [6.5 A combinatorial lower bound](combinatorial-optimization-problems/tsp/the-travelling-salesman-problem.md)
+    - [6.6 Variants: metric and asymmetric TSP](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
     - [6.7 Remarks](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
     - [6.8 Typical mistakes](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
     - [6.9 In summary](combinatorial-optimization-problems/tsp/variants-metric-and-asymmetric-tsp.md)
@@ -198,9 +197,13 @@
 25. [DP for the uncapacitated lot sizing problem](dynamic-programming/dp-lot-sizing/index.md)
     - 25.1 Notation, model and feasible solutions
     - [25.2 A DP algorithm for the ULS](dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls.md)
-    - [25.3 A DP algorithm for the capacitated case](dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md)
-    - [25.4 Typical mistakes](dynamic-programming/dp-lot-sizing/typical-mistakes.md)
-    - [25.5 In summary](dynamic-programming/dp-lot-sizing/typical-mistakes.md)
+    - [25.3 Typical mistakes](dynamic-programming/dp-lot-sizing/typical-mistakes.md)
+    - [25.4 In summary](dynamic-programming/dp-lot-sizing/typical-mistakes.md)
+26. [DP for the capacitated lot sizing problem](dynamic-programming/dp-capacitated-lot-sizing.md)
+    - 26.1 Notation, model and feasible solutions
+    - 26.2 A DP algorithm for the CLS
+    - 26.3 Typical mistakes
+    - 26.4 In summary
 27. [DP for the coin change problem](dynamic-programming/dp-coin-change.md)
     - 27.1 Instances and feasible solutions
     - 27.2 A DP algorithm
@@ -325,7 +328,7 @@
     - 38.5 Sources
     - 38.6 Typical mistakes
     - 38.7 In summary
-39. [Approximation for the metric TSP](approximation-algorithms/tsp-approximation.md)
+39. [The TSP: the general case and the metric case](approximation-algorithms/tsp-approximation.md)
     - 39.1 The general TSP is not approximable
     - 39.2 A special case: the metric TSP
     - 39.3 The double tree and the Christofides algorithms

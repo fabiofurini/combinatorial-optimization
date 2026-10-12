@@ -6,7 +6,7 @@ title: "Lot sizing with several products and setup times (MLS)"
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
+[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-folder-outline: Lot sizing problems](lot-sizing-problems.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
 
 </div>
 
@@ -18,4 +18,19 @@ title: "Lot sizing with several products and setup times (MLS)"
 
     A set $P$ of products shares the resource of each period: $d_{pt}$, $sc_{pt}$, $vc_{pt}$ and $hc_{pt}$ are the data of product $p \in P$ in period $t \in T$; producing a unit of $p$ takes the time $vt_{pt} \in \Z_{\ge 1}$, a setup takes the time $st_{pt} \in \Z_{\ge 0}$, and the capacity $cap_t$ is a time.
 
-- Treated in [Chapter 8 «Lot sizing problems»](../combinatorial-optimization-problems/lot-sizing/index.md), [Chapter 15 «Formulations of lot sizing problems»](../formulations/lot-sizing-formulations/index.md).
+## What the course does on this problem { #sez-sec-cat-mls-vert }
+
+<div class="tabella" markdown="0"><table>
+<tr>
+<th><strong>Technique</strong></th>
+<th><strong>Where</strong></th>
+</tr>
+<tr>
+<td><strong>Definition</strong></td>
+<td>This page</td>
+</tr>
+<tr>
+<td><strong>Formulations</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/ilp-models-for-the-variants/#1572-several-products-and-setup-times">Ch. 15 «Formulations of lot sizing problems»</a></td>
+</tr>
+</table></div>

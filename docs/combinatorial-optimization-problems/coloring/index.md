@@ -95,7 +95,7 @@ title: "Coloring problems"
 
 <div class="grid cards sottopagine" markdown>
 
--   **Definition**
+-   **Overview**
 
     Overview of the family · A short review of graphs
 
@@ -119,7 +119,7 @@ title: "Coloring problems"
 
 ---
 
-**In depth:** [:material-star-outline: the course on this problem](../../selected-problems/vertex-coloring.md)
+**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/vertex-coloring-problem.md)
 
 <!-- laboratorio-interattivo: sezione generata da interattivi.py -->
 

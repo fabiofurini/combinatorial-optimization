@@ -4,7 +4,7 @@ title: Downloads
 
 # Downloads
 
-The lecture notes, the exercise books and the selected problems in PDF, with the same numbering of definitions, theorems, examples and exercises as the website. Text and figures are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en).
+The lecture notes, the exercise books and the catalogue of problems in PDF, with the same numbering of definitions, theorems, examples and exercises as the website. Text and figures are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en).
 
 ## Lecture notes
 
@@ -30,11 +30,11 @@ The lecture notes, the exercise books and the selected problems in PDF, with the
 
 ## Catalogue of problems
 
-All the problems of the course with their definition and assumptions ([the catalogue](catalogue/index.md)); the central problems, studied in depth one by one, are in the [selected problems](selected-problems/index.md).
+All the problems of the course by family, with their definition, their assumptions and what the course does on each one ([the catalogue](catalogue/index.md)).
 
 | | Chapters | PDF |
 |---|---|---|
-| Catalogue of combinatorial problems | all | [:material-file-pdf-box: combinatorial-problem-catalogue.pdf](pdf/combinatorial-problem-catalogue.pdf) (0.4 MB) |
+| Catalogue of combinatorial problems | all | [:material-file-pdf-box: combinatorial-problem-catalogue.pdf](pdf/combinatorial-problem-catalogue.pdf) (0.6 MB) |
 
 ## Colab notebooks
 

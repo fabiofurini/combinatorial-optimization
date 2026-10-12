@@ -6,7 +6,7 @@ title: "Multiple-choice knapsack problem (MCKP)"
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
+[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-folder-outline: Knapsack problems](knapsack-problems.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
 
 </div>
 
@@ -46,6 +46,27 @@ title: "Multiple-choice knapsack problem (MCKP)"
         \sum_{h=1}^{q}\ \min_{j\in \mathscr{J}_h} w_j \;\le\; c.
         $$
 
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem.md#box-14-defMCKP).
+## What the course does on this problem { #sez-sec-cat-mckp-vert }
 
-- Treated in [Chapter 21 «DP for the multiple-choice knapsack problem»](../dynamic-programming/dp-multiple-choice-knapsack.md).
+<div class="tabella" markdown="0"><table>
+<tr>
+<th><strong>Technique</strong></th>
+<th><strong>Where</strong></th>
+</tr>
+<tr>
+<td><strong>Definition</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem/#box-14-defMCKP">Ch. 2 «Knapsack problems»</a></td>
+</tr>
+<tr>
+<td><strong>Dynamic programming</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-multiple-choice-knapsack/">Ch. 21 «DP for the multiple-choice knapsack problem»</a></td>
+</tr>
+<tr>
+<td><strong>Exercises</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-5">Exercise 2.5</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-multiple-choice-knapsack/">Ch. 21 (5 exercises)</a></td>
+</tr>
+<tr>
+<td><strong>Reference instances</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem/#box-15-ex-mckp">Ch. 2</a> (<span class="arithmatex">\(z=17\)</span>)</td>
+</tr>
+</table></div>

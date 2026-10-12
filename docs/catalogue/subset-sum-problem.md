@@ -6,7 +6,7 @@ title: "Subset sum problem (SSP)"
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
+[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-folder-outline: Knapsack problems](knapsack-problems.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
 
 </div>
 
@@ -42,6 +42,27 @@ title: "Subset sum problem (SSP)"
         w_j \le c,~~~~ \forall j \in \mathscr{I}
         $$
 
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-subset-sum-problem.md#box-4-defSSP).
+## What the course does on this problem { #sez-sec-cat-ssp-vert }
 
-- Treated in [Chapter 20 «DP for the subset sum problem»](../dynamic-programming/dp-subset-sum.md).
+<div class="tabella" markdown="0"><table>
+<tr>
+<th><strong>Technique</strong></th>
+<th><strong>Where</strong></th>
+</tr>
+<tr>
+<td><strong>Definition</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-subset-sum-problem/#box-4-defSSP">Ch. 2 «Knapsack problems»</a></td>
+</tr>
+<tr>
+<td><strong>Dynamic programming</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-subset-sum/">Ch. 20 «DP for the subset sum problem»</a></td>
+</tr>
+<tr>
+<td><strong>Exercises</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-2">Exercise 2.2</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-subset-sum/">Ch. 20 (5 exercises)</a></td>
+</tr>
+<tr>
+<td><strong>Reference instances</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-subset-sum-problem/#box-5-ex-ssp">Ch. 2</a></td>
+</tr>
+</table></div>

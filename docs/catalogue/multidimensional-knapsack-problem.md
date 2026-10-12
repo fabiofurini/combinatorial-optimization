@@ -6,7 +6,7 @@ title: "Multidimensional knapsack problem (MDKP)"
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
+[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-folder-outline: Knapsack problems](knapsack-problems.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
 
 </div>
 
@@ -46,6 +46,27 @@ title: "Multidimensional knapsack problem (MDKP)"
         w_{dj} \le c_d, \qquad \forall\, d\in \mathscr{D},\ \forall\, j\in \mathscr{I}.
         $$
 
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-multidimensional-knapsack-problem.md#box-10-defMDKP).
+## What the course does on this problem { #sez-sec-cat-mdkp-vert }
 
-- Treated in [Chapter 22 «DP for the multidimensional knapsack problem»](../dynamic-programming/dp-multidimensional-knapsack.md).
+<div class="tabella" markdown="0"><table>
+<tr>
+<th><strong>Technique</strong></th>
+<th><strong>Where</strong></th>
+</tr>
+<tr>
+<td><strong>Definition</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-multidimensional-knapsack-problem/#box-10-defMDKP">Ch. 2 «Knapsack problems»</a></td>
+</tr>
+<tr>
+<td><strong>Dynamic programming</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-multidimensional-knapsack/">Ch. 22 «DP for the multidimensional knapsack problem»</a></td>
+</tr>
+<tr>
+<td><strong>Exercises</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-multidimensional-knapsack/">Ch. 22 (5 exercises)</a></td>
+</tr>
+<tr>
+<td><strong>Reference instances</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-multidimensional-knapsack-problem/#box-11-ex-mdkp">Ch. 2</a> (<span class="arithmatex">\(z=14\)</span>)</td>
+</tr>
+</table></div>

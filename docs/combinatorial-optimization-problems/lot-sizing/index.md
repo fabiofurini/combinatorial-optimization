@@ -89,7 +89,7 @@ title: "Lot sizing problems"
 
 <div class="grid cards sottopagine" markdown>
 
--   **Definition**
+-   **Overview**
 
     Overview of the family
 
@@ -119,4 +119,4 @@ title: "Lot sizing problems"
 
 ---
 
-**In depth:** [:material-star-outline: the course on this problem](../../selected-problems/lot-sizing.md)
+**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/capacitated-lot-sizing.md)

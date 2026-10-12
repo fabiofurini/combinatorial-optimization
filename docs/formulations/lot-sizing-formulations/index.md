@@ -99,7 +99,7 @@ title: "Formulations of lot sizing problems"
 
 <div class="grid cards sottopagine" markdown>
 
--   **Definition**
+-   **Overview**
 
     Overview of the family
 

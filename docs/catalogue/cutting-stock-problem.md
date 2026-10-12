@@ -6,7 +6,7 @@ title: "Cutting stock problem (CSP)"
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
+[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-folder-outline: Packing problems](packing-problems.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
 
 </div>
 
@@ -42,4 +42,23 @@ title: "Cutting stock problem (CSP)"
         w_j \le c, \qquad \forall\, j\in \mathscr{I}.
         $$
 
-- Defined in [Chapter 3 «Packing problems»](../combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem.md#box-4-defCSP).
+## What the course does on this problem { #sez-sec-cat-csp-vert }
+
+<div class="tabella" markdown="0"><table>
+<tr>
+<th><strong>Technique</strong></th>
+<th><strong>Where</strong></th>
+</tr>
+<tr>
+<td><strong>Definition</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem/#box-4-defCSP">Ch. 3 «Packing problems»</a></td>
+</tr>
+<tr>
+<td><strong>Exercises</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/bin-packing/#esercizio-3-4">Exercise 3.4</a></td>
+</tr>
+<tr>
+<td><strong>Reference instances</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem/#box-5-ex-csp">Ch. 3</a> (<span class="arithmatex">\(z=3\)</span>)</td>
+</tr>
+</table></div>

@@ -14,7 +14,7 @@ The problems on which the whole course focuses, introduced one by one: definitio
 
     Choose items of maximum total profit within the capacity: the 0/1 knapsack problem, subset sum, the bounded and unbounded knapsack problems, and more.
 
-    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/knapsack/index.md) · [Formulations](../formulations/knapsack-formulations/index.md)
+    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/knapsack/index.md) · [Formulations](../formulations/knapsack-formulations/index.md) · [The whole course](../catalogue/knapsack-problem.md)
 
 -   **Packing problems**
 
@@ -22,7 +22,7 @@ The problems on which the whole course focuses, introduced one by one: definitio
 
     Pack items of given weights into the minimum number of bins of capacity $c$: bin packing and cutting stock.
 
-    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/bin-packing/index.md) · [Formulations](../formulations/bin-packing-formulations/index.md)
+    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/bin-packing/index.md) · [Formulations](../formulations/bin-packing-formulations/index.md) · [The whole course](../catalogue/bin-packing-problem.md)
 
 -   **Coloring problems**
 
@@ -30,7 +30,7 @@ The problems on which the whole course focuses, introduced one by one: definitio
 
     Color the vertices of a graph so that adjacent vertices get different colors, using the minimum number of colors: vertex coloring.
 
-    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/coloring/index.md) · [Formulations](../formulations/coloring-formulations/index.md)
+    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/coloring/index.md) · [Formulations](../formulations/coloring-formulations/index.md) · [The whole course](../catalogue/vertex-coloring-problem.md)
 
 -   **Clique problems**
 
@@ -38,7 +38,7 @@ The problems on which the whole course focuses, introduced one by one: definitio
 
     Find a largest set of pairwise adjacent vertices of a graph: maximum clique, maximum stable set and the weighted variants.
 
-    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/clique/index.md) · [Formulations](../formulations/clique-formulations/index.md)
+    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/clique/index.md) · [Formulations](../formulations/clique-formulations/index.md) · [The whole course](../catalogue/maximum-clique-problem.md)
 
 -   **Routing problems**
 
@@ -46,7 +46,7 @@ The problems on which the whole course focuses, introduced one by one: definitio
 
     Find a shortest closed route that visits every city once: the travelling salesman problem, the metric and the asymmetric TSP.
 
-    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/tsp/index.md) · [Formulations](../formulations/tsp-formulations/index.md)
+    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/tsp/index.md) · [Formulations](../formulations/tsp-formulations/index.md) · [The whole course](../catalogue/travelling-salesman-problem.md)
 
 -   **Scheduling problems**
 
@@ -54,7 +54,7 @@ The problems on which the whole course focuses, introduced one by one: definitio
 
     Assign jobs to parallel machines so that the makespan is minimum: identical, uniform and unrelated machines.
 
-    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/pcmax/index.md) · [Formulations](../formulations/pcmax-formulations/index.md)
+    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/pcmax/index.md) · [Formulations](../formulations/pcmax-formulations/index.md) · [The whole course](../catalogue/scheduling-on-identical-parallel-machines.md)
 
 -   **Lot sizing problems**
 
@@ -62,6 +62,6 @@ The problems on which the whole course focuses, introduced one by one: definitio
 
     Plan the production of every period at minimum total cost: capacitated and uncapacitated lot sizing, and their variants.
 
-    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/lot-sizing/index.md) · [Formulations](../formulations/lot-sizing-formulations/index.md)
+    [:octicons-arrow-right-24: The problem](../combinatorial-optimization-problems/lot-sizing/index.md) · [Formulations](../formulations/lot-sizing-formulations/index.md) · [The whole course](../catalogue/capacitated-lot-sizing.md)
 
 </div>

@@ -91,7 +91,7 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 
     ---
 
-    All the problems defined in the course, by family: definition and assumptions.
+    All the problems defined in the course, by family: definition, assumptions and what the course does on each one.
 
     [:octicons-arrow-right-24: The catalogue](catalogue/index.md) · [:material-file-pdf-box: PDF](pdf/combinatorial-problem-catalogue.pdf)
 

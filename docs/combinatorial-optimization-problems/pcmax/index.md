@@ -85,7 +85,7 @@ title: "Scheduling problems"
 
 <div class="grid cards sottopagine" markdown>
 
--   **Definition**
+-   **Overview**
 
     Overview of the family · The three-field notation
 
@@ -109,4 +109,4 @@ title: "Scheduling problems"
 
 ---
 
-**In depth:** [:material-star-outline: the course on this problem](../../selected-problems/pcmax.md)
+**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/scheduling-on-identical-parallel-machines.md)

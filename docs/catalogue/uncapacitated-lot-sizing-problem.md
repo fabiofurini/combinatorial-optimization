@@ -6,7 +6,7 @@ title: "Uncapacitated lot sizing problem (ULS)"
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
+[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-folder-outline: Lot sizing problems](lot-sizing-problems.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
 
 </div>
 
@@ -34,4 +34,31 @@ title: "Uncapacitated lot sizing problem (ULS)"
 
     2. The quantities are integer. With integer data, once the periods with a setup are fixed, what remains is a minimum cost flow problem, which has an integer optimal solution: restricting the quantities to integers does not change the optimal cost.
 
-- Treated in [Chapter 8 «Lot sizing problems»](../combinatorial-optimization-problems/lot-sizing/index.md), [Chapter 15 «Formulations of lot sizing problems»](../formulations/lot-sizing-formulations/index.md), [Chapter 25 «DP for the uncapacitated lot sizing problem»](../dynamic-programming/dp-lot-sizing/index.md), [Chapter 33 «MIP heuristics for the classical problems»](../heuristic-algorithms/mip-heuristics-classical.md).
+## What the course does on this problem { #sez-sec-cat-uls-vert }
+
+<div class="tabella" markdown="0"><table>
+<tr>
+<th><strong>Technique</strong></th>
+<th><strong>Where</strong></th>
+</tr>
+<tr>
+<td><strong>Definition</strong></td>
+<td>This page</td>
+</tr>
+<tr>
+<td><strong>Formulations</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/ilp-models-for-the-capacitated-lot-sizing-problem/#sez-sec-lsf-compare">Ch. 15 «Formulations of lot sizing problems»</a></td>
+</tr>
+<tr>
+<td><strong>Dynamic programming</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/#box-3-thmZIO">Ch. 25 «DP for the uncapacitated lot sizing problem»</a></td>
+</tr>
+<tr>
+<td><strong>MIP heuristics</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/mip-heuristics-classical/#box-16-ex-rfcourse">Ch. 33 «MIP heuristics for the classical problems»</a></td>
+</tr>
+<tr>
+<td><strong>Reference instances</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem/#83-counting-the-solutions">Ch. 8</a> (<span class="arithmatex">\(z=170\)</span>)</td>
+</tr>
+</table></div>

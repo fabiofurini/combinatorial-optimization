@@ -62,20 +62,31 @@ plugins:
         # 2026-10-12: one problem per chapter in the dynamic programming part
         dynamic-programming/dp-rod-cutting-coin-change.md: dynamic-programming/dp-rod-cutting/index.md
         exercises/dp-rod-cutting-coin-change.md: exercises/dp-rod-cutting.md
+        # 2026-10-12: the capacitated case of «DP for lot sizing» is a chapter of its own
+        dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md: dynamic-programming/dp-capacitated-lot-sizing.md
         # 2026-10-12: chapter «Limits of approximation: vertex coloring» removed, «DP examples» removed from the catalogue
         approximation-algorithms/coloring-approximation.md: approximation-algorithms/index.md
         exercises/coloring-approximation.md: approximation-algorithms/index.md
         catalogue/dp-examples.md: catalogue/index.md
-        # 2026-10-12: one catalogue page per problem (catalogue/<slug>/), no more pages per family
+        # 2026-10-12: one catalogue page per problem (catalogue/<slug>/); the old group pages → the new family pages
         catalogue/central-problems.md: catalogue/index.md
-        catalogue/knapsack-family.md: catalogue/index.md
-        catalogue/packing.md: catalogue/index.md
+        catalogue/knapsack-family.md: catalogue/knapsack-problems.md
+        catalogue/packing.md: catalogue/packing-problems.md
         catalogue/graphs.md: catalogue/index.md
-        catalogue/routing.md: catalogue/index.md
-        catalogue/scheduling.md: catalogue/index.md
-        catalogue/lot-sizing.md: catalogue/index.md
+        catalogue/routing.md: catalogue/routing-problems.md
+        catalogue/scheduling.md: catalogue/scheduling-problems.md
+        catalogue/lot-sizing.md: catalogue/lot-sizing-problems.md
         # 2026-10-12: the KP is the «0/1 knapsack problem» (knapsack problems are the family)
         heuristic-algorithms/constructive-heuristics/the-knapsack-problem-which-order.md: heuristic-algorithms/constructive-heuristics/the-0-1-knapsack-problem-which-order.md
+        # 2026-10-12: the in-depth pages of the central problems merged into their catalogue pages (the «vertical»)
+        selected-problems/knapsack.md: catalogue/knapsack-problem.md
+        selected-problems/bin-packing.md: catalogue/bin-packing-problem.md
+        selected-problems/vertex-coloring.md: catalogue/vertex-coloring-problem.md
+        selected-problems/maximum-clique.md: catalogue/maximum-clique-problem.md
+        selected-problems/tsp.md: catalogue/travelling-salesman-problem.md
+        selected-problems/pcmax.md: catalogue/scheduling-on-identical-parallel-machines.md
+        selected-problems/lot-sizing.md: catalogue/capacitated-lot-sizing.md
+        selected-problems/at-a-glance.md: combinatorial-optimization-problems/problems.md
 
 extra:
   social:
@@ -258,8 +269,8 @@ nav:
               - dynamic-programming/dp-lot-sizing/index.md
               - "A DP algorithm for the ULS": dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls.md
               - "A DP algorithm for the ULS: Step 1 and Step 2": dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls-step-1-and-step-2.md
-              - "A DP algorithm for the capacitated case": dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-capacitated-case.md
               - "Typical mistakes · In summary": dynamic-programming/dp-lot-sizing/typical-mistakes.md
+          - "26. Capacitated lot sizing (CLS)": dynamic-programming/dp-capacitated-lot-sizing.md
       - "Miscellaneous problems":
           - "27. Coin change": dynamic-programming/dp-coin-change.md
           - "28. Rod cutting":
@@ -359,6 +370,7 @@ nav:
           - "23. Knapsack with setups (KPS)": exercises/dp-knapsack-setups.md
           - "24. Multiple knapsack (MKP)": exercises/dp-multiple-knapsack.md
           - "25. Uncapacitated lot sizing (ULS)": exercises/dp-lot-sizing.md
+          - "26. Capacitated lot sizing (CLS)": exercises/dp-capacitated-lot-sizing.md
           - "27. Coin change": exercises/dp-coin-change.md
           - "28. Rod cutting": exercises/dp-rod-cutting.md
       - "Heuristics":
@@ -381,59 +393,54 @@ nav:
   - Catalogue:
       - catalogue/index.md
       - "The problems at a glance": combinatorial-optimization-problems/problems.md
-      - "Central problems":
-          - "0/1 knapsack":
-              - catalogue/knapsack-problem.md
-              - "The course on this problem": selected-problems/knapsack.md
-          - "Bin packing":
-              - catalogue/bin-packing-problem.md
-              - "The course on this problem": selected-problems/bin-packing.md
-          - "Vertex coloring":
-              - catalogue/vertex-coloring-problem.md
-              - "The course on this problem": selected-problems/vertex-coloring.md
-          - "Maximum clique":
-              - catalogue/maximum-clique-problem.md
-              - "The course on this problem": selected-problems/maximum-clique.md
-          - "Travelling salesman":
-              - catalogue/travelling-salesman-problem.md
-              - "The course on this problem": selected-problems/tsp.md
-          - "P||Cmax":
-              - catalogue/scheduling-on-identical-parallel-machines.md
-              - "The course on this problem": selected-problems/pcmax.md
-          - "Capacitated lot sizing":
-              - catalogue/capacitated-lot-sizing.md
-              - "The course on this problem": selected-problems/lot-sizing.md
-      - "Knapsack family":
-          - "Subset sum": catalogue/subset-sum-problem.md
-          - "Bounded knapsack": catalogue/bounded-knapsack-problem.md
-          - "Unbounded knapsack": catalogue/unbounded-knapsack-problem.md
-          - "Multidimensional knapsack": catalogue/multidimensional-knapsack-problem.md
-          - "Multiple knapsack": catalogue/multiple-knapsack-problem.md
-          - "Multiple-choice knapsack": catalogue/multiple-choice-knapsack-problem.md
-          - "Knapsack problem with setups": catalogue/knapsack-problem-with-setups.md
-          - "Rod cutting": catalogue/rod-cutting-problem.md
-          - "Coin change": catalogue/coin-change-problem.md
-      - "Packing":
-          - "Cutting stock": catalogue/cutting-stock-problem.md
-      - "Graphs":
-          - "Maximum stable set": catalogue/maximum-stable-set-problem.md
-          - "Vertex-weighted maximum clique": catalogue/vertex-weighted-maximum-clique-problem.md
-          - "Edge-weighted maximum clique": catalogue/edge-weighted-maximum-clique-problem.md
-      - "Routing":
+      - "Knapsack problems":
+          - catalogue/knapsack-problems.md
+          - "0/1 knapsack (KP)": catalogue/knapsack-problem.md
+          - "Subset sum (SSP)": catalogue/subset-sum-problem.md
+          - "Bounded knapsack (BKP)": catalogue/bounded-knapsack-problem.md
+          - "Unbounded knapsack (UKP)": catalogue/unbounded-knapsack-problem.md
+          - "Multidimensional knapsack (MDKP)": catalogue/multidimensional-knapsack-problem.md
+          - "Multiple knapsack (MKP)": catalogue/multiple-knapsack-problem.md
+          - "Multiple-choice knapsack (MCKP)": catalogue/multiple-choice-knapsack-problem.md
+          - "Knapsack with setups (KPS)": catalogue/knapsack-problem-with-setups.md
+      - "Packing problems":
+          - catalogue/packing-problems.md
+          - "Bin packing (BPP)": catalogue/bin-packing-problem.md
+          - "Cutting stock (CSP)": catalogue/cutting-stock-problem.md
+      - "Coloring problems":
+          - catalogue/coloring-problems.md
+          - "Vertex coloring (VCP)": catalogue/vertex-coloring-problem.md
+      - "Clique problems":
+          - catalogue/clique-problems.md
+          - "Maximum clique (MCP)": catalogue/maximum-clique-problem.md
+          - "Maximum stable set (MSSP)": catalogue/maximum-stable-set-problem.md
+          - "Vertex-weighted maximum clique (VWMCP)": catalogue/vertex-weighted-maximum-clique-problem.md
+          - "Edge-weighted maximum clique (EWMCP)": catalogue/edge-weighted-maximum-clique-problem.md
+      - "Routing problems":
+          - catalogue/routing-problems.md
+          - "Travelling salesman (TSP)": catalogue/travelling-salesman-problem.md
           - "Metric TSP": catalogue/metric-travelling-salesman-problem.md
-          - "Asymmetric TSP": catalogue/asymmetric-travelling-salesman-problem.md
-          - "Hamiltonian cycle": catalogue/hamiltonian-cycle-problem.md
-      - "Scheduling":
-          - "Pm||Cmax": catalogue/scheduling-on-a-fixed-number-of-identical-machines.md
-          - "Q||Cmax": catalogue/scheduling-on-parallel-machines-with-different-speeds.md
-          - "R||Cmax": catalogue/scheduling-on-unrelated-parallel-machines.md
-      - "Lot sizing":
-          - "Uncapacitated lot sizing": catalogue/uncapacitated-lot-sizing-problem.md
-          - "Capacitated lot sizing with constant capacity": catalogue/capacitated-lot-sizing-with-constant-capacity.md
-          - "Lot sizing with several products and setup times": catalogue/lot-sizing-with-several-products-and-setup-times.md
-          - "Lot sizing with initial stock": catalogue/lot-sizing-with-initial-stock.md
-          - "Lot sizing with overtime": catalogue/lot-sizing-with-overtime.md
-          - "Lot sizing with unsatisfied demand": catalogue/lot-sizing-with-unsatisfied-demand.md
+          - "Asymmetric TSP (ATSP)": catalogue/asymmetric-travelling-salesman-problem.md
+          - "Hamiltonian cycle (HCP)": catalogue/hamiltonian-cycle-problem.md
+      - "Scheduling problems":
+          - catalogue/scheduling-problems.md
+          - "Identical parallel machines (P||Cmax)": catalogue/scheduling-on-identical-parallel-machines.md
+          - "Fixed number of identical machines (Pm||Cmax)": catalogue/scheduling-on-a-fixed-number-of-identical-machines.md
+          - "Parallel machines with different speeds (Q||Cmax)": catalogue/scheduling-on-parallel-machines-with-different-speeds.md
+          - "Unrelated parallel machines (R||Cmax)": catalogue/scheduling-on-unrelated-parallel-machines.md
+      - "Lot sizing problems":
+          - catalogue/lot-sizing-problems.md
+          - "Capacitated lot sizing (CLS)": catalogue/capacitated-lot-sizing.md
+          - "Uncapacitated lot sizing (ULS)": catalogue/uncapacitated-lot-sizing-problem.md
+          - "Capacitated lot sizing with constant capacity (CLS-C)": catalogue/capacitated-lot-sizing-with-constant-capacity.md
+          - "Lot sizing with several products and setup times (MLS)": catalogue/lot-sizing-with-several-products-and-setup-times.md
+          - "Lot sizing with initial stock (LS-SI)": catalogue/lot-sizing-with-initial-stock.md
+          - "Lot sizing with overtime (LS-OT)": catalogue/lot-sizing-with-overtime.md
+          - "Lot sizing with unsatisfied demand (LS-UD)": catalogue/lot-sizing-with-unsatisfied-demand.md
+      - "Miscellaneous problems":
+          - catalogue/miscellaneous-problems.md
+          - "Rod cutting (RCP)": catalogue/rod-cutting-problem.md
+          - "Coin change (CCP)": catalogue/coin-change-problem.md
   - Lab: lab/index.md
   - Downloads:
       - downloads.md

@@ -91,5 +91,5 @@ title: "Variants"
 
 ---
 
-**In depth:** [:material-star-outline: the course on this problem](../../selected-problems/lot-sizing.md)
+**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/capacitated-lot-sizing.md)
 

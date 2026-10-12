@@ -91,7 +91,7 @@ title: "Formulations of clique problems"
 
 <div class="grid cards sottopagine" markdown>
 
--   **Definition**
+-   **Overview**
 
     Overview of the family
 

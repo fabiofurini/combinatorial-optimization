@@ -98,6 +98,14 @@
 
     [:octicons-arrow-right-24: Read the chapter](dp-lot-sizing/index.md) · [Exercises](../exercises/dp-lot-sizing.md)
 
+-   **26. DP for the capacitated lot sizing problem**
+
+    ---
+
+    Notation, model and feasible solutions · A DP algorithm for the CLS
+
+    [:octicons-arrow-right-24: Read the chapter](dp-capacitated-lot-sizing.md) · [Exercises](../exercises/dp-capacitated-lot-sizing.md)
+
 </div>
 
 ## Miscellaneous problems

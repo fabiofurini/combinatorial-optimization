@@ -6,7 +6,7 @@ title: "Unbounded knapsack problem (UKP)"
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
+[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-folder-outline: Knapsack problems](knapsack-problems.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
 
 </div>
 
@@ -42,6 +42,27 @@ title: "Unbounded knapsack problem (UKP)"
         w_j \le c, \qquad \forall j \in \mathscr{I}
         $$
 
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-unbounded-knapsack-problem.md#box-8-defUKP).
+## What the course does on this problem { #sez-sec-cat-ukp-vert }
 
-- Treated in [Chapter 16 «Principles of dynamic programming»](../dynamic-programming/dp-principles.md), [Chapter 18 «DP for the unbounded knapsack problem»](../dynamic-programming/dp-unbounded-knapsack/index.md), [Chapter 27 «DP for the coin change problem»](../dynamic-programming/dp-coin-change.md), [Chapter 28 «DP for the rod cutting problem»](../dynamic-programming/dp-rod-cutting/index.md).
+<div class="tabella" markdown="0"><table>
+<tr>
+<th><strong>Technique</strong></th>
+<th><strong>Where</strong></th>
+</tr>
+<tr>
+<td><strong>Definition</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-unbounded-knapsack-problem/#box-8-defUKP">Ch. 2 «Knapsack problems»</a></td>
+</tr>
+<tr>
+<td><strong>Dynamic programming</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/#164-the-dp-algorithms-of-this-module">Ch. 16 «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-unbounded-knapsack/">Ch. 18 «DP for the unbounded knapsack problem»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-coin-change/">Ch. 27 «DP for the coin change problem»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-rod-cutting/">Ch. 28 «DP for the rod cutting problem»</a></td>
+</tr>
+<tr>
+<td><strong>Exercises</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-3">Exercise 2.3</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-unbounded-knapsack/">Ch. 18 (5 exercises)</a></td>
+</tr>
+<tr>
+<td><strong>Reference instances</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-unbounded-knapsack-problem/#box-9-ex-ukp">Ch. 2</a> (<span class="arithmatex">\(z=24\)</span>)</td>
+</tr>
+</table></div>

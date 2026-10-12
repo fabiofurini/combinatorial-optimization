@@ -101,11 +101,98 @@ title: "Knapsack problems"
 </tr>
 </table></div>
 
+### 2.1.1 The variants at a glance { #sez-sec-kp-glance }
+
+- Each problem of the family is illustrated on a small instance, in its section of the table above and with the notation of that section.
+
+- The table lists, for these instances, the number of candidate solutions, the number of feasible solutions and the optimal value, computed by enumeration.
+
+- In the BKP and in the UKP a candidate solution is the vector of the numbers of copies of every item, so that identical copies are not counted twice.
+
+- The optimal solution is not always unique: the MKP, the MCKP and the KPS have several optimal solutions with the same value, and in the SSP three subsets reach the target.
+
+<div class="tabella" markdown="0"><table>
+<tr>
+<th><strong>Variant</strong></th>
+<th><strong>Candidate solutions</strong></th>
+<th><strong>Number</strong></th>
+<th><strong>Feasible</strong></th>
+<th><strong>Optimum</strong></th>
+<th><strong>Optimal solutions</strong></th>
+</tr>
+<tr>
+<td>KP</td>
+<td>subsets of <span class="arithmatex">\(6\)</span> items</td>
+<td><span class="arithmatex">\(64\)</span></td>
+<td><span class="arithmatex">\(13\)</span></td>
+<td><span class="arithmatex">\(15\)</span></td>
+<td><span class="arithmatex">\(\{1,4\}\)</span></td>
+</tr>
+<tr>
+<td>SSP</td>
+<td>subsets of <span class="arithmatex">\(6\)</span> items</td>
+<td><span class="arithmatex">\(64\)</span></td>
+<td><span class="arithmatex">\(3\)</span></td>
+<td>yes</td>
+<td><span class="arithmatex">\(\{6\}\)</span>, <span class="arithmatex">\(\{1,4\}\)</span>, <span class="arithmatex">\(\{2,3\}\)</span></td>
+</tr>
+<tr>
+<td>BKP</td>
+<td>copies <span class="arithmatex">\(x_j \le b_j\)</span></td>
+<td><span class="arithmatex">\(144\)</span></td>
+<td><span class="arithmatex">\(18\)</span></td>
+<td><span class="arithmatex">\(18\)</span></td>
+<td>two copies of item <span class="arithmatex">\(1\)</span> and item <span class="arithmatex">\(5\)</span></td>
+</tr>
+<tr>
+<td>UKP</td>
+<td>copies <span class="arithmatex">\(x_j \le \hat b_j\)</span></td>
+<td><span class="arithmatex">\(320\)</span></td>
+<td><span class="arithmatex">\(22\)</span></td>
+<td><span class="arithmatex">\(24\)</span></td>
+<td>four copies of item <span class="arithmatex">\(1\)</span></td>
+</tr>
+<tr>
+<td>MDKP</td>
+<td>subsets of <span class="arithmatex">\(4\)</span> items</td>
+<td><span class="arithmatex">\(16\)</span></td>
+<td><span class="arithmatex">\(9\)</span></td>
+<td><span class="arithmatex">\(14\)</span></td>
+<td><span class="arithmatex">\(\{3,4\}\)</span></td>
+</tr>
+<tr>
+<td>MKP</td>
+<td>each item in a knapsack or none</td>
+<td><span class="arithmatex">\(243\)</span></td>
+<td><span class="arithmatex">\(109\)</span></td>
+<td><span class="arithmatex">\(30\)</span></td>
+<td><span class="arithmatex">\((S_1,S_2) = (\{1,2\},\{4,5\})\)</span>, <span class="arithmatex">\((\{2,4\},\{1,5\})\)</span>, <span class="arithmatex">\((\{4,5\},\{1,2\})\)</span></td>
+</tr>
+<tr>
+<td>MCKP</td>
+<td>one item per class</td>
+<td><span class="arithmatex">\(8\)</span></td>
+<td><span class="arithmatex">\(3\)</span></td>
+<td><span class="arithmatex">\(17\)</span></td>
+<td><span class="arithmatex">\(\{1,4,5\}\)</span>, <span class="arithmatex">\(\{2,3,5\}\)</span></td>
+</tr>
+<tr>
+<td>KPS</td>
+<td>subsets of <span class="arithmatex">\(6\)</span> items</td>
+<td><span class="arithmatex">\(64\)</span></td>
+<td><span class="arithmatex">\(40\)</span></td>
+<td><span class="arithmatex">\(16\)</span></td>
+<td><span class="arithmatex">\(\{1,2,3\}\)</span>, <span class="arithmatex">\(\{4,5,6\}\)</span>, <span class="arithmatex">\(\{1,2,3,6\}\)</span></td>
+</tr>
+</table></div>
+
+- In the MCKP only $3$ of the $8$ choices of one item per class fit in the knapsack: the feasibility condition among the assumptions of Section [2.8](the-multiple-choice-knapsack-problem.md#sez-sec-kp-MCKP) is not a formality.
+
 <div class="grid cards sottopagine" markdown>
 
--   **Definition**
+-   **Overview**
 
-    Overview of the family
+    Overview of the family · The variants at a glance
 
     [:octicons-arrow-right-24: Open](#21-overview-of-the-family)
 
@@ -141,7 +228,7 @@ title: "Knapsack problems"
 
 -   **2.9 The knapsack problem with setups**
 
-    The variants at a glance · Remarks · Typical mistakes · In summary
+    Remarks · Typical mistakes · In summary
 
     [:octicons-arrow-right-24: Open](the-knapsack-problem-with-setups.md)
 
@@ -157,4 +244,4 @@ title: "Knapsack problems"
 
 ---
 
-**In depth:** [:material-star-outline: the course on this problem](../../selected-problems/knapsack.md)
+**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/knapsack-problem.md)

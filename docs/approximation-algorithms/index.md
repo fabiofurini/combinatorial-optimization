@@ -76,7 +76,7 @@
 
 <div class="grid cards" markdown>
 
--   **39. Approximation for the metric TSP**
+-   **39. The TSP: the general case and the metric case**
 
     ---
 

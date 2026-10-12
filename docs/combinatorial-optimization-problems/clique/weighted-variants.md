@@ -115,5 +115,5 @@ title: "Weighted variants"
 
 ---
 
-**In depth:** [:material-star-outline: the course on this problem](../../selected-problems/maximum-clique.md)
+**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/maximum-clique-problem.md)
 

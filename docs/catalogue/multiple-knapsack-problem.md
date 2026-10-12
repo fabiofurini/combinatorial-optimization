@@ -6,7 +6,7 @@ title: "Multiple knapsack problem (MKP)"
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
+[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-folder-outline: Knapsack problems](knapsack-problems.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
 
 </div>
 
@@ -44,6 +44,27 @@ title: "Multiple knapsack problem (MKP)"
         \exists\, k\in \mathscr{K}\ \text{such that}\ w_j \le c_k, \qquad \forall\, j\in \mathscr{I}.
         $$
 
-- Defined in [Chapter 2 «Knapsack problems»](../combinatorial-optimization-problems/knapsack/the-multiple-knapsack-problem.md#box-12-defMKP).
+## What the course does on this problem { #sez-sec-cat-mkp-vert }
 
-- Treated in [Chapter 24 «DP for the multiple knapsack problem»](../dynamic-programming/dp-multiple-knapsack.md).
+<div class="tabella" markdown="0"><table>
+<tr>
+<th><strong>Technique</strong></th>
+<th><strong>Where</strong></th>
+</tr>
+<tr>
+<td><strong>Definition</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-multiple-knapsack-problem/#box-12-defMKP">Ch. 2 «Knapsack problems»</a></td>
+</tr>
+<tr>
+<td><strong>Dynamic programming</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-multiple-knapsack/">Ch. 24 «DP for the multiple knapsack problem»</a></td>
+</tr>
+<tr>
+<td><strong>Exercises</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-4">Exercise 2.4</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-multiple-knapsack/">Ch. 24 (5 exercises)</a></td>
+</tr>
+<tr>
+<td><strong>Reference instances</strong></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-multiple-knapsack-problem/#box-13-ex-mkp">Ch. 2</a> (<span class="arithmatex">\(z=30\)</span>)</td>
+</tr>
+</table></div>

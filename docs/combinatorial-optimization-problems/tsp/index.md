@@ -61,19 +61,19 @@ title: "Routing problems"
 <td>metric travelling salesman problem</td>
 <td>metric TSP</td>
 <td>symmetric, with the triangle inequality</td>
-<td><a href="variants-metric-and-asymmetric-tsp/#sez-sec-tsp-variants">6.3</a></td>
+<td><a href="variants-metric-and-asymmetric-tsp/#sez-sec-tsp-variants">6.6</a></td>
 </tr>
 <tr>
 <td>asymmetric travelling salesman problem</td>
 <td>ATSP</td>
 <td><span class="arithmatex">\(d_{ij}\)</span> may differ from <span class="arithmatex">\(d_{ji}\)</span></td>
-<td><a href="variants-metric-and-asymmetric-tsp/#sez-sec-tsp-variants">6.3</a></td>
+<td><a href="variants-metric-and-asymmetric-tsp/#sez-sec-tsp-variants">6.6</a></td>
 </tr>
 </table></div>
 
 <div class="grid cards sottopagine" markdown>
 
--   **Definition**
+-   **Overview**
 
     Overview of the family
 
@@ -81,11 +81,13 @@ title: "Routing problems"
 
 -   **6.2 The travelling salesman problem**
 
+    Counting the tours · A first tour by hand · A combinatorial lower bound
+
     [:octicons-arrow-right-24: Open](the-travelling-salesman-problem.md)
 
--   **6.3 Variants: metric and asymmetric TSP**
+-   **6.6 Variants: metric and asymmetric TSP**
 
-    A first tour by hand · A combinatorial lower bound · Remarks · Typical mistakes · In summary
+    Typical mistakes · In summary
 
     [:octicons-arrow-right-24: Open](variants-metric-and-asymmetric-tsp.md)
 
@@ -101,4 +103,4 @@ title: "Routing problems"
 
 ---
 
-**In depth:** [:material-star-outline: the course on this problem](../../selected-problems/tsp.md)
+**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/travelling-salesman-problem.md)

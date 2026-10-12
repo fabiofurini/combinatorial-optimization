@@ -22,7 +22,7 @@ title: "DP for the uncapacitated lot sizing problem"
 
     - <strong>As a problem and as a model</strong>: single-item lot sizing, its MIP model and its formulations (lot-sizing chapters).
 
-    - <strong>Now, as a table</strong>: the DP algorithm of Wagner and Whitin gives the optimal value of the uncapacitated problem in $\Theta(m^2)$ steps, and a DP algorithm on the inventory handles the capacitated one.
+    - <strong>Now, as a table</strong>: the DP algorithm of Wagner and Whitin gives the optimal value of the uncapacitated problem in $\Theta(m^2)$ steps; the capacitated problem has its DP algorithm in the chapter [«DP for the capacitated lot sizing problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-capacitated-lot-sizing/).
 
 !!! chiave "Objectives"
 
@@ -34,9 +34,9 @@ title: "DP for the uncapacitated lot sizing problem"
 
     - write the recurrence $v(t)$ over the last production run, run the DP algorithm by hand and reconstruct an optimal plan;
 
-    - explain why the property fails with capacities, and write the recurrence $v(t,k)$ on the pairs (period, final inventory);
+    - read the recurrence as a shortest path in the network of the production runs;
 
-    - count the steps of the two DP algorithms, and say why the second one is pseudo-polynomial.
+    - count the steps of the DP algorithm, and show that they are $\Theta(m^2)$.
 
 The problem of this chapter is the [uncapacitated lot-sizing problem (ULS)](https://fabiofurini.github.io/combinatorial-optimization/catalogue/uncapacitated-lot-sizing-problem/): its definition and its assumptions are on its page.
 
@@ -379,12 +379,6 @@ The problem of this chapter is the [uncapacitated lot-sizing problem (ULS)](http
 -   **25.2.2 A DP algorithm for the ULS: Step 1 and Step 2**
 
     [:octicons-arrow-right-24: Open](a-dp-algorithm-for-the-uls-step-1-and-step-2.md)
-
--   **25.3 A DP algorithm for the capacitated case**
-
-    The case of constant capacity
-
-    [:octicons-arrow-right-24: Open](a-dp-algorithm-for-the-capacitated-case.md)
 
 -   **Typical mistakes · In summary**
 

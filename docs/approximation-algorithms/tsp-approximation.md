@@ -1,8 +1,8 @@
 ---
-title: "Approximation for the metric TSP"
+title: "The TSP: the general case and the metric case"
 ---
 
-# Approximation for the metric TSP
+# The TSP: the general case and the metric case
 
 <div class="info-capitolo" markdown>
 

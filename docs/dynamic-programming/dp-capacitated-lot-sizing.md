@@ -1,26 +1,62 @@
 ---
-title: "A DP algorithm for the capacitated case"
+title: "DP for the capacitated lot sizing problem"
 ---
 
-# 25.3 A DP algorithm for the capacitated case
+# DP for the capacitated lot sizing problem
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 25** · [:material-book-open-variant: Chapter 25: Uncapacitated lot sizing (ULS)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Uncapacitated lot sizing (ULS)](../../exercises/dp-lot-sizing.md)
+**Part 3 · Dynamic programming · Chapter 26** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Capacitated lot sizing (CLS)](../exercises/dp-capacitated-lot-sizing.md)
 
 </div>
 
-- In most production systems the quantity that can be produced in a period is limited by the capacity of the resource. The problem of this section is the [capacitated lot sizing problem (CLS)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem/): its definition and its assumptions are on its page.
+!!! nota "Prerequisites"
 
-- The MIP model is the model of the ULS with the additional constraints $x_t\le cap_t$, for all $t\in T$ (the big-M value of period $t$ becomes $\min\{cap_t, D_{t,m}\}$). A feasible solution is encoded by the same vector $(x_1,x_2,\dots,x_m)$ as in the ULS, with the additional requirement $x_t \le cap_t$ for all $t\in T$.
+    - From this module, the chapter [«DP for the uncapacitated lot sizing problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/): the total demands $D_{j,t}$, the encoding of a production plan and its network, the zero-inventory ordering property, and the instance of its Example 1.
 
-- The <strong>zero-inventory ordering property does not hold</strong> for the CLS: a period may have to produce while units are still in stock, because the capacity does not allow to produce everything in the period where it would be cheapest.
+    - From this module, the chapters on lot sizing: the single-item problem and its MIP model with the variables $x_t$, $s_t$, $y_t$.
 
-<a id="box-31-texcls1"></a>
+    - From this module, the chapter «Principles of dynamic programming»: recurrence, base cases, lookup table and reconstruction of a solution.
 
-!!! esempio "Example 25.10: Capacitated lot sizing"
+    - From the module <em>Algorithms</em>: [pseudocode (Chapter 2)](https://fabiofurini.github.io/algorithms/basic-algorithms/02-pseudo-code/), and [the size of the input (Chapter 11)](https://fabiofurini.github.io/algorithms/analysis/11-input-size/).
 
-    We consider <span style="color:#1971c2">[Example 25.1](index.md#box-1-texuls1)</span> measured in units of $10$ products (hence the holding cost is $10$ per unit), with a constant capacity of $4$ units per period:
+!!! chiave "Objectives"
+
+    At the end of this chapter you will be able to:
+
+    - explain why the zero-inventory ordering property fails with capacities, on an example;
+
+    - write the recurrence $v(t,k)$ on the pairs (period, final inventory), with its base cases;
+
+    - run the DP algorithm by hand, fill the matrices ${v}$ and ${r}$, and reconstruct an optimal plan;
+
+    - count the steps of the DP algorithm, and say why it is pseudo-polynomial;
+
+    - state the weaker property that holds when the capacity is the same in all periods.
+
+The problem of this chapter is the [capacitated lot sizing problem (CLS)](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem/): its definition and its assumptions are on its page.
+
+## 26.1 Notation, model and feasible solutions
+
+- As in the chapter [«DP for the uncapacitated lot sizing problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/), for any $j,t \in T$ we denote by
+
+    $$
+    D_{j,t}=\sum_{k=j}^{t} d_k
+    $$
+
+    the total demand of periods $j,j+1,\dots,t$, with $D_{j,t}=0$ if $j>t$.
+
+- The ILP model is the $\mathrm{ILP}_{\mathrm{CLSP}}$ model of [Chapter 15 «Formulations of lot sizing problems»](https://fabiofurini.github.io/combinatorial-optimization/formulations/lot-sizing-formulations/), with the big-M value $\min\{cap_t, D_{t,m}\}$ of period $t$: it is the $\mathrm{ILP}_{\mathrm{ULS}}$ model with the additional constraints $x_t\le cap_t$, for all $t\in T$.
+
+- A feasible solution is encoded by the same vector $(x_1,x_2,\dots,x_m)$ as in the ULS, with the inventories $s_t=\sum_{j=1}^{t} x_j-D_{1,t}$, and with the additional requirement $x_t \le cap_t$ for all $t\in T$.
+
+- The <strong>zero-inventory ordering property does not hold</strong> for the CLS: a period may have to produce while units are still in stock, because the capacity does not allow to produce everything in the period where it would be cheapest. The property, and the DP algorithm over the production runs that rests on it, are those of the chapter [«DP for the uncapacitated lot sizing problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/).
+
+<a id="box-1-texcls1"></a>
+
+!!! esempio "Example 26.1: Capacitated lot sizing"
+
+    We consider the uncapacitated instance of Example 1 of the chapter [«DP for the uncapacitated lot sizing problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/) (the instance of the MIP course), measured in units of $10$ products (hence the holding cost is $10$ per unit), with a constant capacity of $4$ units per period:
 
     $$
     \begin{array}{l|rrrrr}
@@ -34,7 +70,11 @@ title: "A DP algorithm for the capacitated case"
     \end{array}
     $$
 
-    We refer to this CLS instance as <span style="color:#1971c2">[Example 25.10](#box-31-texcls1)</span>. The optimal solution of <span style="color:#1971c2">[Example 25.1](index.md#box-1-texuls1)</span>, in units of $10$, is the vector $(3,\allowbreak 0,\allowbreak 8,\allowbreak 0,\allowbreak 0)$, of cost $170$: it is not feasible for <span style="color:#1971c2">[Example 25.10](#box-31-texcls1)</span>, since period $3$ produces more than $4$ units.
+    We refer to this CLS instance as <span style="color:#1971c2">[Example 26.1](#box-1-texcls1)</span>. The optimal solution of the uncapacitated instance, in units of $10$, is the vector $(3,\allowbreak 0,\allowbreak 8,\allowbreak 0,\allowbreak 0)$, of cost $170$: it is not feasible for <span style="color:#1971c2">[Example 26.1](#box-1-texcls1)</span>, since period $3$ produces more than $4$ units.
+
+## 26.2 A DP algorithm for the CLS
+
+### 26.2.1 Step 1 and Step 2
 
 - <u>Step 1</u>: computation of the optimal value
 
@@ -71,7 +111,7 @@ title: "A DP algorithm for the capacitated case"
         \begin{array}[t]{@{}l@{}}\displaystyle \min \bigg\{ v(t-1,k+d_t-x) + f_t(x) : x \in X_t(k)\bigg\}\\ {}+ hc_t\,k\end{array} & \textrm{if $1\le t \le m$,}\\[2ex]
         0 & \textrm{if $t=0$ and $k=0$,}\\[2ex]
         +\infty & \textrm{if $t=0$ and $k>0$,}
-        \end{array} \right. \tag{25.4}
+        \end{array} \right. \tag{26.1}
         \end{equation*}
 
         where $X_t(k)=\{0,1,\dots,\min\{cap_t,\,k+d_t\}\}$ is the set of the possible productions of period $t$.
@@ -94,7 +134,7 @@ title: "A DP algorithm for the capacitated case"
 
         $\rightsquigarrow$ <strong>Optimal Substructure verified!</strong>
 
-    - Different sequences of production decisions can lead to the same state. For instance, in <span style="color:#1971c2">[Example 25.10](#box-31-texcls1)</span>, starting from the state $(5,0)$, the decisions $x_5=0$ and $x_4=4$ lead to the state $(3,1)$, and the decisions $x_5=1$ and $x_4=3$ lead to the same state $(3,1)$.
+    - Different sequences of production decisions can lead to the same state. For instance, in <span style="color:#1971c2">[Example 26.1](#box-1-texcls1)</span>, starting from the state $(5,0)$, the decisions $x_5=0$ and $x_4=4$ lead to the state $(3,1)$, and the decisions $x_5=1$ and $x_4=3$ lead to the same state $(3,1)$.
 
     - Therefore the same value $v(t,k)$ may need to be computed several times during the recursive evaluation of formula $\eqref{eq:cls}$.
 
@@ -112,7 +152,7 @@ title: "A DP algorithm for the capacitated case"
 
         !!! algoritmo "Algorithm: DP\_CLS"
 
-            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A CLS instance given by the number <span class="arithmatex">\(m\)</span> of periods and the arrays <span class="arithmatex">\(d[1..m]\)</span>, <span class="arithmatex">\(sc[1..m]\)</span>, <span class="arithmatex">\(vc[1..m]\)</span>, <span class="arithmatex">\(hc[1..m]\)</span>, <span class="arithmatex">\(cap[1..m]\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP_CLS(<span class="arithmatex">\(m,d,sc,vc,hc,cap\)</span>)</div><div class="pc" style="--liv:1" id="box-32-cl-a"><span class="pc-n">2</span><span class="arithmatex">\({R} := \textnormal{new array}[0..m]\)</span></div><div class="pc" style="--liv:1" id="box-33-cl-b"><span class="pc-n">3</span><span class="arithmatex">\({R}[m] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-34-cl-c"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(t := m-1\)</span> <strong>downto</strong> <span class="arithmatex">\(0\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-35-cl-d"><span class="pc-n">5</span><span class="arithmatex">\({R}[t] \leftarrow {R}[t+1] + d[t+1]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-36-cl-e"><span class="pc-n">7</span><span class="arithmatex">\({v} := \textnormal{new array}[0..m][0..{R}[0]]\)</span></div><div class="pc" style="--liv:1" id="box-37-cl-f"><span class="pc-n">8</span><span class="arithmatex">\({v}[0][0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-38-cl-g"><span class="pc-n">9</span><strong>for</strong> <span class="arithmatex">\(k := 1\)</span> <strong>to</strong> <span class="arithmatex">\({R}[0]\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-39-cl-h"><span class="pc-n">10</span><span class="arithmatex">\({v}[0][k] \leftarrow +\infty\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">11</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-40-cl-i"><span class="pc-n">12</span><strong>for</strong> <span class="arithmatex">\(t := 1\)</span> <strong>to</strong> <span class="arithmatex">\(m\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-41-cl-j"><span class="pc-n">13</span><strong>for</strong> <span class="arithmatex">\(k := 0\)</span> <strong>to</strong> <span class="arithmatex">\({R}[t]\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-42-cl-k"><span class="pc-n">14</span><span class="arithmatex">\(\mathit{b} := +\infty\)</span></div><div class="pc" style="--liv:3" id="box-43-cl-l"><span class="pc-n">15</span><strong>for</strong> <span class="arithmatex">\(x := 0\)</span> <strong>to</strong> <span class="arithmatex">\(\min\{cap[t],\,k+d[t]\}\)</span>  <strong>do</strong></div><div class="pc" style="--liv:4" id="box-44-cl-m"><span class="pc-n">16</span><strong>if</strong> <span class="arithmatex">\({v}[t-1][k+d[t]-x] + f_t(x) + hc[t]\cdot k < \mathit{b}\)</span>  <strong>then</strong></div><div class="pc" style="--liv:5" id="box-45-cl-n"><span class="pc-n">17</span><span class="arithmatex">\(\mathit{b} \leftarrow {v}[t-1][k+d[t]-x] + f_t(x) + hc[t]\cdot k\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">18</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">19</span><strong>end</strong></div><div class="pc" style="--liv:3" id="box-46-cl-o"><span class="pc-n">20</span><span class="arithmatex">\({v}[t][k] \leftarrow \mathit{b}\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">21</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">22</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-47-cl-p"><span class="pc-n">23</span><strong>return</strong> <span class="arithmatex">\({v}[m][0]\)</span></div></div>
+            <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> A CLS instance given by the number <span class="arithmatex">\(m\)</span> of periods and the arrays <span class="arithmatex">\(d[1..m]\)</span>, <span class="arithmatex">\(sc[1..m]\)</span>, <span class="arithmatex">\(vc[1..m]\)</span>, <span class="arithmatex">\(hc[1..m]\)</span>, <span class="arithmatex">\(cap[1..m]\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> The optimal value</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP_CLS(<span class="arithmatex">\(m,d,sc,vc,hc,cap\)</span>)</div><div class="pc" style="--liv:1" id="box-2-cl-a"><span class="pc-n">2</span><span class="arithmatex">\({R} := \textnormal{new array}[0..m]\)</span></div><div class="pc" style="--liv:1" id="box-3-cl-b"><span class="pc-n">3</span><span class="arithmatex">\({R}[m] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-4-cl-c"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(t := m-1\)</span> <strong>downto</strong> <span class="arithmatex">\(0\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-5-cl-d"><span class="pc-n">5</span><span class="arithmatex">\({R}[t] \leftarrow {R}[t+1] + d[t+1]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">6</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-6-cl-e"><span class="pc-n">7</span><span class="arithmatex">\({v} := \textnormal{new array}[0..m][0..{R}[0]]\)</span></div><div class="pc" style="--liv:1" id="box-7-cl-f"><span class="pc-n">8</span><span class="arithmatex">\({v}[0][0] \leftarrow 0\)</span></div><div class="pc" style="--liv:1" id="box-8-cl-g"><span class="pc-n">9</span><strong>for</strong> <span class="arithmatex">\(k := 1\)</span> <strong>to</strong> <span class="arithmatex">\({R}[0]\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-9-cl-h"><span class="pc-n">10</span><span class="arithmatex">\({v}[0][k] \leftarrow +\infty\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">11</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-10-cl-i"><span class="pc-n">12</span><strong>for</strong> <span class="arithmatex">\(t := 1\)</span> <strong>to</strong> <span class="arithmatex">\(m\)</span>  <strong>do</strong></div><div class="pc" style="--liv:2" id="box-11-cl-j"><span class="pc-n">13</span><strong>for</strong> <span class="arithmatex">\(k := 0\)</span> <strong>to</strong> <span class="arithmatex">\({R}[t]\)</span>  <strong>do</strong></div><div class="pc" style="--liv:3" id="box-12-cl-k"><span class="pc-n">14</span><span class="arithmatex">\(\mathit{b} := +\infty\)</span></div><div class="pc" style="--liv:3" id="box-13-cl-l"><span class="pc-n">15</span><strong>for</strong> <span class="arithmatex">\(x := 0\)</span> <strong>to</strong> <span class="arithmatex">\(\min\{cap[t],\,k+d[t]\}\)</span>  <strong>do</strong></div><div class="pc" style="--liv:4" id="box-14-cl-m"><span class="pc-n">16</span><strong>if</strong> <span class="arithmatex">\({v}[t-1][k+d[t]-x] + f_t(x) + hc[t]\cdot k < \mathit{b}\)</span>  <strong>then</strong></div><div class="pc" style="--liv:5" id="box-15-cl-n"><span class="pc-n">17</span><span class="arithmatex">\(\mathit{b} \leftarrow {v}[t-1][k+d[t]-x] + f_t(x) + hc[t]\cdot k\)</span></div><div class="pc" style="--liv:4"><span class="pc-n">18</span><strong>end</strong></div><div class="pc" style="--liv:3"><span class="pc-n">19</span><strong>end</strong></div><div class="pc" style="--liv:3" id="box-16-cl-o"><span class="pc-n">20</span><span class="arithmatex">\({v}[t][k] \leftarrow \mathit{b}\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">21</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">22</span><strong>end</strong></div><div class="pc" style="--liv:1" id="box-17-cl-p"><span class="pc-n">23</span><strong>return</strong> <span class="arithmatex">\({v}[m][0]\)</span></div></div>
 
         - The vector ${R}[0..m]$ contains the remaining demands ${R}[t]=D_{t+1,m}$, computed backwards from ${R}[m]=0$: the states of period $t$ are the pairs $(t,k)$ with $k\le {R}[t]$.
 
@@ -124,11 +164,11 @@ title: "A DP algorithm for the capacitated case"
 
         - Finally, the optimal value ${v}[m][0]$ of the CLS instance is returned.
 
-        <a id="box-48-texclsbu"></a>
+        <a id="box-18-texclsbu"></a>
 
-        !!! esempio "Example 25.11: Execution of the DP algorithm"
+        !!! esempio "Example 26.2: Execution of the DP algorithm"
 
-            We consider the CLS instance of <span style="color:#1971c2">[Example 25.10](#box-31-texcls1)</span>:
+            We consider the CLS instance of <span style="color:#1971c2">[Example 26.1](#box-1-texcls1)</span>:
 
             $$
             \begin{array}{l|rrrrr}
@@ -430,11 +470,11 @@ title: "A DP algorithm for the capacitated case"
 
         - The DP algorithm uses the additional temporary variable $\mathit{a}$ to keep track of the decision made when $\mathit{b}$ is updated: if the production $x$ is selected, $\mathit{a}\leftarrow x$ stores this decision, and at the end of the inner loop ${r}[t][k]\leftarrow\mathit{a}$ stores it, together with the optimal value ${v}[t][k]\leftarrow\mathit{b}$. Because of the strict comparison, in case of ties the smallest production is stored.
 
-        <a id="box-49-texclsbuinfo"></a>
+        <a id="box-19-texclsbuinfo"></a>
 
-        !!! esempio "Example 25.12: Computation of the additional information"
+        !!! esempio "Example 26.3: Computation of the additional information"
 
-            We consider the CLS instance of <span style="color:#1971c2">[Example 25.10](#box-31-texcls1)</span>:
+            We consider the CLS instance of <span style="color:#1971c2">[Example 26.1](#box-1-texcls1)</span>:
 
             $$
             \begin{array}{l|rrrrr}
@@ -448,7 +488,7 @@ title: "A DP algorithm for the capacitated case"
             \end{array}
             $$
 
-            For each step of the DP algorithm, the table shows the values of $t$ and $k$, the cell ${r}[t][k]$, and the production $x$ for which the minimum of the corresponding row of <span style="color:#1971c2">[Example 25.11](#box-48-texclsbu)</span> is attained first.
+            For each step of the DP algorithm, the table shows the values of $t$ and $k$, the cell ${r}[t][k]$, and the production $x$ for which the minimum of the corresponding row of <span style="color:#1971c2">[Example 26.2](#box-18-texclsbu)</span> is attained first.
 
             <div class="tabella" markdown="0"><table>
             <tr>
@@ -730,11 +770,11 @@ title: "A DP algorithm for the capacitated case"
 
             <div class="pseudocodice" markdown="0"><div class="pc" style="--liv:0"><strong>Input:</strong> The number <span class="arithmatex">\(m\)</span> of periods and the demands <span class="arithmatex">\(d[1..m]\)</span> of the CLS instance, and the matrix <span class="arithmatex">\({r}[0..m][0..D_{1,m}]\)</span></div><div class="pc" style="--liv:0"><strong>Output:</strong> An optimal solution of the CLS instance</div><div class="pc" style="--liv:0"><span class="pc-n">1</span><strong>Function</strong> DP_CLS_SolComputation(<span class="arithmatex">\(m,d,{r}\)</span>)</div><div class="pc" style="--liv:1"><span class="pc-n">2</span><span class="arithmatex">\(x := \textnormal{new array}[1..m]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">3</span><span class="arithmatex">\(k := 0\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">4</span><strong>for</strong> <span class="arithmatex">\(t := m\)</span> <strong>downto</strong> <span class="arithmatex">\(1\)</span> <strong>do</strong></div><div class="pc" style="--liv:2"><span class="pc-n">5</span><span class="arithmatex">\(x[t] \leftarrow {r}[t][k]\)</span></div><div class="pc" style="--liv:2"><span class="pc-n">6</span><span class="arithmatex">\(k \leftarrow k + d[t] - x[t]\)</span></div><div class="pc" style="--liv:1"><span class="pc-n">7</span><strong>end</strong></div><div class="pc" style="--liv:1"><span class="pc-n">8</span><strong>return</strong> <span class="arithmatex">\(x\)</span></div></div>
 
-        <a id="box-50-texclssolvector"></a>
+        <a id="box-20-texclssolvector"></a>
 
-        !!! esempio "Example 25.13: Computing an optimal solution"
+        !!! esempio "Example 26.4: Computing an optimal solution"
 
-            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 25.10](#box-31-texcls1)</span>, we have the matrix ${r}$ of <span style="color:#1971c2">[Example 25.12](#box-49-texclsbuinfo)</span>. We can compute an optimal solution as follows:
+            After the execution of the DP algorithm on the instance of <span style="color:#1971c2">[Example 26.1](#box-1-texcls1)</span>, we have the matrix ${r}$ of <span style="color:#1971c2">[Example 26.3](#box-19-texclsbuinfo)</span>. We can compute an optimal solution as follows:
 
             <div class="tabella" markdown="0"><table>
             <tr>
@@ -835,29 +875,29 @@ title: "A DP algorithm for the capacitated case"
             \underbrace{50+50+50}_{\text{setup}}+\underbrace{10\cdot 1+10\cdot 0+10\cdot 1+10\cdot 1+10\cdot 0}_{\text{holding}}=150+30=180.
             $$
 
-            The corresponding optimal value is ${v}[5][0]=180$, the same value given by Gurobi on the MIP model; the capacity costs $180-170$ with respect to <span style="color:#1971c2">[Example 25.1](index.md#box-1-texuls1)</span>. The network of the solution is:
+            The corresponding optimal value is ${v}[5][0]=180$, the same value given by Gurobi on the MIP model; the capacity costs $180-170$ with respect to the uncapacitated instance. The network of the solution is:
 
-            ![Figure 3](../../img/dp-lot-sizing/fig03.svg){ .fig loading=lazy  }
+            ![Figure 1](../img/dp-capacitated-lot-sizing/fig01.svg){ .fig loading=lazy  }
 
             Period $4$ produces although one unit is in stock at the end of period $3$: the solution does not have the zero-inventory ordering property (and it is the unique optimal solution with integer quantities).
 
-## 25.3.1 Number of steps
+### 26.2.2 Number of steps
 
-- Let $S(m,D,C)$ denote the number of steps executed by DP\_CLS in the worst case, where $m$ is the number of periods, $D=D_{1,m}$ is the total demand, and $C=\max_{t\in T} cap_t$ is the largest capacity. For every $t\ge 1$ we have ${R}[t]+1\le D$ (since $d_1\ge 1$), and the inner loop has at most $C+1$ iterations. In the worst case, the condition at line [16](#box-44-cl-m) is always true. The number of executions of the lines is:
+- Let $S(m,D,C)$ denote the number of steps executed by DP\_CLS in the worst case, where $m$ is the number of periods, $D=D_{1,m}$ is the total demand, and $C=\max_{t\in T} cap_t$ is the largest capacity. For every $t\ge 1$ we have ${R}[t]+1\le D$ (since $d_1\ge 1$), and the inner loop has at most $C+1$ iterations. In the worst case, the condition at line [16](#box-14-cl-m) is always true. The number of executions of the lines is:
 
-    - <span style="color:#e03131">Line</span> [2](#box-32-cl-a), <span style="color:#e03131">Line</span> [3](#box-33-cl-b), <span style="color:#e03131">Line</span> [7](#box-36-cl-e), and <span style="color:#e03131">Line</span> [8](#box-37-cl-f) are executed $1$ time each.
+    - <span style="color:#e03131">Line</span> [2](#box-2-cl-a), <span style="color:#e03131">Line</span> [3](#box-3-cl-b), <span style="color:#e03131">Line</span> [7](#box-6-cl-e), and <span style="color:#e03131">Line</span> [8](#box-7-cl-f) are executed $1$ time each.
 
-    - <span style="color:#e03131">Line</span> [4](#box-34-cl-c) and <span style="color:#e03131">Line</span> [5](#box-35-cl-d) are executed $m$ times each.
+    - <span style="color:#e03131">Line</span> [4](#box-4-cl-c) and <span style="color:#e03131">Line</span> [5](#box-5-cl-d) are executed $m$ times each.
 
-    - <span style="color:#e03131">Line</span> [9](#box-38-cl-g) and <span style="color:#e03131">Line</span> [10](#box-39-cl-h) are executed $D$ times each.
+    - <span style="color:#e03131">Line</span> [9](#box-8-cl-g) and <span style="color:#e03131">Line</span> [10](#box-9-cl-h) are executed $D$ times each.
 
-    - <span style="color:#e03131">Line</span> [12](#box-40-cl-i) is executed $m$ times.
+    - <span style="color:#e03131">Line</span> [12](#box-10-cl-i) is executed $m$ times.
 
-    - <span style="color:#e03131">Line</span> [13](#box-41-cl-j), <span style="color:#e03131">Line</span> [14](#box-42-cl-k), and <span style="color:#e03131">Line</span> [20](#box-46-cl-o) are executed $\displaystyle\sum_{t=1}^{m}({R}[t]+1)\le mD$ times each.
+    - <span style="color:#e03131">Line</span> [13](#box-11-cl-j), <span style="color:#e03131">Line</span> [14](#box-12-cl-k), and <span style="color:#e03131">Line</span> [20](#box-16-cl-o) are executed $\displaystyle\sum_{t=1}^{m}({R}[t]+1)\le mD$ times each.
 
-    - <span style="color:#e03131">Line</span> [15](#box-43-cl-l), <span style="color:#e03131">Line</span> [16](#box-44-cl-m), and <span style="color:#e03131">Line</span> [17](#box-45-cl-n) are executed at most $mD(C+1)$ times each.
+    - <span style="color:#e03131">Line</span> [15](#box-13-cl-l), <span style="color:#e03131">Line</span> [16](#box-14-cl-m), and <span style="color:#e03131">Line</span> [17](#box-15-cl-n) are executed at most $mD(C+1)$ times each.
 
-    - <span style="color:#e03131">Line</span> [23](#box-47-cl-p) is executed $1$ time.
+    - <span style="color:#e03131">Line</span> [23](#box-17-cl-p) is executed $1$ time.
 
     Therefore,
 
@@ -887,7 +927,7 @@ title: "A DP algorithm for the capacitated case"
 
 - The DP algorithm gives the optimal value $160$, with the production plan $(50,\allowbreak 50,\allowbreak 0,\allowbreak 0,\allowbreak 50,\allowbreak 0)$ (in the original units): the same value proved optimal by the MIP solver.
 
-## 25.3.2 The case of constant capacity
+### 26.2.3 The case of constant capacity
 
 - With general capacities $cap_t$ the CLS is NP-hard, so a polynomial algorithm is not expected and the pseudo-polynomial DP algorithm is a natural exact method for small values of $D$ and $C$.
 
@@ -897,12 +937,57 @@ title: "A DP algorithm for the capacitated case"
 
     If $cap_t=C$ for all $t\in T$, there is an optimal solution in which, between two consecutive periods with empty inventory, at most one period produces a quantity strictly between $0$ and $C$; all the other periods produce $0$ or $C$.
 
-- We do not develop the polynomial algorithms based on this property here.
+- The CLS with constant capacity has its own [page in the catalogue of problems](https://fabiofurini.github.io/combinatorial-optimization/catalogue/capacitated-lot-sizing-with-constant-capacity/).
 
-- <span style="color:#1971c2">[Example 25.10](#box-31-texcls1)</span> has constant capacity $C=4$. Its optimal solution $(3,\allowbreak 0,\allowbreak 4,\allowbreak 4,\allowbreak 0)$ has inventories $(1,\allowbreak 0,\allowbreak 1,\allowbreak 1,\allowbreak 0)$, empty at the end of periods $0$, $2$, and $5$.
+- <span style="color:#1971c2">[Example 26.1](#box-1-texcls1)</span> has constant capacity $C=4$. Its optimal solution $(3,\allowbreak 0,\allowbreak 4,\allowbreak 4,\allowbreak 0)$ has inventories $(1,\allowbreak 0,\allowbreak 1,\allowbreak 1,\allowbreak 0)$, empty at the end of periods $0$, $2$, and $5$.
 
 - In periods $1$–$2$ only period $1$ produces a quantity strictly between $0$ and $4$, and in periods $3$–$5$ every period produces $0$ or $4$, as stated by the property.
 
+## 26.3 Typical mistakes
+
+!!! attenzione "Warning"
+
+    - <strong>Applying the zero-inventory ordering property with capacities.</strong> With capacities a period can produce while units are in stock: in [Example 26.1](#box-1-texcls1) the unique optimal plan violates the property.
+
+    - <strong>Forgetting the base cases with value $+\infty$.</strong> The initial inventory is empty, so $v(0,k)=+\infty$ for $k>0$; this value marks every state that cannot be reached within the capacities.
+
+    - <strong>Allowing too large an inventory.</strong> At the end of period $t$ the inventory is at most $D_{t+1,m}$, since it must be empty at the end of period $m$: the other pairs $(t,k)$ are not states.
+
+    - <strong>Putting the holding cost inside the choice.</strong> The cost $hc_t\,k$ of the final inventory is paid in the state $(t,k)$ whatever the production $x$: it is added outside the minimum.
+
+    - <strong>Calling $O(mDC)$ polynomial.</strong> The running time contains the total demand $D$ and the largest capacity $C$, which are numbers of the input: the DP algorithm is pseudo-polynomial.
+
+## 26.4 In summary
+
+!!! chiave "In summary"
+
+    - With capacities the zero-inventory ordering property fails: a period may produce while units are in stock, and the DP algorithm over the production runs does not apply.
+
+    - The state is the pair $(t,k)$ of the period and the final inventory, with $k\le D_{t+1,m}$; the recurrence $v(t,k)$ chooses the production $x$ of period $t$, and the optimal value is $v(m,0)$.
+
+    - The matrix ${r}$ of the chosen productions, read backwards from the state $(m,0)$, gives an optimal plan.
+
+    - The DP algorithm takes $O(mDC)$ steps, which is pseudo-polynomial.
+
+    - With a constant capacity a weaker property holds, and the problem is polynomial; with general capacities it is NP-hard.
+
+    <strong>Dashboard of the example.</strong>
+
+    <div class="tabella" markdown="0"><table>
+    <tr>
+    <th>Instance</th>
+    <th>Lower bound</th>
+    <th>Upper bound</th>
+    <th>Origin</th>
+    </tr>
+    <tr>
+    <td><a href="#box-1-texcls1">Example 26.1</a> (capacitated, <span class="arithmatex">\(C=4\)</span>)</td>
+    <td><span class="arithmatex">\(180\)</span></td>
+    <td><span class="arithmatex">\(180\)</span></td>
+    <td>DP algorithm on (period, inventory)</td>
+    </tr>
+    </table></div>
+
 ---
 
-**Next:** [Typical mistakes · In summary](typical-mistakes.md)
+**Exercises on this chapter:** [:material-pencil: Capacitated lot sizing (CLS)](../exercises/dp-capacitated-lot-sizing.md)

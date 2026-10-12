@@ -316,5 +316,5 @@ title: "Scheduling on identical parallel machines"
 
 ---
 
-**In depth:** [:material-star-outline: the course on this problem](../../selected-problems/pcmax.md)
+**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/scheduling-on-identical-parallel-machines.md)
 

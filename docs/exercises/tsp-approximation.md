@@ -1,8 +1,8 @@
 ---
-title: "Exercises · Approximation for the metric TSP"
+title: "Exercises · The TSP: the general case and the metric case"
 ---
 
-# Exercises · Approximation for the metric TSP
+# Exercises · The TSP: the general case and the metric case
 
 <div class="info-capitolo" markdown>
 

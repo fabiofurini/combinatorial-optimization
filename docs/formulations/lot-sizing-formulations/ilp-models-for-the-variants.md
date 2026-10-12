@@ -59,7 +59,7 @@ The problems of this section are the variants of the capacitated lot sizing prob
 
     - finally, constraints $\eqref{ULS:domx}$–$\eqref{ULS:domy}$ define the variables of the ILP model.
 
-- The $\mathrm{ILP}_{\mathrm{ULS}}$ model is the $\mathrm{ILP}_{\mathrm{CLSP}}$ model without the capacity constraints [(15.1d)](ilp-models-for-the-capacitated-lot-sizing-problem.md#mjx-eqn:CL1:cap) and with the big-M values $M_t=D_{t,m}$. The DP algorithm of Wagner and Whitin of [Chapter 27 «Dynamic programming for lot sizing»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/) solves the ULS in polynomial time.
+- The $\mathrm{ILP}_{\mathrm{ULS}}$ model is the $\mathrm{ILP}_{\mathrm{CLSP}}$ model without the capacity constraints [(15.1d)](ilp-models-for-the-capacitated-lot-sizing-problem.md#mjx-eqn:CL1:cap) and with the big-M values $M_t=D_{t,m}$. The DP algorithm of Wagner and Whitin of [Chapter 25 «DP for the uncapacitated lot sizing problem»](https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-lot-sizing/) solves the ULS in polynomial time.
 
 <a id="box-6-ex-ULS-ILP"></a>
 

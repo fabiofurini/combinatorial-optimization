@@ -804,4 +804,4 @@ title: "A DP algorithm for the ULS: Step 1 and Step 2"
 
 ---
 
-**Next:** [25.3 A DP algorithm for the capacitated case](a-dp-algorithm-for-the-capacitated-case.md)
+**Next:** [Typical mistakes · In summary](typical-mistakes.md)
