@@ -40,7 +40,7 @@ title: "The bin packing problem"
 
     - [Chapter 26 «Approximation algorithms for bin packing»](../approximation-algorithms/bin-packing-approximation.md): Next Fit and the Any Fit class (First Fit, Best Fit, Worst Fit) with their worst-case ratios
 
-    - [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#2872-vertex-coloring-no-ratio-below-four-thirds): No approximation ratio below $\frac32$, since deciding whether $2$ bins suffice is PARTITION
+    - [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/coloring-approximation.md#303-no-ratio-below-four-thirds): No approximation ratio below $\frac32$, since deciding whether $2$ bins suffice is PARTITION
 
 ## Definition { #sez-sec-cat-bpp-def }
 
@@ -160,7 +160,7 @@ title: "The bin packing problem"
 
 - First Fit and Best Fit have $r(FF) = r(BF) = \frac{17}{10}$ ([Chapter 26 «Approximation algorithms for bin packing»](../approximation-algorithms/bin-packing-approximation.md#box-22-propFFtight)).
 
-- No polynomial algorithm has a ratio below $\frac32$ unless $P=NP$, since deciding whether $2$ bins suffice is the NP-complete PARTITION problem ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#2872-vertex-coloring-no-ratio-below-four-thirds)).
+- No polynomial algorithm has a ratio below $\frac32$ unless $P=NP$, since deciding whether $2$ bins suffice is the NP-complete PARTITION problem ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/coloring-approximation.md#303-no-ratio-below-four-thirds)).
 
 ## Instances { #sez-sec-cat-bpp-ist }
 

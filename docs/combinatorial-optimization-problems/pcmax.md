@@ -291,7 +291,7 @@ title: "Parallel machine scheduling"
 
 - In 1966 R. L. Graham proved that any list of jobs, processed greedily, gives a makespan at most $2-1/m$ times the optimal one.
 
-- In 1969 he proved the better ratio $4/3-1/(3m)$ for the list sorted by non-increasing processing time (the rule called LPT). Both guarantees are proved in the chapter «$P\|C_{\max}$, metric TSP and the limits of approximation».
+- In 1969 he proved the better ratio $4/3-1/(3m)$ for the list sorted by non-increasing processing time (the rule called LPT). Both guarantees are proved in the chapter [«Approximation for $P\|C_{\max}$»](https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/pcmax-approximation/).
 
 ## 7.8 Typical mistakes
 

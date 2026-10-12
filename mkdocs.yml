@@ -55,6 +55,11 @@ not_in_nav: |
 plugins:
   - search:
       lang: en
+  # old URLs of chapters that were split or renamed (2026-10-12: P||Cmax, metric TSP and coloring in three chapters)
+  - redirects:
+      redirect_maps:
+        approximation-algorithms/pcmax-tsp-coloring-approximation.md: approximation-algorithms/pcmax-approximation.md
+        exercises/pcmax-tsp-coloring-approximation.md: exercises/pcmax-approximation.md
 
 extra:
   social:
@@ -172,10 +177,12 @@ nav:
       - "25. Definitions": approximation-algorithms/approximation.md
       - "26. Bin packing": approximation-algorithms/bin-packing-approximation.md
       - "27. Knapsack": approximation-algorithms/knapsack-approximation.md
-      - "28. P||Cmax, TSP, coloring": approximation-algorithms/pcmax-tsp-coloring-approximation.md
+      - "28. P||Cmax": approximation-algorithms/pcmax-approximation.md
+      - "29. Metric TSP": approximation-algorithms/tsp-approximation.md
+      - "30. Coloring: limits": approximation-algorithms/coloring-approximation.md
   - Specialized:
       - specialized-algorithms/index.md
-      - "29. Knapsack: B&B": specialized-algorithms/knapsack-branch-and-bound.md
+      - "31. Knapsack: B&B": specialized-algorithms/knapsack-branch-and-bound.md
   - Catalogue:
       - catalogue/index.md
       - "At a glance": catalogue/at-a-glance.md
@@ -217,8 +224,10 @@ nav:
       - "25. Definitions": exercises/approximation.md
       - "26. Bin packing": exercises/bin-packing-approximation.md
       - "27. Knapsack": exercises/knapsack-approximation.md
-      - "28. P||Cmax, TSP, coloring": exercises/pcmax-tsp-coloring-approximation.md
-      - "29. Knapsack: B&B": exercises/knapsack-branch-and-bound.md
+      - "28. P||Cmax": exercises/pcmax-approximation.md
+      - "29. Metric TSP": exercises/tsp-approximation.md
+      - "30. Coloring: limits": exercises/coloring-approximation.md
+      - "31. Knapsack: B&B": exercises/knapsack-branch-and-bound.md
   - Lab: lab/index.md
   - Downloads: downloads.md
   - Index: full-index.md

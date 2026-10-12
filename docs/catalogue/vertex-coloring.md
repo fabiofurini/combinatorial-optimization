@@ -26,9 +26,9 @@ title: "The vertex coloring problem"
 
     - [Chapter 11 «Formulations of the vertex coloring problem»](../formulations/coloring-formulations.md): The $\ILP_{\VCP}$ model and its two LP relaxations, whose value is always $2$
 
-    - [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#284-vertex-coloring): The greedy coloring $GC$ and $DSATUR$
+    - [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/coloring-approximation.md#302-the-greedy-coloring-and-dsatur): The greedy coloring $GC$ and $DSATUR$
 
-    - [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#2872-vertex-coloring-no-ratio-below-four-thirds): The limits of approximation and what the greedy coloring guarantees
+    - [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/coloring-approximation.md#303-no-ratio-below-four-thirds): The limits of approximation and what the greedy coloring guarantees
 
 ## Definition { #sez-sec-cat-vcp-def }
 
@@ -72,7 +72,7 @@ title: "The vertex coloring problem"
 
 - $z(\LP\text{-}0_{\VCP}) = z(\LP_{\VCP}) = 2$ for every graph with an edge: the LP bound is very weak ([Chapter 11 «Formulations of the vertex coloring problem»](../formulations/coloring-formulations.md#box-11-cor_lp_vcp_value)).
 
-- $\chi(G)\le GC(I)\le\Delta(G)+1$ for every list $\lambda$: a primal bound from any greedy coloring ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-24-prop-GCDelta)).
+- $\chi(G)\le GC(I)\le\Delta(G)+1$ for every list $\lambda$: a primal bound from any greedy coloring ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/coloring-approximation.md#box-5-prop-GCDelta)).
 
 - $\chi(G)\le\Delta$ for a connected graph that is neither complete nor an odd cycle (Brooks, 1941) ([Chapter 4 «Vertex coloring»](../combinatorial-optimization-problems/coloring.md#43-remarks)).
 
@@ -80,7 +80,7 @@ title: "The vertex coloring problem"
 
 - The two bounds do not always meet $\chi(G)$: on the Petersen graph $\omega(G)=2<\chi(G)=3$, and on the wheel $W_5$ both bounds give $3$ while $\chi(W_5)=4$ ([Exercise 4.4](../exercises/coloring.md#esercizio-4-4)).
 
-- Unless $P=NP$, the chromatic number cannot be approximated within $n^{1-\varepsilon}$ for any $\varepsilon>0$ (Zuckerman, 2007, cited without proof in [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#2872-vertex-coloring-no-ratio-below-four-thirds)).
+- Unless $P=NP$, the chromatic number cannot be approximated within $n^{1-\varepsilon}$ for any $\varepsilon>0$ (Zuckerman, 2007, cited without proof in [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/coloring-approximation.md#303-no-ratio-below-four-thirds)).
 
 ## Formulation { #sez-sec-cat-vcp-formulation }
 
@@ -104,23 +104,23 @@ title: "The vertex coloring problem"
 
 ## Constructive heuristics { #sez-sec-cat-vcp-constructiveheuristics }
 
-- The greedy coloring $GC$ examines the vertices in the order of a list $\lambda$ and gives each vertex the smallest color not used by its colored neighbours, in $O(n+|E|)$ time ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#sez-sec-GC)).
+- The greedy coloring $GC$ examines the vertices in the order of a list $\lambda$ and gives each vertex the smallest color not used by its colored neighbours, in $O(n+|E|)$ time ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/coloring-approximation.md#sez-sec-GC)).
 
-- On the Petersen graph $GC$ uses $3$ colors with the list $(1,2,\dots,10)$ and $4$ colors with the list $(1,2,3,4,5,7,8,6,9,10)$ ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-8-ex-gc)).
+- On the Petersen graph $GC$ uses $3$ colors with the list $(1,2,\dots,10)$ and $4$ colors with the list $(1,2,3,4,5,7,8,6,9,10)$ ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/coloring-approximation.md#box-2-ex-gc)).
 
-- $DSATUR$ colors first an uncolored vertex of maximum saturation degree (ties by the degree among the uncolored vertices, then by the smallest index), in $O(n^2)$ time ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#sez-sec-DSATUR)).
+- $DSATUR$ colors first an uncolored vertex of maximum saturation degree (ties by the degree among the uncolored vertices, then by the smallest index), in $O(n^2)$ time ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/coloring-approximation.md#sez-sec-DSATUR)).
 
-- $DSATUR$ uses $3=\chi(G)$ colors on the Petersen graph and $2$ colors on every bipartite graph (Brélaz, 1979) ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#2874-dsatur-as-a-heuristic)).
+- $DSATUR$ uses $3=\chi(G)$ colors on the Petersen graph and $2$ colors on every bipartite graph (Brélaz, 1979) ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/coloring-approximation.md#305-dsatur-as-a-heuristic)).
 
 ## Approximation { #sez-sec-cat-vcp-approximation }
 
-- If $P\neq NP$, no polynomial algorithm has $\frac{\mathscr{A}(I)}{z(I)}<\frac43$ for every VCP instance, because it would decide 3-colorability ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-23-prop-VCP43)).
+- If $P\neq NP$, no polynomial algorithm has $\frac{\mathscr{A}(I)}{z(I)}<\frac43$ for every VCP instance, because it would decide 3-colorability ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/coloring-approximation.md#box-4-prop-VCP43)).
 
-- $GC(I)\le\Delta(G)+1$ for every list, which is not a performance guarantee: it compares $GC(I)$ with $\Delta(G)+1$, not with $\chi(G)$ ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-24-prop-GCDelta)).
+- $GC(I)\le\Delta(G)+1$ for every list, which is not a performance guarantee: it compares $GC(I)$ with $\Delta(G)+1$, not with $\chi(G)$ ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/coloring-approximation.md#box-5-prop-GCDelta)).
 
-- On the crown graphs $G_k$, with $\chi(G_k)=2$, a bad list gives $GC(I_k)=k=\frac n2$, so $GC$ has no constant performance guarantee ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-25-prop-crown)).
+- On the crown graphs $G_k$, with $\chi(G_k)=2$, a bad list gives $GC(I_k)=k=\frac n2$, so $GC$ has no constant performance guarantee ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/coloring-approximation.md#box-6-prop-crown)).
 
-- Some list is always optimal for $GC$: the vertices of the classes $Q_1,\dots,Q_{\chi(G)}$ of an optimal coloring, one class after the other ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#2873-what-the-greedy-coloring-guarantees)).
+- Some list is always optimal for $GC$: the vertices of the classes $Q_1,\dots,Q_{\chi(G)}$ of an optimal coloring, one class after the other ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/coloring-approximation.md#304-what-the-greedy-coloring-guarantees)).
 
 ## Instances { #sez-sec-cat-vcp-ist }
 
@@ -139,7 +139,7 @@ $$
 
 - Optimal value $z(\mathrm{VCP1})=3$, attained by $\mathcal{Q} = \big\{\, \{1,4,7,8\},~ \{2,5,6\},~ \{3,9,10\} \,\big\}$; $\omega(G)=2$, $\alpha(G)=4$, and $7\,430$ of the $B(10)=115\,975$ partitions are feasible.
 
-- Used in [Example «VCP instance: the Petersen graph»](../combinatorial-optimization-problems/coloring.md#box-5-ex-vcp2), [Counting, a first solution and the bounds](../combinatorial-optimization-problems/coloring.md#423-counting-the-solutions-a-first-solution-and-the-bounds), [Instance of the coloring examples](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#2813-the-vertex-coloring-problem), [Example «$GC$ on the Petersen graph, two orders»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-8-ex-gc), [Example «$DSATUR$ on the Petersen graph»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-9-ex-dsatur).
+- Used in [Example «VCP instance: the Petersen graph»](../combinatorial-optimization-problems/coloring.md#box-5-ex-vcp2), [Counting, a first solution and the bounds](../combinatorial-optimization-problems/coloring.md#423-counting-the-solutions-a-first-solution-and-the-bounds), [Instance of the coloring examples](../approximation-algorithms/coloring-approximation.md#301-the-problem-and-the-assumptions), [Example «$GC$ on the Petersen graph, two orders»](../approximation-algorithms/coloring-approximation.md#box-2-ex-gc), [Example «$DSATUR$ on the Petersen graph»](../approximation-algorithms/coloring-approximation.md#box-3-ex-dsatur).
 
 ### Instance VCP2 { #sez-sec-cat-ist-vcp2 }
 
@@ -305,7 +305,7 @@ $$
 
 - Optimal value $z(\mathrm{VCP12})=3$, attained by $DSATUR$: $Q_1=\{4,7\}$, $Q_2=\{1,6\}$, $Q_3=\{2,3,5\}$; $GC$ with $(1,\dots,7)$ uses $4$ colors.
 
-- Used in [Exercise 28.7](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-7).
+- Used in [Exercise 30.1](../exercises/coloring-approximation.md#esercizio-30-1).
 
 ### Instance VCP13 { #sez-sec-cat-ist-vcp13 }
 
@@ -322,7 +322,7 @@ $$
 
 - Optimal value $z(\mathrm{VCP13})=2$, attained by $\{1,3,5,7\}$, $\{2,4,6,8\}$; $GC$ with $(1,2,\dots,8)$ uses $4$ colors, $DSATUR$ uses $2$.
 
-- Used in [Example «$GC$ and $DSATUR$ on the crown graph $G_4$»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-26-ex-crown).
+- Used in [Example «$GC$ and $DSATUR$ on the crown graph $G_4$»](../approximation-algorithms/coloring-approximation.md#box-7-ex-crown).
 
 ### Instance VCP14 { #sez-sec-cat-ist-vcp14 }
 
@@ -340,7 +340,7 @@ $$
 
 - Optimal value $z(\mathrm{VCP14})=2$, attained by $\{1,\dots,5\}$, $\{6,\dots,10\}$; $GC$ with $(1,6,2,7,\dots,5,10)$ uses $5$ colors.
 
-- Used in [Exercise 28.8](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-8).
+- Used in [Exercise 30.2](../exercises/coloring-approximation.md#esercizio-30-2).
 
 ### Instance VCP15 { #sez-sec-cat-ist-vcp15 }
 
@@ -357,7 +357,7 @@ $$
 
 - Optimal value $z(\mathrm{VCP15})=3$, attained by $Q_1=\{1,4\}$, $Q_2=\{2,3,6\}$, $Q_3=\{5,7\}$; $DSATUR(I)=4$.
 
-- Used in [Exercise 28.9](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-9).
+- Used in [Exercise 30.3](../exercises/coloring-approximation.md#esercizio-30-3).
 
 ## Exercises { #sez-sec-cat-vcp-es }
 
@@ -381,11 +381,11 @@ $$
 
 - [Integrality gap of the VCP model (1)](../exercises/coloring-formulations.md#esercizio-11-5)
 
-- [Vertex coloring approximation 1](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-7)
+- [Vertex coloring approximation 1](../exercises/coloring-approximation.md#esercizio-30-1)
 
-- [Vertex coloring approximation 2](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-8)
+- [Vertex coloring approximation 2](../exercises/coloring-approximation.md#esercizio-30-2)
 
-- [Vertex coloring approximation 3](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-9)
+- [Vertex coloring approximation 3](../exercises/coloring-approximation.md#esercizio-30-3)
 
 ## 3-colorability (3-COL) { #sez-sec-cat-3col }
 
@@ -395,7 +395,7 @@ $$
 
     Given a graph $G=(V,E)$, decide whether $\chi(G)\le 3$.
 
-- Defined in [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-23-prop-VCP43).
+- Defined in [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/coloring-approximation.md#box-4-prop-VCP43).
 
 - The decision version of the VCP with the number of colors fixed to $3$: an algorithm with ratio below $\frac43$ for the VCP would decide it.
 
@@ -407,6 +407,6 @@ $$
 
 - [Chapter 4 «Vertex coloring»](../combinatorial-optimization-problems/coloring.md#43-remarks): NP-complete even on planar graphs of maximum degree $4$ (Garey, Johnson and Stockmeyer)
 
-- [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-23-prop-VCP43): The reduction behind the bound $\frac43$
+- [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/coloring-approximation.md#box-4-prop-VCP43): The reduction behind the bound $\frac43$
 
-- [Exercise 28.9](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-9): The reduction on a graph where $DSATUR$ uses $4$ colors
+- [Exercise 30.3](../exercises/coloring-approximation.md#esercizio-30-3): The reduction on a graph where $DSATUR$ uses $4$ colors

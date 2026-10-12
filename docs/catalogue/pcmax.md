@@ -40,7 +40,7 @@ title: "Scheduling on identical parallel machines"
 
     - [Chapter 25 «Approximation algorithms: definitions»](../approximation-algorithms/approximation.md): Exercise on the algorithm ONE, an $m$-approximation with a tight ratio
 
-    - [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#282-scheduling-on-parallel-machines): Guarantees of $LIST$ and $LPT$, proved, with Graham's tight families
+    - [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-approximation.md#282-the-algorithms-list-and-lpt): Guarantees of $LIST$ and $LPT$, proved, with Graham's tight families
 
 ## Definition { #sez-sec-cat-pcmax-def }
 
@@ -136,9 +136,9 @@ title: "Scheduling on identical parallel machines"
 
 ## Approximation { #sez-sec-cat-pcmax-approximation }
 
-- $LIST$ is a $\left(2-\frac1m\right)$-approximation algorithm for every list, and the instance with $m(m-1)$ unit jobs followed by a job of time $m$ shows that the ratio is tight ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-14-prop-LIST)).
+- $LIST$ is a $\left(2-\frac1m\right)$-approximation algorithm for every list, and the instance with $m(m-1)$ unit jobs followed by a job of time $m$ shows that the ratio is tight ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-approximation.md#box-5-prop-LIST)).
 
-- $LPT$ is a $\left(\frac43-\frac1{3m}\right)$-approximation algorithm, tight on Graham's family $t=(2m-1,2m-1,\dots,m+1,m+1,m,m,m)$, which for $m=3$ is the reference instance ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-16-prop-LPT)).
+- $LPT$ is a $\left(\frac43-\frac1{3m}\right)$-approximation algorithm, tight on Graham's family $t=(2m-1,2m-1,\dots,m+1,m+1,m,m,m)$, which for $m=3$ is the reference instance ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-approximation.md#box-7-prop-LPT)).
 
 - The algorithm ONE, all the jobs on machine $1$, is an $m$-approximation algorithm with $r(\mathrm{ONE})=m$ and no finite additive guarantee ([Exercise 25.2](../exercises/approximation.md#esercizio-25-2)).
 
@@ -162,7 +162,7 @@ $$
 
 - Optimal value $z(\mathrm{PCM1})=9$, attained by $J_1=\{1,3\}$, $J_2=\{2,4\}$, $J_3=\{5,6,7\}$ (two optimal schedules, twelve optimal assignments).
 
-- Used in [A small $P\,||\,C_{\max}$ instance](../combinatorial-optimization-problems/combinatorial-optimization.md#box-11-ex-oc1-pcm), [Primal and dual bounds ($LPT$ $11$, $\LB=9$)](../combinatorial-optimization-problems/combinatorial-optimization.md#box-21-ex-oc1-bounds), [$P\,||\,C_{\max}$ instance](../combinatorial-optimization-problems/pcmax.md#box-2-ex-pcmax7), [Counting the schedules](../combinatorial-optimization-problems/pcmax.md#box-3-ex-pcmax-count), [Assigning every job to the least loaded machine](../combinatorial-optimization-problems/pcmax.md#box-4-ex-pcmax-list), [The bound on the reference instance](../combinatorial-optimization-problems/pcmax.md#box-6-ex-pcmax-lb), [$\ILP_{\PCmax}$ model](../formulations/pcmax-formulations.md#box-2-ex-PCMAX-ILP), [$P\,||\,C_{\max}$ reference instance](../heuristic-algorithms/heuristics.md#box-5-ex-refPCM), [Gaps of the reference instances](../heuristic-algorithms/heuristics.md#box-7-ex-gaps), [$LIST$ on the reference instance, shortest jobs first](../heuristic-algorithms/constructive-heuristics.md#box-7-ex-list), [$LPT$ on the reference instance](../heuristic-algorithms/constructive-heuristics.md#box-9-ex-lpt), [The solution of $LPT$ is a local optimum for move, but not for swap](../heuristic-algorithms/local-search.md#box-8-ex-lpt), [$VND$ on $P\,||\,C_{\max}$ with move and swap](../heuristic-algorithms/local-search.md#box-16-ex-vndpcm), [$TS$ on the $P\,||\,C_{\max}$ reference instance](../heuristic-algorithms/metaheuristics.md#box-6-ex-tsPCM), [$VNS$ on the $P\,||\,C_{\max}$ reference instance](../heuristic-algorithms/metaheuristics.md#box-8-ex-vnsPCM), [The LP solutions of the reference instances](../heuristic-algorithms/mip-heuristics-classical.md#box-2-ex-lpsol), [Rounding on the reference instances](../heuristic-algorithms/mip-heuristics-classical.md#box-3-ex-rounding), [Fractional diving on $P\,||\,C_{\max}$](../heuristic-algorithms/mip-heuristics-classical.md#box-5-ex-divepcm), [Guided diving on $P\,||\,C_{\max}$](../heuristic-algorithms/mip-heuristics-classical.md#box-6-ex-guided), [The feasibility pump on $P\,||\,C_{\max}$](../heuristic-algorithms/mip-heuristics-classical.md#box-7-ex-fppcm), [RINS on $P\,||\,C_{\max}$](../heuristic-algorithms/mip-heuristics-classical.md#box-10-ex-rinspcm), [Local branching on $P\,||\,C_{\max}$](../heuristic-algorithms/mip-heuristics-classical.md#box-13-ex-lbpcm), [Proximity search on $P\,||\,C_{\max}$](../heuristic-algorithms/mip-heuristics-classical.md#box-15-ex-pspcm), [$LIST$ on the reference instance, shortest jobs first](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-4-ex-list), [$LPT$ on the reference instance](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-5-ex-lpt), [Tight family of $LPT$, case $m=3$](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-17-prop-LPTtight), [instance $I_3$](../exercises/approximation.md#esercizio-25-2).
+- Used in [A small $P\,||\,C_{\max}$ instance](../combinatorial-optimization-problems/combinatorial-optimization.md#box-11-ex-oc1-pcm), [Primal and dual bounds ($LPT$ $11$, $\LB=9$)](../combinatorial-optimization-problems/combinatorial-optimization.md#box-21-ex-oc1-bounds), [$P\,||\,C_{\max}$ instance](../combinatorial-optimization-problems/pcmax.md#box-2-ex-pcmax7), [Counting the schedules](../combinatorial-optimization-problems/pcmax.md#box-3-ex-pcmax-count), [Assigning every job to the least loaded machine](../combinatorial-optimization-problems/pcmax.md#box-4-ex-pcmax-list), [The bound on the reference instance](../combinatorial-optimization-problems/pcmax.md#box-6-ex-pcmax-lb), [$\ILP_{\PCmax}$ model](../formulations/pcmax-formulations.md#box-2-ex-PCMAX-ILP), [$P\,||\,C_{\max}$ reference instance](../heuristic-algorithms/heuristics.md#box-5-ex-refPCM), [Gaps of the reference instances](../heuristic-algorithms/heuristics.md#box-7-ex-gaps), [$LIST$ on the reference instance, shortest jobs first](../heuristic-algorithms/constructive-heuristics.md#box-7-ex-list), [$LPT$ on the reference instance](../heuristic-algorithms/constructive-heuristics.md#box-9-ex-lpt), [The solution of $LPT$ is a local optimum for move, but not for swap](../heuristic-algorithms/local-search.md#box-8-ex-lpt), [$VND$ on $P\,||\,C_{\max}$ with move and swap](../heuristic-algorithms/local-search.md#box-16-ex-vndpcm), [$TS$ on the $P\,||\,C_{\max}$ reference instance](../heuristic-algorithms/metaheuristics.md#box-6-ex-tsPCM), [$VNS$ on the $P\,||\,C_{\max}$ reference instance](../heuristic-algorithms/metaheuristics.md#box-8-ex-vnsPCM), [The LP solutions of the reference instances](../heuristic-algorithms/mip-heuristics-classical.md#box-2-ex-lpsol), [Rounding on the reference instances](../heuristic-algorithms/mip-heuristics-classical.md#box-3-ex-rounding), [Fractional diving on $P\,||\,C_{\max}$](../heuristic-algorithms/mip-heuristics-classical.md#box-5-ex-divepcm), [Guided diving on $P\,||\,C_{\max}$](../heuristic-algorithms/mip-heuristics-classical.md#box-6-ex-guided), [The feasibility pump on $P\,||\,C_{\max}$](../heuristic-algorithms/mip-heuristics-classical.md#box-7-ex-fppcm), [RINS on $P\,||\,C_{\max}$](../heuristic-algorithms/mip-heuristics-classical.md#box-10-ex-rinspcm), [Local branching on $P\,||\,C_{\max}$](../heuristic-algorithms/mip-heuristics-classical.md#box-13-ex-lbpcm), [Proximity search on $P\,||\,C_{\max}$](../heuristic-algorithms/mip-heuristics-classical.md#box-15-ex-pspcm), [$LIST$ on the reference instance, shortest jobs first](../approximation-algorithms/pcmax-approximation.md#box-2-ex-list), [$LPT$ on the reference instance](../approximation-algorithms/pcmax-approximation.md#box-3-ex-lpt), [Tight family of $LPT$, case $m=3$](../approximation-algorithms/pcmax-approximation.md#box-8-prop-LPTtight), [instance $I_3$](../exercises/approximation.md#esercizio-25-2).
 
 ### Instance PCM2 { #sez-sec-cat-ist-pcm2 }
 
@@ -772,7 +772,7 @@ $$
 
 - Optimal value $z(\mathrm{PCM31})=3$, attained by $J_1=\{7\}$, $J_2=\{1,2,3\}$, $J_3=\{4,5,6\}$ ($LIST$ gives $5$).
 
-- Used in [Tight family of $LIST$, case $m=3$](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-15-prop-LISTtight), [Exercise 28.2](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-2).
+- Used in [Tight family of $LIST$, case $m=3$](../approximation-algorithms/pcmax-approximation.md#box-6-prop-LISTtight), [Exercise 28.2](../exercises/pcmax-approximation.md#esercizio-28-2).
 
 ### Instance PCM32 { #sez-sec-cat-ist-pcm32 }
 
@@ -792,7 +792,7 @@ $$
 
 - Optimal value $z(\mathrm{PCM32})=12$, attained by the $LPT$ schedule ($LIST$ gives $16$).
 
-- Used in [Exercise 28.1](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-1).
+- Used in [Exercise 28.1](../exercises/pcmax-approximation.md#esercizio-28-1).
 
 ### Instance PCM33 { #sez-sec-cat-ist-pcm33 }
 
@@ -812,7 +812,7 @@ $$
 
 - Optimal value $z(\mathrm{PCM33})=12$, attained by $J_1=\{1,5\}$, $J_2=\{2,6\}$, $J_3=\{3,4\}$, $J_4=\{7,8,9\}$ ($LPT$ gives $15$).
 
-- Used in [Exercise 28.3](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-3).
+- Used in [Exercise 28.3](../exercises/pcmax-approximation.md#esercizio-28-3).
 
 ## Exercises { #sez-sec-cat-pcmax-es }
 
@@ -866,11 +866,11 @@ $$
 
 - [A tight guarantee for a simple algorithm](../exercises/approximation.md#esercizio-25-2)
 
-- [$P\,||\,C_{\max}$ approximation 1](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-1)
+- [$P\,||\,C_{\max}$ approximation 1](../exercises/pcmax-approximation.md#esercizio-28-1)
 
-- [$P\,||\,C_{\max}$ approximation 2](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-2)
+- [$P\,||\,C_{\max}$ approximation 2](../exercises/pcmax-approximation.md#esercizio-28-2)
 
-- [$P\,||\,C_{\max}$ approximation 3](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-3)
+- [$P\,||\,C_{\max}$ approximation 3](../exercises/pcmax-approximation.md#esercizio-28-3)
 
 ## Scheduling on a fixed number of identical machines ($m$ not part of the input) ($Pm\|C_{\max}$) { #sez-sec-cat-pmcmax }
 

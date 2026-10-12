@@ -257,7 +257,7 @@ $$
 
 - Optimal value $z(\mathrm{MCP10})=3$, attained by $\{1,2,4\}$; no clique of size $4$.
 
-- Used in [Exercise 28.7](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-7).
+- Used in [Exercise 30.1](../exercises/coloring-approximation.md#esercizio-30-1).
 
 ## Exercises { #sez-sec-cat-mcp-es }
 
@@ -269,7 +269,7 @@ $$
 
 - [When both bounds are not tight (VCP)](../exercises/coloring.md#esercizio-4-4)
 
-- [Vertex coloring approximation 1](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-7)
+- [Vertex coloring approximation 1](../exercises/coloring-approximation.md#esercizio-30-1)
 
 ## Maximum stable set problem (MSSP) { #sez-sec-cat-mssp }
 

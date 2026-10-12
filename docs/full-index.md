@@ -255,22 +255,37 @@
     - 27.10 Typical mistakes
     - 27.11 In summary
     - 27.12 <code>C++</code> implementation
-28. [P|Cmax, metric TSP and the limits of approximation](approximation-algorithms/pcmax-tsp-coloring-approximation.md)
-    - 28.1 The problems and the assumptions
-    - 28.2 Scheduling on parallel machines
-    - 28.3 The metric TSP
-    - 28.4 Vertex coloring
-    - 28.5 Structural properties
-    - 28.6 Performance guarantees
-    - 28.7 The limits of approximation
-    - 28.8 Sources
-    - 28.9 Typical mistakes
-    - 28.10 In summary
+28. [Approximation for P|Cmax](approximation-algorithms/pcmax-approximation.md)
+    - 28.1 The problem and the assumptions
+    - 28.2 The algorithms $LIST$ and $LPT$
+    - 28.3 A property of list scheduling
+    - 28.4 Performance guarantees
+    - 28.5 Sources
+    - 28.6 Typical mistakes
+    - 28.7 In summary
+29. [Approximation for the metric TSP](approximation-algorithms/tsp-approximation.md)
+    - 29.1 The problem and the assumptions
+    - 29.2 The double tree and the Christofides algorithms
+    - 29.3 Structural properties
+    - 29.4 Performance guarantees
+    - 29.5 The general TSP
+    - 29.6 Sources
+    - 29.7 Typical mistakes
+    - 29.8 In summary
+30. [Limits of approximation: vertex coloring](approximation-algorithms/coloring-approximation.md)
+    - 30.1 The problem and the assumptions
+    - 30.2 The greedy coloring and DSATUR
+    - 30.3 No ratio below four thirds
+    - 30.4 What the greedy coloring guarantees
+    - 30.5 DSATUR as a heuristic
+    - 30.6 Sources
+    - 30.7 Typical mistakes
+    - 30.8 In summary
 
 ## [Specialized algorithms](specialized-algorithms/index.md)
 
-29. [Knapsack: branch-and-bound on the critical item](specialized-algorithms/knapsack-branch-and-bound.md)
-    - 29.1 The algorithm for the KP
-    - 29.2 A worked example
-    - 29.3 Typical mistakes
-    - 29.4 In summary
+31. [Knapsack: branch-and-bound on the critical item](specialized-algorithms/knapsack-branch-and-bound.md)
+    - 31.1 The algorithm for the KP
+    - 31.2 A worked example
+    - 31.3 Typical mistakes
+    - 31.4 In summary

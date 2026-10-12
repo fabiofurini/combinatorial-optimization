@@ -36,9 +36,9 @@ title: "The travelling salesman problem"
 
     - [Chapter 24 «MIP heuristics for the classical problems»](../heuristic-algorithms/mip-heuristics-classical.md#2423-the-travelling-salesman-problem): The symmetric edge model and its LP relaxation on the reference instance
 
-    - [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#283-the-metric-tsp): Double tree and Christofides for the metric TSP
+    - [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/tsp-approximation.md#292-the-double-tree-and-the-christofides-algorithms): Double tree and Christofides for the metric TSP
 
-    - [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#2871-the-general-tsp): No constant ratio for the general TSP unless $P=NP$
+    - [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/tsp-approximation.md#295-the-general-tsp): No constant ratio for the general TSP unless $P=NP$
 
 ## Definition { #sez-sec-cat-tsp-def }
 
@@ -68,7 +68,7 @@ title: "The travelling salesman problem"
 
 - $z(I) \ge \left\lceil \frac{1}{2} \sum_{i \in \Vcitta} (a_i + b_i) \right\rceil$, where $a_i \le b_i$ are the two smallest distances from city $i$ (two shortest edges) ([Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp.md#box-7-obs-tsp-lb)).
 
-- $d(T)\le z(I)$ for every minimum spanning tree $T$, metric or not ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-12-obs-mst)).
+- $d(T)\le z(I)$ for every minimum spanning tree $T$, metric or not ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/tsp-approximation.md#box-5-obs-mst)).
 
 - Assignment relaxation $\le z(\LP_{\TSP}^{\mathrm{MTZ}}) \le z(\LP_{\TSP}^{\mathrm{DFJ}}) \le z(I)$ on the reference instance: $16\le17\le18=18$ ([Chapter 13 «Formulations of the travelling salesman problem»](../formulations/tsp-formulations.md#box-8-ex-TSP-LP)).
 
@@ -76,7 +76,7 @@ title: "The travelling salesman problem"
 
 - Different permutations describe the same tour: $n$ starting cities and, in the symmetric case, $2$ directions ([Chapter 6 «The travelling salesman problem»](../combinatorial-optimization-problems/tsp.md#box-4-prop-tsp-count)).
 
-- Shortcutting a closed walk does not increase its length in a metric instance, and a minimum perfect matching of an even set of cities weighs at most $\frac{z(I)}{2}$ ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#285-structural-properties)).
+- Shortcutting a closed walk does not increase its length in a metric instance, and a minimum perfect matching of an even set of cities weighs at most $\frac{z(I)}{2}$ ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/tsp-approximation.md#293-structural-properties)).
 
 ## Formulation { #sez-sec-cat-tsp-formulation }
 
@@ -143,11 +143,11 @@ title: "The travelling salesman problem"
 
 ## Approximation { #sez-sec-cat-tsp-approximation }
 
-- Double tree: $DT(I)\le 2\,d(T)\le 2\,z(I)$, and the ratio $2$ is tight ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-18-prop-DT)).
+- Double tree: $DT(I)\le 2\,d(T)\le 2\,z(I)$, and the ratio $2$ is tight ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/tsp-approximation.md#box-7-prop-DT)).
 
-- Christofides: $CH(I)\le d(T)+d(M)\le\frac32\,z(I)$, tight; on the reference instance $CH(I)=18=z(I)$ and $DT(I)=22$ ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-20-prop-CH)).
+- Christofides: $CH(I)\le d(T)+d(M)\le\frac32\,z(I)$, tight; on the reference instance $CH(I)=18=z(I)$ and $DT(I)=22$ ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/tsp-approximation.md#box-9-prop-CH)).
 
-- For the general TSP no polynomial algorithm has $\frac{\mathscr{A}(I)}{z(I)}\le\alpha$ for a constant $\alpha$, unless $P=NP$ (Sahni and Gonzalez, 1976) ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-22-prop-TSPinapx)).
+- For the general TSP no polynomial algorithm has $\frac{\mathscr{A}(I)}{z(I)}\le\alpha$ for a constant $\alpha$, unless $P=NP$ (Sahni and Gonzalez, 1976) ([Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/tsp-approximation.md#box-11-prop-TSPinapx)).
 
 ## Instances { #sez-sec-cat-tsp-ist }
 
@@ -173,7 +173,7 @@ $$
 
 - Optimal value $z(\mathrm{TSP1})=18$, attained by $\tilde\sigma=(1,3,5,2,4)$, unique; NN from $1$: $25$; $\LB=17$; $DT(I)=22$, $CH(I)=18$.
 
-- Used in [Example «a small TSP instance»](../combinatorial-optimization-problems/combinatorial-optimization.md#box-9-ex-oc1-tsp), [Example «counting the tours»](../combinatorial-optimization-problems/combinatorial-optimization.md#box-15-ex-oc1-count-tsp), [Example «bounds on the small instances»](../combinatorial-optimization-problems/combinatorial-optimization.md#box-21-ex-oc1-bounds), [Example «TSP instance»](../combinatorial-optimization-problems/tsp.md#box-2-ex-tsp5), [Example «enumeration of the tours»](../combinatorial-optimization-problems/tsp.md#box-5-ex-tsp-enum), [Example «nearest neighbour from city $1$»](../combinatorial-optimization-problems/tsp.md#box-6-ex-tsp-nn), [Example «the bound on the reference instance»](../combinatorial-optimization-problems/tsp.md#box-8-ex-tsp-lb), [Example «the instance of the chapter»](../formulations/tsp-formulations.md#box-2-ex-TSP-inst), [Example «$\ILP_{\TSP}^{\mathrm{MTZ}}$ model»](../formulations/tsp-formulations.md#box-4-ex-TSP-ILP), [Example «$\ILP_{\TSP}^{\mathrm{DFJ}}$ model»](../formulations/tsp-formulations.md#box-6-ex-TSP-DFJ), [Example «comparing the relaxations»](../formulations/tsp-formulations.md#box-8-ex-TSP-LP), [Example «$DT$ on the TSP reference instance»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-6-ex-dt), [Example «$CH$ on the TSP reference instance»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-7-ex-ch), [Example «TSP reference instance»](../heuristic-algorithms/heuristics.md#box-4-ex-refTSP), [Example «Bounds and gaps on the reference instances»](../heuristic-algorithms/heuristics.md#box-7-ex-gaps), [Proposition «two-edge lower bound»](../heuristic-algorithms/heuristics.md#box-8-prop-twoedges), [How to evaluate a heuristic algorithm](../heuristic-algorithms/heuristics.md#sez-sec-evaluation), [Example «NN on the TSP reference instance»](../heuristic-algorithms/constructive-heuristics.md#box-11-ex-nn), [Example «Multi-start NN on the TSP reference instance»](../heuristic-algorithms/constructive-heuristics.md#box-12-ex-msnn), [Example «NI and CI on the TSP reference instance»](../heuristic-algorithms/constructive-heuristics.md#box-13-ex-ni), [Example «FI on the TSP reference instance»](../heuristic-algorithms/constructive-heuristics.md#box-14-ex-fi), [Example «$RNN_{0.3}$ on the TSP reference instance»](../heuristic-algorithms/constructive-heuristics.md#box-16-ex-rnn), [Example «PILOT-NN on the TSP reference instance»](../heuristic-algorithms/constructive-heuristics.md#box-18-ex-pilot), [What constructive heuristics give, and what they do not](../heuristic-algorithms/constructive-heuristics.md#sez-sec-WHAT), [Proposition «termination of local search»](../heuristic-algorithms/local-search.md#box-2-prop-termination), [Example «2OPT on the TSP reference instance»](../heuristic-algorithms/local-search.md#box-5-ex-twooptref), [Example «SA with the 2-opt neighbourhood on the TSP reference instance»](../heuristic-algorithms/metaheuristics.md#box-4-ex-saTSP), [Example «LNS on the TSP reference instance»](../heuristic-algorithms/metaheuristics.md#box-10-ex-lnsTSP), [The LP relaxations on the reference instances](../heuristic-algorithms/mip-heuristics-classical.md#2425-the-lp-relaxations-on-the-reference-instances), [What the MIP-based heuristics give](../heuristic-algorithms/mip-heuristics-classical.md#sez-sec-give).
+- Used in [Example «a small TSP instance»](../combinatorial-optimization-problems/combinatorial-optimization.md#box-9-ex-oc1-tsp), [Example «counting the tours»](../combinatorial-optimization-problems/combinatorial-optimization.md#box-15-ex-oc1-count-tsp), [Example «bounds on the small instances»](../combinatorial-optimization-problems/combinatorial-optimization.md#box-21-ex-oc1-bounds), [Example «TSP instance»](../combinatorial-optimization-problems/tsp.md#box-2-ex-tsp5), [Example «enumeration of the tours»](../combinatorial-optimization-problems/tsp.md#box-5-ex-tsp-enum), [Example «nearest neighbour from city $1$»](../combinatorial-optimization-problems/tsp.md#box-6-ex-tsp-nn), [Example «the bound on the reference instance»](../combinatorial-optimization-problems/tsp.md#box-8-ex-tsp-lb), [Example «the instance of the chapter»](../formulations/tsp-formulations.md#box-2-ex-TSP-inst), [Example «$\ILP_{\TSP}^{\mathrm{MTZ}}$ model»](../formulations/tsp-formulations.md#box-4-ex-TSP-ILP), [Example «$\ILP_{\TSP}^{\mathrm{DFJ}}$ model»](../formulations/tsp-formulations.md#box-6-ex-TSP-DFJ), [Example «comparing the relaxations»](../formulations/tsp-formulations.md#box-8-ex-TSP-LP), [Example «$DT$ on the TSP reference instance»](../approximation-algorithms/tsp-approximation.md#box-2-ex-dt), [Example «$CH$ on the TSP reference instance»](../approximation-algorithms/tsp-approximation.md#box-3-ex-ch), [Example «TSP reference instance»](../heuristic-algorithms/heuristics.md#box-4-ex-refTSP), [Example «Bounds and gaps on the reference instances»](../heuristic-algorithms/heuristics.md#box-7-ex-gaps), [Proposition «two-edge lower bound»](../heuristic-algorithms/heuristics.md#box-8-prop-twoedges), [How to evaluate a heuristic algorithm](../heuristic-algorithms/heuristics.md#sez-sec-evaluation), [Example «NN on the TSP reference instance»](../heuristic-algorithms/constructive-heuristics.md#box-11-ex-nn), [Example «Multi-start NN on the TSP reference instance»](../heuristic-algorithms/constructive-heuristics.md#box-12-ex-msnn), [Example «NI and CI on the TSP reference instance»](../heuristic-algorithms/constructive-heuristics.md#box-13-ex-ni), [Example «FI on the TSP reference instance»](../heuristic-algorithms/constructive-heuristics.md#box-14-ex-fi), [Example «$RNN_{0.3}$ on the TSP reference instance»](../heuristic-algorithms/constructive-heuristics.md#box-16-ex-rnn), [Example «PILOT-NN on the TSP reference instance»](../heuristic-algorithms/constructive-heuristics.md#box-18-ex-pilot), [What constructive heuristics give, and what they do not](../heuristic-algorithms/constructive-heuristics.md#sez-sec-WHAT), [Proposition «termination of local search»](../heuristic-algorithms/local-search.md#box-2-prop-termination), [Example «2OPT on the TSP reference instance»](../heuristic-algorithms/local-search.md#box-5-ex-twooptref), [Example «SA with the 2-opt neighbourhood on the TSP reference instance»](../heuristic-algorithms/metaheuristics.md#box-4-ex-saTSP), [Example «LNS on the TSP reference instance»](../heuristic-algorithms/metaheuristics.md#box-10-ex-lnsTSP), [The LP relaxations on the reference instances](../heuristic-algorithms/mip-heuristics-classical.md#2425-the-lp-relaxations-on-the-reference-instances), [What the MIP-based heuristics give](../heuristic-algorithms/mip-heuristics-classical.md#sez-sec-give).
 
 ### Instance TSP2 { #sez-sec-cat-ist-tsp2 }
 
@@ -458,7 +458,7 @@ $$
 
 - Optimal value $z(\mathrm{TSP13})=27$, attained by $(1,2,6,4,3,5)$, unique; $DT(I)=32$, $CH(I)=27$.
 
-- Used in [Exercise 28.4](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-4).
+- Used in [Exercise 29.1](../exercises/tsp-approximation.md#esercizio-29-1).
 
 ### Instance TSP14 { #sez-sec-cat-ist-tsp14 }
 
@@ -483,7 +483,7 @@ $$
 
 - Optimal value $z(\mathrm{TSP14})=24$, attained by $(1,3,2,6,5,4)$, unique; $CH(I)=25$, $DT(I)=28$.
 
-- Used in [Exercise 28.5](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-5).
+- Used in [Exercise 29.2](../exercises/tsp-approximation.md#esercizio-29-2).
 
 ### Instance TSP15 { #sez-sec-cat-ist-tsp15 }
 
@@ -507,7 +507,7 @@ $$
 
 - Optimal value $z(\mathrm{TSP15})=5$, attained by $(1,2,3,4,5)$.
 
-- Used in [Exercise 28.6](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-6).
+- Used in [Exercise 29.3](../exercises/tsp-approximation.md#esercizio-29-3).
 
 ### Instance TSP16 { #sez-sec-cat-ist-tsp16 }
 
@@ -531,7 +531,7 @@ $$
 
 - Optimal value $z(\mathrm{TSP16})=15$, attained by $(1,3,2,4,5)$; tours of length $15$ or $35$ only.
 
-- Used in [Exercise 28.6](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-6).
+- Used in [Exercise 29.3](../exercises/tsp-approximation.md#esercizio-29-3).
 
 ### Instance TSP17 { #sez-sec-cat-ist-tsp17 }
 
@@ -555,7 +555,7 @@ $$
 
 - Optimal value $z(\mathrm{TSP17})=28$, attained by $(1,3,5,2,4)$; $DT(I_5)=40$.
 
-- Used in [Proposition (tightness of $DT$)](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-19-prop-DTtight).
+- Used in [Proposition (tightness of $DT$)](../approximation-algorithms/tsp-approximation.md#box-8-prop-DTtight).
 
 ### Instance TSP18 { #sez-sec-cat-ist-tsp18 }
 
@@ -579,7 +579,7 @@ $$
 
 - Optimal value $z(\mathrm{TSP18})=28$, attained by $CH(I_5)=32$.
 
-- Used in [Proposition (tightness of $CH$)](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-21-prop-CHtight).
+- Used in [Proposition (tightness of $CH$)](../approximation-algorithms/tsp-approximation.md#box-10-prop-CHtight).
 
 ### Instance TSP19 { #sez-sec-cat-ist-tsp19 }
 
@@ -1032,11 +1032,11 @@ $$
 
 - [Adding subtour elimination constraints (1)](../exercises/tsp-formulations.md#esercizio-13-5)
 
-- [Metric TSP approximation 1](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-4)
+- [Metric TSP approximation 1](../exercises/tsp-approximation.md#esercizio-29-1)
 
-- [Metric TSP approximation 2](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-5)
+- [Metric TSP approximation 2](../exercises/tsp-approximation.md#esercizio-29-2)
 
-- [Metric TSP approximation 3](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-6)
+- [Metric TSP approximation 3](../exercises/tsp-approximation.md#esercizio-29-3)
 
 - [A dual bound for the TSP (1)](../exercises/heuristics.md#esercizio-20-3)
 
@@ -1091,15 +1091,15 @@ $$
 
 - [Exercise 7.4](../exercises/tsp.md#esercizio-6-4): Checking the triangle inequality
 
-- [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-2-def-metricTSP): Definition in the approximation chapter
+- [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/tsp-approximation.md#box-1-def-metricTSP): Definition in the approximation chapter
 
-- [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-18-prop-DT): $DT$ is a $2$-approximation, tight
+- [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/tsp-approximation.md#box-7-prop-DT): $DT$ is a $2$-approximation, tight
 
-- [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-20-prop-CH): $CH$ is a $\frac32$-approximation, tight
+- [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/tsp-approximation.md#box-9-prop-CH): $CH$ is a $\frac32$-approximation, tight
 
-- [Exercise 28.4](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-4):
+- [Exercise 29.1](../exercises/tsp-approximation.md#esercizio-29-1):
 
-- [Exercise 28.5](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-5):
+- [Exercise 29.2](../exercises/tsp-approximation.md#esercizio-29-2):
 
 ## Asymmetric travelling salesman problem (ATSP) { #sez-sec-cat-atsp }
 
@@ -1152,7 +1152,7 @@ $$
 
     The <strong>Hamiltonian cycle problem</strong> asks whether a graph $G=(V,E)$ has a cycle through all its vertices.
 
-- Defined in [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-22-prop-TSPinapx).
+- Defined in [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/tsp-approximation.md#box-11-prop-TSPinapx).
 
 - With $d_{ij}=1$ on the edges and a large distance elsewhere, $G$ is Hamiltonian if and only if $z(I_G)=n$: the TSP contains it.
 
@@ -1162,6 +1162,6 @@ $$
 
 - [Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#sez-sec-complexity): Why the TSP is strongly NP-hard
 
-- [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/pcmax-tsp-coloring-approximation.md#box-22-prop-TSPinapx): The reduction behind the inapproximability of the general TSP
+- [Chapter 28 «$P\|C_{\max}$, metric TSP and the limits of approximation»](../approximation-algorithms/tsp-approximation.md#box-11-prop-TSPinapx): The reduction behind the inapproximability of the general TSP
 
-- [Exercise 28.6](../exercises/pcmax-tsp-coloring-approximation.md#esercizio-28-6):
+- [Exercise 29.3](../exercises/tsp-approximation.md#esercizio-29-3):

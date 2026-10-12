@@ -43,8 +43,10 @@ Exercises with **worked solutions**, chapter by chapter. Try each exercise on yo
 - [25. Approximation algorithms: definitions](approximation.md) · 5 exercises
 - [26. Approximation algorithms for bin packing](bin-packing-approximation.md) · 12 exercises
 - [27. Approximation algorithms for the knapsack problem](knapsack-approximation.md) · 15 exercises
-- [28. P|Cmax, metric TSP and the limits of approximation](pcmax-tsp-coloring-approximation.md) · 9 exercises
+- [28. Approximation for P|Cmax](pcmax-approximation.md) · 3 exercises
+- [29. Approximation for the metric TSP](tsp-approximation.md) · 3 exercises
+- [30. Limits of approximation: vertex coloring](coloring-approximation.md) · 3 exercises
 
 ## Specialized algorithms
 
-- [29. Knapsack: branch-and-bound on the critical item](knapsack-branch-and-bound.md) · 4 exercises
+- [31. Knapsack: branch-and-bound on the critical item](knapsack-branch-and-bound.md) · 4 exercises

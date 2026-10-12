@@ -30,12 +30,28 @@
 
     [:octicons-arrow-right-24: Read the chapter](knapsack-approximation.md) · [Exercises](../exercises/knapsack-approximation.md)
 
--   **28. P|Cmax, metric TSP and the limits of approximation**
+-   **28. Approximation for P|Cmax**
 
     ---
 
-    The problems and the assumptions · Scheduling on parallel machines · The metric TSP · Vertex coloring · …
+    The problem and the assumptions · The algorithms $LIST$ and $LPT$ · A property of list scheduling · Performance guarantees · …
 
-    [:octicons-arrow-right-24: Read the chapter](pcmax-tsp-coloring-approximation.md) · [Exercises](../exercises/pcmax-tsp-coloring-approximation.md)
+    [:octicons-arrow-right-24: Read the chapter](pcmax-approximation.md) · [Exercises](../exercises/pcmax-approximation.md)
+
+-   **29. Approximation for the metric TSP**
+
+    ---
+
+    The problem and the assumptions · The double tree and the Christofides algorithms · Structural properties · Performance guarantees · …
+
+    [:octicons-arrow-right-24: Read the chapter](tsp-approximation.md) · [Exercises](../exercises/tsp-approximation.md)
+
+-   **30. Limits of approximation: vertex coloring**
+
+    ---
+
+    The problem and the assumptions · The greedy coloring and DSATUR · No ratio below four thirds · What the greedy coloring guarantees · …
+
+    [:octicons-arrow-right-24: Read the chapter](coloring-approximation.md) · [Exercises](../exercises/coloring-approximation.md)
 
 </div>

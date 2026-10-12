@@ -23,7 +23,7 @@ The course solves 7 combinatorial optimization problems in every way: their char
 - Chapter 17: [Dynamic programming for knapsack problems](../dynamic-programming/dp-knapsack.md)
 - Chapter 21: [Constructive heuristics](../heuristic-algorithms/constructive-heuristics.md)
 - Chapter 27: [Approximation algorithms for the knapsack problem](../approximation-algorithms/knapsack-approximation.md)
-- Chapter 29: [Knapsack: branch-and-bound on the critical item](../specialized-algorithms/knapsack-branch-and-bound.md)
+- Chapter 31: [Knapsack: branch-and-bound on the critical item](../specialized-algorithms/knapsack-branch-and-bound.md)
 - Catalogue: [everything the course does on this problem](../catalogue/knapsack.md)
 
 ## Bin packing (BPP)
@@ -43,7 +43,7 @@ The course solves 7 combinatorial optimization problems in every way: their char
 - Chapter 4: [Vertex coloring](../combinatorial-optimization-problems/coloring.md)
 - Chapter 11: [Formulations of the vertex coloring problem](../formulations/coloring-formulations.md)
 - Chapter 21: [Constructive heuristics](../heuristic-algorithms/constructive-heuristics.md)
-- Chapter 28: [P|Cmax, metric TSP and the limits of approximation](../approximation-algorithms/pcmax-tsp-coloring-approximation.md)
+- Chapter 30: [Limits of approximation: vertex coloring](../approximation-algorithms/coloring-approximation.md)
 - Catalogue: [everything the course does on this problem](../catalogue/vertex-coloring.md)
 
 ## Maximum clique (MCP)
@@ -63,7 +63,7 @@ The course solves 7 combinatorial optimization problems in every way: their char
 - Chapter 21: [Constructive heuristics](../heuristic-algorithms/constructive-heuristics.md)
 - Chapter 22: [Local search](../heuristic-algorithms/local-search.md)
 - Chapter 23: [Metaheuristics](../heuristic-algorithms/metaheuristics.md)
-- Chapter 28: [P|Cmax, metric TSP and the limits of approximation](../approximation-algorithms/pcmax-tsp-coloring-approximation.md)
+- Chapter 29: [Approximation for the metric TSP](../approximation-algorithms/tsp-approximation.md)
 - Catalogue: [everything the course does on this problem](../catalogue/tsp.md)
 
 ## Parallel machine scheduling (P||Cmax)
@@ -73,7 +73,7 @@ The course solves 7 combinatorial optimization problems in every way: their char
 - Chapter 7: [Parallel machine scheduling](../combinatorial-optimization-problems/pcmax.md)
 - Chapter 14: [Formulations of parallel machine scheduling](../formulations/pcmax-formulations.md)
 - Chapter 21: [Constructive heuristics](../heuristic-algorithms/constructive-heuristics.md)
-- Chapter 28: [P|Cmax, metric TSP and the limits of approximation](../approximation-algorithms/pcmax-tsp-coloring-approximation.md)
+- Chapter 28: [Approximation for P|Cmax](../approximation-algorithms/pcmax-approximation.md)
 - Catalogue: [everything the course does on this problem](../catalogue/pcmax.md)
 
 ## Capacitated lot sizing (CLS)
