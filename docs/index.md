@@ -59,14 +59,6 @@ Each chapter is one of the course notes, with the same numbers and the same colo
 
 <div class="grid cards" markdown>
 
--   :material-star-outline: **Selected problems**
-
-    ---
-
-    The problems on which the whole course focuses: for each one, everything the course does on it — where it is treated, the techniques and the exercises.
-
-    [:octicons-arrow-right-24: The selected problems](selected-problems/index.md)
-
 -   :material-puzzle-outline: **1 · Combinatorial optimization problems**
 
     ---
@@ -114,6 +106,14 @@ Each chapter is one of the course notes, with the same numbers and the same colo
     33\. Knapsack: B&B
 
     [:octicons-arrow-right-24: The chapters](specialized-algorithms/index.md)
+
+-   :material-star-outline: **Selected problems**
+
+    ---
+
+    The problems on which the whole course focuses: for each one, everything the course does on it — where it is treated, the techniques and the exercises.
+
+    [:octicons-arrow-right-24: The selected problems](selected-problems/index.md)
 
 -   :material-view-list: **Catalogue of problems**
 

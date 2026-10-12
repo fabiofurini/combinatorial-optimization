@@ -44,7 +44,7 @@ title: "Scheduling on identical parallel machines"
 
 ## Definition { #sez-sec-cat-pcmax-def }
 
-- Definition and assumptions: [Catalogue of combinatorial problems](../catalogo/central-problems.md#sez-sec-cat-def-pcmax).
+- Definition and assumptions: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-pcmax).
 
 - It models the balancing of work among identical resources (machines, processors, workers), where the plan ends when the last resource finishes.
 
@@ -184,8 +184,8 @@ title: "Scheduling on identical parallel machines"
 
 ## Variants { #sez-sec-cat-pcmax-var }
 
-- [Scheduling on a fixed number of identical machines ($m$ not part of the input) ($Pm\|C_{\max}$)](../catalogo/scheduling.md#sez-sec-cat-def-pmcmax): Special case of $P\,||\,C_{\max}$ with $m$ fixed; with $m=2$ it asks for a split of the jobs into two sets of loads as equal as possible.
+- [Scheduling on a fixed number of identical machines ($m$ not part of the input) ($Pm\|C_{\max}$)](../catalogue/scheduling.md#sez-sec-cat-def-pmcmax): Special case of $P\,||\,C_{\max}$ with $m$ fixed; with $m=2$ it asks for a split of the jobs into two sets of loads as equal as possible.
 
-- [Scheduling on parallel machines with different speeds, $Q\,||\,C_{\max}$](../catalogo/scheduling.md#sez-sec-cat-def-qcmax): Generalizes $P\,||\,C_{\max}$, which is the case of machines with equal speeds.
+- [Scheduling on parallel machines with different speeds, $Q\,||\,C_{\max}$](../catalogue/scheduling.md#sez-sec-cat-def-qcmax): Generalizes $P\,||\,C_{\max}$, which is the case of machines with equal speeds.
 
-- [Scheduling on unrelated parallel machines, $R\,||\,C_{\max}$](../catalogo/scheduling.md#sez-sec-cat-def-rcmax): Generalizes $Q\,||\,C_{\max}$ and $P\,||\,C_{\max}$.
+- [Scheduling on unrelated parallel machines, $R\,||\,C_{\max}$](../catalogue/scheduling.md#sez-sec-cat-def-rcmax): Generalizes $Q\,||\,C_{\max}$ and $P\,||\,C_{\max}$.

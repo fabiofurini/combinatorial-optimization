@@ -42,7 +42,7 @@ title: "The travelling salesman problem"
 
 ## Definition { #sez-sec-cat-tsp-def }
 
-- Definition and assumptions: [Catalogue of combinatorial problems](../catalogo/central-problems.md#sez-sec-cat-def-tsp).
+- Definition and assumptions: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-tsp).
 
 - The cities are places to visit and $d_{ij}$ the cost of going from $i$ to $j$, as for a technician who visits her sites and comes back to the office ([Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#110-exercises)).
 
@@ -201,8 +201,8 @@ title: "The travelling salesman problem"
 
 ## Variants { #sez-sec-cat-tsp-var }
 
-- [Metric travelling salesman problem (metric TSP)](../catalogo/routing.md#sez-sec-cat-def-metrictsp): The special case of the TSP with the triangle inequality, where approximation guarantees exist.
+- [Metric travelling salesman problem (metric TSP)](../catalogue/routing.md#sez-sec-cat-def-metrictsp): The special case of the TSP with the triangle inequality, where approximation guarantees exist.
 
-- [Asymmetric travelling salesman problem (ATSP)](../catalogo/routing.md#sez-sec-cat-def-atsp): The TSP is the special case of the ATSP in which $d_{ij}=d_{ji}$ for all $i,j$; an ATSP instance has $(n-1)!$ tours.
+- [Asymmetric travelling salesman problem (ATSP)](../catalogue/routing.md#sez-sec-cat-def-atsp): The TSP is the special case of the ATSP in which $d_{ij}=d_{ji}$ for all $i,j$; an ATSP instance has $(n-1)!$ tours.
 
-- [Hamiltonian cycle problem (HCP)](../catalogo/routing.md#sez-sec-cat-def-hcp): With $d_{ij}=1$ on the edges and a large distance elsewhere, $G$ is Hamiltonian if and only if $z(I_G)=n$: the TSP contains it.
+- [Hamiltonian cycle problem (HCP)](../catalogue/routing.md#sez-sec-cat-def-hcp): With $d_{ij}=1$ on the edges and a large distance elsewhere, $G$ is Hamiltonian if and only if $z(I_G)=n$: the TSP contains it.

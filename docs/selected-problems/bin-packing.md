@@ -42,7 +42,7 @@ title: "The bin packing problem"
 
 ## Definition { #sez-sec-cat-bpp-def }
 
-- Definition and assumptions: [Catalogue of combinatorial problems](../catalogo/central-problems.md#sez-sec-cat-def-bpp).
+- Definition and assumptions: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-bpp).
 
 - A solution is a <strong>partition</strong> of the items into packing patterns, one per bin, so the candidate solutions are counted by the Bell numbers ([Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#133-partitions-and-bell-numbers)).
 
@@ -210,4 +210,4 @@ title: "The bin packing problem"
 
 ## Variants { #sez-sec-cat-bpp-var }
 
-- [Cutting stock problem (CSP)](../catalogo/packing.md#sez-sec-cat-def-csp): The CSP is the BPP with $d_j$ identical copies of every item $j$, and the BPP is the case $d_j = 1$ for all $j\in\Ioggetti$.
+- [Cutting stock problem (CSP)](../catalogue/packing.md#sez-sec-cat-def-csp): The CSP is the BPP with $d_j$ identical copies of every item $j$, and the BPP is the case $d_j = 1$ for all $j\in\Ioggetti$.

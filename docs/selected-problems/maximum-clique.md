@@ -28,7 +28,7 @@ title: "The maximum clique problem"
 
 ## Definition { #sez-sec-cat-mcp-def }
 
-- Definition and assumptions: [Catalogue of combinatorial problems](../catalogo/central-problems.md#sez-sec-cat-def-mcp).
+- Definition and assumptions: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-mcp).
 
 - A clique is a set of pairwise adjacent vertices: groups of pairwise connected members of a social network, of pairwise compatible tasks or exams, common substructures of two molecules.
 
@@ -92,8 +92,8 @@ title: "The maximum clique problem"
 
 ## Variants { #sez-sec-cat-mcp-var }
 
-- [Maximum stable set problem (MSSP)](../catalogo/graphs.md#sez-sec-cat-def-mssp): A subset is a clique of $G$ if and only if it is a stable set of $\overline{G}$: $\omega(G) = \alpha(\overline{G})$ and $\alpha(G) = \omega(\overline{G})$.
+- [Maximum stable set problem (MSSP)](../catalogue/graphs.md#sez-sec-cat-def-mssp): A subset is a clique of $G$ if and only if it is a stable set of $\overline{G}$: $\omega(G) = \alpha(\overline{G})$ and $\alpha(G) = \omega(\overline{G})$.
 
-- [Vertex-weighted maximum clique problem (VWMCP)](../catalogo/graphs.md#sez-sec-cat-def-vwmcp): With all the weights $w_v=1$ it is the MCP.
+- [Vertex-weighted maximum clique problem (VWMCP)](../catalogue/graphs.md#sez-sec-cat-def-vwmcp): With all the weights $w_v=1$ it is the MCP.
 
-- [Edge-weighted maximum clique problem (EWMCP)](../catalogo/graphs.md#sez-sec-cat-def-ewmcp): With $r_{uv}=1$ it is again the MCP, since $r(K)=\binom{|K|}{2}$ grows with $|K|$.
+- [Edge-weighted maximum clique problem (EWMCP)](../catalogue/graphs.md#sez-sec-cat-def-ewmcp): With $r_{uv}=1$ it is again the MCP, since $r(K)=\binom{|K|}{2}$ grows with $|K|$.

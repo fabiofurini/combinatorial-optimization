@@ -28,7 +28,7 @@ title: "The vertex coloring problem"
 
 ## Definition { #sez-sec-cat-vcp-def }
 
-- Definition and assumptions: [Catalogue of combinatorial problems](../catalogo/central-problems.md#sez-sec-cat-def-vcp).
+- Definition and assumptions: [Catalogue of combinatorial problems](../catalogue/central-problems.md#sez-sec-cat-def-vcp).
 
 - The vertices are objects in conflict and the colors are resources that conflicting objects cannot share, as in the exam calendar of [Chapter 1 «Combinatorial optimization problems»](../combinatorial-optimization-problems/combinatorial-optimization.md#box-7-ex-oc1-vcp), where the colors are the days of the session.
 
