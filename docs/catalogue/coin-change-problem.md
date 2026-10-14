@@ -43,8 +43,4 @@ title: "Coin change problem (CCP)"
 <td><strong>Exercises</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-coin-change/">Ch. 27 (5 exercises)</a></td>
 </tr>
-<tr>
-<td><strong>Reference instances</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-coin-change/#box-1-texccpex1">Ch. 27</a> (<span class="arithmatex">\(z=2\)</span>)</td>
-</tr>
 </table></div>

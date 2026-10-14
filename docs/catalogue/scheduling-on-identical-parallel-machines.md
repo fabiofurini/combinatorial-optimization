@@ -67,10 +67,6 @@ title: "Scheduling on identical parallel machines (P||Cmax)"
 <td><strong>Exercises</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/pcmax/">Ch. 7 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/pcmax-formulations/">Ch. 14 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/heuristics/">Ch. 29 (2 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/constructive-heuristics/">Ch. 30 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/local-search/">Ch. 31 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/metaheuristics/">Ch. 32 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/mip-heuristics-classical/#esercizio-33-5">Exercise 33.5</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/approximation/#esercizio-34-2">Exercise 34.2</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/pcmax-approximation/">Ch. 40 (3 exercises)</a></td>
 </tr>
-<tr>
-<td><strong>Reference instances</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/pcmax/scheduling-on-identical-parallel-machines/#box-2-ex-pcmax7">Ch. 7</a> (<span class="arithmatex">\(z=9\)</span>); <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/local-search/p-cmax-move-and-swap/#sez-sec-pcmax">Ch. 31, PCM12</a> (<span class="arithmatex">\(z=19\)</span>); <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/metaheuristics/the-problems-and-the-assumptions/#box-3-ex-medium">Ch. 32, PCM15</a> (<span class="arithmatex">\(z=69\)</span>)</td>
-</tr>
 </table></div>
 
 ### Properties { #sez-sec-cat-pcmax-properties }

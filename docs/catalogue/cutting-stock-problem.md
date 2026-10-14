@@ -61,8 +61,4 @@ title: "Cutting stock problem (CSP)"
 <td><strong>Exercises</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/bin-packing/#esercizio-3-4">Exercise 3.4</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/bin-packing-formulations/#esercizio-10-6">Exercise 10.6</a></td>
 </tr>
-<tr>
-<td><strong>Reference instances</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/the-cutting-stock-problem/#box-5-ex-csp">Ch. 3</a> (<span class="arithmatex">\(z=3\)</span>)</td>
-</tr>
 </table></div>

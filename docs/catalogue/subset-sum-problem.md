@@ -65,8 +65,4 @@ title: "Subset sum problem (SSP)"
 <td><strong>Exercises</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-2">Exercise 2.2</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/#esercizio-9-6">Exercise 9.6</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-principles/#esercizio-16-2">Exercise 16.2</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-subset-sum/">Ch. 20 (5 exercises)</a></td>
 </tr>
-<tr>
-<td><strong>Reference instances</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-subset-sum-problem/#box-5-ex-ssp">Ch. 2</a></td>
-</tr>
 </table></div>

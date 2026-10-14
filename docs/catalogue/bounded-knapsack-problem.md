@@ -71,8 +71,4 @@ title: "Bounded knapsack problem (BKP)"
 <td><strong>Exercises</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-3">Exercise 2.3</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/#esercizio-9-7">Exercise 9.7</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-bounded-knapsack/">Ch. 19 (5 exercises)</a></td>
 </tr>
-<tr>
-<td><strong>Reference instances</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-bounded-knapsack-problem/#box-7-ex-bkp">Ch. 2</a> (<span class="arithmatex">\(z=18\)</span>)</td>
-</tr>
 </table></div>

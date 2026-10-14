@@ -87,10 +87,6 @@ title: "The vertex coloring problem (VCP)"
 <td><strong>Exercises</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring/">Ch. 4 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring-formulations/">Ch. 11 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/constructive-heuristics/">Ch. 30 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring-inapproximability/">Ch. 37 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dsatur-branch-and-bound/">Ch. 42 (5 exercises)</a></td>
 </tr>
-<tr>
-<td><strong>Reference instances</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/the-vertex-coloring-problem/#box-5-ex-vcp2">Ch. 4</a> (<span class="arithmatex">\(z=3\)</span>)</td>
-</tr>
 </table></div>
 
 ### Properties { #sez-sec-cat-vcp-properties }

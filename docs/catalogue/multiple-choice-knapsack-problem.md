@@ -69,8 +69,4 @@ title: "Multiple-choice knapsack problem (MCKP)"
 <td><strong>Exercises</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-5">Exercise 2.5</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/#esercizio-9-11">Exercise 9.11</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-principles/#esercizio-16-5">Exercise 16.5</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-multiple-choice-knapsack/">Ch. 21 (5 exercises)</a></td>
 </tr>
-<tr>
-<td><strong>Reference instances</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-multiple-choice-knapsack-problem/#box-15-ex-mckp">Ch. 2</a> (<span class="arithmatex">\(z=17\)</span>)</td>
-</tr>
 </table></div>

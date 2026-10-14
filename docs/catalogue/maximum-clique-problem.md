@@ -67,10 +67,6 @@ title: "The maximum clique problem (MCP)"
 <td><strong>Exercises</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring/">Ch. 4 (2 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/clique/">Ch. 5 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/clique-formulations/">Ch. 12 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/clique-inapproximability/">Ch. 38 (4 exercises)</a></td>
 </tr>
-<tr>
-<td><strong>Reference instances</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/clique/the-maximum-clique-problem/#box-6-mcpP-ex1">Ch. 5</a> (<span class="arithmatex">\(z=3\)</span>)</td>
-</tr>
 </table></div>
 
 ### Properties { #sez-sec-cat-mcp-properties }

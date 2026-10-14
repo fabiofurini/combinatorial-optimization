@@ -67,10 +67,6 @@ title: "Capacitated lot sizing (CLS)"
 <td><strong>Exercises</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/lot-sizing/">Ch. 8 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/lot-sizing-formulations/">Ch. 15 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-capacitated-lot-sizing/">Ch. 26 (2 exercises)</a></td>
 </tr>
-<tr>
-<td><strong>Reference instances</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem/#box-2-ex-cls5">Ch. 8</a> (<span class="arithmatex">\(z=180\)</span>)</td>
-</tr>
 </table></div>
 
 ### Properties { #sez-sec-cat-cls-properties }

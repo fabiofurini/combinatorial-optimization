@@ -69,8 +69,4 @@ title: "Multidimensional knapsack problem (MDKP)"
 <td><strong>Exercises</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/#esercizio-9-9">Exercise 9.9</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-multidimensional-knapsack/">Ch. 22 (5 exercises)</a></td>
 </tr>
-<tr>
-<td><strong>Reference instances</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-multidimensional-knapsack-problem/#box-11-ex-mdkp">Ch. 2</a> (<span class="arithmatex">\(z=14\)</span>)</td>
-</tr>
 </table></div>

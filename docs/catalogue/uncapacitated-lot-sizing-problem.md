@@ -61,8 +61,4 @@ title: "Uncapacitated lot sizing problem (ULS)"
 <td><strong>Exercises</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/lot-sizing/#esercizio-8-4">Exercise 8.4</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/lot-sizing-formulations/#esercizio-15-6">Exercise 15.6</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-lot-sizing/">Ch. 25 (3 exercises)</a></td>
 </tr>
-<tr>
-<td><strong>Reference instances</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/lot-sizing/the-capacitated-lot-sizing-problem/#83-counting-the-solutions">Ch. 8</a> (<span class="arithmatex">\(z=170\)</span>)</td>
-</tr>
 </table></div>

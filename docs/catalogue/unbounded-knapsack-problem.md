@@ -65,8 +65,4 @@ title: "Unbounded knapsack problem (UKP)"
 <td><strong>Exercises</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-3">Exercise 2.3</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/#esercizio-9-8">Exercise 9.8</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-unbounded-knapsack/">Ch. 18 (5 exercises)</a></td>
 </tr>
-<tr>
-<td><strong>Reference instances</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-unbounded-knapsack-problem/#box-9-ex-ukp">Ch. 2</a> (<span class="arithmatex">\(z=24\)</span>)</td>
-</tr>
 </table></div>

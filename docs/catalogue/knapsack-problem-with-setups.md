@@ -69,8 +69,4 @@ title: "Knapsack problem with setups (KPS)"
 <td><strong>Exercises</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/#esercizio-9-12">Exercise 9.12</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-knapsack-setups/">Ch. 23 (5 exercises)</a></td>
 </tr>
-<tr>
-<td><strong>Reference instances</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-knapsack-problem-with-setups/#box-17-ex-kps">Ch. 2</a> (<span class="arithmatex">\(z=16\)</span>)</td>
-</tr>
 </table></div>

@@ -45,8 +45,4 @@ title: "Rod cutting problem (RCP)"
 <td><strong>Exercises</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-rod-cutting/">Ch. 28 (5 exercises)</a></td>
 </tr>
-<tr>
-<td><strong>Reference instances</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-rod-cutting/#box-1-texexpbox1">Ch. 28</a> (<span class="arithmatex">\(z=10\)</span>)</td>
-</tr>
 </table></div>

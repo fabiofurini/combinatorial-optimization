@@ -81,10 +81,6 @@ title: "The 0/1 knapsack problem (KP)"
 <td><strong>Exercises</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/">Ch. 2 (6 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/">Ch. 9 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-principles/#esercizio-16-1">Exercise 16.1</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-knapsack/">Ch. 17 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/heuristics/">Ch. 29 (2 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/constructive-heuristics/">Ch. 30 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/local-search/">Ch. 31 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/metaheuristics/">Ch. 32 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/mip-heuristics-classical/">Ch. 33 (4 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/approximation/#esercizio-34-4">Exercise 34.4</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-approximation/">Ch. 35 (15 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-branch-and-bound/">Ch. 41 (4 exercises)</a></td>
 </tr>
-<tr>
-<td><strong>Reference instances</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-0-1-knapsack-problem/#box-2-ex-kp">Ch. 2</a> (<span class="arithmatex">\(z=15\)</span>); <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/heuristics/#box-2-ex-refKP">Ch. 29</a> (<span class="arithmatex">\(z=17\)</span>); <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/metaheuristics/the-problems-and-the-assumptions/#box-2-ex-tsp20">Ch. 32, KP20</a> (<span class="arithmatex">\(z=521\)</span>); <a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/knapsack-approximation/#box-2-ex-split">Ch. 35</a> (<span class="arithmatex">\(z=15\)</span>)</td>
-</tr>
 </table></div>
 
 ### Properties { #sez-sec-cat-kp-properties }
@@ -146,5 +142,3 @@ title: "The 0/1 knapsack problem (KP)"
 ### Ad hoc algorithms { #sez-sec-cat-kp-adhocalgorithms }
 
 - The LP of a node is solved by the Dantzig formulas, without the simplex algorithm, and has one fractional variable: the split item, on which it branches ([Ch. 41](../specialized-algorithms/knapsack-branch-and-bound.md#411-the-algorithm-for-the-kp)).
-
-- On the instance of [Ch. 2](../combinatorial-optimization-problems/knapsack/index.md) it closes the gap between $\LB=15$ and $\UB=16$ with $5$ nodes ([Ch. 41](../specialized-algorithms/knapsack-branch-and-bound.md#box-3-texexpbox2)).

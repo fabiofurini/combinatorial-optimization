@@ -67,8 +67,4 @@ title: "Multiple knapsack problem (MKP)"
 <td><strong>Exercises</strong></td>
 <td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-4">Exercise 2.4</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/#esercizio-9-10">Exercise 9.10</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-multiple-knapsack/">Ch. 24 (5 exercises)</a></td>
 </tr>
-<tr>
-<td><strong>Reference instances</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/the-multiple-knapsack-problem/#box-13-ex-mkp">Ch. 2</a> (<span class="arithmatex">\(z=30\)</span>)</td>
-</tr>
 </table></div>
