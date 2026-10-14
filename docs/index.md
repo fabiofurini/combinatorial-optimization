@@ -185,3 +185,5 @@ Teaching material by **[Fabio Furini](https://fabiofurini.github.io/)** —
 *This website is also available in [Italian](https://fabiofurini.github.io/ottimizzazione-combinatoria/).*
 
 [:material-presentation: Course slides --- Chapter 1: Combinatorial optimization problems](pdf/slides-01-combinatorial-optimization-problems.pdf){ .md-button }
+
+[:material-presentation: Course slides --- Chapter 2: Knapsack problems](pdf/slides-02-knapsack-problems.pdf){ .md-button }
