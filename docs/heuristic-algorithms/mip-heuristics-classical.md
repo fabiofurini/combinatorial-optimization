@@ -6,7 +6,7 @@ title: "MIP heuristics for the classical problems"
 
 <div class="info-capitolo" markdown>
 
-**Part 4 · Heuristic algorithms · Chapter 33** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-pencil: Exercises: MIP heuristics](../exercises/mip-heuristics-classical.md)
+**Part 4 · Heuristic algorithms · Chapter 33** · [:material-file-pdf-box: Lecture notes, volume 4 (PDF)](../pdf/lecture-notes-4-heuristic-algorithms.pdf) · [:material-presentation: Slides](../pdf/slides-mip-heuristics-classical.pdf) · [:material-pencil: Exercises: MIP heuristics](../exercises/mip-heuristics-classical.md)
 
 </div>
 

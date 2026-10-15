@@ -6,7 +6,7 @@ title: "Vertex coloring: limits of approximation"
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 37** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Vertex coloring (VCP)](../exercises/coloring-inapproximability.md)
+**Part 5 · Approximation algorithms · Chapter 37** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-presentation: Slides](../pdf/slides-coloring-inapproximability.pdf) · [:material-pencil: Exercises: Vertex coloring (VCP)](../exercises/coloring-inapproximability.md)
 
 </div>
 

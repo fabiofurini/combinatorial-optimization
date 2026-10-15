@@ -6,7 +6,7 @@ title: "Maximum clique: limits of approximation"
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 38** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Maximum clique (MCP)](../exercises/clique-inapproximability.md)
+**Part 5 · Approximation algorithms · Chapter 38** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-presentation: Slides](../pdf/slides-clique-inapproximability.pdf) · [:material-pencil: Exercises: Maximum clique (MCP)](../exercises/clique-inapproximability.md)
 
 </div>
 
