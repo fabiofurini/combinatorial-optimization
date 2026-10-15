@@ -6,7 +6,7 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
 <div class="info-capitolo" markdown>
 
-**Part 6 · Ad hoc algorithms · Chapter 42** · [:material-file-pdf-box: Lecture notes, volume 6 (PDF)](../pdf/lecture-notes-6-specialized-algorithms.pdf) · [:material-pencil: Exercises: Vertex coloring (VCP)](../exercises/dsatur-branch-and-bound.md) · [:material-gesture-tap: App: Vertex coloring: the DSATUR branch-and-bound](../lab/dsatur-branch-and-bound.md)
+**Part 6 · Ad hoc algorithms · Chapter 42** · [:material-file-pdf-box: Lecture notes, volume 6 (PDF)](../pdf/lecture-notes-6-specialized-algorithms.pdf) · [:material-presentation: Slides](../pdf/slides-dsatur-branch-and-bound.pdf) · [:material-pencil: Exercises: Vertex coloring (VCP)](../exercises/dsatur-branch-and-bound.md) · [:material-gesture-tap: App: Vertex coloring: the DSATUR branch-and-bound](../lab/dsatur-branch-and-bound.md)
 
 </div>
 
