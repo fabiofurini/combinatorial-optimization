@@ -6,7 +6,7 @@ title: "Principles of approximation algorithms"
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 34** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Principles](../exercises/approximation.md) · [:material-gesture-tap: App: Tight instances](../lab/tight-instances.md)
+**Part 5 · Approximation algorithms · Chapter 34** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-presentation: Slides](../pdf/slides-approximation.pdf) · [:material-pencil: Exercises: Principles](../exercises/approximation.md) · [:material-gesture-tap: App: Tight instances](../lab/tight-instances.md)
 
 </div>
 

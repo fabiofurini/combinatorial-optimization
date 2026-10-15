@@ -6,7 +6,7 @@ title: "DP for the 0/1 knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 17** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP tables for the knapsack problems](../../lab/dp-knapsack-table.md)
+**Part 3 · Dynamic programming · Chapter 17** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-presentation: Slides (1/2)](../../pdf/slides-dp-knapsack-1.pdf) · [:material-presentation: Slides (2/2)](../../pdf/slides-dp-knapsack-2.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../../exercises/dp-knapsack.md) · [:material-gesture-tap: App: DP tables for the knapsack problems](../../lab/dp-knapsack-table.md)
 
 </div>
 
