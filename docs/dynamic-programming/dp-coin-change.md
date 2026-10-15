@@ -6,7 +6,7 @@ title: "DP for the coin change problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 27** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Coin change (CCP)](../exercises/dp-coin-change.md)
+**Part 3 · Dynamic programming · Chapter 27** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-presentation: Slides](../pdf/slides-dp-coin-change.pdf) · [:material-pencil: Exercises: Coin change (CCP)](../exercises/dp-coin-change.md)
 
 </div>
 

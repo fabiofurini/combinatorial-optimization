@@ -6,7 +6,7 @@ title: "DP for the capacitated lot sizing problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 26** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Capacitated lot sizing (CLS)](../exercises/dp-capacitated-lot-sizing.md)
+**Part 3 · Dynamic programming · Chapter 26** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-presentation: Slides](../pdf/slides-dp-capacitated-lot-sizing.pdf) · [:material-pencil: Exercises: Capacitated lot sizing (CLS)](../exercises/dp-capacitated-lot-sizing.md)
 
 </div>
 
