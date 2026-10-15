@@ -14,7 +14,7 @@ title: "Constructive heuristics"
 
     - From this module, the chapter [«Heuristic algorithms: definitions»](https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/heuristics/): primal and dual bounds, the gap, and the four reference instances.
 
-    - From this module, the chapters on the problems: the KP, the BPP, $P\,||\,C_{\max}$ and the TSP.
+    - From this module, the chapters on the problems: the KP, the BPP, $P\,||\,C_{\max}$, the TSP and the VCP.
 
 !!! chiave "Objectives"
 
