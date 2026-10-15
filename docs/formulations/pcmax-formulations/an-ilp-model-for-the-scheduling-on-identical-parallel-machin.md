@@ -468,7 +468,7 @@ The problem of this section is the scheduling on identical parallel machines ($P
 
 !!! esempio "Example 14.6: an integrality gap"
 
-    Consider two machines and three jobs with processing times $(3,3,2)$. [Proposition 14.1](#box-4-prop-LP0-PCMAX) gives $z(\mathrm{LP}_{P\|C_{\max}})=8/2=4$. In every integer schedule, the job of length two must share a machine with one job of length three, so $z(\mathrm{ILP}_{P\|C_{\max}})=5$. The fractional assignment
+    Consider two machines and three jobs with processing times $(3,3,2)$. [Proposition 14.1](#box-4-prop-LP0-PCMAX) gives $z(\mathrm{LP}_{P\|C_{\max}})=8/2=4$. In every integer schedule one machine processes at least two of the three jobs, so its load is at least $3+2=5$; the schedule $\{3,2\},\{3\}$ reaches it, so $z(\mathrm{ILP}_{P\|C_{\max}})=5$. The fractional assignment
 
     $$
     x_{j1}=x_{j2}=\frac12\qquad\forall j\in\{1,2,3\}

@@ -6,7 +6,7 @@ title: "Formulations of lot sizing problems"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 15** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Lot sizing problems](../../exercises/lot-sizing-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 15** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-presentation: Slides](../../pdf/slides-lot-sizing-formulations.pdf) · [:material-pencil: Exercises: Lot sizing problems](../../exercises/lot-sizing-formulations.md)
 
 </div>
 

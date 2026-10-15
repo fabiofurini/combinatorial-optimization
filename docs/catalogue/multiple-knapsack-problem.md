@@ -41,7 +41,7 @@ title: "Multiple knapsack problem (MKP)"
     2. Each item individually fits in (at least) one knapsack (otherwise, it can never be selected). Formally,
 
         $$
-        \exists\, k\in \mathscr{K}\ \text{such that}\ w_j \le c_k, \qquad \forall\, j\in \mathscr{I}.
+        \forall\, j\in \mathscr{I}\quad \exists\, k\in \mathscr{K}\ \text{such that}\ w_j \le c_k .
         $$
 
 ## What the course does on this problem { #sez-sec-cat-mkp-vert }

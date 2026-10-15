@@ -264,7 +264,7 @@ The Vertex Coloring Problem and its assumptions are defined in [Chapter 4 «Col
     \label{DDPI}
     \tilde{\pi}_{c\{u,v\}}=1,  \quad \forall c \in \mathscr{C}
     \text{    and    }
-    \tilde{\pi}_{ce}= 0,  \quad \forall e \in E \setminus \{\{u,v\}\}, \tag{11.7b}
+    \tilde{\pi}_{ce}= 0,  \quad \forall c \in \mathscr{C},~ e \in E \setminus \{\{u,v\}\}, \tag{11.7b}
     \end{equation*}
 
 <a id="box-5-cor_lp0_vcp_value"></a>
@@ -509,7 +509,7 @@ The Vertex Coloring Problem and its assumptions are defined in [Chapter 4 «Col
 
     $$
     \begin{array}{rcccccccccccccccr}
-    {\max} & {\mu_1} & {+\mu_2} & {+\mu_3} &  &  &  &  &  &  &  &  &  & {\lambda_1} & {+\lambda_2} & {+\lambda_3} &  \\[1ex]
+    {\max} & {\mu_1} & {+\mu_2} & {+\mu_3} &  &  &  &  &  &  &  &  &  & {+\lambda_1} & {+\lambda_2} & {+\lambda_3} &  \\[1ex]
     \text{subject to} & {\mu_1} &  &  & {-\pi_{112}} & {-\pi_{113}} &  &  &  &  &  &  &  &  &  &  & {\le 0} \\[1ex]
     & {\mu_1} &  &  &  &  &  & {-\pi_{212}} & {-\pi_{213}} &  &  &  &  &  &  &  & {\le 0} \\[1ex]
     & {\mu_1} &  &  &  &  &  &  &  &  & {-\pi_{312}} & {-\pi_{313}} &  &  &  &  & {\le 0} \\[1ex]
@@ -589,7 +589,7 @@ The Vertex Coloring Problem and its assumptions are defined in [Chapter 4 «Col
     \label{DDPI_BIS}
     \tilde{\pi}_{c\{u,v\}}=1,~ \forall c \in \mathscr{C},
     {\rm ~~~~~}
-    \tilde{\pi}_{ce}= 0,  ~ \forall e \in E \setminus \{\{u,v\}\},
+    \tilde{\pi}_{ce}= 0,  ~ \forall c \in \mathscr{C},~ e \in E \setminus \{\{u,v\}\},
     \text{    and    }
     \tilde{\lambda}_{c}= 0,  ~ \forall c \in \mathscr{C}, \tag{11.15b}
     \end{equation*}
@@ -629,7 +629,7 @@ The Vertex Coloring Problem and its assumptions are defined in [Chapter 4 «Col
 
     - <strong>Believing that the model counts only the colors that are really used.</strong> The constraints allow $y_c=1$ for a color that no vertex takes: it is the objective function that switches such colors off.
 
-    - <strong>Ignoring the symmetry.</strong> Permuting the colors of an optimal solution gives another optimal solution: the $\mathrm{ILP}_{\mathrm{VCP}}$ model has $k!$ equivalent copies of every coloring.
+    - <strong>Ignoring the symmetry.</strong> Permuting the colors of an optimal solution gives another optimal solution: a coloring that uses $q$ of the $k$ colors has $k!/(k-q)!$ equivalent copies in the $\mathrm{ILP}_{\mathrm{VCP}}$ model ($k!$ when it uses all the colors).
 
     - <strong>Writing the dual solution with a wrong edge.</strong> The dual values $\tilde{\pi}_{ce}$ are non-zero only for one edge $e=\{u,v\}$, and for every color $c$: all the other edges have value zero.
 

@@ -115,7 +115,7 @@ The problems of this section are the asymmetric travelling salesman problem (ATS
 
     - <strong>Writing the MTZ constraints for the city $1$.</strong> The constraints [(13.1d)](ilp-models-for-the-travelling-salesman-problem.md#mjx-eqn:MTZ:TSP) are written only for the pairs of cities different from city $1$: the city $1$ has no position variable.
 
-    - <strong>Using a smaller coefficient than $n-1$.</strong> With a coefficient smaller than $n-1$ the constraint cuts off feasible tours; $n-1$ is the smallest valid value.
+    - <strong>Using a big-M smaller than $n-1$.</strong> Written as $u_i-u_j+Mx_{ij}\le M-1$, the constraint with $M<n-1$ cuts off feasible tours: when $x_{ij}=0$ it requires $u_i-u_j\le M-1<n-2$, while two positions can differ by $n-2$; $M=n-1$ is the smallest valid value.
 
     - <strong>Taking $S=\mathscr{V}$ in the subtour elimination constraints.</strong> A tour uses $|\mathscr{V}|$ arcs inside $\mathscr{V}$: the constraint would cut off every tour. The sets $S$ are proper subsets of the cities, with at least two cities.
 

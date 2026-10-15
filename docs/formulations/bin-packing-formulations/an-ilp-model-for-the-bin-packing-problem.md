@@ -491,7 +491,7 @@ The problem of this section is the Bin Packing Problem (BPP), defined in [Chapte
 
     $$
     \begin{array}{rcccccccccc}
-    {\max} & {\mu_{1}} & {+} {\mu_{2}} & {+} {\mu_{3}} &  &  &  & {\lambda_{1}} & {+} {\lambda_{2}} & {+} {\lambda_{3}} &  \\[1ex]
+    {\max} & {\mu_{1}} & {+} {\mu_{2}} & {+} {\mu_{3}} &  &  &  & {+} {\lambda_{1}} & {+} {\lambda_{2}} & {+} {\lambda_{3}} &  \\[1ex]
     \text{subject to} & {\mu_1} &  &  & {-} {7\pi_1} &  &  &  &  &  & {\le 0} \\[1ex]
     & {\mu_1} &  &  &  & {-} {7\pi_2} &  &  &  &  & {\le 0} \\[1ex]
     & {\mu_1} &  &  &  &  & {-} {7\pi_3} &  &  &  & {\le 0} \\[1ex]
@@ -587,7 +587,7 @@ The problem of this section is the Bin Packing Problem (BPP), defined in [Chapte
 
 ### 10.4.1 Some important theoretical properties
 
-- The following two propositions show that the ratio between $z(\mathrm{LP}_{\mathrm{BPP}})$ and $z(\mathrm{ILP}_{\mathrm{BPP}})$ is at least one half for every BPP instance (<strong>by hypothesis</strong>  $z(\mathrm{ILP}_{\mathrm{BPP}}) >1$ since all items do not fit in a single bin). Furthermore, there exist instances for which the value one half can be asymptotically achieved as the capacity $c \to +\infty$.
+- The following two propositions show that the ratio between $z(\mathrm{LP}_{\mathrm{BPP}})$ and $z(\mathrm{ILP}_{\mathrm{BPP}})$ is at least one half for every BPP instance (<strong>by hypothesis</strong>  $z(\mathrm{ILP}_{\mathrm{BPP}}) >1$ since not all items fit in a single bin). Furthermore, there exist instances for which the value one half can be asymptotically achieved as the capacity $c \to +\infty$.
 
 <a id="box-11-prop_lp_bpp_ratio_half"></a>
 
@@ -637,7 +637,7 @@ The problem of this section is the Bin Packing Problem (BPP), defined in [Chapte
     $$
     \begin{aligned}
     \sum_{j\in\mathscr I} w_j
-    &=\sum_{b=1}^{z}\sum_{j\in\mathscr I} w_j\,\tilde x_{jb}\ =\underbrace{\sum_{b=2}^{z-1}\sum_{j\in\mathscr I} w_j\,\tilde x_{jb}}_{>\frac{c}{2}(z-2)}
+    &=\sum_{b=1}^{z}\sum_{j\in\mathscr I} w_j\,\tilde x_{jb}\ =\underbrace{\sum_{b=2}^{z-1}\sum_{j\in\mathscr I} w_j\,\tilde x_{jb}}_{\ge\frac{c}{2}(z-2)}
     \;+\; \underbrace{\sum_{j\in\mathscr I} w_j\,\tilde x_{j1}
     \;+\;\sum_{j\in\mathscr I} w_j\,\tilde x_{jz}}_{>c}\\[1ex]
     &>\frac{c}{2}(z-2)+c

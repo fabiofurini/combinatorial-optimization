@@ -18,7 +18,7 @@ title: "Formulations of clique problems"
 
     - From the module <em>Integer linear programming</em>, [Chapter 2 «Primal and dual bounds»](https://fabiofurini.github.io/integer-linear-programming/models-and-bounds/lp-relaxation/), [Chapter 3 «Ideal formulations»](https://fabiofurini.github.io/integer-linear-programming/formulations/ideal-formulations/) and [Chapter 4 «Valid inequalities»](https://fabiofurini.github.io/integer-linear-programming/formulations/valid-inequalities/): LP relaxations, stronger formulations and valid inequalities.
 
-    - From the module <em>Linear Programming</em>, [Chapter 9 «Duality theory»](https://fabiofurini.github.io/linear-programming/duality/09-duality/): the dual of an LP problem and weak duality.
+    - From the module <em>Linear Programming</em>, [Chapter 9 «Duality theory»](https://fabiofurini.github.io/linear-programming/duality/09-duality/): the dual of an LP problem, weak and strong duality.
 
 !!! chiave "Objectives"
 
