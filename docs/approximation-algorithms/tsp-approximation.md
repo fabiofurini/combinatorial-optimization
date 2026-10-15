@@ -6,7 +6,7 @@ title: "The TSP: the general case and the metric case"
 
 <div class="info-capitolo" markdown>
 
-**Part 5 · Approximation algorithms · Chapter 39** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-pencil: Exercises: Travelling salesman (TSP)](../exercises/tsp-approximation.md) · [:material-gesture-tap: App: Metric TSP: double tree and Christofides](../lab/metric-tsp-double-tree-christofides.md)
+**Part 5 · Approximation algorithms · Chapter 39** · [:material-file-pdf-box: Lecture notes, volume 5 (PDF)](../pdf/lecture-notes-5-approximation-algorithms.pdf) · [:material-presentation: Slides](../pdf/slides-tsp-approximation.pdf) · [:material-pencil: Exercises: Travelling salesman (TSP)](../exercises/tsp-approximation.md) · [:material-gesture-tap: App: Metric TSP: double tree and Christofides](../lab/metric-tsp-double-tree-christofides.md)
 
 </div>
 

@@ -6,7 +6,7 @@ title: "A first DP algorithm"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 28** · [:material-book-open-variant: Chapter 28: Rod cutting (RCP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting (RCP)](../../exercises/dp-rod-cutting.md)
+**Part 3 · Dynamic programming · Chapter 28** · [:material-book-open-variant: Chapter 28: Rod cutting (RCP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-presentation: Slides](../../pdf/slides-dp-rod-cutting.pdf) · [:material-pencil: Exercises: Rod cutting (RCP)](../../exercises/dp-rod-cutting.md)
 
 </div>
 
@@ -595,7 +595,7 @@ title: "A first DP algorithm"
             \end{array}
             $$
 
-            We can compute an optimal solution for a rod of length $n=3$ as follows:
+            We can compute an optimal solution for a rod of length $3$ as follows:
 
             <div class="tabella" markdown="0"><table>
             <tr>
@@ -636,7 +636,7 @@ title: "A first DP algorithm"
             (0,0,1,0)
             $$
 
-            We can compute an optimal solution for a rod of length $n=2$ as follows:
+            We can compute an optimal solution for a rod of length $2$ as follows:
 
             <div class="tabella" markdown="0"><table>
             <tr>

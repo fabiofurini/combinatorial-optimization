@@ -72,11 +72,14 @@ The lecture slides, one PDF per chapter, with the same definitions and examples 
 | 25 | [DP for the uncapacitated lot sizing problem](dynamic-programming/dp-lot-sizing/index.md) | [:material-file-pdf-box: PDF](pdf/slides-dp-lot-sizing.pdf) (0.5 MB) |
 | 26 | [DP for the capacitated lot sizing problem](dynamic-programming/dp-capacitated-lot-sizing.md) | [:material-file-pdf-box: PDF](pdf/slides-dp-capacitated-lot-sizing.pdf) (0.5 MB) |
 | 27 | [DP for the coin change problem](dynamic-programming/dp-coin-change.md) | [:material-file-pdf-box: PDF](pdf/slides-dp-coin-change.pdf) (0.5 MB) |
+| 28 | [DP for the rod cutting problem](dynamic-programming/dp-rod-cutting/index.md) | [:material-file-pdf-box: PDF](pdf/slides-dp-rod-cutting.pdf) (0.5 MB) |
 | 29 | [Heuristic algorithms: definitions](heuristic-algorithms/heuristics.md) | [:material-file-pdf-box: PDF](pdf/slides-heuristics.pdf) (0.4 MB) |
 | 33 | [MIP heuristics for the classical problems](heuristic-algorithms/mip-heuristics-classical.md) | [:material-file-pdf-box: PDF](pdf/slides-mip-heuristics-classical.pdf) (0.8 MB) |
 | 34 | [Principles of approximation algorithms](approximation-algorithms/approximation.md) | [:material-file-pdf-box: PDF](pdf/slides-approximation.pdf) (0.3 MB) |
 | 37 | [Vertex coloring: limits of approximation](approximation-algorithms/coloring-inapproximability.md) | [:material-file-pdf-box: PDF](pdf/slides-coloring-inapproximability.pdf) (0.4 MB) |
 | 38 | [Maximum clique: limits of approximation](approximation-algorithms/clique-inapproximability.md) | [:material-file-pdf-box: PDF](pdf/slides-clique-inapproximability.pdf) (0.3 MB) |
+| 39 | [The TSP: the general case and the metric case](approximation-algorithms/tsp-approximation.md) | [:material-file-pdf-box: PDF](pdf/slides-tsp-approximation.pdf) (0.5 MB) |
+| 40 | [Approximation for $P\|C_{\max}$](approximation-algorithms/pcmax-approximation.md) | [:material-file-pdf-box: PDF](pdf/slides-pcmax-approximation.pdf) (0.4 MB) |
 
 </div>
 

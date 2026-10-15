@@ -6,7 +6,7 @@ title: "Typical mistakes · In summary"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 28** · [:material-book-open-variant: Chapter 28: Rod cutting (RCP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Rod cutting (RCP)](../../exercises/dp-rod-cutting.md)
+**Part 3 · Dynamic programming · Chapter 28** · [:material-book-open-variant: Chapter 28: Rod cutting (RCP)](index.md) · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-presentation: Slides](../../pdf/slides-dp-rod-cutting.pdf) · [:material-pencil: Exercises: Rod cutting (RCP)](../../exercises/dp-rod-cutting.md)
 
 </div>
 
@@ -14,7 +14,7 @@ title: "Typical mistakes · In summary"
 
 !!! attenzione "Warning"
 
-    - <strong>Counting vectors instead of cutting patterns.</strong> The $2^{n-1}$ cutting patterns of a rod of length $n$ are more than the solution vectors, because different patterns can give the same vector.
+    - <strong>Counting vectors instead of cutting patterns.</strong> The $2^{n-1}$ cutting patterns of a rod of length $n$ are more than the solution vectors when $n\ge 3$, because different patterns can give the same vector.
 
     - <strong>Forgetting the base case.</strong> $v(0)=0$ is used when the first piece has the length of the whole rod: $v(\ell)$ contains the term $p_\ell+v(0)$.
 
