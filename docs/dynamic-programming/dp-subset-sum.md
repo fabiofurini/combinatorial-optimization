@@ -6,7 +6,7 @@ title: "DP for the subset sum problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 20** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Subset sum (SSP)](../exercises/dp-subset-sum.md) · [:material-gesture-tap: App: DP tables for the knapsack problems](../lab/dp-knapsack-table.md)
+**Part 3 · Dynamic programming · Chapter 20** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-presentation: Slides](../pdf/slides-dp-subset-sum.pdf) · [:material-pencil: Exercises: Subset sum (SSP)](../exercises/dp-subset-sum.md) · [:material-gesture-tap: App: DP tables for the knapsack problems](../lab/dp-knapsack-table.md)
 
 </div>
 

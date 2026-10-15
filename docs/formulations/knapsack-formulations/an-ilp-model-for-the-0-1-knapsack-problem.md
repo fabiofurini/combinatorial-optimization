@@ -6,7 +6,7 @@ title: "0/1 knapsack"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 9** · [:material-book-open-variant: Chapter 9: Knapsack problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Knapsack problems](../../exercises/knapsack-formulations.md) · [:material-gesture-tap: App: LP relaxation and upper bounds for the 0/1 KP](../../lab/kp-lp-relaxation-bounds.md)
+**Part 2 · Formulations and their properties · Chapter 9** · [:material-book-open-variant: Chapter 9: Knapsack problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-presentation: Slides](../../pdf/slides-knapsack-formulations.pdf) · [:material-pencil: Exercises: Knapsack problems](../../exercises/knapsack-formulations.md) · [:material-gesture-tap: App: LP relaxation and upper bounds for the 0/1 KP](../../lab/kp-lp-relaxation-bounds.md)
 
 </div>
 

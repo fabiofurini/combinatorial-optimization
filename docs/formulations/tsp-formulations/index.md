@@ -6,7 +6,7 @@ title: "Formulations of routing problems"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 13** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Routing problems](../../exercises/tsp-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 13** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-presentation: Slides](../../pdf/slides-tsp-formulations.pdf) · [:material-pencil: Exercises: Routing problems](../../exercises/tsp-formulations.md)
 
 </div>
 

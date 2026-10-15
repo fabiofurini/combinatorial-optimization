@@ -6,7 +6,7 @@ title: "Principles of dynamic programming"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 16** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Principles](../exercises/dp-principles.md)
+**Part 3 · Dynamic programming · Chapter 16** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-presentation: Slides](../pdf/slides-dp-principles.pdf) · [:material-pencil: Exercises: Principles](../exercises/dp-principles.md)
 
 </div>
 

@@ -6,7 +6,7 @@ title: "DP for the multidimensional knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 22** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Multidimensional knapsack (MDKP)](../exercises/dp-multidimensional-knapsack.md)
+**Part 3 · Dynamic programming · Chapter 22** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-presentation: Slides](../pdf/slides-dp-multidimensional-knapsack.pdf) · [:material-pencil: Exercises: Multidimensional knapsack (MDKP)](../exercises/dp-multidimensional-knapsack.md)
 
 </div>
 

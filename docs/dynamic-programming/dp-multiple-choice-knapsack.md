@@ -6,7 +6,7 @@ title: "DP for the multiple-choice knapsack problem"
 
 <div class="info-capitolo" markdown>
 
-**Part 3 · Dynamic programming · Chapter 21** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-pencil: Exercises: Multiple-choice knapsack (MCKP)](../exercises/dp-multiple-choice-knapsack.md)
+**Part 3 · Dynamic programming · Chapter 21** · [:material-file-pdf-box: Lecture notes, volume 3 (PDF)](../pdf/lecture-notes-3-dynamic-programming.pdf) · [:material-presentation: Slides](../pdf/slides-dp-multiple-choice-knapsack.pdf) · [:material-pencil: Exercises: Multiple-choice knapsack (MCKP)](../exercises/dp-multiple-choice-knapsack.md)
 
 </div>
 

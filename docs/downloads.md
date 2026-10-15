@@ -52,6 +52,17 @@ The lecture slides, one PDF per chapter, with the same definitions and examples 
 | 6 | [Routing problems](combinatorial-optimization-problems/tsp/index.md) | [:material-file-pdf-box: PDF](pdf/slides-tsp.pdf) (0.4 MB) |
 | 7 | [Scheduling problems](combinatorial-optimization-problems/pcmax/index.md) | [:material-file-pdf-box: PDF](pdf/slides-pcmax.pdf) (0.4 MB) |
 | 8 | [Lot sizing problems](combinatorial-optimization-problems/lot-sizing/index.md) | [:material-file-pdf-box: PDF](pdf/slides-lot-sizing.pdf) (0.4 MB) |
+| 9 | [Formulations of knapsack problems](formulations/knapsack-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slides-knapsack-formulations.pdf) (0.6 MB) |
+| 10 | [Formulations of packing problems](formulations/bin-packing-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slides-bin-packing-formulations.pdf) (0.5 MB) |
+| 11 | [Formulations of coloring problems](formulations/coloring-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slides-coloring-formulations.pdf) (0.4 MB) |
+| 12 | [Formulations of clique problems](formulations/clique-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slides-clique-formulations.pdf) (0.5 MB) |
+| 13 | [Formulations of routing problems](formulations/tsp-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slides-tsp-formulations.pdf) (0.4 MB) |
+| 14 | [Formulations of scheduling problems](formulations/pcmax-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slides-pcmax-formulations.pdf) (0.4 MB) |
+| 16 | [Principles of dynamic programming](dynamic-programming/dp-principles.md) | [:material-file-pdf-box: PDF](pdf/slides-dp-principles.pdf) (0.3 MB) |
+| 20 | [DP for the subset sum problem](dynamic-programming/dp-subset-sum.md) | [:material-file-pdf-box: PDF](pdf/slides-dp-subset-sum.pdf) (0.4 MB) |
+| 21 | [DP for the multiple-choice knapsack problem](dynamic-programming/dp-multiple-choice-knapsack.md) | [:material-file-pdf-box: PDF](pdf/slides-dp-multiple-choice-knapsack.pdf) (0.4 MB) |
+| 22 | [DP for the multidimensional knapsack problem](dynamic-programming/dp-multidimensional-knapsack.md) | [:material-file-pdf-box: PDF](pdf/slides-dp-multidimensional-knapsack.pdf) (0.4 MB) |
+| 24 | [DP for the multiple knapsack problem](dynamic-programming/dp-multiple-knapsack.md) | [:material-file-pdf-box: PDF](pdf/slides-dp-multiple-knapsack.pdf) (0.4 MB) |
 
 </div>
 

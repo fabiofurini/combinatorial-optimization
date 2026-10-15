@@ -6,7 +6,7 @@ title: "Scheduling on identical parallel machines"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 14** · [:material-book-open-variant: Chapter 14: Scheduling problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Scheduling problems](../../exercises/pcmax-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 14** · [:material-book-open-variant: Chapter 14: Scheduling problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-presentation: Slides](../../pdf/slides-pcmax-formulations.pdf) · [:material-pencil: Exercises: Scheduling problems](../../exercises/pcmax-formulations.md)
 
 </div>
 

@@ -6,7 +6,7 @@ title: "Formulations of packing problems"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 10** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Packing problems](../../exercises/bin-packing-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 10** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-presentation: Slides](../../pdf/slides-bin-packing-formulations.pdf) · [:material-pencil: Exercises: Packing problems](../../exercises/bin-packing-formulations.md)
 
 </div>
 

@@ -6,7 +6,7 @@ title: "Formulations of clique problems"
 
 <div class="info-capitolo" markdown>
 
-**Part 2 · Formulations and their properties · Chapter 12** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-pencil: Exercises: Clique problems](../../exercises/clique-formulations.md)
+**Part 2 · Formulations and their properties · Chapter 12** · [:material-file-pdf-box: Lecture notes, volume 2 (PDF)](../../pdf/lecture-notes-2-formulations.pdf) · [:material-presentation: Slides](../../pdf/slides-clique-formulations.pdf) · [:material-pencil: Exercises: Clique problems](../../exercises/clique-formulations.md)
 
 </div>
 
