@@ -6,7 +6,7 @@ title: "Knapsack: branch-and-bound on the critical item"
 
 <div class="info-capitolo" markdown>
 
-**Part 6 · Ad hoc algorithms · Chapter 41** · [:material-file-pdf-box: Lecture notes, volume 6 (PDF)](../pdf/lecture-notes-6-specialized-algorithms.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../exercises/knapsack-branch-and-bound.md) · [:material-gesture-tap: App: Branch-and-bound for the knapsack](../lab/knapsack-branch-and-bound.md)
+**Part 6 · Ad hoc algorithms · Chapter 41** · [:material-file-pdf-box: Lecture notes, volume 6 (PDF)](../pdf/lecture-notes-6-specialized-algorithms.pdf) · [:material-presentation: Slides](../pdf/slides-knapsack-branch-and-bound.pdf) · [:material-pencil: Exercises: 0/1 knapsack (KP)](../exercises/knapsack-branch-and-bound.md) · [:material-gesture-tap: App: Branch-and-bound for the knapsack](../lab/knapsack-branch-and-bound.md)
 
 </div>
 
