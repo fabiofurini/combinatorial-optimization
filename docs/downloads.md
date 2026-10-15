@@ -36,6 +36,25 @@ The lecture notes, the exercise books and the catalogue of problems in PDF, with
 
 </div>
 
+## Slides
+
+The lecture slides, one PDF per chapter, with the same definitions and examples as the lecture notes.
+
+<div class="tabella-download" markdown>
+
+| Chapter | Title | File |
+|:---:|---|---|
+| 1 | [Combinatorial optimization problems](combinatorial-optimization-problems/combinatorial-optimization/index.md) | [:material-file-pdf-box: PDF](pdf/slides-combinatorial-optimization.pdf) (0.5 MB) |
+| 2 | [Knapsack problems](combinatorial-optimization-problems/knapsack/index.md) | [:material-file-pdf-box: PDF](pdf/slides-knapsack.pdf) (0.6 MB) |
+| 3 | [Packing problems](combinatorial-optimization-problems/bin-packing/index.md) | [:material-file-pdf-box: PDF](pdf/slides-bin-packing.pdf) (0.6 MB) |
+| 4 | [Coloring problems](combinatorial-optimization-problems/coloring/index.md) | [:material-file-pdf-box: PDF](pdf/slides-coloring.pdf) (0.4 MB) |
+| 5 | [Clique problems](combinatorial-optimization-problems/clique/index.md) | [:material-file-pdf-box: PDF](pdf/slides-clique.pdf) (0.5 MB) |
+| 6 | [Routing problems](combinatorial-optimization-problems/tsp/index.md) | [:material-file-pdf-box: PDF](pdf/slides-tsp.pdf) (0.4 MB) |
+| 7 | [Scheduling problems](combinatorial-optimization-problems/pcmax/index.md) | [:material-file-pdf-box: PDF](pdf/slides-pcmax.pdf) (0.4 MB) |
+| 8 | [Lot sizing problems](combinatorial-optimization-problems/lot-sizing/index.md) | [:material-file-pdf-box: PDF](pdf/slides-lot-sizing.pdf) (0.4 MB) |
+
+</div>
+
 ## Catalogue of problems
 
 <div class="tabella-download" markdown>

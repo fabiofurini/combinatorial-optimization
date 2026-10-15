@@ -6,7 +6,7 @@ title: "Scheduling on identical parallel machines"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 7** · [:material-book-open-variant: Chapter 7: Scheduling problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil: Exercises: Scheduling problems](../../exercises/pcmax.md)
+**Part 1 · Combinatorial optimization problems · Chapter 7** · [:material-book-open-variant: Chapter 7: Scheduling problems](index.md) · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-presentation: Slides](../../pdf/slides-pcmax.pdf) · [:material-pencil: Exercises: Scheduling problems](../../exercises/pcmax.md)
 
 </div>
 
