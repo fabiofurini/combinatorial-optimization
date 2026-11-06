@@ -87,7 +87,7 @@ Exercises with **worked solutions**, chapter by chapter, with the same parts and
 
 - [40. Approximation for P||Cmax](pcmax-approximation.md) · 3 exercises
 
-## Ad hoc algorithms
+## Ad hoc
 
 ### Knapsack problems
 

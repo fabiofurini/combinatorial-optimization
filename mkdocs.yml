@@ -368,7 +368,7 @@ nav:
           - "39. Travelling salesman (TSP)": approximation-algorithms/tsp-approximation.md
       - "Scheduling problems":
           - "40. Identical parallel machines (P||Cmax)": approximation-algorithms/pcmax-approximation.md
-  - Ad hoc algorithms:
+  - Ad hoc:
       - specialized-algorithms/index.md
       - "Knapsack problems":
           - "41. 0/1 knapsack (KP)": specialized-algorithms/knapsack-branch-and-bound.md
@@ -431,12 +431,12 @@ nav:
               - "39. Travelling salesman (TSP)": exercises/tsp-approximation.md
           - "Scheduling problems":
               - "40. Identical parallel machines (P||Cmax)": exercises/pcmax-approximation.md
-      - "Ad hoc algorithms":
+      - "Ad hoc":
           - "Knapsack problems":
               - "41. 0/1 knapsack (KP)": exercises/knapsack-branch-and-bound.md
           - "Coloring problems":
               - "42. Vertex coloring (VCP)": exercises/dsatur-branch-and-bound.md
-  - Self-assessment: self-assessment.md
+  - Quiz: self-assessment.md
   - Catalogue:
       - catalogue/index.md
       - "The problems at a glance": combinatorial-optimization-problems/problems.md

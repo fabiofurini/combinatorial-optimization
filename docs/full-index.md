@@ -378,7 +378,7 @@ All the pages of the website, in the order of the menu: the chapters with their 
     - [40.6 Typical mistakes](approximation-algorithms/pcmax-approximation.md#406-typical-mistakes)
     - [40.7 In summary](approximation-algorithms/pcmax-approximation.md#407-in-summary)
 
-## [Ad hoc algorithms](specialized-algorithms/index.md)
+## [Ad hoc](specialized-algorithms/index.md)
 
 ### Knapsack problems
 

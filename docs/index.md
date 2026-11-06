@@ -19,6 +19,7 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 [:material-school: Study the course](combinatorial-optimization-problems/combinatorial-optimization/index.md){ .md-button .md-button--primary }
 [:material-star-outline: Explore the problems](selected-problems/index.md){ .md-button }
 [:material-pencil: Practice](exercises/index.md){ .md-button }
+[:material-clipboard-check-outline: Test yourself](self-assessment.md){ .md-button }
 [:material-download: Get the materials](downloads.md){ .md-button }
 
 </div>
@@ -89,7 +90,7 @@ The same entries as the menu: each card gives its part and its chapters in the l
 
     [:octicons-arrow-right-24: The chapters](approximation-algorithms/index.md)
 
--   :material-tools: **Ad hoc algorithms**
+-   :material-tools: **Ad hoc**
 
     ---
 
