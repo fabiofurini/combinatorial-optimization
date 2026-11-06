@@ -160,6 +160,7 @@ extra_css:
   - stylesheets/extra.css?v=a25c6f8414
   - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraph.css
   - stylesheets/interattivi.css?v=c51ac2286b
+  - stylesheets/quiz.css?v=9e3792b41c
 
 markdown_extensions:
   - admonition
@@ -193,6 +194,7 @@ extra_javascript:
   - javascripts/gi-oc-d.js?v=c702b61e84
   - javascripts/gi-oc-e.js?v=81b96a11df
   - javascripts/gi-oc-f.js?v=16cc0cf8e9
+  - javascripts/quiz.js?v=a75e27774a
 
 
 nav:
@@ -434,6 +436,7 @@ nav:
               - "41. 0/1 knapsack (KP)": exercises/knapsack-branch-and-bound.md
           - "Coloring problems":
               - "42. Vertex coloring (VCP)": exercises/dsatur-branch-and-bound.md
+  - Self-assessment: self-assessment.md
   - Catalogue:
       - catalogue/index.md
       - "The problems at a glance": combinatorial-optimization-problems/problems.md

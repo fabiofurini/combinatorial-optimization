@@ -109,6 +109,16 @@ The same entries as the menu: each card gives its part and its chapters in the l
 
     [:octicons-arrow-right-24: The catalogue](catalogue/index.md) · [:material-file-pdf-box: PDF](pdf/combinatorial-problem-catalogue.pdf)
 
+-   :material-clipboard-check-outline: **Self-assessment**
+
+    ---
+
+    *Mock exam*
+
+    A new mock exam at every start: 13 questions, 33 points, with the solutions and links to the notes.
+
+    [:octicons-arrow-right-24: Test yourself](self-assessment.md)
+
 -   :material-gesture-tap: **Lab**
 
     ---

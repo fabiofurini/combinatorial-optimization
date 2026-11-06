@@ -415,3 +415,4 @@ All the pages of the website, in the order of the menu: the chapters with their 
 - [Lab](lab/index.md)
 - [Downloads](downloads.md)
 - [Colab notebooks](notebooks.md)
+- [Self-assessment](self-assessment.md)
