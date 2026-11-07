@@ -1,5 +1,41 @@
 # Full index
 
+<!-- collana-organizzazione -->
+## How to use these notes
+
+- **Website and PDF.** Each chapter of the website is a chapter of the lecture notes, with the same numbers and the same colors; long chapters are split into one page per section or per problem.
+- **At the top of each chapter** a bar with the part, the PDF of the volume, the exercises and the apps of the chapter; at the bottom, the link to the exercises.
+- **By problem.** The catalogue has one page per problem: its definition and the chapters that treat it, technique by technique.
+- **The code.** On the pages the algorithms are in pseudo-code; the «Run in Colab» buttons open the notebook with the code in Python and C++.
+
+The boxes have the same colors as in the lecture notes:
+
+<div class="grid" markdown>
+
+!!! definizione "Definition"
+    The precise meaning of a new concept.
+
+!!! teorema "Theorem, proposition, observation"
+    A result to remember, with its hypotheses.
+
+!!! esempio "Example"
+    A computation worked out in full, one step at a time.
+
+!!! formula "Formula"
+    In pink the formulas to keep at hand (for example the recurrences of dynamic programming).
+
+!!! algoritmo "Algorithm"
+    The pseudo-code, step by step as in the lecture notes.
+
+!!! chiave ""
+    **In green** the key point to take away.
+
+</div>
+
+??? dimostrazione "Proof: opens with a click"
+    All proofs are included, but folded: first read the statement, then open the proof when you want to study it. The same holds for the solutions of the exercises.
+<!-- /collana-organizzazione -->
+
 All the pages of the website, in the order of the menu: the chapters with their sections, the catalogue and the other pages.
 
 ## [Combinatorial optimization](combinatorial-optimization-problems/combinatorial-optimization/index.md)

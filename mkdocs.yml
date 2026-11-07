@@ -157,6 +157,7 @@ extra:
       lang: it
 
 extra_css:
+  - stylesheets/collana.css
   - stylesheets/extra.css?v=a25c6f8414
   - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraph.css
   - stylesheets/interattivi.css?v=c51ac2286b
@@ -437,6 +438,7 @@ nav:
           - "Coloring problems":
               - "42. Vertex coloring (VCP)": exercises/dsatur-branch-and-bound.md
   - Quiz: self-assessment.md
+  - Lab: lab/index.md
   - Catalogue:
       - catalogue/index.md
       - "The problems at a glance": combinatorial-optimization-problems/problems.md
@@ -488,7 +490,6 @@ nav:
           - catalogue/miscellaneous-problems.md
           - "Rod cutting (RCP)": catalogue/rod-cutting-problem.md
           - "Coin change (CCP)": catalogue/coin-change-problem.md
-  - Lab: lab/index.md
   - Downloads:
       - downloads.md
       - Colab notebooks: notebooks.md

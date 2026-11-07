@@ -9,6 +9,10 @@ hide:
 
 # Combinatorial Optimization
 
+<!-- collana-riga -->
+<p class="collana-riga" markdown>A course of the <b>Operations Research and Mathematics</b> series · [all the courses](#the-series)</p>
+<!-- /collana-riga -->
+
 Teaching material conceived and developed by **[Fabio Furini](https://fabiofurini.github.io/)**, associate
 professor at [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
 
@@ -16,13 +20,23 @@ professor at [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
 
 For the students of the Master's degree in Management Engineering at Sapienza, and for anyone who wants to learn how to solve combinatorial optimization problems. Prerequisites: [Integer Linear Programming](https://fabiofurini.github.io/integer-linear-programming/) for the formulations and [Algorithms](https://fabiofurini.github.io/algorithms/) for the algorithms.
 
-[:material-school: Study the course](combinatorial-optimization-problems/combinatorial-optimization/index.md){ .md-button .md-button--primary }
-[:material-star-outline: Explore the problems](selected-problems/index.md){ .md-button }
-[:material-pencil: Practice](exercises/index.md){ .md-button }
-[:material-clipboard-check-outline: Test yourself](self-assessment.md){ .md-button }
-[:material-download: Get the materials](downloads.md){ .md-button }
+[Start :material-arrow-right:](combinatorial-optimization-problems/combinatorial-optimization/index.md){ .md-button .md-button--primary }
+[:material-pencil: Exercises](exercises/index.md){ .md-button }
+[:material-gesture-tap: Lab](lab/index.md){ .md-button }
+[:material-clipboard-check-outline: Quiz](self-assessment.md){ .md-button }
+[:material-download: Downloads](downloads.md){ .md-button }
 
 </div>
+
+<!-- collana-app -->
+## Try it now
+
+The travelling salesman: build a tour with nearest neighbour and improve it with 2-opt moves.
+
+<div class="gi" data-grafico="oc-tsp"></div>
+
+[:material-gesture-tap: More apps in the lab](lab/index.md){ .md-button }
+<!-- /collana-app -->
 
 ## The parts of the course
 
@@ -142,53 +156,57 @@ The same entries as the menu: each card gives its part and its chapters in the l
 
 </div>
 
-## How to use these notes
-
-- **Website and PDF.** Each chapter of the website is a chapter of the lecture notes, with the same numbers and the same colors; long chapters are split into one page per section or per problem.
-- **At the top of each chapter** a bar with the part, the PDF of the volume, the exercises and the apps of the chapter; at the bottom, the link to the exercises.
-- **By problem.** The catalogue has one page per problem: its definition and the chapters that treat it, technique by technique.
-- **The code.** On the pages the algorithms are in pseudo-code; the «Run in Colab» buttons open the notebook with the code in Python and C++.
-
-The boxes have the same colors as in the lecture notes:
-
-<div class="grid" markdown>
-
-!!! definizione "Definition"
-    The precise meaning of a new concept.
-
-!!! teorema "Theorem, proposition, observation"
-    A result to remember, with its hypotheses.
-
-!!! esempio "Example"
-    A computation worked out in full, one step at a time.
-
-!!! formula "Formula"
-    In pink the formulas to keep at hand (for example the recurrences of dynamic programming).
-
-!!! algoritmo "Algorithm"
-    The pseudo-code, step by step as in the lecture notes.
-
-!!! chiave ""
-    **In green** the key point to take away.
-
-</div>
-
-??? dimostrazione "Proof: opens with a click"
-    All proofs are included, but folded: first read the statement, then open the proof when you want to study it. The same holds for the solutions of the exercises.
-
 ---
 
-By the same author:
+<!-- collana -->
+## The series
 
-- **[Linear Programming](https://fabiofurini.github.io/linear-programming/)** — polyhedra, the simplex algorithm, duality and the dual simplex, with the interactive lab;
-- **[Convex Optimization](https://fabiofurini.github.io/convex-optimization/)** — convex sets and functions, convex optimization problems, with interactive graphs;
-- **[Algorithms](https://fabiofurini.github.io/algorithms/)** — number representation, pseudo-code, sorting and searching, analysis and recursive algorithms;
-- **[Integer Linear Programming](https://fabiofurini.github.io/integer-linear-programming/)** — LP relaxation, valid inequalities, cutting planes, branch-and-bound and branch-and-cut;
-- **[Network Optimization](https://fabiofurini.github.io/network-optimization/)** — graphs, spanning trees, shortest paths, network flows, the network simplex and project management;
-- **[MIP Modelling](https://fabiofurini.github.io/mip-modelling/)** — integer linear programming models, from the formulation to the solution with solvers;
-- **[Operations Research Lab](https://fabiofurini.github.io/operations-research-lab/)** — modelling and solving optimization problems with Python and solvers;
-- **[Mathematical Analysis 1](https://fabiofurini.github.io/mathematical-analysis-1/)** — real numbers, functions, limits, derivatives and series, with interactive graphs;
-- **[Linear Algebra](https://fabiofurini.github.io/linear-algebra/)** — vectors, matrices, determinants, linear systems and eigenvalues, with the computation lab.
+Ten courses built the same way: lecture notes online and in PDF, exercises with solutions, an interactive lab and self-assessment quizzes.
+
+<div class="grid cards" markdown>
+
+-   :material-function-variant: **[Mathematical Analysis 1](https://fabiofurini.github.io/mathematical-analysis-1/)**
+
+    real numbers, functions, limits, derivatives and series, with interactive graphs
+
+-   :material-matrix: **[Linear Algebra](https://fabiofurini.github.io/linear-algebra/)**
+
+    vectors, matrices, determinants, linear systems and eigenvalues, with the computation lab
+
+-   :material-code-braces: **[Algorithms](https://fabiofurini.github.io/algorithms/)**
+
+    number representation, pseudo-code, sorting and searching, analysis and recursive algorithms
+
+-   :material-vector-triangle: **[Linear Programming](https://fabiofurini.github.io/linear-programming/)**
+
+    polyhedra, the simplex algorithm, duality and the dual simplex, with the interactive lab
+
+-   :material-dots-grid: **[Integer Linear Programming](https://fabiofurini.github.io/integer-linear-programming/)**
+
+    LP relaxation, valid inequalities, cutting planes, branch-and-bound and branch-and-cut
+
+-   :material-vector-curve: **[Convex Optimization](https://fabiofurini.github.io/convex-optimization/)**
+
+    convex sets and functions, convex optimization problems, with interactive graphs
+
+-   :material-graph-outline: **[Network Optimization](https://fabiofurini.github.io/network-optimization/)**
+
+    graphs, spanning trees, shortest paths, network flows, the network simplex and project management
+
+-   :material-hexagon-multiple-outline: **Combinatorial Optimization** · *this course*
+
+    knapsack, bin packing, coloring, TSP, scheduling and lot sizing, solved in every way
+
+-   :material-vector-polygon: **[MIP Modelling](https://fabiofurini.github.io/mip-modelling/)**
+
+    integer linear programming models, from the formulation to the solution with solvers
+
+-   :material-chart-timeline-variant: **[Operations Research Lab](https://fabiofurini.github.io/operations-research-lab/)**
+
+    modelling and solving optimization problems with Python and solvers
+
+</div>
+<!-- /collana -->
 
 Teaching material by **[Fabio Furini](https://fabiofurini.github.io/)** —
 [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
