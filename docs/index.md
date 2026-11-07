@@ -31,9 +31,9 @@ For the students of the Master's degree in Management Engineering at Sapienza, a
 <!-- collana-app -->
 ## Try it now
 
-The travelling salesman: build a tour with nearest neighbour and improve it with 2-opt moves.
+Branch-and-bound for the 0-1 knapsack: the tree grows node by node, with Dantzig's bounds, the pruning and the best solution found so far.
 
-<div class="gi" data-grafico="oc-tsp"></div>
+<div class="gi" data-grafico="oc-bb-knapsack"></div>
 
 [:material-gesture-tap: More apps in the lab](lab/index.md){ .md-button }
 <!-- /collana-app -->
