@@ -18,7 +18,7 @@ professor at [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
 
 **The course lecture notes, online**: knapsack, packing, coloring, clique, routing, scheduling and lot sizing problems, studied through formulations and their properties, dynamic programming, heuristic, approximation and ad hoc algorithms; with definitions, results with proofs, examples worked out step by step, exercises with solutions, Colab notebooks and interactive apps.
 
-For the students of the Master's degree in Management Engineering at Sapienza, and for anyone who wants to learn how to solve combinatorial optimization problems. Prerequisites: [Integer Linear Programming](https://fabiofurini.github.io/integer-linear-programming/) for the formulations and [Algorithms](https://fabiofurini.github.io/algorithms/) for the algorithms.
+Prerequisites: [Integer Linear Programming](https://fabiofurini.github.io/integer-linear-programming/) for the formulations and [Algorithms](https://fabiofurini.github.io/algorithms/) for the algorithms.
 
 [Start :material-arrow-right:](combinatorial-optimization-problems/combinatorial-optimization/index.md){ .md-button .md-button--primary }
 [:material-pencil: Exercises](exercises/index.md){ .md-button }
