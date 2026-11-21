@@ -73,19 +73,19 @@ title: "The vertex coloring problem (VCP)"
 </tr>
 <tr>
 <td><strong>Heuristics</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur/#sez-sec-VCPgreedy">Ch. 30 «Constructive heuristics»</a></td>
+<td><a href="https://fabiofurini.github.io/heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur/#sez-sec-VCPgreedy"><em>Heuristic Algorithms</em>: «Constructive heuristics»</a></td>
 </tr>
 <tr>
 <td><strong>Limits of approximation</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/coloring-inapproximability/">Ch. 37 «Vertex coloring: limits of approximation»</a></td>
+<td><a href="https://fabiofurini.github.io/approximation-algorithms/coloring-inapproximability/"><em>Approximation Algorithms</em>: «Vertex coloring: limits of approximation»</a></td>
 </tr>
 <tr>
 <td><strong>Ad hoc algorithms</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/specialized-algorithms/dsatur-branch-and-bound/">Ch. 42 «Vertex coloring: the DSATUR branch-and-bound»</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/specialized-algorithms/dsatur-branch-and-bound/">Ch. 17 «Vertex coloring: the DSATUR branch-and-bound»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring/">Ch. 4 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring-formulations/">Ch. 11 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/constructive-heuristics/">Ch. 30 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring-inapproximability/">Ch. 37 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dsatur-branch-and-bound/">Ch. 42 (5 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring/">Ch. 4 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring-formulations/">Ch. 11 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dsatur-branch-and-bound/">Ch. 17 (5 exercises)</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/constructive-heuristics/"><em>Heuristic Algorithms</em>: «Constructive heuristics» (3 exercises)</a>; <a href="https://fabiofurini.github.io/approximation-algorithms/exercises/coloring-inapproximability/"><em>Approximation Algorithms</em>: «Vertex coloring: limits of approximation» (5 exercises)</a></td>
 </tr>
 </table></div>
 
@@ -109,18 +109,18 @@ title: "The vertex coloring problem (VCP)"
 
 ### Heuristics { #sez-sec-cat-vcp-heuristics }
 
-- The greedy coloring uses at most $\Delta(G)+1$ colors, and the order of the vertices matters ([Ch. 30](../heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur.md#sez-sec-VCPgreedy)).
+- The greedy coloring uses at most $\Delta(G)+1$ colors, and the order of the vertices matters ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur/#sez-sec-VCPgreedy)).
 
-- $DSATUR$ colors first the vertex that sees the most colors; it is exact on bipartite graphs ([Ch. 30](../heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur.md#sez-sec-VCPgreedy)).
+- $DSATUR$ colors first the vertex that sees the most colors; it is exact on bipartite graphs ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/constructive-heuristics/vertex-coloring-greedy-and-dsatur/#sez-sec-VCPgreedy)).
 
 ### Approximation { #sez-sec-cat-vcp-approximation }
 
-- Not approximable: no polynomial algorithm guarantees a ratio below $\frac43$ unless $P=NP$, and not even $n^{1-\varepsilon}$ (Zuckerman) ([Ch. 37](../approximation-algorithms/coloring-inapproximability.md#box-1-vci-thm43)).
+- Not approximable: no polynomial algorithm guarantees a ratio below $\frac43$ unless $P=NP$, and not even $n^{1-\varepsilon}$ (Zuckerman) ([<em>Approximation Algorithms</em>](https://fabiofurini.github.io/approximation-algorithms/coloring-inapproximability/#box-1-vci-thm43)).
 
-- Special cases: bipartite and interval graphs exactly, planar graphs within $2$ colors of the optimum ([Ch. 37](../approximation-algorithms/coloring-inapproximability.md#box-9-vci-corPL)).
+- Special cases: bipartite and interval graphs exactly, planar graphs within $2$ colors of the optimum ([<em>Approximation Algorithms</em>](https://fabiofurini.github.io/approximation-algorithms/coloring-inapproximability/#box-9-vci-corPL)).
 
 ### Ad hoc algorithms { #sez-sec-cat-vcp-adhocalgorithms }
 
-- The DSATUR branch-and-bound branches on the most saturated vertex, with one child per feasible color and one new color, and prunes a node when $q(k)\ge\UB$ ([Ch. 42](../specialized-algorithms/dsatur-branch-and-bound.md#box-1-def-VCPnode)).
+- The DSATUR branch-and-bound branches on the most saturated vertex, with one child per feasible color and one new color, and prunes a node when $q(k)\ge\UB$ ([Ch. 17](../specialized-algorithms/dsatur-branch-and-bound.md#box-1-def-VCPnode)).
 
-- On the Petersen graph it proves $\chi(G)=3$ with $6$ nodes ([Ch. 42](../specialized-algorithms/dsatur-branch-and-bound.md#box-3-ex-petersenBB)).
+- On the Petersen graph it proves $\chi(G)=3$ with $6$ nodes ([Ch. 17](../specialized-algorithms/dsatur-branch-and-bound.md#box-3-ex-petersenBB)).

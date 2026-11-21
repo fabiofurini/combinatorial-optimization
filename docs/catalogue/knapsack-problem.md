@@ -59,27 +59,27 @@ title: "The 0/1 knapsack problem (KP)"
 </tr>
 <tr>
 <td><strong>Dynamic programming</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/#164-the-dp-algorithms-of-this-module">Ch. 16 «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack/">Ch. 17 «DP for the 0/1 knapsack problem»</a></td>
+<td><a href="https://fabiofurini.github.io/dynamic-programming/dp-principles/#14-the-dp-algorithms-of-this-module"><em>Dynamic Programming</em>: «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/dynamic-programming/dp-knapsack/"><em>Dynamic Programming</em>: «DP for the 0/1 knapsack problem»</a></td>
 </tr>
 <tr>
 <td><strong>Heuristics</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/heuristics/#box-2-ex-refKP">Ch. 29 «Heuristic algorithms: definitions»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/the-0-1-knapsack-problem-which-order/#sez-sec-KP">Ch. 30 «Constructive heuristics»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/local-search/kp-feasibility-and-penalties/#sez-sec-kp">Ch. 31 «Local search»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/metaheuristics/how-to-escape-from-a-local-optimum/#sez-sec-sa-kp">Ch. 32 «Metaheuristics»</a></td>
+<td><a href="https://fabiofurini.github.io/heuristic-algorithms/heuristics/#box-2-ex-refKP"><em>Heuristic Algorithms</em>: «Heuristic algorithms: definitions»</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/constructive-heuristics/the-0-1-knapsack-problem-which-order/#sez-sec-KP"><em>Heuristic Algorithms</em>: «Constructive heuristics»</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/local-search/kp-feasibility-and-penalties/#sez-sec-kp"><em>Heuristic Algorithms</em>: «Local search»</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/metaheuristics/how-to-escape-from-a-local-optimum/#sez-sec-sa-kp"><em>Heuristic Algorithms</em>: «Metaheuristics»</a></td>
 </tr>
 <tr>
 <td><strong>MIP heuristics</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/mip-heuristics-classical/#eq-eq-kp">Ch. 33 «MIP heuristics for the classical problems»</a></td>
+<td><a href="https://fabiofurini.github.io/heuristic-algorithms/mip-heuristics-classical/#eq-eq-kp"><em>Heuristic Algorithms</em>: «MIP heuristics for the classical problems»</a></td>
 </tr>
 <tr>
 <td><strong>Approximation</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/approximation/">Ch. 34 «Principles of approximation algorithms»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/knapsack-approximation/">Ch. 35 «Approximation algorithms for the knapsack problem»</a></td>
+<td><a href="https://fabiofurini.github.io/approximation-algorithms/approximation/"><em>Approximation Algorithms</em>: «Principles of approximation algorithms»</a>; <a href="https://fabiofurini.github.io/approximation-algorithms/knapsack-approximation/"><em>Approximation Algorithms</em>: «Approximation algorithms for the knapsack problem»</a></td>
 </tr>
 <tr>
 <td><strong>Ad hoc algorithms</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/specialized-algorithms/knapsack-branch-and-bound/">Ch. 41 «Knapsack: branch-and-bound on the critical item»</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/specialized-algorithms/knapsack-branch-and-bound/">Ch. 16 «Knapsack: branch-and-bound on the critical item»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/">Ch. 2 (6 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/">Ch. 9 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-principles/#esercizio-16-1">Exercise 16.1</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-knapsack/">Ch. 17 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/heuristics/">Ch. 29 (2 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/constructive-heuristics/">Ch. 30 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/local-search/">Ch. 31 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/metaheuristics/">Ch. 32 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/mip-heuristics-classical/">Ch. 33 (4 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/approximation/#esercizio-34-4">Exercise 34.4</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-approximation/">Ch. 35 (15 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-branch-and-bound/">Ch. 41 (4 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/">Ch. 2 (6 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/">Ch. 9 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-branch-and-bound/">Ch. 16 (4 exercises)</a>; <a href="https://fabiofurini.github.io/dynamic-programming/exercises/dp-principles/#esercizio-1-1"><em>Dynamic Programming</em>, Exercise 1.1</a>; <a href="https://fabiofurini.github.io/dynamic-programming/exercises/dp-knapsack/"><em>Dynamic Programming</em>: «DP for the 0/1 knapsack problem» (5 exercises)</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/heuristics/"><em>Heuristic Algorithms</em>: «Heuristic algorithms: definitions» (2 exercises)</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/constructive-heuristics/"><em>Heuristic Algorithms</em>: «Constructive heuristics» (3 exercises)</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/local-search/"><em>Heuristic Algorithms</em>: «Local search» (3 exercises)</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/metaheuristics/"><em>Heuristic Algorithms</em>: «Metaheuristics» (5 exercises)</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/mip-heuristics-classical/"><em>Heuristic Algorithms</em>: «MIP heuristics for the classical problems» (4 exercises)</a>; <a href="https://fabiofurini.github.io/approximation-algorithms/exercises/approximation/#esercizio-1-4"><em>Approximation Algorithms</em>, Exercise 1.4</a>; <a href="https://fabiofurini.github.io/approximation-algorithms/exercises/knapsack-approximation/"><em>Approximation Algorithms</em>: «Approximation algorithms for the knapsack problem» (15 exercises)</a></td>
 </tr>
 </table></div>
 
@@ -103,42 +103,42 @@ title: "The 0/1 knapsack problem (KP)"
 
 ### Dynamic programming { #sez-sec-cat-kp-dynamicprogramming }
 
-- The recurrence $v(j,k)$ over items and capacities takes $\Theta(nc)$ steps ([Ch. 17](../dynamic-programming/dp-knapsack/index.md)).
+- The recurrence $v(j,k)$ over items and capacities takes $\Theta(nc)$ steps ([<em>Dynamic Programming</em>](https://fabiofurini.github.io/dynamic-programming/dp-knapsack/)).
 
-- The lists of non-dominated states keep only the reachable states, at most $\min\{2^j, c+1\}$ per stage ([Ch. 17](../dynamic-programming/dp-knapsack/a-first-dp-algorithm-an-implementation-with-lists.md#box-28-texkp3graph)).
+- The lists of non-dominated states keep only the reachable states, at most $\min\{2^j, c+1\}$ per stage ([<em>Dynamic Programming</em>](https://fabiofurini.github.io/dynamic-programming/dp-knapsack/a-first-dp-algorithm-an-implementation-with-lists/#box-28-texkp3graph)).
 
-- The DP by profits takes $\Theta(nP)$ steps; it is the core of the FPTAS ([Ch. 17](../dynamic-programming/dp-knapsack/a-second-dp-algorithm.md#173-a-second-dp-algorithm)).
+- The DP by profits takes $\Theta(nP)$ steps; it is the core of the FPTAS ([<em>Dynamic Programming</em>](https://fabiofurini.github.io/dynamic-programming/dp-knapsack/a-second-dp-algorithm/#23-a-second-dp-algorithm)).
 
-- The UKP and the BKP have their own recurrences ([Ch. 18](../dynamic-programming/dp-unbounded-knapsack/index.md), [Ch. 19](../dynamic-programming/dp-bounded-knapsack.md)).
+- The UKP and the BKP have their own recurrences ([<em>Dynamic Programming</em>](https://fabiofurini.github.io/dynamic-programming/dp-unbounded-knapsack/), [<em>Dynamic Programming</em>](https://fabiofurini.github.io/dynamic-programming/dp-bounded-knapsack/)).
 
-- So do the SSP, the MCKP and the KPS, in $\Theta(nc)$ steps; for the MDKP and the MKP the table grows exponentially with the number of capacities ([Ch. 20](../dynamic-programming/dp-subset-sum.md), [Ch. 21](../dynamic-programming/dp-multiple-choice-knapsack.md), [Ch. 22](../dynamic-programming/dp-multidimensional-knapsack.md), [Ch. 23](../dynamic-programming/dp-knapsack-setups.md), [Ch. 24](../dynamic-programming/dp-multiple-knapsack.md)).
+- So do the SSP, the MCKP and the KPS, in $\Theta(nc)$ steps; for the MDKP and the MKP the table grows exponentially with the number of capacities ([<em>Dynamic Programming</em>](https://fabiofurini.github.io/dynamic-programming/dp-subset-sum/), [<em>Dynamic Programming</em>](https://fabiofurini.github.io/dynamic-programming/dp-multiple-choice-knapsack/), [<em>Dynamic Programming</em>](https://fabiofurini.github.io/dynamic-programming/dp-multidimensional-knapsack/), [<em>Dynamic Programming</em>](https://fabiofurini.github.io/dynamic-programming/dp-knapsack-setups/), [<em>Dynamic Programming</em>](https://fabiofurini.github.io/dynamic-programming/dp-multiple-knapsack/)).
 
 ### Heuristics { #sez-sec-cat-kp-heuristics }
 
-- Greedy by profit, by weight and by efficiency: on the four-item instance of [Ch. 29](../heuristic-algorithms/heuristics.md) (optimum $17$) they give $17$, $10$ and $16$ ([Ch. 30](../heuristic-algorithms/constructive-heuristics/the-0-1-knapsack-problem-which-order.md#box-3-ex-kp3)).
+- Greedy by profit, by weight and by efficiency: on the four-item instance of [<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/heuristics/) (optimum $17$) they give $17$, $10$ and $16$ ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/constructive-heuristics/the-0-1-knapsack-problem-which-order/#box-3-ex-kp3)).
 
-- Flip and swap local search: first and best improvement reach $17$ along different paths ([Ch. 31](../heuristic-algorithms/local-search/first-improvement-and-best-improvement.md#box-3-ex-kpfirstbest)).
+- Flip and swap local search: first and best improvement reach $17$ along different paths ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/local-search/first-improvement-and-best-improvement/#box-3-ex-kpfirstbest)).
 
-- A penalty on the excess weight lets the search cross infeasible solutions; with $\alpha>\max_j p_j$ its local optima are feasible ([Ch. 31](../heuristic-algorithms/local-search/kp-feasibility-and-penalties.md#box-14-ex-kppen)).
+- A penalty on the excess weight lets the search cross infeasible solutions; with $\alpha>\max_j p_j$ its local optima are feasible ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/local-search/kp-feasibility-and-penalties/#box-14-ex-kppen)).
 
-- Simulated annealing, GRASP, genetic and memetic algorithms; on KP20 the memetic algorithm reaches the optimum $521$ in every run ([Ch. 32](../heuristic-algorithms/metaheuristics/population-based-methods-genetic-and-memetic-algorithms.md#box-12-ex-gaKP)).
+- Simulated annealing, GRASP, genetic and memetic algorithms; on KP20 the memetic algorithm reaches the optimum $521$ in every run ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/metaheuristics/population-based-methods-genetic-and-memetic-algorithms/#box-12-ex-gaKP)).
 
 ### MIP heuristics { #sez-sec-cat-kp-mipheuristics }
 
-- Rounding down the LP solution is always feasible, since the model has a single packing constraint ([Ch. 33](../heuristic-algorithms/mip-heuristics-classical.md#box-3-ex-rounding)).
+- Rounding down the LP solution is always feasible, since the model has a single packing constraint ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/mip-heuristics-classical/#box-3-ex-rounding)).
 
-- On the instance of [Ch. 29](../heuristic-algorithms/heuristics.md) fractional diving ends at $16$ and RINS fails, while local branching and proximity search reach and prove the optimum $17$ ([Ch. 33](../heuristic-algorithms/mip-heuristics-classical.md#box-4-ex-divekp)).
+- On the instance of [<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/heuristics/) fractional diving ends at $16$ and RINS fails, while local branching and proximity search reach and prove the optimum $17$ ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/mip-heuristics-classical/#box-4-ex-divekp)).
 
 ### Approximation { #sez-sec-cat-kp-approximation }
 
-- The greedy algorithm has no constant guarantee; Ext-Greedy is a $2$-approximation, and the bound is tight ([Ch. 35](../approximation-algorithms/knapsack-approximation.md#box-16-prop-GRe2approx)).
+- The greedy algorithm has no constant guarantee; Ext-Greedy is a $2$-approximation, and the bound is tight ([<em>Approximation Algorithms</em>](https://fabiofurini.github.io/approximation-algorithms/knapsack-approximation/#box-16-prop-GRe2approx)).
 
-- $H^{\ell}$ guarantees $\frac{\ell+2}{\ell+1}$ in $O(n^{\ell+1})$ time, which gives a PTAS ([Ch. 35](../approximation-algorithms/knapsack-approximation.md#box-20-prop-Hlapprox)).
+- $H^{\ell}$ guarantees $\frac{\ell+2}{\ell+1}$ in $O(n^{\ell+1})$ time, which gives a PTAS ([<em>Approximation Algorithms</em>](https://fabiofurini.github.io/approximation-algorithms/knapsack-approximation/#box-20-prop-Hlapprox)).
 
-- The Basic-FPTAS scales the profits and guarantees $\frac{1}{1-\varepsilon}$ in $O(n^2/\varepsilon)$ time ([Ch. 35](../approximation-algorithms/knapsack-approximation.md#box-23-prop-fptas)).
+- The Basic-FPTAS scales the profits and guarantees $\frac{1}{1-\varepsilon}$ in $O(n^2/\varepsilon)$ time ([<em>Approximation Algorithms</em>](https://fabiofurini.github.io/approximation-algorithms/knapsack-approximation/#box-23-prop-fptas)).
 
-- No polynomial algorithm has a fixed absolute guarantee, unless it solves the KP exactly ([Ch. 35](../approximation-algorithms/knapsack-approximation.md#box-25-thm-absolute)).
+- No polynomial algorithm has a fixed absolute guarantee, unless it solves the KP exactly ([<em>Approximation Algorithms</em>](https://fabiofurini.github.io/approximation-algorithms/knapsack-approximation/#box-25-thm-absolute)).
 
 ### Ad hoc algorithms { #sez-sec-cat-kp-adhocalgorithms }
 
-- The LP of a node is solved by the Dantzig formulas, without the simplex algorithm, and has one fractional variable: the split item, on which it branches ([Ch. 41](../specialized-algorithms/knapsack-branch-and-bound.md#411-the-algorithm-for-the-kp)).
+- The LP of a node is solved by the Dantzig formulas, without the simplex algorithm, and has one fractional variable: the split item, on which it branches ([Ch. 16](../specialized-algorithms/knapsack-branch-and-bound.md#161-the-algorithm-for-the-kp)).

@@ -61,11 +61,11 @@ title: "The maximum clique problem (MCP)"
 </tr>
 <tr>
 <td><strong>Limits of approximation</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/clique-inapproximability/">Ch. 38 «Maximum clique: limits of approximation»</a></td>
+<td><a href="https://fabiofurini.github.io/approximation-algorithms/clique-inapproximability/"><em>Approximation Algorithms</em>: «Maximum clique: limits of approximation»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring/">Ch. 4 (2 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/clique/">Ch. 5 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/clique-formulations/">Ch. 12 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/clique-inapproximability/">Ch. 38 (4 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring/">Ch. 4 (2 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/clique/">Ch. 5 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/clique-formulations/">Ch. 12 (5 exercises)</a>; <a href="https://fabiofurini.github.io/approximation-algorithms/exercises/clique-inapproximability/"><em>Approximation Algorithms</em>: «Maximum clique: limits of approximation» (4 exercises)</a></td>
 </tr>
 </table></div>
 
@@ -87,6 +87,6 @@ title: "The maximum clique problem (MCP)"
 
 ### Approximation { #sez-sec-cat-mcp-approximation }
 
-- Not approximable: for every $\varepsilon>0$ no polynomial algorithm guarantees a ratio within $n^{1-\varepsilon}$, unless $P=NP$ (Zuckerman) ([Ch. 38](../approximation-algorithms/clique-inapproximability.md#box-4-cli-thmHZ)).
+- Not approximable: for every $\varepsilon>0$ no polynomial algorithm guarantees a ratio within $n^{1-\varepsilon}$, unless $P=NP$ (Zuckerman) ([<em>Approximation Algorithms</em>](https://fabiofurini.github.io/approximation-algorithms/clique-inapproximability/#box-4-cli-thmHZ)).
 
-- Special cases: planar graphs and graphs of bounded degree, solved exactly by enumeration ([Ch. 38](../approximation-algorithms/clique-inapproximability.md#box-6-cli-propdeg)).
+- Special cases: planar graphs and graphs of bounded degree, solved exactly by enumeration ([<em>Approximation Algorithms</em>](https://fabiofurini.github.io/approximation-algorithms/clique-inapproximability/#box-6-cli-propdeg)).

@@ -63,10 +63,10 @@ title: "Multiple-choice knapsack problem (MCKP)"
 </tr>
 <tr>
 <td><strong>Dynamic programming</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/#164-the-dp-algorithms-of-this-module">Ch. 16 «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-multiple-choice-knapsack/">Ch. 21 «DP for the multiple-choice knapsack problem»</a></td>
+<td><a href="https://fabiofurini.github.io/dynamic-programming/dp-principles/#14-the-dp-algorithms-of-this-module"><em>Dynamic Programming</em>: «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/dynamic-programming/dp-multiple-choice-knapsack/"><em>Dynamic Programming</em>: «DP for the multiple-choice knapsack problem»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-5">Exercise 2.5</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/#esercizio-9-11">Exercise 9.11</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-principles/#esercizio-16-5">Exercise 16.5</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-multiple-choice-knapsack/">Ch. 21 (5 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-5">Exercise 2.5</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/#esercizio-9-11">Exercise 9.11</a>; <a href="https://fabiofurini.github.io/dynamic-programming/exercises/dp-principles/#esercizio-1-5"><em>Dynamic Programming</em>, Exercise 1.5</a>; <a href="https://fabiofurini.github.io/dynamic-programming/exercises/dp-multiple-choice-knapsack/"><em>Dynamic Programming</em>: «DP for the multiple-choice knapsack problem» (5 exercises)</a></td>
 </tr>
 </table></div>

@@ -57,19 +57,19 @@ title: "The travelling salesman problem (TSP)"
 </tr>
 <tr>
 <td><strong>Heuristics</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/heuristics/#sez-sec-problems">Ch. 29 «Heuristic algorithms: definitions»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/the-travelling-salesman-problem-append-or-insert/#sez-sec-TSP">Ch. 30 «Constructive heuristics»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/local-search/tsp-2-opt-and-or-opt/#sez-sec-tsp">Ch. 31 «Local search»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/metaheuristics/the-problems-and-the-assumptions/#sez-sec-instances">Ch. 32 «Metaheuristics»</a></td>
+<td><a href="https://fabiofurini.github.io/heuristic-algorithms/heuristics/#sez-sec-problems"><em>Heuristic Algorithms</em>: «Heuristic algorithms: definitions»</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/constructive-heuristics/the-travelling-salesman-problem-append-or-insert/#sez-sec-TSP"><em>Heuristic Algorithms</em>: «Constructive heuristics»</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/local-search/tsp-2-opt-and-or-opt/#sez-sec-tsp"><em>Heuristic Algorithms</em>: «Local search»</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/metaheuristics/the-problems-and-the-assumptions/#sez-sec-instances"><em>Heuristic Algorithms</em>: «Metaheuristics»</a></td>
 </tr>
 <tr>
 <td><strong>MIP heuristics</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/mip-heuristics-classical/#3323-the-travelling-salesman-problem">Ch. 33 «MIP heuristics for the classical problems»</a></td>
+<td><a href="https://fabiofurini.github.io/heuristic-algorithms/mip-heuristics-classical/#523-the-travelling-salesman-problem"><em>Heuristic Algorithms</em>: «MIP heuristics for the classical problems»</a></td>
 </tr>
 <tr>
 <td><strong>Approximation</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/tsp-approximation/#sez-sec-DT">Ch. 39 «The TSP: the general case and the metric case»</a></td>
+<td><a href="https://fabiofurini.github.io/approximation-algorithms/tsp-approximation/#sez-sec-DT"><em>Approximation Algorithms</em>: «The TSP: the general case and the metric case»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp/">Ch. 6 (7 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp-formulations/">Ch. 13 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/heuristics/#esercizio-29-3">Exercise 29.3</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/constructive-heuristics/">Ch. 30 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/local-search/">Ch. 31 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/metaheuristics/">Ch. 32 (7 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp-approximation/">Ch. 39 (3 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp/">Ch. 6 (7 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp-formulations/">Ch. 13 (5 exercises)</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/heuristics/#esercizio-1-3"><em>Heuristic Algorithms</em>, Exercise 1.3</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/constructive-heuristics/"><em>Heuristic Algorithms</em>: «Constructive heuristics» (3 exercises)</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/local-search/"><em>Heuristic Algorithms</em>: «Local search» (3 exercises)</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/metaheuristics/"><em>Heuristic Algorithms</em>: «Metaheuristics» (7 exercises)</a>; <a href="https://fabiofurini.github.io/approximation-algorithms/exercises/tsp-approximation/"><em>Approximation Algorithms</em>: «The TSP: the general case and the metric case» (3 exercises)</a></td>
 </tr>
 </table></div>
 
@@ -89,22 +89,22 @@ title: "The travelling salesman problem (TSP)"
 
 ### Heuristics { #sez-sec-cat-tsp-heuristics }
 
-- Multi-start nearest neighbour and the insertion heuristics NI, FI and CI all reach $18$ on the instance of [Ch. 6](../combinatorial-optimization-problems/tsp/index.md) ([Ch. 30](../heuristic-algorithms/constructive-heuristics/the-travelling-salesman-problem-append-or-insert.md#sez-sec-INS)).
+- Multi-start nearest neighbour and the insertion heuristics NI, FI and CI all reach $18$ on the instance of [Ch. 6](../combinatorial-optimization-problems/tsp/index.md) ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/constructive-heuristics/the-travelling-salesman-problem-append-or-insert/#sez-sec-INS)).
 
-- 2-opt evaluates each of its $\frac{n(n-3)}{2}$ moves in $O(1)$ and turns the tour of length $25$ into an optimal one in two moves ([Ch. 31](../heuristic-algorithms/local-search/tsp-2-opt-and-or-opt.md#box-5-ex-twooptref)).
+- 2-opt evaluates each of its $\frac{n(n-3)}{2}$ moves in $O(1)$ and turns the tour of length $25$ into an optimal one in two moves ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/local-search/tsp-2-opt-and-or-opt/#box-5-ex-twooptref)).
 
-- Or-opt and VND escape the local optima of 2-opt ([Ch. 31](../heuristic-algorithms/local-search/tsp-2-opt-and-or-opt.md#box-7-ex-oropt)).
+- Or-opt and VND escape the local optima of 2-opt ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/local-search/tsp-2-opt-and-or-opt/#box-7-ex-oropt)).
 
-- Simulated annealing, tabu search, iterated local search, GRASP and LNS are compared on TSP20 (optimum $291$) ([Ch. 32](../heuristic-algorithms/metaheuristics/comparison-and-conclusions.md#32111-the-methods-on-the-medium-instances)).
+- Simulated annealing, tabu search, iterated local search, GRASP and LNS are compared on TSP20 (optimum $291$) ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/metaheuristics/comparison-and-conclusions/#4111-the-methods-on-the-medium-instances)).
 
 ### MIP heuristics { #sez-sec-cat-tsp-mipheuristics }
 
-- With the subtour constraints the LP optimum of the instance of [Ch. 6](../combinatorial-optimization-problems/tsp/index.md) is integer: rounding gives $18$, gap $0\%$ ([Ch. 33](../heuristic-algorithms/mip-heuristics-classical.md#3325-the-lp-relaxations-on-the-reference-instances)).
+- With the subtour constraints the LP optimum of the instance of [Ch. 6](../combinatorial-optimization-problems/tsp/index.md) is integer: rounding gives $18$, gap $0\%$ ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/mip-heuristics-classical/#525-the-lp-relaxations-on-the-reference-instances)).
 
 ### Approximation { #sez-sec-cat-tsp-approximation }
 
-- Metric TSP: the double tree algorithm is a $2$-approximation, tight ([Ch. 39](../approximation-algorithms/tsp-approximation.md#box-8-prop-DT)).
+- Metric TSP: the double tree algorithm is a $2$-approximation, tight ([<em>Approximation Algorithms</em>](https://fabiofurini.github.io/approximation-algorithms/tsp-approximation/#box-8-prop-DT)).
 
-- Christofides is a $\frac32$-approximation, tight ([Ch. 39](../approximation-algorithms/tsp-approximation.md#box-10-prop-CH)).
+- Christofides is a $\frac32$-approximation, tight ([<em>Approximation Algorithms</em>](https://fabiofurini.github.io/approximation-algorithms/tsp-approximation/#box-10-prop-CH)).
 
-- General TSP: no constant ratio, unless $P=NP$ ([Ch. 39](../approximation-algorithms/tsp-approximation.md#box-1-prop-TSPinapx)).
+- General TSP: no constant ratio, unless $P=NP$ ([<em>Approximation Algorithms</em>](https://fabiofurini.github.io/approximation-algorithms/tsp-approximation/#box-1-prop-TSPinapx)).

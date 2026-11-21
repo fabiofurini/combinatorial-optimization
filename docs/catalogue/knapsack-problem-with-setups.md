@@ -63,10 +63,10 @@ title: "Knapsack problem with setups (KPS)"
 </tr>
 <tr>
 <td><strong>Dynamic programming</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/#164-the-dp-algorithms-of-this-module">Ch. 16 «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-knapsack-setups/">Ch. 23 «DP for the knapsack problem with setups»</a></td>
+<td><a href="https://fabiofurini.github.io/dynamic-programming/dp-principles/#14-the-dp-algorithms-of-this-module"><em>Dynamic Programming</em>: «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/dynamic-programming/dp-knapsack-setups/"><em>Dynamic Programming</em>: «DP for the knapsack problem with setups»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/#esercizio-9-12">Exercise 9.12</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-knapsack-setups/">Ch. 23 (5 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/#esercizio-9-12">Exercise 9.12</a>; <a href="https://fabiofurini.github.io/dynamic-programming/exercises/dp-knapsack-setups/"><em>Dynamic Programming</em>: «DP for the knapsack problem with setups» (5 exercises)</a></td>
 </tr>
 </table></div>

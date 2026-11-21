@@ -39,10 +39,10 @@ title: "Rod cutting problem (RCP)"
 </tr>
 <tr>
 <td><strong>Dynamic programming</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/#164-the-dp-algorithms-of-this-module">Ch. 16 «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-rod-cutting/">Ch. 28 «DP for the rod cutting problem»</a></td>
+<td><a href="https://fabiofurini.github.io/dynamic-programming/dp-principles/#14-the-dp-algorithms-of-this-module"><em>Dynamic Programming</em>: «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/dynamic-programming/dp-rod-cutting/"><em>Dynamic Programming</em>: «DP for the rod cutting problem»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-rod-cutting/">Ch. 28 (5 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/dynamic-programming/exercises/dp-rod-cutting/"><em>Dynamic Programming</em>: «DP for the rod cutting problem» (5 exercises)</a></td>
 </tr>
 </table></div>

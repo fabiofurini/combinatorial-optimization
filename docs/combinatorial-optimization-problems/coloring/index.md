@@ -6,7 +6,7 @@ title: "Coloring problems"
 
 <div class="info-capitolo" markdown>
 
-**Part 1 · Combinatorial optimization problems · Chapter 4** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-presentation: Slides](../../pdf/slides-coloring.pdf) · [:material-pencil: Exercises: Coloring problems](../../exercises/coloring.md) · [:material-gesture-tap: App: Vertex coloring: greedy and DSATUR](../../lab/coloring-greedy-dsatur.md)
+**Part 1 · Problems · Chapter 4** · [:material-file-pdf-box: Lecture notes, volume 1 (PDF)](../../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-presentation: Slides](../../pdf/slides-coloring.pdf) · [:material-pencil: Exercises: Coloring problems](../../exercises/coloring.md)
 
 </div>
 
@@ -123,4 +123,4 @@ title: "Coloring problems"
 
 <!-- laboratorio-interattivo: sezione generata da interattivi.py -->
 
-:material-flask-outline: **In the interactive lab:** [Vertex coloring: greedy and DSATUR](../../lab/coloring-greedy-dsatur.md).
+:material-flask-outline: **In the interactive lab:** [Vertex coloring: greedy and DSATUR](https://fabiofurini.github.io/heuristic-algorithms/lab/coloring-greedy-dsatur/) (module *Heuristic Algorithms*).

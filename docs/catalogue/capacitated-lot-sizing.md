@@ -57,15 +57,15 @@ title: "Capacitated lot sizing (CLS)"
 </tr>
 <tr>
 <td><strong>Dynamic programming</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/#164-the-dp-algorithms-of-this-module">Ch. 16 «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-capacitated-lot-sizing/">Ch. 26 «DP for the capacitated lot sizing problem»</a></td>
+<td><a href="https://fabiofurini.github.io/dynamic-programming/dp-principles/#14-the-dp-algorithms-of-this-module"><em>Dynamic Programming</em>: «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/dynamic-programming/dp-capacitated-lot-sizing/"><em>Dynamic Programming</em>: «DP for the capacitated lot sizing problem»</a></td>
 </tr>
 <tr>
 <td><strong>MIP heuristics</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/mip-heuristics-classical/#sez-sec-rf">Ch. 33 «MIP heuristics for the classical problems»</a></td>
+<td><a href="https://fabiofurini.github.io/heuristic-algorithms/mip-heuristics-classical/#sez-sec-rf"><em>Heuristic Algorithms</em>: «MIP heuristics for the classical problems»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/lot-sizing/">Ch. 8 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/lot-sizing-formulations/">Ch. 15 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-capacitated-lot-sizing/">Ch. 26 (2 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/lot-sizing/">Ch. 8 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/lot-sizing-formulations/">Ch. 15 (5 exercises)</a>; <a href="https://fabiofurini.github.io/dynamic-programming/exercises/dp-capacitated-lot-sizing/"><em>Dynamic Programming</em>: «DP for the capacitated lot sizing problem» (2 exercises)</a></td>
 </tr>
 </table></div>
 
@@ -85,12 +85,12 @@ title: "Capacitated lot sizing (CLS)"
 
 ### Dynamic programming { #sez-sec-cat-cls-dynamicprogramming }
 
-- Without capacities an optimal plan produces only with empty stock (Wagner and Whitin): a DP over the last production run solves the ULS in $\Theta(m^2)$ steps ([Ch. 25](../dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls.md#252-a-dp-algorithm-for-the-uls)).
+- Without capacities an optimal plan produces only with empty stock (Wagner and Whitin): a DP over the last production run solves the ULS in $\Theta(m^2)$ steps ([<em>Dynamic Programming</em>](https://fabiofurini.github.io/dynamic-programming/dp-lot-sizing/a-dp-algorithm-for-the-uls/#102-a-dp-algorithm-for-the-uls)).
 
-- With capacities the state is (period, inventory): $O(m\,D\,C)$ steps, pseudo-polynomial ([Ch. 26](../dynamic-programming/dp-capacitated-lot-sizing.md#2622-number-of-steps)).
+- With capacities the state is (period, inventory): $O(m\,D\,C)$ steps, pseudo-polynomial ([<em>Dynamic Programming</em>](https://fabiofurini.github.io/dynamic-programming/dp-capacitated-lot-sizing/#1122-number-of-steps)).
 
 ### MIP heuristics { #sez-sec-cat-cls-mipheuristics }
 
-- On the uncapacitated instance of the MIP course relax-and-fix finds the optimum $170$, while the least unit cost heuristic gives $200$ ([Ch. 33](../heuristic-algorithms/mip-heuristics-classical.md#box-16-ex-rfcourse)).
+- On the uncapacitated instance of the MIP course relax-and-fix finds the optimum $170$, while the least unit cost heuristic gives $200$ ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/mip-heuristics-classical/#box-16-ex-rfcourse)).
 
-- On a capacitated instance relax-and-fix stops at $170$, and fix-and-optimize reaches the optimum $160$ ([Ch. 33](../heuristic-algorithms/mip-heuristics-classical.md#box-18-ex-fo)).
+- On a capacitated instance relax-and-fix stops at $170$, and fix-and-optimize reaches the optimum $160$ ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/mip-heuristics-classical/#box-18-ex-fo)).

@@ -37,10 +37,10 @@ title: "Coin change problem (CCP)"
 </tr>
 <tr>
 <td><strong>Dynamic programming</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/#164-the-dp-algorithms-of-this-module">Ch. 16 «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-coin-change/">Ch. 27 «DP for the coin change problem»</a></td>
+<td><a href="https://fabiofurini.github.io/dynamic-programming/dp-principles/#14-the-dp-algorithms-of-this-module"><em>Dynamic Programming</em>: «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/dynamic-programming/dp-coin-change/"><em>Dynamic Programming</em>: «DP for the coin change problem»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-coin-change/">Ch. 27 (5 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/dynamic-programming/exercises/dp-coin-change/"><em>Dynamic Programming</em>: «DP for the coin change problem» (5 exercises)</a></td>
 </tr>
 </table></div>

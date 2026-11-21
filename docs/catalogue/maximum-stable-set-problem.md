@@ -49,10 +49,10 @@ title: "Maximum stable set problem (MSSP)"
 </tr>
 <tr>
 <td><strong>Limits of approximation</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/clique-inapproximability/#box-7-cli-cormssp">Ch. 38 «Maximum clique: limits of approximation»</a></td>
+<td><a href="https://fabiofurini.github.io/approximation-algorithms/clique-inapproximability/#box-7-cli-cormssp"><em>Approximation Algorithms</em>: «Maximum clique: limits of approximation»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring/#esercizio-4-3">Exercise 4.3</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/clique/">Ch. 5 (2 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/clique-formulations/#esercizio-12-6">Exercise 12.6</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/clique-inapproximability/">Ch. 38 (2 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/coloring/#esercizio-4-3">Exercise 4.3</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/clique/">Ch. 5 (2 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/clique-formulations/#esercizio-12-6">Exercise 12.6</a>; <a href="https://fabiofurini.github.io/approximation-algorithms/exercises/clique-inapproximability/"><em>Approximation Algorithms</em>: «Maximum clique: limits of approximation» (2 exercises)</a></td>
 </tr>
 </table></div>

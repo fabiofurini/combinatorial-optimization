@@ -59,10 +59,10 @@ title: "Subset sum problem (SSP)"
 </tr>
 <tr>
 <td><strong>Dynamic programming</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/#164-the-dp-algorithms-of-this-module">Ch. 16 «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-subset-sum/">Ch. 20 «DP for the subset sum problem»</a></td>
+<td><a href="https://fabiofurini.github.io/dynamic-programming/dp-principles/#14-the-dp-algorithms-of-this-module"><em>Dynamic Programming</em>: «Principles of dynamic programming»</a>; <a href="https://fabiofurini.github.io/dynamic-programming/dp-subset-sum/"><em>Dynamic Programming</em>: «DP for the subset sum problem»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-2">Exercise 2.2</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/#esercizio-9-6">Exercise 9.6</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-principles/#esercizio-16-2">Exercise 16.2</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-subset-sum/">Ch. 20 (5 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack/#esercizio-2-2">Exercise 2.2</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/knapsack-formulations/#esercizio-9-6">Exercise 9.6</a>; <a href="https://fabiofurini.github.io/dynamic-programming/exercises/dp-principles/#esercizio-1-2"><em>Dynamic Programming</em>, Exercise 1.2</a>; <a href="https://fabiofurini.github.io/dynamic-programming/exercises/dp-subset-sum/"><em>Dynamic Programming</em>: «DP for the subset sum problem» (5 exercises)</a></td>
 </tr>
 </table></div>

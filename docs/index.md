@@ -1,5 +1,5 @@
 ---
-title: Combinatorial Optimization
+title: Combinatorial Optimization Problems
 hide:
   - navigation
   - toc
@@ -7,7 +7,7 @@ hide:
 
 <div class="hero" markdown>
 
-# Combinatorial Optimization
+# Combinatorial Optimization Problems
 
 <!-- collana-riga -->
 <p class="collana-riga" markdown>A course of the <b>Operations Research and Mathematics</b> series · [all the courses](#the-series)</p>
@@ -16,7 +16,7 @@ hide:
 Teaching material conceived and developed by **[Fabio Furini](https://fabiofurini.github.io/)**, associate
 professor at [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
 
-**The course lecture notes, online**: knapsack, packing, coloring, clique, routing, scheduling and lot sizing problems, studied through formulations and their properties, dynamic programming, heuristic, approximation and ad hoc algorithms; with definitions, results with proofs, examples worked out step by step, exercises with solutions, Colab notebooks and interactive apps.
+**The course lecture notes, online**: knapsack, packing, coloring, clique, routing, scheduling and lot sizing problems, their formulations with their properties and bounds, and ad hoc algorithms; with definitions, results with proofs, examples worked out step by step, exercises with solutions and interactive apps.
 
 Prerequisites: [Linear Programming](https://fabiofurini.github.io/linear-programming/) and [Integer Linear Programming](https://fabiofurini.github.io/integer-linear-programming/) for the formulations and [Algorithms](https://fabiofurini.github.io/algorithms/) for the algorithms.
 
@@ -74,45 +74,45 @@ The same entries as the menu: each card gives its part and its chapters in the l
 
     [:octicons-arrow-right-24: The chapters](formulations/index.md)
 
--   :material-table-arrow-right: **Dynamic programming**
+-   :material-tools: **Ad hoc algorithms**
 
     ---
 
-    *Part 3 · Chapters 16–28*
-
-    Principles · Knapsack problems · Lot sizing problems · Miscellaneous problems
-
-    [:octicons-arrow-right-24: The chapters](dynamic-programming/index.md)
-
--   :material-map-marker-path: **Heuristics**
-
-    ---
-
-    *Part 4 · Chapters 29–33*
-
-    Definitions · Constructive heuristics · Local search · Metaheuristics · MIP heuristics
-
-    [:octicons-arrow-right-24: The chapters](heuristic-algorithms/index.md)
-
--   :material-approximately-equal: **Approximation**
-
-    ---
-
-    *Part 5 · Chapters 34–40*
-
-    Principles · Knapsack problems · Packing problems · Coloring problems · Clique problems · Routing problems · Scheduling problems
-
-    [:octicons-arrow-right-24: The chapters](approximation-algorithms/index.md)
-
--   :material-tools: **Ad hoc**
-
-    ---
-
-    *Part 6 · Chapters 41–42*
+    *Part 3 · Chapters 16–17*
 
     Knapsack problems · Coloring problems
 
     [:octicons-arrow-right-24: The chapters](specialized-algorithms/index.md)
+
+-   :material-table-large: **Dynamic Programming**
+
+    ---
+
+    *Module of the series*
+
+    Principles and DP algorithms for knapsack, lot sizing, coin change and rod cutting.
+
+    [:octicons-arrow-right-24: The module](https://fabiofurini.github.io/dynamic-programming/)
+
+-   :material-map-marker-path: **Heuristic Algorithms**
+
+    ---
+
+    *Module of the series*
+
+    Constructive heuristics, local search, metaheuristics and MIP heuristics for combinatorial optimization problems.
+
+    [:octicons-arrow-right-24: The module](https://fabiofurini.github.io/heuristic-algorithms/)
+
+-   :material-approximately-equal: **Approximation Algorithms**
+
+    ---
+
+    *Module of the series*
+
+    Performance guarantees, approximation schemes and limits of approximation for combinatorial problems.
+
+    [:octicons-arrow-right-24: The module](https://fabiofurini.github.io/approximation-algorithms/)
 
 -   :material-view-list: **Catalogue**
 
@@ -143,16 +143,6 @@ The same entries as the menu: each card gives its part and its chapters in the l
     The algorithms of the course step by step, on the reference instances or on your own.
 
     [:octicons-arrow-right-24: The apps](lab/index.md)
-
--   :simple-googlecolab: **Colab notebooks**
-
-    ---
-
-    *Python · C++*
-
-    The code of the algorithms of the chapters, to run in Google Colab on the examples and the exercises.
-
-    [:octicons-arrow-right-24: The notebooks](notebooks.md)
 
 </div>
 
@@ -200,14 +190,6 @@ The same entries as the menu: each card gives its part and its chapters in the l
     The problems used in the examples and exercises, each with its figure.
 
     [:octicons-arrow-right-24: The catalogue](catalogue/index.md)
-
--   :material-language-python: **Notebooks in Colab**
-
-    ---
-
-    The code of the course running in the browser, with nothing to install.
-
-    [:octicons-arrow-right-24: The notebooks](notebooks.md)
 
 -   :material-format-list-numbered: **Full index**
 
@@ -257,9 +239,21 @@ Ten courses built the same way: lecture notes online and in PDF, exercises with 
 
     graphs, spanning trees, shortest paths, network flows, the network simplex and project management
 
--   :material-hexagon-multiple-outline: **Combinatorial Optimization** · *this course*
+-   :material-hexagon-multiple-outline: **Combinatorial Optimization Problems** · *this course*
 
-    knapsack, bin packing, coloring, TSP, scheduling and lot sizing, solved in every way
+    knapsack, bin packing, coloring, TSP, scheduling and lot sizing: the problems, their formulations and ad hoc algorithms
+
+-   :material-table-large: **[Dynamic Programming](https://fabiofurini.github.io/dynamic-programming/)**
+
+    principles and DP algorithms for knapsack, lot sizing, coin change and rod cutting
+
+-   :material-map-marker-path: **[Heuristic Algorithms](https://fabiofurini.github.io/heuristic-algorithms/)**
+
+    constructive heuristics, local search, metaheuristics and MIP heuristics for combinatorial optimization problems
+
+-   :material-approximately-equal: **[Approximation Algorithms](https://fabiofurini.github.io/approximation-algorithms/)**
+
+    performance guarantees, approximation schemes and limits of approximation for combinatorial problems
 
 -   :material-vector-polygon: **[MIP Modelling](https://fabiofurini.github.io/mip-modelling/)**
 
@@ -271,8 +265,6 @@ Ten courses built the same way: lecture notes online and in PDF, exercises with 
 
 </div>
 <!-- /collana -->
-
----
 
 Teaching material by **[Fabio Furini](https://fabiofurini.github.io/)** —
 [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.

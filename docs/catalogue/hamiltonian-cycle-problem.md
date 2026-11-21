@@ -31,10 +31,10 @@ title: "Hamiltonian cycle problem (HCP)"
 </tr>
 <tr>
 <td><strong>Approximation</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/tsp-approximation/#box-1-prop-TSPinapx">Ch. 39 «The TSP: the general case and the metric case»</a></td>
+<td><a href="https://fabiofurini.github.io/approximation-algorithms/tsp-approximation/#box-1-prop-TSPinapx"><em>Approximation Algorithms</em>: «The TSP: the general case and the metric case»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp-approximation/#esercizio-39-3">Exercise 39.3</a></td>
+<td><a href="https://fabiofurini.github.io/approximation-algorithms/exercises/tsp-approximation/#esercizio-6-3"><em>Approximation Algorithms</em>, Exercise 6.3</a></td>
 </tr>
 </table></div>

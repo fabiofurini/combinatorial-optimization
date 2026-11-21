@@ -53,19 +53,19 @@ title: "Scheduling on identical parallel machines (P||Cmax)"
 </tr>
 <tr>
 <td><strong>Heuristics</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/heuristics/#box-5-ex-refPCM">Ch. 29 «Heuristic algorithms: definitions»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/scheduling-on-parallel-machines-longest-jobs-first/#sez-sec-PCM">Ch. 30 «Constructive heuristics»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/local-search/p-cmax-move-and-swap/#sez-sec-pcmax">Ch. 31 «Local search»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/metaheuristics/tabu-search/#sez-sec-ts">Ch. 32 «Metaheuristics»</a></td>
+<td><a href="https://fabiofurini.github.io/heuristic-algorithms/heuristics/#box-5-ex-refPCM"><em>Heuristic Algorithms</em>: «Heuristic algorithms: definitions»</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/constructive-heuristics/scheduling-on-parallel-machines-longest-jobs-first/#sez-sec-PCM"><em>Heuristic Algorithms</em>: «Constructive heuristics»</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/local-search/p-cmax-move-and-swap/#sez-sec-pcmax"><em>Heuristic Algorithms</em>: «Local search»</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/metaheuristics/tabu-search/#sez-sec-ts"><em>Heuristic Algorithms</em>: «Metaheuristics»</a></td>
 </tr>
 <tr>
 <td><strong>MIP heuristics</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/mip-heuristics-classical/#eq-eq-pcm">Ch. 33 «MIP heuristics for the classical problems»</a></td>
+<td><a href="https://fabiofurini.github.io/heuristic-algorithms/mip-heuristics-classical/#eq-eq-pcm"><em>Heuristic Algorithms</em>: «MIP heuristics for the classical problems»</a></td>
 </tr>
 <tr>
 <td><strong>Approximation</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/approximation/">Ch. 34 «Principles of approximation algorithms»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/pcmax-approximation/#sez-sec-LIST">Ch. 40 «Approximation for <span class="arithmatex">\(P\|C_{\max}\)</span>»</a></td>
+<td><a href="https://fabiofurini.github.io/approximation-algorithms/approximation/"><em>Approximation Algorithms</em>: «Principles of approximation algorithms»</a>; <a href="https://fabiofurini.github.io/approximation-algorithms/pcmax-approximation/#sez-sec-LIST"><em>Approximation Algorithms</em>: «Approximation for <span class="arithmatex">\(P\|C_{\max}\)</span>»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/pcmax/">Ch. 7 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/pcmax-formulations/">Ch. 14 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/heuristics/">Ch. 29 (2 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/constructive-heuristics/">Ch. 30 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/local-search/">Ch. 31 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/metaheuristics/">Ch. 32 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/mip-heuristics-classical/#esercizio-33-5">Exercise 33.5</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/approximation/#esercizio-34-2">Exercise 34.2</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/pcmax-approximation/">Ch. 40 (3 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/pcmax/">Ch. 7 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/pcmax-formulations/">Ch. 14 (5 exercises)</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/heuristics/"><em>Heuristic Algorithms</em>: «Heuristic algorithms: definitions» (2 exercises)</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/constructive-heuristics/"><em>Heuristic Algorithms</em>: «Constructive heuristics» (3 exercises)</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/local-search/"><em>Heuristic Algorithms</em>: «Local search» (3 exercises)</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/metaheuristics/"><em>Heuristic Algorithms</em>: «Metaheuristics» (3 exercises)</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/mip-heuristics-classical/#esercizio-5-5"><em>Heuristic Algorithms</em>, Exercise 5.5</a>; <a href="https://fabiofurini.github.io/approximation-algorithms/exercises/approximation/#esercizio-1-2"><em>Approximation Algorithms</em>, Exercise 1.2</a>; <a href="https://fabiofurini.github.io/approximation-algorithms/exercises/pcmax-approximation/"><em>Approximation Algorithms</em>: «Approximation for <span class="arithmatex">\(P\|C_{\max}\)</span>» (3 exercises)</a></td>
 </tr>
 </table></div>
 
@@ -87,20 +87,20 @@ title: "Scheduling on identical parallel machines (P||Cmax)"
 
 ### Heuristics { #sez-sec-cat-pcmax-heuristics }
 
-- On the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax/index.md) (three machines, optimum $9$) LIST with the shortest jobs first gives $12$ and LPT gives $11$ ([Ch. 30](../heuristic-algorithms/constructive-heuristics/scheduling-on-parallel-machines-longest-jobs-first.md#sez-sec-LPT)).
+- On the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax/index.md) (three machines, optimum $9$) LIST with the shortest jobs first gives $12$ and LPT gives $11$ ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/constructive-heuristics/scheduling-on-parallel-machines-longest-jobs-first/#sez-sec-LPT)).
 
-- The LPT solution is a local optimum for move, while two swaps reach $9$; the auxiliary objective $\sum_h L_h^2$ gives a slope to the plateaus ([Ch. 31](../heuristic-algorithms/local-search/p-cmax-move-and-swap.md#box-8-ex-lpt)).
+- The LPT solution is a local optimum for move, while two swaps reach $9$; the auxiliary objective $\sum_h L_h^2$ gives a slope to the plateaus ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/local-search/p-cmax-move-and-swap/#box-8-ex-lpt)).
 
-- Tabu search and VNS reach $9$ on the same instance ([Ch. 32](../heuristic-algorithms/metaheuristics/variable-neighbourhood-search.md#box-8-ex-vnsPCM)).
+- Tabu search and VNS reach $9$ on the same instance ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/metaheuristics/variable-neighbourhood-search/#box-8-ex-vnsPCM)).
 
 ### MIP heuristics { #sez-sec-cat-pcmax-mipheuristics }
 
-- On the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax/index.md) fractional diving ends at $10$, guided diving from LPT finds $9$, the feasibility pump returns $11$ ([Ch. 33](../heuristic-algorithms/mip-heuristics-classical.md#box-5-ex-divepcm)).
+- On the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax/index.md) fractional diving ends at $10$, guided diving from LPT finds $9$, the feasibility pump returns $11$ ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/mip-heuristics-classical/#box-5-ex-divepcm)).
 
-- RINS, local branching and proximity search, started from LPT, reach $9$; proximity search also proves it optimal ([Ch. 33](../heuristic-algorithms/mip-heuristics-classical.md#box-10-ex-rinspcm)).
+- RINS, local branching and proximity search, started from LPT, reach $9$; proximity search also proves it optimal ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/mip-heuristics-classical/#box-10-ex-rinspcm)).
 
 ### Approximation { #sez-sec-cat-pcmax-approximation }
 
-- LIST is a $\left(2-\frac1m\right)$-approximation for every list, tight ([Ch. 40](../approximation-algorithms/pcmax-approximation.md#box-4-prop-LIST)).
+- LIST is a $\left(2-\frac1m\right)$-approximation for every list, tight ([<em>Approximation Algorithms</em>](https://fabiofurini.github.io/approximation-algorithms/pcmax-approximation/#box-4-prop-LIST)).
 
-- LPT is a $\left(\frac43-\frac1{3m}\right)$-approximation, tight on Graham's family; for $m=3$ it is the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax/index.md) ([Ch. 40](../approximation-algorithms/pcmax-approximation.md#box-6-prop-LPT)).
+- LPT is a $\left(\frac43-\frac1{3m}\right)$-approximation, tight on Graham's family; for $m=3$ it is the instance of [Ch. 7](../combinatorial-optimization-problems/pcmax/index.md) ([<em>Approximation Algorithms</em>](https://fabiofurini.github.io/approximation-algorithms/pcmax-approximation/#box-6-prop-LPT)).

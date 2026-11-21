@@ -59,19 +59,19 @@ title: "The bin packing problem (BPP)"
 </tr>
 <tr>
 <td><strong>Heuristics</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/heuristics/#box-3-ex-refBPP">Ch. 29 «Heuristic algorithms: definitions»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/the-bin-packing-problem-first-sort-then-pack/#sez-sec-BPP">Ch. 30 «Constructive heuristics»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/local-search/local-search-the-scheme/#3142-bpp-move-and-swap">Ch. 31 «Local search»</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/metaheuristics/large-neighbourhood-search/#sez-sec-lns-bpp">Ch. 32 «Metaheuristics»</a></td>
+<td><a href="https://fabiofurini.github.io/heuristic-algorithms/heuristics/#box-3-ex-refBPP"><em>Heuristic Algorithms</em>: «Heuristic algorithms: definitions»</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/constructive-heuristics/the-bin-packing-problem-first-sort-then-pack/#sez-sec-BPP"><em>Heuristic Algorithms</em>: «Constructive heuristics»</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/local-search/local-search-the-scheme/#342-bpp-move-and-swap"><em>Heuristic Algorithms</em>: «Local search»</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/metaheuristics/large-neighbourhood-search/#sez-sec-lns-bpp"><em>Heuristic Algorithms</em>: «Metaheuristics»</a></td>
 </tr>
 <tr>
 <td><strong>MIP heuristics</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/mip-heuristics-classical/#eq-eq-bpp">Ch. 33 «MIP heuristics for the classical problems»</a></td>
+<td><a href="https://fabiofurini.github.io/heuristic-algorithms/mip-heuristics-classical/#eq-eq-bpp"><em>Heuristic Algorithms</em>: «MIP heuristics for the classical problems»</a></td>
 </tr>
 <tr>
 <td><strong>Approximation</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/bin-packing-approximation/">Ch. 36 «Approximation algorithms for bin packing»</a></td>
+<td><a href="https://fabiofurini.github.io/approximation-algorithms/bin-packing-approximation/"><em>Approximation Algorithms</em>: «Approximation algorithms for bin packing»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/bin-packing/">Ch. 3 (6 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/pcmax/#esercizio-7-5">Exercise 7.5</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/bin-packing-formulations/">Ch. 10 (5 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/heuristics/#esercizio-29-2">Exercise 29.2</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/constructive-heuristics/">Ch. 30 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/local-search/">Ch. 31 (3 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/metaheuristics/">Ch. 32 (2 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/approximation/#esercizio-34-3">Exercise 34.3</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/bin-packing-approximation/">Ch. 36 (12 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/bin-packing/">Ch. 3 (6 exercises)</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/pcmax/#esercizio-7-5">Exercise 7.5</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/bin-packing-formulations/">Ch. 10 (5 exercises)</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/heuristics/#esercizio-1-2"><em>Heuristic Algorithms</em>, Exercise 1.2</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/constructive-heuristics/"><em>Heuristic Algorithms</em>: «Constructive heuristics» (3 exercises)</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/local-search/"><em>Heuristic Algorithms</em>: «Local search» (3 exercises)</a>; <a href="https://fabiofurini.github.io/heuristic-algorithms/exercises/metaheuristics/"><em>Heuristic Algorithms</em>: «Metaheuristics» (2 exercises)</a>; <a href="https://fabiofurini.github.io/approximation-algorithms/exercises/approximation/#esercizio-1-3"><em>Approximation Algorithms</em>, Exercise 1.3</a>; <a href="https://fabiofurini.github.io/approximation-algorithms/exercises/bin-packing-approximation/"><em>Approximation Algorithms</em>: «Approximation algorithms for bin packing» (12 exercises)</a></td>
 </tr>
 </table></div>
 
@@ -91,24 +91,24 @@ title: "The bin packing problem (BPP)"
 
 ### Heuristics { #sez-sec-cat-bpp-heuristics }
 
-- First Fit Decreasing and Best Fit Decreasing find the optimum $3$ on the instance of [Ch. 29](../heuristic-algorithms/heuristics.md); $FFD(I) \le \frac{11}{9}\, z(I) + \frac{6}{9}$, tight ([Ch. 30](../heuristic-algorithms/constructive-heuristics/the-bin-packing-problem-first-sort-then-pack.md#sez-sec-FFD)).
+- First Fit Decreasing and Best Fit Decreasing find the optimum $3$ on the instance of [<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/heuristics/); $FFD(I) \le \frac{11}{9}\, z(I) + \frac{6}{9}$, tight ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/constructive-heuristics/the-bin-packing-problem-first-sort-then-pack/#sez-sec-FFD)).
 
-- The number of bins is flat, so move and swap local search uses the auxiliary objective $\max \sum_b L_b^2$ ([Ch. 31](../heuristic-algorithms/local-search/flat-landscapes-and-auxiliary-objectives.md#sez-sec-flat)).
+- The number of bins is flat, so move and swap local search uses the auxiliary objective $\max \sum_b L_b^2$ ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/local-search/flat-landscapes-and-auxiliary-objectives/#sez-sec-flat)).
 
-- VND with move and swap reaches the optimum in $89$ of $100$ runs on an instance with $n=12$ ([Ch. 31](../heuristic-algorithms/local-search/variable-neighbourhood-descent.md#sez-sec-vnd)).
+- VND with move and swap reaches the optimum in $89$ of $100$ runs on an instance with $n=12$ ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/local-search/variable-neighbourhood-descent/#sez-sec-vnd)).
 
-- Large neighbourhood search: on BPP24 the exact repair with $q\ge 3$ reaches the optimum $9$ in every run ([Ch. 32](../heuristic-algorithms/metaheuristics/large-neighbourhood-search.md#box-11-ex-lnsBPP)).
+- Large neighbourhood search: on BPP24 the exact repair with $q\ge 3$ reaches the optimum $9$ in every run ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/metaheuristics/large-neighbourhood-search/#box-11-ex-lnsBPP)).
 
 ### MIP heuristics { #sez-sec-cat-bpp-mipheuristics }
 
-- Rounding and fractional diving fail on the instance of [Ch. 29](../heuristic-algorithms/heuristics.md): the LP spreads an item over several bins ([Ch. 33](../heuristic-algorithms/mip-heuristics-classical.md#box-3-ex-rounding)).
+- Rounding and fractional diving fail on the instance of [<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/heuristics/): the LP spreads an item over several bins ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/mip-heuristics-classical/#box-3-ex-rounding)).
 
-- The feasibility pump always finds a packing, but it may leave empty bins open ([Ch. 33](../heuristic-algorithms/mip-heuristics-classical.md#box-8-ex-fpbpp)).
+- The feasibility pump always finds a packing, but it may leave empty bins open ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/mip-heuristics-classical/#box-8-ex-fpbpp)).
 
-- On an instance with $n=60$ the whole difficulty is primal: the heuristics of Gurobi decide the solution time ([Ch. 33](../heuristic-algorithms/mip-heuristics-classical.md#box-19-ex-gurobi)).
+- On an instance with $n=60$ the whole difficulty is primal: the heuristics of Gurobi decide the solution time ([<em>Heuristic Algorithms</em>](https://fabiofurini.github.io/heuristic-algorithms/mip-heuristics-classical/#box-19-ex-gurobi)).
 
 ### Approximation { #sez-sec-cat-bpp-approximation }
 
-- Every Any Fit algorithm is half-full, hence a $2$-approximation ([Ch. 36](../approximation-algorithms/bin-packing-approximation.md#364-half-full-property)).
+- Every Any Fit algorithm is half-full, hence a $2$-approximation ([<em>Approximation Algorithms</em>](https://fabiofurini.github.io/approximation-algorithms/bin-packing-approximation/#34-half-full-property)).
 
-- $r(NF) = r(WF) = 2$ and $r(FF) = r(BF) = \frac{17}{10}$ ([Ch. 36](../approximation-algorithms/bin-packing-approximation.md#box-20-propFF)).
+- $r(NF) = r(WF) = 2$ and $r(FF) = r(BF) = \frac{17}{10}$ ([<em>Approximation Algorithms</em>](https://fabiofurini.github.io/approximation-algorithms/bin-packing-approximation/#box-20-propFF)).

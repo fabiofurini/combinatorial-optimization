@@ -42,14 +42,14 @@ title: "Metric travelling salesman problem (metric TSP)"
 </tr>
 <tr>
 <td><strong>Heuristics</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/heuristic-algorithms/constructive-heuristics/the-travelling-salesman-problem-append-or-insert/#sez-sec-INS">Ch. 30 «Constructive heuristics»</a></td>
+<td><a href="https://fabiofurini.github.io/heuristic-algorithms/constructive-heuristics/the-travelling-salesman-problem-append-or-insert/#sez-sec-INS"><em>Heuristic Algorithms</em>: «Constructive heuristics»</a></td>
 </tr>
 <tr>
 <td><strong>Approximation</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/approximation-algorithms/tsp-approximation/#box-2-def-metricTSP">Ch. 39 «The TSP: the general case and the metric case»</a></td>
+<td><a href="https://fabiofurini.github.io/approximation-algorithms/tsp-approximation/#box-2-def-metricTSP"><em>Approximation Algorithms</em>: «The TSP: the general case and the metric case»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp/#esercizio-6-4">Exercise 6.4</a>; <a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp-approximation/">Ch. 39 (2 exercises)</a></td>
+<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/tsp/#esercizio-6-4">Exercise 6.4</a>; <a href="https://fabiofurini.github.io/approximation-algorithms/exercises/tsp-approximation/"><em>Approximation Algorithms</em>: «The TSP: the general case and the metric case» (2 exercises)</a></td>
 </tr>
 </table></div>

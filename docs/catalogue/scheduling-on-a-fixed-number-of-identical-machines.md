@@ -31,10 +31,10 @@ title: "Scheduling on a fixed number of identical machines (Pm||Cmax)"
 </tr>
 <tr>
 <td><strong>Dynamic programming</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/dynamic-programming/dp-principles/">Ch. 16 «Principles of dynamic programming»</a></td>
+<td><a href="https://fabiofurini.github.io/dynamic-programming/dp-principles/"><em>Dynamic Programming</em>: «Principles of dynamic programming»</a></td>
 </tr>
 <tr>
 <td><strong>Exercises</strong></td>
-<td><a href="https://fabiofurini.github.io/combinatorial-optimization/exercises/dp-principles/#esercizio-16-3">Exercise 16.3</a></td>
+<td><a href="https://fabiofurini.github.io/dynamic-programming/exercises/dp-principles/#esercizio-1-3"><em>Dynamic Programming</em>, Exercise 1.3</a></td>
 </tr>
 </table></div>
