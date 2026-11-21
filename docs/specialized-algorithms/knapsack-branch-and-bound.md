@@ -12,7 +12,7 @@ title: "Knapsack: branch-and-bound on the critical item"
 
 !!! nota "Prerequisites"
 
-    - From the module <em>Integer linear programming</em>, [Chapter 7 «Branch-and-bound»](https://fabiofurini.github.io/integer-linear-programming/exact-methods/bb/): branching and bounding operations, the problem list, the pruning criteria, the lower bound $\LB$ and the upper bound $\UB$. The general algorithm is applied here to the 0/1 knapsack problem.
+    - From the module <em>Integer linear programming</em>, [Chapter 7 «LP-based branch-and-bound»](https://fabiofurini.github.io/integer-linear-programming/exact-methods/bb/): branching and bounding operations, the problem list, the pruning criteria, the lower bound $\LB$ and the upper bound $\UB$. The general algorithm is applied here to the 0/1 knapsack problem.
 
     - From this module, [Chapter 9 «Formulations of knapsack problems»](https://fabiofurini.github.io/combinatorial-optimization/formulations/knapsack-formulations/an-ilp-model-for-the-0-1-knapsack-problem/): the models $\mathrm{ILP}_{\mathrm{KP}}$ and $\mathrm{LP}_{\mathrm{KP}}$, the efficiency of an item, the split item $s$, the residual capacity $\mathit{rc}$ and the bound of Dantzig.
 
@@ -108,7 +108,7 @@ The problem of this chapter is the [0/1 knapsack problem (KP)](https://fabiofuri
 
 ### 16.1.3 What changes with respect to the general algorithm
 
-- The algorithm is the LP-based branch-and-bound algorithm of the module <em>Integer linear programming</em> ([Chapter 7 «Branch-and-bound»](https://fabiofurini.github.io/integer-linear-programming/exact-methods/bb/)), with its problem list, its pruning criteria and its optimality gap.
+- The algorithm is the LP-based branch-and-bound algorithm of the module <em>Integer linear programming</em> ([Chapter 7 «LP-based branch-and-bound»](https://fabiofurini.github.io/integer-linear-programming/exact-methods/bb/)), with its problem list, its pruning criteria and its optimality gap.
 
 - <strong>Bounding.</strong> The problem of a node is solved by the formulas above. All the profits are integer, so the bound of a node is $\lfloor z(\mathrm{LP}_{\mathrm{KP}}^k)\rfloor$: the node is pruned by bound if $\lfloor z(\mathrm{LP}_{\mathrm{KP}}^k)\rfloor \le \LB$, by infeasibility if $c(k)<0$, by integrality if its solution is integer (then $\LB$ is updated when the value is larger). An integer node is pruned by integrality even when its value does not exceed $\LB$.
 

@@ -48,7 +48,9 @@ title: "Combinatorial optimization: definitions"
 
 !!! nota "Prerequisites"
 
-    - From the <em>Preliminaries</em>: optimization problems (feasible region, objective function, optimal solution and optimal value), binomial coefficients and partitions of a finite set.
+    - From the module <em>Convex optimization</em>, [Chapter 5 «Optimization problems»](https://fabiofurini.github.io/convex-optimization/problems/05-optimization-problems/): feasible region, objective function, optimal solution and optimal value.
+
+    - From the module <em>Mathematical Analysis 1</em>, [the chapter «Factorials, binomial coefficients and triangle inequality»](https://fabiofurini.github.io/mathematical-analysis-1/numbers/06-factorials-binomials/): factorials and binomial coefficients.
 
     - No knowledge of integer programming is needed: the bounds of this chapter come from combinatorial arguments.
 

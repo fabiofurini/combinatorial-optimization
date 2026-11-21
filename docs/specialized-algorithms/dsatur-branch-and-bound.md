@@ -12,7 +12,7 @@ title: "Vertex coloring: the DSATUR branch-and-bound"
 
 !!! nota "Prerequisites"
 
-    - From the module <em>Integer linear programming</em>, [Chapter 7 «Branch-and-bound»](https://fabiofurini.github.io/integer-linear-programming/exact-methods/bb/): branching and bounding operations, the problem list, the pruning criteria, the bounds $\LB$ and $\UB$.
+    - From the module <em>Integer linear programming</em>, [Chapter 7 «LP-based branch-and-bound»](https://fabiofurini.github.io/integer-linear-programming/exact-methods/bb/): branching and bounding operations, the problem list, the pruning criteria, the bounds $\LB$ and $\UB$.
 
     - From this module, [Chapter 4 «Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/): the vertex coloring problem, cliques, stable sets and the clique bound $\omega(G)\le\chi(G)$.
 
