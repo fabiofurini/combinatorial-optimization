@@ -37,9 +37,9 @@ The boxes have the same colors as in the lecture notes:
 
 All the pages of the website, in the order of the menu: the chapters with their sections, the catalogue and the other pages.
 
-## [Combinatorial optimization](combinatorial-optimization-problems/combinatorial-optimization/index.md)
+## [Definitions](combinatorial-optimization-problems/combinatorial-optimization/index.md)
 
-- **[1. Combinatorial optimization problems](combinatorial-optimization-problems/combinatorial-optimization/index.md)** · [Exercises](exercises/combinatorial-optimization.md)
+- **[1. Combinatorial optimization: definitions](combinatorial-optimization-problems/combinatorial-optimization/index.md)** · [Exercises](exercises/combinatorial-optimization.md)
     - [1.1 Combinatorial optimization problems](combinatorial-optimization-problems/combinatorial-optimization/combinatorial-optimization-problems.md)
     - [1.2 Categories of combinatorial optimization problems](combinatorial-optimization-problems/combinatorial-optimization/categories-of-combinatorial-optimization-problems.md)
     - [1.3 Counting the solutions](combinatorial-optimization-problems/combinatorial-optimization/counting-the-solutions.md)

@@ -12,7 +12,7 @@ title: "Clique problems"
 
 !!! nota "Prerequisites"
 
-    - From this module, the chapter [«Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): instances, feasible solutions, primal and dual bounds, and the gap.
+    - From this module, the chapter [«Combinatorial optimization: definitions»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): instances, feasible solutions, primal and dual bounds, and the gap.
 
     - From this module, the chapter [«Coloring problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/coloring/): graphs, neighbourhoods, degrees, the complement graph and the chromatic number $\chi(G)$.
 

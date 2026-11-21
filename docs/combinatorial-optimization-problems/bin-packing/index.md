@@ -12,7 +12,7 @@ title: "Packing problems"
 
 !!! nota "Prerequisites"
 
-    - From this module, [Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): instances, feasible solutions, primal and dual bounds, the gap, and the Bell numbers that count the partitions of a set.
+    - From this module, [Chapter 1 «Combinatorial optimization: definitions»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): instances, feasible solutions, primal and dual bounds, the gap, and the Bell numbers that count the partitions of a set.
 
     - From this module, [Chapter 2 «Knapsack problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/knapsack/): the form of the definitions and of the assumptions on the data.
 

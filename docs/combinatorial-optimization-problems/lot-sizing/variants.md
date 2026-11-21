@@ -58,7 +58,7 @@ title: "Variants"
 
 - In 1958 Wagner and Whitin gave a dynamic programming algorithm for the case without capacity and with demand that varies over time. It rests on a property of the optimal plans: one produces only when the stock is empty.
 
-- With capacities the property fails, and the problem is NP-hard ([Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/)).
+- With capacities the property fails, and the problem is NP-hard ([Chapter 1 «Combinatorial optimization: definitions»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/)).
 
 ## 8.8 Typical mistakes
 

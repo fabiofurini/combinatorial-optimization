@@ -12,7 +12,7 @@ title: "Lot sizing problems"
 
 !!! nota "Prerequisites"
 
-    - From this module, [Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): what a combinatorial optimization problem is, the number of candidate solutions, and primal and dual bounds.
+    - From this module, [Chapter 1 «Combinatorial optimization: definitions»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): what a combinatorial optimization problem is, the number of candidate solutions, and primal and dual bounds.
 
 !!! chiave "Objectives"
 

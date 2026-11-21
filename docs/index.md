@@ -44,7 +44,7 @@ The same entries as the menu: each card gives its part and its chapters in the l
 
 <div class="grid cards" markdown>
 
--   :material-puzzle-outline: **Combinatorial optimization**
+-   :material-puzzle-outline: **Definitions**
 
     ---
 

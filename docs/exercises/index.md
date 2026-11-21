@@ -2,9 +2,9 @@
 
 Exercises with **worked solutions**, chapter by chapter, with the same parts and groups as the menu. Try each exercise on your own first: the solution opens with a click.
 
-## Combinatorial optimization
+## Definitions
 
-- [1. Combinatorial optimization problems](combinatorial-optimization.md) · 8 exercises
+- [1. Combinatorial optimization: definitions](combinatorial-optimization.md) · 8 exercises
 
 ## Selected problems
 

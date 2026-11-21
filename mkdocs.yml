@@ -98,7 +98,7 @@ plugins:
         catalogue/maximum-clique.md: catalogue/maximum-clique-problem.md
         catalogue/tsp.md: catalogue/travelling-salesman-problem.md
         catalogue/pcmax.md: catalogue/scheduling-on-identical-parallel-machines.md
-        # 2026-10-12: Part 1 is in the menu as «Combinatorial optimization» (chapter 1) and «Selected problems» (chapters 2-8)
+        # 2026-10-12: Part 1 is in the menu as «Definitions» (chapter 1) and «Selected problems» (chapters 2-8)
         combinatorial-optimization-problems/index.md: selected-problems/index.md
         # 2026-10-12: definitions only on the problem pages (the catalogue has one page per problem)
         combinatorial-optimization-problems/definitions.md: catalogue/index.md
@@ -309,7 +309,7 @@ extra_javascript:
 
 nav:
   - Home: index.md
-  - Combinatorial optimization:
+  - Definitions:
       - combinatorial-optimization-problems/combinatorial-optimization/index.md
       - "Combinatorial optimization problems": combinatorial-optimization-problems/combinatorial-optimization/combinatorial-optimization-problems.md
       - "Categories of combinatorial optimization problems": combinatorial-optimization-problems/combinatorial-optimization/categories-of-combinatorial-optimization-problems.md
@@ -393,8 +393,8 @@ nav:
           - "17. Vertex coloring (VCP)": specialized-algorithms/dsatur-branch-and-bound.md
   - Exercises:
       - exercises/index.md
-      - "Combinatorial optimization":
-          - "1. Combinatorial optimization": exercises/combinatorial-optimization.md
+      - "Definitions":
+          - "1. Definitions": exercises/combinatorial-optimization.md
       - "Selected problems":
           - "2. Knapsack problems": exercises/knapsack.md
           - "3. Packing problems": exercises/bin-packing.md

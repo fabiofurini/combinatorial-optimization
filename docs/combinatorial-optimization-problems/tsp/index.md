@@ -12,7 +12,7 @@ title: "Routing problems"
 
 !!! nota "Prerequisites"
 
-    - From this module, [Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): what a combinatorial optimization problem is, how the number of solutions explodes, and the notions of primal bound, dual bound and gap.
+    - From this module, [Chapter 1 «Combinatorial optimization: definitions»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): what a combinatorial optimization problem is, how the number of solutions explodes, and the notions of primal bound, dual bound and gap.
 
     - From the same chapter, the reference TSP instance with $5$ cities, which this chapter studies in detail.
 

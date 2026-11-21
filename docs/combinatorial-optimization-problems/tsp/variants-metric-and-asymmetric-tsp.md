@@ -65,7 +65,7 @@ title: "Metric and asymmetric TSP"
 
 - On the road maps of real countries, the record of 2025 is the instance korea81998, with $81\,998$ bars of South Korea.
 
-- The TSP is strongly NP-hard ([Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/)). Christofides (1976) gave an approximation algorithm with ratio $\frac32$ for the metric TSP.
+- The TSP is strongly NP-hard ([Chapter 1 «Combinatorial optimization: definitions»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/)). Christofides (1976) gave an approximation algorithm with ratio $\frac32$ for the metric TSP.
 
 ## 6.8 Typical mistakes
 

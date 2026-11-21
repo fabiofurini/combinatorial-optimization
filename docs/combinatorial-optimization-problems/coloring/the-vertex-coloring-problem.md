@@ -191,7 +191,7 @@ title: "Vertex coloring"
 
 ## 4.2.3 Counting the solutions, a first solution and the bounds
 
-- <strong>Candidate solutions.</strong> The candidate solutions are the partitions of $V$, counted by the Bell numbers (Chapter 1 [«Combinatorial optimization problems»](../combinatorial-optimization/index.md)). For <span style="color:#1971c2">[Example 4.1](#box-4-ex-vcp1)</span> we have $B(3) = 5$ partitions and only one is feasible: three singletons, since every pair of vertices is adjacent. Hence $\chi(G) = 3$.
+- <strong>Candidate solutions.</strong> The candidate solutions are the partitions of $V$, counted by the Bell numbers (Chapter 1 [«Combinatorial optimization: definitions»](../combinatorial-optimization/index.md)). For <span style="color:#1971c2">[Example 4.1](#box-4-ex-vcp1)</span> we have $B(3) = 5$ partitions and only one is feasible: three singletons, since every pair of vertices is adjacent. Hence $\chi(G) = 3$.
 
 - For <span style="color:#1971c2">[Example 4.2](#box-5-ex-vcp2)</span> we have $B(10) = 115\,975$ partitions, and $7\,430$ of them are feasible, that is, have only stable sets as classes.
 

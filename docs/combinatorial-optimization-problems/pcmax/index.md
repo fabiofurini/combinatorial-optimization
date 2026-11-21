@@ -12,7 +12,7 @@ title: "Scheduling problems"
 
 !!! nota "Prerequisites"
 
-    - From this module, [Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): what a combinatorial optimization problem is, the number of candidate solutions, primal and dual bounds, and the partitions of a set (Bell numbers).
+    - From this module, [Chapter 1 «Combinatorial optimization: definitions»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/): what a combinatorial optimization problem is, the number of candidate solutions, primal and dual bounds, and the partitions of a set (Bell numbers).
 
     - From this module, [Chapter 3 «Packing problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/bin-packing/): the bin packing problem.
 

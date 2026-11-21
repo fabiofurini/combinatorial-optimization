@@ -24,7 +24,7 @@ The lecture notes, the exercise books, the slides and the catalogue of problems 
 
 | Volume | Contents | Chapters | File |
 |---|---|:---:|---|
-| 1. Problems | Combinatorial optimization · Knapsack problems · Packing problems · Coloring problems · Clique problems · Routing problems · Scheduling problems · Lot sizing problems | 1–8 | [:material-file-pdf-box: PDF](pdf/exercises-1-combinatorial-optimization-problems.pdf) (0.6 MB) |
+| 1. Problems | Definitions · Knapsack problems · Packing problems · Coloring problems · Clique problems · Routing problems · Scheduling problems · Lot sizing problems | 1–8 | [:material-file-pdf-box: PDF](pdf/exercises-1-combinatorial-optimization-problems.pdf) (0.6 MB) |
 | 2. Formulations and their properties | Knapsack problems · Packing problems · Coloring problems · Clique problems · Routing problems · Scheduling problems · Lot sizing problems | 9–15 | [:material-file-pdf-box: PDF](pdf/exercises-2-formulations.pdf) (0.6 MB) |
 | 3. Ad hoc algorithms | Knapsack problems · Coloring problems | 16–17 | [:material-file-pdf-box: PDF](pdf/exercises-3-specialized-algorithms.pdf) (0.5 MB) |
 
@@ -38,7 +38,7 @@ The lecture slides, one PDF per chapter, with the same definitions and examples 
 
 | Chapter | Title | File |
 |:---:|---|---|
-| 1 | [Combinatorial optimization problems](combinatorial-optimization-problems/combinatorial-optimization/index.md) | [:material-file-pdf-box: PDF](pdf/slides-combinatorial-optimization.pdf) (0.5 MB) |
+| 1 | [Combinatorial optimization: definitions](combinatorial-optimization-problems/combinatorial-optimization/index.md) | [:material-file-pdf-box: PDF](pdf/slides-combinatorial-optimization.pdf) (0.5 MB) |
 | 2 | [Knapsack problems](combinatorial-optimization-problems/knapsack/index.md) | [:material-file-pdf-box: PDF](pdf/slides-knapsack.pdf) (0.6 MB) |
 | 3 | [Packing problems](combinatorial-optimization-problems/bin-packing/index.md) | [:material-file-pdf-box: PDF](pdf/slides-bin-packing.pdf) (0.6 MB) |
 | 4 | [Coloring problems](combinatorial-optimization-problems/coloring/index.md) | [:material-file-pdf-box: PDF](pdf/slides-coloring.pdf) (0.4 MB) |

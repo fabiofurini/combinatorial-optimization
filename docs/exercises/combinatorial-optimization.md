@@ -1,12 +1,12 @@
 ---
-title: "Exercises · Combinatorial optimization problems"
+title: "Exercises · Combinatorial optimization: definitions"
 ---
 
-# Exercises · Combinatorial optimization problems
+# Exercises · Combinatorial optimization: definitions
 
 <div class="info-capitolo" markdown>
 
-**Exercises · Chapter 1** · each solution opens with a click · [:material-book-open-variant: Chapter 1: Combinatorial optimization](../combinatorial-optimization-problems/combinatorial-optimization/index.md) · [:material-file-pdf-box: Exercises, volume 1 (PDF)](../pdf/exercises-1-combinatorial-optimization-problems.pdf)
+**Exercises · Chapter 1** · each solution opens with a click · [:material-book-open-variant: Chapter 1: Definitions](../combinatorial-optimization-problems/combinatorial-optimization/index.md) · [:material-file-pdf-box: Exercises, volume 1 (PDF)](../pdf/exercises-1-combinatorial-optimization-problems.pdf)
 
 </div>
 

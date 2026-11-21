@@ -501,7 +501,7 @@ The Capacitated Lot Sizing Problem and its reference instance (Example 8.1) are
 
 - The formulations have the same optimal value $z(\mathrm{ILP}_{\mathrm{CLSP}})=z(\mathrm{MIP}^{\mathrm{SP}}_{\mathrm{CLSP}})=180$, but their LP relaxations have different optimal values. On the reference instance the lower bounds, computed with the exact simplex algorithm and checked with Gurobi, are the following.
 
-- The last column is the gap of [Chapter 1 «Combinatorial optimization problems»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/) between the bound and the optimal value; it is undefined for the bound $0$.
+- The last column is the gap of [Chapter 1 «Combinatorial optimization: definitions»](https://fabiofurini.github.io/combinatorial-optimization/combinatorial-optimization-problems/combinatorial-optimization/) between the bound and the optimal value; it is undefined for the bound $0$.
 
 <div class="tabella" markdown="0"><table>
 <tr>
