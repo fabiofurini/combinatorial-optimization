@@ -207,7 +207,7 @@ The same entries as the menu: each card gives its part and its chapters in the l
 <!-- collana -->
 ## The series
 
-Ten courses built the same way: lecture notes online and in PDF, exercises with solutions, an interactive lab and self-assessment quizzes.
+All the courses of the series are built the same way: lecture notes online and in PDF, exercises with solutions, an interactive lab and self-assessment quizzes.
 
 <div class="grid cards" markdown>
 
@@ -265,6 +265,8 @@ Ten courses built the same way: lecture notes online and in PDF, exercises with 
 
 </div>
 <!-- /collana -->
+
+---
 
 Teaching material by **[Fabio Furini](https://fabiofurini.github.io/)** —
 [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
