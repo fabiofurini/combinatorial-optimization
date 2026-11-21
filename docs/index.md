@@ -31,9 +31,9 @@ Prerequisites: [Linear Programming](https://fabiofurini.github.io/linear-program
 <!-- collana-app -->
 ## Try it now
 
-Branch-and-bound for the 0-1 knapsack: the tree grows node by node, with Dantzig's bounds, the pruning and the best solution found so far.
+Branch-and-bound for the 0-1 knapsack on five items: the complete tree, with Dantzig's bounds, the pruned nodes, the infeasible ones and the solutions that improve the incumbent. Press «Run» to watch it grow node by node.
 
-<div class="gi" data-grafico="oc-bb-knapsack"></div>
+<div class="gi" data-grafico="oc-bb-knapsack" data-vetrina="18 6 8 10 11 ; 4 3 5 7 8 ; 16 | 9 11 5 11 8 ; 2 6 4 9 7 ; 15"></div>
 
 [:material-gesture-tap: More apps in the lab](lab/index.md){ .md-button }
 <!-- /collana-app -->
