@@ -4,9 +4,13 @@ title: Catalogue
 
 # Catalogue of combinatorial problems
 
-All the problems of the course, by family: the name leads to the definition, the labels to the chapters that treat it.
+<div class="info-capitolo" markdown>
 
-[:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf){ .md-button } [:material-table: The problems at a glance](../combinatorial-optimization-problems/problems.md){ .md-button }
+**Catalogue** · 32 problems · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf) · [:material-table: The problems at a glance](../combinatorial-optimization-problems/problems.md)
+
+</div>
+
+All the problems of the course, by family: the name leads to the definition, the labels to the chapters that treat it.
 
 <nav class="cat-famiglie" markdown>
 

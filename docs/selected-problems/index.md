@@ -4,11 +4,13 @@ title: Selected problems
 
 # Selected problems
 
-*Part 1 of the course, volume 1 of the lecture notes: chapters 2–8.*
+<div class="info-capitolo" markdown>
+
+**Part 1 · Selected problems** · 7 chapters · [:material-file-pdf-box: Lecture notes (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) · [:material-pencil-box-multiple: Exercises (PDF)](../pdf/exercises-1-combinatorial-optimization-problems.pdf) · [:material-table: The problems at a glance](../combinatorial-optimization-problems/problems.md)
+
+</div>
 
 The families of problems on which the whole course focuses: each family opens with an overview, then one page per problem with its definition, its assumptions and a first example.
-
-[:material-file-pdf-box: Lecture notes (PDF)](../pdf/lecture-notes-1-combinatorial-optimization-problems.pdf){ .md-button } [:material-file-pdf-box: Exercises (PDF)](../pdf/exercises-1-combinatorial-optimization-problems.pdf){ .md-button } [:material-table: The problems at a glance](../combinatorial-optimization-problems/problems.md){ .md-button }
 
 <div class="grid cards" markdown>
 
