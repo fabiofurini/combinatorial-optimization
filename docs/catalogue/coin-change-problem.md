@@ -6,7 +6,7 @@ title: "Coin change problem (CCP)"
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-folder-outline: Miscellaneous problems](index.md#miscellaneous-problems) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
+[:material-view-list: **Problems**](../selected-problems/index.md) · [:material-folder-outline: Miscellaneous problems](../selected-problems/index.md#miscellaneous-problems) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
 
 </div>
 

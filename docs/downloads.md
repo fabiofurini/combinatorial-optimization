@@ -64,7 +64,7 @@ The lecture slides, one PDF per chapter, with the same definitions and examples 
 
 | | Contents | File |
 |---|---|---|
-| [Catalogue of combinatorial problems](catalogue/index.md) | All the problems defined in the course, grouped by family: for each one its definition, its assumptions and what the course does on it, technique by technique. | [:material-file-pdf-box: PDF](pdf/combinatorial-problem-catalogue.pdf) (0.6 MB) |
+| [Catalogue of combinatorial problems](selected-problems/index.md) | All the problems defined in the course, grouped by family: for each one its definition, its assumptions and what the course does on it, technique by technique. | [:material-file-pdf-box: PDF](pdf/combinatorial-problem-catalogue.pdf) (0.6 MB) |
 
 </div>
 

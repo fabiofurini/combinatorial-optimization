@@ -117,4 +117,4 @@ title: "Clique problems"
 
 ---
 
-**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/index.md#maximum-clique-problem)
+**In depth:** [:material-view-list: what the course does on this problem](../../selected-problems/index.md#maximum-clique-problem)

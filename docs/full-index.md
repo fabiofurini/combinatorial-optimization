@@ -5,7 +5,7 @@
 
 - **Website and PDF.** Each chapter of the website is a chapter of the lecture notes, with the same numbers and the same colors; long chapters are split into one page per section or per problem.
 - **At the top of each chapter** a bar with the part, the PDF of the volume, the exercises and the apps of the chapter; at the bottom, the link to the exercises.
-- **By problem.** The catalogue is the list of all the problems: for each one its definition and the chapters that treat it, technique by technique.
+- **By problem.** The Problems page lists all the problems, by family: for each one its definition and the chapters that treat it, technique by technique.
 
 The boxes have the same colors as in the lecture notes:
 
@@ -35,7 +35,7 @@ The boxes have the same colors as in the lecture notes:
     All proofs are included, but folded: first read the statement, then open the proof when you want to study it. The same holds for the solutions of the exercises.
 <!-- /collana-organizzazione -->
 
-All the pages of the website, in the order of the menu: the chapters with their sections, the catalogue and the other pages.
+All the pages of the website, in the order of the menu: the chapters with their sections and the other pages.
 
 ## [Definitions](combinatorial-optimization-problems/combinatorial-optimization/index.md)
 
@@ -49,7 +49,7 @@ All the pages of the website, in the order of the menu: the chapters with their 
     - [1.7 Typical mistakes](combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md#17-typical-mistakes)
     - [1.8 In summary](combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md#18-in-summary)
 
-## [Selected problems](selected-problems/index.md)
+## [Problems](selected-problems/index.md)
 
 - **[2. Knapsack problems](combinatorial-optimization-problems/knapsack/index.md)** · [Exercises](exercises/knapsack.md)
     - [2.1 Overview of the family](combinatorial-optimization-problems/knapsack/index.md#21-overview-of-the-family)
@@ -207,17 +207,7 @@ All the pages of the website, in the order of the menu: the chapters with their 
     - [17.4 Typical mistakes](specialized-algorithms/dsatur-branch-and-bound.md#174-typical-mistakes)
     - [17.5 In summary](specialized-algorithms/dsatur-branch-and-bound.md#175-in-summary)
 
-## [Catalogue](catalogue/index.md)
-
-- [The problems at a glance](combinatorial-optimization-problems/problems.md)
-- [Knapsack problems](catalogue/index.md#knapsack-problems): [0/1 knapsack (KP)](catalogue/index.md#knapsack-problem) · [Subset sum (SSP)](catalogue/index.md#subset-sum-problem) · [Bounded knapsack (BKP)](catalogue/index.md#bounded-knapsack-problem) · [Unbounded knapsack (UKP)](catalogue/index.md#unbounded-knapsack-problem) · [Multidimensional knapsack (MDKP)](catalogue/index.md#multidimensional-knapsack-problem) · [Multiple knapsack (MKP)](catalogue/index.md#multiple-knapsack-problem) · [Multiple-choice knapsack (MCKP)](catalogue/index.md#multiple-choice-knapsack-problem) · [Knapsack with setups (KPS)](catalogue/index.md#knapsack-problem-with-setups)
-- [Packing problems](catalogue/index.md#packing-problems): [Bin packing (BPP)](catalogue/index.md#bin-packing-problem) · [Cutting stock (CSP)](catalogue/index.md#cutting-stock-problem)
-- [Coloring problems](catalogue/index.md#coloring-problems): [Vertex coloring (VCP)](catalogue/index.md#vertex-coloring-problem)
-- [Clique problems](catalogue/index.md#clique-problems): [Maximum clique (MCP)](catalogue/index.md#maximum-clique-problem) · [Maximum stable set (MSSP)](catalogue/index.md#maximum-stable-set-problem) · [Vertex-weighted maximum clique (VWMCP)](catalogue/index.md#vertex-weighted-maximum-clique-problem) · [Edge-weighted maximum clique (EWMCP)](catalogue/index.md#edge-weighted-maximum-clique-problem)
-- [Routing problems](catalogue/index.md#routing-problems): [Travelling salesman (TSP)](catalogue/index.md#travelling-salesman-problem) · [Metric TSP](catalogue/index.md#metric-travelling-salesman-problem) · [Asymmetric TSP (ATSP)](catalogue/index.md#asymmetric-travelling-salesman-problem) · [Hamiltonian cycle (HCP)](catalogue/index.md#hamiltonian-cycle-problem)
-- [Scheduling problems](catalogue/index.md#scheduling-problems): [Identical parallel machines (P||Cmax)](catalogue/index.md#scheduling-on-identical-parallel-machines) · [Fixed number of identical machines (Pm||Cmax)](catalogue/index.md#scheduling-on-a-fixed-number-of-identical-machines) · [Parallel machines with different speeds (Q||Cmax)](catalogue/index.md#scheduling-on-parallel-machines-with-different-speeds) · [Unrelated parallel machines (R||Cmax)](catalogue/index.md#scheduling-on-unrelated-parallel-machines)
-- [Lot sizing problems](catalogue/index.md#lot-sizing-problems): [Capacitated lot sizing (CLS)](catalogue/index.md#capacitated-lot-sizing) · [Uncapacitated lot sizing (ULS)](catalogue/index.md#uncapacitated-lot-sizing-problem) · [Capacitated lot sizing with constant capacity (CLS-C)](catalogue/index.md#capacitated-lot-sizing-with-constant-capacity) · [Lot sizing with several products and setup times (MLS)](catalogue/index.md#lot-sizing-with-several-products-and-setup-times) · [Lot sizing with initial stock (LS-SI)](catalogue/index.md#lot-sizing-with-initial-stock) · [Lot sizing with overtime (LS-OT)](catalogue/index.md#lot-sizing-with-overtime) · [Lot sizing with unsatisfied demand (LS-UD)](catalogue/index.md#lot-sizing-with-unsatisfied-demand)
-- [Miscellaneous problems](catalogue/index.md#miscellaneous-problems): [Rod cutting (RCP)](catalogue/index.md#rod-cutting-problem) · [Coin change (CCP)](catalogue/index.md#coin-change-problem)
+- All the problems, by family: [Knapsack problems](selected-problems/index.md#knapsack-problems) · [Packing problems](selected-problems/index.md#packing-problems) · [Coloring problems](selected-problems/index.md#coloring-problems) · [Clique problems](selected-problems/index.md#clique-problems) · [Routing problems](selected-problems/index.md#routing-problems) · [Scheduling problems](selected-problems/index.md#scheduling-problems) · [Lot sizing problems](selected-problems/index.md#lot-sizing-problems) · [Miscellaneous problems](selected-problems/index.md#miscellaneous-problems)
 
 ## Other pages
 

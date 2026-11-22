@@ -6,7 +6,7 @@ Exercises with **worked solutions**, chapter by chapter, with the same parts and
 
 - [1. Combinatorial optimization: definitions](combinatorial-optimization.md) · 8 exercises
 
-## Selected problems
+## Problems
 
 - [2. Knapsack problems](knapsack.md) · 6 exercises
 - [3. Packing problems](bin-packing.md) · 6 exercises

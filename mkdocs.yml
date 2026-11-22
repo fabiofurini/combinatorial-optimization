@@ -68,40 +68,40 @@ plugins:
         # 2026-10-12: chapter «Limits of approximation: vertex coloring» removed, «DP examples» removed from the catalogue
         approximation-algorithms/coloring-approximation.md: https://fabiofurini.github.io/approximation-algorithms/coloring-inapproximability/
         exercises/coloring-approximation.md: https://fabiofurini.github.io/approximation-algorithms/exercises/coloring-inapproximability/
-        catalogue/dp-examples.md: catalogue/index.md
+        catalogue/dp-examples.md: selected-problems/index.md
         # 2026-10-12: one catalogue page per problem (catalogue/<slug>/); the old group pages → the new family pages
-        catalogue/central-problems.md: catalogue/index.md
-        catalogue/knapsack-family.md: catalogue/index.md#knapsack-problems
-        catalogue/packing.md: catalogue/index.md#packing-problems
-        catalogue/graphs.md: catalogue/index.md
-        catalogue/routing.md: catalogue/index.md#routing-problems
-        catalogue/scheduling.md: catalogue/index.md#scheduling-problems
-        catalogue/lot-sizing.md: catalogue/index.md#lot-sizing-problems
+        catalogue/central-problems.md: selected-problems/index.md
+        catalogue/knapsack-family.md: selected-problems/index.md#knapsack-problems
+        catalogue/packing.md: selected-problems/index.md#packing-problems
+        catalogue/graphs.md: selected-problems/index.md
+        catalogue/routing.md: selected-problems/index.md#routing-problems
+        catalogue/scheduling.md: selected-problems/index.md#scheduling-problems
+        catalogue/lot-sizing.md: selected-problems/index.md#lot-sizing-problems
         # 2026-10-12: the KP is the «0/1 knapsack problem» (knapsack problems are the family)
         heuristic-algorithms/constructive-heuristics/the-knapsack-problem-which-order.md: https://fabiofurini.github.io/heuristic-algorithms/constructive-heuristics/the-0-1-knapsack-problem-which-order/
         # 2026-10-12: the in-depth pages of the central problems merged into their catalogue pages (the «vertical»)
-        selected-problems/knapsack.md: catalogue/index.md#knapsack-problem
-        selected-problems/bin-packing.md: catalogue/index.md#bin-packing-problem
-        selected-problems/vertex-coloring.md: catalogue/index.md#vertex-coloring-problem
-        selected-problems/maximum-clique.md: catalogue/index.md#maximum-clique-problem
-        selected-problems/tsp.md: catalogue/index.md#travelling-salesman-problem
-        selected-problems/pcmax.md: catalogue/index.md#scheduling-on-identical-parallel-machines
-        selected-problems/lot-sizing.md: catalogue/index.md#capacitated-lot-sizing
-        selected-problems/at-a-glance.md: combinatorial-optimization-problems/problems.md
-        selected-problems/knapsack-family.md: catalogue/index.md#knapsack-problems
-        selected-problems/dp-examples.md: catalogue/index.md#miscellaneous-problems
+        selected-problems/knapsack.md: selected-problems/index.md#knapsack-problem
+        selected-problems/bin-packing.md: selected-problems/index.md#bin-packing-problem
+        selected-problems/vertex-coloring.md: selected-problems/index.md#vertex-coloring-problem
+        selected-problems/maximum-clique.md: selected-problems/index.md#maximum-clique-problem
+        selected-problems/tsp.md: selected-problems/index.md#travelling-salesman-problem
+        selected-problems/pcmax.md: selected-problems/index.md#scheduling-on-identical-parallel-machines
+        selected-problems/lot-sizing.md: selected-problems/index.md#capacitated-lot-sizing
+        selected-problems/at-a-glance.md: selected-problems/index.md
+        selected-problems/knapsack-family.md: selected-problems/index.md#knapsack-problems
+        selected-problems/dp-examples.md: selected-problems/index.md#miscellaneous-problems
         # 2026-10-12: the first catalogue pages of the central problems (catalogue/<id>.md) → the problem pages
-        catalogue/at-a-glance.md: combinatorial-optimization-problems/problems.md
-        catalogue/knapsack.md: catalogue/index.md#knapsack-problem
-        catalogue/bin-packing.md: catalogue/index.md#bin-packing-problem
-        catalogue/vertex-coloring.md: catalogue/index.md#vertex-coloring-problem
-        catalogue/maximum-clique.md: catalogue/index.md#maximum-clique-problem
-        catalogue/tsp.md: catalogue/index.md#travelling-salesman-problem
-        catalogue/pcmax.md: catalogue/index.md#scheduling-on-identical-parallel-machines
+        catalogue/at-a-glance.md: selected-problems/index.md
+        catalogue/knapsack.md: selected-problems/index.md#knapsack-problem
+        catalogue/bin-packing.md: selected-problems/index.md#bin-packing-problem
+        catalogue/vertex-coloring.md: selected-problems/index.md#vertex-coloring-problem
+        catalogue/maximum-clique.md: selected-problems/index.md#maximum-clique-problem
+        catalogue/tsp.md: selected-problems/index.md#travelling-salesman-problem
+        catalogue/pcmax.md: selected-problems/index.md#scheduling-on-identical-parallel-machines
         # 2026-10-12: Part 1 is in the menu as «Definitions» (chapter 1) and «Selected problems» (chapters 2-8)
         combinatorial-optimization-problems/index.md: selected-problems/index.md
         # 2026-10-12: definitions only on the problem pages (the catalogue has one page per problem)
-        combinatorial-optimization-problems/definitions.md: catalogue/index.md
+        combinatorial-optimization-problems/definitions.md: selected-problems/index.md
         # 2026-10-12: chapter 1 without roadmap; its exercises on the exercises page; remarks and summary in the last subpage
         combinatorial-optimization-problems/combinatorial-optimization/roadmap-of-the-course.md: combinatorial-optimization-problems/combinatorial-optimization/index.md
         combinatorial-optimization-problems/combinatorial-optimization/exercises.md: exercises/combinatorial-optimization.md
@@ -117,43 +117,45 @@ plugins:
         heuristic-algorithms/local-search/c-implementation.md: https://fabiofurini.github.io/heuristic-algorithms/notebooks/
         heuristic-algorithms/metaheuristics/c-implementation.md: https://fabiofurini.github.io/heuristic-algorithms/notebooks/
         # 2026-11-21: every page of the three parts that became modules (python/reindirizzamenti.tsv)
-        # 2026-11-22: the catalogue is one list page; the old pages of the problems and of the families → their entry in the list
-        catalogue/knapsack-problem.md: catalogue/index.md#knapsack-problem
-        catalogue/knapsack-problems.md: catalogue/index.md#knapsack-problems
-        catalogue/subset-sum-problem.md: catalogue/index.md#subset-sum-problem
-        catalogue/bounded-knapsack-problem.md: catalogue/index.md#bounded-knapsack-problem
-        catalogue/unbounded-knapsack-problem.md: catalogue/index.md#unbounded-knapsack-problem
-        catalogue/multidimensional-knapsack-problem.md: catalogue/index.md#multidimensional-knapsack-problem
-        catalogue/multiple-knapsack-problem.md: catalogue/index.md#multiple-knapsack-problem
-        catalogue/multiple-choice-knapsack-problem.md: catalogue/index.md#multiple-choice-knapsack-problem
-        catalogue/knapsack-problem-with-setups.md: catalogue/index.md#knapsack-problem-with-setups
-        catalogue/bin-packing-problem.md: catalogue/index.md#bin-packing-problem
-        catalogue/packing-problems.md: catalogue/index.md#packing-problems
-        catalogue/cutting-stock-problem.md: catalogue/index.md#cutting-stock-problem
-        catalogue/vertex-coloring-problem.md: catalogue/index.md#vertex-coloring-problem
-        catalogue/coloring-problems.md: catalogue/index.md#coloring-problems
-        catalogue/maximum-clique-problem.md: catalogue/index.md#maximum-clique-problem
-        catalogue/clique-problems.md: catalogue/index.md#clique-problems
-        catalogue/maximum-stable-set-problem.md: catalogue/index.md#maximum-stable-set-problem
-        catalogue/vertex-weighted-maximum-clique-problem.md: catalogue/index.md#vertex-weighted-maximum-clique-problem
-        catalogue/edge-weighted-maximum-clique-problem.md: catalogue/index.md#edge-weighted-maximum-clique-problem
-        catalogue/travelling-salesman-problem.md: catalogue/index.md#travelling-salesman-problem
-        catalogue/routing-problems.md: catalogue/index.md#routing-problems
-        catalogue/metric-travelling-salesman-problem.md: catalogue/index.md#metric-travelling-salesman-problem
-        catalogue/asymmetric-travelling-salesman-problem.md: catalogue/index.md#asymmetric-travelling-salesman-problem
-        catalogue/scheduling-on-identical-parallel-machines.md: catalogue/index.md#scheduling-on-identical-parallel-machines
-        catalogue/scheduling-problems.md: catalogue/index.md#scheduling-problems
-        catalogue/scheduling-on-parallel-machines-with-different-speeds.md: catalogue/index.md#scheduling-on-parallel-machines-with-different-speeds
-        catalogue/scheduling-on-unrelated-parallel-machines.md: catalogue/index.md#scheduling-on-unrelated-parallel-machines
-        catalogue/capacitated-lot-sizing.md: catalogue/index.md#capacitated-lot-sizing
-        catalogue/lot-sizing-problems.md: catalogue/index.md#lot-sizing-problems
-        catalogue/uncapacitated-lot-sizing-problem.md: catalogue/index.md#uncapacitated-lot-sizing-problem
-        catalogue/capacitated-lot-sizing-with-constant-capacity.md: catalogue/index.md#capacitated-lot-sizing-with-constant-capacity
-        catalogue/lot-sizing-with-several-products-and-setup-times.md: catalogue/index.md#lot-sizing-with-several-products-and-setup-times
-        catalogue/lot-sizing-with-initial-stock.md: catalogue/index.md#lot-sizing-with-initial-stock
-        catalogue/lot-sizing-with-overtime.md: catalogue/index.md#lot-sizing-with-overtime
-        catalogue/lot-sizing-with-unsatisfied-demand.md: catalogue/index.md#lot-sizing-with-unsatisfied-demand
-        catalogue/miscellaneous-problems.md: catalogue/index.md#miscellaneous-problems
+        # 2026-11-22: «Selected problems» and «Catalogue» are one page «Problems» (selected-problems/index.md): the old catalogue pages and «The problems at a glance» → their entry
+        catalogue/index.md: selected-problems/index.md
+        combinatorial-optimization-problems/problems.md: selected-problems/index.md
+        catalogue/knapsack-problem.md: selected-problems/index.md#knapsack-problem
+        catalogue/knapsack-problems.md: selected-problems/index.md#knapsack-problems
+        catalogue/subset-sum-problem.md: selected-problems/index.md#subset-sum-problem
+        catalogue/bounded-knapsack-problem.md: selected-problems/index.md#bounded-knapsack-problem
+        catalogue/unbounded-knapsack-problem.md: selected-problems/index.md#unbounded-knapsack-problem
+        catalogue/multidimensional-knapsack-problem.md: selected-problems/index.md#multidimensional-knapsack-problem
+        catalogue/multiple-knapsack-problem.md: selected-problems/index.md#multiple-knapsack-problem
+        catalogue/multiple-choice-knapsack-problem.md: selected-problems/index.md#multiple-choice-knapsack-problem
+        catalogue/knapsack-problem-with-setups.md: selected-problems/index.md#knapsack-problem-with-setups
+        catalogue/bin-packing-problem.md: selected-problems/index.md#bin-packing-problem
+        catalogue/packing-problems.md: selected-problems/index.md#packing-problems
+        catalogue/cutting-stock-problem.md: selected-problems/index.md#cutting-stock-problem
+        catalogue/vertex-coloring-problem.md: selected-problems/index.md#vertex-coloring-problem
+        catalogue/coloring-problems.md: selected-problems/index.md#coloring-problems
+        catalogue/maximum-clique-problem.md: selected-problems/index.md#maximum-clique-problem
+        catalogue/clique-problems.md: selected-problems/index.md#clique-problems
+        catalogue/maximum-stable-set-problem.md: selected-problems/index.md#maximum-stable-set-problem
+        catalogue/vertex-weighted-maximum-clique-problem.md: selected-problems/index.md#vertex-weighted-maximum-clique-problem
+        catalogue/edge-weighted-maximum-clique-problem.md: selected-problems/index.md#edge-weighted-maximum-clique-problem
+        catalogue/travelling-salesman-problem.md: selected-problems/index.md#travelling-salesman-problem
+        catalogue/routing-problems.md: selected-problems/index.md#routing-problems
+        catalogue/metric-travelling-salesman-problem.md: selected-problems/index.md#metric-travelling-salesman-problem
+        catalogue/asymmetric-travelling-salesman-problem.md: selected-problems/index.md#asymmetric-travelling-salesman-problem
+        catalogue/scheduling-on-identical-parallel-machines.md: selected-problems/index.md#scheduling-on-identical-parallel-machines
+        catalogue/scheduling-problems.md: selected-problems/index.md#scheduling-problems
+        catalogue/scheduling-on-parallel-machines-with-different-speeds.md: selected-problems/index.md#scheduling-on-parallel-machines-with-different-speeds
+        catalogue/scheduling-on-unrelated-parallel-machines.md: selected-problems/index.md#scheduling-on-unrelated-parallel-machines
+        catalogue/capacitated-lot-sizing.md: selected-problems/index.md#capacitated-lot-sizing
+        catalogue/lot-sizing-problems.md: selected-problems/index.md#lot-sizing-problems
+        catalogue/uncapacitated-lot-sizing-problem.md: selected-problems/index.md#uncapacitated-lot-sizing-problem
+        catalogue/capacitated-lot-sizing-with-constant-capacity.md: selected-problems/index.md#capacitated-lot-sizing-with-constant-capacity
+        catalogue/lot-sizing-with-several-products-and-setup-times.md: selected-problems/index.md#lot-sizing-with-several-products-and-setup-times
+        catalogue/lot-sizing-with-initial-stock.md: selected-problems/index.md#lot-sizing-with-initial-stock
+        catalogue/lot-sizing-with-overtime.md: selected-problems/index.md#lot-sizing-with-overtime
+        catalogue/lot-sizing-with-unsatisfied-demand.md: selected-problems/index.md#lot-sizing-with-unsatisfied-demand
+        catalogue/miscellaneous-problems.md: selected-problems/index.md#miscellaneous-problems
         dynamic-programming/dp-bounded-knapsack.md: https://fabiofurini.github.io/dynamic-programming/dp-bounded-knapsack/
         dynamic-programming/dp-capacitated-lot-sizing.md: https://fabiofurini.github.io/dynamic-programming/dp-capacitated-lot-sizing/
         dynamic-programming/dp-coin-change.md: https://fabiofurini.github.io/dynamic-programming/dp-coin-change/
@@ -322,7 +324,7 @@ extra:
 
 extra_css:
   - stylesheets/collana.css
-  - stylesheets/extra.css?v=c09bb8c9c1
+  - stylesheets/extra.css?v=d1088ddb11
   - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraph.css
   - stylesheets/interattivi.css?v=c51ac2286b
   - stylesheets/quiz.css?v=9e3792b41c
@@ -370,7 +372,7 @@ nav:
       - "Combinatorial explosion and brute force": combinatorial-optimization-problems/combinatorial-optimization/combinatorial-explosion-and-brute-force.md
       - "Primal bounds, dual bounds and gap": combinatorial-optimization-problems/combinatorial-optimization/primal-bounds-dual-bounds-and-gap.md
       - "A glimpse of computational complexity": combinatorial-optimization-problems/combinatorial-optimization/a-glimpse-of-computational-complexity.md
-  - Selected problems:
+  - Problems:
       - selected-problems/index.md
       - "2. Knapsack problems":
           - combinatorial-optimization-problems/knapsack/index.md
@@ -448,7 +450,7 @@ nav:
       - exercises/index.md
       - "Definitions":
           - "1. Definitions": exercises/combinatorial-optimization.md
-      - "Selected problems":
+      - "Problems":
           - "2. Knapsack problems": exercises/knapsack.md
           - "3. Packing problems": exercises/bin-packing.md
           - "4. Coloring problems": exercises/coloring.md
@@ -471,6 +473,5 @@ nav:
               - "17. Vertex coloring (VCP)": exercises/dsatur-branch-and-bound.md
   - Quiz: self-assessment.md
   - Lab: lab/index.md
-  - Catalogue: catalogue/index.md
   - Downloads: downloads.md
   - Index: full-index.md

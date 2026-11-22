@@ -54,7 +54,7 @@ The same entries as the menu: each card gives its part and its chapters in the l
 
     [:octicons-arrow-right-24: The chapter](combinatorial-optimization-problems/combinatorial-optimization/index.md)
 
--   :material-star-outline: **Selected problems**
+-   :material-star-outline: **Problems**
 
     ---
 
@@ -114,16 +114,6 @@ The same entries as the menu: each card gives its part and its chapters in the l
 
     [:octicons-arrow-right-24: The module](https://fabiofurini.github.io/approximation-algorithms/)
 
--   :material-view-list: **Catalogue**
-
-    ---
-
-    *All the problems*
-
-    All the problems in one list, by family: the definition and the chapters that treat each one.
-
-    [:octicons-arrow-right-24: The catalogue](catalogue/index.md) · [:material-file-pdf-box: PDF](pdf/combinatorial-problem-catalogue.pdf)
-
 -   :material-clipboard-check-outline: **Self-assessment**
 
     ---
@@ -182,14 +172,6 @@ The same entries as the menu: each card gives its part and its chapters in the l
     Lecture notes, exercise books and slides in PDF, with the same numbering as the website.
 
     [:octicons-arrow-right-24: Downloads](downloads.md)
-
--   :material-view-list: **Problem catalogue**
-
-    ---
-
-    The problems used in the examples and exercises, each with its figure.
-
-    [:octicons-arrow-right-24: The catalogue](catalogue/index.md)
 
 -   :material-format-list-numbered: **Full index**
 

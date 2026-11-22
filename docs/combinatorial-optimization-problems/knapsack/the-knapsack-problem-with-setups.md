@@ -208,5 +208,5 @@ title: "Knapsack with setups"
 
 ---
 
-**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/index.md#knapsack-problem)
+**In depth:** [:material-view-list: what the course does on this problem](../../selected-problems/index.md#knapsack-problem)
 

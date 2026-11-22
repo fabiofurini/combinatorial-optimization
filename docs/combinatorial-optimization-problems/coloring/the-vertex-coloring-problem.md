@@ -270,5 +270,5 @@ title: "Vertex coloring"
 
 ---
 
-**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/index.md#vertex-coloring-problem)
+**In depth:** [:material-view-list: what the course does on this problem](../../selected-problems/index.md#vertex-coloring-problem)
 
