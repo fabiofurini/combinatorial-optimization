@@ -6,7 +6,7 @@ title: "Rod cutting problem (RCP)"
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-folder-outline: Miscellaneous problems](miscellaneous-problems.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
+[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-folder-outline: Miscellaneous problems](index.md#miscellaneous-problems) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
 
 </div>
 

@@ -120,7 +120,7 @@ The same entries as the menu: each card gives its part and its chapters in the l
 
     *All the problems*
 
-    One page per problem, by family: definition, assumptions and what the course does on the problem.
+    All the problems in one list, by family: the definition and the chapters that treat each one.
 
     [:octicons-arrow-right-24: The catalogue](catalogue/index.md) · [:material-file-pdf-box: PDF](pdf/combinatorial-problem-catalogue.pdf)
 

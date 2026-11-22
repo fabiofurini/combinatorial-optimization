@@ -242,7 +242,7 @@ title: "Knapsack problems"
 
 ---
 
-**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/knapsack-problem.md)
+**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/index.md#knapsack-problem)
 
 <!-- laboratorio-interattivo: sezione generata da interattivi.py -->
 

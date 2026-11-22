@@ -30,10 +30,10 @@ Each cell links to the chapter. Dynamic programming, heuristics and approximatio
 
 ## The catalogue pages
 
-- **0/1 knapsack problem (KP)** — [what the course does on this problem](../catalogue/knapsack-problem.md)
-- **Bin packing (BPP)** — [what the course does on this problem](../catalogue/bin-packing-problem.md)
-- **Vertex coloring (VCP)** — [what the course does on this problem](../catalogue/vertex-coloring-problem.md)
-- **Maximum clique (MCP)** — [what the course does on this problem](../catalogue/maximum-clique-problem.md)
-- **Travelling salesman (TSP)** — [what the course does on this problem](../catalogue/travelling-salesman-problem.md)
-- **Parallel machine scheduling (P\|\|Cmax)** — [what the course does on this problem](../catalogue/scheduling-on-identical-parallel-machines.md)
-- **Capacitated lot sizing (CLS)** — [what the course does on this problem](../catalogue/capacitated-lot-sizing.md)
+- **0/1 knapsack problem (KP)** — [what the course does on this problem](../catalogue/index.md#knapsack-problem)
+- **Bin packing (BPP)** — [what the course does on this problem](../catalogue/index.md#bin-packing-problem)
+- **Vertex coloring (VCP)** — [what the course does on this problem](../catalogue/index.md#vertex-coloring-problem)
+- **Maximum clique (MCP)** — [what the course does on this problem](../catalogue/index.md#maximum-clique-problem)
+- **Travelling salesman (TSP)** — [what the course does on this problem](../catalogue/index.md#travelling-salesman-problem)
+- **Parallel machine scheduling (P\|\|Cmax)** — [what the course does on this problem](../catalogue/index.md#scheduling-on-identical-parallel-machines)
+- **Capacitated lot sizing (CLS)** — [what the course does on this problem](../catalogue/index.md#capacitated-lot-sizing)

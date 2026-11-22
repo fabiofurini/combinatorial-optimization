@@ -6,7 +6,7 @@ title: "Hamiltonian cycle problem (HCP)"
 
 <div class="info-capitolo" markdown>
 
-[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-folder-outline: Routing problems](routing-problems.md) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
+[:material-view-list: **Catalogue of combinatorial problems**](index.md) · [:material-folder-outline: Routing problems](index.md#routing-problems) · [:material-file-pdf-box: Catalogue (PDF)](../pdf/combinatorial-problem-catalogue.pdf)
 
 </div>
 

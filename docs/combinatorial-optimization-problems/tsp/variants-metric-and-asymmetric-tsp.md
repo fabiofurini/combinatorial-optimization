@@ -122,5 +122,5 @@ title: "Metric and asymmetric TSP"
 
 ---
 
-**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/travelling-salesman-problem.md)
+**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/index.md#travelling-salesman-problem)
 

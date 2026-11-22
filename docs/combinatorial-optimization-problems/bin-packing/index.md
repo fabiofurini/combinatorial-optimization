@@ -97,4 +97,4 @@ title: "Packing problems"
 
 ---
 
-**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/bin-packing-problem.md)
+**In depth:** [:material-view-list: what the course does on this problem](../../catalogue/index.md#bin-packing-problem)
