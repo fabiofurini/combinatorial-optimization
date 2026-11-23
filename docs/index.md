@@ -16,7 +16,11 @@ hide:
 Teaching material conceived and developed by **[Fabio Furini](https://fabiofurini.github.io/)**, associate
 professor at [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
 
-**The course lecture notes, online**: knapsack, packing, coloring, clique, routing, scheduling and lot sizing problems, their formulations with their properties and bounds, and ad hoc algorithms; with definitions, results with proofs, examples worked out step by step, exercises with solutions and interactive apps.
+The course presents combinatorial optimization problems: knapsack, packing, coloring, clique, routing,
+scheduling and lot sizing, with their formulations, properties and bounds, and ad hoc algorithms.
+
+Every chapter has definitions, results with proofs, examples worked out step by step, exercises with
+solutions and interactive apps.
 
 Prerequisites: [Linear Programming](https://fabiofurini.github.io/linear-programming/) and [Integer Linear Programming](https://fabiofurini.github.io/integer-linear-programming/) for the formulations and [Algorithms](https://fabiofurini.github.io/algorithms/) for the algorithms.
 
