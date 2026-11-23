@@ -4,67 +4,107 @@ title: Downloads
 
 # Downloads
 
-The lecture notes, the exercise books, the slides and the catalogue of problems in PDF, with the same numbering of definitions, theorems, examples and exercises as the website. Text and figures are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en), the code under the MIT licence.
+The lecture notes, the exercises, the slides and the catalogue of problems in PDF, with the same numbering of definitions, theorems, examples and exercises as the website. Text and figures are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en), the code under the MIT licence.
 
 ## Lecture notes
 
-<div class="tabella-download" markdown>
+<div class="grid cards" markdown>
 
-| Volume | Contents | Chapters | File |
-|---|---|:---:|---|
-| 1. Problems | Combinatorial optimization problems and their families: knapsack, packing, coloring, clique, routing, scheduling and lot sizing problems. For each problem: definition, assumptions, instances, counting the solutions, a first solution by hand and a simple bound. | 1–8 | [:material-file-pdf-box: PDF](pdf/lecture-notes-1-combinatorial-optimization-problems.pdf) (0.8 MB) |
-| 2. Formulations and their properties | Integer linear programming models of the problems of Volume 1, their linear programming relaxations and duals, the bounds they give, and the comparison between weaker and stronger formulations. | 9–15 | [:material-file-pdf-box: PDF](pdf/lecture-notes-2-formulations.pdf) (1.0 MB) |
-| 3. Ad hoc algorithms | Ad hoc algorithms: the branch-and-bound on the critical item for the 0/1 knapsack problem and the DSATUR branch-and-bound for vertex coloring. | 16–17 | [:material-file-pdf-box: PDF](pdf/lecture-notes-3-specialized-algorithms.pdf) (0.5 MB) |
+-   :material-book-open-variant: **Lecture notes, volume 1 · Problems**
+
+    ---
+
+    Combinatorial optimization problems and their families: knapsack, packing, coloring, clique, routing, scheduling and lot sizing problems. For each problem: definition, assumptions, instances, counting the solutions, a first solution by hand and a simple bound.
+
+    [:octicons-download-24: lecture-notes-1-combinatorial-optimization-problems.pdf](pdf/lecture-notes-1-combinatorial-optimization-problems.pdf)
+
+-   :material-book-open-variant: **Lecture notes, volume 2 · Formulations and their properties**
+
+    ---
+
+    Integer linear programming models of the problems of Volume 1, their linear programming relaxations and duals, the bounds they give, and the comparison between weaker and stronger formulations.
+
+    [:octicons-download-24: lecture-notes-2-formulations.pdf](pdf/lecture-notes-2-formulations.pdf)
+
+-   :material-book-open-variant: **Lecture notes, volume 3 · Ad hoc algorithms**
+
+    ---
+
+    Ad hoc algorithms: the branch-and-bound on the critical item for the 0/1 knapsack problem and the DSATUR branch-and-bound for vertex coloring.
+
+    [:octicons-download-24: lecture-notes-3-specialized-algorithms.pdf](pdf/lecture-notes-3-specialized-algorithms.pdf)
 
 </div>
 
-## Exercise books
+## Exercises
 
-<div class="tabella-download" markdown>
+<div class="grid cards" markdown>
 
-| Volume | Contents | Chapters | File |
-|---|---|:---:|---|
-| 1. Problems | Definitions · Knapsack problems · Packing problems · Coloring problems · Clique problems · Routing problems · Scheduling problems · Lot sizing problems | 1–8 | [:material-file-pdf-box: PDF](pdf/exercises-1-combinatorial-optimization-problems.pdf) (0.6 MB) |
-| 2. Formulations and their properties | Knapsack problems · Packing problems · Coloring problems · Clique problems · Routing problems · Scheduling problems · Lot sizing problems | 9–15 | [:material-file-pdf-box: PDF](pdf/exercises-2-formulations.pdf) (0.6 MB) |
-| 3. Ad hoc algorithms | Knapsack problems · Coloring problems | 16–17 | [:material-file-pdf-box: PDF](pdf/exercises-3-specialized-algorithms.pdf) (0.5 MB) |
+-   :material-pencil-box-multiple: **Exercises, volume 1 · Problems**
+
+    ---
+
+    Definitions · Knapsack problems · Packing problems · Coloring problems · Clique problems · Routing problems · Scheduling problems · Lot sizing problems
+
+    [:octicons-download-24: exercises-1-combinatorial-optimization-problems.pdf](pdf/exercises-1-combinatorial-optimization-problems.pdf)
+
+-   :material-pencil-box-multiple: **Exercises, volume 2 · Formulations and their properties**
+
+    ---
+
+    Knapsack problems · Packing problems · Coloring problems · Clique problems · Routing problems · Scheduling problems · Lot sizing problems
+
+    [:octicons-download-24: exercises-2-formulations.pdf](pdf/exercises-2-formulations.pdf)
+
+-   :material-pencil-box-multiple: **Exercises, volume 3 · Ad hoc algorithms**
+
+    ---
+
+    Knapsack problems · Coloring problems
+
+    [:octicons-download-24: exercises-3-specialized-algorithms.pdf](pdf/exercises-3-specialized-algorithms.pdf)
 
 </div>
 
 ## Slides
 
-The lecture slides, one PDF per chapter, with the same definitions and examples as the lecture notes.
+### Problems
 
-<div class="tabella-download" markdown>
+- :material-presentation: [Chapter 1 · Combinatorial optimization: definitions](pdf/slides-combinatorial-optimization.pdf)
+- :material-presentation: [Chapter 2 · Knapsack problems](pdf/slides-knapsack.pdf)
+- :material-presentation: [Chapter 3 · Packing problems](pdf/slides-bin-packing.pdf)
+- :material-presentation: [Chapter 4 · Coloring problems](pdf/slides-coloring.pdf)
+- :material-presentation: [Chapter 5 · Clique problems](pdf/slides-clique.pdf)
+- :material-presentation: [Chapter 6 · Routing problems](pdf/slides-tsp.pdf)
+- :material-presentation: [Chapter 7 · Scheduling problems](pdf/slides-pcmax.pdf)
+- :material-presentation: [Chapter 8 · Lot sizing problems](pdf/slides-lot-sizing.pdf)
 
-| Chapter | Title | File |
-|:---:|---|---|
-| 1 | [Combinatorial optimization: definitions](combinatorial-optimization-problems/combinatorial-optimization/index.md) | [:material-file-pdf-box: PDF](pdf/slides-combinatorial-optimization.pdf) (0.5 MB) |
-| 2 | [Knapsack problems](combinatorial-optimization-problems/knapsack/index.md) | [:material-file-pdf-box: PDF](pdf/slides-knapsack.pdf) (0.6 MB) |
-| 3 | [Packing problems](combinatorial-optimization-problems/bin-packing/index.md) | [:material-file-pdf-box: PDF](pdf/slides-bin-packing.pdf) (0.6 MB) |
-| 4 | [Coloring problems](combinatorial-optimization-problems/coloring/index.md) | [:material-file-pdf-box: PDF](pdf/slides-coloring.pdf) (0.4 MB) |
-| 5 | [Clique problems](combinatorial-optimization-problems/clique/index.md) | [:material-file-pdf-box: PDF](pdf/slides-clique.pdf) (0.5 MB) |
-| 6 | [Routing problems](combinatorial-optimization-problems/tsp/index.md) | [:material-file-pdf-box: PDF](pdf/slides-tsp.pdf) (0.4 MB) |
-| 7 | [Scheduling problems](combinatorial-optimization-problems/pcmax/index.md) | [:material-file-pdf-box: PDF](pdf/slides-pcmax.pdf) (0.4 MB) |
-| 8 | [Lot sizing problems](combinatorial-optimization-problems/lot-sizing/index.md) | [:material-file-pdf-box: PDF](pdf/slides-lot-sizing.pdf) (0.4 MB) |
-| 9 | [Formulations of knapsack problems](formulations/knapsack-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slides-knapsack-formulations.pdf) (0.6 MB) |
-| 10 | [Formulations of packing problems](formulations/bin-packing-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slides-bin-packing-formulations.pdf) (0.5 MB) |
-| 11 | [Formulations of coloring problems](formulations/coloring-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slides-coloring-formulations.pdf) (0.4 MB) |
-| 12 | [Formulations of clique problems](formulations/clique-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slides-clique-formulations.pdf) (0.5 MB) |
-| 13 | [Formulations of routing problems](formulations/tsp-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slides-tsp-formulations.pdf) (0.4 MB) |
-| 14 | [Formulations of scheduling problems](formulations/pcmax-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slides-pcmax-formulations.pdf) (0.4 MB) |
-| 15 | [Formulations of lot sizing problems](formulations/lot-sizing-formulations/index.md) | [:material-file-pdf-box: PDF](pdf/slides-lot-sizing-formulations.pdf) (0.5 MB) |
-| 16 | [Knapsack: branch-and-bound on the critical item](specialized-algorithms/knapsack-branch-and-bound.md) | [:material-file-pdf-box: PDF](pdf/slides-knapsack-branch-and-bound.pdf) (0.5 MB) |
-| 17 | [Vertex coloring: the DSATUR branch-and-bound](specialized-algorithms/dsatur-branch-and-bound.md) | [:material-file-pdf-box: PDF](pdf/slides-dsatur-branch-and-bound.pdf) (0.4 MB) |
+### Formulations and their properties
 
-</div>
+- :material-presentation: [Chapter 9 · Formulations of knapsack problems](pdf/slides-knapsack-formulations.pdf)
+- :material-presentation: [Chapter 10 · Formulations of packing problems](pdf/slides-bin-packing-formulations.pdf)
+- :material-presentation: [Chapter 11 · Formulations of coloring problems](pdf/slides-coloring-formulations.pdf)
+- :material-presentation: [Chapter 12 · Formulations of clique problems](pdf/slides-clique-formulations.pdf)
+- :material-presentation: [Chapter 13 · Formulations of routing problems](pdf/slides-tsp-formulations.pdf)
+- :material-presentation: [Chapter 14 · Formulations of scheduling problems](pdf/slides-pcmax-formulations.pdf)
+- :material-presentation: [Chapter 15 · Formulations of lot sizing problems](pdf/slides-lot-sizing-formulations.pdf)
 
-## Catalogue of problems
+### Ad hoc algorithms
 
-<div class="tabella-download" markdown>
+- :material-presentation: [Chapter 16 · Knapsack: branch-and-bound on the critical item](pdf/slides-knapsack-branch-and-bound.pdf)
+- :material-presentation: [Chapter 17 · Vertex coloring: the DSATUR branch-and-bound](pdf/slides-dsatur-branch-and-bound.pdf)
 
-| | Contents | File |
-|---|---|---|
-| [Catalogue of combinatorial problems](selected-problems/index.md) | All the problems defined in the course, grouped by family: for each one its definition, its assumptions and what the course does on it, technique by technique. | [:material-file-pdf-box: PDF](pdf/combinatorial-problem-catalogue.pdf) (0.6 MB) |
+## Other documents
+
+<div class="grid cards" markdown>
+
+-   :material-file-document-outline: **Catalogue of combinatorial problems**
+
+    ---
+
+    All the problems defined in the course, grouped by family: for each one its definition, its assumptions and what the course does on it, technique by technique. Online: [the catalogue](selected-problems/index.md).
+
+    [:octicons-download-24: combinatorial-problem-catalogue.pdf](pdf/combinatorial-problem-catalogue.pdf)
 
 </div>
 
