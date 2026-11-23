@@ -19,9 +19,6 @@ professor at [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
 The course presents combinatorial optimization problems: knapsack, packing, coloring, clique, routing,
 scheduling and lot sizing, with their formulations, properties and bounds, and ad hoc algorithms.
 
-Every chapter has definitions, results with proofs, examples worked out step by step, exercises with
-solutions and interactive apps.
-
 Prerequisites: [Linear Programming](https://fabiofurini.github.io/linear-programming/) and [Integer Linear Programming](https://fabiofurini.github.io/integer-linear-programming/) for the formulations and [Algorithms](https://fabiofurini.github.io/algorithms/) for the algorithms.
 
 [Start :material-arrow-right:](combinatorial-optimization-problems/combinatorial-optimization/index.md){ .md-button .md-button--primary }
