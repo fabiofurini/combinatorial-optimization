@@ -5,8 +5,8 @@ hide:
 
 # Interactive lab
 
-Here you can get your hands on combinatorial optimization: each app runs an algorithm step by step on the reference instances of the course,
-which you can also change. Pick an app: it opens full page. Everything runs in the browser; the numbers are computed by the algorithm, not typed by hand.
+Each app runs an algorithm step by step on the reference instances of the course,
+which you can also change. Pick an app: it opens full page. Everything runs in the browser.
 
 ## Problems
 
